@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=naninfio003.scenario
+#FEATURE =
+#CREATOR = Michael Selvanayagam
+#DATE    = 20060331
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)nanqinput2003std.dat $(tcasedir)nansinput2003std.dat
+#OUTPUT   = ./
+#ENDCMD
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)naninfio003.f
+#OUTPUT    = naninfio003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = naninfio003$(OBJ)
+#OUTPUT    = naninfio003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = naninfio003$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

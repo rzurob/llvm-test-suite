@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_procptr/component1/sequenceType001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_procptr/*
+#DATE      = 20071009
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)sequenceType001.f
+#OUTPUT    = sequenceType001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = sequenceType001$(OBJ)
+#OUTPUT    = sequenceType001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = sequenceType001$(EXE)
+#STDOUT    = sequenceType001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)sequenceType001$(product)vf) sequenceType001.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,38 @@
+ Long student numbers:
+ There are 4 students with first names of 6 or fewer characters, and last names of 8 or fewer characters
+ 1 Jonas  Salk    : 1234567
+ 2 Albert Einstein: 2345678
+ 3 Marie  Curie   : 3456789
+ 4 Isaac  Newton  : 4567890
+ Long student numbers:
+ There are 3 students with first names of 8 or fewer characters, and last names of 16 or fewer characters
+ 1 Pyotr    Tschaikovsky    : 1234567
+ 2 Nicolai  Rimsky-Korsakov : 2345678
+ 3 Modest   Mussorgsky      : 3456789
+ Mid-length student numbers:
+ There are 6 students with first names of 3 or fewer characters, and last names of 3 or fewer characters
+ 1 bbbbbbb: 5
+ 2 ccccccc: 25
+ 3 ddddddd: 125
+ 4 eeeeeee: 625
+ 5 fffffff: 3125
+ 6 ggggggg: 15625
+ Mid-length student numbers:
+ There are 1 students with first names of 11 or fewer characters, and last names of 6 or fewer characters
+ 1 Heironymous Bosch : 32767
+ Short student numbers:
+ There are 9 students with first names of 0 or fewer characters, and last names of 0 or fewer characters
+ 1 y: 1
+ 2 x: 4
+ 3 w: 9
+ 4 v: 16
+ 5 u: 25
+ 6 t: 36
+ 7 s: 49
+ 8 r: 64
+ 9 q: 81
+ Short student numbers:
+ There are 3 students with first names of 4 or fewer characters, and last names of 4 or fewer characters
+ 1 John John: -127
+ 2 Jane Joan: 0
+ 3 Xing Lang: 127

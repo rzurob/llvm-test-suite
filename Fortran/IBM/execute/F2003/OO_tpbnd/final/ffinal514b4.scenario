@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_tpbnd/final/ffinal514b4.f
+#FEATURE = OO_tpbnd
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ffinal514b4.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ffinal514b4$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = ffinal514b4$(OBJ)
+#OUTPUT    = ffinal514b4$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ffinal514b4$(EXE)
+#STDOUT    = ffinal514b4.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = ffinal514b4.out $($(tcasedir)ffinal514b4$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,5 @@
+  NaN NaN(S)  +3,14  +3,15     +Inf
+ NaN*****Inf
+ -Inf 3.2 NaN(S) NaN(Q)
+    NaN(Q)    NaN(Q)       3.2    NaN(Q)
+       Inf    NaN(Q)       3.1      -Inf

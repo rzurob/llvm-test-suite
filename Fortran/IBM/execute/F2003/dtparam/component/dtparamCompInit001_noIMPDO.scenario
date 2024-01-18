@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/component/dtparamCompInit001_noIMPDO.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamCompInit001_noIMPDO.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamCompInit001_noIMPDO$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dtparamCompInit001_noIMPDO$(OBJ)
+#OUTPUT    = dtparamCompInit001_noIMPDO$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamCompInit001_noIMPDO$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

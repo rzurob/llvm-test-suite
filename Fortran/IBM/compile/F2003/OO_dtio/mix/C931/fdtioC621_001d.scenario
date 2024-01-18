@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = OO_dtio/mix/C931/fdtioC621_001d.scenario
+#FEATURE = OO_dtio/mix tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fdtioC621_001d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fdtioC621_001d$(EXE)
+#STDERR    = fdtioC621_001d.stderr
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = fdtioC621_001d.stderr $($(tcasedir)fdtioC621_001d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

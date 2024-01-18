@@ -1,0 +1,4 @@
+"d380877.f", line 37.15: 1516-342 (S) The coarray dummy argument x of procedure foo is not an assumed-shape array or is declared with the CONTIGUOUS attribute.  The corresponding actual argument must be simply contiguous.
+"d380877.f", line 38.15: 1516-342 (S) The coarray dummy argument x of procedure bar is not an assumed-shape array or is declared with the CONTIGUOUS attribute.  The corresponding actual argument must be simply contiguous.
+** d380877   === End of Compilation 1 ===
+1501-511  Compilation failed for file d380877.f.

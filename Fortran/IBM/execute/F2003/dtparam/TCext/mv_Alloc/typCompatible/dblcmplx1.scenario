@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/typCompatible/dblcmplx1.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071105
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dblcmplx1.f
+#OUTPUT= dblcmplx1$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  dblcmplx1$(OBJ)
+#OUTPUT= dblcmplx1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dblcmplx1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

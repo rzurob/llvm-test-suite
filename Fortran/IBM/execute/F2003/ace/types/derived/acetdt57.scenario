@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/derived/acetdt57.scenario
+#FEATURE	= Array constructor enhancement - default initialization of derived type _component_ (derived type)
+#CREATOR	= DF Manual Update
+#DATE		= 20061123
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt57.f
+#OUTPUT		= acetdt57$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt57$(OBJ)
+#OUTPUT		= acetdt57$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt57$(EXE)
+#STDOUT		= acetdt57.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetdt57$(product)vf) acetdt57.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BImplTypeTgt.scenario
+#FEATURE   = F2008 BLOCK - implicit typing (var appears in TARGET statement)
+#CREATOR   = DF Manual Update
+#DATE      = 20101214
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)BImplTypeTgt.f
+#OUTPUT    = BImplTypeTgt$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = BImplTypeTgt$(OBJ)
+#OUTPUT    = BImplTypeTgt$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = BImplTypeTgt$(EXE)
+#STDOUT    = BImplTypeTgt.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)BImplTypeTgt$(product)vf) BImplTypeTgt.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

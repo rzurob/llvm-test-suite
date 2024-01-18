@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignAssociate.scenario
+#FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - pointer assignment within ASSOCIATE construct
+#CREATOR   = DF Manual Update
+#DATE      = 20090121
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPtrAssignAssociate.f
+#OUTPUT    = dtpPtrAssignAssociate$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPtrAssignAssociate$(OBJ)
+#OUTPUT    = dtpPtrAssignAssociate$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPtrAssignAssociate$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

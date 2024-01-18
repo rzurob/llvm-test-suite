@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/procPtrComp/dtpPPCBasicNoPassFunctionDummy.scenario
+#FEATURE   = Procedure Pointers as Components - reference to function without passed-object dummy argument - invoke in nested routine
+#CREATOR   = DF Manual Update
+#DATE      = 20090323
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPPCBasicNoPassFunctionDummy.f
+#OUTPUT    = dtpPPCBasicNoPassFunctionDummy$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPPCBasicNoPassFunctionDummy$(OBJ)
+#OUTPUT    = dtpPPCBasicNoPassFunctionDummy$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPPCBasicNoPassFunctionDummy$(EXE)
+#STDOUT    = dtpPPCBasicNoPassFunctionDummy.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpPPCBasicNoPassFunctionDummy$(product)vf) dtpPPCBasicNoPassFunctionDummy.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

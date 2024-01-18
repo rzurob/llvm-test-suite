@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_type/abstract/crossFeature/userDefOp/userDefOp002.scenario
+#FEATURE = OO_type/abstract/crossFeature tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)userDefOp002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = userDefOp002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  userDefOp002$(OBJ)
+#OUTPUT    = userDefOp002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = userDefOp002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,155 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=fxiosendeor004.scenario
+#FEATURE = diagnostic test for is_iostat_end and is_iostat_eor
+#CREATOR = Bardia Mahjour
+#DATE    = 20050817
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
+#ENDDEFS
+#INVALID_XOPTS = $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP) $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT)
+#INVALID_PRODUCT = cbe_ssc
+#ENDENV
+
+#BEGINCONTROL
+
+! for $(OPT_SET_LANG_LEVEL<77std>)
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)fxiosendeor004.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM) $(OPT_SET_LANG_LEVEL<77std>) -qdebug=intmsg $(OPT_ZEROSIZE_OFF) $(OPT_ENABLE_MSG_NUM<1518-317:1518-318>)
+#STDOUT    = fxiosendeor004.out
+#STDERR    = fxiosendeor004.out
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fxiosendeor004.out $($(tcasedir)fxiosendeor004a$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+! for $(OPT_SET_LANG_LEVEL<90std>)
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)fxiosendeor004.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<90std>) -qdebug=intmsg $(OPT_ENABLE_MSG_NUM<1518-317:1518-318>)
+#STDOUT    = fxiosendeor004.out
+#STDERR    = fxiosendeor004.out
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fxiosendeor004.out $($(tcasedir)fxiosendeor004b$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+
+! for $(OPT_SET_LANG_LEVEL<90pure>)
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)fxiosendeor004.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<90pure>) -qdebug=intmsg $(OPT_ENABLE_MSG_NUM<1518-317:1518-318>)
+#STDOUT    = fxiosendeor004.out
+#STDERR    = fxiosendeor004.out
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fxiosendeor004.out $($(tcasedir)fxiosendeor004b$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+
+! for $(OPT_SET_LANG_LEVEL<95std>)
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)fxiosendeor004.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<95std>) -qdebug=intmsg $(OPT_ENABLE_MSG_NUM<1518-317:1518-318>)
+#STDOUT    = fxiosendeor004.out
+#STDERR    = fxiosendeor004.out
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fxiosendeor004.out $($(tcasedir)fxiosendeor004c$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+
+! for $(OPT_SET_LANG_LEVEL<95pure>)
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)fxiosendeor004.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<95pure>) -qdebug=intmsg $(OPT_ENABLE_MSG_NUM<1518-317:1518-318>)
+#STDOUT    = fxiosendeor004.out
+#STDERR    = fxiosendeor004.out
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fxiosendeor004.out $($(tcasedir)fxiosendeor004c$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+
+! for $(OPT_SET_LANG_LEVEL<90ext>) which is equivalent of extended.
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)fxiosendeor004.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<90ext>) -qdebug=intmsg $(OPT_ENABLE_MSG_NUM<1518-317:1518-318>)
+#STDOUT    = fxiosendeor004.out
+#STDERR    = fxiosendeor004.out
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fxiosendeor004.out $($(tcasedir)fxiosendeor004d$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+
+! for $(OPT_SET_LANG_LEVEL<extended>)
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)fxiosendeor004.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<extended>) -qdebug=intmsg $(OPT_ENABLE_MSG_NUM<1518-317:1518-318>)
+#STDOUT    = fxiosendeor004.out
+#STDERR    = fxiosendeor004.out
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fxiosendeor004.out $($(tcasedir)fxiosendeor004d$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+! for $(OPT_SET_LANG_LEVEL<2003std>)
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)fxiosendeor004.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<2003std>) -qdebug=intmsg $(OPT_ENABLE_MSG_NUM<1518-317:1518-318>)
+#STDOUT    = fxiosendeor004.out
+#STDERR    = fxiosendeor004.out
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fxiosendeor004.out $($(tcasedir)fxiosendeor004d$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+! for $(OPT_SET_LANG_LEVEL<2003pure>)
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)fxiosendeor004.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<2003pure>) -qdebug=intmsg $(OPT_ENABLE_MSG_NUM<1518-317:1518-318>)
+#STDOUT    = fxiosendeor004.out
+#STDERR    = fxiosendeor004.out
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fxiosendeor004.out $($(tcasedir)fxiosendeor004d$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

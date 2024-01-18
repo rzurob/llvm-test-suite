@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_type/abstract/fabst001d.scenario
+#FEATURE = OO_type
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fabst001d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fabst001d$(OBJ)
+#STDERR    = fabst001d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)fabst001d$(product)vf) fabst001d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

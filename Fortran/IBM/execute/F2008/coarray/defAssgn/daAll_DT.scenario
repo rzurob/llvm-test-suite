@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/coarray/defAssgn/daAll_DT.scenario
+#FEATURE   = F2008 CAF coarray defined assignment - LHS is any non-char coarray intrinsic type, RHS is noncoarray derived type
+#CREATOR   = DF
+#DATE      = 20101220
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)daAll_DT.f
+#OUTPUT    = daAll_DT$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = daAll_DT$(OBJ)
+#OUTPUT    = daAll_DT$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD       = MPRUN
+	#INPUT     = daAll_DT$(EXE)
+	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

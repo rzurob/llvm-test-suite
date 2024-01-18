@@ -1,0 +1,8 @@
+ 1525-075 A decimal point and the number of digits to the right of the decimal point for the D edit descriptor are missing in a format specification.  The program will recover by assuming the decimal point followed by a default value.
+                                                                  
+ 1525-075 A decimal point and the number of digits to the right of the decimal point for the E edit descriptor are missing in a format specification.  The program will recover by assuming the decimal point followed by a default value.
+                                                                  
+ 1525-075 A decimal point and the number of digits to the right of the decimal point for the F edit descriptor are missing in a format specification.  The program will recover by assuming the decimal point followed by a default value.
+                                                                  
+ 1525-075 A decimal point and the number of digits to the right of the decimal point for the Qw.d edit descriptor are missing in a format specification.  The program will recover by assuming the decimal point followed by a default value.
+                                                               

@@ -1,0 +1,2 @@
+ 1525-033 The CLOSE statement on unit 9 was coded with a value of KEEP for the STATUS= specifier, but the file was opened with a value of SCRATCH for the STATUS= specifier.  The program will recover by assuming a value of DELETE for the STATUS= specifier.
+                                             

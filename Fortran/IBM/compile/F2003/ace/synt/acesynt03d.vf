@@ -1,0 +1,101 @@
+"acesynt03d.f", line 41.52: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 42.25: 1514-242 (S) An array has been specified as the initial value of a scalar constant.
+"acesynt03d.f", line 42.43: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 42.51: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 43.47: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 44.48: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 47.22: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 48.22: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 52.50: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 53.59: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 54.81: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 56.50: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 57.67: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 58.81: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.115: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.117: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.118: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.120: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.121: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.123: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.124: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.126: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.127: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.129: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.130: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.132: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.133: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.135: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.136: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.138: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.139: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.141: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.142: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.144: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.145: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.147: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.148: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.150: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.151: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.153: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.154: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.156: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.157: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.159: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.160: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.162: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.163: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.165: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.166: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.168: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.169: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.171: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.172: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.174: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.175: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.177: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.178: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.180: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.181: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.183: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.184: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.186: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.187: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.189: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.190: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.192: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.193: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.195: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.196: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.198: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.199: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.201: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.202: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.204: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.205: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.207: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.208: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 61.210: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 61.211: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 64.10: 1516-078 (S) Operands must be conformable.
+"acesynt03d.f", line 65.10: 1516-078 (S) Operands must be conformable.
+"acesynt03d.f", line 66.10: 1516-078 (S) Operands must be conformable.
+"acesynt03d.f", line 66.61: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 67.10: 1516-078 (S) Operands must be conformable.
+"acesynt03d.f", line 67.63: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 68.10: 1516-078 (S) Operands must be conformable.
+"acesynt03d.f", line 68.65: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 69.10: 1516-078 (S) Operands must be conformable.
+"acesynt03d.f", line 69.61: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 70.10: 1516-078 (S) Operands must be conformable.
+"acesynt03d.f", line 70.63: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 71.10: 1516-078 (S) Operands must be conformable.
+"acesynt03d.f", line 71.65: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 74.43: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 75.43: 1515-151 (S) An array constructor that begins with the "[" character must end with the "]" character.
+"acesynt03d.f", line 75.46: 1515-022 (S) Syntax Error: Extra token " / " was found. The token is ignored.
+"acesynt03d.f", line 75.47: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acesynt03d.f", line 76.43: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt03d.f", line 77.47: 1515-022 (S) Syntax Error: Extra token " ] " was found. The token is ignored.
+** acesynt03d   === End of Compilation 1 ===
+1501-511  Compilation failed for file acesynt03d.f.

@@ -1,0 +1,6 @@
+"implied01d.f", line 4.36: 1516-078 (S) Operands must be conformable.
+"implied01d.f", line 5.41: 1516-078 (S) Operands must be conformable.
+"implied01d.f", line 6.29: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"implied01d.f", line 7.42: 1516-078 (S) Operands must be conformable.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file implied01d.f.

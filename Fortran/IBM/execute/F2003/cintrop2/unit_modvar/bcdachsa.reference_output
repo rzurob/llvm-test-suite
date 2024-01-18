@@ -1,0 +1,6 @@
+         36 |character*1, bind(c, name=
+            ..............a............
+a - "bcdachsa.f", line 36.14: 1514-239 (S) Arrays with non-constant bounds are not permitted in the scope of a module.
+b - "bcdachsa.f", line 36.27: 1515-023 (S) Syntax Error: Illegal token " = " is replaced by token " ) ".
+** mod   === End of Compilation 1 ===
+1501-511  Compilation failed for file bcdachsa.f.

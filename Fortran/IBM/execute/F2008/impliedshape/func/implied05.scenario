@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2008/impliedshape/func/implied05.scenario
+#FEATURE = F2008 Implied-shape arrays
+#CREATOR = Rafik Zurob
+#DATE    = 20110225
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)implied05.f
+#OUTPUT    = implied05$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = implied05$(OBJ)
+#OUTPUT    = implied05$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = implied05$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

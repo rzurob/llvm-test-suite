@@ -1,0 +1,17 @@
+"this_image_d002.f", line 40.22: 1514-776 (S) The COARRAY argument of intrinsic procedure THIS_IMAGE must be a coarray.
+"this_image_d002.f", line 41.22: 1514-776 (S) The COARRAY argument of intrinsic procedure THIS_IMAGE must be a coarray.
+"this_image_d002.f", line 42.22: 1514-776 (S) The COARRAY argument of intrinsic procedure THIS_IMAGE must be a coarray.
+"this_image_d002.f", line 43.22: 1514-776 (S) The COARRAY argument of intrinsic procedure THIS_IMAGE must be a coarray.
+"this_image_d002.f", line 45.22: 1514-776 (S) The COARRAY argument of intrinsic procedure THIS_IMAGE must be a coarray.
+"this_image_d002.f", line 46.22: 1514-776 (S) The COARRAY argument of intrinsic procedure THIS_IMAGE must be a coarray.
+"this_image_d002.f", line 47.22: 1514-776 (S) The COARRAY argument of intrinsic procedure THIS_IMAGE must be a coarray.
+"this_image_d002.f", line 48.22: 1514-776 (S) The COARRAY argument of intrinsic procedure THIS_IMAGE must be a coarray.
+"this_image_d002.f", line 50.22: 1514-776 (S) The COARRAY argument of intrinsic procedure THIS_IMAGE must be a coarray.
+"this_image_d002.f", line 51.22: 1514-776 (S) The COARRAY argument of intrinsic procedure THIS_IMAGE must be a coarray.
+"this_image_d002.f", line 52.22: 1514-776 (S) The COARRAY argument of intrinsic procedure THIS_IMAGE must be a coarray.
+"this_image_d002.f", line 53.22: 1514-776 (S) The COARRAY argument of intrinsic procedure THIS_IMAGE must be a coarray.
+"this_image_d002.f", line 54.22: 1514-776 (S) The COARRAY argument of intrinsic procedure THIS_IMAGE must be a coarray.
+"this_image_d002.f", line 56.29: 1514-776 (S) The COARRAY argument of intrinsic procedure THIS_IMAGE must be a coarray.
+"this_image_d002.f", line 57.29: 1514-776 (S) The COARRAY argument of intrinsic procedure THIS_IMAGE must be a coarray.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file this_image_d002.f.

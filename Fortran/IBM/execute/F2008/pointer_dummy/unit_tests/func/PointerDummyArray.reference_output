@@ -1,0 +1,18 @@
+ 1 2 3 4 5
+ 5
+ 1 2 3 4 5
+ 5
+ arr_add:  30
+ 2
+ 3
+ 14
+ 1 2 3 2 4 6 3 6 9
+ 1 2 3 2 4 6 3 6 9
+ 9
+ 2
+ 14
+ 2 4 3 6
+ 1 2 3 2 4 6 3 6 9
+ a(Not pointer dummy enhancement):  1 2 3 2 4 6 3 6 9
+ b(Pointer dummy enhancement):  6
+ c(Pointer dummy enhancement):  2 3 4 6

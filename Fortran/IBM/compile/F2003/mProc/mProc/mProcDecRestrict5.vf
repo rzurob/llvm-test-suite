@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"mProcDecRestrict5.f", line 80.15: 1514-706 (S) procptr must not be a function. procptr will not be included in the defined assignment generic interface.
+"mProcDecRestrict5.f", line 84.15: 1514-705 (S) proc must not be a subroutine. proc will not be included in the generic interface for the .op. operator.
+** mprocdecrestrict5   === End of Compilation 2 ===
+1501-511  Compilation failed for file mProcDecRestrict5.f.

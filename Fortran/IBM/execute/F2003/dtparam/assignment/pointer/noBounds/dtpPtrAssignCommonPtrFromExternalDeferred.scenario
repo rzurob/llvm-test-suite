@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpPtrAssignCommonPtrFromExternalDeferred.scenario
+#FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - via pointers in COMMON with deferred length parameters, assign to COMMON variables in external subprograms
+#CREATOR   = DF Manual Update
+#DATE      = 20090112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPtrAssignCommonPtrFromExternalDeferred.f
+#OUTPUT    = dtpPtrAssignCommonPtrFromExternalDeferred$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPtrAssignCommonPtrFromExternalDeferred$(OBJ)
+#OUTPUT    = dtpPtrAssignCommonPtrFromExternalDeferred$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPtrAssignCommonPtrFromExternalDeferred$(EXE)
+#STDOUT    = dtpPtrAssignCommonPtrFromExternalDeferred.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpPtrAssignCommonPtrFromExternalDeferred$(product)vf) dtpPtrAssignCommonPtrFromExternalDeferred.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

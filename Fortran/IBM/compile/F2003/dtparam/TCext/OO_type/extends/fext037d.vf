@@ -1,0 +1,5 @@
+"fext037d.f", line 63.24: 1514-587 (S) Component base is not permitted. base is the name of a component, binding, or type parameter that is inherited from type child.
+"fext037d.f", line 68.34: 1514-683 (S) Identifier base appearing as a component of derived type child2 has already been defined as a component, binding, or type parameter of the same derived type.
+** m   === End of Compilation 1 ===
+** fext037d   === End of Compilation 2 ===
+1501-511  Compilation failed for file fext037d.f.

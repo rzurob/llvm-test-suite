@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignAssociate_TPINQ.scenario
+#FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - pointer assignment within ASSOCIATE construct
+#CREATOR   = DF Manual Update
+#DATE      = 20090121
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPtrAssignAssociate_TPINQ.f
+#OUTPUT    = dtpPtrAssignAssociate_TPINQ$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPtrAssignAssociate_TPINQ$(OBJ)
+#OUTPUT    = dtpPtrAssignAssociate_TPINQ$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPtrAssignAssociate_TPINQ$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

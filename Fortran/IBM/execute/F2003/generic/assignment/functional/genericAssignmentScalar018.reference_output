@@ -1,0 +1,18 @@
+ assign
+ innerassgn
+ 50
+ 100
+ assign
+ innerassgn
+ 50
+ 100
+ assign
+ innerchildassgn
+ innerassgn
+ 500 1000
+ 20000
+ assign
+ innerchildassgn
+ innerassgn
+ 500 1000
+ 20000

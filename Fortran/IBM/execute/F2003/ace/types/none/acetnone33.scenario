@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/none/acetnone33.scenario
+#FEATURE	= Array constructor enhancement - unltd polymorphic AC in ASSOCIATE construct
+#CREATOR	= DF Manual Update
+#DATE		= 20061121
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetnone33.f
+#OPTS = -qxlf2003=dynamicacval
+#OUTPUT		= acetnone33$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetnone33$(OBJ)
+#OUTPUT		= acetnone33$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetnone33$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/ArraySections/arrsec_2d3.scenario
+#FEATURE   = 353925
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20080802
+#TEST_TYPE = Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = -C
+#INPUT     = $(tcasedir)arrsec_2d3.f
+#STDOUT    = arrsec_2d3$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = arrsec_2d3$(OBJ)
+#OUTPUT    = arrsec_2d3$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = arrsec_2d3$(EXE)
+#STDOUT    = arrsec_2d3.out
+#VALIDSIGNALS = TRAP
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)arrsec_2d3$(product)vf) arrsec_2d3.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

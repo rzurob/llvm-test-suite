@@ -1,0 +1,6 @@
+"d305952.f", line 31.14: 1513-253 (S) A length specification must not be specified for an object of derived type.
+"d305952.f", line 38.25: 1513-253 (S) A length specification must not be specified for an object of derived type.
+"d305952.f", line 38.25: 1513-160 (S) A length must not be specified for a function of derived type.
+"d305952.f", line 39.32: 1513-253 (S) A length specification must not be specified for an object of derived type.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file d305952.f.

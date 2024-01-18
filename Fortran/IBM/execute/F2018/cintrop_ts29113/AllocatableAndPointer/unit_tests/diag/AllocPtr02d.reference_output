@@ -1,0 +1,8 @@
+** m   === End of Compilation 1 ===
+"AllocPtr02d.f", line 49.37: 1513-291 (S) Procedure s1 is declared with the BIND(C) attribute.  Dummy argument a3 of s1 is of a derived type with default initialization. a3 must not have the POINTER attribute.
+"AllocPtr02d.f", line 50.41: 1513-291 (S) Procedure s1 is declared with the BIND(C) attribute.  Dummy argument a4 of s1 is of a derived type with default initialization. a4 must not have the ALLOCATABLE attribute.
+** _main   === End of Compilation 2 ===
+"AllocPtr02d.f", line 64.33: 1513-291 (S) Procedure s1 is declared with the BIND(C) attribute.  Dummy argument a3 of s1 is of a derived type with default initialization. a3 must not have the POINTER attribute.
+"AllocPtr02d.f", line 65.37: 1513-291 (S) Procedure s1 is declared with the BIND(C) attribute.  Dummy argument a4 of s1 is of a derived type with default initialization. a4 must not have the ALLOCATABLE attribute.
+** s1   === End of Compilation 3 ===
+1501-511  Compilation failed for file AllocPtr02d.f.

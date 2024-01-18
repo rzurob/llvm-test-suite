@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/mix/generic/functional/usage/array006kk.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070813
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)array006kk.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = array006kk$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = array006kk$(OBJ)
+#OUTPUT    = array006kk$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = array006kk$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

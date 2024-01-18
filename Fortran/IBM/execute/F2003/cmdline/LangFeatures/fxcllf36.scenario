@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME	 = cmdline/LangFeatures/fxcllf36.scenario
+#FEATURE = cmdline tests - regression run bucket
+#CREATOR = SH Manual conversion
+#DATE    = 20041206
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+CmdLine=fxcllf36 1 a
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       =  XLF95_COMPILE
+#INPUT     =  $(tcasedir)fxcllf36.f
+#OPTS      =  $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    =  fxcllf36$(OBJ)
+#ENDCMD
+
+#CMD       =  XLF95_LINK
+#INPUT     =  fxcllf36$(OBJ)
+#OPTS      =  $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    =  fxcllf36$(EXE)
+#ENDCMD
+
+#CMD       =  RUN
+#INPUT     =  fxcllf36$(EXE)
+#OPTS      =  1 a
+#STDOUT    =  fxcllf36.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

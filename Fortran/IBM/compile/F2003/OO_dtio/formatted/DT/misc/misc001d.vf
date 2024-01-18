@@ -1,0 +1,4 @@
+"misc001d.f", line 40.13: 1511-139 (S) Associate name k is not associated with an entity that can be defined. k must not be redefined or become undefined.
+"misc001d.f", line 48.16: 1511-139 (S) Associate name k is not associated with an entity that can be defined. k must not be redefined or become undefined.
+** misc001d   === End of Compilation 1 ===
+1501-511  Compilation failed for file misc001d.f.

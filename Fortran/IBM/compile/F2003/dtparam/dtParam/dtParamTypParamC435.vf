@@ -1,0 +1,12 @@
+"dtParamTypParamC435.f", line 47.22: 1514-685 (S) Identifier k is not a type parameter. k must not have the KIND attribute.
+"dtParamTypParamC435.f", line 48.22: 1514-685 (S) Identifier l is not a type parameter. l must not have the LEN attribute.
+"dtParamTypParamC435.f", line 52.19: 1514-712 (E) Type parameter k must be declared with the KIND or LEN attribute.  The KIND attribute is assumed.
+"dtParamTypParamC435.f", line 53.19: 1514-712 (E) Type parameter l must be declared with the KIND or LEN attribute.  The KIND attribute is assumed.
+"dtParamTypParamC435.f", line 58.19: 1514-683 (S) Identifier l appearing as a component of derived type dt2 has already been defined as a component, binding, or type parameter of the same derived type.
+"dtParamTypParamC435.f", line 61.29: 1514-727 (S) Type parameter k is not permitted. k is the name of a type parameter that is inherited from type dt0.
+"dtParamTypParamC435.f", line 64.29: 1514-727 (S) Type parameter l is not permitted. l is the name of a type parameter that is inherited from type dt0.
+"dtParamTypParamC435.f", line 67.29: 1514-747 (S) Type parameter i is not permitted. i is the name of a component that is inherited from type dt0.
+"dtParamTypParamC435.f", line 71.22: 1514-723 (S) Type parameter kk must be a scalar.
+"dtParamTypParamC435.f", line 72.22: 1514-723 (S) Type parameter ll must be a scalar.
+** dtparamtypparamc435   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtParamTypParamC435.f.

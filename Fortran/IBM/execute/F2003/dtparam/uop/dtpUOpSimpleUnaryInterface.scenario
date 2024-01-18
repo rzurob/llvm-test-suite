@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpSimpleUnaryInterface.scenario
+#FEATURE   = User-Defined Operators - correct unary operator functions (in interface) are used for given type and kind (single operator)
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpSimpleUnaryInterface.f
+#OUTPUT    = dtpUOpSimpleUnaryInterface$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpSimpleUnaryInterface$(OBJ)
+#OUTPUT    = dtpUOpSimpleUnaryInterface$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpSimpleUnaryInterface$(EXE)
+#STDOUT    = dtpUOpSimpleUnaryInterface.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUOpSimpleUnaryInterface$(product)vf) dtpUOpSimpleUnaryInterface.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

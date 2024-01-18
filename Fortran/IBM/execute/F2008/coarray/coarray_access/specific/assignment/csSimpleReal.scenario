@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_access/specific/assignment/csSimpleReal
+#FEATURE        = CAF coarray access (specific) - assignment - assign simple values to real coarray scalars and arrays
+#CREATOR        = DF
+#DATE           = 2010-10-04
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)csSimpleReal.f
+#OUTPUT = csSimpleReal$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = csSimpleReal$(OBJ)
+#OUTPUT = csSimpleReal$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = csSimpleReal$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

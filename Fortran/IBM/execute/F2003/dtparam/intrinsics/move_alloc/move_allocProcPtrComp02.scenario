@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/move_alloc/move_allocProcPtrComp02.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Oct. 8 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#OPTS  = -qdebug=allowrpdt
+#INPUT = $(tcasedir)move_allocProcPtrComp02.f
+#OUTPUT= move_allocProcPtrComp02$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = move_allocProcPtrComp02$(OBJ)
+#OUTPUT= move_allocProcPtrComp02$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = move_allocProcPtrComp02$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/unpack/unpack003.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050222
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)unpack003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = unpack003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = unpack003$(OBJ)
+#OUTPUT    = unpack003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = unpack003$(EXE)
+#STDOUT    = unpack003.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)unpack003$(product)vf) unpack003.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,10 @@
+ start
+ b - base:  100
+ calling old implementation to clear b; not expecting runtime error message
+ b #2 - base:  -1
+ c - child(1): 99 >abc< 123 45 67 89 >def<
+ local clear; no failure expected
+ c2 - child(1): -1 >pqr< -2 -2 -2 -3 >zyx<
+ calling old implementation to clear c; expecting no runtime error message
+ c #2 - child(1): -1 >pqr< -2 -2 -2 -3 >zyx<
+ End.

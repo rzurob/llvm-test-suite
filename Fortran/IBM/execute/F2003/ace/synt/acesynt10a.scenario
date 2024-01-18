@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/synt/acesynt10a.scenario
+#FEATURE	= Array constructor enhancement Type specifier syntax (character, doubles, derived)
+#CREATOR	= DF Manual Update
+#DATE		= 20061006
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acesynt10a.f
+#OUTPUT		= acesynt10a$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acesynt10a$(OBJ)
+#OUTPUT		= acesynt10a$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acesynt10a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

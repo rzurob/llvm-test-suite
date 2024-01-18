@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/fabst002d1.scenario
+#FEATURE   = OO_type tests - regression run bucket
+#CREATOR   = GB copy from OO_type/abstract/fabst002d1.scenario
+#DATE      = 20070426
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fabst002d1.f
+#OUTPUT    = fabst002d1$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = fabst002d1.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = fabst002d1.err $($(tcasedir)fabst002d1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,9 @@
+"genericR452Operator001d.f", line 35.19: 1515-019 (S) Syntax is incorrect.
+"genericR452Operator001d.f", line 35.36: 1514-095 (S) Invalid statement within derived type definition.
+"genericR452Operator001d.f", line 36.9: 1515-019 (S) Syntax is incorrect.
+"genericR452Operator001d.f", line 36.29: 1514-095 (S) Invalid statement within derived type definition.
+"genericR452Operator001d.f", line 42.38: 1514-084 (S) Identifier obj is being declared with type name base which has not been defined in a derived type definition.
+"genericR452Operator001d.f", line 43.37: 1514-084 (S) Identifier passobj is being declared with type name base which has not been defined in a derived type definition.
+** m   === End of Compilation 1 ===
+** genericr452operator001d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericR452Operator001d.f.

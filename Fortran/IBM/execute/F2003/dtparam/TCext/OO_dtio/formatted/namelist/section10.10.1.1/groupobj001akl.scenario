@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/formatted/namelist/namelist.1.1/groupobj001akl.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070720
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)groupobj001akl.1 .
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)groupobj001akl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = groupobj001akl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = groupobj001akl$(OBJ)
+#OUTPUT    = groupobj001akl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = groupobj001akl$(EXE)
+#STDOUT    = groupobj001akl.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

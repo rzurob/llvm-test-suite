@@ -1,0 +1,9 @@
+
+Feature #351605.31 CAF: STOP statement
+
+  See the ./doc subdirectory for details
+
+  Note: The related unit test cases are located in directory
+        <release>/F2008/coarray/error_stop/unit
+       since they are common between CAF STOP and ERROR STOP
+

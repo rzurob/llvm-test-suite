@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/selectType/Quotes/SltTypeComp.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071006
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS =  -qdebug=allowrpdt
+#INPUT=  $(tcasedir)SltTypeComp.f
+#OUTPUT= SltTypeComp$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  SltTypeComp$(OBJ)
+#OUTPUT= SltTypeComp$(EXE)
+#ENDCMD
+
+#CMD=    RUN
+#INPUT=  SltTypeComp$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

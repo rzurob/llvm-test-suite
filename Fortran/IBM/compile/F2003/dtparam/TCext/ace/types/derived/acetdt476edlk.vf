@@ -1,0 +1,41 @@
+** mod   === End of Compilation 1 ===
+"acetdt476edlk.f", line 116.16: 1514-718 (S) Identifier ext appearing as a type name has not been defined in a derived type definition.
+"acetdt476edlk.f", line 117.16: 1514-718 (S) Identifier ext appearing as a type name has not been defined in a derived type definition.
+"acetdt476edlk.f", line 117.25: 1516-044 (S) A conversion from type ext is not permitted.
+"acetdt476edlk.f", line 118.16: 1514-718 (S) Identifier ext appearing as a type name has not been defined in a derived type definition.
+"acetdt476edlk.f", line 118.25: 1516-044 (S) A conversion from type ext is not permitted.
+"acetdt476edlk.f", line 119.16: 1514-718 (S) Identifier ext appearing as a type name has not been defined in a derived type definition.
+"acetdt476edlk.f", line 120.16: 1514-718 (S) Identifier ext appearing as a type name has not been defined in a derived type definition.
+"acetdt476edlk.f", line 120.25: 1516-044 (S) A conversion from type ext is not permitted.
+"acetdt476edlk.f", line 121.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476edlk.f", line 121.28: 1514-718 (S) Identifier ext appearing as a type name has not been defined in a derived type definition.
+"acetdt476edlk.f", line 121.37: 1516-044 (S) A conversion from type ext is not permitted.
+"acetdt476edlk.f", line 124.16: 1514-718 (S) Identifier priv appearing as a type name has not been defined in a derived type definition.
+"acetdt476edlk.f", line 125.16: 1514-718 (S) Identifier priv appearing as a type name has not been defined in a derived type definition.
+"acetdt476edlk.f", line 125.27: 1516-044 (S) A conversion from type priv is not permitted.
+"acetdt476edlk.f", line 126.16: 1514-718 (S) Identifier priv appearing as a type name has not been defined in a derived type definition.
+"acetdt476edlk.f", line 126.27: 1516-044 (S) A conversion from type priv is not permitted.
+"acetdt476edlk.f", line 127.16: 1514-718 (S) Identifier priv appearing as a type name has not been defined in a derived type definition.
+"acetdt476edlk.f", line 128.16: 1514-718 (S) Identifier priv appearing as a type name has not been defined in a derived type definition.
+"acetdt476edlk.f", line 128.27: 1516-044 (S) A conversion from type priv is not permitted.
+"acetdt476edlk.f", line 129.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476edlk.f", line 129.28: 1514-718 (S) Identifier priv appearing as a type name has not been defined in a derived type definition.
+"acetdt476edlk.f", line 129.39: 1516-044 (S) A conversion from type priv is not permitted.
+"acetdt476edlk.f", line 133.15: 1514-718 (S) Identifier ext appearing as a type name has not been defined in a derived type definition.
+"acetdt476edlk.f", line 134.15: 1514-718 (S) Identifier priv appearing as a type name has not been defined in a derived type definition.
+"acetdt476edlk.f", line 135.15: 1514-718 (S) Identifier ext appearing as a type name has not been defined in a derived type definition.
+"acetdt476edlk.f", line 135.24: 1516-044 (S) A conversion from type ext is not permitted.
+"acetdt476edlk.f", line 136.15: 1514-718 (S) Identifier priv appearing as a type name has not been defined in a derived type definition.
+"acetdt476edlk.f", line 136.26: 1516-044 (S) A conversion from type priv is not permitted.
+"acetdt476edlk.f", line 137.15: 1514-718 (S) Identifier priv appearing as a type name has not been defined in a derived type definition.
+"acetdt476edlk.f", line 137.26: 1516-044 (S) A conversion from type priv is not permitted.
+"acetdt476edlk.f", line 138.15: 1514-718 (S) Identifier ext appearing as a type name has not been defined in a derived type definition.
+"acetdt476edlk.f", line 138.24: 1516-044 (S) A conversion from type ext is not permitted.
+"acetdt476edlk.f", line 139.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476edlk.f", line 139.27: 1514-718 (S) Identifier priv appearing as a type name has not been defined in a derived type definition.
+"acetdt476edlk.f", line 139.38: 1516-044 (S) A conversion from type priv is not permitted.
+"acetdt476edlk.f", line 141.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476edlk.f", line 141.27: 1514-718 (S) Identifier ext appearing as a type name has not been defined in a derived type definition.
+"acetdt476edlk.f", line 141.36: 1516-044 (S) A conversion from type ext is not permitted.
+** acetdt476edlk   === End of Compilation 2 ===
+1501-511  Compilation failed for file acetdt476edlk.f.

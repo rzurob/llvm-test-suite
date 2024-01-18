@@ -1,0 +1,6 @@
+"override005d.f", line 42.33: 1514-592 (S) The dummy argument in position 2 of overridden binding setid is named j.  The corresponding dummy argument in overriding binding setid must also be named j.
+"override005d.f", line 42.33: 1514-592 (S) The dummy argument in position 1 of overridden binding setid is named dtv.  The corresponding dummy argument in overriding binding setid must also be named dtv.
+"override005d.f", line 42.33: 1514-569 (S) The passed-object dummy argument dtv of inherited binding setid is in position 1.  The passed-object dummy argument of the overriding binding must have the same name and position.
+** n   === End of Compilation 1 ===
+** override005d   === End of Compilation 2 ===
+1501-511  Compilation failed for file override005d.f.

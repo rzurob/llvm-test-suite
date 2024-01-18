@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/submodule/module_subprogram22f.scenario
+#FEATURE   = F2008 submodule
+#CREATOR   = Bernard Kan
+#DATE      = 20130425
+#TEST_TYPE = Functional
+#KEYWORDS  = F2008, submodule, F2008 submodule
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)module_subprogram22f.f
+#OUTPUT    = module_subprogram22f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = module_subprogram22f$(OBJ)
+#OUTPUT    = module_subprogram22f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = module_subprogram22f$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

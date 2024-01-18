@@ -1,0 +1,14 @@
+ test 1
+ finalizeBase
+ test 2
+ test 3
+ test 4
+ finalizeBaseRank2; shape = 3 2
+ test 5
+ finalizeBaseRank1; size = 10
+ deallocate b2, b3
+ finalizeBaseRank1; size = 0
+ finalizeBaseRank2; shape = 3 0
+ last test
+ finalizeBase
+ end

@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= cintrop2/modvar/fxmdvd08.scenario
+#REFERENCE	= fdpr/cinterop/fxmdvd08.scenario
+#REF_TYPE	= FDPR -- XL FORTRAN/C Interoperability Tests
+#FEATURE = cintrop2 tests - regression run bucket
+#CREATOR	= CPR Manual Update
+#DATE		= 20060711
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+FTCARG="fxmdvd08"
+CTCARG1="cxmdvd08a"
+CTCARG2="cxmdvd08b"
+CTCARG3="cxmdvd08c"
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#INCLUDE   = rundev.shinclude
+
+#ENDCONTROL
+#ENDSCENARIO

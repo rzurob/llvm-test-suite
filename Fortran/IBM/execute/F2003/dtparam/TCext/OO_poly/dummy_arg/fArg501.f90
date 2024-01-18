@@ -1,0 +1,128 @@
+! GB DTP extension using:
+! ftcx_dtp -qck -qk -ql -qreuse=all -qdeferredlp /tstdev/OO_poly/dummy_arg/fArg501.f
+!#######################################################################
+! SCCS ID Information
+! %W%, %I%
+! Extract Date/Time: %D% %T%
+! Checkin Date/Time: %E% %U%
+!#######################################################################
+! *********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: fArg501.f
+! %VERIFY: 
+! %STDIN:
+! %STDOUT:
+! %EXECARGS:
+! %POSTCMD: 
+! %END
+! *********************************************************************
+!*  =================================================================== 
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
+!*  =================================================================== 
+!*  =================================================================== 
+!*
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Jim Xia
+!*  DATE                       : 06/25/2004
+!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
+!*                             :
+!*
+!*  PRIMARY FUNCTIONS TESTED   :
+!*                             :
+!*  SECONDARY FUNCTIONS TESTED : 
+!*
+!*  DRIVER STANZA              : xlf95
+!*
+!*  DESCRIPTION                : argument association (defined assignment
+!                               refers to the type bound)
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!* ===================================================================
+!*
+!*  REVISION HISTORY
+!*
+!*  MM/DD/YY:  Init:  Comments:
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+module m
+    type dataType(k1)    ! (4)
+        integer, kind        :: k1
+        integer(k1), pointer :: data => null()
+
+        contains
+
+        procedure :: assgnData
+        procedure :: value => dataTypeValue
+    end type
+
+    private dataTypeValue, assgnData
+    contains
+
+    pure integer*4 function dataTypeValue (d)
+        class (dataType(4)), intent(in) :: d
+
+        if (associated (d%data)) then
+            dataTypeValue = d%data
+        else
+            dataTypeValue = 0   !<-- we treat null() as if 0
+        end if
+    end function
+
+    pure subroutine assgnData (d, d1)
+        class (dataType(4)), intent(inout) :: d
+        class (dataType(4)), intent(in) :: d1
+
+        if (.not. associated (d%data)) allocate (d%data)
+
+        d%data = d1%value()
+    end subroutine
+end module
+
+program fArg501
+use m
+    interface assignment(=)
+        pure subroutine dataAssign (d, d1)
+        use m
+            class (dataType(4)), intent(inout) :: d
+            class (dataType(4)), intent(in) :: d1
+        end subroutine
+    end interface
+
+    type (dataType(4)) :: dt (100)
+
+    do i=1,50
+        allocate (dt(i)%data)
+
+        dt(i)%data = i
+    end do
+
+    forall (i=51:100)
+        dt(i) = dt(101-i)
+    end forall
+
+    do i = 1,50
+        if (dt(i)%value() /= i) error stop 1_4
+    end do
+
+    do i= 51,100
+        if (dt(i)%value() /= 101-i) error stop 2_4
+    end do
+
+    do i = 1, 100
+        deallocate (dt(i)%data)
+    end do
+end
+
+pure subroutine dataAssign (d, d1)
+use m
+    class (dataType(4)), intent(inout) :: d
+    class (dataType(4)), intent(in) :: d1
+
+    call d%assgnData(d1)
+end subroutine

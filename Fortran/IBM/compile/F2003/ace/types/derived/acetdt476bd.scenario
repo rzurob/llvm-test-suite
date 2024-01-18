@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/derived/acetdt476bd.scenario
+#FEATURE	= Array constructor enhancement derived type specifier tests
+#CREATOR	= DF Manual Update
+#DATE		= 20060720
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD            = F_COMPILE
+#INPUT		= $(tcasedir)acetdt476bd.f
+#OUTPUT		= acetdt476bd$(OBJ)
+#STDERR         = acetdt476bd.stderr
+#VALIDRCS       = $(RC_ANY)
+#ENDCMD
+
+#CMD            = XLDIFF
+#INPUT          = $(tcasedir)acetdt476bd.vf acetdt476bd.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,52 @@
+      pure SUBROUTINE MyGetArg(CmdLine, Num, Arg)
+
+      CHARACTER*(*), INTENT(in)      :: CmdLine
+      CHARACTER*(*), INTENT(out)     :: Arg
+      INTEGER,       INTENT(in)      :: Num
+      INTEGER, AUTOMATIC             :: i, j, l, m, n, Length
+      CHARACTER(LEN=LEN(CmdLine)+1)  :: S
+
+      S = CmdLine
+      Length = LEN(TRIM(CmdLine)) + 1
+      S(Length:Length) = ' '         ! Set the extra byte a space as a mark
+
+      l = 1
+      m = 1
+      n = -1
+
+      DO i = 0, Num
+
+        IF ( m .eq. Length ) THEN
+          EXIT
+        END IF
+
+        ! Skip the leading spaces
+        DO j = m, Length
+          l = j
+          IF ( S( j:j ) .ne. ' ' ) THEN
+            EXIT
+          END IF
+        END DO
+
+        m = l
+
+        IF ( l .eq. Length ) THEN
+          EXIT
+        END IF
+
+        ! Count non space string
+        DO j = m, Length
+          m = j
+          IF ( S( j:j ) .eq. ' ' ) THEN
+            n = n + 1
+            EXIT
+          END IF
+        END DO
+
+      END DO
+ 
+      Arg = ' '
+      IF ( (n .eq. Num) .and. (l .lt. Length) ) Arg = S( l:m-1 )
+
+      END SUBROUTINE
+

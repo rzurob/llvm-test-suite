@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=roundR8ReadEdit03.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)roundR8ReadEdit03.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = roundR8ReadEdit03$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = roundR8ReadEdit03$(OBJ)
+#OUTPUT    = roundR8ReadEdit03$(EXE)
+#ENDCMD
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)roundR8ReadEdit03.dat
+#OUTPUT   = ./
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = roundR8ReadEdit03$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

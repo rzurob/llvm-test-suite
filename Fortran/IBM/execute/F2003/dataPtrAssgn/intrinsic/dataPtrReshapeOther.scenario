@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrReshapeOther.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrReshapeOther.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrReshapeOther$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrReshapeOther$(OBJ)
+#OUTPUT    = dataPtrReshapeOther$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrReshapeOther$(EXE)
+#STDOUT    = dataPtrReshapeOther.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrReshapeOther.out $($(tcasedir)dataPtrReshapeOther$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

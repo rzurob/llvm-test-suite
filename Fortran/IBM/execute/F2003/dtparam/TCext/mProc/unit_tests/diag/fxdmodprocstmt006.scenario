@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mProc/unit_tests/diag/fxdmodprocstmt006.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mProc/*
+#DATE      = 20071106
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)fxdmodprocstmt006.f
+#OUTPUT    = fxdmodprocstmt006.f
+#ENDCMD
+
+#CMD       = XLF90_COMPILE
+#INPUT     = fxdmodprocstmt006.f
+#OPTS      = -qdebug=ooall -Q -O -lxlfzz2
+#STDERR    = fxdmodprocstmt006.out
+#STDOUT    = fxdmodprocstmt006.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fxdmodprocstmt006.out $($(tcasedir)fxdmodprocstmt006$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

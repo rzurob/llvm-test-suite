@@ -1,0 +1,20 @@
+"cobound03d.f", line 27.32: 1516-334 (S) The value of DIM is greater than the corank of the corresponding coarray argument.
+"cobound03d.f", line 28.32: 1513-130 (S) The DIM argument must have a value greater than or equal to 1.
+"cobound03d.f", line 29.32: 1513-130 (S) The DIM argument must have a value greater than or equal to 1.
+"cobound03d.f", line 31.32: 1516-334 (S) The value of DIM is greater than the corank of the corresponding coarray argument.
+"cobound03d.f", line 32.32: 1513-130 (S) The DIM argument must have a value greater than or equal to 1.
+"cobound03d.f", line 33.32: 1513-130 (S) The DIM argument must have a value greater than or equal to 1.
+"cobound03d.f", line 36.32: 1516-334 (S) The value of DIM is greater than the corank of the corresponding coarray argument.
+"cobound03d.f", line 37.32: 1513-130 (S) The DIM argument must have a value greater than or equal to 1.
+"cobound03d.f", line 38.32: 1513-130 (S) The DIM argument must have a value greater than or equal to 1.
+"cobound03d.f", line 40.32: 1516-334 (S) The value of DIM is greater than the corank of the corresponding coarray argument.
+"cobound03d.f", line 41.32: 1513-130 (S) The DIM argument must have a value greater than or equal to 1.
+"cobound03d.f", line 42.32: 1513-130 (S) The DIM argument must have a value greater than or equal to 1.
+"cobound03d.f", line 45.43: 1516-334 (S) The value of DIM is greater than the corank of the corresponding coarray argument.
+"cobound03d.f", line 46.35: 1513-130 (S) The DIM argument must have a value greater than or equal to 1.
+"cobound03d.f", line 47.35: 1513-130 (S) The DIM argument must have a value greater than or equal to 1.
+"cobound03d.f", line 48.35: 1516-334 (S) The value of DIM is greater than the corank of the corresponding coarray argument.
+"cobound03d.f", line 49.35: 1513-130 (S) The DIM argument must have a value greater than or equal to 1.
+"cobound03d.f", line 50.35: 1513-130 (S) The DIM argument must have a value greater than or equal to 1.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file cobound03d.f.

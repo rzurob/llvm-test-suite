@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=release/F2003/volatile/volatileC1117.f
+#FEATURE = VOLATILE 255728
+#CREATOR = William Zhang
+#DATE    = 05/30/2006
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD            = F_COMPILE
+#INPUT          = $(tcasedir)volatileC1117.f
+#OPTS           = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT         = volatileC1117$(OBJ)
+#ENDCMD
+
+#CMD            = F_LINK
+#INPUT          = volatileC1117$(OBJ)
+#OUTPUT         = volatileC1117$(EXE)
+#ENDCMD
+
+
+#CMD            = RUN
+#INPUT          = volatileC1117$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

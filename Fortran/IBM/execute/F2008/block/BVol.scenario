@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BVol.scenario
+#FEATURE   = F2008 BLOCK - var declared in containing scope marked as volatile in block
+#CREATOR   = DF Manual Update
+#DATE      = 20101214
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_GEN_BASIC_LISTING) $(OPT_SHOW_ATTRIBUTES_USED_ALL) $(OPT_INTERNAL_DEBUG_OPTION<wdump>)
+#INPUT     = $(tcasedir)BVol.f
+#OUTPUT    = BVol$(OBJ)
+#ENDCMD
+
+#CMD       = AWK
+#OPTS      = -f $($(tcasedir)BVol$(product)awk)
+#STDIN     = BVol$(LST)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = BVol$(OBJ)
+#OUTPUT    = BVol$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = BVol$(EXE)
+#STDOUT    = BVol.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-5
+#INPUT     = $($(tcasedir)BVol$(product)vf) BVol.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

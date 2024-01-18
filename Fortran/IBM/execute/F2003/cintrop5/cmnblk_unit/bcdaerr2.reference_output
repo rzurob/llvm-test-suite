@@ -1,0 +1,6 @@
+"bcdaerr2.f", line 45.14: 1516-208 (S) Variable x that has the POINTER attribute may not appear as a member of a COMMON block with the BIND(C) attribute.
+"bcdaerr2.f", line 45.17: 1516-209 (S) Members of BIND(C) COMMON blocks must have type and type parameters that are interoperable with any C type.
+"bcdaerr2.f", line 45.20: 1516-210 (S) Members of BIND(C) COMMON blocks must not appear as equivalence group objects in EQUIVALENCE statements.
+"bcdaerr2.f", line 45.24: 1516-195 (S) The BIND(C) attribute must not be specified for a zero-sized array. 
+** bcdaerr2   === End of Compilation 1 ===
+1501-511  Compilation failed for file bcdaerr2.f.

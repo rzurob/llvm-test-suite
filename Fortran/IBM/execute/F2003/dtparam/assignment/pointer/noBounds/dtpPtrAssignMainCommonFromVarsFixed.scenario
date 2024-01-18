@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignMainCommonFromVarsFixed.scenario
+#FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - via pointers with fixed length parameter, assign variables to variables in common in main
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPtrAssignMainCommonFromVarsFixed.f
+#OUTPUT    = dtpPtrAssignMainCommonFromVarsFixed$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPtrAssignMainCommonFromVarsFixed$(OBJ)
+#OUTPUT    = dtpPtrAssignMainCommonFromVarsFixed$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPtrAssignMainCommonFromVarsFixed$(EXE)
+#STDOUT    = dtpPtrAssignMainCommonFromVarsFixed.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpPtrAssignMainCommonFromVarsFixed$(product)vf) dtpPtrAssignMainCommonFromVarsFixed.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

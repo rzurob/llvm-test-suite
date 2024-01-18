@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/selectType/CrossFeatures/TypeSpecRecord.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071003
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)TypeSpecRecord.f
+#OUTPUT= TypeSpecRecord$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  TypeSpecRecord$(OBJ)
+#OUTPUT= TypeSpecRecord$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  TypeSpecRecord$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

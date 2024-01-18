@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_dummy/assumed_size/cdasBasicNewBoundsStgAssoc
+#FEATURE        = CAF dummy arguments - assumed size - everything but the bounds are the same
+#CREATOR        = DF
+#DATE           = 2010-09-28
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)cdasBasicNewBoundsStgAssoc.f
+#OUTPUT = cdasBasicNewBoundsStgAssoc$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = cdasBasicNewBoundsStgAssoc$(OBJ)
+#OUTPUT = cdasBasicNewBoundsStgAssoc$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = cdasBasicNewBoundsStgAssoc$(EXE)
+#STDOUT = cdasBasicNewBoundsStgAssoc.out
+#ENDCMD
+
+#CMD    = SPIFF
+#OPTS   = -r1e-5
+#INPUT  = $($(tcasedir)cdasBasicNewBoundsStgAssoc$(product)vf) cdasBasicNewBoundsStgAssoc.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

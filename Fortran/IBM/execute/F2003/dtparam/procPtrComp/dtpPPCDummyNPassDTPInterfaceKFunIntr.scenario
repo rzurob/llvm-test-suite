@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/procPtrComp/dtpPPCDummyNPassDTPInterfaceKFunIntr.scenario
+#FEATURE   = Procedure Pointers as Components - reference to function returning intrinsic, with DTP dummy args but no passed-object dummy arg, invoke as arg
+#CREATOR   = DF Manual Update
+#DATE      = 20090325
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPPCDummyNPassDTPInterfaceKFunIntr.f
+#OUTPUT    = dtpPPCDummyNPassDTPInterfaceKFunIntr$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPPCDummyNPassDTPInterfaceKFunIntr$(OBJ)
+#OUTPUT    = dtpPPCDummyNPassDTPInterfaceKFunIntr$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPPCDummyNPassDTPInterfaceKFunIntr$(EXE)
+#STDOUT    = dtpPPCDummyNPassDTPInterfaceKFunIntr.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpPPCDummyNPassDTPInterfaceKFunIntr$(product)vf) dtpPPCDummyNPassDTPInterfaceKFunIntr.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

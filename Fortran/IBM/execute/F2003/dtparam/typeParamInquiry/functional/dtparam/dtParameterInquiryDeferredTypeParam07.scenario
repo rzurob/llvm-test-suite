@@ -1,0 +1,38 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/typeParamInquiry/functional/dtparam/dtParameterInquiryDeferredTypeParam07.scenario
+#FEATURE= Type Parameter Inquiry(354612)
+#CREATOR=   Nancy Wang
+#DATE= July 25 2008
+#TEST_TYPE=  Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)dtParameterInquiryDeferredTypeParam07.f
+#OUTPUT= dtParameterInquiryDeferredTypeParam07$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  dtParameterInquiryDeferredTypeParam07$(OBJ)
+#OUTPUT= dtParameterInquiryDeferredTypeParam07$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dtParameterInquiryDeferredTypeParam07$(EXE)
+#STDOUT  = dtParameterInquiryDeferredTypeParam07.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtParameterInquiryDeferredTypeParam07$(product)vf) dtParameterInquiryDeferredTypeParam07.out
+#ENDCMD
+
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

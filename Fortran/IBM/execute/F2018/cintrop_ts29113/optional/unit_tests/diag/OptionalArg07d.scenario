@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/cintrop_ts29113/optional/unit_tests/diag/OptionalArg07d.scenario
+#FEATURE = BIND(C) Optional arguments
+#CREATOR = Rafik Zurob
+#DATE    = 20120525
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)OptionalArg07d.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<2008std>) $(OPT_ENABLE_MSG_NUM<1518-317>)
+#OUTPUT    = OptionalArg07d$(OBJ)
+#STDERR    = OptionalArg07d.err
+#VALIDRCS  = 0
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)OptionalArg07d$(product)vf) OptionalArg07d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

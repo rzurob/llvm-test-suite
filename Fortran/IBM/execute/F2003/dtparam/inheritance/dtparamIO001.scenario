@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/inheritance/dtparamIO001.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamIO001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamIO001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dtparamIO001$(OBJ)
+#OUTPUT    = dtparamIO001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamIO001$(EXE)
+#STDOUT    = dtparamIO001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dtparamIO001.out $($(tcasedir)dtparamIO001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

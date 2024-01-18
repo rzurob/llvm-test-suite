@@ -1,0 +1,8 @@
+** m   === End of Compilation 1 ===
+"typeDeclaration002d.f", line 44.11: 1514-539 (S) The derived type sequencebase specified with the CLASS keyword must be extensible.
+"typeDeclaration002d.f", line 46.24: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "extends_type_of".
+"typeDeclaration002d.f", line 46.24: 1514-644 (S) The A argument to the intrinsic procedure EXTENDS_TYPE_OF must be of an extensible type.
+"typeDeclaration002d.f", line 47.21: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "same_type_as".
+"typeDeclaration002d.f", line 47.21: 1514-644 (S) The A argument to the intrinsic procedure SAME_TYPE_AS must be of an extensible type.
+** typedeclaration002d   === End of Compilation 2 ===
+1501-511  Compilation failed for file typeDeclaration002d.f.

@@ -1,0 +1,8 @@
+"cobound07d.f", line 32.33: 1513-128 (S) Actual argument must not be an optional dummy argument.
+"cobound07d.f", line 33.33: 1513-128 (S) Actual argument must not be an optional dummy argument.
+"cobound07d.f", line 34.33: 1513-128 (S) Actual argument must not be an optional dummy argument.
+"cobound07d.f", line 36.33: 1513-128 (S) Actual argument must not be an optional dummy argument.
+"cobound07d.f", line 37.33: 1513-128 (S) Actual argument must not be an optional dummy argument.
+"cobound07d.f", line 38.33: 1513-128 (S) Actual argument must not be an optional dummy argument.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file cobound07d.f.

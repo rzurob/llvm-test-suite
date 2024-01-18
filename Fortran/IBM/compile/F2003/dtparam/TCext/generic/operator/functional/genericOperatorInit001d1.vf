@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"genericOperatorInit001d1.f", line 61.30: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"genericOperatorInit001d1.f", line 61.35: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericOperatorInit001d1.f.

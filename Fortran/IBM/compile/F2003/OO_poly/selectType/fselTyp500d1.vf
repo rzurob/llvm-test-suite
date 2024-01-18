@@ -1,0 +1,7 @@
+"fselTyp500d1.f", line 60.18: 1511-132 (S) Intrinsic type INTEGER must not be specified in a CLASS IS statement.
+"fselTyp500d1.f", line 62.18: 1511-132 (S) Intrinsic type REAL must not be specified in a CLASS IS statement.
+"fselTyp500d1.f", line 63.18: 1511-132 (S) Intrinsic type COMPLEX must not be specified in a CLASS IS statement.
+"fselTyp500d1.f", line 64.18: 1511-132 (S) Intrinsic type CHARACTER must not be specified in a CLASS IS statement.
+"fselTyp500d1.f", line 65.18: 1511-132 (S) Intrinsic type LOGICAL must not be specified in a CLASS IS statement.
+** fseltyp500d1   === End of Compilation 1 ===
+1501-511  Compilation failed for file fselTyp500d1.f.

@@ -1,0 +1,6 @@
+** type   === End of Compilation 1 ===
+** externalnull   === End of Compilation 2 ===
+"genericAmbiguityInterface011d.f", line 61.29: 1516-001 (S) Identifier null was elsewhere defined or used as a subroutine.
+"genericAmbiguityInterface011d.f", line 64.9: 1516-001 (S) Identifier null was elsewhere defined or used as a subroutine.
+** genericambiguityinterface011d   === End of Compilation 3 ===
+1501-511  Compilation failed for file genericAmbiguityInterface011d.f.

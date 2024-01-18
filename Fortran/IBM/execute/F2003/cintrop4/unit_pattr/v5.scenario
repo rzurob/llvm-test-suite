@@ -1,0 +1,45 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop4/unit_pattr/v5.scenario
+#FEATURE = cintrop4 tests - regression run bucket
+#CREATOR = CPR Manual update
+#DATE    = 20060810
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS)
+#INPUT     = $(tcasedir)v5-c.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)v5.f
+#STDERR    = v5.out1
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = v5-c$(OBJ) v5$(OBJ)
+#OUTPUT    = v5$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = v5$(EXE)
+#STDOUT    = v5.out2
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = v5.out1 v5.out2
+#STDOUT    = v5.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = v5.out $(tcasedir)v5.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

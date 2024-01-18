@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"C813TypeIs.f", line 98.26: 1511-101 (S) The selector in the SELECT TYPE statement is not polymorphic.
+** c813typeis   === End of Compilation 2 ===
+1501-511  Compilation failed for file C813TypeIs.f.

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignExternalModuleFromVarsFixed.scenario
+#FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - assign variables to module variables via fixed-length pointers in external subprogram
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPtrAssignExternalModuleFromVarsFixed.f
+#OUTPUT    = dtpPtrAssignExternalModuleFromVarsFixed$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPtrAssignExternalModuleFromVarsFixed$(OBJ)
+#OUTPUT    = dtpPtrAssignExternalModuleFromVarsFixed$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPtrAssignExternalModuleFromVarsFixed$(EXE)
+#STDOUT    = dtpPtrAssignExternalModuleFromVarsFixed.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpPtrAssignExternalModuleFromVarsFixed$(product)vf) dtpPtrAssignExternalModuleFromVarsFixed.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

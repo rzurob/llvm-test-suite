@@ -1,0 +1,8 @@
+** m1   === End of Compilation 1 ===
+"C574_001kl.f", line 57.22: 1514-717 (S) Assumed-size array a must not appear in a namelist.
+"C574_001kl.f", line 64.22: 1514-717 (S) Assumed-size array b must not appear in a namelist.
+** m   === End of Compilation 2 ===
+** c574_001kl   === End of Compilation 3 ===
+"C574_001kl.f", line 76.19: 1514-717 (S) Assumed-size array b must not appear in a namelist.
+** bar1   === End of Compilation 4 ===
+1501-511  Compilation failed for file C574_001kl.f.

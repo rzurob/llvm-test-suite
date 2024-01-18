@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/streamio/formatted/fxstio150.scenario
+#FEATURE = streamio tests - regression run bucket
+#CREATOR = CPR Manual conversion
+#DATE    = 20040819
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)fxstio150.f
+#OUTPUT    = fxstio150$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     =  fxstio150$(OBJ)
+#OUTPUT    = fxstio150$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxstio150$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)fxstio150$(product)vf) fxstio150.dat
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

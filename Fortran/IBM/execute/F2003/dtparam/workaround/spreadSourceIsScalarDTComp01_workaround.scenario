@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/spread/spreadSourceIsScalarDTComp01_workaround.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Oct. 15 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#OPTS  = -qdebug=allowrpdt
+#INPUT = $(tcasedir)spreadSourceIsScalarDTComp01_workaround.f
+#OUTPUT= spreadSourceIsScalarDTComp01_workaround$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = spreadSourceIsScalarDTComp01_workaround$(OBJ)
+#OUTPUT= spreadSourceIsScalarDTComp01_workaround$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = spreadSourceIsScalarDTComp01_workaround$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

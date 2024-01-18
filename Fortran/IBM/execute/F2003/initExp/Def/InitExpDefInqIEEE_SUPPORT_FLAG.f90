@@ -1,0 +1,107 @@
+!*********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : InitExpDefInqIEEE_SUPPORT_FLAG.f  
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Apr. 04, 2006
+!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*
+!*  SECONDARY FUNCTIONS TESTED : 
+!*
+!*  REFERENCE                  : Feature Number 289074 
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  : -qfree=f90
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*
+!*  
+!*  a reference to an IEEE inquiry function
+!* 
+!*  -  IEEE_SUPPORT_FLAG 
+!* 
+!*  ()
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+
+
+  PROGRAM  InitExpDefInqIEEE_SUPPORT_FLAG
+  USE IEEE_EXCEPTIONS 
+  IMPLICIT NONE
+  INTEGER :: I, J, K
+
+
+  TYPE(IEEE_FLAG_TYPE), PARAMETER :: INVALID        = IEEE_INVALID 
+  TYPE(IEEE_FLAG_TYPE), PARAMETER :: OVERFLOW       = IEEE_OVERFLOW 
+  TYPE(IEEE_FLAG_TYPE), PARAMETER :: DIVIDE_BY_ZERO = IEEE_DIVIDE_BY_ZERO 
+  TYPE(IEEE_FLAG_TYPE), PARAMETER :: UNDERFLOW      = IEEE_UNDERFLOW  
+  TYPE(IEEE_FLAG_TYPE), PARAMETER :: INEXACT        = IEEE_INEXACT 
+
+  REAL(4),   PARAMETER :: R4 = 10
+  REAL(8),   PARAMETER :: R8(-2147483648:-2147483647, 2147483646:2147483647) = 1
+  REAL(16),  PARAMETER :: R6(1:0) = -1 
+
+  LOGICAL  :: TR41= IEEE_SUPPORT_FLAG(INVALID, R4)
+  LOGICAL  :: TR42= IEEE_SUPPORT_FLAG(OVERFLOW, R4)
+  LOGICAL  :: TR43= IEEE_SUPPORT_FLAG(DIVIDE_BY_ZERO, R4)
+  LOGICAL  :: TR44= IEEE_SUPPORT_FLAG(UNDERFLOW, R4)
+  LOGICAL  :: TR45= IEEE_SUPPORT_FLAG(INEXACT, R4)
+
+  LOGICAL  :: TR81= IEEE_SUPPORT_FLAG(INVALID, R8)
+  LOGICAL  :: TR82= IEEE_SUPPORT_FLAG(OVERFLOW, R8)
+  LOGICAL  :: TR83= IEEE_SUPPORT_FLAG(DIVIDE_BY_ZERO, R8)
+  LOGICAL  :: TR84= IEEE_SUPPORT_FLAG(UNDERFLOW, R8)
+  LOGICAL  :: TR85= IEEE_SUPPORT_FLAG(INEXACT, R8)
+
+  LOGICAL  :: TR61= IEEE_SUPPORT_FLAG(INVALID, R6)
+  LOGICAL  :: TR62= IEEE_SUPPORT_FLAG(OVERFLOW, R6)
+  LOGICAL  :: TR63= IEEE_SUPPORT_FLAG(DIVIDE_BY_ZERO, R6)
+  LOGICAL  :: TR64= IEEE_SUPPORT_FLAG(UNDERFLOW, R6)
+  LOGICAL  :: TR65= IEEE_SUPPORT_FLAG(INEXACT, R6)
+
+  LOGICAL  :: TR1= IEEE_SUPPORT_FLAG(INVALID)
+  LOGICAL  :: TR2= IEEE_SUPPORT_FLAG(OVERFLOW)
+  LOGICAL  :: TR3= IEEE_SUPPORT_FLAG(DIVIDE_BY_ZERO)
+  LOGICAL  :: TR4= IEEE_SUPPORT_FLAG(UNDERFLOW)
+  LOGICAL  :: TR5= IEEE_SUPPORT_FLAG(INEXACT)
+
+  IF (  .NOT. TR41 )   STOP 11
+  IF (  .NOT. TR42 )   STOP 12
+  IF (  .NOT. TR43 )   STOP 13
+  IF (  .NOT. TR44 )   STOP 14
+  IF (  .NOT. TR45 )   STOP 15
+
+  IF (  .NOT. TR81 )   STOP 21
+  IF (  .NOT. TR82 )   STOP 22
+  IF (  .NOT. TR83 )   STOP 23
+  IF (  .NOT. TR84 )   STOP 24
+  IF (  .NOT. TR85 )   STOP 25
+
+  IF (   TR61 )   STOP 31
+  IF (   TR62 )   STOP 32
+  IF (   TR63 )   STOP 33
+  IF (   TR64 )   STOP 34
+  IF (   TR65 )   STOP 35
+
+  IF (   TR1  )   STOP 41
+  IF (   TR2  )   STOP 42
+  IF (   TR3  )   STOP 43
+  IF (   TR4  )   STOP 44
+  IF (   TR5  )   STOP 45
+
+
+  END
+
+
+ 

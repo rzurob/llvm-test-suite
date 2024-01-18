@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/cintrop1/unit_isoc/icattr13.scenario
+#FEATURE = cintrop1 tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)icattr13.f
+#OUTPUT    = icattr13$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     =  icattr13$(OBJ)
+#OUTPUT    = icattr13$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = icattr13$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

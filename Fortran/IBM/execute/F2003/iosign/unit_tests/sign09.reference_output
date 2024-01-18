@@ -1,0 +1,5 @@
+1525-217 The SIGN= specifier in the OPEN statement for unit 1 is not allowed because the FORM= specifier is set to UNFORMATTED.  The program will recover by ignoring the SIGN= specifier.
+1525-218 A value of aaaa is not allowed for the SIGN= specifier in the OPEN statement for unit 1.  The value of the SIGN= specifier must be either PLUS, SUPPRESS, or PROCESSOR_DEFINED.  The program will recover by ignoring the SIGN= specifier.
+1525-215 A value of aaaa is not allowed for the SIGN= specifier in the WRITE statement on unit 1.  The value of the SIGN= specifier must be PLUS, SUPPRESS, or PROCESSOR_DEFINED.  The program will recover by ignoring the DELIM= specifier.
+1525-215 A value of aaaa is not allowed for the SIGN= specifier in the WRITE statement on unit 1.  The value of the SIGN= specifier must be PLUS, SUPPRESS, or PROCESSOR_DEFINED.  The program will recover by ignoring the DELIM= specifier.
+1525-216 A value of aaaa is not allowed for the SIGN= specifier in the WRITE statement on the internal file.  The value of the SIGN= specifier must be PLUS, SUPPRESS, or PROCESSOR_DEFINED.  The program will recover by ignoring the SIGN= specifier.

@@ -1,0 +1,6 @@
+"image_index_d006b.f", line 31.12: 1516-026 (S) Non-arrays must not be subscripted.
+"image_index_d006b.f", line 35.12: 1516-026 (S) Non-arrays must not be subscripted.
+"image_index_d006b.f", line 36.12: 1516-026 (S) Non-arrays must not be subscripted.
+"image_index_d006b.f", line 37.12: 1516-026 (S) Non-arrays must not be subscripted.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file image_index_d006b.f.

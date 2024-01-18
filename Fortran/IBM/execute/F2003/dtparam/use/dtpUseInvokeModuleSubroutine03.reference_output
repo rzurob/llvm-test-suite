@@ -1,0 +1,24 @@
+ A: in modSub1
+ B: checker(4,*) k= 4 4 l= 5 5 data= 12 12 12 12 12
+ C: checker(4,*) k= 4 4 l= 5 5 data= 13 13 13 13 13
+ D: check(4) k= 4 4 data= 14
+ E: check(4) k= 4 4 data= 15
+ F: tl, l= 5 data= 16 16 16 16 16
+ G: tl, l= 5 data= 17 17 17 17 17
+ H: end modSub1
+ I: in modSub2
+ J: tkl(4,*) k= 4 4 l= 5 5 data= 18 18 18 18 18
+ K: tk(4) k= 4 4 data= 19
+ L: tl, l= 5 data= 20 20 20 20 20
+ M: end modSub2
+ N: tkl(4,*) k= 4 4 l= 5 5 data= 22 22 22 22 22
+ O: tk(4) k= 4 4 data= 19
+ P: tl, l= 5 data= 30 30 30 30 30
+ Q: tkl(2,*) k= 2 2 l= 3 3 data= 31 31 31
+ R: tkl(4,*) k= 4 4 l= 5 5 data= -99 -99 -99 -99 -99
+ S: in modSub3
+ T: tickle(2,*) k= 2 2 l= 3 3 data= 31 31 31
+ U: tick(2) k= 2 2 data= 23
+ V: tl, l= 5 data= 30 30 30 30 30
+ W: end modSub3
+ X: end

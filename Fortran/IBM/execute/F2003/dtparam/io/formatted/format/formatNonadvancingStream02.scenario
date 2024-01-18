@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/format/formatNonadvancingStream02.scenario
+#FEATURE   = 359704
+#CREATOR   = Nancy Wang
+#DATE      = Dec. 19 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)formatNonadvancingStream02.f
+#OUTPUT= formatNonadvancingStream02$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = formatNonadvancingStream02$(OBJ)
+#OUTPUT= formatNonadvancingStream02$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = formatNonadvancingStream02$(EXE)
+#STDOUT= formatNonadvancingStream02.out
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT  = $($(tcasedir)formatNonadvancingStream02$(product)vf) formatNonadvancingStream02.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

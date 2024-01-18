@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_procptr/CrossFeatures2/PtrAssignCharacteristics.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_procptr/*
+#DATE      = 20071011
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)PtrAssignCharacteristics.f
+#OUTPUT= PtrAssignCharacteristics$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  PtrAssignCharacteristics$(OBJ)
+#OUTPUT= PtrAssignCharacteristics$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  PtrAssignCharacteristics$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

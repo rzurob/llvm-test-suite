@@ -1,0 +1,8 @@
+"shifta01d.f", line 41.18: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "shifta".
+"shifta01d.f", line 42.18: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "shifta".
+"shifta01d.f", line 43.21: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "shifta".
+"shifta01d.f", line 45.21: 1516-144 (S) The value of the argument must be between 0 and 32.
+"shifta01d.f", line 46.21: 1516-144 (S) The value of the argument must be between 0 and 32.
+"shifta01d.f", line 47.28: 1516-144 (S) The value of the argument must be between 0 and 8.
+** shifta_test   === End of Compilation 1 ===
+1501-511  Compilation failed for file shifta01d.f.

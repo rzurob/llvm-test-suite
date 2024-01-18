@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"submodule19ad.f", line 52.19: 1513-269 (S) Separate module procedure func2 must be declared in a separate interface body in the containing program unit or an ancestor of that program unit.
+"submodule19ad.f", line 56.21: 1513-269 (S) Separate module procedure sub2 must be declared in a separate interface body in the containing program unit or an ancestor of that program unit.
+** n   === End of Compilation 2 ===
+1501-511  Compilation failed for file submodule19ad.f.

@@ -1,0 +1,86 @@
+! GB DTP extension using:
+! ftcx_dtp -qnol /tstdev/F2003/generic/operator/functional/genericOperatorPass011.f
+! opt variations: -ql
+
+!+  ===================================================================
+!+  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!+  ===================================================================
+!+  ===================================================================
+!+
+!+  TEST CASE TITLE            :
+!+
+!+  PROGRAMMER                 : Robert Ma
+!+  DATE                       : 11/01/2005
+!+  ORIGIN                     : AIX Compiler Development, Toronto Lab
+!+                             :
+!+
+!+  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
+!+                             :
+!+  SECONDARY FUNCTIONS TESTED : with Operator( )
+!+
+!+  DRIVER STANZA              : xlf95
+!+
+!+  DESCRIPTION                : Binary Operator: Elemental and with pass attribute
+!+  KEYWORD(S)                 :
+!+  TARGET(S)                  :
+!+ ===================================================================
+!+
+!+  REVISION HISTORY
+!+
+!+  MM/DD/YY:  Init:  Comments:
+!+ ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+module m
+
+   type base(k1)    ! (4)
+      integer, kind :: k1
+      integer(k1)   :: i = -999
+      contains
+         procedure, pass(b) ::  int_int_base
+         procedure, pass ::  int_base_base
+         generic :: operator(+) => int_base_base, int_int_base
+   end type
+
+   contains
+
+   elemental integer function int_base_base ( a, b )
+      class(base(4)), intent(in) :: a
+      class(base(4)), intent(in) :: b
+
+      int_base_base = a%i + b%i + 1
+
+   end function
+
+   elemental integer function int_int_base ( a, b )
+      integer, intent(in)     :: a
+      class(base(4)), intent(in) :: b
+
+      int_int_base = a + b%i + 1
+
+   end function
+
+end module
+
+program genericOperatorPass011
+   use m
+
+   integer :: i(5) = (/ 1,2,3,4,5 /)
+   integer :: j(2,2)
+
+   class(base(4)), allocatable :: b1(:), b2(:,:)
+
+   j = reshape ( source = i(1:4), shape = (/2,2/) )
+   allocate ( b1(size(i)), source = (/ base(4)(base(4)(5)+base(4)(5)), base(4)(base(4)(10)+base(4)(10)), base(4)(base(4)(15)+base(4)(15)), base(4)(base(4)(20)+base(4)(20)), base(4)(base(4)(25)+base(4)(25)) /) )
+   allocate ( b2(size(j,1), size(j,2)), source = reshape ( source = (/ base(4)(base(4)(5)+base(4)(5)), base(4)(base(4)(10)+base(4)(10)), base(4)(base(4)(15)+base(4)(15)), base(4)(base(4)(20)+base(4)(20)) /) , shape = (/2,2/) ) )
+
+   print *, b1%i
+   print *, b2%i
+
+   i = i + b1
+   print *,i
+
+   j = j + b2
+   print *, j
+
+end program

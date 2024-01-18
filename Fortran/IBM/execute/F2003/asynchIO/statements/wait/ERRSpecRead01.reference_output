@@ -1,0 +1,4 @@
+ WAIT(ERR=100,ID= 1 ) < 1 > 1525-001 The READ statement on the file ERRSpecRead01.dat cannot be completed because the end of the file was reached.  The program will stop.
+                                                                                                                 
+ WAIT(ERR=200) < 1 > 1525-001 The READ statement on the file ERRSpecRead01.dat cannot be completed because the end of the file was reached.  The program will stop.
+                                                                                                                 

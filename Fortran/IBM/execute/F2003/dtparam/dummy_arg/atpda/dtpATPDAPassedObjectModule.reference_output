@@ -1,0 +1,9 @@
+ There are 4 students with first names of 6 or fewer characters, and last names of 8 or fewer characters
+ 1 Jonas  Salk    : 1234567
+ 2 Albert Einstein: 2345678
+ 3 Marie  Curie   : 3456789
+ 4 Isaac  Newton  : 4567890
+ There are 3 students with first names of 8 or fewer characters, and last names of 16 or fewer characters
+ 1 Pyotr    Tschaikovsky    : 1234567
+ 2 Nicolai  Rimsky-Korsakov : 2345678
+ 3 Modest   Mussorgsky      : 3456789

@@ -1,0 +1,4 @@
+"C819StartMissed.f", line 65.14: 1511-116 (E) The END SELECT statement must not contain a construct name.  Construct name end is ignored.
+"C819StartMissed.f", 1516-036 (S) Entity end has undefined type.
+** c819startmissed   === End of Compilation 1 ===
+1501-511  Compilation failed for file C819StartMissed.f.

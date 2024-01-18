@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = codimension_f003a.scenario
+#FEATURE  = CAF Intrinsics
+#CREATOR  = Francesco Cassullo
+#DATE     = October 2010
+#TEST_TYPE= FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_COARRAY_IMAGES<8>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = $(tcasedir)codimension_f003a.f
+#OUTPUT    = codimension_f003a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_COARRAY_IMAGES<8>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = codimension_f003a$(OBJ)
+#OUTPUT    = codimension_f003a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#ENVAR     = CAF_NUM_IMAGES=8
+#ENVAR     = MP_PROCS=1
+#INPUT     = codimension_f003a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

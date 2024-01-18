@@ -1,0 +1,59 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/asynchIO/attribute/misc/asynchAttrSelectType04.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of asynchIO/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=bgq
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)asynchAttrSelectType04.dat .
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)asynchAttrSelectType04.f
+#OUTPUT		= asynchAttrSelectType04$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= asynchAttrSelectType04$(OBJ)
+#OUTPUT		= asynchAttrSelectType04$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= asynchAttrSelectType04$(EXE)
+#STDOUT		= asynchAttrSelectType04.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)asynchAttrSelectType04$(product)vf)	\
+				asynchAttrSelectType04.stdout
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= -i '^theObj[ 	]'
+#INPUT		= asynchAttrSelectType04$(LST)
+#STDOUT		= asynchAttrSelectType04.egrep.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= asynchAttrSelectType04.egrep.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"volatileC1232ArraySection03d.f", line 51.31: 1516-272 (S) Dummy argument x of procedure arraysectionvolatile was specified with the VOLATILE attribute. x is not an assumed-shape array.  The corresponding actual argument must not be an array section or an assumed-shape array.
+** volatilec1232arraysection03d   === End of Compilation 2 ===
+1501-511  Compilation failed for file volatileC1232ArraySection03d.f.

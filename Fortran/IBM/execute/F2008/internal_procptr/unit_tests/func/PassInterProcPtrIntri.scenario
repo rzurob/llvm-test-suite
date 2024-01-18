@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/internal_procptr/PassInterProcPtrIntri.scenario
+#FEATURE   = 303977
+#CREATOR   = Ren Jian Gang
+#DATE      = February 23, 2011
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)PassInterProcPtrIntri.f
+#OUTPUT   =  PassInterProcPtrIntri$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  PassInterProcPtrIntri$(OBJ)
+#OUTPUT   =  PassInterProcPtrIntri$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  PassInterProcPtrIntri$(EXE)
+#STDOUT   =  PassInterProcPtrIntri.out
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = $(tcasedir)PassInterProcIntri.vf PassInterProcPtrIntri.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       logkind4a.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)logkind4a.f
+#OUTPUT= logkind4a$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  logkind4a$(OBJ)
+#OUTPUT= logkind4a$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  logkind4a$(EXE)
+#STDOUT= logkind4a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = logkind4a.out $($(tcasedir)logkind4a$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

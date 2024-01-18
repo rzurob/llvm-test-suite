@@ -1,0 +1,54 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/coarray/error_stop/func/error_stop_021f.scenario
+#FEATURE    = CAF: ERROR STOP statement (feature #351605.31)
+#CREATOR    = Grigor Nikolov
+#DATE       = 20100828
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)error_stop_021f.f
+#OUTPUT     = error_stop_021f$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#INPUT      = error_stop_021f$(OBJ)
+#OUTPUT     = error_stop_021f$(EXE)
+#ENDCMD
+
+#CMD        = MPRUN
+#INPUT      = error_stop_021f$(EXE)
+#STDOUT     = error_stop_021f.out
+#STDERR     = error_stop_021f.out
+#VALIDRCS   = 1
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "ERROR STOP Correct end"
+#INPUT      = error_stop_021f.out
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "ERROR STOP Bad end"
+#INPUT      = error_stop_021f.out
+#VALIDRCS   = 1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

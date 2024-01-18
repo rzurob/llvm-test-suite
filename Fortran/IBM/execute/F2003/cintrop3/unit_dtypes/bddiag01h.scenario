@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop3/unit_dtypes/bddiag01h.scenario
+#FEATURE = cintrop3 tests - regression run bucket
+#CREATOR = Manual conversion CPR
+#DATE    = 20060802
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = XLF95_COMPILE
+#OPTS   = -qdebug=intmsg
+#INPUT  = $(tcasedir)bddiag01h.F
+#STDERR = bddiag01h.err
+#ENDCMD
+
+#CMD    = DIFF
+#IF on(macos)
+  #INPUT  = bddiag01h.err $(tcasedir)bddiag01h.Fvf.macos
+#ELSE
+  #INPUT  = bddiag01h.err $(tcasedir)bddiag01h.Fvf
+#ENDIF
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

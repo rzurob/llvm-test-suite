@@ -1,0 +1,7 @@
+"declaration002.f", line 36.37: 1514-018 (E) Identifier "p" may not have the SAVE attribute specified.  SAVE attribute is ignored for this variable.
+"declaration002.f", line 36.37: 1515-115 (S) Procedure entity p was declared with the SAVE attribute. p must also be declared with the POINTER attribute.
+"declaration002.f", line 42.37: 1514-018 (E) Identifier "p" may not have the SAVE attribute specified.  SAVE attribute is ignored for this variable.
+"declaration002.f", line 42.37: 1515-115 (S) Procedure entity p was declared with the SAVE attribute. p must also be declared with the POINTER attribute.
+** m   === End of Compilation 1 ===
+** declaration002   === End of Compilation 2 ===
+1501-511  Compilation failed for file declaration002.f.

@@ -1,0 +1,7 @@
+  iotype:DT_base-1 v_list: 4 abc  iotype:DT_base-2 v_list: 5  def  iotype:DT_base-3 v_list: 6   ghi
+  iotype:DT_io1 v_list: 5  ABC  iotype:DT_io2 v_list: 6 7   DEF    GHI
+  iotype:DT_io1 v_list: 5  ABC  iotype:DT_io2 v_list: 6 7   DEF    GHI
+  iotype:DT_io1 v_list: 5  ABC  iotype:DT_io2 v_list: 6 7   DEF    GHI
+  iotype:DT_child-1 v_list: 4 5 abc  def
+  100
+  child-2:  iotype:DT_child-2 v_list: 5 6  ghi   jkl

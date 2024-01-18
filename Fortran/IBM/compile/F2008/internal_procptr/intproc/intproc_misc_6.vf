@@ -1,0 +1,4 @@
+"intproc_misc_6.f", line 37.13: 1516-100 (S) Any procedure actual argument of pure procedure must be pure.
+"intproc_misc_6.f", line 38.13: 1516-100 (S) Any procedure actual argument of pure procedure must be pure.
+** intproc_misc_6   === End of Compilation 1 ===
+1501-511  Compilation failed for file intproc_misc_6.f.

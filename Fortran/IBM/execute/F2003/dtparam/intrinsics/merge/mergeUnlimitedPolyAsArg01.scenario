@@ -1,0 +1,32 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/intrinsics/merge/mergeUnlimitedPolyAsArg01.scenario
+#FEATURE= 355754
+#CREATOR= Nancy Wang
+#DATE   = Sept. 21 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)mergeUnlimitedPolyAsArg01.f
+#OUTPUT= mergeUnlimitedPolyAsArg01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = mergeUnlimitedPolyAsArg01$(OBJ)
+#OUTPUT= mergeUnlimitedPolyAsArg01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = mergeUnlimitedPolyAsArg01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

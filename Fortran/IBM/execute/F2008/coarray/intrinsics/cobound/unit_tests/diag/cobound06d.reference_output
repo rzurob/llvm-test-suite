@@ -1,0 +1,8 @@
+"cobound06d.f", line 27.25: 1513-145 (S) Argument keyword "coarr" does not match the dummy argument specified in the interface for the intrinsic procedure "lcobound".
+"cobound06d.f", line 29.32: 1513-145 (S) Argument keyword "dimm" does not match the dummy argument specified in the interface for the intrinsic procedure "lcobound".
+"cobound06d.f", line 30.39: 1513-145 (S) Argument keyword "kinds" does not match the dummy argument specified in the interface for the intrinsic procedure "lcobound".
+"cobound06d.f", line 32.25: 1513-145 (S) Argument keyword "coarr" does not match the dummy argument specified in the interface for the intrinsic procedure "ucobound".
+"cobound06d.f", line 34.32: 1513-145 (S) Argument keyword "dimm" does not match the dummy argument specified in the interface for the intrinsic procedure "ucobound".
+"cobound06d.f", line 35.39: 1513-145 (S) Argument keyword "kinds" does not match the dummy argument specified in the interface for the intrinsic procedure "ucobound".
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file cobound06d.f.

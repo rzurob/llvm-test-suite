@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/intrinsics/acetint34k.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
+			   Vector Subscript in LHS of Assignment Statement)
+#CREATOR	= Glen Mateer (derived from work by David Forster)
+#DATE		= 20080125
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint34k.f
+#OUTPUT		= acetint34k$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint34k$(OBJ)
+#OUTPUT		= acetint34k$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint34k$(EXE)
+#STDOUT		= acetint34k.stdout
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetint34k$(product)vf) acetint34k.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

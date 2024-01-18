@@ -1,0 +1,68 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = OptionalArg11f.scenario
+#FEATURE    = 399982 - C Interop: Optional Argument
+#CREATOR    = Bardia Mahjour
+#DATE       = May 2012
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS)
+#INPUT     = $(tcasedir)OptionalArg11f.c
+#OUTPUT    = OptionalArg11f_c$(OBJ)
+#ENDCMD
+
+! Test with -qxlf2008=nocheckpresence
+#CMD       = F_COMPILE
+#OPTS      = -qxlf2008=nocheckpresence
+#INPUT     = $(tcasedir)OptionalArg11f.f
+#OUTPUT    = OptionalArg11f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = OptionalArg11f$(OBJ) OptionalArg11f_c$(OBJ)
+#OUTPUT    = OptionalArg11f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = OptionalArg11f$(EXE)
+#STDOUT    = OptionalArg11f.out
+#STDERR    = OptionalArg11f.out
+#ENDCMD
+
+#CMD       = DIFF
+#OPTS      = -wb
+#INPUT     = OptionalArg11f.out $($(tcasedir)OptionalArg11f$(product)vf)
+#ENDCMD
+
+! Test with -qxlf2008=checkpresence
+#CMD       = F_COMPILE
+#OPTS      = -qxlf2008=checkpresence
+#INPUT     = $(tcasedir)OptionalArg11f.f
+#OUTPUT    = OptionalArg11f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = OptionalArg11f$(OBJ) OptionalArg11f_c$(OBJ)
+#OUTPUT    = OptionalArg11f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = OptionalArg11f$(EXE)
+#STDOUT    = OptionalArg11f.out
+#STDERR    = OptionalArg11f.out
+#ENDCMD
+
+#CMD       = DIFF
+#OPTS      = -wb
+#INPUT     = OptionalArg11f.out $($(tcasedir)OptionalArg11f$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

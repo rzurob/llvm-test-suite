@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= fxif0001.scenario
+#FEATURE = ISO_FORTRAN_ENV ( test case adopted form derived_types/if)
+#CREATOR = Morteza Ershad-Manesh
+#DATE    = 20100818
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)fxif0001.f
+#OUTPUT    = fxif0001$(OBJ)
+#ENDCMD
+
+#CMD       = XLF_LINK
+#INPUT     = fxif0001$(OBJ)
+#OUTPUT    = fxif0001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxif0001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

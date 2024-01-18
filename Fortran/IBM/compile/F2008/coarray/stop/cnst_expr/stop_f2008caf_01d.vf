@@ -1,0 +1,5 @@
+"stop_f2008caf_01d.f", line 40.9: 1516-332 (S) The stop code in the STOP statement must be a scalar constant expression of character or integer type.
+"stop_f2008caf_01d.f", line 44.9: 1516-332 (S) The stop code in the STOP statement must be a scalar constant expression of character or integer type.
+"stop_f2008caf_01d.f", line 54.15: 1516-332 (S) The stop code in the STOP statement must be a scalar constant expression of character or integer type.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file stop_f2008caf_01d.f.

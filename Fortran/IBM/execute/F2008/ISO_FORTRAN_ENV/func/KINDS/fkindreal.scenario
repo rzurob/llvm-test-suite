@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       fkindreal
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2008_COMPILE
+#INPUT=  $(tcasedir)fkindreal.f
+#OUTPUT= fkindreal$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_LINK
+#INPUT=  fkindreal$(OBJ)
+#OUTPUT= fkindreal$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fkindreal$(EXE)
+#STDOUT=  fkindreal.out
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT = fkindreal.out $($(tcasedir)fkindreal$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

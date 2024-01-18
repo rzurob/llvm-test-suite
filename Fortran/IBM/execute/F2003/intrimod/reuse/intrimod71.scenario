@@ -1,0 +1,176 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME	 = intrimod/reuse/intrimod71.scenario
+#FEATURE = intrimod tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+	LST_FILE="intrimod71.lst"
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)../fake_omp_lib_module.f
+#OPTS      = $(OPT_GEN_BASIC_LISTING)
+#OUTPUT    = fake_omp_lib_module$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = $(OPT_GEN_BASIC_LISTING)
+#INPUT     = $(tcasedir)intrimod71.F
+#OUTPUT    = intrimod71$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = fake_omp_lib_module$(OBJ) intrimod71$(OBJ)
+#OUTPUT    = intrimod71$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = intrimod71$(EXE)
+#ENDCMD
+
+#CMD	= GREP
+#INPUT	= $LST_FILE
+#OPTS	= -c __xlf_omp_init_lock
+#STDOUT	= intrimod71.out
+#ENDCMD
+
+#CMD    = GREP
+#INPUT  = $LST_FILE
+#OPTS   = -c __xlf_omp_init_nest_lock
+#STDOUTA = intrimod71.out
+#ENDCMD
+
+#CMD    = GREP
+#INPUT  = $LST_FILE
+#OPTS   = -c __xlf_omp_set_dynamic_i4
+#STDOUTA = intrimod71.out
+#ENDCMD
+
+#CMD    = GREP
+#INPUT  = $LST_FILE
+#OPTS   = -c __xlf_omp_get_dynamic_i4
+#STDOUTA = intrimod71.out
+#ENDCMD
+
+#CMD    = GREP
+#INPUT  = $LST_FILE
+#OPTS   = -c __xlf_omp_get_max_threads_i4
+#STDOUTA = intrimod71.out
+#ENDCMD
+
+#CMD    = GREP
+#INPUT  = $LST_FILE
+#OPTS   = -c __xlf_omp_set_nested_i4
+#STDOUTA = intrimod71.out
+#ENDCMD
+
+#CMD    = GREP
+#INPUT  = $LST_FILE
+#OPTS   = -c __xlf_omp_get_nested_i4
+#STDOUTA = intrimod71.out
+#ENDCMD
+
+#CMD    = GREP
+#INPUT  = $LST_FILE
+#OPTS   = -c __xlf_omp_get_num_procs_i4
+#STDOUTA = intrimod71.out
+#ENDCMD
+
+#CMD    = GREP
+#INPUT  = $LST_FILE
+#OPTS   = -c __xlf_omp_in_parallel_i4
+#STDOUTA = intrimod71.out
+#ENDCMD
+
+#CMD    = GREP
+#INPUT  = $LST_FILE
+#OPTS   = -c __xlf_omp_set_num_threads_i4
+#STDOUTA = intrimod71.out
+#ENDCMD
+
+#CMD    = GREP
+#INPUT  = $LST_FILE
+#OPTS   = -c __xlf_omp_get_wtick_r8
+#STDOUTA = intrimod71.out
+#ENDCMD
+
+#CMD    = GREP
+#INPUT  = $LST_FILE
+#OPTS   = -c __xlf_omp_get_wtime_r8
+#STDOUTA = intrimod71.out
+#ENDCMD
+
+#CMD    = GREP
+#INPUT  = $LST_FILE
+#OPTS   = -c __xlf_omp_set_lock
+#STDOUTA = intrimod71.out
+#ENDCMD
+
+#CMD    = GREP
+#INPUT  = $LST_FILE
+#OPTS   = -c __xlf_omp_set_nest_lock
+#STDOUTA = intrimod71.out
+#ENDCMD
+
+#CMD    = GREP
+#INPUT  = $LST_FILE
+#OPTS   = -c __xlf_omp_test_lock_i4
+#STDOUTA = intrimod71.out
+#ENDCMD
+
+#CMD    = GREP
+#INPUT  = $LST_FILE
+#OPTS   = -c __xlf_omp_test_nest_lock_i4
+#STDOUTA = intrimod71.out
+#ENDCMD
+
+#CMD    = GREP
+#INPUT  = $LST_FILE
+#OPTS   = -c __xlf_omp_unset_lock
+#STDOUTA = intrimod71.out
+#ENDCMD
+
+#CMD    = GREP
+#INPUT  = $LST_FILE
+#OPTS   = -c __xlf_omp_unset_nest_lock
+#STDOUTA = intrimod71.out
+#ENDCMD
+
+#CMD    = GREP
+#INPUT  = $LST_FILE
+#OPTS   = -c __xlf_omp_get_thread_num_i4
+#STDOUTA = intrimod71.out
+#ENDCMD
+
+#CMD    = GREP
+#INPUT  = $LST_FILE
+#OPTS   = -c __xlf_omp_get_num_threads_i4
+#STDOUTA = intrimod71.out
+#ENDCMD
+
+#CMD    = GREP
+#INPUT  = $LST_FILE
+#OPTS   = -c __xlf_omp_destroy_lock
+#STDOUTA = intrimod71.out
+#ENDCMD
+
+#CMD    = GREP
+#INPUT  = $LST_FILE
+#OPTS   = -c __xlf_omp_destroy_nest_lock
+#STDOUTA = intrimod71.out
+#ENDCMD
+
+#CMD	= DIFF
+#INPUT	= intrimod71.out $($(tcasedir)intrimod71$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

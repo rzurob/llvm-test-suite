@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"Target1.f", line 106.9: 1511-139 (S) Associate name u%id is not associated with an entity that can be defined. u%id must not be redefined or become undefined.
+"Target1.f", line 109.21: 1511-139 (S) Associate name u is not associated with an entity that can be defined. u must not be redefined or become undefined.
+** optional1   === End of Compilation 2 ===
+1501-511  Compilation failed for file Target1.f.

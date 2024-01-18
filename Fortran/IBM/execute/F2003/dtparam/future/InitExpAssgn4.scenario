@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/initExp/Misc/InitExpAssgn4.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of F2003/initExp/*
+#DATE      = 20071108
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)InitExpAssgn4.f
+#OUTPUT= InitExpAssgn4$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  InitExpAssgn4$(OBJ)
+#OUTPUT= InitExpAssgn4$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  InitExpAssgn4$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

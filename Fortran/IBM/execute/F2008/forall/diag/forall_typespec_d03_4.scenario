@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME             = forall_typespec_d03_4.scenario
+#CREATOR          = Bernard Kan
+#FEATURE          = 400906 Support typespec on FORALL
+#DATE             = June 18, 2012
+#TEST_TYPE        = DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#INVALID_XOPTS    = $$(XLF2008_COMPILE^OPT_SET_LANG_LEVEL<.*>)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD              = XLF2008_COMPILE
+#OPTS             = $(OPT_SET_LANG_LEVEL<77STD>)
+#INPUT            = $(tcasedir)forall_typespec_d03.f
+#STDOUT           = forall_typespec_d03.out
+#STDERR           = forall_typespec_d03.out
+#ENDCMD
+
+#CMD              = XLDIFF
+#IF in ($(XLF2008_COMPILE^OPT_OPTIMIZE_FOR_SMP)) || in ($$(XLF2008_COMPILE^OPT_OPTIMIZE_FOR_SMP<.*>))
+  #INPUT          = forall_typespec_d03.out $(tcasedir)forall_typespec_d03_4.smp.vf
+#ELSE
+  #INPUT          = forall_typespec_d03.out $(tcasedir)forall_typespec_d03_4.vf
+#ENDIF
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

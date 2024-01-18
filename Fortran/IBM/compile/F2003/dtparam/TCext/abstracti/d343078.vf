@@ -1,0 +1,4 @@
+"d343078.f", line 36.8: 1514-584 (S) Interface cloneinterface specified for binding clone must be a procedure with an explicit interface.
+"d343078.f", line 43.19: 1514-729 (S) The derived type specifier must not specify more than 1 type parameter value(s) for type abstractparent.
+** m   === End of Compilation 1 ===
+1501-511  Compilation failed for file d343078.f.

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2003/dtparam/intrinsics/transpose/fSpecLentp7a.scenario
+#FEATURE = dtp intrinsics
+#CREATOR = Adrian Green
+#DATE    = 20080821
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)fSpecLentp7a.f
+#OUTPUT   = fSpecLentp7a$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = fSpecLentp7a$(OBJ)
+#OUTPUT   = fSpecLentp7a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fSpecLentp7a$(EXE)
+#STDOUT   = fSpecLentp7a.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

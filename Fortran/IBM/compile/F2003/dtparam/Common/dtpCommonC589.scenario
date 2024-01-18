@@ -1,0 +1,31 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dtpCommonC589.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       07-13-07
+#TEST_TYPE=  Diagostic
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dtpCommonC589.f
+#VALIDRCS= $(RC_COMP_E)
+#STDERR  = dtpCommonC589.err
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    dtpCommonC589.err $($(tcasedir)dtpCommonC589$(product)vf)
+#ENDCMD
+
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

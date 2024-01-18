@@ -1,0 +1,12 @@
+ &NMLB
+ ARG=1, 1, 1, 1, 1, 1, "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", 1, 1, 1, 1, 1, 1, "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     "
+ /
+ &NMLP
+ PTR=1, 1, 1, 1, 1, 1, "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", 1, 1, 1, 1, 1, 1, "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     "
+ /
+ &NMLB
+ N1=1, 1, 1, 1, 1, 1, "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", 1, 1, 1, 1, 1, 1, "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     "
+ /
+ &NMLC
+ C1=1, 1, 1, 1, 1, 1, "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     "
+ /

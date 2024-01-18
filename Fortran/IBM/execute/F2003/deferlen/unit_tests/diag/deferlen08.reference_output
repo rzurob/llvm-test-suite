@@ -1,0 +1,5 @@
+"deferlen08.f", line 23.11: 1514-704 (S) Entity pfnc is declared with a deferred type parameter. pfnc must have the POINTER or ALLOCATABLE attribute.
+** _main   === End of Compilation 1 ===
+"deferlen08.f", line 29.32: 1514-704 (S) Entity pfnc is declared with a deferred type parameter. pfnc must have the POINTER or ALLOCATABLE attribute.
+** pfnc   === End of Compilation 2 ===
+1501-511  Compilation failed for file deferlen08.f.

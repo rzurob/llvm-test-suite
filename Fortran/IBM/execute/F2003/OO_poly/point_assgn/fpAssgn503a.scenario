@@ -1,0 +1,44 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/point_assgn/fpAssgn503a.f
+#FEATURE = OO_poly
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fpAssgn503a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fpAssgn503a$(OBJ)
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS)
+#INPUT     = $(tcasedir)fpAssgn502a_1.c
+#OUTPUT    = fpAssgn502a_1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fpAssgn503a$(OBJ) fpAssgn502a_1$(OBJ)
+#OUTPUT    = fpAssgn503a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fpAssgn503a$(EXE)
+#STDOUT    = fpAssgn503a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fpAssgn503a.out $($(tcasedir)fpAssgn503a$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

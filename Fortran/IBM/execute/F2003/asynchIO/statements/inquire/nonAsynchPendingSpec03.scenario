@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME	   = F2003/asynchIO/statements/inquire/nonAsynchPendingSpec03.scenario
+#FEATURE   = Asynchronous I/O -- INQUIRE Statement
+#CREATOR   = GM Manual Creation
+#DATE	   = 20060328
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= TOUCH
+#INPUT		= nonAsynchPendingSpec03.dat
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)nonAsynchPendingSpec03.f
+#OUTPUT		= nonAsynchPendingSpec03$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= nonAsynchPendingSpec03$(OBJ)
+#OUTPUT		= nonAsynchPendingSpec03$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= nonAsynchPendingSpec03$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

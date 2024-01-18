@@ -1,0 +1,46 @@
+** mod   === End of Compilation 1 ===
+"acetint22d.f", line 76.21: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint22d.f", line 77.26: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"acetint22d.f", line 78.26: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint22d.f", line 79.26: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint22d.f", line 80.26: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint22d.f", line 81.26: 1516-082 (S) Array object or expression is invalid in this context.
+"acetint22d.f", line 82.21: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint22d.f", line 85.20: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint22d.f", line 86.21: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"acetint22d.f", line 87.21: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint22d.f", line 88.21: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint22d.f", line 89.21: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint22d.f", line 90.21: 1516-082 (S) Array object or expression is invalid in this context.
+"acetint22d.f", line 91.20: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint22d.f", line 94.20: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint22d.f", line 94.20: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint22d.f", line 95.21: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"acetint22d.f", line 96.21: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint22d.f", line 96.21: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint22d.f", line 97.21: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint22d.f", line 97.21: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint22d.f", line 98.21: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint22d.f", line 98.21: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint22d.f", line 99.21: 1516-082 (S) Array object or expression is invalid in this context.
+"acetint22d.f", line 99.21: 1516-082 (S) Array object or expression is invalid in this context.
+"acetint22d.f", line 100.20: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint22d.f", line 100.20: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint22d.f", line 103.16: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint22d.f", line 104.25: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"acetint22d.f", line 105.20: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint22d.f", line 107.17: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint22d.f", line 108.25: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint22d.f", line 109.25: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint22d.f", line 111.17: 1516-082 (S) Array object or expression is invalid in this context.
+"acetint22d.f", line 112.20: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint22d.f", line 114.20: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acetint22d.f", line 114.29: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint22d.f", line 114.30: 1515-022 (S) Syntax Error: Extra token " 8 " was found. The token is ignored.
+"acetint22d.f", line 114.31: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acetint22d.f", line 115.20: 1515-022 (S) Syntax Error: Extra token " complex " was found. The token is ignored.
+"acetint22d.f", line 115.27: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint22d.f", line 115.28: 1515-022 (S) Syntax Error: Extra token " 8 " was found. The token is ignored.
+"acetint22d.f", line 115.29: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+** acetint22d   === End of Compilation 2 ===
+1501-511  Compilation failed for file acetint22d.f.

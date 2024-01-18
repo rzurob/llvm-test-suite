@@ -1,0 +1,41 @@
+ 1
+ 2 3 4
+ 4 5 6 4
+ 7 8 9 Ear 4 3
+ 10 11 8
+ 12 13 14 8
+ 15 16 17 Mar 8 3
+ Base:: bb: Base 18
+ Derived(4):: d4b: Derived(4) 19 20
+ Derived2(4):: d24b: Derived2(4) 21 22 23
+ Derived3(4,3):: d34b: Derived3(4,*) 24 25 26 Wot
+ Derived(8):: d8b: Derived(8) 27 28
+ Derived2(8):: d28b: Derived2(8) 29 30 31
+ Derived3(8,3):: d38b: Derived3(8,*) 32 33 34 Gor
+ Base:: bc: Base 39
+ Derived(4):: d4c: Derived(4) 40 41
+ Derived2(4):: d24c: Derived2(4) 42 43 44
+ Derived3(4,3):: d34c: Derived3(4,*) 45 46 47 Unq
+ Derived(8):: d8c: Derived(8) 48 49
+ Derived2(8):: d28c: Derived2(8) 51 52 53
+ Derived3(8,3):: d38c: Derived3(8,*) 54 55 56 Slu
+ auto d8b: Derived(8) 353689 17452771
+ auto d38b: Derived3(8,*) 118898333 1198228293 1303132345 to
+ barr(3) as Derived(4): Derived(4) -1 -2 -1 -2 -1 -2
+ barr(2) as Derived(8): Derived(8) -1 -2 -1 -2
+ barr(2) as Derived2(4): Derived2(4) -1 -2 -3 -1 -2 -3
+ barr(3) as Derived2(8): Derived2(8) -1 -2 -3 -1 -2 -3 -1 -2 -3
+ barr(4) as Derived3(4,3): Derived3(4,*) -1 -2 -3 abc -1 -2 -3 abc -1 -2 -3 abc -1 -2 -3 abc
+ barr(5) as Derived3(8,3): Derived3(8,*) -1 -2 -3 abc -1 -2 -3 abc -1 -2 -3 abc -1 -2 -3 abc -1 -2 -3 abc
+ d4arr(3) as Derived(4): Derived(4) -1 -2 -1 -2 -1 -2
+ d4arr(2) as Derived2(4): Derived2(4) -1 -2 -3 -1 -2 -3
+ d4arr(4) as Derived3(4,3): Derived3(4,*) -1 -2 -3 abc -1 -2 -3 abc -1 -2 -3 abc -1 -2 -3 abc
+ d8arr(2) as Derived(8): Derived(8) -1 -2 -1 -2
+ d8arr(3) as Derived2(8): Derived2(8) -1 -2 -3 -1 -2 -3 -1 -2 -3
+ d8arr(5) as Derived3(8,3): Derived3(8,*) -1 -2 -3 abc -1 -2 -3 abc -1 -2 -3 abc -1 -2 -3 abc -1 -2 -3 abc
+ d24arr(2) as Derived2(4): Derived2(4) -1 -2 -3 -1 -2 -3
+ d24arr(4) as Derived3(4,3): Derived3(4,*) -1 -2 -3 abc -1 -2 -3 abc -1 -2 -3 abc -1 -2 -3 abc
+ d28arr(3) as Derived2(8): Derived2(8) -1 -2 -3 -1 -2 -3 -1 -2 -3
+ d28arr(5) as Derived3(8,3): Derived3(8,*) -1 -2 -3 abc -1 -2 -3 abc -1 -2 -3 abc -1 -2 -3 abc -1 -2 -3 abc
+ d34arr(5) as Derived3(4,3): Derived3(4,*) -1 -2 -3 abc -1 -2 -3 abc -1 -2 -3 abc -1 -2 -3 abc -1 -2 -3 abc
+ d38arr(5) as Derived3(8,3): Derived3(8,*) -1 -2 -3 abc -1 -2 -3 abc -1 -2 -3 abc -1 -2 -3 abc -1 -2 -3 abc

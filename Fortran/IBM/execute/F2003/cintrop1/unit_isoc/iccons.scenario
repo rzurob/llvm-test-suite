@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop1/unit_isoc/iccons.scenario
+#FEATURE = cintrop1 tests - regression run bucket
+#CREATOR = Manual conversion CPR
+#DATE    = 20060607
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)iccons.F
+#IF in($(F_COMPILE^OPT_GEN_64BIT_COMPILER_MODE)) || on(default64)
+  #OPTS      = $(OPT_DEFINE_MACRO<BITMODE64>)
+#ENDIF
+#OUTPUT    = iccons$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = iccons$(OBJ)
+#IF in($(F_COMPILE^OPT_GEN_64BIT_COMPILER_MODE))  || on(default64)
+  #OPTS      = $(OPT_DEFINE_MACRO<BITMODE64>)
+#ENDIF
+#OUTPUT    = iccons$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = iccons$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/allocate/falloc005a17_workaround.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071122
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)falloc005a17_workaround.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = falloc005a17_workaround$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  falloc005a17_workaround$(OBJ)
+#OUTPUT    = falloc005a17_workaround$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = falloc005a17_workaround$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

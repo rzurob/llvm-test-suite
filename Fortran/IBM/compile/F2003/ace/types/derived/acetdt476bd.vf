@@ -1,0 +1,19 @@
+** mod   === End of Compilation 1 ===
+"acetdt476bd.f", line 62.16: 1511-142 (S) Identifier derived specified in the array constructor has not been defined in a derived type definition.
+"acetdt476bd.f", line 63.16: 1511-142 (S) Identifier derived specified in the array constructor has not been defined in a derived type definition.
+"acetdt476bd.f", line 64.16: 1511-142 (S) Identifier derived specified in the array constructor has not been defined in a derived type definition.
+"acetdt476bd.f", line 66.16: 1511-142 (S) Identifier derived specified in the array constructor has not been defined in a derived type definition.
+"acetdt476bd.f", line 67.16: 1511-142 (S) Identifier derived specified in the array constructor has not been defined in a derived type definition.
+"acetdt476bd.f", line 69.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476bd.f", line 69.29: 1511-142 (S) Identifier derived specified in the array constructor has not been defined in a derived type definition.
+"acetdt476bd.f", line 71.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476bd.f", line 71.29: 1511-142 (S) Identifier derived specified in the array constructor has not been defined in a derived type definition.
+"acetdt476bd.f", line 73.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476bd.f", line 73.29: 1511-142 (S) Identifier derived specified in the array constructor has not been defined in a derived type definition.
+"acetdt476bd.f", line 77.15: 1511-142 (S) Identifier derived specified in the array constructor has not been defined in a derived type definition.
+"acetdt476bd.f", line 78.15: 1511-142 (S) Identifier derived specified in the array constructor has not been defined in a derived type definition.
+"acetdt476bd.f", line 79.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476bd.f", line 79.28: 1511-142 (S) Identifier derived specified in the array constructor has not been defined in a derived type definition.
+"acetdt476bd.f", line 80.15: 1511-142 (S) Identifier derived specified in the array constructor has not been defined in a derived type definition.
+** acetdt476bd   === End of Compilation 2 ===
+1501-511  Compilation failed for file acetdt476bd.f.

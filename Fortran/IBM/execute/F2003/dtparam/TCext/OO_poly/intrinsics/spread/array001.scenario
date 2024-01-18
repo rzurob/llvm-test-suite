@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/spread/array001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070928
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)array001.f
+#OUTPUT    = array001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = array001$(OBJ)
+#OUTPUT    = array001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = array001$(EXE)
+#STDOUT    = array001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)array001$(product)vf) array001.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

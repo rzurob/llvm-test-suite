@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"fext037d2.f", line 67.24: 1514-587 (S) Component newbase is not permitted. newbase is the name of a component, binding, or type parameter that is inherited from type child.
+** m1   === End of Compilation 2 ===
+** fext037d2   === End of Compilation 3 ===
+1501-511  Compilation failed for file fext037d2.f.

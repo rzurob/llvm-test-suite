@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/point_assgn/fpAssgn503.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071002
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fpAssgn503.f
+#OUTPUT    = fpAssgn503$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fpAssgn503$(OBJ)
+#OUTPUT    = fpAssgn503$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fpAssgn503$(EXE)
+#STDOUT    = fpAssgn503.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fpAssgn503.out $($(tcasedir)fpAssgn503$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

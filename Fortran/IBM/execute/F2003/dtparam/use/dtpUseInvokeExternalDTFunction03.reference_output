@@ -1,0 +1,16 @@
+ A: start
+ B: chuckle(4,*) k= 4 4 l= 5 5 data= 20 20 20 20 20
+ C: chuck(4) k= 4 4 data= 21
+ D: churl, l= 5 data= 22 22 22 22 22
+ E: chuckle(2,*) k= 2 2 l= 3 3 data= 23 23 23
+ F: chuck(2) k= 2 2 data= 24
+ G: chuckle(4,*) k= 4 4 l= 5 5 data= 25 25 25 25 25
+ H: churl, l= 3 data= 26 26 26
+ I: chuckle(4,*) k= 4 4 l= 5 5 data= 39 39 39 39 39
+ J: chuck(4) k= 4 4 data= 38
+ K: churl, l= 5 data= 37 37 37 37 37
+ L: chuckle(2,*) k= 2 2 l= 3 3 data= 1728 1728 1728
+ M: chuck(2) k= 2 2 data= 1225
+ N: chuckle(4,*) k= 4 4 l= 5 5 data= 34 34 34 34 34
+ O: churl, l= 3 data= 33 33 33
+ P: end

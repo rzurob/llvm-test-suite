@@ -1,0 +1,50 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2008/value/pure/unit_tests/hpf_pure/fxpure07a.scenario
+#FEATURE = 384867 \
+           F2008: VALUE attribute allowed for dummy args of PURE procedures
+#CREATOR = Gaby Baghdadi (copy of /tstdev/hpf_pure/fxpure07a.scenario)
+#DATE    = 20101201
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)fxpure07a.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION)
+#OUTPUT    = fxpure07a$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     =  fxpure07a$(OBJ)
+#OUTPUT    = fxpure07a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxpure07a$(EXE)
+#STDOUT    = fxpure07a.out
+#ENDCMD
+
+#CMD       = SPIFF
+#IF in ($(F_COMPILE^OPT_GEN_64BIT_COMPILER_MODE))
+#INPUT     =  fxpure07a.out $($(tcasedir)fxpure07a$(product)64.vf)
+#ELSE IF in ($(F_COMPILE^OPT_GEN_CODE_FOR_GENERIC_ARCHITECTURE<ppc>))
+#INPUT     =  fxpure07a.out $($(tcasedir)fxpure07a$(product)64.vf)
+#ELSE IF in ($(F_COMPILE^OPT_OPTIMIZE_LEVEL4))
+#INPUT     =  fxpure07a.out $($(tcasedir)fxpure07a$(product)64.vf)
+#ELSE
+#INPUT     = fxpure07a.out $($(tcasedir)fxpure07a$(product).vf)
+#ENDIF
+#OPTS      = -r 0.0001
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=release/F2003/volatile/volatileAttrIntent.f
+#FEATURE = VOLATILE 255728
+#CREATOR = William Zhang
+#DATE    = 05/30/2006
+#TEST_TYPE= diagnostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)volatileAttrIntent.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_LANG_LEVEL<2003pure>)
+#OUTPUT    = volatileAttrIntent$(OBJ)
+#STDERR    = volatileAttrIntent.err
+#VALIDRCS  = $(RC_COMP_S)
+#ENDCMD
+
+#CMD       = XLDIFF
+#IF in($(F_COMPILE^OPT_OPTIMIZE_FOR_SMP))  ||  in($(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT))
+        #INPUT  = $($(tcasedir)volatileAttrIntent.smp$(product)vf)\
+                                volatileAttrIntent.err
+#ELSE
+        #INPUT  = $($(tcasedir)volatileAttrIntent$(product)vf)   \
+                                volatileAttrIntent.err
+#ENDIF
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

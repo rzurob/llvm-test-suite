@@ -1,0 +1,5 @@
+"C808Func.f", line 51.9: 1511-139 (S) Associate name as0 is not associated with an entity that can be defined. as0 must not be redefined or become undefined.
+"C808Func.f", line 57.28: 1511-139 (S) Associate name as0 is not associated with an entity that can be defined. as0 must not be redefined or become undefined.
+"C808Func.f", line 63.12: 1511-009 (S) A DO-loop variable must be a scalar integer, default REAL, or DOUBLE PRECISION variable.
+** c808func   === End of Compilation 1 ===
+1501-511  Compilation failed for file C808Func.f.

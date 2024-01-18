@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/refToVar/exprIsZeroLengthArraySection07.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071220
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)exprIsZeroLengthArraySection07.f
+#OUTPUT		= exprIsZeroLengthArraySection07$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= exprIsZeroLengthArraySection07$(OBJ)
+#OUTPUT		= exprIsZeroLengthArraySection07$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= exprIsZeroLengthArraySection07$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/Namelist/d359604.f
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20090107
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d359604.f
+#OUTPUT    = d359604$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d359604$(OBJ)
+#OUTPUT    = d359604$(EXE)
+#ENDCMD
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)d359604.In .
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d359604$(EXE)
+#STDOUT    = d359604.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

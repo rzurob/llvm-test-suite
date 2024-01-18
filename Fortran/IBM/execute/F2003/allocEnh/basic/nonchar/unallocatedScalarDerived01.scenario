@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/basic/nonchar/unallocatedScalarDerived01.scenario
+#FEATURE	= Intrinsic Assignment-Basic Tests:Non-CHARACTER Scalar Derived Type
+#CREATOR	= GM Manual Creation
+#DATE		= 20060828
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)unallocatedScalarDerived01.f
+#OUTPUT		= unallocatedScalarDerived01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= unallocatedScalarDerived01$(OBJ)
+#OUTPUT		= unallocatedScalarDerived01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= unallocatedScalarDerived01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /block/BMain.scenario
+#FEATURE   = F2008 BLOCK - in main program
+#CREATOR   = DF
+#DATE      = 2010-11-17
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = F_COMPILE
+#INPUT    = $(tcasedir)BMain.f
+#OUTPUT   = BMain$(OBJ)
+#ENDCMD
+
+#CMD      = F_LINK
+#INPUT    = BMain$(OBJ)
+#OUTPUT   = BMain$(EXE)
+#ENDCMD
+
+#CMD      = RUN
+#INPUT    = BMain$(EXE)
+#STDOUT   = BMain.out
+#ENDCMD
+
+#CMD      = SPIFF
+#OPTS     = -r1e-5
+#INPUT    = $($(tcasedir)BMain$(product)vf) BMain.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

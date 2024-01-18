@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /block/BHost01.f
+#FEATURE   = F2008 - BLOCK - host association
+#CREATOR   = DF
+#DATE      = 2010-11-15
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = F_COMPILE
+#INPUT    = $(tcasedir)BHost01.f
+#OUTPUT   = BHost01$(OBJ)
+#ENDCMD
+
+#CMD      = F_LINK
+#INPUT    = BHost01$(OBJ)
+#OUTPUT   = BHost01$(EXE)
+#ENDCMD
+
+#CMD      = RUN
+#INPUT    = BHost01$(EXE)
+#STDOUT   = BHost01.out
+#ENDCMD
+
+#CMD      = SPIFF
+#OPTS     = -r1e-5
+#INPUT    = $($(tcasedir)BHost01$(product)vf) BHost01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

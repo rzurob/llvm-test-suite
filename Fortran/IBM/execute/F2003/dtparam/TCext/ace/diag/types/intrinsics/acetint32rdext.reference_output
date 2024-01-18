@@ -1,0 +1,25 @@
+** acetint32rdextmod   === End of Compilation 1 ===
+"acetint32rdext.f", line 99.16: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint32rdext.f", line 99.28: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint32rdext.f", line 101.23: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint32rdext.f", line 101.35: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint32rdext.f", line 105.16: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint32rdext.f", line 105.28: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint32rdext.f", line 107.23: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint32rdext.f", line 107.35: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint32rdext.f", line 111.16: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint32rdext.f", line 111.29: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint32rdext.f", line 113.23: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint32rdext.f", line 113.36: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint32rdext.f", line 118.16: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint32rdext.f", line 118.27: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint32rdext.f", line 120.23: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint32rdext.f", line 120.34: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint32rdext.f", line 125.16: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint32rdext.f", line 125.26: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint32rdext.f", line 127.23: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint32rdext.f", line 127.33: 1513-020 (S) Procedure names must be specified with arguments in this context.
+** acetint32rdext   === End of Compilation 2 ===
+** externfunc   === End of Compilation 3 ===
+** anotherfunc   === End of Compilation 4 ===
+1501-511  Compilation failed for file acetint32rdext.f.

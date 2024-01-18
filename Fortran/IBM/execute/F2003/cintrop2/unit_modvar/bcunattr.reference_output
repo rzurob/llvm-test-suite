@@ -1,0 +1,36 @@
+IDENTIFIER NAME                  CROSS REFERENCE AND ATTRIBUTES
+ 
+ca                               Public, Static, BIND(C), binding label: ca, Integer(4) (1:3, 1:2, 1:1), Offset: 0, Alignment: full word
+                                 0-40.16$  0-41.16$
+ 
+cf                               Public, Static, BIND(C), binding label: cf, Real(4), Offset: 0, Alignment: full word
+                                 0-39.18$
+ 
+ch                               Public, Static, BIND(C), binding label: ch, Character(1), Offset: 0, Alignment: full word
+                                 0-36.11$  0-37.9$
+ 
+ci                               Public, Static, BIND(C), binding label: ci, Integer(4), Offset: 0, Alignment: full word
+                                 0-40.12$  0-41.12$
+ 
+mod                              Nonintrinsic Module
+                                 0-35.8$
+ 
+** mod   === End of Compilation 1 ===
+IDENTIFIER NAME                  CROSS REFERENCE AND ATTRIBUTES
+ 
+ca                               Use associated, Static, BIND(C), binding label: ca, Integer(4) (1:3, 1:2, 1:1), Offset: 0, Alignment: full word
+                                 0-44.5$  0-49.1@
+ 
+cf                               Use associated, Static, BIND(C), binding label: cf, Real(4), Offset: 0, Alignment: full word
+                                 0-44.5$  0-47.1@
+ 
+ch                               Use associated, Static, BIND(C), binding label: ch, Character(1), Offset: 0, Alignment: full word
+                                 0-44.5$  0-45.1@
+ 
+ci                               Use associated, Static, BIND(C), binding label: ci, Integer(4), Offset: 0, Alignment: full word
+                                 0-44.5$  0-48.1@
+ 
+mod                              Use associated, Nonintrinsic Module
+                                 0-44.5$  0-44.5
+ 
+** _main   === End of Compilation 2 ===

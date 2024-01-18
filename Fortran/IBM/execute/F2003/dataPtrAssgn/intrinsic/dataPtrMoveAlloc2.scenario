@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrMoveAlloc2.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrMoveAlloc2.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrMoveAlloc2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrMoveAlloc2$(OBJ)
+#OUTPUT    = dataPtrMoveAlloc2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrMoveAlloc2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

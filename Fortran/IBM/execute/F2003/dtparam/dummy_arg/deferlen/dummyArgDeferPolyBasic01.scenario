@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/dummy_arg/deferlen/dummyArgDeferPolyBasic01.scenario
+#FEATURE   = 358458
+#CREATOR   = Nancy Wang
+#DATE      = Nov. 13 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)dummyArgDeferPolyBasic01.f
+#OUTPUT= dummyArgDeferPolyBasic01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = dummyArgDeferPolyBasic01$(OBJ)
+#OUTPUT= dummyArgDeferPolyBasic01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = dummyArgDeferPolyBasic01$(EXE)
+#STDOUT= dummyArgDeferPolyBasic01.out
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT  = $($(tcasedir)dummyArgDeferPolyBasic01$(product)vf) dummyArgDeferPolyBasic01.out
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

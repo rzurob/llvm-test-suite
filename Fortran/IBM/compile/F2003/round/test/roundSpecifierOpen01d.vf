@@ -1,0 +1,7 @@
+"roundSpecifierOpen01d.f", line 26.32: 1512-014 (S) The value given for the ROUND specifier is incorrect.
+"roundSpecifierOpen01d.f", line 28.32: 1512-014 (S) The value given for the ROUND specifier is incorrect.
+"roundSpecifierOpen01d.f", line 32.27: 1512-014 (S) The value given for the ROUND specifier is incorrect.
+"roundSpecifierOpen01d.f", line 34.25: 1512-014 (S) The value given for the ROUND specifier is incorrect.
+"roundSpecifierOpen01d.f", line 36.27: 1512-014 (S) The value given for the ROUND specifier is incorrect.
+** roundspecifieropen01d   === End of Compilation 1 ===
+1501-511  Compilation failed for file roundSpecifierOpen01d.f.

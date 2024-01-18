@@ -1,0 +1,51 @@
+### Sample makefile for Fortran programs
+# vi:ts=3:sw=3:wm=0:ai:noexpandtab
+
+### Inference rules for Fortran
+### (The Fortran rules reuse some of the pre-supplied values)
+# cO = Options supplied on make(1) Command-line
+
+#FC = xlf95  # override the default (`xlf')
+#FFLAGS = -qfixed    -qnolm -qsuppress=cmpmsg -qsource -qdebug=stdout:except
+#FFLAGS = -qfree=f90 -qnolm -qsuppress=cmpmsg -qsource -qdebug=stdout:except
+#
+# -qnolm: disable Licence Management
+# -qsource: Output entire source lines wherein errors occur (to stdout too).
+#  Inevitably, a .lst file is also produced.
+# -qdebug=stdout : output messages to stdout in addition to .lst
+#                  NB: sometimes this causes additional failures
+# -qdebug=except : if exception occurs, output call trace
+
+FC = $(COMPILER)
+# Append C/Fortran compiler Flags from command invocation line:
+CFLAGS := $(CFLAGS) $(cF)
+FFLAGS := $(FFLAGS) $(fF)
+
+COMPILE.f  = $(FC) $(FFLAGS) $(xlfSubst) $(TARGET_ARCH) $(cO) -c
+LINK.f     = $(FC) $(FFLAGS) $(xlfSubst) $(LDFLAGS) $(TARGET_ARCH) $(cO)
+# The default linker (cc) doesn't know about xlf libraries, so override it:
+LINK.o := $(LINK.f)
+
+.SUFFIXES: .f .F
+.f .F:
+	$(LINK.f) -o $@  $<
+
+#
+#  NOTE:  $SILENT_BUILD is used with the -qpdf1/-qpdf2 options to quietly
+#  rebuild the .o's for C mainline test cases.  This ensures that we don't
+#  require a special set of .vf files for the PDF runs, and that we don't
+#  need to update the existing .vf files (ie:  less maintenance).
+#
+.f.o .F.o:
+	$(COMPILE.f) $< $(SILENT_BUILD)
+
+.c.o:
+	$(CC) $(CFLAGS) -c $< $(SILENT_BUILD)
+
+### Target rules
+VPATH=.:$(TR_SRC)
+
+
+## Cleanup
+ clean cl:  ; rm -f *.lst *.o *.mod
+vclean vc:  ; rm -f a.out core $e

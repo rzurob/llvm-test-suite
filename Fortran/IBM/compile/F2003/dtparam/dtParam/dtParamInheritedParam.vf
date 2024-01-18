@@ -1,0 +1,5 @@
+"dtParamInheritedParam.f", line 43.28: 1514-727 (S) Type parameter k is not permitted. k is the name of a type parameter that is inherited from type dt.
+"dtParamInheritedParam.f", line 51.29: 1514-727 (S) Type parameter l is not permitted. l is the name of a type parameter that is inherited from type dt2.
+"dtParamInheritedParam.f", line 59.29: 1514-727 (S) Type parameter l is not permitted. l is the name of a type parameter that is inherited from type dt2.
+** dtparaminheritedparam   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtParamInheritedParam.f.

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/allocate/falloc512.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_poly/*
+#DATE      = 20070817
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)falloc512.f
+#OUTPUT    = falloc512$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = falloc512$(OBJ)
+#OUTPUT    = falloc512$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = falloc512$(EXE)
+#STDOUT    = falloc512.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = falloc512.out $($(tcasedir)falloc512$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/structConstr/dtparamConstr051a1_defer.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamConstr051a1_defer.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamConstr051a1_defer$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtparamConstr051a1_defer$(OBJ)
+#OUTPUT    = dtparamConstr051a1_defer$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamConstr051a1_defer$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

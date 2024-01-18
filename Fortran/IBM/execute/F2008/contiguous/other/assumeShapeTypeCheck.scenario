@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/contiguous/other/assumeShapeTypeCheck.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20101025
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)assumeShapeTypeCheck.f
+#OUTPUT    = assumeShapeTypeCheck$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = assumeShapeTypeCheck$(OBJ)
+#OUTPUT    = assumeShapeTypeCheck$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = assumeShapeTypeCheck$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

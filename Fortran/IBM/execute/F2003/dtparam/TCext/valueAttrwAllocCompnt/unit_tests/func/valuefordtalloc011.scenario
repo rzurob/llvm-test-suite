@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/valueAttrwAllocCompnt/unit_tests/func/valuefordtalloc011.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of valueAttrwAllocCompnt/*
+#DATE      = 20071102
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -qxlf2003=polymorphic
+#INPUT     = $(tcasedir)valuefordtalloc011.f
+#OUTPUT    = valuefordtalloc011$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = -qxlf2003=polymorphic
+#INPUT     = valuefordtalloc011$(OBJ)
+#OUTPUT    = valuefordtalloc011$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = valuefordtalloc011$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

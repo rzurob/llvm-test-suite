@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2003/dtparam/intrinsics/transpose/fPntComptp3.scenario
+#FEATURE = dtp intrinsics
+#CREATOR = Adrian Green
+#DATE    = 20080821
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)fPntComptp3.f
+#OUTPUT   = fPntComptp3$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = fPntComptp3$(OBJ)
+#OUTPUT   = fPntComptp3$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fPntComptp3$(EXE)
+#STDOUT   = fPntComptp3.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

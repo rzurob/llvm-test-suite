@@ -1,0 +1,45 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/coarray/character/substr003.scenario
+#FEATURE   = character coarray
+#CREATOR   = Ke Wen Lin
+#DATE      = 20110412
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)module_for_char.f
+#OUTPUT    = module_for_char$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)substr003.f
+#OUTPUT    = substr003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = substr003$(OBJ) module_for_char$(OBJ)
+#OUTPUT    = substr003$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+   #CMD       = MPRUN
+   #INPUT     = substr003$(EXE)
+   #STDOUT    = substr003$(i).out
+   #STDERR    = substr003$(i).out
+   #ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

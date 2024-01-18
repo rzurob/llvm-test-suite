@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME	 = F2008/coarray/defAssgn/unit_tests/charlog1.scenario
+#FEATURE = Coarray defined assignment
+#CREATOR = Pooja Dayanand
+#DATE    = 20101014
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = $(tcasedir)charlog1.f
+#OUTPUT    = charlog1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = charlog1$(OBJ)
+#OUTPUT    = charlog1$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD       = MPRUN
+	#INPUT     = charlog1$(EXE)
+	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

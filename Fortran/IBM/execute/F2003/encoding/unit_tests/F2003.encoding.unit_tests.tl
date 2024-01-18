@@ -1,0 +1,10 @@
+encodingspecifier001.scenario
+encodingspecifier002.scenario
+encodingspecifier003.scenario
+encodingspecifier004.scenario
+encodingspecifier005.scenario
+encodingspecifier006.scenario
+encodingspecifier007.scenario
+encodingspecifier008.scenario
+encodingspecifier009.scenario
+encodingspecifier010.scenario

@@ -1,0 +1,50 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/cmdline/Misc/fxclms05.scenario
+#FEATURE = cmdline tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041204
+#TEST_TYPE=sanity
+#ENDDOC
+
+
+
+#BEGINCONTROL
+
+#CMD    = XLC_COMPILE
+#INPUT  = $(tcasedir)fxclms05.c
+#OUTPUT = fxclms051$(OBJ)
+#IF in ($(F_COMPILE^OPT_GEN_64BIT_COMPILER_MODE))
+#OPTS = $(OPT_GEN_64BIT_COMPILER_MODE)
+#ENDIF
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = fxclms051$(OBJ)
+#OUTPUT = fxclms051$(EXE)
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)fxclms050.f
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT = fxclms050$(OBJ)
+#ENDCMD
+
+
+#CMD    = XLF95_LINK
+#INPUT  = fxclms050$(OBJ)
+#OUTPUT = fxclms050$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#IF on(aix)
+  #INPUT  = fxclms051$(EXE)
+  #OPTS   = 0
+#ELSE
+  #INPUT  = fxclms051$(EXE)
+  #OPTS   = 1
+#ENDIF
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

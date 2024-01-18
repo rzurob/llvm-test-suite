@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/wait/unitSpecFileUnitNum02d.scenario
+#FEATURE	= Asynchronous I/O -- WAIT() Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060303
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)unitSpecFileUnitNum02d.f
+#OUTPUT		= unitSpecFileUnitNum02d$(OBJ)
+#STDERR		= unitSpecFileUnitNum02d.stderr
+#VALIDRCS	= $(RC_COMP_S)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)unitSpecFileUnitNum02d$(product)vf)	\
+				unitSpecFileUnitNum02d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

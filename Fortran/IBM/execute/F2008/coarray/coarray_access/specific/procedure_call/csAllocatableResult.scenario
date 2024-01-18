@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_dummy/assumed_size/csAllocatableResult
+#FEATURE        = CAF coarray access (specific) - procedure call - function accepts coarray actual argument and returns an allocatable object copied from it
+#CREATOR        = DF
+#DATE           = 2010-10-15
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)csAllocatableResult.f
+#OUTPUT = csAllocatableResult$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = csAllocatableResult$(OBJ)
+#OUTPUT = csAllocatableResult$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = csAllocatableResult$(EXE)
+#STDOUT = csAllocatableResult.out
+#ENDCMD
+
+#CMD    = DIFF
+#INPUT  = $(tcasedir)csAllocatableResult$(product)vf) csAllocatableResult.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

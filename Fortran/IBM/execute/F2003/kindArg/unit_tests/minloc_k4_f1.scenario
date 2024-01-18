@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=minloc_k4_f1.scenario
+#FEATURE = Support new Kind Parameter for Several Intrinsics
+#CREATOR = Vince Yuen
+#DATE    = 20060414
+#TEST_TYPE=functional ut
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)minloc_k4_f1.f
+#OPTS      = $(OPT_INTSIZE_8)
+#OUTPUT    = minloc_k4_f1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = minloc_k4_f1$(OBJ)
+#OUTPUT    = minloc_k4_f1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = minloc_k4_f1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

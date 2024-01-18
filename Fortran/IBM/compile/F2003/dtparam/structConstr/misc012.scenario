@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/structConstr/misc012.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)misc012.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = misc012$(OBJ)
+#STDERR    = misc012.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = misc012.err $($(tcasedir)misc012$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

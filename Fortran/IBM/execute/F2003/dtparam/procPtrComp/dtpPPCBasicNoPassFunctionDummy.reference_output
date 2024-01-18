@@ -1,0 +1,19 @@
+ Set 1
+ A=>horse/equus< 32000 -12345
+ Ap>horse/equus< 32000 -12345
+ B=>esroh/suuqe< -32000 12345
+ Bp>esroh/suuqe< -32000 12345
+ C=>horse/equus< 32000 -12345
+ Cp>horse/equus< 32000 -12345
+ D=>esroh/suuqe< -32000 12345
+ Dp>esroh/suuqe< -32000 12345
+ Set 2
+ A=>esroh/suuqe< -32000 12345
+ Ap>esroh/suuqe< -32000 12345
+ B=>horse/equus< 32000 -12345
+ Bp>horse/equus< 32000 -12345
+ C=>esroh/suuqe< -32000 12345
+ Cp>esroh/suuqe< -32000 12345
+ D=>horse/equus< 32000 -12345
+ Dp>horse/equus< 32000 -12345
+ done

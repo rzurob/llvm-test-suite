@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"submodule11d.f", line 47.2: 1513-284 (S) Dummy argument y of separate module procedure sub must have the same type and type parameters as the corresponding dummy argument in the module procedure interface body.
+"submodule11d.f", line 47.2: 1513-284 (S) Dummy argument x of separate module procedure sub must have the same type and type parameters as the corresponding dummy argument in the module procedure interface body.
+** n   === End of Compilation 2 ===
+"submodule11d.f", line 57.6: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+** submodule11d   === End of Compilation 3 ===
+1501-511  Compilation failed for file submodule11d.f.

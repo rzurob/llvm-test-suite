@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/AllocMold/multAllocSourceMold01.f
+#FEATURE   = DTP - Allocate with source expression
+#CREATOR   = Izhak Jakov
+#DATE      = 20150605
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)multAllocSourceMold01.f
+#OUTPUT    = multAllocSourceMold01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = multAllocSourceMold01$(OBJ)
+#OUTPUT    = multAllocSourceMold01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = multAllocSourceMold01$(EXE)
+#STDOUT    = multAllocSourceMold01.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

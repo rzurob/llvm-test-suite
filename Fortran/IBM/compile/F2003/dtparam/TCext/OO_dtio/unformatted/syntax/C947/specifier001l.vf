@@ -1,0 +1,10 @@
+** m1   === End of Compilation 1 ===
+  83.17   01510061 UNITÜ
+  84.28   01510061 RECLÜ
+  85.30   01510061 STREAMÜ
+** specifier001l   === End of Compilation 2 ===
+  128.45   01510061 SEQUENTIALÜ
+** readunformatted   === End of Compilation 3 ===
+  150.33   01510061 EXISTÜ
+** writeunformatted   === End of Compilation 4 ===
+1501-510  Compilation successful for file specifier001l.f.

@@ -1,0 +1,6 @@
+"genericC461Operator002d.f", line 37.37: 1514-672 (S) Specific binding not with the NOPASS attribute must not be specified for the generic binding with the generic specification OPERATOR(.not.).
+"genericC461Operator002d.f", line 44.40: 1514-699 (S) Procedure "childnot" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "not", present and type incompatible, present with different kind type parameters, or present with a different rank.
+"genericC461Operator002d.f", line 44.40: 1514-672 (S) Specific binding childnot with the NOPASS attribute must not be specified for the generic binding with the generic specification OPERATOR(.not.).
+** m   === End of Compilation 1 ===
+** genericc461operator002d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericC461Operator002d.f.

@@ -1,0 +1,16 @@
+forall_typespec_f01.scenario
+forall_typespec_f02.scenario
+forall_typespec_f03.scenario
+forall_typespec_f04.scenario
+forall_typespec_f05.scenario
+forall_typespec_f06.scenario
+forall_typespec_f07.scenario
+forall_typespec_f08.scenario
+forall_typespec_f09.scenario
+forall_typespec_f10.scenario
+forall_typespec_f11.scenario
+forall_typespec_f12.scenario
+forall_typespec_f13.scenario
+forall_typespec_f14.scenario
+forall_typespec_f15.scenario
+forall_typespec_f16.scenario

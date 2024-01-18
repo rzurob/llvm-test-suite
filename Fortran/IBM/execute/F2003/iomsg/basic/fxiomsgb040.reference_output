@@ -1,0 +1,8 @@
+ 1525-081 The number of digits to the right of the decimal point is not allowed to be 2001 for the D edit descriptor in a format specification.  The program will recover by assuming a default value.
+                                                                                                      
+ 1525-080 The number of digits to be printed is not allowed to be 2001 for the Z edit descriptor in a format specification.  The program will recover by assuming a default value.
+                                                                                                                          
+ 1525-080 The number of digits to be printed is not allowed to be 2001 for the O edit descriptor in a format specification.  The program will recover by assuming a default value.
+                                                                                                                          
+ 1525-080 The number of digits to be printed is not allowed to be 2001 for the B edit descriptor in a format specification.  The program will recover by assuming a default value.
+                                                                                                                          

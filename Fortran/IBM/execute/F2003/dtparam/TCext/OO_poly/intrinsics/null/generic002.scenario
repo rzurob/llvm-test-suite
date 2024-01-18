@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/null/generic002.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070925
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)generic002.f
+#OUTPUT    = generic002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = generic002$(OBJ)
+#OUTPUT    = generic002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = generic002$(EXE)
+#STDOUT    = generic002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)generic002$(product)vf) generic002.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

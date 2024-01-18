@@ -1,0 +1,4 @@
+"fArg011d.f", line 73.18: 1511-139 (S) Associate name x is not associated with an entity that can be defined. x must not be redefined or become undefined.
+** m   === End of Compilation 1 ===
+** farg011d   === End of Compilation 2 ===
+1501-511  Compilation failed for file fArg011d.f.

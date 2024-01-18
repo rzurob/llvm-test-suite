@@ -1,0 +1,150 @@
+! GB DTP extension using:
+! ftcx_dtp -qk -ql -qdeferredlp -qreuse=none /tstdev/OO_poly/selectType/Quotes/TypeMatch1.f
+! opt variations: -qnok -qnol -qnodeferredlp -qreuse=base
+
+! *********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD: 
+! %COMPOPTS: -qfree=f90 
+! %GROUP: TypeMatch1.f
+! %VERIFY:  
+! %STDIN:
+! %STDOUT: 
+! %EXECARGS:
+! %POSTCMD: 
+! %END
+! *********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : TypeMatch1
+!*  TEST CASE TITLE            : 
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Jan. 21, 2005
+!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*
+!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*
+!*  REFERENCE                  : Feature 219934.OO_poly
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*     
+!*   Types specified for TYPE IS and CLASS IS are the same  
+!*   
+!*    ()
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+
+
+  MODULE M
+
+    TYPE  :: Zero(K1,N1)    ! (4,20)
+        INTEGER, KIND :: K1
+        INTEGER, LEN  :: N1
+    CONTAINS
+      PROCEDURE, NoPASS   :: Called
+    END TYPE 
+
+    TYPE, EXTENDS(Zero)  :: Base(N2,K2)    ! (4,20,20,4)
+      INTEGER, KIND :: K2
+      INTEGER, LEN  :: N2
+      INTEGER(K2)   :: BaseId = 1
+    CONTAINS
+      PROCEDURE, PASS   :: GetId => GetBaseId
+      PROCEDURE, NoPASS   :: SetId => SetBaseId
+    END TYPE
+
+    TYPE, EXTENDS(Base) :: Child(N3,K3)    ! (4,20,20,4,20,4)
+      INTEGER, KIND :: K3
+      INTEGER, LEN  :: N3
+      INTEGER(K3)   :: ChildId = 2
+    CONTAINS
+      PROCEDURE, PASS   :: GetId => GetChildId
+      PROCEDURE, NoPASS   :: SetId => SetChildId
+    END TYPE
+
+    CONTAINS
+
+    FUNCTION Called()
+    LOGICAL :: Called
+      Called =.true.
+    END FUNCTION
+
+    ELEMENTAL FUNCTION GetChildId(Arg)
+    CLASS(Child(4,*,*,4,*,4)), INTENT(IN) :: Arg
+    INTEGER                  :: GetChildId
+      GetChildId = Arg%ChildId
+    END FUNCTION
+
+    ELEMENTAL FUNCTION GetBaseId(Arg)
+    CLASS(Base(4,*,*,4)), INTENT(IN)  :: Arg
+    INTEGER                  :: GetBaseId
+      GetBaseId = Arg%BaseId
+    END FUNCTION
+
+    SUBROUTINE SetBaseId(Arg)
+    CLASS(Base(4,*,*,4)), INTENT(INOUT) :: Arg(:,:)
+      Arg%BaseId =  -Arg%BaseId
+    END SUBROUTINE
+
+    SUBROUTINE SetChildId(Arg)
+    CLASS(Base(4,*,*,4)), INTENT(INOUT)  :: Arg(:,:)
+      SELECT TYPE(Arg)
+        TYPE IS (Child(4,*,*,4,*,4))
+          Arg%ChildId = -Arg%ChildId
+      END SELECT
+    END SUBROUTINE
+
+  END MODULE
+
+
+  PROGRAM TypeMatch1 
+  USE M
+  IMPLICIT NONE
+  CLASS(Base(4,:,:,4)), POINTER :: V(:,:)
+   
+    ALLOCATE(V(2:3,3:4), SOURCE=Child(4,20,20,4,20,4)(BaseId=-1, ChildId=-2))
+
+    ASSOCIATE  (W=>V)
+    SELECT TYPE (U=>W)
+    CLASS IS (Child(4,*,*,4,*,4)) 
+       STOP 42
+    CLASS IS (Base(4,*,*,4)) 
+       STOP 43
+    TYPE IS (Child(4,*,*,4,*,4))
+      ! Check U
+      IF ( SIZE(U)          .NE. 4 )          STOP 31
+      IF ( ANY (LBOUND(U)   .NE. (/2, 3/) ) ) STOP 32
+      IF ( ANY (UBOUND(U)   .NE. (/3, 4/) ) ) STOP 33
+      IF ( ANY(SHAPE(U)     .NE. (/2,2/)) )   STOP 24
+      IF ( ANY(U%Base%GetId() .NE. -1) )      STOP 35
+      IF ( ANY(U%GetId()      .NE. -2) )      STOP 36
+      IF ( ANY(U%BaseId       .NE. -1) )      STOP 37
+      IF ( ANY(U%ChildId      .NE. -2) )      STOP 38
+  
+      IF ( .NOT. U%Called() ) STOP 45
+
+    TYPE IS (Base(4,*,*,4))
+       STOP 40
+    CLASS DEFAULT
+       STOP 41
+    END SELECT
+    END ASSOCIATE
+ 
+  END
+
+
+

@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/subObject/derivedTypePolyComp01.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071220
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)derivedTypePolyComp01.f
+#OUTPUT		= derivedTypePolyComp01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= derivedTypePolyComp01$(OBJ)
+#OUTPUT		= derivedTypePolyComp01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= derivedTypePolyComp01$(EXE)
+#STDOUT		= derivedTypePolyComp01.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)derivedTypePolyComp01$(product)vf)	\
+				derivedTypePolyComp01.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

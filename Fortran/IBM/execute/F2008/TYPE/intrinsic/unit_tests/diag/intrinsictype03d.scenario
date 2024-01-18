@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/TYPE/intrinsic/unit_tests/diag/intrinsictype03d.scenario
+#FEATURE    = F386894 - F2008: Intrinsic types in TYPE spec
+#CREATOR    = David Nichols
+#DATE       = 20110310
+#TEST_TYPE  = Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)intrinsictype03d.F
+#STDERR     = intrinsictype03d.out
+#VALIDRCS   = 1
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = intrinsictype03d.out $($(tcasedir)intrinsictype03d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

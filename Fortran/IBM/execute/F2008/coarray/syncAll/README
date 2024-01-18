@@ -1,0 +1,8 @@
+!*******************************************************************************
+!* Bucket brief description.
+!* 
+!* DESCRIPTION: Test SYNC ALL in Coarray Fortran
+!*              - causes all images to wait until they have executed the same number of SYNC ALL statements
+!* 
+!*******************************************************************************
+

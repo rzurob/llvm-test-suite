@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_tpbnd/specific/ftpbnd504d1.f
+#FEATURE = OO_tpbnd
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ftpbnd504d1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ftpbnd504d1$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = ftpbnd504d1.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = ftpbnd504d1.err $($(tcasedir)ftpbnd504d1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

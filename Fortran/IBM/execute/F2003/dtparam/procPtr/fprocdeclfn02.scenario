@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2003/dtparam/procPtr/fprocdeclfn02.scenario
+#FEATURE = Procedure Declaration statement
+#CREATOR = Morteza Ershad-Manesh
+#DATE    = 20080805
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)fprocdeclfn02.f
+#OUTPUT    = fprocdeclfn02$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = fprocdeclfn02$(OBJ)
+#OUTPUT    = fprocdeclfn02$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fprocdeclfn02$(EXE)
+#STDOUT   = fprocdeclfn02.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fprocdeclfn02.out $($(tcasedir)fprocdeclfn02$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

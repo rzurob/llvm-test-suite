@@ -1,0 +1,13 @@
+"cobound_d007.f", line 57.7: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"cobound_d007.f", line 58.7: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"cobound_d007.f", line 59.7: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"cobound_d007.f", line 60.7: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"cobound_d007.f", line 61.7: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"cobound_d007.f", line 81.7: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"cobound_d007.f", line 82.7: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"cobound_d007.f", line 83.7: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"cobound_d007.f", line 84.7: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"cobound_d007.f", line 85.7: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"cobound_d007.f", line 91.9: 1516-044 (S) A conversion from type INTEGER is not permitted.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file cobound_d007.f.

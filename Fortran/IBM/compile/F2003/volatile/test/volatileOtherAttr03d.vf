@@ -1,0 +1,4 @@
+"volatileOtherAttr03d.f", line 34.31: 1516-056 (S) An accessible explicit interface has a dummy argument with the INTENT(OUT) or INTENT(INOUT) attribute specified. Corresponding actual argument which is not definable is not permitted in this context.
+** volatileotherattr03d   === End of Compilation 1 ===
+** arraysectionvolatile   === End of Compilation 2 ===
+1501-511  Compilation failed for file volatileOtherAttr03d.f.

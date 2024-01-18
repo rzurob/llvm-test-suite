@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"fabst002d1.f", line 71.18: 1514-645 (S) base is an abstract type. base is not permitted in this context.
+** fabst002d1   === End of Compilation 2 ===
+1501-511  Compilation failed for file fabst002d1.f.

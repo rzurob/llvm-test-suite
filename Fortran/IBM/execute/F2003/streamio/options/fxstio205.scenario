@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/streamio/options/fxstio205.scenario
+#FEATURE = streamio tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)fxstio205.f
+#OPTS      = $(OPT_INTSIZE_2)
+#OUTPUT    = fxstio205$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_INTSIZE_2)
+#INPUT     =  fxstio205$(OBJ)
+#OUTPUT    = fxstio205$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxstio205$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

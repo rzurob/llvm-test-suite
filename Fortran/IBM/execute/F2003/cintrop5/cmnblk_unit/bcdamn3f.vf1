@@ -1,0 +1,5 @@
+** mod   === End of Compilation 1 ===
+"bcdamn3f.f", line 51.22: 1514-005 (S) COMMON block identifier mod was defined elsewhere with conflicting attributes. This identifier and any element names are ignored.
+** sub   === End of Compilation 2 ===
+** bcdamn3f   === End of Compilation 3 ===
+1501-511  Compilation failed for file bcdamn3f.f.

@@ -1,0 +1,33 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       InitExpIntrinOP.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       09-06-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)InitExpIntrinOP.f
+#OUTPUT= InitExpIntrinOP$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  InitExpIntrinOP$(OBJ)
+#OUTPUT= InitExpIntrinOP$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  InitExpIntrinOP$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

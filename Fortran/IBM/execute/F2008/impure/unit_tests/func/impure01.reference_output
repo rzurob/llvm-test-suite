@@ -1,0 +1,7 @@
+ a =  10 20 30 40 50
+ in accumulate(a) a =  10
+ in accumulate(a) a =  20
+ in accumulate(a) a =  30
+ in accumulate(a) a =  40
+ in accumulate(a) a =  50
+ a =  10 20 30 40 50     b =  11 21 31 41 51

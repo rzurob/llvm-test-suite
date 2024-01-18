@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/typeparam/lenparamSpecexpr001_defer.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)lenparamSpecexpr001_defer.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = lenparamSpecexpr001_defer$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = lenparamSpecexpr001_defer$(OBJ)
+#OUTPUT    = lenparamSpecexpr001_defer$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = lenparamSpecexpr001_defer$(EXE)
+#STDOUT    = lenparamSpecexpr001_defer.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = lenparamSpecexpr001_defer.out $($(tcasedir)lenparamSpecexpr001_defer$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

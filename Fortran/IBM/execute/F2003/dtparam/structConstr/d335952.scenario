@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/structConstr/d335952.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d335952.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=allowrpdt
+#OUTPUT    = d335952$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d335952$(OBJ)
+#OUTPUT    = d335952$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d335952$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2003/dtparam/TCext/OO_dtio/unformatted/section9.5.2/read/dummyArg005l_workaround.scenario
+#FEATURE = OO_dtio + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070914
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dummyArg005l_workaround.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dummyArg005l_workaround$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  dummyArg005l_workaround$(OBJ)
+#OUTPUT    = dummyArg005l_workaround$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dummyArg005l_workaround$(EXE)
+#STDOUT    = dummyArg005l_workaround.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dummyArg005l_workaround$(product)vf) dummyArg005l_workaround.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

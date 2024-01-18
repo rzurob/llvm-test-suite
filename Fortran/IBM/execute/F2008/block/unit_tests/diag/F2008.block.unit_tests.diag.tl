@@ -1,0 +1,23 @@
+comblk_name_in_save_in_block.scenario
+common_stmt_in_block.scenario
+contains_in_block1.scenario
+contains_in_block2.scenario
+equiv_stmt_in_block.scenario
+goto_into_block.scenario
+!goto_out_of_block.scenario
+imp_none_stmt_in_block.scenario
+imp_stmt_in_block.scenario
+intent_stmt_in_block.scenario
+mismatched_block_constr_name.scenario
+missing_block_constr_name.scenario
+missing_block_stmt.scenario
+missing_end_block_constr_name.scenario
+missing_end_block_stmt.scenario
+namelist_stmt_in_block.scenario
+optional_stmt_in_block.scenario
+save_stmt_in_pure_block.scenario
+static_stmt_in_pure_block.scenario
+stmt_func_in_block.scenario
+unnamed_exit_in_block.scenario
+value_stmt_in_block.scenario
+!volatile_coarray_in_block.scenario ! moved to the caf sub-directory

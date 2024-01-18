@@ -1,0 +1,18 @@
+ base_base
+ 10
+ base_child1
+ 20
+ base_child2
+ 30
+ base_child2
+ 40 400
+ base_child1
+ 40 400
+ base_base
+ 30 -999
+ base_base
+ 20 -999
+ base_child2
+ 50 500
+ base_child1
+ 60 600

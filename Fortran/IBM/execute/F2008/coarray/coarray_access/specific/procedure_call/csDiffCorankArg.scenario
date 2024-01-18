@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_access/specific/procedure_call/csDiffCorankArg
+#FEATURE        = CAF coarray access (specific) - procedure call - scalar coarray dummy argument with different corank (and therefore different codimensions) as actual argument
+#CREATOR        = DF
+#DATE           = 2010-10-04
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)csDiffCorankArg.f
+#OUTPUT = csDiffCorankArg$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = csDiffCorankArg$(OBJ)
+#OUTPUT = csDiffCorankArg$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD    = MPRUN
+	#INPUT  = csDiffCorankArg$(EXE)
+	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

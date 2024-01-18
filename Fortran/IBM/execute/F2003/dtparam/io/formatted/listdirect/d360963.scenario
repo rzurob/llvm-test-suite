@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/listdirect/d360963.scenario
+#FEATURE   = 360757
+#CREATOR   = Nancy Wang
+#DATE      = Jan. 13 2009
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)d360963.f
+#OUTPUT= d360963$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = d360963$(OBJ)
+#OUTPUT= d360963$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = d360963$(EXE)
+#STDOUT= d360963.out
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT  = $($(tcasedir)d360963$(product)vf) d360963.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

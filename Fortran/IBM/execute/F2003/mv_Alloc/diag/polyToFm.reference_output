@@ -1,0 +1,3 @@
+"polyToFm.f", line 41.29: 1516-289 (S) The TO argument of the intrinsic procedure MOVE_ALLOC must be type compatible with the FROM argument.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file polyToFm.f.

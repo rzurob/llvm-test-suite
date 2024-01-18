@@ -1,0 +1,106 @@
+!######################################################################
+!*
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*  ===================================================================
+!*
+!*  TEST CASE TITLE            : F2008/generic/func/generic_proc_data_f001.f
+!*  TYPE                       : Functional test
+!*  FEATURE                    : #917301 F2008: Generic resolution extensions
+!*  RTC Master Story           : 17301: F2008: Generic resolution extensions (master story)
+!*                               https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/17301
+!*
+!*  PROGRAMMER                 : Grigor Nikolov
+!*  DATE                       : 29 June 2012
+!*  ORIGIN                     : XLF Test -  IBM Toronto Lab
+!*
+!*  DRIVER STANZA              : xlf2008
+!*  REQUIRED COMPILER OPTIONS  :
+!*  DEPENDENCIES               :
+!*
+!*  DESCRIPTION                :
+!* ===================================================================
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+program generic_proc_data_f001
+implicit none
+
+   interface proc_data_sub
+      subroutine proc_sub(x)
+         procedure(integer) :: x
+      end  subroutine
+
+      subroutine data_sub(x)
+         integer :: x
+      end  subroutine
+   end interface
+
+   interface proc_data_func
+      integer function data_func(x)
+         integer :: x
+      end  function
+
+      integer function proc_func(x)
+         procedure(integer) :: x
+      end  function
+   end interface
+
+   interface
+      integer function fun1()
+      end function
+   end interface
+
+     integer               :: i_res /5/
+
+     call proc_data_sub(i_res)
+     if (i_res /= 35) error stop 1
+     call proc_data_sub(fun1)
+     i_res = proc_data_func(i_res)
+     if (i_res /= 105) error stop 3
+     i_res = proc_data_func(fun1)
+     if (i_res /= 7660) error stop 4
+     print *, " .... end"
+
+end program
+
+
+      integer function fun1()
+      implicit none
+          print *,"       inside fun1 ()"
+          fun1 = int(7654.32)
+      end function
+
+      subroutine proc_sub(x)
+      implicit none
+         procedure(integer) x
+         integer :: y
+
+         y = x()
+         print *, "   inside proc_sub()    y=",y
+      end  subroutine
+
+      subroutine data_sub(x)
+      implicit none
+         integer :: x
+
+         x = x * 7
+         print *, "   inside data_sub()  x=",x
+      end  subroutine
+
+      integer function proc_func(x)
+         implicit none
+         procedure(integer) :: x
+
+         proc_func = 6 + x()
+         print *, "   inside proc_func()"
+      end  function
+
+      integer function data_func(x)
+         implicit none
+         integer :: x
+
+         data_func = x * 3
+         print *, "   inside data_func()  x=",x
+      end  function
+

@@ -1,0 +1,4 @@
+"coindex_assignment_002d.f", line 52.10: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"coindex_assignment_002d.f", line 53.5: 1516-077 (S) Conformable array is required in this context.
+** coindex_assignment_002d   === End of Compilation 1 ===
+1501-511  Compilation failed for file coindex_assignment_002d.f.

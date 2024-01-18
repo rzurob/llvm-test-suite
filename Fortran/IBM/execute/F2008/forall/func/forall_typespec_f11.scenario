@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME	   = forall_typespec_f11.scenario
+#REFERENCE = wkshare/test/fxws12h.scenario
+#FEATURE   = 400906 Support typespec on FORALL
+#CREATOR   = Bernard Kan
+#DATE      = 20120621
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINENV
+!#REQUIRED_XOPTS=$(F_COMPILE^OPT_OPTIMIZE_FOR_SMP) $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)forall_typespec_f11.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#OUTPUT    = forall_typespec_f11$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = forall_typespec_f11$(OBJ)
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#OUTPUT    = forall_typespec_f11$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = forall_typespec_f11$(EXE)
+#STDOUT    = forall_typespec_f11.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = forall_typespec_f11.out $($(tcasedir)forall_typespec_f11$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

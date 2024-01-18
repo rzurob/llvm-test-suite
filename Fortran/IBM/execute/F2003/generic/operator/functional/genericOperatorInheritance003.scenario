@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/operator/functional/genericOperatorInheritance003.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericOperatorInheritance003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericOperatorInheritance003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericOperatorInheritance003$(OBJ)
+#OUTPUT    = genericOperatorInheritance003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericOperatorInheritance003$(EXE)
+#STDOUT    = genericOperatorInheritance003.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericOperatorInheritance003.out $(tcasedir)genericOperatorInheritance003.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

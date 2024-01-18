@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = dataPtrStrConstr.scenario
+#FEATURE   =
+#CREATOR   = MZ adapted from F2003/dtparam/TCext/dataPtrAssgn/CrossFeatures/dataPtrStrConstr.f
+#DATE      = 20100504
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_ALT_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dataPtrStrConstr_mod.f
+#OUTPUT= dataPtrStrConstr_mod$(OBJ)
+#ENDCMD
+
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dataPtrStrConstr_main.f
+#OUTPUT= dataPtrStrConstr_main$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  dataPtrStrConstr_mod$(OBJ) dataPtrStrConstr_main$(OBJ)
+#OUTPUT= dataPtrStrConstr$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dataPtrStrConstr$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/ArraySections/arrsec_4.scenario
+#FEATURE   = 353925
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20080802
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)arrsec_4.f
+#OUTPUT    = arrsec_4$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = arrsec_4$(OBJ)
+#OUTPUT    = arrsec_4$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = arrsec_4$(EXE)
+#STDOUT    = arrsec_4.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)arrsec_4$(product)vf) arrsec_4.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

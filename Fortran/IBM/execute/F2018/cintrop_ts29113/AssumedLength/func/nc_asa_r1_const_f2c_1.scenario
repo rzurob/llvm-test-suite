@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = C Interop: Assumed-length Character arguments  (405423)
+#COMPONENT  = xlftest.cinterop_ts29113.assumed_length
+#DATE       = March 27, 2015
+#CREATOR    = Umme Hunny
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD          = XLC_COMPILE
+#INPUT        = $(tcasedir)/nc_asa_r1_const_f2c_1c.c
+#OUTPUT       = nc_asa_r1_const_f2c_1c$(OBJ)
+#OPTS         = $(C_COMPILER_OPTS) -I$(xlf_include)
+#ENDCMD
+
+#CMD          = F_COMPILE
+#INPUT        = $(tcasedir)/nc_asa_r1_const_f2c_1f.f
+#OUTPUT       = nc_asa_r1_const_f2c_1f$(OBJ)
+#ENDCMD
+
+#CMD          = F_LINK
+#INPUT        = nc_asa_r1_const_f2c_1c$(OBJ) nc_asa_r1_const_f2c_1f$(OBJ)
+#OUTPUT       = nc_asa_r1_const_f2c_1f$(EXE)
+#ENDCMD
+
+#CMD          = RUN
+#INPUT        = nc_asa_r1_const_f2c_1f$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

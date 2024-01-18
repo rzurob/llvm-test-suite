@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME      = F2008/value/array/func/valuearray_f340.scenario
+#FEATURE   = VALUE(F2008 extension) - dummy argument arrays allowed with value
+#CREATOR   = Cezar Lutac
+#DATE      = 20150924
+#TEST_TYPE = functional
+#KEYWORDS  = F2008, value, arrays, array
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)valuearray_f340.f
+#OUTPUT    =  valuearray_f340$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     =  valuearray_f340$(OBJ)
+#OUTPUT    =  valuearray_f340$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     =  valuearray_f340$(EXE)
+#STDOUT    =  valuearray_f340.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

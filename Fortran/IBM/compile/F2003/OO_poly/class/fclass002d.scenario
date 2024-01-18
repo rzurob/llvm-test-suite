@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/class/fclass002d.f
+#FEATURE = OO_poly
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fclass002d.f
+#OPTS      = -qxlf2003=dynamicacval $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fclass002d$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = fclass002d.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = fclass002d.err $($(tcasedir)fclass002d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

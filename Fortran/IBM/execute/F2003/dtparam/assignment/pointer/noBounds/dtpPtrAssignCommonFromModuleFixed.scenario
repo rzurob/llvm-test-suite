@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignCommonFromModuleFixed.scenario
+#FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - via pointers with fixed length parameters, assign to common variables in module procedures
+#CREATOR   = DF Manual Update
+#DATE      = 20090126
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPtrAssignCommonFromModuleFixed.f
+#OUTPUT    = dtpPtrAssignCommonFromModuleFixed$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPtrAssignCommonFromModuleFixed$(OBJ)
+#OUTPUT    = dtpPtrAssignCommonFromModuleFixed$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPtrAssignCommonFromModuleFixed$(EXE)
+#STDOUT    = dtpPtrAssignCommonFromModuleFixed.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpPtrAssignCommonFromModuleFixed$(product)vf) dtpPtrAssignCommonFromModuleFixed.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

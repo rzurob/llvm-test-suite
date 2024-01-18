@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/syncMemDefRefMod
+#FEATURE        = CAF SYNC MEMORY - sync memory in different contexts: main and module subroutine
+#CREATOR        = DF
+#DATE           = 2010-09-22
+#TEST_TYPE      = sanity
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)syncMemDefRefMod.f
+#OUTPUT = syncMemDefRefMod$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = syncMemDefRefMod$(OBJ)
+#OUTPUT = syncMemDefRefMod$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = syncMemDefRefMod$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

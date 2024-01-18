@@ -1,0 +1,5 @@
+** n   === End of Compilation 1 ===
+"deferLenAllocate003d.f", line 40.15: 1511-140 (S) Variable c1 must not be allocated by an ALLOCATE statement that does not have a type specification, SOURCE= specifier, or MOLD= specifier.
+"deferLenAllocate003d.f", line 41.15: 1511-140 (S) Variable c2 must not be allocated by an ALLOCATE statement that does not have a type specification, SOURCE= specifier, or MOLD= specifier.
+** deferlenallocate003d   === End of Compilation 2 ===
+1501-511  Compilation failed for file deferLenAllocate003d.f.

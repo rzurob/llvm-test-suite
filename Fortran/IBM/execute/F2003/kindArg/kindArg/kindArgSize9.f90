@@ -1,0 +1,57 @@
+!*********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : kindArgSize9
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Jun. 30, 2006
+!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*
+!*  SECONDARY FUNCTIONS TESTED : SIZE 
+!*
+!*  REFERENCE                  : Feature Number 289083 
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  : -qfree=f90
+!*
+!*  KEYWORD(S)                 :
+!*  TARGEK(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*
+!*   
+!*  
+!*
+!*  - qintsize 
+!*    
+!*  () 
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+
+  PROGRAM kindArgSize9
+
+  INTEGER, ALLOCATABLE :: I(:,:)
+
+  INTEGER, PARAMETER   :: II(2)=(/129,129/)
+
+
+  ALLOCATE(I(-127:1,1:129))
+
+  IF (     SIZE(ARRAY=I, KIND=II%KIND )  .NE. 129**2 )     STOP 11
+  IF (KIND(SIZE(ARRAY=I, KIND=II%KIND )) .NE. II%KIND )    STOP 12
+
+  IF (     SIZE(ARRAY=I, KIND=II%KIND, DIM=1 )  .NE. 129 )        STOP 21
+  IF (KIND(SIZE(ARRAY=I, KIND=II%KIND, DIM=1 )) .NE. II%KIND )    STOP 22
+
+  IF (     SIZE(ARRAY=I, KIND=II%KIND, DIM=2 )  .NE. 129 )        STOP 31
+  IF (KIND(SIZE(ARRAY=I, KIND=II%KIND, DIM=2 )) .NE. II%KIND )    STOP 32
+
+  END
+

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/Namelist/d359566.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20081113
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d359566.f
+#OUTPUT    = d359566$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d359566$(OBJ)
+#OUTPUT    = d359566$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d359566$(EXE)
+#STDOUT    = d359566.out
+#ENDCMD
+
+#CMD       = DIFF
+#OPTS      = -b
+#INPUT     = $($(tcasedir)d359566$(product)vf) d359566.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

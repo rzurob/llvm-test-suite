@@ -1,0 +1,4 @@
+"Generic_BOperator_diag01.f", line 53.42: 1514-699 (S) Procedure "mut2" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "mut1", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** mod1   === End of Compilation 1 ===
+** generic_operator_diag01   === End of Compilation 2 ===
+1501-511  Compilation failed for file Generic_BOperator_diag01.f.

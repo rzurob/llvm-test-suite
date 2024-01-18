@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=shape_k1_f5.scenario
+#FEATURE = Support new Kind Parameter for Several Intrinsics
+#CREATOR = Vince Yuen
+#DATE    = 20060414
+#TEST_TYPE=functional ut
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)shape_k1_f5.f
+#OUTPUT    = shape_k1_f5$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = shape_k1_f5$(OBJ)
+#OUTPUT    = shape_k1_f5$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = shape_k1_f5$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

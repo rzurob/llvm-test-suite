@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = ArgDeferPolyBasic03.scenario
+#FEATURE   =
+#CREATOR   = MZ adapted from dtparam/dummy_arg/deferlen/dummyArgDeferPolyBasic03.f
+#DATE      = 20100504
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_ALT_COMPILE
+#INPUT = $(tcasedir)dummyArgDeferPolyBasic03_mod.f
+#OUTPUT= dummyArgDeferPolyBasic03_mod$(OBJ)
+#ENDCMD
+
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)dummyArgDeferPolyBasic03_main.f
+#OUTPUT= dummyArgDeferPolyBasic03_main$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = dummyArgDeferPolyBasic03_mod$(OBJ) dummyArgDeferPolyBasic03_main$(OBJ)
+#OUTPUT= dummyArgDeferPolyBasic03$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = dummyArgDeferPolyBasic03$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

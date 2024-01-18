@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=     fxsf000p.scenario
+#FEATURE = ISO_FORTRAN_ENV (Test case adopted from pointer/sf/)
+#CREATOR = Morteza Ershad-Manesh
+#DATE    = 20100810
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF2008_COMPILE
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)fxsf000p.f
+#OUTPUT    = fxsf000p$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2008_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = fxsf000p$(OBJ)
+#OUTPUT    = fxsf000p$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxsf000p$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

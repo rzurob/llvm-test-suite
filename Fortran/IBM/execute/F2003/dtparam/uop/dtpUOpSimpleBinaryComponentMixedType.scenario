@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpSimpleBinaryComponentMixedType.scenario
+#FEATURE   = User-Defined Operators - correct operator is applied with mixed type results and involvement of intrinsic types
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpSimpleBinaryComponentMixedType.f
+#OUTPUT    = dtpUOpSimpleBinaryComponentMixedType$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpSimpleBinaryComponentMixedType$(OBJ)
+#OUTPUT    = dtpUOpSimpleBinaryComponentMixedType$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpSimpleBinaryComponentMixedType$(EXE)
+#STDOUT    = dtpUOpSimpleBinaryComponentMixedType.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUOpSimpleBinaryComponentMixedType$(product)vf) dtpUOpSimpleBinaryComponentMixedType.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

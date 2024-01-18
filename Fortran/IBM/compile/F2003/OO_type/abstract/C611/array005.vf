@@ -1,0 +1,21 @@
+** m   === End of Compilation 1 ===
+"array005.f", line 84.34: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"array005.f", line 84.34: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+"array005.f", line 86.34: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"array005.f", line 86.34: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+"array005.f", line 88.34: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"array005.f", line 88.34: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+"array005.f", line 93.34: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"array005.f", line 93.34: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+"array005.f", line 95.34: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+"array005.f", line 95.34: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"array005.f", line 97.34: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+"array005.f", line 97.34: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"array005.f", line 102.34: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+"array005.f", line 102.34: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"array005.f", line 104.34: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+"array005.f", line 104.34: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"array005.f", line 106.34: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"array005.f", line 106.34: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+** array005   === End of Compilation 2 ===
+1501-511  Compilation failed for file array005.f.

@@ -1,0 +1,15 @@
+** m   === End of Compilation 1 ===
+"C936_003l.f", line 52.19: 1514-539 (S) The derived type newbase1 specified with the CLASS keyword must be extensible.
+"C936_003l.f", line 60.19: 1514-539 (S) The derived type base2 specified with the CLASS keyword must be extensible.
+"C936_003l.f", line 72.19: 1514-539 (S) The derived type newbase1 specified with the CLASS keyword must be extensible.
+"C936_003l.f", line 80.19: 1514-539 (S) The derived type base2 specified with the CLASS keyword must be extensible.
+** c936_003l   === End of Compilation 2 ===
+"C936_003l.f", line 94.11: 1514-539 (S) The derived type newbase1 specified with the CLASS keyword must be extensible.
+** unformattedread1   === End of Compilation 3 ===
+"C936_003l.f", line 110.11: 1514-539 (S) The derived type newbase1 specified with the CLASS keyword must be extensible.
+** unformattedwrite1   === End of Compilation 4 ===
+"C936_003l.f", line 121.11: 1514-539 (S) The derived type base2 specified with the CLASS keyword must be extensible.
+** unformattedread2   === End of Compilation 5 ===
+"C936_003l.f", line 136.11: 1514-539 (S) The derived type base2 specified with the CLASS keyword must be extensible.
+** unformattedwrite2   === End of Compilation 6 ===
+1501-511  Compilation failed for file C936_003l.f.

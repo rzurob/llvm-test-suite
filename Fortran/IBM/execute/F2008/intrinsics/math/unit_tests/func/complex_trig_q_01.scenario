@@ -1,0 +1,45 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/intrinsics/math/unit_tests/func/complex_trig_q_01.scenario
+#FEATURE   = Math intrinsic functions
+#CREATOR   = Rafik Zurob
+#DATE      = 20110105
+#TEST_TYPE = unit tests
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= aix
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = GCC_COMPILE
+#OPTS      = $(GCC_COMPILER_OPTS)
+#INPUT     = $(tcasedir)c_trig.c
+#OUTPUT    = c_trig$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     = $(tcasedir)c_trig_mod.f
+#OUTPUT    = c_trig_mod$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     = $(tcasedir)complex_trig_q_01.f
+#OUTPUT    = complex_trig_q_01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     = complex_trig_q_01$(OBJ) c_trig_mod$(OBJ) c_trig$(OBJ)
+#OUTPUT    = complex_trig_q_01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = complex_trig_q_01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

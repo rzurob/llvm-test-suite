@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /block/BSimpleNoCycled.scenario
+#FEATURE   = derived type definition within block used outside
+#CREATOR   = DF
+#DATE      = 2010-11-15
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = F_COMPILE
+#INPUT    = $(tcasedir)BSimpleNoCycled.f
+#OUTPUT   = BSimpleNoCycled$(OBJ)
+#STDERR   = BSimpleNoCycled.err
+#STDOUT   = BSimpleNoCycled.err
+#VALIDRCS = $(RC_FAIL)
+#ENDCMD
+
+#CMD      = XLDIFF
+#INPUT    = $($(tcasedir)BSimpleNoCycled$(product)vf) BSimpleNoCycled.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2003/dtparam/intrinsics/pack/fDecup8.scenario
+#FEATURE = dtp intrinsics
+#CREATOR = Adrian Green
+#DATE    = 20080821
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)fDecup8.f
+#OUTPUT   = fDecup8$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = fDecup8$(OBJ)
+#OUTPUT   = fDecup8$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fDecup8$(EXE)
+#STDOUT   = fDecup8.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $(tcasedir)fDecup8.vf fDecup8.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

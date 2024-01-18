@@ -1,0 +1,5 @@
+"C1217_001d.f", line 39.50: 1516-191 (S) An identical binding label was specified for another entity.
+"C1217_001d.f", line 39.54: 1516-191 (S) An identical binding label was specified for another entity.
+** m   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file C1217_001d.f.

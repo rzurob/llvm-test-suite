@@ -1,0 +1,22 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      dtParamSpecifierC481_02.scenario
+#FEATURE=   Derived Type Parameters - Derived type specifier
+#CREATOR=   Rafik Zurob
+#DATE=      20060627
+#TEST_TYPE= unit
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=      F_COMPLINK
+#INPUT=    $(tcasedir)dtParamSpecifierC481_02.f
+#OPTS=     $(OPT_FREE_SOURCE_FORM)
+#OUTPUT=   dtParamSpecifierC481_02$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtParamSpecifierC481_02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

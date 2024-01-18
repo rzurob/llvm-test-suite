@@ -1,0 +1,10 @@
+"AllocPtr01d.f", line 32.44: 1518-385 (L) Procedure s1 is declared with the BIND(C) attribute.  Dummy argument a2 of s1 is not permitted to have the ALLOCATABLE attribute by the Fortran 2008 standard.
+"AllocPtr01d.f", line 33.39: 1518-385 (L) Procedure s1 is declared with the BIND(C) attribute.  Dummy argument a3 of s1 is not permitted to have the POINTER attribute by the Fortran 2008 standard.
+** _main   === End of Compilation 1 ===
+"AllocPtr01d.f", line 49.40: 1518-385 (L) Procedure s1 is declared with the BIND(C) attribute.  Dummy argument a2 of s1 is not permitted to have the ALLOCATABLE attribute by the Fortran 2008 standard.
+"AllocPtr01d.f", line 50.35: 1518-385 (L) Procedure s1 is declared with the BIND(C) attribute.  Dummy argument a3 of s1 is not permitted to have the POINTER attribute by the Fortran 2008 standard.
+** s1   === End of Compilation 2 ===
+"AllocPtr01d.f", line 60.39: 1518-385 (L) Procedure f1 is declared with the BIND(C) attribute.  Dummy argument a of f1 is not permitted to have the ALLOCATABLE attribute by the Fortran 2008 standard.
+"AllocPtr01d.f", line 61.35: 1518-385 (L) Procedure f1 is declared with the BIND(C) attribute.  Dummy argument b of f1 is not permitted to have the POINTER attribute by the Fortran 2008 standard.
+** f1   === End of Compilation 3 ===
+1501-510  Compilation successful for file AllocPtr01d.f.

@@ -1,0 +1,4 @@
+"AssocNameSameAlloc.f", line 60.18: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"AssocNameSameAlloc.f", line 70.18: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+** assocnamesamealloc   === End of Compilation 1 ===
+1501-511  Compilation failed for file AssocNameSameAlloc.f.

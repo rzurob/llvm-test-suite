@@ -1,0 +1,3 @@
+"dataPtrFuncNameAsRemap1.f", line 32.3: 1513-245 (S) The number of dimensions specified in the pointer bounds remapping list must be equal to the rank of the pointer.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file dataPtrFuncNameAsRemap1.f.

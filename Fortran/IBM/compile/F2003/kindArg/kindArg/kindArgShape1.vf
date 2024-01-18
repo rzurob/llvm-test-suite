@@ -1,0 +1,7 @@
+** kindargshape1   === End of Compilation 1 ===
+"kindArgShape1.f", line 48.27: 1513-143 (S) Invalid KIND value.
+"kindArgShape1.f", line 49.30: 1513-143 (S) Invalid KIND value.
+"kindArgShape1.f", line 50.17: 1513-143 (S) Invalid KIND value.
+"kindArgShape1.f", line 52.27: 1513-143 (S) Invalid KIND value.
+** sub   === End of Compilation 2 ===
+1501-511  Compilation failed for file kindArgShape1.f.

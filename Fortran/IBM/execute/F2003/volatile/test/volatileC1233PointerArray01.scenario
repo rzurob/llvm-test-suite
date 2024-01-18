@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=release/F2003/volatile/volatileC1233PointerArray01.scenario
+#FEATURE = VOLATILE 255728
+#CREATOR = William Zhang
+#DATE    = 05/30/2006
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)volatileC1233PointerArray01d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qxlf2003=novolatile
+#OUTPUT    = volatileC1233PointerArray01d$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = volatileC1233PointerArray01d$(OBJ)
+#OUTPUT    = volatileC1233PointerArray01d$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = volatileC1233PointerArray01d$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

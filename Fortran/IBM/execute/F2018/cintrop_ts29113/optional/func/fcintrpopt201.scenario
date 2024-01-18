@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/optional/func/fcintrpopt201.scenario
+#FEATURE   = 399982 - C Interop: Optional Argument
+#CREATOR   = Ying Zhang
+#DATE      = 2012-05-01
+#TEST_TYPE = functional
+#KEYWORDS  = C Interop, Optional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)ccintrpopt201.c
+#OPTS      = $(C_COMPILER_OPTS) $(OPT_SET_LANG_LEVEL_EXTENDED) $(OPT_GEN_64BIT_LONGLONG)
+#OUTPUT    = ccintrpopt201$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#OPTS      = -qxlf2008=checkpresence $(OPT_CHECK_TYPES_AT_BIND_TIME) -qinit
+#INPUT     = $(tcasedir)fcintrpopt201.f
+#OUTPUT    = fcintrpopt201$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = ccintrpopt201$(OBJ) fcintrpopt201$(OBJ)
+#OUTPUT    = fcintrpopt201$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fcintrpopt201$(EXE)
+#STDOUT    = fcintrpopt201.out
+#ENDCMD
+
+#CMD       = SPIFF
+#INPUT     = $($(tcasedir)fcintrpopt201$(product)vf) fcintrpopt201.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

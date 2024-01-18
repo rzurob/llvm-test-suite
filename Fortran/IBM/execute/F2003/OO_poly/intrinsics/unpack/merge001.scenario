@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/unpack/merge001.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050224
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)merge001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = merge001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = merge001$(OBJ)
+#OUTPUT    = merge001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = merge001$(EXE)
+#STDOUT    = merge001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)merge001$(product)vf) merge001.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

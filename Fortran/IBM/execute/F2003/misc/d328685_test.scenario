@@ -1,0 +1,47 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/misc/d328685_test.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)d328685_test.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = d328685_test$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#INPUT     = d328685_test$(OBJ)
+#OUTPUT    = d328685_test$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d328685_test$(EXE)
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)d328685_test.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = d328685_test$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = d328685_test$(OBJ)
+#OUTPUT    = d328685_test$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d328685_test$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,24 @@
+Feature: 289079 - Allocatable Assignment Enhancements - Reallocation of an
+         allocatable left-hand side of an intrinsic assignment where necessary
+
+Test cases:
+
+ReallocAssignArray[xy] 
+    Testing reallocation of allocatable arrays that are not of character type
+    or derived type.
+
+ReallocAssignArrayCharacter[xy]
+    Testing reallocation of allocatable character arrays, with lengths that
+    are assumed, deferred, known at run time, and known at compile time.
+
+ReallocAssignArrayDT[xy]
+    Testing reallocation of allocatable derived-type arrays.  Testing involves
+    finalization, as well as derived types with type parameters.  Type parameter
+    testing in these unit tests is very limited.
+
+ReallocAssignScalarCharacter[xy]
+    Testing reallocation of allocatable deferred-length character scalars.
+
+ReallocAssignScalarDT[xy]
+    Testing reallocation of allocatable derived-type scalars with deferred
+    length type parameters.  These unit tests are very limited.

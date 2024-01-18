@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/associate/misc/arraySection02.scenario
+#FEATURE	= ASSOCIATE Contruct (with Derived Type Parameters) --	\
+				selector is an Array Section
+#CREATOR	= Glen Mateer
+#DATE		= 20080916
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)arraySection02.f
+#OUTPUT		= arraySection02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= arraySection02$(OBJ)
+#OUTPUT		= arraySection02$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= arraySection02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

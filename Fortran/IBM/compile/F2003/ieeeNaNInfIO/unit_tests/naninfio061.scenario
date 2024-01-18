@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=naninfio061.scenario
+#FEATURE =
+#CREATOR = Michael Selvanayagam
+#DATE    = 20060331
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#INVALID_XOPTS = $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP) $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)cmpx_nanqext.dat $(tcasedir)cmpx_nansext.dat $(tcasedir)naninfio061.f
+#OUTPUT   = ./
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)naninfio061.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<77std>) -qxlf2003=nooldnaninf
+#STDERR    = naninfio061.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = naninfio061.out  $($(tcasedir)naninfio061$(product)vf)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

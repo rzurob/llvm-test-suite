@@ -1,0 +1,32 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME = F2003/dtparam/typeParamInquiry/functional/dtparam/dtParameterInquiryArrayRealComplexComp01.scenario
+#FEATURE  = Type Parameter Inquiry(354612)
+#CREATOR  = Nancy Wang
+#DATE     = July 12 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)dtParameterInquiryArrayRealComplexComp01.f
+#OUTPUT = dtParameterInquiryArrayRealComplexComp01$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = dtParameterInquiryArrayRealComplexComp01$(OBJ)
+#OUTPUT = dtParameterInquiryArrayRealComplexComp01$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = dtParameterInquiryArrayRealComplexComp01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

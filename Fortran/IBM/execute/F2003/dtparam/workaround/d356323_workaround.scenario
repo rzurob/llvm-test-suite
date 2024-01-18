@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/intrinsics/merge/d356323_workaround.scenario
+#FEATURE= 355754
+#CREATOR= Nancy Wang
+#DATE   = Sept. 17 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)d356323_workaround.f
+#OUTPUT= d356323_workaround$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = d356323_workaround$(OBJ)
+#OUTPUT= d356323_workaround$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = d356323_workaround$(EXE)
+#STDOUT = d356323_workaround.out
+#ENDCMD
+
+#CMD    = DIFF
+#INPUT  = $($(tcasedir)d356323_workaround$(product)vf) d356323_workaround.out
+#ENDCMD
+#ENDCONTROL
+
+#ENDSCENARIO
+

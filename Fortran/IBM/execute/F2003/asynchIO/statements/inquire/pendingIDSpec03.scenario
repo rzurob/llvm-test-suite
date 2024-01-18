@@ -1,0 +1,80 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/inquire/pendingIDSpec03.scenario
+#FEATURE	= Asynchronous I/O -- INQUIRE Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060320
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)pendingIDSpec03.dat fort.12
+#ENDCMD
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)pendingIDSpec03.dat fort.14
+#ENDCMD
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)pendingIDSpec03.dat fort.16
+#ENDCMD
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)pendingIDSpec03.dat fort.18
+#ENDCMD
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)pendingIDSpec03.dat fort.20
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)pendingIDSpec03.f
+#OUTPUT		= pendingIDSpec03$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= pendingIDSpec03$(OBJ)
+#OUTPUT		= pendingIDSpec03$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= pendingIDSpec03$(EXE)
+#STDOUT		= pendingIDSpec03.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)pendingIDSpec03$(product)vf) pendingIDSpec03.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $(tcasedir)pendingIDSpec03.dat fort.11
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $(tcasedir)pendingIDSpec03.dat fort.13
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $(tcasedir)pendingIDSpec03.dat fort.15
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $(tcasedir)pendingIDSpec03.dat fort.17
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $(tcasedir)pendingIDSpec03.dat fort.19
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

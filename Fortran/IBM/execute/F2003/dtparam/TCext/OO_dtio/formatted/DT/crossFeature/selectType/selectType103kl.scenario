@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/TCext/OO_dtio/formatted/DT/crossFeature/selectType/selectType103kl.scenario
+#FEATURE = OO_dtio and derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070618
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)selectType103kl.1 .
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)selectType103kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = selectType103kl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = selectType103kl$(OBJ)
+#OUTPUT    = selectType103kl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = selectType103kl$(EXE)
+#STDOUT    = selectType103kl.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)selectType103kl$(product)vf) selectType103kl.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

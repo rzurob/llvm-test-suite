@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/crossFeature/arrayConst/arrayConstr004.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/abstract/crossFeature/arrayConst/arrayConstr004.scenario
+#DATE      = 20070612
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)arrayConstr004.f
+#OPTS = -qxlf2003=dynamicacval
+#OUTPUT    = arrayConstr004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = arrayConstr004$(OBJ)
+#OUTPUT    = arrayConstr004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = arrayConstr004$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

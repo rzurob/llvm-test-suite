@@ -1,0 +1,2 @@
+CFI_allocate returns: CFI_INVALID_DESCRIPTOR
+CFI_deallocate: CFI_INVALID_DESCRIPTOR

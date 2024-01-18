@@ -1,0 +1,16 @@
+ in setTP1
+ not allocated
+ in setTP1
+ 4 2 2
+ 10 8 8
+ reallocate
+ 4 2 2
+ 3 8 8
+ in setTP2
+ not associated
+ in setTP2
+ 2 2 2
+ 3 8 8
+ reallocate
+ 2 2 2
+ 10 8 8

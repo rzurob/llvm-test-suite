@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/spread/spreadMis02.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Oct. 23 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)spreadMis02.f
+#OUTPUT= spreadMis02$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = spreadMis02$(OBJ)
+#OUTPUT= spreadMis02$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = spreadMis02$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

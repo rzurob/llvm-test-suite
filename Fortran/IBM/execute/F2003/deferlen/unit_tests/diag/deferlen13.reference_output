@@ -1,0 +1,4 @@
+"deferlen13.f", 1514-704 (S) Entity char2 is declared with a deferred type parameter. char2 must have the POINTER or ALLOCATABLE attribute.
+"deferlen13.f", 1514-704 (S) Entity char1 is declared with a deferred type parameter. char1 must have the POINTER or ALLOCATABLE attribute.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file deferlen13.f.

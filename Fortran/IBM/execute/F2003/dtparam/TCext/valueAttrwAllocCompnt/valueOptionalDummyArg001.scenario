@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/valueAttrwAllocCompnt/valueOptionalDummyArg001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of valueAttrwAllocCompnt/*
+#DATE      = 20071102
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)valueOptionalDummyArg001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = valueOptionalDummyArg001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = valueOptionalDummyArg001$(OBJ)
+#OUTPUT    = valueOptionalDummyArg001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = valueOptionalDummyArg001$(EXE)
+#STDOUT    = valueOptionalDummyArg001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = valueOptionalDummyArg001.out $(tcasedir)valueOptionalDummyArg001.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

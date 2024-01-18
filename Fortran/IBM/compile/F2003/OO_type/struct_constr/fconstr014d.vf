@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"fconstr014d.f", line 51.26: 1514-589 (S) Inaccessible component value must not be specified in the structure constructor for type child.
+"fconstr014d.f", line 52.41: 1514-560 (S) The component keyword value does not match a component of the derived type child.
+** fconstr014d   === End of Compilation 2 ===
+1501-511  Compilation failed for file fconstr014d.f.

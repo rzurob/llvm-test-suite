@@ -1,0 +1,22 @@
+ Subroutine sub
+ pf pointer assoc. = F
+ i = 6
+ c = 2 2 2
+ Subroutine sub
+ pf pointer assoc. = T
+ c = 3 4 5
+ pf associated, i = 24
+ i = 6
+ c = 2 2 2
+ optional arg. is present, i = 15
+ Function fun
+ pf pointer assoc. = F
+ i = 6
+ c = 2 2 2
+ Function fun
+ pf pointer assoc. = T
+ c = 3 4 5
+ pf associated, i = 24
+ i = 6
+ c = 2 2 2
+ optional arg. is present, i = 15

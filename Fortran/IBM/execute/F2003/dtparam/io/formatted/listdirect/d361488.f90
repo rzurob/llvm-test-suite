@@ -1,0 +1,59 @@
+!*********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : d361488.f   
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Nancy Wang 
+!*  DATE                       : Jan. 26 2009 
+!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO 
+!*
+!*  SECONDARY FUNCTIONS TESTED :  
+!*
+!*  REFERENCE                  : 
+!*
+!*  DRIVER STANZA              : xlf2003
+!*
+!*
+!*  DESCRIPTION
+!*  defect 361488
+!234567890123456789012345678901234567890123456789012345678901234567890
+module m
+   type inner3(l3)
+      integer,len  :: l3 !l3=3
+      real         :: r1(l3:l3+1)=-9.9
+   end type
+  type outer(l4)
+     integer,len  :: l4 ! l4=4
+     complex(8)   :: x1(l4-1)=(9.9_8,-9.9_8)
+     type(inner3(l4-1)) :: inn3
+  end type
+end module
+
+program d361488
+
+  use m
+  type(outer(:)),allocatable :: outobj2  
+  logical,external :: precision_r4,precision_x6
+
+  allocate(outer(4) :: outobj2)
+
+  open(10,file='d361488.dat')
+  read(10,*) outobj2
+
+
+  if(.not. precision_x6(outobj2%x1(1),(9.9_8,-9.9_8) )) stop 1
+  if(.not. precision_x6(outobj2%x1(2),(3.4_8,-7.8_8) )) stop 2
+  if(.not. precision_x6(outobj2%x1(3),(0.5_8,-0.5D-2))) stop 3
+
+  if(.not. precision_r4(outobj2%inn3%r1(3),-3.4 ))      stop 4
+  if(.not. precision_r4(outobj2%inn3%r1(4),-2.3E-3 ))   stop 5
+
+
+  close(10)
+
+end program

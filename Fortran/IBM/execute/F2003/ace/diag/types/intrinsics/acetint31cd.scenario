@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/diag/types/intrinsics/acetint31cd.scenario
+#FEATURE	= Array constructor enhancement - procedure pointers are not acceptable data (character)
+#CREATOR	= DF Manual Update
+#DATE		= 20060830
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint31cd.f
+#OUTPUT		= acetint31cd$(OBJ)
+#STDERR		= acetint31cd.stderr
+#VALIDRCS       = $(RC_COMP_S)
+#ENDCMD
+
+#CMD            = XLDIFF
+#INPUT          = $(tcasedir)acetint31cd.vf acetint31cd.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

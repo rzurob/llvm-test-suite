@@ -1,0 +1,4 @@
+"diagDifflenTP1.f", line 43.33: 1516-289 (S) The TO argument of the intrinsic procedure MOVE_ALLOC must be type compatible with the FROM argument.
+** m   === End of Compilation 1 ===
+"diagDifflenTP1.f", line 49.5: 1514-219 (S) Unable to access module symbol file for module m. Check path and file permissions of file. Use association not done for this module.
+1501-511  Compilation failed for file diagDifflenTP1.f.

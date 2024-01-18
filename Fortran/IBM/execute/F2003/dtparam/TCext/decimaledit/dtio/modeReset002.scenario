@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/decimaledit/dtio/modeReset002.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of decimaledit/*
+#DATE      = 20071213
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)modeReset002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = modeReset002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = modeReset002$(OBJ)
+#OUTPUT    = modeReset002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = modeReset002$(EXE)
+#STDOUT    = modeReset002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = modeReset002.out $($(tcasedir)modeReset002$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/formatted/section10.7/position002bkl.scenario
+#FEATURE = OO_dtio/formatted tests - regression run bucket + derived type parameters
+#CREATOR = automated conversion script
+#DATE    = 20070722
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)position002bkl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = position002bkl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  position002bkl$(OBJ)
+#OUTPUT    = position002bkl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = position002bkl$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

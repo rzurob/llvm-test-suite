@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2003/dtparam/TCext/OO_tpbnd/final/ffinal516ak.f
+#FEATURE = OO_tpbnd + derived type parameters
+#CREATOR = David Forster (derived from work by Jim Xia)
+#DATE    = 20071111
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ffinal516ak.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ffinal516ak$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = ffinal516ak$(OBJ)
+#OUTPUT    = ffinal516ak$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ffinal516ak$(EXE)
+#STDOUT    = ffinal516ak.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = ffinal516ak.out $($(tcasedir)ffinal516ak$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

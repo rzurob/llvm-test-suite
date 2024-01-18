@@ -1,0 +1,7 @@
+"datastmnt_d03.f", line 25.11: 1515-022 (S) Syntax Error: Extra token " [ " was found. The token is ignored.
+"datastmnt_d03.f", line 25.12: 1515-022 (S) Syntax Error: Extra token " 1 " was found. The token is ignored.
+"datastmnt_d03.f", line 25.13: 1515-022 (S) Syntax Error: Extra token " ] " was found. The token is ignored.
+"datastmnt_d03.f", line 26.1: 1514-047 (S) No initializations for this DATA statement will be done because of presence of syntax error.
+"datastmnt_d03.f", line 26.14: 1515-019 (S) Syntax is incorrect.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file datastmnt_d03.f.

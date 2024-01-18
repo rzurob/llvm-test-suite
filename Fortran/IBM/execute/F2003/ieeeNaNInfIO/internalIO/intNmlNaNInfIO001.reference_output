@@ -1,0 +1,6 @@
+  &MYNML                                                         
+  RL1=NaN(Q), CX1=(Inf,NaN(S)), RL2=-Inf, CX2=(NaN(Q),NaN(Q))    
+  /                                                              
+  &MYNML                                                         
+  RL1=-Inf, CX1=(Inf,NaN(Q)), RL2=NaN(Q), CX2=(NaN(Q),NaN(Q))    
+  /                                                              

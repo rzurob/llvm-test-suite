@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/use/dtpUseAllocatable02.scenario
+#FEATURE   = DTP and USE - allocatable with no type specifier, but deferred length parameters
+#CREATOR   = DF Manual Update
+#DATE      = 20081007
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUseAllocatable02.f
+#OUTPUT    = dtpUseAllocatable02$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUseAllocatable02$(OBJ)
+#OUTPUT    = dtpUseAllocatable02$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUseAllocatable02$(EXE)
+#STDOUT    = dtpUseAllocatable02.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUseAllocatable02$(product)vf) dtpUseAllocatable02.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

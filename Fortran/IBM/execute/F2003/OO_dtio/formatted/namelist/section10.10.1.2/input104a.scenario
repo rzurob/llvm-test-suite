@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/namelist/namelist.1.2/input104a.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)input104a.1 .
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)input104a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = input104a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = input104a$(OBJ)
+#OUTPUT    = input104a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = input104a$(EXE)
+#STDOUT    = input104a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)input104a$(product)vf) input104a.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

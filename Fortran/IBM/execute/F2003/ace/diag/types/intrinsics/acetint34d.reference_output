@@ -1,0 +1,4 @@
+"acetint34d.f", line 43.8: 1516-022 (S) Subscript, stride, or substring expression must be a valid arithmetic expression.
+"acetint34d.f", line 44.8: 1516-022 (S) Subscript, stride, or substring expression must be a valid arithmetic expression.
+** acetint34   === End of Compilation 1 ===
+1501-511  Compilation failed for file acetint34d.f.

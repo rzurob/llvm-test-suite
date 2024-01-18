@@ -1,0 +1,93 @@
+!#######################################################################
+! SCCS ID Information
+! %W%, %I%
+! Extract Date/Time: %D% %T%
+! Checkin Date/Time: %E% %U%
+!#######################################################################
+! *********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: falloc005a20_1.f
+! %VERIFY: 
+! %STDIN:
+! %STDOUT:
+! %EXECARGS:
+! %POSTCMD: 
+! %END
+! *********************************************************************
+!*  =================================================================== 
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
+!*  =================================================================== 
+!*  =================================================================== 
+!*
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Jim Xia
+!*  DATE                       : 07/16/2004
+!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
+!*                             :
+!*
+!*  PRIMARY FUNCTIONS TESTED   :
+!*                             :
+!*  SECONDARY FUNCTIONS TESTED : 
+!*
+!*  DRIVER STANZA              : xlf95
+!*
+!*  DESCRIPTION                : ALLOCATE (level-4 expression as the
+!                               source-expr; use defined operation for a derived
+!                               type)
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!* ===================================================================
+!*
+!*  REVISION HISTORY
+!*
+!*  MM/DD/YY:  Init:  Comments:
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+module m
+    type base
+        real(8) :: data
+    end type
+
+    interface operator (.eq.)
+        elemental logical function b1EqB2 (b1, b2)
+        import base
+            class (base), intent(in) :: b1, b2
+        end function
+    end interface
+end module
+
+
+elemental logical function b1EqB2 (b1, b2)
+use m, only : base
+    class (base), intent(in) :: b1, b2
+
+    real(8), parameter :: torlerance = 1.0d-15
+
+    real (8) :: diff, avg
+
+    diff = dabs (b1%data - b2%data)
+
+    avg = (b1%data + b2%data) / 2.0d0
+
+    b1EqB2 = ((diff / avg) <= torlerance)
+end function
+
+
+program falloc005a20_1
+use m
+    type (base) :: b1(10)
+
+    logical, pointer :: l1(:)
+
+    b1%data = (/(i*1.1d0, i=1,10)/)
+
+    allocate (l1(size(b1)), source=(base(2*1.1d0) == b1))
+
+    if ((.not. l1(2)) .or. l1(1) .or. (any (l1(3:)))) error stop 1_4
+end

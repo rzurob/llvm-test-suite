@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = modeBlankNaNInfIO003.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 30, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)modeBlankNaNInfIO003.dat
+#OUTPUT   = modeBlankNaNInfIO003.dat
+#ENDCMD
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)modeBlankNaNInfIO003.f
+#OUTPUT   =  modeBlankNaNInfIO003$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  modeBlankNaNInfIO003$(OBJ)
+#OUTPUT   =  modeBlankNaNInfIO003$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  modeBlankNaNInfIO003$(EXE)
+#STDERR   =  modeBlankNaNInfIO003.err
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = modeBlankNaNInfIO003.err $(tcasedir)modeBlankNaNInfIO003.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

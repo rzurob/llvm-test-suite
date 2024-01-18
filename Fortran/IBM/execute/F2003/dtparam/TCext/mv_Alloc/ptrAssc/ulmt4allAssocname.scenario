@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/ptrAssc/ulmt4allAssocname.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071105
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)ulmt4allAssocname.f
+#OUTPUT= ulmt4allAssocname$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  ulmt4allAssocname$(OBJ)
+#OUTPUT= ulmt4allAssocname$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  ulmt4allAssocname$(EXE)
+#STDOUT= ulmt4allAssocname.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

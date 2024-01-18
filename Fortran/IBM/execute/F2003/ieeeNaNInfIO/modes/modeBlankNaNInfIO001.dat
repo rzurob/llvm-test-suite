@@ -1,0 +1,6 @@
+  NaN(S)   NaN(Q)    -Infinity    NaN    Inf    NaN()  
+  NaN(S)   NaN(Q)    -Infinity    NaN    Inf    NaN()  
+ +NaN(Q)   -Inf    -NaN(S)  +Infinity   -Nan    +inf  
+ +NaN(Q)   -Inf    -NaN(S)  +Infinity   -Nan    +inf  
+NaN(0)   -NaN(_abcd123)   -infINity   NaN(__)    -3 .1 4   +NaN(S) 
+NaN(0)   -NaN(_abcd123)   -infINity   NaN(__)    - 3 .1 4   +NaN(S) 

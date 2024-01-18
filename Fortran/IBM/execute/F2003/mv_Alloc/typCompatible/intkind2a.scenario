@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       intkind2a.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)intkind2a.f
+#OUTPUT= intkind2a$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  intkind2a$(OBJ)
+#OUTPUT= intkind2a$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  intkind2a$(EXE)
+#STDOUT= intkind2a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = intkind2a.out $(tcasedir)intkind2a.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

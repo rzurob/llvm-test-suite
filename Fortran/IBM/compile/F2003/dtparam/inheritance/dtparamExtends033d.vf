@@ -1,0 +1,3 @@
+"dtparamExtends033d.f", line 37.15: 1514-539 (S) The derived type base specified with the CLASS keyword must be extensible.
+** dtparamextends033d   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtparamExtends033d.f.

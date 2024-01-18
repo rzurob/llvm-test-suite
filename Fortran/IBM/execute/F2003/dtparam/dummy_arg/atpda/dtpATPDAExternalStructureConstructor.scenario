@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/dummy_arg/atpda/dtpATPDAExternalStructureConstructor.scenario
+#FEATURE   = Assumed type parameters and dummy arguments - test the length passed in
+#CREATOR   = DF Manual Update
+#DATE      = 20081015
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpATPDAExternalStructureConstructor.f
+#OUTPUT    = dtpATPDAExternalStructureConstructor$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpATPDAExternalStructureConstructor$(OBJ)
+#OUTPUT    = dtpATPDAExternalStructureConstructor$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpATPDAExternalStructureConstructor$(EXE)
+#STDOUT    = dtpATPDAExternalStructureConstructor.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpATPDAExternalStructureConstructor$(product)vf) dtpATPDAExternalStructureConstructor.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

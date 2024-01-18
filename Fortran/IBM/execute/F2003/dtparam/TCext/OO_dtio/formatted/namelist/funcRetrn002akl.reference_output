@@ -1,0 +1,9 @@
+ &W
+ WRITE=c=abc, c=def, c=ghi
+ /
+ &W
+ WRITE=i= 101 c=ABC, i= 102 c=DEF, i= 103 c=GHI
+ /
+ &W
+ WRITE=i= 201 c=JKL, i= 202 c=MNO, i= 203 c=PQR
+ /

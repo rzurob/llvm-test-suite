@@ -1,0 +1,4 @@
+"genericC460GenericName004d.f", line 36.33: 1514-658 (S) Entity myfinal is not a specific binding for type base. myfinal must not be specified in a generic binding for this type.
+** m   === End of Compilation 1 ===
+** genericc460genericname004d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericC460GenericName004d.f.

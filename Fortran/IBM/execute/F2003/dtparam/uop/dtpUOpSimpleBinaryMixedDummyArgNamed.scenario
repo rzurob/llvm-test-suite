@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpSimpleBinaryMixedDummyArgNamed.scenario
+#FEATURE   = User-Defined Operators - mixed result types, binary ops appear as dummy arguments(named)
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpSimpleBinaryMixedDummyArgNamed.f
+#OUTPUT    = dtpUOpSimpleBinaryMixedDummyArgNamed$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpSimpleBinaryMixedDummyArgNamed$(OBJ)
+#OUTPUT    = dtpUOpSimpleBinaryMixedDummyArgNamed$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpSimpleBinaryMixedDummyArgNamed$(EXE)
+#STDOUT    = dtpUOpSimpleBinaryMixedDummyArgNamed.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUOpSimpleBinaryMixedDummyArgNamed$(product)vf) dtpUOpSimpleBinaryMixedDummyArgNamed.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

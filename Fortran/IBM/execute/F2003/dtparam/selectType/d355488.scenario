@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/selectType/d355488.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20080826
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)d355488.f
+#OUTPUT= d355488$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  d355488$(OBJ)
+#OUTPUT= d355488$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  d355488$(EXE)
+#STDOUT= d355488.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = d355488.out $(tcasedir)d355488.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

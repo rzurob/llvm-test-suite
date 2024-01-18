@@ -1,0 +1,4 @@
+"ftybn092g.f", line 55.40: 1514-586 (S) Overridden binding bind_b, defined in type parent, does not have the PRIVATE attribute.  The overriding binding must not have the PRIVATE attribute.
+** mod   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file ftybn092g.f.

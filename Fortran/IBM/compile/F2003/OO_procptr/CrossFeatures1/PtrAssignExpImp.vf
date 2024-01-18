@@ -1,0 +1,5 @@
+** extfun1   === End of Compilation 1 ===
+** extfun2   === End of Compilation 2 ===
+"PtrAssignExpImp.f", line 80.15: 1515-124 (S) The procedure pointer was declared with an explicit interface.  The procedure pointer assignment target must also be declared with an explicit interface.
+** ptrassignexpimp   === End of Compilation 3 ===
+1501-511  Compilation failed for file PtrAssignExpImp.f.

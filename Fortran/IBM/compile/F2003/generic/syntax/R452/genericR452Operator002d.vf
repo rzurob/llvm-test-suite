@@ -1,0 +1,19 @@
+"genericR452Operator002d.f", line 35.19: 1515-019 (S) Syntax is incorrect.
+"genericR452Operator002d.f", line 35.30: 1515-018 (S) Incorrect character found in source at line 35 in column 30.  Hexadecimal value of character is 3F.
+"genericR452Operator002d.f", line 35.36: 1514-095 (S) Invalid statement within derived type definition.
+"genericR452Operator002d.f", line 36.9: 1515-019 (S) Syntax is incorrect.
+"genericR452Operator002d.f", line 36.29: 1514-095 (S) Invalid statement within derived type definition.
+"genericR452Operator002d.f", line 42.19: 1515-019 (S) Syntax is incorrect.
+"genericR452Operator002d.f", line 42.30: 1515-018 (S) Incorrect character found in source at line 42 in column 30.  Hexadecimal value of character is 25.
+"genericR452Operator002d.f", line 42.36: 1514-095 (S) Invalid statement within derived type definition.
+"genericR452Operator002d.f", line 43.9: 1515-019 (S) Syntax is incorrect.
+"genericR452Operator002d.f", line 43.29: 1514-095 (S) Invalid statement within derived type definition.
+"genericR452Operator002d.f", line 48.27: 1514-084 (S) Identifier a is being declared with type name base which has not been defined in a derived type definition.
+"genericR452Operator002d.f", line 49.37: 1514-084 (S) Identifier obj is being declared with type name base which has not been defined in a derived type definition.
+"genericR452Operator002d.f", line 50.37: 1514-084 (S) Identifier passobj is being declared with type name base which has not been defined in a derived type definition.
+"genericR452Operator002d.f", line 56.28: 1514-084 (S) Identifier b is being declared with type name base1 which has not been defined in a derived type definition.
+"genericR452Operator002d.f", line 57.38: 1514-084 (S) Identifier obj is being declared with type name base1 which has not been defined in a derived type definition.
+"genericR452Operator002d.f", line 58.38: 1514-084 (S) Identifier passobj is being declared with type name base1 which has not been defined in a derived type definition.
+** m   === End of Compilation 1 ===
+** genericr452operator002d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericR452Operator002d.f.

@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetnone07c.scenario
+#FEATURE	= Array constructor enhancement no type specifier BOZ + complex
+#CREATOR	= DF Manual Update
+#DATE		= 20060802
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetnone07c.f
+#OUTPUT		= acetnone07c$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetnone07c$(OBJ)
+#OUTPUT		= acetnone07c$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetnone07c$(EXE)
+#STDOUT		= acetnone07c.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

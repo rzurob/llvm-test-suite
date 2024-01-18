@@ -1,0 +1,57 @@
+ Integer:
+ Using Procedure pointer:
+ y - TYPE is Child1(4)
+ x - TYPE is Child1(4)
+ 100
+ Using subroutine call:
+ y - TYPE is Child1(4)
+ x - TYPE is Child1(4)
+ 120
+ Using INTERFACE SWITCH:
+ 40
+ 
+ Real:
+ Using Procedure pointer:
+ y - TYPE is Child2(4)
+ x - TYPE is Child2(4)
+ 110.8000031
+ Using subroutine call:
+ y - TYPE is Child2(4)
+ x - TYPE is Child2(4)
+ 126.3000031
+ Using INTERFACE SWITCH:
+ 31.00000000
+ 
+ Complex:
+ Using Procedure pointer:
+ y - TYPE is Child3(4)
+ x - TYPE is Child3(4)
+ (21.00000000,-25.00000000)
+ Using subroutine call:
+ y - TYPE is Child3(4)
+ x - TYPE is Child3(4)
+ (36.50000000,-45.00000000)
+ Using INTERFACE SWITCH:
+ (31.00000000,-40.00000000)
+ 
+ Logical:
+ Using Procedure pointer:
+ y - TYPE is Child4(4)
+ x - TYPE is Child4(4)
+ F
+ Using subroutine call:
+ y - TYPE is Child4(4)
+ x - TYPE is Child4(4)
+ F
+ Using INTERFACE SWITCH:
+ T
+ 
+ Using Type definition t5:
+ Using Procedure pointer:
+ y - TYPE is Child1(4)
+ x - TYPE is Child5(4)
+ 240
+ Using subroutine call:
+ y - TYPE is Child1(4)
+ x - TYPE is Child5(4)
+ 480

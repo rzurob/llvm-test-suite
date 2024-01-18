@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/allocEnh/misc/d307217_2.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d307217_2.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = d307217_2$(OBJ)
+#STDERR    = d307217_2.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = d307217_2.err $($(tcasedir)d307217_2$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

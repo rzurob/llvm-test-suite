@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"AssociationAlloc.f", line 102.21: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+** associationalloc   === End of Compilation 2 ===
+1501-511  Compilation failed for file AssociationAlloc.f.

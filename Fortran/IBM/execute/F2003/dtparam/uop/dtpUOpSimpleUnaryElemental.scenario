@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpSimpleUnaryElemental.scenario
+#FEATURE   = User-Defined Operators - correct unary operators are used for a given TKR (elemental)
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpSimpleUnaryElemental.f
+#OUTPUT    = dtpUOpSimpleUnaryElemental$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpSimpleUnaryElemental$(OBJ)
+#OUTPUT    = dtpUOpSimpleUnaryElemental$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpSimpleUnaryElemental$(EXE)
+#STDOUT    = dtpUOpSimpleUnaryElemental.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUOpSimpleUnaryElemental$(product)vf) dtpUOpSimpleUnaryElemental.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

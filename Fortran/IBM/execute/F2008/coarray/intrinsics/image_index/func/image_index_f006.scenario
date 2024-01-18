@@ -1,0 +1,52 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = image_index_f006.scenario
+#FEATURE  = CAF Intrinsics
+#CREATOR  = Francesco Cassullo
+#DATE     = August 2010
+#TEST_TYPE= FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_COARRAY_IMAGES<8>) $(OPT_COARRAY_DNODES<2>)
+#INPUT     = $(tcasedir)image_index_f006.f
+#OUTPUT    = image_index_f006$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_COARRAY_IMAGES<8>) $(OPT_COARRAY_DNODES<2>)
+#INPUT     = image_index_f006$(OBJ)
+#OUTPUT    = image_index_f006$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#ENVAR     = CAF_NUM_IMAGES=8
+#ENVAR     = MP_PROCS=2
+#INPUT     = image_index_f006$(EXE)
+#STDOUT    = image_index_f006.out
+#ENDCMD
+
+#CMD       = SORT
+#INPUT     = image_index_f006.out
+#STDOUT    = image_index_f006.out.sorted
+#ENDCMD
+
+#CMD       = SORT
+#INPUT     = $($(tcasedir)image_index_f006$(product)vf)
+#STDOUT    = image_index_f006.vf.sorted
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = image_index_f006.vf.sorted image_index_f006.out.sorted
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

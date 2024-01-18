@@ -1,0 +1,6 @@
+"Misc9.f", line 75.11: 1512-125 (S) A derived-type entity containing a component with the POINTER attribute must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+"Misc9.f", line 76.11: 1512-125 (S) A derived-type entity containing a component with the POINTER attribute must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+"Misc9.f", line 78.11: 1512-125 (S) A derived-type entity containing a component with the POINTER attribute must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+"Misc9.f", line 79.11: 1512-125 (S) A derived-type entity containing a component with the POINTER attribute must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+** misc9   === End of Compilation 1 ===
+1501-511  Compilation failed for file Misc9.f.

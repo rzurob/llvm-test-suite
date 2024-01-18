@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/procPtrComp/dtpPPCDummyNPassIntrImplDTKLFunDTP.scenario
+#FEATURE   = Procedure Pointers as Components - reference to nopass function, implicit interface (derived type) with intrinsic dummy args, K+L, DTP result, ref via dummy arg
+#CREATOR   = DF Manual Update
+#DATE      = 20090324
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = -qdebug=allowrpdt
+#INPUT     = $(tcasedir)dtpPPCDummyNPassIntrImplDTKLFunDTP.f
+#OUTPUT    = dtpPPCDummyNPassIntrImplDTKLFunDTP$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPPCDummyNPassIntrImplDTKLFunDTP$(OBJ)
+#OUTPUT    = dtpPPCDummyNPassIntrImplDTKLFunDTP$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPPCDummyNPassIntrImplDTKLFunDTP$(EXE)
+#STDOUT    = dtpPPCDummyNPassIntrImplDTKLFunDTP.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpPPCDummyNPassIntrImplDTKLFunDTP$(product)vf) dtpPPCDummyNPassIntrImplDTKLFunDTP.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

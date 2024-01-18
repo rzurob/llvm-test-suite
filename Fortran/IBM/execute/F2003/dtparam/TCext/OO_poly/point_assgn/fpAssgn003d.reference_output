@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"fpAssgn003d.f", line 63.14: 1516-303 (W) The pointer and target specified for the ASSOCIATED intrinsic are not type compatible or have mismatching type parameters or rank.  The value of ASSOCIATED will be FALSE.
+"fpAssgn003d.f", line 64.14: 1516-303 (W) The pointer and target specified for the ASSOCIATED intrinsic are not type compatible or have mismatching type parameters or rank.  The value of ASSOCIATED will be FALSE.
+"fpAssgn003d.f", line 66.14: 1516-303 (W) The pointer and target specified for the ASSOCIATED intrinsic are not type compatible or have mismatching type parameters or rank.  The value of ASSOCIATED will be FALSE.
+"fpAssgn003d.f", line 67.14: 1516-303 (W) The pointer and target specified for the ASSOCIATED intrinsic are not type compatible or have mismatching type parameters or rank.  The value of ASSOCIATED will be FALSE.
+** fpassgn003d   === End of Compilation 2 ===
+1501-510  Compilation successful for file fpAssgn003d.f.

@@ -1,0 +1,11 @@
+"volatileMisc04d.f", line 37.10: 1514-603 (S) Dummy argument vlist of the derived-type I/O procedure forwrite must not be specified with the VOLATILE attribute.
+"volatileMisc04d.f", line 37.10: 1514-603 (S) Dummy argument iotype of the derived-type I/O procedure forwrite must not be specified with the VOLATILE attribute.
+"volatileMisc04d.f", line 37.10: 1514-603 (S) Dummy argument iomsg of the derived-type I/O procedure forwrite must not be specified with the VOLATILE attribute.
+"volatileMisc04d.f", line 37.10: 1514-603 (S) Dummy argument iostat of the derived-type I/O procedure forwrite must not be specified with the VOLATILE attribute.
+"volatileMisc04d.f", line 37.10: 1514-603 (S) Dummy argument unit of the derived-type I/O procedure forwrite must not be specified with the VOLATILE attribute.
+"volatileMisc04d.f", line 39.52: 1518-208 (L) The entity dtv is not permitted to have both the INTENT(IN) attribute and the VOLATILE attribute by the Fortran 2003 standard.
+"volatileMisc04d.f", line 40.46: 1518-208 (L) The entity unit is not permitted to have both the INTENT(IN) attribute and the VOLATILE attribute by the Fortran 2003 standard.
+"volatileMisc04d.f", line 41.51: 1518-208 (L) The entity iotype is not permitted to have both the INTENT(IN) attribute and the VOLATILE attribute by the Fortran 2003 standard.
+"volatileMisc04d.f", line 42.46: 1518-208 (L) The entity vlist is not permitted to have both the INTENT(IN) attribute and the VOLATILE attribute by the Fortran 2003 standard.
+** m   === End of Compilation 1 ===
+1501-511  Compilation failed for file volatileMisc04d.f.

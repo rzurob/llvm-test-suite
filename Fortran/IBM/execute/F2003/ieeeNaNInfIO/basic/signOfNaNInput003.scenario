@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = signOfNaNInput003.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 20, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)signOfNaNInput003.f
+#OUTPUT   =  signOfNaNInput003$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  signOfNaNInput003$(OBJ)
+#OUTPUT   =  signOfNaNInput003$(EXE)
+#ENDCMD
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)signOfNaNInput003.dat
+#OUTPUT   = signOfNaNInput003.dat
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  signOfNaNInput003$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

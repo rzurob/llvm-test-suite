@@ -1,0 +1,39 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME	 = cmdline/Misc/fxclms17.scenario
+#FEATURE = cmdline tests - regression run bucket
+#CREATOR = SH Manual conversion
+#DATE    = 20041206
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+CmdLine=fxclms17 \\ \| |fxclms17 \\ \|;fxclms17 \\ \| |fxclms17 \\ \|
+#ENDDEFS
+#INVALID_PRODUCT = bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)fxclms17.f
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT = fxclms17$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = fxclms17$(OBJ)
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT = fxclms17$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = fxclms17$(EXE)
+#OPTS   = \\ \| |fxclms17 \\ \|;fxclms17 \\ \| |fxclms17 \\ \|
+#STDOUT = fxclms17.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

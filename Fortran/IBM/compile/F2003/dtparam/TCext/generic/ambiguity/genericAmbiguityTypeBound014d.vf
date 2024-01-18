@@ -1,0 +1,8 @@
+"genericAmbiguityTypeBound014d.f", line 45.38: 1514-699 (S) Procedure "printb" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "printa", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** genericname   === End of Compilation 1 ===
+"genericAmbiguityTypeBound014d.f", line 73.42: 1514-699 (S) Procedure "addb" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "adda", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** binoperator   === End of Compilation 2 ===
+"genericAmbiguityTypeBound014d.f", line 104.46: 1514-699 (S) Procedure "assgn2" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "assgn1", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** assignment   === End of Compilation 3 ===
+** genericambiguitytypebound014d   === End of Compilation 4 ===
+1501-511  Compilation failed for file genericAmbiguityTypeBound014d.f.

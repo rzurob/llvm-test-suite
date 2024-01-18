@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint60cshift.scenario
+#FEATURE	= Array constructor enhancement - array construction intrinsics
+#CREATOR	= DF Manual Update
+#DATE		= 20061124
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint60cshift.f
+#OUTPUT		= acetint60cshift$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint60cshift$(OBJ)
+#OUTPUT		= acetint60cshift$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint60cshift$(EXE)
+#STDOUT		= acetint60cshift.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -r1e-5
+#INPUT		= $($(tcasedir)acetint60cshift$(product)vf) acetint60cshift.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

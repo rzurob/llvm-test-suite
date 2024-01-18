@@ -1,0 +1,8 @@
+ -Inf (NaN(Q),Inf) NaN(Q) (-Inf,NaN(Q)) Inf (NaN(Q),NaN(Q))
+ Inf (Inf,-Inf) NaN(S) (NaN(Q),NaN(Q)) NaN(Q) (NaN(Q),NaN(S))
+ NaN(S) (Inf,NaN(Q)) -Inf (NaN(Q),NaN(Q)) Inf (Inf,-Inf)
+ NaN(Q) (Inf,Inf) Inf (NaN(Q),NaN(Q)) NaN(Q) (NaN(Q),NaN(Q))
+ NaN(Q) (NaN(S),Inf) Inf (NaN(S),NaN(S)) NaN(Q) (NaN(S),NaN(S))
+ NaN(Q) (Inf,Inf) NaN(Q) (Inf,Inf) Inf (NaN(Q),NaN(Q))
+ NaN(S) (NaN(Q),NaN(S)) NaN(Q) (Inf,Inf) -Inf (NaN(Q),NaN(Q))
+ NaN(Q) (Inf,NaN(Q)) NaN(Q) (NaN(Q),NaN(Q)) Inf (NaN(Q),NaN(Q))

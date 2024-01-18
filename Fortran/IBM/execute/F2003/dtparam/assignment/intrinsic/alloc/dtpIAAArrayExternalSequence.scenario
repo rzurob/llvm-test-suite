@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/assignment/intrinsic/alloc/dtpIAAArrayExternalSequence.scenario
+#FEATURE   = Intrinsic Assignment with Allocation - allocate sequence DTP array (container) via intrinsic assignment (in external subroutine)
+#CREATOR   = DF Manual Update
+#DATE      = 20090522
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAAArrayExternalSequence.f
+#OUTPUT    = dtpIAAArrayExternalSequence$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAAArrayExternalSequence$(OBJ)
+#OUTPUT    = dtpIAAArrayExternalSequence$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAAArrayExternalSequence$(EXE)
+#STDOUT    = dtpIAAArrayExternalSequence.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpIAAArrayExternalSequence$(product)vf) dtpIAAArrayExternalSequence.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

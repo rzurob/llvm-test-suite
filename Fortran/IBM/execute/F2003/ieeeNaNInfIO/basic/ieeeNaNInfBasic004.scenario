@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = ieeeNaNInfBasic004.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 7, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)ieeeNaNInfBasic004.f
+#OUTPUT   =  ieeeNaNInfBasic004$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  ieeeNaNInfBasic004$(OBJ)
+#OUTPUT   =  ieeeNaNInfBasic004$(EXE)
+#ENDCMD
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)real_nan_s.dat
+#OUTPUT   = ./
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  ieeeNaNInfBasic004$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

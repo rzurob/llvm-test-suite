@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpBinaryElementalTKRMixInterface.scenario
+#FEATURE   = User-Defined Operators - correct binary operators are used for a given TKR (mixed elemental and non-elemental, generic interface)
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpBinaryElementalTKRMixInterface.f
+#OUTPUT    = dtpUOpBinaryElementalTKRMixInterface$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpBinaryElementalTKRMixInterface$(OBJ)
+#OUTPUT    = dtpUOpBinaryElementalTKRMixInterface$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpBinaryElementalTKRMixInterface$(EXE)
+#STDOUT    = dtpUOpBinaryElementalTKRMixInterface.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUOpBinaryElementalTKRMixInterface$(product)vf) dtpUOpBinaryElementalTKRMixInterface.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

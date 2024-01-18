@@ -1,0 +1,10 @@
+** m   === End of Compilation 1 ===
+"dtParamTypeDecUseOfSpecExpr_d.f", line 57.25: 1514-753 (S) Automatic object t1 is not permitted in the specification part of a module or main program.
+"dtParamTypeDecUseOfSpecExpr_d.f", line 58.25: 1514-239 (S) Arrays with non-constant bounds are not permitted in the scope of a module.
+"dtParamTypeDecUseOfSpecExpr_d.f", line 59.25: 1514-253 (S) Declaration of identifier c1 is invalid. Check the declaration and the scope where the explicit or implicit declaration occurs.
+** m1   === End of Compilation 2 ===
+"dtParamTypeDecUseOfSpecExpr_d.f", line 66.25: 1514-753 (S) Automatic object t3 is not permitted in the specification part of a module or main program.
+"dtParamTypeDecUseOfSpecExpr_d.f", line 67.25: 1514-130 (S) Variable t4 was declared as array of type ADJUSTABLE.  This type of array is not permitted in a main program.
+"dtParamTypeDecUseOfSpecExpr_d.f", line 68.25: 1514-753 (S) Automatic object c2 is not permitted in the specification part of a module or main program.
+** dtparamtypedecuseofspecexpr_d   === End of Compilation 3 ===
+1501-511  Compilation failed for file dtParamTypeDecUseOfSpecExpr_d.f.

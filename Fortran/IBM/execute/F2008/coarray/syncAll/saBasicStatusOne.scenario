@@ -1,0 +1,50 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /syncAll/saBasicStatusOne.scenario
+#FEATURE   = sync all - basic test of progress + status - one image
+#CREATOR   = DF
+#DATE      = 20100727
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+
+! Just like saBasicStatus, but limited to a single image
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_COARRAY_IMAGES<1>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = $(tcasedir)saBasicStatus.f
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_COARRAY_IMAGES<1>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = saBasicStatus$(OBJ)
+#OUTPUT    = saBasicStatus$(EXE)
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD       = RUN
+	#ENVAR     = CAF_NUM_IMAGES=1
+	#ENVAR     = MP_PROCS=1
+	#INPUT     = saBasicStatus$(EXE)
+	#STDOUT    = count
+	#ENDCMD
+	
+	#CMD       = CAT
+	#OPTS      = o??? count
+	#STDOUT    = saBasicStatus.out
+	#ENDCMD
+	
+	#CMD       = AWK
+	#OPTS      = -f $($(tcasedir)saBasicStatus$(product)awk)
+	#STDIN     = saBasicStatus.out
+	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

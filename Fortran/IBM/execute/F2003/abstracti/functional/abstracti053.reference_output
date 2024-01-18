@@ -1,0 +1,32 @@
+ Subroutine sub
+ pf pointer assoc. = F
+ Subroutine two
+ jj = 12
+ c8 = 4 4 4
+ Subroutine my_tbps2
+ jj = 21
+ c8 = 8 9 10
+ Subroutine sub
+ pf pointer assoc. = T
+ Subroutine two
+ Subroutine one
+ Subroutine one
+ c4 = 3 4 5
+ pf associated, i = 30
+ Subroutine my_tbps1
+ kk = 6
+ c4 = 2 2 2
+ Subroutine two
+ jj = 12
+ c8 = 4 4 4
+ Subroutine my_tbps2
+ jj = 21
+ c8 = 8 9 10
+ Subroutine two
+ Subroutine one
+ ii = 9
+ c4 = 3 4 5
+ optional arg. is present, i = 21
+ Subroutine my_tbps1
+ kk = 9
+ c4 = 3 4 5

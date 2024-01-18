@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/struct_constr/fconstr043.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/*
+#DATE      = 20070720
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = -qdebug=allowrpdt
+#INPUT     = $(tcasedir)fconstr043.f
+#OUTPUT    = fconstr043$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fconstr043$(OBJ)
+#OUTPUT    = fconstr043$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fconstr043$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

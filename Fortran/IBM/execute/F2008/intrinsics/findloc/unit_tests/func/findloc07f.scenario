@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      =
+#FEATURE   =
+#CREATOR   = Maryam Moghadas
+#DATE      = 20130527
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)findloc07f.f
+#OUTPUT   =  findloc07f$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  findloc07f$(OBJ)
+#OUTPUT   =  findloc07f$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  findloc07f$(EXE)
+#STDOUT   =  findloc07f.out
+#ENDCMD
+
+#CMD      = DIFF
+#OPTS     = -b
+#INPUT    = findloc07f.out $(tcasedir)findloc07f.vf
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

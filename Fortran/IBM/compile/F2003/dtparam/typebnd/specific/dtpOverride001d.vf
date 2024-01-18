@@ -1,0 +1,4 @@
+"dtpOverride001d.f", line 43.22: 1514-781 (S) The kind type parameters of dummy argument b1 of overriding binding p must have the same values as the corresponding kind type parameters of b1 in overridden binding p in type base.
+** m   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtpOverride001d.f.

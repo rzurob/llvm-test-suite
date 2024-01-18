@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpSimpleUnaryTKRInterface.scenario
+#FEATURE   = User-Defined Operators - correct unary operators are used for a given TKR (generic interface)
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpSimpleUnaryTKRInterface.f
+#OUTPUT    = dtpUOpSimpleUnaryTKRInterface$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpSimpleUnaryTKRInterface$(OBJ)
+#OUTPUT    = dtpUOpSimpleUnaryTKRInterface$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpSimpleUnaryTKRInterface$(EXE)
+#STDOUT    = dtpUOpSimpleUnaryTKRInterface.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUOpSimpleUnaryTKRInterface$(product)vf) dtpUOpSimpleUnaryTKRInterface.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

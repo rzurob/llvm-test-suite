@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/procPtrComp/dtpPPCLocalNPassDTPInterfaceLSub.scenario
+#FEATURE   = Procedure Pointers as Components - reference to subroutine without passed-object dummy argument, DTP arg w/ len parameter
+#CREATOR   = DF Manual Update
+#DATE      = 20090323
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPPCLocalNPassDTPInterfaceLSub.f
+#OUTPUT    = dtpPPCLocalNPassDTPInterfaceLSub$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPPCLocalNPassDTPInterfaceLSub$(OBJ)
+#OUTPUT    = dtpPPCLocalNPassDTPInterfaceLSub$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPPCLocalNPassDTPInterfaceLSub$(EXE)
+#STDOUT    = dtpPPCLocalNPassDTPInterfaceLSub.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpPPCLocalNPassDTPInterfaceLSub$(product)vf) dtpPPCLocalNPassDTPInterfaceLSub.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

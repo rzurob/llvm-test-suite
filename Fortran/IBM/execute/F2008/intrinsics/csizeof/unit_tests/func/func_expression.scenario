@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2008/intrinsics/csizeof/unit_tests/func/func_expression.scenario
+#FEATURE = F2008 ISO_C_BINDING - C_SIZEOF
+#CREATOR = Paul Liu
+#DATE    = 20101226
+#TEST_TYPE=FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)func_expression.f
+#OUTPUT    = func_expression$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = func_expression$(OBJ)
+#OUTPUT    = func_expression$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = func_expression$(EXE)
+#OUTPUT    = func_expression.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/abstracti/abstracti008l.scenario
+#FEATURE	= Abstract Interface Tests + derived type parameters
+#CREATOR	= automated conversion script
+#DATE		= 20071015
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)abstracti008l.f
+#OPTS = -qxlf2003=dynamicacval
+#OUTPUT		= abstracti008l$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= abstracti008l$(OBJ)
+#OUTPUT		= abstracti008l$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= abstracti008l$(EXE)
+#STDOUT		= abstracti008l.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)abstracti008l$(product)vf) abstracti008l.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

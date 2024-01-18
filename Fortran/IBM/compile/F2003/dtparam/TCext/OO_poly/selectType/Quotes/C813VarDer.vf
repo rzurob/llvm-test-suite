@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"C813VarDer.f", line 91.24: 1511-101 (S) The selector in the SELECT TYPE statement is not polymorphic.
+"C813VarDer.f", line 100.28: 1511-101 (S) The selector in the SELECT TYPE statement is not polymorphic.
+"C813VarDer.f", line 109.24: 1511-101 (S) The selector in the SELECT TYPE statement is not polymorphic.
+** c813varder   === End of Compilation 2 ===
+1501-511  Compilation failed for file C813VarDer.f.

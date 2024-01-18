@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /syncAll/saModuleNIntern.scenario
+#FEATURE   = CAF SYNC ALL - synchronisation from module procedures and internal procedures
+#CREATOR   = DF
+#DATE      = 20100727
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)saModuleNIntern.f
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = saModuleNIntern$(OBJ)
+#OUTPUT    = saModuleNIntern$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = saModuleNIntern$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

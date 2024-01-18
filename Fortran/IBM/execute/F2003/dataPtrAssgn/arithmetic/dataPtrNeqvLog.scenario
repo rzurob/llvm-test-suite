@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrNeqvLog.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrNeqvLog.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrNeqvLog$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrNeqvLog$(OBJ)
+#OUTPUT    = dataPtrNeqvLog$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrNeqvLog$(EXE)
+#STDOUT    = dataPtrNeqvLog.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrNeqvLog.out $($(tcasedir)dataPtrNeqvLog$(product)vf)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

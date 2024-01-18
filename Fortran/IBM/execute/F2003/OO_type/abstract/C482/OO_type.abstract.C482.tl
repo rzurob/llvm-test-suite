@@ -1,0 +1,6 @@
+! automatically generated
+structConstr001.scenario
+structConstr002.scenario
+structConstr003.scenario
+structConstr004.scenario
+structConstr005.scenario

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_access/specific/assignment/csExternal
+#FEATURE        = CAF coarray access (specific) - assignment - in external procedure, assign constants and variables of various intrinsic types to coarray variables and assign coarray variables to variables, all of which are defined in the external procedure
+#CREATOR        = DF
+#DATE           = 2010-10-04
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)csExternal.f
+#OUTPUT = csExternal$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = csExternal$(OBJ)
+#OUTPUT = csExternal$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = csExternal$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

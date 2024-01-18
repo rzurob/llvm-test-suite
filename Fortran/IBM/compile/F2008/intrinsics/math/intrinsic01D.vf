@@ -1,0 +1,38 @@
+"intrinsic01D.f", line 50.19: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "acosh".
+"intrinsic01D.f", line 51.19: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "acosh".
+"intrinsic01D.f", line 52.19: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "acosh".
+"intrinsic01D.f", line 53.19: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "acosh".
+"intrinsic01D.f", line 54.19: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "acosh".
+"intrinsic01D.f", line 55.19: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "acosh".
+"intrinsic01D.f", line 56.19: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "acosh".
+"intrinsic01D.f", line 57.13: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "acosh".
+"intrinsic01D.f", line 61.19: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "asinh".
+"intrinsic01D.f", line 62.19: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "asinh".
+"intrinsic01D.f", line 63.19: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "asinh".
+"intrinsic01D.f", line 64.19: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "asinh".
+"intrinsic01D.f", line 65.19: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "asinh".
+"intrinsic01D.f", line 66.19: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "asinh".
+"intrinsic01D.f", line 67.19: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "asinh".
+"intrinsic01D.f", line 68.13: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "asinh".
+"intrinsic01D.f", line 72.19: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "atanh".
+"intrinsic01D.f", line 73.19: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "atanh".
+"intrinsic01D.f", line 74.19: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "atanh".
+"intrinsic01D.f", line 75.19: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "atanh".
+"intrinsic01D.f", line 76.19: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "atanh".
+"intrinsic01D.f", line 77.19: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "atanh".
+"intrinsic01D.f", line 78.19: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "atanh".
+"intrinsic01D.f", line 79.13: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "atanh".
+"intrinsic01D.f", line 83.18: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "atan".
+"intrinsic01D.f", line 84.18: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "atan".
+"intrinsic01D.f", line 85.26: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "atan".
+"intrinsic01D.f", line 89.23: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "log_gamma".
+"intrinsic01D.f", line 90.23: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "log_gamma".
+"intrinsic01D.f", line 91.23: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "log_gamma".
+"intrinsic01D.f", line 92.23: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "log_gamma".
+"intrinsic01D.f", line 93.23: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "log_gamma".
+"intrinsic01D.f", line 94.23: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "log_gamma".
+"intrinsic01D.f", line 95.23: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "log_gamma".
+"intrinsic01D.f", line 96.13: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "log_gamma".
+"intrinsic01D.f", line 98.23: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "log_gamma".
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file intrinsic01D.f.

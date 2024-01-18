@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/mix/interface/fdtio507a6.f
+#FEATURE = OO_dtio
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fdtio507a6.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fdtio507a6$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fdtio507a6$(OBJ)
+#OUTPUT    = fdtio507a6$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fdtio507a6$(EXE)
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = TEST
+#OPTS      = -s
+#INPUT     = fdtio507a6.data
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

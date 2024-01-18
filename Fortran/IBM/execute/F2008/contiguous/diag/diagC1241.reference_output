@@ -1,0 +1,11 @@
+** mod   === End of Compilation 1 ===
+"diagC1241.f", line 53.16: 1516-336 (S) Dummy argument arg of procedure sub was declared with the POINTER and CONTIGUOUS attributes.  The corresponding actual argument must be simply contiguous.
+"diagC1241.f", line 56.16: 1516-336 (S) Dummy argument arg of procedure sub was declared with the POINTER and CONTIGUOUS attributes.  The corresponding actual argument must be simply contiguous.
+"diagC1241.f", line 59.16: 1516-336 (S) Dummy argument arg of procedure sub was declared with the POINTER and CONTIGUOUS attributes.  The corresponding actual argument must be simply contiguous.
+"diagC1241.f", line 62.16: 1516-336 (S) Dummy argument arg of procedure sub was declared with the POINTER and CONTIGUOUS attributes.  The corresponding actual argument must be simply contiguous.
+"diagC1241.f", line 65.16: 1516-336 (S) Dummy argument arg of procedure sub was declared with the POINTER and CONTIGUOUS attributes.  The corresponding actual argument must be simply contiguous.
+"diagC1241.f", line 68.16: 1516-336 (S) Dummy argument arg of procedure sub was declared with the POINTER and CONTIGUOUS attributes.  The corresponding actual argument must be simply contiguous.
+"diagC1241.f", line 71.16: 1516-336 (S) Dummy argument arg of procedure sub was declared with the POINTER and CONTIGUOUS attributes.  The corresponding actual argument must be simply contiguous.
+"diagC1241.f", line 74.16: 1516-336 (S) Dummy argument arg of procedure sub was declared with the POINTER and CONTIGUOUS attributes.  The corresponding actual argument must be simply contiguous.
+** diagc1241   === End of Compilation 2 ===
+1501-511  Compilation failed for file diagC1241.f.

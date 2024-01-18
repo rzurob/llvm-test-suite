@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/FuncResult/FunctionResult09_workaround.scenario
+#FEATURE   = DTP - Function Result
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20090326
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)FunctionResult09_workaround.f
+#OUTPUT    = FunctionResult09_workaround$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = FunctionResult09_workaround$(OBJ)
+#OUTPUT    = FunctionResult09_workaround$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = FunctionResult09_workaround$(EXE)
+#STDOUT    = FunctionResult09_workaround.out
+#ENDCMD
+
+#CMD       = DIFF
+#OPTS      = -b
+#INPUT     = $($(tcasedir)FunctionResult09_workaround$(product)vf) FunctionResult09_workaround.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

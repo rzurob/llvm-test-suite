@@ -1,0 +1,5 @@
+         36 |character*1, bind(c)
+            ..............a......
+a - "bcdachs2.f", line 36.14: 1514-239 (S) Arrays with non-constant bounds are not permitted in the scope of a module.
+** mod   === End of Compilation 1 ===
+1501-511  Compilation failed for file bcdachs2.f.

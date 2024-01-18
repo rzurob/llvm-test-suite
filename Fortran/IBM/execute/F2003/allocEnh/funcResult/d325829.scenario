@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/allocEnh/funcResult/d325829.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d325829.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = d325829$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d325829$(OBJ)
+#OUTPUT    = d325829$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d325829$(EXE)
+#STDOUT    = d325829.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = d325829.out $($(tcasedir)d325829$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

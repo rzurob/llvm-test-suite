@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/mxminAll/con/maxMin/mxminConform02d.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F2003_COMPILE
+#INPUT     = $(tcasedir)mxminConform02d.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<2003std>) $(OPT_ENABLE_MSG_NUM<1518-317>)
+#OUTPUT    = mxminConform02d$(OBJ)
+#STDERR    = mxminConform02d.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)mxminConform02d$(product)vf) mxminConform02d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

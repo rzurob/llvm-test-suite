@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetnone07d.scenario
+#FEATURE	= Array constructor enhancement, BOZ nonstandard
+#CREATOR	= DF Manual Update
+#DATE		= 20060802
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetnone07.f
+                  ! variations with $(OPT_OPTIMIZE_FOR_SMP) add a spurious error message (1518-317) we can ignore:
+#OPTS		= $(OPT_SET_LANG_LEVEL<2003std>) $(OPT_ENABLE_MSG_NUM<1518-317>)
+#OUTPUT		= acetnone07$(OBJ)
+#STDERR		= acetnone07d.err
+#VALIDRCS	= $(RC_ANY)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $(tcasedir)acetnone07d.vf acetnone07d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

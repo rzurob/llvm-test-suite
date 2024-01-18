@@ -1,0 +1,57 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/coarray/stop/func/stop_f006.scenario
+#FEATURE    = CAF: STOP statement (feature #351605.31)
+#CREATOR    = Grigor Nikolov
+#DATE       = 20101019
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#OPTS       = $(OPT_NOCOARRAY)
+#INPUT      = $(tcasedir)stop_novalue_nocaf.f
+#OUTPUT     = stop_novalue_nocaf$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#OPTS       = $(OPT_NOCOARRAY)
+#INPUT      = stop_novalue_nocaf$(OBJ)
+#OUTPUT     = stop_novalue_nocaf$(EXE)
+#ENDCMD
+
+#CMD        = RUN
+#INPUT      = stop_novalue_nocaf$(EXE)
+#STDOUT     = stop_novalue_nocaf.out
+#STDERR     = stop_novalue_nocaf.out
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "Stop with no value set"
+#INPUT      = stop_novalue_nocaf.out
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "STOP"
+#INPUT      = stop_novalue_nocaf.out
+#VALIDRCS   = 1
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "FAILURE if this message"
+#INPUT      = stop_novalue_nocaf.out
+#VALIDRCS   = 1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

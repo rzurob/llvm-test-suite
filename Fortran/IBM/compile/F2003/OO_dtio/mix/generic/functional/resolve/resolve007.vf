@@ -1,0 +1,13 @@
+** m   === End of Compilation 1 ===
+"resolve007.f", line 115.6: 1514-699 (S) Procedure "writebaseext" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "writec", present and type incompatible, present with different kind type parameters, or present with a different rank.
+"resolve007.f", line 127.6: 1514-699 (S) Procedure "readbaseext" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "readc", present and type incompatible, present with different kind type parameters, or present with a different rank.
+"resolve007.f", line 148.57: 1512-138 (S) A polymorphic entity must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+"resolve007.f", line 154.57: 1512-138 (S) A polymorphic entity must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+"resolve007.f", line 166.57: 1512-138 (S) A polymorphic entity must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+"resolve007.f", line 179.56: 1512-138 (S) A polymorphic entity must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+"resolve007.f", line 187.56: 1512-138 (S) A polymorphic entity must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+"resolve007.f", line 207.56: 1512-138 (S) A polymorphic entity must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+** resolve007   === End of Compilation 2 ===
+** writebaseext   === End of Compilation 3 ===
+** readbaseext   === End of Compilation 4 ===
+1501-511  Compilation failed for file resolve007.f.

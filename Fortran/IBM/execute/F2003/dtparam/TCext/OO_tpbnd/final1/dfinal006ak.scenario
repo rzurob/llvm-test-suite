@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2003/dtparam/TCext/OO_tpbnd/final1/dfinal006ak.scenario
+#FEATURE = OO_tpbnd tests - regression run bucket + derived type parameters
+#CREATOR = automated conversion script
+#DATE    = 20071112
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dfinal006ak.f
+#OUTPUT    = dfinal006ak$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     =  dfinal006ak$(OBJ)
+#OUTPUT    = dfinal006ak$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dfinal006ak$(EXE)
+#STDOUT    = dfinal006ak.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dfinal006ak$(product)vf) dfinal006ak.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

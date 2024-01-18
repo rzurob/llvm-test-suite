@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"fdtioC936_001d2.f", line 65.20: 1514-539 (S) The derived type btype specified with the CLASS keyword must be extensible.
+** fdtioc936_001d2   === End of Compilation 2 ===
+1501-511  Compilation failed for file fdtioC936_001d2.f.

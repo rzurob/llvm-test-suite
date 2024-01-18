@@ -1,0 +1,3 @@
+hostassoc01.scenario
+hostassoc02.scenario
+hostassoc03.scenario

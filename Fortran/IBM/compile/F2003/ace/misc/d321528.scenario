@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/../misc/d321528.scenario
+#FEATURE	= Array constructor enhancement, Defect 321528: "F2003: ICE: Array constructor with boz literal"
+#CREATOR	= DF Manual Update
+#DATE		= 20061006
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)d321528.f
+#OUTPUT		= d321528$(OBJ)
+#STDERR		= d321528.stderr
+#VALIDRCS       = $(RC_COMP_S)
+#ENDCMD
+
+#CMD            = XLDIFF
+#INPUT          = $($(tcasedir)d321528$(product)vf) d321528.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

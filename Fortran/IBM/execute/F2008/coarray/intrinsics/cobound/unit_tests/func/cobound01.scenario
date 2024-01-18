@@ -1,0 +1,47 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = cobound01.scenario
+#FEATURE    = Cobound inquiry intrinsics
+#CREATOR    = Bardia Mahjour
+#DATE       = August 2010
+#TEST_TYPE  = unit test
+#ENDDOC
+
+! Scenario Environment Tags
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)cobound01.f
+#OUTPUT    = cobound01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = cobound01$(OBJ)
+#OUTPUT    = cobound01$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = cobound01$(EXE)
+#STDOUT    = cobound01.out
+#ENDCMD
+
+#CMD	   = DIFF
+#INPUT     = cobound01.out $($(tcasedir)cobound01$(product)vf)
+#OPTS      =
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

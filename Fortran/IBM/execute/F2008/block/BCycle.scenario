@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BCycle.scenario
+#FEATURE   = allowed operations
+#CREATOR   = DF
+#DATE      = 2010-11-15
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = F_COMPILE
+#INPUT    = $(tcasedir)BCycle.f
+#OUTPUT   = BCycle$(OBJ)
+#STDERR   = BCycle.err
+#ENDCMD
+
+! Make sure there are no syntax errors:
+#CMD      = XLDIFF
+#INPUT    = $($(tcasedir)BCycle$(product)vf) BCycle.err
+#ENDCMD
+
+#CMD      = F_LINK
+#INPUT    = BCycle$(OBJ)
+#OUTPUT   = BCycle$(EXE)
+#ENDCMD
+
+#CMD      = RUN
+#INPUT    = BCycle$(EXE)
+#STDOUT   = BCycle.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

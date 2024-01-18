@@ -1,0 +1,6 @@
+ &NML1
+ B1=a= ibm , B2=a=ibm b= 888
+ /
+ &NML2
+ B2=a=ibm b= 888 c=   T
+ /

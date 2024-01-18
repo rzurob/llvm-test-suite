@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/dummy_arg/atpda/dtpATPDAWhich.scenario
+#FEATURE   = Assumed type parameters and dummy arguments - which argument is assumed-type parameter
+#CREATOR   = DF Manual Update
+#DATE      = 20081015
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpATPDAWhich.f
+#OUTPUT    = dtpATPDAWhich$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpATPDAWhich$(OBJ)
+#OUTPUT    = dtpATPDAWhich$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpATPDAWhich$(EXE)
+#STDOUT    = dtpATPDAWhich.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpATPDAWhich$(product)vf) dtpATPDAWhich.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

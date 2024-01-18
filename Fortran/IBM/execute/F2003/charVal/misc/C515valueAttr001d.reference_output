@@ -1,0 +1,7 @@
+"C515valueAttr001d.f", line 52.34: 1516-173 (E) The VALUE, INTENT and OPTIONAL attributes may be specified only for dummy arguments.  The attribute is ignored.
+"C515valueAttr001d.f", line 54.11: 1516-173 (E) The VALUE, INTENT and OPTIONAL attributes may be specified only for dummy arguments.  The attribute is ignored.
+** c515valueattr001d   === End of Compilation 1 ===
+"C515valueAttr001d.f", line 71.34: 1516-173 (E) The VALUE, INTENT and OPTIONAL attributes may be specified only for dummy arguments.  The attribute is ignored.
+"C515valueAttr001d.f", line 73.11: 1516-173 (E) The VALUE, INTENT and OPTIONAL attributes may be specified only for dummy arguments.  The attribute is ignored.
+** gosub   === End of Compilation 2 ===
+1501-510  Compilation successful for file C515valueAttr001d.f.

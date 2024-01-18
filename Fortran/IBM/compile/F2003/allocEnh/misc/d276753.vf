@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"d276753.f", line 52.11: 1516-044 (S) A conversion from type seq1 is not permitted.
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file d276753.f.

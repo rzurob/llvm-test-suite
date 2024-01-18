@@ -1,0 +1,47 @@
+!
+!  Automatically Generated .tl file
+!  Bucket:      F2003/dtparam
+!  Sub-Bucket:  TCext/dataPtrAssgn/intrinsic
+!
+dataPtrAll.scenario
+dataPtrCshiftChar.scenario
+dataPtrCshiftCmplx.scenario
+dataPtrCshiftDT.scenario
+dataPtrDotProduct.scenario
+dataPtrEoshiftChar.scenario
+dataPtrEoshiftDT.scenario
+dataPtrMatmulCmplx.scenario
+dataPtrMatmulDbld.scenario
+dataPtrMatmulIntReal.scenario
+dataPtrMaxlocInt.scenario
+dataPtrMaxlocReal.scenario
+dataPtrMaxvalReal.scenario
+dataPtrMergeDT.scenario
+dataPtrMergeInt2Log2.scenario
+dataPtrMergeReal.scenario
+dataPtrMinlocChar.scenario
+dataPtrMinvalChar.scenario
+dataPtrMinvalInt.scenario
+dataPtrMoveAlloc.scenario
+dataPtrMoveAlloc1.scenario
+dataPtrMoveAlloc2.scenario
+dataPtrNullDT.scenario
+dataPtrPackDT.scenario
+dataPtrPresentDT.scenario
+dataPtrProductInt.scenario
+dataPtrProductReal.scenario
+dataPtrReshapeChar.scenario
+dataPtrReshapeDT.scenario
+dataPtrSpreadDT.scenario
+dataPtrSpreadDbleCmplxPrec.scenario
+dataPtrSpreadInt.scenario
+dataPtrSpreadReal.scenario
+dataPtrSqrt.scenario
+dataPtrSumInt1.scenario
+dataPtrTransferDT.scenario
+dataPtrTransposeByte.scenario
+dataPtrTransposeDT.scenario
+dataPtrUnpackDT.scenario
+dataPtrUnpackDblPrec.scenario
+dataPtrUnpackInt.scenario
+dataPtrUnpackRealLog.scenario

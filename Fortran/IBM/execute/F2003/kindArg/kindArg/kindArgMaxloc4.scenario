@@ -1,0 +1,36 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       kindArgMaxloc4.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       06-26-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)kindArgMaxloc4.f
+#OUTPUT= kindArgMaxloc4$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  kindArgMaxloc4$(OBJ)
+#OUTPUT= kindArgMaxloc4$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  kindArgMaxloc4$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

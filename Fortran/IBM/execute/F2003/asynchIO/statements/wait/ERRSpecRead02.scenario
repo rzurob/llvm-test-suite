@@ -1,0 +1,48 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/wait/ERRSpecRead02.scenario
+#FEATURE	= Asynchronous I/O -- WAIT() Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060331
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#IF on (linuxle)
+    XLFRTEOPTS=$(CONVERT_UFMT_IO_ENDIANESS<922>)
+#ENDIF
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)ERRSpecRead02.dat fort.922
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)ERRSpecRead02.f
+#OUTPUT		= ERRSpecRead02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= ERRSpecRead02$(OBJ)
+#OUTPUT		= ERRSpecRead02$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= ERRSpecRead02$(EXE)
+#STDOUT		= ERRSpecRead02.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)ERRSpecRead02$(product)vf) ERRSpecRead02.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

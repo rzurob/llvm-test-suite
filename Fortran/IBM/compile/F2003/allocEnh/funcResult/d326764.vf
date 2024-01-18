@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"d326764.f", line 66.22: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+** _main   === End of Compilation 2 ===
+** reverseorder   === End of Compilation 3 ===
+1501-511  Compilation failed for file d326764.f.

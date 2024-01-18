@@ -1,0 +1,4 @@
+"genericC459Operator004d.f", line 38.9: 1514-703 (S) All generic bindings with generic specification OPERATOR(.myadd.) in type base must have the same accessibility.
+** m   === End of Compilation 1 ===
+** genericc459operator004d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericC459Operator004d.f.

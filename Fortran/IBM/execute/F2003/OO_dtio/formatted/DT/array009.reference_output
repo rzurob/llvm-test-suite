@@ -1,0 +1,24 @@
+
+ iotype: DT_u1-1 v_list: 1
+ component u allocated
+ 555
+ 101
+ iotype: DT_u1-2 v_list: -2
+ component u allocated
+ GHI
+ 102
+ iotype: DT_u1-3 v_list: 3
+ component u allocated
+ 201
+ 103
+
+ iotype: DT_u1 v_list: -1 -2 -3
+ component u allocated
+ 555
+ 101
+ iotype: DT_u1 v_list: -1 -2 -3
+ 102
+ iotype: DT v_list:
+ component u allocated
+ 201
+ 103

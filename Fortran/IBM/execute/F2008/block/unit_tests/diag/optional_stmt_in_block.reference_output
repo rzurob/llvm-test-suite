@@ -1,0 +1,3 @@
+"optional_stmt_in_block.f", line 7.8: 1516-299 (S) OPTIONAL statement must not appear within the BLOCK construct.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file optional_stmt_in_block.f.

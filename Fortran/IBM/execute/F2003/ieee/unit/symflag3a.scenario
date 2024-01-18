@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/ieee/unit/symflag3a.scenario
+#FEATURE = ieee tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#INVALID_PRODUCT= mac
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)symflag3a.f
+#OPTS      = -qnostrictieeemod $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = symflag3a$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = -qnostrictieeemod $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  symflag3a$(OBJ)
+#OUTPUT    = symflag3a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = symflag3a$(EXE)
+#STDOUT    = symflag3a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)symflag3a$(product)vf) symflag3a.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

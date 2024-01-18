@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = multAllocMoldMold.f
+#FEATURE   = DTP - Allocate with source expression
+#CREATOR   = Izhak Jakov
+#DATE      = 20150629
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)multAllocMoldMold.f
+#OUTPUT    = multAllocMoldMold$(OBJ)
+#STDERR    = multAllocMoldMold.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $(tcasedir)multAllocMoldMold.vf multAllocMoldMold.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

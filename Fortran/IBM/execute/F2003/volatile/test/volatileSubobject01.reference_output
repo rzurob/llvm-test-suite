@@ -1,0 +1,4 @@
+a                                Volatile, Automatic, Derived type: base, Offset: 0, Alignment: double word
+a%x                              Volatile, Automatic, Integer(4), Offset: 0, Alignment: quadruple word
+a%y                              Volatile, Automatic, Complex(4), Offset: 8, Alignment: double word
+a%z                              Volatile, Automatic, Character(2), Offset: 16, Alignment: quadruple word

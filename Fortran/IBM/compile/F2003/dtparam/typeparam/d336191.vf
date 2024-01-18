@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"d336191.f", line 36.10: 1515-164 (S) Derived type component ids is specified with an invalid kind. 16 is not a valid kind for type INTEGER.
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file d336191.f.

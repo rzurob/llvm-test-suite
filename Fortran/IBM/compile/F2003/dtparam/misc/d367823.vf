@@ -1,0 +1,4 @@
+"d367823.f", line 39.18: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"d367823.f", line 40.17: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file d367823.f.

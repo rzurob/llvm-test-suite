@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"dtparamConstr032d.f", line 47.24: 1516-078 (S) Operands must be conformable.
+"dtparamConstr032d.f", line 49.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"dtparamConstr032d.f", line 49.39: 1516-078 (S) Operands must be conformable.
+** dtparamconstr032d   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtparamConstr032d.f.

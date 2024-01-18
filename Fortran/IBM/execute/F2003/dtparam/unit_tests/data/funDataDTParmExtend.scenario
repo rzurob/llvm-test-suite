@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/unit_tests/data/funDataDTParmExtend.scenario
+#FEATURE	= 333315
+#CREATOR	= Zheming Gu
+#DATE		= May 11,2007
+#TEST_TYPE	= functional test
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)funDataDTParmExtend.f
+#OUTPUT		= funDataDTParmExtend$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= funDataDTParmExtend$(OBJ)
+#OUTPUT		= funDataDTParmExtend$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= funDataDTParmExtend$(EXE)
+#STDOUT		= funDataDTParmExtend.out
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= funDataDTParmExtend.out $($(tcasedir)funDataDTParmExtend$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

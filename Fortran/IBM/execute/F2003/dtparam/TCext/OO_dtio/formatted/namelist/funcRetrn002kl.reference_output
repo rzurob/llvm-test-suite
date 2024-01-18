@@ -1,0 +1,9 @@
+ &WB
+ WRITEBASE=c=abc, c=def, c=ghi
+ /
+ &WC
+ WRITECHILD=i= 101 c=ABC, i= 102 c=DEF, i= 103 c=GHI
+ /
+ &WC
+ WRITECHILD=i= 201 c=JKL, i= 202 c=MNO, i= 203 c=PQR
+ /

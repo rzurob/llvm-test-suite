@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/contiguous/isContig/isContigFalse6.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20101028
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)isContigFalse6.f
+#OUTPUT    = isContigFalse6$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = isContigFalse6$(OBJ)
+#OUTPUT    = isContigFalse6$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = isContigFalse6$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

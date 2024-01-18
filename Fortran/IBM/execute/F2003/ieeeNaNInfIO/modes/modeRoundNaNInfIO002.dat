@@ -1,0 +1,6 @@
++NaN(Q) -Inf, (-NaN(S), +Inf)
+nan     -infinity (-nan(s), infinity)
++nan()  -iNF  (-nAn(S), +infinity)
+nan(_abcd123), -inf, (-nan(S), inf)
+nan()   -iNf   (-NAN(S),inf)
+nan(_s_),-infinity (-nan(s),   +inf)  

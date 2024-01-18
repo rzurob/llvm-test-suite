@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=fxiosendeor010.scenario
+#FEATURE = functional testing of is_iostat_end and is_iostat_eor
+#CREATOR = Bardia Mahjour
+#DATE    = 20050818
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)fxiosendeor010.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#OUTPUT    = fxiosendeor010$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = fxiosendeor010$(OBJ)
+#OUTPUT    = fxiosendeor010$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxiosendeor010$(EXE)
+#STDOUT    = fxiosendeor010.out
+#STDERR    = fxiosendeor010.out
+#ENDCMD
+
+#CMD	   = DIFF
+#INPUT     = fxiosendeor010.out $($(tcasedir)fxiosendeor010$(product).vf)
+#OPTS      = -b
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

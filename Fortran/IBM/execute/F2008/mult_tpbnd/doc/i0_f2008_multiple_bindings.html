@@ -1,0 +1,510 @@
+<html><head><title>F08:Multiple type-bound procedures declaration</title></head><body><table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#c0e1ff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="left" style="font-size: 12pt; color: rgb(0, 0, 128); font-family: Arial;"><strong>Document Control Information:</strong>
+            <p style="color: rgb(0, 0, 0);">The official version of this document is kept in CMVC in the <span style="font-weight: bold; text-decoration: underline;">%CMVC_Family%</span> family, release <span style="font-weight: bold; text-decoration: underline;">%CMVC_Release%</span>, component <span style="font-weight: bold; text-decoration: underline;">%CMVC_Component%</span>, file <span style="font-weight: bold; color: rgb(255, 102, 102); text-decoration: underline;">%CMVC_PathName%</span>. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.<br />
+            <br />
+            CMVC Extraction Information: %W% %H% %I% sccsid<br />
+            <br />
+            This document is IBM Confidential.<br />
+            </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table cellspacing="0" cellpadding="5" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td width="20%" valign="top" align="left"><strong>CMVC Feature Number</strong> </td>
+            <td width="80%" valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%CMVC_Feature%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Feature Title</strong> </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Document_Name% %Note{By default the feature title and document name are the same. You can either change the document name (through Properties), or replace the tag with the title of the feature}%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Author(s)</strong> </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Authors%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Applicable Product Releases</strong> </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">XL Fortran v14.1 on Linux , AIX and BlueGene<br />
+            %Note{ List all the products and their release numbers for which the information in this document is/will be correct. For example:<br />
+            XL C/C++ v7.0 and 8.0 on Linux and AIX<br />
+            XL Fortran v9.1 and 10.1 on Linux and AIX.<br />
+            <br />
+            If you are updating this I0, remove old products from the list if they will not support this updated I0's behaviour. For example, if this I0 was first written for XL Fortran v9.1 and a change is being made in XL Fortran v10.1 that will not be ported back to v9.1, then v9.1 should not appear in the list.<br />
+            <br />
+            For prototype or experimental code that isn't scheduled to ship in any release yet, note possible future targets like this: &quot;Experimental code, may ship in future XL Fortran and XL C/C++ AIX releases&quot; }%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Affected Components</strong> </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">Front End: Fortran<br />
+            Documentation:XL Fortran language reference<br />
+            Other: Fortran test<br />
+            %Note{ List all compiler components affected by the introduction of or changes to this document. If you believe this document will cause a component to add or change code, then you should list it. Use this list as a starting point and add to it as necessary:<br />
+            <br />
+            Front Ends: C, C++, Fortran, PL/X, PL/1, COBOL, PLIX<br />
+            Optimizers: ASTI, TPO, TOBEY<br />
+            Libraries: Fortran RT, C++ RT, SMP RT, libxl, libxlopt, MASS, PLIX RT<br />
+            Compiler Services: Driver, builtin table, target validation<br />
+            Build/Packaging: Installation tools, config files, build scripts/makefiles<br />
+            Documentation: Product documentation, web pages, README files<br />
+            Other: W-Code, disassembler, bolt, Makedepend }%</td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#ff6666">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial; text-align: left;"><strong>Document Status: For Approval</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<p><strong>Approvers Only:</strong> Click on the 'Approve' check-box beside your name in the table below if you agree with the technical and user interface content of this document; not checking your 'approve' check-box signifies you do not approve.</p>
+<p>%Approvals%</p>
+<p>Approval Comments</p>
+<p>
+<table cellspacing="0" cellpadding="5" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td valign="top" align="left"><strong>Approvers</strong> (mandatory participation) </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Note{Insert the names of people who will have approval authority for this review. These people, in aggregate, are responsible for approving the technical and user interface content of the document. Generally, this list should include people who represent compiler components that will need to change if this review is approved.<br />
+            The I0 Process document provides detailed guidance on choosing your list of approvers.<br />
+            Use Access Control to add/delete people from this list. The initial access control list is populated with the people from the Component Reviewers section below. You can use Access Control to change their role to Approver, or add additional approvers.}%<br />
+            %Approvers%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Release Management Contact</strong> (optional participation) </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Release_Management_Contact% <br />
+            %Note{Release Manager/Development Manager/Team Lead,<br />
+            usually your team's representative at product status meetings. Use Access Control to add/change Release Management Contact.}%<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Component Reviewers</strong> (optional participation) </td>
+            <td valign="top" align="left" style="color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Note{These groups must be made aware of the I0. Assign at least one person representing each group. The names listed below are suggested contacts only, please assign whoever is appropriate:<br />
+            <ul style="font-family: Arial;">
+                <li><strong>C FE and related tools/libraries/driver:</strong><br />
+                AIX - Philip Luk<br />
+                Linux - Philip Luk<br />
+                z/OS - Kendrick Wong<br />
+                CELL - Larry Lindsay<br />
+                UPC - Philip Luk </li>
+                <li><strong>C++ FE and related tools/libraries/driver:</strong><br />
+                AIX - Jeff Heath<br />
+                Linux - Sasha Kasapinovic<br />
+                z/OS - Michael Wong<br />
+                CELL - Kevin Shin<br />
+                </li>
+                <li><strong>Fortran FE, ASTI, PLIX, and related tools/libraries/driver:</strong><br />
+                AIX, PLIX - Rafik Zurob<br />
+                Linux - Xing Xue<br />
+                BG/L - Daniel Chen<br />
+                CELL - Kelvin Li </li>
+                <li><strong>PL/X Development:</strong><br />
+                Kirk Crane<br />
+                </li>
+                <li><strong>TPO and associated tools/libraries (libxlopt, SMPRT, MASS):</strong><br />
+                AIX - Arie Tal/Yan Zhang<br />
+                Linux - Tommy Wong<br />
+                z/OS - Chris Miclea<br />
+                BG - Damien Bonaventure<br />
+                CELL - Amy Wang </li>
+                <li><strong>TOBEY and associated tools/libraries: (dis, libxl, bolt)</strong><br />
+                AIX - Christopher Lapkowski<br />
+                Linux - Irina rada<br />
+                z/OS - Chwan-Hang Lee<br />
+                BG - Damien Bonaventure, Leon Ding (Xialoliang Ding/Piscataway/IBM@IBMUS)<br />
+                CELL - Dickson Chau<br />
+                dis - Ian McIntosh<br />
+                </li>
+                <li><strong>WCode:</strong><br />
+                Roland Froese </li>
+                <li><strong>Disassembler<br />
+                </strong>Ian McIntosh </li>
+                <li><strong>Information Development:</strong><br />
+                C/C++ - Wei Zhong Shan/China/IBM<br />
+                Fortran - Lisa Wilkinson<br />
+                </li>
+                <li><strong>Customer Service and Support:</strong><br />
+                AIX/Linux - Zoran Kulina<br />
+                z/OS - Youssef Himo <br />
+                Cell - Sean Kennedy </li>
+                <li><strong>Compiler Enablement:</strong><br />
+                Dwayne Moore </li>
+                <li><strong>Fortran Test:</strong><br />
+                Kobi Vinayagamoorthy<br />
+                </li>
+                <li><strong>C/C++ Test:</strong><br />
+                Thomas Lee(z/OS)<br />
+                Adrean Gatea (system p)<br />
+                </li>
+                <li><strong>PL/X Test:</strong><br />
+                Anne Wylie </li>
+                <li><strong>Build and Packaging Team:</strong><br />
+                AIX - Chris Taylor<br />
+                Linux - Viktor Ganich<br />
+                BG - Steven Chen<br />
+                Cell - Kevin Yuen<br />
+                z/OS - Steve Chen<br />
+                Dale Soldiuk (Please include Dale as optional on all reviews) </li>
+                <li><strong>Performance Measurement and Analysis Team:<br />
+                </strong>John Tam </li>
+                <li><strong>Planning</strong><br />
+                Mary Chan<br />
+                </li>
+            </ul>
+            <p>The following groups must be notified of a W-Code change or if a change affects their language. They are optional otherwise.</p>
+            <ul>
+                <li><strong>PL/I:</strong><br />
+                zOS and AIX - Peter Elderon (in SVL) </li>
+                <li><strong>Cobol:</strong><br />
+                AIX - Richard Nelson (in SVL) </li>
+            </ul>
+            <p>The following group must be notified of a front-end (C FE, or C++ FE) related change or other modification having a direct impact. Inclusion is optional otherwise.</p>
+            <ul>
+                <li><strong>Makedepend for USS:</strong><br />
+                Christopher Taylor </li>
+            </ul>
+            <p>The following group must be notified whenever a change in debug WCODE is made, and any debugger related issues are involved.</p>
+            <ul>
+                <li><strong>Common Debug Architecture Development (CDA):</strong><br />
+                Kendrick Wong </li>
+            </ul>
+            Use Access Control to add/delete people from this list.}% <br />
+            %Component_Reviewers%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Team Reviewers</strong> (optional participation) </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Note{List any additional people you feel need to participate in the review. These people do not have approval authority. Use Access Control to add/delete people from this list.}%<br />
+            %Team_Reviewers%</td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p><br />
+<br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td style="vertical-align: top; font-family: Arial;"><strong>Reviewers</strong>: Please click the 'Reviewed' checkbox beside your name to indicate your participation in the review. </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%Reviews%<br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td style="vertical-align: top; font-family: Arial;"><strong>Access Change History</strong> %Note{Authors: Access Change History will list any changes to the access control done to the document draft. These changes would not be visible in a review. In a review, this section would only list the access changes done to the review itself.<br />
+            Please note that changes to the access control of a review are not automatically reflected in the access control of the draft document.}% </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%CollapsedSection{<strong>Access Change History</strong>}{%Access_Change_History%}%<br />
+</p>
+<p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>Feature Overview</strong> </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>F2008: Multiple type-bound procedures can be declared in a single type-bound procedure statement</p>
+<p>%Note{ General description of the feature. The contents of this section are intended to guide reviewers as to what they will be reviewing. Any information relevant to an external product user must appear in the User Documentation section; that content must not only appear here.<br />
+</p>
+<p>The rest of this section outlines the key issues and design decisions that should be noted by the reviewers. The purpose of these subsections is to give reviewers a 'birds-eye' view of the design, to see if any key requirements or issues were missed or design decisions made that need to call out special attention. This is also a good vehicle for identifying whether anyone should be added as a reviewer for the design}%</p>
+<h2>Key Requirements</h2>
+Fortran 2003 allowed only one type-bound procedure to be declared in each type-bound procedure statement.<br />
+In Fortran 2008 derived type definition users can be allowed to declare multiple type-bound procedures in the same type-bound procedure statement.<br />
+It's convenience to users.<br />
+<br />
+%Note{In this subsection, describe what are the key requirements from this design. Such requirements could be user interface impact (i.e. what is visible to the users), to interaction with external tools, such as profilers, debuggers,&nbsp; and requirements such as standard compatibility, etc.}%<br />
+<h2>Key Design Issues</h2>
+We currently only allow one type-bound procedure to be declared in each type-bound procedure statement.<br />
+To allow multiple type-bound procedures to be declared in each single type-bound procedure statement we need to add and modify the grammar rules.<br />
+<br />
+%Note{In this subsection, describe what are the key design issues that have been discovered by the authors while researching the design. For example, how to maintain backward binary compatibility, compatibility with listing files, additional work that is required for supporting other platforms such as z/OS, BlueGene, Cell, etc. }%
+<h2>Key Design Decisions</h2>
+Add and modify grammar rules to accept multiple type-bound procedures to be declared in each single type-bound procedure statement <br />
+<br />
+%Note{In this subsection, describe what were the decisions made by the authors that deal with the issues raised in the previous section. }%
+<h2>Testing Strategy</h2>
+&nbsp;&nbsp;&nbsp;&nbsp; (1) Functional test :<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.1 multiple type-bound procedures can be defined in the same type-bound procedure statement(all attribute will be covered)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.2 it will not affect original single type-bound procedure definition cases<br />
+&nbsp;&nbsp;&nbsp;&nbsp; (2) Diagnostic test : <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.1 same type-bound procedure is only allowed once in the same derived type<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.2 once there is &quot; =&gt; procedure_name &quot; in any type-bound procedure then &quot; :: &quot; shall appear<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.3 if there is &quot;interface_name&quot; then &quot; =&gt; procedure_name&quot; shall not appear in any type-bound procedure<br />
+&nbsp;&nbsp;&nbsp;&nbsp; (3) Language level test : <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Emit a langlvl message when the multiple type-bound procedures are used and the -qlanglvl option is set to&nbsp;2003std or 2003pure.(for 90std and before, type-bound procedures are not allowed)<br />
+%Note{In this subsection, describe what is the testing approach chosen by the authors for the feature. This should be limited to a high level description of the strategy, leaving the more detailed description to the &quot;Testing Considerations&quot; section that follows in the design. }% <strong style="font-size: 20px; color: rgb(0, 128, 0);"></strong><strong style="font-size: 20px; color: rgb(0, 128, 0);"></strong>
+<p>&nbsp;</p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>User Documentation</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Overview</h3>
+</strong>
+<p>Users can declare multiple type-bound procedures in a single type-bound procedure statement.</p>
+<p>%Note{ Describe in general terms what a user will see or can do with this feature. Do not include compiler-internal technical details, this entire section should only include user-visible information. Specific implementation details should be covered in the sections following. <br />
+<br />
+For example, &quot;The new -qcook and -qbroil options give the user control of the compiler's culinary capabilities.&quot;}%<br />
+</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);"></strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3><strong style="font-size: 20px; color: rgb(0, 128, 0);"></strong></h3>
+</strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>User Benefits</h3>
+</strong>
+<p>Users can declare multiple type-bound procedures in a single type-bound procedure statement. <br />
+</p>
+<p>%Note{Describe why a user would want or need to use this feature. Include any relevant information to help guide the Information Development team presenting this feature to customers. For example, &quot;Using option -qXXXX will usually speed up programs that contain nested loops when combined with the -qpdf option.&quot; Another example, &quot;The __XXXX attribute is compatible with the like-named gcc attribute and allows you to compile code written for the gcc compiler.&quot;}%</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Public Interface</h3>
+</strong>
+<pre><font size="+0"><font size="+0"><font size="+0"><font color="#ff0000"><font face="Courier New"><font color="#000000">&gt;&gt;-- PROCEDURE --+---------------<em>------</em>---+--</font></font></font></font></font></font><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font color="#ff0000"><font face="Courier New"><font color="#000000">+</font></font></font></font></font></font></font></font></font></font></font></font><font size="+0"><font size="+0"><font size="+0"><font color="#ff0000"><font face="Courier New"><font color="#000000">-------------------------</font></font></font></font></font></font><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font color="#ff0000"><font face="Courier New"><font color="#000000">+</font></font></font></font></font></font></font></font></font></font></font></font><font size="+0"><font size="+0"><font size="+0"><font color="#ff0000"><font face="Courier New"><font color="#000000">------binding_name--+----------------------+--+-&gt;&lt;<br /></font></font></font></font></font></font><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font color="#ff0000"><font face="Courier New"><font color="#000000">        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</font></font></font></font></font></font></font></font></font></font></font></font> <font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font color="#ff0000"><font face="Courier New"><font color="#000000"> |</font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font color="#ff0000"><font face="Courier New"><font color="#000000">                         |</font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font color="#ff0000"><font face="Courier New"><font color="#000000">   ^                |       </font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font color="#ff0000"><font face="Courier New"><font color="#000000">               |  |</font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font><br /><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font color="#ff0000"><font face="Courier New"><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       &nbsp;  +--(--interface_name--)--+  +--,--attribute_list--::--+</font></font></font></font></font></font></font></font></font></font></font></font><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font color="#ff0000"><font face="Courier New"><font color="#000000">   |                +--</font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font color="#ff0000"><font face="Courier New"><font color="#000000">=&gt;--procedure_name--+  |</font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font><br /><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font color="#ff0000"><font face="Courier New"><font color="#000000">        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></font></font></font></font></font></font></font></font></font></font></font><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font color="#ff0000"><font face="Courier New"><font color="#000000"> |</font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font color="#ff0000"><font face="Courier New"><font color="#000000">                         </font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font color="#ff0000"><font face="Courier New"><font color="#000000">|</font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font color="#ff0000"><font face="Courier New"><font color="#000000">   |                                          |<br /></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font color="#ff0000"><font face="Courier New"><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       &nbsp;&nbsp;                             +--::---------------------+</font></font></font></font></font></font></font></font></font></font></font></font><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font size="+0"><font color="#ff0000"><font face="Courier New"><font color="#000000">   +--,---------------------------------------+<br /></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></pre>
+<p>%Note{;Describe source interfaces, options, listings, etc. - how the user would use this. For multi-language I0s, remember to provide syntax etc. for all languages involved. Also, remember that option syntax may vary between platforms, especially between zSeries and pSeries compilers.</p>
+<p>If you are adding an option that has an equivalent gcc/g++ option, you need to review the designs/i0/gxlcOptionMapping/gxlcOptionMapping_I0.html I0, to determine if that I0 will require updating.</p>
+<p>If you are defining a feature that requires the generation of file names, refer to the Reference Information section of this document below for help on how to specifiy the rules for file naming.}%</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Constraints</h3>
+</strong>
+<p>None<br />
+</p>
+<p>%Note{Describe conditions that must be met and can be validated by the compiler - e.g. &quot;The BLAH directive cannot be used outside of a DO loop.&quot; Violation of a constraint usually results in an error message.}%</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Rules</h3>
+</strong>
+<p>None<br />
+</p>
+<p>%Note{Describe conditions that must be met but cannot be validated by the compiler - e.g. &quot;The BLAH option may not be used with programs that call Fortran subroutines from C.&quot; Generally, violation of a rule does not (but might) result in an error message.}%</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Language Standard Considerations</h3>
+</strong>
+<p>This feature conforms to the Fortran 2008 standard section 4.5.5 R448<br />
+</p>
+<p>%Note{If relevant, what language standard(s) does this apply to or should it be labeled in the documentation as an IBM language extension? Is there a -qlanglvl impact in the compiler and/or runtime?}% </p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Messages</h3>
+</strong>
+<p>A&nbsp;langlvl message will be emitted when the multiple type-bound procedures are used and the -qlanglvl option is set to&nbsp;2003std or 2003pure.(for 90std and before, type-bound procedures are not allowed):<br />
+<br />
+Message detail:<br />
+COMPONENT: 18<br />
+NAME: LANGLVL_NP_MULTI_TYPEBOUNDPROC<br />
+SEVERITY: L<br />
+MESSAGE TEXT:<br />
+Declaring multiple procedures in a single type-bound procedure statement is not permitted by the %1$s standard.</p>
+<p>%Note{ Either insert new message text or a description of the kinds of messages required. Include a description of which components will need to issue them (e.g. driver, FE, BE, runtime...). </p>
+Tips for writing message text:
+<ul>
+    <li>Use short, simple sentences. Avoid sentence fragments and do not omit articles (a, an, the, etc.). </li>
+    <li>Include only essential information. </li>
+    <li>Avoid wording that seems to blame the user. </li>
+    <li>Use system-supplied substitution variables where appropriate to provide the user with useful information. </li>
+</ul>
+<p>For XL Fortran, messages must be reviewed by the XL Fortran message review committee and will generally be finalized in the I1, not the I0. Contact Dave Paulmark or Richard Salyniuk to get a message reviewed. </p>
+<p>For messages that will be emitted on zOS, remember to include the following so that the detailed message documentation will be accurate: </p>
+<ul>
+    <li><strong>Message Number</strong> (if known) </li>
+    <li><strong>Raw Message</strong> including substitution text markers. </li>
+    <li><strong>Where</strong> information explaining what each substitition text marker represents. </li>
+    <li><strong>Explanation</strong> text detailing the message contents and what it means. Use the explanation to expand the message text and provide more detail. Describe the cause of the message (when and where the error occurred) and the consequences of the error. The explanation might also include a system action that occurs as part of the error. </li>
+    <li><strong>User Response</strong> text explaining what the user should do to recover from the error. Specify the exact steps that would allow the user to continue working, to correct the error, or to prevent the problem. Write in an active voice and use the imperative (command) mood. When the user can choose between different options, present the options in an unordered list. When the user must follow a specific sequence of steps, present the information in an ordered list. Provide precise information, such as exact names of directories etc. If the user does not need to do anything in response to the message, use the phrase &quot;No response required.&quot; <br />
+    </li>
+</ul>
+}%<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Performance Considerations</h3>
+</strong>
+<p>The feature only involves a syntax change, it won't have any appreciable  impact on performance. Hence high optimization option testing is  unnecessary.</p>
+<p>%Note{Describe any performance impacts (good or bad) that we can tell users about. Consider both compile time and runtime performance. For example, &quot;Using this option will slow down the compiler at higher optimization levels but can result in improved execution speed for programs with deeply nested loop constructs.&quot; If the feature has minimal impact on compile time and execution time, mark this section as &quot;n/a&quot;. }%<br />
+</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Multi-Platform/Portability Considerations</h3>
+</strong>
+<p>None</p>
+<p>%Note{What compiler products will be affected by this? Consider both operating systems (AIX, zOS, Linux, iOS...) and hardware (pSeries, zSeries, iSeries, xSeries...) For example, &quot;This feature takes advantage of AIX-specific capabilities and is not portable to our other non-AIX products.&quot; Also, &quot;The intrinsics in this feature work on all supported Linux systems but some will not function correctly on older AIX platforms such as POWER2.&quot; </p>
+<p>Consider also portability issues such as gcc or competitive compiler product affinity. For example, &quot;This language extension is compatible with the similar extension defined by many Cray and VAX Fortran compilers.&quot;}%</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Migration/Co-Existence/Binary-Compatibility Considerations</h3>
+</strong>
+<p>None.</p>
+<p>%Note{Describe anything relevant. Consider things like linking old code to new code, using old module files, reading data files written by code built with older compilers... Consider impact to existing make files. Consider anything that changes the meaning of a pre-existing option or construct.}%</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Debug Considerations</h3>
+</strong>
+<p>None</p>
+<p>%Note{How are debuggers affected by this? Is existing debug format on all relevant targets sufficient? Do debuggers need new capabilities to understand this? Will there be known limitations with specific debuggers? Will the debugger function better/worse at higher optimization levels?}%<strong style="font-size: 20px; color: rgb(0, 128, 0);"> </strong></p>
+<p>&nbsp;</p>
+<strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>NLS (Unicode) Considerations</h3>
+</strong></strong>
+<p>None</p>
+<p>%Note{Note anything relevant here to national language support.}%</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Samples</h3>
+</strong>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; real function length1()<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; length1=1.1<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; real function length2()<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; length2=1.2<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end<br />
+<br />
+<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; program t<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; interface<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; real function length1()<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end function<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; real function length2()<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end function<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end interface&nbsp;&nbsp; &nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp; <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; type point<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; contains<br />
+&nbsp;&nbsp; &nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; procedure,nopass ::<strong> length1, length2</strong>&nbsp;&nbsp;<strong> ! In F2003 we must use 2 statements to declare these 2 type-bound procedures</strong><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end type point<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end program t <br />
+</p>
+<p>%Note{Where relevant, provide both valid examples and invalid examples of using the new feature.}%</p>
+<br />
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>Architecture Review Board</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);"></strong>
+<p>No ARB required</p>
+<p>%Note{ Describe whether a review before the Architecture Review Board is required.&nbsp; Should a review be conducted, the results should be pasted here.&nbsp; Otherwise, please place a comment here explaining why no review is required.}%<br />
+</p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>Internal Compiler Team Information</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Product Dependencies</h3>
+</strong>
+<p>None</p>
+<p>%Note{ Identify dependencies within the product for this feature. Does this feature rely on the completion of another feature or does it need to finish before others can begin? Does a W-Code ACR need to be approved? Where possible, use master feature numbers to pinpoint the precise work items. }%<br />
+</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Patent/Disclosure Implications</h3>
+</strong>
+<p>None</p>
+<p>%Note{ Identify if this feature or any related work should/will result in a patent application or technical disclosure. }% <br />
+</p>
+<strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Scientific Research and Experimental Development</h3>
+</strong></strong>
+<p><strong>Technological Advancements</strong>: None. %Note{State the technological objective of the feature. Describe the advancements in knowledge gained through the experimentation performed.}%</p>
+<p><strong>Technological Obstacles</strong>: None. %Note{List the limitations of the current state of technology. Outline the technological uncertainty in development and the systematic investigation performed. Focus on the obstacles that must be overcome and not on the difficulty of the feature.}%</p>
+<p><strong>Work Performed</strong>: None. %Note{Describe the development of prototypes and final implementations, including dates. Make sure to include failed prototypes. Describe findings from any experimentation.}%</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Build and Packaging Considerations</h3>
+</strong>None<br />
+%Note{Note anything here that needs to be done to alter build or packaging. In particular, note new or deleted packaged files.}%<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Information Development Impacts</h3>
+</strong>
+<p>&nbsp;</p>
+<p>1. Update&nbsp;the syntax diagram in Language Reference&nbsp;-&gt; Derived types -&gt; Type-bound procedures -&gt; Specific binding </p>
+<p><a href="http://vaidbld.torolab.ibm.com:10201/help/topic/com.ibm.xlf141.aix.doc/language_ref/syntaxspecbinding.html">http://vaidbld.torolab.ibm.com:10201/help/topic/com.ibm.xlf141.aix.doc/language_ref/syntaxspecbinding.html</a></p>
+<p>2. Add the feature to the F2008 feature list in Getting Started -&gt; What's new for IBM XL Fortran for AIX, V14.1 (Technology preview) -&gt; Fortran 2008 features</p>
+<p><a href="http://vaidbld.torolab.ibm.com:10201/help/topic/com.ibm.xlf141.aix.doc/getstart/new_flangupdates_v14.html">http://vaidbld.torolab.ibm.com:10201/help/topic/com.ibm.xlf141.aix.doc/getstart/new_flangupdates_v14.html</a></p>
+<p>%Note{List any documentation impacts. What books/chapters/sections are affected? Do the man pages need updating? Are there any new terms or phrases that need to be added to the glossary?}% </p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Testing Considerations</h3>
+</strong>
+<p>pls see &quot;Testing Strategy&quot; section<br />
+</p>
+<p>%Note{List any information here that would assist the test teams.}% </p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>High-Level Implementation Design</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Implementation Design Overview</h3>
+</strong>
+<p>According to the current grammar rules, we don't accept multiple type-bound procdures declaration in the same statement, if multiple type-bound procdures are declared in the same statement a syntax error will be emitted.<br />
+So we need to add and modify the grammar rules to accept this declaration.</p>
+<p>1. Add new grammar rules in p[1234]_fdcl.cpp to accept multiple type-bound procdures declaration in the same statement.<br />
+2. Modify current grammar rules in p[1234]_fdcl.cpp to fit the new rules.<br />
+3. Update related files via fortlpg</p>
+<p>%Note{The remainder of this document should not be used or needed to develop end-user documentation.}% </p>
+<p>%Note{Describe, in general high-level terms, how the compiler will implement this. For example, &quot;The front end will parse a new option and set a W-Code bit which TOBEY will read...&quot; }%<br />
+</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Inter-Component Communication/Interfaces</h3>
+</strong>
+<p>None</p>
+<p>%Note{List the requirements or assumptions placed on all affected components. Describe how components (e.g. FE, ASTI, TPO, TOBEY, driver, runtime...) will communicate where that is necessary. Are new W-Code interfaces required? Will the driver need to recognize a new return code?}% </p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Other Implementation Design Information</h3>
+</strong>
+<p>None</p>
+<p>%Note{Note anything here relevant to the review of the high-level implementation design that would be useful to reviewers that doesn't fit into any other section. For example, &quot;The C front end will protect this code under the AIX_ONLY macro.&quot; Another example, &quot;TOBEY will implement this using the ldxrwa PWR9 instruction, see the reference in the Appendix for details.&quot;}%</p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>Appendix/References</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<p><br />
+<br />
+RTC work item : </p>
+<p>https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/16819<br />
+<br />
+%Note{This section provides additional information to be used when writing the I0. This is not intended for inclusion in the I0 so this section should be removed from the I0 once it is written. </p>
+<h4>Rules for file name generation on Z/OS</h4>
+<p>&nbsp;</p>
+<ol>
+    <li>There are 4 types of invocation: JCL, TSO, c89 utility and xlc utility </li>
+    <li>JCL invocation is processed separate from all other invocation types. A default destination name is generated based on the source file name. Output file names are then generated based on this default destination name. For example:
+    <ul>
+        <li>If I compile a source file //'TSCTEST.PDS.C(FOO)' the generated name of the DBRM file would be //'MILOS.PDS.C.DBRM(FOO)' </li>
+        <li>If I compile a source file //'TSCTEST.SEQ.C' the generated name of the DBRM file would be //'MILOS.SEQ.C.DBRM' </li>
+        <li>If I compile a source file /home/milos/foo.c the generated DBRM file would be ./foo.dbrm </li>
+    </ul>
+    </li>
+    <li>TSO invocation relies on REXX execs which specify a default destination pattern &quot;//~.DEST&quot;. The default destination pattern is passed to the compiler as an argument. This pattern causes the compiler to generate output file names using the same logic as in the JCL case. </li>
+    <li>The xlc utility always generates a default destination name based on the source file name (this can not be changed by the user). The default destination name is passed to the compiler as an argument. The compiler uses the default destination name to generate output file names in a similar fashion as in the JCL case, but with slightly different results. For example:
+    <ul>
+        <li>If I compile a source file //'TSCTEST.PDS.C(FOO)' the generated name of the DBRM file would be //'MILOS.PDS.DBRM(FOO)' </li>
+        <li>If I compile a source file //'TSCTEST.SEQ.C' the generated name of the DBRM file would be //'MILOS.SEQ.DBRM' </li>
+        <li>If I compile a z/OS UNIX file /home/milos/foo.c the generated DBRM file would be ./foo.dbrm </li>
+    </ul>
+    </li>
+    <li>Like xlc, the c89 utility always generates a default destination name based on the source file name. By default the behavior is the same as in the xlc case. However, this can be changed by setting _OSUFFIX_HOSTQUAL and _OSUFFIX_HOSTRULE to 0 which yields the same behavior as in the JCL case.}% </li>
+</ol><!--HTML Wrapper--></body></html>

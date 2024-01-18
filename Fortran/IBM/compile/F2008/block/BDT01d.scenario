@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /block/BDT01d.scenario
+#FEATURE   = derived type definition within block used outside
+#CREATOR   = DF
+#DATE      = 2010-11-15
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = F_COMPILE
+#INPUT    = $(tcasedir)BDT01d.f
+#OUTPUT   = BDT01d$(OBJ)
+#STDERR   = BDT01d.err
+#VALIDRCS = $(RC_FAIL)
+#ENDCMD
+
+#CMD      = XLDIFF
+#INPUT    = $($(tcasedir)BDT01d$(product)vf) BDT01d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

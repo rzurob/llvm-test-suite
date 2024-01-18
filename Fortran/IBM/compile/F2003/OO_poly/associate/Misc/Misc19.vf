@@ -1,0 +1,4 @@
+"Misc19.f", line 48.34: 1516-018 (S) Operand for concatenation must be a character string.
+"Misc19.f", line 48.40: 1516-018 (S) Operand for concatenation must be a character string.
+** misc19   === End of Compilation 1 ===
+1501-511  Compilation failed for file Misc19.f.

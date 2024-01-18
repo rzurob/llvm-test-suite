@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/contiguous/other/combinedAttr3.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20101020
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)combinedAttr3.f
+#OUTPUT    = combinedAttr3$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = combinedAttr3$(OBJ)
+#OUTPUT    = combinedAttr3$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = combinedAttr3$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

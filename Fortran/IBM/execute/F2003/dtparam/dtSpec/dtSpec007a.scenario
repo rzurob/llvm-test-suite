@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/dtSpec/dtSpec007a.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtSpec007a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtSpec007a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dtSpec007a$(OBJ)
+#OUTPUT    = dtSpec007a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtSpec007a$(EXE)
+#STDOUT    = dtSpec007a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dtSpec007a.out $($(tcasedir)dtSpec007a$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

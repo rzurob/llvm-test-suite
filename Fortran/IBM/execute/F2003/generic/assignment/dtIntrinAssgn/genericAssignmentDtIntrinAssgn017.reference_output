@@ -1,0 +1,13 @@
+ set c1:
+ innerfinal
+ innerfinal
+ inner1final
+ innerfinal
+ bounds: 1 0 T T
+ set c2:
+ innerfinal
+ inner1final
+ bounds: 2 3 F T
+ set c3:
+ inner1final
+ bounds: F F

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint44e.scenario
+#FEATURE	= Array constructor enhancement arithmetic expressions
+#CREATOR	= DF Manual Update
+#DATE		= 20061103
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_REALSIZE_4)
+#INPUT		= $(tcasedir)acetint44.f
+#OUTPUT		= acetint44$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint44$(OBJ)
+#OUTPUT		= acetint44$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint44$(EXE)
+#STDOUT		= acetint44.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -r1e-6
+#INPUT		= $($(tcasedir)acetint44$(product)vf) acetint44.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

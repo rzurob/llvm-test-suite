@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/abstracti/abifce02ckl_dlp.scenario
+#FEATURE	= Derived Type Parameters (+ Abstract Interface Unit Tests)
+#CREATOR	= Glen Mateer (derived from work by James Ren)
+#DATE		= 20071106
+#TEST_TYPE	= Unit Test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= XLF2003_COMPILE
+#INPUT		= $(tcasedir)abifce02ckl_dlp.f
+#OUTPUT		= abifce02ckl_dlp$(OBJ)
+#ENDCMD
+
+#CMD		= XLF2003_LINK
+#INPUT		= abifce02ckl_dlp$(OBJ)
+#OUTPUT		= abifce02ckl_dlp$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= abifce02ckl_dlp$(EXE)
+#STDOUT		= abifce02ckl_dlp.out
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)abifce02ckl_dlp$(product)vf) abifce02ckl_dlp.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

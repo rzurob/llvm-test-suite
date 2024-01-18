@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = outputComplexNaN003.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 9, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)outputComplexNaN003.f
+#OUTPUT   =  outputComplexNaN003$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  outputComplexNaN003$(OBJ)
+#OUTPUT   =  outputComplexNaN003$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  outputComplexNaN003$(EXE)
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = outputComplexNaN003.out $(tcasedir)outputComplexNaN003.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

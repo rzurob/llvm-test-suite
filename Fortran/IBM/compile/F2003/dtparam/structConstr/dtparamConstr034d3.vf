@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"dtparamConstr034d3.f", line 52.39: 1515-123 (S) The procedure pointer assignment statement target must be declared with the same type and type parameters as the procedure pointer.
+** dtparamconstr034d3   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtparamConstr034d3.f.

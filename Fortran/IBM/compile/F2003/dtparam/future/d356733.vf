@@ -1,0 +1,4 @@
+"d356733.f", line 31.11: 1516-263 (S) The MOLD argument of the NULL intrinsic must have the POINTER or ALLOCATABLE attribute.
+"d356733.f", line 32.6: 1516-263 (S) The MOLD argument of the NULL intrinsic must have the POINTER or ALLOCATABLE attribute.
+** d356733   === End of Compilation 1 ===
+1501-511  Compilation failed for file d356733.f.

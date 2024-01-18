@@ -1,0 +1,12 @@
+"purevalue03d.f", line 23.31: 1516-178 (S) Dummy procedure pf must not be declared with the VALUE attribute.
+"purevalue03d.f", line 27.25: 1516-178 (S) Dummy procedure ps must not be declared with the VALUE attribute.
+"purevalue03d.f", line 29.39: 1516-178 (S) Dummy procedure npf must not be declared with the VALUE attribute.
+"purevalue03d.f", line 37.36: 1516-178 (S) Dummy procedure ef must not be declared with the VALUE attribute.
+"purevalue03d.f", line 41.30: 1516-178 (S) Dummy procedure es must not be declared with the VALUE attribute.
+"purevalue03d.f", line 54.31: 1516-178 (S) Dummy procedure pf must not be declared with the VALUE attribute.
+"purevalue03d.f", line 58.25: 1516-178 (S) Dummy procedure ps must not be declared with the VALUE attribute.
+"purevalue03d.f", line 60.39: 1516-178 (S) Dummy procedure npf must not be declared with the VALUE attribute.
+"purevalue03d.f", line 68.36: 1516-178 (S) Dummy procedure ef must not be declared with the VALUE attribute.
+"purevalue03d.f", line 72.30: 1516-178 (S) Dummy procedure es must not be declared with the VALUE attribute.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file purevalue03d.f.

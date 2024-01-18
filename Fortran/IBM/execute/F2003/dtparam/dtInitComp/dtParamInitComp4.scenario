@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dtParamInitComp4.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       05-26-05
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM) -qdebug=allowrpdt
+#INPUT=  $(tcasedir)dtParamInitComp4.f
+#OUTPUT= dtParamInitComp4$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  dtParamInitComp4$(OBJ)
+#OUTPUT= dtParamInitComp4$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dtParamInitComp4$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

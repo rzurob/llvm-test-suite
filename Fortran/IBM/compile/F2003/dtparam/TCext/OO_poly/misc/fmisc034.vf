@@ -1,0 +1,4 @@
+"fmisc034.f", line 46.27: 1512-141 (S) A derived-type entity containing a component with the ALLOCATABLE attribute must not appear in the output list of an INQUIRE statement.
+"fmisc034.f", line 47.27: 1512-141 (S) A derived-type entity containing a component with the POINTER attribute must not appear in the output list of an INQUIRE statement.
+** fmisc034   === End of Compilation 1 ===
+1501-511  Compilation failed for file fmisc034.f.

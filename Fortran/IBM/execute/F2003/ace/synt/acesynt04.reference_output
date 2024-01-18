@@ -1,0 +1,5 @@
+"acesynt04.f", line 52.20: 1512-050 (W) Field separator is missing, in component number 6 of FORMAT statement, after edit descriptor I.  A comma is assumed.
+"acesynt04.f", line 52.22: 1512-053 (E) Edit descriptor in component number 6 of FORMAT statement is invalid and will be ignored.
+"acesynt04.f", line 52.26: 1512-040 (W) Repeat specification 1, in component number 7 of FORMAT statement, for ) edit descriptor is not allowed.  Repeat specification is ignored.
+** acesynt04   === End of Compilation 1 ===
+1501-510  Compilation successful for file acesynt04.f.

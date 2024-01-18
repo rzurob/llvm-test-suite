@@ -1,0 +1,9 @@
+"bozC408digit003d.f", line 38.16: 1518-347 (L) The Fortran 2003 standard requires that binary, octal, and hexadecimal constants contain at least one digit.
+"bozC408digit003d.f", line 39.16: 1518-347 (L) The Fortran 2003 standard requires that binary, octal, and hexadecimal constants contain at least one digit.
+"bozC408digit003d.f", line 41.20: 1518-347 (L) The Fortran 2003 standard requires that binary, octal, and hexadecimal constants contain at least one digit.
+"bozC408digit003d.f", line 43.21: 1518-347 (L) The Fortran 2003 standard requires that binary, octal, and hexadecimal constants contain at least one digit.
+"bozC408digit003d.f", line 45.21: 1518-347 (L) The Fortran 2003 standard requires that binary, octal, and hexadecimal constants contain at least one digit.
+"bozC408digit003d.f", line 47.22: 1518-347 (L) The Fortran 2003 standard requires that binary, octal, and hexadecimal constants contain at least one digit.
+"bozC408digit003d.f", line 47.26: 1518-347 (L) The Fortran 2003 standard requires that binary, octal, and hexadecimal constants contain at least one digit.
+** bozc408digit003d   === End of Compilation 1 ===
+1501-510  Compilation successful for file bozC408digit003d.f.

@@ -1,0 +1,53 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=iostatarrend002a.scenario
+#FEATURE = 299314
+#CREATOR = Rob Wheeler
+#DATE    = 20060109
+#TEST_TYPE=fvt
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)iostatarrend002a.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#OUTPUT    = iostatarrend002a$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = iostatarrend002a$(OBJ)
+#OUTPUT    = iostatarrend002a$(EXE)
+#ENDCMD
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)file1.txt .
+#ENDCMD
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)file2.txt .
+#ENDCMD
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)file3.txt .
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = iostatarrend002a$(EXE)
+#STDOUT    = iostatarrend002a.out
+#STDERR    = iostatarrend002a.out
+#ENDCMD
+
+#CMD	   = DIFF
+#OPTS	   = -b
+#INPUT     = iostatarrend002a.out $($(tcasedir)iostatarrend002a$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

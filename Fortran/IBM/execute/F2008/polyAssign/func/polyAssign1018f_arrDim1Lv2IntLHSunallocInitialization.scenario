@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME      = F2008/polyAssign/func/polyAssign1018f_arrDim1Lv2IntLHSunallocInitialization.scenario
+#FEATURE   = LHS of intrinsic assignment is allowed to be polymorphic
+#CREATOR   = Aaron Liu
+#DATE      = 20150901
+#TEST_TYPE = functional
+#KEYWORDS  = F2008, polymorphic, LHS, intrinsic assignment
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)polyAssign1018f_arrDim1Lv2IntLHSunallocInitialization.f
+#OUTPUT    =  polyAssign1018f_arrDim1Lv2IntLHSunallocInitialization$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     =  polyAssign1018f_arrDim1Lv2IntLHSunallocInitialization$(OBJ)
+#OUTPUT    =  polyAssign1018f_arrDim1Lv2IntLHSunallocInitialization$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     =  polyAssign1018f_arrDim1Lv2IntLHSunallocInitialization$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

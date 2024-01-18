@@ -1,0 +1,66 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop4/unit_pattr/notKeyword2.scenario
+#FEATURE = cintrop4 tests - regression run bucket
+#CREATOR = CPR Manual update
+#DATE    = 20060810
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)notKeyword2.f
+#STDERR    = notKeyword2.out1
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = notKeyword2$(OBJ)
+#OUTPUT    = notKeyword2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = notKeyword2$(EXE)
+#STDOUT    = notKeyword2.out2
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = notKeyword2.out1 notKeyword2.out2
+#STDOUT    = notKeyword2.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = notKeyword2.out $(tcasedir)notKeyword2.vf
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)notKeyword2.f
+#STDERR    = notKeyword2.out1
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = notKeyword2$(OBJ)
+#OUTPUT    = notKeyword2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = notKeyword2$(EXE)
+#STDOUT    = notKeyword2.out2
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = notKeyword2.out1 notKeyword2.out2
+#STDOUT    = notKeyword2.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = notKeyword2.out $(tcasedir)notKeyword2.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       deferchar2.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)deferchar2.f
+#OUTPUT= deferchar2$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  deferchar2$(OBJ)
+#OUTPUT= deferchar2$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  deferchar2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=userenamediag010b.scenario
+#FEATURE = Renaming the operator in a use statement
+#CREATOR = Rob Wheeler
+#DATE    = 20060330
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)userenamediag010b.f
+#OPTS      = -qdebug=intmsg
+#STDOUT    = userenamediag010b.out
+#STDERR    = userenamediag010b.out
+#OUTPUT    = userenamediag010b$(OBJ)
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+
+#CMD       = XLDIFF
+#INPUT     = userenamediag010b.out $($(tcasedir)userenamediag010b$(product)vf)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

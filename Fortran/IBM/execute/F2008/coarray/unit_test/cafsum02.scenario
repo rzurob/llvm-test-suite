@@ -1,0 +1,44 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = cafsum02.scenario
+#FEATURE = Coarray access
+#CREATOR = Xing Xue
+#DATE    = 20090731
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_COARRAY_IMAGES<8>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = $(tcasedir)cafsum02.f
+#OUTPUT    = cafsum02$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_COARRAY_IMAGES<8>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = cafsum02$(OBJ)
+#OUTPUT    = cafsum02$(EXE)
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD       = RUN
+	#ENVAR     = CAF_NUM_IMAGES=8
+	#ENVAR     = MP_PROCS=1
+	#INPUT     = cafsum02$(EXE)
+	#STDOUT    = cafsum02$(i).out
+	#ENDCMD
+
+	#CMD       = DIFF
+	#INPUT     = cafsum02$(i).out $($(tcasedir)cafsum02$(product)vf)
+	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

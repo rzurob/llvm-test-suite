@@ -1,0 +1,139 @@
+      program PROGNAME
+! this is the non-gcc4 version
+        type, bind(c) :: dt
+          character a
+          character b
+          character c
+          logical(1) d
+          character e
+          integer(1) f
+          character g
+          integer(2) h
+          character i
+          integer(4) j
+          character k
+          real(4) l
+          character m
+          integer(8) n
+          character o
+          real(8) p
+          character q
+          complex(4) r
+          character s
+#if __LITTLE_ENDIAN__
+          real(16) t
+#else
+          real(8) t
+#endif
+          character u
+          complex(8) v
+          character w
+#if __LITTLE_ENDIAN__
+          complex(16) x
+#else
+          complex(8) x
+#endif
+          character y
+        end type
+        interface
+          subroutine csub(bcdt)
+            type, bind(c) :: dt
+              character a
+              character b
+              character c
+              logical(1) d
+              character e
+              integer(1) f
+              character g
+              integer(2) h
+              character i
+              integer(4) j
+              character k
+              real(4) l
+              character m
+              integer(8) n
+              character o
+              real(8) p
+              character q
+              complex(4) r
+              character s
+#if __LITTLE_ENDIAN__
+              real(16) t
+#else
+              real(8) t
+#endif
+              character u
+              complex(8) v
+              character w
+#if __LITTLE_ENDIAN__
+              complex(16) x
+#else
+              complex(8) x
+#endif
+              character y
+            end type
+            type(dt) VALUE_ATTR :: bcdt
+          end subroutine csub
+        end interface
+        type(dt) :: foo
+        foo = dt('a', 'b', 'c', .false., 'e', 6,                             &
+     &           'g', 8, 'i', 10, 'k', 12.0_4,                               &
+     &           'm', 14, 'o', 16.0_8, 'q',                                  &
+     &           (18.0_4, 36.0_4), 's', 20.0_8,                             &
+     &           'u', (22.0_8, 44.0_8), 'w',                                 &
+     &           (24.0_8, 48.0_8), 'y')
+        call csub(foo)
+#if (!VALUE_SPECIFIED)
+        if (foo%a /= 'A') error stop 26
+        if (foo%b /= 'B') error stop 27
+        if (foo%c /= 'C') error stop 28
+        if (foo%d .neqv. .true.) error stop 29
+        if (foo%e /= 'E') error stop 30
+        if (foo%f /= 60) error stop 31
+        if (foo%g /= 'G') error stop 32
+        if (foo%h /= 80) error stop 33
+        if (foo%i /= 'I') error stop 34
+        if (foo%j /= 100) error stop 35
+        if (foo%k /= 'K') error stop 36
+        if (foo%l /= 120.0_4) error stop 37
+        if (foo%m /= 'M') error stop 38
+        if (foo%n /= 140) error stop 39
+        if (foo%o /= 'O') error stop 40
+        if (foo%p /= 160.0_8) error stop 41
+        if (foo%q /= 'Q') error stop 42
+        if (foo%r /= (180.0_4, 360.0_4)) error stop 43
+        if (foo%s /= 'S') error stop 44
+        if (foo%t /= 200.0_8) error stop 45
+        if (foo%u /= 'U') error stop 46
+        if (foo%v /= (220.0_8, 440.0_8)) error stop 47
+        if (foo%w /= 'W') error stop 48
+        if (foo%x /= (240.0_8, 480.0_8)) error stop 49
+        if (foo%y /= 'Y') error stop 50
+#else
+        if (foo%a /= 'a') error stop 26
+        if (foo%b /= 'b') error stop 27
+        if (foo%c /= 'c') error stop 28
+        if (foo%d .neqv. .false.) error stop 29
+        if (foo%e /= 'e') error stop 30
+        if (foo%f /= 6) error stop 31
+        if (foo%g /= 'g') error stop 32
+        if (foo%h /= 8) error stop 33
+        if (foo%i /= 'i') error stop 34
+        if (foo%j /= 10) error stop 35
+        if (foo%k /= 'k') error stop 36
+        if (foo%l /= 12.0_4) error stop 37
+        if (foo%m /= 'm') error stop 38
+        if (foo%n /= 14) error stop 39
+        if (foo%o /= 'o') error stop 40
+        if (foo%p /= 16.0_8) error stop 41
+        if (foo%q /= 'q') error stop 42
+        if (foo%r /= (18.0_4, 36.0_4)) error stop 43
+        if (foo%s /= 's') error stop 44
+        if (foo%t /= 20.0_8) error stop 45
+        if (foo%u /= 'u') error stop 46
+        if (foo%v /= (22.0_8, 44.0_8)) error stop 47
+        if (foo%w /= 'w') error stop 48
+        if (foo%x /= (24.0_8, 48.0_8)) error stop 49
+        if (foo%y /= 'y') error stop 50
+#endif
+      end program PROGNAME

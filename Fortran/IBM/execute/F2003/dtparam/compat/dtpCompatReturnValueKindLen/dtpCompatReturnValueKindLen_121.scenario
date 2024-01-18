@@ -1,0 +1,52 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/compat/dtpCompatReturnValueKindLen/dtpCompatReturnValueKindLen_121.scenario
+#FEATURE   = Broken Compatability Warning - DTP code returns pointer to extended type with both KIND and LEN type parameters
+! - latest PTF, v. 12.1
+#CREATOR   = DF Manual Update
+#DATE      = 20090613
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_RESOURCES = RHEL6
+#INVALID_PRODUCT=bgq linuxle
+#ENDENV
+
+#BEGINCONTROL
+
+! Compile "pre-DTP" files with the latest 12.1 PTF compiler,
+! compile "post-DTP" files with the latest version of the latest compiler,
+! link with the latest version of the latest compiler,
+! run:  Since no DTP data is actually defined, no error message should be generated.
+
+#CMD       = V121_XLF2003_COMPILE
+#INPUT     = $(tcasedir)dtpCompatReturnValueKindLenPreDTP.f
+#OUTPUT    = dtpCompatReturnValueKindLenPreDTP$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)dtpCompatReturnValueKindLenPostDTP.f
+#OUTPUT    = dtpCompatReturnValueKindLenPostDTP$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = dtpCompatReturnValueKindLenPostDTP$(OBJ) dtpCompatReturnValueKindLenPreDTP$(OBJ)
+#OUTPUT    = dtpCompatReturnValueKindLen$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpCompatReturnValueKindLen$(EXE)
+#STDOUT    = dtpCompatReturnValueKindLen.out
+#STDERR    = dtpCompatReturnValueKindLen.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpCompatReturnValueKindLen$(product)vf) dtpCompatReturnValueKindLen.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

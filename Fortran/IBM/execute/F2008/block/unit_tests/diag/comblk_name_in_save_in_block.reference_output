@@ -1,0 +1,3 @@
+"comblk_name_in_save_in_block.f", line 7.10: 1514-791 (S) Common block comblk must not be specified in a SAVE statement inside a BLOCK construct.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file comblk_name_in_save_in_block.f.

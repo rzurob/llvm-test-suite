@@ -1,0 +1,47 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/asynch_communication/asynchcomm020f.scenario
+#FEATURE   = C_Interop_Asynch_Communication
+#CREATOR   = Tapti Vaid
+#DATE      = 2013-10-07
+#TEST_TYPE = functional
+#KEYWORDS =  C_Interop  ASYNCH
+#ENDDOC
+
+#BEGINENV
+#RESOURCES_REQ= POE
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = SET_DYN_ENV
+#OPTS      = -auto_set=procs -c_mode=dist -usehostname
+#ENDCMD
+
+#CMD       = F_R_COMPLINK
+#INPUT     = $(tcasedir)asynchcomm020f.f
+#IF on (aix)
+#OPTS      = -I$(POE_PATH)/include -L$(POE_PATH)/lib -binitfini:poe_remote_main -lmpi_r
+#ELSE
+   #IF on (linuxle)
+       #OPTS      = -I$(POE_PATH)/../mpich/gnu/include64
+       #OPTS      = -L$(POE_PATH)/../mpich/gnu/lib64/ -lmpigf
+   #ELSE
+     #IF in($(F_COMPILE^OPT_GEN_64BIT_COMPILER_MODE))
+            #OPTS      = -I$(POE_PATH)/include/thread64 -L$(POE_PATH)/lib/libmpi64 -lmpi_ibm -lpoe -L$(POE_PATH)/../lapi/lib/lapi64 -llapi
+          #ELSE
+            #OPTS      = -I$(POE_PATH)/include/thread -L$(POE_PATH)/lib/libmpi -lmpi_ibm -lpoe -L$(POE_PATH)/../lapi/lib/lapi32 -llapi
+          #ENDIF
+   #ENDIF
+#ENDIF
+#OUTPUT    = asynchcomm020f$(EXE)
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = poe asynchcomm020f$(EXE) -procs 2
+#STDOUT    = asynchcomm020f.out
+#STDERR    = asynchcomm020f.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

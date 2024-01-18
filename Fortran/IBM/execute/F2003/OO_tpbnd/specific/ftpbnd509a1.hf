@@ -1,0 +1,19 @@
+module m
+    type base
+        integer*4 :: id
+
+        contains
+
+        procedure :: print => printBase
+    end type
+
+    private printBase
+
+    interface
+        subroutine printBase (b)
+        import base
+            class (base), intent(in) :: b
+        end subroutine
+    end interface
+end module
+

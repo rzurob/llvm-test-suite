@@ -1,0 +1,60 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BASync.scenario
+#FEATURE   = F2008 BLOCK - var declared in containing scope marked as async in block
+#CREATOR   = DF Manual Update
+#DATE      = 20101214
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+! Compile and run the program to create the input for the real test case program
+#CMD       = F_COMPLINK
+#INPUT     = $(tcasedir)BASyncPrep.f
+#OUTPUT    = BASyncPrep$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = BASyncPrep$(EXE)
+#ENDCMD
+
+! Now compile the real test case program, checking for variable markings (fgrep+diff)
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_GEN_BASIC_LISTING) $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT     = $(tcasedir)BASync.f
+#OUTPUT    = BASync$(OBJ)
+#ENDCMD
+
+#CMD       = FGREP
+#OPTS      = Asynchronous
+#INPUT     = BASync$(LST)
+#STDOUT    = BASync.attr
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)BASync$(product)vf0) BASync.attr
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = BASync$(OBJ)
+#OUTPUT    = BASync$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = BASync$(EXE)
+#STDOUT    = BASync.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)BASync$(product)vf) BASync.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

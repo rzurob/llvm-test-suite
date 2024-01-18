@@ -1,0 +1,8 @@
+"dtybn013.f", line 47.18: 1514-558 (S) Binding bind was declared with the PASS attribute. bind must not be declared with the NOPASS attribute.
+"dtybn013.f", line 47.18: 1514-556 (E) Binding attribute NON_OVERRIDABLE was specified more than once.  This occurrence of NON_OVERRIDABLE is ignored.
+"dtybn013.f", line 47.18: 1514-556 (E) Binding attribute NOPASS was specified more than once.  This occurrence of NOPASS is ignored.
+"dtybn013.f", line 50.29: 1514-084 (S) Identifier dt_p is being declared with type name parent which has not been defined in a derived type definition.
+"dtybn013.f", line 54.33: 1514-084 (S) Identifier arg1 is being declared with type name parent which has not been defined in a derived type definition.
+** mod1   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtybn013.f.

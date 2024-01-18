@@ -1,0 +1,32 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/intrinsics/merge/mergeAsFunRes02.scenario
+#FEATURE= 355754
+#CREATOR= Nancy Wang
+#DATE   = Sept. 19 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)mergeAsFunRes02.f
+#OUTPUT= mergeAsFunRes02$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = mergeAsFunRes02$(OBJ)
+#OUTPUT= mergeAsFunRes02$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = mergeAsFunRes02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

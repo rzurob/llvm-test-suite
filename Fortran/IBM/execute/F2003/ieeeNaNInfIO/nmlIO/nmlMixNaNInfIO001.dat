@@ -1,0 +1,27 @@
+ &NAN
+ RL1=nan, CX1=(3.14, 4.5), RL2=inf, CX2=(1.1, 2.2), RL3=-inf, CX3=(nan(s),nan)
+ /
+ &NAN
+ RL1=nan(s), CX1=(nan, -nan), RL2=inf, CX2=(inf, 2.2), RL3=-infinity, CX3=(nan(q),inf)
+ /
+ &NAN
+ RL1=nan(q), CX1=(nan, inf), RL2=inf, CX2=(nan(s), inf), RL3=-inf, CX3=(inf,-nan(s))
+ /
+ &NAN
+ RL1=nan(), CX1=(3.14, nan(s)), RL2=+infinity, CX2=(-inf, 2.2), RL3=+infinity, CX3=(-inf, nan(S))
+ /
+ &NAN
+ RL1=nan(abcd), CX1=(+nan(q), -nan(q)), RL2=3.14, CX2=(inf, infinity), RL3=7.0, CX3=(nan(1234),infinity)
+ /
+ &NAN
+ RL1=nan(ss), CX1=(+nan, -nan(q)), RL2=3.14, CX2=(-inf, -infinity), RL3=8.0, CX3=(nan(S),-infinity)
+ /
+ &NAN
+ RL1=nan(ab13), CX1=(-nan, -nan(S)), RL2=nan(13ab), CX2=(nan(s), NAN(S)), RL3=-inf, CX3=(nan(s1s),+inf)
+ /
+ &NAN
+ RL1=nan(_), CX1=(-nan(), +nan()), RL2=nan(_123), CX2=(nan(123_), NAN(_abc_)), RL3=-inf, CX3=(nan(_s_),-inf)
+ /
+ &NAN
+ RL1=+nan(_), CX1=(-nan(Q), +nan(__)), RL2=+nan(_123), CX2=(-nan(123_), -NAN(_abc_)), RL3=-inf, CX3=(+inf,nan(_s_))
+ /

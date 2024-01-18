@@ -1,0 +1,22 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/unit_tests/func/genop19.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPLINK
+#INPUT     = $(tcasedir)genop19.f
+#OUTPUT    = genop19$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genop19$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

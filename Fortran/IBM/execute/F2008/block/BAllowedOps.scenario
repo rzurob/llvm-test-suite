@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BAllowedOps.scenario
+#FEATURE   = allowed operations
+#CREATOR   = DF
+#DATE      = 2010-11-15
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = F_COMPILE
+#INPUT    = $(tcasedir)BAllowedOps.f
+#OUTPUT   = BAllowedOps$(OBJ)
+#STDERR   = BAllowedOps.err
+#ENDCMD
+
+! Make sure there are no syntax errors:
+#CMD      = XLDIFF
+#INPUT    = $($(tcasedir)BAllowedOps$(product)vf0) BAllowedOps.err
+#ENDCMD
+
+#CMD      = F_LINK
+#INPUT    = BAllowedOps$(OBJ)
+#OUTPUT   = BAllowedOps$(EXE)
+#ENDCMD
+
+#CMD      = RUN
+#INPUT    = BAllowedOps$(EXE)
+#STDOUT   = BAllowedOps.out
+#ENDCMD
+
+#CMD      = SPIFF
+#OPTS     = -r1e-5
+#INPUT    = $($(tcasedir)BAllowedOps$(product)vf) BAllowedOps.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

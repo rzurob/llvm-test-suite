@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/structConstr/dtparamConstr055_workaround.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamConstr055_workaround.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamConstr055_workaround$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtparamConstr055_workaround$(OBJ)
+#OUTPUT    = dtparamConstr055_workaround$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamConstr055_workaround$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

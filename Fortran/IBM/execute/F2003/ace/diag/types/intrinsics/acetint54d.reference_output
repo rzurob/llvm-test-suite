@@ -1,0 +1,12 @@
+"acetint54d.f", line 44.39: 1516-089 (S) Statement entity, apple, was seen with conflicting attributes.
+"acetint54d.f", line 45.52: 1516-089 (S) Statement entity, apple, was seen with conflicting attributes.
+"acetint54d.f", line 47.51: 1516-089 (S) Statement entity, apple, was seen with conflicting attributes.
+"acetint54d.f", line 48.64: 1516-089 (S) Statement entity, apple, was seen with conflicting attributes.
+"acetint54d.f", line 52.21: 1516-089 (S) Statement entity, orange, was seen with conflicting attributes.
+"acetint54d.f", line 53.22: 1516-089 (S) Statement entity, orange, was seen with conflicting attributes.
+"acetint54d.f", line 54.31: 1516-089 (S) Statement entity, orange, was seen with conflicting attributes.
+"acetint54d.f", line 55.32: 1516-089 (S) Statement entity, orange, was seen with conflicting attributes.
+"acetint54d.f", line 57.3: 1515-025 (S) Only a name of a variable, array element, or character substring is permitted on the left hand side of an assignment statement.
+"acetint54d.f", line 58.3: 1515-025 (S) Only a name of a variable, array element, or character substring is permitted on the left hand side of an assignment statement.
+** acetint54d   === End of Compilation 1 ===
+1501-511  Compilation failed for file acetint54d.f.

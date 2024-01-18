@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2012/generic/assignment/functional/genericAssignmentPass012.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericAssignmentPass012.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericAssignmentPass012$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericAssignmentPass012$(OBJ)
+#OUTPUT    = genericAssignmentPass012$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericAssignmentPass012$(EXE)
+#STDOUT    = genericAssignmentPass012.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericAssignmentPass012.out $(tcasedir)genericAssignmentPass012.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

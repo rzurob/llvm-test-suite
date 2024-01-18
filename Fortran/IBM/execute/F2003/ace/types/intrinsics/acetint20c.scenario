@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint20c.scenario
+#FEATURE	= Array constructor enhancement - Intrinsic type specifier in assignment (CHARACTER), init expr in kind and len
+#CREATOR	= DF Manual Update
+#DATE		= 20060919
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint20c.f
+#OUTPUT		= acetint20c$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint20c$(OBJ)
+#OUTPUT		= acetint20c$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint20c$(EXE)
+#STDOUT		= acetint20c.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $(tcasedir)acetint20c.vf acetint20c.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      =
+#FEATURE   =
+#CREATOR   =
+#DATE      =
+#TEST_TYPE =
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)d368969_3.f
+#OUTPUT		= d368969_3$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= d368969_3$(OBJ)
+#OUTPUT		= d368969_3$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= d368969_3$(EXE)
+#STDOUT		= d368969_3.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)d368969_3$(product)vf) d368969_3.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,9 @@
+"codimension_d02.f", line 25.24: 1514-767 (S) The upper cobound of the last codimension must be *.
+"codimension_d02.f", line 26.26: 1514-778 (S) Coarrays must not be zero-sized.
+"codimension_d02.f", line 28.19: 1514-775 (S) The sum of the rank and corank must not exceed 20.
+"codimension_d02.f", line 29.19: 1514-775 (S) The sum of the rank and corank must not exceed 20.
+"codimension_d02.f", line 31.41: 1514-775 (S) The sum of the rank and corank must not exceed 20.
+"codimension_d02.f", line 32.51: 1514-775 (S) The sum of the rank and corank must not exceed 20.
+"codimension_d02.f", line 33.89: 1514-775 (S) The sum of the rank and corank must not exceed 20.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file codimension_d02.f.

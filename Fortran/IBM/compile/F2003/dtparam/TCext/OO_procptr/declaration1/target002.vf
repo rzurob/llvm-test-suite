@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"target002.f", line 53.5: 1515-039 (S) The target in the pointer assignment must have the TARGET or POINTER attribute.
+"target002.f", line 54.5: 1515-039 (S) The target in the pointer assignment must have the TARGET or POINTER attribute.
+** target002   === End of Compilation 2 ===
+** sub1   === End of Compilation 3 ===
+** func1   === End of Compilation 4 ===
+1501-511  Compilation failed for file target002.f.

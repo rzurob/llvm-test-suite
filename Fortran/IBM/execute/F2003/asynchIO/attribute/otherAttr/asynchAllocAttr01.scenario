@@ -1,0 +1,61 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/attribute/otherAttr/asynchAllocAttr01.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Attribute
+#CREATOR	= GM Manual Creation
+#DATE		= 20060208
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)asynchAllocAttr01.dat .
+#ENDCMD
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)asynchAllocAttr01.f
+#OUTPUT		= asynchAllocAttr01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= asynchAllocAttr01$(OBJ)
+#OUTPUT		= asynchAllocAttr01$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= asynchAllocAttr01$(EXE)
+#STDOUT		= asynchAllocAttr01.stdout
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)asynchAllocAttr01$(product)vf)	\
+				asynchAllocAttr01.stdout
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= -i '^nameList[ 	]'
+#INPUT		= asynchAllocAttr01$(LST)
+#STDOUT		= asynchAllocAttr01.egrep.stdout
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= asynchAllocAttr01.egrep.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Allocatable'
+#INPUT		= asynchAllocAttr01.egrep.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

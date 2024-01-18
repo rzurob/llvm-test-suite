@@ -1,0 +1,30 @@
+ 
+ Expect:  4 4 4
+ Found:   4 4 4
+abcd QRST ghij WXYZ 
+efgh UVWX klmn ABCD 
+ijkl YZAB opqr EFGH 
+mnop CDEF stuv IJKL 
+ 
+ Expect:  6 4 4
+ Found:   6 4 4
+abcdcd QRSTST ghijij WXYZYZ 
+efghgh UVWXWX klmnmn ABCDCD 
+ijklkl YZABAB opqrqr EFGHGH 
+mnopop CDEFEF stuvuv IJKLKL 
+ 
+ Expect:  6 6 6
+ Found:   6 6 6
+abcdcd ghijij efghgh klmnmn ghijij abcdcd 
+efghgh klmnmn ijklkl opqrqr klmnmn efghgh 
+ijklkl opqrqr mnopop stuvuv opqrqr ijklkl 
+QRSTST WXYZYZ UVWXWX ABCDCD WXYZYZ QRSTST 
+UVWXWX ABCDCD YZABAB EFGHGH ABCDCD UVWXWX 
+YZABAB EFGHGH CDEFEF IJKLKL EFGHGH YZABAB 
+ 
+ Expect:  4 4 4
+ Found:   4 4 4
+lmnm pqrq jklk lmnm 
+pqrq tuvu nopo pqrq 
+XYZY BCDC VWXW XYZY 
+BCDC FGHG ZABA BCDC 

@@ -1,0 +1,89 @@
+!#######################################################################
+! SCCS ID Information
+! %W%, %I%
+! Extract Date/Time: %D% %T%
+! Checkin Date/Time: %E% %U%
+!#######################################################################
+! *********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: ffinal002.f
+! %VERIFY: ffinal002.out:ffinal002.vf
+! %STDIN:
+! %STDOUT: ffinal002.out
+! %EXECARGS:
+! %POSTCMD: 
+! %END
+! *********************************************************************
+!*  =================================================================== 
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
+!*  =================================================================== 
+!*  =================================================================== 
+!*
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Jim Xia
+!*  DATE                       : 04/26/2004
+!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
+!*                             :
+!*
+!*  PRIMARY FUNCTIONS TESTED   :
+!*                             :
+!*  SECONDARY FUNCTIONS TESTED : 
+!*
+!*  DRIVER STANZA              : xlf95
+!*
+!*  DESCRIPTION                : final sub (parent component is finalized)
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!* ===================================================================
+!*
+!*  REVISION HISTORY
+!*
+!*  MM/DD/YY:  Init:  Comments:
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+module m
+    type base
+        integer*4 :: flag
+
+        contains
+
+        final :: finalizeBase
+    end type
+
+    type, extends (base) :: child
+        character(20) :: name
+
+        contains
+
+        final :: finalizeChild
+    end type
+
+    contains
+
+    subroutine finalizeBase (b)
+        type (base), intent(inout) :: b
+
+        print *, 'finalizeBase'
+    end subroutine
+
+    subroutine finalizeChild (c)
+        type (child), intent(inout) :: c
+
+        print *, 'finalizeChild'
+    end subroutine
+end module
+
+program ffinal002
+use m
+    type (child), pointer :: c_ptr
+
+    allocate (c_ptr)
+
+    deallocate (c_ptr)
+end

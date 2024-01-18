@@ -1,0 +1,9 @@
+"C575_001kl.f", line 34.1: 1513-237 (E) Namelist group nml3 containing private namelist item c1 must not have public accessibility. nml3 is assumed to have private accessibility.
+"C575_001kl.f", line 34.1: 1513-237 (E) Namelist group nml2 containing private namelist item b1 must not have public accessibility. nml2 is assumed to have private accessibility.
+"C575_001kl.f", line 34.1: 1513-237 (E) Namelist group nml1 containing private namelist item a1 must not have public accessibility. nml1 is assumed to have private accessibility.
+** m1   === End of Compilation 1 ===
+"C575_001kl.f", line 61.1: 1513-237 (E) Namelist group nml5 containing private namelist item e1 must not have public accessibility. nml5 is assumed to have private accessibility.
+"C575_001kl.f", line 61.1: 1513-237 (E) Namelist group nml4 containing private namelist item d1 must not have public accessibility. nml4 is assumed to have private accessibility.
+** m2   === End of Compilation 2 ===
+** c575_001kl   === End of Compilation 3 ===
+1501-510  Compilation successful for file C575_001kl.f.

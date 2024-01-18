@@ -1,0 +1,4 @@
+ 1525-058 The format specification has zero length or contains all blanks.  The program will recover by assuming a format specification of '()'.
+                                                                                                                                                            
+ 1525-071 The initial left parenthesis in the format specification is missing.  The program will recover by assuming an initial left parenthesis.
+                                                                                                                                                           

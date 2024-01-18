@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/derived/acetdt33kl.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
+			   Derived TS in AC Same as Associate Name in ASSOCIATE	Construct)
+#CREATOR	= Glen Mateer (based on work by David Forster)
+#DATE		= 20080115
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt33kl.f
+#OUTPUT		= acetdt33kl$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt33kl$(OBJ)
+#OUTPUT		= acetdt33kl$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt33kl$(EXE)
+#STDOUT		= acetdt33kl.stdout
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -r1e-5
+#INPUT		= $($(tcasedir)acetdt33kl$(product)vf) acetdt33kl.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

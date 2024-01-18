@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/mix/generic/functional/crossFeature/structConstr/structConstr003alkl.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070808
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)structConstr003alkl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = structConstr003alkl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = structConstr003alkl$(OBJ)
+#OUTPUT    = structConstr003alkl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = structConstr003alkl$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

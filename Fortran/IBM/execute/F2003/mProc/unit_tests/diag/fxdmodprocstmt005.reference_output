@@ -1,0 +1,7 @@
+"fxdmodprocstmt005.f", line 53.21: 1514-146 (E) Invalid statement found within an interface block. Executable statement, statement function or syntax error encountered.
+"fxdmodprocstmt005.f", line 56.21: 1514-146 (E) Invalid statement found within an interface block. Executable statement, statement function or syntax error encountered.
+** m   === End of Compilation 1 ===
+"fxdmodprocstmt005.f", line 72.22: 1514-146 (E) Invalid statement found within an interface block. Executable statement, statement function or syntax error encountered.
+"fxdmodprocstmt005.f", line 75.22: 1514-146 (E) Invalid statement found within an interface block. Executable statement, statement function or syntax error encountered.
+** _main   === End of Compilation 2 ===
+1501-510  Compilation successful for file fxdmodprocstmt005.f.

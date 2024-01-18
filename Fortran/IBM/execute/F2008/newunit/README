@@ -1,0 +1,10 @@
+Feature 344377 F2008: Fortran 2008 adds the NEWUNIT= specifier to the OPEN statement. The NEWUNIT= specifier avoids accidental changes to currently connected units by asking the Fortran runtime library to make a connection to an unused unit, and assign that unit's number to the variable specified in the NEWUNIT= specifier. The unit number selected by the runtime library is always negative and does not interfere with unit numbers selected by the user program.
+
+unit/diag tests are located :
+F2008/newunit/unit_tests/diag
+F2008/newunit/unit_tests/func
+
+functional tests are located :
+F2008/newunit/func
+
+The design documents, I0, IT1 and IT2, can be found in ./doc subdirectory.

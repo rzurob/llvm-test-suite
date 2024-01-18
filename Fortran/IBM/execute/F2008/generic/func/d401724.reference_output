@@ -1,0 +1,4 @@
+    inside func_fsub()
+        -- inside fun_a10()
+    inside proc_fsub()
+        -- inside fun_int()

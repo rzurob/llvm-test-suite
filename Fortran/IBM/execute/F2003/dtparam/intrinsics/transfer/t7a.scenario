@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2003/dtparam/intrinsics/transfer/t7a.scenario
+#FEATURE = dtp intrinsics
+#CREATOR = Adrian Green
+#DATE    = 20080821
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)t7a.f
+#OUTPUT   = t7a$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = t7a$(OBJ)
+#OUTPUT   = t7a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = t7a$(EXE)
+#STDOUT   = t7a.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/spread/spreadAsActualArg02.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Oct. 23 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)spreadAsActualArg02.f
+#OUTPUT= spreadAsActualArg02$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = spreadAsActualArg02$(OBJ)
+#OUTPUT= spreadAsActualArg02$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = spreadAsActualArg02$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

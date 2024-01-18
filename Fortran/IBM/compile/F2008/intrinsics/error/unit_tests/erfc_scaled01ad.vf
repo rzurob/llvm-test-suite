@@ -1,0 +1,7 @@
+"erfc_scaled01a.f", line 3.23: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"erfc_scaled01a.f", line 5.23: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"erfc_scaled01a.f", line 5.30: 1518-256 (L) The intrinsic procedure erfc_scaled (with these arguments) is not permitted by the Fortran 2003 standard.
+"erfc_scaled01a.f", line 6.23: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"erfc_scaled01a.f", line 20.14: 1518-256 (L) The intrinsic procedure erfc_scaled (with these arguments) is not permitted by the Fortran 2003 standard.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file erfc_scaled01a.f.

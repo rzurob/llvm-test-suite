@@ -1,0 +1,5 @@
+"fabst001d.f", line 53.8: 1514-595 (S) Type base, specified with the ABSTRACT attribute, must not contain the SEQUENCE statement.
+"fabst001d.f", line 57.4: 1514-529 (S) Type base1 was declared with the ABSTRACT attribute. base1 must not be declared with the BIND attribute.
+** m   === End of Compilation 1 ===
+** fabst001d   === End of Compilation 2 ===
+1501-511  Compilation failed for file fabst001d.f.

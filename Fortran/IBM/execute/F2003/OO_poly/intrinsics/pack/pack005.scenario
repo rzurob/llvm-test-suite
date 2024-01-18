@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/pack/pack005.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050210
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)pack005.f
+#OPTS      = -qxlf2003=dynamicacval $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = pack005$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = pack005$(OBJ)
+#OUTPUT    = pack005$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = pack005$(EXE)
+#STDOUT    = pack005.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)pack005$(product)vf) pack005.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

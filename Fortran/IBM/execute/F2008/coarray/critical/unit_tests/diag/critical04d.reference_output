@@ -1,0 +1,14 @@
+"critical04d.f", line 29.6: 1511-144 (S) Transfer of control into or out of a CRITICAL construct is not permitted.  Check all references to this label.
+"critical04d.f", line 38.8: 1511-144 (S) Transfer of control into or out of a CRITICAL construct is not permitted.  Check all references to this label.
+"critical04d.f", line 61.10: 1512-123 (S) The CYCLE statement may not appear within a CRITICAL construct.
+"critical04d.f", line 70.8: 1512-123 (S) The EXIT statement may not appear within a CRITICAL construct.
+"critical04d.f", line 81.10: 1512-123 (S) The EXIT statement may not appear within a CRITICAL construct.
+"critical04d.f", line 95.12: 1512-123 (S) The EXIT statement may not appear within a CRITICAL construct.
+"critical04d.f", line 96.12: 1512-123 (S) The EXIT statement may not appear within a CRITICAL construct.
+"critical04d.f", line 113.10: 1512-123 (S) The RETURN statement may not appear within a CRITICAL construct.
+"critical04d.f", line 120.10: 1512-123 (S) The RETURN statement may not appear within a CRITICAL construct.
+** critical04d   === End of Compilation 1 ===
+"critical04d.f", line 133.12: 1512-123 (S) The RETURN statement may not appear within a CRITICAL construct.
+"critical04d.f", line 140.12: 1512-123 (S) The RETURN statement may not appear within a CRITICAL construct.
+** m_return   === End of Compilation 2 ===
+1501-511  Compilation failed for file critical04d.f.

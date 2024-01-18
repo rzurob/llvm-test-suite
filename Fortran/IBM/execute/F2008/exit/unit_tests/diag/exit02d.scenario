@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/exit/unit_tests/func/exit02d.scenario
+#FEATURE    = F386895 - F2008 Exit Statement
+#CREATOR    = David Nichols
+#DATE       = 20110308
+#TEST_TYPE  = Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)exit02d.f
+#STDERR     = exit02d.out
+#VALIDRCS   = 1
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = exit02d.out $($(tcasedir)exit02d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

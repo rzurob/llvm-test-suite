@@ -1,0 +1,6 @@
+"exit01d.f", line 24.8: 1512-123 (S) The EXIT statement may not appear within a CRITICAL construct.
+"exit01d.f", line 28.8: 1512-123 (S) The EXIT statement may not appear within a CRITICAL construct.
+"exit01d.f", line 32.8: 1512-123 (S) The EXIT statement may not appear within a CRITICAL construct.
+"exit01d.f", line 36.8: 1512-123 (S) The EXIT statement may not appear within a CRITICAL construct.
+** exit01d   === End of Compilation 1 ===
+1501-511  Compilation failed for file exit01d.f.

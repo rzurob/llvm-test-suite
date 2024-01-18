@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/synt/acesynt01a.scenario
+#FEATURE	= Array constructor enhancement syntax tests
+#CREATOR	= DF Manual Update
+#DATE		= 20060609
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acesynt01.f
+#OUTPUT		= acesynt01$(OBJ)
+#OPTS		= $(OPT_INTSIZE_2)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acesynt01$(OBJ)
+#OUTPUT		= acesynt01$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acesynt01$(EXE)
+#STDOUT		= acesynt01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

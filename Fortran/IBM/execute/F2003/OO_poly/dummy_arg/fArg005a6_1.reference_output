@@ -1,0 +1,6 @@
+ finalizeBase
+ deallocating x
+ finalizeBase
+ finalizeChild
+ finalizeBase
+ end

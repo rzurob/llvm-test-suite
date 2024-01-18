@@ -1,0 +1,15 @@
+** mod   === End of Compilation 1 ===
+"acetint11d.f", line 160.25: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acetint11d.f", line 160.39: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acetint11d.f", line 161.25: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acetint11d.f", line 161.39: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acetint11d.f", line 162.25: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acetint11d.f", line 162.39: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acetint11d.f", line 163.25: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acetint11d.f", line 163.39: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acetint11d.f", line 164.25: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acetint11d.f", line 164.39: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acetint11d.f", line 165.25: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acetint11d.f", line 165.39: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+** acetint11d   === End of Compilation 2 ===
+1501-511  Compilation failed for file acetint11d.f.

@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"falloc510d.f", line 52.15: 1513-088 (S) Procedure names must not be specified in this context.
+"falloc510d.f", line 53.15: 1513-088 (S) Procedure names must not be specified in this context.
+** falloc510d   === End of Compilation 2 ===
+1501-511  Compilation failed for file falloc510d.f.

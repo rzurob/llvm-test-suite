@@ -1,0 +1,6 @@
+"kindArgUbound2.f", line 43.25: 1513-145 (S) Argument keyword "kindd" does not match the dummy argument specified in the interface for the intrinsic procedure "ubound".
+"kindArgUbound2.f", line 44.25: 1513-145 (S) Argument keyword "dimkind" does not match the dummy argument specified in the interface for the intrinsic procedure "ubound".
+"kindArgUbound2.f", line 46.39: 1513-067 (S) Argument keyword "kind" was already specified for an actual argument.
+"kindArgUbound2.f", line 47.45: 1513-067 (S) Argument keyword "kind" was already specified for an actual argument.
+** kindargubound2   === End of Compilation 1 ===
+1501-511  Compilation failed for file kindArgUbound2.f.

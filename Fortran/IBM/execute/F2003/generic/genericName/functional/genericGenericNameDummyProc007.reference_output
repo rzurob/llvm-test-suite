@@ -1,0 +1,36 @@
+ setbasewint
+ returnintplusplus
+ 2 3 4 5 6
+ setbasewint
+ returnintminusminus
+ -1 0 1 2 3 4 5
+ setbasewbase
+ returninttobase
+ 1 2 3 4 5
+ setbasewbase
+ returndoublebase
+ 2 4 6 8 10 12 14 16
+ setbasewint
+ returnintplusplus
+ 2 3 4 5 6
+ setbasewint
+ returnintminusminus
+ -1 0 1 2 3 4 5
+ setbasewbase
+ returninttobase
+ 1 2 3 4 5
+ setbasewbase
+ returndoublebase
+ 2 4 6 8 10 12 14 16
+ setbasewint
+ returnintplusplus
+ 2 3 4 5 6
+ setbasewint
+ returnintminusminus
+ -1 0 1 2 3 4 5
+ setbasewbase
+ returninttobase
+ 1 2 3 4 5
+ setbasewbase
+ returndoublebase
+ 2 4 6 8 10 12 14 16

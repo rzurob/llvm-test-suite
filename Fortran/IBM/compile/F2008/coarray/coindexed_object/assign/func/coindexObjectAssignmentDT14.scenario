@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2008/coarray/coindexed_object/assign/func/coindexObjectAssignmentDT14.scenario
+#FEATURE   =
+#CREATOR   = Shahid Alam
+#DATE      = 20110307
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)coindexObjectAssignmentDT14.f
+#OUTPUT    = coindexObjectAssignmentDT14$(OBJ)
+#STDOUT    = coindexObjectAssignmentDT14.out
+#STDERR    = coindexObjectAssignmentDT14.out
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = SED
+#INPUT     = 's/value.*/value/g' coindexObjectAssignmentDT14.out > coindexObjectAssignmentDT14.sed
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = coindexObjectAssignmentDT14.sed $(tcasedir)coindexObjectAssignmentDT14.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

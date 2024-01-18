@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=data_module.scenario
+#FEATURE = Coarray in data
+#CREATOR = Feng Ye
+#DATE    = 20100602
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)data_module.f
+#OUTPUT    = data_module$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = data_module$(OBJ)
+#OUTPUT    = data_module$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = data_module$(EXE)
+#STDOUT    = data_module.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

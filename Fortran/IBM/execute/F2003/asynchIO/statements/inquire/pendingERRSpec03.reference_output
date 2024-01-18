@@ -1,0 +1,8 @@
+dataOut(  1321  2613  3905  5197  6489  7781  9073 10365 11657 12949)
+ 3 INQUIRE(ERR=100,ID= 3 ) < 1 > 1525-001 The READ statement on the file fort.217 cannot be completed because the end of the file was reached.  The program will stop.
+                                                                                                                          
+ 4 INQUIRE(ERR=100,ID= 2 ) < 226 > 1525-226 There is no outstanding asynchronous data transfer 2 specified by the ID= specifier. The program will recover by ignoring the INQUIRE statement.
+                                                                                                      
+ 5 INQUIRE(ERR=100,ID= 1 ) < 226 > 1525-226 There is no outstanding asynchronous data transfer 1 specified by the ID= specifier. The program will recover by ignoring the INQUIRE statement.
+                                                                                                      
+ dataIn(  2613  5197     0 10365 12949)

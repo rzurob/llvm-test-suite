@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/operator/resolve/genericOperatorResolve007.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericOperatorResolve007.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericOperatorResolve007$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericOperatorResolve007$(OBJ)
+#OUTPUT    = genericOperatorResolve007$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericOperatorResolve007$(EXE)
+#STDOUT    = genericOperatorResolve007.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericOperatorResolve007.out $(tcasedir)genericOperatorResolve007.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

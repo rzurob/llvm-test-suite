@@ -1,0 +1,4 @@
+"newunit01d.f", line 3.6: 1512-687 (S) The NEWUNIT= specifier appears in the OPEN statement.  The STATUS= specifier with a value of SCRATCH or the FILE= specifier must also appear in the OPEN statement.
+"newunit01d.f", line 3.12: 1518-283 (L) The NEWUNIT= specifier is not permitted by the Fortran 2003 standard.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file newunit01d.f.

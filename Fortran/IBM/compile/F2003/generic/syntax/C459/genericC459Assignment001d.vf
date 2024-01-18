@@ -1,0 +1,4 @@
+"genericC459Assignment001d.f", line 39.9: 1514-703 (S) All generic bindings with generic specification ASSIGNMENT(=) in type base must have the same accessibility.
+** m   === End of Compilation 1 ===
+** genericc459assignment001d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericC459Assignment001d.f.

@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_procptr/component1/sequenceType001.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050418
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)sequenceType001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = sequenceType001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = sequenceType001$(OBJ)
+#OUTPUT    = sequenceType001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = sequenceType001$(EXE)
+#STDOUT    = sequenceType001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)sequenceType001$(product)vf) sequenceType001.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

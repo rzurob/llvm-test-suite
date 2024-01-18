@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/ArraySections/d353913.scenario
+#FEATURE   = 353925
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20080718
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d353913.f
+#OUTPUT    = d353913$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d353913$(OBJ)
+#OUTPUT    = d353913$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d353913$(EXE)
+#STDOUT    = d353913.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)d353913$(product)vf) d353913.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

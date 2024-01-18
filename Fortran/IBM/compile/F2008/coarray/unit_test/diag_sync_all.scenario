@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = diag_sync_all.scenario
+#FEATURE  =
+#CREATOR  = Francesco Cassullo
+#DATE     = December 2010
+#TEST_TYPE= DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_NOCOARRAY)
+#INPUT     = $(tcasedir)diag_sync_all.f
+#OUTPUT    = diag_sync_all$(OBJ)
+#STDOUT    = diag_sync_all.err
+#STDERR    = diag_sync_all.err
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)diag_sync_all$(product)vf) diag_sync_all.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

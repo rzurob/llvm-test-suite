@@ -1,0 +1,3 @@
+"volatile_coarray_in_block.f", line 7.12: 1514-790 (S) Coarray i is not a construct entity of the BLOCK construct.  It must not be specified with the VOLATILE attribute.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file volatile_coarray_in_block.f.

@@ -1,0 +1,2 @@
+ DEALLOCATING this shall fail!
+"dataPtrDeallocArrSec.f", line 49: 1525-109 Error encountered while attempting to deallocate a data object.  The program will stop.

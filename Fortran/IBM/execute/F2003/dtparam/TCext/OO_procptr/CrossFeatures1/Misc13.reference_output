@@ -1,0 +1,7 @@
+"Misc13.f", line 61.14: 1515-107 (E) Attribute VOLATILE must not be specified for this procedure declaration statement.  Attribute VOLATILE is ignored.
+"Misc13.f", line 62.20: 1515-107 (E) Attribute VOLATILE must not be specified for this procedure declaration statement.  Attribute VOLATILE is ignored.
+"Misc13.f", line 63.20: 1515-107 (E) Attribute VOLATILE must not be specified for this procedure declaration statement.  Attribute VOLATILE is ignored.
+"Misc13.f", line 69.20: 1515-107 (E) Attribute VOLATILE must not be specified for this procedure declaration statement.  Attribute VOLATILE is ignored.
+"Misc13.f", line 73.20: 1515-107 (E) Attribute VOLATILE must not be specified for this procedure declaration statement.  Attribute VOLATILE is ignored.
+** misc13   === End of Compilation 1 ===
+1501-510  Compilation successful for file Misc13.f.

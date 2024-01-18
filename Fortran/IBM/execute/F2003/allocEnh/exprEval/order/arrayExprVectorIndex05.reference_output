@@ -1,0 +1,6 @@
+       ("1,abcde","2,FGHIJ","3,klmno","4,PQRST","5,uvwxy","6,ZABCD","7,Efghi")
+       ("1,abcde","2,FGHIJ","3,klmno","4,PQRST")
+Before ("1,abcde","3,klmno","5,uvwxy","7,Efghi")
+ After ("1,decab","2,IJHFG","3,nomkl","4,STRPQ")
+       ("1,decab","2,FGHIJ","2,IJHFG","4,PQRST")
+       ("1,decab","2,FGHIJ","2,IJHFG","4,PQRST","3,nomkl","6,ZABCD","4,STRPQ")

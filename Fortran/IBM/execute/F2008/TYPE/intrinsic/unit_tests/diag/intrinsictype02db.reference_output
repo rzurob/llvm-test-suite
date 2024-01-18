@@ -1,0 +1,10 @@
+"intrinsictype02d.F", line 26.20: 1518-262 (L) The length specification for a non-character declaration is not permitted in the Fortran 2008 standard.
+"intrinsictype02d.F", line 30.17: 1518-262 (L) The length specification for a non-character declaration is not permitted in the Fortran 2008 standard.
+"intrinsictype02d.F", line 34.20: 1518-262 (L) The length specification for a non-character declaration is not permitted in the Fortran 2008 standard.
+"intrinsictype02d.F", line 42.20: 1518-262 (L) The length specification for a non-character declaration is not permitted in the Fortran 2008 standard.
+"intrinsictype02d.F", line 44.13: 1518-260 (L) The BYTE keyword is not permitted by the Fortran 2008 standard.
+"intrinsictype02d.F", line 46.12: 1518-260 (L) The VECTOR keyword is not permitted by the Fortran 2008 standard.
+"intrinsictype02d.F", line 47.12: 1518-260 (L) The VECTOR keyword is not permitted by the Fortran 2008 standard.
+"intrinsictype02d.F", line 48.12: 1518-260 (L) The VECTOR keyword is not permitted by the Fortran 2008 standard.
+** intrinsictype02d   === End of Compilation 1 ===
+1501-510  Compilation successful for file intrinsictype02d.F.

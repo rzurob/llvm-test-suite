@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/null/typeQuery002.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050302
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)typeQuery002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = typeQuery002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = typeQuery002$(OBJ)
+#OUTPUT    = typeQuery002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = typeQuery002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

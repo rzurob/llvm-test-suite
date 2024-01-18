@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/dummy_arg/atpda/dtpATPDAIntent.scenario
+#FEATURE   = Assumed type parameters and dummy arguments - intent
+#CREATOR   = DF Manual Update
+#DATE      = 20081015
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpATPDAIntent.f
+#OUTPUT    = dtpATPDAIntent$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpATPDAIntent$(OBJ)
+#OUTPUT    = dtpATPDAIntent$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpATPDAIntent$(EXE)
+#STDOUT    = dtpATPDAIntent.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpATPDAIntent$(product)vf) dtpATPDAIntent.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

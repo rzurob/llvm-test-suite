@@ -1,0 +1,6 @@
+ 10
+ finalizeBase
+ 10 test1               
+ finalizeChild
+ finalizeBase
+ end

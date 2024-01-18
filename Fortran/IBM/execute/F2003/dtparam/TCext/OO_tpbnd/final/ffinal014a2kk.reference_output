@@ -1,0 +1,13 @@
+ deallocating b
+ finalizeChildRank1 and then 2 base parent comp.
+ finalizeBase
+ finalizeBase
+ deallocating a1
+ finalizeChild
+ finalizeBase
+ deallocating a2
+ finalizeChildRank1 and then 3 base parent comp.
+ finalizeBase
+ finalizeBase
+ finalizeBase
+ end

@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/decimaledit/dtio/d322417.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d322417.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = d322417$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d322417$(OBJ)
+#OUTPUT    = d322417$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d322417$(EXE)
+#STDOUT    = d322417.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = d322417.out $($(tcasedir)d322417$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

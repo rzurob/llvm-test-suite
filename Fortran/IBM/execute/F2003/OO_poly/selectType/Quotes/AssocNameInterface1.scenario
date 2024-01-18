@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       AssocNameInterface1.f
+#FEATURE= SELECT TYPE STATEMENT
+#CREATOR=    Feng Ye
+#DATE=       11-01-05
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)AssocNameInterface1.f
+#OUTPUT= AssocNameInterface1$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  AssocNameInterface1$(OBJ)
+#OUTPUT= AssocNameInterface1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  AssocNameInterface1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

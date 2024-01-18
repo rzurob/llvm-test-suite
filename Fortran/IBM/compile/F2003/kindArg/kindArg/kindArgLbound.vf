@@ -1,0 +1,9 @@
+"kindArgLbound.f", line 53.28: 1513-133 (S) KIND must be an integer constant.
+"kindArgLbound.f", line 54.32: 1513-040 (S) The argument KIND must be a scalar.
+"kindArgLbound.f", line 56.25: 1513-040 (S) The argument KIND must be a scalar.
+"kindArgLbound.f", line 58.28: 1513-133 (S) KIND must be an integer constant.
+"kindArgLbound.f", line 59.28: 1513-133 (S) KIND must be an integer constant.
+"kindArgLbound.f", line 60.28: 1513-133 (S) KIND must be an integer constant.
+"kindArgLbound.f", line 61.28: 1513-133 (S) KIND must be an integer constant.
+** kindarglbound   === End of Compilation 1 ===
+1501-511  Compilation failed for file kindArgLbound.f.

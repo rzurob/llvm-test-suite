@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/others/dataPtrIntrinbound.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071217
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrIntrinbound.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrIntrinbound$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrIntrinbound$(OBJ)
+#OUTPUT    = dataPtrIntrinbound$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrIntrinbound$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

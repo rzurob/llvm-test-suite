@@ -1,0 +1,8 @@
+"kindArgSize.f", line 53.23: 1513-133 (S) KIND must be an integer constant.
+"kindArgSize.f", line 54.23: 1513-040 (S) The argument KIND must be a scalar.
+"kindArgSize.f", line 56.21: 1513-133 (S) KIND must be an integer constant.
+"kindArgSize.f", line 57.21: 1513-133 (S) KIND must be an integer constant.
+"kindArgSize.f", line 58.21: 1513-133 (S) KIND must be an integer constant.
+"kindArgSize.f", line 59.21: 1513-133 (S) KIND must be an integer constant.
+** kindargsize   === End of Compilation 1 ===
+1501-511  Compilation failed for file kindArgSize.f.

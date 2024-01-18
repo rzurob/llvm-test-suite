@@ -1,0 +1,31 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dtpAttrSpecStmtSaveC570.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       06-06-12
+#TEST_TYPE=  DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=      F_COMPILE
+#INPUT=    $(tcasedir)dtpAttrSpecStmtSaveC570.f
+#OPTS = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_LANG_LEVEL<2003pure>) -qhalt=l $(OPT_ENABLE_MSG_NUM<1518-317>)
+#STDERR=   dtpAttrSpecStmtSaveC570.err
+#VALIDRCS= $(RC_COMP_E)
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    dtpAttrSpecStmtSaveC570.err $($(tcasedir)dtpAttrSpecStmtSaveC570$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

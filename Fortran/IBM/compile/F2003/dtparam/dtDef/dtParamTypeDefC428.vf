@@ -1,0 +1,5 @@
+"dtParamTypeDefC428.f", line 41.6: 1514-595 (S) Type dt1, specified with the ABSTRACT attribute, must not contain the SEQUENCE statement.
+"dtParamTypeDefC428.f", line 45.4: 1514-529 (S) Type dt2 was declared with the ABSTRACT attribute. dt2 must not be declared with the BIND attribute.
+** m   === End of Compilation 1 ===
+** dtparamtypedefc428   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtParamTypeDefC428.f.

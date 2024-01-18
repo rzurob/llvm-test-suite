@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/iomsg/unit/fiomsg08.scenario
+#FEATURE = iomsg tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) $(F_COMPILE^OPT_FREE_SOURCE_FORM)  $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+! Deconstructing a SCRIPT : PREdeconSCRIPT
+! Valid line : ${COMPILER} $TR_SRC/$1.f -o $1 $OPTIONS
+
+#CMD       = XLF_COMPLINK
+#INPUT     = $(tcasedir)fiomsg08.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fiomsg08$(EXE)
+#ENDCMD
+! Valid line : $1 > $1.err 2>&1
+
+#CMD       = RUN
+#INPUT     = ./fiomsg08
+#STDOUT    = fiomsg08.err
+#STDERR    = fiomsg08.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+! Valid line : diff $1.err $TR_SRC/$1.vf
+
+#CMD       = DIFF
+#INPUT     = fiomsg08.err $($(tcasedir)fiomsg08$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,48 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/cintrop5/cmnblk_unit/bcdalag2.scenario
+#FEATURE = cintrop5 tests - regression run bucket
+#CREATOR = SH Manual conversion
+#DATE    = 20041101
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPLINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_LANG_LEVEL<90std>)
+#INPUT     = $(tcasedir)bcdalag2.f
+#STDERR    = bcdalag2.err2
+#ENDCMD
+
+#CMD 	   = SED
+#INPUT     = bcdalag2.err2
+#OPTS      = -e 's?$(tcasedir)??g'
+#STDOUT    = bcdalag2.err1
+#ENDCMD
+
+#CMD       = SORT
+#INPUT     = bcdalag2.err1
+#STDOUT    = bcdalag2.err
+#ENDCMD
+
+#CMD       = SORT
+#IF in($(F_COMPILE^OPT_OPTIMIZE_FOR_SMP)) || in($(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT)) || on(cbe_ssc)
+  #INPUT   = $(tcasedir)bcdalag2.vf2
+#ELSE
+  #INPUT   = $($(tcasedir)bcdalag2$(product)vf1)
+#ENDIF
+#STDOUT    = bcdalag2.vf
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = bcdalag2.err bcdalag2.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

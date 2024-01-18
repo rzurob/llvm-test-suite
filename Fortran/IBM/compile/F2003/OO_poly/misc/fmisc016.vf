@@ -1,0 +1,7 @@
+"fmisc016.f", line 55.29: 1511-139 (S) Associate name x is not associated with an entity that can be defined. x must not be redefined or become undefined.
+"fmisc016.f", line 60.23: 1511-074 (S) The stat-variable in the ALLOCATE statement must be a scalar integer variable.
+"fmisc016.f", line 61.23: 1511-074 (S) The stat-variable in the ALLOCATE statement must be a scalar integer variable.
+"fmisc016.f", line 62.23: 1511-074 (S) The stat-variable in the ALLOCATE statement must be a scalar integer variable.
+** fmisc016   === End of Compilation 1 ===
+** if1   === End of Compilation 2 ===
+1501-511  Compilation failed for file fmisc016.f.

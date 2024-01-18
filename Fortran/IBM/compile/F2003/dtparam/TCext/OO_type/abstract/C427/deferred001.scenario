@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/C427/deferred001.scenario
+#FEATURE   = OO_type/abstract tests - regression run bucket
+#CREATOR   = GB copy from OO_type/abstract/C427/deferred001.scenario
+#DATE      = 20070426
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+! This chunk was DCOMP
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)deferred001.f
+#OPTS      = -qdebug=intmsg:shutup
+#OUTPUT    = deferred001$(OBJ)
+#STDERR    = deferred001.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)deferred001$(product)vf) deferred001.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

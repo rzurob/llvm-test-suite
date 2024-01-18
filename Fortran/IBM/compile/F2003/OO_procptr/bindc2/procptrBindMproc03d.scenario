@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_procptr/bindc2/procptrBindMproc03d.f
+#CREATOR = William Zhang
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)procptrBindMproc03d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=intmsg:shutup
+#OUTPUT    = procptrBindMproc03d$(OBJ)
+#STDERR    = procptrBindMproc03d.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)procptrBindMproc03d$(product)vf) procptrBindMproc03d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

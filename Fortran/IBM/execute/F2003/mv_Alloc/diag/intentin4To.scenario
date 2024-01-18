@@ -1,0 +1,33 @@
+
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      intentin4To.f
+#FEATURE=
+#CREATOR=   Michelle Zhang
+#DATE=
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = $(tcasedir)intentin4To.f
+#OUTPUT    = intentin4To$(OBJ)
+#STDERR    = intentin4To.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    intentin4To.err $($(tcasedir)intentin4To$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

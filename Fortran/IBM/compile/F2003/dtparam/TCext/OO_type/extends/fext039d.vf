@@ -1,0 +1,4 @@
+"fext039d.f", line 60.21: 1514-587 (S) Component value is not permitted. value is the name of a component, binding, or type parameter that is inherited from type base.
+** m   === End of Compilation 1 ===
+** fext039d   === End of Compilation 2 ===
+1501-511  Compilation failed for file fext039d.f.

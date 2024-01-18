@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/abstracti/abstracti004.scenario
+#FEATURE = Abstract Interface Tests
+#CREATOR = Robert Ma
+#DATE    = 20060220
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)abstracti004.1 .
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)abstracti004.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = abstracti004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = abstracti004$(OBJ)
+#OUTPUT    = abstracti004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = abstracti004$(EXE)
+#STDOUT    = abstracti004.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = abstracti004.out $(tcasedir)abstracti004.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

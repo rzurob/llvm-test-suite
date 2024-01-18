@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+** m2   === End of Compilation 2 ===
+"submodule02d.f", line 55.27: 1514-245 (S) Identifier func is accessed by use association. It must not be redeclared or initialized.
+"submodule02d.f", line 55.27: 1513-269 (S) Separate module procedure func must be declared in a separate interface body in the containing program unit or an ancestor of that program unit.
+** b   === End of Compilation 3 ===
+** submodule02d   === End of Compilation 4 ===
+1501-511  Compilation failed for file submodule02d.f.

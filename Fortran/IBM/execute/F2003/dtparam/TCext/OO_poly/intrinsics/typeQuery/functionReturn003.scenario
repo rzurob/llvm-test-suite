@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/typeQuery/functionReturn003.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071001
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)functionReturn003.f
+#OUTPUT    = functionReturn003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = functionReturn003$(OBJ)
+#OUTPUT    = functionReturn003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = functionReturn003$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

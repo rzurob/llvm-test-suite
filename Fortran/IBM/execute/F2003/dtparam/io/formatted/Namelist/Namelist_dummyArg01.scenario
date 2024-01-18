@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/Namelist/Namelist_dummyArg01.scenario
+#FEATURE   = DTP - Namelist
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20081117
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)Namelist_dummyArg01.f
+#OUTPUT    = Namelist_dummyArg01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = Namelist_dummyArg01$(OBJ)
+#OUTPUT    = Namelist_dummyArg01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = Namelist_dummyArg01$(EXE)
+#STDOUT    = Namelist_dummyArg01.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)Namelist_dummyArg01$(product)vf) Namelist_dummyArg01.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

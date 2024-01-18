@@ -1,0 +1,5 @@
+ inside foo 10000 T
+ deallocating component of b1 10000
+ F
+ after deallocActual 10000 T
+ F

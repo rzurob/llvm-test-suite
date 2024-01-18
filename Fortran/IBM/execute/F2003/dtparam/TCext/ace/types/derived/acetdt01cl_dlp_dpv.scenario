@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/derived/acetdt01cl_dlp_dpv.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
+			   No-Parameter Derived TS Allocatable Component with Defined	\
+			   Assignment via Elementals
+#CREATOR	= Glen Mateer (derived from work by David Forster)
+#DATE		= 20080114
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt01cl_dlp_dpv.f
+#OUTPUT		= acetdt01cl_dlp_dpv$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt01cl_dlp_dpv$(OBJ)
+#OUTPUT		= acetdt01cl_dlp_dpv$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt01cl_dlp_dpv$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

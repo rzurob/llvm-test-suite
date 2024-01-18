@@ -1,0 +1,32 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/intrinsics/merge/mergeIntComp02.scenario
+#FEATURE= 355754
+#CREATOR= Nancy Wang
+#DATE   = Sept. 13 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)mergeIntComp02.f
+#OUTPUT= mergeIntComp02$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = mergeIntComp02$(OBJ)
+#OUTPUT= mergeIntComp02$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = mergeIntComp02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/intrinsics/transfer/structureComponent005.scenario
+#FEATURE = OO_poly/intrinsics tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)structureComponent005.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = structureComponent005$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  structureComponent005$(OBJ)
+#OUTPUT    = structureComponent005$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = structureComponent005$(EXE)
+#STDOUT    = structureComponent005.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)structureComponent005$(product)vf) structureComponent005.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

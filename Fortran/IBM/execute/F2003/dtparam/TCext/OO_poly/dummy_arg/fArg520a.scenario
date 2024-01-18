@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/dummy_arg/fArg520a.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070919
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fArg520a.f
+#OPTS = -qxlf2003=dynamicacval
+#OUTPUT    = fArg520a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fArg520a$(OBJ)
+#OUTPUT    = fArg520a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fArg520a$(EXE)
+#STDOUT    = fArg520a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fArg520a.out $($(tcasedir)fArg520a$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

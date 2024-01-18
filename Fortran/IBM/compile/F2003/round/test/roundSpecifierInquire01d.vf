@@ -1,0 +1,8 @@
+"roundSpecifierInquire01d.f", line 25.32: 1512-019 (S) INQUIRE statement specifier must be a simple variable or array element.  Statement is ignored.
+"roundSpecifierInquire01d.f", line 27.32: 1512-019 (S) INQUIRE statement specifier must be a simple variable or array element.  Statement is ignored.
+"roundSpecifierInquire01d.f", line 29.23: 1512-019 (S) INQUIRE statement specifier must be a simple variable or array element.  Statement is ignored.
+"roundSpecifierInquire01d.f", line 31.23: 1512-019 (S) INQUIRE statement specifier must be a simple variable or array element.  Statement is ignored.
+"roundSpecifierInquire01d.f", line 33.23: 1512-019 (S) INQUIRE statement specifier must be a simple variable or array element.  Statement is ignored.
+"roundSpecifierInquire01d.f", line 48.38: 1511-139 (S) Associate name x is not associated with an entity that can be defined. x must not be redefined or become undefined.
+** roundspecifierinquire01d   === End of Compilation 1 ===
+1501-511  Compilation failed for file roundSpecifierInquire01d.f.

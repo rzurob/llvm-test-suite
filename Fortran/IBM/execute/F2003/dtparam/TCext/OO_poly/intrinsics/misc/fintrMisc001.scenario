@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/misc/fintrMisc001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070925
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fintrMisc001.f
+#OUTPUT    = fintrMisc001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fintrMisc001$(OBJ)
+#OUTPUT    = fintrMisc001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fintrMisc001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

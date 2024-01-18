@@ -1,0 +1,15 @@
+ ios =  0
+ four letter word = boat
+ ios =  0
+ four letter word = moat
+ ios =  0
+ four letter word = rake
+ ios =  0
+ four letter word = take
+ ios =  0
+ four letter word = plan
+ ios =  -1
+ four letter word = eof 
+ expr = ios(which should be -1)+2+(2*4)-8-2:  T
+ expr = ios(which should be -1)+2*max(3,4)-8:  T
+ expr = ios(which should be -1)+2*max(3,4)-8**3:  F

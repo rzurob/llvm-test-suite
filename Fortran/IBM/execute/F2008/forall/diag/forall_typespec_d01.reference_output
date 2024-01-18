@@ -1,0 +1,19 @@
+"forall_typespec_d01.f", line 31.16: 1511-081 (S) The index name must be a scalar integer variable.
+"forall_typespec_d01.f", line 34.16: 1511-081 (S) The index name must be a scalar integer variable.
+"forall_typespec_d01.f", line 37.17: 1511-081 (S) The index name must be a scalar integer variable.
+"forall_typespec_d01.f", line 41.17: 1511-081 (S) The index name must be a scalar integer variable.
+"forall_typespec_d01.f", line 45.17: 1511-081 (S) The index name must be a scalar integer variable.
+"forall_typespec_d01.f", line 49.19: 1511-081 (S) The index name must be a scalar integer variable.
+"forall_typespec_d01.f", line 52.20: 1511-081 (S) The index name must be a scalar integer variable.
+"forall_typespec_d01.f", line 55.20: 1511-081 (S) The index name must be a scalar integer variable.
+"forall_typespec_d01.f", line 60.18: 1511-081 (S) The index name must be a scalar integer variable.
+"forall_typespec_d01.f", line 63.7: 1515-022 (S) Syntax Error: Extra token " TYPE " was found. The token is ignored.
+"forall_typespec_d01.f", line 63.12: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"forall_typespec_d01.f", line 63.13: 1515-022 (S) Syntax Error: Extra token " mytype " was found. The token is ignored.
+"forall_typespec_d01.f", line 63.19: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"forall_typespec_d01.f", line 68.7: 1515-019 (S) Syntax is incorrect.
+"forall_typespec_d01.f", line 69.2: 1515-019 (S) Syntax is incorrect.
+"forall_typespec_d01.f", line 71.7: 1515-019 (S) Syntax is incorrect.
+"forall_typespec_d01.f", line 72.2: 1515-019 (S) Syntax is incorrect.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file forall_typespec_d01.f.

@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"dtparamConstr030d.f", line 46.25: 1516-044 (S) A conversion from type REAL*4 is not permitted.
+"dtparamConstr030d.f", line 47.40: 1516-044 (S) A conversion from type LOGICAL is not permitted.
+"dtparamConstr030d.f", line 48.37: 1516-044 (S) A conversion from type LOGICAL is not permitted.
+** dtparamconstr030d   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtparamConstr030d.f.

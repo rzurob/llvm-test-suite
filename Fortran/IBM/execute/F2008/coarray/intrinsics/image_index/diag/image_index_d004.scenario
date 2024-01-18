@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = image_index_d004.scenario
+#FEATURE  = CAF Intrinsics
+#CREATOR  = Francesco Cassullo
+#DATE     = August 2010
+#TEST_TYPE= DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_NOCOARRAY)
+#INPUT     = $(tcasedir)image_index_d004.f
+#OUTPUT    = image_index_d004$(OBJ)
+#STDOUT    = image_index_d004.err
+#STDERR    = image_index_d004.err
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)image_index_d004$(product)vf) image_index_d004.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

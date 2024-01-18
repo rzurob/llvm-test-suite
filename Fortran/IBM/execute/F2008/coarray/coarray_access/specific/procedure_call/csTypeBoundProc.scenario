@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_access/specific/procedure_call/csTypeBoundProc
+#FEATURE        = CAF coarray access (specific) - procedure call - pass coarray actual arguments to type-bound procedure (*not* as the passed-object dummy argument, obviously), which passes it on and modifies or processes it in an internal procedure
+#CREATOR        = DF
+#DATE           = 2010-10-04
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)csTypeBoundProc.f
+#OUTPUT = csTypeBoundProc$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = csTypeBoundProc$(OBJ)
+#OUTPUT = csTypeBoundProc$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = csTypeBoundProc$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,6 @@
+"kindArgScan1.f", line 43.49: 1513-143 (S) Invalid KIND value.
+"kindArgScan1.f", line 44.49: 1513-143 (S) Invalid KIND value.
+"kindArgScan1.f", line 45.16: 1513-143 (S) Invalid KIND value.
+"kindArgScan1.f", line 47.50: 1513-143 (S) Invalid KIND value.
+** kindargscan1   === End of Compilation 1 ===
+1501-511  Compilation failed for file kindArgScan1.f.

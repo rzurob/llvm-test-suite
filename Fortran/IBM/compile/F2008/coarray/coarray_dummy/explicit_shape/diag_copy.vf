@@ -1,0 +1,3 @@
+"diag_copy.f", line 34.15: 1516-342 (S) The coarray dummy argument x of procedure foo is not an assumed-shape array or is declared with the CONTIGUOUS attribute.  The corresponding actual argument must be simply contiguous.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file diag_copy.f.

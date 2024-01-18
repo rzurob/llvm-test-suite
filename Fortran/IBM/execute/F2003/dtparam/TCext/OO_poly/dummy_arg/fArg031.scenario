@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/dummy_arg/fArg031.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070919
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fArg031.f
+#OUTPUT    = fArg031$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fArg031$(OBJ)
+#OUTPUT    = fArg031$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fArg031$(EXE)
+#STDOUT    = fArg031.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)fArg031$(product)vf) fArg031.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

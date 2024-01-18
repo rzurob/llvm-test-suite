@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/ArraySections/arrsec_4d.scenario
+#FEATURE   = 353925
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20080804
+#TEST_TYPE = Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)arrsec_4d.f
+#VALIDRCS  = 1
+#STDERR    = arrsec_4d.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)arrsec_4d$(product)vf) arrsec_4d.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

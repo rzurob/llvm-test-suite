@@ -1,0 +1,44 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/namelist/namelist.1.3/logical001.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)logical001.1 .
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)logical001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = logical001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = logical001$(OBJ)
+#OUTPUT    = logical001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = logical001$(EXE)
+#STDOUT    = logical001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)logical001$(product)vf) logical001.out
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

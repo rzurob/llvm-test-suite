@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/inquire/pendingERRSpec03.scenario
+#FEATURE	= Asynchronous I/O -- INQUIRE Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060324
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)pendingERRSpec03.f
+#OUTPUT		= pendingERRSpec03$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= pendingERRSpec03$(OBJ)
+#OUTPUT		= pendingERRSpec03$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= pendingERRSpec03$(EXE)
+#STDOUT		= pendingERRSpec03.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)pendingERRSpec03$(product)vf)	\
+				pendingERRSpec03.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

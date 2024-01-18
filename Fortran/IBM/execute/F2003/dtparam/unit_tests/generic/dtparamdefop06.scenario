@@ -1,0 +1,22 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=dtparamdefop06.scenario
+#FEATURE = Generic interfaces and bindings with derived type parameters
+#CREATOR = Rafik Zurob
+#DATE    = 20060313
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPLINK
+#INPUT     = $(tcasedir)dtparamdefop06.f
+#OUTPUT    = dtparamdefop06$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamdefop06$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

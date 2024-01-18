@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/C503/d337764.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB per defect d337764
+#DATE      = 20070612
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d337764.f
+#OUTPUT    = d337764$(OBJ)
+#STDERR    = d337764.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)d337764$(product)vf) d337764.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

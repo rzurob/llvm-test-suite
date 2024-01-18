@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)list01.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=allowrpdt
+#OUTPUT    = list01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = list01$(OBJ)
+#OUTPUT    = list01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = list01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

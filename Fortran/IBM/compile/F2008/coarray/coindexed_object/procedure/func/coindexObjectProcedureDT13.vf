@@ -1,0 +1,6 @@
+--- TODO ---
+** dt   === End of Compilation 1 ===
+"coindexObjectProcedureDT13.f", line 58.19: <some number> (S) Coarray variable shall not have codimensions with deferred shape.
+"coindexObjectProcedureDT13.f", line 70.41: <some number> (S) Polymorphic coarray not yet supported.
+** main   === End of Compilation 2 ===
+1501-511  Compilation failed for file coindexObjectProcedureDT13.f.

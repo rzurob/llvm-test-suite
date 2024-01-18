@@ -1,0 +1,15 @@
+ &BASENML
+ B=c= abc
+ /
+ &CHILDNML
+ B=i=    2 c= def
+ /
+ &BASENML
+ B=c= ghi
+ /
+ &CHILDNML
+ B=i=    4 c= jkl
+ /
+ &CHILDNML
+ B=i=    5 c= mno
+ /

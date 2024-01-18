@@ -1,0 +1,28 @@
+    3.14NaN(Q)
+   1.1NaN(Q)   9.9
+NaN(Q)   Inf   6.6
+   InfNaN(S)   7.7 NaN
+    NaN(Q)    NaN(S)
+      -Inf    3  NaN(S)
+    NaN(Q)      4.44
+      5.44    NaN(Q)
+         NaN(Q) 98
+ 99         NaN(Q)
+ 99         NaN(Q)           -Inf            Inf
+      Inf   NaN(Q)      Inf   NaN(Q)     -Inf
+       Inf       Inf      -Inf      5.90
+     -7.00    NaN(Q)      -Inf    712.00
+   3.140  NaN(Q)
+    1.10  NaN(Q)    9.90
+  NaN(Q)     Inf    6.60
+     Inf  NaN(S)    7.70
+    NaN(Q)    NaN(S)
+      -Inf 3    NaN(S)
+        NaN(Q)          4.44
+  5.44NaN(Q)
+NaN(Q)  98
+  99  NaN
+  99 NaN(Q)    -Inf     Inf
+     Inf  NaN(Q)     Inf  NaN(Q)    -Inf
+       Inf       Inf      -Inf       5.9
+ -7.0  NaN -Inf712.0

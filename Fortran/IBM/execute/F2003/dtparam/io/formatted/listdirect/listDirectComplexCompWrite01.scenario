@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/listdirect/listDirectComplexCompWrite01.scenario
+#FEATURE   = 360757
+#CREATOR   = Nancy Wang
+#DATE      = Jan. 9 2009
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)listDirectComplexCompWrite01.f
+#OUTPUT= listDirectComplexCompWrite01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = listDirectComplexCompWrite01$(OBJ)
+#OUTPUT= listDirectComplexCompWrite01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = listDirectComplexCompWrite01$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

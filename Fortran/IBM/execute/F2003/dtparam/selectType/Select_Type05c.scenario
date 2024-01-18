@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/selectType/Select_Type05c.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20080826
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)Select_Type05c.f
+#OUTPUT= Select_Type05c$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  Select_Type05c$(OBJ)
+#OUTPUT= Select_Type05c$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  Select_Type05c$(EXE)
+#STDOUT= Select_Type05c.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

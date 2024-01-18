@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/coarray/critical/func/critical_f002.scenario
+#FEATURE    = 381021
+#CREATOR    = Francesco Cassullo
+#DATE       = Jan 2011
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD     = F_COMPILE
+#OPTS    = $(OPT_COARRAY_IMAGES<8>) $(OPT_COARRAY_DNODES<8>)
+#INPUT   = $(tcasedir)critical_f002.f
+#OUTPUT  = critical_f002$(OBJ)
+#ENDCMD
+
+#CMD     = F_LINK
+#OPTS    = $(OPT_COARRAY_IMAGES<8>) $(OPT_COARRAY_DNODES<8>)
+#INPUT   = critical_f002$(OBJ)
+#OUTPUT  = critical_f002$(EXE)
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD     = RUN
+	#ENVAR   = CAF_NUM_IMAGES=8
+	#ENVAR   = MP_PROCS=8
+	#INPUT   = critical_f002$(EXE)
+	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

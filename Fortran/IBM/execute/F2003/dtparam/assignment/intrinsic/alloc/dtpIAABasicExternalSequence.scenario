@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/assignment/intrinsic/alloc/dtpIAABasicExternalSequence.scenario
+#FEATURE   = Intrinsic Assignment with Allocation - allocate basic sequence DTP variable (container) with allocatable components via intrinsic assignment (in external subroutine)
+#CREATOR   = DF Manual Update
+#DATE      = 20090522
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAABasicExternalSequence.f
+#OUTPUT    = dtpIAABasicExternalSequence$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAABasicExternalSequence$(OBJ)
+#OUTPUT    = dtpIAABasicExternalSequence$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAABasicExternalSequence$(EXE)
+#STDOUT    = dtpIAABasicExternalSequence.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpIAABasicExternalSequence$(product)vf) dtpIAABasicExternalSequence.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

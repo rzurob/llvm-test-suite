@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_type/struct_constr/fconstr041d.f
+#FEATURE = OO_type
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fconstr041d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fconstr041d$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = fconstr041d.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = fconstr041d.err $($(tcasedir)fconstr041d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

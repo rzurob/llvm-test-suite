@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop5/cmnblk_mix/fxcmn_blk539.scenario
+#FEATURE = cintrop5 tests - regression run bucket
+#CREATOR = Manual conversion CPR
+#DATE    = 20060828
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+FTCARG="fxcmn_blk539"
+CTCARG="cxcmn_blk509"
+#ENDDEFS
+!#INVALID_PRODUCT= sles,rhel,mac
+#ENDENV
+
+#BEGINCONTROL
+
+#INCLUDE   = cmn_blk_qlngdbl.shinclude
+
+#ENDCONTROL
+#ENDSCENARIO

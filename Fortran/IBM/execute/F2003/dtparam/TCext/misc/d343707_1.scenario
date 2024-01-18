@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/misc/d343707_1.scenario
+#FEATURE   = Defect 343720
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20071112
+#TEST_TYPE =
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d343707_1.f
+#OUTPUT    = d343707_1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d343707_1$(OBJ)
+#OUTPUT    = d343707_1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d343707_1$(EXE)
+#STDOUT    = d343707_1.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = d343707_1.out $(tcasedir)d343707_1.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

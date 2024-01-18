@@ -1,0 +1,9 @@
+ first call
+ not allocated
+ second call
+ finalizeChild
+ finalizeBase
+ last call
+ finalizeChildRank1 size = 2
+ finalizeBase
+ finalizeBase

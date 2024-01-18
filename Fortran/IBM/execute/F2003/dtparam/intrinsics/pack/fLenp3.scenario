@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2003/dtparam/intrinsics/pack/fLenp3.scenario
+#FEATURE = dtp intrinsics
+#CREATOR = Adrian Green
+#DATE    = 20080821
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)fLenp3.f
+#OUTPUT   = fLenp3$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = fLenp3$(OBJ)
+#OUTPUT   = fLenp3$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fLenp3$(EXE)
+#STDOUT   = fLenp3.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $(tcasedir)fLenp3.vf fLenp3.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

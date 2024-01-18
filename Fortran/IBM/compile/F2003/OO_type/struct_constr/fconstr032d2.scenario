@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_type/struct_constr/fconstr032d2.f
+#FEATURE = OO_type
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fconstr032d2.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fconstr032d2$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = fconstr032d2.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = fconstr032d2.err $($(tcasedir)fconstr032d2$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

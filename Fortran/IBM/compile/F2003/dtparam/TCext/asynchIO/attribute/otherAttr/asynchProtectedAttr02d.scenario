@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/asynchIO/attribute/otherAttr/asynchProtectedAttr02d.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of asynchIO/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)asynchProtectedAttr02d.f
+#OUTPUT		= asynchProtectedAttr02d$(OBJ)
+#STDERR		= asynchProtectedAttr02d.stderr
+#VALIDRCS	= $(RC_COMP_S)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)asynchProtectedAttr02d$(product)vf)	\
+				asynchProtectedAttr02d.stderr
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,15 @@
+ 101 102 103
+ 111 112 113
+ 121 123 125
+ -999 -999 -999
+ 104 105 106
+ 114 115 116
+ 124 126 128
+ 125 127 129
+ 201 203 205
+ 202 204 206
+ 211 213 215
+ 212 214 216
+ 221 223 225
+ 222 224 226
+  DT_type_base1 5     DT_type_base2 6     DT_type_base3 7     DT_type_base1 5     DT_type_base2 6     DT_type_base3 7     DT_type_base1 5     DT_type_base2 6     DT_type_base3 7     DT_class_base1 4 5  DT_class_base2 5 6  DT_class_base3 6 7  DT_class_base1 4 5  DT_class_base2 5 6  DT_class_base3 6 7  DT_class_base1 4 5  DT_class_base2 5 6  DT_class_base3 6 7  DT_class_base1 4 5  DT_class_base2 5 6  DT_class_base3 6 7  DT_class_base1 4 5  DT_class_base2 5 6  DT_class_base3 6 7  DT_class_base1 4 5  DT_class_base2 5 6  DT_class_base3 6 7 

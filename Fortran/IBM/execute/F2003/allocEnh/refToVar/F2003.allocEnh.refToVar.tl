@@ -1,0 +1,25 @@
+! Test Cases for:
+! Bucket:	F2003/allocEnh
+! Sub-Bucket:	refToVar
+exprIsArrayConstructor01.scenario
+
+exprIsArraySection01.scenario
+exprIsArraySection05.scenario
+exprIsArraySection06.scenario
+exprIsArraySection07.scenario
+!exprIsArraySection08.scenario
+
+exprIsZeroLengthArraySection01.scenario
+exprIsZeroLengthArraySection05.scenario
+exprIsZeroLengthArraySection06.scenario
+exprIsZeroLengthArraySection07.scenario
+
+funcResultDummyArgs01.scenario
+funcResultDummyArgs05.scenario
+funcResultDummyArgs06.scenario
+funcResultDummyArgs07.scenario
+
+intrinsicFunction01.scenario
+
+scalarVariableDiffLength01.scenario
+scalarVariableDiffLength02.scenario

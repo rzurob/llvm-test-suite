@@ -1,0 +1,5 @@
+pt1    Inf NaN(S)  NaN(Q)  NaN(Q)
+nan NaN(Q)   3.14    -Inf  NaN(S)
+ inf = { -Inf , NaN(Q) , (Inf,NaN(Q)) }NaN = { NaN(Q) , NaN(S) , (3.140000105,Inf) }
+inf -Inf  NaN Inf NaN
+ NaN = { NaN(Q) , NaN(S) , (3.140000105,Inf) }

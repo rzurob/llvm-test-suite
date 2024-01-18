@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/mix/generic/functional/usage/recursive003kl.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070813
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)recursive003kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=allowrpdt
+#OUTPUT    = recursive003kl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = recursive003kl$(OBJ)
+#OUTPUT    = recursive003kl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = recursive003kl$(EXE)
+#STDOUT    = recursive003kl.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = recursive003kl.out $(tcasedir)recursive003kl.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

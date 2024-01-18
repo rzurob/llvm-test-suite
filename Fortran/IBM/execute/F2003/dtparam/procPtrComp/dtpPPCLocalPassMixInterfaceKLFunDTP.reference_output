@@ -1,0 +1,37 @@
+ 123  /abcd
+ -120 
+ 101  ijk/lmno
+ 98  ln
+ 100  ijk/m
+ -1536  abcdabcd
+ -6172  ef
+ -420783575  opqrstuv
+ 
+ 127  /
+ -127 
+ 1  ijk/
+ -1  lmn
+ 1  ijk/
+ 32000  abcd
+ -12345  efgh
+ 1234543211  opqrs
+ 
+ -125 
+ 122  /abcd
+ -99 ijk
+ -100  lmn/m
+ -99 opqrs
+ 16000  ab
+ -24690  efghefgh
+ -420783575  opqrstuv
+ 
+ 127 
+ -127  /
+ 1  ijk
+ -1  lmn/
+ 0  opqrs
+ 32000  abcd
+ -12345  efgh
+ 1234543211  opqrs
+ 
+ done

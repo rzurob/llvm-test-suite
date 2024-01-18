@@ -1,0 +1,4 @@
+"C1505_001d.f", line 49.42: 1516-185 (S) A derived type with the BIND(C) attribute must not contain components with the POINTER or ALLOCATABLE attribute.
+"C1505_001d.f", line 54.43: 1516-185 (S) A derived type with the BIND(C) attribute must not contain components with the POINTER or ALLOCATABLE attribute.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file C1505_001d.f.

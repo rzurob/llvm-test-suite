@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/encoding/unit_tests/encodingspecifier002.scenario
+#FEATURE	= Encoding Specifier
+#CREATOR	= Thomas Tewoldemedhin
+#DATE		= 20070428
+#TEST_TYPE	= unit test
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)encodingspecifier002.f
+#STDERR		= encodingspecifier002.err
+#OUTPUT		= encodingspecifier002$(OBJ)
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= encodingspecifier002.err $($(tcasedir)encodingspecifier002$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

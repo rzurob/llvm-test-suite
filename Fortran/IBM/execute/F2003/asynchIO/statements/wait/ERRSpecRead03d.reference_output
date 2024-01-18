@@ -1,0 +1,4 @@
+ 1 ) aIDs( 1 ) = 1
+ 2 ) aIDs( 2 ) = 2
+ 3 ) aIDs( 3 ) = 3
+1525-001 The READ statement on the file ERRSpecRead03d.dat cannot be completed because the end of the file was reached.  The program will stop.

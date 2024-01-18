@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/../enhDummyArg03.scenario
+#FEATURE   = Enhancement to determining dummy argument presence
+#CREATOR   = Shahid Alam
+#DATE      = 20110808
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = -qxlf2008=checkpresence
+#INPUT     = $(tcasedir)enhDummyArg03.f
+#OUTPUT    = enhDummyArg03$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = -qxlf2008=checkpresence
+#INPUT     = enhDummyArg03$(OBJ)
+#OUTPUT    = enhDummyArg03$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = enhDummyArg03$(EXE)
+#STDOUT    = enhDummyArg03.out
+#STDERR    = enhDummyArg03.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $(tcasedir)enhDummyArg03.vf enhDummyArg03.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

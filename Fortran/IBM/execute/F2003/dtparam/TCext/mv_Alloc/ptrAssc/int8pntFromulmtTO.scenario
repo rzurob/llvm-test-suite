@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/ptrAssc/int8pntFromulmtTO.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071105
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)int8pntFromulmtTO.f
+#OUTPUT= int8pntFromulmtTO$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  int8pntFromulmtTO$(OBJ)
+#OUTPUT= int8pntFromulmtTO$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  int8pntFromulmtTO$(EXE)
+#STDOUT= int8pntFromulmtTO.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = int8pntFromulmtTO.out $(tcasedir)int8pntFromulmtTO.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

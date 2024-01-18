@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /block/BDT01.scenario
+#FEATURE   = derived type definition within block
+#CREATOR   = DF
+#DATE      = 2010-11-15
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = F_COMPILE
+#INPUT    = $(tcasedir)BDT01.f
+#OUTPUT   = BDT01$(OBJ)
+#ENDCMD
+
+#CMD      = F_LINK
+#INPUT    = BDT01$(OBJ)
+#OUTPUT   = BDT01$(EXE)
+#ENDCMD
+
+#CMD      = RUN
+#INPUT    = BDT01$(EXE)
+#STDOUT   = BDT01.out
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = $($(tcasedir)BDT01$(product)vf) BDT01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2008/value/pure/unit_tests/purevalue02.scenario
+#FEATURE = VALUE attribute for dummy args of PURE procedures
+#CREATOR = Rafik Zurob
+#DATE    = 20100826
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)purevalue02.f
+#OUTPUT    = purevalue02$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = purevalue02$(OBJ)
+#OUTPUT    = purevalue02$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = purevalue02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

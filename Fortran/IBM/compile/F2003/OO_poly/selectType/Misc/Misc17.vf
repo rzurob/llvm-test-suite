@@ -1,0 +1,3 @@
+"Misc17.f", line 49.2: 1511-141 (S) The END ASSOCIATE statement appears outside of an ASSOCIATE construct.
+** misc17   === End of Compilation 1 ===
+1501-511  Compilation failed for file Misc17.f.

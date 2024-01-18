@@ -1,0 +1,33 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       InitExpTypSpecPreSpec2.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       09-05-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)InitExpTypSpecPreSpec2.f
+#OUTPUT= InitExpTypSpecPreSpec2$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  InitExpTypSpecPreSpec2$(OBJ)
+#OUTPUT= InitExpTypSpecPreSpec2$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  InitExpTypSpecPreSpec2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

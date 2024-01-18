@@ -1,0 +1,4 @@
+"TypeDecl4.f", line 57.19: 1516-178 (S) Dummy procedure proc must not be declared with the VALUE attribute.
+"TypeDecl4.f", line 60.28: 1516-178 (S) Dummy procedure procptr must not be declared with the VALUE attribute.
+** typedecl4   === End of Compilation 1 ===
+1501-511  Compilation failed for file TypeDecl4.f.

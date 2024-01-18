@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME = F2008/do_concurrent/func/do_concurrent_omp_f007.scenario
+#FEATURE = RTC 17293 - F2008: DO CONCURRENT construct
+#CREATOR = Nicole Negherbon
+#DATE    = August 24, 2015
+#REFERENCE = single/exec/fxsg004b.scenario
+#TEST_TYPE = FUNCTIONAL
+#KEYWORDS = DO CONCURRENT, OMP, OMP SINGLE
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF2008_R_COMPILE
+#OPTS      = $(OPT_OPTIMIZE_FOR_SMP<nested_par>)
+#INPUT     = $(tcasedir)do_concurrent_omp_f007.f
+#OUTPUT    = do_concurrent_omp_f007$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2008_R_LINK
+#OPTS      = $(OPT_OPTIMIZE_FOR_SMP<nested_par>)
+#INPUT     = do_concurrent_omp_f007$(OBJ)
+#OUTPUT    = do_concurrent_omp_f007$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = do_concurrent_omp_f007$(EXE)
+#STDOUT    = do_concurrent_omp_f007.out
+#ENDCMD
+
+#CMD       = SPIFF
+#INPUT     = do_concurrent_omp_f007.out $(tcasedir)do_concurrent_omp_f007.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

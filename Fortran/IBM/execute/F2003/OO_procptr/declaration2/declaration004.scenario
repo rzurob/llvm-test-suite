@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_procptr/declaration2/declaration004.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050618
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)declaration004.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = declaration004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = declaration004$(OBJ)
+#OUTPUT    = declaration004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = declaration004$(EXE)
+#STDOUT    = declaration004.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)declaration004$(product)vf) declaration004.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

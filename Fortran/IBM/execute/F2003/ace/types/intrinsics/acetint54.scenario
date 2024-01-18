@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint54.scenario
+#FEATURE	= Array constructor enhancement - enumerators
+#CREATOR	= DF Manual Update
+#DATE		= 20061123
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint54.f
+#OUTPUT		= acetint54$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint54$(OBJ)
+#OUTPUT		= acetint54$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint54$(EXE)
+#STDOUT		= acetint54.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetint54$(product)vf) acetint54.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,22 @@
+!*******************************************************************************
+!* Bucket brief description.
+!*
+!* DESCRIPTION: C-InteropTS: Remove Restrictions on ISO_C_BINDING module procedures
+!*
+!*
+!*******************************************************************************
+Feature XLC/XLF V13/V15 (PTF2)
+
+   RTC Master Story 92969: C-InteropTS: remove restrictions on ISO_C_BINDING module procedures
+       https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/92969
+
+   I0  document is kept in CMVC
+     family: aix, release: des.dev, component: design.i0,
+     file:   designs/i0/remove_restrictions_on_iso_c_binding_mdoule_procedures/remove_restrictions_on_iso_c_binding_mdoule_procedures.html
+         FF: https://featureflow.torolab.ibm.com/featureflow/show/7620
+
+   Unit test cases only feature ==> no IT1 and IT2 documents
+
+
+  See the ./doc subdirectory for details
+

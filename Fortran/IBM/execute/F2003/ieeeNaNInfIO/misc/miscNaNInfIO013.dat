@@ -1,0 +1,4 @@
+infinity -nan(q) +nan(s)
++nan()    -inf      -NaN
+NaN +inf -NaN(s)
+  Inf     +NaN      0        

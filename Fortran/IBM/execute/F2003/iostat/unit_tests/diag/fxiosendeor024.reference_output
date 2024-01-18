@@ -1,0 +1,10 @@
+  39.30   010103AF j‹is_iostat_end‹
+  40.30   010103AF h‹is_iostat_end‹
+  41.30   010103AF k‹is_iostat_end‹
+  42.30   010103AF l‹is_iostat_end‹
+  45.30   010103AF j‹is_iostat_eor‹
+  46.30   010103AF h‹is_iostat_eor‹
+  47.30   010103AF k‹is_iostat_eor‹
+  48.30   010103AF l‹is_iostat_eor‹
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file fxiosendeor024.f.

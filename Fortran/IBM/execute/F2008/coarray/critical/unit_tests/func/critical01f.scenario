@@ -1,0 +1,47 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/critical/diag/critical01f.scenario
+#FEATURE    = F381021 - Critical Unit Tests
+#CREATOR    = David Nichols
+#DATE       = 20101025
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#OPTS       = $(OPT_COARRAY_IMAGES<6>) $(OPT_COARRAY_DNODES<2>)
+#INPUT      = $(tcasedir)critical01f.f
+#OUTPUT     = critical01f$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#OPTS       = $(OPT_COARRAY_IMAGES<6>) $(OPT_COARRAY_DNODES<2>)
+#INPUT      = critical01f$(OBJ)
+#OUTPUT     = critical01f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#ENVAR     = CAF_NUM_IMAGES=6
+#ENVAR     = MP_PROCS=2
+#INPUT     = critical01f$(EXE)
+#STDOUT    = critical01f.out
+#ENDCMD
+
+#CMD       = GREP
+#OPTS      = "Unsuccessful"
+#INPUT     = critical01f.out
+#VALIDRCS  = 1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

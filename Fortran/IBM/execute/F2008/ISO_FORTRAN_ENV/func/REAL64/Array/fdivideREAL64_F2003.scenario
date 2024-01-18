@@ -1,0 +1,63 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       fdivideREAL64
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2003_COMPILE
+#INPUT=  $(tcasedir)fdivideREAL64.f
+#OUTPUT= fdivideREAL64$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2003_LINK
+#INPUT=  fdivideREAL64$(OBJ)
+#OUTPUT= fdivideREAL64$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fdivideREAL64$(EXE)
+#ENDCMD
+
+#CMD=    XLF2003_COMPILE
+#OPTS=   $(OPT_REALSIZE_4)
+#INPUT=  $(tcasedir)fdivideREAL64.f
+#OUTPUT= fdivideREAL64_1$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2003_LINK
+#OPTS=   $(OPT_REALSIZE_4)
+#INPUT=  fdivideREAL64_1$(OBJ)
+#OUTPUT= fdivideREAL64_1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fdivideREAL64_1$(EXE)
+#ENDCMD
+
+#CMD=    XLF2003_COMPILE
+#OPTS=   -qautodbl=dbl
+#INPUT=  $(tcasedir)fdivideREAL64.f
+#OUTPUT= fdivideREAL64_2$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2003_LINK
+#OPTS=   -qautodbl=dbl
+#INPUT=  fdivideREAL64_2$(OBJ)
+#OUTPUT= fdivideREAL64_2$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fdivideREAL64_2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

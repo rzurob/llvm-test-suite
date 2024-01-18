@@ -1,0 +1,14 @@
+"error_stop_pure.f", line 34.7: 1516-333 (S) A pure subprogram must not contain the ERROR STOP statement.
+** elemsub11   === End of Compilation 1 ===
+"error_stop_pure.f", line 43.11: 1516-333 (S) A pure subprogram must not contain the ERROR STOP statement.
+"error_stop_pure.f", line 49.11: 1516-333 (S) A pure subprogram must not contain the ERROR STOP statement.
+"error_stop_pure.f", line 55.11: 1516-333 (S) A pure subprogram must not contain the ERROR STOP statement.
+"error_stop_pure.f", line 61.11: 1516-333 (S) A pure subprogram must not contain the ERROR STOP statement.
+"error_stop_pure.f", line 67.11: 1516-333 (S) A pure subprogram must not contain the ERROR STOP statement.
+** m   === End of Compilation 2 ===
+"error_stop_pure.f", line 75.10: 1516-333 (S) A pure subprogram must not contain the ERROR STOP statement.
+** func1   === End of Compilation 3 ===
+"error_stop_pure.f", line 80.10: 1516-333 (S) A pure subprogram must not contain the ERROR STOP statement.
+** func2   === End of Compilation 4 ===
+"error_stop_pure.f", line 84.10: 1514-219 (S) Unable to access module symbol file for module m. Check path and file permissions of file. Use association not done for this module.
+1501-511  Compilation failed for file error_stop_pure.f.

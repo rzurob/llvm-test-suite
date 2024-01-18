@@ -1,0 +1,17 @@
+#!/usr/bin/ksh
+
+diff ffinal514a18_1.out $TR_SRC/ffinal514a18_1.vf1 > /dev/null
+ret_cd1=$?
+
+diff ffinal514a18_1.out $TR_SRC/ffinal514a18_1.vf2 > /dev/null
+ret_cd2=$?
+
+echo $ret_cd1 $ret_cd2
+if [[ $ret_cd1 = 0 || $ret_cd2 = 0 ]]
+then
+    rm ffinal514a18_1.out
+    exit 0
+else
+    exit 1
+fi
+

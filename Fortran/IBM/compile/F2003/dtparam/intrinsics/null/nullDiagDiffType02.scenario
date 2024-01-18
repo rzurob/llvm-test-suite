@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/null/nullDiagDiffType02.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Sept. 26 2008
+#TEST_TYPE = Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)nullDiagDiffType02.f
+#STDERR = nullDiagDiffType02.err
+#VALIDRCS = $(RC_COMP_E)
+#ENDCMD
+
+#CMD    = XLDIFF
+#INPUT  = nullDiagDiffType02.err $($(tcasedir)nullDiagDiffType02$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

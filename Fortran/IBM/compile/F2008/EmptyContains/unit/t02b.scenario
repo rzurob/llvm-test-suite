@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=t02b.scenario
+#FEATURE = empty CONTAINS
+#CREATOR = J. Liu
+#DATE    = 20100510
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)/t02.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<2003std>) $(OPT_ENABLE_MSG_NUM<1518-317>)
+#OUTPUT    = t02b$(OBJ)
+#STDERR    = t02b.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)t02b$(product)vf) t02b.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

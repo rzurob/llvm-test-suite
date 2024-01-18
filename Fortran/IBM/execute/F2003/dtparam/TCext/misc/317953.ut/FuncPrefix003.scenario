@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/misc/317953.ut/FuncPrefix003.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of misc/*
+#DATE      = 20071106
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)FuncPrefix003.f
+#OPTS     =  -qdebug=fprefixfwdref:shutup
+#OUTPUT   =  FuncPrefix003$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  FuncPrefix003$(OBJ)
+#OUTPUT   =  FuncPrefix003$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  FuncPrefix003$(EXE)
+#STDOUT   =  FuncPrefix003.out
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = FuncPrefix003.out $(tcasedir)FuncPrefix003.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

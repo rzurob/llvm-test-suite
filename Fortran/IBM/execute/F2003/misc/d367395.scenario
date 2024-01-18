@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/misc/d367395.scenario
+#FEATURE   = Defect 367395 - for reduced code in defect 346625
+#CREATOR   = GB
+#DATE      = 20090713
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d367395.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = d367395$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d367395$(OBJ)
+#OUTPUT    = d367395$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d367395$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

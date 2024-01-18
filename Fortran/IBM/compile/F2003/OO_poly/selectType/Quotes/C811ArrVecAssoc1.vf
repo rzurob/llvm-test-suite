@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"C811ArrVecAssoc1.f", line 70.21: 1511-106 (S) The selector in the SELECT TYPE statement is not a named variable.  An associate name should appear.
+** c811arrvecassoc1   === End of Compilation 2 ===
+1501-511  Compilation failed for file C811ArrVecAssoc1.f.

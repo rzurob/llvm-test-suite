@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignDummyArgDeferred.scenario
+#FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - via dummy arg pointers (with deferred length parameter), assign values to variables
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPtrAssignDummyArgDeferred.f
+#OUTPUT    = dtpPtrAssignDummyArgDeferred$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPtrAssignDummyArgDeferred$(OBJ)
+#OUTPUT    = dtpPtrAssignDummyArgDeferred$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPtrAssignDummyArgDeferred$(EXE)
+#STDOUT    = dtpPtrAssignDummyArgDeferred.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpPtrAssignDummyArgDeferred$(product)vf) dtpPtrAssignDummyArgDeferred.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

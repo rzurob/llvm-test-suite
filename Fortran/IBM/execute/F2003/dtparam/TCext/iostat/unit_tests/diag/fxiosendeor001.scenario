@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/iostat/unit_tests/diag/fxiosendeor001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of F2003/iostat/*
+#DATE      = 20071107
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)fxiosendeor001.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM) -qdebug=intmsg -Q -O -lxlfzz2
+#STDOUT    = fxiosendeor001.out
+#STDERR    = fxiosendeor001.out
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fxiosendeor001.out $($(tcasedir)fxiosendeor001$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

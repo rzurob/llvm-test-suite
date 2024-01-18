@@ -1,0 +1,8 @@
+"exit03d.f", line 29.14: 1516-345 (S) Construct name a2 specified on the EXIT statement does not match the name of any enclosing construct.
+"exit03d.f", line 36.14: 1516-345 (S) Construct name b2 specified on the EXIT statement does not match the name of any enclosing construct.
+"exit03d.f", line 43.14: 1516-345 (S) Construct name d2 specified on the EXIT statement does not match the name of any enclosing construct.
+"exit03d.f", line 52.14: 1516-345 (S) Construct name i2 specified on the EXIT statement does not match the name of any enclosing construct.
+"exit03d.f", line 62.14: 1516-345 (S) Construct name sc2 specified on the EXIT statement does not match the name of any enclosing construct.
+"exit03d.f", line 74.14: 1516-345 (S) Construct name st2 specified on the EXIT statement does not match the name of any enclosing construct.
+** exit02d   === End of Compilation 1 ===
+1501-511  Compilation failed for file exit03d.f.

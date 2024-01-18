@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/encoding/unit_tests/encodingspecifier010.scenario
+#FEATURE	= Encoding Specifier
+#CREATOR	= Morteza Ershad-Manesh
+#DATE		= 20071207
+#TEST_TYPE	= unit test
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)encodingspecifier010.f
+#STDERR		= encodingspecifier010.err
+#OUTPUT		= encodingspecifier010$(OBJ)
+#VALIDRCS       = 1
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= encodingspecifier010.err $($(tcasedir)encodingspecifier010$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

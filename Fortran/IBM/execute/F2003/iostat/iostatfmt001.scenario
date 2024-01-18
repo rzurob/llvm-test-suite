@@ -1,0 +1,47 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=iostatfmt001.scenario
+#FEATURE = 299314
+#CREATOR = Rob Wheeler
+#DATE    = 20060109
+#TEST_TYPE=fvt
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)iostatfmt001.f
+#OPTS      =
+#OUTPUT    = iostatfmt001$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      =
+#INPUT     = iostatfmt001$(OBJ)
+#OUTPUT    = iostatfmt001$(EXE)
+#ENDCMD
+
+
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)fmtdat.txt .
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = iostatfmt001$(EXE)
+#STDOUT    = iostatfmt001.out
+#STDERR    = iostatfmt001.out
+#ENDCMD
+
+#CMD	   = DIFF
+#OPTS	   = -b
+#INPUT     = iostatfmt001.out $($(tcasedir)iostatfmt001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

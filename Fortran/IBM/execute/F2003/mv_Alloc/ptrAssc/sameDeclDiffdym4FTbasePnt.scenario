@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       sameDeclDiffdym4FTbasePnt.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)sameDeclDiffdym4FTbasePnt.f
+#OUTPUT= sameDeclDiffdym4FTbasePnt$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  sameDeclDiffdym4FTbasePnt$(OBJ)
+#OUTPUT= sameDeclDiffdym4FTbasePnt$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  sameDeclDiffdym4FTbasePnt$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

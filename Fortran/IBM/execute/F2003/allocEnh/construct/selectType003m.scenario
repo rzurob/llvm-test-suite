@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/allocEnh/construct/selectType003m.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)selectType003m.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = selectType003m$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = selectType003m$(OBJ)
+#OUTPUT    = selectType003m$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = selectType003m$(EXE)
+#STDOUT    = selectType003m.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = selectType003m.out $($(tcasedir)selectType003m$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

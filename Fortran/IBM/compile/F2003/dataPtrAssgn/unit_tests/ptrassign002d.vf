@@ -1,0 +1,6 @@
+"ptrassign002d.f", line 49.3: 1515-105 (S) The target in the pointer assignment statement is unlimited polymorphic.  The pointer must be unlimited polymorphic, or of a non-extensible derived type.
+"ptrassign002d.f", line 50.3: 1515-105 (S) The target in the pointer assignment statement is unlimited polymorphic.  The pointer must be unlimited polymorphic, or of a non-extensible derived type.
+"ptrassign002d.f", line 51.3: 1515-105 (S) The target in the pointer assignment statement is unlimited polymorphic.  The pointer must be unlimited polymorphic, or of a non-extensible derived type.
+"ptrassign002d.f", line 52.3: 1515-105 (S) The target in the pointer assignment statement is unlimited polymorphic.  The pointer must be unlimited polymorphic, or of a non-extensible derived type.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file ptrassign002d.f.

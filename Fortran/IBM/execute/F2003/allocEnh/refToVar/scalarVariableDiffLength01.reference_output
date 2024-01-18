@@ -1,0 +1,7 @@
+  Initialization:  LEN =  7 ( 7 ), 'aBcDeFg'
+ Self Assignment:  LEN =  7 ( 7 ), 'aBcDeFg'
+      Sub-String:  LEN =  7 ( 7 ), 'BcDeF  '
+   Concatenation:  LEN =  7 ( 7 ), 'BcDeBcD'
+      Invert (1):  LEN =  7 ( 7 ), 'BBcecDD'
+      Invert (2):  LEN =  7 ( 7 ), 'DBcecDB'
+      Invert (3):  LEN =  7 ( 7 ), 'BBcecDD'

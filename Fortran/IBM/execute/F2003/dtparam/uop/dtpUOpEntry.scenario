@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpEntry.scenario
+#FEATURE   = User-Defined Operators - operator associated with procedure defined as ENTRY
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpEntry.f
+#OUTPUT    = dtpUOpEntry$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpEntry$(OBJ)
+#OUTPUT    = dtpUOpEntry$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpEntry$(EXE)
+#STDOUT    = dtpUOpEntry.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUOpEntry$(product)vf) dtpUOpEntry.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

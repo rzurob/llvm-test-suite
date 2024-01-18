@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/typCompatible/intkind8.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071105
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)intkind8.f
+#OUTPUT= intkind8$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  intkind8$(OBJ)
+#OUTPUT= intkind8$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  intkind8$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

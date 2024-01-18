@@ -1,0 +1,4 @@
+"genericAmbiguityInterface013d.f", line 44.37: 1514-699 (S) Procedure "myequalmod" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "myequal", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** type   === End of Compilation 1 ===
+** genericambiguityinterface013d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericAmbiguityInterface013d.f.

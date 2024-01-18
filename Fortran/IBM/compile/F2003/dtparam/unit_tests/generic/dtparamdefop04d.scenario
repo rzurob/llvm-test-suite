@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=dtparamdefop04d.scenario
+#FEATURE = Generic interfaces and bindings with derived type parameters
+#CREATOR = Rafik Zurob
+#DATE    = 20060313
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+! This chunk was DCOMP
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamdefop04d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=intmsg:shutup
+#OUTPUT    = dtparamdefop04d$(OBJ)
+#STDERR    = dtparamdefop04d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)dtparamdefop04d$(product)vf) dtparamdefop04d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

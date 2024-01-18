@@ -1,0 +1,36 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = d381288.scenario
+#FEATURE    = diagnostic - non-integer coindex
+#CREATOR    = Kelvin Li
+#DATE       = September 2010
+#TEST_TYPE  = unit test
+#ENDDOC
+
+! Scenario Environment Tags
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d381288.f
+#OUTPUT    = d381288$(OBJ)
+#STDERR    = d381288.err
+#VALIDRCS  = $(RC_COMP_E)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = d381288.err $($(tcasedir)d381288$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

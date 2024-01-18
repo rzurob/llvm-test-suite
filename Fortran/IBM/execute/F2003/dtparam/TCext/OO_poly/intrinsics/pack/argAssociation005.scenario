@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/pack/argAssociation005.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070927
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)argAssociation005.f
+#OUTPUT    = argAssociation005$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = argAssociation005$(OBJ)
+#OUTPUT    = argAssociation005$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = argAssociation005$(EXE)
+#STDOUT    = argAssociation005.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)argAssociation005$(product)vf) argAssociation005.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

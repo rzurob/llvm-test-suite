@@ -1,0 +1,4 @@
+"C815TypeIsSeq.f", line 64.14: 1511-107 (S) Derived type seq, specified in a type guard statement, must be extensible.
+"C815TypeIsSeq.f", line 65.15: 1511-107 (S) Derived type seq, specified in a type guard statement, must be extensible.
+** c815typeisseq   === End of Compilation 1 ===
+1501-511  Compilation failed for file C815TypeIsSeq.f.

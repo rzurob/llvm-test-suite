@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    =  F2008/intrinsics/csizeof/
+#FEATURE =  F2008 ISO_C_BINDING C_SIZEOF function 381475
+#CREATOR =  Michelle Zhang
+#DATE    =  2011/01/14
+#TEST_TYPE= diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)diagAssumeSize.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = diagAssumeSize$(OBJ)
+#STDERR    = diagAssumeSize.stderr
+#VALIDRCS  = $(RC_COMP_S)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)diagAssumeSize$(product)vf) diagAssumeSize.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

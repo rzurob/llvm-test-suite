@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignFunctionResultFromModulePolymorphicFixed.scenario
+#FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - assign polymorphic module function results with fixed-length type parameters
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPtrAssignFunctionResultFromModulePolymorphicFixed.f
+#OUTPUT    = dtpPtrAssignFunctionResultFromModulePolymorphicFixed$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPtrAssignFunctionResultFromModulePolymorphicFixed$(OBJ)
+#OUTPUT    = dtpPtrAssignFunctionResultFromModulePolymorphicFixed$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPtrAssignFunctionResultFromModulePolymorphicFixed$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

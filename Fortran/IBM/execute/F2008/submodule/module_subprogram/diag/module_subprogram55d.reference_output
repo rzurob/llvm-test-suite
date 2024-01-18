@@ -1,0 +1,14 @@
+** m   === End of Compilation 1 ===
+"module_subprogram55d.f", line 63.16: 1515-023 (S) Syntax Error: Illegal token " PROCEDURE " is replaced by token " SUBROUTINE ".
+"module_subprogram55d.f", line 63.27: 1513-273 (S) Procedure impfunc is declared as a function in a module procedure interface body.  Separate module procedure impfunc must also be a function.
+"module_subprogram55d.f", line 65.2: 1513-085 (S) Improper END statement specified. This END statement will be matched with the program unit or procedure named impfunc.
+"module_subprogram55d.f", line 68.9: 1515-023 (S) Syntax Error: Illegal token " MODULEPROCSUB " is replaced by token " SUBROUTINE ".
+"module_subprogram55d.f", line 70.2: 1513-085 (S) Improper END statement specified. This END statement will be matched with the program unit or procedure named impsub.
+"module_subprogram55d.f", line 73.12: 1515-023 (S) Syntax Error: Illegal token " MODULEPROCSUB " is replaced by token " SUBROUTINE ".
+"module_subprogram55d.f", line 75.2: 1513-085 (S) Improper END statement specified. This END statement will be matched with the program unit or procedure named elemfunc.
+"module_subprogram55d.f", line 78.2: 1513-283 (S) Procedure elemsub is declared with 1 arguments in a module procedure interface body.  The corresponding separate module procedure must have the same number of arguments.
+"module_subprogram55d.f", line 78.19: 1515-023 (S) Syntax Error: Illegal token " PROCEDURE " is replaced by token " SUBROUTINE ".
+"module_subprogram55d.f", line 79.5: 1516-096 (S) In a pure subprogram, any object which is host-associated, is use-associated, is in a common block, is a dummy argument with INTENT(IN), is a pointer dummy argument of a pure function, or is a subobject of any of these, must not become defined, undefined or redefined.
+"module_subprogram55d.f", line 80.2: 1513-085 (S) Improper END statement specified. This END statement will be matched with the program unit or procedure named elemsub.
+** n   === End of Compilation 2 ===
+1501-511  Compilation failed for file module_subprogram55d.f.

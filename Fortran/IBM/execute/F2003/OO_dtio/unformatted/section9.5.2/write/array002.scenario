@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/unformatted/section9.5.2/write/array002.scenario
+#FEATURE = OO_dtio
+#CREATOR = Robert Ma
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)array002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = array002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  array002$(OBJ)
+#OUTPUT    = array002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = array002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

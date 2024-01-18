@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpIAssignExternalHostAssociatedFromVars.scenario
+#FEATURE   = Intrinsic Assignment without Allocation - assign variables to host associated variables in external subprogram
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAssignExternalHostAssociatedFromVars.f
+#OUTPUT    = dtpIAssignExternalHostAssociatedFromVars$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAssignExternalHostAssociatedFromVars$(OBJ)
+#OUTPUT    = dtpIAssignExternalHostAssociatedFromVars$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAssignExternalHostAssociatedFromVars$(EXE)
+#STDOUT    = dtpIAssignExternalHostAssociatedFromVars.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpIAssignExternalHostAssociatedFromVars$(product)vf) dtpIAssignExternalHostAssociatedFromVars.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

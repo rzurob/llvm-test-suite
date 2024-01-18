@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=storagesizef4.scenario
+#FEATURE = STORAGE_SIZE intrinsic
+#CREATOR = Daniel Chen
+#DATE    = 20140818
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)storagesizef4.f
+#OPTS      = $(OPT_DISABLE_MSG_NUM<1518-317>)
+#OUTPUT    = storagesizef4$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2008_LINK
+#INPUT     = storagesizef4$(OBJ)
+#OUTPUT    = storagesizef4$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = storagesizef4$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

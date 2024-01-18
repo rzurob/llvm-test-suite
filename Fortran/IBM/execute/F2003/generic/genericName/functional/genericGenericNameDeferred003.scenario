@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/genericName/functional/genericGenericNameDeferred003.scenario
+#FEATURE = generic tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericGenericNameDeferred003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericGenericNameDeferred003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericGenericNameDeferred003$(OBJ)
+#OUTPUT    = genericGenericNameDeferred003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericGenericNameDeferred003$(EXE)
+#STDOUT    = genericGenericNameDeferred003.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericGenericNameDeferred003.out $(tcasedir)genericGenericNameDeferred003.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

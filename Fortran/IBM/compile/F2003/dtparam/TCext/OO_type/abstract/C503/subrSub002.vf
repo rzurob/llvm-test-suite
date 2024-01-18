@@ -1,0 +1,5 @@
+"subrSub002.f", line 69.12: 1514-645 (S) base is an abstract type. base is not permitted in this context.
+"subrSub002.f", line 74.12: 1514-645 (S) base is an abstract type. base is not permitted in this context.
+** m   === End of Compilation 1 ===
+** subrsub002   === End of Compilation 2 ===
+1501-511  Compilation failed for file subrSub002.f.

@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      pptrDTPReturnLen01.f
+#FEATURE=   PROCEDURE POINTER
+#TEST_TYPE= DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=      F_COMPILE
+#OPTS=     $(OPT_FREE_SOURCE_FORM)
+#INPUT=    $(tcasedir)pptrDTPReturnLen01.f
+#STDERR=   pptrDTPReturnLen01.err
+#VALIDRCS= 1
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    pptrDTPReturnLen01.err $($(tcasedir)pptrDTPReturnLen01$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

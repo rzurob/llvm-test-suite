@@ -1,0 +1,76 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/coarray/error_stop/func/error_stop_002f.scenario
+#FEATURE    = CAF: ERROR STOP statement (feature #351605.31)
+#CREATOR    = Grigor Nikolov
+#DATE       = 20100828
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD        = F_COMPILE
+#OPTS       = -WF,-DTC_ES_VALUE=1
+#INPUT      = $(tcasedir)error_stop_intvalue1.F
+#OUTPUT     = error_stop_intvalue1$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#INPUT      = error_stop_intvalue1$(OBJ)
+#OUTPUT     = error_stop_intvalue1$(EXE)
+#ENDCMD
+
+#CMD        = MPRUN
+#INPUT      = error_stop_intvalue1$(EXE)
+#STDOUT     = error_stop_intvalue1_1.out
+#STDERR     = error_stop_intvalue1_1.out
+#VALIDRCS   = 1
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "FAILURE if this message"
+#INPUT      = error_stop_intvalue1_1.out
+#VALIDRCS   = 1
+#ENDCMD
+
+#FOR run_iter=128 TO 255
+  #CMD        = F_COMPILE
+  #OPTS       = -WF,-DTC_ES_VALUE=$(run_iter)
+  #INPUT      = $(tcasedir)error_stop_intvalue1.F
+  #OUTPUT     = error_stop_intvalue1$(OBJ)
+  #ENDCMD
+
+  #CMD        = F_LINK
+  #INPUT      = error_stop_intvalue1$(OBJ)
+  #OUTPUT     = error_stop_intvalue1$(EXE)
+  #ENDCMD
+
+  #CMD        = MPRUN
+  #INPUT      = error_stop_intvalue1$(EXE)
+  #STDOUT     = error_stop_intvalue1_$(run_iter).out
+  #STDERR     = error_stop_intvalue1_$(run_iter).out
+  #VALIDRCS   = 1
+  #ENDCMD
+
+  #CMD        = GREP
+  #OPTS       = -e "FAILURE if this message"
+  #INPUT      = error_stop_intvalue1_$(run_iter).out
+  #VALIDRCS   = 1
+  #ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

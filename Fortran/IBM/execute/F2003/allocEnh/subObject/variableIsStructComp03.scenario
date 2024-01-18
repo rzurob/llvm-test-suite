@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/subObject/variableIsStructComp03.scenario
+#FEATURE	= Intrinsic Assignment -- variable is a Subobject
+#CREATOR	= GM Manual Creation
+#DATE		= 20061109
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)variableIsStructComp03.f
+#OUTPUT		= variableIsStructComp03$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= variableIsStructComp03$(OBJ)
+#OUTPUT		= variableIsStructComp03$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= variableIsStructComp03$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

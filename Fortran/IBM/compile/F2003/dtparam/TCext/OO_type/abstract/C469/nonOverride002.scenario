@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/C469/nonOverride002.scenario
+#FEATURE   = OO_type/abstract tests - regression run bucket
+#CREATOR   = GB copy from OO_type/abstract/C469/nonOverride002.scenario
+#DATE      = 20070426
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)nonOverride002.f
+#OPTS      = -qdebug=intmsg:shutup
+#OUTPUT    = nonOverride002$(OBJ)
+#STDERR    = nonOverride002.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)nonOverride002$(product)vf) nonOverride002.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

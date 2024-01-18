@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/AttrSpecStmt/dtpAttrSpecStmtData14a.scenario
+#FEATURE	=
+#CREATOR	= Glen Mateer
+#DATE		= 20090428
+#TEST_TYPE	= Functional
+#ENDDOC
+
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= -qinitauto=0
+#INPUT		= $(tcasedir)dtpAttrSpecStmtData14a.f
+#OUTPUT		= dtpAttrSpecStmtData14a$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= dtpAttrSpecStmtData14a$(OBJ)
+#OUTPUT		= dtpAttrSpecStmtData14a$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= dtpAttrSpecStmtData14a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/submodule/func/module_subprogram19f.scenario
+#FEATURE   = F2008 Submodule
+#CREATOR   = Bernard Kan
+#DATE      = 20121206
+#TEST_TYPE = functional
+#KEYWORDS  = F2008, submodule, F2008 submodule
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)module_subprogram19f.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = module_subprogram19f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = module_subprogram19f$(OBJ)
+#OUTPUT    = module_subprogram19f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = module_subprogram19f$(EXE)
+#STDOUT    = module_subprogram19f.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)module_subprogram19f$(product)vf) module_subprogram19f.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

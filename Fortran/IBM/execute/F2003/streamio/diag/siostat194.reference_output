@@ -1,0 +1,1 @@
+1525-194 The BACKSPACE statement cannot be performed on unit 11 because it is connected for unformatted stream I/O.  The program will recover by ignoring the BACKSPACE statement.

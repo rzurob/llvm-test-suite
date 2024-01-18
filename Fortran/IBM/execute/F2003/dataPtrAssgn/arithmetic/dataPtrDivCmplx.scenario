@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrDivCmplx.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrDivCmplx.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrDivCmplx$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrDivCmplx$(OBJ)
+#OUTPUT    = dataPtrDivCmplx$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrDivCmplx$(EXE)
+#STDOUT    = dataPtrDivCmplx.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrDivCmplx.out $($(tcasedir)dataPtrDivCmplx$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

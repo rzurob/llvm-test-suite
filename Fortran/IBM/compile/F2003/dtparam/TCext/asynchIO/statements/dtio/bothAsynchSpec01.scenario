@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/asynchIO/statements/dtio/bothAsynchSpec01.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of asynchIO/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)bothAsynchSpec01.f
+#OUTPUT		= bothAsynchSpec01$(OBJ)
+#STDERR		= bothAsynchSpec01.stderr
+#VALIDRCS	= $(RC_COMP_S)
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)bothAsynchSpec01$(product)vf)	\
+				bothAsynchSpec01.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

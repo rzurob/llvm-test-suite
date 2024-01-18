@@ -1,0 +1,4 @@
+"deferred004.f", line 61.24: 1514-585 (S) The derived type child inheriting a deferred binding must be abstract.
+** m   === End of Compilation 1 ===
+** deferred004   === End of Compilation 2 ===
+1501-511  Compilation failed for file deferred004.f.

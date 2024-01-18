@@ -1,0 +1,5 @@
+"dtSpec005d.f", line 40.16: 1514-688 (S) The type parameter keyword kk does not match a type parameter of the derived type base.
+"dtSpec005d.f", line 41.20: 1514-688 (S) The type parameter keyword l does not match a type parameter of the derived type base.
+"dtSpec005d.f", line 43.20: 1514-688 (S) The type parameter keyword n1 does not match a type parameter of the derived type base.
+** dtspec005d   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtSpec005d.f.

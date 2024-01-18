@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/spread/spreadSourceIsScalarProcPtrComp02.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Oct. 16 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)spreadSourceIsScalarProcPtrComp02.f
+#OUTPUT= spreadSourceIsScalarProcPtrComp02$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = spreadSourceIsScalarProcPtrComp02$(OBJ)
+#OUTPUT= spreadSourceIsScalarProcPtrComp02$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = spreadSourceIsScalarProcPtrComp02$(EXE)
+#STDOUT = spreadSourceIsScalarProcPtrComp02.out
+#ENDCMD
+
+#CMD    = DIFF
+#INPUT  = $($(tcasedir)spreadSourceIsScalarProcPtrComp02$(product)vf) spreadSourceIsScalarProcPtrComp02.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrProductReal.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrProductReal.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrProductReal$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrProductReal$(OBJ)
+#OUTPUT    = dataPtrProductReal$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrProductReal$(EXE)
+#STDOUT    = dataPtrProductReal.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrProductReal.out $($(tcasedir)dataPtrProductReal$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

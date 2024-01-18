@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME      = F2008/polyAssign/func/polyAssign1029f_arrDim2LHSunallocSameTypeSameShape.scenario
+#FEATURE   = LHS of intrinsic assignment is allowed to be polymorphic
+#CREATOR   = Aaron Liu
+#DATE      = 20150901
+#TEST_TYPE = functional
+#KEYWORDS  = F2008, polymorphic, LHS, intrinsic assignment
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)polyAssign1029f_arrDim2LHSunallocSameTypeSameShape.f
+#OUTPUT    =  polyAssign1029f_arrDim2LHSunallocSameTypeSameShape$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     =  polyAssign1029f_arrDim2LHSunallocSameTypeSameShape$(OBJ)
+#OUTPUT    =  polyAssign1029f_arrDim2LHSunallocSameTypeSameShape$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     =  polyAssign1029f_arrDim2LHSunallocSameTypeSameShape$(EXE)
+#STDOUT    =  polyAssign1029f_arrDim2LHSunallocSameTypeSameShape.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

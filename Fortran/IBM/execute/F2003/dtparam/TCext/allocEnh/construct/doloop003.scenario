@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/construct/doloop003.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071219
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)doloop003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = doloop003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = doloop003$(OBJ)
+#OUTPUT    = doloop003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = doloop003$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,150 @@
+XL Fortran Enterprise Edition for AIX, V11.1 (Beta)  Version 10.01.9990.0000 --- /home/xlftest/mzhang/dataPtr/other/dataPtrIntrinbound.f 10/05/06 15:07:07
+ 
+>>>>> OPTIONS SECTION <<<<<
+***   Options In Effect   ***
+  
+         ==  On / Off Options  ==
+         32              CR              ESCAPE          I4
+         NOLIBESSL       NOLIBPOSIX      OBJECT          SOURCE
+         STDFRAMEWORK    SWAPOMP         UNWIND          ZEROSIZE
+  
+         ==  Options Of Integer Type ==
+         MAXMEM(8192)          SPILLSIZE(512)        STACKTEMP(0)
+  
+  
+         ==  Options Of Character Type  ==
+         ALIAS(STD,NOINTPTR)   ALIGN(BINDC(POWER),STRUCT(NATURAL))
+         ARCH(PPC)             AUTODBL(NONE)         DIRECTIVE(IBM*)
+         ENUM()                FLAG(I,I)             FLOAT(RNDSNGL,MAF,FOLD,RNGCHK)
+         FREE(F90)             HALT(S)               IEEE(NEAR)
+         INTSIZE(4)            LANGLVL(EXTENDED)     REALSIZE(4)
+         TUNE(BALANCED)        UNROLL(AUTO)          XLF2003(POLYMORPHIC,BOZLITARGS,SIGNDZEROINTR,STOPEXCEPT,VOLATILE,AUTOREALLOC)
+         XLF77(LEADZERO,BLANKPAD)
+         XLF90(SIGNEDZERO,AUTODEALLOC)
+  
+>>>>> SOURCE SECTION <<<<<
+          1 |!*********************************************************************
+          2 |!*  ===================================================================
+          3 |!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+          4 |!*  ===================================================================
+          5 |!*
+          6 |!*  TEST CASE NAME             : dataPtrIntrinbound.f
+          7 |!*
+          8 |!*  PROGRAMMER                 : Michelle Zhang
+          9 |!*  DATE                       : Aug 31, 2006
+         10 |!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
+         11 |!*
+         12 |!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
+         13 |!*
+         14 |!*  SECONDARY FUNCTIONS TESTED :
+         15 |!*
+         16 |!*  DRIVER STANZA              : xlf2003
+         17 |!*
+         18 |!*  DESCRIPTION
+         19 |!*
+         20 |!* - ub of data-pointer is intrinsic func
+         21 |!* - data-pointer/target have attributes save, public, volatile
+         22 |!* -
+         23 |!234567890123456789012345678901234567890123456789012345678901234567890
+         24 |
+         25 |module m
+         26 |
+         27 |    type base
+         28 |	integer :: p(10)
+         29 |    end type
+         30 |
+         31 |    type another
+         32 |        class(*), pointer :: p(:)
+         33 |    end type
+         34 |
+         35 |    type(another), public, save, volatile, target :: a
+         36 |
+         37 |end module
+** m   === End of Compilation 1 ===
+ 
+>>>>> COMPILATION UNIT EPILOGUE SECTION <<<<<
+ 
+ 
+TOTAL   UNRECOVERABLE  SEVERE       ERROR     WARNING    INFORMATIONAL
+               (U)       (S)         (E)        (W)          (I)
+    0           0         0           0          0            0
+ 
+>>>>> OPTIONS SECTION <<<<<
+***   Options In Effect   ***
+  
+         ==  On / Off Options  ==
+         32              CR              ESCAPE          I4
+         NOLIBESSL       NOLIBPOSIX      OBJECT          SOURCE
+         STDFRAMEWORK    SWAPOMP         UNWIND          ZEROSIZE
+  
+         ==  Options Of Integer Type ==
+         MAXMEM(8192)          SPILLSIZE(512)        STACKTEMP(0)
+  
+  
+         ==  Options Of Character Type  ==
+         ALIAS(STD,NOINTPTR)   ALIGN(BINDC(POWER),STRUCT(NATURAL))
+         ARCH(PPC)             AUTODBL(NONE)         DIRECTIVE(IBM*)
+         ENUM()                FLAG(I,I)             FLOAT(RNDSNGL,MAF,FOLD,RNGCHK)
+         FREE(F90)             HALT(S)               IEEE(NEAR)
+         INTSIZE(4)            LANGLVL(EXTENDED)     REALSIZE(4)
+         TUNE(BALANCED)        UNROLL(AUTO)          XLF2003(POLYMORPHIC,BOZLITARGS,SIGNDZEROINTR,STOPEXCEPT,VOLATILE,AUTOREALLOC)
+         XLF77(LEADZERO,BLANKPAD)
+         XLF90(SIGNEDZERO,AUTODEALLOC)
+  
+>>>>> SOURCE SECTION <<<<<
+         38 |
+         39 |program main
+         40 |    use m
+         41 |
+         42 |    type(base), volatile, target :: b
+         43 |
+         44 |    data ( b%p(i), i = ishft(1,1),ishft(3,1)) / 1,2,3,4,5/
+            ........................a..........b.......................
+ a - 1514-142 (S) Use of INTRINSIC function is not permitted in this context.
+ b - 1514-142 (S) Use of INTRINSIC function is not permitted in this context.
+         45 |
+         46 |    a%p(ishft(1, 2):int(7.0)) => b%p(b%p(3) : b%p(6))
+         47 |
+         48 |    if ( .not. associated(a%p) ) stop 9
+         49 |    if ( lbound( a%p, 1) /= 4 ) stop 19	
+         50 |    if ( ubound( a%p, 1) /= 7 ) stop 29
+         51 |
+         52 |    select type ( y => a%p)	
+         53 |	type is (integer)
+         54 |	    if ( any(y .ne. (/ 1, 2, 3, 4 /)) ) stop 39
+         55 |	class default
+         56 |	    stop 22
+         57 |	end select
+         58 |
+         59 |end
+** main   === End of Compilation 2 ===
+ 
+>>>>> COMPILATION UNIT EPILOGUE SECTION <<<<<
+ 
+ 
+TOTAL   UNRECOVERABLE  SEVERE       ERROR     WARNING    INFORMATIONAL
+               (U)       (S)         (E)        (W)          (I)
+    2           0         2           0          0            0
+ 
+>>>>> FILE TABLE SECTION <<<<<
+ 
+ 
+                                       FILE CREATION        FROM
+FILE NO   FILENAME                    DATE       TIME       FILE    LINE
+     0    /home/xlftest/mzhang/dataPtr/other/dataPtrIntrinbound.f
+                                      10/05/06   15:06:20
+ 
+ 
+>>>>> COMPILATION EPILOGUE SECTION <<<<<
+ 
+ 
+FORTRAN Summary of Diagnosed Conditions
+ 
+TOTAL   UNRECOVERABLE  SEVERE       ERROR     WARNING    INFORMATIONAL
+               (U)       (S)         (E)        (W)          (I)
+    2           0         2           0          0            0
+ 
+ 
+    Source records read.......................................      59
+1501-511  Compilation failed for file dataPtrIntrinbound.f.
+1501-544  Object file not created.

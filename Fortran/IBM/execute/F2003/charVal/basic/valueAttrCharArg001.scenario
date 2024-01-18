@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/F2003/charVal/basic/valueAttrCharArg001.scenario
+#FEATURE = Value Attribute with characters > 1
+#CREATOR = Vicram Uppal
+#DATE    = 20060403
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)valueAttrCharArg001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = valueAttrCharArg001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = valueAttrCharArg001$(OBJ)
+#OUTPUT    = valueAttrCharArg001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = valueAttrCharArg001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/operator/functional/genericOperatorRecursive002.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericOperatorRecursive002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=allowrpdt
+#OUTPUT    = genericOperatorRecursive002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericOperatorRecursive002$(OBJ)
+#OUTPUT    = genericOperatorRecursive002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericOperatorRecursive002$(EXE)
+#STDOUT    = genericOperatorRecursive002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericOperatorRecursive002.out $(tcasedir)genericOperatorRecursive002.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

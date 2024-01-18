@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/component/dtparamCompDecl002a1.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamCompDecl002a1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamCompDecl002a1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dtparamCompDecl002a1$(OBJ)
+#OUTPUT    = dtparamCompDecl002a1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamCompDecl002a1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = pdo_ext/reduction/abstracti060.scenario
+#FEATURE = pdo_ext tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#INVALID_PRODUCT=bgl_system
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_OPTIMIZE_FOR_SMP) $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT)
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)abstracti060.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION) $(OPT_GEN_CODE_FOR_GENERIC_ARCHITECTURE<com>)
+#OUTPUT    = abstracti060$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION) $(OPT_GEN_CODE_FOR_GENERIC_ARCHITECTURE<com>)
+#INPUT     =  abstracti060$(OBJ)
+#OUTPUT    = abstracti060$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = abstracti060$(EXE)
+#STDOUT    = abstracti060.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)abstracti060$(product)vf) abstracti060.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

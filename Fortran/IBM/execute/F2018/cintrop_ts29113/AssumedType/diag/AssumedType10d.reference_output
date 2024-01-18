@@ -1,0 +1,8 @@
+"AssumedType10d.f", line 33.14: 1515-019 (S) Syntax is incorrect.
+"AssumedType10d.f", line 33.22: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"AssumedType10d.f", line 34.8: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"AssumedType10d.f", line 36.13: 1515-019 (S) Syntax is incorrect.
+"AssumedType10d.f", line 36.21: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"AssumedType10d.f", line 37.8: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+** assumedtype10d   === End of Compilation 1 ===
+1501-511  Compilation failed for file AssumedType10d.f.

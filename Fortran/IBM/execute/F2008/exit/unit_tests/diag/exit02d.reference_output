@@ -1,0 +1,7 @@
+"exit02d.f", line 29.8: 1511-037 (S) EXIT statement was not found within the range of a DO-loop.
+"exit02d.f", line 36.8: 1511-037 (S) EXIT statement was not found within the range of a DO-loop.
+"exit02d.f", line 52.8: 1511-037 (S) EXIT statement was not found within the range of a DO-loop.
+"exit02d.f", line 62.8: 1511-037 (S) EXIT statement was not found within the range of a DO-loop.
+"exit02d.f", line 74.8: 1511-037 (S) EXIT statement was not found within the range of a DO-loop.
+** exit02d   === End of Compilation 1 ===
+1501-511  Compilation failed for file exit02d.f.

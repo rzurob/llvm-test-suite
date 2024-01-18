@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/selectType/Quotes/ScopeAssocName1.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071004
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)ScopeAssocName1.f
+#OUTPUT= ScopeAssocName1$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  ScopeAssocName1$(OBJ)
+#OUTPUT= ScopeAssocName1$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  ScopeAssocName1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

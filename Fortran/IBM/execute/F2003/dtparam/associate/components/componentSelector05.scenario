@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/associate/components/componentSelector05.scenario
+#FEATURE	= ASSOCIATE Contruct (with Derived Type Parameters) --	\
+				Component Selector
+#CREATOR	= Glen Mateer
+#DATE		= 20080912
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)componentSelector05.f
+#OPTS       = -qdebug=allowrpdt
+#OUTPUT		= componentSelector05$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= componentSelector05$(OBJ)
+#OUTPUT		= componentSelector05$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= componentSelector05$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/use/dtpUseTypeSpecAllocatable01.scenario
+#FEATURE   = DTP and USE - allocatable with type specifier
+#CREATOR   = DF Manual Update
+#DATE      = 20081007
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUseTypeSpecAllocatable01.f
+#OUTPUT    = dtpUseTypeSpecAllocatable01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUseTypeSpecAllocatable01$(OBJ)
+#OUTPUT    = dtpUseTypeSpecAllocatable01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUseTypeSpecAllocatable01$(EXE)
+#STDOUT    = dtpUseTypeSpecAllocatable01.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUseTypeSpecAllocatable01$(product)vf) dtpUseTypeSpecAllocatable01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

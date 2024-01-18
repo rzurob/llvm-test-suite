@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+** m1   === End of Compilation 2 ===
+"ftpbnd504d.f", line 69.22: 1514-586 (S) Overridden binding print, defined in type base, does not have the PRIVATE attribute.  The overriding binding must not have the PRIVATE attribute.
+** m2   === End of Compilation 3 ===
+** ftpbnd504d   === End of Compilation 4 ===
+1501-511  Compilation failed for file ftpbnd504d.f.

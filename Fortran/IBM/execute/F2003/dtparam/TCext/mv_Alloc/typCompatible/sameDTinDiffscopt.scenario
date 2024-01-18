@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/typCompatible/sameDTinDiffscopt.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071105
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)sameDTinDiffscopt.f
+#OUTPUT= sameDTinDiffscopt$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  sameDTinDiffscopt$(OBJ)
+#OUTPUT= sameDTinDiffscopt$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  sameDTinDiffscopt$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

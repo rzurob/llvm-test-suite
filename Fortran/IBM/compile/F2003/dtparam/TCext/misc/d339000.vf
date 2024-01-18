@@ -1,0 +1,4 @@
+"d339000.f", line 31.21: 1516-305 (S) Assumed type parameter values are not permitted in this context.
+** m   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file d339000.f.

@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_procptr/CrossFeatures1/Assign3.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_procptr/*
+#DATE      = 20071011
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)Assign3.f
+#OUTPUT= Assign3$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  Assign3$(OBJ)
+#OUTPUT= Assign3$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  Assign3$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

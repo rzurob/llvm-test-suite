@@ -1,0 +1,44 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)my_matrix.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = my_matrix$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)test_matrix_col_access04.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = test_matrix_col_access04$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = my_matrix$(OBJ) test_matrix_col_access04$(OBJ)
+#OUTPUT    = test_matrix_col_access04$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = test_matrix_col_access04$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

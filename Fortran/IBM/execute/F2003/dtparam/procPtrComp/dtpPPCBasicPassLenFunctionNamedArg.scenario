@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/procPtrComp/dtpPPCBasicPassLenFunctionNamedArg.scenario
+#FEATURE   = Procedure Pointers as Components - pointer to PASS functions from DTP with len param (named arg)
+#CREATOR   = DF Manual Update
+#DATE      = 20090323
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPPCBasicPassLenFunctionNamedArg.f
+#OUTPUT    = dtpPPCBasicPassLenFunctionNamedArg$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPPCBasicPassLenFunctionNamedArg$(OBJ)
+#OUTPUT    = dtpPPCBasicPassLenFunctionNamedArg$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPPCBasicPassLenFunctionNamedArg$(EXE)
+#STDOUT    = dtpPPCBasicPassLenFunctionNamedArg.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpPPCBasicPassLenFunctionNamedArg$(product)vf) dtpPPCBasicPassLenFunctionNamedArg.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,3 @@
+"Misc3.f", line 57.16: 1511-106 (S) The selector in the SELECT TYPE statement is not a named variable.  An associate name should appear.
+** misc3   === End of Compilation 1 ===
+1501-511  Compilation failed for file Misc3.f.

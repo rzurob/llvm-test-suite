@@ -1,0 +1,73 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/attribute/otherAttr/asynchBindAttr01.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Attribute
+#CREATOR	= GM Manual Creation
+#DATE		= 20060208
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)asynchBindAttr01.dat .
+#ENDCMD
+
+#CMD		= XLC_COMPILE
+#OPTS		= $(C_COMPILER_OPTS)
+#INPUT		= $(tcasedir)asynchBindAttr01c.c
+#OUTPUT		= asynchBindAttr01c$(OBJ)
+#ENDCMD
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)asynchBindAttr01.f
+#OUTPUT		= asynchBindAttr01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= asynchBindAttr01c$(OBJ) asynchBindAttr01$(OBJ)
+#OUTPUT		= asynchBindAttr01$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= asynchBindAttr01$(EXE)
+#STDOUT		= asynchBindAttr01.stdout
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)asynchBindAttr01$(product)vf)	\
+				asynchBindAttr01.stdout
+#ENDCMD
+
+
+#CMD		= SED
+#OPTS		= -e '1,/^\**\ mshort   === End of Compilation 1 ===/d'
+#INPUT		= asynchBindAttr01$(LST)
+#STDOUT		= asynchBindAttr01.sed.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i '^cShort[ 	]'
+#INPUT		= asynchBindAttr01.sed.stdout
+#STDOUT		= asynchBindAttr01.egrep.stdout
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= asynchBindAttr01.egrep.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'BIND\(C\)'
+#INPUT		= asynchBindAttr01.egrep.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

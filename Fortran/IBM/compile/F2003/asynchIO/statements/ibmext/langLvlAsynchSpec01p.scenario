@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/ibmext/langLvlAsynchSpec01p.scenario
+#FEATURE	= Asynchronous I/O -- IBM Extensions with Language Level Options
+#CREATOR	= GM Manual Creation
+#DATE		= 20060411
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= XLF95_COMPILE
+#OPTS		= $(OPT_SET_LANG_LEVEL<2003pure>) $(OPT_ENABLE_MSG_NUM<1518-318>)
+#INPUT		= $(tcasedir)langLvlAsynchSpec01.f
+#OUTPUT		= langLvlAsynchSpec01p$(OBJ)
+#STDERR		= langLvlAsynchSpec01p.stderr
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#IF in($(F_COMPILE^OPT_OPTIMIZE_FOR_SMP))  ||  in($(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT))
+	#INPUT	= $($(tcasedir)langLvlAsynchSpec01p.smp$(product)vf)\
+				langLvlAsynchSpec01p.stderr
+#ELSE
+	#INPUT	= $($(tcasedir)langLvlAsynchSpec01p$(product)vf)	\
+				langLvlAsynchSpec01p.stderr
+#ENDIF
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

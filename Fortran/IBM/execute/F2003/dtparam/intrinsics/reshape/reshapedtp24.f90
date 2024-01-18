@@ -1,0 +1,46 @@
+!#######################################################################
+! SCCS ID Information
+! %W%, %I%
+! Extract Date/Time: %D% %T%
+! Checkin Date/Time: %E% %U%
+!#######################################################################
+! *********************************************************************
+!* ===================================================================
+!* XL Fortran Test Case IBM INTERNAL USE ONLY
+!* ===================================================================
+!* ===================================================================
+!*
+!* TEST CASE TITLE : Test for DTP with RESHAPE
+!*
+!* TEST CASE NAME : reshapedtp24.f
+!*
+!* CREATED BY : Pooja Dayanand
+!* MODIFIED BY : Andy Sheung
+!* DATE : Jul31, 2008
+!* ORIGIN : AIX Compiler Development, Toronto Lab
+!*
+!* DESCRIPTION:
+!* RESHAPE constructs an array of a specified shape from the elements
+!* of a given array.
+!* CASE:
+!*  24) Same as 23 but with deferred LEN DTP for the source of reshape and the pointer that is allocated
+!*
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+type dtp (l)
+  integer, len :: l
+  integer ::  i
+end type
+
+type (dtp(:)), pointer :: dtp1(:)
+type (dtp(:)), pointer :: dtp2(:,:)
+
+allocate(dtp1(6), SOURCE = (/dtp(4)(1),dtp(4)(2), dtp(4)(3), dtp(4)(4), &
+                             dtp(4)(5), dtp(4)(6)/))
+allocate(dtp2(2,3), SOURCE = reshape(dtp1, (/2, 3/)))
+j = 1
+do while (j .LT. 3)
+  print *, dtp2(j, 1)%i, ' ', dtp2(j, 2)%i, ' ', dtp2(j, 3)%i
+  j = j+1
+end do
+end

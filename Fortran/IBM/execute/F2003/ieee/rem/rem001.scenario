@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = ieee/rem/rem001.scenario
+#FEATURE = ieee tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)ieeeconsts.f
+#OUTPUT = ieeeconsts$(OBJ)
+#OPTS 	= $(OPT_FREE_SOURCE_FORM) -qfloat=rrm $(OPT_FOLD_FLOATS_OFF) -qieee=Near $(OPT_SET_STRICT_OPTIMIZATION)
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)rem001.f
+#OUTPUT = rem001$(OBJ)
+#OPTS 	= $(OPT_FREE_SOURCE_FORM) -qfloat=rrm $(OPT_FOLD_FLOATS_OFF) -qieee=Near $(OPT_SET_STRICT_OPTIMIZATION) -I./
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = rem001$(OBJ)
+#OUTPUT = rem001$(EXE)
+#OPTS 	= $(OPT_FREE_SOURCE_FORM) -qfloat=rrm $(OPT_FOLD_FLOATS_OFF) -qieee=Near $(OPT_SET_STRICT_OPTIMIZATION) -I./
+#ENDCMD
+
+#CMD	= RUN
+#INPUT	= rem001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

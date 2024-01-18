@@ -1,0 +1,6 @@
+"datastmnt_d02.f", line 26.11: 1514-033 (E) Too many initial values in list.
+"datastmnt_d02.f", line 27.11: 1514-033 (E) Too many initial values in list.
+"datastmnt_d02.f", line 28.7: 1514-032 (E) Too few initial values in list.
+"datastmnt_d02.f", line 29.7: 1514-032 (E) Too few initial values in list.
+** main   === End of Compilation 1 ===
+1501-510  Compilation successful for file datastmnt_d02.f.

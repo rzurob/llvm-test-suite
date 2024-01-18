@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/none/acetnone07b.scenario
+#FEATURE	= Array constructor enhancement BOZ literals (w/ logicals)
+#CREATOR	= DF Manual Update
+#DATE		= 20060809
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetnone07b.f
+#OUTPUT		= acetnone07b$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetnone07b$(OBJ)
+#OUTPUT		= acetnone07b$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetnone07b$(EXE)
+#STDOUT		= acetnone07b.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $(tcasedir)acetnone07b.vf acetnone07b.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

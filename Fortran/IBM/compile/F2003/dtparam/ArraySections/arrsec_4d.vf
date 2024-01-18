@@ -1,0 +1,8 @@
+** m   === End of Compilation 1 ===
+"arrsec_4d.f", line 48.9: 1516-076 (S) Stride must not be zero.
+"arrsec_4d.f", line 51.9: 1516-076 (S) Stride must not be zero.
+"arrsec_4d.f", line 54.9: 1516-076 (S) Stride must not be zero.
+"arrsec_4d.f", line 55.9: 1516-076 (S) Stride must not be zero.
+"arrsec_4d.f", line 56.9: 1516-076 (S) Stride must not be zero.
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file arrsec_4d.f.

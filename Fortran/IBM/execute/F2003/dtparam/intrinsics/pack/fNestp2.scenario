@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2003/dtparam/intrinsics/pack/fNestp2.scenario
+#FEATURE = dtp intrinsics
+#CREATOR = Adrian Green
+#DATE    = 20080821
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)fNestp2.f
+#OUTPUT   = fNestp2$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = fNestp2$(OBJ)
+#OUTPUT   = fNestp2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fNestp2$(EXE)
+#STDOUT   = fNestp2.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $(tcasedir)fNestp2.vf fNestp2.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

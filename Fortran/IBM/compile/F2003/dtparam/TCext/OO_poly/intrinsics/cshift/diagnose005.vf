@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"diagnose005.f", line 33.28: 1513-129 (S) The value of DIM is greater than the rank of the corresponding array argument.
+** diagnose005   === End of Compilation 2 ===
+1501-511  Compilation failed for file diagnose005.f.

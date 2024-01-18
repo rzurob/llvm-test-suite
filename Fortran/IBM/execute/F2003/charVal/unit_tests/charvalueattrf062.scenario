@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=charvalueattrf062.scenario
+#FEATURE = functional test for VALUE attr used for characters of length other than 1 ( feature 298120 ).
+#CREATOR = Bardia Mahjour
+#DATE    = 20060127
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)charvalueattrf062.f
+#OPTS      = -Q -O -lxlfzz2
+#OUTPUT    = charvalueattrf062$(OBJ)
+#VALIDRCS  = 0
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#INPUT     = charvalueattrf062$(OBJ)
+#OUTPUT    = charvalueattrf062$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = charvalueattrf062$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

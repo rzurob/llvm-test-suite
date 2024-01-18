@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/move_alloc/move_allocBasic02_workaround.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Oct. 7 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)move_allocBasic02_workaround.f
+#OUTPUT= move_allocBasic02_workaround$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = move_allocBasic02_workaround$(OBJ)
+#OUTPUT= move_allocBasic02_workaround$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = move_allocBasic02_workaround$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

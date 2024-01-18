@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/ieee_underflow/unit_tests/fxIeeeEnhanc.scenario
+#FEATURE   = 289080
+#CREATOR   = Zheming Gu
+#DATE      = July 26, 2007
+#TEST_TYPE = Unit Test
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT=cbe_spu
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)fxIeeeEnhanc.f
+#OUTPUT    = fxIeeeEnhanc$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  fxIeeeEnhanc$(OBJ)
+#OUTPUT    = fxIeeeEnhanc$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxIeeeEnhanc$(EXE)
+#STDOUT    = fxIeeeEnhanc.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)fxIeeeEnhanc$(product)vf)  fxIeeeEnhanc.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

@@ -1,0 +1,45 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME       = F2008/intrinsics/EXECUTE_COMMAND_LINE/caf/execute_command_line18f.scenario
+#FEATURE    =
+#CREATOR    = Dorra Bouchiha
+#DATE       =
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_COARRAY_IMAGES<6>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = $(tcasedir)execute_command_line18f.f
+#OUTPUT    = execute_command_line18f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_COARRAY_IMAGES<6>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = execute_command_line18f$(OBJ)
+#OUTPUT    = execute_command_line18f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#ENVAR     = CAF_NUM_IMAGES=6
+#ENVAR     = MP_PROCS=1
+#INPUT     = execute_command_line18f$(EXE)
+#STDOUT    = execute_command_line18f.out
+#STDERR    = execute_command_line18f.err
+#ENDCMD
+
+#CMD      = DIFF
+#OPTS     = -b
+#INPUT    = execute_command_line18f.out $($(tcasedir)execute_command_line18f$(product)vf)
+#ENDCMD
+#ENDCONTROL
+
+#ENDSCENARIO

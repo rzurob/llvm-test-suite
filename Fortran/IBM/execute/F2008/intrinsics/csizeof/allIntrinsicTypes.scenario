@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    =  F2008/intrinsics/csizeof/allIntrinsicTypes.scenario
+#FEATURE =  F2008 ISO_C_BINDING C_SIZEOF function 381475
+#CREATOR =  Michelle Zhang
+#DATE    =  2011/01/14
+#TEST_TYPE= functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)allIntrinsicTypes.c
+#OPTS      = $(C_COMPILER_OPTS) $(OPT_SET_LANG_LEVEL_EXTENDED) $(OPT_GEN_64BIT_LONGLONG) $(OPT_BIGGER_LONG_DOUBLE)
+#OUTPUT    = ctest$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)allIntrinsicTypes.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = allIntrinsicTypes$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = allIntrinsicTypes$(OBJ) ctest$(OBJ)
+#OUTPUT    = allIntrinsicTypes$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = allIntrinsicTypes$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

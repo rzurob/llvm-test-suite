@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_procptr/bindc2/procptrBindcProc01.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_procptr/*
+#DATE      = 20071009
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)procptrBindcProc01.c
+#OPTS      = $(C_COMPILER_OPTS)
+#OUTPUT    = BindcProc01$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)procptrBindcProc01.f
+#OUTPUT    = procptrBindcProc01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = procptrBindcProc01$(OBJ) BindcProc01$(OBJ)
+#OUTPUT    = procptrBindcProc01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = procptrBindcProc01$(EXE)
+#STDOUT    = procptrBindcProc01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

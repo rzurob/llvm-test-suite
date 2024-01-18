@@ -1,0 +1,3 @@
+"dataPtrSubReal.f", line 34.26: 1514-710 (S) Dummy argument in of procedure or binding defassgn2 must not be specified with the ALLOCATABLE attribute. defassgn2 will not be included in the ASSIGNMENT(=) generic interface.
+** m   === End of Compilation 1 ===
+1501-511  Compilation failed for file dataPtrSubReal.f.

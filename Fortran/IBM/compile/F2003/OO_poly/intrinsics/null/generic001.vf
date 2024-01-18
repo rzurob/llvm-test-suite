@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"generic001.f", line 40.10: 1513-062 (S) Generic procedure reference can not be resolved due to incorrect actual argument attributes.
+** generic001   === End of Compilation 2 ===
+** s1   === End of Compilation 3 ===
+** s2   === End of Compilation 4 ===
+1501-511  Compilation failed for file generic001.f.

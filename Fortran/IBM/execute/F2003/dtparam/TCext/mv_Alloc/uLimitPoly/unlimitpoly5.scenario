@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/uLimitPoly/unlimitpoly5.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071106
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)unlimitpoly5.f
+#OUTPUT= unlimitpoly5$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  unlimitpoly5$(OBJ)
+#OUTPUT= unlimitpoly5$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  unlimitpoly5$(EXE)
+#STDOUT= unlimitpoly5.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = unlimitpoly5.out $($(tcasedir)unlimitpoly5$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

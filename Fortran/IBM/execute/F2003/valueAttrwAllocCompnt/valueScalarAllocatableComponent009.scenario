@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/home/robertma/tc/F2009/valueAttrDTwAllocatableComponents/valueScalarAllocatableComponent009.scenario
+#FEATURE = value attribute with DT containing allocatable components test cases
+#CREATOR = Robert Ma
+#DATE    = 20091215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)valueScalarAllocatableComponent009.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = valueScalarAllocatableComponent009$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = valueScalarAllocatableComponent009$(OBJ)
+#OUTPUT    = valueScalarAllocatableComponent009$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = valueScalarAllocatableComponent009$(EXE)
+#STDOUT    = valueScalarAllocatableComponent009.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = valueScalarAllocatableComponent009.out $(tcasedir)valueScalarAllocatableComponent009.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

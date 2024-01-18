@@ -1,0 +1,31 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      AssocNameSameAlloc.f
+#FEATURE= SELECT TYPE STATEMENT
+#CREATOR=   Feng Ye
+#DATE=      11-01-05
+#TEST_TYPE= DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=      F_COMPILE
+#OPTS=     $(OPT_FREE_SOURCE_FORM)
+#INPUT=    $(tcasedir)AssocNameSameAlloc.f
+#STDERR=   AssocNameSameAlloc.err
+#VALIDRCS= 1
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    AssocNameSameAlloc.err $($(tcasedir)AssocNameSameAlloc$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

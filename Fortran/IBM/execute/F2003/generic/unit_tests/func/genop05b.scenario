@@ -1,0 +1,22 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/unit_tests/func/genop05b.scenario
+#FEATURE = Generic Bindings
+#CREATOR = Rafik Zurob
+#DATE    = 20051118
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPLINK
+#INPUT     = $(tcasedir)genop05b.f
+#OUTPUT    = genop05b$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genop05b$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

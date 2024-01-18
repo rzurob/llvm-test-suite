@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/abstracti/abifce04kl.scenario
+#FEATURE	= Derived Type Parameters (+ Abstract Interface Unit Tests)
+#CREATOR	= Glen Mateer (derived from work by James Ren)
+#DATE		= 20071106
+#TEST_TYPE	= Unit Test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= XLF95_COMPILE
+#INPUT		= $(tcasedir)abifce04kl.f
+#OUTPUT		= abifce04kl$(OBJ)
+#ENDCMD
+
+#CMD		= XLF95_LINK
+#INPUT		= abifce04kl$(OBJ)
+#OUTPUT		= abifce04kl$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= abifce04kl$(EXE)
+#STDOUT		= abifce04kl.out
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)abifce04kl$(product)vf) abifce04kl.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,8 @@
+"mxminvalVarConform01d.f", line 49.26: 1513-040 (S) The argument DIM must be a scalar.
+"mxminvalVarConform01d.f", line 51.26: 1513-040 (S) The argument DIM must be a scalar.
+"mxminvalVarConform01d.f", line 53.22: 1513-134 (S) Array argument required.
+"mxminvalVarConform01d.f", line 55.22: 1513-134 (S) Array argument required.
+"mxminvalVarConform01d.f", line 57.33: 1513-132 (S) Conformable argument required.
+** mxminvalvarconform01d   === End of Compilation 1 ===
+** sub1   === End of Compilation 2 ===
+1501-511  Compilation failed for file mxminvalVarConform01d.f.

@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/selectedCharName/unit_tests/SelCKind004.scenario
+#FEATURE   = 317648
+#CREATOR   = Zheming Gu
+#DATE      = August 02, 2006
+#TEST_TYPE = Functional Unit Test
+#ENDDOC
+
+
+#BEGINENV
+#ENDENV
+
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)SelCKind004.f
+#OUTPUT   =  SelCKind004$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  SelCKind004$(OBJ)
+#OUTPUT   =  SelCKind004$(EXE)
+#ENDCMD
+
+
+#CMD      =  RUN
+#INPUT    =  SelCKind004$(EXE)
+#STDOUT   =  SelCKind004.out
+#ENDCMD
+
+
+#CMD      = DIFF
+#INPUT    = $($(tcasedir)SelCKind004$(product)vf) SelCKind004.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

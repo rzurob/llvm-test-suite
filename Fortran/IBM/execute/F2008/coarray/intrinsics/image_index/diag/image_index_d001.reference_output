@@ -1,0 +1,29 @@
+"image_index_d001.f", line 61.23: 1514-776 (S) The coarray argument of intrinsic procedure image_index must be a coarray.
+"image_index_d001.f", line 61.27: 1516-328 (S) The size of the SUB argument to the IMAGE_INDEX intrinsic procedure must be equal to the corank of the COARRAY argument.
+"image_index_d001.f", line 62.23: 1514-776 (S) The coarray argument of intrinsic procedure image_index must be a coarray.
+"image_index_d001.f", line 62.27: 1516-328 (S) The size of the SUB argument to the IMAGE_INDEX intrinsic procedure must be equal to the corank of the COARRAY argument.
+"image_index_d001.f", line 63.23: 1514-776 (S) The coarray argument of intrinsic procedure image_index must be a coarray.
+"image_index_d001.f", line 63.27: 1516-328 (S) The size of the SUB argument to the IMAGE_INDEX intrinsic procedure must be equal to the corank of the COARRAY argument.
+"image_index_d001.f", line 64.23: 1514-776 (S) The coarray argument of intrinsic procedure image_index must be a coarray.
+"image_index_d001.f", line 64.31: 1516-328 (S) The size of the SUB argument to the IMAGE_INDEX intrinsic procedure must be equal to the corank of the COARRAY argument.
+"image_index_d001.f", line 66.23: 1514-776 (S) The coarray argument of intrinsic procedure image_index must be a coarray.
+"image_index_d001.f", line 66.27: 1516-328 (S) The size of the SUB argument to the IMAGE_INDEX intrinsic procedure must be equal to the corank of the COARRAY argument.
+"image_index_d001.f", line 67.23: 1514-776 (S) The coarray argument of intrinsic procedure image_index must be a coarray.
+"image_index_d001.f", line 67.27: 1516-328 (S) The size of the SUB argument to the IMAGE_INDEX intrinsic procedure must be equal to the corank of the COARRAY argument.
+"image_index_d001.f", line 68.23: 1514-776 (S) The coarray argument of intrinsic procedure image_index must be a coarray.
+"image_index_d001.f", line 68.28: 1516-328 (S) The size of the SUB argument to the IMAGE_INDEX intrinsic procedure must be equal to the corank of the COARRAY argument.
+"image_index_d001.f", line 69.23: 1514-776 (S) The coarray argument of intrinsic procedure image_index must be a coarray.
+"image_index_d001.f", line 69.28: 1516-328 (S) The size of the SUB argument to the IMAGE_INDEX intrinsic procedure must be equal to the corank of the COARRAY argument.
+"image_index_d001.f", line 71.23: 1514-776 (S) The coarray argument of intrinsic procedure image_index must be a coarray.
+"image_index_d001.f", line 71.27: 1516-328 (S) The size of the SUB argument to the IMAGE_INDEX intrinsic procedure must be equal to the corank of the COARRAY argument.
+"image_index_d001.f", line 72.23: 1514-776 (S) The coarray argument of intrinsic procedure image_index must be a coarray.
+"image_index_d001.f", line 72.27: 1516-328 (S) The size of the SUB argument to the IMAGE_INDEX intrinsic procedure must be equal to the corank of the COARRAY argument.
+"image_index_d001.f", line 73.23: 1514-776 (S) The coarray argument of intrinsic procedure image_index must be a coarray.
+"image_index_d001.f", line 73.27: 1516-328 (S) The size of the SUB argument to the IMAGE_INDEX intrinsic procedure must be equal to the corank of the COARRAY argument.
+"image_index_d001.f", line 74.23: 1514-776 (S) The coarray argument of intrinsic procedure image_index must be a coarray.
+"image_index_d001.f", line 74.31: 1516-328 (S) The size of the SUB argument to the IMAGE_INDEX intrinsic procedure must be equal to the corank of the COARRAY argument.
+"image_index_d001.f", line 75.23: 1514-776 (S) The coarray argument of intrinsic procedure image_index must be a coarray.
+"image_index_d001.f", line 75.27: 1516-328 (S) The size of the SUB argument to the IMAGE_INDEX intrinsic procedure must be equal to the corank of the COARRAY argument.
+"image_index_d001.f", line 77.23: 1514-776 (S) The coarray argument of intrinsic procedure image_index must be a coarray.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file image_index_d001.f.

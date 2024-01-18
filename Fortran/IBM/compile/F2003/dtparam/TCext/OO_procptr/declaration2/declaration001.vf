@@ -1,0 +1,7 @@
+"declaration001.f", line 42.43: 1514-184 (E) The INTENT attribute must not be specified for a dummy argument that is a dummy procedure. INTENT attribute is ignored.
+"declaration001.f", line 42.43: 1515-115 (S) Procedure entity p was declared with the INTENT attribute. p must also be declared with the POINTER attribute.
+"declaration001.f", line 48.43: 1514-184 (E) The INTENT attribute must not be specified for a dummy argument that is a dummy procedure. INTENT attribute is ignored.
+"declaration001.f", line 48.43: 1515-115 (S) Procedure entity p was declared with the INTENT attribute. p must also be declared with the POINTER attribute.
+** m   === End of Compilation 1 ===
+** declaration001   === End of Compilation 2 ===
+1501-511  Compilation failed for file declaration001.f.

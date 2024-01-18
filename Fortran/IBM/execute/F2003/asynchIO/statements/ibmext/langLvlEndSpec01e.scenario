@@ -1,0 +1,45 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/ibmext/langLvlEndSpec01e.scenario
+#FEATURE	= Asynchronous I/O -- IBM Extensions with Language Level Options
+#CREATOR	= GM Manual Creation
+#DATE		= 20060411
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)langLvlEndSpec01e.dat fort.21
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SET_LANG_LEVEL<extended>)
+#INPUT		= $(tcasedir)langLvlEndSpec01.f
+#OUTPUT		= langLvlEndSpec01e$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= langLvlEndSpec01e$(OBJ)
+#OUTPUT		= langLvlEndSpec01e$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= langLvlEndSpec01e$(EXE)
+#STDOUT		= langLvlEndSpec01e.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)langLvlEndSpec01e$(product)vf)	\
+				langLvlEndSpec01e.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

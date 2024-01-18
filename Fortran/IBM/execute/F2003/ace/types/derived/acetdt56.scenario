@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/derived/acetdt56.scenario
+#FEATURE	= Array constructor enhancement - AC as function return value (derived types)
+#CREATOR	= DF Manual Update
+#DATE		= 20061123
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt56.f
+#OUTPUT		= acetdt56$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt56$(OBJ)
+#OUTPUT		= acetdt56$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt56$(EXE)
+#STDOUT		= acetdt56.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetdt56$(product)vf) acetdt56.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

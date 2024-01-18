@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dtpCommon15.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       07-19-07
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dtpCommon15.f
+#OUTPUT= dtpCommon15$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  dtpCommon15$(OBJ)
+#OUTPUT= dtpCommon15$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dtpCommon15$(EXE)
+#STDOUT= dtpCommon15.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

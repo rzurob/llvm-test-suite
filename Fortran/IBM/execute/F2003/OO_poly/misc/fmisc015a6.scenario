@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/misc/fmisc015a6.f
+#FEATURE = OO_poly
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fmisc015a6.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fmisc015a6$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fmisc015a6$(OBJ)
+#OUTPUT    = fmisc015a6$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fmisc015a6$(EXE)
+#STDOUT    = fmisc015a6.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fmisc015a6.out $($(tcasedir)fmisc015a6$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

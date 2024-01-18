@@ -1,0 +1,33 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       InitExpIntrinDefAssgn.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       08-28-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)InitExpIntrinDefAssgn.f
+#OUTPUT= InitExpIntrinDefAssgn$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  InitExpIntrinDefAssgn$(OBJ)
+#OUTPUT= InitExpIntrinDefAssgn$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  InitExpIntrinDefAssgn$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

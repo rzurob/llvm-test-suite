@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/ArraySections/c619.scenario
+#FEATURE   = 353925
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20080710
+#TEST_TYPE = Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)c619.f
+#OUTPUT    = c619$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = c619$(OBJ)
+#OUTPUT    = c619$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = c619$(EXE)
+#STDOUT    = c619.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)c619$(product)vf) c619.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

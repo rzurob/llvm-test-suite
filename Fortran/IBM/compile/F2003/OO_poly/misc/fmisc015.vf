@@ -1,0 +1,6 @@
+"fmisc015.f", line 54.29: 1511-139 (S) Associate name x is not associated with an entity that can be defined. x must not be redefined or become undefined.
+"fmisc015.f", line 57.21: 1511-139 (S) Associate name x is not associated with an entity that can be defined. x must not be redefined or become undefined.
+"fmisc015.f", line 58.17: 1512-020 (S) Expression must not appear as input list item.  Statement is ignored.
+"fmisc015.f", line 61.21: 1516-056 (S) An accessible explicit interface has a dummy argument with the INTENT(OUT) or INTENT(INOUT) attribute specified. Corresponding actual argument which is not definable is not permitted in this context.
+** fmisc015   === End of Compilation 1 ===
+1501-511  Compilation failed for file fmisc015.f.

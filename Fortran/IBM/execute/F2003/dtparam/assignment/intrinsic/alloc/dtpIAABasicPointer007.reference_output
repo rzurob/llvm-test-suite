@@ -1,0 +1,42 @@
+ 10 F F F F
+ 11 o1 = containera(1,2)(dk(1)(34),dl(2)('ab',[35,36]))
+ 12 f1: 1 1 34
+ 12 f1: 1 1 34
+ 12 fin1: 2 34 ab 2 35 36
+ 12 fin1: 2 no allocations
+ 12 fin: 2 2 2 >ab< 35 36
+ 12 fin: 2 2 2 >ab< 35 36
+ 13 o2 = containera(1,2)(dk(1)(37),dl(2)('cd',[38,39]))
+ 14 f1: 1 1 37
+ 14 f1: 1 1 37
+ 14 fin1: 2 37 cd 2 38 39
+ 14 fin1: 2 no allocations
+ 14 fin: 2 2 2 >cd< 38 39
+ 14 fin: 2 2 2 >cd< 38 39
+ 15 o1 = o2 {o1= T 34 ab 35 36 , o2= T 37 cd 38 39 }
+ 16 f1: 1 1 34
+ 16 fin1: 2 34 ab 2 35 36
+ 16 fin: 2 2 2 >ab< 35 36
+ 21 F F F F
+ 22 v1 = containera(4,2)(dk(4)(44),dl(2)('AB',[45,46]))
+ 23 f4: 4 4 44
+ 23 f4: 4 4 44
+ 23 fin4: 2 44 AB 2 45 46
+ 23 fin4: 2 no allocations
+ 23 fin: 2 2 2 >AB< 45 46
+ 23 fin: 2 2 2 >AB< 45 46
+ 24 v2 = containera(4,2)(dk(4)(47),dl(2)('CD',[48,49]))
+ 25 f4: 4 4 47
+ 25 f4: 4 4 47
+ 25 fin4: 2 47 CD 2 48 49
+ 25 fin4: 2 no allocations
+ 25 fin: 2 2 2 >CD< 48 49
+ 25 fin: 2 2 2 >CD< 48 49
+ 91 T 1 2 2 2 37 cd 38 39
+ 92 T 1 2 2 2 37 cd 38 39
+ 93 T 1 2 2 2 37 cd 38 39
+ 94 T 1 2 2 2 37 cd 38 39
+ 95 T 4 2 2 2 44 AB 45 46
+ 96 T 4 2 2 2 47 CD 48 49
+ 97 T 4 2 2 2 47 CD 48 49
+ 98 T 4 2 2 2 44 AB 45 46

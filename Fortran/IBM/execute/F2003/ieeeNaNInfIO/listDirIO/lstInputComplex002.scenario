@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = lstInputComplex002.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 23, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)lstInputComplex002.dat
+#OUTPUT   = lstInputComplex002.dat
+#ENDCMD
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)lstInputComplex002.f
+#OUTPUT   =  lstInputComplex002$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  lstInputComplex002$(OBJ)
+#OUTPUT   =  lstInputComplex002$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  lstInputComplex002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

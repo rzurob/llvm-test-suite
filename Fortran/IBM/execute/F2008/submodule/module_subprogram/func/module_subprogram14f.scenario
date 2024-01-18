@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/submodule/func/module_subprogram14f.scenario
+#FEATURE   = F2008 BLOCK - block in different contexts (module procedure)
+#CREATOR   = Bernard Kan
+#DATE      = 20130220
+#TEST_TYPE = functional
+#KEYWORDS  = F2008, submodule, F2008 submodule
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)module_subprogram14f.f
+#OUTPUT    = module_subprogram14f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = module_subprogram14f$(OBJ)
+#OUTPUT    = module_subprogram14f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = module_subprogram14f$(EXE)
+#STDOUT    = module_subprogram14f.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)module_subprogram14f$(product)vf) module_subprogram14f.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

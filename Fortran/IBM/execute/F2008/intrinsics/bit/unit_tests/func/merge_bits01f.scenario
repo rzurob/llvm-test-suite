@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      =
+#FEATURE   =
+#CREATOR   = Maryam Moghadas
+#DATE      = 20130212
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)merge_bits01f.f
+#OUTPUT   =  merge_bits01f$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  merge_bits01f$(OBJ)
+#OUTPUT   =  merge_bits01f$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  merge_bits01f$(EXE)
+#STDOUT   =  merge_bits01f.out
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = merge_bits01f.out $(tcasedir)merge_bits01f.vf
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

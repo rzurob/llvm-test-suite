@@ -1,0 +1,83 @@
+! These test cases test warnings about a necessary small break in backwards
+! compatibility between code compiled with "new" DTP-capable compiler versions
+! (13.1 and above) and code compiled with "old" non-DTP-capable versions with
+! polymorphism (11.1 and 12.1).
+
+! "Old" code which uses polymorphic variables which reference "new" DTP objects
+! (e.g., passed in to a subroutine or assigned to a shared variable) will
+! generate an error message if it attempts to copy the new object or apply
+! default initialisation to it.
+
+! In a nutshell, all scenarios in all subdirectories should be attempted by both
+! AIX and LoP runs.  The LoP runs should always have some SLES and some RHEL
+! machines to which the scenarios can be dispatched, otherwise NORESOURCES
+! errors will arise.  Read another way, if you are getting NORESOURCES errors on
+! an LoP run from these test cases, look first to the list of machines on which
+! the tests run to make sure that both SLES and RHEL machines are available.
+! The details are below:
+
+! Because these cases necessarily look back at earlier versions, we always have
+! one foot in a recent version and one foot in an old version -- either 11.1 or
+! 12.1.  All scenarios run in dev (or 13.1 or higher) and either
+! 1. compile one source file with an old version (11.1 or 12.1),
+!    compile another source file with a new version (13.1 or higher), and
+!    link them with the new version or the same old version
+!    (cases linked with the new version have names ending in _111 or _121,
+!     and cases linked with the old version have names ending in _111L, _111Lr,
+!     _121L or _121Lr)
+! OR
+! 2. copy in an object file already precompiled with an old version (gold),
+!    compile another source file with a new version (13.1 or higher), and
+!    link them with the new version (names ending in _111m or _121m).
+
+! The 12.1 scenarios either run on LoP or on AIX, and are completely
+! straightforward.  Also, all scenarios using manually precompiled object files
+! (.o) and module files (.mod) are straightforward, whether using code manually
+! compiled in 11.1 or 12.1.  The only tricky parts are those which use both the
+! 11.1 compiler and the current compiler (..._111, ..._11L, ..._111r, and
+! ..._111Lr).  The reason for the complexity is that we had two compiler
+! products in 11.1, being SLES and RHEL; on a SLES machine in v11.1, only the
+! SLES compiler can be used, so when we run on a SLES machine, we have to be
+! sure to use that one; on a RHEL machine in v11.1, only the RHEL compiler can
+! be used, so when we run on a RHEL machine, we have to be be sure to use that
+! one.  Now, SLES and RHEL are merged as LoP in 12.1 and higher, and are now
+! virtually indistinguishable.  In an LoP run on 12.1 or higher:
+!
+! * "on(sles)" is true when running on either a SLES or RHEL machine
+! * "#REQUIRED_PRODUCT=rhel" is satisfied by both SLES and RHEL machines
+!   and produces a CONFLICT on AIX, which does not result in a TBI
+! * "#REQUIRED_RESOURCES=RHEL5" is satisfied only on RHEL and produces a NORESOURCES
+!   failure, which does result in a TBI, if no RHEL machine is available to run it.
+!
+! It looks like we can sort of distinguish between systems enough to be sure the
+! right scenario is used on the right machine, but may generate spurious TBIs!
+
+! The problem with REQUIRED_RESOURCES and NORESOURCES errors goes away if we
+! can be sure that both SLES and RHEL machines will be used in an LoP run.
+! Therefore, we mark the scenarios to be run only on RHEL machines with 
+! "#REQUIRED_PRODUCT=rhel" (thus excluding AIX machines) and "#REQUIRED_RESOURCES=RHEL5"
+! (thus excluding SLES machines).
+
+! The config files used for the runs necessarily have similar problems.
+! Two commands have been created to compile and linke on AIX or SLES in 11.1:
+! V111_XLF2003_COMPILE and V111_XLF2003_LINK.  Another two commands exist for
+! RHEL: V111_XLF2003_COMPILE_RHEL and V111_XLF2003_LINK_RHEL.
+
+! Scenarios and their requirements for compilers and linkers are summarised in
+! the following table:
+!
+! scenario   "Pre"    "Post"
+! name      compile  compile    link
+! ends in   version  version  version
+! _111        11       dev      dev
+! _111L       11       dev      11
+! _111Lr      11       dev      11  (RHEL)
+! _111m       11*      dev      dev         *: precompiled file copied in
+! _111r       11       dev      dev (RHEL)
+! _121        12       dev      dev
+! _121L       12       dev      12
+! _121m       12*      dev      dev         *: precompiled file copied in
+
+! The shell script "makePrecompiledFiles" in this directory can be used to
+! generate the necessary precompiled files.  See the comments in that file for instructions.
+

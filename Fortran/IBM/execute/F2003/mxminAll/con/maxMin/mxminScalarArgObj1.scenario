@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/mxminAll/con/maxMin/mxminScalarArgObj1.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mxminScalarArgObj1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = mxminScalarArgObj1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = mxminScalarArgObj1$(OBJ)
+#OUTPUT    = mxminScalarArgObj1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminScalarArgObj1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

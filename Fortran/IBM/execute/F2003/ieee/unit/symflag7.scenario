@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/ieee/unit/symflag7.scenario
+#FEATURE = ieee tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)symflag7.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = symflag7$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  symflag7$(OBJ)
+#OUTPUT    = symflag7$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = symflag7$(EXE)
+#STDOUT    = symflag7.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)symflag7$(product)vf) symflag7.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

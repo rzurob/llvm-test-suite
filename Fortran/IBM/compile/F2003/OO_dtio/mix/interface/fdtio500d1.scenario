@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/mix/interface/fdtio500d1.f
+#FEATURE = OO_dtio
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fdtio500d1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fdtio500d1$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = fdtio500d1.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = fdtio500d1.err $($(tcasedir)fdtio500d1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

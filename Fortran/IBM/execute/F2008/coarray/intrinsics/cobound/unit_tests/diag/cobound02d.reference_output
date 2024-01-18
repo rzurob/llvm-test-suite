@@ -1,0 +1,14 @@
+"cobound02d.f", line 29.32: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "lcobound".
+"cobound02d.f", line 30.32: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "lcobound".
+"cobound02d.f", line 31.32: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "lcobound".
+"cobound02d.f", line 33.32: 1513-040 (S) The argument DIM must be a scalar.
+"cobound02d.f", line 34.32: 1513-040 (S) The argument DIM must be a scalar.
+"cobound02d.f", line 35.32: 1513-040 (S) The argument DIM must be a scalar.
+"cobound02d.f", line 40.32: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ucobound".
+"cobound02d.f", line 41.32: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ucobound".
+"cobound02d.f", line 42.32: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ucobound".
+"cobound02d.f", line 44.32: 1513-040 (S) The argument DIM must be a scalar.
+"cobound02d.f", line 45.32: 1513-040 (S) The argument DIM must be a scalar.
+"cobound02d.f", line 46.32: 1513-040 (S) The argument DIM must be a scalar.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file cobound02d.f.

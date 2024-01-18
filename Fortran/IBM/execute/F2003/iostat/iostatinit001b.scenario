@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=iostatinit001.scenario
+#FEATURE = 299314
+#CREATOR = Rob Wheeler
+#DATE    = 20060109
+#TEST_TYPE=fvt
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)iostatinit001.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM) $(OPT_INTSIZE_4)
+#OUTPUT    = iostatinit001b$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM) $(OPT_INTSIZE_4)
+#INPUT     = iostatinit001b$(OBJ)
+#OUTPUT    = iostatinit001b$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = iostatinit001b$(EXE)
+#STDOUT    = iostatinit001b.out
+#STDERR    = iostatinit001b.out
+#ENDCMD
+
+#CMD	   = DIFF
+#OPTS	   = -b
+#INPUT     = iostatinit001b.out $($(tcasedir)iostatinit001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

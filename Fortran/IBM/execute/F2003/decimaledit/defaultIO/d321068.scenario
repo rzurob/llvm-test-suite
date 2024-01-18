@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/decimaledit/defaultIO/d321068.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d321068.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = d321068$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = d321068$(OBJ)
+#OUTPUT    = d321068$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d321068$(EXE)
+#STDOUT    = d321068.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = d321068.out $(tcasedir)d321068.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

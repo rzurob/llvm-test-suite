@@ -1,0 +1,5 @@
+"R452_002dkl.f", line 40.9: 1515-019 (S) Syntax is incorrect.
+"R452_002dkl.f", line 40.53: 1514-095 (S) Invalid statement within derived type definition.
+** m   === End of Compilation 1 ===
+** r452_002dkl   === End of Compilation 2 ===
+1501-511  Compilation failed for file R452_002dkl.f.

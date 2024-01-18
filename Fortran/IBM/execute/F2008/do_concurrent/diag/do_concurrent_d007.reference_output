@@ -1,0 +1,6 @@
+"do_concurrent_d007.f", line 36.10: 1511-144 (S) Transfer of control into or out of a DO CONCURRENT construct is not permitted.  Check all references to this label.
+"do_concurrent_d007.f", line 45.10: 1511-144 (S) Transfer of control into or out of a DO CONCURRENT construct is not permitted.  Check all references to this label.
+"do_concurrent_d007.f", line 54.8: 1511-144 (S) Transfer of control into or out of a DO CONCURRENT construct is not permitted.  Check all references to this label.
+"do_concurrent_d007.f", line 63.10: 1511-144 (S) Transfer of control into or out of a DO CONCURRENT construct is not permitted.  Check all references to this label.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file do_concurrent_d007.f.

@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/do_concurrent/func/do_concurrent_f021_functions.scenario
+#FEATURE   = F2008 DO CONCURRENT
+#CREATOR   = Bernard Kan
+#DATE      = 2015-08-31
+#TEST_TYPE = functional
+#KEYWORDS  = F2008 DO CONCURRENT
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)do_concurrent_f021_functions.c
+#IF on(aix)
+#OPTS      = $(C_COMPILER_OPTS) $(OPT_SET_LANG_LEVEL_EXTENDED)  $(OPT_BIGGER_LONG_DOUBLE) $(OPT_GEN_64BIT_LONGLONG) -lc128
+#ELSE
+#OPTS      = $(C_COMPILER_OPTS) $(OPT_SET_LANG_LEVEL_EXTENDED)  $(OPT_BIGGER_LONG_DOUBLE) -qfloat=gcclongdouble $(OPT_GEN_64BIT_LONGLONG)
+#ENDIF
+#OUTPUT    = do_concurrent_f021_functionsa$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)do_concurrent_f021_functions.f
+#OUTPUT    = do_concurrent_f021_functionsb$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#IF on(aix)
+#OPTS      = -lc128
+#ENDIF
+#INPUT     = do_concurrent_f021_functionsa$(OBJ) do_concurrent_f021_functionsb$(OBJ)
+#OUTPUT    = do_concurrent_f021_functions$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = do_concurrent_f021_functions$(EXE)
+#STDOUT    = do_concurrent_f021_functions.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint61.scenario
+#FEATURE	= Array constructor enhancement rank remapped pointers in AC
+#CREATOR	= DF Manual Update
+#DATE		= 20061126
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint61.f
+#OUTPUT		= acetint61$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint61$(OBJ)
+#OUTPUT		= acetint61$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint61$(EXE)
+#STDOUT		= acetint61.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -r1e-6
+#INPUT		= $($(tcasedir)acetint61$(product)vf) acetint61.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

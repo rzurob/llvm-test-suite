@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=ptrassign007d.scenario
+#FEATURE = Pointer Assignment Enhancement
+#CREATOR = Michael Selvanayagam
+#DATE    = 20060331
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ptrassign007d.f
+#STDERR    = ptrassign007d.err
+#OUTPUT    = ptrassign007d$(OBJ)
+#VALIDRCS  = 1
+#ENDCMD
+
+
+#CMD       = XLDIFF
+#INPUT     = ptrassign007d.err $($(tcasedir)ptrassign007d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

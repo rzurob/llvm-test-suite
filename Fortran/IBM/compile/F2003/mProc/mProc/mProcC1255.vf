@@ -1,0 +1,7 @@
+"mProcC1255.f", line 51.15: 1516-270 (E) Entity modfun1 must be a procedure pointer, external procedure, dummy procedure, or a module procedure, and must have an explicit interface. modfun1 is ignored.
+"mProcC1255.f", line 52.15: 1516-270 (E) Entity modfun2 must be a procedure pointer, external procedure, dummy procedure, or a module procedure, and must have an explicit interface. modfun2 is ignored.
+** m   === End of Compilation 1 ===
+"mProcC1255.f", line 72.15: 1516-270 (E) Entity extsub1 must be a procedure pointer, external procedure, dummy procedure, or a module procedure, and must have an explicit interface. extsub1 is ignored.
+** extsub   === End of Compilation 2 ===
+** mprocc1255   === End of Compilation 3 ===
+1501-510  Compilation successful for file mProcC1255.f.

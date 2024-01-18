@@ -1,0 +1,5 @@
+"asynchProtectedAttr02d.f", line 68.50: 1515-019 (S) Syntax is incorrect.
+"asynchProtectedAttr02d.f", line 69.68: 1515-019 (S) Syntax is incorrect.
+** mcontroldata   === End of Compilation 1 ===
+"asynchProtectedAttr02d.f", line 79.9: 1514-219 (S) Unable to access module symbol file for module mcontroldata. Check path and file permissions of file. Use association not done for this module.
+1501-511  Compilation failed for file asynchProtectedAttr02d.f.

@@ -1,0 +1,35 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/coarray/error_stop/diag/error_stop_025d.scenario
+#FEATURE    = CAF: ERROR STOP statement (feature #351605.31)
+#CREATOR    = Grigor Nikolov
+#DATE       = 20100828
+#TEST_TYPE  = Diagnostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)error_stop_pure.f
+#OUTPUT     = error_stop_pure$(OBJ)
+#STDOUT     = error_stop_pure_caf.out
+#STDERR     = error_stop_pure_caf.err
+#VALIDRCS   = $(RC_COMP_E)
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = error_stop_pure_caf.err $($(tcasedir)error_stop_pure_caf$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

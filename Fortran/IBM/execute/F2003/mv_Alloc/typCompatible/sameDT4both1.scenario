@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       sameDT4both1.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)sameDT4both1.f
+#OUTPUT= sameDT4both1$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  sameDT4both1$(OBJ)
+#OUTPUT= sameDT4both1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  sameDT4both1$(EXE)
+#STDOUT= sameDT4both1.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = sameDT4both1.out $(tcasedir)sameDT4both1.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

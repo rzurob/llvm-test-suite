@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/crossFeature/typeBound/typeBound001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/*
+#DATE      = 20070613
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)typeBound001.f
+#OUTPUT    = typeBound001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = typeBound001$(OBJ)
+#OUTPUT    = typeBound001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = typeBound001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,95 @@
+ F F T F F
+ NaNQ
+ F F T F F
+ NaNQ
+ 
+ F F F F F
+ 0.0000000000E+00
+ F F T F F
+ NaNQ
+ 
+ F F F F F
+ NaNQ
+ F F F F F
+ NaNQ
+ F F F F F
+ NaNQ
+ 
+ F F T F F
+ NaNQ
+ F F T F F
+ NaNQ
+ 
+ F F F F F
+ NaNQ
+ F F F F F
+ NaNQ
+ F F F F F
+ NaNQ
+ F F F F F
+ NaNQ
+ 
+ (real*8 x, real*8 y)
+ F F T F F
+ NaNQ
+ F F T F F
+ NaNQ
+ 
+ F F F F F
+ 0.000000000000000000E+00
+ F F T F F
+ NaNQ
+ 
+ F F F F F
+ -NaNQ
+ F F F F F
+ -NaNQ
+ F F F F F
+ -NaNQ
+ 
+ F F T F F
+ NaNQ
+ F F T F F
+ NaNQ
+ 
+ F F F F F
+ -NaNQ
+ F F F F F
+ -NaNQ
+ F F F F F
+ -NaNQ
+ F F F F F
+ -NaNQ
+ 
+ (real*16 x, real*16 y)
+ F F T F F
+ NaNQ
+ F F T F F
+ NaNQ
+ 
+ F F F F F
+ 0.00000000000000000000000000000000000E+00
+ F F T F F
+ NaNQ
+ 
+ F F F F F
+ -NaNQ
+ F F F F F
+ -NaNQ
+ F F F F F
+ -NaNQ
+ 
+ F F T F F
+ NaNQ
+ F F T F F
+ NaNQ
+ 
+ F F F F F
+ -NaNQ
+ F F F F F
+ -NaNQ
+ F F F F F
+ -NaNQ
+ F F F F F
+ -NaNQ
+ 

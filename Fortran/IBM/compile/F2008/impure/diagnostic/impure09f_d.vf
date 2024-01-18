@@ -1,0 +1,4 @@
+"impure09f_d.f", line 31.41: 1513-302 (S) Dummy argument z of elemental procedure writing must be declared with the INTENT or VALUE attribute.
+"impure09f_d.f", line 42.38: 1513-302 (S) Dummy argument y of elemental procedure reading must be declared with the INTENT or VALUE attribute.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file impure09f_d.f.

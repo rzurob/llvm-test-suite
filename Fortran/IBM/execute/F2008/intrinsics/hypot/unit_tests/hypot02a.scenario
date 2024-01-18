@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2008/intrinsics/hypot/unit_tests/hypot02a.scenario
+#FEATURE = F2008 HYPOT intrinsic
+#CREATOR = Rafik Zurob
+#DATE    = 20110701
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)hypot02a.f
+#OUTPUT    = hypot02a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = hypot02a$(OBJ)
+#OUTPUT    = hypot02a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = hypot02a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

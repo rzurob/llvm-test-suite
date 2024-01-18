@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/subObject/variableIsArraySect02.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071220
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)variableIsArraySect02.f
+#OUTPUT		= variableIsArraySect02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= variableIsArraySect02$(OBJ)
+#OUTPUT		= variableIsArraySect02$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= variableIsArraySect02$(EXE)
+#STDOUT		= variableIsArraySect02.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)variableIsArraySect02$(product)vf)	\
+				variableIsArraySect02.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

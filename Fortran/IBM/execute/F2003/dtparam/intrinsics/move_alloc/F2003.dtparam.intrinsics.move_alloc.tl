@@ -1,0 +1,52 @@
+!
+!  Automatically Generated .tl file
+!  Bucket:      F2003/dtparam
+!  Sub-Bucket:  intrinsics/move_alloc
+!
+d356904.scenario
+d356960.scenario
+d356964.scenario
+d357051.scenario
+d357067.scenario
+d357082.scenario
+d357084.scenario
+d357086.scenario
+d357089.scenario
+d357117.scenario
+d357149.scenario
+d357194.scenario
+d357218.scenario
+d357238.scenario
+! d357256.scenario   !<-- moved to future
+d357263.scenario
+d357266.scenario
+move_allocAllocComp01.scenario
+move_allocBasic01.scenario
+move_allocBasic02.scenario
+move_allocBasic03.scenario
+move_allocCharComp01.scenario
+move_allocCharComp02.scenario
+move_allocDTComp01.scenario
+move_allocDTComp02.scenario
+move_allocDTComp03.scenario
+move_allocDiagArraySect01.scenario
+move_allocDiagFromToAreRes01.scenario
+move_allocDiagNonAlloc01.scenario
+move_allocDiagNonDeferredParam01.scenario
+move_allocDiagPoly01.scenario
+move_allocDiagTypeCompatible01.scenario
+move_allocFromIsUnallocated01.scenario
+move_allocFromIsUnallocated02.scenario
+move_allocIntComp01.scenario
+move_allocLogicalComp01.scenario
+move_allocPointerComp01.scenario
+move_allocPolyComp01.scenario
+move_allocPolyComp02.scenario
+move_allocProcPtrComp01.scenario
+move_allocProcPtrComp02.scenario
+move_allocProcPtrComp03.scenario
+move_allocToHasTargetAttribute01.scenario
+move_allocToHasTargetAttribute02.scenario
+move_allocToHasTargetAttribute03.scenario
+move_allocToIsPoly01.scenario
+move_allocToIsPoly02.scenario

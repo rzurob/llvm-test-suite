@@ -1,0 +1,4 @@
+"fxdmodprocstmt003.f", line 45.20: 1516-270 (E) Entity int_var must be a procedure pointer, external procedure, dummy procedure, or a module procedure, and must have an explicit interface. int_var is ignored.
+"fxdmodprocstmt003.f", line 48.12: 1513-062 (S) Generic procedure reference can not be resolved due to incorrect actual argument attributes.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file fxdmodprocstmt003.f.

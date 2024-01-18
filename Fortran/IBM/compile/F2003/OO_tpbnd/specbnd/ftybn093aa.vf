@@ -1,0 +1,4 @@
+"ftybn093aa.f", line 51.32: 1514-660 (S) Overridden binding bind_b is a subroutine.  Overriding binding bind_b must also be a subroutine.
+** mod   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file ftybn093aa.f.

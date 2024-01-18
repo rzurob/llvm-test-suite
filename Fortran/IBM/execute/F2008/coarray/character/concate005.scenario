@@ -1,0 +1,45 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/coarray/character/concate005.scenario
+#FEATURE   = character coarray
+#CREATOR   = Ke Wen Lin
+#DATE      = 20110412
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)module_for_char.f
+#OUTPUT    = module_for_char$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)concate005.f
+#OUTPUT    = concate005$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = concate005$(OBJ) module_for_char$(OBJ)
+#OUTPUT    = concate005$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+   #CMD       = MPRUN
+   #INPUT     = concate005$(EXE)
+   #STDOUT    = concate005$(i).out
+   #STDERR    = concate005$(i).out
+   #ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

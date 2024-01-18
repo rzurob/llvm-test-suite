@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/selectType/Select_Type02d.scenario
+#FEATURE   = DTP - Select type
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20080826
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)Select_Type02d.f
+#OUTPUT    = Select_Type02d$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = Select_Type02d$(OBJ)
+#OUTPUT    = Select_Type02d$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = Select_Type02d$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

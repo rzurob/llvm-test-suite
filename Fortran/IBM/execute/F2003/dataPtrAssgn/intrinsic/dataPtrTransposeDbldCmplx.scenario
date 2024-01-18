@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrTransposeDbldCmplx.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrTransposeDbldCmplx.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrTransposeDbldCmplx$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrTransposeDbldCmplx$(OBJ)
+#OUTPUT    = dataPtrTransposeDbldCmplx$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrTransposeDbldCmplx$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/spread/spreadSourceIsScalarIntComp01.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Oct. 13 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)spreadSourceIsScalarIntComp01.f
+#OUTPUT= spreadSourceIsScalarIntComp01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = spreadSourceIsScalarIntComp01$(OBJ)
+#OUTPUT= spreadSourceIsScalarIntComp01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = spreadSourceIsScalarIntComp01$(EXE)
+#STDOUT = spreadSourceIsScalarIntComp01.out
+#ENDCMD
+
+#CMD    = DIFF
+#INPUT  = $($(tcasedir)spreadSourceIsScalarIntComp01$(product)vf) spreadSourceIsScalarIntComp01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

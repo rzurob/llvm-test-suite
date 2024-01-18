@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = extNaNInfIO005.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = July 17, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT=bgl,linux
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#OPTS     =  -qxlf2003=oldnaninf
+#INPUT    =  $(tcasedir)extNaNInfIO005.f
+#OUTPUT   =  extNaNInfIO005$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  extNaNInfIO005$(OBJ)
+#OUTPUT   =  extNaNInfIO005$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  extNaNInfIO005$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

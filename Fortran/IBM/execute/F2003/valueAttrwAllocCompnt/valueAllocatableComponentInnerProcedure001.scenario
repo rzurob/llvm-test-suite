@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/home/robertma/tc/F2010/valueAttrDTwAllocatableComponents/valueAllocatableComponentInnerProcedure001.scenario
+#FEATURE = value attribute with DT containing allocatable components test cases
+#CREATOR = Robert Ma
+#DATE    = 20101215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)valueAllocatableComponentInnerProcedure001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = valueAllocatableComponentInnerProcedure001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = valueAllocatableComponentInnerProcedure001$(OBJ)
+#OUTPUT    = valueAllocatableComponentInnerProcedure001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = valueAllocatableComponentInnerProcedure001$(EXE)
+#STDOUT    = valueAllocatableComponentInnerProcedure001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = valueAllocatableComponentInnerProcedure001.out $(tcasedir)valueAllocatableComponentInnerProcedure001.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

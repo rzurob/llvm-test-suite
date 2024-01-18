@@ -1,0 +1,3 @@
+Feature 385143 --> F2008: CAF Array Intrinsics part 1 (cshift and eoshift)
+There is no I0 for this feature. The design documents IT1/IT2, can be found in ./doc
+subdirectory.

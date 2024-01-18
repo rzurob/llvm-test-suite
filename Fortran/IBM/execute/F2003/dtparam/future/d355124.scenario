@@ -1,0 +1,38 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME   = F2003/dtparam/typeParamInquiry/functional/dtparam/d355124.scenario
+#FEATURE= Type Parameter Inquiry(354612)
+#CREATOR= Nancy Wang
+#DATE   = August 17 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)d355124.f
+#OUTPUT= d355124$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = d355124$(OBJ)
+#OUTPUT= d355124$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = d355124$(EXE)
+#STDOUT= d355124.out
+#ENDCMD
+
+
+#CMD  = DIFF
+#INPUT= $($(tcasedir)d355124$(product)vf) d355124.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

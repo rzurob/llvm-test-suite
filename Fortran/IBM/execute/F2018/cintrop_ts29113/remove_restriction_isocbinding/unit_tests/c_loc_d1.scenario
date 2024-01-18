@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=c_loc_d1.scenario
+#FEATURE = noninteroperable array actual to C_LOC issue langlvl for F2008
+#CREATOR = Daniel Chen
+#DATE    = 20140731
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)c_loc_d1.f
+#OPTS      = $(OPT_DISABLE_MSG_NUM<1518-317>) $(OPT_SET_LANG_LEVEL<2008std>)
+#OUTPUT    = c_loc_d1$(OBJ)
+#STDERR    = c_loc_d1.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)c_loc_d1$(product)vf) c_loc_d1.err
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = c_loc_d1$(OBJ)
+#OUTPUT    = c_loc_d1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = c_loc_d1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

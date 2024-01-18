@@ -1,0 +1,3 @@
+"bcdasc25.f", line 43.10: 1516-207 (S) This COMMON block appears in a BIND statement, but did not appear in a COMMON statement in the same scoping unit.
+** bcdasc25   === End of Compilation 1 ===
+1501-511  Compilation failed for file bcdasc25.f.

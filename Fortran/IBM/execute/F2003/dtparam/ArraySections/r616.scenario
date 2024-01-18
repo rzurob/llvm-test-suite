@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/ArraySections/r616.scenario
+#FEATURE   = 353925
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20080710
+#TEST_TYPE = Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)r616.f
+#OUTPUT    = r616$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = r616$(OBJ)
+#OUTPUT    = r616$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = r616$(EXE)
+#STDOUT    = r616.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)r616$(product)vf) r616.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

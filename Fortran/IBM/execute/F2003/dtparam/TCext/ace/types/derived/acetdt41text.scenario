@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/intrinsics/acetdt41text.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
+				AC Containing Dummy Arguments, Including Arrays (Derived Types))
+#CREATOR	= Glen Mateer (derived from work by David Forster)
+#DATE		= 20080117
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt41text.f
+#OUTPUT		= acetdt41text$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt41text$(OBJ)
+#OUTPUT		= acetdt41text$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt41text$(EXE)
+#STDOUT		= acetdt41text.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetdt41text$(product)vf) acetdt41text.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

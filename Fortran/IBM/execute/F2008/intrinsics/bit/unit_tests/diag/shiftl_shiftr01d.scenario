@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      =
+#FEATURE   =
+#CREATOR   = Maryam Moghadas
+#DATE      = 20130227
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)shiftl_shiftr01d.f
+#OUTPUT    = shiftl_shiftr01d$(OBJ)
+#STDERR    = shiftl_shiftr01d.err
+#VALIDRCS  = $(RC_COMP_E)
+#ENDCMD
+
+
+#CMD       = XLDIFF
+#INPUT     = shiftl_shiftr01d.err $(tcasedir)shiftl_shiftr01d.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

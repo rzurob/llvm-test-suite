@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/procPtrComp/dtpPPCLocalNPassNArgInterfaceKLSub.scenario
+#FEATURE   = Procedure Pointers as Components - reference to subroutine without passed-object dummy argument, DTP arg w/ K+L parameters-NoPassNoArg
+#CREATOR   = DF Manual Update
+#DATE      = 20090323
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPPCLocalNPassNArgInterfaceKLSub.f
+#OUTPUT    = dtpPPCLocalNPassNArgInterfaceKLSub$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPPCLocalNPassNArgInterfaceKLSub$(OBJ)
+#OUTPUT    = dtpPPCLocalNPassNArgInterfaceKLSub$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPPCLocalNPassNArgInterfaceKLSub$(EXE)
+#STDOUT    = dtpPPCLocalNPassNArgInterfaceKLSub.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpPPCLocalNPassNArgInterfaceKLSub$(product)vf) dtpPPCLocalNPassNArgInterfaceKLSub.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

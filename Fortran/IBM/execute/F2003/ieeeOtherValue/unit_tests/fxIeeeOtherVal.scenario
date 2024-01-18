@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003ieeeOtherValue/unit_tests/fxIeeeOtherVal.scenario
+#FEATURE   = 338353
+#CREATOR   = Zheming Gu
+#DATE      = July 8,2007
+#TEST_TYPE = functional test
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT = cbe_spu
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      =  XLF2003_COMPILE
+#INPUT    =  $(tcasedir)fxIeeeOtherVal.f
+#OUTPUT   =  fxIeeeOtherVal$(OBJ)
+#ENDCMD
+
+#CMD      =  XLF2003_LINK
+#INPUT    =  fxIeeeOtherVal$(OBJ)
+#OUTPUT   =  fxIeeeOtherVal$(EXE)
+#ENDCMD
+
+#CMD      = RUN
+#INPUT    = fxIeeeOtherVal$(EXE)
+#ENDCMD
+#ENDCONTROL
+
+#ENDSCENARIO
+

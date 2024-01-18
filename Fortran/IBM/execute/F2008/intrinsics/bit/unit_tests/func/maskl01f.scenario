@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      =
+#FEATURE   =
+#CREATOR   = Maryam Moghadas
+#DATE      = 20130212
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)maskl01f.f
+#OUTPUT   =  maskl01f$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  maskl01f$(OBJ)
+#OUTPUT   =  maskl01f$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  maskl01f$(EXE)
+#STDOUT   =  maskl01f.out
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = maskl01f.out $(tcasedir)maskl01f.vf
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,71 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/intrimod/exec/intrimod43a.scenario
+#FEATURE = intrimod tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#REQUIRED_PRODUCT=aix
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF95_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+! Deconstructing a SCRIPT : PREdeconSCRIPT
+! PRECMD Deconstruction was aborted !
+!#CMD       = SCRIPT_RUN
+!#INPUT     = $TR_SRC/intrimod43a.presh
+!#ENDCMD
+
+#IF in($(F_COMPILE^OPT_GEN_64BIT_COMPILER_MODE))
+	#CMD		= COPY
+	#INPUT		= $(tcasedir)my_main.o.AIX_64.81
+	#OUTPUT		= my_main.o
+	#ENDCMD
+#ELSE
+	#CMD		= COPY
+	#INPUT		= $(tcasedir)my_main.o.AIX.81
+	#OUTPUT		= my_main.o
+	#ENDCMD
+#ENDIF
+
+#CMD		 = XLF90_COMPILE
+#INPUT		 = $(tcasedir)fake_ieee_modules.f
+#OPTS	  	 = $(OPT_SET_LANG_LANG_MSGS)
+#OUTPUT   	 = fake_ieee_modules$(OBJ)
+#ENDCMD
+
+#CMD		 = XLF90_COMPILE
+#INPUT		 = $(tcasedir)intrimod43.f
+#OUTPUT		 = intrimod43$(OBJ)
+#OPTS		 = $(OPT_SET_LANG_LANG_MSGS)
+#ENDCMD
+
+#CMD		 = XLF90_LINK
+#INPUT		 = fake_ieee_modules$(OBJ) intrimod43$(OBJ) my_main.o
+#OUTPUT		 = intrimod43$(EXE)
+#STDERR		 = intrimod43a.err
+#VALIDRCS	 = $(RC_ANY)
+#ENDCMD
+
+! Verify that suitable error messages mention missing symbols:
+
+#CMD          	 = EGREP
+#OPTS		 = '(undefined reference|1586-206|ld: 0711-317) .*__my_mod_MOD_sub1'
+#INPUT 		 = intrimod43a.err
+#ENDCMD
+
+#CMD          	 = EGREP
+#OPTS		 = '(undefined reference|1586-206|ld: 0711-317) .*__constants_MOD_sub2'
+#INPUT 		 = intrimod43a.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = dtparamFuncReturn14.scenario
+#CREATOR  = James Ren
+#DATE     = June 15, 2007
+#TEST_TYPE= Unit Test
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ = 60
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#INPUT  = $(tcasedir)dtparamFuncReturn14.f
+#OUTPUT = dtparamFuncReturn14$(OBJ)
+#ENDCMD
+
+
+#CMD    = F_LINK
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#INPUT = dtparamFuncReturn14$(OBJ)
+#OUTPUT = dtparamFuncReturn14$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT = dtparamFuncReturn14$(EXE)
+#STDOUT = dtparamFuncReturn14.out
+#ENDCMD
+
+#CMD    = DIFF
+#INPUT  = dtparamFuncReturn14.out $($(tcasedir)dtparamFuncReturn14$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

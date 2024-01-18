@@ -1,0 +1,15 @@
+"acetnone05d.f", line 59.25: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acetnone05d.f", line 60.27: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acetnone05d.f", line 61.21: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acetnone05d.f", line 62.29: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acetnone05d.f", line 64.31: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acetnone05d.f", line 65.23: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acetnone05d.f", line 66.24: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acetnone05d.f", line 68.20: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acetnone05d.f", line 69.20: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acetnone05d.f", line 70.34: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acetnone05d.f", line 72.45: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acetnone05d.f", line 73.30: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acetnone05d.f", line 74.30: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+** acetnone05d   === End of Compilation 1 ===
+1501-511  Compilation failed for file acetnone05d.f.

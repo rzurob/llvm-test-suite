@@ -1,0 +1,5 @@
+AssumedSizeScalar02.scenario
+AssumedSizeScalar03.scenario
+AssumedSizeScalar04.scenario
+AssumedSizeScalar05.scenario
+AssumedSizeScalar06.scenario

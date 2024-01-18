@@ -1,0 +1,5 @@
+"intproc_arg_2.f", line 39.16: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"intproc_arg_2.f", line 41.16: 1513-200 (S) User-defined elemental procedures may not be passed as actual arguments.
+"intproc_arg_2.f", line 42.16: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+** intproc_arg_2   === End of Compilation 1 ===
+1501-511  Compilation failed for file intproc_arg_2.f.

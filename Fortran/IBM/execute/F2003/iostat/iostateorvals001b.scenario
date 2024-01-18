@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=iostateorvals001b.scenario
+#FEATURE = 299314
+#CREATOR = Rob Wheeler
+#DATE    = 20060109
+#TEST_TYPE=fvt
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)iostateorvals001.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM) $(OPT_INTSIZE_4)
+#OUTPUT    = iostateorvals001b$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = iostateorvals001b$(OBJ)
+#OUTPUT    = iostateorvals001b$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = iostateorvals001b$(EXE)
+#STDOUT    = iostateorvals001b.out
+#STDERR    = iostateorvals001b.out
+#ENDCMD
+
+#CMD	   = DIFF
+#OPTS	   = -b
+#INPUT     = iostateorvals001b.out $($(tcasedir)iostateorvals001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

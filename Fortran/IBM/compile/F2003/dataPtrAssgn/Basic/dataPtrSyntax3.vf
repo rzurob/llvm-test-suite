@@ -1,0 +1,8 @@
+"dataPtrSyntax3.f", line 49.3: 1515-039 (S) The target in the pointer assignment must have the TARGET or POINTER attribute.
+"dataPtrSyntax3.f", line 50.3: 1515-039 (S) The target in the pointer assignment must have the TARGET or POINTER attribute.
+"dataPtrSyntax3.f", line 52.3: 1515-039 (S) The target in the pointer assignment must have the TARGET or POINTER attribute.
+"dataPtrSyntax3.f", line 53.3: 1515-039 (S) The target in the pointer assignment must have the TARGET or POINTER attribute.
+"dataPtrSyntax3.f", line 55.3: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"dataPtrSyntax3.f", line 56.3: 1513-020 (S) Procedure names must be specified with arguments in this context.
+** dataptrsyntax3   === End of Compilation 1 ===
+1501-511  Compilation failed for file dataPtrSyntax3.f.

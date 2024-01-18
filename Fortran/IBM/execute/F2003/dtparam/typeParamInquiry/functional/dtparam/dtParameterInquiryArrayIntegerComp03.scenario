@@ -1,0 +1,32 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME = F2003/dtparam/typeParamInquiry/functional/dtparam/dtParameterInquiryArrayIntegerComp03.scenario
+#FEATURE  = Type Parameter Inquiry(354612)
+#CREATOR  = Nancy Wang
+#DATE     = July 13 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)dtParameterInquiryArrayIntegerComp03.f
+#OUTPUT = dtParameterInquiryArrayIntegerComp03$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = dtParameterInquiryArrayIntegerComp03$(OBJ)
+#OUTPUT = dtParameterInquiryArrayIntegerComp03$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = dtParameterInquiryArrayIntegerComp03$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

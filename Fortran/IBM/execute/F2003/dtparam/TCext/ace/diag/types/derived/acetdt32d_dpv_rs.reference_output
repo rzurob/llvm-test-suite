@@ -1,0 +1,29 @@
+** acetdt32d_dpv_rsmod   === End of Compilation 1 ===
+"acetdt32d_dpv_rs.f", line 150.16: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d_dpv_rs.f", line 150.28: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d_dpv_rs.f", line 152.24: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d_dpv_rs.f", line 152.36: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d_dpv_rs.f", line 156.16: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d_dpv_rs.f", line 156.28: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d_dpv_rs.f", line 158.24: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d_dpv_rs.f", line 158.36: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d_dpv_rs.f", line 162.16: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d_dpv_rs.f", line 162.29: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d_dpv_rs.f", line 164.24: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d_dpv_rs.f", line 164.37: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d_dpv_rs.f", line 169.16: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d_dpv_rs.f", line 169.27: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d_dpv_rs.f", line 171.24: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d_dpv_rs.f", line 171.35: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d_dpv_rs.f", line 176.16: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d_dpv_rs.f", line 176.26: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d_dpv_rs.f", line 178.24: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d_dpv_rs.f", line 178.34: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d_dpv_rs.f", line 181.16: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d_dpv_rs.f", line 181.24: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d_dpv_rs.f", line 183.24: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d_dpv_rs.f", line 183.32: 1513-020 (S) Procedure names must be specified with arguments in this context.
+** acetdt32d_dpv_rs   === End of Compilation 2 ===
+** externfunc   === End of Compilation 3 ===
+** anotherfunc   === End of Compilation 4 ===
+1501-511  Compilation failed for file acetdt32d_dpv_rs.f.

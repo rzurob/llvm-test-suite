@@ -1,0 +1,13 @@
+        -- inside fun_arr()
+    inside func_fsub()
+        -- inside fun_sng()
+    inside proc_fsub()
+        -- inside fun_sng()
+    inside proc_fsub()
+        -- inside fun_arr()
+    inside func_ffunc()
+        -- inside fun_sng()
+    inside proc_ffunc()
+        -- inside fun_arr()
+    inside func_ffunc()
+  .... end

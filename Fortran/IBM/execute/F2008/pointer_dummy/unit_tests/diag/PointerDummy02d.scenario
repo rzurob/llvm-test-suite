@@ -1,0 +1,27 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = $(tcasedir)PointerDummy02d.scenario
+#FEATURE    = 387873
+#CREATOR    = Ren Jian Gang
+#DATE       = 20110622
+#TEST_TYPE  = Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD        = XLF2003_COMPILE
+#INPUT      = $(tcasedir)PointerDummy02d.f
+#OPTS       = $(OPT_SET_LANG_LEVEL<2003std>) $(OPT_ENABLE_MSG_NUM<1518-317>)
+#OUTPUT     = PointerDummy02d$(OBJ)
+#STDERR     = PointerDummy02d.err
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = PointerDummy02d.err $(tcasedir)PointerDummy02d.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

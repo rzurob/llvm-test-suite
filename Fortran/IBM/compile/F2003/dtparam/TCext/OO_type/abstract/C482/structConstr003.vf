@@ -1,0 +1,14 @@
+** m   === End of Compilation 1 ===
+"structConstr003.f", line 72.29: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"structConstr003.f", line 72.32: 1514-645 (S) base is an abstract type. base is not permitted in this context.
+"structConstr003.f", line 72.44: 1514-645 (S) base is an abstract type. base is not permitted in this context.
+"structConstr003.f", line 72.56: 1514-645 (S) base is an abstract type. base is not permitted in this context.
+"structConstr003.f", line 73.29: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"structConstr003.f", line 73.48: 1514-645 (S) base is an abstract type. base is not permitted in this context.
+"structConstr003.f", line 73.85: 1514-645 (S) base is an abstract type. base is not permitted in this context.
+"structConstr003.f", line 74.29: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"structConstr003.f", line 74.32: 1514-645 (S) base is an abstract type. base is not permitted in this context.
+"structConstr003.f", line 74.44: 1514-645 (S) base is an abstract type. base is not permitted in this context.
+"structConstr003.f", line 74.56: 1514-645 (S) base is an abstract type. base is not permitted in this context.
+** structconstr003   === End of Compilation 2 ===
+1501-511  Compilation failed for file structConstr003.f.

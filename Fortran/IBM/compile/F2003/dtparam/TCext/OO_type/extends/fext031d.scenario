@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/extends/fext031d.scenario
+#FEATURE   = OO_type tests - regression run bucket
+#CREATOR   = GB copy from OO_type/extends/fext031d.scenario
+#DATE      = 20070423
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fext031d.f
+#OPTS      = -qdebug=intmsg:shutup
+#OUTPUT    = fext031d$(OBJ)
+#STDERR    = fext031d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)fext031d$(product)vf) fext031d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,62 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       fgeneralREAL64
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2003_COMPILE
+#INPUT=  $(tcasedir)fgeneralREAL64.f
+#OUTPUT= fgeneralREAL64$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2003_LINK
+#INPUT=  fgeneralREAL64$(OBJ)
+#OUTPUT= fgeneralREAL64$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fgeneralREAL64$(EXE)
+#ENDCMD
+
+#CMD=    XLF2003_COMPILE
+#OPTS=   $(OPT_REALSIZE_4)
+#INPUT=  $(tcasedir)fgeneralREAL64.f
+#OUTPUT= fgeneralREAL64_1$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2003_LINK
+#OPTS=   $(OPT_REALSIZE_4)
+#INPUT=  fgeneralREAL64_1$(OBJ)
+#OUTPUT= fgeneralREAL64_1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fgeneralREAL64_1$(EXE)
+#ENDCMD
+
+#CMD=    XLF2003_COMPILE
+#OPTS=   -qautodbl=dbl
+#INPUT=  $(tcasedir)fgeneralREAL64.f
+#OUTPUT= fgeneralREAL64_2$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2003_LINK
+#OPTS=   -qautodbl=dbl
+#INPUT=  fgeneralREAL64_2$(OBJ)
+#OUTPUT= fgeneralREAL64_2$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fgeneralREAL64_2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/attribute/stmt/statementIntrinsic02.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060116
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)statementIntrinsic02.f
+#OUTPUT		= statementIntrinsic02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= statementIntrinsic02$(OBJ)
+#OUTPUT		= statementIntrinsic02$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= statementIntrinsic02$(EXE)
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i '^asynchReal'
+#INPUT		= statementIntrinsic02$(LST)
+#STDOUT		= statementIntrinsic02.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= statementIntrinsic02.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

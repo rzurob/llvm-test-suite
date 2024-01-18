@@ -1,0 +1,8 @@
+ 1001 101 111
+ 1002 102
+ 1003 103 113
+ 2004 204
+ 2003 203 213
+ 2002 202
+ 2001 201 211
+  DTu1-1 5 6 7   DTdata 6 7     DTu1-2 5 9     DTdata 9       DTu1-1 5 6 7   DTdata 6 7     DTu2-1 5 9     DTdata 9       DTu2-2 5 5 10  DTdata 5 10    DTu2-1 5 9     DTdata 9       DTu2-2 5 5 10  DTdata 5 10   

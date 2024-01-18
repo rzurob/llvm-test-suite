@@ -1,0 +1,17 @@
+ &NML1
+ B2=c= def , &NML
+ B=i=  777 , i=  888 , i=  888 , i=  777
+ /
+ /
+ &NML2
+ B1=c= abc , &NML
+ B=i=  777 , i=  888 , i=  777 , i=  888
+ /
+ /
+ &NML3
+ B3=c= ghi , &NML
+ B=i=  777 , i=  888 , i=  888
+ /, B4=c= def , &NML
+ B=i=  777 , i=  888 , i=  777
+ /
+ /

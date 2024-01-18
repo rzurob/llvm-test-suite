@@ -1,0 +1,296 @@
+Document Control Information:
+
+The official version of this document is kept in CMVC in the %CMVC_Family% family, release %CMVC_Release%, component %CMVC_Component%, file %CMVC_PathName%. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.
+
+CMVC Extraction Information: %W% %H% %I% sccsid
+
+This document is IBM Confidential.
+
+
+CMVC Feature Number 	%CMVC_Feature%
+Feature Title 	%Document_Name% %Note{By default the feature title and document name are the same. You can either change the document name (through Properties), or replace the tag with the title of the feature}%
+Author(s) 	%Authors%
+Applicable Product Releases 	XL Fortran v14.1 for AIX, Linux
+Affected Components 	Front Ends: Fortran
+Libraries: Fortran RT
+Documentation: Product documentation, web pages
+
+
+Document Status: For Approval
+
+Approvers Only: Click on the 'Approve' check-box beside your name in the table below if you agree with the technical and user interface content of this document; not checking your 'approve' check-box signifies you do not approve.
+
+%Approvals%
+
+Approval Comments
+
+Approvers (mandatory participation) 	%Note{Insert the names of people who will have approval authority for this review. These people, in aggregate, are responsible for approving the technical and user interface content of the document. Generally, this list should include people who represent compiler components that will need to change if this review is approved.
+The I0 Process document provides detailed guidance on choosing your list of approvers.
+Use Access Control to add/delete people from this list. The initial access control list is populated with the people from the Component Reviewers section below. You can use Access Control to change their role to Approver, or add additional approvers.}%
+%Approvers%
+Release Management Contact (optional participation) 	%Release_Management_Contact%
+%Note{Release Manager/Development Manager/Team Lead,
+usually your team's representative at product status meetings. Use Access Control to add/change Release Management Contact.}%
+Component Reviewers (optional participation) 	%Note{These groups must be made aware of the I0. Assign at least one person representing each group. The names listed below are suggested contacts only, please assign whoever is appropriate:
+
+    * C FE and related tools/libraries/driver:
+      AIX - Philip Luk
+      Linux - Philip Luk
+      z/OS - Kendrick Wong
+      CELL - Larry Lindsay
+      UPC - Philip Luk
+    * C++ FE and related tools/libraries/driver:
+      AIX - Jeff Heath
+      Linux - Sasha Kasapinovic
+      z/OS - Michael Wong
+      CELL - Kevin Shin
+    * Fortran FE, ASTI, PLIX, and related tools/libraries/driver:
+      AIX, PLIX - Rafik Zurob
+      Linux - Xing Xue
+      BG/L - Daniel Chen
+      CELL - Kelvin Li
+    * PL/X Development:
+      Kirk Crane
+    * TPO and associated tools/libraries (libxlopt, SMPRT, MASS):
+      AIX - Arie Tal/Yan Zhang
+      Linux - Tommy Wong
+      z/OS - Chris Miclea
+      BG - Damien Bonaventure
+      CELL - Amy Wang
+    * TOBEY and associated tools/libraries: (dis, libxl, bolt)
+      AIX - Christopher Lapkowski
+      Linux - Irina rada
+      z/OS - Chwan-Hang Lee
+      BG - Damien Bonaventure, Leon Ding (Xialoliang Ding/Piscataway/IBM@IBMUS)
+      CELL - Dickson Chau
+      dis - Ian McIntosh
+    * WCode:
+      Roland Froese
+    * Disassembler
+      Ian McIntosh
+    * Information Development:
+      C/C++ - Wei Zhong Shan/China/IBM
+      Fortran - Lisa Wilkinson
+    * Customer Service and Support:
+      AIX/Linux - Zoran Kulina
+      z/OS - Youssef Himo
+      Cell - Sean Kennedy
+    * Compiler Enablement:
+      Dwayne Moore
+    * Fortran Test:
+      Kobi Vinayagamoorthy
+    * C/C++ Test:
+      Thomas Lee(z/OS)
+      Adrean Gatea (system p)
+    * PL/X Test:
+      Anne Wylie
+    * Build and Packaging Team:
+      AIX - Chris Taylor
+      Linux - Viktor Ganich
+      BG - Steven Chen
+      Cell - Kevin Yuen
+      z/OS - Steve Chen
+      Dale Soldiuk (Please include Dale as optional on all reviews)
+    * Performance Measurement and Analysis Team:
+      John Tam
+    * Planning
+      Mary Chan
+
+The following groups must be notified of a W-Code change or if a change affects their language. They are optional otherwise.
+
+    * PL/I:
+      zOS and AIX - Peter Elderon (in SVL)
+    * Cobol:
+      AIX - Richard Nelson (in SVL)
+
+The following group must be notified of a front-end (C FE, or C++ FE) related change or other modification having a direct impact. Inclusion is optional otherwise.
+
+    * Makedepend for USS:
+      Christopher Taylor
+
+The following group must be notified whenever a change in debug WCODE is made, and any debugger related issues are involved.
+
+    * Common Debug Architecture Development (CDA):
+      Kendrick Wong
+
+Use Access Control to add/delete people from this list.}%
+%Component_Reviewers%
+Team Reviewers (optional participation) 	%Note{List any additional people you feel need to participate in the review. These people do not have approval authority. Use Access Control to add/delete people from this list.}%
+%Team_Reviewers%
+
+
+
+Reviewers: Please click the 'Reviewed' checkbox beside your name to indicate your participation in the review.
+
+%Reviews%
+
+Access Change History %Note{Authors: Access Change History will list any changes to the access control done to the document draft. These changes would not be visible in a review. In a review, this section would only list the access changes done to the review itself.
+Please note that changes to the access control of a review are not automatically reflected in the access control of the draft document.}%
+
+%CollapsedSection{Access Change History}{%Access_Change_History%}%
+
+Feature Overview
+
+Fortran 2008 adds the NEWUNIT= specifier to the OPEN statement.  The NEWUNIT= specifier avoids accidental changes to currently connected units by asking the Fortran runtime library to make a connection to an unused unit, and assign that unit's number to the variable specified in the NEWUNIT= specifier.  The unit number selected by the runtime library is always negative and does not interfere with unit numbers selected by the user program.
+
+User Documentation
+Overview
+
+Fortran 2008 adds the NEWUNIT= specifier to the OPEN statement.  The NEWUNIT= specifier avoids accidental changes to currently connected units by asking the Fortran runtime library to make a connection to an unused unit, and assign that unit's number to the variable specified in the NEWUNIT= specifier.  The unit number selected by the runtime library is always negative and does not interfere with unit numbers selected by the user program.
+User Benefits
+
+In the past, users had to ensure that a unit number was not reused until the connection to the unit was closed.  With the NEWUNIT= specifier, the runtime library takes on the responsibility of ensuring that unit numbers are unique and that they don't interfere with user-selected unit numbers.
+Public Interface
+NEWUNIT=var
+
+where var is a default integer scalar variable
+and NEWUNIT= is a specifier in the OPEN statement
+Constraints
+
+   1. The OPEN statement must contain exactly one of the UNIT= specifier (optionally without "UNIT="), and the NEWUNIT= specifier.
+   2. If the NEWUNIT= specifier appears in the OPEN statement, the STATUS= specifier with value SCRATCH, or the FILE= specifier must also appear.
+
+Rules
+
+    * Upon successful execution of the OPEN statement, the variable specified by the NEWUNIT= specifier is assigned a new "NEWUNIT value".  A NEWUNIT value is a negative number that is smaller than -2 and is not equal to the unit number of any currently connected file.
+    * If an error is detected in the execution of the OPEN statement, the variable specified by the NEWUNIT= specifier is not changed.
+
+Language Standard Considerations
+
+The NEWUNIT= specifier is a Fortran 2008 feature.  It is flagged with compile-time langlvl messages when FORTRAN 77, Fortran 90, Fortran 95, or Fortran 2003 language level checking is enabled.
+Messages
+Messages for the constraints above as well as langlvl will be emitted.
+Performance Considerations
+
+None.
+Multi-Platform/Portability Considerations
+This feature applies to all supported platforms.
+Migration/Co-Existence/Binary-Compatibility Considerations
+
+Since NEWUNIT values are negative, there is no chance of collision with user-selected unit numbers in existing programs.
+Debug Considerations
+
+None.
+NLS (Unicode) Considerations
+
+None
+Samples
+
+Valid examples:
+
+The following example write 'hello world' to file 'hello'.
+integer unit_number
+open(newunit=unit_number, file='hello')
+write(unit_number, *) 'hello world'
+close(unit_number)
+end
+
+The following example shows that you can change the connection properties for a unit obtained via NEWUNIT=
+
+integer unit_number
+integer i, j
+open(newunit=unit_number, status='scratch', decimal='comma')
+write(unit_number, '(F3.1)') 1.5
+rewind(unit_number)
+
+! change the decimal mode of the connection
+open(unit_number, decimal='point')
+read(unit_number, *) i, j
+close(unit_number)
+print *, i, j   ! prints 1 5
+end
+
+Invalid examples:
+
+The following example is invalid because neither the UNIT= specifier, nor the NEWUNIT= specifier appear in the OPEN statement.
+
+open(file='myfile')
+end
+
+The following example is invalid because the UNIT= and NEWUNIT= specifiers both appear in the same OPEN statement.
+
+open(unit=1, newunit=i, file='myfile')
+end
+
+The following example is invalid because the NEWUNIT= specifier appears in the OPEN statement, but FILE= or STATUS='scratch' do not.
+
+open(newunit=i, status='new')
+end
+
+
+
+Internal Compiler Team Information
+Product Dependencies
+
+None
+Patent/Disclosure Implications
+
+None
+Build and Packaging Considerations
+
+None
+Information Development Impacts
+
+Update the Language Reference, and add an entry to the Getting Started guide.  Also, please note the following:
+
+"NEWUNIT value" should be added to the glossary.
+
+The range for unit values in BACKSPACE, CLOSE, READ, WRITE, REWIND, and FLUSH should include "NEWUNIT value".
+
+The LR section about the definition status of variables needs to be updated to reflect that NEWUNIT= causes the specified variables to become defined.
+Testing Considerations
+
+Test that the various IO statement accept unit numbers obtained via NEWUNIT=.  This should include testing in parallel environment (OMP).
+High-Level Implementation Design
+Implementation Design Overview
+When NEWUNIT= appears, the FE passes a reserved negative unit number, NEWUNIT_REQUEST_UNIT, to _xlfIOCmd.  It also passes IOK_NEWUNIT and the address of the 4-byte user variable in the spec list.  If the user-variable is 2-bytes long, the FE creates a 4-byte temp, passes the address of the temp, and CONVs the temp to 2 bytes after the RTE returns.  As a result, if the user has more than 32767 connected NEWUNITs, overflow will occur.  If the user variable is 8-bytes long, the FE passes IOPK_NEWUNIT instead of IOK_NEWUNIT, along with the address of the the 8-byte user variable.
+
+In the RTE, a new table was added to the global context:  fast_newunit_table[FAST_UNITS].  This table is similar to fast_unit_table, except it's for use with NEWUNIT units only.  The table is indexed via abs(newunit unit number). (More accurately, -(newunit unit number)) .  The first 3 values in the table are not used:  fast_newunit_table[0] is not used because no negative unit can have that absolute value 0.  fast_newunit_table[1] is not used because the Fortran standards (since at least 2003) reserve unit -1 for NUMBER= in INQUIRE when there is no connection.  fast_newunit_table[2] is not used because -2 is reserved as the unit number passed by user-defined DTIO to the user-defined routine when the parent statement is acting on an internal file.  The following macros were added to facilitate access:  FIRST_NEWUNIT_UNIT, FIRST_FAST_UNIT, LAST_FAST_UNIT, FIRST_FAST_NEWUNIT, LAST_FAST_NEWUNIT.
+
+If we have more units than can fit in the fast_newunit_table, we store the newunit numbers in the unit_hash_table, which is the same table used for positive unit numbers.  The hash function for the table was changed to take the absolute value of the unit number.
+
+The last 10 unit numbers in the negative range (i.e. MININT32 to MININT32+10L) have been reserved for future use.  The following new macros were added to facilitate access to the units:  FIRST_RESERVED_UNIT_NUMBER, and LAST_RESERVED_UNIT_NUMBER.
+
+A new counter, next_available_newunit_number, was added to the global context.  The counter starts from FIRST_NEWUNIT_UNIT, and is decremented every time we allocate a new NEWUNIT value.  (The counter is not changed when a value is reused).  The last possible value for the counter is LAST_RESERVED_UNIT_NUMBER.
+
+Two new OPEN properites were added:  OPEN_NEWUNIT_SPEC indicates that the NEWUNIT specifier is present and specifies a 4-byte variable.  OPEN_NEWUNIT64_SPEC indicates that the NEWUNIT= specifier is present and specifies an 8-byte variable.  These properties are set based on the presence of IOK_NEWUNIT, and IOPK_NEWUNIT, respectively.  The properties are used to ensure that the value we store in the variable specified by NEWUNIT= are cast to the correct size.
+
+Getting a NEWUNIT value:
+
+In GetUnit(), after the unit table is locked, we check if the unit number is equal to NEWUNIT_REQUEST_UNIT.  If it is, we follow the following strategy to get a new NEWUNIT number:
+1. If gc->next_available_newunit_number falls within fast_newunit_table, we use gc->next_available_newunit_number, and decrement the counter.
+2. If gc->next_available_newunit_number is beyond the end of the fast_newunit_table, we first go through the fast_newunit_table looking for unused entries.  These entries can result from close statements or when an error occurs in OPEN after a NEWUNIT value is reserved.  We search through the fast_newunit_table from FIRST_FAST_NEWUNIT to LAST_FAST_NEWUNIT.  i.e. from oldest to newest.  The assumption is that older units are more likley to have been closed.  If we find an unused value, that value is reserved.
+3. If there are no unused values in fast_newunit_table, and gc->next_available_newunit_number is larger than LAST_RESERVED_UNIT_NUMBER, we use gc->next_available_newunit_number and decrement the counter.
+4. If gc->next_available_newunit_number is equal to LAST_RESERVED_UNIT_NUMBER, we serach starting LAST_FAST_NEWUNIT - 1 for an unused value.  (again, starting from oldest.)
+5. If no value is found, that means that we have over 2 billion units in use!  We return an out of memory error and terminate the open statement.
+
+For thread safety, gc->next_available_newunit_number is always decremented.  It's never incremented.  For example, the Fortran 2008 standard states that if an error occurs during execution of the OPEN statement, the variable specified by the NEWUNIT= specifier must not be updated.   But once we've reserved a unit number, and decremented the counter, we never un-reserve the number because doing that causes a race condition in gc->next_available_newunit_number.  This number will be reused in the algorithm above after we run out of numbers, and will not require changing gc->next_available_newunit_number.
+
+Reserving a NEWUNIT value is done in GetUnit becuase GetUnit locks the unit table.  (And if we lock, get number, unlock, then call GetUnit, we'll need a way of marking a number reserved so that other threads don't reuse it.
+
+Behaviour of other I/O statements when given an unconnected negative number
+
+In the past, we used to give an error message in several I/O statements (e.g. BACKSPACE, REWIND, and CLOSE) if the unit number is negative.  If the unit number is positive, and the unit is not connected, statements like CLOSE returned quietly without giving an error.
+
+These statements no longer complain about negative connected unit numbers.  They still complain, however, when the unit number is not connected.  While this is slightly inconsistent, existing test cases expect this behaviour.  After consideration, we decided that this behaviour is an acceptable tradeoff.
+
+For example:
+
+open(1, file='myfile')
+close(1)
+close(1)  ! no error
+
+open(newunit=i, file='myfile')
+close(i)
+close(i)  ! error
+
+Inter-Component Communication/Interfaces 
+
+See above.
+Other Implementation Design Information
+
+None.
+Appendix/References
+
+
+Please refer to the latest draft of the Fortran 2008 standard.

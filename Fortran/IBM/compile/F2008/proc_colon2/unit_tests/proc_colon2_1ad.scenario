@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2008/proc_colon2/unit_tests/proc_colon2_1ad.scenario
+#FEATURE = The :: separator is allowed in module procedure statements
+#CREATOR = Rafik Zurob
+#DATE    = 20121017
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)proc_colon2_1.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<2003std>) $(OPT_ENABLE_MSG_NUM<1518-317>)
+#OUTPUT    = proc_colon2_1ad$(OBJ)
+#STDERR    = proc_colon2_1ad.err
+#VALIDRCS  = 0
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)proc_colon2_1ad$(product)vf) proc_colon2_1ad.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

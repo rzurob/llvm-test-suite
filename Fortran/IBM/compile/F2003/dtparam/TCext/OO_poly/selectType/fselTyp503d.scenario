@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/selectType/fselTyp503d.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071004
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fselTyp503d.f
+#OUTPUT    = fselTyp503d$(OBJ)
+#STDERR    = fselTyp503d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = fselTyp503d.err $($(tcasedir)fselTyp503d$(product)vf)
+#OUTPUT    =
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

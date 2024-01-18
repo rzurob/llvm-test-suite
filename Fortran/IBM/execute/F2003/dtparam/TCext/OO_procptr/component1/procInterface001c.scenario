@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_procptr/component1/procInterface001c.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_procptr/*
+#DATE      = 20071009
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)procInterface001c.f
+#OUTPUT    = procInterface001c$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = procInterface001c$(OBJ)
+#OUTPUT    = procInterface001c$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = procInterface001c$(EXE)
+#STDOUT    = procInterface001c.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)procInterface001c$(product)vf) procInterface001c.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

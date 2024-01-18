@@ -1,0 +1,1500 @@
+ old value of sum is:  2
+ sum inside impure is:  2
+ array element is:  3
+ old value of sum is:  2
+ sum inside impure is:  12
+ array element is:  18
+ old value of sum is:  12
+ sum inside impure is:  22
+ array element is:  33
+ old value of sum is:  22
+ sum inside impure is:  32
+ array element is:  48
+ old value of sum is:  32
+ sum inside impure is:  42
+ array element is:  63
+ old value of sum is:  42
+ sum inside impure is:  52
+ array element is:  78
+ old value of sum is:  52
+ sum inside impure is:  62
+ array element is:  93
+ old value of sum is:  62
+ sum inside impure is:  72
+ array element is:  108
+ old value of sum is:  72
+ sum inside impure is:  82
+ array element is:  123
+ old value of sum is:  82
+ sum inside impure is:  92
+ array element is:  138
+ old value of sum is:  92
+ sum inside impure is:  102
+ array element is:  153
+ old value of sum is:  102
+ sum inside impure is:  112
+ array element is:  168
+ old value of sum is:  112
+ sum inside impure is:  122
+ array element is:  183
+ old value of sum is:  122
+ sum inside impure is:  132
+ array element is:  198
+ old value of sum is:  132
+ sum inside impure is:  142
+ array element is:  213
+ old value of sum is:  142
+ sum inside impure is:  152
+ array element is:  228
+ old value of sum is:  152
+ sum inside impure is:  162
+ array element is:  243
+ old value of sum is:  162
+ sum inside impure is:  172
+ array element is:  258
+ old value of sum is:  172
+ sum inside impure is:  182
+ array element is:  273
+ old value of sum is:  182
+ sum inside impure is:  192
+ array element is:  288
+ old value of sum is:  192
+ sum inside impure is:  202
+ array element is:  303
+ old value of sum is:  202
+ sum inside impure is:  212
+ array element is:  318
+ old value of sum is:  212
+ sum inside impure is:  222
+ array element is:  333
+ old value of sum is:  222
+ sum inside impure is:  232
+ array element is:  348
+ old value of sum is:  232
+ sum inside impure is:  242
+ array element is:  363
+ old value of sum is:  242
+ sum inside impure is:  252
+ array element is:  378
+ old value of sum is:  252
+ sum inside impure is:  262
+ array element is:  393
+ old value of sum is:  262
+ sum inside impure is:  272
+ array element is:  408
+ old value of sum is:  272
+ sum inside impure is:  282
+ array element is:  423
+ old value of sum is:  282
+ sum inside impure is:  292
+ array element is:  438
+ old value of sum is:  292
+ sum inside impure is:  302
+ array element is:  453
+ old value of sum is:  302
+ sum inside impure is:  312
+ array element is:  468
+ old value of sum is:  312
+ sum inside impure is:  322
+ array element is:  483
+ old value of sum is:  322
+ sum inside impure is:  332
+ array element is:  498
+ old value of sum is:  332
+ sum inside impure is:  342
+ array element is:  513
+ old value of sum is:  342
+ sum inside impure is:  352
+ array element is:  528
+ old value of sum is:  352
+ sum inside impure is:  362
+ array element is:  543
+ old value of sum is:  362
+ sum inside impure is:  372
+ array element is:  558
+ old value of sum is:  372
+ sum inside impure is:  382
+ array element is:  573
+ old value of sum is:  382
+ sum inside impure is:  392
+ array element is:  588
+ old value of sum is:  392
+ sum inside impure is:  402
+ array element is:  603
+ old value of sum is:  402
+ sum inside impure is:  412
+ array element is:  618
+ old value of sum is:  412
+ sum inside impure is:  422
+ array element is:  633
+ old value of sum is:  422
+ sum inside impure is:  432
+ array element is:  648
+ old value of sum is:  432
+ sum inside impure is:  442
+ array element is:  663
+ old value of sum is:  442
+ sum inside impure is:  452
+ array element is:  678
+ old value of sum is:  452
+ sum inside impure is:  462
+ array element is:  693
+ old value of sum is:  462
+ sum inside impure is:  472
+ array element is:  708
+ old value of sum is:  472
+ sum inside impure is:  482
+ array element is:  723
+ old value of sum is:  482
+ sum inside impure is:  492
+ array element is:  738
+ old value of sum is:  492
+ sum inside impure is:  502
+ array element is:  753
+ old value of sum is:  502
+ sum inside impure is:  512
+ array element is:  768
+ old value of sum is:  512
+ sum inside impure is:  522
+ array element is:  783
+ old value of sum is:  522
+ sum inside impure is:  532
+ array element is:  798
+ old value of sum is:  532
+ sum inside impure is:  542
+ array element is:  813
+ old value of sum is:  542
+ sum inside impure is:  552
+ array element is:  828
+ old value of sum is:  552
+ sum inside impure is:  562
+ array element is:  843
+ old value of sum is:  562
+ sum inside impure is:  572
+ array element is:  858
+ old value of sum is:  572
+ sum inside impure is:  582
+ array element is:  873
+ old value of sum is:  582
+ sum inside impure is:  592
+ array element is:  888
+ old value of sum is:  592
+ sum inside impure is:  602
+ array element is:  903
+ old value of sum is:  602
+ sum inside impure is:  612
+ array element is:  918
+ old value of sum is:  612
+ sum inside impure is:  622
+ array element is:  933
+ old value of sum is:  622
+ sum inside impure is:  632
+ array element is:  948
+ old value of sum is:  632
+ sum inside impure is:  642
+ array element is:  963
+ old value of sum is:  642
+ sum inside impure is:  652
+ array element is:  978
+ old value of sum is:  652
+ sum inside impure is:  662
+ array element is:  993
+ old value of sum is:  662
+ sum inside impure is:  672
+ array element is:  1008
+ old value of sum is:  672
+ sum inside impure is:  682
+ array element is:  1023
+ old value of sum is:  682
+ sum inside impure is:  692
+ array element is:  1038
+ old value of sum is:  692
+ sum inside impure is:  702
+ array element is:  1053
+ old value of sum is:  702
+ sum inside impure is:  712
+ array element is:  1068
+ old value of sum is:  712
+ sum inside impure is:  722
+ array element is:  1083
+ old value of sum is:  722
+ sum inside impure is:  732
+ array element is:  1098
+ old value of sum is:  732
+ sum inside impure is:  742
+ array element is:  1113
+ old value of sum is:  742
+ sum inside impure is:  752
+ array element is:  1128
+ old value of sum is:  752
+ sum inside impure is:  762
+ array element is:  1143
+ old value of sum is:  762
+ sum inside impure is:  772
+ array element is:  1158
+ old value of sum is:  772
+ sum inside impure is:  782
+ array element is:  1173
+ old value of sum is:  782
+ sum inside impure is:  792
+ array element is:  1188
+ old value of sum is:  792
+ sum inside impure is:  802
+ array element is:  1203
+ old value of sum is:  802
+ sum inside impure is:  812
+ array element is:  1218
+ old value of sum is:  812
+ sum inside impure is:  822
+ array element is:  1233
+ old value of sum is:  822
+ sum inside impure is:  832
+ array element is:  1248
+ old value of sum is:  832
+ sum inside impure is:  842
+ array element is:  1263
+ old value of sum is:  842
+ sum inside impure is:  852
+ array element is:  1278
+ old value of sum is:  852
+ sum inside impure is:  862
+ array element is:  1293
+ old value of sum is:  862
+ sum inside impure is:  872
+ array element is:  1308
+ old value of sum is:  872
+ sum inside impure is:  882
+ array element is:  1323
+ old value of sum is:  882
+ sum inside impure is:  892
+ array element is:  1338
+ old value of sum is:  892
+ sum inside impure is:  902
+ array element is:  1353
+ old value of sum is:  902
+ sum inside impure is:  912
+ array element is:  1368
+ old value of sum is:  912
+ sum inside impure is:  922
+ array element is:  1383
+ old value of sum is:  922
+ sum inside impure is:  932
+ array element is:  1398
+ old value of sum is:  932
+ sum inside impure is:  942
+ array element is:  1413
+ old value of sum is:  942
+ sum inside impure is:  952
+ array element is:  1428
+ old value of sum is:  952
+ sum inside impure is:  962
+ array element is:  1443
+ old value of sum is:  962
+ sum inside impure is:  972
+ array element is:  1458
+ old value of sum is:  972
+ sum inside impure is:  982
+ array element is:  1473
+ old value of sum is:  982
+ sum inside impure is:  992
+ array element is:  1488
+ old value of sum is:  992
+ sum inside impure is:  1002
+ array element is:  1503
+ old value of sum is:  1002
+ sum inside impure is:  1012
+ array element is:  1518
+ old value of sum is:  1012
+ sum inside impure is:  1022
+ array element is:  1533
+ old value of sum is:  1022
+ sum inside impure is:  1032
+ array element is:  1548
+ old value of sum is:  1032
+ sum inside impure is:  1042
+ array element is:  1563
+ old value of sum is:  1042
+ sum inside impure is:  1052
+ array element is:  1578
+ old value of sum is:  1052
+ sum inside impure is:  1062
+ array element is:  1593
+ old value of sum is:  1062
+ sum inside impure is:  1072
+ array element is:  1608
+ old value of sum is:  1072
+ sum inside impure is:  1082
+ array element is:  1623
+ old value of sum is:  1082
+ sum inside impure is:  1092
+ array element is:  1638
+ old value of sum is:  1092
+ sum inside impure is:  1102
+ array element is:  1653
+ old value of sum is:  1102
+ sum inside impure is:  1112
+ array element is:  1668
+ old value of sum is:  1112
+ sum inside impure is:  1122
+ array element is:  1683
+ old value of sum is:  1122
+ sum inside impure is:  1132
+ array element is:  1698
+ old value of sum is:  1132
+ sum inside impure is:  1142
+ array element is:  1713
+ old value of sum is:  1142
+ sum inside impure is:  1152
+ array element is:  1728
+ old value of sum is:  1152
+ sum inside impure is:  1162
+ array element is:  1743
+ old value of sum is:  1162
+ sum inside impure is:  1172
+ array element is:  1758
+ old value of sum is:  1172
+ sum inside impure is:  1182
+ array element is:  1773
+ old value of sum is:  1182
+ sum inside impure is:  1192
+ array element is:  1788
+ old value of sum is:  1192
+ sum inside impure is:  1202
+ array element is:  1803
+ old value of sum is:  1202
+ sum inside impure is:  1212
+ array element is:  1818
+ old value of sum is:  1212
+ sum inside impure is:  1222
+ array element is:  1833
+ old value of sum is:  1222
+ sum inside impure is:  1232
+ array element is:  1848
+ old value of sum is:  1232
+ sum inside impure is:  1242
+ array element is:  1863
+ old value of sum is:  1242
+ sum inside impure is:  1252
+ array element is:  1878
+ old value of sum is:  1252
+ sum inside impure is:  1262
+ array element is:  1893
+ old value of sum is:  1262
+ sum inside impure is:  1272
+ array element is:  1908
+ old value of sum is:  1272
+ sum inside impure is:  1282
+ array element is:  1923
+ old value of sum is:  1282
+ sum inside impure is:  1292
+ array element is:  1938
+ old value of sum is:  1292
+ sum inside impure is:  1302
+ array element is:  1953
+ old value of sum is:  1302
+ sum inside impure is:  1312
+ array element is:  1968
+ old value of sum is:  1312
+ sum inside impure is:  1322
+ array element is:  1983
+ old value of sum is:  1322
+ sum inside impure is:  1332
+ array element is:  1998
+ old value of sum is:  1332
+ sum inside impure is:  1342
+ array element is:  2013
+ old value of sum is:  1342
+ sum inside impure is:  1352
+ array element is:  2028
+ old value of sum is:  1352
+ sum inside impure is:  1362
+ array element is:  2043
+ old value of sum is:  1362
+ sum inside impure is:  1372
+ array element is:  2058
+ old value of sum is:  1372
+ sum inside impure is:  1382
+ array element is:  2073
+ old value of sum is:  1382
+ sum inside impure is:  1392
+ array element is:  2088
+ old value of sum is:  1392
+ sum inside impure is:  1402
+ array element is:  2103
+ old value of sum is:  1402
+ sum inside impure is:  1412
+ array element is:  2118
+ old value of sum is:  1412
+ sum inside impure is:  1422
+ array element is:  2133
+ old value of sum is:  1422
+ sum inside impure is:  1432
+ array element is:  2148
+ old value of sum is:  1432
+ sum inside impure is:  1442
+ array element is:  2163
+ old value of sum is:  1442
+ sum inside impure is:  1452
+ array element is:  2178
+ old value of sum is:  1452
+ sum inside impure is:  1462
+ array element is:  2193
+ old value of sum is:  1462
+ sum inside impure is:  1472
+ array element is:  2208
+ old value of sum is:  1472
+ sum inside impure is:  1482
+ array element is:  2223
+ old value of sum is:  1482
+ sum inside impure is:  1492
+ array element is:  2238
+ old value of sum is:  1492
+ sum inside impure is:  1502
+ array element is:  2253
+ old value of sum is:  1502
+ sum inside impure is:  1512
+ array element is:  2268
+ old value of sum is:  1512
+ sum inside impure is:  1522
+ array element is:  2283
+ old value of sum is:  1522
+ sum inside impure is:  1532
+ array element is:  2298
+ old value of sum is:  1532
+ sum inside impure is:  1542
+ array element is:  2313
+ old value of sum is:  1542
+ sum inside impure is:  1552
+ array element is:  2328
+ old value of sum is:  1552
+ sum inside impure is:  1562
+ array element is:  2343
+ old value of sum is:  1562
+ sum inside impure is:  1572
+ array element is:  2358
+ old value of sum is:  1572
+ sum inside impure is:  1582
+ array element is:  2373
+ old value of sum is:  1582
+ sum inside impure is:  1592
+ array element is:  2388
+ old value of sum is:  1592
+ sum inside impure is:  1602
+ array element is:  2403
+ old value of sum is:  1602
+ sum inside impure is:  1612
+ array element is:  2418
+ old value of sum is:  1612
+ sum inside impure is:  1622
+ array element is:  2433
+ old value of sum is:  1622
+ sum inside impure is:  1632
+ array element is:  2448
+ old value of sum is:  1632
+ sum inside impure is:  1642
+ array element is:  2463
+ old value of sum is:  1642
+ sum inside impure is:  1652
+ array element is:  2478
+ old value of sum is:  1652
+ sum inside impure is:  1662
+ array element is:  2493
+ old value of sum is:  1662
+ sum inside impure is:  1672
+ array element is:  2508
+ old value of sum is:  1672
+ sum inside impure is:  1682
+ array element is:  2523
+ old value of sum is:  1682
+ sum inside impure is:  1692
+ array element is:  2538
+ old value of sum is:  1692
+ sum inside impure is:  1702
+ array element is:  2553
+ old value of sum is:  1702
+ sum inside impure is:  1712
+ array element is:  2568
+ old value of sum is:  1712
+ sum inside impure is:  1722
+ array element is:  2583
+ old value of sum is:  1722
+ sum inside impure is:  1732
+ array element is:  2598
+ old value of sum is:  1732
+ sum inside impure is:  1742
+ array element is:  2613
+ old value of sum is:  1742
+ sum inside impure is:  1752
+ array element is:  2628
+ old value of sum is:  1752
+ sum inside impure is:  1762
+ array element is:  2643
+ old value of sum is:  1762
+ sum inside impure is:  1772
+ array element is:  2658
+ old value of sum is:  1772
+ sum inside impure is:  1782
+ array element is:  2673
+ old value of sum is:  1782
+ sum inside impure is:  1792
+ array element is:  2688
+ old value of sum is:  1792
+ sum inside impure is:  1802
+ array element is:  2703
+ old value of sum is:  1802
+ sum inside impure is:  1812
+ array element is:  2718
+ old value of sum is:  1812
+ sum inside impure is:  1822
+ array element is:  2733
+ old value of sum is:  1822
+ sum inside impure is:  1832
+ array element is:  2748
+ old value of sum is:  1832
+ sum inside impure is:  1842
+ array element is:  2763
+ old value of sum is:  1842
+ sum inside impure is:  1852
+ array element is:  2778
+ old value of sum is:  1852
+ sum inside impure is:  1862
+ array element is:  2793
+ old value of sum is:  1862
+ sum inside impure is:  1872
+ array element is:  2808
+ old value of sum is:  1872
+ sum inside impure is:  1882
+ array element is:  2823
+ old value of sum is:  1882
+ sum inside impure is:  1892
+ array element is:  2838
+ old value of sum is:  1892
+ sum inside impure is:  1902
+ array element is:  2853
+ old value of sum is:  1902
+ sum inside impure is:  1912
+ array element is:  2868
+ old value of sum is:  1912
+ sum inside impure is:  1922
+ array element is:  2883
+ old value of sum is:  1922
+ sum inside impure is:  1932
+ array element is:  2898
+ old value of sum is:  1932
+ sum inside impure is:  1942
+ array element is:  2913
+ old value of sum is:  1942
+ sum inside impure is:  1952
+ array element is:  2928
+ old value of sum is:  1952
+ sum inside impure is:  1962
+ array element is:  2943
+ old value of sum is:  1962
+ sum inside impure is:  1972
+ array element is:  2958
+ old value of sum is:  1972
+ sum inside impure is:  1982
+ array element is:  2973
+ old value of sum is:  1982
+ sum inside impure is:  1992
+ array element is:  2988
+ old value of sum is:  1992
+ sum inside impure is:  2002
+ array element is:  3003
+ old value of sum is:  2002
+ sum inside impure is:  2012
+ array element is:  3018
+ old value of sum is:  2012
+ sum inside impure is:  2022
+ array element is:  3033
+ old value of sum is:  2022
+ sum inside impure is:  2032
+ array element is:  3048
+ old value of sum is:  2032
+ sum inside impure is:  2042
+ array element is:  3063
+ old value of sum is:  2042
+ sum inside impure is:  2052
+ array element is:  3078
+ old value of sum is:  2052
+ sum inside impure is:  2062
+ array element is:  3093
+ old value of sum is:  2062
+ sum inside impure is:  2072
+ array element is:  3108
+ old value of sum is:  2072
+ sum inside impure is:  2082
+ array element is:  3123
+ old value of sum is:  2082
+ sum inside impure is:  2092
+ array element is:  3138
+ old value of sum is:  2092
+ sum inside impure is:  2102
+ array element is:  3153
+ old value of sum is:  2102
+ sum inside impure is:  2112
+ array element is:  3168
+ old value of sum is:  2112
+ sum inside impure is:  2122
+ array element is:  3183
+ old value of sum is:  2122
+ sum inside impure is:  2132
+ array element is:  3198
+ old value of sum is:  2132
+ sum inside impure is:  2142
+ array element is:  3213
+ old value of sum is:  2142
+ sum inside impure is:  2152
+ array element is:  3228
+ old value of sum is:  2152
+ sum inside impure is:  2162
+ array element is:  3243
+ old value of sum is:  2162
+ sum inside impure is:  2172
+ array element is:  3258
+ old value of sum is:  2172
+ sum inside impure is:  2182
+ array element is:  3273
+ old value of sum is:  2182
+ sum inside impure is:  2192
+ array element is:  3288
+ old value of sum is:  2192
+ sum inside impure is:  2202
+ array element is:  3303
+ old value of sum is:  2202
+ sum inside impure is:  2212
+ array element is:  3318
+ old value of sum is:  2212
+ sum inside impure is:  2222
+ array element is:  3333
+ old value of sum is:  2222
+ sum inside impure is:  2232
+ array element is:  3348
+ old value of sum is:  2232
+ sum inside impure is:  2242
+ array element is:  3363
+ old value of sum is:  2242
+ sum inside impure is:  2252
+ array element is:  3378
+ old value of sum is:  2252
+ sum inside impure is:  2262
+ array element is:  3393
+ old value of sum is:  2262
+ sum inside impure is:  2272
+ array element is:  3408
+ old value of sum is:  2272
+ sum inside impure is:  2282
+ array element is:  3423
+ old value of sum is:  2282
+ sum inside impure is:  2292
+ array element is:  3438
+ old value of sum is:  2292
+ sum inside impure is:  2302
+ array element is:  3453
+ old value of sum is:  2302
+ sum inside impure is:  2312
+ array element is:  3468
+ old value of sum is:  2312
+ sum inside impure is:  2322
+ array element is:  3483
+ old value of sum is:  2322
+ sum inside impure is:  2332
+ array element is:  3498
+ old value of sum is:  2332
+ sum inside impure is:  2342
+ array element is:  3513
+ old value of sum is:  2342
+ sum inside impure is:  2352
+ array element is:  3528
+ old value of sum is:  2352
+ sum inside impure is:  2362
+ array element is:  3543
+ old value of sum is:  2362
+ sum inside impure is:  2372
+ array element is:  3558
+ old value of sum is:  2372
+ sum inside impure is:  2382
+ array element is:  3573
+ old value of sum is:  2382
+ sum inside impure is:  2392
+ array element is:  3588
+ old value of sum is:  2392
+ sum inside impure is:  2402
+ array element is:  3603
+ old value of sum is:  2402
+ sum inside impure is:  2412
+ array element is:  3618
+ old value of sum is:  2412
+ sum inside impure is:  2422
+ array element is:  3633
+ old value of sum is:  2422
+ sum inside impure is:  2432
+ array element is:  3648
+ old value of sum is:  2432
+ sum inside impure is:  2442
+ array element is:  3663
+ old value of sum is:  2442
+ sum inside impure is:  2452
+ array element is:  3678
+ old value of sum is:  2452
+ sum inside impure is:  2462
+ array element is:  3693
+ old value of sum is:  2462
+ sum inside impure is:  2472
+ array element is:  3708
+ old value of sum is:  2472
+ sum inside impure is:  2482
+ array element is:  3723
+ old value of sum is:  2482
+ sum inside impure is:  2492
+ array element is:  3738
+ old value of sum is:  2492
+ sum inside impure is:  2502
+ array element is:  3753
+ old value of sum is:  2502
+ sum inside impure is:  2512
+ array element is:  3768
+ old value of sum is:  2512
+ sum inside impure is:  2522
+ array element is:  3783
+ old value of sum is:  2522
+ sum inside impure is:  2532
+ array element is:  3798
+ old value of sum is:  2532
+ sum inside impure is:  2542
+ array element is:  3813
+ old value of sum is:  2542
+ sum inside impure is:  2552
+ array element is:  3828
+ old value of sum is:  2552
+ sum inside impure is:  2562
+ array element is:  3843
+ old value of sum is:  2562
+ sum inside impure is:  2572
+ array element is:  3858
+ old value of sum is:  2572
+ sum inside impure is:  2582
+ array element is:  3873
+ old value of sum is:  2582
+ sum inside impure is:  2592
+ array element is:  3888
+ old value of sum is:  2592
+ sum inside impure is:  2602
+ array element is:  3903
+ old value of sum is:  2602
+ sum inside impure is:  2612
+ array element is:  3918
+ old value of sum is:  2612
+ sum inside impure is:  2622
+ array element is:  3933
+ old value of sum is:  2622
+ sum inside impure is:  2632
+ array element is:  3948
+ old value of sum is:  2632
+ sum inside impure is:  2642
+ array element is:  3963
+ old value of sum is:  2642
+ sum inside impure is:  2652
+ array element is:  3978
+ old value of sum is:  2652
+ sum inside impure is:  2662
+ array element is:  3993
+ old value of sum is:  2662
+ sum inside impure is:  2672
+ array element is:  4008
+ old value of sum is:  2672
+ sum inside impure is:  2682
+ array element is:  4023
+ old value of sum is:  2682
+ sum inside impure is:  2692
+ array element is:  4038
+ old value of sum is:  2692
+ sum inside impure is:  2702
+ array element is:  4053
+ old value of sum is:  2702
+ sum inside impure is:  2712
+ array element is:  4068
+ old value of sum is:  2712
+ sum inside impure is:  2722
+ array element is:  4083
+ old value of sum is:  2722
+ sum inside impure is:  2732
+ array element is:  4098
+ old value of sum is:  2732
+ sum inside impure is:  2742
+ array element is:  4113
+ old value of sum is:  2742
+ sum inside impure is:  2752
+ array element is:  4128
+ old value of sum is:  2752
+ sum inside impure is:  2762
+ array element is:  4143
+ old value of sum is:  2762
+ sum inside impure is:  2772
+ array element is:  4158
+ old value of sum is:  2772
+ sum inside impure is:  2782
+ array element is:  4173
+ old value of sum is:  2782
+ sum inside impure is:  2792
+ array element is:  4188
+ old value of sum is:  2792
+ sum inside impure is:  2802
+ array element is:  4203
+ old value of sum is:  2802
+ sum inside impure is:  2812
+ array element is:  4218
+ old value of sum is:  2812
+ sum inside impure is:  2822
+ array element is:  4233
+ old value of sum is:  2822
+ sum inside impure is:  2832
+ array element is:  4248
+ old value of sum is:  2832
+ sum inside impure is:  2842
+ array element is:  4263
+ old value of sum is:  2842
+ sum inside impure is:  2852
+ array element is:  4278
+ old value of sum is:  2852
+ sum inside impure is:  2862
+ array element is:  4293
+ old value of sum is:  2862
+ sum inside impure is:  2872
+ array element is:  4308
+ old value of sum is:  2872
+ sum inside impure is:  2882
+ array element is:  4323
+ old value of sum is:  2882
+ sum inside impure is:  2892
+ array element is:  4338
+ old value of sum is:  2892
+ sum inside impure is:  2902
+ array element is:  4353
+ old value of sum is:  2902
+ sum inside impure is:  2912
+ array element is:  4368
+ old value of sum is:  2912
+ sum inside impure is:  2922
+ array element is:  4383
+ old value of sum is:  2922
+ sum inside impure is:  2932
+ array element is:  4398
+ old value of sum is:  2932
+ sum inside impure is:  2942
+ array element is:  4413
+ old value of sum is:  2942
+ sum inside impure is:  2952
+ array element is:  4428
+ old value of sum is:  2952
+ sum inside impure is:  2962
+ array element is:  4443
+ old value of sum is:  2962
+ sum inside impure is:  2972
+ array element is:  4458
+ old value of sum is:  2972
+ sum inside impure is:  2982
+ array element is:  4473
+ old value of sum is:  2982
+ sum inside impure is:  2992
+ array element is:  4488
+ old value of sum is:  2992
+ sum inside impure is:  3002
+ array element is:  4503
+ old value of sum is:  3002
+ sum inside impure is:  3012
+ array element is:  4518
+ old value of sum is:  3012
+ sum inside impure is:  3022
+ array element is:  4533
+ old value of sum is:  3022
+ sum inside impure is:  3032
+ array element is:  4548
+ old value of sum is:  3032
+ sum inside impure is:  3042
+ array element is:  4563
+ old value of sum is:  3042
+ sum inside impure is:  3052
+ array element is:  4578
+ old value of sum is:  3052
+ sum inside impure is:  3062
+ array element is:  4593
+ old value of sum is:  3062
+ sum inside impure is:  3072
+ array element is:  4608
+ old value of sum is:  3072
+ sum inside impure is:  3082
+ array element is:  4623
+ old value of sum is:  3082
+ sum inside impure is:  3092
+ array element is:  4638
+ old value of sum is:  3092
+ sum inside impure is:  3102
+ array element is:  4653
+ old value of sum is:  3102
+ sum inside impure is:  3112
+ array element is:  4668
+ old value of sum is:  3112
+ sum inside impure is:  3122
+ array element is:  4683
+ old value of sum is:  3122
+ sum inside impure is:  3132
+ array element is:  4698
+ old value of sum is:  3132
+ sum inside impure is:  3142
+ array element is:  4713
+ old value of sum is:  3142
+ sum inside impure is:  3152
+ array element is:  4728
+ old value of sum is:  3152
+ sum inside impure is:  3162
+ array element is:  4743
+ old value of sum is:  3162
+ sum inside impure is:  3172
+ array element is:  4758
+ old value of sum is:  3172
+ sum inside impure is:  3182
+ array element is:  4773
+ old value of sum is:  3182
+ sum inside impure is:  3192
+ array element is:  4788
+ old value of sum is:  3192
+ sum inside impure is:  3202
+ array element is:  4803
+ old value of sum is:  3202
+ sum inside impure is:  3212
+ array element is:  4818
+ old value of sum is:  3212
+ sum inside impure is:  3222
+ array element is:  4833
+ old value of sum is:  3222
+ sum inside impure is:  3232
+ array element is:  4848
+ old value of sum is:  3232
+ sum inside impure is:  3242
+ array element is:  4863
+ old value of sum is:  3242
+ sum inside impure is:  3252
+ array element is:  4878
+ old value of sum is:  3252
+ sum inside impure is:  3262
+ array element is:  4893
+ old value of sum is:  3262
+ sum inside impure is:  3272
+ array element is:  4908
+ old value of sum is:  3272
+ sum inside impure is:  3282
+ array element is:  4923
+ old value of sum is:  3282
+ sum inside impure is:  3292
+ array element is:  4938
+ old value of sum is:  3292
+ sum inside impure is:  3302
+ array element is:  4953
+ old value of sum is:  3302
+ sum inside impure is:  3312
+ array element is:  4968
+ old value of sum is:  3312
+ sum inside impure is:  3322
+ array element is:  4983
+ old value of sum is:  3322
+ sum inside impure is:  3332
+ array element is:  4998
+ old value of sum is:  3332
+ sum inside impure is:  3342
+ array element is:  5013
+ old value of sum is:  3342
+ sum inside impure is:  3352
+ array element is:  5028
+ old value of sum is:  3352
+ sum inside impure is:  3362
+ array element is:  5043
+ old value of sum is:  3362
+ sum inside impure is:  3372
+ array element is:  5058
+ old value of sum is:  3372
+ sum inside impure is:  3382
+ array element is:  5073
+ old value of sum is:  3382
+ sum inside impure is:  3392
+ array element is:  5088
+ old value of sum is:  3392
+ sum inside impure is:  3402
+ array element is:  5103
+ old value of sum is:  3402
+ sum inside impure is:  3412
+ array element is:  5118
+ old value of sum is:  3412
+ sum inside impure is:  3422
+ array element is:  5133
+ old value of sum is:  3422
+ sum inside impure is:  3432
+ array element is:  5148
+ old value of sum is:  3432
+ sum inside impure is:  3442
+ array element is:  5163
+ old value of sum is:  3442
+ sum inside impure is:  3452
+ array element is:  5178
+ old value of sum is:  3452
+ sum inside impure is:  3462
+ array element is:  5193
+ old value of sum is:  3462
+ sum inside impure is:  3472
+ array element is:  5208
+ old value of sum is:  3472
+ sum inside impure is:  3482
+ array element is:  5223
+ old value of sum is:  3482
+ sum inside impure is:  3492
+ array element is:  5238
+ old value of sum is:  3492
+ sum inside impure is:  3502
+ array element is:  5253
+ old value of sum is:  3502
+ sum inside impure is:  3512
+ array element is:  5268
+ old value of sum is:  3512
+ sum inside impure is:  3522
+ array element is:  5283
+ old value of sum is:  3522
+ sum inside impure is:  3532
+ array element is:  5298
+ old value of sum is:  3532
+ sum inside impure is:  3542
+ array element is:  5313
+ old value of sum is:  3542
+ sum inside impure is:  3552
+ array element is:  5328
+ old value of sum is:  3552
+ sum inside impure is:  3562
+ array element is:  5343
+ old value of sum is:  3562
+ sum inside impure is:  3572
+ array element is:  5358
+ old value of sum is:  3572
+ sum inside impure is:  3582
+ array element is:  5373
+ old value of sum is:  3582
+ sum inside impure is:  3592
+ array element is:  5388
+ old value of sum is:  3592
+ sum inside impure is:  3602
+ array element is:  5403
+ old value of sum is:  3602
+ sum inside impure is:  3612
+ array element is:  5418
+ old value of sum is:  3612
+ sum inside impure is:  3622
+ array element is:  5433
+ old value of sum is:  3622
+ sum inside impure is:  3632
+ array element is:  5448
+ old value of sum is:  3632
+ sum inside impure is:  3642
+ array element is:  5463
+ old value of sum is:  3642
+ sum inside impure is:  3652
+ array element is:  5478
+ old value of sum is:  3652
+ sum inside impure is:  3662
+ array element is:  5493
+ old value of sum is:  3662
+ sum inside impure is:  3672
+ array element is:  5508
+ old value of sum is:  3672
+ sum inside impure is:  3682
+ array element is:  5523
+ old value of sum is:  3682
+ sum inside impure is:  3692
+ array element is:  5538
+ old value of sum is:  3692
+ sum inside impure is:  3702
+ array element is:  5553
+ old value of sum is:  3702
+ sum inside impure is:  3712
+ array element is:  5568
+ old value of sum is:  3712
+ sum inside impure is:  3722
+ array element is:  5583
+ old value of sum is:  3722
+ sum inside impure is:  3732
+ array element is:  5598
+ old value of sum is:  3732
+ sum inside impure is:  3742
+ array element is:  5613
+ old value of sum is:  3742
+ sum inside impure is:  3752
+ array element is:  5628
+ old value of sum is:  3752
+ sum inside impure is:  3762
+ array element is:  5643
+ old value of sum is:  3762
+ sum inside impure is:  3772
+ array element is:  5658
+ old value of sum is:  3772
+ sum inside impure is:  3782
+ array element is:  5673
+ old value of sum is:  3782
+ sum inside impure is:  3792
+ array element is:  5688
+ old value of sum is:  3792
+ sum inside impure is:  3802
+ array element is:  5703
+ old value of sum is:  3802
+ sum inside impure is:  3812
+ array element is:  5718
+ old value of sum is:  3812
+ sum inside impure is:  3822
+ array element is:  5733
+ old value of sum is:  3822
+ sum inside impure is:  3832
+ array element is:  5748
+ old value of sum is:  3832
+ sum inside impure is:  3842
+ array element is:  5763
+ old value of sum is:  3842
+ sum inside impure is:  3852
+ array element is:  5778
+ old value of sum is:  3852
+ sum inside impure is:  3862
+ array element is:  5793
+ old value of sum is:  3862
+ sum inside impure is:  3872
+ array element is:  5808
+ old value of sum is:  3872
+ sum inside impure is:  3882
+ array element is:  5823
+ old value of sum is:  3882
+ sum inside impure is:  3892
+ array element is:  5838
+ old value of sum is:  3892
+ sum inside impure is:  3902
+ array element is:  5853
+ old value of sum is:  3902
+ sum inside impure is:  3912
+ array element is:  5868
+ old value of sum is:  3912
+ sum inside impure is:  3922
+ array element is:  5883
+ old value of sum is:  3922
+ sum inside impure is:  3932
+ array element is:  5898
+ old value of sum is:  3932
+ sum inside impure is:  3942
+ array element is:  5913
+ old value of sum is:  3942
+ sum inside impure is:  3952
+ array element is:  5928
+ old value of sum is:  3952
+ sum inside impure is:  3962
+ array element is:  5943
+ old value of sum is:  3962
+ sum inside impure is:  3972
+ array element is:  5958
+ old value of sum is:  3972
+ sum inside impure is:  3982
+ array element is:  5973
+ old value of sum is:  3982
+ sum inside impure is:  3992
+ array element is:  5988
+ old value of sum is:  3992
+ sum inside impure is:  4002
+ array element is:  6003
+ old value of sum is:  4002
+ sum inside impure is:  4012
+ array element is:  6018
+ old value of sum is:  4012
+ sum inside impure is:  4022
+ array element is:  6033
+ old value of sum is:  4022
+ sum inside impure is:  4032
+ array element is:  6048
+ old value of sum is:  4032
+ sum inside impure is:  4042
+ array element is:  6063
+ old value of sum is:  4042
+ sum inside impure is:  4052
+ array element is:  6078
+ old value of sum is:  4052
+ sum inside impure is:  4062
+ array element is:  6093
+ old value of sum is:  4062
+ sum inside impure is:  4072
+ array element is:  6108
+ old value of sum is:  4072
+ sum inside impure is:  4082
+ array element is:  6123
+ old value of sum is:  4082
+ sum inside impure is:  4092
+ array element is:  6138
+ old value of sum is:  4092
+ sum inside impure is:  4102
+ array element is:  6153
+ old value of sum is:  4102
+ sum inside impure is:  4112
+ array element is:  6168
+ old value of sum is:  4112
+ sum inside impure is:  4122
+ array element is:  6183
+ old value of sum is:  4122
+ sum inside impure is:  4132
+ array element is:  6198
+ old value of sum is:  4132
+ sum inside impure is:  4142
+ array element is:  6213
+ old value of sum is:  4142
+ sum inside impure is:  4152
+ array element is:  6228
+ old value of sum is:  4152
+ sum inside impure is:  4162
+ array element is:  6243
+ old value of sum is:  4162
+ sum inside impure is:  4172
+ array element is:  6258
+ old value of sum is:  4172
+ sum inside impure is:  4182
+ array element is:  6273
+ old value of sum is:  4182
+ sum inside impure is:  4192
+ array element is:  6288
+ old value of sum is:  4192
+ sum inside impure is:  4202
+ array element is:  6303
+ old value of sum is:  4202
+ sum inside impure is:  4212
+ array element is:  6318
+ old value of sum is:  4212
+ sum inside impure is:  4222
+ array element is:  6333
+ old value of sum is:  4222
+ sum inside impure is:  4232
+ array element is:  6348
+ old value of sum is:  4232
+ sum inside impure is:  4242
+ array element is:  6363
+ old value of sum is:  4242
+ sum inside impure is:  4252
+ array element is:  6378
+ old value of sum is:  4252
+ sum inside impure is:  4262
+ array element is:  6393
+ old value of sum is:  4262
+ sum inside impure is:  4272
+ array element is:  6408
+ old value of sum is:  4272
+ sum inside impure is:  4282
+ array element is:  6423
+ old value of sum is:  4282
+ sum inside impure is:  4292
+ array element is:  6438
+ old value of sum is:  4292
+ sum inside impure is:  4302
+ array element is:  6453
+ old value of sum is:  4302
+ sum inside impure is:  4312
+ array element is:  6468
+ old value of sum is:  4312
+ sum inside impure is:  4322
+ array element is:  6483
+ old value of sum is:  4322
+ sum inside impure is:  4332
+ array element is:  6498
+ old value of sum is:  4332
+ sum inside impure is:  4342
+ array element is:  6513
+ old value of sum is:  4342
+ sum inside impure is:  4352
+ array element is:  6528
+ old value of sum is:  4352
+ sum inside impure is:  4362
+ array element is:  6543
+ old value of sum is:  4362
+ sum inside impure is:  4372
+ array element is:  6558
+ old value of sum is:  4372
+ sum inside impure is:  4382
+ array element is:  6573
+ old value of sum is:  4382
+ sum inside impure is:  4392
+ array element is:  6588
+ old value of sum is:  4392
+ sum inside impure is:  4402
+ array element is:  6603
+ old value of sum is:  4402
+ sum inside impure is:  4412
+ array element is:  6618
+ old value of sum is:  4412
+ sum inside impure is:  4422
+ array element is:  6633
+ old value of sum is:  4422
+ sum inside impure is:  4432
+ array element is:  6648
+ old value of sum is:  4432
+ sum inside impure is:  4442
+ array element is:  6663
+ old value of sum is:  4442
+ sum inside impure is:  4452
+ array element is:  6678
+ old value of sum is:  4452
+ sum inside impure is:  4462
+ array element is:  6693
+ old value of sum is:  4462
+ sum inside impure is:  4472
+ array element is:  6708
+ old value of sum is:  4472
+ sum inside impure is:  4482
+ array element is:  6723
+ old value of sum is:  4482
+ sum inside impure is:  4492
+ array element is:  6738
+ old value of sum is:  4492
+ sum inside impure is:  4502
+ array element is:  6753
+ old value of sum is:  4502
+ sum inside impure is:  4512
+ array element is:  6768
+ old value of sum is:  4512
+ sum inside impure is:  4522
+ array element is:  6783
+ old value of sum is:  4522
+ sum inside impure is:  4532
+ array element is:  6798
+ old value of sum is:  4532
+ sum inside impure is:  4542
+ array element is:  6813
+ old value of sum is:  4542
+ sum inside impure is:  4552
+ array element is:  6828
+ old value of sum is:  4552
+ sum inside impure is:  4562
+ array element is:  6843
+ old value of sum is:  4562
+ sum inside impure is:  4572
+ array element is:  6858
+ old value of sum is:  4572
+ sum inside impure is:  4582
+ array element is:  6873
+ old value of sum is:  4582
+ sum inside impure is:  4592
+ array element is:  6888
+ old value of sum is:  4592
+ sum inside impure is:  4602
+ array element is:  6903
+ old value of sum is:  4602
+ sum inside impure is:  4612
+ array element is:  6918
+ old value of sum is:  4612
+ sum inside impure is:  4622
+ array element is:  6933
+ old value of sum is:  4622
+ sum inside impure is:  4632
+ array element is:  6948
+ old value of sum is:  4632
+ sum inside impure is:  4642
+ array element is:  6963
+ old value of sum is:  4642
+ sum inside impure is:  4652
+ array element is:  6978
+ old value of sum is:  4652
+ sum inside impure is:  4662
+ array element is:  6993
+ old value of sum is:  4662
+ sum inside impure is:  4672
+ array element is:  7008
+ old value of sum is:  4672
+ sum inside impure is:  4682
+ array element is:  7023
+ old value of sum is:  4682
+ sum inside impure is:  4692
+ array element is:  7038
+ old value of sum is:  4692
+ sum inside impure is:  4702
+ array element is:  7053
+ old value of sum is:  4702
+ sum inside impure is:  4712
+ array element is:  7068
+ old value of sum is:  4712
+ sum inside impure is:  4722
+ array element is:  7083
+ old value of sum is:  4722
+ sum inside impure is:  4732
+ array element is:  7098
+ old value of sum is:  4732
+ sum inside impure is:  4742
+ array element is:  7113
+ old value of sum is:  4742
+ sum inside impure is:  4752
+ array element is:  7128
+ old value of sum is:  4752
+ sum inside impure is:  4762
+ array element is:  7143
+ old value of sum is:  4762
+ sum inside impure is:  4772
+ array element is:  7158
+ old value of sum is:  4772
+ sum inside impure is:  4782
+ array element is:  7173
+ old value of sum is:  4782
+ sum inside impure is:  4792
+ array element is:  7188
+ old value of sum is:  4792
+ sum inside impure is:  4802
+ array element is:  7203
+ old value of sum is:  4802
+ sum inside impure is:  4812
+ array element is:  7218
+ old value of sum is:  4812
+ sum inside impure is:  4822
+ array element is:  7233
+ old value of sum is:  4822
+ sum inside impure is:  4832
+ array element is:  7248
+ old value of sum is:  4832
+ sum inside impure is:  4842
+ array element is:  7263
+ old value of sum is:  4842
+ sum inside impure is:  4852
+ array element is:  7278
+ old value of sum is:  4852
+ sum inside impure is:  4862
+ array element is:  7293
+ old value of sum is:  4862
+ sum inside impure is:  4872
+ array element is:  7308
+ old value of sum is:  4872
+ sum inside impure is:  4882
+ array element is:  7323
+ old value of sum is:  4882
+ sum inside impure is:  4892
+ array element is:  7338
+ old value of sum is:  4892
+ sum inside impure is:  4902
+ array element is:  7353
+ old value of sum is:  4902
+ sum inside impure is:  4912
+ array element is:  7368
+ old value of sum is:  4912
+ sum inside impure is:  4922
+ array element is:  7383
+ old value of sum is:  4922
+ sum inside impure is:  4932
+ array element is:  7398
+ old value of sum is:  4932
+ sum inside impure is:  4942
+ array element is:  7413
+ old value of sum is:  4942
+ sum inside impure is:  4952
+ array element is:  7428
+ old value of sum is:  4952
+ sum inside impure is:  4962
+ array element is:  7443
+ old value of sum is:  4962
+ sum inside impure is:  4972
+ array element is:  7458
+ old value of sum is:  4972
+ sum inside impure is:  4982
+ array element is:  7473
+ old value of sum is:  4982
+ sum inside impure is:  4992
+ array element is:  7488

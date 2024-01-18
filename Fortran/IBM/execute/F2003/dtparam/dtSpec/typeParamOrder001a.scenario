@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/dtSpec/typeParamOrder001a.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)typeParamOrder001a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = typeParamOrder001a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = typeParamOrder001a$(OBJ)
+#OUTPUT    = typeParamOrder001a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = typeParamOrder001a$(EXE)
+#STDOUT    = typeParamOrder001a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = typeParamOrder001a.out $($(tcasedir)typeParamOrder001a$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

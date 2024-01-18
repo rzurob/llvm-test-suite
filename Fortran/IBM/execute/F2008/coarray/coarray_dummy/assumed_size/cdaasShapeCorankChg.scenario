@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_dummy/assumed_size/cdaasShapeCorankChg
+#FEATURE        = CAF dummy arguments - assumed size - both corank and dimensions are different
+#CREATOR        = DF
+#DATE           = 2010-09-29
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)cdaasShapeCorankChg.f
+#OUTPUT = cdaasShapeCorankChg$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = cdaasShapeCorankChg$(OBJ)
+#OUTPUT = cdaasShapeCorankChg$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = cdaasShapeCorankChg$(EXE)
+#STDOUT = cdaasShapeCorankChg.out
+#ENDCMD
+
+#CMD    = SPIFF
+#OPTS   = -r1e-5
+#INPUT  = $($(tcasedir)cdaasShapeCorankChg$(product)vf) cdaasShapeCorankChg.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

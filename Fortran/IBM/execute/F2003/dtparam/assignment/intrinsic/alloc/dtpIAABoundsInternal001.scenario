@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/assignment/intrinsic/alloc/dtpIAABoundsInternal001.scenario
+#FEATURE   = Intrinsic Assignment with Allocation - allocate basic DTP array (kind) via intrinsic assignment and check lower and upper bounds(in internal subroutine)
+#CREATOR   = DF Manual Update
+#DATE      = 20090522
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAABoundsInternal001.f
+#OUTPUT    = dtpIAABoundsInternal001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAABoundsInternal001$(OBJ)
+#OUTPUT    = dtpIAABoundsInternal001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAABoundsInternal001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

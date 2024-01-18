@@ -1,0 +1,23 @@
+ optionalint
+ optionalchar
+ optionalint
+ optionalchar
+  abc:   10
+  ibm: 2006
+ optionalint
+ optionalchar
+  ibm: 2006
+  xlf: 2003
+ optionalint
+ optionalchar
+  FTN: 2006    0
+ optionalintint
+  FTN: 1234 5678
+ optionalintint
+  xyz:  100  200
+ optionalintint
+  ibm: 1001 2001
+ optionalchar
+  ibm:10000    0
+ optionalintint
+  abc:    1    2

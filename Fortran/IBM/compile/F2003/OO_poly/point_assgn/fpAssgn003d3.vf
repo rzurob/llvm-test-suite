@@ -1,0 +1,4 @@
+"fpAssgn003d3.f", line 38.5: 1515-040 (S) Target may not be a whole assumed-size array, or an array section with a vector-valued subscript in a pointer assignment.
+"fpAssgn003d3.f", line 40.29: 1515-040 (S) Target may not be a whole assumed-size array, or an array section with a vector-valued subscript in a pointer assignment.
+** fpassgn003d3   === End of Compilation 1 ===
+1501-511  Compilation failed for file fpAssgn003d3.f.

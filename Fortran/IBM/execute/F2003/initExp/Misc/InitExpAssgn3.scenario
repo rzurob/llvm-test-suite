@@ -1,0 +1,33 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       InitExpAssgn3.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       09-11-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)InitExpAssgn3.f
+#OUTPUT= InitExpAssgn3$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  InitExpAssgn3$(OBJ)
+#OUTPUT= InitExpAssgn3$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  InitExpAssgn3$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

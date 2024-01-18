@@ -1,0 +1,8 @@
+faddINT64.scenario
+faddINT64intsize.scenario
+fdivINT64.scenario
+fdivINT64intsize.scenario
+fmulINT64.scenario
+fmulINT64intsize.scenario
+fsubINT64.scenario
+fsubINT64intsize.scenario

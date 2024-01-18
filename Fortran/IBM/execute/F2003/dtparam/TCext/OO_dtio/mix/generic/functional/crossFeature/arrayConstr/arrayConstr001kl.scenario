@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/mix/generic/functional/crossFeature/arrayConstr/arrayConstr001kl.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070723
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)arrayConstr001kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = arrayConstr001kl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = arrayConstr001kl$(OBJ)
+#OUTPUT    = arrayConstr001kl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = arrayConstr001kl$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = arrayConstr001kl.1 $(tcasedir)arrayConstr001kl.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

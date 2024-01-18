@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/mix/interface/fdtio520akl.f
+#FEATURE = OO_dtio + derived type parameters
+#CREATOR = David Forster (derived from work by Jim Xia)
+#DATE    = 20070816
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fdtio520akl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=allowrpdt
+#OUTPUT    = fdtio520akl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fdtio520akl$(OBJ)
+#OUTPUT    = fdtio520akl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fdtio520akl$(EXE)
+#STDOUT    = fdtio520akl.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fdtio520akl.out $($(tcasedir)fdtio520akl$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

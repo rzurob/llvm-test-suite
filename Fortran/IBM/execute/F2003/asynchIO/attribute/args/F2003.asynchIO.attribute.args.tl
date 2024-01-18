@@ -1,0 +1,29 @@
+! Test Cases for:
+! Bucket:	F2003
+! Sub-Bucket:	asynchIO/attribute/args
+C1232arraySect01.scenario
+C1232arraySect02d.scenario
+C1232arraySect03.scenario
+C1232arraySect04d.scenario
+C1232arraySect05.scenario
+C1232arraySect06.scenario
+
+C1232assumedShape01.scenario
+C1232assumedShape02d.scenario
+C1232assumedShape03.scenario
+C1232assumedShape04d.scenario
+C1232assumedShape05.scenario
+C1232assumedShape06.scenario
+
+C1233pointerArray01.scenario
+C1233pointerArray02.scenario
+C1233pointerArray03d.scenario
+C1233pointerArray04.scenario
+C1233pointerArray05.scenario
+C1233pointerArray06d.scenario
+C1233pointerArray07.scenario
+C1233pointerArray08.scenario
+
+actArgArraySectVectSub01d.scenario
+actArgArraySectVectSub02.scenario
+actArgArraySectVectSub03.scenario

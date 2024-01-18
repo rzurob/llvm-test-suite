@@ -1,0 +1,125 @@
+
+/*
+        C code for testcase "fxisok10.f" and "fxisok11.f"
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void sub1(char *a, signed char *b) {
+   int i;
+
+   for ( i = 0; i < 4; i++ ) {
+      if ( a[i] != 'A'+i ) exit(21);
+      a[i] = 'A'+i+4;
+      if ( b[i] != 'A'+i ) exit(23);
+      b[i] = 'A'+i+4;
+   }
+
+}
+
+void sub2(char *a, signed char *b) {
+   int i;
+
+   for ( i = 0; i < 4; i++ ) {
+      if ( a[i] != 'A'+i ) exit(25);
+      if ( b[i] != 'A'+i ) exit(27);
+   }
+
+}
+
+void sub2a(const char *a, const signed char *b) {
+   int i;
+
+   for ( i = 0; i < 4; i++ ) {
+      if ( a[i] != 'A'+i ) exit(29);
+      if ( b[i] != 'A'+i ) exit(31);
+   }
+
+}
+
+void sub3(char *a, signed char *b) {
+   int i;
+
+   for ( i = 0; i < 4; i++ ) {
+      if ( a[i] != 'A'+i ) exit(33);
+      a[i] = 'A'+i+4;
+      if ( b[i] != 'A'+i ) exit(35);
+      b[i] = 'A'+i+4;
+   }
+
+}
+
+void sub4(char *a, signed char *b) {
+   int i;
+
+   for ( i = 0; i < 4; i++ ) {
+      a[i] = 'A'+i+4;
+      b[i] = 'A'+i+4;
+   }
+
+}
+
+void sub5(char aa[][6], signed char bb[][6]) {
+   int i, j;
+
+   for ( i = 0; i < 4; i++ ) {
+      for ( j = 0; j < 6; j++ ) {
+         if ( aa[i][j] != 'A'+i*6+j ) exit(37);
+         aa[i][j] = 'A'+i*6+j+1;
+         if ( bb[i][j] != 'A'+i*6+j ) exit(39);
+         bb[i][j] = 'A'+i*6+j+1;
+      }
+   }
+
+}
+
+void sub6(char aa[][6], signed char bb[][6]) {
+   int i, j;
+
+   for ( i = 0; i < 4; i++ ) {
+      for ( j = 0; j < 6; j++ ) {
+         if ( aa[i][j] != 'A'+i*6+j ) exit(41);
+         if ( bb[i][j] != 'A'+i*6+j ) exit(43);
+      }
+   }
+
+}
+
+void sub6a(const char aa[][6], const signed char bb[][6]) {
+   int i, j;
+
+   for ( i = 0; i < 4; i++ ) {
+      for ( j = 0; j < 6; j++ ) {
+         if ( aa[i][j] != 'A'+i*6+j ) exit(45);
+         if ( bb[i][j] != 'A'+i*6+j ) exit(47);
+      }
+   }
+
+}
+
+void sub7(char aa[][6], signed char bb[][6]) {
+   int i, j;
+
+   for ( i = 0; i < 4; i++ ) {
+      for ( j = 0; j < 6; j++ ) {
+         if ( aa[i][j] != 'A'+i*6+j ) exit(49);
+         aa[i][j] = 'A'+i*6+j+1;
+         if ( bb[i][j] != 'A'+i*6+j ) exit(51);
+         bb[i][j] = 'A'+i*6+j+1;
+      }
+   }
+
+}
+
+void sub8(char aa[][6], signed char bb[][6]) {
+   int i, j;
+
+   for ( i = 0; i < 4; i++ ) {
+      for ( j = 0; j < 6; j++ ) {
+         aa[i][j] = 'A'+i*6+j+1;
+         bb[i][j] = 'A'+i*6+j+1;
+      }
+   }
+
+}

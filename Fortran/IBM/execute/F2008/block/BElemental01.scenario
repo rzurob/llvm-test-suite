@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BElemental01.scenario
+#FEATURE   = block in elemental procedure
+#CREATOR   = DF
+#DATE      = 2010-12-06
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = F_COMPILE
+#INPUT    = $(tcasedir)BElemental01.f
+#OUTPUT   = BElemental01$(OBJ)
+#ENDCMD
+
+#CMD      = F_LINK
+#INPUT    = BElemental01$(OBJ)
+#OUTPUT   = BElemental01$(EXE)
+#ENDCMD
+
+#CMD      = RUN
+#INPUT    = BElemental01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

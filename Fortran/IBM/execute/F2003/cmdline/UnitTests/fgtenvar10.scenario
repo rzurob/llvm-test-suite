@@ -1,0 +1,37 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME	   = cmdline/UnitTests/fgtenvar10.scenario
+#FEATURE   = cmdline tests - regression run bucket
+#CREATOR   = automated conversion script
+#DATE      = 20081110
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+	EXIST_VAR=hello
+	EMPTY_VAR=
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)fgtenvar10.f
+#OPTS      = $(OPT_INTSIZE_8) $(OPT_FIXED_SOURCE_FORM)
+#OUTPUT    = fgtenvar10$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_INTSIZE_8) $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = fgtenvar10$(OBJ)
+#OUTPUT    = fgtenvar10$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fgtenvar10$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/unformatted/section9.5.2/write/end004a.scenario
+#FEATURE = OO_dtio
+#CREATOR = Robert Ma
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)end004a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = end004a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  end004a$(OBJ)
+#OUTPUT    = end004a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = end004a$(EXE)
+#STDOUT    = end004a.out
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)end004a$(product)vf) end004a.out
+#ENDCMD
+#ENDCONTROL
+#ENDSCENARIO

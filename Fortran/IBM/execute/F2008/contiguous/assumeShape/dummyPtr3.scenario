@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2008/contiguous/assumeShape/dummyPtr3.scenario
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dummyPtr3.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dummyPtr3$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dummyPtr3$(OBJ)
+#OUTPUT    = dummyPtr3$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dummyPtr3$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

@@ -1,0 +1,34 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dtpAttrSpecStmtData6.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       06-20-07
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM) -qdebug=allowrpdt
+#INPUT=  $(tcasedir)dtpAttrSpecStmtData6.f
+#OUTPUT= dtpAttrSpecStmtData6$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  dtpAttrSpecStmtData6$(OBJ)
+#OUTPUT= dtpAttrSpecStmtData6$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dtpAttrSpecStmtData6$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

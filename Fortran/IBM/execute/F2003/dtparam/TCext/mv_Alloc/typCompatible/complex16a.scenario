@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/typCompatible/complex16a.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071105
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)complex16a.f
+#OUTPUT= complex16a$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  complex16a$(OBJ)
+#OUTPUT= complex16a$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  complex16a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

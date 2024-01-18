@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/intrinsics/selectedRealKind/unit_tests/func/SelRKindSpec.scenario
+#FEATURE   = 376076
+#CREATOR   = Ren Jian Gang
+#DATE      = November 05, 2010
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)SelRKindSpec.f
+#OUTPUT   =  SelRKindSpec$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  SelRKindSpec$(OBJ)
+#OUTPUT   =  SelRKindSpec$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  SelRKindSpec$(EXE)
+#STDOUT   =  SelRKindSpec.out
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = SelRKindSpec.out $(tcasedir)SelRKindSpec.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

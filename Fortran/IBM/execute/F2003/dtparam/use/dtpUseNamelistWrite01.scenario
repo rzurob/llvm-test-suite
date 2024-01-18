@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/use/dtpUseNamelistWrite01.scenario
+#FEATURE   = DTP and USE - namelist output
+#CREATOR   = DF Manual Update
+#DATE      = 20081008
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUseNamelistWrite01.f
+#OUTPUT    = dtpUseNamelistWrite01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUseNamelistWrite01$(OBJ)
+#OUTPUT    = dtpUseNamelistWrite01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUseNamelistWrite01$(EXE)
+#STDIN     = $(tcasedir)dtpUseNamelistWrite01.in
+#STDOUT    = dtpUseNamelistWrite01.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpUseNamelistWrite01$(product)vf) dtpUseNamelistWrite01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

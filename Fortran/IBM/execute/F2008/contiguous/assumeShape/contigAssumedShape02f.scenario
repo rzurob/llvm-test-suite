@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/contiguous/assumeShape/contigAssumedShape02f.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20110831
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)contigAssumedShape02f.f
+#OUTPUT    = contigAssumedShape02f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = contigAssumedShape02f$(OBJ)
+#OUTPUT    = contigAssumedShape02f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = contigAssumedShape02f$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetnone09.scenario
+#FEATURE	= Array constructor enhancement no type specifier polymorphism tests
+#CREATOR	= DF Manual Update
+#DATE		= 20060726
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetnone09.f
+#OPTS = -qxlf2003=dynamicacval
+#OUTPUT		= acetnone09$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetnone09$(OBJ)
+#OUTPUT		= acetnone09$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetnone09$(EXE)
+#STDOUT		= acetnone09.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

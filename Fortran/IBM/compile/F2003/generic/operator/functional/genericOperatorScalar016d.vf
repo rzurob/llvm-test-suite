@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"genericOperatorScalar016d.f", line 76.12: 1516-064 (S) Operands to the + operator must be compatible with the intrinsic uses of the operator, or with a specific interface within an accessible defined operator generic interface.
+** genericoperatorscalar016d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericOperatorScalar016d.f.

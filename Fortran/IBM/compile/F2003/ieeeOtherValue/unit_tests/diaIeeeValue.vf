@@ -1,0 +1,6 @@
+"diaIeeeValue.f", line 38.29: 1515-169 (S) k is not a valid value for the CLASS argument of intrinsic procedure ieee_value.
+"diaIeeeValue.f", line 39.28: 1515-169 (S) ieee_other_value is not a valid value for the CLASS argument of intrinsic procedure ieee_value.
+"diaIeeeValue.f", line 40.19: 1515-169 (S) k is not a valid value for the CLASS argument of intrinsic procedure ieee_value.
+"diaIeeeValue.f", line 41.19: 1515-169 (S) ieee_other_value is not a valid value for the CLASS argument of intrinsic procedure ieee_value.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file diaIeeeValue.f.

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = modeSignNaNInfIO003.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 28, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)modeSignNaNInfIO003.dat
+#OUTPUT   = modeSignNaNInfIO003.dat
+#ENDCMD
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)modeSignNaNInfIO003.f
+#OUTPUT   =  modeSignNaNInfIO003$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  modeSignNaNInfIO003$(OBJ)
+#OUTPUT   =  modeSignNaNInfIO003$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  modeSignNaNInfIO003$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

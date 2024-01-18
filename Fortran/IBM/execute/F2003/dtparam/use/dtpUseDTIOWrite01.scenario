@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/use/dtpUseDTIOWrite01.scenario
+#FEATURE   = DTP and USE - DTIO - read and write
+#CREATOR   = DF Manual Update
+#DATE      = 20081008
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUseDTIOWrite01.f
+#OUTPUT    = dtpUseDTIOWrite01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUseDTIOWrite01$(OBJ)
+#OUTPUT    = dtpUseDTIOWrite01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUseDTIOWrite01$(EXE)
+#STDOUT    = dtpUseDTIOWrite01.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUseDTIOWrite01$(product)vf) dtpUseDTIOWrite01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

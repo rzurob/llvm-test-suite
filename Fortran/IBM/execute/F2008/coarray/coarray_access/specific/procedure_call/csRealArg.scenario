@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_access/specific/procedure_call/csRealArg
+#FEATURE        = CAF coarray access (specific) - procedure call - pass REAL scalar coarray actual argument to procedure which examines it and modifies it
+#CREATOR        = DF
+#DATE           = 2010-10-04
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)csRealArg.f
+#OUTPUT = csRealArg$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = csRealArg$(OBJ)
+#OUTPUT = csRealArg$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = csRealArg$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

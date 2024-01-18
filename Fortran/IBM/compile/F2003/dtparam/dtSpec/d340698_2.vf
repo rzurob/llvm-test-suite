@@ -1,0 +1,4 @@
+"d340698_2.f", line 45.26: 1515-166 (S) The value of length type parameter n in the type declaration for the object to be allocated is assumed.  The value of n in the type specification must also be assumed.
+"d340698_2.f", line 46.20: 1516-306 (S) Deferred type parameter values are not permitted in this context.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file d340698_2.f.

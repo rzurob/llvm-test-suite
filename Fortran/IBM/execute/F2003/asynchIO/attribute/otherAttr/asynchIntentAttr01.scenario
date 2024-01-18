@@ -1,0 +1,77 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/attribute/otherAttr/asynchIntentAttr01.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Attribute
+#CREATOR	= GM Manual Creation
+#DATE		= 20060208
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)asynchIntentAttr01.f
+#OUTPUT		= asynchIntentAttr01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= asynchIntentAttr01$(OBJ)
+#OUTPUT		= asynchIntentAttr01$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= asynchIntentAttr01$(EXE)
+#STDOUT		= asynchIntentAttr01.stdout
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)asynchIntentAttr01$(product)vf)	\
+				asynchIntentAttr01.stdout
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= -i '^cValue[ 	]'
+#INPUT		= asynchIntentAttr01$(LST)
+#STDOUT		= asynchIntentAttr01.cValue.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= asynchIntentAttr01.cValue.stdout
+#VALIDRCS	= $(GREP_FAIL)
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= -i '^complexV[ 	]'
+#INPUT		= asynchIntentAttr01$(LST)
+#STDOUT		= asynchIntentAttr01.complexV.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= asynchIntentAttr01.complexV.stdout
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= -i '^cV[ 	]'
+#INPUT		= asynchIntentAttr01$(LST)
+#STDOUT		= asynchIntentAttr01.cV.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= asynchIntentAttr01.cV.stdout
+#VALIDRCS	= $(GREP_FAIL)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

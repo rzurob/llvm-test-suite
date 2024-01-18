@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BInIntProc.scenario
+#FEATURE   = F2008 BLOCK - block in different contexts (internal procedure)
+#CREATOR   = DF Manual Update
+#DATE      = 20101214
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)BInIntProc.f
+#OUTPUT    = BInIntProc$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = BInIntProc$(OBJ)
+#OUTPUT    = BInIntProc$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = BInIntProc$(EXE)
+#STDOUT    = BInIntProc.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)BInIntProc$(product)vf) BInIntProc.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

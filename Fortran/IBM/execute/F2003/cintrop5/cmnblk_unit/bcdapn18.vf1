@@ -1,0 +1,4 @@
+** mod   === End of Compilation 1 ===
+"bcdapn18.f", line 52.5: 1513-101 (S) Global entity prg was seen elsewhere as a global entity with conflicting attributes.
+** prg   === End of Compilation 2 ===
+1501-511  Compilation failed for file bcdapn18.f.

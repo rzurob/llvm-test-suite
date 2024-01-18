@@ -1,0 +1,20 @@
+"cobound_d004.f", line 46.27: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "lcobound".
+"cobound_d004.f", line 47.27: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "lcobound".
+"cobound_d004.f", line 48.27: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "lcobound".
+"cobound_d004.f", line 49.27: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "lcobound".
+"cobound_d004.f", line 51.27: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "lcobound".
+"cobound_d004.f", line 52.27: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "lcobound".
+"cobound_d004.f", line 53.27: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "lcobound".
+"cobound_d004.f", line 54.27: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "lcobound".
+"cobound_d004.f", line 55.27: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "lcobound".
+"cobound_d004.f", line 66.27: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ucobound".
+"cobound_d004.f", line 67.27: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ucobound".
+"cobound_d004.f", line 68.27: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ucobound".
+"cobound_d004.f", line 69.27: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ucobound".
+"cobound_d004.f", line 71.27: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ucobound".
+"cobound_d004.f", line 72.27: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ucobound".
+"cobound_d004.f", line 73.27: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ucobound".
+"cobound_d004.f", line 74.27: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ucobound".
+"cobound_d004.f", line 75.27: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ucobound".
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file cobound_d004.f.

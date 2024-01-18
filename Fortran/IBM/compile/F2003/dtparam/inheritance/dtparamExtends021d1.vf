@@ -1,0 +1,4 @@
+"dtparamExtends021d1.f", line 41.28: 1514-528 (S) Type seq1 in the EXTENDS clause must be extensible.
+"dtparamExtends021d1.f", line 45.8: 1514-595 (S) Type seq2, specified with the EXTENDS attribute, must not contain the SEQUENCE statement.
+** dtparamextends021d1   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtparamExtends021d1.f.

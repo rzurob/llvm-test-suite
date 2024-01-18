@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/assignment/functional/genericAssignmentElemental003.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071114
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericAssignmentElemental003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericAssignmentElemental003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericAssignmentElemental003$(OBJ)
+#OUTPUT    = genericAssignmentElemental003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericAssignmentElemental003$(EXE)
+#STDOUT    = genericAssignmentElemental003.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericAssignmentElemental003.out $(tcasedir)genericAssignmentElemental003.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

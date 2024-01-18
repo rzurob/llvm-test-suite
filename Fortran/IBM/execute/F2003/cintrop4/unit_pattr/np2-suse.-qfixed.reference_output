@@ -1,0 +1,12 @@
+*** testcase variant:  -qfixed\n
+** f1   === End of Compilation 1 ===
+** f2   === End of Compilation 2 ===
+    0151001B 
+** f3bind   === End of Compilation 3 ===
+  40.30   01610192 =Ü
+  40.31   01610192 'f4BÜ
+  42.28   01610192 =Ü
+  42.29   01610192 'f4eBÜ
+    0151001B 
+** f4bind   === End of Compilation 4 ===
+1501-511  Compilation failed for file np2.f.

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /syncAll/saInternNExtern.scenario
+#FEATURE   = CAF SYNC ALL - internal and external procedures
+#CREATOR   = DF
+#DATE      = 20100727
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)saInternNExtern.f
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = saInternNExtern$(OBJ)
+#OUTPUT    = saInternNExtern$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = saInternNExtern$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

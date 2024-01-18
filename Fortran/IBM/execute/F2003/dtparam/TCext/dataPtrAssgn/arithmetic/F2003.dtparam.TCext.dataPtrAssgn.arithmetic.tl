@@ -1,0 +1,40 @@
+!
+!  Automatically Generated .tl file
+!  Bucket:      F2003/dtparam
+!  Sub-Bucket:  TCext/dataPtrAssgn/arithmetic
+!
+dataPtrANDLog.scenario
+dataPtrAddInt.scenario
+dataPtrAddReal1.scenario
+dataPtrAndLog.scenario
+dataPtrConcat.scenario
+dataPtrDivInt.scenario
+dataPtrDivReal.scenario
+dataPtrEQCmplx.scenario
+dataPtrEQInt.scenario
+dataPtrEQchar.scenario
+dataPtrEQchar1.scenario
+dataPtrEqvLog.scenario
+dataPtrExpInt.scenario
+dataPtrExpReal.scenario
+dataPtrGEInt.scenario
+dataPtrGEReal.scenario
+dataPtrGTChar.scenario
+dataPtrGTInt.scenario
+dataPtrLEChar.scenario
+dataPtrLEInt.scenario
+dataPtrMulCmplx.scenario
+dataPtrMulInt.scenario
+dataPtrMulMix.scenario
+dataPtrNE1Char.scenario
+dataPtrNEChar.scenario
+dataPtrNECmplx.scenario
+dataPtrNEInt.scenario
+dataPtrNEReal.scenario
+dataPtrNeqvLog.scenario
+dataPtrNotLog.scenario
+dataPtrORLog.scenario
+dataPtrSubInt.scenario
+dataPtrSubReal.scenario
+dataPtrUnaryCmplx.scenario
+dataPtrUnaryReal.scenario

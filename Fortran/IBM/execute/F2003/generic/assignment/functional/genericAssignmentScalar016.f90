@@ -1,0 +1,92 @@
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*  ===================================================================
+!*
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Robert Ma
+!*  DATE                       : 11/01/2005
+!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
+!*                             :
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
+!*                             :
+!*  SECONDARY FUNCTIONS TESTED : with Assignment(=)
+!*
+!*  DRIVER STANZA              : xlf2003
+!*
+!*  DESCRIPTION                : assignment: different kind type parameter
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!* ===================================================================
+!*
+!*  REVISION HISTORY
+!*
+!*  MM/DD/YY:  Init:  Comments:
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+
+module m
+
+   type base
+      integer(8) :: i = -999_8
+      contains
+         procedure :: assign_8
+         procedure :: assign_4
+         procedure :: assign_2
+         generic :: assignment(=) => assign_8, assign_4, assign_2
+   end type
+
+   contains
+
+      subroutine assign_8 ( a, b )
+         class(base), intent(out) :: a
+         integer(8), intent(in) :: b
+
+         a%i = b
+         print *, 'int8'
+
+      end subroutine
+
+      subroutine assign_4 ( a, b )
+         class(base), intent(out) :: a
+         integer(4), intent(in) :: b
+
+         a%i = INT(b,8)
+         print *, 'int4'
+
+      end subroutine
+
+      subroutine assign_2 ( a, b )
+         class(base), intent(out) :: a
+         integer(2), intent(in) :: b
+
+         a%i = INT(b,8)
+         print *, 'int2'
+
+      end subroutine
+
+end module
+
+program genericAssignmentScalar016
+   use m
+
+   type(base) :: b1
+
+   b1 = 10
+   print *, b1
+   b1 = 100_2
+   print *, b1
+   b1 = 10000_4
+   print *, b1
+   b1 = 999_8
+   print *, b1
+
+   b1 = 10_2 + 20_1
+   print *, b1
+   b1 = INT(10_2)
+   print *, b1
+
+end program

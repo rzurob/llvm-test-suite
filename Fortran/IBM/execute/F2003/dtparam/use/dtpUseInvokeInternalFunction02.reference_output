@@ -1,0 +1,15 @@
+ A: start
+ B: tkl(4,*) k= 4 4 l= 5 5 data= 20 20 20 20 20
+ C: tk(4) k= 4 4 data= 21
+ D: tl, l= 5 data= 22 22 22 22 22
+ E: tkl(2,*) k= 2 2 l= 3 3 data= 23 23 23
+ F: tk(2) k= 2 2 data= 24
+ G: tkl(4,*) k= 4 4 l= 5 5 data= 20 20 20 20 20 223 223
+ H: tk(4) k= 4 4 data= 21 -102
+ I: tl, l= 5 data= 22 22 22 22 22 13530 110
+ J: tkl(2,*) k= 2 2 l= 3 3 data= 23 23 23 12167
+ K: tk(2) k= 2 2 data= 24 576
+ L: tkl(2,*) k= 2 2 l= 3 3 data= 25 25 25 15625
+ M: tk(2) k= 2 2 data= 26 676
+ N: tl, l= 3 data= 27 27 27 81
+ O: end

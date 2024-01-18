@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/allocate/MoldExp/AllocateWithMoldExp02-08.f
+#FEATURE   = DTP - Allocate with mold expression
+#CREATOR   = Izhak Jakov
+#DATE      = 20150619
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AllocateWithMoldExp02-08.f
+#OUTPUT    = AllocateWithMoldExp02-08$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = AllocateWithMoldExp02-08$(OBJ)
+#OUTPUT    = AllocateWithMoldExp02-08$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = AllocateWithMoldExp02-08$(EXE)
+#STDOUT    = AllocateWithMoldExp02-08.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

@@ -1,0 +1,44 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/inquire/pendingIDSpecError01.scenario
+#FEATURE	= Asynchronous I/O -- INQUIRE Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060322
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)pendingIDSpecError01.dat fort.2142
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)pendingIDSpecError01.f
+#OUTPUT		= pendingIDSpecError01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= pendingIDSpecError01$(OBJ)
+#OUTPUT		= pendingIDSpecError01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= pendingIDSpecError01$(EXE)
+#STDOUT		= pendingIDSpecError01.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)pendingIDSpecError01$(product)vf)	\
+				pendingIDSpecError01.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

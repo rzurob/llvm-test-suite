@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"subsub01d.f", line 32.2: 1514-699 (S) Procedure "sub2" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "sub1", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** _main   === End of Compilation 2 ===
+** sub1   === End of Compilation 3 ===
+** sub2   === End of Compilation 4 ===
+1501-511  Compilation failed for file subsub01d.f.

@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_tpbnd/specbnd/dtybn022.scenario
+#FEATURE = OO_tpbnd
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtybn022.f
+#OPTS      =  $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtybn022$(OBJ)
+#STDERR    = dtybn022.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)dtybn022$(product)vf) dtybn022.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

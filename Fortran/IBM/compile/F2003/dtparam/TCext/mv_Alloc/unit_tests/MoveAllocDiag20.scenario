@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/unit_tests/MoveAllocDiag20.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071106
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)MoveAllocDiag20.f
+#OUTPUT    = MoveAllocDiag20$(OBJ)
+#STDERR    = MoveAllocDiag20.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)MoveAllocDiag20$(product)vf) MoveAllocDiag20.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

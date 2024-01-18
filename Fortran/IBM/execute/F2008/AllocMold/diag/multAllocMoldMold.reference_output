@@ -1,0 +1,3 @@
+"multAllocMoldMold.f", line 7.28: 1516-266 (S) The MOLD= specifier must not be specified more than once in the ALLOCATE statement.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file multAllocMoldMold.f.

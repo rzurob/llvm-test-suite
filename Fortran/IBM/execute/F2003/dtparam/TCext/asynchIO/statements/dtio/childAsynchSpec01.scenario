@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/asynchIO/statements/dtio/childAsynchSpec01.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of asynchIO/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=bgq
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)childAsynchSpec01.f
+#OUTPUT		= childAsynchSpec01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= childAsynchSpec01$(OBJ)
+#OUTPUT		= childAsynchSpec01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= childAsynchSpec01$(EXE)
+#STDERR		= childAsynchSpec01.stderr
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)childAsynchSpec01$(product)vf)	\
+				childAsynchSpec01.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

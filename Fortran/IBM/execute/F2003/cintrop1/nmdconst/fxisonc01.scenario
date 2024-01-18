@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/cintrop1/nmdconst/fxisonc01.scenario
+#FEATURE = cintrop1 tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)fxisonc01.f
+#OUTPUT    = fxisonc01$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     =  fxisonc01$(OBJ)
+#OUTPUT    = fxisonc01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxisonc01$(EXE)
+#STDOUT    = fxisonc01.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)fxisonc01$(product)vf) fxisonc01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

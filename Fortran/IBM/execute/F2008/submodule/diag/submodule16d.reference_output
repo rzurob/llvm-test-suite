@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+** a   === End of Compilation 2 ===
+** b   === End of Compilation 3 ===
+** n   === End of Compilation 4 ===
+** o   === End of Compilation 5 ===
+"submodule16d.f", line 50.14: 1514-219 (S) Unable to access module symbol file for module b. Check path and file permissions of file. Use association not done for this module.
+1501-511  Compilation failed for file submodule16d.f.

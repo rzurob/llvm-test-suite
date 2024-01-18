@@ -1,0 +1,2 @@
+ OK: in the callee, get the scalar coarray.
+ OK: the value is reset in the callee (remote read)

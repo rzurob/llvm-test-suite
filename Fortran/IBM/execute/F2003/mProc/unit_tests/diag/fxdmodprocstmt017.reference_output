@@ -1,0 +1,8 @@
+"fxdmodprocstmt017.f", line 44.9: 1513-098 (E) PROCEDURE statements should only appear within a generic interface.  Statement is ignored.
+"fxdmodprocstmt017.f", line 48.23: 1516-270 (E) Entity s1 must be a procedure pointer, external procedure, dummy procedure, or a module procedure, and must have an explicit interface. s1 is ignored.
+"fxdmodprocstmt017.f", line 48.23: 1516-036 (S) Entity s1 has undefined type.
+"fxdmodprocstmt017.f", line 52.9: 1514-146 (E) Invalid statement found within an interface block. Executable statement, statement function or syntax error encountered.
+"fxdmodprocstmt017.f", line 56.9: 1514-146 (E) Invalid statement found within an interface block. Executable statement, statement function or syntax error encountered.
+"fxdmodprocstmt017.f", line 60.9: 1514-146 (E) Invalid statement found within an interface block. Executable statement, statement function or syntax error encountered.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file fxdmodprocstmt017.f.

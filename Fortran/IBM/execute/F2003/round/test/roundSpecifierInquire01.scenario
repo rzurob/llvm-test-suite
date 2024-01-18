@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=roundSpecifierInquire01.scenario
+#FEATURE = 289037
+#CREATOR = William Zhang
+#DATE    = 07/24/2006
+#TEST_TYPE= functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)roundSpecifierInquire01.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = roundSpecifierInquire01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = roundSpecifierInquire01$(OBJ)
+#OUTPUT    = roundSpecifierInquire01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = roundSpecifierInquire01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

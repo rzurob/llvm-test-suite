@@ -1,0 +1,5 @@
+  +NaN(Q)xlf-NaN(Q)  ibm +NaN(S)  -NaN(S) +Infinity-Infinity
+   NaN(Q)xlf  -NaN() ibmNaN(S)   -NaN(s)  Infinity -Inf     
+  NaN(01)xlf -NaN    ibm NAN(S)  -nan(S)   +Inf    -Inf     
+NaN(abcd)xlf-NaN(1a) ibm +NaN(s)  -NaN(S)  Infinity-Infinity
+  +NaN(_)xlf-NaN(_s) ibm+naN(S)  -NaN(S)   inF     -infINity

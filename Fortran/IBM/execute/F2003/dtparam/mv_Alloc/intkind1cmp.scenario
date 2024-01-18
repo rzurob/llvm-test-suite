@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       intkind1cmp.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)intkind1cmp.f
+#OUTPUT= intkind1cmp$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  intkind1cmp$(OBJ)
+#OUTPUT= intkind1cmp$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  intkind1cmp$(EXE)
+#STDOUT= intkind1cmp.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = intkind1cmp.out $(tcasedir)intkind1cmp.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,157 @@
+! replaces scrdtya01.presh
+
+! forget Mac settings of 'default' 'natural' 'packed' 'port'
+
+! first do settings common to all platforms - default, bit_packed
+! do default - no align setting
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)$FTCARG.f
+#OUTPUT = $FTCARG$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = $FTCARG$(OBJ)
+#OUTPUT = $FTCARG$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = $FTCARG$(EXE)
+#ENDCMD
+
+! do bit_packed
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)$FTCARG.f
+#OPTS   = -qalign=bindc=bit_packed
+#OUTPUT = $FTCARG$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = $FTCARG$(OBJ)
+#OPTS   = -qalign=bindc=bit_packed
+#OUTPUT = $FTCARG$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = $FTCARG$(EXE)
+#ENDCMD
+
+! settings specific to Linux - linuxppc
+
+#IF on(linux)
+  #CMD    = XLF95_COMPILE
+  #INPUT  = $(tcasedir)$FTCARG.f
+  #OPTS   = -qalign=bindc=linuxppc
+  #OUTPUT = $FTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_LINK
+  #INPUT  = $FTCARG$(OBJ)
+  #OPTS   = -qalign=bindc=linuxppc
+  #OUTPUT = $FTCARG$(EXE)
+  #ENDCMD
+
+  #CMD    = RUN
+  #INPUT  = $FTCARG$(EXE)
+  #ENDCMD
+#ENDIF
+
+! settings specific to AIX - full, power, mac68k, twobyte, natural, packed
+
+#IF on(aix)
+! do full
+  #CMD    = XLF95_COMPILE
+  #INPUT  = $(tcasedir)$FTCARG.f
+  #OPTS   = -qalign=bindc=full
+  #OUTPUT = $FTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_LINK
+  #INPUT  = $FTCARG$(OBJ)
+  #OPTS   = -qalign=bindc=full
+  #OUTPUT = $FTCARG$(EXE)
+  #ENDCMD
+
+  #CMD    = RUN
+  #INPUT  = $FTCARG$(EXE)
+  #ENDCMD
+! do power
+  #CMD    = XLF95_COMPILE
+  #INPUT  = $(tcasedir)$FTCARG.f
+  #OPTS   = -qalign=bindc=power
+  #OUTPUT = $FTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_LINK
+  #INPUT  = $FTCARG$(OBJ)
+  #OPTS   = -qalign=bindc=power
+  #OUTPUT = $FTCARG$(EXE)
+  #ENDCMD
+
+  #CMD    = RUN
+  #INPUT  = $FTCARG$(EXE)
+  #ENDCMD
+! do mac68k
+  #CMD    = XLF95_COMPILE
+  #INPUT  = $(tcasedir)$FTCARG.f
+  #OPTS   = -qalign=bindc=mac68k
+  #OUTPUT = $FTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_LINK
+  #INPUT  = $FTCARG$(OBJ)
+  #OPTS   = -qalign=bindc=mac68k
+  #OUTPUT = $FTCARG$(EXE)
+  #ENDCMD
+
+  #CMD    = RUN
+  #INPUT  = $FTCARG$(EXE)
+  #ENDCMD
+! do twobyte
+  #CMD    = XLF95_COMPILE
+  #INPUT  = $(tcasedir)$FTCARG.f
+  #OPTS   = -qalign=bindc=twobyte
+  #OUTPUT = $FTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_LINK
+  #INPUT  = $FTCARG$(OBJ)
+  #OPTS   = -qalign=bindc=twobyte
+  #OUTPUT = $FTCARG$(EXE)
+  #ENDCMD
+
+  #CMD    = RUN
+  #INPUT  = $FTCARG$(EXE)
+  #ENDCMD
+! do natural
+  #CMD    = XLF95_COMPILE
+  #INPUT  = $(tcasedir)$FTCARG.f
+  #OPTS   = -qalign=bindc=natural
+  #OUTPUT = $FTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_LINK
+  #INPUT  = $FTCARG$(OBJ)
+  #OPTS   = -qalign=bindc=natural
+  #OUTPUT = $FTCARG$(EXE)
+  #ENDCMD
+
+  #CMD    = RUN
+  #INPUT  = $FTCARG$(EXE)
+  #ENDCMD
+! do packed
+  #CMD    = XLF95_COMPILE
+  #INPUT  = $(tcasedir)$FTCARG.f
+  #OPTS   = -qalign=bindc=packed
+  #OUTPUT = $FTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_LINK
+  #INPUT  = $FTCARG$(OBJ)
+  #OPTS   = -qalign=bindc=packed
+  #OUTPUT = $FTCARG$(EXE)
+  #ENDCMD
+
+  #CMD    = RUN
+  #INPUT  = $FTCARG$(EXE)
+  #ENDCMD
+#ENDIF

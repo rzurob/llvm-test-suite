@@ -1,0 +1,15 @@
+  53.10   016100C8 c_f_procpointer‹
+  54.10   016100C8 c_f_procpointer‹
+  55.10   016100C8 c_f_procpointer‹
+  56.26   01610136 CPTR‹
+  57.26   016100C9 C_F_PROCPOINTER‹
+  59.26   016100C9 C_F_PROCPOINTER‹
+  60.26   016100C9 C_F_PROCPOINTER‹
+  61.37   016100C9 C_F_PROCPOINTER‹
+  62.37   016103A9 POINTER‹
+  63.37   016100C9 C_F_PROCPOINTER‹
+  64.43   010103AE 
+  65.43   016103A9 POINTER‹
+  66.26   016100C9 C_F_PROCPOINTER‹
+** procptrbindmproc01d   === End of Compilation 1 ===
+1501-511  Compilation failed for file procptrBindMproc01d.f.

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpUnaryDummyArgInterface.scenario
+#FEATURE   = User-Defined Operators - several unary ops appearing as an expression as a dummy argument (generic interface)
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpUnaryDummyArgInterface.f
+#OUTPUT    = dtpUOpUnaryDummyArgInterface$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpUnaryDummyArgInterface$(OBJ)
+#OUTPUT    = dtpUOpUnaryDummyArgInterface$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpUnaryDummyArgInterface$(EXE)
+#STDOUT    = dtpUOpUnaryDummyArgInterface.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUOpUnaryDummyArgInterface$(product)vf) dtpUOpUnaryDummyArgInterface.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"fconstr041d1.f", line 42.14: 1514-540 (S) The entity z1 declared with the CLASS keyword must be a dummy argument, or have the ALLOCATABLE or POINTER attribute.
+"fconstr041d1.f", line 42.18: 1514-540 (S) The entity x1 declared with the CLASS keyword must be a dummy argument, or have the ALLOCATABLE or POINTER attribute.
+** fconstr041d1   === End of Compilation 2 ===
+1501-511  Compilation failed for file fconstr041d1.f.

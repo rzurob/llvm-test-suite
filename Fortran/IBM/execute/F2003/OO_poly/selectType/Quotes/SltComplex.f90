@@ -1,0 +1,110 @@
+! *********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD: 
+! %COMPOPTS: -qfree=f90 
+! %GROUP: SltComplex.f  
+! %VERIFY:  
+! %STDIN:
+! %STDOUT: 
+! %EXECARGS:
+! %POSTCMD: 
+! %END
+! *********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : SltComplex
+!*  TEST CASE TITLE            : 
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Dec. 13, 2004
+!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*
+!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*
+!*  REFERENCE                  : Feature 219934.OO_poly
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*     
+!*   The selector is of complex 
+!*    ()
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+
+
+  PROGRAM SltComplex
+  IMPLICIT NONE
+
+  CLASS(*), POINTER :: Ptr(:)
+  COMPLEX(4),  TARGET :: C4(4) = (1.,-1.)
+  COMPLEX(8),  TARGET :: C8(4) = (1.,-1.)
+  COMPLEX(16), TARGET :: C16(4) = (1.,-1.)
+  COMPLEX,     TARGET :: C(4)  = (1.,-1.)
+
+  Ptr => C4
+
+  SELECT TYPE ( As => Ptr )
+  CLASS DEFAULT 
+    STOP 30
+  TYPE IS (COMPLEX(8) )
+    STOP 34 
+  TYPE IS (COMPLEX(4))
+    IF ( ANY(SHAPE(As) .NE. (/4/))  )   STOP 31
+    IF ( LBOUND(As, 1) .NE. 1       )   STOP 32
+    IF ( ANY(As        .NE. (1.,-1.)))  STOP 32
+  END SELECT
+ 
+  Ptr => C8 
+ 
+  SELECT TYPE ( Ptr )
+  CLASS DEFAULT 
+    STOP 40
+  TYPE IS (COMPLEX  )
+    STOP 41
+  TYPE IS (COMPLEX(8) )
+    IF ( ANY(SHAPE(Ptr) .NE. (/4/))  )   STOP 42
+    IF ( LBOUND(Ptr, 1) .NE. 1       )   STOP 43
+    IF ( ANY(Ptr        .NE. (1._8,-1._8)) )  STOP 44
+  TYPE IS (COMPLEX(16) )
+    STOP 45 
+  END SELECT
+  
+  Ptr => C16 
+
+  SELECT TYPE ( As => Ptr(::3) )
+  TYPE IS (COMPLEX(8))
+    STOP 54 
+  CLASS DEFAULT 
+    STOP 50
+  TYPE IS (COMPLEX( 16) )
+    IF ( ANY(SHAPE(As) .NE. (/2/))  )   STOP 51
+    IF ( LBOUND(As, 1) .NE. 1       )   STOP 52
+    IF ( ANY(As        .NE. (1._16,-1._16)) )  STOP 53
+  END SELECT
+  
+  Ptr => C 
+
+  SELECT TYPE ( As => Ptr(3) )
+  CLASS DEFAULT 
+    STOP 60
+  TYPE IS (COMPLEX)
+    IF ( As .NE. (1.,-1.) )  STOP 62
+  TYPE IS (COMPLEX(8) )
+    STOP 64 
+  END SELECT
+  
+  
+  END
+

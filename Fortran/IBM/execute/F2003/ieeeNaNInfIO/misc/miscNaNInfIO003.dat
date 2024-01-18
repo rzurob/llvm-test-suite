@@ -1,0 +1,3 @@
++NaN(Q), -NaN(ab), +NaN(S), -NaN(S) ,+Inf, -Inf    
+NAN(_) ; -NaN;NaN(s);   -nan(S);  +inFIniTy ; -inFinity
+  nan() ; -nan(12); +nan(s) ; -nAn(s)  ; infinity; -inf;  

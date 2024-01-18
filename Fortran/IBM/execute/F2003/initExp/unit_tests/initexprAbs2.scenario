@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       initexprAbs2.f
+#FEATURE=
+#CREATOR=    Kelvin Li
+#DATE=       March 31, 2006
+#TEST_TYPE=  Unit Test
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)initexprAbs2.f
+#OUTPUT= initexprAbs2$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  initexprAbs2$(OBJ)
+#OUTPUT= initexprAbs2$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  initexprAbs2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

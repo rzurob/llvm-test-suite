@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/point_assgn/fpAssgn002d1.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071002
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fpAssgn002d1.f
+#OUTPUT    = fpAssgn002d1$(OBJ)
+#STDERR    = fpAssgn002d1.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = fpAssgn002d1.err $($(tcasedir)fpAssgn002d1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

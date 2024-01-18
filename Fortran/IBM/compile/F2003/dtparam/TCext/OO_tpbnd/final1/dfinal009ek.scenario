@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2003/dtparam/TCext/OO_tpbnd/final1/dfinal009ek.scenario
+#FEATURE = OO_tpbnd + derived type parameters
+#CREATOR = David Forster (derived from work by Jim Xia)
+#DATE    = 20071113
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dfinal009ek.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dfinal009ek$(OBJ)
+#STDERR    = dfinal009ek.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)dfinal009ek$(product)vf) dfinal009ek.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

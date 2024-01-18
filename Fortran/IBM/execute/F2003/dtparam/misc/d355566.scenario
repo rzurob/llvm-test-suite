@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/misc/d355566.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d355566.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = d355566$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d355566$(OBJ)
+#OUTPUT    = d355566$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d355566$(EXE)
+#STDOUT    = d355566.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = d355566.out $($(tcasedir)d355566$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

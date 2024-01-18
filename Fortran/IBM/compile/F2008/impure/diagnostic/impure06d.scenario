@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/impure/diagnostic/impure06d.scenario
+#FEATURE   = F2008 IMPURE - IMPURE elemental procedures in F2008
+#CREATOR   = Tapti Vaid
+#DATE      = 20120413
+#TEST_TYPE = diagnostic
+#KEYWORDS =  F2008, IMPURE
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)impure06d.f
+#OUTPUT    = impure06d$(OBJ)
+#VALIDRCS   = $(RC_COMP_E)
+#STDOUT    = impure06d.out
+#STDERR    = impure06d.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)impure06d$(product)vf) impure06d.out
+#ENDCMD
+
+
+
+#ENDCONTROL
+#ENDSCENARIO

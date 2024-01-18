@@ -1,0 +1,3 @@
+"C808Arr1.f", line 49.7: 1511-139 (S) Associate name as is not associated with an entity that can be defined. as must not be redefined or become undefined.
+** c808arr1   === End of Compilation 1 ===
+1501-511  Compilation failed for file C808Arr1.f.

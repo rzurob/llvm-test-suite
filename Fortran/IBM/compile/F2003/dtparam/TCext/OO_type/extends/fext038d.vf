@@ -1,0 +1,6 @@
+** m1   === End of Compilation 1 ===
+"fext038d.f", 1514-587 (S) Component base is not permitted. base is the name of a component, binding, or type parameter that is inherited from type base.
+** m   === End of Compilation 2 ===
+"fext038d.f", 1514-587 (S) Component base is not permitted. base is the name of a component, binding, or type parameter that is inherited from type base.
+** fext038d   === End of Compilation 3 ===
+1501-511  Compilation failed for file fext038d.f.

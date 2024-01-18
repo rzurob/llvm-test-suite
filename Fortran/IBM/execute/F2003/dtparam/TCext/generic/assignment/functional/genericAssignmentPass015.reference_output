@@ -1,0 +1,18 @@
+ base_sbase
+ 1000
+ child_sbase
+ 2000
+ sbase_base
+ sbase_child
+ 50
+ 500
+ sbase_child
+ child_sbase
+ 5000
+ 500
+ child_sbase
+ sbase_base
+ 1 2
+ child_sbase
+ sbase_child
+ 3 4

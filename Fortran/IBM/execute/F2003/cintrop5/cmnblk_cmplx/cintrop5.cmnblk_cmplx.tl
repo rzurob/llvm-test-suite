@@ -1,0 +1,10 @@
+!Scenario list
+fxcmn_blk401.scenario
+fxcmn_blk401a.scenario
+fxcmn_blk402.scenario
+fxcmn_blk402a.scenario
+fxcmn_blk403.scenario
+fxcmn_blk403a.scenario
+fxcmn_blk404.scenario
+fxcmn_blk404a.scenario
+fxcmn_blk406.scenario

@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrEQCmplx1.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrEQCmplx1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrEQCmplx1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrEQCmplx1$(OBJ)
+#OUTPUT    = dataPtrEQCmplx1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrEQCmplx1$(EXE)
+#STDOUT    = dataPtrEQCmplx1.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrEQCmplx1.out $($(tcasedir)dataPtrEQCmplx1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

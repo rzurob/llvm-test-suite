@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/dummy_arg/deferlen/dummyArgTypeCompatible03a.scenario
+#FEATURE   = 358458
+#CREATOR   = Nancy Wang
+#DATE      = Nov. 14 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)dummyArgTypeCompatible03a.f
+#OUTPUT= dummyArgTypeCompatible03a$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = dummyArgTypeCompatible03a$(OBJ)
+#OUTPUT= dummyArgTypeCompatible03a$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = dummyArgTypeCompatible03a$(EXE)
+#STDOUT= dummyArgTypeCompatible03a.out
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT  = $($(tcasedir)dummyArgTypeCompatible03a$(product)vf) dummyArgTypeCompatible03a.out
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

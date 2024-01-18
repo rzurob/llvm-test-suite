@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = AllocPtr17f
+#FEATURE   = C Interop: Allocatable and Pointer
+#CREATOR   = Bardia Mahjour
+#DATE      = 2013-03-01
+#TEST_TYPE = functional
+#KEYWORDS  = C Interop, Allocatable, Pointer
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)AllocPtr17f.c
+#OPTS      = $(C_COMPILER_OPTS) -I$(xlf_include)
+#OUTPUT    = AllocPtr17fc$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AllocPtr17f.f
+#OUTPUT    = AllocPtr17f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = AllocPtr17f$(OBJ) AllocPtr17fc$(OBJ)
+#OUTPUT    = AllocPtr17f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = AllocPtr17f$(EXE)
+#STDOUT    = AllocPtr17f.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

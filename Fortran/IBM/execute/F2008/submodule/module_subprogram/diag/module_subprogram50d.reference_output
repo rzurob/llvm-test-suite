@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"module_subprogram50d.f", line 53.17: 1513-085 (S) Improper END statement specified. This END statement will be matched with the program unit or procedure named func2.
+"module_subprogram50d.f", line 57.17: 1513-085 (S) Improper END statement specified. This END statement will be matched with the program unit or procedure named sub2.
+** n   === End of Compilation 2 ===
+1501-511  Compilation failed for file module_subprogram50d.f.

@@ -1,0 +1,53 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/compat/dtpCompatDummyInGrandChild/dtpCompatDummyInGrandChild_111.scenario
+#FEATURE   = Broken Compatability Warning - DTP code passes reference to grandchild extended type with both KIND and LEN type parameters (child does not use DTP)
+! - latest PTF, v. 11.1
+#CREATOR   = DF Manual Update
+#DATE      = 20090613
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+! See F2003/dtparam/compat/README for details (especially if this TC produces a NORESOURCES error).
+#IF on(linux)
+  #REQUIRED_RESOURCES = SUSE10
+#ENDIF
+#INVALID_PRODUCT=bgq linuxle
+#ENDENV
+
+#BEGINCONTROL
+
+! Compile "pre-DTP" files with the latest 11.1 PTF compiler,
+! compile "post-DTP" files with the latest version of the latest compiler,
+! link with the latest version of the latest compiler,
+! run:  Since no DTP data is actually defined, no error message should be generated.
+
+#CMD       = V111_XLF2003_COMPILE
+#INPUT     = $(tcasedir)dtpCompatDummyInGrandChildPreDTP.f
+#OUTPUT    = dtpCompatDummyInGrandChildPreDTP$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)dtpCompatDummyInGrandChildPostDTP.f
+#OUTPUT    = dtpCompatDummyInGrandChildPostDTP$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = dtpCompatDummyInGrandChildPostDTP$(OBJ) dtpCompatDummyInGrandChildPreDTP$(OBJ)
+#OUTPUT    = dtpCompatDummyInGrandChild$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpCompatDummyInGrandChild$(EXE)
+#STDOUT    = dtpCompatDummyInGrandChild.out
+#STDERR    = dtpCompatDummyInGrandChild.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpCompatDummyInGrandChild$(product)vf) dtpCompatDummyInGrandChild.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

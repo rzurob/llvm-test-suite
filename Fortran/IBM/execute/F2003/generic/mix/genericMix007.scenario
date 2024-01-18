@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2007/generic/mix/genericMix007.scenario
+#FEATURE = generic tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericMix007.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericMix007$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericMix007$(OBJ)
+#OUTPUT    = genericMix007$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericMix007$(EXE)
+#STDOUT    = genericMix007.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericMix007.out $(tcasedir)genericMix007.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

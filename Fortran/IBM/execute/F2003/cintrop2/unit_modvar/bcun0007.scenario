@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop2/unit_modvar/bcun0007.scenario
+#FEATURE = cintrop2 tests - regression run bucket
+#CREATOR = Manual conversion CPR
+#DATE    = 20060724
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)bcun0007.f
+#OUTPUT = bcun0007$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = bcun0007$(OBJ)
+#OUTPUT = bcun0007$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = bcun0007$(EXE)
+#STDOUT = bcun0007.outs
+#ENDCMD
+
+#CMD    = XLDIFF
+#INPUT  = bcun0007.outs $(tcasedir)bcun0007.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

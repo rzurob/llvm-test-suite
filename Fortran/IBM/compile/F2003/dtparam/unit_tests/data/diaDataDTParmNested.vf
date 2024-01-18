@@ -1,0 +1,6 @@
+"diaDataDTParmNested.f", line 54.23: 1514-213 (S) A type parameter in this position must be a scalar integer initialization expression.
+"diaDataDTParmNested.f", line 54.25: 1514-213 (S) A type parameter in this position must be a scalar integer initialization expression.
+"diaDataDTParmNested.f", line 54.44: 1514-213 (S) A type parameter in this position must be a scalar integer initialization expression.
+"diaDataDTParmNested.f", line 54.46: 1514-213 (S) A type parameter in this position must be a scalar integer initialization expression.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file diaDataDTParmNested.f.

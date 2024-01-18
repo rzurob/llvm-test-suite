@@ -1,0 +1,6 @@
+"misc012.f", line 30.29: 1515-162 (S) Function result x declared as procedure must also be declared with the POINTER attribute.
+** m   === End of Compilation 1 ===
+"misc012.f", line 38.29: 1515-162 (S) Function result bad declared as procedure must also be declared with the POINTER attribute.
+"misc012.f", line 38.29: 1514-258 (E) A procedure must not be given the EXTERNAL attribute if it appears within an interface block. EXTERNAL attribute is ignored.
+** misc012   === End of Compilation 2 ===
+1501-511  Compilation failed for file misc012.f.

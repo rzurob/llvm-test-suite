@@ -1,0 +1,2 @@
+  BASE:DT dtv%i= 10  CHILD:DT dtv%i= 20  dtv%j= 30  BASE1:DT_1 2  dtv%c=ABC BASE2:DT_1 2  dtv%c=DEF
+  BASE:DT dtv%i= 10  CHILD:DT dtv%i= 20  dtv%j= 30  BASE1:DT_1 2  dtv%c=ABC BASE2:DT_1 2  dtv%c=DEF

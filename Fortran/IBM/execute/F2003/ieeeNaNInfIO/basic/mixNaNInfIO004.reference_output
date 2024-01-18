@@ -1,0 +1,12 @@
+ibm nan  NaN(Q)      Inf21.1        NaN(S)
+iBm nan  NaN(Q)      Inf22.20E+00    NaN(S)
+ibm    -nan(_) NaN(Q)      Inf23.3        NaN(Q)
+iBm    -nan(_) NaN(Q)      Inf24.40E+00    NaN(Q)
+ibm    -nan(_) NaN(Q)      Inf25.5        NaN(Q)
+iBm    -nan(_) NaN(Q)      Inf26.60E+00    NaN(Q)
+ibm,  NaN(Q)     -Inf27.7     NaN(Q)
+iBm,  NaN(Q)     -Inf28.80E+00 NaN(Q)
+ 12ibm   NaN(Q)     -Inf21.4     NaN(S)
+ 12iBm   NaN(Q)     -Inf22.40E+00 NaN(S)
+infi InfNaN(S)    Inf a     -Inf
+iNfi -Inf  NaN(S)    Inf a     -Inf

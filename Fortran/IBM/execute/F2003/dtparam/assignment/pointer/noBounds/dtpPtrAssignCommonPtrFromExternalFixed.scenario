@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpPtrAssignCommonPtrFromExternalFixed.scenario
+#FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - via pointers in COMMON with fixed length parameters, assign to COMMON variables in external subprograms
+#CREATOR   = DF Manual Update
+#DATE      = 20090112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPtrAssignCommonPtrFromExternalFixed.f
+#OUTPUT    = dtpPtrAssignCommonPtrFromExternalFixed$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPtrAssignCommonPtrFromExternalFixed$(OBJ)
+#OUTPUT    = dtpPtrAssignCommonPtrFromExternalFixed$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPtrAssignCommonPtrFromExternalFixed$(EXE)
+#STDOUT    = dtpPtrAssignCommonPtrFromExternalFixed.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpPtrAssignCommonPtrFromExternalFixed$(product)vf) dtpPtrAssignCommonPtrFromExternalFixed.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

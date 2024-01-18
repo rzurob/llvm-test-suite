@@ -1,0 +1,16 @@
+ finalizeChild
+ finalizeBase
+ test1
+ deallocating data
+ finalizeChild
+ finalizeBase
+ 1 b1                  
+ finalizeBase
+ test2
+ deallocating data
+ finalizeChild
+ finalizeBase
+ deallocating data
+ finalizeBase
+ 100
+ end

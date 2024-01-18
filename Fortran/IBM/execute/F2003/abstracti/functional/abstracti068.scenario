@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/suborder/func/abstracti068.scenario
+#FEATURE = suborder tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)abstracti068.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = abstracti068$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  abstracti068$(OBJ)
+#OUTPUT    = abstracti068$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = abstracti068$(EXE)
+#STDOUT    = abstracti068.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = abstracti068.out $(tcasedir)abstracti068.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

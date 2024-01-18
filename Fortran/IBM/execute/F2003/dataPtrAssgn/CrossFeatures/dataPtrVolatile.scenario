@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dataPtrVolatile.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       02-14-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dataPtrVolatile.f
+#OUTPUT= dataPtrVolatile$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  dataPtrVolatile$(OBJ)
+#OUTPUT= dataPtrVolatile$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dataPtrVolatile$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

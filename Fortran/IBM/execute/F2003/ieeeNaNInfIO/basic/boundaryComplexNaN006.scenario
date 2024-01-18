@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = boundaryComplexNaN006.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 14, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)boundaryComplexNaN006.f
+#OUTPUT   =  boundaryComplexNaN006$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  boundaryComplexNaN006$(OBJ)
+#OUTPUT   =  boundaryComplexNaN006$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  boundaryComplexNaN006$(EXE)
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = boundaryComplexNaN006.out $(tcasedir)boundaryComplexNaN006.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

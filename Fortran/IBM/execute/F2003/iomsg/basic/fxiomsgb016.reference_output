@@ -1,0 +1,4 @@
+ 1525-096 A data item processed during an integer read is too large.  The program will recover by assigning the data item the value 127.
+                                                                                                                                                                    
+ 1525-096 A data item processed during an integer read is too large.  The program will recover by assigning the data item the value -2147483648.
+                                                                                                                                                            

@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpIAssignFunctionResultFromModulePolymorphic.scenario
+#FEATURE   = Intrinsic Assignment without Allocation - assign polymorphic module function results
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAssignFunctionResultFromModulePolymorphic.f
+#OUTPUT    = dtpIAssignFunctionResultFromModulePolymorphic$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAssignFunctionResultFromModulePolymorphic$(OBJ)
+#OUTPUT    = dtpIAssignFunctionResultFromModulePolymorphic$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAssignFunctionResultFromModulePolymorphic$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,17 @@
+  before allocate
+  after allocate
+  sizeof b1= 28
+  sizeof b2= 28
+  sizeof b3= 28
+  offsetof(b3, b3%basescalar)= 24
+  offsetof(b2, b2%basescalar)= 24
+  offsetof(b1, b1%basescalar)= 24
+  offsetof(b1%old, b1%b)= 0
+  offsetof(b4, b4%base2M%basescalar)= 52
+  offsetof(b4%base2M, b4%base2M%basescalar)= 24
+  b1%basescalar= 15   b2%basescalar= 15
+  b1%baselen= 4
+  b1%basekind= 4
+  b1%basekind + b1%baselen= 8
+  basescalar 1 -ok
+  basescalar 2 -ok

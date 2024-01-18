@@ -1,0 +1,17 @@
+** s1   === End of Compilation 1 ===
+** sn1   === End of Compilation 2 ===
+  27.21   01610192 bind‹
+  27.25   01610192 (‹
+  27.26   01610192 c‹
+  27.27   01610192 )‹
+** s2   === End of Compilation 3 ===
+  30.22   01610192 bind‹
+  30.26   01610192 (‹
+  30.27   01610192 c‹
+  30.28   01610192 ,‹
+  30.30   01610192 name‹
+  30.34   01610192 =‹
+  30.35   01610192 'S2‹
+  30.39   01610192 )‹
+** sn2   === End of Compilation 4 ===
+1501-511  Compilation failed for file np3.f.

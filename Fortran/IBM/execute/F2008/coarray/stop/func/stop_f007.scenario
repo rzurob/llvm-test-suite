@@ -1,0 +1,58 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/coarray/stop/func/stop_f007.scenario
+#FEATURE    = CAF: STOP statement (feature #351605.31)
+#CREATOR    = Grigor Nikolov
+#DATE       = 20101019
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)stop_stringvalue.f
+#OUTPUT     = stop_stringvalue$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#INPUT      = stop_stringvalue$(OBJ)
+#OUTPUT     = stop_stringvalue$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD        = MPRUN
+#INPUT      = stop_stringvalue$(EXE)
+#STDOUT     = stop_stringvalue.out
+#STDERR     = stop_stringvalue.out
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "Stop with string value set"
+#INPUT      = stop_stringvalue.out
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "STOP ES_String message!"
+#INPUT      = stop_stringvalue.out
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "FAILURE if this message"
+#INPUT      = stop_stringvalue.out
+#VALIDRCS   = 1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

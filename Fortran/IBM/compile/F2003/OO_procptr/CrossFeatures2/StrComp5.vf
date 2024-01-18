@@ -1,0 +1,9 @@
+"StrComp5.f", line 55.26: 1514-702 (S) Binding procptr is not permitted. procptr is the name of a component, binding, or type parameter that is inherited from type dt1.
+"StrComp5.f", line 61.28: 1514-682 (S) Identifier procptr appearing as a binding of derived type dt3 has already been defined as a component, binding, or type parameter of the same derived type.
+** m   === End of Compilation 1 ===
+"StrComp5.f", line 82.27: 1515-161 (S) Procedure extsub is pure.  Dummy procedure proc must also be pure.
+** extsub   === End of Compilation 2 ===
+"StrComp5.f", line 91.29: 1515-161 (S) Procedure extsub1 is pure.  Dummy procedure proc must also be pure.
+** extsub1   === End of Compilation 3 ===
+** strcomp5   === End of Compilation 4 ===
+1501-511  Compilation failed for file StrComp5.f.

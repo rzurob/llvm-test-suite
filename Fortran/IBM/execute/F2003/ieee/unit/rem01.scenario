@@ -1,0 +1,45 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = ieee/unit/rem01.scenario
+#FEATURE = ieee tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)rem01.f
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#OUTPUT    = rem01$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     = rem01$(OBJ)
+#OUTPUT    = rem01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = rem01$(EXE)
+#STDOUT    = rem01.out
+#ENDCMD
+
+#IF on(aix)
+        #CMD       = XLDIFF
+        #INPUT     = rem01.out $(tcasedir)rem01.vf -o "-i"
+        #ENDCMD
+#ELSE
+        #CMD       = DIFF
+        #INPUT     = rem01.out $(tcasedir)rem01.vfl
+        #ENDCMD
+#ENDIF
+
+#ENDCONTROL
+#ENDSCENARIO

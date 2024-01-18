@@ -1,0 +1,4 @@
+"misc002d.f", line 31.33: 1514-699 (S) Procedure "x3" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "x1", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** m   === End of Compilation 1 ===
+"misc002d.f", line 61.5: 1514-219 (S) Unable to access module symbol file for module m. Check path and file permissions of file. Use association not done for this module.
+1501-511  Compilation failed for file misc002d.f.

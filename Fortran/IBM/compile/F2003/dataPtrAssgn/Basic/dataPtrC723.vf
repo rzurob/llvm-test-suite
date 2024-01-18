@@ -1,0 +1,8 @@
+"dataPtrC723.f", line 47.3: 1515-039 (S) The target in the pointer assignment must have the TARGET or POINTER attribute.
+"dataPtrC723.f", line 48.3: 1515-039 (S) The target in the pointer assignment must have the TARGET or POINTER attribute.
+"dataPtrC723.f", line 50.3: 1515-039 (S) The target in the pointer assignment must have the TARGET or POINTER attribute.
+"dataPtrC723.f", line 51.3: 1515-039 (S) The target in the pointer assignment must have the TARGET or POINTER attribute.
+"dataPtrC723.f", line 53.3: 1515-040 (S) Target may not be a whole assumed-size array, or an array section with a vector-valued subscript in a pointer assignment.
+"dataPtrC723.f", line 54.3: 1515-040 (S) Target may not be a whole assumed-size array, or an array section with a vector-valued subscript in a pointer assignment.
+** dataptrc723   === End of Compilation 1 ===
+1501-511  Compilation failed for file dataPtrC723.f.

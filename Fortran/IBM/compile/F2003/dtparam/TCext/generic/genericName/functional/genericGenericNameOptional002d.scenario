@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/genericName/functional/genericGenericNameOptional002d.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericGenericNameOptional002d.f
+#OUTPUT    = genericGenericNameOptional002d$(OBJ)
+#STDERR    = genericGenericNameOptional002d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = genericGenericNameOptional002d.err $($(tcasedir)genericGenericNameOptional002d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

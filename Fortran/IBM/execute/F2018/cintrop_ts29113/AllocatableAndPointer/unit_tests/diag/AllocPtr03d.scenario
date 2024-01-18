@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = AllocPtr03d
+#FEATURE   = 26305: C Interop: Allocatable and Pointer
+#CREATOR   = Bardia Mahjour
+#DATE      = 2013-03-08
+#TEST_TYPE = diagnostics
+#KEYWORDS  = C Interop, Allocatable, Pointer
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AllocPtr03d.f
+#OUTPUT     = AllocPtr03d$(OBJ)
+#STDERR     = AllocPtr03d.out
+#VALIDRCS   = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)AllocPtr03d$(product)vf) AllocPtr03d.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

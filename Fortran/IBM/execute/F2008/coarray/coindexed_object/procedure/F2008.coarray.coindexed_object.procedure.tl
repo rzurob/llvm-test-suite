@@ -1,0 +1,6 @@
+test_copy_out_array01.scenario
+test_copy_out_array02.scenario
+test_copy_out_scalar01.scenario
+test_copy_out_scalar02.scenario
+test_copy_out_scalar03.scenario
+.im func/F2008.coarray.coindexed_object.procedure.func.tl

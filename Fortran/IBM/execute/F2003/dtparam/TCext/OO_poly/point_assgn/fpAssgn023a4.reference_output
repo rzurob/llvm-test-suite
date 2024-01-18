@@ -1,0 +1,11 @@
+ calling abc
+ freeData
+ deallocating 1 element of child
+ deallocating 2 element of child
+ calling abc1
+ freeDataRank1
+ freeData
+ deallocating 1 element of child
+ freeData
+ deallocating 1 element of child
+ freeData

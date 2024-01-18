@@ -1,0 +1,24 @@
+!Scenario list
+fxstio201.scenario
+fxstio202.scenario
+fxstio203.scenario
+fxstio204.scenario
+fxstio205.scenario
+fxstio206.scenario
+fxstio207.scenario
+fxstio208.scenario
+fxstio208a.scenario
+fxstio209.scenario
+fxstio211.scenario
+fxstio211a.scenario
+fxstio211b.scenario
+fxstio212.scenario
+fxstio214.scenario
+fxstio215.scenario
+fxstio216.scenario
+fxstio217.scenario
+fxstio221.scenario
+fxstio222.scenario
+fxstio231.scenario
+fxstio232.scenario
+fxstio233.scenario

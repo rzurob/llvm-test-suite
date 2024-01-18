@@ -1,0 +1,6 @@
+"fxdmodprocstmt006.f", line 59.28: 1514-146 (E) Invalid statement found within an interface block. Executable statement, statement function or syntax error encountered.
+"fxdmodprocstmt006.f", line 62.28: 1514-146 (E) Invalid statement found within an interface block. Executable statement, statement function or syntax error encountered.
+"fxdmodprocstmt006.f", line 65.12: 1513-062 (S) Generic procedure reference can not be resolved due to incorrect actual argument attributes.
+"fxdmodprocstmt006.f", line 66.12: 1513-062 (S) Generic procedure reference can not be resolved due to incorrect actual argument attributes.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file fxdmodprocstmt006.f.

@@ -1,0 +1,1 @@
+"iofilenamelineno005.f", line 45: 1525-071 The initial left parenthesis in the format specification is missing.  The program will recover by assuming an initial left parenthesis.

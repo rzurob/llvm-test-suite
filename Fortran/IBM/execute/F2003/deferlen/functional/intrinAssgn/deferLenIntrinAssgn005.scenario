@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/deferlen/functional/intrinAssgn/deferLenIntrinAssgn005.scenario
+#FEATURE = character with deferred length type parameter
+#CREATOR = Robert Ma
+#DATE    = 20060501
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)deferLenIntrinAssgn005.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = deferLenIntrinAssgn005$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = deferLenIntrinAssgn005$(OBJ)
+#OUTPUT    = deferLenIntrinAssgn005$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = deferLenIntrinAssgn005$(EXE)
+#STDOUT    = deferLenIntrinAssgn005.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = deferLenIntrinAssgn005.out $(tcasedir)deferLenIntrinAssgn005.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

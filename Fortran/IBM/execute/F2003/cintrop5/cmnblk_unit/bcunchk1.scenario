@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop5/cmnblk_unit/bcunchk1.scenario
+#FEATURE = cintrop5 tests - regression run bucket
+#CREATOR = Manual conversion CPR
+#DATE    = 20060829
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+FTCARG="bcunchk1"
+CTCARG="comc1"
+#ENDDEFS
+#INVALID_PRODUCT= sles,rhel,mac,yhpc
+#ENDENV
+
+#BEGINCONTROL
+
+#INCLUDE   = unextchk.shinclude
+
+#ENDCONTROL
+#ENDSCENARIO

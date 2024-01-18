@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/selectType/Select_Type03e.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20080826
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   -qxlf2003=dynamicacval $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)Select_Type03e.f
+#OUTPUT= Select_Type03e$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  Select_Type03e$(OBJ)
+#OUTPUT= Select_Type03e$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  Select_Type03e$(EXE)
+#STDOUT= Select_Type03e.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

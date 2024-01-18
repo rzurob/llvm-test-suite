@@ -1,0 +1,48 @@
+!**********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE TITLE            : AssumedType20d
+!*
+!*  PROGRAMMER                 : Dorra Bouchiha
+!*  DATE                       : June 13, 2012
+!*  ORIGIN                     : AIX Compiler Development,
+!*                             : IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : C-interop: Assumed Type objects
+!*
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
+!*  DRIVER STANZA              : xlf2008
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  DESCRIPTION                : An assumed-type entity shall be a dummy variable 
+!*                               that does not have the CODIMENSION attribute
+!*       
+!*      
+!*     
+!*
+!**********************************************************************
+!234567890123456789012345678901234567890123456789012345678901234567890
+module  mod
+  implicit none
+
+  contains
+  subroutine module_sub(coa) 
+      type(*), codimension[*] :: coa
+
+  end subroutine module_sub
+end module mod
+
+program AssumedType20d
+implicit none
+
+contains 
+
+   subroutine sub(coa) 
+      type(*), codimension[*] :: coa
+
+   end subroutine sub
+
+end program AssumedType20d

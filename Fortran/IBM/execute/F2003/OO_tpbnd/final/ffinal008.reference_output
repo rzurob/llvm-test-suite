@@ -1,0 +1,9 @@
+ test 1
+ deallocating name
+ deallocating id
+ test 2
+ deallocating name
+ deallocating id
+ deallocating name
+ deallocating id
+ end

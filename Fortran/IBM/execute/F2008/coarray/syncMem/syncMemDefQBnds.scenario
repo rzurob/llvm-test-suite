@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/syncMemDefQBnds
+#FEATURE        = CAF SYNC MEMORY - Define followed by Query of bounds
+#CREATOR        = DF
+#DATE           = 2010-09-22
+#TEST_TYPE      = sanity
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)syncMemDefQBnds.f
+#OUTPUT = syncMemDefQBnds$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = syncMemDefQBnds$(OBJ)
+#OUTPUT = syncMemDefQBnds$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = syncMemDefQBnds$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

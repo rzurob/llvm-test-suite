@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = F2008/intrinsics/selectedRealKind/selectedRealKind02f.scenario
+#FEATURE  = SELECTED_REAL_KIND tests
+#CREATOR  = Jin Li
+#DATE     = 20101020
+#TEST_TYPE= functional
+#ENDDOC
+
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)selectedRealKind02f.f
+#OUTPUT    = selectedRealKind02f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = selectedRealKind02f$(OBJ)
+#OUTPUT    = selectedRealKind02f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = selectedRealKind02f$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

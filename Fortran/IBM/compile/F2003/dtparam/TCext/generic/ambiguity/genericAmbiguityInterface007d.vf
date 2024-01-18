@@ -1,0 +1,10 @@
+** binoperator   === End of Compilation 1 ===
+** assignment   === End of Compilation 2 ===
+** addb   === End of Compilation 3 ===
+** assgn2   === End of Compilation 4 ===
+** assgn1   === End of Compilation 5 ===
+"genericAmbiguityInterface007d.f", line 138.17: 1514-699 (S) Procedure "assgn2" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "assgn1", present and type incompatible, present with different kind type parameters, or present with a different rank.
+"genericAmbiguityInterface007d.f", line 142.17: 1514-699 (S) Procedure "addb" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "adda", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** genericambiguityinterface007d   === End of Compilation 6 ===
+** adda   === End of Compilation 7 ===
+1501-511  Compilation failed for file genericAmbiguityInterface007d.f.

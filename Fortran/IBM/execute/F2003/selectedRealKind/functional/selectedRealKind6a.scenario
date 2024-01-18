@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = F2003/selectedRealKind/functional/selectedRealKind6a.scenario
+#FEATURE  = SELECTED_REAL_KIND tests
+#CREATOR  = Salma Elshatanoufy
+#DATE     = 20070827
+#TEST_TYPE= functional
+#ENDDOC
+
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)selectedRealKind6.f
+#OPTS      = $(OPT_AUTO_INLINE_FUNCTION) $(OPT_INLINE_PROC<selected_real_kind>) $(OPT_GEN_BASIC_LISTING)
+#OUTPUT    = selectedRealKind6a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = selectedRealKind6a$(OBJ)
+#OUTPUT    = selectedRealKind6a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = selectedRealKind6a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

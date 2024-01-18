@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/null/argAssociation007.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050304
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(F_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) $(F_COMPILE^OPT_FREE_SOURCE_FORM) $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)argAssociation007.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#STDOUT    = argAssociation007$(OBJ)
+#STDERR    = argAssociation007.err
+!#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)argAssociation007$(product)vf) argAssociation007.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

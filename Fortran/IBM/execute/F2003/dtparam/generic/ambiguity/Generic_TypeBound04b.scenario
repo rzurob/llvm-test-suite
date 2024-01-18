@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/F2003/dtparam/generic/resolution/Generic_TypeBound04b.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20081015
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)Generic_TypeBound04b.f
+#OUTPUT= Generic_TypeBound04b$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  Generic_TypeBound04b$(OBJ)
+#OUTPUT= Generic_TypeBound04b$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  Generic_TypeBound04b$(EXE)
+#STDOUT= Generic_TypeBound04b.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

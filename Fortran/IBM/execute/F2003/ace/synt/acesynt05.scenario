@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/synt/acesynt05.scenario
+#FEATURE	= Array constructor enhancement syntax tests
+#CREATOR	= DF Manual Update
+#DATE		= 20060706
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acesynt05.f
+#OUTPUT		= acesynt05$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acesynt05$(OBJ)
+#OUTPUT		= acesynt05$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acesynt05$(EXE)
+#STDOUT		= acesynt05.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $(tcasedir)acesynt05.vf acesynt05.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

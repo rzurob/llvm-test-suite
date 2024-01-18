@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/namelist/namelist.2.1/character002.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)character002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = character002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = character002$(OBJ)
+#OUTPUT    = character002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = character002$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)character002$(product)vf) character002.1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = F2008/intrinsics/IEEESelectedRealKind/IEEESelectedRealKind03d.scenario
+#FEATURE  = IEEE_SELECTED_REAL_KIND tests
+#CREATOR  = Jin Li
+#DATE     = 20101020
+#TEST_TYPE= diagnostic
+#ENDDOC
+
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)IEEESelectedRealKind03d.f
+#OUTPUT    = IEEESelectedRealKind03d$(OBJ)
+#STDERR    = IEEESelectedRealKind03d.err
+#VALIDRCS = $(RC_COMP_E)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $(tcasedir)IEEESelectedRealKind03d.vf IEEESelectedRealKind03d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

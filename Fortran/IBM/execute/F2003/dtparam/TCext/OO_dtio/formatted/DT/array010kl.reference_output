@@ -1,0 +1,15 @@
+ iotype:DT v_list: -1 100 1000
+ iotype:DT v_list: -2 101 1001
+ iotype:DT v_list: -3 102 1002
+ iotype:DT v_list: -1 100 1000
+ iotype:DT v_list: -2 101 1001
+ iotype:DT v_list: -3 102 1002
+ iotype:DT v_list: -1 100 1000
+ iotype:DT v_list: -2 101 1001
+ iotype:DT v_list: -3 102 1002
+ iotype:DTb2-1 v_list: -2 -4 200
+ iotype:DTb2-2 v_list: -6 -8 201
+ iotype:DTb2-1 v_list: -2 -4 202
+ iotype:DTb2-2 v_list: -6 -8 203
+ iotype:DTb3-1 v_list: 10 300 3000 iotype:DTb3-2 v_list: 20 301 3001
+ iotype:DTb3-1 v_list: 10 302 3002 iotype:DTb3-2 v_list: 20 303 3003

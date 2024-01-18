@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/basic/nonchar/allocatedLBoundDerived01.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071219
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)allocatedLBoundDerived01.f
+#OUTPUT		= allocatedLBoundDerived01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= allocatedLBoundDerived01$(OBJ)
+#OUTPUT		= allocatedLBoundDerived01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= allocatedLBoundDerived01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

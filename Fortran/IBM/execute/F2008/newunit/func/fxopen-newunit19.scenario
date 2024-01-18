@@ -1,0 +1,44 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           =  /tst141/F2008/newunit/func/fxopen-newunit19.scenario
+#FEATURE        =  FEATURE 377344 (NEWUNIT) - regression run bucket
+#CREATOR        =  Sarah Kouchanki Ramezan
+#DATE           =  Oct. 2010
+#TEST_TYPE      = sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)fxopen-newunit19.dat .
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)fxopen-newunit19.f
+#OUTPUT		= fxopen-newunit19$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= fxopen-newunit19$(OBJ)
+#OUTPUT		= fxopen-newunit19$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= fxopen-newunit19$(EXE)
+#STDERR		= fxopen-newunit19.stderr
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)fxopen-newunit19$(product)vf)	\
+				fxopen-newunit19.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

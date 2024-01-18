@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"mProcC1204.f", line 54.4: 1513-098 (E) PROCEDURE statements should only appear within a generic interface.  Statement is ignored.
+"mProcC1204.f", line 58.4: 1513-098 (E) PROCEDURE statements should only appear within a generic interface.  Statement is ignored.
+** mprocc1204   === End of Compilation 2 ===
+1501-510  Compilation successful for file mProcC1204.f.

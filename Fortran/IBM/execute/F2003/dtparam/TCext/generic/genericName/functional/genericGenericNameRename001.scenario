@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/genericName/functional/genericGenericNameRename001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericGenericNameRename001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericGenericNameRename001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericGenericNameRename001$(OBJ)
+#OUTPUT    = genericGenericNameRename001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericGenericNameRename001$(EXE)
+#STDOUT    = genericGenericNameRename001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericGenericNameRename001.out $(tcasedir)genericGenericNameRename001.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

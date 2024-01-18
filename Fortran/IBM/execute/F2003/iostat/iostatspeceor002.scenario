@@ -1,0 +1,45 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=iostatspeceor002.scenario
+#FEATURE = 299314
+#CREATOR = Rob Wheeler
+#DATE    = 20060109
+#TEST_TYPE=fvt
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)iostatspeceor002.f
+#OPTS      =
+#OUTPUT    = iostatspeceor002$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      =
+#INPUT     = iostatspeceor002$(OBJ)
+#OUTPUT    = iostatspeceor002$(EXE)
+#ENDCMD
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)file1.txt .
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = iostatspeceor002$(EXE)
+#STDOUT    = iostatspeceor002.out
+#STDERR    = iostatspeceor002.out
+#ENDCMD
+
+#CMD	   = DIFF
+#OPTS	   = -b
+#INPUT     = iostatspeceor002.out $($(tcasedir)iostatspeceor002$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

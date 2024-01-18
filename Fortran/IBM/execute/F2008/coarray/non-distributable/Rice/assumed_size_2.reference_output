@@ -1,0 +1,3 @@
+ OK: Assumed_size_coarray_test_2 : step 1 of 3, in caller, assgin value locally
+ OK: Assumed_size_coarray_test_2 : step 2 of 3, remote write in callee
+ OK: Assumed_size_coarray_test_2 : step 3 of 3, back to the caller, check the remote write.

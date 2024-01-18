@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"AssocNameAsOther.f", line 66.3: 1516-053 (S) The construct name a was seen with conflicting attributes.
+** assocnameasother   === End of Compilation 2 ===
+1501-511  Compilation failed for file AssocNameAsOther.f.

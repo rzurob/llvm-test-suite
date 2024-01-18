@@ -1,0 +1,4 @@
+ finalizedataType
+ deallocating d%data
+ finalizeChild
+ deallocating c%value

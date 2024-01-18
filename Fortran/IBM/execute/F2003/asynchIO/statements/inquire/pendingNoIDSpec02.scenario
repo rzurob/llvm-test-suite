@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/inquire/pendingNoIDSpec02.scenario
+#FEATURE	= Asynchronous I/O -- INQUIRE Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060321
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)pendingNoIDSpec02.f
+#OUTPUT		= pendingNoIDSpec02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= pendingNoIDSpec02$(OBJ)
+#OUTPUT		= pendingNoIDSpec02$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= pendingNoIDSpec02$(EXE)
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)pendingNoIDSpec02$(product)vf) fort.650
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

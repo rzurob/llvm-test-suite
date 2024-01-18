@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint17.scenario
+#FEATURE	= Array constructor enhancement - generics in AC via interface
+#CREATOR	= DF Manual Update
+#DATE		= 20061024
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint17.f
+#OUTPUT		= acetint17$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint17$(OBJ)
+#OUTPUT		= acetint17$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint17$(EXE)
+#STDOUT		= acetint17.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -r1e-5
+#INPUT		= $($(tcasedir)acetint17$(product)vf) acetint17.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/inquire/nonAsynchPendingSpec01.scenario
+#FEATURE	= Asynchronous I/O -- INQUIRE Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060321
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)nonAsynchPendingSpec01.f
+#OUTPUT		= nonAsynchPendingSpec01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= nonAsynchPendingSpec01$(OBJ)
+#OUTPUT		= nonAsynchPendingSpec01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= nonAsynchPendingSpec01$(EXE)
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)nonAsynchPendingSpec01$(product)vf) fort.2
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)nonAsynchPendingSpec01$(product)vf) fort.3
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/C503/interface002.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/abstract/C503/interface002.scenario
+#DATE      = 20070608
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)interface002.f
+#OPTS      = -qdebug=shutup
+#OUTPUT    = interface002$(OBJ)
+#STDERR    = interface002.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)interface002$(product)vf) interface002.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

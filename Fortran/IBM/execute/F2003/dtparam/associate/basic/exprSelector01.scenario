@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/associate/basic/exprSelector01.scenario
+#FEATURE	= ASSOCIATE Contruct (with Derived Type Parameters) --	\
+				selector is an Expression of Derived Type with Type Parameters
+#CREATOR	= Glen Mateer
+#DATE		= 20080708
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)exprSelector01.f
+#OUTPUT		= exprSelector01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= exprSelector01$(OBJ)
+#OUTPUT		= exprSelector01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= exprSelector01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

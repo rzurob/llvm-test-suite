@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = dtSpec008a.scenario
+#FEATURE   =
+#CREATOR   = MZ adapted from F2003/dtparam/dtSpec/dtSpec008a.f
+#DATE      = 20100504
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_ALT_COMPILE
+#INPUT     = $(tcasedir)dtSpec008a_mod.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtSpec008a_mod$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtSpec008a_main.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtSpec008a_main$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dtSpec008a_mod$(OBJ) dtSpec008a_main$(OBJ)
+#OUTPUT    = dtSpec008a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtSpec008a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

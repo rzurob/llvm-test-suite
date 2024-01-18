@@ -1,0 +1,239 @@
+! GB DTP extension using:
+! ftcx_dtp -qck -qk -ql -qreuse=all -qdeferredlp /tstdev/OO_poly/dummy_arg/fArg513a.f
+!#######################################################################
+! SCCS ID Information
+! %W%, %I%
+! Extract Date/Time: %D% %T%
+! Checkin Date/Time: %E% %U%
+!#######################################################################
+! *********************************************************************
+!*  =================================================================== 
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
+!*  =================================================================== 
+!*  =================================================================== 
+!*
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Jim Xia
+!*  DATE                       : 04/11/2005
+!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
+!*
+!*
+!*  DESCRIPTION                : argument association (sorting algorithm as the
+!                               actual-arg for a type-bound)
+!*
+!*
+!*
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+module m
+    type base(k1)    ! (4)
+        integer, kind :: k1
+        integer(k1)   :: id
+
+        contains
+
+        procedure :: print => printBase
+    end type
+
+    type, extends (base) :: child(k2,n1)    ! (4,1,20)
+        integer, kind             :: k2
+        integer, len              :: n1
+        character(kind=k2,len=n1) :: name
+
+        contains
+
+        procedure :: print => printChild
+    end type
+
+    interface
+        logical function less (b1, b2)
+        import base
+            class (base(4)), intent(in) :: b1, b2
+        end function
+    end interface
+
+    interface assignment(=)
+        subroutine b1AssgnByB2 (b1, b2)
+        import base
+            class (base(4)), intent(out) :: b1
+            class (base(4)), intent(in) :: b2
+        end subroutine
+    end interface
+
+    type table(k3)    ! (4)
+        integer, kind                :: k3
+        class(base(k3)), allocatable :: data (:)
+
+        contains
+
+        procedure :: print => printTable
+        procedure :: sort => sortWithAlg
+    end type
+
+    contains
+
+    subroutine printBase (b)
+        class (base(4)), intent (in) :: b
+
+        print *, b%id
+    end subroutine
+
+    subroutine printChild (b)
+        class (child(4,1,*)), intent(in) :: b
+
+        print *, b%id, b%name
+    end subroutine
+
+    subroutine printTable (t)
+        class (table(4)), intent(in) :: t
+
+        if (allocated (t%data)) then
+            do i = 1, size (t%data)
+                call t%data(i)%print
+            end do
+        end if
+    end subroutine
+
+    subroutine sortWithAlg (t, extern_less)
+        class (table(4)), intent(inout) :: t
+
+        procedure (less) extern_less
+
+        class (base(4)), allocatable :: temp
+
+        if (allocated (t%data)) then
+            select type (x => t%data)
+                type is (base(4))
+                    allocate (temp)
+                type is (child(4,1,*))
+                    allocate (child(4,1,20):: temp)
+                class default
+                    error stop 50_4
+            end select
+
+
+            !! use bubble sort
+            do i = 1, size (t%data)
+                do j = 1, size(t%data) - i
+                    if (extern_less(t%data(j+1), t%data(j))) then
+                        temp = t%data(j+1)
+                        t%data(j+1) = t%data(j)
+                        t%data(j) = temp
+                    end if
+                end do
+            end do
+        end if
+
+    end subroutine
+end module
+
+
+subroutine b1AssgnByB2 (b1, b2)
+use m, only: base, child
+    class (base(4)), intent(out) :: b1
+    class (base(4)), intent(in) :: b2
+
+    if (.not. same_type_as (b1, b2)) error stop 30_4
+
+    select type (b1)
+        type is (base(4))
+            b1%id = b2%id
+        type is (child(4,1,*))
+            select type (b2)
+                type is (child(4,1,*))
+                    b1 = b2
+                class default
+                    error stop 31_4
+            end select
+        class default
+            error stop 32_4
+    end select
+end subroutine
+
+program fArg513a
+use m
+    class (table(4)), pointer :: t1(:)
+    class (base(4)), allocatable :: b1(:)
+
+    procedure (less) sortWithID, sortWithIDName
+
+    allocate (t1(2))
+
+    allocate (child(4,1,20):: b1(10))
+
+    b1%id = (/3, 2, 2, 2, 4, 5, 3, 4, 9, 2/)
+
+    select type (b1)
+        type is (child(4,1,*))
+            b1(1)%name = 'abc_3.1'
+            b1(2)%name = 'abc_2.1'
+            b1(3)%name = 'xyz_2.2'
+            b1(4)%name = 'ibm_2.3'
+            b1(5)%name = '123_4.1'
+            b1(6)%name = 'nowhere_5'
+            b1(7)%name = 'ABC_3.2'
+            b1(8)%name = 'mbi_4.2'
+            b1(9)%name = 'biggest_9'
+            b1(10)%name = 'SMALL_2.4'
+
+        class default
+            error stop 1_4
+    end select
+
+    allocate (t1(1)%data(size(b1)), source=b1)
+
+    call t1(1)%sort(sortWithID)
+    call t1(1)%print
+
+    print *, new_line('a'), 'second test', new_line('a')
+
+    call t1(1)%sort (extern_less=sortWithIDName)
+
+    call t1(1)%print
+end
+
+
+logical function sortWithID (b1, b2)
+use m, only : base
+    class (base(4)), intent(in) :: b1, b2
+
+    if (.not. same_type_as (b1, b2)) error stop 10_4
+
+    sortWithID = (b1%id < b2%id)
+end function
+
+
+logical function sortWithIDName (b1, b2)
+use m, only: base, child
+    class(base(4)), intent(in) :: b1, b2
+
+    select type (b1)
+        type is (base(4))
+            sortWithIDName = IDcmp (b1, b2)
+        type is (child(4,1,*))
+            select type (b2)
+                type is (child(4,1,*))
+                    sortWithIDName = IDcmp (b1, b2)
+
+                    if ((.not. sortWithIDName) .and. (b1%id == b2%id)) then
+                        sortWithIDName = b1%name < b2%name
+                    end if
+                class default
+                    error stop 21_4
+            end select
+        class default
+            error stop 22_4
+    end select
+
+    contains
+
+    logical function IDcmp (bb1, bb2)
+        class (base(4)), intent(in) :: bb1, bb2
+
+        if (.not. same_type_as (bb1, bb2)) error stop 20_4
+
+        IDcmp = bb1%id < bb2%id
+    end function
+end function

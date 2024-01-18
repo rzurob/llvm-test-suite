@@ -1,0 +1,9 @@
+** m   === End of Compilation 1 ===
+"C919_001.f", line 93.3: 1512-129 (S) Stream access is not allowed on internal files.
+"C919_001.f", line 95.3: 1512-074 (S) Keywords on I/O statement imply both INTERNAL I/O and Direct I/O.  Statement is ignored.
+"C919_001.f", line 97.3: 1512-074 (S) Keywords on I/O statement imply both INTERNAL I/O and Direct I/O.  Statement is ignored.
+"C919_001.f", line 99.3: 1512-129 (S) Stream access is not allowed on internal files.
+** c919_001   === End of Compilation 2 ===
+** writeformatted   === End of Compilation 3 ===
+** readformatted   === End of Compilation 4 ===
+1501-511  Compilation failed for file C919_001.f.

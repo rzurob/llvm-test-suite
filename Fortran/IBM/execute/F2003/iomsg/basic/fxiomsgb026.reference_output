@@ -1,0 +1,4 @@
+ 1525-083 The number of digits in the exponent field is not allowed to be 2004 for the E edit descriptor in a format specification.  The program will recover by assuming a default value.
+                                                                                                                  
+ 1525-083 The number of digits in the exponent field is not allowed to be 2004 for the G edit descriptor in a format specification.  The program will recover by assuming a default value.
+                                                                                                                  

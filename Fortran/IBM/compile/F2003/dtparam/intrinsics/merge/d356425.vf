@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"d356425.f", line 55.25: 1516-009 (S) NAMELIST, ENTRY, PROGRAM, SUBROUTINE, and statement function names are not permitted in this context.
+** d356425   === End of Compilation 2 ===
+1501-511  Compilation failed for file d356425.f.

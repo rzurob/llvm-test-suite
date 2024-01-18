@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpPtrAssignMainDeferred.scenario
+#FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - assign via pointers with deferred length in main program
+#CREATOR   = DF Manual Update
+#DATE      = 20090112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPtrAssignMainDeferred.f
+#OUTPUT    = dtpPtrAssignMainDeferred$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPtrAssignMainDeferred$(OBJ)
+#OUTPUT    = dtpPtrAssignMainDeferred$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPtrAssignMainDeferred$(EXE)
+#STDOUT    = dtpPtrAssignMainDeferred.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpPtrAssignMainDeferred$(product)vf) dtpPtrAssignMainDeferred.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME	   = F2003/dtparam/TCext/ace/unit_tests/ArrayConstructorEmpty11l_dlp_rb.scenario
+#FEATURE   = Derived Type Parameters (+ Array Constructor Enhancements)
+#CREATOR   = Glen Mateer (derived from work by Rob James)
+#DATE	   = 20080129
+#TEST_TYPE = Unit Test
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_FIXED_SOURCE_FORM)
+#INPUT		= $(tcasedir)ArrayConstructorEmpty11l_dlp_rb.f
+#OUTPUT		= ArrayConstructorEmpty11l_dlp_rb$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= ArrayConstructorEmpty11l_dlp_rb$(OBJ)
+#OUTPUT		= ArrayConstructorEmpty11l_dlp_rb$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= ArrayConstructorEmpty11l_dlp_rb$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

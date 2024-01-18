@@ -1,0 +1,10 @@
+stop at 91
+run
+step
+whatis x
+whatis x%i
+print x%i
+whatis x%l3
+whatis x%l3%r
+print x%l3%r
+cont

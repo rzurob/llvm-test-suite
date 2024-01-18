@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=valuefordtalloc003.scenario
+#FEATURE = Value attribute for derived types with allocatable components
+#CREATOR = Michael Selvanayagam
+#DATE    = 20060120
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)valuefordtalloc003.f
+#OUTPUT    = valuefordtalloc003$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = valuefordtalloc003$(OBJ)
+#OUTPUT    = valuefordtalloc003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = valuefordtalloc003$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

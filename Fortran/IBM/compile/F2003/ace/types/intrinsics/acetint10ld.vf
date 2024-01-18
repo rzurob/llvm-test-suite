@@ -1,0 +1,22 @@
+"acetint10ld.f", line 42.21: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint10ld.f", line 43.21: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint10ld.f", line 44.21: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint10ld.f", line 45.21: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint10ld.f", line 46.21: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint10ld.f", line 47.26: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint10ld.f", line 48.26: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint10ld.f", line 49.26: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint10ld.f", line 50.26: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint10ld.f", line 51.26: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint10ld.f", line 53.20: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint10ld.f", line 54.20: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint10ld.f", line 55.20: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint10ld.f", line 56.20: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint10ld.f", line 57.20: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint10ld.f", line 58.21: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint10ld.f", line 59.21: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint10ld.f", line 60.21: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint10ld.f", line 61.21: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint10ld.f", line 62.21: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+** acetint10ld   === End of Compilation 1 ===
+1501-510  Compilation successful for file acetint10ld.f.

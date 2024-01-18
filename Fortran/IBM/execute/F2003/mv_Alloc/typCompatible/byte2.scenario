@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       byte2.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)byte2.f
+#OUTPUT= byte2$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  byte2$(OBJ)
+#OUTPUT= byte2$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  byte2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

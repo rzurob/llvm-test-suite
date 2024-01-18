@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2008/intrinsics/csizeof/unit_tests/func/bit_test.scenario
+#FEATURE = F2008 ISO_C_BINDING - C_SIZEOF
+#CREATOR = Paul Liu
+#DATE    = 20101226
+#TEST_TYPE=FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)bit_test.f
+#OUTPUT    = bit_test$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = bit_test$(OBJ)
+#OUTPUT    = bit_test$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = bit_test$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

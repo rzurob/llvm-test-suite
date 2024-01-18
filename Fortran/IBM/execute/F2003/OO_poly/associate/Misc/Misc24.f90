@@ -1,0 +1,385 @@
+! *********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Misc24.f
+! %VERIFY:
+! %STDIN:
+! %STDOUT:
+! %EXECARGS:
+! %POSTCMD:
+! %END
+! *********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : Misc24
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Feb. 16, 2005
+!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Associate
+!*
+!*  SECONDARY FUNCTIONS TESTED :
+!*
+!*  REFERENCE                  : Feature 219934
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*  
+!*
+!* 
+!*  (ICE-299923)
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+
+  PROGRAM Misc24
+
+  ASSOCIATE ( A00 => 1_8 )
+  ASSOCIATE ( A01 => A00 )
+  ASSOCIATE ( A02 => A01 )
+  ASSOCIATE ( A03 => A02 )
+  ASSOCIATE ( A04 => A03 )
+  ASSOCIATE ( A05 => A04 )
+  ASSOCIATE ( A06 => A05 )
+  ASSOCIATE ( A07 => A06 )
+  ASSOCIATE ( A08 => A07 )
+  ASSOCIATE ( A09 => A08 )
+
+  ASSOCIATE ( A10 => A09 )
+  ASSOCIATE ( A11 => A10 )
+  ASSOCIATE ( A12 => A11 )
+  ASSOCIATE ( A13 => A12 )
+  ASSOCIATE ( A14 => A13 )
+  ASSOCIATE ( A15 => A14 )
+  ASSOCIATE ( A16 => A15 )
+  ASSOCIATE ( A17 => A16 )
+  ASSOCIATE ( A18 => A17 )
+  ASSOCIATE ( A19 => A18 )
+
+  ASSOCIATE ( A20 => A19 )
+  ASSOCIATE ( A21 => A20 )
+  ASSOCIATE ( A22 => A21 )
+  ASSOCIATE ( A23 => A22 )
+  ASSOCIATE ( A24 => A23 )
+  ASSOCIATE ( A25 => A24 )
+  ASSOCIATE ( A26 => A25 )
+  ASSOCIATE ( A27 => A26 )
+  ASSOCIATE ( A28 => A27 )
+  ASSOCIATE ( A29 => A28 )
+
+  ASSOCIATE ( A30 => A29 )
+  ASSOCIATE ( A31 => A30 )
+  ASSOCIATE ( A32 => A31 )
+  ASSOCIATE ( A33 => A32 )
+  ASSOCIATE ( A34 => A33 )
+  ASSOCIATE ( A35 => A34 )
+  ASSOCIATE ( A36 => A35 )
+  ASSOCIATE ( A37 => A36 )
+  ASSOCIATE ( A38 => A37 )
+  ASSOCIATE ( A39 => A38 )
+
+  ASSOCIATE ( A40 => A39 )
+  ASSOCIATE ( A41 => A40 )
+  ASSOCIATE ( A42 => A41 )
+  ASSOCIATE ( A43 => A42 )
+  ASSOCIATE ( A44 => A43 )
+  ASSOCIATE ( A45 => A44 )
+  ASSOCIATE ( A46 => A45 )
+  ASSOCIATE ( A47 => A46 )
+  ASSOCIATE ( A48 => A47 )
+  ASSOCIATE ( A49 => A48 )
+
+  ASSOCIATE ( A50 => A49 )
+  ASSOCIATE ( A51 => A50 )
+  ASSOCIATE ( A52 => A51 )
+  ASSOCIATE ( A53 => A52 )
+  ASSOCIATE ( A54 => A53 )
+  ASSOCIATE ( A55 => A54 )
+  ASSOCIATE ( A56 => A55 )
+  ASSOCIATE ( A57 => A56 )
+  ASSOCIATE ( A58 => A57 )
+  ASSOCIATE ( A59 => A58 )
+
+  ASSOCIATE ( A60 => A59 )
+  ASSOCIATE ( A61 => A60 )
+  ASSOCIATE ( A62 => A61 )
+  ASSOCIATE ( A63 => A62 )
+  ASSOCIATE ( A64 => A63 )
+  ASSOCIATE ( A65 => A64 )
+  ASSOCIATE ( A66 => A65 )
+  ASSOCIATE ( A67 => A66 )
+  ASSOCIATE ( A68 => A67 )
+  ASSOCIATE ( A69 => A68 )
+
+  ASSOCIATE ( A70 => A69 )
+  ASSOCIATE ( A71 => A70 )
+  ASSOCIATE ( A72 => A71 )
+  ASSOCIATE ( A73 => A72 )
+  ASSOCIATE ( A74 => A73 )
+  ASSOCIATE ( A75 => A74 )
+  ASSOCIATE ( A76 => A75 )
+  ASSOCIATE ( A77 => A76 )
+  ASSOCIATE ( A78 => A77 )
+  ASSOCIATE ( A79 => A78 )
+
+  ASSOCIATE ( A80 => A79 )
+  ASSOCIATE ( A81 => A80 )
+  ASSOCIATE ( A82 => A81 )
+  ASSOCIATE ( A83 => A82 )
+  ASSOCIATE ( A84 => A83 )
+  ASSOCIATE ( A85 => A84 )
+  ASSOCIATE ( A86 => A85 )
+  ASSOCIATE ( A87 => A86 )
+  ASSOCIATE ( A88 => A87 )
+  ASSOCIATE ( A89 => A88 )
+
+  ASSOCIATE ( A90 => A89 )
+  ASSOCIATE ( A91 => A90 )
+  ASSOCIATE ( A92 => A91 )
+  ASSOCIATE ( A93 => A92 )
+  ASSOCIATE ( A94 => A93 )
+  ASSOCIATE ( A95 => A94 )
+  ASSOCIATE ( A96 => A95 )
+  ASSOCIATE ( A97 => A96 )
+  ASSOCIATE ( A98 => A97 )
+  ASSOCIATE ( A99 => A98 )
+
+
+  IF (             &
+  & A00 .NE. 1_8 .OR. &
+  & A01 .NE. 1_8 .OR. &
+  & A02 .NE. 1_8 .OR. &
+  & A03 .NE. 1_8 .OR. &
+  & A04 .NE. 1_8 .OR. &
+  & A05 .NE. 1_8 .OR. &
+  & A06 .NE. 1_8 .OR. &
+  & A07 .NE. 1_8 .OR. &
+  & A08 .NE. 1_8 .OR. &
+  & A09 .NE. 1_8 .OR. &
+  &                   &
+  & A10 .NE. 1_8 .OR. &
+  & A11 .NE. 1_8 .OR. &
+  & A12 .NE. 1_8 .OR. &
+  & A13 .NE. 1_8 .OR. &
+  & A14 .NE. 1_8 .OR. &
+  & A15 .NE. 1_8 .OR. &
+  & A16 .NE. 1_8 .OR. &
+  & A17 .NE. 1_8 .OR. &
+  & A18 .NE. 1_8 .OR. &
+  & A19 .NE. 1_8 .OR. &
+  &                   &
+  & A20 .NE. 1_8 .OR. &
+  & A21 .NE. 1_8 .OR. &
+  & A22 .NE. 1_8 .OR. &
+  & A23 .NE. 1_8 .OR. &
+  & A24 .NE. 1_8 .OR. &
+  & A25 .NE. 1_8 .OR. &
+  & A26 .NE. 1_8 .OR. &
+  & A27 .NE. 1_8 .OR. &
+  & A28 .NE. 1_8 .OR. &
+  & A29 .NE. 1_8 .OR. &
+  &                   &
+  & A30 .NE. 1_8 .OR. &
+  & A31 .NE. 1_8 .OR. &
+  & A32 .NE. 1_8 .OR. &
+  & A33 .NE. 1_8 .OR. &
+  & A34 .NE. 1_8 .OR. &
+  & A35 .NE. 1_8 .OR. &
+  & A36 .NE. 1_8 .OR. &
+  & A37 .NE. 1_8 .OR. &
+  & A38 .NE. 1_8 .OR. &
+  & A39 .NE. 1_8 .OR. &
+  &                   &
+  & A40 .NE. 1_8 .OR. &
+  & A41 .NE. 1_8 .OR. &
+  & A42 .NE. 1_8 .OR. &
+  & A43 .NE. 1_8 .OR. &
+  & A44 .NE. 1_8 .OR. &
+  & A45 .NE. 1_8 .OR. &
+  & A46 .NE. 1_8 .OR. &
+  & A47 .NE. 1_8 .OR. &
+  & A48 .NE. 1_8 .OR. &
+  & A49 .NE. 1_8 .OR. &
+  &                   &
+  & A50 .NE. 1_8 .OR. &
+  & A51 .NE. 1_8 .OR. &
+  & A52 .NE. 1_8 .OR. &
+  & A53 .NE. 1_8 .OR. &
+  & A54 .NE. 1_8 .OR. &
+  & A55 .NE. 1_8 .OR. &
+  & A56 .NE. 1_8 .OR. &
+  & A57 .NE. 1_8 .OR. &
+  & A58 .NE. 1_8 .OR. &
+  & A59 .NE. 1_8 .OR. &
+  &                   &
+  & A60 .NE. 1_8 .OR. &
+  & A61 .NE. 1_8 .OR. &
+  & A62 .NE. 1_8 .OR. &
+  & A63 .NE. 1_8 .OR. &
+  & A64 .NE. 1_8 .OR. &
+  & A65 .NE. 1_8 .OR. &
+  & A66 .NE. 1_8 .OR. &
+  & A67 .NE. 1_8 .OR. &
+  & A68 .NE. 1_8 .OR. &
+  & A69 .NE. 1_8 .OR. &
+  &                   &
+  & A70 .NE. 1_8 .OR. &
+  & A71 .NE. 1_8 .OR. &
+  & A72 .NE. 1_8 .OR. &
+  & A73 .NE. 1_8 .OR. &
+  & A74 .NE. 1_8 .OR. &
+  & A75 .NE. 1_8 .OR. &
+  & A76 .NE. 1_8 .OR. &
+  & A77 .NE. 1_8 .OR. &
+  & A78 .NE. 1_8 .OR. &
+  & A79 .NE. 1_8 .OR. &
+  &                   &
+  & A80 .NE. 1_8 .OR. &
+  & A81 .NE. 1_8 .OR. &
+  & A82 .NE. 1_8 .OR. &
+  & A83 .NE. 1_8 .OR. &
+  & A84 .NE. 1_8 .OR. &
+  & A85 .NE. 1_8 .OR. &
+  & A86 .NE. 1_8 .OR. &
+  & A87 .NE. 1_8 .OR. &
+  & A88 .NE. 1_8 .OR. &
+  & A89 .NE. 1_8 .OR. &
+  &                   &
+  & A90 .NE. 1_8 .OR. &
+  & A91 .NE. 1_8 .OR. &
+  & A92 .NE. 1_8 .OR. &
+  & A93 .NE. 1_8 .OR. &
+  & A94 .NE. 1_8 .OR. &
+  & A95 .NE. 1_8 .OR. &
+  & A96 .NE. 1_8 .OR. &
+  & A97 .NE. 1_8 .OR. &
+  & A98 .NE. 1_8 .OR. &
+  & A99 .NE. 1_8      &
+  &                   &
+  & ) STOP 33
+
+
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+  END ASSOCIATE
+
+  END
+
+

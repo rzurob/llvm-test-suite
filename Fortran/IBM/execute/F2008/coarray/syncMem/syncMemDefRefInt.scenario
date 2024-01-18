@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/syncMemDefRefInt
+#FEATURE        = CAF SYNC MEMORY - sync memory in different contexts: main and internal subroutine
+#CREATOR        = DF
+#DATE           = 2010-09-22
+#TEST_TYPE      = sanity
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)syncMemDefRefInt.f
+#OUTPUT = syncMemDefRefInt$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = syncMemDefRefInt$(OBJ)
+#OUTPUT = syncMemDefRefInt$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = syncMemDefRefInt$(EXE)
+#STDOUT = syncMemDefRefInt.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

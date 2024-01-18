@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/arithmetic/dataPtrUnaryCmplx.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071221
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrUnaryCmplx_mod.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrUnaryCmplx_mod$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrUnaryCmplx.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrUnaryCmplx$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrUnaryCmplx$(OBJ) dataPtrUnaryCmplx_mod$(OBJ)
+#OUTPUT    = dataPtrUnaryCmplx$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrUnaryCmplx$(EXE)
+#STDOUT    = dataPtrUnaryCmplx.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrUnaryCmplx.out $($(tcasedir)dataPtrUnaryCmplx$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

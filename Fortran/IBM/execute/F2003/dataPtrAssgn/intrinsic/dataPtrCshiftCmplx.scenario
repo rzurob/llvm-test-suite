@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrCshiftCmplx.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrCshiftCmplx.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrCshiftCmplx$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrCshiftCmplx$(OBJ)
+#OUTPUT    = dataPtrCshiftCmplx$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrCshiftCmplx$(EXE)
+#STDOUT    = dataPtrCshiftCmplx.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrCshiftCmplx.out $($(tcasedir)dataPtrCshiftCmplx$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

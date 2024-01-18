@@ -1,0 +1,15 @@
+ twotofour
+ setint2
+ 10 10
+ fourtofour
+ setint4
+ 100 100
+ eighttofour
+ setint8
+ 10000 10000
+ realfourtoint
+ setreal4
+ 100000 100000
+ realeighttoint
+ setreal8
+ 9999999 9999999

@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/allocate/TypeSpec/allocfun001.f
+#FEATURE   = DTP - Allocate with type-spec
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20090126
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)allocfun001.f
+#OUTPUT    = allocfun001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = allocfun001$(OBJ)
+#OUTPUT    = allocfun001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = allocfun001$(EXE)
+#STDOUT    = allocfun001.out
+#ENDCMD
+#ENDCONTROL
+
+#ENDSCENARIO

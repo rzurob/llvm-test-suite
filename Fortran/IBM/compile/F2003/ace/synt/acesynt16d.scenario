@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/synt/acesynt16d.scenario
+#FEATURE	= Array constructor enhancement syntax tests
+#CREATOR	= DF Manual Update
+#DATE		= 20060808
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acesynt16d.f
+#OPTS       = -qdebug=noline070112:shutup
+#OUTPUT		= acesynt16d$(OBJ)
+#STDERR		= acesynt16d.stderr
+#VALIDRCS	= $(RC_ANY)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $(tcasedir)acesynt16d.vf acesynt16d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

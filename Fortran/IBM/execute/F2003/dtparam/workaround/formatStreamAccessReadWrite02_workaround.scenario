@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/format/formatStreamAccessReadWrite02_workaround.scenario
+#FEATURE   = 359704
+#CREATOR   = Nancy Wang
+#DATE      = Dec. 12 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)formatStreamAccessReadWrite02_workaround.f
+#OUTPUT= formatStreamAccessReadWrite02_workaround$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = formatStreamAccessReadWrite02_workaround$(OBJ)
+#OUTPUT= formatStreamAccessReadWrite02_workaround$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = formatStreamAccessReadWrite02_workaround$(EXE)
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT  = $($(tcasedir)formatStreamAccessReadWrite02_workaround$(product)vf) formatStreamAccessReadWrite02_workaround.out
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

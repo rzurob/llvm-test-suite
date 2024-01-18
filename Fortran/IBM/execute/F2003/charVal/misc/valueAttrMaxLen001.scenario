@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/charVal/misc/valueAttrMaxLen001.scenario
+#FEATURE	= VALUE Attribute -- Character Length > 1
+#CREATOR	= GM Manual Creation
+#DATE		= 20060425
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)valueAttrMaxLen001.f
+#OUTPUT		= valueAttrMaxLen001$(OBJ)
+#ENDCMD
+
+!
+!  -bmaxdata = (512 Mb * 1048576 bytes/Mb) = 536870912 bytes
+!  -bmaxstack experiences similar results
+!
+#CMD		= F_LINK
+#IF on(aix)
+  #OPTS		= -bmaxdata:536870912
+#ENDIF
+#INPUT		= valueAttrMaxLen001$(OBJ)
+#OUTPUT		= valueAttrMaxLen001$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= valueAttrMaxLen001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

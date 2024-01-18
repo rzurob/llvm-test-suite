@@ -1,0 +1,60 @@
+ print_b_b1darray:
+ b00
+ b11b12b13
+ print_b_b2darray:
+ b00
+ b21b22b23b24
+ print_b_b1darray:
+ b00
+ c11c12c13
+ 101 102 103
+ print_b_b2darray:
+ b00
+ c21c22c23c24
+ 201 202 203 204
+ print_c_c1darray:
+ c00
+ 1
+ c11c12c13
+ 101 102 103
+ print_b_b2darray:
+ c00
+ 1
+ c21c22c23c24
+ 201 202 203 204
+ print_c_c3darray:
+ c00
+ 1
+ c31c32c33c34c35c36c37c38
+ 301 302 303 304 305 306 307 308
+ print_c_c3darray:
+ c00
+ 1
+ b31b32b33b34b35b36b37b38
+ 301 302 303 304 305 306 307 308
+ print_b_b1darray:
+ b00
+ b11b13
+ print_b_b2darray:
+ b00
+ b21b23
+ print_c_c1darray:
+ c00
+ 1
+ c13c12c11
+ 103 102 101
+ print_b_b2darray:
+ c00
+ 1
+ c24c23c22c21
+ 204 203 202 201
+ print_c_c3darray:
+ c00
+ 1
+ c38c37c36c35c34c33c32c31
+ 308 307 306 305 304 303 302 301
+ print_c_c3darray:
+ c00
+ 1
+ b38b37b36b35b34b33b32b31
+ 308 307 306 305 304 303 302 301

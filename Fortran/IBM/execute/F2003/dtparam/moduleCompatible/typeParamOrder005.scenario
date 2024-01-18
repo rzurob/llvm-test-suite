@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = typeParamOrder005.scenario
+#FEATURE   =
+#CREATOR   = MZ adapted from F2003/dtparam/dtSpec/typeParamOrder005.f
+#DATE      = 20100504
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_ALT_COMPILE
+#INPUT     = $(tcasedir)typeParamOrder005_mod.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = typeParamOrder005_mod$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)typeParamOrder005_main.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = typeParamOrder005_main$(OBJ)
+#ENDCMD
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = typeParamOrder005_mod$(OBJ) typeParamOrder005_main$(OBJ)
+#OUTPUT    = typeParamOrder005$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = typeParamOrder005$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/unformatted/section9.5.2/read/dummyArg003a.scenario
+#FEATURE = OO_dtio/unformatted/section9.5.2 tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dummyArg003a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dummyArg003a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  dummyArg003a$(OBJ)
+#OUTPUT    = dummyArg003a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dummyArg003a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/extends/fext001.scenario
+#FEATURE   = OO_type tests - regression run bucket
+#CREATOR   = GB copy from OO_type/extends/fext001.scenario
+#DATE      = 20070423
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fext001.f
+#OUTPUT    = fext001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fext001$(OBJ)
+#OUTPUT    = fext001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fext001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"array002.f", line 77.27: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+"array002.f", line 78.27: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+"array002.f", line 80.27: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+"array002.f", line 81.27: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+** array002   === End of Compilation 2 ===
+1501-511  Compilation failed for file array002.f.

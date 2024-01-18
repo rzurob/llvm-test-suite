@@ -1,0 +1,3 @@
+"saSyncStatd.f", line 32.14: 1516-219 (E) The status specifier must not be specified for a SYNC statement.  The status specifier is ignored.
+** sasyncstatd   === End of Compilation 1 ===
+1501-510  Compilation successful for file saSyncStatd.f.

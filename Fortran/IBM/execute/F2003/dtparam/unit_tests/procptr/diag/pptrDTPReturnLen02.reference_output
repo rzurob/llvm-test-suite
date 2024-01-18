@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"pptrDTPReturnLen02.f", line 23.14: 1516-044 (S) A conversion from type dt is not permitted.
+** _main   === End of Compilation 2 ===
+** func1   === End of Compilation 3 ===
+1501-511  Compilation failed for file pptrDTPReturnLen02.f.

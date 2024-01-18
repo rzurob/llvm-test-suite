@@ -1,0 +1,15 @@
+modeBlankNaNInfIO001.scenario
+modeBlankNaNInfIO002.scenario
+modeBlankNaNInfIO003.scenario
+modeDecimalNaNInfIO001.scenario
+modeDecimalNaNInfIO002.scenario
+modeDelimNaNInfIO001.scenario
+modeDelimNaNInfIO002.scenario
+modeMixNaNInfIO001.scenario
+modePadNaNInfIO001.scenario
+modeRoundNaNInfIO001.scenario
+modeRoundNaNInfIO002.scenario
+modeSignNaNInfIO001.scenario
+modeSignNaNInfIO002.scenario
+modeSignNaNInfIO003.scenario
+modeSignNaNInfIO004.scenario

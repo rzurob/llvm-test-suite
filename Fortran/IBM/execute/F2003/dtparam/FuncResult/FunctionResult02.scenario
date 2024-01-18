@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/FuncResult/FunctionResult02.scenario
+#FEATURE   = DTP - Function Result
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20090316
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)FunctionResult02.f
+#OUTPUT    = FunctionResult02$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = FunctionResult02$(OBJ)
+#OUTPUT    = FunctionResult02$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = FunctionResult02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

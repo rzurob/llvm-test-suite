@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"StrComp.f", line 77.3: 1514-638 (S) In the structure component reference, part-name bcomp must not have the POINTER attribute if it is to the right of a part-ref with non-zero rank.
+"StrComp.f", line 79.3: 1514-638 (S) In the structure component reference, part-name bcomp must not have the POINTER attribute if it is to the right of a part-ref with non-zero rank.
+"StrComp.f", line 81.3: 1514-638 (S) In the structure component reference, part-name bcomp must not have the POINTER attribute if it is to the right of a part-ref with non-zero rank.
+"StrComp.f", line 83.3: 1514-638 (S) In the structure component reference, part-name bcomp must not have the POINTER attribute if it is to the right of a part-ref with non-zero rank.
+** strcomp   === End of Compilation 2 ===
+1501-511  Compilation failed for file StrComp.f.

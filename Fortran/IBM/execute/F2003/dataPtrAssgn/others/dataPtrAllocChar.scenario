@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrAllocChar.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrAllocChar.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrAllocChar$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrAllocChar$(OBJ)
+#OUTPUT    = dataPtrAllocChar$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrAllocChar$(EXE)
+#STDOUT    = dataPtrAllocChar.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrAllocChar.out $($(tcasedir)dataPtrAllocChar$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

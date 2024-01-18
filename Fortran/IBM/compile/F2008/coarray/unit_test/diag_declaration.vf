@@ -1,0 +1,2 @@
+"diag_declaration.f", line 24.16: 1514-768 (S) Support for coarrays requires the CAF option to be specified.
+1501-511  Compilation failed for file diag_declaration.f.

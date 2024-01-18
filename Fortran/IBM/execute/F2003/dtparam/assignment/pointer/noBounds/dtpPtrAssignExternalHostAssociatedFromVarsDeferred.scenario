@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignExternalHostAssociatedFromVarsDeferred.scenario
+#FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - assign variables to host associated variables via fixed-length pointers in an external subprogram - deferred
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPtrAssignExternalHostAssociatedFromVarsDeferred.f
+#OUTPUT    = dtpPtrAssignExternalHostAssociatedFromVarsDeferred$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPtrAssignExternalHostAssociatedFromVarsDeferred$(OBJ)
+#OUTPUT    = dtpPtrAssignExternalHostAssociatedFromVarsDeferred$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPtrAssignExternalHostAssociatedFromVarsDeferred$(EXE)
+#STDOUT    = dtpPtrAssignExternalHostAssociatedFromVarsDeferred.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpPtrAssignExternalHostAssociatedFromVarsDeferred$(product)vf) dtpPtrAssignExternalHostAssociatedFromVarsDeferred.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

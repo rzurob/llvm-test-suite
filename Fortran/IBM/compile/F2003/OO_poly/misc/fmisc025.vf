@@ -1,0 +1,5 @@
+"fmisc025.f", line 55.16: 1511-139 (S) Associate name x is not associated with an entity that can be defined. x must not be redefined or become undefined.
+"fmisc025.f", line 59.16: 1511-139 (S) Associate name x is not associated with an entity that can be defined. x must not be redefined or become undefined.
+"fmisc025.f", line 63.16: 1516-089 (S) Statement entity, x, was seen with conflicting attributes.
+** fmisc025   === End of Compilation 1 ===
+1501-511  Compilation failed for file fmisc025.f.

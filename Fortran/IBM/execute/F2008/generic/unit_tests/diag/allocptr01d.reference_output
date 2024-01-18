@@ -1,0 +1,4 @@
+"allocptr01d.f", line 11.6: 1514-699 (S) Procedure "func1" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "func2", present and type incompatible, present with different kind type parameters, or present with a different rank.
+"allocptr01d.f", line 26.12: 1513-062 (S) Generic procedure reference can not be resolved due to incorrect actual argument attributes.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file allocptr01d.f.

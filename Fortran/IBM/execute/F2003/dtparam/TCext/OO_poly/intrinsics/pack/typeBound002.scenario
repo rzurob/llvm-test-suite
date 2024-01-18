@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/pack/typeBound002.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070927
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)typeBound002.f
+#OUTPUT    = typeBound002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = typeBound002$(OBJ)
+#OUTPUT    = typeBound002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = typeBound002$(EXE)
+#STDOUT    = typeBound002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)typeBound002$(product)vf) typeBound002.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,57 @@
+ Partial lists:
+ Printing 1 to 2 of 4 students ( 6 8 )
+ 1 Jonas  Salk    : 1234567
+ 2 Albert Einstein: 2345678
+ Printing 2 to 3 of 3 students ( 8 16 )
+ 2 Nicolai  Rimsky-Korsakov : 2345678
+ 3 Modest   Mussorgsky      : 3456789
+ Complete lists:
+ Printing 1 to 4 of 4 students ( 6 8 )
+ 1 Jonas  Salk    : 1234567
+ 2 Albert Einstein: 2345678
+ 3 Marie  Curie   : 3456789
+ 4 Isaac  Newton  : 4567890
+ Printing 1 to 3 of 3 students ( 8 16 )
+ 1 Pyotr    Tschaikovsky    : 1234567
+ 2 Nicolai  Rimsky-Korsakov : 2345678
+ 3 Modest   Mussorgsky      : 3456789
+ Targets after replace:
+ Printing 1 to 4 of 4 students ( 6 8 )
+ 1 Jonas  Salk    : 1234567
+ 2 Albert Einstein: 2345678
+ 3 Marie  Curie   : 3456789
+ 4 Isaac  Newton  : 4567890
+ Printing 1 to 3 of 3 students ( 8 16 )
+ 1 Pyotr    Tschaikovsky    : 1234567
+ 2 Nicolai  Rimsky-Korsakov : 2345678
+ 3 Modest   Mussorgsky      : 3456789
+ Sources after replace:
+ Printing 1 to 4 of 4 students ( 6 8 )
+ 1 Jonas  Salk    : 1234567
+ 2 Albert Einstein: 2345678
+ 3 Marie  Curie   : 3456789
+ 4 Isaac  Newton  : 4567890
+ Printing 1 to 3 of 3 students ( 8 16 )
+ 1 Pyotr    Tschaikovsky    : 1234567
+ 2 Nicolai  Rimsky-Korsakov : 2345678
+ 3 Modest   Mussorgsky      : 3456789
+ Targets after update:
+ Printing 1 to 4 of 4 students ( 6 8 )
+ 1 Jonas  Salk    : 1234567
+ 2 Albert Einstein: 2345678
+ 3 Ernest Rutherfo: 3456789
+ 4 Isaac  Newton  : 4567890
+ Printing 1 to 3 of 3 students ( 8 16 )
+ 1 Wolfgang Mozart          : 1234567
+ 2 Nicolai  Rimsky-Korsakov : 2345678
+ 3 Modest   Mussorgsky      : 3456789
+ Targets after zap:
+ Printing 1 to 4 of 4 students ( 6 8 )
+ 1                : 0
+ 2                : 0
+ 3                : 0
+ 4                : 0
+ Printing 1 to 3 of 3 students ( 8 16 )
+ 1                          : 0
+ 2                          : 0
+ 3                          : 0

@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/derived/acetdt32kk_l.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
+			   Procedure Pointers can be Invoked in implied-do for data		\
+			   (Derived Type))
+#CREATOR	= Glen Mateer (based on work by David Forster)
+#DATE		= 20080114
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt32kk_l.f
+#OUTPUT		= acetdt32kk_l$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt32kk_l$(OBJ)
+#OUTPUT		= acetdt32kk_l$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt32kk_l$(EXE)
+#STDOUT		= acetdt32kk_l.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -a1e-6
+#INPUT		= $($(tcasedir)acetdt32kk_l$(product)vf) acetdt32kk_l.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

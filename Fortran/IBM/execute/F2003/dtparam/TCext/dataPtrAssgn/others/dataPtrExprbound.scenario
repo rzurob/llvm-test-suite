@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/others/dataPtrExprbound.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071217
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrExprbound.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrExprbound$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrExprbound$(OBJ)
+#OUTPUT    = dataPtrExprbound$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrExprbound$(EXE)
+#STDOUT    = dataPtrExprbound.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrExprbound.out $($(tcasedir)dataPtrExprbound$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

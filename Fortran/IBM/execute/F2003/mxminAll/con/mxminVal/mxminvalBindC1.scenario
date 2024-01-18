@@ -1,0 +1,46 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/mxminAll/con/mxminVal/mxminvalBindC1.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)mxminvalBindC1.c
+#OPTS      = $(C_COMPILER_OPTS)
+#OUTPUT    = mxminvalCBindC1$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mxminvalBindC1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = mxminvalBindC1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = mxminvalCBindC1$(OBJ) mxminvalBindC1$(OBJ)
+#OUTPUT    = mxminvalBindC1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminvalBindC1$(EXE)
+#STDOUT    = mxminvalBindC1.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $(tcasedir)mxminvalBindC1.vf mxminvalBindC1.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

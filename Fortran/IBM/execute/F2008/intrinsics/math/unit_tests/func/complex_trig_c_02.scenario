@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/intrinsics/math/unit_tests/func/complex_trig_c_02.scenario
+#FEATURE   = Math intrinsic functions
+#CREATOR   = Rafik Zurob
+#DATE      = 20110105
+#TEST_TYPE = unit tests
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION) $(OPT_REALSIZE_8)
+#INPUT     = $(tcasedir)complex_trig_c_02.f
+#OUTPUT    = complex_trig_c_02$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     = complex_trig_c_02$(OBJ)
+#OUTPUT    = complex_trig_c_02$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = complex_trig_c_02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

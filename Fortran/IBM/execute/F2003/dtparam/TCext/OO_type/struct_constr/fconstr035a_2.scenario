@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/struct_constr/fconstr035a_2.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB per defect 347092 (see also 346653)
+#DATE      = 20070709
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fconstr035a_2.f
+#OUTPUT    = fconstr035a_2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fconstr035a_2$(OBJ)
+#OUTPUT    = fconstr035a_2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fconstr035a_2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

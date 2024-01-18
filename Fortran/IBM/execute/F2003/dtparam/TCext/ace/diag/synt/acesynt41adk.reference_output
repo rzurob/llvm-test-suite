@@ -1,0 +1,23 @@
+"acesynt41adk.f", line 101.30: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41adk.f", line 107.30: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41adk.f", line 113.30: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41adk.f", line 120.30: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41adk.f", line 126.30: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41adk.f", line 132.30: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41adk.f", line 139.30: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41adk.f", line 145.30: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41adk.f", line 151.30: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41adk.f", line 158.27: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41adk.f", line 164.27: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41adk.f", line 170.27: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41adk.f", line 177.32: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41adk.f", line 183.32: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41adk.f", line 189.32: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41adk.f", line 196.30: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41adk.f", line 197.27: 1516-081 (S) Upper bound for the last dimension of an assumed-size array must be specified.
+"acesynt41adk.f", line 203.30: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41adk.f", line 204.27: 1516-081 (S) Upper bound for the last dimension of an assumed-size array must be specified.
+"acesynt41adk.f", line 210.30: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41adk.f", line 211.27: 1516-081 (S) Upper bound for the last dimension of an assumed-size array must be specified.
+** acesynt41adk   === End of Compilation 1 ===
+1501-511  Compilation failed for file acesynt41adk.f.

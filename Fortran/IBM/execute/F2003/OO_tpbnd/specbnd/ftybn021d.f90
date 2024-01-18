@@ -1,0 +1,85 @@
+!**********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD: rm -f *.mod 
+! %COMPOPTS: -qfree=f90 
+! %GROUP: ftybn021d.f
+! %VERIFY: 
+! %STDIN:
+! %STDOUT: 
+! %EXECARGS:
+! %POSTCMD: 
+! %END
+!**********************************************************************
+!**********************************************************************
+!*  ===================================================================
+!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : ftybn021d.f 
+!*  TEST CASE TITLE            : type-bound procedure
+!*
+!*  PROGRAMMER                 : Catherine Sun
+!*  DATE                       : 
+!*  ORIGIN                     : IBM Software Solutions Toronto Lab
+!*  
+!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute 
+!*
+!*  SECONDARY FUNCTIONS TESTED : overriding 
+!*
+!*  DESCRIPTION                : public the private binding procedure of  
+!*                               parent in extended type. Binding procedure
+!*                               without dummy arguments.
+!*                             
+!*                            
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+
+	module mod	      
+   private
+		type, private :: base 
+      integer :: x
+		contains
+      procedure, nopass :: bind => proc1
+		end type base
+
+   	type, extends(base), public :: parent
+ 		contains
+      procedure, nopass :: bind => proc2
+ 		procedure, nopass :: bind_parent => proc2
+		end type
+
+      type, extends(parent), public :: child 
+      contains
+      procedure, nopass :: bind => proc3
+      procedure, nopass :: bind_child => proc3
+      end type
+
+      contains
+      integer function proc1()
+         proc1 = 100    
+      end function proc1
+
+      integer function proc2()
+         proc2 = 200 
+      end function proc2
+
+      integer function proc3()
+         proc3 = 300
+      end function proc3
+	end module     
+
+   use mod
+
+   type(parent) :: parent_dt 
+   type(child) :: child_dt
+
+   if(parent_dt%bind() .ne. 200)          error stop 2
+   if(parent_dt%bind_parent() .ne. 200)   error stop 3
+   if(child_dt%bind() .ne. 300)           error stop 4
+   if(child_dt%bind_child() .ne. 300)     error stop 5
+ 
+
+  end
+   

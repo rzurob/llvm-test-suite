@@ -1,0 +1,5 @@
+"fmisc015a2.f", line 45.9: 1511-139 (S) Associate name x%i1 is not associated with an entity that can be defined. x%i1 must not be redefined or become undefined.
+"fmisc015a2.f", line 47.21: 1511-139 (S) Associate name x%r1 is not associated with an entity that can be defined. x%r1 must not be redefined or become undefined.
+"fmisc015a2.f", line 48.19: 1511-139 (S) Associate name x%i2 is not associated with an entity that can be defined. x%i2 must not be redefined or become undefined.
+** fmisc015a2   === End of Compilation 1 ===
+1501-511  Compilation failed for file fmisc015a2.f.

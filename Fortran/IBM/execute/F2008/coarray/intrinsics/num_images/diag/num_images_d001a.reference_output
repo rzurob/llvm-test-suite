@@ -1,0 +1,6 @@
+"num_images_d001a.f", line 35.9: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "num_images".
+"num_images_d001a.f", line 39.11: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "num_images".
+"num_images_d001a.f", line 42.11: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "num_images".
+"num_images_d001a.f", line 43.11: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "num_images".
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file num_images_d001a.f.

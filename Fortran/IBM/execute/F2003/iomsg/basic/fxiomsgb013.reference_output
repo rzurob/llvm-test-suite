@@ -1,0 +1,2 @@
+ 1525-025 The RECL= specifier is missing in the OPEN statement for unit 8 while the ACCESS= specifier is set to DIRECT.  The program will recover by ignoring the OPEN statement.
+                                                                                                                           

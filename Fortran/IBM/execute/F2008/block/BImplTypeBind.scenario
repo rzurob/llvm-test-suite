@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BImplTypeBind.scenario
+#FEATURE   = F2008 BLOCK - implicit typing (var appears in BIND statement)
+#CREATOR   = DF Manual Update
+#DATE      = 20101214
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)BImplTypeBind.f
+#OUTPUT    = BImplTypeBind$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = BImplTypeBind$(OBJ)
+#OUTPUT    = BImplTypeBind$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = BImplTypeBind$(EXE)
+#STDOUT    = BImplTypeBind.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)BImplTypeBind$(product)vf) BImplTypeBind.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

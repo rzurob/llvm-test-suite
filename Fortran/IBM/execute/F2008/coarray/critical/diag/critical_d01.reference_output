@@ -1,0 +1,2 @@
+"critical_d01.f", line 28.2: 1514-768 (S) Support for coarrays requires the CAF option to be specified.
+1501-511  Compilation failed for file critical_d01.f.

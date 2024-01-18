@@ -1,0 +1,40 @@
+ lbounds of data are -1 0 1
+ ubounds of data are 0 1 2
+ element: -1 0 1
+ 1 c1             
+ element: 0 0 1
+ 2 c1             
+ element: -1 1 1
+ 3 c1             
+ element: 0 1 1
+ 4 c1             
+ element: -1 0 2
+ 5 c1             
+ element: 0 0 2
+ 6 c1             
+ element: -1 1 2
+ 7 c1             
+ element: 0 1 2
+ 8 c1             
+ 
+ intrinsic assignment
+ 
+ lbounds of data are -1 0 1
+ ubounds of data are 0 1 2
+ element: -1 0 1
+ 1 c1             
+ element: 0 0 1
+ 2 c1             
+ element: -1 1 1
+ 3 c1             
+ element: 0 1 1
+ 4 c1             
+ element: -1 0 2
+ 5 c1             
+ element: 0 0 2
+ 6 c1             
+ element: -1 1 2
+ 7 c1             
+ element: 0 1 2
+ 8 c1             
+ data in dataType not allocated

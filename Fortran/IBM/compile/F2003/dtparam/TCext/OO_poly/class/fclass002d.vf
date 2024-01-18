@@ -1,0 +1,3 @@
+"fclass002d.f", line 44.14: 1512-138 (S) A polymorphic entity must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+** fclass002d   === End of Compilation 1 ===
+1501-511  Compilation failed for file fclass002d.f.

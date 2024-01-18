@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/arithmetic/dataPtrNE1Char.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071216
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrNE1Char.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrNE1Char$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrNE1Char$(OBJ)
+#OUTPUT    = dataPtrNE1Char$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrNE1Char$(EXE)
+#STDOUT    = dataPtrNE1Char.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrNE1Char.out $($(tcasedir)dataPtrNE1Char$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

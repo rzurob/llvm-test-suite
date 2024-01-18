@@ -1,0 +1,27 @@
+** mod   === End of Compilation 1 ===
+"acetdt476fd.f", line 87.16: 1511-142 (S) Identifier notused specified in the array constructor has not been defined in a derived type definition.
+"acetdt476fd.f", line 88.16: 1511-142 (S) Identifier notused specified in the array constructor has not been defined in a derived type definition.
+"acetdt476fd.f", line 89.16: 1511-142 (S) Identifier notused specified in the array constructor has not been defined in a derived type definition.
+"acetdt476fd.f", line 90.16: 1511-142 (S) Identifier notused specified in the array constructor has not been defined in a derived type definition.
+"acetdt476fd.f", line 91.16: 1511-142 (S) Identifier notused specified in the array constructor has not been defined in a derived type definition.
+"acetdt476fd.f", line 92.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476fd.f", line 92.28: 1511-142 (S) Identifier notused specified in the array constructor has not been defined in a derived type definition.
+"acetdt476fd.f", line 94.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476fd.f", line 94.28: 1511-142 (S) Identifier notused specified in the array constructor has not been defined in a derived type definition.
+"acetdt476fd.f", line 96.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476fd.f", line 96.28: 1511-142 (S) Identifier notused specified in the array constructor has not been defined in a derived type definition.
+"acetdt476fd.f", line 100.15: 1511-142 (S) Identifier notused specified in the array constructor has not been defined in a derived type definition.
+"acetdt476fd.f", line 101.15: 1511-142 (S) Identifier notused specified in the array constructor has not been defined in a derived type definition.
+"acetdt476fd.f", line 102.15: 1511-142 (S) Identifier notused specified in the array constructor has not been defined in a derived type definition.
+"acetdt476fd.f", line 103.15: 1511-142 (S) Identifier notused specified in the array constructor has not been defined in a derived type definition.
+"acetdt476fd.f", line 104.15: 1511-142 (S) Identifier notused specified in the array constructor has not been defined in a derived type definition.
+"acetdt476fd.f", line 105.15: 1511-142 (S) Identifier notused specified in the array constructor has not been defined in a derived type definition.
+"acetdt476fd.f", line 106.15: 1511-142 (S) Identifier notused specified in the array constructor has not been defined in a derived type definition.
+"acetdt476fd.f", line 107.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476fd.f", line 107.27: 1511-142 (S) Identifier notused specified in the array constructor has not been defined in a derived type definition.
+"acetdt476fd.f", line 109.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476fd.f", line 109.27: 1511-142 (S) Identifier notused specified in the array constructor has not been defined in a derived type definition.
+"acetdt476fd.f", line 111.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476fd.f", line 111.27: 1511-142 (S) Identifier notused specified in the array constructor has not been defined in a derived type definition.
+** acetdt476fd   === End of Compilation 2 ===
+1501-511  Compilation failed for file acetdt476fd.f.

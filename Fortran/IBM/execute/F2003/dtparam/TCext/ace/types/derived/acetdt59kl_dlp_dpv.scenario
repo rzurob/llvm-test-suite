@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/derived/acetdt59kl_dlp_dpv.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
+			  self-referential assignment, including array sections (derived))
+#CREATOR	= Glen Mateer (derived from work by David Forster)
+#DATE		= 20080123
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt59kl_dlp_dpv.f
+#OUTPUT		= acetdt59kl_dlp_dpv$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt59kl_dlp_dpv$(OBJ)
+#OUTPUT		= acetdt59kl_dlp_dpv$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt59kl_dlp_dpv$(EXE)
+#STDOUT		= acetdt59kl_dlp_dpv.stdout
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetdt59kl_dlp_dpv$(product)vf)	\
+				acetdt59kl_dlp_dpv.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /syncAll/saSyncStatd.scenario
+#FEATURE   = sync all - diagnostic message on incorrect sync-stat entry
+#CREATOR   = DF
+#DATE      = 20100727
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINENV
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)saSyncStatd.f
+#STDOUT    = saSyncStatd.err
+#STDERR    = saSyncStatd.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = saSyncStatd.err $($(tcasedir)saSyncStatd$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

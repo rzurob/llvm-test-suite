@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/intrinsics/acetdt62kk.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
+			   Pointer with Specified Lower Bound in AC)
+#CREATOR	= Glen Mateer (based on work by David Forster)
+#DATE		= 20080125
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt62kk.f
+#OUTPUT		= acetdt62kk$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt62kk$(OBJ)
+#OUTPUT		= acetdt62kk$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt62kk$(EXE)
+#STDOUT		= acetdt62kk.stdout
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -r1e-6
+#INPUT		= $($(tcasedir)acetdt62kk$(product)vf) acetdt62kk.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/mix/generic/functional/crossFeature/arrayConstr/arrayConstr002.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)arrayConstr002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = arrayConstr002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = arrayConstr002$(OBJ)
+#OUTPUT    = arrayConstr002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = arrayConstr002$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = arrayConstr002.1 $(tcasedir)arrayConstr002.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

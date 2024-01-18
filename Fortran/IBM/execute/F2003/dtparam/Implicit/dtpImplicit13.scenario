@@ -1,0 +1,39 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dtpImplicit13.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       06-27-07
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dtpImplicit13.f
+#OUTPUT= dtpImplicit13$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  dtpImplicit13$(OBJ)
+#OUTPUT= dtpImplicit13$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dtpImplicit13$(EXE)
+#STDOUT= dtpImplicit13.out
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    dtpImplicit13.out $($(tcasedir)dtpImplicit13$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

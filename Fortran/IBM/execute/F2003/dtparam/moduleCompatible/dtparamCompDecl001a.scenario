@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = dtparamCompDecl001a.scenario
+#FEATURE =
+#CREATOR = MZ adapted from F2003/dtparam/component/dtparamCompDecl001a.f
+#DATE    = 20100504
+#TEST_TYPE= functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_ALT_COMPILE
+#INPUT     = $(tcasedir)dtparamCompDecl001a_mod.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamCompDecl001a_mod$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamCompDecl001a_main.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamCompDecl001a_main$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dtparamCompDecl001a_mod$(OBJ) dtparamCompDecl001a_main$(OBJ)
+#OUTPUT    = dtparamCompDecl001a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamCompDecl001a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

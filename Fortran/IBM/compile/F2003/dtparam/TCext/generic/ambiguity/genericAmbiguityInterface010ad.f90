@@ -1,0 +1,82 @@
+! GB DTP extension using:
+! ftcx_dtp -qk -qnol /tstdev/F2003/generic/ambiguity/genericAmbiguityInterface010ad.f
+! opt variations: -qnok -ql
+
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*  ===================================================================
+!*
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Robert Ma
+!*  DATE                       : 11/01/2005
+!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
+!*                             :
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
+!*                             :
+!*  SECONDARY FUNCTIONS TESTED : ambiguious generic interfaces
+!*
+!*  DRIVER STANZA              : xlf2003
+!*
+!*  DESCRIPTION                : ambiguous but between interface and deferred type bound
+!*
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!* ===================================================================
+!*
+!*  REVISION HISTORY
+!*
+!*  MM/DD/YY:  Init:  Comments:
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+module assignment
+
+   type, abstract :: base2(k1)    ! (4)
+       integer, kind :: k1
+      contains
+         procedure(assgn2), deferred, pass :: assgn1
+         generic :: assignment(=) => assgn1
+   end type
+
+   type, extends(base2) :: child2    ! (4)
+      contains
+         procedure, pass :: assgn1
+   end type
+
+   interface assignment(=)
+      subroutine assgn2(a, b)
+         import base2
+         class(base2(4)), intent(out) :: a
+         class(base2(4)), intent(in)  :: b
+      end subroutine
+   end interface
+
+   interface
+      subroutine assgn1(a, b)
+         import base2, child2
+         class(child2(4)), intent(out) :: a
+         class(base2(4)), intent(in)  :: b
+      end subroutine
+   end interface
+
+end module
+
+subroutine assgn1(a, b)
+   use assignment, only: child2, base2
+   class(child2(4)), intent(out) :: a
+   class(base2(4)), intent(in)  :: b
+end subroutine
+
+subroutine assgn2(a, b)
+   use assignment, only: base2
+   class(base2(4)), intent(out) :: a
+   class(base2(4)), intent(in)  :: b
+end subroutine
+
+program genericAmbiguityInterface010ad
+end program
+

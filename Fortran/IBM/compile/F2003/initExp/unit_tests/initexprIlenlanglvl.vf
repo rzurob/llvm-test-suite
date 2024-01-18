@@ -1,0 +1,6 @@
+"initexprIlenlanglvl.f", line 15.18: 1518-256 (L) The intrinsic procedure ilen (with these arguments) is not permitted by the Fortran 2003 standard.
+"initexprIlenlanglvl.f", line 16.18: 1518-256 (L) The intrinsic procedure ilen (with these arguments) is not permitted by the Fortran 2003 standard.
+"initexprIlenlanglvl.f", line 17.14: 1518-256 (L) The intrinsic procedure ilen (with these arguments) is not permitted by the Fortran 2003 standard.
+"initexprIlenlanglvl.f", line 18.18: 1518-256 (L) The intrinsic procedure ilen (with these arguments) is not permitted by the Fortran 2003 standard.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file initexprIlenlanglvl.f.

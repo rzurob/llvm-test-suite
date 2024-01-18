@@ -1,0 +1,5 @@
+"bcdamn35.f", line 48.9: 1514-005 (S) COMMON block identifier mod was defined elsewhere with conflicting attributes. This identifier and any element names are ignored.
+"bcdamn35.f", line 49.10: 1514-005 (S) COMMON block identifier mod was defined elsewhere with conflicting attributes. This identifier and any element names are ignored.
+** mod   === End of Compilation 1 ===
+** bcdamn35   === End of Compilation 2 ===
+1501-511  Compilation failed for file bcdamn35.f.

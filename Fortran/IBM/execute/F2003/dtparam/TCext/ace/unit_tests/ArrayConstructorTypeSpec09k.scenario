@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/unit_tests/ArrayConstructorTypeSpec09k.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancements)
+#CREATOR	= Glen Mateer (derived from work by Rob James)
+#DATE		= 20080129
+#TEST_TYPE	= Unit Test
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)ArrayConstructorTypeSpec09k.f
+#OUTPUT		= ArrayConstructorTypeSpec09k$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= ArrayConstructorTypeSpec09k$(OBJ)
+#OUTPUT		= ArrayConstructorTypeSpec09k$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= ArrayConstructorTypeSpec09k$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

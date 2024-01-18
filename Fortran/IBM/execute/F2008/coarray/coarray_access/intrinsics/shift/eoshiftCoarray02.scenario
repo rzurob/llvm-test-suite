@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/coarray/array_intrinsics/eoshiftCoarray02.scenario
+#FEATURE   =
+#CREATOR   = Shahid Alam
+#DATE      = 20101220
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)eoshiftCoarray02.f
+#OUTPUT    = eoshiftCoarray02$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = eoshiftCoarray02$(OBJ)
+#OUTPUT    = eoshiftCoarray02$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+   #CMD       = MPRUN
+   #ENVAR     = XLFRTEOPTS=$(XLFRTEOPTS):errimagenum=yes
+   #INPUT     = eoshiftCoarray02$(EXE)
+   #STDOUT    = eoshiftCoarray02.out
+   #STDERR    = eoshiftCoarray02.out
+   #ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

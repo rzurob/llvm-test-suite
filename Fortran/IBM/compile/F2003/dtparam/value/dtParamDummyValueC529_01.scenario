@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = dtParamDummyValueC529_01.scenario
+#FEATURE   = Derived Type Parameters - Dummy args with VALUE attribute
+#CREATOR   = Rick Sawyer
+#DATE      = 20080513
+#TEST_TYPE = unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)dtParamDummyValueC529_01.f
+#OPTS      = -qdebug=intmsg:shutup
+#OUTPUT    = dtParamDummyValueC529_01$(OBJ)
+#STDERR    = dtParamDummyValueC529_01.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtParamDummyValueC529_01$(product)vf) dtParamDummyValueC529_01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

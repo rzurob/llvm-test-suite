@@ -1,0 +1,33 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       InitExpTypSpecAllocate.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       08-30-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)InitExpTypSpecAllocate.f
+#OUTPUT= InitExpTypSpecAllocate$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  InitExpTypSpecAllocate$(OBJ)
+#OUTPUT= InitExpTypSpecAllocate$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  InitExpTypSpecAllocate$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

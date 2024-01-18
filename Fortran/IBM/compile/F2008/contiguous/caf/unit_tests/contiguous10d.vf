@@ -1,0 +1,8 @@
+"contiguous10d.f", line 46.32: 1516-342 (S) The coarray dummy argument contig_assumed of procedure sub_arg_coarray_c is not an assumed-shape array or is declared with the CONTIGUOUS attribute.  The corresponding actual argument must be simply contiguous.
+"contiguous10d.f", line 47.32: 1516-342 (S) The coarray dummy argument deferred of procedure sub_arg_coarray_d is not an assumed-shape array or is declared with the CONTIGUOUS attribute.  The corresponding actual argument must be simply contiguous.
+"contiguous10d.f", line 50.32: 1516-342 (S) The coarray dummy argument contig_assumed of procedure sub_arg_coarray_c is not an assumed-shape array or is declared with the CONTIGUOUS attribute.  The corresponding actual argument must be simply contiguous.
+"contiguous10d.f", line 51.32: 1516-342 (S) The coarray dummy argument deferred of procedure sub_arg_coarray_d is not an assumed-shape array or is declared with the CONTIGUOUS attribute.  The corresponding actual argument must be simply contiguous.
+"contiguous10d.f", line 54.32: 1516-342 (S) The coarray dummy argument contig_assumed of procedure sub_arg_coarray_c is not an assumed-shape array or is declared with the CONTIGUOUS attribute.  The corresponding actual argument must be simply contiguous.
+"contiguous10d.f", line 55.32: 1516-342 (S) The coarray dummy argument deferred of procedure sub_arg_coarray_d is not an assumed-shape array or is declared with the CONTIGUOUS attribute.  The corresponding actual argument must be simply contiguous.
+** contiguous10d   === End of Compilation 1 ===
+1501-511  Compilation failed for file contiguous10d.f.

@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/subObject/variableIsStructComp03.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071220
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)variableIsStructComp03.f
+#OUTPUT		= variableIsStructComp03$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= variableIsStructComp03$(OBJ)
+#OUTPUT		= variableIsStructComp03$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= variableIsStructComp03$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

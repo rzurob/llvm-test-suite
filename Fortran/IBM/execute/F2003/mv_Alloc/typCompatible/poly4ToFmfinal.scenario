@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       poly4ToFmfinal.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)poly4ToFmfinal.f
+#OUTPUT= poly4ToFmfinal$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  poly4ToFmfinal$(OBJ)
+#OUTPUT= poly4ToFmfinal$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  poly4ToFmfinal$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

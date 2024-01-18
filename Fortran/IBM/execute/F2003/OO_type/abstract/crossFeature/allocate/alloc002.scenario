@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_type/abstract/crossFeature/allocate/alloc002.scenario
+#FEATURE = OO_type/abstract/crossFeature tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)alloc002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qxlf2003=dynamicacval
+#OUTPUT    = alloc002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = alloc002$(OBJ)
+#OUTPUT    = alloc002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = alloc002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

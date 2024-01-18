@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/move_alloc/move_allocCharComp02.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Oct. 5 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)move_allocCharComp02.f
+#OUTPUT= move_allocCharComp02$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = move_allocCharComp02$(OBJ)
+#OUTPUT= move_allocCharComp02$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = move_allocCharComp02$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

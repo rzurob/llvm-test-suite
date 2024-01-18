@@ -1,0 +1,47 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop4/unit_pattr/entry.scenario
+#FEATURE = cintrop4 tests - regression run bucket
+#CREATOR = CPR Manual update
+#DATE    = 20060811
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -qdebug=intmsg
+#INPUT     = $(tcasedir)entry.f
+#STDERR    = entry.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = entry.out $(tcasedir)entry.vf
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -qdebug=intmsg $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)entry.f
+#STDERR    = entry.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = entry.out $(tcasedir)entry.-qfixed.vf
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = entry$(OBJ)
+#OUTPUT    = entry$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = entry$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

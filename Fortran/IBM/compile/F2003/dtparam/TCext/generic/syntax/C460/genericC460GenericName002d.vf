@@ -1,0 +1,4 @@
+"genericC460GenericName002d.f", line 41.28: 1514-658 (S) Entity dnespec is not a specific binding for type base. dnespec must not be specified in a generic binding for this type.
+** m   === End of Compilation 1 ===
+** genericc460genericname002d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericC460GenericName002d.f.

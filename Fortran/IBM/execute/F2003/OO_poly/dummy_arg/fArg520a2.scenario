@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/dummy_arg/fArg520a2.f
+#FEATURE = OO_poly
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fArg520a2.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fArg520a2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fArg520a2$(OBJ)
+#OUTPUT    = fArg520a2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fArg520a2$(EXE)
+#STDOUT    = fArg520a2.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fArg520a2.out $($(tcasedir)fArg520a2$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

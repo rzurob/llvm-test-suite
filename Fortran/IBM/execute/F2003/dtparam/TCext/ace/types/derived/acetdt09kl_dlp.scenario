@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/derived/acetdt09kl_dlp.scenario
+#FEATURE	= Array constructor enhancement derived type polymorphism tests
+#CREATOR	= Glen Mateer (derived from work by DF Manual Update)
+#DATE		= 20080114
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt09kl_dlp.f
+#OPTS = -qxlf2003=dynamicacval
+#OUTPUT		= acetdt09kl_dlp$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt09kl_dlp$(OBJ)
+#OUTPUT		= acetdt09kl_dlp$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt09kl_dlp$(EXE)
+#STDOUT		= acetdt09kl_dlp.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetdt09kl_dlp$(product)vf) acetdt09kl_dlp.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

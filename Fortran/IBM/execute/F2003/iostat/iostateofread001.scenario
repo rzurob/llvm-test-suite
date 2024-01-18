@@ -1,0 +1,50 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=iostateofread001.scenario
+#FEATURE = 299314
+#CREATOR = Rob Wheeler
+#DATE    = 20060109
+#TEST_TYPE=fvt
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)iostateofread001.f
+#OPTS      =
+#OUTPUT    = iostateofread001$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      =
+#INPUT     = iostateofread001$(OBJ)
+#OUTPUT    = iostateofread001$(EXE)
+#ENDCMD
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)iostateofread001.drv .
+#ENDCMD
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)iostateofread001.dat .
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = iostateofread001$(EXE)
+#STDIN     = iostateofread001.drv
+#STDOUT    = iostateofread001.out
+#STDERR    = iostateofread001.out
+#ENDCMD
+
+#CMD	   = DIFF
+#OPTS	   = -b
+#INPUT     = iostateofread001.out $($(tcasedir)iostateofread001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

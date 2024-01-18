@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/ptrAssc/polyPntFmUlmtTo.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071105
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)polyPntFmUlmtTo.f
+#OUTPUT= polyPntFmUlmtTo$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  polyPntFmUlmtTo$(OBJ)
+#OUTPUT= polyPntFmUlmtTo$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  polyPntFmUlmtTo$(EXE)
+#STDOUT= polyPntFmUlmtTo.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = polyPntFmUlmtTo.out $(tcasedir)polyPntFmUlmtTo.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

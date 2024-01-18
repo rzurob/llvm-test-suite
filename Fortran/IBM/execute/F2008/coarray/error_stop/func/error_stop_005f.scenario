@@ -1,0 +1,60 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/coarray/error_stop/func/error_stop_005f.scenario
+#FEATURE    = CAF: ERROR STOP statement (feature #351605.31)
+#CREATOR    = Grigor Nikolov
+#DATE       = 20100828
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)error_stop_novalue.f
+#OUTPUT     = error_stop_novalue$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#INPUT      = error_stop_novalue$(OBJ)
+#OUTPUT     = error_stop_novalue$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD        = MPRUN
+#INPUT      = error_stop_novalue$(EXE)
+#STDOUT     = error_stop_novalue.out
+#STDERR     = error_stop_novalue.out
+#VALIDRCS   = 1
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "Error Stop with no value set"
+#INPUT      = error_stop_novalue.out
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "ERROR STOP"
+#INPUT      = error_stop_novalue.out
+#VALIDRCS=1
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "FAILURE if this message"
+#INPUT      = error_stop_novalue.out
+#VALIDRCS   = 1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

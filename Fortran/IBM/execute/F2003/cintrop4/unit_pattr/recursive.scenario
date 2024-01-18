@@ -1,0 +1,66 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop4/unit_pattr/recursive.scenario
+#FEATURE = cintrop4 tests - regression run bucket
+#CREATOR = CPR Manual update
+#DATE    = 20060811
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)recursive.f
+#STDERR    = recursive.out1
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = recursive$(OBJ)
+#OUTPUT    = recursive$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = recursive$(EXE)
+#STDOUT    = recursive.out2
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = recursive.out1 recursive.out2
+#STDOUT    = recursive.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = recursive.out $(tcasedir)recursive.vf
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)recursive.f
+#STDERR    = recursive.out1
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = recursive$(OBJ)
+#OUTPUT    = recursive$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = recursive$(EXE)
+#STDOUT    = recursive.out2
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = recursive.out1 recursive.out2
+#STDOUT    = recursive.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = recursive.out $(tcasedir)recursive.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

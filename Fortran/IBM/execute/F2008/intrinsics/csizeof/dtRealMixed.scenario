@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    =  F2008/intrinsics/csizeof/dtRealMixed.scenario
+#FEATURE =  F2008 ISO_C_BINDING C_SIZEOF function 381475
+#CREATOR =  Michelle Zhang
+#DATE    =  2011/01/14
+#TEST_TYPE= functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+  C_OPTS = $(XLC_COMPILE^OPT_BIGGER_LONG_DOUBLE) $(C_COMPILER_OPTS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)ctest.c
+#OPTS      = $C_OPTS $(OPT_SET_LANG_LEVEL_EXTENDED) $(OPT_GEN_64BIT_LONGLONG) $(OPT_ALIGN_BYTE<full>)
+#OUTPUT    = ctest$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtRealMixed.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qalign=bindc=full
+#OUTPUT    = dtRealMixed$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = ctest$(OBJ) dtRealMixed$(OBJ)
+#OUTPUT    = dtRealMixed$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtRealMixed$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

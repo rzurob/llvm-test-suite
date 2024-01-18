@@ -1,0 +1,15 @@
+ start
+ b - base:  100
+ calling old implementation to clear b; not expecting runtime error message
+ b #2 - base:  -1
+ b1 - child: 101 >x<
+ calling old implementation to clear b1; not expecting runtime error message
+ b1 #2 - child: -1 >o<
+ c - child: 102 >y<
+ calling old implementation to clear c; not expecting runtime error message
+ c #2 - child: -1 >o<
+ g - grandchild(1,*): 99 >z< 3 3 >abc< 3 123 45 67 89 3 >def<
+ local clear; no failure expected
+ g2 - grandchild(1,*): -1 >o< 3 3 >pqr< 3 -2 -2 -2 -3 3 >zyx<
+ calling old implementation to clear g; expecting runtime error message
+1525-239 XL Fortran detected a mismatch in a compiler-generated routine. If your code contains compilation units compiled with XL Fortran V11.1 or V12.1, recompile them with the latest XL Fortran compiler.

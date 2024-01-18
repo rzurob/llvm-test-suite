@@ -1,0 +1,4 @@
+"ftpbnd500d2.f", line 56.8: 1514-625 (S) Sequence type btype must not have type-bound procedures.
+** m   === End of Compilation 1 ===
+** ftpbnd500d2   === End of Compilation 2 ===
+1501-511  Compilation failed for file ftpbnd500d2.f.

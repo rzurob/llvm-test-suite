@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/mix/interface/fdtio522a.f
+#FEATURE = OO_dtio
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fdtio522a.f
+#OPTS      = -qxlf2003=dynamicacval $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fdtio522a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fdtio522a$(OBJ)
+#OUTPUT    = fdtio522a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fdtio522a$(EXE)
+#STDOUT    = fdtio522a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fdtio522a.out $($(tcasedir)fdtio522a$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

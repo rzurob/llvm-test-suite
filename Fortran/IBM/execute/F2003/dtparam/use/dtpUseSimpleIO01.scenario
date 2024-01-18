@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/use/dtpUseSimpleIO01.scenario
+#FEATURE   = DTP and USE - simple input and output
+#CREATOR   = DF Manual Update
+#DATE      = 20081008
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUseSimpleIO01.f
+#OUTPUT    = dtpUseSimpleIO01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUseSimpleIO01$(OBJ)
+#OUTPUT    = dtpUseSimpleIO01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUseSimpleIO01$(EXE)
+#STDIN     = $(tcasedir)dtpUseSimpleIO01.in
+#STDOUT    = dtpUseSimpleIO01.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpUseSimpleIO01$(product)vf) dtpUseSimpleIO01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

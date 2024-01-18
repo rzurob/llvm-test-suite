@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_procptr/CrossFeatures2/Misc1.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_procptr/*
+#DATE      = 20071011
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS =  -qdebug=allowrpdt
+#INPUT=  $(tcasedir)Misc1.f
+#OUTPUT= Misc1$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  Misc1$(OBJ)
+#OUTPUT= Misc1$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  Misc1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

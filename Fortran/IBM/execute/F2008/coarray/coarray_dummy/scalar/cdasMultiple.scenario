@@ -1,0 +1,44 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_dummy/assumed_size/cdasMultiple
+#FEATURE        = CAF coarray dummy arguments - scalar - multiple images
+#CREATOR        = DF
+#DATE           = 2010-09-30
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)cdasMultiple.f
+#OUTPUT = cdasMultiple$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = cdasMultiple$(OBJ)
+#OUTPUT = cdasMultiple$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#FOR ITER = 1 TO 1
+
+  #CMD    = MPRUN
+  #INPUT  = cdasMultiple$(EXE)
+  #STDOUT = cdasMultiple.out
+  #ENDCMD
+
+  #CMD    = SPIFF
+  #OPTS   = -r1e-5
+  #INPUT  = $($(tcasedir)cdasMultiple$(product)vf) cdasMultiple.out
+  #ENDCMD
+
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

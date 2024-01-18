@@ -1,0 +1,5 @@
+"dtParamTypeDecC503d.f", line 45.8: 1514-645 (S) dt is an abstract type. dt is not permitted in this context.
+"dtParamTypeDecC503d.f", line 51.8: 1514-645 (S) dt1 is an abstract type. dt1 is not permitted in this context.
+"dtParamTypeDecC503d.f", line 56.12: 1514-645 (S) dt1 is an abstract type. dt1 is not permitted in this context.
+** dtparamtypedecc503d   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtParamTypeDecC503d.f.

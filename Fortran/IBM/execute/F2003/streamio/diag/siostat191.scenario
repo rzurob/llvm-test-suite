@@ -1,0 +1,53 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/streamio/diag/siostat191.scenario
+#FEATURE = streamio tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF95_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) $(F_COMPILE^OPT_FREE_SOURCE_FORM)  $(COMP_LIBS)
+#ENDDEFS
+#INVALID_PRODUCT= bgl_stdin
+#ENDENV
+
+#BEGINCONTROL
+
+! Deconstructing a SCRIPT : PREdeconSCRIPT
+! Valid line : $COMPILER -o $1 $TR_SRC/$1.f $OPTIONS
+
+#CMD       = XLF95_COMPLINK
+#INPUT     = $(tcasedir)siostat191.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = siostat191$(EXE)
+#ENDCMD
+! # We have to redirect STDIN and STDOUT to some files, otherwise it will
+! # be by default redirected to /dev/null by the Load_levelor. This causes
+! # run-time error when the testcase trys to open /dev/null (B.C. -defect 249979)
+! Valid line : touch stdin.txt
+
+#CMD       = TOUCH
+#INPUT     = stdin.txt
+#ENDCMD
+! Valid line : $1 < stdin.txt > stdout.txt 2> $1.out
+
+#CMD       = RUN
+#INPUT     = ./siostat191
+#STDIN     = stdin.txt
+#STDOUT    = stdout.txt
+#STDERR    = siostat191.out
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+! Valid line : diff $TR_SRC/$1.vf $1.out
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)siostat191$(product)vf) siostat191.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

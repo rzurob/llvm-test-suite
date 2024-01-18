@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      dtParamTypeDefMissing02.scenario
+#FEATURE=   Derived Type Parameters - declarations
+#CREATOR=   Rafik Zurob
+#DATE=      20060519
+#TEST_TYPE= unit
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=      F_COMPILE
+#INPUT=    $(tcasedir)dtParamTypeDefMissing02.f
+#OPTS=     $(OPT_FREE_SOURCE_FORM) -qdebug=intmsg:shutup
+#STDERR=   dtParamTypeDefMissing02.err
+#VALIDRCS= 1
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    $($(tcasedir)dtParamTypeDefMissing02$(product)vf) dtParamTypeDefMissing02.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

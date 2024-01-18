@@ -1,0 +1,5 @@
+  64.25   016106AC print‹DEFERRED‹
+** m   === End of Compilation 1 ===
+** deferred003   === End of Compilation 2 ===
+** printif   === End of Compilation 3 ===
+1501-511  Compilation failed for file deferred003.f.

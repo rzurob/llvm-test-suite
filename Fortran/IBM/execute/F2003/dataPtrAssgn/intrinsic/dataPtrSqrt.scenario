@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrSqrt.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrSqrt.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrSqrt$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrSqrt$(OBJ)
+#OUTPUT    = dataPtrSqrt$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrSqrt$(EXE)
+#STDOUT    = dataPtrSqrt.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrSqrt.out $($(tcasedir)dataPtrSqrt$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

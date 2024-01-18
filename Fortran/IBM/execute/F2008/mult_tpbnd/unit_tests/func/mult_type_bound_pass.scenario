@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2008/mult_tpbnd/unit_tests/func/mult_type_bound_pass.scenario
+#FEATURE = 916819 F2008:Multiple type-bound procedures in a single procedure stmt
+#CREATOR = Paul Liu
+#DATE    = 20110525
+#TEST_TYPE=FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+! within module
+! pass attribute
+! procedure,pass(a) :: foo=>real_foo,bar=>real_bar,fox=>real_fox
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mult_type_bound_pass.f
+#OUTPUT    = mult_type_bound_pass$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = mult_type_bound_pass$(OBJ)
+#OUTPUT    = mult_type_bound_pass$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mult_type_bound_pass$(EXE)
+#STDOUT    = mult_type_bound_pass.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $(tcasedir)mult_type_bound_pass.vf mult_type_bound_pass.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

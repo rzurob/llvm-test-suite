@@ -1,0 +1,64 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       fdivideINT8
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2003_COMPILE
+#INPUT=  $(tcasedir)fdivideINT8.f
+#OUTPUT= fdivideINT8$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2003_LINK
+#INPUT=  fdivideINT8$(OBJ)
+#OUTPUT= fdivideINT8$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fdivideINT8$(EXE)
+#ENDCMD
+
+#CMD=    XLF2003_COMPILE
+#OPTS=   $(OPT_INTSIZE_8)
+#INPUT=  $(tcasedir)fdivideINT8.f
+#OUTPUT= fdivideINT8_1$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2003_LINK
+#OPTS=   $(OPT_INTSIZE_8)
+#INPUT=  fdivideINT8_1$(OBJ)
+#OUTPUT= fdivideINT8_1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fdivideINT8_1$(EXE)
+#ENDCMD
+
+#CMD=    XLF2003_COMPILE
+#OPTS=   $(OPT_INTSIZE_4)
+#INPUT=  $(tcasedir)fdivideINT8.f
+#OUTPUT= fdivideINT8_2$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2003_LINK
+#OPTS=   $(OPT_INTSIZE_4)
+#INPUT=  fdivideINT8_2$(OBJ)
+#OUTPUT= fdivideINT8_2$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fdivideINT8_2$(EXE)
+#ENDCMD
+
+
+
+#ENDCONTROL
+#ENDSCENARIO

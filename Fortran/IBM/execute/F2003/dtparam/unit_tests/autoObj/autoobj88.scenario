@@ -1,0 +1,34 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       autoobj88.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       01-31-09
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)autoobj88.f
+#OUTPUT= autoobj88$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  autoobj88$(OBJ)
+#OUTPUT= autoobj88$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  autoobj88$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

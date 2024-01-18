@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/mxminAll/con/mxminVal/mxminvalCtyplssHollerith.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mxminvalCtyplssHollerith.F
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_CTYPLSS) -qxflag=callby
+#OUTPUT    = mxminvalCtyplssHollerith$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_CTYPLSS) -qxflag=callby
+#INPUT     = mxminvalCtyplssHollerith$(OBJ)
+#OUTPUT    = mxminvalCtyplssHollerith$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminvalCtyplssHollerith$(EXE)
+#STDOUT    = mxminvalCtyplssHollerith.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = mxminvalCtyplssHollerith.out $(tcasedir)mxminvalCtyplssHollerith.vf
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

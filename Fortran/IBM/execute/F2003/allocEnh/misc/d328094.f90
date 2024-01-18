@@ -1,0 +1,55 @@
+!#######################################################################
+! SCCS ID Information
+! %W%, %I%
+! Extract Date/Time: %D% %T%
+! Checkin Date/Time: %E% %U%
+!#######################################################################
+! *********************************************************************
+!*  =================================================================== 
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
+!*  =================================================================== 
+!*  =================================================================== 
+!*
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Jim Xia
+!*  DATE                       : 11/15/2006
+!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
+!*
+!*
+!*  DESCRIPTION                : miscellaneous (defect 328094)
+!*
+!*
+!*
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+module m
+    type point
+        real x,y
+    end type
+
+    abstract interface
+        elemental function unitPoint (p)
+            import
+            class(point), intent(in) :: p
+
+            type(point) unitPoint
+        end function
+    end interface
+
+    procedure(unitPoint), pointer :: gen
+
+    contains
+
+    subroutine Query
+        print *, associated(gen)
+    end subroutine
+end module
+
+!use m
+!    gen => null()
+
+!    call Query
+end
+

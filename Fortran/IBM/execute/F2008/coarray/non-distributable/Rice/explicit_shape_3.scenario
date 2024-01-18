@@ -1,0 +1,45 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = explicit_shape_3.scenario
+#FEATURE    =
+#CREATOR    = Jin Li
+#DATE       = 2010-10-27
+#TEST_TYPE  = unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)explicit_shape_3.f
+#OUTPUT    = explicit_shape_3$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = explicit_shape_3$(OBJ)
+#OUTPUT    = explicit_shape_3$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = explicit_shape_3$(EXE)
+#STDOUT    = explicit_shape_3.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = explicit_shape_3.out $(tcasedir)explicit_shape_3.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

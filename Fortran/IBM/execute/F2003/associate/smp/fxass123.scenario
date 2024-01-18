@@ -1,0 +1,77 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/associat/smp/fxass123.scenario
+#FEATURE = associat tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+EXEC_REP=10
+    #IF on (aix)
+       OMP_STACKSIZE=1M
+    #ENDIF
+#ENDDEFS
+#INVALID_PRODUCT= bgl_system,bgl
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)fxass123.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM) $(OPT_OPTIMIZE_FOR_SMP) -F:xlf90_r
+#OUTPUT    = fxass123$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM) $(OPT_OPTIMIZE_FOR_SMP) -F:xlf90_r
+#INPUT     =  fxass123$(OBJ)
+#OUTPUT    = fxass123$(EXE)
+#ENDCMD
+
+! Reflecting influence of EXEC_REP setting
+
+#CMD       = RUN
+#INPUT     = fxass123$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxass123$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxass123$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxass123$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxass123$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxass123$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxass123$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxass123$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxass123$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxass123$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,11 @@
+ b1_m allocated
+ 1 b1_m           
+ b2_m allocated with bounds: -1 1
+ -1 b1_m_1         
+ 0 b1_m_2         
+ 1 b1_m_3         
+ b1_m allocated
+ 1 b1             
+ b2_m allocated with bounds: 0 1
+ 0 b2_1           
+ 1 b2_2           

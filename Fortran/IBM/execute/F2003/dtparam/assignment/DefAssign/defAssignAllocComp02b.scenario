@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/defAssignn/defAssignAllocComp02b.scenario
+#FEATURE   = 361704
+#CREATOR   = Nancy Wang
+#DATE      = Feb. 7 2009
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)defAssignAllocComp02b.f
+#OUTPUT= defAssignAllocComp02b$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = defAssignAllocComp02b$(OBJ)
+#OUTPUT= defAssignAllocComp02b$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = defAssignAllocComp02b$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

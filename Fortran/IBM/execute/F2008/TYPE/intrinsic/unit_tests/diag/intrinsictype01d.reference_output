@@ -1,0 +1,37 @@
+"intrinsictype01d.F", line 23.29: 1514-084 (S) Identifier i1 is being declared with type name integer which has not been defined in a derived type definition.
+"intrinsictype01d.F", line 24.29: 1514-084 (S) Identifier i2 is being declared with type name integer which has not been defined in a derived type definition.
+"intrinsictype01d.F", line 25.21: 1515-022 (S) Syntax Error: Extra token " * " was found. The token is ignored.
+"intrinsictype01d.F", line 25.22: 1515-022 (S) Syntax Error: Extra token " 4 " was found. The token is ignored.
+"intrinsictype01d.F", line 25.29: 1514-084 (S) Identifier i3 is being declared with type name integer which has not been defined in a derived type definition.
+"intrinsictype01d.F", line 27.26: 1514-084 (S) Identifier r1 is being declared with type name real which has not been defined in a derived type definition.
+"intrinsictype01d.F", line 28.26: 1514-084 (S) Identifier r2 is being declared with type name real which has not been defined in a derived type definition.
+"intrinsictype01d.F", line 29.18: 1515-022 (S) Syntax Error: Extra token " * " was found. The token is ignored.
+"intrinsictype01d.F", line 29.19: 1515-022 (S) Syntax Error: Extra token " 4 " was found. The token is ignored.
+"intrinsictype01d.F", line 29.26: 1514-084 (S) Identifier r3 is being declared with type name real which has not been defined in a derived type definition.
+"intrinsictype01d.F", line 31.29: 1514-084 (S) Identifier cp1 is being declared with type name complex which has not been defined in a derived type definition.
+"intrinsictype01d.F", line 32.29: 1514-084 (S) Identifier cp2 is being declared with type name complex which has not been defined in a derived type definition.
+"intrinsictype01d.F", line 33.21: 1515-022 (S) Syntax Error: Extra token " * " was found. The token is ignored.
+"intrinsictype01d.F", line 33.22: 1515-022 (S) Syntax Error: Extra token " 8 " was found. The token is ignored.
+"intrinsictype01d.F", line 33.29: 1514-084 (S) Identifier cp3 is being declared with type name complex which has not been defined in a derived type definition.
+"intrinsictype01d.F", line 35.31: 1514-084 (S) Identifier ch1 is being declared with type name character which has not been defined in a derived type definition.
+"intrinsictype01d.F", line 36.31: 1514-084 (S) Identifier ch2 is being declared with type name character which has not been defined in a derived type definition.
+"intrinsictype01d.F", line 37.23: 1515-022 (S) Syntax Error: Extra token " * " was found. The token is ignored.
+"intrinsictype01d.F", line 37.24: 1515-022 (S) Syntax Error: Extra token " 4 " was found. The token is ignored.
+"intrinsictype01d.F", line 37.31: 1514-084 (S) Identifier ch3 is being declared with type name character which has not been defined in a derived type definition.
+"intrinsictype01d.F", line 39.29: 1514-084 (S) Identifier l1 is being declared with type name logical which has not been defined in a derived type definition.
+"intrinsictype01d.F", line 40.29: 1514-084 (S) Identifier l2 is being declared with type name logical which has not been defined in a derived type definition.
+"intrinsictype01d.F", line 41.21: 1515-022 (S) Syntax Error: Extra token " * " was found. The token is ignored.
+"intrinsictype01d.F", line 41.22: 1515-022 (S) Syntax Error: Extra token " 1 " was found. The token is ignored.
+"intrinsictype01d.F", line 41.29: 1514-084 (S) Identifier l3 is being declared with type name logical which has not been defined in a derived type definition.
+"intrinsictype01d.F", line 43.26: 1514-084 (S) Identifier b1 is being declared with type name byte which has not been defined in a derived type definition.
+"intrinsictype01d.F", line 45.14: 1514-718 (S) Identifier vector appearing as a type name has not been defined in a derived type definition.
+"intrinsictype01d.F", line 45.21: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"intrinsictype01d.F", line 45.35: 1514-084 (S) Identifier v1 is being declared with type name vector which has not been defined in a derived type definition.
+"intrinsictype01d.F", line 46.14: 1514-718 (S) Identifier vector appearing as a type name has not been defined in a derived type definition.
+"intrinsictype01d.F", line 46.21: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"intrinsictype01d.F", line 46.35: 1514-084 (S) Identifier v2 is being declared with type name vector which has not been defined in a derived type definition.
+"intrinsictype01d.F", line 47.14: 1514-718 (S) Identifier vector appearing as a type name has not been defined in a derived type definition.
+"intrinsictype01d.F", line 47.21: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"intrinsictype01d.F", line 47.35: 1514-084 (S) Identifier v3 is being declared with type name vector which has not been defined in a derived type definition.
+** intrinsictype01d   === End of Compilation 1 ===
+1501-511  Compilation failed for file intrinsictype01d.F.

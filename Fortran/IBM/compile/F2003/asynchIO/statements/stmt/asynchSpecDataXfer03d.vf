@@ -1,0 +1,6 @@
+"asynchSpecDataXfer03d.f", line 62.4: 1516-283 (S) Asynchronous I/O is permitted only for external files.
+"asynchSpecDataXfer03d.f", line 74.4: 1516-284 (S) The UNIT specifier is not an integer expression.  The ASYNCHRONOUS== specifier with a value YES must not appear.
+"asynchSpecDataXfer03d.f", line 86.4: 1516-283 (S) Asynchronous I/O is permitted only for external files.
+"asynchSpecDataXfer03d.f", line 98.4: 1516-284 (S) The UNIT specifier is not an integer expression.  The ASYNCHRONOUS== specifier with a value YES must not appear.
+** asynchspecdataxfer03d   === End of Compilation 1 ===
+1501-511  Compilation failed for file asynchSpecDataXfer03d.f.

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/contiguous/diag/diagIsContig.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20101028
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)diagIsContig.f
+#OUTPUT    = diagIsContig$(OBJ)
+#STDOUT    = diagIsContig.out
+#STDERR    = diagIsContig.err
+#VALIDRCS  = $(RC_COMP_E)
+#ENDCMD
+
+
+#CMD       = XLDIFF
+#INPUT     = diagIsContig.err $($(tcasedir)diagIsContig$(product)vf)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

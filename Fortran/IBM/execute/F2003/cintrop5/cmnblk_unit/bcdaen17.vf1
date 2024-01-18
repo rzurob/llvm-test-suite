@@ -1,0 +1,4 @@
+"bcdaen17.f", line 50.10: 1514-127 (E) Identifier sub declared with EXTERNAL/INTRINSIC attribute was defined elsewhere with conflicting attributes.  Identifier is ignored.
+"bcdaen17.f", 1516-036 (S) Entity sub has undefined type.
+** bcdaen17   === End of Compilation 1 ===
+1501-511  Compilation failed for file bcdaen17.f.

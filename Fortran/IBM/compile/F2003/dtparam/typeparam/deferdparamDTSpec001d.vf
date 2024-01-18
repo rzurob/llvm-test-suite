@@ -1,0 +1,4 @@
+"deferdparamDTSpec001d.f", line 38.22: 1514-693 (S) Derived type object b1 with deferred type parameters requires the POINTER or ALLOCATABLE attribute.
+"deferdparamDTSpec001d.f", line 44.23: 1514-704 (S) Entity b1 is declared with a deferred type parameter. b1 must have the POINTER or ALLOCATABLE attribute.
+** deferdparamdtspec001d   === End of Compilation 1 ===
+1501-511  Compilation failed for file deferdparamDTSpec001d.f.

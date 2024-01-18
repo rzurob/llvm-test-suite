@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2003/dtparam/TCext/OO_dtio/unformatted/section9.5.2/read/associate002l.scenario
+#FEATURE = OO_dtio + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070914
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)associate002l.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = associate002l$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  associate002l$(OBJ)
+#OUTPUT    = associate002l$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = associate002l$(EXE)
+#STDOUT    = associate002l.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)associate002l$(product)vf) associate002l.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

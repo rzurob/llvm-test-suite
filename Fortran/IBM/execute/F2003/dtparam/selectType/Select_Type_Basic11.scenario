@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/selectType/Select_Type_Basic11.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20080826
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)Select_Type_Basic11.f
+#OUTPUT= Select_Type_Basic11$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  Select_Type_Basic11$(OBJ)
+#OUTPUT= Select_Type_Basic11$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  Select_Type_Basic11$(EXE)
+#STDOUT= Select_Type_Basic11.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

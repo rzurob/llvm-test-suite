@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       fkindint
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2008_COMPILE
+#INPUT=  $(tcasedir)fkindint.f
+#OUTPUT= fkindint$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_LINK
+#INPUT=  fkindint$(OBJ)
+#OUTPUT= fkindint$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fkindint$(EXE)
+#STDOUT=  fkindint.out
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT = fkindint.out $($(tcasedir)fkindint$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

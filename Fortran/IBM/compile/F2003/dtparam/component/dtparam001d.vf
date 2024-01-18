@@ -1,0 +1,4 @@
+"dtparam001d.f", line 30.20: 1514-712 (E) Type parameter lb must be declared with the KIND or LEN attribute.  The KIND attribute is assumed.
+"dtparam001d.f", line 30.26: 1514-712 (E) Type parameter ub must be declared with the KIND or LEN attribute.  The KIND attribute is assumed.
+** dtparam001d   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtparam001d.f.

@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = intFmtNaNInfIO002.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = Aug 4, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)intFmtNaNInfIO002.f
+#OUTPUT   =  intFmtNaNInfIO002$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  intFmtNaNInfIO002$(OBJ)
+#OUTPUT   =  intFmtNaNInfIO002$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  intFmtNaNInfIO002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

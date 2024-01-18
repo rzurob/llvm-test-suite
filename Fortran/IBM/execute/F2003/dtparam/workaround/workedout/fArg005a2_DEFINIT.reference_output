@@ -1,0 +1,11 @@
+ begin
+ before 2nd call
+ finalizeChild
+ finalizeBase
+ before 3rd call
+ finalizeChild
+ finalizeBase
+ before 4th call
+ before last call
+ finalizeBaseRank1
+ end

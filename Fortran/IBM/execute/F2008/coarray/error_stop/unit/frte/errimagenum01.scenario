@@ -1,0 +1,68 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = errimagenum01.scenario
+#FEATURE   = 351605.31.2
+#CREATOR   = Xing Xue
+#DATE      = 08-10-10
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINENV
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      = F_COMPILE
+#OPTS     = -qflttrap=EN:ZERO -qsigtrap $(OPT_COARRAY_IMAGES<1>) $(OPT_COARRAY_DNODES<1>)
+#INPUT    = $(tcasedir)errimagenum01.f
+#OUTPUT   = errimagenum01$(OBJ)
+#ENDCMD
+
+#CMD      = F_LINK
+#INPUT    = errimagenum01$(OBJ)
+#OUTPUT   = errimagenum01$(EXE)
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD      = RUN
+	#ENVAR    = XLFRTEOPTS=$(XLFRTEOPTS):errimagenum=yes:errloc=no
+	#ENVAR    = CAF_NUM_IMAGES=1
+	#ENVAR    = MP_PROCS=1
+	#INPUT    = errimagenum01$(EXE)
+	#STDERR   = errimagenum01.err.tmp
+	#VALIDRCS = $(RC_FAIL)
+	#ENDCMD
+
+	#CMD       = SED
+	#INPUT     = -e "s/Offset 0x[0-9a-f]* in/Offset in/g" errimagenum01.err.tmp
+	#STDOUT    = errimagenum01.err.tmp1
+	#ENDCMD
+
+	#CMD       = SED
+	#INPUT     = -e "/Location 0x[0-9a-f]*/d" \
+             -e "s:line [0-9]\{2,\}:line NUMBER:g" \
+             -e "s:, near line NUMBER in file crti.S::g" \
+             errimagenum01.err.tmp1
+	#IF in ($(F_COMPILE^OPT_GEN_DEBUG_INFO))
+		#OPTS      = -e 's/,.*errimagenum01\.f//'
+	#ENDIF
+	#STDOUT    = errimagenum01.err
+	#ENDCMD
+
+	#IF on (linux)
+		#CMD      = DIFF
+		#IF in ($(F_COMPILE^OPT_GEN_64BIT_COMPILER_MODE))
+			#INPUT    = errimagenum01.err $(tcasedir)errimagenum01.lx64.vf
+		#ELSE
+			#INPUT    = errimagenum01.err $(tcasedir)errimagenum01.lx.vf
+		#ENDIF
+	#ELSE
+		#CMD      = DIFF
+		#INPUT    = errimagenum01.err $(tcasedir)errimagenum01.vf
+	#ENDIF
+	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

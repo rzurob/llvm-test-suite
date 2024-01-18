@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/attribute/args/C1232arraySect06.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Attribute
+#CREATOR	= GM Manual Creation
+#DATE		= 20060410
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= XLC_COMPILE
+#OPTS		= $(C_COMPILER_OPTS)
+#INPUT		= $(tcasedir)C1232arraySect06c.c
+#OUTPUT		= C1232arraySect06c$(OBJ)
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)C1232arraySect06.f
+#OUTPUT		= C1232arraySect06$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= C1232arraySect06$(OBJ) C1232arraySect06c$(OBJ)
+#OUTPUT		= C1232arraySect06$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= C1232arraySect06$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

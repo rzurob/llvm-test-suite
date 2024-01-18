@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/eoshift/structureComponent003.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050208
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)structureComponent003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = structureComponent003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = structureComponent003$(OBJ)
+#OUTPUT    = structureComponent003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = structureComponent003$(EXE)
+#STDOUT    = structureComponent003.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)structureComponent003$(product)vf) structureComponent003.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

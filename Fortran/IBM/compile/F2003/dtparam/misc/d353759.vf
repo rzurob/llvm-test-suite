@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"d353759.f", line 38.20: 1514-692 (S) Type parameter k must be specified in this derived-type specifier.
+"d353759.f", line 40.10: 1514-692 (S) Type parameter k must be specified in this derived-type specifier.
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file d353759.f.

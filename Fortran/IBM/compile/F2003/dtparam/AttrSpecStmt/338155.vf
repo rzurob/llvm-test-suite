@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"338155.f", line 58.13: 1514-088 (S) Invalid component name.
+"338155.f", line 60.11: 1512-137 (S) A derived-type object containing components that are not accessible within the scoping unit is not permitted as an input or output item, unless it is processed by a user-defined I/O procedure.
+** m1   === End of Compilation 2 ===
+** d338155   === End of Compilation 3 ===
+1501-511  Compilation failed for file 338155.f.

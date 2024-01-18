@@ -1,0 +1,44 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = C Interop: Simple fortran to c and back to fortran internal proceduce
+#COMPONENT  = xlftest.cinterop_ts29f2c2internalf3.assumed_length
+#DATE       = June 30, 2015
+#CREATOR    = Izhak Jakov
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD          = XLC_COMPILE
+#INPUT        = $(tcasedir)/f2c2internalfc.c
+#OUTPUT       = f2c2internalfc$(OBJ)
+#OPTS         = $(C_COMPILER_OPTS) -I$(xlf_include)
+#ENDCMD
+
+#CMD          = F_COMPILE
+#INPUT        = $(tcasedir)/f2c2internalff.f
+#OUTPUT       = f2c2internalff$(OBJ)
+#ENDCMD
+
+#CMD          = F_LINK
+#INPUT        = f2c2internalfc$(OBJ) f2c2internalff$(OBJ)
+#OUTPUT       = f2c2internalf$(EXE)
+#ENDCMD
+
+#CMD          = RUN
+#INPUT        = f2c2internalf$(EXE)
+#STDOUT       = f2c2internalf.out
+#ENDCMD
+
+#CMD          = XLDIFF
+#INPUT        = $(tcasedir)f2c2internalf.vf f2c2internalf.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

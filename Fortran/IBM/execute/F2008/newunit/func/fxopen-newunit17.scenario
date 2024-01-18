@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		=  /tst141/F2008/newunit/func/fxopen-newunit17.scenario
+#FEATURE	=  FEATURE 377344 (NEWUNIT) - regression run bucket
+#CREATOR	=  Sarah Kouchanki Ramezan
+#DATE		=  Oct. 2010
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#IF on (linuxle)
+    XLFRTEOPTS=$(CONVERT_UFMT_IO_ENDIANESS<newunit>)
+#ENDIF
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)fxopen-newunit17.f
+#OUTPUT		= fxopen-newunit17$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= fxopen-newunit17$(OBJ)
+#OUTPUT		= fxopen-newunit17$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= fxopen-newunit17$(EXE)
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)fxopen-newunit17$(product)vf) fxopen-newunit17.dat
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/decimaledit/defaultIO/commaEdit003.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)commaEdit003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = commaEdit003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = commaEdit003$(OBJ)
+#OUTPUT    = commaEdit003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = commaEdit003$(EXE)
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $(tcasedir)commaEdit003.vf test2
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

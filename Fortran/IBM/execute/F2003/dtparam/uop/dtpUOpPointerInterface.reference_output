@@ -1,0 +1,32 @@
+ dk(2):  1
+ dk(4):  3
+ dl(*):  5 abcde
+ dkl(2,*):  9 , dl/dk are:
+ dl(*):  9 abcdefghi
+ dk(2):  21
+ dkl(4,*):  7 , dl/dk are:
+ dl(*):  7 cdefghi
+ dk(4):  23
+ dk(2):  67
+ dk(2):  -998
+ dk(4):  32775
+ dk(4):  -4
+ dl(*):  5 "$&(*
+ dl(*):  5 edcba
+ dkl(2,*):  9 , dl/dk are:
+ dl(*):  9 +++++++++
+ dk(2):  107
+ dkl(2,*):  9 , dl/dk are:
+ dl(*):  9 bcdefghij
+ dk(2):  -978
+ dkl(4,*):  7 , dl/dk are:
+ dl(*):  7 &(*,.02
+ dk(4):  32815
+ dkl(4,*):  7 , dl/dk are:
+ dl(*):  7 ihgfedc
+ dk(4):  -24
+ dl(*):  9 "#%&()+,C
+ dl(*):  9 bcdefghij
+ dl(*):  9 "#%&()+,C
+ dk(4):  32815
+ dk(4):  -24

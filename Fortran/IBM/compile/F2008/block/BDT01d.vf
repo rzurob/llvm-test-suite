@@ -1,0 +1,5 @@
+"BDT01d.f", line 32.2: 1514-050 (S) Specification statement is out of order.  Statement is ignored.
+"BDT01d.f", line 32.21: 1516-036 (S) Entity z2 has undefined type.
+"BDT01d.f", line 33.16: 1515-019 (S) Syntax is incorrect.
+** bdt01d   === End of Compilation 1 ===
+1501-511  Compilation failed for file BDT01d.f.

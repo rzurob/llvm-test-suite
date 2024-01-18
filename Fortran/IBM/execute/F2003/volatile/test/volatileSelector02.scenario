@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=release/F2003/volatile/volatileSelector02.f
+#FEATURE = VOLATILE 255728
+#CREATOR = William Zhang
+#DATE    = 05/30/2006
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD            = F_COMPILE
+#OPTS           = $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT          = $(tcasedir)volatileSelector02.f
+#OUTPUT         = volatileSelector02$(OBJ)
+#ENDCMD
+
+#CMD            = F_LINK
+#INPUT          = volatileSelector02$(OBJ)
+#OUTPUT         = volatileSelector02$(EXE)
+#ENDCMD
+
+#CMD            = RUN
+#INPUT          = volatileSelector02$(EXE)
+#ENDCMD
+
+#CMD            = EGREP
+#OPTS           = -i '^a[   ]'
+#INPUT          = volatileSelector02$(LST)
+#STDOUT         = volatileSelector02.egrep.stdout
+#ENDCMD
+
+#CMD            = EGREP
+#OPTS           = 'Volatile'
+#INPUT          = volatileSelector02.egrep.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

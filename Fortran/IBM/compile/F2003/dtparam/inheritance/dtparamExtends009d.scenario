@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/inheritance/dtparamExtends009d.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamExtends009d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamExtends009d$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = dtparamExtends009d.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = dtparamExtends009d.err $($(tcasedir)dtparamExtends009d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,8 @@
+** m   === End of Compilation 1 ===
+"dtio001.f", line 65.25: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+"dtio001.f", line 65.38: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+"dtio001.f", line 66.22: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+"dtio001.f", line 66.35: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+** dtio001   === End of Compilation 2 ===
+** aaa   === End of Compilation 3 ===
+1501-511  Compilation failed for file dtio001.f.

@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrDummyArgPtr.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrDummyArgPtr.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrDummyArgPtr$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrDummyArgPtr$(OBJ)
+#OUTPUT    = dataPtrDummyArgPtr$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrDummyArgPtr$(EXE)
+#STDOUT    = dataPtrDummyArgPtr.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrDummyArgPtr.out $($(tcasedir)dataPtrDummyArgPtr$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,8 @@
+** m   === End of Compilation 1 ===
+** dataptrprivintent   === End of Compilation 2 ===
+"dataPtrPrivIntent.f", line 53.3: 1516-147 (S) parr has the attribute INTENT(IN).  It may not appear as the pointer object in a pointer assignment statement, or in an ALLOCATE, DEALLOCATE, or NULLIFY statement.
+"dataPtrPrivIntent.f", line 55.3: 1516-147 (S) parr has the attribute INTENT(IN).  It may not appear as the pointer object in a pointer assignment statement, or in an ALLOCATE, DEALLOCATE, or NULLIFY statement.
+"dataPtrPrivIntent.f", line 57.3: 1516-157 (S) Module entity parr1 with the PROTECTED attribute is not definable when it is accessed by use association.
+"dataPtrPrivIntent.f", line 59.3: 1516-157 (S) Module entity parr1 with the PROTECTED attribute is not definable when it is accessed by use association.
+** sub   === End of Compilation 3 ===
+1501-511  Compilation failed for file dataPtrPrivIntent.f.

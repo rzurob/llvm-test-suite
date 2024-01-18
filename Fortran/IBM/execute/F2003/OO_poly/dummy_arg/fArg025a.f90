@@ -1,0 +1,153 @@
+!#######################################################################
+! SCCS ID Information
+! %W%, %I%
+! Extract Date/Time: %D% %T%
+! Checkin Date/Time: %E% %U%
+!#######################################################################
+! *********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: fArg025a.f
+! %VERIFY: fArg025a.out:fArg025a.vf
+! %STDIN:
+! %STDOUT: fArg025a.out
+! %EXECARGS:
+! %POSTCMD: 
+! %END
+! *********************************************************************
+!*  =================================================================== 
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
+!*  =================================================================== 
+!*  =================================================================== 
+!*
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Jim Xia
+!*  DATE                       : 07/21/2004
+!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
+!*                             :
+!*
+!*  PRIMARY FUNCTIONS TESTED   :
+!*                             :
+!*  SECONDARY FUNCTIONS TESTED : 
+!*
+!*  DRIVER STANZA              : xlf95
+!*
+!*  DESCRIPTION                : argument association (dummy procedure in
+!                               argument association)
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!* ===================================================================
+!*
+!*  REVISION HISTORY
+!*
+!*  MM/DD/YY:  Init:  Comments:
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+module m
+    type base
+        integer*4 :: id
+
+        contains
+
+        procedure :: print => printBase
+    end type
+
+    type, extends(base) :: child
+        character*20 :: name
+
+        contains
+
+        procedure :: print => printChild
+    end type
+
+    interface
+        function findAlg (b, id)
+        import base
+            class (base), pointer :: findAlg (:)
+            class (base), intent(in) :: b (:)
+            integer*4, intent(in) :: id
+        end function
+    end interface
+
+    contains
+
+    subroutine printBase (b)
+        class (base), intent(in) :: b
+
+        print *, b%id
+    end subroutine
+
+    subroutine printChild (b)
+        class (child), intent(in) :: b
+
+        print *, b%id, b%name
+    end subroutine
+
+    subroutine printMatches (b, func, id)
+        class (base), intent (in) :: b(:)
+        procedure (findAlg) func
+        integer*4, intent(in) :: id
+
+        class (base), pointer :: temp(:)
+
+        temp => func (b, id)
+
+        if (associated (temp)) then
+            do i = lbound(temp,1), ubound(temp, 1)
+                call temp(i)%print
+            end do
+
+            deallocate (temp)
+        else
+            print *, 'there is no data with matching ID'
+        end if
+    end subroutine
+end module
+
+program fArg025a
+use m
+    procedure (findAlg) :: find1
+
+    type(child) :: c1 (10)
+
+    c1 = (/(child(mod(i,4), 'c1_'//char(ichar('0')+i-1)), i=1,10)/)
+
+    call printMatches (c1, find1, 1)
+
+    call printMatches (c1%base, find1, 3)
+
+    call printMatches (c1(::3), find1, 0)
+
+    call printMatches (c1((/1,2,10/)), find1, 3)
+end
+
+
+function find1 (b, id)
+use m, only: base, child
+    class (base), pointer :: find1 (:)
+    class (base), intent(in) :: b (:)
+    integer*4, intent(in) :: id
+
+    integer*4 matchSize, indexs(size(b))
+
+    nullify (find1)
+
+    matchSize = 0
+    indexs = 0
+
+    do i = 1, size(b)
+        if (b(i)%id == id) then    ! then we find a match based on id
+            matchSize = matchSize + 1
+            indexs(matchSize) = i
+        end if
+    end do
+
+    if (matchSize /= 0) then
+        allocate (find1(matchSize), source=b(indexs(1:matchSize)))
+    end if
+end function

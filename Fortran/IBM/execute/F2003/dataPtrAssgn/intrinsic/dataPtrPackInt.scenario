@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrPackInt.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrPackInt.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrPackInt$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrPackInt$(OBJ)
+#OUTPUT    = dataPtrPackInt$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrPackInt$(EXE)
+#STDOUT    = dataPtrPackInt.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrPackInt.out $($(tcasedir)dataPtrPackInt$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/allocEnh/funcResult/procPtr001.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)procPtr001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = procPtr001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = procPtr001$(OBJ)
+#OUTPUT    = procPtr001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = procPtr001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

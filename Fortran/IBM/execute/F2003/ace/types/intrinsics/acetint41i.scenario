@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint41i.scenario
+#FEATURE	= Array constructor enhancement AC containing dummy arguments, including arrays (integers)
+#CREATOR	= DF Manual Update
+#DATE		= 20061018
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint41i.f
+#OUTPUT		= acetint41i$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint41i$(OBJ)
+#OUTPUT		= acetint41i$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint41i$(EXE)
+#STDOUT		= acetint41i.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $(tcasedir)acetint41i.vf acetint41i.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

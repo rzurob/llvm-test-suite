@@ -1,0 +1,441 @@
+<html><head><title>F2008: Implied Shape Arrays</title></head><body><table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#c0e1ff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="left" style="font-size: 12pt; color: rgb(0, 0, 128); font-family: Arial;"><strong>Document Control Information:</strong>
+            <p style="color: rgb(0, 0, 0);">The official version of this document is kept in CMVC in the <span style="font-weight: bold; text-decoration: underline;">%CMVC_Family%</span> family, release <span style="font-weight: bold; text-decoration: underline;">%CMVC_Release%</span>, component <span style="font-weight: bold; text-decoration: underline;">%CMVC_Component%</span>, file <span style="font-weight: bold; color: rgb(255, 102, 102); text-decoration: underline;">%CMVC_PathName%</span>. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.<br />
+            <br />
+            CMVC Extraction Information: %W% %H% %I% sccsid<br />
+            <br />
+            This document is IBM Confidential.<br />
+            </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table cellspacing="0" cellpadding="5" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td width="20%" valign="top" align="left"><strong>CMVC Feature Number</strong> </td>
+            <td width="80%" valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%CMVC_Feature%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Feature Title</strong> </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Document_Name%  %Note{By default the feature title and document name are the same. You can either change the document name (through Properties), or replace the tag with the title of the feature}%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Author(s)</strong> </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Authors%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Applicable Product Releases</strong> </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">XL Fortran v14.1 on AIX, BGQ and Linux<br />
+            <br />
+            %Note{ List all the products and their release numbers for which the information in this document is/will be correct. For example:<br />
+            XL C/C++ v7.0 and 8.0 on Linux and AIX<br />
+            XL Fortran v9.1 and 10.1 on Linux and AIX.<br />
+            <br />
+            If you are updating this I0, remove old products from the list if they will not support this updated I0's behaviour. For example, if this I0 was first written for XL Fortran v9.1 and a change is being made in XL Fortran v10.1 that will not be ported back to v9.1, then v9.1 should not appear in the list.<br />
+            <br />
+            For prototype or experimental code that isn't scheduled to ship in any release yet, note possible future targets like this: &quot;Experimental code, may ship in future XL Fortran and XL C/C++ AIX releases&quot; }%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Affected Components</strong> </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">Front Ends: Fortran<br />
+            Optimizers: ASTI<br />
+            Documentation: Product documentation<br />
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#ff6666">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial; text-align: left;"><strong>Document Status: For Approval</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<p><strong>Approvers Only:</strong> Click on the 'Approve' check-box beside your name in the table below if you agree with the technical and user interface content of this document; not checking your 'approve' check-box signifies you do not approve.</p>
+<p>%Approvals%</p>
+<p>Approval Comments</p>
+<p>
+<table cellspacing="0" cellpadding="5" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td valign="top" align="left"><strong>Approvers</strong> (mandatory participation) </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Note{Insert the names of people who will have approval authority for this review. These people, in aggregate, are responsible for approving the technical and user interface content of the document. Generally, this list should include people who represent compiler components that will need to change if this review is approved.<br />
+            The I0 Process document provides detailed guidance on choosing your list of approvers.<br />
+            Use Access Control to add/delete people from this list. The initial access control list is populated with the people from the Component Reviewers section below. You can use Access Control to change their role to Approver, or add additional approvers.}%<br />
+            %Approvers%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Release Management Contact</strong> (optional participation) </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Release_Management_Contact% <br />
+            %Note{Release Manager/Development Manager/Team Lead,<br />
+            usually your team's representative at product status meetings. Use Access Control to add/change Release Management Contact.}%<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Component Reviewers</strong> (optional participation) </td>
+            <td valign="top" align="left" style="color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Note{These groups must be made aware of the I0. Assign at least one person representing each group. The names listed below are suggested contacts only, please assign whoever is appropriate:<br />
+            <ul style="font-family: Arial;">
+                <li><strong>C FE and related tools/libraries/driver:</strong><br />
+                AIX - Philip Luk<br />
+                Linux - Philip Luk<br />
+                z/OS - Kendrick Wong<br />
+                CELL - Larry Lindsay<br />
+                UPC - Philip Luk</li>
+                <li><strong>C++ FE and related tools/libraries/driver:</strong><br />
+                AIX - Jeff Heath<br />
+                Linux - Sasha Kasapinovic<br />
+                z/OS - Michael Wong<br />
+                CELL - Kevin Shin<br />
+                </li>
+                <li><strong>Fortran FE, ASTI, PLIX, and related tools/libraries/driver:</strong><br />
+                AIX, PLIX - Rafik Zurob<br />
+                Linux - Xing Xue<br />
+                BG/L - Daniel Chen<br />
+                CELL - Kelvin Li </li>
+                <li><strong>PL/X Development:</strong><br />
+                Kirk Crane<br />
+                </li>
+                <li><strong>TPO and associated tools/libraries (libxlopt, SMPRT, MASS):</strong><br />
+                AIX - Arie Tal/Yan Zhang<br />
+                Linux - Tommy Wong<br />
+                z/OS - Chris Miclea<br />
+                BG - Damien Bonaventure<br />
+                CELL - Amy Wang</li>
+                <li><strong>TOBEY and associated tools/libraries: (dis, libxl, bolt)</strong><br />
+                AIX - Christopher Lapkowski<br />
+                Linux - Irina rada<br />
+                z/OS - Chwan-Hang Lee<br />
+                BG - Damien Bonaventure, Leon Ding (Xialoliang Ding/Piscataway/IBM@IBMUS)<br />
+                CELL - Dickson Chau<br />
+                dis - Ian McIntosh<br />
+                </li>
+                <li><strong>WCode:</strong><br />
+                Roland Froese</li>
+                <li><strong>Disassembler<br />
+                </strong>Ian McIntosh</li>
+                <li><strong>Information Development:</strong><br />
+                C/C++ - Wei Zhong Shan/China/IBM<br />
+                Fortran - Lisa Wilkinson<br />
+                </li>
+                <li><strong>Customer Service and Support:</strong><br />
+                AIX/Linux - Zoran Kulina<br />
+                z/OS - Youssef Himo <br />
+                Cell - Sean Kennedy </li>
+                <li><strong>Compiler Enablement:</strong><br />
+                Dwayne Moore </li>
+                <li><strong>Fortran Test:</strong><br />
+                Kobi Vinayagamoorthy<br />
+                </li>
+                <li><strong>C/C++ Test:</strong><br />
+                Thomas Lee(z/OS)<br />
+                Adrean Gatea (system p)<br />
+                </li>
+                <li><strong>PL/X Test:</strong><br />
+                Anne Wylie </li>
+                <li><strong>Build and Packaging Team:</strong><br />
+                AIX - Chris Taylor<br />
+                Linux - Viktor Ganich<br />
+                BG - Steven Chen<br />
+                Cell - Kevin Yuen<br />
+                z/OS - Steve Chen<br />
+                Dale Soldiuk (Please include Dale as optional on all reviews)</li>
+                <li><strong>Performance Measurement and Analysis Team:<br />
+                </strong>John Tam</li>
+                <li><strong>Planning</strong><br />
+                Mary Chan<br />
+                </li>
+            </ul>
+            <p>The following groups must be notified of a W-Code change or if a change affects their language. They are optional otherwise.</p>
+            <ul>
+                <li><strong>PL/I:</strong><br />
+                zOS and AIX - Peter Elderon (in SVL) </li>
+                <li><strong>Cobol:</strong><br />
+                AIX - Richard Nelson (in SVL) </li>
+            </ul>
+            <p>The following group must be notified of a front-end (C FE, or C++ FE) related change or other modification having a direct impact. Inclusion is optional otherwise.</p>
+            <ul>
+                <li><strong>Makedepend for USS:</strong><br />
+                Christopher Taylor </li>
+            </ul>
+            <p>The following group must be notified whenever a change in debug WCODE is made, and any debugger related issues are involved.</p>
+            <ul>
+                <li><strong>Common Debug Architecture Development (CDA):</strong><br />
+                Kendrick Wong </li>
+            </ul>
+            Use Access Control to add/delete people from this list.}%             <br />
+            %Component_Reviewers%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Team Reviewers</strong> (optional participation) </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">             %Note{List any additional people you feel need to participate in the review. These people do not have approval authority. Use Access Control to add/delete people from this list.}%<br />
+            %Team_Reviewers%</td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p><br />
+<br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td style="vertical-align: top; font-family: Arial;"><strong>Reviewers</strong>: Please click the 'Reviewed' checkbox beside your name to indicate your participation in the review. </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%Reviews%<br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td style="vertical-align: top; font-family: Arial;"><strong>Access Change History</strong> %Note{Authors: Access Change History will list any changes to the access control done to the document draft. These changes would not be visible in a review. In a review, this section would only list the access changes done to the review itself.<br />
+            Please note that changes to the access control of a review are not automatically reflected in the access control of the draft document.}% </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%CollapsedSection{<strong>Access Change History</strong>}{%Access_Change_History%}%<br />
+</p>
+<p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>Feature Overview</strong> </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>This feature will implement implied-shape arrays in as described by the Fortran 2008 standard. <br />
+</p>
+<h2>Key Requirements</h2>
+The new syntax for implied-shape arrays must be handled by correctly. Proper semantic checking must be implemented.<br />
+<h2>Key Design Issues</h2>
+1) How will the bounds information be gathered?<br />
+2) <span id="comments43620"><span id="expanded43620"><span id="comments_content43620">Determining the shape when the constant expression is an ac-implied-do.</span></span></span>
+<h2>Key Design Decisions</h2>
+1) The bounds information wll be gathered from both the implied-shape specifications and the constant expression. The rank and low bounds of the array will be taken from the  implied-shape specifications, on the LHS. However the extent of each  dimension will be determined by the constant expression, on the RHS. As the RHS is a constant expression, all the appropriate information will be known.<br />
+2) As the ac-implied-do-control must be a constant expression, we are able to fold the array constructor before performing the initialization. After folding the ac-implied-do we will know its shape.<br />
+<h2>Testing Strategy</h2>
+Implied-shape arrays should be tested within a variety of program  units, including modules, program, procedures and BLOCK constructs. Array declarations should be tested to ensure that the compiler differentiates all array specifications correctly, specifically differentiating assumed shape. All types of constant expressions should be used to initialize the implied-shape array, with particular emphasis on ac-implied-do and parameterized derived types.<br />
+<p> </p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>User Documentation</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Overview</h3>
+</strong>
+<p>An implied-shape array is a named constant. Its declaration contains an implied-shape specification and a constant expression, from where it inherits its shape. The rank of an implied-shape array is the number of implied-shape specifications. The extent of each dimension of an implied-shape array is the same as the extent of the corresponding dimension of the constant expression. The lower bound of each dimension is specified in the implied-shape specification, called lower-bound below, or 1 otherwise. The upper bound is one less than the sum of the lower bound and the extent.</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3><strong style="font-size: 20px; color: rgb(0, 128, 0);"> </strong> </h3>
+</strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>User Benefits<br />
+</h3>
+</strong>
+<p>Allows use of implied-shape arrays.</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Public Interface</h3>
+</strong>The new syntax is as follows:
+<p><font face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp; R515&nbsp;&nbsp;&nbsp; array-spec&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; is&nbsp;&nbsp;&nbsp; implied-shape-spec-list<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp; R522&nbsp;&nbsp;&nbsp; implied-shape-spec&nbsp;&nbsp;&nbsp; is&nbsp;&nbsp;&nbsp; [ lower-bound : ] *</font></p>
+<p>&nbsp;</p>
+<p><font face="Courier New"><span id="comments43625"><span id="expanded43625"><span id="comments_content43625">
+<pre>     --- , -----------------------------<br />     |                                 |<br /> &gt;&gt;--+---+-------------------+--- * ---+----&gt;&lt;<br />         |                   |<br />         --- lower_bound : --- </pre>
+</span></span></span></font></p>
+<p><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Constraints</h3>
+</strong> </p>
+<p>1) An implied-shape array must have the parameter attribute.<br />
+2) An implied-shape array shall be a named constant.<br />
+3) The constant expression within the implied-shape specification statement must not be a scalar.<a class="review" title="Click on the text to add a comment"><span id="line_43790_1"></span></a><br />
+<br />
+</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Rules</h3>
+</strong>
+<p>1) The rank of the constant expression must equal the rank of implied-shape array.<br />
+2) <span id="comments43612"><span id="expanded43612"><span id="comments_content43612">The rank of the implied-shape array is equal to the rank of the constant expression used to initialize it. <br />
+3) The extent of the implied-shape array will be equal to the extent of the constant expression for each dimension specified.<br />
+4) The low bound of each dimension of an implied-shape array will be taken from the respective low bounds specified in implied-shape specification. For each dimension that a low bound is not specified a value of 1 will be used.</span></span></span></p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Language Standard Considerations</h3>
+</strong>
+<p>Implied-shape arrays conform to the Fortran 2008 standard. Implied-shape arrays will be flagged with a language level message if the source is compiled with a language level of Fortran 2003 or below.<br />
+</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Messages</h3>
+</strong>
+<p>All messages will be approved by the XLF Messages committee.</p>
+<p>In addition of the constraints and language level considerations above, we need to diagnose improperly formed array specifications, such as:</p>
+<p>integer, parameter :: arr(*,2,*) = reshape([1,2,3,4,5,6,7,8],[2,2,2])<br />
+</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Performance Considerations</h3>
+</strong>
+<p>None.<br />
+</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Multi-Platform/Portability Considerations</h3>
+</strong>
+<p>None.</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Migration/Co-Existence/Binary-Compatibility Considerations</h3>
+</strong>
+<p>None.</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Debug Considerations</h3>
+</strong>
+<p><span id="comments43618"><span id="expanded43618"><span id="comments_content43618">  Implied-shape arrays will have explicit shape in the debug information. </span></span></span> <strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>NLS (Unicode) Considerations</h3>
+</strong> </p>
+<p>None.</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Samples</h3>
+</strong>
+<p><font face="Courier New">&nbsp; type base<br />
+&nbsp;&nbsp;&nbsp; integer :: i = 1<br />
+&nbsp; end base<br />
+&nbsp; integer, parameter :: onetofour = [ 1, 2, 3, 4 ]<br />
+&nbsp; integer, parameter :: imp1 ( 4 : * ) = [&nbsp; 1, 2 ]<br />
+&nbsp; real, parameter :: imp2 ( *, 10 : * ) = reshape( [1,2,3,4],[2,2] )<br />
+&nbsp; </font><font face="Courier New">type(base), parameter :: imp3 ( * ) = [ (base(), i=1, 2) ]<br />
+&nbsp; integer, parameter, dimension( * ) = onetofour</font></p>
+<p><font face="Courier New">&nbsp; end</font></p>
+<p><br />
+</p>
+<br />
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>Architecture Review Board</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">  </strong>
+<p>None.<br />
+</p>
+<p><br />
+</p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>Internal Compiler Team Information</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Product Dependencies</h3>
+</strong>
+<p>None.</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Patent/Disclosure Implications</h3>
+</strong>
+<p>None.</p>
+<p><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Scientific Research and Experimental Development</h3>
+</strong> </p>
+<p>None<br />
+</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Build and Packaging Considerations</h3>
+</strong>None. <strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Information Development Impacts</h3>
+</strong>
+<p>1. In the XL Fortran v14.1: Getting Started:<br />
+</p>
+<p>Add the feature in topic <strong>Fortran 2008 features</strong> at http://vaidbld.torolab.ibm.com:10201/help/topic/com.ibm.xlf141.aix.doc/getstart/new_flangupdates_v14.html<br />
+</p>
+<p>2. In the XL Fortran v14.1: Language Reference:<br />
+</p>
+<p>Add topic <strong>Implied-shape arrays </strong>as a parallel topic to <strong>Explicit-shape arrays</strong>, <strong>Assumed-shaped arrays</strong>, and <strong>Deferred-shape arrays</strong> at http://vaidbld.torolab.ibm.com:10201/help/topic/com.ibm.xlf141.aix.doc/language_ref/arrays.html</p>
+%Note{List any documentation impacts. What books/chapters/sections are affected?  Do the man pages need updating? Are there any new terms or phrases that need to be added to the glossary?}%  <strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Testing Considerations</h3>
+</strong>
+<p><span id="comments43623"><span id="expanded43623"><span id="comments_content43623">Test the case when declaration of the shape is in a different statement from the initialization.<br />
+e.g.<br />
+integer arr(*)<br />
+parameter ( arr = [1, 2, 3] )<br />
+<br />
+Test implied shape arrays of derived type, including parameterized derived types.<br />
+Test implied-shape arrays where the constant expression is:</span></span></span><span id="comments43623"><span id="expanded43623"><span id="comments_content43623"><br />
+</span></span></span></p>
+<ul>
+    <li><span id="comments43623"><span id="expanded43623"><span id="comments_content43623">an  ac-implied-do.</span></span></span></li>
+    <li><span id="comments43623"><span id="expanded43623"><span id="comments_content43623">an array  constructor containing ac-values in addition to implied-dos.</span></span></span></li>
+    <li><span id="comments43623"><span id="expanded43623"><span id="comments_content43623">a </span></span></span><span id="comments43623"><span id="expanded43623"><span id="comments_content43623">call to reshape</span></span></span></li>
+    <li><span id="comments43623"><span id="expanded43623"><span id="comments_content43623">zero-sized<br />
+    </span></span></span></li>
+</ul>
+<br />
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>High-Level Implementation Design</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Implementation Design Overview</h3>
+</strong> <br />
+The front end will parse the new syntax. The rank and low bounds of the array will be taken from the implied-shape-specification on the LHS, however the extent of each dimension will be determined by the constant expression on the RHS. Once this is done, it is business as usual.<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Inter-Component Communication/Interfaces</h3>
+</strong>
+<p>No change. </p>
+<p><br />
+</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Other Implementation Design Information</h3>
+</strong>
+<p>None.<br />
+</p>
+<p><br />
+</p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>Appendix/References</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<p>&nbsp;</p>
+<p><span id="comments_153"><span id="comments43772"><span id="expanded43772"><span id="comments_content43772"></span></span></span></span><a class="review" title="Click on the text to add a comment"><span id="line_43772_1">Section 5.3.8.6 of the 2010-04-20 draft of the Fortran 2008 standard. </span></a><br />
+<br />
+<br />
+<br />
+%Note{This section provides additional information to be used when writing the I0.  This is not intended for inclusion in the I0 so this section should be removed from the I0 once it is written. </p>
+<h4>Rules for file name generation on Z/OS</h4>
+<p> </p>
+<ol>
+    <li>There are 4 types of invocation: JCL, TSO, c89 utility and xlc utility</li>
+    <li>JCL invocation is processed separate from all other invocation types. A default destination name is generated based on the source file name. Output file names are then generated based on this default destination name. For example:
+    <ul>
+        <li>If I compile a source file //'TSCTEST.PDS.C(FOO)' the generated name of the DBRM file would be //'MILOS.PDS.C.DBRM(FOO)'</li>
+        <li>If I compile a source file //'TSCTEST.SEQ.C' the generated name of the DBRM file would be //'MILOS.SEQ.C.DBRM'</li>
+        <li>If I compile a source file /home/milos/foo.c the generated DBRM file would be ./foo.dbrm</li>
+    </ul>
+    </li>
+    <li>TSO invocation relies on REXX execs which specify a default destination pattern &quot;//~.DEST&quot;. The default destination pattern is passed to the compiler as an argument. This pattern causes the compiler to generate output file names using the same logic as in the JCL case.</li>
+    <li>The xlc utility always generates a default destination name based on the source file name (this can not be changed by the user). The default destination name is passed to the compiler as an argument. The compiler uses the default destination name to generate output file names in a similar fashion as in the JCL case, but with slightly different results. For example:
+    <ul>
+        <li>If I compile a source file //'TSCTEST.PDS.C(FOO)' the generated name of the DBRM file would be //'MILOS.PDS.DBRM(FOO)'</li>
+        <li>If I compile a source file //'TSCTEST.SEQ.C' the generated name of the DBRM file would be //'MILOS.SEQ.DBRM'</li>
+        <li>If I compile a z/OS UNIX file /home/milos/foo.c the generated DBRM file would be ./foo.dbrm </li>
+    </ul>
+    </li>
+    <li>Like xlc, the c89 utility always generates a default destination name based on the source file name. By default the behavior is the same as in the xlc case. However, this can be changed by setting _OSUFFIX_HOSTQUAL  and _OSUFFIX_HOSTRULE to 0 which yields the same behavior as in the JCL case.}%</li>
+</ol>
+<p>&nbsp;</p><!--HTML Wrapper--></body></html>

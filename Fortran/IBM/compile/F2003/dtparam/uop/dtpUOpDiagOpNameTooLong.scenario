@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpDiagOpNameTooLong.scenario
+#FEATURE   = User-Defined Operators - diagnostic for name longer than 63 characters
+#CREATOR   = DF Manual Update
+#DATE      = 20090209
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpDiagOpNameTooLong.f
+#OUTPUT    = dtpUOpDiagOpNameTooLong$(OBJ)
+#STDERR    = dtpUOpDiagOpNameTooLong.stderr
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)dtpUOpDiagOpNameTooLong$(product)vf) dtpUOpDiagOpNameTooLong.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

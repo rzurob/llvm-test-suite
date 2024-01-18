@@ -1,0 +1,12 @@
+ in pC1
+ pC2.. 123
+ 
+ in disp1
+ in disp1a
+ abcde#bcd& 92345678 -92345678
+ 
+ in disp1a
+ in disp1
+ #bcd&abcde -93456789 93456789
+ 
+ done

@@ -1,0 +1,38 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/intrinsics/merge/mergeProcPointerComp01.scenario
+#FEATURE= 355754
+#CREATOR= Nancy Wang
+#DATE   = Sept. 22 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)mergeProcPointerComp01.f
+#OUTPUT= mergeProcPointerComp01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = mergeProcPointerComp01$(OBJ)
+#OUTPUT= mergeProcPointerComp01$(EXE)
+#ENDCMD
+
+
+#CMD   = RUN
+#INPUT = mergeProcPointerComp01$(EXE)
+#STDOUT = mergeProcPointerComp01.out
+#ENDCMD
+
+#CMD    = DIFF
+#INPUT  = $($(tcasedir)mergeProcPointerComp01$(product)vf) mergeProcPointerComp01.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

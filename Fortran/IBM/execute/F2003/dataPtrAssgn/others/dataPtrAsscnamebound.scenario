@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrAsscnamebound.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrAsscnamebound.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrAsscnamebound$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrAsscnamebound$(OBJ)
+#OUTPUT    = dataPtrAsscnamebound$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrAsscnamebound$(EXE)
+#STDOUT    = dataPtrAsscnamebound.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrAsscnamebound.out $($(tcasedir)dataPtrAsscnamebound$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/polyAssign/diag/polyAssign1008d_conversionNotPermitted.f
+#FEATURE   = LHS of intrinsic assignment is allowed to be polymorphic
+#CREATOR   = Aaron Liu
+#DATE      = 20150901
+#TEST_TYPE = diagnostic
+#KEYWORDS  = F2008, polymorphic, LHS, intrinsic assignment
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)polyAssign1008d_conversionNotPermitted.f
+#OUTPUT    = polyAssign1008d_conversionNotPermitted$(OBJ)
+#STDOUT    = polyAssign1008d_conversionNotPermitted.out
+#STDERR    = polyAssign1008d_conversionNotPermitted.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)polyAssign1008d_conversionNotPermitted$(product)vf) polyAssign1008d_conversionNotPermitted.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

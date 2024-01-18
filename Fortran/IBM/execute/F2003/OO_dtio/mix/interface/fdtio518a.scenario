@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/mix/interface/fdtio518a.f
+#FEATURE = OO_dtio
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fdtio518a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fdtio518a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fdtio518a$(OBJ)
+#OUTPUT    = fdtio518a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fdtio518a$(EXE)
+#STDOUT    = fdtio518a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fdtio518a.out $($(tcasedir)fdtio518a$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,15 @@
+ &MYNML
+ CX1=(NaN(S),Inf), I1=11, CX2=(NaN(S),-Inf), C1=IBM
+ /
+ &MYNML
+ CX1=(NaN(Q),Inf), I1=11, CX2=(NaN(Q),-Inf), C1=IBM
+ /
+ &MYNML
+ CX1=(NaN(Q),Inf), I1=11, CX2=(NaN(S),-Inf), C1=IBM
+ /
+ &MYNML
+ CX1=(-Inf,Inf), I1=11, CX2=(NaN(S),NaN(Q)), C1=IBM
+ /
+ &MYNML
+ CX1=(3.00000000000000000,-Inf), I1=11, CX2=(2.00000000000000000,NaN(Q)), C1=IBM
+ /

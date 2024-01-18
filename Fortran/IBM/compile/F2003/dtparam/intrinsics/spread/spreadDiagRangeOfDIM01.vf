@@ -1,0 +1,11 @@
+** m   === End of Compilation 1 ===
+"spreadDiagRangeOfDIM01.f", line 46.23: 1513-129 (S) The value of DIM is greater than the rank of the corresponding array argument.
+"spreadDiagRangeOfDIM01.f", line 47.23: 1513-129 (S) The value of DIM is greater than the rank of the corresponding array argument.
+"spreadDiagRangeOfDIM01.f", line 48.23: 1513-129 (S) The value of DIM is greater than the rank of the corresponding array argument.
+"spreadDiagRangeOfDIM01.f", line 49.23: 1513-129 (S) The value of DIM is greater than the rank of the corresponding array argument.
+"spreadDiagRangeOfDIM01.f", line 50.23: 1513-130 (S) The DIM argument must have a value greater than or equal to 1.
+"spreadDiagRangeOfDIM01.f", line 51.23: 1513-130 (S) The DIM argument must have a value greater than or equal to 1.
+"spreadDiagRangeOfDIM01.f", line 52.23: 1513-130 (S) The DIM argument must have a value greater than or equal to 1.
+"spreadDiagRangeOfDIM01.f", line 53.23: 1513-130 (S) The DIM argument must have a value greater than or equal to 1.
+** spreaddiagrangeofdim01   === End of Compilation 2 ===
+1501-511  Compilation failed for file spreadDiagRangeOfDIM01.f.

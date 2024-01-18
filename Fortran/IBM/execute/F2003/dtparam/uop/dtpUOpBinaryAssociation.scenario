@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpBinaryAssociation.scenario
+#FEATURE   = User-Defined Operators - correct association in expressions with repeated binary operations (left-to-right for all but **)
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpBinaryAssociation.f
+#OUTPUT    = dtpUOpBinaryAssociation$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpBinaryAssociation$(OBJ)
+#OUTPUT    = dtpUOpBinaryAssociation$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpBinaryAssociation$(EXE)
+#STDOUT    = dtpUOpBinaryAssociation.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUOpBinaryAssociation$(product)vf) dtpUOpBinaryAssociation.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

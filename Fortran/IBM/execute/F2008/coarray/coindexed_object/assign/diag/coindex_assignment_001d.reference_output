@@ -1,0 +1,3 @@
+"coindex_assignment_001d.f", line 39.22: 1514-774 (S) Cobound or coindex must be a scalar integer value from 1 to 9223372036854775807.
+** coindex_assignment_001d   === End of Compilation 1 ===
+1501-511  Compilation failed for file coindex_assignment_001d.f.

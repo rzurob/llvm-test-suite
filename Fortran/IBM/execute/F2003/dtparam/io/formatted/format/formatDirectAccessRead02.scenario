@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/format/formatDirectAccessRead02.scenario
+#FEATURE   = 359704
+#CREATOR   = Nancy Wang
+#DATE      = Dec. 15 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = COPY
+#INPUT = $(tcasedir)formatDirectAccessRead02.in .
+#ENDCMD
+
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)formatDirectAccessRead02.f
+#OUTPUT= formatDirectAccessRead02$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = formatDirectAccessRead02$(OBJ)
+#OUTPUT= formatDirectAccessRead02$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = formatDirectAccessRead02$(EXE)
+#STDOUT= formatDirectAccessRead02.out
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT  = $($(tcasedir)formatDirectAccessRead02$(product)vf) formatDirectAccessRead02.out
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

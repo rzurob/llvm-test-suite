@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrSumInt.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrSumInt.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrSumInt$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrSumInt$(OBJ)
+#OUTPUT    = dataPtrSumInt$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrSumInt$(EXE)
+#STDOUT    = dataPtrSumInt.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrSumInt.out $($(tcasedir)dataPtrSumInt$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

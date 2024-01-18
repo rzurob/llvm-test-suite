@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+
+! Scenario Documentation
+#BEGINDOC
+#NAME      = F2008/do_concurrent/func/do_concurrent_f013.scenario
+#FEATURE   = RTC STORY 17293 - F2008: DO CONCURRENT construct
+#PURPOSE   = Test the DO CONCURRENT construct
+#CREATOR   = Nicole Negherbon
+#DATE      = June 25, 2015
+#TEST_TYPE = FUNCTIONAL
+#KEYWORD   = DO CONCURRENT
+#ENDDOC
+
+! Blocks with DO CONCURRENT loops inside them and user-defined data types
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      = F_COMPILE
+#INPUT    = $(tcasedir)do_concurrent_f013.f
+#OUTPUT   = do_concurrent_f013$(OBJ)
+#ENDCMD
+
+#CMD      = F_LINK
+#INPUT    = do_concurrent_f013$(OBJ)
+#OUTPUT   = do_concurrent_f013$(EXE)
+#ENDCMD
+
+#CMD      = RUN
+#INPUT    = do_concurrent_f013$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,11 @@
+ ******************runtime test****************************
+ 1
+ 1525-610 Error encountered while attempting to execute the command:
+mv file1.txt file2.txt
+ **************compipiletime test**************************
+ 1
+ 1525-610 Error encountered while attempting to execute the command:
+mv file1.txt file2.txt
+
+ 1
+ End of the program: Normal termination

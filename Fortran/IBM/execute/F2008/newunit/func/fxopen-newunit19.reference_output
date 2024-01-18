@@ -1,0 +1,5 @@
+ ioID( 1 ) = ' 1 '
+ ioID( 2 ) = ' 2 '
+ ioID( 3 ) = ' 3 '
+ INQUIRE(ERR=100,ID= 3 ) 1525-001 The READ statement on the file fxopen-newunit19.dat cannot be completed because the end of the file was reached.  The program will stop.
+                                                                                                              

@@ -1,0 +1,14 @@
+"dtParamTypParamSyn1.f", line 38.27: 1515-019 (S) Syntax is incorrect.
+"dtParamTypParamSyn1.f", line 38.32: 1514-095 (S) Invalid statement within derived type definition.
+"dtParamTypParamSyn1.f", line 42.23: 1515-019 (S) Syntax is incorrect.
+"dtParamTypParamSyn1.f", line 42.28: 1514-095 (S) Invalid statement within derived type definition.
+"dtParamTypParamSyn1.f", line 46.19: 1515-019 (S) Syntax is incorrect.
+"dtParamTypParamSyn1.f", line 46.30: 1514-095 (S) Invalid statement within derived type definition.
+"dtParamTypParamSyn1.f", line 50.20: 1515-019 (S) Syntax is incorrect.
+"dtParamTypParamSyn1.f", line 50.36: 1514-095 (S) Invalid statement within derived type definition.
+"dtParamTypParamSyn1.f", line 54.35: 1514-725 (E) Identifier k has already been declared as a type parameter of derived type dt5.  This declaration of k is ignored.
+"dtParamTypParamSyn1.f", line 58.32: 1514-725 (E) Identifier l has already been declared as a type parameter of derived type dt6.  This declaration of l is ignored.
+"dtParamTypParamSyn1.f", line 62.20: 1515-019 (S) Syntax is incorrect.
+"dtParamTypParamSyn1.f", line 62.33: 1514-095 (S) Invalid statement within derived type definition.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtParamTypParamSyn1.f.

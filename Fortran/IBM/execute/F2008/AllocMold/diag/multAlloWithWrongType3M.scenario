@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = multAlloWithWrongType3M.f
+#FEATURE   = DTP - Allocate with source expression
+#CREATOR   = Izhak Jakov
+#DATE      = 20150629
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)multAlloWithWrongType3M.f
+#OUTPUT    = multAlloWithWrongType3M$(OBJ)
+#STDERR    = multAlloWithWrongType3M.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $(tcasedir)multAlloWithWrongType3M.vf multAlloWithWrongType3M.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

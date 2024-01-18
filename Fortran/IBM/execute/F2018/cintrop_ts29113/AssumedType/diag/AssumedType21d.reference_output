@@ -1,0 +1,7 @@
+** mod   === End of Compilation 1 ===
+"AssumedType21d.f", line 50.10: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"AssumedType21d.f", line 51.10: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"AssumedType21d.f", line 52.17: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"AssumedType21d.f", line 53.17: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+** assumedtype21d   === End of Compilation 2 ===
+1501-511  Compilation failed for file AssumedType21d.f.

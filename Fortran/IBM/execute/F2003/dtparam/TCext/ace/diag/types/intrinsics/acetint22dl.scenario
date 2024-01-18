@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/intrinsics/acetint22dl.scenario
+#FEATURE	= Derived Type Parameters (+ Array constructor enhancement --	\
+				Intrinsic Type Specifier with Incorrect KIND in Assignment)
+#CREATOR	= Glen Mateer (derived from work by David Forster)
+#DATE		= 20071203
+#TEST_TYPE	= Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint22dl.f
+#OUTPUT		= acetint22dl$(OBJ)
+#STDERR		= acetint22dl.stderr
+#VALIDRCS	= $(RC_COMP_S)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)acetint22dl$(product)vf) acetint22dl.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

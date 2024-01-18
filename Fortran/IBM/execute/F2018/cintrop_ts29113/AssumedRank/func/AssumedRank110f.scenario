@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/AssumedRank/func/AssumedRank110f.scenario
+#FEATURE   = C Interop, Assumed Rank
+#CREATOR   = Dorra Bouchiha
+#DATE      = 2013-11-30
+#TEST_TYPE = functional
+#KEYWORDS  = C Interop, Assumed Rank, CFI functions
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AssumedRank110f.F
+#OUTPUT    = AssumedRank110f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = AssumedRank110f$(OBJ)
+#OUTPUT    = AssumedRank110f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = AssumedRank110f$(EXE)
+#STDOUT    = AssumedRank110f.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

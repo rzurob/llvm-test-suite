@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/move_alloc/move_allocDiagArraySect01.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Oct. 3 2008
+#TEST_TYPE = Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)move_allocDiagArraySect01.f
+#STDERR = move_allocDiagArraySect01.err
+#VALIDRCS = $(RC_COMP_E)
+#ENDCMD
+
+#CMD    = XLDIFF
+#INPUT  = move_allocDiagArraySect01.err $($(tcasedir)move_allocDiagArraySect01$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

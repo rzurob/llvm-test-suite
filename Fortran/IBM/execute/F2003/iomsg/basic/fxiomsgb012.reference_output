@@ -1,0 +1,2 @@
+ 1525-024 The OPEN statement cannot be processed because ACCESS=SEQUENTIAL was coded in the OPEN statement but the file file1 is already connected to this unit with a different ACCESS value.  The program will recover by ignoring the ACCESS= specifier.
+                                                 

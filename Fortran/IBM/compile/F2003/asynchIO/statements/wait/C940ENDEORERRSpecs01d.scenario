@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/wait/C940ENDEORERRSpecs01d.scenario
+#FEATURE	= Asynchronous I/O -- WAIT() Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060315
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)C940ENDEORERRSpecs01d.f
+#OUTPUT		= C940ENDEORERRSpecs01d$(OBJ)
+#STDERR		= C940ENDEORERRSpecs01d.stderr
+#VALIDRCS	= $(RC_COMP_S)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)C940ENDEORERRSpecs01d$(product)vf)	\
+				C940ENDEORERRSpecs01d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

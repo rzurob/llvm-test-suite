@@ -1,0 +1,5 @@
+"genericC461Assignment001d.f", line 43.35: 1514-672 (S) Specific binding typetotype with the NOPASS attribute must not be specified for the generic binding with the generic specification ASSIGNMENT(=).
+"genericC461Assignment001d.f", line 43.47: 1514-672 (S) Specific binding inttotype with the NOPASS attribute must not be specified for the generic binding with the generic specification ASSIGNMENT(=).
+** m   === End of Compilation 1 ===
+** genericc461assignment001d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericC461Assignment001d.f.

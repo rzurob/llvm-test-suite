@@ -1,0 +1,8 @@
+ start
+ c - child: 99 xyz<
+ storing and recalling via old implementation
+ allocate in new via pointer from old
+ d - child: 99 xyz<
+ calling old implementation to copy; not expecting runtime error message
+ old implementation successfully copied.
+ bp2 - child: 99 xyz<

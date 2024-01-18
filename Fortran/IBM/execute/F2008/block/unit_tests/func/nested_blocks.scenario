@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=nested_blocks.scenario
+#FEATURE = F2008 BLOCK construct
+#CREATOR = Pooja Dayanand
+#DATE    = 20101021
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)nested_blocks.f
+#OUTPUT    = nested_blocks$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#INPUT     = nested_blocks$(OBJ)
+#OUTPUT    = nested_blocks$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = nested_blocks$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

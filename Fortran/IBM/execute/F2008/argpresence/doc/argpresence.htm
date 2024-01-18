@@ -1,0 +1,509 @@
+
+
+<script language="JavaScript1.2" type="text/javaScript" src="/scripts/scripts.js"></script>
+<link rel="stylesheet" type="text/css" href="/stylesheets/v4-screen.css" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/featureflow.css" />
+<style type="text/css" media="all">
+<!--
+@import url("/stylesheets/screen.css");
+@import url("/stylesheets/interior.css");
+@import url("/stylesheets/icons.css");
+@import url("/stylesheets/tables.css");
+-->
+</style>
+<!-- print stylesheet MUST follow imported stylesheets -->
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/print.css" />
+	<script type="text/javascript" language="JavaScript1.2">
+	var pageExitWarn = false;
+
+	<!-- 
+	function msover(image) { // Mouse Over 
+		if (document.images) { 
+			document[image].src = eval(image + "on.src") 
+		} 
+	} 
+	function msout(image) { // Mouse Out 
+		if (document.images) { 
+			document[image].src = eval(image + ".src") 
+		} 
+	} 
+	/* ----------------------------------------- */ 
+	function popup(hp, f3) { 
+		if (document.layers) { 
+			document[hp].visibility = "visible" 
+			document[hp].top = 0 
+			document[hp].left = f3.x + 23 
+			//document[hp].top = f3.pageY + 10 
+		} else { 
+			if (document.all) { 
+				document.all[hp].style.visibility = "visible" 
+				document.all[hp].style.left = f3.x + 23 
+				//document.all[hp].style.top = f3.y + 10 
+				document.all[hp].style.top = 0 
+			} 
+		} 
+	} 
+	function cpopup(hp) { 
+		if (document.layers) { 
+			document[hp].visibility = "hidden" 
+		} else { 
+			if (document.all) { 
+				document.all[hp].style.visibility = "hidden" 
+			} 
+		} 
+	} 
+	function lpopup(lyr) { 
+		if (document.layers) { 
+			if (document[lyr].visibility == "show") { 
+				document[lyr].visibility = "hidden" 
+			} else { 
+				document[lyr].visibility = "visible" 
+			} 
+		} else { 
+			if (document.all) { 
+				if (document.all[lyr].style.visibility == "visible") { 
+					document.all[lyr].style.visibility = "hidden" 
+				} else { 
+					document.all[lyr].style.visibility = "visible" 
+				} 
+			} 
+		} 
+	} 
+function selectAll() { for(var i=0;i<document.theform.elements.length;i++) {if(document.theform.elements[i].type == "checkbox"){document.theform.elements[i].checked = true;};};}
+function DeselectAll() { for(var i=0;i<document.theform.elements.length;i++) {if(document.theform.elements[i].type == "checkbox"){document.theform.elements[i].checked = false;};};}
+function goback() { 
+    if (true) 
+         history.back() 
+} 
+function fixdays(d_obj, m_obj) {
+   var numdays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+   for (var i = (eval(d_obj).length-1); i>=0; i--) {
+      eval(d_obj).options[i] = null;
+   }
+
+   for (var i = 1; i<=numdays[eval(m_obj).value]; i++) {
+      var optionadd = new Option(i, i);
+      eval(d_obj).options[eval(d_obj).length] = optionadd;
+   }
+}
+	//--> 
+
+function jsPageExitEnable() {
+    pageExitWarn = true;
+}
+
+function jsPageExitDisable() {
+    pageExitWarn = false;
+}
+    
+function pageExitWarning(){
+    if (pageExitWarn) {
+	return "All changes will be lost by leaving this page.";
+    }
+}
+
+
+
+</script><noscript> <!--  //--> </noscript>
+<TITLE>Reviewing  F2008: Argument Presence Enhancement (rev. 6) -  F E A T U R E - F L O W</TITLE>
+<script src="/javascripts/prototype.js?1307100769" type="text/javascript"></script>
+<script src="/javascripts/effects.js?1307100769" type="text/javascript"></script>
+<script src="/javascripts/dragdrop.js?1307100769" type="text/javascript"></script>
+<script src="/javascripts/controls.js?1307100769" type="text/javascript"></script>
+</head>
+<body  id="w3-ibm-com" class="article" onbeforeunload="return pageExitWarning();">
+<!-- start accessibility prolog -->
+<div class="skip"><a href="#content-main" accesskey="2">Skip to main content</a></div>
+<div class="skip"><a href="#left-nav" accesskey="n">Skip to navigation</a></div>
+<div id="access-info">
+	<p class="access">The access keys for this page are:</p>
+	<ul class="access">
+		<li>ALT plus 0 links to this site's <a href="https://w3.ibm.com/w3/access-stmt.html" accesskey="0">Accessibility Statement.</a></li>
+		<li>ALT plus 1 links to the w3.ibm.com home page.</li>
+		<li>ALT plus 2 skips to main content.</li>
+		<li>ALT plus 4 skips to the search form.</li>
+		<li>ALT plus 9 links to the feedback page.</li>
+		<li>ALT plus N skips to navigation.</li>
+	</ul>
+	<p class="access">Additional accessibility information for w3.ibm.com can be found <a href="https://w3.ibm.com/w3/access-stmt.html">on the w3 Accessibility Statement page.</a></p>
+</div>
+<!-- end accessibility prolog -->
+<!-- start masthead -->
+<div id="masthead">
+	<h2 class="access">Start of masthead</h2>
+	<div id="prt-w3-sitemark"><img src="/stylesheets/images/id-w3-sitemark-simple.gif" alt="" width="54" height="33" /></div>
+	<div id="prt-ibm-logo"><img src="/stylesheets/images/id-ibm-logo-black.gif" alt="IBM Logo" width="44" height="15" /></div>
+	<div id="w3-sitemark"><img src="/stylesheets/images/id-w3-sitemark-large.gif" alt="" width="266" height="70" usemap="#sitemark_map" /><map id="sitemark_map" name="sitemark_map"><area shape="rect" alt="Link to W3 Home Page" coords="0,0,130,70" href="http://w3.ibm.com/"  accesskey="1" /></map></div>
+   
+   <div id="personalization-links">
+      Logged on as zhangy@ca.ibm.com |
+      <a class="wpsToolbarLink" href="/featureflow/user_profile">User Profile</a> |
+
+      <a class="wpsToolbarLink" href="/login/logout">Sign Out</a>
+   </div>
+   
+	<div id="site-title-only">F E A T U R E - F L O W</div>
+	<div id="ibm-logo"><img src="/stylesheets/images/id-ibm-logo.gif" alt="IBM Logo" width="44" height="15" /></div>
+	<div id="persistent-nav"><a id="w3home" href="http://w3.canlab.ibm.com/"> w3 home </a><a id="bluepages" href="http://w3.ibm.com/bluepages/"> BluePages </a><a id="helpnow" href="/featureflow/help"> Help </a><a id="feedback" href="mailto:kwongray@ca.ibm.com,cntaylor@ca.ibm.com" accesskey="9"> Feedback </a></div>
+	<div id="header-search">
+		<form action="http://w3.ibm.com/search/w3results.jsp" method="get" id="search">
+		<table cellspacing="0" cellpadding="0" class="header-search">
+		<tr><td class="label"><label for="header-search-field">Search w3</label></td><td class="field"><input id="header-search-field" name="qt" type="text" accesskey="4" /></td><td class="submit"><input id="header-search-btn" type="image" alt="Go" src="/stylesheets/images/btn-go-dark.gif" /></td></tr>
+		</table>
+		</form>
+	</div>
+	<div id="browser-warning"><img src="/stylesheets/images/icon-system-status-alert.gif" alt="Error" width="12" height="10" /> This Web page is best used in a modern browser. Since your browser is no longer supported by IBM, please upgrade your web browser at the <a href="http://w3.ibm.com/download/">ISSI site</a>.</div>
+</div>
+<!-- stop masthead -->
+<!-- start navigation -->
+<div id="navigation">
+	<h2 class="access">Start of left navigation</h2>
+	<!-- left nav -->
+	<div id="left-nav">
+		<div class="top-level">
+			<a href="http://w3.ibm.com/">w3 Home</a>
+			<a  href="https://bluepages.ibm.com/tools/groups/protect/groupsgui.wss">BlueGroups</a>
+         
+         <a href="/featureflow">Feature Flow</a>
+         <div class="second-level">
+            <a href="/featureflow/documents">Documents</a>
+            <a href="/featureflow/reviews">Reviews</a>
+            <a href="/featureflow/search">Search (Beta)</a>
+        </div>
+         
+		</div>
+      <div name="document_control" id="document_control" style="border-bottom:1px solid #fff;">
+      
+
+<p>&nbsp;</p>
+<span style="width: 140px; overflow:hidden;">
+<table style="width: 140px; overflow:hidden;" border=1 width="100%" cellpadding=0 cellspacing=0 bgcolor="#CCE5FF">
+<tr><td align=center><b>Review Actions</b></td></tr>
+<tr><td>
+<table style="width: 148px; overflow:hidden;" cellpadding=1 cellspacing=0>
+
+<tr><td>
+<a href="/featureflow/show/5197">Show</a>
+<a href="/featureflow/show/5197?fullscreen=true"><font size=-2>(print/!frame)</font></a>
+</tr></td>
+
+
+<tr><td>
+<div id="mark_reviewed_approved">
+<table style="width: 148px; overflow:hidden;" cellspacing=0 cellpadding=0 border=0>
+
+
+</table>
+
+</div>
+</td></tr>
+</div>
+</td></tr>
+<tr><td>
+<a href="/featureflow/review_stats/5197">Review Statistics...</a>
+</td></tr>
+</td></tr>
+</table>
+<tr><td><table style="width: 148px; overflow:hidden;"><tr><td>Compare To:</td></tr><tr><td align='center'><form action="/featureflow/show"><select id="compare_to" style="width: 120px; overflow:hidden;" name="compare_to" onchange="var s=document.getElementById('compare_to'); var v=s.options[s.selectedIndex].value; location.href='/featureflow/show/5197'+ ((v != 0) ? '?compare_to='+v : '');"><option value=0>None</option><option value=5038>rev. 1</option><option value=5049>rev. 2</option><option value=5050>rev. 3</option><option value=5051>rev. 4</option><option value=5077>rev. 5 (Approval Draft)</option></select></form></td></tr></table></td></tr>
+
+<tr><td>
+<div id='comment_jump'>
+	<script>new Ajax.Updater(
+			'comment_jump', 
+			'/featureflow/comment_summary?id=5197&since=1314891960'
+		);
+	</script>
+</div>
+</td></tr>
+
+<tr><td><font color="red"></font></td></tr>
+</table>
+</span>
+
+      </div>
+      <div name="document_info" id="document_info" style="border-bottom:1px solid #fff;">
+      
+<span style="width: 140px; overflow:hidden;">
+<p>&nbsp;</p>
+
+<table style="width: 140px; overflow:hidden;" border=1 width="100%" cellpadding=2 cellspacing=0>
+<tr><td align=center><b>Review Information</b></td></tr>
+<tr><td><table style="width: 148px; overflow:hidden;"><p>Status: <b>APPROVED</b><p>Cut-off Date: <br>&nbsp;  Apr 19, 2011 (Tue)<br></tr></td></table></td></tr>
+</table>
+</span>
+
+      </div>
+	</div>
+	<!-- start related links -->
+	<!-- ** If there's related links, html goes here.  Otherwise, remove this line ** -->
+	<!-- stop related links -->
+</div>
+<!-- stop navigation -->
+<!-- start content -->
+<div id="content">
+	<h1 class="access">Start of main content</h1>
+	<!-- start content head -->
+	<div id="content-head">
+	<!-- <p id="breadcrumbs"></p> -->
+	</div>
+	<!-- stop content head -->
+	<!-- start main content -->
+	<div id="content-main">
+		<!--BEGIN MAIN BODY CONTENT-->
+      <head>
+  <script src="/javascripts/prototype.js?1307100769" type="text/javascript"></script>
+<script src="/javascripts/effects.js?1307100769" type="text/javascript"></script>
+<script src="/javascripts/dragdrop.js?1307100769" type="text/javascript"></script>
+<script src="/javascripts/controls.js?1307100769" type="text/javascript"></script>
+  <script src="/javascripts/fckeditor.js?1307100769" type="text/javascript"></script>
+  <script src="/javascripts/effects.js?1307100769" type="text/javascript"></script>
+
+</head>
+<span id="dummy" style="position: absolute; overflow:hidden; width:0; height:0">
+<form>
+<textarea id="dummytext">
+</textarea>
+</form>
+</span>
+<script>
+   var oFCKeditor = new FCKeditor( 'dummytext' ) ;
+   oFCKeditor.Config['LinkBrowser'] = false ; 
+   oFCKeditor.Config['ImageBrowser'] = true ;
+   oFCKeditor.Config["CustomConfigurationsPath"] =
+          '/javascripts/railsfck_comments.js?1307100769';
+/*   oFCKeditor.Config["SkinPath"] = 'skins/SilverNarrow/' ; */
+   oFCKeditor.ReplaceTextarea() ;   
+function edit(comment_id, id)
+{
+   var ac ;
+   var entry='' ;
+   var ref=comment_id ;
+   if (!id) {
+      entry='_entry' ;
+   } else {
+      ref = id ;
+   }
+   var parent_id=null;
+   var match=comment_id.match(/(\d+)_(\d+)/) ;
+   if (match) {
+      parent_id = match[1] ;
+   }
+
+   var old_comment_type		= null;
+   var comment_type_element	= document.getElementById('ctype'+id+'_'+comment_id);
+   if (comment_type_element != null) {
+	   old_comment_type	= comment_type_element.selectedIndex;
+   }
+
+   ac = document.getElementById('comments'+entry+ref) ;
+   if (!id && ac.innerHTML!='') {
+      var myb=document.getElementById('mycancelbutton'+ref) ;
+      myb.scrollIntoView(false) ;
+      return ;
+   }
+   var con = document.getElementById('comments_content'+id) ;
+   var content = '' ;
+   if (con) {
+      content = unlinkfy(con.innerHTML) ;
+      /* remove response */
+      content = content.replace(/<p><font size=\"?-1\"?>\(reply\)<\/font><\/p>\s*$/i,'');
+
+      /* Defect 336615: escape &lt and &gt so that the FCK editor does not treat these as HTML tags */
+      content = content.replace(/&lt;/g, '&amp;lt;');
+      content = content.replace(/&gt;/g, '&amp;gt;');
+   }
+   ac.originalInnerHTML = ac.innerHTML ;
+   ac.innerHTML='<table border=0 style="text-decoration:none;font-size:13px;">'+
+'<tr><td width="100%">'+
+'<form id="text_comments_form'+comment_id+'"'+
+' method="post" '+
+' onsubmit="myCommentEditorSubmit(\''+comment_id+'\', \''+id+'\'); return false ;">'+
+'<input id="id" name="id" size="30" type="hidden" value="'+id+'">'+
+'<input id="commentid" name="commentid" size="30" type="hidden" value="'+comment_id+'">'+
+'<input id="document_id" name="document_id" size="30" type="hidden" value="'+5197+'">'+
+'<table bgcolor="80FFFF" width="600" border=1 cellpadding=0 cellspacing=0>'+
+'<tr><td>'+
+'<font color=blue>User:</font> Ying Zhang '+
+((parent_id == null) ?  '<font color=blue>Type:</font> <select id="ctype_edit' + id + '_' + comment_id + '" name="ctype">'+
+   '<option value="Typo">Typo</option>'+
+   '<option value="Comment" selected>Comment</option>'+
+   '<option value="Problem">Problem</option>'+
+   '<option value="Issue">Issue</option>'+
+   '</select>'+
+   ' <font color=blue>Disposition:</font>'+ 
+   '<input id="disposition" name="disposition" value="Unassigned" type="hidden"/>'+
+   'Unassigned'
+: '') +
+'</td></tr>'+
+'<tr><td width="100%">'+
+'<table border=0 cellpadding=1 width="100%">'+
+'<tr><td td width="100%">'+
+'<textarea id="text_comment'+comment_id+'" name="text_comment'+comment_id+'" cols=76 rows=12 style="font-family:courier; background:#80FFFF">'+
+content+
+'</textarea></td></tr>'+
+'</td></tr>'+
+'</table>'+
+'<tr><td>'+
+'<input type="button" value="Clear" onclick="var oEditor=FCKeditorAPI.GetInstance(\'text_comment'+comment_id+'\'); oEditor.SetHTML(\'\') ; return false;">'+
+'<input type="submit" value="Submit">'+
+'<input type="submit" value="Submit+Notify" onclick="myCommentEditorSubmit(\''+comment_id+'\', \''+id+'\', true); return false ;">'+
+'<input id="mycancelbutton'+ref+'" type="button" value="Cancel" onclick="hideEditor(\''+entry+ref+'\'); return false;">'+
+'</td></tr>'+
+'</table>'+
+'</form>'+
+'</td></tr></table>';
+
+   if (old_comment_type != null) {
+	   document.getElementById('ctype_edit' + id + '_' + comment_id).selectedIndex	= old_comment_type;
+   }
+
+   var part='text_comment' + comment_id ;
+   var oFCKeditor = new FCKeditor( part ) ;
+   oFCKeditor.Height=200;
+/* work around an IE bug here that temporarily blanks the screen */
+   if ( navigator.userAgent.toLowerCase().indexOf("msie") == -1) {
+     oFCKeditor.Config['StartupFocus'] = true ; 
+   } 
+   oFCKeditor.Config['LinkBrowser'] = false ; 
+   oFCKeditor.Config['ImageBrowser'] = true ;
+   oFCKeditor.Config["CustomConfigurationsPath"] =
+          '/javascripts/railsfck_comments.js?1307100769';
+/*   oFCKeditor.Config["SkinPath"] = 'skins/SilverNarrow/' ; */
+   var ta=document.getElementById(part) ;
+   ta.style.height='0px';
+   oFCKeditor.ReplaceTextarea() ; 
+   var myb=document.getElementById('mycancelbutton'+ref) ;
+   myb.scrollIntoView(false) ;
+}
+function hideEditor(where)
+{
+   var ac = document.getElementById('comments'+where) ;
+   ac.innerHTML=ac.originalInnerHTML; 
+}
+
+function myCommentEditorSubmit(comment_id, id, notify)
+{
+   var entry='' ;
+   var ref=comment_id ;
+   if (!id || id == 'undefined') {
+      entry='_entry' ;
+   } else {
+      ref = id ;
+   }
+  var submit_notify=0
+  var parent_id=null;
+  var match=comment_id.match(/(\d+)_(\d+)/) ;
+  if (match) {
+     parent_id = match[1];
+  }
+  if (notify) {
+     if (parent_id) {
+        if (confirm("Send a notification to the participants in this comment thread (and the author) about this reply ?")) {
+           submit_notify=1;
+        }
+     } else if (confirm("Send a notification to the author about this comment?")) {
+        submit_notify=1;
+     }
+  }
+
+  var frm = document.getElementById('text_comments_form'+comment_id) ; 
+  var oEditor=FCKeditorAPI.GetInstance('text_comment'+comment_id); 
+  var textArea = document.getElementById('text_comment'+comment_id) ; 
+  textArea.value = oEditor.GetXHTML() +  '<p><font size=\"-1\">(reply)</font></p>' ;
+  var params = Form.serialize(frm) ;
+  params = params + '&notify='+submit_notify
+  var ac=document.getElementById('comments'+entry+ref) ;
+  var editSave = ac.innerHTML ;
+  var errFunc = function(t) {
+       alert('Error ' + t.status + ' -- ' + t.statusText +'  - try re-submitting ');
+  }
+  var succFunc = function(t) {
+       hideEditor(entry+ref) ;
+  }
+  if (ref != id) {
+    new Ajax.Updater('comments'+comment_id,'/featureflow/update_comment', {method:'post', 
+          parameters: params, asynchronous:true, evalScripts:true, insertion:Insertion.Bottom, 
+          onFailure:errFunc, onSuccess:succFunc});
+  } else {
+    new Ajax.Updater('comments'+id,'/featureflow/update_comment', {method:'post', 
+          parameters: params, asynchronous:true, evalScripts:true, 
+          onFailure:errFunc, onSuccess:succFunc});
+  }
+  return false;
+}
+function changeCommentAttribute(document_id, inp, param, currentValue, last_comment_id)
+{
+  var s=document.getElementById(inp) ;
+  var v=s.options[s.selectedIndex].value; 
+  var errFunc = function(t) {
+       alert('Error ' + t.status + ' -- ' + t.statusText +'  - try re-submitting ');
+  }
+  new Ajax.Updater('comments'+last_comment_id, '/featureflow/update_comment', 
+        {method:'post', 
+        parameters:'id=undefined'+
+           '&commentid='+last_comment_id+
+           '&document_id='+document_id+
+           '&'+param+'='+encodeURIComponent(v),
+        asynchronous:true, evalScripts:true, insertion:Insertion.Bottom,
+        onFailure:errFunc});
+}
+function unlinkfy(str)
+{
+   var s1=str.replace(/<a class=\"?review\"? .*?><span id=\"?line_(.*?)\"?>/ig, "") ;
+   var s2=s1.replace(/<\/span><\/a><span id=\"?comments(.*?)>/ig, "") ;
+   var s3 = s2.replace(/<\/span><span id=\"?comments_entry(.*?)\"?><\/span>/ig, "") ;
+   // Adam D'Andrea: February 19, 2007: remove (reply) when it goes into editor
+   var s4 = s3.replace(/<font size=\"?-1\"?>\(reply\)<\/font>/ig, "");
+   return s4;
+}
+
+function collapse(expander, lineBreak)
+{
+   var ac=document.getElementById('expander'+expander) ;
+   ac.innerHTML='<a href="javascript:expand(\''+expander+'\');"><img src="/images/expand_small.gif" alt="Expand"></a>' ;
+   var expanded=document.getElementById('expanded'+expander) ;
+   expanded.saveHTML = expanded.innerHTML ;
+   expanded.innerHTML = (lineBreak) ? '<br>' : '' ;
+}
+function expand(expander)
+{
+   var ac=document.getElementById('expander'+expander) ;
+   ac.innerHTML='<a href="javascript:collapse(\''+expander+'\');"><img src="/images/collapse_small.gif" alt="Collapse"></a>'
+   var expanded=document.getElementById('expanded'+expander) ;
+   if (typeof expanded.saveHTML == 'undefined')
+      expanded.innerHTML = document.sections['expanded'+expander]
+   else
+      expanded.innerHTML = expanded.saveHTML ;
+}
+</script>
+
+
+<table border=1 cellspacing=0 cellpadding=2 frame=sunken><tr><td>
+<div id="show_scroller" style="width:100%; height:400px; overflow:scroll;">
+<script type="text/javascript">
+function resizeScroller() 
+{
+  var e=document.getElementById('show_scroller') ;
+  e.style.height = document.body.clientHeight-120 ; 
+  e.style.width = document.body.clientWidth-180 ;
+}
+resizeScroller() ;
+window.onresize = resizeScroller ;
+</script>
+
+  <head>  <title></title> </head>  <table bgcolor="#C0E1FF" cellspacing="0" border="1" cellpadding="5" width="100%"> <tbody> <tr> <td valign="top" align="left" style="color:rgb(0,0,128);font-family:Arial;font-size:12pt" width="100%"><strong><!-- featureflow:line:_1 -->Document Control Information:<!-- featureflow:comments:_1 --><!-- featureflow:newcomments:_1 --></strong> <p style="color:rgb(0,0,0)"><!-- featureflow:line:_2 -->The official version of this document is kept in CMVC in the <!-- featureflow:comments:_2 --><!-- featureflow:newcomments:_2 --><span style="font-weight:bold;text-decoration:underline"><!-- featureflow:line:_3 -->aix<!-- featureflow:comments:_3 --><!-- featureflow:newcomments:_3 --></span><!-- featureflow:line:_4 --> family, release <!-- featureflow:comments:_4 --><!-- featureflow:newcomments:_4 --><span style="font-weight:bold;text-decoration:underline"><!-- featureflow:line:_5 -->des.dev<!-- featureflow:comments:_5 --><!-- featureflow:newcomments:_5 --></span><!-- featureflow:line:_6 -->, component <!-- featureflow:comments:_6 --><!-- featureflow:newcomments:_6 --><span style="font-weight:bold;text-decoration:underline"><!-- featureflow:line:_7 -->design.i0<!-- featureflow:comments:_7 --><!-- featureflow:newcomments:_7 --></span><!-- featureflow:line:_8 -->, file <!-- featureflow:comments:_8 --><!-- featureflow:newcomments:_8 --><span style="color:rgb(255,102,102);font-weight:bold;text-decoration:underline"><!-- featureflow:line:_9 -->designs/i0/f2008__argument_presence_enhancement/f2008__argument_presence_enhancement.html<!-- featureflow:comments:_9 --><!-- featureflow:newcomments:_9 --></span><!-- featureflow:line:_10 -->.<!-- featureflow:comments:_10 --><!-- featureflow:newcomments:_10 --> <!-- featureflow:line:_11 -->Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version.<!-- featureflow:comments:_11 --><!-- featureflow:newcomments:_11 --> <!-- featureflow:line:_12 -->If this document is not a copy of the official version, it is obsolete.<!-- featureflow:comments:_12 --><!-- featureflow:newcomments:_12 --><br> <br><!-- featureflow:line:_13 --> CMVC Extraction Information: <!-- featureflow:comments:_13 --><!-- featureflow:newcomments:_13 -->%W% %H% %I%<!-- featureflow:line:_14 --> sccsid<!-- featureflow:comments:_14 --><!-- featureflow:newcomments:_14 --><br> <br><!-- featureflow:line:_15 --> This document is IBM Confidential.<!-- featureflow:comments:_15 --><!-- featureflow:newcomments:_15 --><br></p> </td> </tr> </tbody> </table> <br> <br> <table cellspacing="0" border="1" cellpadding="5" style="background-color:rgb(224,255,191);font-family:Arial;font-size:12pt;text-align:left;width:100%"> <tbody> <tr> <td valign="top" align="left" width="20%"><!-- featureflow:line:_16 --><strong>CMVC Feature Number</strong><!-- featureflow:comments:_16 --><!-- featureflow:newcomments:_16 --></td> <td valign="top" align="left" style="background-color:rgb(255,255,255);color:rgb(0,0,255);font-weight:bold" width="80%"><!-- featureflow:line:_17 -->386700<!-- featureflow:comments:_17 --><!-- featureflow:newcomments:_17 --></td> </tr> <tr> <td valign="top" align="left"><!-- featureflow:line:_18 --><strong>Feature Title</strong><!-- featureflow:comments:_18 --><!-- featureflow:newcomments:_18 --></td> <td valign="top" align="left" style="background-color:rgb(255,255,255);color:rgb(0,0,255);font-weight:bold"><!-- featureflow:line:_19 -->F2008: Argument Presence Enhancement<!-- featureflow:comments:_19 --><!-- featureflow:newcomments:_19 --></td> </tr> <tr> <td valign="top" align="left"><!-- featureflow:line:_20 --><strong>Author(s)</strong><!-- featureflow:comments:_20 --><!-- featureflow:newcomments:_20 --></td> <td valign="top" align="left" style="background-color:rgb(255,255,255);color:rgb(0,0,255);font-weight:bold"><!-- featureflow:line:_21 -->Chris Lord, David Nichols (primary), Jia Lei Ma<!-- featureflow:comments:_21 --><!-- featureflow:newcomments:_21 --></td> </tr> <tr> <td valign="top" align="left"><!-- featureflow:line:_22 --><strong>Applicable Product Releases</strong><!-- featureflow:comments:_22 --><!-- featureflow:newcomments:_22 --></td> <td valign="top" align="left" style="background-color:rgb(255,255,255);color:rgb(0,0,255);font-weight:bold"><!-- featureflow:line:_23 -->XL Fortran v14.1 on AIX, BGQ and Linux<!-- featureflow:comments:_23 --><!-- featureflow:newcomments:_23 --><br></td> </tr> <tr> <td valign="top" align="left"><!-- featureflow:line:_24 --><strong>Affected Components</strong><!-- featureflow:comments:_24 --><!-- featureflow:newcomments:_24 --></td> <td valign="top" align="left" style="background-color:rgb(255,255,255);color:rgb(0,0,255);font-weight:bold"><!-- featureflow:line:_25 -->Front Ends: Fortran<!-- featureflow:comments:_25 --><!-- featureflow:newcomments:_25 --><br><!-- featureflow:line:_26 --> Optimizers: ASTI<!-- featureflow:comments:_26 --><!-- featureflow:newcomments:_26 --><br><!-- featureflow:line:_27 --> Documentation: Product documentation<!-- featureflow:comments:_27 --><!-- featureflow:newcomments:_27 --><br></td> </tr> </tbody> </table> <br> <br> <table bgcolor="#FF6666" cellspacing="0" border="1" cellpadding="5" width="100%"> <tbody> <tr> <td valign="top" align="center" style="font-family:Arial;font-size:12pt;text-align:left" width="100%"><!-- featureflow:line:_28 --><strong>Document Status: For Approval</strong><!-- featureflow:comments:_28 --><!-- featureflow:newcomments:_28 --></td> </tr> </tbody> </table> <p><!-- featureflow:line:_29 --><strong>Approvers Only:</strong> Click on the 'Approve' check-box beside your name in the table below if you agree with the technical and user interface content of this document; not checking your 'approve' check-box signifies you do not approve.<!-- featureflow:comments:_29 --><!-- featureflow:newcomments:_29 --></p> <p><table border=0 cellpadding=0 cellspacing=20><tr><td><table border=3 cellpadding=0 cellspacing=0><tr><th>Approver</th><th>Approved</th></tr><tr><td>Rafik Zurob</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="approval_1405" checked disabled onClick="var cb=document.getElementById('approval_1405'); new Ajax.Updater('approval_span_1405',    '/featureflow/mark_approval_review_status?id=5197&status=Approved&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1405',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="approval_span_1405"></span></form></td></tr><tr><td>Sean Perry</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="approval_1408" checked disabled onClick="var cb=document.getElementById('approval_1408'); new Ajax.Updater('approval_span_1408',    '/featureflow/mark_approval_review_status?id=5197&status=Approved&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1408',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="approval_span_1408"></span></form></td></tr></table></td></tr></table></p> <p><!-- featureflow:line:_30 -->Approval Comments<!-- featureflow:comments:_30 --><!-- featureflow:newcomments:_30 --></p> <table cellspacing="0" border="1" cellpadding="5" style="background-color:rgb(224,255,191);font-family:Arial;font-size:12pt;text-align:left;width:100%"> <tbody> <tr> <td valign="top" align="left"><!-- featureflow:line:_31 --><strong>Approvers</strong> (mandatory participation)<!-- featureflow:comments:_31 --><!-- featureflow:newcomments:_31 --></td> <td valign="top" align="left" style="background-color:rgb(255,255,255);color:rgb(0,0,255);font-weight:bold"><!-- featureflow:line:_32 -->Rafik Zurob, Sean Perry<!-- featureflow:comments:_32 --><!-- featureflow:newcomments:_32 --></td> </tr> <tr> <td valign="top" align="left"><!-- featureflow:line:_33 --><strong>Release Management Contact</strong> (optional participation)<!-- featureflow:comments:_33 --><!-- featureflow:newcomments:_33 --></td> <td valign="top" align="left" style="background-color:rgb(255,255,255);color:rgb(0,0,255);font-weight:bold"><!-- featureflow:line:_34 -->Dave Paulmark, Derek Truong, Guirlyn Olivar, Jeff Heath, Rene Matteau, Sarah McNamara, Si Yuan Zhang, Tatjana Kolakovic, Vicky Chin, Wang Chen<!-- featureflow:comments:_34 --><!-- featureflow:newcomments:_34 --><br></td> </tr> <tr> <td valign="top" align="left"><!-- featureflow:line:_35 --><strong>Component Reviewers</strong> (optional participation)<!-- featureflow:comments:_35 --><!-- featureflow:newcomments:_35 --></td> <td valign="top" align="left" style="background-color:rgb(255,255,255);color:rgb(0,0,255)"><br><!-- featureflow:line:_36 --> Dale Soldiuk, Dorra Bouchiha, Dwayne Moore, Francesco Cassullo, Gaby Baghdadi, Graham Yiu, Grigor Nikolov, Jim Xia, Kathleen Dowling, Mary Chan, Michelle Zhang, Nan Zhang, Ray Kivisto, Sasha Kasapinovic, Shahid Alam, Wei Zhong Shan, Ying Zhang, Youssef Himo, linka@cn.ibm.com<!-- featureflow:comments:_36 --><!-- featureflow:newcomments:_36 --></td> </tr> <tr> <td valign="top" align="left"><!-- featureflow:line:_37 --><strong>Team Reviewers</strong> (optional participation)<!-- featureflow:comments:_37 --><!-- featureflow:newcomments:_37 --></td> <td valign="top" align="left" style="background-color:rgb(255,255,255);color:rgb(0,0,255);font-weight:bold"><!-- featureflow:line:_38 -->Arie Tal, Bardia Mahjour, Chad McIntyre, Daniel C Chen, Enrique Varillas, Feng Ye, Ian McIntosh, Jim McInnes, Kelvin Li, Kendrick Wong, Kobi Vinayagamoorthy, Leon L Kiriliuk, Pooja Dayanand, Raul Silvera, Raymond Mak, Roch Archambault, Tarique Islam, Xing Xue<!-- featureflow:comments:_38 --><!-- featureflow:newcomments:_38 --></td> </tr> </tbody> </table> <p><br> <br></p> <table cellspacing="2" border="1" cellpadding="2" style="background-color:rgb(224,255,191);font-family:Arial;font-size:12pt;text-align:left;width:100%"> <tbody> <tr> <td style="font-family:Arial;vertical-align:top"><!-- featureflow:line:_39 --><strong>Reviewers</strong>: Please click the 'Reviewed' checkbox beside your name to indicate your participation in the review.<!-- featureflow:comments:_39 --><!-- featureflow:newcomments:_39 --></td> </tr> </tbody> </table> <p><table border=0 cellpadding=0 cellspacing=20><tr><td><table border=3 cellpadding=0 cellspacing=0><tr><th>Reviewer</th><th>Reviewed</th></tr><tr><td>Arie Tal</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_17"  disabled onClick="var cb=document.getElementById('review_17'); new Ajax.Updater('review_span_17',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=17',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_17"></span></form></td></tr><tr><td>Bardia Mahjour</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1399"  disabled onClick="var cb=document.getElementById('review_1399'); new Ajax.Updater('review_span_1399',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1399',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1399"></span></form></td></tr><tr><td>Chad McIntyre</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1640"  disabled onClick="var cb=document.getElementById('review_1640'); new Ajax.Updater('review_span_1640',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1640',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1640"></span></form></td></tr><tr><td>Chris Lord</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1522"  disabled onClick="var cb=document.getElementById('review_1522'); new Ajax.Updater('review_span_1522',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1522',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1522"></span></form></td></tr><tr><td>Dale Soldiuk</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1455"  disabled onClick="var cb=document.getElementById('review_1455'); new Ajax.Updater('review_span_1455',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1455',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1455"></span></form></td></tr><tr><td>Daniel C Chen</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1350"  disabled onClick="var cb=document.getElementById('review_1350'); new Ajax.Updater('review_span_1350',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1350',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1350"></span></form></td></tr><tr><td>Dave Paulmark</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1371"  disabled onClick="var cb=document.getElementById('review_1371'); new Ajax.Updater('review_span_1371',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1371',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1371"></span></form></td></tr><tr><td>David Nichols</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1650" checked disabled onClick="var cb=document.getElementById('review_1650'); new Ajax.Updater('review_span_1650',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1650',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1650"></span></form></td></tr><tr><td>Derek Truong</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1441"  disabled onClick="var cb=document.getElementById('review_1441'); new Ajax.Updater('review_span_1441',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1441',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1441"></span></form></td></tr><tr><td>Dorra Bouchiha</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1662"  disabled onClick="var cb=document.getElementById('review_1662'); new Ajax.Updater('review_span_1662',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1662',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1662"></span></form></td></tr><tr><td>Dwayne Moore</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1288"  disabled onClick="var cb=document.getElementById('review_1288'); new Ajax.Updater('review_span_1288',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1288',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1288"></span></form></td></tr><tr><td>Enrique Varillas</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1293"  disabled onClick="var cb=document.getElementById('review_1293'); new Ajax.Updater('review_span_1293',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1293',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1293"></span></form></td></tr><tr><td>Feng Ye</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1341"  disabled onClick="var cb=document.getElementById('review_1341'); new Ajax.Updater('review_span_1341',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1341',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1341"></span></form></td></tr><tr><td>Francesco Cassullo</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1693"  disabled onClick="var cb=document.getElementById('review_1693'); new Ajax.Updater('review_span_1693',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1693',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1693"></span></form></td></tr><tr><td>Gaby Baghdadi</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1516"  disabled onClick="var cb=document.getElementById('review_1516'); new Ajax.Updater('review_span_1516',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1516',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1516"></span></form></td></tr><tr><td>Graham Yiu</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1619"  disabled onClick="var cb=document.getElementById('review_1619'); new Ajax.Updater('review_span_1619',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1619',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1619"></span></form></td></tr><tr><td>Grigor Nikolov</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1360"  disabled onClick="var cb=document.getElementById('review_1360'); new Ajax.Updater('review_span_1360',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1360',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1360"></span></form></td></tr><tr><td>Guirlyn Olivar</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1355"  disabled onClick="var cb=document.getElementById('review_1355'); new Ajax.Updater('review_span_1355',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1355',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1355"></span></form></td></tr></table></td><td><table border=3 cellpadding=0 cellspacing=0><tr><th>Reviewer</th><th>Reviewed</th></tr><tr><td>Ian McIntosh</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1332"  disabled onClick="var cb=document.getElementById('review_1332'); new Ajax.Updater('review_span_1332',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1332',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1332"></span></form></td></tr><tr><td>Jeff Heath</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1284"  disabled onClick="var cb=document.getElementById('review_1284'); new Ajax.Updater('review_span_1284',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1284',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1284"></span></form></td></tr><tr><td>Jia Lei Ma</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1899"  disabled onClick="var cb=document.getElementById('review_1899'); new Ajax.Updater('review_span_1899',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1899',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1899"></span></form></td></tr><tr><td>Jim McInnes</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1398"  disabled onClick="var cb=document.getElementById('review_1398'); new Ajax.Updater('review_span_1398',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1398',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1398"></span></form></td></tr><tr><td>Jim Xia</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1380"  disabled onClick="var cb=document.getElementById('review_1380'); new Ajax.Updater('review_span_1380',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1380',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1380"></span></form></td></tr><tr><td>Kathleen Dowling</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1429"  disabled onClick="var cb=document.getElementById('review_1429'); new Ajax.Updater('review_span_1429',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1429',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1429"></span></form></td></tr><tr><td>Kelvin Li</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1377"  disabled onClick="var cb=document.getElementById('review_1377'); new Ajax.Updater('review_span_1377',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1377',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1377"></span></form></td></tr><tr><td>Kendrick Wong</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1318"  disabled onClick="var cb=document.getElementById('review_1318'); new Ajax.Updater('review_span_1318',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1318',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1318"></span></form></td></tr><tr><td>Kobi Vinayagamoorthy</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1289"  disabled onClick="var cb=document.getElementById('review_1289'); new Ajax.Updater('review_span_1289',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1289',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1289"></span></form></td></tr><tr><td>Larry Lindsay</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1357"  disabled onClick="var cb=document.getElementById('review_1357'); new Ajax.Updater('review_span_1357',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1357',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1357"></span></form></td></tr><tr><td>Leon L Kiriliuk</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1478"  disabled onClick="var cb=document.getElementById('review_1478'); new Ajax.Updater('review_span_1478',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1478',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1478"></span></form></td></tr><tr><td>Mary Chan</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1489"  disabled onClick="var cb=document.getElementById('review_1489'); new Ajax.Updater('review_span_1489',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1489',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1489"></span></form></td></tr><tr><td>Michelle Zhang</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1335"  disabled onClick="var cb=document.getElementById('review_1335'); new Ajax.Updater('review_span_1335',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1335',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1335"></span></form></td></tr><tr><td>Nan Zhang</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1439"  disabled onClick="var cb=document.getElementById('review_1439'); new Ajax.Updater('review_span_1439',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1439',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1439"></span></form></td></tr><tr><td>Pooja Dayanand</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1651"  disabled onClick="var cb=document.getElementById('review_1651'); new Ajax.Updater('review_span_1651',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1651',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1651"></span></form></td></tr><tr><td>Rafik Zurob</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1405" checked disabled onClick="var cb=document.getElementById('review_1405'); new Ajax.Updater('review_span_1405',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1405',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1405"></span></form></td></tr><tr><td>Raul Silvera</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1372"  disabled onClick="var cb=document.getElementById('review_1372'); new Ajax.Updater('review_span_1372',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1372',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1372"></span></form></td></tr><tr><td>Ray Kivisto</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1448"  disabled onClick="var cb=document.getElementById('review_1448'); new Ajax.Updater('review_span_1448',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1448',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1448"></span></form></td></tr></table></td><td><table border=3 cellpadding=0 cellspacing=0><tr><th>Reviewer</th><th>Reviewed</th></tr><tr><td>Raymond Mak</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1322"  disabled onClick="var cb=document.getElementById('review_1322'); new Ajax.Updater('review_span_1322',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1322',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1322"></span></form></td></tr><tr><td>Rene Matteau</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1435"  disabled onClick="var cb=document.getElementById('review_1435'); new Ajax.Updater('review_span_1435',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1435',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1435"></span></form></td></tr><tr><td>Roch Archambault</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1457"  disabled onClick="var cb=document.getElementById('review_1457'); new Ajax.Updater('review_span_1457',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1457',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1457"></span></form></td></tr><tr><td>Sarah McNamara</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1518"  disabled onClick="var cb=document.getElementById('review_1518'); new Ajax.Updater('review_span_1518',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1518',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1518"></span></form></td></tr><tr><td>Sasha Kasapinovic</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1415"  disabled onClick="var cb=document.getElementById('review_1415'); new Ajax.Updater('review_span_1415',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1415',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1415"></span></form></td></tr><tr><td>Sean Perry</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1408" checked disabled onClick="var cb=document.getElementById('review_1408'); new Ajax.Updater('review_span_1408',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1408',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1408"></span></form></td></tr><tr><td>Shahid Alam</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1973"  disabled onClick="var cb=document.getElementById('review_1973'); new Ajax.Updater('review_span_1973',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1973',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1973"></span></form></td></tr><tr><td>Si Yuan Zhang</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1948"  disabled onClick="var cb=document.getElementById('review_1948'); new Ajax.Updater('review_span_1948',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1948',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1948"></span></form></td></tr><tr><td>Tarique Islam</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1622"  disabled onClick="var cb=document.getElementById('review_1622'); new Ajax.Updater('review_span_1622',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1622',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1622"></span></form></td></tr><tr><td>Tatjana Kolakovic</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1423"  disabled onClick="var cb=document.getElementById('review_1423'); new Ajax.Updater('review_span_1423',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1423',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1423"></span></form></td></tr><tr><td>Vicky Chin</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1418"  disabled onClick="var cb=document.getElementById('review_1418'); new Ajax.Updater('review_span_1418',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1418',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1418"></span></form></td></tr><tr><td>Wang Chen</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1366"  disabled onClick="var cb=document.getElementById('review_1366'); new Ajax.Updater('review_span_1366',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1366',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1366"></span></form></td></tr><tr><td>Wei Zhong Shan</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1749"  disabled onClick="var cb=document.getElementById('review_1749'); new Ajax.Updater('review_span_1749',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1749',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1749"></span></form></td></tr><tr><td>Xing Xue</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1331"  disabled onClick="var cb=document.getElementById('review_1331'); new Ajax.Updater('review_span_1331',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1331',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1331"></span></form></td></tr><tr><td>Ying Zhang</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1401"  disabled onClick="var cb=document.getElementById('review_1401'); new Ajax.Updater('review_span_1401',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1401',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1401"></span></form></td></tr><tr><td>Youssef Himo</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1420"  disabled onClick="var cb=document.getElementById('review_1420'); new Ajax.Updater('review_span_1420',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1420',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1420"></span></form></td></tr><tr><td>linka@cn.ibm.com</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_2049"  disabled onClick="var cb=document.getElementById('review_2049'); new Ajax.Updater('review_span_2049',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=2049',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_2049"></span></form></td></tr><tr><td>shereen@ca.ibm.com</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_2168"  disabled onClick="var cb=document.getElementById('review_2168'); new Ajax.Updater('review_span_2168',    '/featureflow/mark_approval_review_status?id=5197&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=2168',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_2168"></span></form></td></tr></table></td></tr></table></p> <table cellspacing="2" border="1" cellpadding="2" style="background-color:rgb(224,255,191);font-family:Arial;font-size:12pt;text-align:left;width:100%"> <tbody> <tr> <td style="font-family:Arial;vertical-align:top"><!-- featureflow:line:_40 --><strong>Access Change History</strong><!-- featureflow:comments:_40 --><!-- featureflow:newcomments:_40 --></td> </tr> </tbody> </table> <p><span id="expander_sec1"><a href="javascript:expand('_sec1');"><img src="/images/expand_small.gif" alt="Expand"></a></span>&nbsp;<!-- featureflow:line:_41 --><strong>Access Change History</strong><!-- featureflow:comments:_41 --><!-- featureflow:newcomments:_41 --><div id="expanded_sec1"></div></p> <table bgcolor="#BFBFFF" cellspacing="0" border="1" cellpadding="5" width="100%"> <tbody> <tr> <td valign="top" align="center" style="font-family:Arial;font-size:12pt" width="100%"><!-- featureflow:line:_42 --><strong>Feature Overview</strong><!-- featureflow:comments:_42 --><!-- featureflow:newcomments:_42 --></td> </tr> </tbody> </table><!-- featureflow:line:_43 --> This feature will implement the relaxed restraints on actual argument presence as described in the Fortran 2008 standard.<!-- featureflow:comments:_43 --><!-- featureflow:newcomments:_43 --><br> <h2><!-- featureflow:line:_44 -->Key Requirements<!-- featureflow:comments:_44 --><!-- featureflow:newcomments:_44 --></h2><!-- featureflow:line:_45 --> In the Fortran 2008 standard, the following exception to argument presence:<!-- featureflow:comments:_45 --><!-- featureflow:newcomments:_45 --><br> <br> <blockquote><font face="Courier New"><!-- featureflow:line:_46 -->A dummy argument or an entity that is host associated with a dummy argument is not present if the dummy argument does not have the ALLOCATABLE or POINTER attribute, and corresponds to an actual argument that has the ALLOCATABLE attribute and is not allocated, or has the POINTER attribute and is disassociated.<!-- featureflow:comments:_46 --><!-- featureflow:newcomments:_46 --><br></font></blockquote><!-- featureflow:line:_47 --> This feature must generate new W-Code to handle this exception.<!-- featureflow:comments:_47 --><!-- featureflow:newcomments:_47 --><br> <br> <h2><!-- featureflow:line:_48 -->Key Design Issues<!-- featureflow:comments:_48 --><!-- featureflow:newcomments:_48 --></h2><!-- featureflow:line:_49 --> 1.<!-- featureflow:comments:_49 --><!-- featureflow:newcomments:_49 --> <!-- featureflow:line:_50 -->This new functionality will introduce negative performance impacts due to the runtime check needed for whether the allocatable is allocated or the pointer is associated.<!-- featureflow:comments:_50 --><!-- featureflow:newcomments:_50 --><br><!-- featureflow:line:_51 --> 2.<!-- featureflow:comments:_51 --><!-- featureflow:newcomments:_51 --> <!-- featureflow:line:_52 -->As the code generation is emitted on the caller side, the attributes, specifically optional, on the dummy argument may not be known.<!-- featureflow:comments:_52 --><!-- featureflow:newcomments:_52 --><br><!-- featureflow:line:_53 --> 3.<!-- featureflow:comments:_53 --><!-- featureflow:newcomments:_53 --> <!-- featureflow:line:_54 -->As ASTI does not consume the SEL instruction, how can we communicate legal W-Code++ to ASTI that states it must choose to between two actual arguments<!-- featureflow:comments:_54 --><!-- featureflow:newcomments:_54 --><br> <h2><!-- featureflow:line:_55 -->Key Design Decisions<!-- featureflow:comments:_55 --><!-- featureflow:newcomments:_55 --></h2><!-- featureflow:line:_56 --> 1.<!-- featureflow:comments:_56 --><!-- featureflow:newcomments:_56 --> <!-- featureflow:line:_57 -->A new option will be introduced to enable this behaviour.<!-- featureflow:comments:_57 --><!-- featureflow:newcomments:_57 --> <!-- featureflow:line:_58 -->This option will default off if the compiler is invoked with a stanza xlf2003 or less.<!-- featureflow:comments:_58 --><!-- featureflow:newcomments:_58 --> <!-- featureflow:line:_59 -->It will default to on when xlf2008 is invoked.<!-- featureflow:comments:_59 --><!-- featureflow:newcomments:_59 --> <!-- featureflow:line:_60 -->The exact option will be reviewed by the XL Options Review Board.<!-- featureflow:comments:_60 --><!-- featureflow:newcomments:_60 --><br><!-- featureflow:line:_61 --> 2.<!-- featureflow:comments:_61 --><!-- featureflow:newcomments:_61 --> <!-- featureflow:line:_62 -->The new code generation testing for the allocation and association status of the actual argument will only be performed when the procedure has an interface.<!-- featureflow:comments:_62 --><!-- featureflow:newcomments:_62 --><br><!-- featureflow:line:_63 --> 3.<!-- featureflow:comments:_63 --><!-- featureflow:newcomments:_63 --> <!-- featureflow:line:_64 -->Until the SEL instruction is implemented, this will be implemented in the form of an ASTI BIF named <!-- featureflow:comments:_64 --><!-- featureflow:newcomments:_64 --><font face="Courier New"><!-- featureflow:line:_65 -->__supplyoptarg_cond(descriptor, flag)<!-- featureflow:comments:_65 --><!-- featureflow:newcomments:_65 --></font><br> <h2><!-- featureflow:line:_66 -->Testing Strategy<!-- featureflow:comments:_66 --><!-- featureflow:newcomments:_66 --></h2><!-- featureflow:line:_67 --> This feature will be tested via unit testing.<!-- featureflow:comments:_67 --><!-- featureflow:newcomments:_67 --> <!-- featureflow:line:_68 -->The unit tests will cover a variety of differing program units, include module, intrinsic, external and internal procedures, where the actual and dummy arguments are derived types, parameterized derived types, polymorphic types and all possible intrinsic types.<!-- featureflow:comments:_68 --><!-- featureflow:newcomments:_68 --><br> <p> </p> <table bgcolor="#BFBFFF" cellspacing="0" border="1" cellpadding="5" width="100%"> <tbody> <tr> <td valign="top" align="center" style="font-family:Arial;font-size:12pt" width="100%"><!-- featureflow:line:_69 --><strong>User Documentation</strong><!-- featureflow:comments:_69 --><!-- featureflow:newcomments:_69 --></td> </tr> </tbody> </table> <h3><!-- featureflow:line:_70 --><strong style="color:rgb(0,128,0);font-size:20px">Overview</strong><!-- featureflow:comments:_70 --><!-- featureflow:newcomments:_70 --></h3> <p><!-- featureflow:line:_71 -->The <font face="Courier New">-qxlf2008=checkpresence</font> option* will provide the user the opportunity to make use of the new actual argument presence detection.<!-- featureflow:comments:_71 --><!-- featureflow:newcomments:_71 --></p> <p><!-- featureflow:line:_72 -->* Under review by the ORB.<!-- featureflow:comments:_72 --><!-- featureflow:newcomments:_72 --></p> <h3><!-- featureflow:line:_73 --><strong style="color:rgb(0,128,0);font-size:20px">User Benefits</strong><!-- featureflow:comments:_73 --><!-- featureflow:newcomments:_73 --></h3> <p><!-- featureflow:line:_74 -->This feature has the potential to guard the user from incorrect results. <span id="comments44414"><span id="expanded44414"><span id="comments_content44414">Previously when an unallocated or disassociated object is passed to an optional dummy argument the PRESENT() intrinsic would return true, however the value passed was undefined.<!-- featureflow:comments:_74 --><!-- featureflow:newcomments:_74 --> <!-- featureflow:line:_75 -->With this feature the PRESENT() intrinsic will return the correct result of false.</span></span></span><!-- featureflow:comments:_75 --><!-- featureflow:newcomments:_75 --></p> <h3><!-- featureflow:line:_76 --><strong style="color:rgb(0,128,0);font-size:20px">Public Interface</strong><!-- featureflow:comments:_76 --><!-- featureflow:newcomments:_76 --></h3> <p><!-- featureflow:line:_77 --><font face="Courier New"><span id="comments43625"><span id="expanded43625"><span id="comments_content43625"></span></span></span></font><!-- featureflow:comments:_77 --><!-- featureflow:newcomments:_77 --></p> <p><!-- featureflow:line:_78 -->A new option will be introduced named <font face="Courier New">-qxlf2008</font> with a suboption of <font face="Courier New">checkpresence</font>.<!-- featureflow:comments:_78 --><!-- featureflow:newcomments:_78 --> <!-- featureflow:line:_79 -->The <font face="Courier New">-qxlf2008=</font><font face="Courier New">checkpresence</font> option will enable this feature.<!-- featureflow:comments:_79 --><!-- featureflow:newcomments:_79 --></p> <p><font face="Arial"><!-- featureflow:line:_80 -->Syntax:<!-- featureflow:comments:_80 --><!-- featureflow:newcomments:_80 --><br></font></p> <p><font face="Arial"><!-- featureflow:line:_81 -->Option:<!-- featureflow:comments:_81 --><!-- featureflow:newcomments:_81 --><br></font></p> <p><!-- featureflow:line:_82 --><font face="Courier New"><span id="comments43625"><span id="expanded43625"><span id="comments_content43625"></span></span></span></font><!-- featureflow:comments:_82 --><!-- featureflow:newcomments:_82 --></p> <pre>  <font face="Courier New"><span id="comments43625"><br><!-- featureflow:line:_83 -->   &gt;&gt;----  -qxlf2008  --+----------------------------+------&gt;&lt;<!-- featureflow:comments:_83 --><!-- featureflow:newcomments:_83 --><br><!-- featureflow:line:_84 -->                        |                            |<!-- featureflow:comments:_84 --><!-- featureflow:newcomments:_84 --><br><!-- featureflow:line:_85 -->                        --  =  --+-- <!-- featureflow:comments:_85 --><!-- featureflow:newcomments:_85 --><font face="Courier New"><!-- featureflow:line:_86 -->checkpresence<!-- featureflow:comments:_86 --><!-- featureflow:newcomments:_86 --></font><!-- featureflow:line:_87 --> --+<!-- featureflow:comments:_87 --><!-- featureflow:newcomments:_87 --><br><!-- featureflow:line:_88 -->                                 |                   | <!-- featureflow:comments:_88 --><!-- featureflow:newcomments:_88 --><br><!-- featureflow:line:_89 -->                                 -- no<!-- featureflow:comments:_89 --><!-- featureflow:newcomments:_89 --><font face="Courier New"><!-- featureflow:line:_90 -->checkpresence<!-- featureflow:comments:_90 --><!-- featureflow:newcomments:_90 --></font><!-- featureflow:line:_91 --> --<!-- featureflow:comments:_91 --><!-- featureflow:newcomments:_91 --><font face="Courier New"><!-- featureflow:line:_92 --><span id="comments43625"><span id="expanded43625"><span id="comments_content43625"></span></span></span><!-- featureflow:comments:_92 --><!-- featureflow:newcomments:_92 --></font>   </span></font> </pre> <p> </p> <pre><!-- featureflow:line:_93 --> <font face="Courier New"><span id="comments43625"><font face="Arial">@PROCESS</font>:</span></font>  <!-- featureflow:comments:_93 --><!-- featureflow:newcomments:_93 --></pre> <p><br></p> <p><!-- featureflow:line:_94 --><font face="Courier New"><span id="comments43625"><span id="expanded43625"><span id="comments_content43625"></span></span></span></font><!-- featureflow:comments:_94 --><!-- featureflow:newcomments:_94 --></p> <blockquote><font face="Courier New"><!-- featureflow:line:_95 -->@PROCESS XLF2008 ( suboption, suboption, ... )<!-- featureflow:comments:_95 --><!-- featureflow:newcomments:_95 --></font><br></blockquote> <p><!-- featureflow:line:_96 --><font face="Courier New"><span id="comments43625"><span id="expanded43625"><span id="comments_content43625"></span></span></span></font><!-- featureflow:comments:_96 --><!-- featureflow:newcomments:_96 --></p> <p> </p> <p><!-- featureflow:line:_97 -->Defaults: The default <font face="Courier New">suboption</font> depends on the invocation command that you specify.<!-- featureflow:comments:_97 --><!-- featureflow:newcomments:_97 --></p> <blockquote><br><!-- featureflow:line:_98 --> For the f2008, xlf2008, or xlf2008_r command, the defaults are:<!-- featureflow:comments:_98 --><!-- featureflow:newcomments:_98 --><br> <font face="Courier New"><!-- featureflow:line:_99 -->checkpresence<!-- featureflow:comments:_99 --><!-- featureflow:newcomments:_99 --></font><br> <br><!-- featureflow:line:_100 --> For all other invocation commands, the defaults are:<!-- featureflow:comments:_100 --><!-- featureflow:newcomments:_100 --><br> <font face="Courier New"><!-- featureflow:line:_101 -->no<!-- featureflow:comments:_101 --><!-- featureflow:newcomments:_101 --></font><font face="Courier New"><!-- featureflow:line:_102 -->checkpresence<!-- featureflow:comments:_102 --><!-- featureflow:newcomments:_102 --></font></blockquote> <p><!-- featureflow:line:_103 --><font face="Courier New"><span id="comments43625"><span id="expanded43625"><span id="comments_content43625"></span></span></span></font><!-- featureflow:comments:_103 --><!-- featureflow:newcomments:_103 --></p> <h3><!-- featureflow:line:_104 --><strong style="color:rgb(0,128,0);font-size:20px">Constraints</strong><!-- featureflow:comments:_104 --><!-- featureflow:newcomments:_104 --></h3> <p><!-- featureflow:line:_105 -->None.<!-- featureflow:comments:_105 --><!-- featureflow:newcomments:_105 --></p> <h3><!-- featureflow:line:_106 --><strong style="color:rgb(0,128,0);font-size:20px">Rules</strong><!-- featureflow:comments:_106 --><!-- featureflow:newcomments:_106 --></h3> <p><!-- featureflow:line:_107 -->The new behaviour takes effect when:<!-- featureflow:comments:_107 --><!-- featureflow:newcomments:_107 --><br></p> <ol> <li><!-- featureflow:line:_108 -->The actual argument is an allocatable or pointer,<!-- featureflow:comments:_108 --><!-- featureflow:newcomments:_108 --></li> <li><!-- featureflow:line:_109 -->The called procedure has an interface,<!-- featureflow:comments:_109 --><!-- featureflow:newcomments:_109 --></li> <li><!-- featureflow:line:_110 -->The dummy argument is not an allocatable nor a pointer, and<!-- featureflow:comments:_110 --><!-- featureflow:newcomments:_110 --><br></li> <li><!-- featureflow:line:_111 -->The dummy argument has the optional attribute.<!-- featureflow:comments:_111 --><!-- featureflow:newcomments:_111 --></li> <li><!-- featureflow:line:_112 --><font face="Courier New">-xlf2008=</font><font face="Courier New">checkpresence</font> is specified<!-- featureflow:comments:_112 --><!-- featureflow:newcomments:_112 --></li> </ol> <p> </p> <h3><!-- featureflow:line:_113 --><strong><strong style="color:rgb(0,128,0);font-size:20px">Language Standard Considerations</strong></strong><!-- featureflow:comments:_113 --><!-- featureflow:newcomments:_113 --></h3> <p><span id="comments44497"><!-- featureflow:line:_114 --><span id="expanded44497"><span id="comments_content44497">The <font face="Courier New">-qxlf2008=</font></span></span><!-- featureflow:comments:_114 --><!-- featureflow:newcomments:_114 --></span><font face="Courier New"><!-- featureflow:line:_115 -->checkpresence<!-- featureflow:comments:_115 --><!-- featureflow:newcomments:_115 --></font> <span id="comments44497"><!-- featureflow:line:_116 --><span id="expanded44497"><span id="comments_content44497">behaviour conforms to the Fortran 2008 standard.<!-- featureflow:comments:_116 --><!-- featureflow:newcomments:_116 --> <!-- featureflow:line:_117 -->The <font face="Courier New">-qxlf2008=no</font></span></span><!-- featureflow:comments:_117 --><!-- featureflow:newcomments:_117 --></span><font face="Courier New"><!-- featureflow:line:_118 -->checkpresence<!-- featureflow:comments:_118 --><!-- featureflow:newcomments:_118 --></font> <span id="comments44497"><!-- featureflow:line:_119 --><span id="expanded44497"><span id="comments_content44497">behaviour conforms to previous Fortran standards.</span></span><!-- featureflow:comments:_119 --><!-- featureflow:newcomments:_119 --></span><!-- featureflow:line:_120 -->If a language level of less than Fortran 2008 is used with the argument presence enhancement enabled, a language level message will be emitted stating that the actual argument may be removed from the actual argument list if not allocated or disassociated.<!-- featureflow:comments:_120 --><!-- featureflow:newcomments:_120 --><br></p> <h3><!-- featureflow:line:_121 --><strong style="color:rgb(0,128,0);font-size:20px">Messages</strong><!-- featureflow:comments:_121 --><!-- featureflow:newcomments:_121 --></h3><!-- featureflow:line:_122 --> Language level message described above. <!-- featureflow:comments:_122 --><!-- featureflow:newcomments:_122 --><h3><!-- featureflow:line:_123 --><strong style="color:rgb(0,128,0);font-size:20px">Performance Considerations</strong><!-- featureflow:comments:_123 --><!-- featureflow:newcomments:_123 --></h3> <p><!-- featureflow:line:_124 -->When <!-- featureflow:comments:_124 --><!-- featureflow:newcomments:_124 --><span id="comments44497"><!-- featureflow:line:_125 --><span id="expanded44497"><span id="comments_content44497"><font face="Courier New">-qxlf2008=</font></span></span><!-- featureflow:comments:_125 --><!-- featureflow:newcomments:_125 --></span><font face="Courier New"><!-- featureflow:line:_126 -->checkpresence<!-- featureflow:comments:_126 --><!-- featureflow:newcomments:_126 --></font><!-- featureflow:line:_127 --> is in effect, the dummy argument presence check will negatively impact the performance of the user's program due to the increased amount of runtime code needed to determine if the allocatable or pointer is allocated or associated, respectively.<!-- featureflow:comments:_127 --><!-- featureflow:newcomments:_127 --> <!-- featureflow:line:_128 -->A user should use <!-- featureflow:comments:_128 --><!-- featureflow:newcomments:_128 --><font face="Courier New"><!-- featureflow:line:_129 -->-qxlf2008=no<!-- featureflow:comments:_129 --><!-- featureflow:newcomments:_129 --></font><font face="Courier New"><!-- featureflow:line:_130 -->checkpresence<!-- featureflow:comments:_130 --><!-- featureflow:newcomments:_130 --></font><!-- featureflow:line:_131 --> command line option or a xlf, f77, xlf90, xlf95, xlf2003 stanza, to ensure to avoid these performance impacts.<!-- featureflow:comments:_131 --><!-- featureflow:newcomments:_131 --><br></p> <h3><!-- featureflow:line:_132 --><strong style="color:rgb(0,128,0);font-size:20px">Multi-Platform/Portability Considerations</strong><!-- featureflow:comments:_132 --><!-- featureflow:newcomments:_132 --></h3><!-- featureflow:line:_133 --> None. <!-- featureflow:comments:_133 --><!-- featureflow:newcomments:_133 --><h3><!-- featureflow:line:_134 --><strong style="color:rgb(0,128,0);font-size:20px">Migration/Co-Existence/Binary-Compatibility Considerations</strong><!-- featureflow:comments:_134 --><!-- featureflow:newcomments:_134 --></h3> <p><span id="comments_112"><span id="comments44552"><span id="expanded44552"><span id="comments_content44552"><a class='review' title='Click on the text to add a comment'><span id='line_44552_2'></a><!-- featureflow:line:_136 -->The result of the PRESENT() intrinsic may differ if the containing code is called from that compiled with the v14.1 compiler versus code compiled with v13.1 or before.<!-- featureflow:comments:_136 --><!-- featureflow:newcomments:_136 --> <!-- featureflow:line:_137 -->This is expected to be rare since the value of the dummy argument was undefined in Fortran 2003. <!-- featureflow:comments:_137 --><!-- featureflow:newcomments:_137 --><a class='review' title='Click on the text to add a comment'><span id='line_44552_3'></a></span></span></span></span></p> <h3><!-- featureflow:line:_139 --><strong style="color:rgb(0,128,0);font-size:20px">Debug Considerations</strong><!-- featureflow:comments:_139 --><!-- featureflow:newcomments:_139 --></h3> <p><!-- featureflow:line:_140 -->None.<!-- featureflow:comments:_140 --><!-- featureflow:newcomments:_140 --></p> <h3><!-- featureflow:line:_141 --><strong><strong style="color:rgb(0,128,0);font-size:20px">NLS (Unicode) Considerations</strong></strong><!-- featureflow:comments:_141 --><!-- featureflow:newcomments:_141 --></h3> <p> </p> <p><!-- featureflow:line:_142 -->None<!-- featureflow:comments:_142 --><!-- featureflow:newcomments:_142 --><br></p> <h3><!-- featureflow:line:_143 --><strong style="color:rgb(0,128,0);font-size:20px">Samples</strong><!-- featureflow:comments:_143 --><!-- featureflow:newcomments:_143 --></h3> <pre> <font face="Courier New"><!-- featureflow:line:_144 -->integer, pointer :: p1(:), p2(:)<!-- featureflow:comments:_144 --><!-- featureflow:newcomments:_144 --><br><!-- featureflow:line:_145 --> integer, target :: t1(2)<!-- featureflow:comments:_145 --><!-- featureflow:newcomments:_145 --><br><!-- featureflow:line:_146 --> integer, allocatable :: a1(:), a2(:)<!-- featureflow:comments:_146 --><!-- featureflow:newcomments:_146 --></font> </pre> <pre> <font face="Courier New"><!-- featureflow:line:_147 -->p2 =&gt; t1<!-- featureflow:comments:_147 --><!-- featureflow:newcomments:_147 --><br><!-- featureflow:line:_148 --> allocate (a2(1))<!-- featureflow:comments:_148 --><!-- featureflow:newcomments:_148 --><br></font> </pre> <pre><!-- featureflow:line:_149 --> <font face="Courier New">call sub(p1,p2,a1,a2)</font> <!-- featureflow:comments:_149 --><!-- featureflow:newcomments:_149 --></pre> <pre> <font face="Courier New"><!-- featureflow:line:_150 -->contains<!-- featureflow:comments:_150 --><!-- featureflow:newcomments:_150 --><br><!-- featureflow:line:_151 --> subroutine sub(w,x,y,z)<!-- featureflow:comments:_151 --><!-- featureflow:newcomments:_151 --><br><!-- featureflow:line:_152 --> integer, optional :: w(:), x(:), y(:), z(:)<!-- featureflow:comments:_152 --><!-- featureflow:newcomments:_152 --><br></font> </pre> <pre> <font face="Courier New"><!-- featureflow:line:_153 -->print *, PRESENT(w), PRESENT(x), PRESENT(y), PRESENT(z) <!-- featureflow:comments:_153 --><!-- featureflow:newcomments:_153 --><br></font><font size="+0"><!-- featureflow:line:_154 --><font face="Courier New">! Output: with -qxlf2008=</font><!-- featureflow:comments:_154 --><!-- featureflow:newcomments:_154 --></font><font face="Courier New"><!-- featureflow:line:_155 -->checkpresence<!-- featureflow:comments:_155 --><!-- featureflow:newcomments:_155 --></font><font size="+0"><!-- featureflow:line:_156 --><font face="Courier New">:    F T F T</font><!-- featureflow:comments:_156 --><!-- featureflow:newcomments:_156 --></font><br> <font size="+0"><!-- featureflow:line:_157 --><font face="Courier New">!         with -qxlf2008=no</font><!-- featureflow:comments:_157 --><!-- featureflow:newcomments:_157 --></font><font face="Courier New"><!-- featureflow:line:_158 -->checkpresence<!-- featureflow:comments:_158 --><!-- featureflow:newcomments:_158 --></font><font size="+0"><!-- featureflow:line:_159 --><font face="Courier New">:  T T T T</font><!-- featureflow:comments:_159 --><!-- featureflow:newcomments:_159 --></font><br> </pre> <pre> <font face="Courier New"><!-- featureflow:line:_160 -->end subroutine<!-- featureflow:comments:_160 --><!-- featureflow:newcomments:_160 --><br><!-- featureflow:line:_161 --> end<!-- featureflow:comments:_161 --><!-- featureflow:newcomments:_161 --></font><br> </pre> <br> <table bgcolor="#BFBFFF" cellspacing="0" border="1" cellpadding="5" width="100%"> <tbody> <tr> <td valign="top" align="center" style="font-family:Arial;font-size:12pt" width="100%"><!-- featureflow:line:_162 --><strong>Architecture Review Board</strong><!-- featureflow:comments:_162 --><!-- featureflow:newcomments:_162 --></td> </tr> </tbody> </table> <p><!-- featureflow:line:_163 -->ARB will not be needed.<!-- featureflow:comments:_163 --><!-- featureflow:newcomments:_163 --></p> <table bgcolor="#BFBFFF" cellspacing="0" border="1" cellpadding="5" width="100%"> <tbody> <tr> <td valign="top" align="center" style="font-family:Arial;font-size:12pt" width="100%"><!-- featureflow:line:_164 --><strong>Internal Compiler Team Information</strong><!-- featureflow:comments:_164 --><!-- featureflow:newcomments:_164 --></td> </tr> </tbody> </table> <h3><!-- featureflow:line:_165 --><strong style="color:rgb(0,128,0);font-size:20px">Product Dependencies</strong><!-- featureflow:comments:_165 --><!-- featureflow:newcomments:_165 --></h3> <p><!-- featureflow:line:_166 -->None<!-- featureflow:comments:_166 --><!-- featureflow:newcomments:_166 --><br></p> <p><br></p> <h3><!-- featureflow:line:_167 --><strong style="color:rgb(0,128,0);font-size:20px">Patent/Disclosure Implications</strong><!-- featureflow:comments:_167 --><!-- featureflow:newcomments:_167 --></h3> <p><!-- featureflow:line:_168 -->None<!-- featureflow:comments:_168 --><!-- featureflow:newcomments:_168 --></p> <p> </p> <h3><!-- featureflow:line:_169 --><strong><strong style="color:rgb(0,128,0);font-size:20px">Scientific Research and Experimental Development</strong></strong><!-- featureflow:comments:_169 --><!-- featureflow:newcomments:_169 --></h3><!-- featureflow:line:_170 --> None<!-- featureflow:comments:_170 --><!-- featureflow:newcomments:_170 --><br> <h3><!-- featureflow:line:_171 --><strong style="color:rgb(0,128,0);font-size:20px">Build and Packaging Considerations</strong><!-- featureflow:comments:_171 --><!-- featureflow:newcomments:_171 --></h3><!-- featureflow:line:_172 --> None<!-- featureflow:comments:_172 --><!-- featureflow:newcomments:_172 --><br> <br> <h3><!-- featureflow:line:_173 --><strong style="color:rgb(0,128,0);font-size:20px">Information Development Impacts</strong><!-- featureflow:comments:_173 --><!-- featureflow:newcomments:_173 --></h3> <p><!-- featureflow:line:_174 -->The f2008, xlf2008 and xlf2008_r stanzas are not part of the v14.1 plan.<!-- featureflow:comments:_174 --><!-- featureflow:newcomments:_174 --> <!-- featureflow:line:_175 -->Please do not document these stanzas in v14.1.<!-- featureflow:comments:_175 --><!-- featureflow:newcomments:_175 --></p> <p><!-- featureflow:line:_176 -->1.<!-- featureflow:comments:_176 --><!-- featureflow:newcomments:_176 --> <!-- featureflow:line:_177 -->The XL Fortran v14.1 Getting Started:<!-- featureflow:comments:_177 --><!-- featureflow:newcomments:_177 --></p> <p><!-- featureflow:line:_178 -->1.1 Add the feature to Chapter 2, Section "Fortran 2008 features"<!-- featureflow:comments:_178 --><!-- featureflow:newcomments:_178 --></p> <p><!-- featureflow:line:_179 -->1.2 Add -qxlf2008 to Chapter 2, Section "New or changed compiler options and directives"<!-- featureflow:comments:_179 --><!-- featureflow:newcomments:_179 --></p> <p> </p> <p><!-- featureflow:line:_180 -->2.<!-- featureflow:comments:_180 --><!-- featureflow:newcomments:_180 --> <!-- featureflow:line:_181 -->The XL Fortran v14.1 Compiler Reference:<!-- featureflow:comments:_181 --><!-- featureflow:newcomments:_181 --></p> <p><!-- featureflow:line:_182 -->2.1 Add -qxlf2008 to Chapter 5, Section "Language element control"<!-- featureflow:comments:_182 --><!-- featureflow:newcomments:_182 --></p> <p><!-- featureflow:line:_183 -->2.2 Add -qxlf2008 to Chapter 6 "Detailed descriptions of the XL Fortran compiler options"<!-- featureflow:comments:_183 --><!-- featureflow:newcomments:_183 --></p> <p> </p> <p><!-- featureflow:line:_184 -->3.<!-- featureflow:comments:_184 --><!-- featureflow:newcomments:_184 --> <!-- featureflow:line:_185 -->The XL Fortran v14.1 Optimization and Programming Guide:<!-- featureflow:comments:_185 --><!-- featureflow:newcomments:_185 --></p> <p><!-- featureflow:line:_186 -->Add entry to list in Chapter 2, Section "Options that can inhibit performance"<!-- featureflow:comments:_186 --><!-- featureflow:newcomments:_186 --></p> <p> </p> <p><!-- featureflow:line:_187 -->4.<!-- featureflow:comments:_187 --><!-- featureflow:newcomments:_187 --> <!-- featureflow:line:_188 -->The XL Fortran v14.1 Language Reference:<!-- featureflow:comments:_188 --><!-- featureflow:newcomments:_188 --></p> <p><!-- featureflow:line:_189 -->Update Chapter 8,  Section "Argument Association",   Subsection "Restrictions on optional dummy arguments not present"<!-- featureflow:comments:_189 --><!-- featureflow:newcomments:_189 --></p> <p> </p> <p><!-- featureflow:line:_190 -->5.<!-- featureflow:comments:_190 --><!-- featureflow:newcomments:_190 --> <!-- featureflow:line:_191 -->Man pages: Add the -qxlf2008 option<!-- featureflow:comments:_191 --><!-- featureflow:newcomments:_191 --><br></p> <h3><!-- featureflow:line:_192 --><strong style="color:rgb(0,128,0);font-size:20px">Testing Considerations</strong><!-- featureflow:comments:_192 --><!-- featureflow:newcomments:_192 --></h3> <p><!-- featureflow:line:_193 -->The functional unit tests should cover:<!-- featureflow:comments:_193 --><!-- featureflow:newcomments:_193 --></p> <p><!-- featureflow:line:_194 -->- Procedures:<!-- featureflow:comments:_194 --><!-- featureflow:newcomments:_194 --><br></p> <ul> <li><!-- featureflow:line:_195 -->Module procedures<!-- featureflow:comments:_195 --><!-- featureflow:newcomments:_195 --></li> <li><!-- featureflow:line:_196 -->Intrinsic procedures that have optional dummy arguments<!-- featureflow:comments:_196 --><!-- featureflow:newcomments:_196 --><br></li> <li><!-- featureflow:line:_197 -->External procedures (with and without interfaces)<!-- featureflow:comments:_197 --><!-- featureflow:newcomments:_197 --><br></li> <li><!-- featureflow:line:_198 -->Internal procedures<!-- featureflow:comments:_198 --><!-- featureflow:newcomments:_198 --></li> <li><!-- featureflow:line:_199 -->Elemental procedures<!-- featureflow:comments:_199 --><!-- featureflow:newcomments:_199 --></li> </ul><!-- featureflow:line:_200 --> - Procedure calls within other procedures<!-- featureflow:comments:_200 --><!-- featureflow:newcomments:_200 --><br> <br><!-- featureflow:line:_201 --> - Actual and dummy arguments:<!-- featureflow:comments:_201 --><!-- featureflow:newcomments:_201 --><br> <ul> <li><!-- featureflow:line:_202 -->Derived types<!-- featureflow:comments:_202 --><!-- featureflow:newcomments:_202 --></li> <li><!-- featureflow:line:_203 -->Parameterized derived types<!-- featureflow:comments:_203 --><!-- featureflow:newcomments:_203 --></li> <li><!-- featureflow:line:_204 -->Polymorphic types<!-- featureflow:comments:_204 --><!-- featureflow:newcomments:_204 --></li> <li><!-- featureflow:line:_205 -->All possible intrinsic types.<!-- featureflow:comments:_205 --><!-- featureflow:newcomments:_205 --></li> <li><span id="comments44415"><span id="expanded44415"><span id="comments_content44415"><!-- featureflow:line:_206 -->Allocatable or pointer component within scalar and array derived types<!-- featureflow:comments:_206 --><!-- featureflow:newcomments:_206 --><br></span></span></span></li> <li><!-- featureflow:line:_207 --><span id="comments44415"><span id="expanded44415"><span id="comments_content44415">Function result that is an allocatable or pointer</span></span></span><!-- featureflow:comments:_207 --><!-- featureflow:newcomments:_207 --></li> <li><!-- featureflow:line:_208 --><span id="comments44415"><span id="expanded44415"><span id="comments_content44415">NULL() intrinsic</span></span></span><!-- featureflow:comments:_208 --><!-- featureflow:newcomments:_208 --></li> <li><!-- featureflow:line:_209 --><span id="comments44502"><span id="expanded44502"><span id="comments_content44502">Specified via argument keyword in a differing order</span></span></span><!-- featureflow:comments:_209 --><!-- featureflow:newcomments:_209 --></li> </ul> <br><!-- featureflow:line:_210 --> The diagnostic unit tests should cover:<!-- featureflow:comments:_210 --><!-- featureflow:newcomments:_210 --><br> <ul> <li><!-- featureflow:line:_211 -->Interaction between <font face="Courier New">-qxlf2008</font> and <font face="Courier New">-qlanglvl</font><!-- featureflow:comments:_211 --><!-- featureflow:newcomments:_211 --></li> </ul> <p><br></p> <table bgcolor="#BFBFFF" cellspacing="0" border="1" cellpadding="5" width="100%"> <tbody> <tr> <td valign="top" align="center" style="font-family:Arial;font-size:12pt" width="100%"><!-- featureflow:line:_212 --><strong>High-Level Implementation Design</strong><!-- featureflow:comments:_212 --><!-- featureflow:newcomments:_212 --></td> </tr> </tbody> </table> <h3><!-- featureflow:line:_213 --><strong style="color:rgb(0,128,0);font-size:20px">Implementation Design Overview</strong><!-- featureflow:comments:_213 --><!-- featureflow:newcomments:_213 --></h3> <p><!-- featureflow:line:_214 -->When the <font face="Courier New">-qxlf2008=</font><font face="Courier New">checkpresence</font> is enabled and the user passes an allocatable or pointer as an actual argument to an optional dummy argument that is not an allocatable or pointer, the compiler will perform the following:<!-- featureflow:comments:_214 --><!-- featureflow:newcomments:_214 --></p> <ol> <li><!-- featureflow:line:_215 -->If a language level less than or equal to Fortran 2003 is enabled, emit a langlvl message stating that the allocatable or pointer might be removed from the actual argument list.<!-- featureflow:comments:_215 --><!-- featureflow:newcomments:_215 --></li> <li><!-- featureflow:line:_216 -->Test if the actual argument is the NULL() intrinsic, if so generate the bif <font face="Courier New">__SUPPLYOPTARG.</font><!-- featureflow:comments:_216 --><!-- featureflow:newcomments:_216 --></li> <li><!-- featureflow:line:_217 -->Load the descriptor of the actual argument<!-- featureflow:comments:_217 --><!-- featureflow:newcomments:_217 --></li> <li><!-- featureflow:line:_218 -->Load the DSCR_IS_ALLOCATED or DSCR_IS_ASSOCIATED flag, as appropriate.<!-- featureflow:comments:_218 --><!-- featureflow:newcomments:_218 --><br></li> <li><!-- featureflow:line:_219 -->Generate a call to ASTI bif <font face="Courier New">__SUPPLYOPTARG_COND,</font> which takes two arguments.<!-- featureflow:comments:_219 --><!-- featureflow:newcomments:_219 --></li> </ol> <h3><!-- featureflow:line:_220 --><strong style="color:rgb(0,128,0);font-size:20px">Inter-Component Communication/Interfaces</strong><!-- featureflow:comments:_220 --><!-- featureflow:newcomments:_220 --></h3> <p><!-- featureflow:line:_221 -->A new ASTI BIF named <font face="Courier New">__SUPPLYOPTARG_COND <font face="Arial">will be created.<!-- featureflow:comments:_221 --><!-- featureflow:newcomments:_221 --> <!-- featureflow:line:_222 -->The BIF takes two arguments a descriptor and a flags field:</font></font><!-- featureflow:comments:_222 --><!-- featureflow:newcomments:_222 --></p> <blockquote> <p><tt><!-- featureflow:line:_223 -->void __supplyoptarg_cond(d-arg, flags)<!-- featureflow:comments:_223 --><!-- featureflow:newcomments:_223 --></tt></p> </blockquote> <p><!-- featureflow:line:_224 --><font face="Arial">This BIF will test the flag argument against the flags within the descriptor.</font> If the result is non-zero, it will load the descriptor and set the presence of the actual argument to true.<!-- featureflow:comments:_224 --><!-- featureflow:newcomments:_224 --> <!-- featureflow:line:_225 -->Otherwise it will pass null and set the presence of the actual argument to false.<!-- featureflow:comments:_225 --><!-- featureflow:newcomments:_225 --></p> <p> </p> <h3><!-- featureflow:line:_226 --><strong style="color:rgb(0,128,0);font-size:20px">Other Implementation Design Information</strong><!-- featureflow:comments:_226 --><!-- featureflow:newcomments:_226 --></h3> <p><!-- featureflow:line:_227 -->None.<!-- featureflow:comments:_227 --><!-- featureflow:newcomments:_227 --><br></p> <p><br></p> <table bgcolor="#BFBFFF" cellspacing="0" border="1" cellpadding="5" width="100%"> <tbody> <tr> <td valign="top" align="center" style="font-family:Arial;font-size:12pt" width="100%"><!-- featureflow:line:_228 --><strong>Appendix/References</strong><!-- featureflow:comments:_228 --><!-- featureflow:newcomments:_228 --></td> </tr> </tbody> </table> <p><br> <a class='review' title='Click on the text to add a comment'><span id='line_43772_1'>Section 12.5.2.12 of the 2010-04-20 draft of the Fortran 2008 standard.</span></a><br> <br></p> <p> </p>   <script>document.sections={};</script><script>document.sections['expanded_sec1']='<p><table border=1 cellspacing=0 cellpadding=0><tr><th>Change Date</th><th>Updater</th><th>Access Change</th></tr></table></p>';</script><br>
+
+
+</div></td></tr></table>
+
+
+		<!--END MAIN BODY CONTENT-->
+		<a href="http://w3.ibm.com/w3/info_terms_of_use.html" class="terms">Terms of use</a><br />
+	</div>
+	<!-- stop main content -->
+</div>
+<!-- stop content -->
+</body>
+</html>
+

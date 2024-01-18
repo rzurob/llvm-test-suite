@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=     allocins001.scenario
+#FEATURE = ISO_FORTRAN_ENV (Test case adopted from allocat/intrinsic/ bucket)
+#CREATOR = Morteza Ershad-Manesh
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)allocins001.f
+#OUTPUT    = allocins001$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = allocins001$(OBJ)
+#OUTPUT    = allocins001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = allocins001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

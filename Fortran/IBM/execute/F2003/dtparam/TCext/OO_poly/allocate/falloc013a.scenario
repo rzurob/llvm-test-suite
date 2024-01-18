@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/allocate/falloc013a.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_poly/*
+#DATE      = 20070817
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=linux
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)falloc013a.f
+#OUTPUT    = falloc013a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#IF on(aix)
+    #OPTS  = -bmaxdata:0x10000000
+#ENDIF
+#INPUT     = falloc013a$(OBJ)
+#OUTPUT    = falloc013a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = falloc013a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

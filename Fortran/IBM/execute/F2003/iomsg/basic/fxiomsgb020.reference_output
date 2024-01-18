@@ -1,0 +1,2 @@
+ 1525-032 The FILE= specifier in the OPEN statement on unit 9 is not allowed because the STATUS= specifier is set to SCRATCH.  The program will recover by assuming a value of UNKNOWN for the STATUS= specifier.
+                                                                                           

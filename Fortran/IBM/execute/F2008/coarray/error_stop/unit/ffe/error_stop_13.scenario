@@ -1,0 +1,56 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = error_stop_13.scenario
+#FEATURE    = ERROR STOP
+#CREATOR    = Feng Ye
+#DATE       = 2010-07-30
+#TEST_TYPE  = unit test
+#ENDDOC
+
+! Scenario Environment Tags
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)error_stop_13.f
+#OUTPUT    = error_stop_13$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = error_stop_13$(OBJ)
+#OUTPUT    = error_stop_13$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = error_stop_13$(EXE)
+#STDERR    = error_stop_13.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = GREP
+#INPUT     = "ERROR STOP 127" error_stop_13.err
+#ENDCMD
+
+#CMD       = GREP
+#INPUT     = "The ERROR STOP statement with stop code 127 will terminate the program with return code 1." error_stop_13.err
+#ENDCMD
+
+#CMD       = GREP
+#INPUT     = "Can not reach here!" error_stop_13.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

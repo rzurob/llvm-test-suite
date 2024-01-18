@@ -1,0 +1,9 @@
+ &LINKEDLIST
+ HEAD=abcdefghi
+ /
+ &LINKEDLIST
+ HEAD=jklmnopqr
+ /
+ &LINKEDLIST
+ HEAD=mnopqr
+ /

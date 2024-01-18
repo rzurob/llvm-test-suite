@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       ArrFuncHostPolyAlloc.f
+#FEATURE= ASSOCIATE STATEMENT
+#CREATOR=    Feng Ye
+#DATE=       11-01-05
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)ArrFuncHostPolyAlloc.f
+#OUTPUT= ArrFuncHostPolyAlloc$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  ArrFuncHostPolyAlloc$(OBJ)
+#OUTPUT= ArrFuncHostPolyAlloc$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  ArrFuncHostPolyAlloc$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

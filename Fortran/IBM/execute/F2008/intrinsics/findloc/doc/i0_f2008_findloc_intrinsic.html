@@ -1,0 +1,526 @@
+<html><head><title>FINDLOC Transformational Intrinsic Function</title></head><body><table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#c0e1ff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="left" style="FONT-SIZE: 12pt; FONT-FAMILY: Arial; COLOR: rgb(0,0,128)">         <strong>Document Control Information:</strong>
+            <p style="COLOR: rgb(0,0,0)">The official version of this         document is kept in CMVC in the          <span style="FONT-WEIGHT: bold; TEXT-DECORATION: underline">         %CMVC_Family%</span>family, release          <span style="FONT-WEIGHT: bold; TEXT-DECORATION: underline">         %CMVC_Release%</span>, component          <span style="FONT-WEIGHT: bold; TEXT-DECORATION: underline">         %CMVC_Component%</span>, file          <span style="FONT-WEIGHT: bold; COLOR: rgb(255,102,102); TEXT-DECORATION: underline">         %CMVC_PathName%</span>. Users of this document are         personally responsible for using the official version and         for verifying that any copies of the document, in whole or         in part, are of the official version. If this document is         not a copy of the official version, it is obsolete.          <br />
+            <br />
+            CMVC Extraction Information: %W% %H% %I% sccsid          <br />
+            <br />
+            This document is IBM Confidential.          <br />
+            </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table cellspacing="0" cellpadding="5" border="1" style="FONT-SIZE: 12pt; FONT-FAMILY: Arial; TEXT-ALIGN: left; WIDTH: 100%; BACKGROUND-COLOR: rgb(224,255,191)">
+    <tbody>
+        <tr>
+            <td width="20%" valign="top" align="left">         <strong>CMVC Feature Number</strong>       </td>
+            <td width="80%" valign="top" align="left" style="FONT-WEIGHT: bold; COLOR: rgb(0,0,255); BACKGROUND-COLOR: rgb(255,255,255)">%CMVC_Feature%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left">         <strong>Feature Title</strong>       </td>
+            <td valign="top" align="left" style="FONT-WEIGHT: bold; COLOR: rgb(0,0,255); BACKGROUND-COLOR: rgb(255,255,255)">%Document_Name% %Note{By default       the feature title and document name are the same. You can       either change the document name (through Properties), or       replace the tag with the title of the feature}%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left">         <strong>Author(s)</strong>       </td>
+            <td valign="top" align="left" style="FONT-WEIGHT: bold; COLOR: rgb(0,0,255); BACKGROUND-COLOR: rgb(255,255,255)">%Authors%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left">         <strong>Applicable Product Releases</strong>       </td>
+            <td valign="top" align="left" style="FONT-WEIGHT: bold; COLOR: rgb(0,0,255); BACKGROUND-COLOR: rgb(255,255,255)">%Note{ List all the products and       their release numbers for which the information in this       document is/will be correct. For example:        <br />
+            XL C/C++ v7.0 and 8.0 on Linux and AIX        <br />
+            XL Fortran v9.1 and 10.1 on Linux and AIX.        <br />
+            <br />
+            If you are updating this I0, remove old products from       the list if they will not support this updated I0's       behaviour. For example, if this I0 was first written for XL       Fortran v9.1 and a change is being made in XL Fortran v10.1       that will not be ported back to v9.1, then v9.1 should not       appear in the list.        <br />
+            <br />
+            For prototype or experimental code that isn't scheduled       to ship in any release yet, note possible future targets like       this: &quot;Experimental code, may ship in future XL Fortran and       XL C/C++ AIX releases&quot; }%        <br />
+            <br />
+            XL Fortran v15.1 AIX        <br />
+            XL Fortran v15.1 Linux</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left">         <strong>Affected Components</strong>       </td>
+            <td valign="top" align="left" style="FONT-WEIGHT: bold; COLOR: rgb(0,0,255); BACKGROUND-COLOR: rgb(255,255,255)">%Note{ List all compiler components       affected by the introduction of or changes to this document.       If you believe this document will cause a component to add or       change code, then you should list it. Use this list as a       starting point and add to it as necessary:        <br />
+            <br />
+            Front Ends: C, C++, Fortran, PL/X, PL/1, COBOL, PLIX        <br />
+            Optimizers: ASTI, TPO, TOBEY        <br />
+            Libraries: Fortran RT, C++ RT, SMP RT, libxl, libxlopt,       MASS, PLIX RT        <br />
+            Compiler Services: Driver, builtin table, target       validation        <br />
+            Build/Packaging: Installation tools, config files,       build scripts/makefiles        <br />
+            Documentation: Product documentation, web pages, README       files        <br />
+            Other: W-Code, disassembler, bolt, Makedepend }%        <br />
+            <br />
+            Fortran FE, ASTI, Run-Time        <br />
+            Documentation: Language reference</td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#ff6666">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="FONT-SIZE: 12pt; FONT-FAMILY: Arial; TEXT-ALIGN: left">         <strong>Document Status: For Approval</strong>       </td>
+        </tr>
+    </tbody>
+</table>
+<p> <strong>Approvers Only:</strong>Click on the 'Approve' check-box beside your name in the table below if you agree with the technical and user interface content of this document; not checking your 'approve' check-box signifies you do not approve.</p>
+<p>%Approvals%</p>
+<p>Approval Comments</p>
+<p>
+<table cellspacing="0" cellpadding="5" border="1" style="FONT-SIZE: 12pt; FONT-FAMILY: Arial; TEXT-ALIGN: left; WIDTH: 100%; BACKGROUND-COLOR: rgb(224,255,191)">
+    <tbody>
+        <tr>
+            <td valign="top" align="left">         <strong>Approvers</strong>(mandatory participation)</td>
+            <td valign="top" align="left" style="FONT-WEIGHT: bold; COLOR: rgb(0,0,255); BACKGROUND-COLOR: rgb(255,255,255)">%Note{Insert the names of people         who will have approval authority for this review. These         people, in aggregate, are responsible for approving the         technical and user interface content of the document.         Generally, this list should include people who represent         compiler components that will need to change if this review         is approved.          <br />
+            The I0 Process document provides detailed guidance on         choosing your list of approvers.          <br />
+            A member of the Option Review Board must approve any         i0 that adds an option or pragma.          <br />
+            Use Access Control to add/delete people from this         list. The initial access control list is populated with the         people from the Component Reviewers section below. You can         use Access Control to change their role to Approver, or add         additional approvers.}%          <br />
+            %Approvers%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left">         <strong>Release Management Contact</strong>(optional         participation)</td>
+            <td valign="top" align="left" style="FONT-WEIGHT: bold; COLOR: rgb(0,0,255); BACKGROUND-COLOR: rgb(255,255,255)">%Release_Management_Contact%          <br />
+            %Note{Choose the appropriate Release Managers from         the BlueGroup FeatureFlow-ReleaseManagers}%          <br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" align="left">         <strong>Component Reviewers</strong>(optional         participation)</td>
+            <td valign="top" align="left" style="COLOR: rgb(0,0,255); BACKGROUND-COLOR: rgb(255,255,255)">%Note{Each member of the         BlueGroup FeatureFlow-ReleaseLeadsFocals must be made aware         of the i0 review.&nbsp; Use Access Control to add/delete         people from this list.}%          <br />
+            %Component_Reviewers%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left">         <strong>Team Reviewers</strong>(optional         participation)</td>
+            <td valign="top" align="left" style="FONT-WEIGHT: bold; COLOR: rgb(0,0,255); BACKGROUND-COLOR: rgb(255,255,255)">%Note{List any additional people         you feel need to participate in the review. These people do         not have approval authority. Use Access Control to         add/delete people from this list.}%          <br />
+            %Team_Reviewers%</td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>   <br />
+<br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="FONT-SIZE: 12pt; FONT-FAMILY: Arial; TEXT-ALIGN: left; WIDTH: 100%; BACKGROUND-COLOR: rgb(224,255,191)">
+    <tbody>
+        <tr>
+            <td style="FONT-FAMILY: Arial; VERTICAL-ALIGN: top">         <strong>Reviewers</strong>: Please click the 'Reviewed'         checkbox beside your name to indicate your participation in         the review.</td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%Reviews%  <br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="FONT-SIZE: 12pt; FONT-FAMILY: Arial; TEXT-ALIGN: left; WIDTH: 100%; BACKGROUND-COLOR: rgb(224,255,191)">
+    <tbody>
+        <tr>
+            <td style="FONT-FAMILY: Arial; VERTICAL-ALIGN: top">         <strong>Access Change History</strong>%Note{Authors: Access         Change History will list any changes to the access control         done to the document draft. These changes would not be         visible in a review. In a review, this section would only         list the access changes done to the review itself.          <br />
+            Please note that changes to the access control of a         review are not automatically reflected in the access         control of the draft document.}%</td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%CollapsedSection{  <strong>Access Change History</strong>}{%Access_Change_History%}%  <br />
+</p>
+<p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="FONT-SIZE: 12pt; FONT-FAMILY: Arial">           <strong>Feature Overview</strong>         </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%Note{ General description of the feature. The contents of this section are intended to guide reviewers as to what they will be reviewing. Any information relevant to an external product user must appear in the User Documentation section; that content must not only appear here.  <br />
+</p>
+<p>The rest of this section outlines the key issues and design decisions that should be noted by the reviewers. The purpose of these subsections is to give reviewers a 'birds-eye' view of the design, to see if any key requirements or issues were missed or design decisions made that need to call out special attention. This is also a good vehicle for identifying whether anyone should be added as a reviewer for the design}%</p>
+<p>   <span class="DescriptionSpan readonly-text" style="DISPLAY: block">     <span>This feature implements&nbsp; FINDLOC() as a     transformational intrinsic function (TIF) for finding location     of a specific value. (section 13.7.61 from Fortran 2008     standard)      <br />
+</span>   </span> </p>
+<h2>Key Requirements</h2>
+<p>This feature provides support for FINDLOC() which is a transformational intrinsic function (TIF) as described in standard 2008 section 13.7.61.</p>
+<h2>Key Design Issues</h2>
+<ol>
+    <li>Which component should inline this intrinsic?<br />
+    </li>
+    <li>Which component should fold it in case of constant expression?<span id="comments62351"><span id="expanded62351"><span id="comments_content62351">.</span></span></span></li>
+    <li>what are the  differences between FINDLOC and MINLOC/MAXLOC?</li>
+</ol>
+<h2>Key Design Decisions</h2>
+<ol>
+    <li>ASTI will inline this intrinsic because it is &nbsp;a   transformational intrinsic function which should be processed in   the Scalarizer&nbsp; phase of ASTI.</li>
+    <li>FE will fold all constant expression initializations    <span id="comments62351">     <span id="expanded62351">       <span id="comments_content62351">through a call to a runtime       routine (at compile-time) that is implemented in Fortran       using ASTI's implementation.</span>     </span>   </span></li>
+    <li>FINDLOC is similar to MAXLOC/MINLOC, and the   implementation&nbsp;has the same infrastructure. For   MAXLOC/MINLOC, however, the XLF RTE handles the cases when&nbsp;   the arguments are&nbsp;of type character. For FINDLOC, we handle   the character case in ASTI. Also,&nbsp; when dim is not a compile-time constant, FINDLOC will get resolved to a runtime call instead of being inlined by ASTI which is the same as&nbsp; MAXLOC/MINLOC.     </li>
+</ol>
+<h2>Testing Strategy</h2>
+<p>Testing strategy is Unit Test only. We also do Diagnostic tests.</p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="FONT-SIZE: 12pt; FONT-FAMILY: Arial">         <strong>User Documentation</strong>       </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">
+<h3>Overview</h3>
+</strong>
+<p>This feature adds support for the following Fortran 2008 transformational intrinsic: FINDLOC.</p>
+<strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">
+<h3>User Benefits</h3>
+</strong>
+<p>%Note{Describe why a user would want or need to use this feature. Include any relevant information to help guide the Information Development team presenting this feature to customers. For example, &quot;Using option -qXXXX will usually speed up programs that contain nested loops when combined with the -qpdf option.&quot; Another example, &quot;The __XXXX attribute is compatible with the like-named gcc attribute and allows you to compile code written for the gcc compiler.&quot;}%</p>
+<p>Using these intrinsic, users can find the location of a specific value in an array.  <br />
+</p>
+<strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">
+<h3>Public Interface</h3>
+</strong>
+<p>%Note{;Describe source interfaces, options, listings, etc. - how the user would use this. For multi-language I0s, remember to provide syntax etc. for all languages involved. Also, remember that option syntax may vary between platforms, especially between zSeries and pSeries compilers.</p>
+<p>If you are adding an option that has an equivalent gcc/g++ option, you need to review the designs/i0/gxlcOptionMapping/gxlcOptionMapping_I0.html I0, to determine if that I0 will require updating.</p>
+<p>If you are defining a feature that requires the generation of file names, refer to the Reference Information section of this document below for help on how to specifiy the rules for file naming.}%</p>
+<p>FINDLOC (ARRAY, VALUE, DIM [, MASK, KIND, BACK]) or  <br />
+FINDLOC (ARRAY, VALUE [, MASK, KIND, BACK]) :</p>
+<p>   <strong>Purpose</strong> </p>
+<p>Locates the first element, or the last element if BACK&nbsp;  <span id="comments62352">   <span id="expanded62352">     <span id="comments_content62352">is present and is .TRUE</span>   </span> </span>., of an array along a dimension corresponding to the true values of the mask. FINDLOC will return the index referable to the position of the element using a positive integer.</p>
+<p>   <strong>Class</strong> </p>
+<p>Transformational function.</p>
+<p>   <strong>Argument type and attributes</strong> </p>
+<dl>   <dt>     <strong>ARRAY</strong>   </dt>   <dd>is an array of type integer, real, complex, logical,   character, or byte.</dd>   <dt>     <strong>VALUE</strong>   </dt>   <dd>a scalar in type conformance with ARRAY.</dd>   <dt>     <strong>DIM</strong>   </dt>   <dd>a scalar integer with a value in the range 1 &lt;=&nbsp; DIM   &lt; = n, where n is the rank of ARRAY. The corresponding actual   argument must not be an optional dummy argument.</dd>   <dt>   <strong>MASK</strong>(optional)</dt>   <dd>must be of type logical and must be conformable with ARRAY in   shape. If it is absent, the default mask evaluation is .TRUE.;   which means, the entire array is evaluated.</dd>   <dt>   <strong>KIND</strong>(optional)</dt>   <dd>a scalar integer constant expression.</dd>   <dt>   <strong>BACK</strong>(optional)</dt>   <dd>a scalar of type logical and specifies the direction in which   ARRAY is searched. If it is .FALSE. or absent, the array is   searched from the beginning . If it is .TRUE., the array is   searched from the end.</dd> </dl>
+<p>   <strong>Result type and attributes</strong> </p>
+<p>&nbsp;- If KIND is present, the KIND type parameter is that specified by the value of KIND; otherwise, the KIND type parameter is that of default integer type.</p>
+<p>&nbsp;- If DIM is absent, the result is an integer array of rank one with a size equal to the rank of ARRAY. If DIM is present, the result is an integer array of rank  <br />
+&nbsp;&nbsp; rank(ARRAY)-1, and the shape is (s  <sub>1</sub>, ..., s  <sub>DIM-1</sub>, s  <sub>DIM+1</sub>, ..., s  <sub>n)</sub>, where n is the rank of ARRAY.  <br />
+</p>
+<p>&nbsp;- If there is no matching value, perhaps because the array is zero-sized or the mask array has all .FALSE. values or there is no element in the ARRAY equal to  <br />
+</p>
+<p>&nbsp;&nbsp; the VALUE argument and DIM is absent&nbsp; the return value is a&nbsp; one-dimensional entity whose elements are zero.&nbsp; If DIM is present, the result shape depends on the rank of ARRAY.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>   <strong>Result value</strong> </p>
+<p>&nbsp;The result indicates the subscript of the location of the&nbsp; masked element of ARRAY whose value matches VALUE. If ARRAY is of type character, the comparison is done using the ASCII  <br />
+&nbsp;collating sequence. If more than one element is equal to the VALUE and BACK is absent or has the value .FALSE., the function finds the location of the first element in array element order.</p>
+<p>&nbsp;If BACK is present with the value .TRUE., the function finds the location of the last element in array element order.</p>
+<p>&nbsp;If DIM is specified, the result indicates the location of the masked element of ARRAY whose value matches VALUE along each vector of the dimension.  <br />
+</p>
+<strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">
+<h3>Constraints</h3>
+</strong>
+<p>%Note{Describe conditions that must be met and can be validated by the compiler - e.g. &quot;The BLAH directive cannot be used outside of a DO loop.&quot; Violation of a constraint usually results in an error message.}%</p>
+<p>According to the standard, FINDLOC must not be passed as an actual argument.</p>
+<p>There are different constraints on the type and range of the arguments of FINDLOC() which  <span id="comments62354">   <span id="expanded62354">     <span id="comments_content62354">have been explained in the     Public Interface section.</span>   </span> </span></p>
+<p>&nbsp;</p>
+<strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">
+<h3>Rules</h3>
+</strong>
+<p>%Note{Describe conditions that must be met but cannot be validated by the compiler - e.g. &quot;The BLAH option may not be used with programs that call Fortran subroutines from C.&quot; Generally, violation of a rule does not (but might) result in an error message.}%</p>
+<p>None.</p>
+<strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">
+<h3>Language Standard Considerations</h3>
+</strong>
+<p>%Note{If relevant, what language standard(s) does this apply to or should it be labeled in the documentation as an IBM language extension? Is there a -qlanglvl impact in the compiler and/or runtime?}%  <br />
+</p>
+<p>This applies to Fortran2008 standard.</p>
+<strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">
+<h3>Messages</h3>
+</strong>
+<p>%Note{ Either insert new message text or a description of the kinds of messages required. Include a description of which components will need to issue them (e.g. driver, FE, BE, runtime...).</p>
+<ul>
+    <li>Use short, simple sentences. Avoid sentence fragments and do   not omit articles (a, an, the, etc.).</li>
+    <li>Include only essential information.</li>
+    <li>Avoid wording that seems to blame the user.</li>
+    <li>Use system-supplied substitution variables where appropriate   to provide the user with useful information.</li>
+</ul>
+<p>For XL Fortran, messages must be reviewed by the XL Fortran message review committee and will generally be finalized in the I1, not the I0. Contact Dave Paulmark or Richard Salyniuk to get a message reviewed.</p>
+<p>For messages that will be emitted on zOS, remember to include the following so that the detailed message documentation will be accurate:</p>
+<ul>
+    <li>   <strong>Message Number</strong>(if known)</li>
+    <li>   <strong>Raw Message</strong>including substitution text   markers.</li>
+    <li>   <strong>Where</strong>information explaining what each   substitition text marker represents.</li>
+    <li>   <strong>Explanation</strong>text detailing the message contents   and what it means. Use the explanation to expand the message text   and provide more detail. Describe the cause of the message (when   and where the error occurred) and the consequences of the error.   The explanation might also include a system action that occurs as   part of the error.</li>
+    <li>   <strong>User Response</strong>text explaining what the user   should do to recover from the error. Specify the exact steps that   would allow the user to continue working, to correct the error,   or to prevent the problem. Write in an active voice and use the   imperative (command) mood. When the user can choose between   different options, present the options in an unordered list. When   the user must follow a specific sequence of steps, present the   information in an ordered list. Provide precise information, such   as exact names of directories etc. If the user does not need to   do anything in response to the message, use the phrase &quot;No   response required.&quot;}%<br />
+    </li>
+</ul>
+<br />
+N/A <br />
+<strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">
+<h3>Runtime and Compile Time Performance Considerations</h3>
+</strong>
+<p>%Note{Describe any performance impacts (good or bad) that we can tell users about. For example, &quot;Using this option will slow down the compiler at higher optimization levels but can result in improved execution speed for programs with deeply nested loop constructs.&quot; Also consider impact to the memory footprint of the compiler. If the feature has minimal impact on compile time and execution time, mark this section as &quot;n/a&quot;. }%</p>
+<p>N/A<br />
+</p>
+<strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">
+<h3>Multi-Platform/Portability Considerations</h3>
+</strong>
+<p>%Note{What compiler products will be affected by this? Consider both operating systems (AIX, zOS, Linux, iOS...) and hardware (pSeries, zSeries, iSeries, xSeries...) For example, &quot;This feature takes advantage of AIX-specific capabilities and is not portable to our other non-AIX products.&quot; Also, &quot;The intrinsics in this feature work on all supported Linux systems but some will not function correctly on older AIX platforms such as POWER2.&quot;</p>
+<p>Consider also portability issues such as gcc or competitive compiler product affinity. For example, &quot;This language extension is compatible with the similar extension defined by many Cray and VAX Fortran compilers.&quot;}%</p>
+<p>N/A  <br />
+</p>
+<strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">
+<h3>Migration/Co-Existence/Binary-Compatibility   Considerations</h3>
+</strong>
+<p>%Note{Describe anything relevant. Consider things like linking old code to new code, using old module files, reading data files written by code built with older compilers... Consider impact to existing make files. Consider anything that changes the meaning of a pre-existing option or construct.}%</p>
+<p>N/A  <br />
+</p>
+<strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">
+<h3>Debug Considerations</h3>
+</strong>
+<p>%Note{How are debuggers affected by this? Is existing debug format on all relevant targets sufficient? Do debuggers need new capabilities to understand this? Will there be known limitations with specific debuggers? Will the debugger function better/worse at higher optimization levels?}%</p>
+<p>N/A  <br />
+</p>
+<strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">
+<h3>NLS (Unicode) Considerations</h3>
+</strong>
+<p>%Note{Note anything relevant here to national language support.}%</p>
+<p>N/A  <br />
+</p>
+<strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">
+<h3>Samples</h3>
+</strong>
+<p>%Note{Where relevant, provide both valid examples and invalid examples of using the new feature.}%</p>
+<pre>1:   <br />  print *,FINDLOC([4,9,-2,9], VALUE=9)                ! prints the result array which is [2]   <br />  print *,FINDLOC([4,9,-2,9], VALUE=9, BACK=.TRUE.)   ! prints the result array which is [4] <br />  <br />2:  <br /> !if A has the value |3  8 -4  5|  and M has the value |F T T F| then,   <br /> !                   |2  5  1  3|                      |T T T T|   <br /> !                   |7  1  0  5|                      |F T T T|  <br /> <br />  integer :: A(-2:0,5:8)     ! the lower bound of A does not affect the result.   <br />  logical :: M(-5:-3,-1:2)   ! A and M can have different lower bounds. <br /> <br />  A = reshape((/3,2,7,8,5,1,-4,1,0,5,3,5/), (/3,4/))   <br />  M = reshape((/.FALSE., .TRUE., .FALSE., .TRUE., .TRUE., .TRUE., &amp;                 <br />                .TRUE., .TRUE., .TRUE., .FALSE., .TRUE., .TRUE./), (/3,4/))  <br /><br />  print *, FINDLOC(A, 5, MASK=M)                     ! prints the result array which is [2,2]    <br />  print *, FINDLOC(A, 5, MASK=M, BACK=.TRUE.)        ! prints the result array which is [3,4]  <br /><br />3:   <br /> !If B has the value |6 -2  4|   <br /> !                   |4  3  5|   <br /><br />  integer  :: B(2,3)   <br />  B = reshape((/6,4,-2,3,4,5/),(/2,3/))   <br />  print *, FINDLOC(B, VALUE=4, DIM=1)   ! prints the result array which is [2,0,1]   <br />  print *, FINDLOC(B, VALUE=4, DIM=2)  ! prints the results array which is [3,1]   <br /></pre>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="FONT-SIZE: 12pt; FONT-FAMILY: Arial">         <strong>Architecture Review Board</strong>       </td>
+        </tr>
+    </tbody>
+</table>
+<p>%Note{ Describe whether a review before the Architecture Review Board is required.&nbsp; Should a review be conducted, the results should be pasted here.&nbsp; Otherwise, please place a comment here explaining why no review is required.}%</p>
+<p>It is not necessary to review with ARB because this feature is just related to Fortran.</p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="FONT-SIZE: 12pt; FONT-FAMILY: Arial">         <strong>Internal Compiler Team Information</strong>       </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">
+<h3>Product Dependencies</h3>
+</strong>
+<p>%Note{ Identify dependencies within the product for this feature. Does this feature rely on the completion of another feature or does it need to finish before others can begin? Does a W-Code ACR need to be approved? Where possible, use master feature numbers to pinpoint the precise work items. }%</p>
+<p>N/A  <br />
+</p>
+<strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">
+<h3>Patent/Disclosure Implications</h3>
+</strong>
+<p>%Note{ Identify if this feature or any related work should/will result in a patent application or technical disclosure. }%</p>
+<p>N/A  <br />
+</p>
+<strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">
+<h3>Scientific Research and Experimental Development</h3>
+</strong>
+<p> <strong>Technological Advancements</strong>: %Note{State the technological objective of the feature. Describe the advancements in knowledge gained through the experimentation performed.}%</p>
+<p> <strong>Technological Obstacles</strong>: %Note{List the limitations of the current state of technology. Outline the technological uncertainty in development and the systematic investigation performed. Focus on the obstacles that must be overcome and not on the difficulty of the feature.}%</p>
+<p> <strong>Work Performed</strong>: %Note{Describe the development of prototypes and final implementations, including dates. Make sure to include failed prototypes. Describe findings from any experimentation.}%</p>
+<p>N/A  <br />
+</p>
+<strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">
+<h3>Build and Packaging Considerations</h3>
+</strong>
+<p>&nbsp;</p>
+<p>N/A</p>
+<strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">
+<h3>Information Development Impacts</h3>
+</strong>
+<p>%Note{List any documentation impacts. What books/chapters/sections are affected? Do the man pages need updating? Are there any new terms or phrases that need to be added to the glossary? See template below.&nbsp; Add new rows as necessary.}%</p>
+<table cellspacing="2" cellpadding="2" border="1" style="HEIGHT: 408px; TEXT-ALIGN: left; WIDTH: 100%">
+    <tbody>
+        <tr>
+            <td style="VERTICAL-ALIGN: top" colspan="2">       <span style="FONT-WEIGHT: bold">Overview</span>: <font size="2" face="Tahoma">Document the FINDLOC procedure in Fortran LR</font>        </td>
+        </tr>
+        <tr>
+            <td style="VERTICAL-ALIGN: top">       <span style="FONT-WEIGHT: bold">New terminology</span>       <br />
+            <font size="2" face="Arial">new index: FINDLOC</font><br />
+            <br />
+            <br />
+            <br />
+            </td>
+            <td style="VERTICAL-ALIGN: top">%Note { Fortran 95        <br />
+            <br />
+            SUSE Linux Enterprise Server 11 Service Pack 1 (SLES 11       SP1)        <br />
+            <br />
+            SUSE Linux Enterprise Server 11 Service Pack 2 (SLES 11       SP2) }%        <br />
+            <br />
+            </td>
+        </tr>
+        <tr>
+            <td style="VERTICAL-ALIGN: top">       <strong>Publication Name</strong> :Language Reference <br />
+            <br />
+            <strong>Chapter</strong>:Intrinsic procedures <br />
+            <br />
+            <strong>Section</strong>:Detailed descriptions of intrinsic procedures-&gt;FINDLOC(ARRAY, VALUE, DIM, MASK, KIND, BACK) or FINDLOC(ARRAY, VALUE, MASK, KIND, BACK) (Fortran 2008)<br />
+            <br />
+            <strong>Update/New/Delete</strong>: NEW<br />
+            </td>
+            <td style="VERTICAL-ALIGN: top">       <span style="FONT-WEIGHT: bold">Description:</span>       <br />
+            Document the purpose, class, argument type and attributes, result type and attributes, result value and example<br />
+            <br />
+            <span style="FONT-WEIGHT: bold">Related cross       references/links:</span>       <br />
+            %Note { links to the Information Technology -       Programming Languages - Fortran Part 1....and also       Conventions: Qualifying section.... }%        <br />
+            <br />
+            <span style="FONT-WEIGHT: bold">Impact on external       interfaces:</span>       <br />
+            %Note { None }%        <br />
+            <br />
+            <span style="FONT-WEIGHT: bold">Other dependencies:</span>       <br />
+            %Note { Information about SUSE Linux Enterprise Server       11 Service Pack 2(SLES 11 SP2) to be conditionally tagged       till GA announcment. }%        <br />
+            <br />
+            </td>
+        </tr>
+        <tr>
+            <td style="VERTICAL-ALIGN: top"><strong>Publication Name</strong> :Language Reference <br />
+            <br />
+            <strong>Chapter</strong>:Intrinsic procedures <br />
+            <br />
+            <strong>Section</strong>:Classes of intrinsic procedures<br />
+            <br />
+            <strong>Update/New/Delete</strong>: UPDATE</td>
+            <td style="VERTICAL-ALIGN: top"><span style="FONT-WEIGHT: bold">Description:</span>       Add FINDLOC to the table and mark it as Fortran 2008<br />
+            <br />
+            <span style="FONT-WEIGHT: bold">Related cross       references/links:</span>       <br />
+            %Note { links to the Information Technology -       Programming Languages - Fortran Part 1....and also       Conventions: Qualifying section.... }%        <br />
+            <br />
+            <span style="FONT-WEIGHT: bold">Impact on external       interfaces:</span>       <br />
+            %Note { None }%        <br />
+            <br />
+            <span style="FONT-WEIGHT: bold">Other dependencies:</span>       <br />
+            %Note { Information about SUSE Linux Enterprise Server       11 Service Pack 2(SLES 11 SP2) to be conditionally tagged       till GA announcment. }%        </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">
+<h3>Testing Considerations</h3>
+</strong>
+<p>Only Unit Test will be done.</p>
+<ul>
+    <li>     <span id="comments62361">       <span id="expanded62361">         <span id="comments_content62361">Diagnostic tests&nbsp;for         all constraints mention in this I0.</span></span></span></li>
+    <li><span id="comments63145"><span id="expanded63145"><span id="comments_content63145">Test the result of findloc when it is used as an actual argument to another  procedure reference or intrinsic call,also when the arguments of  findloc are (intrinsic or non-intrinsic) function results.</span></span></span></li>
+    <li>     <span id="comments62361">       <span id="expanded62361">         <span id="comments_content62361">Test for all intrinsic         types (including the IBM extension one supported by         findloc() : Byte)</span>       </span>     </span>   </li>
+    <li>     <span>       <span>         <span>           <span id="comments62361">             <span id="expanded62361">               <span id="comments_content62361">Test three possible               cases where no matching value is found (ie the               elements of the result are 0)</span>             </span>           </span>         </span>       </span>     </span>   </li>
+    <li>Test the result when:
+    <ol>
+        <li>The intrinsic appears in a constant expression.</li>
+        <li>The intrinsic does not appear in a constant expression, but     all the arguments are constant expressions.</li>
+        <li>The intrinsic does not appear in a constant expression, and     some of the arguments are unknown at compile time.</li>
+    </ol>
+    </li>
+    <li>     <span id="comments62363">       <span id="expanded62363">         <span id="comments_content62363">Test the result with         different lower bounds of ARRAY, regardless of presence of         MASK.</span>       </span>     </span>   </li>
+    <li>Test with and without argument keywords.</li>
+    <li>Test with and without argument KIND</li>
+    <li>Test with and without argument BACK</li>
+    <li>Test with and without argument MASK    <span id="comments62362">     <span id="expanded62362">       <span id="comments_content62362">also, test when&nbsp;MASK is       scalar and when it is an array.&nbsp;</span>     </span>   </span>&nbsp;</li>
+    <li>Test with and without argument DIM</li>
+    <li>   <style type="text/css">body { margin: 0 0 0 0; padding:0 0 0 0 }
+  td,div { font-family:Segoe UI;font-size:9pt;vertical-align:top }
+  /* Copyright IBM Corp. 2011 All Rights Reserved. */ body {
+  margin: 0 0 0 0; padding:0 0 0 0; } .transcript {
+  background-color:#d2d2d2; } .messageBlock { padding-left:10px;
+  padding-right:10px; margin-bottom:3px } .message {
+  padding-left:20px; margin-left:95px; word-wrap:break-word;
+  white-space:-moz-pre-wrap; _white-space:pre;
+  white-space:pre-wrap;} .messageCont { padding-left:20px;
+  margin-left:95px; word-wrap:break-word;
+  white-space:-moz-pre-wrap;
+  _white-space:pre;white-space:pre-wrap;} .other {
+  font-size:11px;color:#39577a;vertical-align:top;font-weight:bold;font-style:normal;float:left;
+  width:95px; } .myself {
+  font-size:11px;color:#da8103;font-style:normal;font-weight:bold;font-style:normal;float:left;
+  width:95px; } .otherCont { font-size:8px;text-align:right;
+  color:#39577a;font-family:Arial,Lucida
+  Grande;font-style:normal;vertical-align:top;font-weight:bold;float:left;
+  width:95px; } .myselfCont { font-size:8px;text-align:right;
+  color:#da8103;font-family:Arial,Lucida
+  Grande;font-style:normal;vertical-align:top;font-weight:bold;float:left;
+  width:95px; } .system { font-size:11px;
+  word-wrap:break-word;color:#da8103;font-style:normal;font-weight:normal;
+  white-space:-moz-pre-wrap; _white-space:pre;white-space:pre-wrap;
+  } .showTimestamp { padding-left:20px; font-size:11px;
+  float:right; color:#999999;font-style:normal;font-weight:normal;
+  } .other1 { font-size:11px;
+  color:#ac2000;vertical-align:top;font-weight:bold;font-style:normal;float:left;
+  width:95px; } .otherCont1 { font-size:8px;text-align:right;
+  color:#ac2000;font-family:Arial,Lucida
+  Grande;font-style:normal;vertical-align:top;font-weight:bold;float:left;
+  width:95px; } .other2 { font-size:11px;
+  color:#3c9fa8;vertical-align:top;font-weight:bold;font-style:normal;float:left;
+  width:95px; } .otherCont2 { font-size:8px;text-align:right;
+  color:#3c9fa8;font-family:Arial,Lucida
+  Grande;font-style:normal;vertical-align:top;font-weight:bold;float:left;
+  width:95px; } .other3 { font-size:11px;
+  color:#e25614;vertical-align:top;font-weight:bold;font-style:normal;float:left;
+  width:95px; } .otherCont3 { font-size:8px;text-align:right;
+  color:#e25614;font-family:Arial,Lucida
+  Grande;font-style:normal;vertical-align:top;font-weight:bold;float:left;
+  width:95px; } .other4 { font-size:11px;
+  color:#0b6ac8;vertical-align:top;font-weight:bold;font-style:normal;float:left;
+  width:95px; } .otherCont4 { font-size:8px;text-align:right;
+  color:#0b6ac8;font-family:Arial,Lucida
+  Grande;font-style:normal;vertical-align:top;font-weight:bold;float:left;
+  width:95px; } .other5 { font-size:11px;
+  color:#b23290;vertical-align:top;font-weight:bold;font-style:normal;float:left;
+  width:95px; } .otherCont5 { font-size:8px;text-align:right;
+  color:#b23290;font-family:Arial,Lucida
+  Grande;font-style:normal;vertical-align:top;font-weight:bold;float:left;
+  width:95px; } .other6 { font-size:11px;
+  color:#02e7c7;vertical-align:top;font-weight:bold;font-style:normal;float:left;
+  width:95px; } .otherCont6 { font-size:8px;text-align:right;
+  color:#02e7c7;font-family:Arial,Lucida
+  Grande;font-style:normal;vertical-align:top;font-weight:bold;float:left;
+  width:95px; } .other7 { font-size:11px;
+  color:#5b3284;vertical-align:top;font-weight:bold;font-style:normal;float:left;
+  width:95px; } .otherCont7 { font-size:8px;text-align:right;
+  color:#5b3284;font-family:Arial,Lucida
+  Grande;font-style:normal;vertical-align:top;font-weight:bold;float:left;
+  width:95px; } .highlight { background-color:#bed6f8; } .datestamp
+  { padding-right:0px; font-size:11px; cursor:default;
+  margin-bottom:1px; background-color:#c0c0c0; width:100%;
+  float:left; text-align:right; color:#ffffff; font-weight:bold;
+  font-style:italic; } #chatAlert { float:left; border-bottom:1px
+  solid #E8D091; padding:6px; width:100%; color:#A5754C; }
+  #chatAlertImage { float:left; } #chatAlertText { float:left;
+  margin-left:6px; } #chatAlertClose { float:right;
+  margin-right:10px; padding-right:6px; margin-top:0px; }
+  #chatAlertText a { color:#A5754C; } #chatAlertText a:hover {
+  color:#A5754C; text-decoration:none; } .tsDisplay { display:block
+  }.dsDisplay { display:none }</style>Test that when MASK is   specified, we'll get the same result even when the lower bounds   of MASK and&nbsp; ARRAY are different</li>
+    <li>Test langlvl checking, focus on ensuring that the intrinsic get flagged with anything other than -qlanglvl=extended, -qlanglvl=2008std and -qlanglvl=2008pure. </li>
+</ul>
+<strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">   <strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">
+<h3>Internal or Hidden Options</h3>
+</strong> </strong>
+<p>%Note{List any debugging aids that will be implemented for the use of development, test or service. For example, are any -qdebug options available?. Document the output if possible and appropiate.}%  <br />
+</p>
+<p>N/A  <br />
+</p>
+<strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="FONT-SIZE: 12pt; FONT-FAMILY: Arial">           <strong>High-Level Implementation Design</strong>         </td>
+        </tr>
+    </tbody>
+</table>
+</strong> <strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">   <strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">
+<h3>Implementation Design Overview</h3>
+</strong> </strong>
+<p>For FINDLOC() function, The FE will parse it and then generate one or more&nbsp;BIFS for this function depending on the number of&nbsp;available optional arguments; when all of the optional arguments are present then FE just generates one BIF called __findloc, for every absent optional argument other than KIND, FE will generate one bif called&nbsp; __supplyoptarg and for&nbsp; absent KIND argument FE will send the value of the default integer kind.  <br />
+ASTI will read these&nbsp;BIFS and then  <span id="comments62367">   <span id="expanded62367">     <span id="comments_content62367">the Scalarizer in ASTI     generates inline code to calculate the result.</span>   </span> </span></p>
+<strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">   <strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">
+<h3>Inter-Component Communication/Interfaces</h3>
+</strong> </strong>
+<p>FE will send a&nbsp;BIF to ASTI and then ASTI&nbsp;  <span id="comments62366">   <span id="expanded62366">     <span id="comments_content62366">will generate      <strong>code</strong>that will calculate the result</span>   </span> </span>, but in case of constant expressions, FE will fold them.</p>
+<strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">   <strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">
+<h3>Other Implementation Design Information</h3>
+</strong> </strong> <strong style="FONT-SIZE: 20px; COLOR: rgb(0,128,0)">
+<p>%Note{Note anything here relevant to the review of the   high-level implementation design that would be useful to   reviewers that doesn't fit into any other section. For example,   &quot;The C front end will protect this code under the AIX_ONLY   macro.&quot; Another example, &quot;TOBEY will implement this using the   ldxrwa PWR9 instruction, see the reference in the Appendix for   details.&quot;}%</p>
+</strong>
+<p>N/A  <br />
+</p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="FONT-SIZE: 12pt; FONT-FAMILY: Arial">         <strong>Appendix/References</strong>       </td>
+        </tr>
+    </tbody>
+</table><!--HTML Wrapper--></body></html>

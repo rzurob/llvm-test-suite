@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= /F2003/encoding/unit_tests/encodingspecifier010.scenario
+#FEATURE	= ENCODING SPECIFIER
+#CREATOR	= Robert Jackiewicz
+#DATE		= 2007/08/23
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD	= COPY
+#INPUT	= $(tcasedir)fvwdca01.vf01 fort.1
+#ENDCMD
+
+#CMD	= F_COMPILE
+#INPUT	= $(tcasedir)encodingspecifier010.f
+#OUTPUT	= encodingspecifier010$(OBJ)
+#ENDCMD
+
+#CMD	= F_LINK
+#INPUT	= encodingspecifier010$(OBJ)
+#OUTPUT	= encodingspecifier010$(EXE)
+#ENDCMD
+
+#CMD	= RUN
+#INPUT	= encodingspecifier010$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

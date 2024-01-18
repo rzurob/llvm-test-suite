@@ -1,0 +1,3 @@
+base%base     = "1234"
+derived1%base = "5678", derived1%derived1 = "9012"
+derived2%base = "3456", derived2%derived1 = "7890", derived2%derived2 = "1234"

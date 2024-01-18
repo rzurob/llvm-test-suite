@@ -1,0 +1,4 @@
+ iotype:DT empty v_list 100
+ iotype:DTb2 empty v_list 200 abc
+ iotype:DTc1 v_list: 10       300 def
+ iotype:DTc2 v_list: 10 5       400  ghi

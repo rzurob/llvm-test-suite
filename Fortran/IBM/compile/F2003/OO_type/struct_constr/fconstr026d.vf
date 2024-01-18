@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"fconstr026d.f", line 38.10: 1515-039 (S) The target in the pointer assignment must have the TARGET or POINTER attribute.
+** fconstr026d   === End of Compilation 2 ===
+1501-511  Compilation failed for file fconstr026d.f.

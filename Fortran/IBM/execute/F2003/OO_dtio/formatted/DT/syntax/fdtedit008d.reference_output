@@ -1,0 +1,1 @@
+1525-110  The data edit descriptor DT is used in a formatted WRITE statement with a data item of the wrong type or size.  The program will recover by skipping the data item.

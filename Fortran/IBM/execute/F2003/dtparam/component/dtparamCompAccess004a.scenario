@@ -1,0 +1,44 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/component/dtparamCompAccess004a.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)convertArray.c
+#OPTS      = $(C_COMPILER_OPTS)
+#OUTPUT    = convertArray$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamCompAccess004a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamCompAccess004a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dtparamCompAccess004a$(OBJ) convertArray$(OBJ)
+#OUTPUT    = dtparamCompAccess004a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamCompAccess004a$(EXE)
+#STDOUT    = dtparamCompAccess004a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dtparamCompAccess004a.out $($(tcasedir)dtparamCompAccess004a$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

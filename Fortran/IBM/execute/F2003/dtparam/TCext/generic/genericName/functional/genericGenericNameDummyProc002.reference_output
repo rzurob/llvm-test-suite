@@ -1,0 +1,48 @@
+ abase
+ setbase
+ 10
+ abase
+ setsumbase
+ 30
+ anegbase
+ setbase
+ -10
+ anegbase
+ setsumbase
+ -30
+ abase
+ setchild
+ 10 10
+ abase
+ setsumchild
+ 30 30
+ abase
+ setsumchildchild
+ 30 70
+ anegbase
+ setchild
+ -10 -10
+ anegbase
+ setsumchild
+ -30 -30
+ anegbase
+ setsumchildchild
+ -30 -70
+ abase
+ setchild
+ 100 100
+ abase
+ setsumchild
+ 300 300
+ abase
+ setsumchildchild
+ 300 700
+ anegbase
+ setchild
+ -100 -100
+ anegbase
+ setsumchild
+ -300 -300
+ anegbase
+ setsumchildchild
+ -300 -700

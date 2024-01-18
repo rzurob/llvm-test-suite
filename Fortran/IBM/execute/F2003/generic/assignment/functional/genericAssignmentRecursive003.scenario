@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/assignment/functional/genericAssignmentRecursive003.scenario
+#FEATURE = generic tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericAssignmentRecursive003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericAssignmentRecursive003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericAssignmentRecursive003$(OBJ)
+#OUTPUT    = genericAssignmentRecursive003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericAssignmentRecursive003$(EXE)
+#STDOUT    = genericAssignmentRecursive003.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericAssignmentRecursive003.out $(tcasedir)genericAssignmentRecursive003.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

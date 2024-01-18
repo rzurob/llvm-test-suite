@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE =
+#CREATOR = Andy Chen
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)coindex_procedure_012f.f
+#OUTPUT    = coindex_procedure_012f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = coindex_procedure_012f$(OBJ)
+#OUTPUT    = coindex_procedure_012f$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = coindex_procedure_012f$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

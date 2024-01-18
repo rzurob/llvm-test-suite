@@ -1,0 +1,20 @@
+"AllocPtr03d.f", line 36.38: 1513-230 (S) Procedure s1 was declared with the BIND(C) attribute.  Dummy argument cc2 of s1 must have interoperable type and type parameters.
+"AllocPtr03d.f", line 37.38: 1513-292 (S) Procedure s1 is declared with the BIND(C) attribute.  Character dummy argument cc3 of s1 has the POINTER attribute. cc3 must have deferred length.
+"AllocPtr03d.f", line 38.42: 1513-230 (S) Procedure s1 was declared with the BIND(C) attribute.  Dummy argument cc4 of s1 must have interoperable type and type parameters.
+"AllocPtr03d.f", line 39.42: 1513-292 (S) Procedure s1 is declared with the BIND(C) attribute.  Character dummy argument cc5 of s1 has the ALLOCATABLE attribute. cc5 must have deferred length.
+"AllocPtr03d.f", line 44.38: 1513-230 (S) Procedure s2 was declared with the BIND(C) attribute.  Dummy argument cc2 of s2 must have interoperable type and type parameters.
+"AllocPtr03d.f", line 45.38: 1513-292 (S) Procedure s2 is declared with the BIND(C) attribute.  Character dummy argument cc3 of s2 has the POINTER attribute. cc3 must have deferred length.
+"AllocPtr03d.f", line 46.42: 1513-230 (S) Procedure s2 was declared with the BIND(C) attribute.  Dummy argument cc4 of s2 must have interoperable type and type parameters.
+"AllocPtr03d.f", line 47.42: 1513-292 (S) Procedure s2 is declared with the BIND(C) attribute.  Character dummy argument cc5 of s2 has the ALLOCATABLE attribute. cc5 must have deferred length.
+** _main   === End of Compilation 1 ===
+"AllocPtr03d.f", line 58.34: 1513-230 (S) Procedure s1 was declared with the BIND(C) attribute.  Dummy argument cc2 of s1 must have interoperable type and type parameters.
+"AllocPtr03d.f", line 59.34: 1513-292 (S) Procedure s1 is declared with the BIND(C) attribute.  Character dummy argument cc3 of s1 has the POINTER attribute. cc3 must have deferred length.
+"AllocPtr03d.f", line 60.38: 1513-230 (S) Procedure s1 was declared with the BIND(C) attribute.  Dummy argument cc4 of s1 must have interoperable type and type parameters.
+"AllocPtr03d.f", line 61.38: 1513-292 (S) Procedure s1 is declared with the BIND(C) attribute.  Character dummy argument cc5 of s1 has the ALLOCATABLE attribute. cc5 must have deferred length.
+** s1   === End of Compilation 2 ===
+"AllocPtr03d.f", line 68.34: 1513-230 (S) Procedure s2 was declared with the BIND(C) attribute.  Dummy argument cc2 of s2 must have interoperable type and type parameters.
+"AllocPtr03d.f", line 69.34: 1513-292 (S) Procedure s2 is declared with the BIND(C) attribute.  Character dummy argument cc3 of s2 has the POINTER attribute. cc3 must have deferred length.
+"AllocPtr03d.f", line 70.38: 1513-230 (S) Procedure s2 was declared with the BIND(C) attribute.  Dummy argument cc4 of s2 must have interoperable type and type parameters.
+"AllocPtr03d.f", line 71.38: 1513-292 (S) Procedure s2 is declared with the BIND(C) attribute.  Character dummy argument cc5 of s2 has the ALLOCATABLE attribute. cc5 must have deferred length.
+** s2   === End of Compilation 3 ===
+1501-511  Compilation failed for file AllocPtr03d.f.

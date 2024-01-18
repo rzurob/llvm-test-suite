@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=move_alloc/MoveAllocScalar19
+#FEATURE = MOVE_ALLOC intrinsic procedure
+#CREATOR = Rob James
+#DATE    = 20060411
+#TEST_TYPE=Functional unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)MoveAllocScalar19.f
+#OUTPUT    = MoveAllocScalar19$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = MoveAllocScalar19$(OBJ)
+#OUTPUT    = MoveAllocScalar19$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = MoveAllocScalar19$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

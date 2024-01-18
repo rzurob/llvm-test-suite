@@ -1,0 +1,3 @@
+"differlen.f", line 34.27: 1516-290 (S) The nondeferred type parameter values of the TO argument to the intrinsic procedure MOVE_ALLOC must be equal to the corresponding type parameter values of the FROM argument.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file differlen.f.

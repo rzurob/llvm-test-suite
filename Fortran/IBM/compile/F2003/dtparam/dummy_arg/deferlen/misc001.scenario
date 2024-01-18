@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/dummy_arg/deferlen/misc001.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)misc001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = misc001$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = misc001.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = misc001.err $($(tcasedir)misc001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,4 @@
+"AssumedRank02d.f", line 38.14: 1516-368 (S) Entity arr is an assumed-rank object. arr must not be used in this context.
+"AssumedRank02d.f", line 39.16: 1516-368 (S) Entity arr is an assumed-rank object. arr must not be used in this context.
+** sub   === End of Compilation 1 ===
+1501-511  Compilation failed for file AssumedRank02d.f.

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/format/formatNonadvancingSequential01.scenario
+#FEATURE   = 359704
+#CREATOR   = Nancy Wang
+#DATE      = Dec. 18 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)formatNonadvancingSequential01.f
+#OUTPUT= formatNonadvancingSequential01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = formatNonadvancingSequential01$(OBJ)
+#OUTPUT= formatNonadvancingSequential01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = formatNonadvancingSequential01$(EXE)
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT  = $($(tcasedir)formatNonadvancingSequential01$(product)vf) formatNonadvancingSequential01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

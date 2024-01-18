@@ -1,0 +1,5 @@
+"fclass008d2.f", line 66.13: 1515-103 (S) The polymorphic variable being defined in the intrinsic assignment must be allocatable.
+"fclass008d2.f", line 68.22: 1512-138 (S) A polymorphic entity must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+** m   === End of Compilation 1 ===
+** fclass008d2   === End of Compilation 2 ===
+1501-511  Compilation failed for file fclass008d2.f.

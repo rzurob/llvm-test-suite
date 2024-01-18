@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=dtparamimplicit01f.scenario
+#FEATURE = Implicit statement with derived type parameters
+#CREATOR = Rafik Zurob
+#DATE    = 20060313
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPLINK
+#INPUT     = $(tcasedir)dtparamimplicit01f.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#OUTPUT    = dtparamimplicit01f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamimplicit01f$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

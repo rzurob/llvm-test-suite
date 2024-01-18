@@ -1,0 +1,17 @@
+ finalizeData
+ deallocating d%data
+ 
+ finalizeData
+ deallocating d%data
+ 
+ finalizeData
+ deallocating d%data
+ finalizeData
+ deallocating d%data
+ 
+ finalizeData
+ deallocating d%data
+ finalizeData
+ deallocating d%data
+ finalizeChild
+ deallocating c%value

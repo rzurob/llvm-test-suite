@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/syntax/fdtio010d1.scenario
+#FEATURE = OO_dtio/formatted tests - regression run bucket
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = $(tcasedir)fdtio010d1.f
+#OUTPUT    = fdtio010d1$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = fdtio010d1.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = fdtio010d1.err $($(tcasedir)fdtio010d1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

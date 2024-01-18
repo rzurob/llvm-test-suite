@@ -1,0 +1,23 @@
+mxminVarArgBindC1.scenario
+!mxminVarArgBindC2.scenario !!! Removing because there are many issues with this scenario
+mxminVarArgSub1.scenario
+mxminVarArgSubAttr.scenario
+mxminVarArrArgObj1.scenario
+mxminVarArrArgObj2.scenario
+mxminVarArrArgSub1.scenario
+mxminVarArrArgSub2.scenario
+mxminVarArrArgSub3.scenario
+mxminVarArrArgSub4.scenario
+mxminVarArrPointer.scenario
+mxminVarArrSubEntry.scenario
+mxminVarBindC3.scenario
+mxminVarConform01.scenario
+mxminVarConform01d.scenario
+mxminVarConform02.scenario
+mxminVarConform03.scenario
+mxminVarDefAssign.scenario
+mxminVarExpression.scenario
+mxminVarForallWhere.scenario
+mxminVarGenInterface.scenario
+mxminVarIO.scenario
+mxminVarIntrin.scenario

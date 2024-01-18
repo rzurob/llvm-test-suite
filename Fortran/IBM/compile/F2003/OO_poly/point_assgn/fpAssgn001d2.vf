@@ -1,0 +1,4 @@
+"fpAssgn001d2.f", line 32.5: 1515-038 (S) Only an object with the POINTER attribute is permitted on the left hand side of a pointer assignment.
+"fpAssgn001d2.f", line 39.9: 1515-038 (S) Only an object with the POINTER attribute is permitted on the left hand side of a pointer assignment.
+** fpassgn001d2   === End of Compilation 1 ===
+1501-511  Compilation failed for file fpAssgn001d2.f.

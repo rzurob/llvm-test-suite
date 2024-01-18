@@ -1,0 +1,22 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/typeParamInquiry/functional/dtparam/d353423.scenario
+#FEATURE   = Type Parameter Inquiry(354612)
+#CREATOR   = Nancy Wang
+#DATE      = July 7 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)d353423.f
+#STDERR = d353423.err
+#ENDCMD
+
+#CMD    = XLDIFF
+#INPUT  = d353423.err $($(tcasedir)d353423$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

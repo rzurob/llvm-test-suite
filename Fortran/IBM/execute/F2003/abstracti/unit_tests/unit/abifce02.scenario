@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE =
+#CREATOR = James Ren
+#DATE    = 20051110
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)abifce02.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=ooall
+#OUTPUT    = abifce02$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=ooall
+#INPUT     = abifce02$(OBJ)
+#OUTPUT    = abifce02$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = abifce02$(EXE)
+#STDOUT    = abifce02.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)abifce02$(product)vf) abifce02.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

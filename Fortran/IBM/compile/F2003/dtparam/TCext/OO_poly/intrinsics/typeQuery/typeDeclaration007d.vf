@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"typeDeclaration007d.f", line 45.24: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "extends_type_of".
+"typeDeclaration007d.f", line 45.24: 1514-644 (S) The A argument to the intrinsic procedure EXTENDS_TYPE_OF must be of an extensible type.
+"typeDeclaration007d.f", line 46.21: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "same_type_as".
+"typeDeclaration007d.f", line 46.21: 1514-644 (S) The A argument to the intrinsic procedure SAME_TYPE_AS must be of an extensible type.
+** typedeclaration007d   === End of Compilation 2 ===
+1501-511  Compilation failed for file typeDeclaration007d.f.

@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/complexPartDesignator/diag/complexPartDesignatorD3.scenario
+#FEATURE   = Complex Part Designator
+#CREATOR   = Shahid Alam
+#DATE      = 20110117
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)complexPartDesignatorD3.f
+#OUTPUT    = complexPartDesignatorD3$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = complexPartDesignatorD3$(OBJ)
+#OUTPUT    = complexPartDesignatorD3$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = complexPartDesignatorD3$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

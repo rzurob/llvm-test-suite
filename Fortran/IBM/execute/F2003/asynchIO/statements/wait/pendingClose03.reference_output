@@ -1,0 +1,6 @@
+ CLOSE(ERR=100) < 1 > 1525-001 The READ statement on the file pendingClose03.dat cannot be completed because the end of the file was reached.  The program will stop.
+                                                                                                                
+ERR=/IOSTAT=:   132  185  238  291    0
+ CLOSE(ERR=100)1525-001 The READ statement on the file pendingClose03.dat cannot be completed because the end of the file was reached.  The program will stop.
+                                                                                                                
+   ERR= Only:   132  185  238  291    0

@@ -1,0 +1,5 @@
+"AttrPointer.f", line 58.26: 1513-139 (S) The argument must have the POINTER attribute.
+"AttrPointer.f", line 59.17: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"AttrPointer.f", line 60.7: 1515-038 (S) Only an object with the POINTER attribute is permitted on the left hand side of a pointer assignment.
+** attrpointer   === End of Compilation 1 ===
+1501-511  Compilation failed for file AttrPointer.f.

@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrExpReal.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrExpReal.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrExpReal$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrExpReal$(OBJ)
+#OUTPUT    = dataPtrExpReal$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrExpReal$(EXE)
+#STDOUT    = dataPtrExpReal.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrExpReal.out $($(tcasedir)dataPtrExpReal$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

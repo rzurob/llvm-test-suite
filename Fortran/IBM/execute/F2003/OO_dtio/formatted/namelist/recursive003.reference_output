@@ -1,0 +1,26 @@
+ &LINKEDLIST
+ HEAD= &DTIOBASE
+ C=abc
+ /, &DTIONEXT
+ DUMMY= &DTIOCHILD
+ C=def, I=1001
+ /, &DTIONEXT
+ DUMMY= &DTIOBASE
+ C=ghi
+ /, end
+ /
+ /
+ /
+ &LINKEDLIST
+ HEAD= &DTIOCHILD
+ C=jkl, I=1002
+ /, &DTIONEXT
+ DUMMY= &DTIOCHILD
+ C=mno, I=1003
+ /, &DTIONEXT
+ DUMMY= &DTIOCHILD
+ C=pqr, I=1004
+ /, 99999
+ /
+ /
+ /

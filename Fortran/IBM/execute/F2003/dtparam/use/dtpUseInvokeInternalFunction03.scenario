@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/use/dtpUseInvokeInternalFunction03.scenario
+#FEATURE   = DTP and USE - internal procedure invocation
+#CREATOR   = DF Manual Update
+#DATE      = 20080903
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUseInvokeInternalFunction03.f
+#OUTPUT    = dtpUseInvokeInternalFunction03$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUseInvokeInternalFunction03$(OBJ)
+#OUTPUT    = dtpUseInvokeInternalFunction03$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUseInvokeInternalFunction03$(EXE)
+#STDOUT    = dtpUseInvokeInternalFunction03.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUseInvokeInternalFunction03$(product)vf) dtpUseInvokeInternalFunction03.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

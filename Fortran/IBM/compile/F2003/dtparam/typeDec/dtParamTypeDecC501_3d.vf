@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"dtParamTypeDecC501_3d.f", line 55.22: 1514-753 (S) Automatic object t1 is not permitted in the specification part of a module or main program.
+"dtParamTypeDecC501_3d.f", line 56.13: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"dtParamTypeDecC501_3d.f", line 56.22: 1514-753 (S) Automatic object c is not permitted in the specification part of a module or main program.
+"dtParamTypeDecC501_3d.f", line 61.20: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+** dtparamtypedecc501_3d   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtParamTypeDecC501_3d.f.

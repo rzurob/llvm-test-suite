@@ -1,0 +1,48 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/allocate/falloc022.f
+#FEATURE = OO_poly
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)falloc022.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = falloc022$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = falloc022$(OBJ)
+#OUTPUT    = falloc022$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = falloc022$(EXE)
+#VALIDRCS  = 1
+#STDOUT    = falloc022.out
+#STDERR    = falloc022.err
+#ENDCMD
+
+#CMD       = TEST
+#INPUT     = falloc022.err
+#OPTS      = -s
+#ENDCMD
+
+#CMD       = TEST
+#INPUT     = falloc022.out
+#OPTS      = -s
+#VALIDRCS  = 1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

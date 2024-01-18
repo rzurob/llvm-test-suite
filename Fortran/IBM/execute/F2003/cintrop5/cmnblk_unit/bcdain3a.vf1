@@ -1,0 +1,5 @@
+"bcdain3a.f", line 49.12: 1514-161 (S) Identifier "sub" appearing as a specific interface procedure/result name was defined elsewhere with conflicting attributes.  This definition is ignored.
+"bcdain3a.f", line 53.9: 1514-005 (E) COMMON block identifier sub was defined elsewhere with conflicting attributes. This identifier and any element names are ignored.
+"bcdain3a.f", line 54.10: 1514-005 (S) COMMON block identifier sub was defined elsewhere with conflicting attributes. This identifier and any element names are ignored.
+** bcdain3a   === End of Compilation 1 ===
+1501-511  Compilation failed for file bcdain3a.f.

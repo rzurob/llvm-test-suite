@@ -1,0 +1,17 @@
+ Before association
+ PrntValue 1 , the value of the character is ABCDEFGHIJ          
+ Is procptr associated?  F
+ PrntValue 2 , the value of the character is ABCDEFGHIJ          
+ Is procptr associated?  F
+ TYPE IS BASE(4, 20 )
+ PrntValue 3 , the value of the character is ABCDEFGHIJ           and when it is adjusted left ABCDEFGHIJ          .
+ Is procptr associated?  F
+ After association
+ PrntValue 1 , the value of the character is ABCDEFGHIJ          
+ Is procptr associated?  T
+ PrntValue 3 , the value of the character is ABCDEFGHIJ          
+ Is procptr associated?  T
+ TYPE IS BASE(4, 20 )
+ PrntValue 3 , the value of the character is ABCDEFGHIJ           and when it is adjusted left ABCDEFGHIJ          .
+ Is procptr associated?  T
+ In PrntChar6, Got the following String from the passed object: ABCDEFGHIJ          

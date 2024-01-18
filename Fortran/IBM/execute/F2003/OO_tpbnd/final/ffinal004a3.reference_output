@@ -1,0 +1,6 @@
+ finalizeBase
+ finalizeBaseArray Rank 1
+ first 2 elements: 10 20
+ finalizeBaseArray Rank 2
+ first 3 elements: 100 200 300
+ end

@@ -1,0 +1,18 @@
+ base_base
+ base_base
+ base_base
+ 1 1 1
+ int_base
+ 2
+ int_base
+ 1
+ int_base
+ 3
+ real_child
+ 1.000000000
+ base_base
+ base_base
+ real_child
+ 1.000000000
+ real_child
+ 1.000000000

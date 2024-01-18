@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dataPtrBoundSpec.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       1-31-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dataPtrBoundSpec.f
+#OUTPUT= dataPtrBoundSpec$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  dataPtrBoundSpec$(OBJ)
+#OUTPUT= dataPtrBoundSpec$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dataPtrBoundSpec$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

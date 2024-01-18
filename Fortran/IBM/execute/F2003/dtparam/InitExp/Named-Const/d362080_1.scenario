@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/InitExp/Named-Const/d362080_1.f
+#FEATURE   = DTP
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20090426
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d362080_1.f
+#OUTPUT    = d362080_1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d362080_1$(OBJ)
+#OUTPUT    = d362080_1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d362080_1$(EXE)
+#STDOUT    = d362080_1.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

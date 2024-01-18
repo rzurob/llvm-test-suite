@@ -1,0 +1,45 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=iostatendbranch001.scenario
+#FEATURE = 299314
+#CREATOR = Rob Wheeler
+#DATE    = 20060109
+#TEST_TYPE=fvt
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)iostatendbranch001.f
+#OPTS      =
+#OUTPUT    = iostatendbranch001$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      =
+#INPUT     = iostatendbranch001$(OBJ)
+#OUTPUT    = iostatendbranch001$(EXE)
+#ENDCMD
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)mystream .
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = iostatendbranch001$(EXE)
+#STDOUT    = iostatendbranch001.out
+#STDERR    = iostatendbranch001.out
+#ENDCMD
+
+#CMD	   = DIFF
+#OPTS	   = -b
+#INPUT     = iostatendbranch001.out $($(tcasedir)iostatendbranch001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

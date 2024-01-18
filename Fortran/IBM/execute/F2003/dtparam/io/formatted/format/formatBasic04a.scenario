@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/format/formatBasic04a.scenario
+#FEATURE   = 359704
+#CREATOR   = Nancy Wang
+#DATE      = Dec. 7 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)formatBasic04a.f
+#OUTPUT= formatBasic04a$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = formatBasic04a$(OBJ)
+#OUTPUT= formatBasic04a$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = formatBasic04a$(EXE)
+#STDOUT= formatBasic04a.out
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT  = $($(tcasedir)formatBasic04a$(product)vf) formatBasic04a.out
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

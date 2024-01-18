@@ -1,0 +1,150 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/coarray/error_stop/diag/error_stop_013d.scenario
+#FEATURE    = CAF: ERROR STOP statement (feature #351605.31)
+#CREATOR    = Grigor Nikolov
+#DATE       = 20100828
+#TEST_TYPE  = Diagnostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+! -----------------------------------
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)error_stop_001d_1.f
+#OUTPUT     = error_stop_001d_1$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#INPUT      = error_stop_001d_1$(OBJ)
+#OUTPUT     = error_stop_001d_1$(EXE)
+#ENDCMD
+
+#CMD        = MPRUN
+#ENVAR      = XLFRTEOPTS=
+#INPUT      = error_stop_001d_1$(EXE)
+#STDOUT     = error_stop_001d_1.out
+#STDERR     = error_stop_001d_1.err
+#VALIDRCS   = 1
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "Before error_stop statement"
+#INPUT      = error_stop_001d_1.out
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "After error_stop statement"
+#INPUT      = error_stop_001d_1.out
+#VALIDRCS   = 1
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "ERROR STOP"
+#INPUT      = error_stop_001d_1.err
+#VALIDRCS=1
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "<Image .*> ERROR STOP"
+#INPUT      = error_stop_001d_1.err
+#VALIDRCS   = 1
+#ENDCMD
+
+! -----------------------------------
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)error_stop_001d_2.f
+#OUTPUT     = error_stop_001d_2$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#INPUT      = error_stop_001d_2$(OBJ)
+#OUTPUT     = error_stop_001d_2$(EXE)
+#ENDCMD
+
+#CMD        = MPRUN
+#ENVAR      = XLFRTEOPTS=
+#INPUT      = error_stop_001d_2$(EXE)
+#STDOUT     = error_stop_001d_2.out
+#STDERR     = error_stop_001d_2.err
+#VALIDRCS   = 1
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "Before error_stop statement"
+#INPUT      = error_stop_001d_2.out
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "After error_stop statement"
+#INPUT      = error_stop_001d_2.out
+#VALIDRCS   = 1
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "ERROR STOP 7"
+#INPUT      = error_stop_001d_2.err
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "<Image .*> ERROR STOP 7"
+#INPUT      = error_stop_001d_2.err
+#VALIDRCS   = 1
+#ENDCMD
+
+! -----------------------------------
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)error_stop_001d_3.f
+#OUTPUT     = error_stop_001d_3$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#INPUT      = error_stop_001d_3$(OBJ)
+#OUTPUT     = error_stop_001d_3$(EXE)
+#ENDCMD
+
+#CMD        = MPRUN
+#ENVAR      = XLFRTEOPTS=
+#INPUT      = error_stop_001d_3$(EXE)
+#STDOUT     = error_stop_001d_3.out
+#STDERR     = error_stop_001d_3.err
+#VALIDRCS   = 1
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "Before error_stop statement"
+#INPUT      = error_stop_001d_3.out
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "After error_stop statement"
+#INPUT      = error_stop_001d_3.out
+#VALIDRCS   = 1
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "ERROR STOP es_string"
+#INPUT      = error_stop_001d_3.err
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "<Image .*> ERROR STOP es_string"
+#INPUT      = error_stop_001d_3.err
+#VALIDRCS   = 1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,26 @@
+ Before association
+ PrntValue 1 , the value of the character is ABCDEFGHIJ          
+ Is procptr associated?  F
+ PrntChar4 has been called, 1  times
+ PrntValue 2 , the value of the character is ABCDEFGHIJ          
+ Is procptr associated?  F
+ PrntChar4 has been called, 2  times
+ TYPE IS BASE(4, 20 )
+ PrntValue 3 , the value of the character is ABCDEFGHIJ           and when it is adjusted left ABCDEFGHIJ          .
+ Is procptr associated?  F
+ PrntChar4 has been called, 3  times
+ After association
+ PrntValue 1 , the value of the character is ABCDEFGHIJ          
+ Is procptr associated?  T
+ PrntChar4 has been called, 4  times
+ PrntValue 3 , the value of the character is ABCDEFGHIJ          
+ Is procptr associated?  T
+ PrntChar4 has been called, 5  times
+ TYPE IS BASE(4, 20 )
+ PrntValue 3 , the value of the character is ABCDEFGHIJ           and when it is adjusted left ABCDEFGHIJ          .
+ Is procptr associated?  T
+ PrntChar4 has been called, 6  times
+ In PrntChar6, Got the following String from the passed object: ABCDEFGHIJ          
+ using n2, Type Base2
+ In PrntChar7, Got the following String from the passed object: ABCDEFGHIJ          
+ In PrntChar4b, NumCalled  1

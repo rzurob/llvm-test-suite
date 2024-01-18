@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"PtrAssignCharacteristics7.f", line 119.15: 1515-122 (S) The procedure pointer was declared as a subroutine, or is referenced as a subroutine.  The procedure pointer assignment target must be declared as a subroutine.
+"PtrAssignCharacteristics7.f", line 121.15: 1515-125 (S) The procedure pointer was not declared as a subroutine, and is not referenced as a subroutine.  The procedure pointer assignment target must not be declared as a subroutine.
+"PtrAssignCharacteristics7.f", line 123.15: 1515-129 (S) The procedure pointer was declared without the BIND attribute.  The procedure pointer assignment target must also not be declared with the BIND attribute.
+"PtrAssignCharacteristics7.f", line 125.15: 1515-129 (S) The procedure pointer was declared without the BIND attribute.  The procedure pointer assignment target must also not be declared with the BIND attribute.
+** ptrassigncharacteristics2   === End of Compilation 2 ===
+1501-511  Compilation failed for file PtrAssignCharacteristics7.f.

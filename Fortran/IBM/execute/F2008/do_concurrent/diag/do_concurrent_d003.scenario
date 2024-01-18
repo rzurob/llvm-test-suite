@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+
+! Scenario Documentation
+#BEGINDOC
+#NAME      = F2008/do_concurrent/diag/do_concurrent_d003.scenario
+#FEATURE   = RTC STORY 17293 - F2008: DO CONCURRENT construct
+#PURPOSE   = Test the DO CONCURRENT construct
+#CREATOR   = Bernard Kan
+#DATE      = March 27, 2015
+#TEST_TYPE = DIAGNOSTIC
+#KEYWORD   = F2008 DO CONCURRENT
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      = F_COMPILE
+#INPUT    = $(tcasedir)do_concurrent_d003.f
+#STDOUT   = do_concurrent_d003.out
+#STDERR   = do_concurrent_d003.out
+#VALIDRCS = $(RC_COMP_S)
+#ENDCMD
+
+#CMD      = XLDIFF
+#INPUT    = do_concurrent_d003.out $($(tcasedir)do_concurrent_d003$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

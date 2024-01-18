@@ -1,0 +1,4 @@
+"genericOperatorResolve002d1.f", line 39.37: 1514-699 (S) Procedure "add" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "elementaladd", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** m   === End of Compilation 1 ===
+"genericOperatorResolve002d1.f", line 62.8: 1514-219 (S) Unable to access module symbol file for module m. Check path and file permissions of file. Use association not done for this module.
+1501-511  Compilation failed for file genericOperatorResolve002d1.f.

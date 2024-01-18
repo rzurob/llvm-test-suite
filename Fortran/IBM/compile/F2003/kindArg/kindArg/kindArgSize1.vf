@@ -1,0 +1,6 @@
+"kindArgSize1.f", line 43.29: 1513-143 (S) Invalid KIND value.
+"kindArgSize1.f", line 44.29: 1513-143 (S) Invalid KIND value.
+"kindArgSize1.f", line 45.16: 1513-143 (S) Invalid KIND value.
+"kindArgSize1.f", line 47.36: 1513-143 (S) Invalid KIND value.
+** kindargsize1   === End of Compilation 1 ===
+1501-511  Compilation failed for file kindArgSize1.f.

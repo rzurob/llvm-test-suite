@@ -1,0 +1,29 @@
+! This include replaces icc2f.sh
+#IF on(aix)
+  #CMD   = XLC_COMPILE
+  #OPTS  = $(C_COMPILER_OPTS) $(OPT_SET_LANG_LEVEL_STDC99) -qfloat=nocomplexgcc $(OPT_BIGGER_LONG_DOUBLE)
+  #INPUT = $(tcasedir)icc2fc$TCARG.c
+  #OUTPUT = icc2fc$TCARG$(OBJ)
+  #ENDCMD
+#ELSE
+  #CMD   = XLC_COMPILE
+  #OPTS  = $(C_COMPILER_OPTS) $(OPT_SET_LANG_LEVEL_STDC99) -qfloat=nocomplexgcc \
+           -qdebug=aixldbl128
+  #INPUT = $(tcasedir)icc2fc$TCARG.c
+  #OUTPUT = icc2fc$TCARG$(OBJ)
+  #ENDCMD
+#ENDIF
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)icc2ff$TCARG.F
+#OUTPUT = icc2ff$TCARG$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = icc2ff$TCARG$(OBJ) icc2fc$TCARG$(OBJ)
+#OUTPUT = icc2f$TCARG$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = icc2f$TCARG$(EXE)
+#ENDCMD

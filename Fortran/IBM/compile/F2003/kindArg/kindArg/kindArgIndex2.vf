@@ -1,0 +1,6 @@
+"kindArgIndex2.f", line 42.46: 1513-145 (S) Argument keyword "kindd" does not match the dummy argument specified in the interface for the intrinsic procedure "index".
+"kindArgIndex2.f", line 43.46: 1513-145 (S) Argument keyword "kid" does not match the dummy argument specified in the interface for the intrinsic procedure "index".
+"kindArgIndex2.f", line 44.50: 1513-067 (S) Argument keyword "kind" was already specified for an actual argument.
+"kindArgIndex2.f", line 45.46: 1513-067 (S) Argument keyword "substring" was already specified for an actual argument.
+** kindargindex2   === End of Compilation 1 ===
+1501-511  Compilation failed for file kindArgIndex2.f.

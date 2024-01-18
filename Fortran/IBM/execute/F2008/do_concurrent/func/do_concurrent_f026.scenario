@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+
+! Scenario Documentation
+#BEGINDOC
+#NAME      = F2008/do_concurrent/func/do_concurrent_f026.scenario
+#FEATURE   = RTC STORY 17293 - F2008: DO CONCURRENT construct
+#PURPOSE   = Test the DO CONCURRENT construct
+#CREATOR   = Bernard Kan
+#DATE      = March 27, 2015
+#TEST_TYPE = FUNCTIONAL
+#KEYWORD   = DO CONCURRENT
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)do_concurrent_f026.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = do_concurrent_f026$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  do_concurrent_f026$(OBJ)
+#OUTPUT    = do_concurrent_f026$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = do_concurrent_f026$(EXE)
+#STDOUT    = do_concurrent_f026.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

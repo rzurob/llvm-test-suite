@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"diagnose001.f", line 32.22: 1513-134 (S) Array argument required.
+** diagnose001   === End of Compilation 2 ===
+1501-511  Compilation failed for file diagnose001.f.

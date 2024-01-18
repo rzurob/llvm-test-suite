@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2003/dtparam/TCext/OO_tpbnd/final/ffinal508al.f
+#FEATURE = OO_tpbnd + derived type parameters
+#CREATOR = David Forster (derived from work by Jim Xia)
+#DATE    = 20071102
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ffinal508al.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=allowrpdt
+#OUTPUT    = ffinal508al$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = ffinal508al$(OBJ)
+#OUTPUT    = ffinal508al$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ffinal508al$(EXE)
+#STDOUT    = ffinal508al.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = ffinal508al.out $($(tcasedir)ffinal508al$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"d359002.f", line 41.18: 1516-306 (S) Deferred type parameter values are not permitted in this context.
+** d359002   === End of Compilation 2 ===
+1501-511  Compilation failed for file d359002.f.

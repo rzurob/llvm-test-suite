@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/AssumedType/func/AssumedType03f.scenario
+#FEATURE   = C Interop: Assumed Type
+#CREATOR   = Dorra Bouchiha
+#DATE      = 2012-06-20
+#TEST_TYPE = functional
+#KEYWORDS  = C Interop, Assumed Type
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)AssumedType03c.c
+#OPTS      = $(C_COMPILER_OPTS) $(OPT_SET_LANG_LEVEL_EXTENDED)
+#OUTPUT    = AssumedType03c$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AssumedType03f.f
+#OUTPUT    = AssumedType03f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = AssumedType03c$(OBJ) AssumedType03f$(OBJ)
+#OUTPUT    = AssumedType03f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = AssumedType03f$(EXE)
+#STDOUT    = AssumedType03f.out
+#ENDCMD
+
+#CMD       = SPIFF
+#INPUT     = $($(tcasedir)AssumedType03f$(product)vf) AssumedType03f.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

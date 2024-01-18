@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_procptr/CrossFeatures2/Data4.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_procptr/*
+#DATE      = 20071011
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS  = -qdebug=allowrpdt
+#INPUT=  $(tcasedir)Data4.f
+#OUTPUT= Data4$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  Data4$(OBJ)
+#OUTPUT= Data4$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  Data4$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

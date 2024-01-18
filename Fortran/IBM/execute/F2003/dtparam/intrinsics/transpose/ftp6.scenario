@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2003/dtparam/intrinsics/transpose/ftp6.scenario
+#FEATURE = dtp intrinsics
+#CREATOR = Adrian Green
+#DATE    = 20080821
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)ftp6.f
+#OUTPUT   = ftp6$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = ftp6$(OBJ)
+#OUTPUT   = ftp6$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ftp6$(EXE)
+#STDOUT   = ftp6.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

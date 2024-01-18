@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/spread/spreadSourceIsArrayDTComp02.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Oct. 18 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)spreadSourceIsArrayDTComp02.f
+#OUTPUT= spreadSourceIsArrayDTComp02$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = spreadSourceIsArrayDTComp02$(OBJ)
+#OUTPUT= spreadSourceIsArrayDTComp02$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = spreadSourceIsArrayDTComp02$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

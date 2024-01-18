@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       fkindcharacter
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2008_COMPILE
+#INPUT=  $(tcasedir)fkindcharacter.f
+#OUTPUT= fkindcharacter$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_LINK
+#INPUT=  fkindcharacter$(OBJ)
+#OUTPUT= fkindcharacter$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fkindcharacter$(EXE)
+#STDOUT=  fkindcharacter.out
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT = fkindcharacter.out $($(tcasedir)fkindcharacter$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

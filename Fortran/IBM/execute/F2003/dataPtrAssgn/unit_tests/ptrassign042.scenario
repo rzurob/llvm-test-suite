@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=ptrassign042.scenario
+#FEATURE = Pointer Assignment Enhancement
+#CREATOR = Michael Selvanayagam
+#DATE    = 20060421
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ptrassign042.f
+#OUTPUT    = ptrassign042$(OBJ)
+#STDERR    = ptrassign042.err
+#VALIDRCS  = $(RC_COMP_E)
+#ENDCMD
+
+! by defect 396299 "Expected regressions for defect 387960"
+! The size of the target in a bounds remapping must be greater than or equal to the size of the pointer.
+
+#CMD       = XLDIFF
+#INPUT     = ptrassign042.err $($(tcasedir)ptrassign042$(product)vf)
+#ENDCMD
+
+!#CMD       = F_LINK
+!#INPUT     = ptrassign042$(OBJ)
+!#OUTPUT    = ptrassign042$(EXE)
+!#ENDCMD
+
+!#CMD       = RUN
+!#INPUT     = ptrassign042$(EXE)
+!#STDERR    = ptrassign042.err
+!#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

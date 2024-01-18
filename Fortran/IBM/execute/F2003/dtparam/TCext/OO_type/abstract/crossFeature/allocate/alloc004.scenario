@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/crossFeature/allocate/alloc004.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/abstract/crossFeature/allocate/alloc004.scenario
+#DATE      = 20070612
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)alloc004.f
+#OUTPUT    = alloc004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = alloc004$(OBJ)
+#OUTPUT    = alloc004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = alloc004$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

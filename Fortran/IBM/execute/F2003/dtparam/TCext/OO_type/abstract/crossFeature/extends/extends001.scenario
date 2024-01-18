@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/crossFeature/extends/extends001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/abstract/crossFeature/extends/extends001.scenario
+#DATE      = 20070612
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)extends001.f
+#OUTPUT    = extends001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = extends001$(OBJ)
+#OUTPUT    = extends001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = extends001$(EXE)
+#STDOUT    = extends001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)extends001$(product)vf) extends001.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

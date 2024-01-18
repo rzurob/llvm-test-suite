@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/derived/d341813_a.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement)
+#CREATOR	= Glen Mateer
+#DATE		= 20080124
+#TEST_TYPE	= Diagnostic
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)d341813_a.f
+#OUTPUT		= d341813_a$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= d341813_a$(OBJ)
+#OUTPUT		= d341813_a$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= d341813_a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

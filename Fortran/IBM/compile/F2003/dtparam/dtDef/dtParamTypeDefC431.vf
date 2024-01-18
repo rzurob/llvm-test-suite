@@ -1,0 +1,3 @@
+"dtParamTypeDefC431.f", line 57.14: 1514-083 (S) Name appearing on derived type END statement does not match the name appearing on the derived type TYPE statement.
+** dtparamtypedefc431   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtParamTypeDefC431.f.

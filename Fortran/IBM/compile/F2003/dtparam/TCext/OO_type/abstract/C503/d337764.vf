@@ -1,0 +1,4 @@
+"d337764.f", line 10.10: 1514-692 (S) Type parameter k1 must be specified in this derived-type specifier.
+** m   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file d337764.f.

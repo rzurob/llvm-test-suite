@@ -1,0 +1,3 @@
+"coindex_assignment_004d.f", line 49.19: 1514-772 (S) array1 is not a coarray.  A cosubscript must not be specified for array1.
+** coindex_assignment_004d   === End of Compilation 1 ===
+1501-511  Compilation failed for file coindex_assignment_004d.f.

@@ -1,0 +1,8 @@
+"dtParamTypeDefSyntax7.f", line 42.25: 1514-724 (E) Type parameter k of derived type dt2 must appear in a type declaration statement. k is assumed to be a default integer kind type parameter.
+"dtParamTypeDefSyntax7.f", line 45.15: 1515-019 (S) Syntax is incorrect.
+"dtParamTypeDefSyntax7.f", line 46.3: 1515-019 (S) Syntax is incorrect.
+"dtParamTypeDefSyntax7.f", line 48.17: 1515-019 (S) Syntax is incorrect.
+"dtParamTypeDefSyntax7.f", line 48.27: 1514-050 (S) Specification statement is out of order.  Statement is ignored.
+"dtParamTypeDefSyntax7.f", line 49.3: 1515-019 (S) Syntax is incorrect.
+** dtparamtypedefsyntax7   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtParamTypeDefSyntax7.f.

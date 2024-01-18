@@ -1,0 +1,8 @@
+"dtparamExtends011d2.f", line 35.34: 1514-722 (S) Identifier n is a length type parameter. n must not have the PRIVATE attribute.
+"dtparamExtends011d2.f", line 36.33: 1514-722 (S) Identifier o is a length type parameter. o must not have the PUBLIC attribute.
+** m   === End of Compilation 1 ===
+"dtparamExtends011d2.f", line 45.39: 1514-721 (S) Identifier k is a kind type parameter. k must not have the ALLOCATABLE attribute.
+"dtparamExtends011d2.f", line 46.34: 1514-722 (S) Identifier l is a length type parameter. l must not have the POINTER attribute.
+"dtparamExtends011d2.f", line 47.39: 1514-723 (S) Type parameter m must be a scalar.
+** dtparamextends011d2   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtparamExtends011d2.f.

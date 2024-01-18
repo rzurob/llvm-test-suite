@@ -1,0 +1,9 @@
+"R452_004d.f", line 40.18: 1515-019 (S) Syntax is incorrect.
+"R452_004d.f", line 40.62: 1514-095 (S) Invalid statement within derived type definition.
+"R452_004d.f", line 41.9: 1515-019 (S) Syntax is incorrect.
+"R452_004d.f", line 41.63: 1514-095 (S) Invalid statement within derived type definition.
+"R452_004d.f", line 47.37: 1514-084 (S) Identifier dtv is being declared with type name base which has not been defined in a derived type definition.
+"R452_004d.f", line 54.40: 1514-084 (S) Identifier dtv is being declared with type name base which has not been defined in a derived type definition.
+** m   === End of Compilation 1 ===
+** r452_004d   === End of Compilation 2 ===
+1501-511  Compilation failed for file R452_004d.f.

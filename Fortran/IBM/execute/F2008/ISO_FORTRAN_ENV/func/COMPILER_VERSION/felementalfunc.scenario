@@ -1,0 +1,53 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       felementalfunc
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2008_COMPILE
+#INPUT=  $(tcasedir)felementalfunc.f
+#OUTPUT= felementalfunc$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_LINK
+#INPUT=  felementalfunc$(OBJ)
+#OUTPUT= felementalfunc$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  felementalfunc$(EXE)
+#STDOUT=  felementalfunc.out
+#ENDCMD
+
+#CMD=    XLF2008_COMPILE
+#OPTS=   -qversion
+#INPUT=  $(tcasedir)felementalfunc.f
+#STDOUT= felementalfunc_qversion.out
+#ENDCMD
+
+#CMD = SED
+#OPTS = -e '$!N;s/\n/ /' -e 's/://g' -e 's/^/ /g'
+#INPUT = felementalfunc_qversion.out
+#STDOUT = felementalfunc_qversion.sed
+#ENDCMD
+
+#CMD = SED
+#OPTS = -e 's/(DEV) //g'
+#INPUT = felementalfunc.out
+#STDOUT = felementalfunc.sed
+#ENDCMD
+
+#CMD = SPIFF
+#INPUT = felementalfunc_qversion.sed felementalfunc.sed
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

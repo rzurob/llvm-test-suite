@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF90_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
+#ENDDEFS
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+! This chunk was DCOMP
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)aio001.f
+#OPTS      =  -qdebug=intmsg:shutup
+#OUTPUT    = aio001$(OBJ)
+#STDERR    = aio001.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)aio001$(product)vf) aio001.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/wait/EORSpecRead01.scenario
+#FEATURE	= Asynchronous I/O -- WAIT() Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060308
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)EORSpecRead01.dat fort.109
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)EORSpecRead01.f
+#OUTPUT		= EORSpecRead01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= EORSpecRead01$(OBJ)
+#OUTPUT		= EORSpecRead01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= EORSpecRead01$(EXE)
+#STDOUT		= EORSpecRead01.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)EORSpecRead01$(product)vf) EORSpecRead01.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

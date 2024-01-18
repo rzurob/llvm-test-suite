@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME             = forall_typespec_f13.scenario
+#CREATOR          = Bernard Kan
+#FEATURE          = 400906 Support typespec on FORALL
+#DATE             = June 18, 2012
+#TEST_TYPE        = DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+!#REQUIRED_XOPTS   = $(XLF_COMPILE^OPT_OPTIMIZE_FOR_SMP) $(XLF_COMPILE^OPT_OPTIMIZE_FOR_SMP_OMP)
+#REQUIRED_PRODUCT = bgq
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD              = XLF2008_COMPILE
+#INPUT            = $(tcasedir)forall_typespec_f13.f
+#OUTPUT           = forall_typespec_f13$(OBJ)
+#ENDCMD
+
+#CMD              = XLF2008_LINK
+#INPUT            = forall_typespec_f13$(OBJ)
+#OUTPUT           = forall_typespec_f13$(EXE)
+#ENDCMD
+
+#CMD              = RUN
+#INPUT            = forall_typespec_f13$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

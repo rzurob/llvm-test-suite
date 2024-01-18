@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = do_concurrent_f020.scenario
+#REFERENCE = /tst91/hpf_forall/construct/fxfc034b.scenario
+#CREATOR   = Bernard Kan
+#DATE      = 20150831
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+PROCS=5
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)do_concurrent_f020.f
+#OPTS      =  $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = do_concurrent_f020$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#OPTS      =  $(OPT_FREE_SOURCE_FORM)
+#INPUT     = do_concurrent_f020$(OBJ)
+#OUTPUT    = do_concurrent_f020$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = do_concurrent_f020$(EXE)
+#STDOUT    = do_concurrent_f020.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)do_concurrent_f020$(product)vf) do_concurrent_f020.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

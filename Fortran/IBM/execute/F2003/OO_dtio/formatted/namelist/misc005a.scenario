@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/namelist/misc005a.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)misc005a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = misc005a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = misc005a$(OBJ)
+#OUTPUT    = misc005a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = misc005a$(EXE)
+#STDOUT    = misc005a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)misc005a$(product)vf) misc005a.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,17 @@
+ bounds: 0 2
+ data: 0 1 2
+ 
+ bounds: 100 103
+ data: 100 101 102 103
+ 
+ bounds: -100 -99
+ data: -100 -99
+ 
+ bounds: 0 0
+ data: 0
+ 
+ bounds: 1 3
+ data: 1 2 3
+ 
+ not associated
+ 

@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"fdtio500dkl.f", line 68.16: 1512-125 (S) A derived-type entity containing a component with the ALLOCATABLE attribute must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+"fdtio500dkl.f", line 71.14: 1512-125 (S) A derived-type entity containing a component with the ALLOCATABLE attribute must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+** fdtio500dkl   === End of Compilation 2 ===
+** unformattedread   === End of Compilation 3 ===
+** unformattedwrite   === End of Compilation 4 ===
+1501-511  Compilation failed for file fdtio500dkl.f.

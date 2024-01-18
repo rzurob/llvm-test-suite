@@ -1,0 +1,4 @@
+"fconstr032d2.f", line 41.16: 1516-078 (S) Operands must be conformable.
+"fconstr032d2.f", line 43.18: 1516-082 (S) Array object or expression is invalid in this context.
+** fconstr032d2   === End of Compilation 1 ===
+1501-511  Compilation failed for file fconstr032d2.f.

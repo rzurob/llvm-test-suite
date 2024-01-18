@@ -1,0 +1,4 @@
+"bcdamix4.f", line 37.10: 1514-127 (E) Identifier Fun declared with EXTERNAL/INTRINSIC attribute was defined elsewhere with conflicting attributes.  Identifier is ignored.
+** mod   === End of Compilation 1 ===
+** bcdamix4   === End of Compilation 2 ===
+1501-510  Compilation successful for file bcdamix4.f.

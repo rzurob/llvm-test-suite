@@ -1,0 +1,52 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/charVal/misc/C515valueAttr001d.scenario
+#FEATURE	= VALUE Attribute -- Character Length > 1
+#CREATOR	= GM Manual Creation
+#DATE		= 20060425
+#TEST_TYPE	= diagnostic
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED<full>)
+#INPUT		= $(tcasedir)C515valueAttr001d.f
+#OUTPUT		= C515valueAttr001d$(OBJ)
+#STDERR		= C515valueAttr001d.stderr
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= C515valueAttr001d$(OBJ)
+#OUTPUT		= C515valueAttr001d$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= C515valueAttr001d$(EXE)
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)C515valueAttr001d$(product)vf)	\
+				C515valueAttr001d.stderr
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= -i '^fiveLen|^fourLen|^sub30Len|^sub256Len'
+#INPUT		= C515valueAttr001d$(LST)
+#STDOUT		= C515valueAttr001d.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i 'Value'
+#INPUT		= C515valueAttr001d.stdout
+#VALIDRCS	= $(GREP_FAIL)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

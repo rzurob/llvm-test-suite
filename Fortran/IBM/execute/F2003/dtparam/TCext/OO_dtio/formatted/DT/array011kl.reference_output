@@ -1,0 +1,9 @@
+
+
+ iotype: DTz1-1 v_list: 1 2
+ iotype: DTz1-2 v_list: -3 -4
+ iotype: DTz1-3 v_list: 5 6
+ iotype: DTz1-4 v_list: -7 -8
+ iotype: DTz1-5 v_list: 9 10
+ iotype: DTz2-1 v_list: 11 12 iotype: DTz2-2 v_list: -13 -14
+ iotype: DTz2-1 v_list: 11 12 iotype: DTz2-2 v_list: -13 -14

@@ -1,0 +1,6 @@
+"kindArgAchar1.f", line 45.22: 1513-143 (S) Invalid KIND value.
+"kindArgAchar1.f", line 46.24: 1513-143 (S) Invalid KIND value.
+"kindArgAchar1.f", line 47.17: 1513-143 (S) Invalid KIND value.
+"kindArgAchar1.f", line 49.42: 1513-143 (S) Invalid KIND value.
+** kindargachar1   === End of Compilation 1 ===
+1501-511  Compilation failed for file kindArgAchar1.f.

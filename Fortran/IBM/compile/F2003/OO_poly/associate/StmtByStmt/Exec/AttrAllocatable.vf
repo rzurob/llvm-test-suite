@@ -1,0 +1,5 @@
+"AttrAllocatable.f", line 55.26: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"AttrAllocatable.f", line 56.25: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "allocated".
+"AttrAllocatable.f", line 57.19: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+** attrallocatable   === End of Compilation 1 ===
+1501-511  Compilation failed for file AttrAllocatable.f.

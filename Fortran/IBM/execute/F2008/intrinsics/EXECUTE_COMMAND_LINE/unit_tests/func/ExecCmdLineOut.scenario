@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = $(tcasedir)ExecCmdLineOut.scenario
+#FEATURE   = 381472
+#CREATOR   = Ren Jian Gang
+#DATE      = December 05, 2010
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)ExecCmdLineOut.f
+#OUTPUT   =  ExecCmdLineOut$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  ExecCmdLineOut$(OBJ)
+#OUTPUT   =  ExecCmdLineOut$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  ExecCmdLineOut$(EXE)
+#STDOUT   =  ExecCmdLineOut.out
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = ExecCmdLineOut.out $(tcasedir)ExecCmdLineOut.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

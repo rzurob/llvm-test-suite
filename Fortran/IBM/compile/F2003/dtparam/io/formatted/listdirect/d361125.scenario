@@ -1,0 +1,22 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/listdirect/d361125.scenario
+#FEATURE   = 360757
+#CREATOR   = Nancy Wang
+#DATE      = Jan. 20 2009
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)d361125.f
+#STDERR = d361125.err
+#ENDCMD
+
+#CMD    = XLDIFF
+#INPUT  = d361125.err $($(tcasedir)d361125$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

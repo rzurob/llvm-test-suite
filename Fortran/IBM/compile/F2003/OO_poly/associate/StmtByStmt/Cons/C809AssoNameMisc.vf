@@ -1,0 +1,3 @@
+"C809AssoNameMisc.f", line 46.4: 1516-256 (S) The ASSOCIATE construct is missing the corresponding END ASSOCIATE statement.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file C809AssoNameMisc.f.

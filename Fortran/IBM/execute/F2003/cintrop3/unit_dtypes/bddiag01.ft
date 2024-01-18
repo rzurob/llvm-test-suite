@@ -1,0 +1,7 @@
+      program PROGNAME
+        USESTATEMENT
+        DT_DECLARATION
+        type, bind(c) :: dt
+          COMPTYPE :: a
+        end type
+      end program PROGNAME

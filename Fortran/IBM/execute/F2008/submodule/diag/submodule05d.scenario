@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/submodule/diag/submodule05d.scenario
+#FEATURE   = F2008 Submodule
+#CREATOR   = Bernard Kan
+#DATE      = 20121206
+#TEST_TYPE = Diagnostic
+#KEYWORDS  = F2008, submodule, F2008 submodule
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+! note the design limitation that the compiler cannot detect multiple uses of a module name
+! accross files that are compiled separately. We will use a single file for this
+#CMD          = F_COMPILE
+#INPUT        = $(tcasedir)submodule05d.f
+#STDOUT       = submodule05d.out
+#STDERR       = submodule05d.out
+#VALIDRCS     = $(RC_COMP_E)
+#ENDCMD
+
+#CMD          = XLDIFF
+#INPUT        = submodule05d.out $($(tcasedir)submodule05d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

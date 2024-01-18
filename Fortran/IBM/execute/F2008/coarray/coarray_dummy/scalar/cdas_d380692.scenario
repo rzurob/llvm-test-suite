@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE = CAF coarray dummy arguments - scalar - defect 380692
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)cdas_d380692.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = cdas_d380692$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = cdas_d380692$(OBJ)
+#OUTPUT    = cdas_d380692$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#FOR ITER = 1 TO 1
+
+  #CMD       = MPRUN
+  #INPUT     = cdas_d380692$(EXE)
+  #ENDCMD
+
+
+#ENDFOR
+#ENDCONTROL
+#ENDSCENARIO
+

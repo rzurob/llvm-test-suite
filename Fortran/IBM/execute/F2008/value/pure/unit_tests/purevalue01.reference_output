@@ -1,0 +1,7 @@
+"purevalue01.f", line 7.37: 1513-262 (L) Dummy arguments of pure procedures are not permitted to have the VALUE attribute by the Fortran 2003 standard.
+"purevalue01.f", line 14.32: 1513-262 (L) Dummy arguments of pure procedures are not permitted to have the VALUE attribute by the Fortran 2003 standard.
+"purevalue01.f", line 21.42: 1513-262 (L) Dummy arguments of pure procedures are not permitted to have the VALUE attribute by the Fortran 2003 standard.
+"purevalue01.f", line 28.37: 1513-262 (L) Dummy arguments of pure procedures are not permitted to have the VALUE attribute by the Fortran 2003 standard.
+** m   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-510  Compilation successful for file purevalue01.f.

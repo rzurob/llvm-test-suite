@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/argAssociation/dtio001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071219
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtio001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtio001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtio001$(OBJ)
+#OUTPUT    = dtio001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtio001$(EXE)
+#STDOUT    = dtio001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dtio001.out $($(tcasedir)dtio001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

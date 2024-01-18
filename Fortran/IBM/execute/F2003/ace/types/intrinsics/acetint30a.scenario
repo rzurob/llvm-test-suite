@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint30a.scenario
+#FEATURE	= Array constructor enhancement intrinsic type specifier BOZ + default real
+#CREATOR	= DF Manual Update
+#DATE		= 20060804
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint30a.f
+#OUTPUT		= acetint30a$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint30a$(OBJ)
+#OUTPUT		= acetint30a$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint30a$(EXE)
+#STDOUT		= acetint30a.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

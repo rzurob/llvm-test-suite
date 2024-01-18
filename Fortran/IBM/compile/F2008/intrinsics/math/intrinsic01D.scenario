@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/intrinsics/math/intrinsic01D.scenario
+#FEATURE   = Math intrinsic functions
+#CREATOR   = Shahid Alam
+#DATE      = 20101116
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPILE
+#OPTS      = $(OPT_ENABLE_MSG_NUM<1516-267>) $(OPT_ENABLE_MSG_NUM<1520-030>)
+#INPUT     = $(tcasedir)intrinsic01D.f
+#OUTPUT    = intrinsic01D$(OBJ)
+#STDOUT    = intrinsic01D.out
+#STDERR    = intrinsic01D.out
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = AWK
+#OPTS      = '{ gsub("$(tcasedir)", ""); print; }'
+#INPUT     = intrinsic01D.out
+#STDOUT    = intrinsic01D.awk.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = intrinsic01D.awk.out $(tcasedir)intrinsic01D.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

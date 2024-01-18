@@ -1,0 +1,5 @@
+  4.7   011108AF ASYNCHRONOUS=‹YES‹ID=‹Fortran 2003‹
+  5.7   011108AF ASYNCHRONOUS=‹YES‹ID=‹Fortran 2003‹
+    011107D0 -qsmp‹Fortran 2003‹
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file aio005.f.

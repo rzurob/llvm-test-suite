@@ -1,0 +1,5 @@
+"Misc2.f", line 49.16: 1515-019 (S) Syntax is incorrect.
+"Misc2.f", line 50.4: 1511-113 (S) The type guard statement appears outside of the SELECT TYPE construct.
+"Misc2.f", line 51.2: 1511-114 (S) The END SELECT statement appears outside of a SELECT CASE or SELECT TYPE construct.
+** misc2   === End of Compilation 1 ===
+1501-511  Compilation failed for file Misc2.f.

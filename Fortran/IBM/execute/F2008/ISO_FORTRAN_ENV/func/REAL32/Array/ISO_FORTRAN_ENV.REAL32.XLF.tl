@@ -1,0 +1,5 @@
+faddREAL32_XLF.scenario
+fdivideREAL32_XLF.scenario
+fgeneralREAL32_XLF.scenario
+fmultiplyREAL32_XLF.scenario
+fsubtractREAL32_XLF.scenario

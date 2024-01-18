@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/decimaledit/defaultIO/decEditDesc005.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)decEditDesc005.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = decEditDesc005$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = decEditDesc005$(OBJ)
+#OUTPUT    = decEditDesc005$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = decEditDesc005$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fort.4 $(tcasedir)decEditDesc005.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

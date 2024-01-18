@@ -1,0 +1,4 @@
+"proc_colon2_1.f", line 8.21: 1518-387 (L) The double colon separator is not permitted in the PROCEDURE statement by the Fortran 2003 standard.
+"proc_colon2_1.f", line 10.28: 1518-387 (L) The double colon separator is not permitted in the MODULE PROCEDURE statement by the Fortran 2003 standard.
+** m   === End of Compilation 1 ===
+1501-510  Compilation successful for file proc_colon2_1.f.

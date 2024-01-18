@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/operator/functional/genericOperatorDummyArg004.scenario
+#FEATURE = generic tests
+#CREATOR = Robert Ma
+#DATE    = 20051122
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericOperatorDummyArg004.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericOperatorDummyArg004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericOperatorDummyArg004$(OBJ)
+#OUTPUT    = genericOperatorDummyArg004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericOperatorDummyArg004$(EXE)
+#STDOUT    = genericOperatorDummyArg004.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericOperatorDummyArg004.out $(tcasedir)genericOperatorDummyArg004.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

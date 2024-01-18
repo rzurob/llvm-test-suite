@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"diagnose005.f", line 55.14: 1512-138 (S) A polymorphic entity must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+** diagnose005   === End of Compilation 2 ===
+1501-511  Compilation failed for file diagnose005.f.

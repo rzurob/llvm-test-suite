@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE =
+#CREATOR = James Ren
+#DATE    = 20060202
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)deferlen25.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = deferlen25$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = deferlen25$(OBJ)
+#OUTPUT    = deferlen25$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = deferlen25$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

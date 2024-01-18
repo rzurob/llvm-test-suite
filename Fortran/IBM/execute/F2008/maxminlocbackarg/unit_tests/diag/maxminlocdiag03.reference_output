@@ -1,0 +1,4 @@
+"maxminlocdiag03.f", line 3.51: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "maxloc".
+"maxminlocdiag03.f", line 6.37: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "minloc".
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file maxminlocdiag03.f.

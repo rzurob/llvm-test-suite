@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = nmlInputComplex003.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 22, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)nmlInputComplex003.dat
+#OUTPUT   = nmlInputComplex003.dat
+#ENDCMD
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)nmlInputComplex003.f
+#OUTPUT   =  nmlInputComplex003$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  nmlInputComplex003$(OBJ)
+#OUTPUT   =  nmlInputComplex003$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  nmlInputComplex003$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

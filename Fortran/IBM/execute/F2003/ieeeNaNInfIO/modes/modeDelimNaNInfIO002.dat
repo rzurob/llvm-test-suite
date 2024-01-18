@@ -1,0 +1,20 @@
+ &MYNML
+ CX1=(+NaN(Q),-NaN(S)), XLF='xlf', CX2=(-NaN(Q), +Inf), IBM='ibm', CX3=(-Inf, +NaN(S))
+ /
+  ( +NaN(Q), -NaN(S)) xlf, (-NaN(Q),+Inf), ibm (-Inf, +NaN(S) )   
+ &MYNML
+ CX1=(NaN(Q),-NaN(S)), XLF="xlf", CX2=(-NaN(Q), +Infinity), IBM='ibm', CX3=(-Infinity, NaN(S))
+ /
+ (NaN(Q), -NaN(S)) 'xlf', (-NaN(Q), Infinity), "ibm" (-Infinity,NaN(S))
+ &MYNML
+ CX1=(NaN(),-NaN(S)), XLF="xlf", CX2=(-NaN, Infinity), IBM='ibm', CX3=(-Inf, nAn(s))
+ /
+ (NaN, -NaN(S)) 'xlf', (-NaN(), infiNity), "ibm" (-infinitY,  NaN(S))
+ &MYNML
+ CX1=(NaN(0),-NaN(S)), XLF="xlf", CX2=(-NaN(abc), +Infinity), IBM='ibm', CX3=(-Infinity, nan(s))
+ /
+ (NaN(123abcd), -NaN(S)) 'xlf', (-NaN(abcd123), inf), "ibm" (-inf,NaN(S))
+ &MYNML
+ CX1=(NaN(_),-NaN(S)), XLF="xlf", CX2=(-NaN(_s_), +Infinity), IBM='ibm', CX3=(-Infinity, NaN(S))
+ /
+ (NaN(_abc123), -NaN(S)) 'xlf', (-NaN(__), Infinity), "ibm" (-Infinity,NaN(S))

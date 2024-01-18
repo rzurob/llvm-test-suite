@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/procPtrComp/dtpPPCDummyPassMixInterfaceKLSub.scenario
+#FEATURE   = Procedure Pointers as Components - pointer to PASS subroutines from DTP with K+L param with other args of mixed types via dummy arg
+#CREATOR   = DF Manual Update
+#DATE      = 20090323
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPPCDummyPassMixInterfaceKLSub.f
+#OUTPUT    = dtpPPCDummyPassMixInterfaceKLSub$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPPCDummyPassMixInterfaceKLSub$(OBJ)
+#OUTPUT    = dtpPPCDummyPassMixInterfaceKLSub$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPPCDummyPassMixInterfaceKLSub$(EXE)
+#STDOUT    = dtpPPCDummyPassMixInterfaceKLSub.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpPPCDummyPassMixInterfaceKLSub$(product)vf) dtpPPCDummyPassMixInterfaceKLSub.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

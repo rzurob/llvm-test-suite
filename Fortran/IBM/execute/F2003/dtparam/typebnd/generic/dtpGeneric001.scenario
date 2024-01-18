@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/typebnd/generic/dtpGeneric001.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpGeneric001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtpGeneric001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpGeneric001$(OBJ)
+#OUTPUT    = dtpGeneric001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpGeneric001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

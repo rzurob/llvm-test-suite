@@ -1,0 +1,30 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       340524.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       21-08-07
+#TEST_TYPE=  Diagnostic
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=      F_COMPILE
+#INPUT=    $(tcasedir)340524.f
+#STDERR=   340524.err
+#VALIDRCS= $(RC_COMP_E)
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    340524.err $($(tcasedir)340524$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

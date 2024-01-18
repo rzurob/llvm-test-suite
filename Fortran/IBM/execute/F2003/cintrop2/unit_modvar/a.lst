@@ -1,0 +1,49 @@
+1586 V1 R1 M00 IBM IPA/AIX                                   /lib/crt0_64.o                    08/26/2003 16:20:38   Page 1
+
+                                     * * * * *   P r o l o g   * * * * *
+
+ Command options:
+    Primary input name. . . . . . : /lib/crt0_64.o
+    Compiler options. . . . . . . : 
+
+                              * * * * *   E n d   O f   P r o l o g   * * * * *
+
+
+
+-qdebug=NPALI:NLDSTM:
+
+ GPR's set/used:   s-us sss- ---- ----  ---- ---- ---- ----
+ FPR's set/used:   ---- ---- ---- ----  ---- ---- ---- ----
+ CCR's set/used:   ---- ----
+
+     | 000000                           PDEF     _main
+    0|                                  PROC     
+   50| 000000 addi     38600000   1     LI       gr3=0
+   45| 000004 ld       E8820008   1     L8       gr4=.ch(gr2,0)
+   45| 000008 addi     38000046   1     LI       gr0=70
+   49| 00000C addi     38C00003   1     LI       gr6=3
+   49| 000010 ld       E8A20010   1     L8       gr5=.ca(gr2,0)
+   45| 000014 stb      98040000   1     ST1Z     ch(gr4,0)=gr0
+   49| 000018 stw      90C50000   1     ST4Z     <s14:d0:l4>(gr5,0)=gr6
+   49| 00001C stw      90C50004   1     ST4Z     <s14:d4:l4>(gr5,4)=gr6
+   49| 000020 stw      90C50008   1     ST4Z     <s14:d8:l4>(gr5,8)=gr6
+   49| 000024 stw      90C5000C   1     ST4Z     <s14:d12:l4>(gr5,12)=gr6
+   49| 000028 stw      90C50010   1     ST4Z     <s14:d16:l4>(gr5,16)=gr6
+   49| 00002C stw      90C50014   1     ST4Z     <s14:d20:l4>(gr5,20)=gr6
+   50| 000030 bclr     4E800020   0     BA       lr
+     |               Tag Table
+     | 000034        00000000 00012000 00000000 00000034
+     |               Instruction count           13
+     |               Straight-line exec time     12
+
+1586 V1 R1 M00 IBM IPA/AIX                                      Partition 0                    08/26/2003 16:20:38   Page 2
+
+                            * * * * *   M e s s a g e   S u m m a r y   * * * * *
+
+Total   Unrecoverable  Severe       Error     Warning    Informational
+               (U)       (S)         (E)        (W)          (I)
+    0           0         0           0          0            0
+
+                     * * * * *   E n d   O f   M e s s a g e   S u m m a r y   * * * * *
+
+                         * * * * *   E n d   O f   C o m p i l a t i o n   * * * * *

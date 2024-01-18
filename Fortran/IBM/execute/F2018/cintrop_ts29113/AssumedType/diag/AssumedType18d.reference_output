@@ -1,0 +1,7 @@
+"AssumedType18d.f", line 33.24: 1514-809 (S) Entity c has assumed type. c must not have the VALUE attribute.
+** mod   === End of Compilation 1 ===
+"AssumedType18d.f", line 44.25: 1514-809 (S) Entity a has assumed type. a must not have the VALUE attribute.
+"AssumedType18d.f", line 48.25: 1514-809 (S) Entity a has assumed type. a must not have the VALUE attribute.
+"AssumedType18d.f", line 55.25: 1514-809 (S) Entity a has assumed type. a must not have the VALUE attribute.
+** assumedtype18d   === End of Compilation 2 ===
+1501-511  Compilation failed for file AssumedType18d.f.

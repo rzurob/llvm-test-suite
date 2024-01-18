@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/arithmetic/dataPtrNeqvLog.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071216
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrNeqvLog.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrNeqvLog$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrNeqvLog$(OBJ)
+#OUTPUT    = dataPtrNeqvLog$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrNeqvLog$(EXE)
+#STDOUT    = dataPtrNeqvLog.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrNeqvLog.out $($(tcasedir)dataPtrNeqvLog$(product)vf)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

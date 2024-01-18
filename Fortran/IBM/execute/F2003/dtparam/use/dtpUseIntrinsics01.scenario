@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/use/dtpUseIntrinsics01.scenario
+#FEATURE   = DTP and USE - use intrinsic functions relevant to DTP
+#CREATOR   = DF Manual Update
+#DATE      = 20081007
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUseIntrinsics01.f
+#OUTPUT    = dtpUseIntrinsics01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUseIntrinsics01$(OBJ)
+#OUTPUT    = dtpUseIntrinsics01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUseIntrinsics01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

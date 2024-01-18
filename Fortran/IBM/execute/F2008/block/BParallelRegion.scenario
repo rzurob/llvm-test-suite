@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BParallelRegion.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20110124
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS = $$(F_COMPILE^OPT_OPTIMIZE_FOR_ANY_SMP<(omp)|(noopt):*>)
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)BParallelRegion.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = BParallelRegion$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = BParallelRegion$(OBJ)
+#OUTPUT    = BParallelRegion$(EXE)
+#ENDCMD
+
+#FOR i = 1 TO 100 STEP 1
+#CMD       = RUN
+#INPUT     = BParallelRegion$(EXE)
+#ENVAR     = $(OMP_THREAD_LIMIT_4)
+#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpIAssignDummyArg.scenario
+#FEATURE   = Intrinsic Assignment without Allocation - assign to a dummy arg
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAssignDummyArg.f
+#OUTPUT    = dtpIAssignDummyArg$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAssignDummyArg$(OBJ)
+#OUTPUT    = dtpIAssignDummyArg$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAssignDummyArg$(EXE)
+#STDOUT    = dtpIAssignDummyArg.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpIAssignDummyArg$(product)vf) dtpIAssignDummyArg.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

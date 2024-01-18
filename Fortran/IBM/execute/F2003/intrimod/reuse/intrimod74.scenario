@@ -1,0 +1,45 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/intrimod/reuse/intrimod74.scenario
+#FEATURE = intrimod tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)../fake_omp_lib_module.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qnoswapomp
+#OUTPUT    = fake_omp_lib_module$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)intrimod74.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qnoswapomp
+#OUTPUT    = intrimod74$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qnoswapomp
+#INPUT     =  fake_omp_lib_module$(OBJ) intrimod74$(OBJ)
+#OUTPUT    = intrimod74$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = intrimod74$(EXE)
+#STDOUT    = intrimod74.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)intrimod74$(product)vf) intrimod74.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

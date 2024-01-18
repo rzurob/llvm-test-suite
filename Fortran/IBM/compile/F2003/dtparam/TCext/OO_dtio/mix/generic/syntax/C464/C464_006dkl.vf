@@ -1,0 +1,11 @@
+"C464_006dkl.f", line 51.52: 1514-603 (S) Dummy argument dtv of the derived-type I/O procedure uread must not be specified with the OPTIONAL attribute.
+"C464_006dkl.f", line 53.52: 1514-603 (S) Dummy argument unit of the derived-type I/O procedure fread must not be specified with the VALUE attribute.
+"C464_006dkl.f", line 54.52: 1514-603 (S) Dummy argument v_list of the derived-type I/O procedure fwrite must not be specified with the OPTIONAL attribute.
+"C464_006dkl.f", line 54.52: 1514-603 (S) Dummy argument iostat of the derived-type I/O procedure fwrite must not be specified with the OPTIONAL attribute.
+"C464_006dkl.f", line 54.52: 1514-603 (S) Dummy argument iomsg of the derived-type I/O procedure fwrite must not be specified with the OPTIONAL attribute.
+"C464_006dkl.f", line 54.52: 1514-603 (S) Dummy argument unit of the derived-type I/O procedure fwrite must not be specified with the OPTIONAL attribute.
+"C464_006dkl.f", line 54.52: 1514-603 (S) Dummy argument iotype of the derived-type I/O procedure fwrite must not be specified with the OPTIONAL attribute.
+"C464_006dkl.f", line 71.47: 1514-734 (S) Dummy argument dtv was specified with the VALUE attribute. dtv must not have assumed or deferred length type parameters.
+** m   === End of Compilation 1 ===
+** c464_006dkl   === End of Compilation 2 ===
+1501-511  Compilation failed for file C464_006dkl.f.

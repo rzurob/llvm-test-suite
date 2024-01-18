@@ -1,0 +1,4 @@
+"fxdmodprocstmt016.f", line 46.30: 1514-163 (S) Procedures specified in the same generic interface must all be functions or all be subroutines.  Procedure or binding f1 will not be included in the gen generic interface.
+"fxdmodprocstmt016.f", line 47.23: 1514-163 (S) Procedures specified in the same generic interface must all be functions or all be subroutines.  Procedure or binding f1 will not be included in the gen generic interface.
+** m   === End of Compilation 1 ===
+1501-511  Compilation failed for file fxdmodprocstmt016.f.

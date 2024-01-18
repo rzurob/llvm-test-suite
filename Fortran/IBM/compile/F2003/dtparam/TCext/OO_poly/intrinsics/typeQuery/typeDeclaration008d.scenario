@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/typeQuery/typeDeclaration008d.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071001
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)typeDeclaration008d.f
+#OUTPUT    = typeDeclaration008d$(OBJ)
+#STDERR    = typeDeclaration008d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)typeDeclaration008d$(product)vf) typeDeclaration008d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

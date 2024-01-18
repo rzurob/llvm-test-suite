@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/exprEval/order/diffKindVectorIndex03a.scenario
+#FEATURE	= Intrinsic Assignment -- Order of Expression Evaluation
+#CREATOR	= GM Manual Creation
+#DATE		= 20061011
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_REALSIZE_4)
+#INPUT		= $(tcasedir)diffKindVectorIndex03.f
+#OUTPUT		= diffKindVectorIndex03a$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= diffKindVectorIndex03a$(OBJ)
+#OUTPUT		= diffKindVectorIndex03a$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= diffKindVectorIndex03a$(EXE)
+#STDOUT		= diffKindVectorIndex03a.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)diffKindVectorIndex03$(product)vf)	\
+				diffKindVectorIndex03a.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

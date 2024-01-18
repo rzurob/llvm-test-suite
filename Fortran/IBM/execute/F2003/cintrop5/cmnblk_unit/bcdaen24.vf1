@@ -1,0 +1,5 @@
+** mod   === End of Compilation 1 ===
+"bcdaen24.f", line 53.10: 1514-127 (E) Identifier sub declared with EXTERNAL/INTRINSIC attribute was defined elsewhere with conflicting attributes.  Identifier is ignored.
+** subr   === End of Compilation 2 ===
+** bcdaen24   === End of Compilation 3 ===
+1501-510  Compilation successful for file bcdaen24.f.

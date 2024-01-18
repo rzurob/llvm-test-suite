@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/valueAttrwAllocCompnt/valueScalarAllocatableComponent012.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of valueAttrwAllocCompnt/*
+#DATE      = 20071102
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)valueScalarAllocatableComponent012.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = valueScalarAllocatableComponent012$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = valueScalarAllocatableComponent012$(OBJ)
+#OUTPUT    = valueScalarAllocatableComponent012$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = valueScalarAllocatableComponent012$(EXE)
+#STDOUT    = valueScalarAllocatableComponent012.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = valueScalarAllocatableComponent012.out $(tcasedir)valueScalarAllocatableComponent012.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

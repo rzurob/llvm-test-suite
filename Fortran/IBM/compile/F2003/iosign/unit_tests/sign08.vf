@@ -1,0 +1,6 @@
+"sign08.f", line 47.31: 1512-014 (S) The value given for the SIGN specifier is incorrect.
+"sign08.f", line 50.14: 1512-014 (S) The value given for the SIGN specifier is incorrect.
+"sign08.f", line 54.1: 1512-089 (E) The SIGN specifier is not allowed when opening an unformatted file.  Keyword is ignored.
+"sign08.f", line 58.13: 1512-016 (E) The specifier SIGN= is not permitted for the READ statement.  Specifier is ignored.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file sign08.f.

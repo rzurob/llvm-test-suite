@@ -1,0 +1,4 @@
+"dprocdeclfn01.f", line 32.17: 1514-581 (S) Binding get_properties with the DEFERRED attribute must be specified with an interface.
+** m   === End of Compilation 1 ===
+** procdeclfn01   === End of Compilation 2 ===
+1501-511  Compilation failed for file dprocdeclfn01.f.

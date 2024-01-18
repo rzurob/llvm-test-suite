@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = kindparamProcInterf002.scenario
+#FEATURE   =
+#CREATOR   = MZ adapted from F2003/dtparam/typeparam/kindparamProcInterf002.f
+#DATE      = 20100504
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_ALT_COMPILE
+#INPUT     = $(tcasedir)kindparamProcInterf002_mod.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = kindparamProcInterf002_mod$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)kindparamProcInterf002_main.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = kindparamProcInterf002_main$(OBJ)
+#ENDCMD
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = kindparamProcInterf002_mod$(OBJ) kindparamProcInterf002_main$(OBJ)
+#OUTPUT    = kindparamProcInterf002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = kindparamProcInterf002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

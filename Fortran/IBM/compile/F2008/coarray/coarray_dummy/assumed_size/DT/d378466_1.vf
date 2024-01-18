@@ -1,0 +1,4 @@
+"d378466_1.f", line 34.14: 1516-342 (S) The coarray dummy argument r of procedure foo is not an assumed-shape array or is declared with the CONTIGUOUS attribute.  The corresponding actual argument must be simply contiguous.
+"d378466_1.f", line 36.17: 1516-342 (S) The coarray dummy argument x1 of procedure bar is not an assumed-shape array or is declared with the CONTIGUOUS attribute.  The corresponding actual argument must be simply contiguous.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file d378466_1.f.

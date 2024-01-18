@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrUnaryReal.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrUnaryReal.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrUnaryReal$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrUnaryReal$(OBJ)
+#OUTPUT    = dataPtrUnaryReal$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrUnaryReal$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

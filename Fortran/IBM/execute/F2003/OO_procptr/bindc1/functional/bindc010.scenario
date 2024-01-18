@@ -1,0 +1,49 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_procptr/bindc1/functional/bindc010.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#INVALID_PRODUCT = linux
+#IF on(aix)
+#RESOURCES_REQ = AIX52UP
+#ENDIF
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(OPT_BIGGER_LONG_DOUBLE) $(C_COMPILER_OPTS)
+#INPUT     = $(tcasedir)bindc010.c
+#OUTPUT    = bindc010c$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)bindc010.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = bindc010$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = bindc010c$(OBJ) bindc010$(OBJ)
+#OUTPUT    = bindc010$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = bindc010$(EXE)
+#STDOUT    = bindc010.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $(tcasedir)bindc010.vf bindc010.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

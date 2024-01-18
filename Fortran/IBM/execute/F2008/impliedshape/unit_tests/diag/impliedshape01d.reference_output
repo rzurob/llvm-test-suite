@@ -1,0 +1,34 @@
+"impliedshape01d.f", line 39.29: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 40.29: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 41.29: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 42.29: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 44.26: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 45.26: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 46.26: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 47.26: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 49.38: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 50.38: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 51.38: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 52.38: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 54.29: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 55.29: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 56.29: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 57.29: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 59.31: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 60.31: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 61.31: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 62.31: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 64.29: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 65.29: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 66.29: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 67.29: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 69.26: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 70.26: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 71.26: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 72.26: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 74.32: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 75.32: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 76.32: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+"impliedshape01d.f", line 77.32: 1514-795 (S) Implied-shape arrays must be initialized by a constant expression with a non-zero rank.
+** impliedshape01d   === End of Compilation 1 ===
+1501-511  Compilation failed for file impliedshape01d.f.

@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=c_lod_d2.scenario
+#FEATURE = noninteroperable dtype with len parm is not allowed
+#CREATOR = Daniel Chen
+#DATE    = 20140731
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)c_loc_d2.f
+#OPTS      = $(OPT_DISABLE_MSG_NUM<1518-317>)
+#OUTPUT    = c_loc_d2$(OBJ)
+#STDERR    = c_loc_d2.err
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)c_loc_d2$(product)vf) c_loc_d2.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

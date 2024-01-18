@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/abstracti/d341446.scenario
+#FEATURE	= Abstract Interface Tests + derived type parameters
+#CREATOR	= Glen Mateer
+#DATE		= 20070914
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)d341446.f
+#OUTPUT		= d341446$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= d341446$(OBJ)
+#OUTPUT		= d341446$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= d341446$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

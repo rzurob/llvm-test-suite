@@ -1,0 +1,30 @@
+ &MYNML ! input # 1
+ CX1=(NaN(S), -Inf), CX2=(Inf, nan), C1='xlf', CX3=(-NaN(Q), -Nan(s)), CX4=(Infinity, Infinity), I1=11, CX5=(-NaN(S), 3.14) CX6=(-3.14, -Inf), CX7=(-inf, -inf), CX8=(nan(s), nan(s))
+ /
+ &MYNML ! input # 2
+ CX1=(NaN(S), -Infinity), CX2=(Infinity, nan()), C1='xlf', CX3=(-NaN(), -Nan(s)), CX4=(INf, Infinity), I1=11, CX5=(-NaN(S), 3.14) CX6=(-3.14, -Infinity), CX7=(-inf, -infinity), CX8=(NAN(s), nan(s))
+ /
+ &MYNML ! input # 3
+ CX1=(+NaN(S), -Inf), CX2=(+Inf, nan(Q)), C1='xlf', CX3=(-NaN(Q), -Nan(S)), CX4=(+Infinity, +Infinity), I1=11, CX5=(-NaN(S), 3.14) CX6=(-3.14, -Inf), CX7=(-infinity, -inf), CX8=(+nan(s), nan(S))
+ /
+ &MYNML ! input # 4
+ CX1=(+NAN(s), -Infinity), CX2=(Inf, nan(abcd)), C1='xlf', CX3=(-NaN(abcd1234), -Nan(s)), CX4=(+Infinity, Infinity), I1=11, CX5=(-nAn(S), 3.14) CX6=(-3.14, -Inf), CX7=(-infinity, -infinity), CX8=(nan(S), +nan(s))
+ /
+ &MYNML ! input # 5
+ CX1=(naN(S), -Inf), CX2=(Infinity, +nan(abcd)), C1='xlf', CX3=(-NaN(1234), -Nan(s)), CX4=(Infinity, +Infinity), I1=11, CX5=(-NaN(S), 3.14) CX6=(-3.14, -Infinity), CX7=(-inf, -inf), CX8=(+nan(s), +nan(s))
+ /
+ &MYNML ! input # 6
+ CX1=(+naN(S), -Infinity), CX2=(+Infinity, nan(_)), C1='xlf', CX3=(-NaN(q), -Nan(s)), CX4=(InfinitY, +Inf), I1=11, CX5=(-NaN(S), 3.14) CX6=(-3.14, -Inf), CX7=(-inf, -inf), CX8=(nan(s), NAN(s))
+ /
+ &MYNML ! input # 7
+ CX1=(nan(S), -Inf), CX2=(+Inf, +nan(_abcd1234)), C1='xlf', CX3=(-NaN(33_abc), -Nan(s)), CX4=(+InfiniTy, inf), I1=11, CX5=(-NaN(S), +3.14) CX6=(-3.14, -Inf), CX7=(-inf, -inf), CX8=(nan(s), nan(s))
+ /
+ &MYNML ! input # 8
+ CX1=(+NaN(s), -Inf), CX2=(+Inf, nan(134abc_)), C1='xlf', CX3=(-NaN(134abc_), -Nan(s)), CX4=(+iNf, Infinity), I1=11, CX5=(-NaN(S), 3.14) CX6=(-3.14, -Inf), CX7=(-inf, -inf), CX8=(nan(s), nan(s))
+ /
+ &MYNML ! input # 9
+ CX1=(NAN(S), -Inf), CX2=(+Inf, nan(__)), C1='xlf', CX3=(-NaN(__), -Nan(s)), CX4=(+inf, +inf), I1=11, CX5=(-NaN(S), 3.14) CX6=(-3.14, -Inf), CX7=(-inf, -inf), CX8=(nan(s), nan(s))
+ /
+ &MYNML ! input # 10
+ CX1=(nan(S), -Inf), CX2=(Inf, +nan(__)), C1='xlf', CX3=(-NaN(_s_), -Nan(s)), CX4=(+inf, +inf), I1=11, CX5=(-NaN(S), +3.14) CX6=(-3.14, -Inf), CX7=(-inf, -inf), CX8=(nan(s), nan(s))
+ /

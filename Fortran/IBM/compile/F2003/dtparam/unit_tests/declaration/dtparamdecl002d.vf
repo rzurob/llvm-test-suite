@@ -1,0 +1,10 @@
+"dtparamdecl002d.f", line 55.23: 1514-685 (S) Identifier base2 is not a type parameter. base2 must not have the KIND attribute.
+"dtparamdecl002d.f", line 57.23: 1514-685 (S) Identifier base3 is not a type parameter. base3 must not have the LEN attribute.
+"dtparamdecl002d.f", line 64.20: 1514-686 (S) Type parameter basekind2 must be of type integer.
+"dtparamdecl002d.f", line 66.23: 1514-686 (S) Type parameter basetype2 must be of type integer.
+"dtparamdecl002d.f", line 72.19: 1514-687 (E) A KIND attribute has already been specified for this type parameter.  The LEN attribute has been ignored.
+"dtparamdecl002d.f", line 75.18: 1514-687 (E) A LEN attribute has already been specified for this type parameter.  The KIND attribute has been ignored.
+"dtparamdecl002d.f", line 82.19: 1514-687 (E) A KIND attribute has already been specified for this type parameter.  The KIND attribute has been ignored.
+"dtparamdecl002d.f", line 85.18: 1514-687 (E) A LEN attribute has already been specified for this type parameter.  The LEN attribute has been ignored.
+** dtparamdecl002d   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtparamdecl002d.f.

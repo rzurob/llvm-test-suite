@@ -1,0 +1,8 @@
+ (-NaNS;NaNQ) NaNS 3,140000105 -NaNQ INF -INF
+ (-NaNS,NaNQ) NaNS 3.140000105 -NaNQ INF -INF
+ (-NaNS;NaNQ) NaNS 3,140000105 -NaNQ INF -INF
+ (-NaNS,NaNQ) NaNS 3.140000105 -NaNQ INF -INF
+       -NaNS        NaNQ        NaNS        3,14       -NaNQ         INF        -INF
+       -NaNS        NaNQ        NaNS        3.14       -NaNQ         INF        -INF
+       -NaNS        NaNQ        NaNS        3,14       -NaNQ         INF        -INF
+       -NaNS        NaNQ        NaNS        3.14       -NaNQ         INF        -INF

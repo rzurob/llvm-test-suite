@@ -1,0 +1,9 @@
+ &W
+ WRITE=c=IBM
+ /
+ &W
+ WRITE=i= 123 c=FTN
+ /
+ &W
+ WRITE=i=2005 c=IBM
+ /

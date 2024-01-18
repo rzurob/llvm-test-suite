@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/submodule/func/submodule04f.scenario
+#FEATURE   = F2008 Submodule
+#CREATOR   = Bernard Kan
+#DATE      = 20221206
+#TEST_TYPE = Functional
+#KEYWORDS  = F2008, submodule, F2008 submodule
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD          = F_COMPILE
+#INPUT        = $(tcasedir)submodule04f.f
+#OUTPUT       = submodule04f$(OBJ)
+#ENDCMD
+
+#CMD          = F_LINK
+#INPUT        = submodule04f$(OBJ)
+#OUTPUT       = submodule04f$(EXE)
+#ENDCMD
+
+#CMD          = RUN
+#INPUT        = submodule04f$(EXE)
+#STDOUT       = submodule04f.out
+#STDERR       = submodule04f.out
+#ENDCMD
+
+#CMD          = DIFF
+#INPUT        = submodule04f.out $(tcasedir)submodule04f.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

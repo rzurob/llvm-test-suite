@@ -1,0 +1,792 @@
+<html><head><title>F2008: CONTIGUOUS Attribute and Intrinsic</title></head><body><table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#c0e1ff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="left" style="font-size: 12pt; color: rgb(0, 0, 128); font-family: Arial;"><strong>Document Control Information:</strong>
+            <p style="color: rgb(0, 0, 0);">The official version of this document is kept in CMVC in the <span style="font-weight: bold; text-decoration: underline;">%CMVC_Family%</span> family, release <span style="font-weight: bold; text-decoration: underline;">%CMVC_Release%</span>, component <span style="font-weight: bold; text-decoration: underline;">%CMVC_Component%</span>, file <span style="font-weight: bold; color: rgb(255, 102, 102); text-decoration: underline;">%CMVC_PathName%</span>. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.<br />
+            <br />
+            CMVC Extraction Information: %W% %H% %I% sccsid<br />
+            <br />
+            This document is IBM Confidential.<br />
+            </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table cellspacing="0" cellpadding="5" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td width="20%" valign="top" align="left"><strong>CMVC Feature Number</strong> </td>
+            <td width="80%" valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%CMVC_Feature%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Feature Title</strong> </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Document_Name%  %Note{By default the feature title and document name are the same. You can either change the document name (through Properties), or replace the tag with the title of the feature}%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Author(s)</strong> </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Authors%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Applicable Product Releases</strong> </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">XL Fortran v14.1, AIX, Linux, BG<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Affected Components</strong> </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">Front Ends: Fortran<br />
+            Optimizers: ASTI<br />
+            Documentation: Product documentation<br />
+            Other: W-Code</td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#ff6666">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial; text-align: left;"><strong>Document Status: For Approval</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<p><strong>Approvers Only:</strong> Click on the 'Approve' check-box beside your name in the table below if you agree with the technical and user interface content of this document; not checking your 'approve' check-box signifies you do not approve.</p>
+<p>%Approvals%</p>
+<p>Approval Comments</p>
+<p>
+<table cellspacing="0" cellpadding="5" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td valign="top" align="left"><strong>Approvers</strong> (mandatory participation) </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Note{Insert the names of people who will have approval authority for this review. These people, in aggregate, are responsible for approving the technical and user interface content of the document. Generally, this list should include people who represent compiler components that will need to change if this review is approved.<br />
+            The I0 Process document provides detailed guidance on choosing your list of approvers.<br />
+            Use Access Control to add/delete people from this list. The initial access control list is populated with the people from the Component Reviewers section below. You can use Access Control to change their role to Approver, or add additional approvers.}%<br />
+            %Approvers%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Release Management Contact</strong> (optional participation) </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Release_Management_Contact% <br />
+            %Note{Release Manager/Development Manager/Team Lead,<br />
+            usually your team's representative at product status meetings. Use Access Control to add/change Release Management Contact.}%<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Component Reviewers</strong> (optional participation) </td>
+            <td valign="top" align="left" style="color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Note{These groups must be made aware of the I0. Assign at least one person representing each group. The names listed below are suggested contacts only, please assign whoever is appropriate:<br />
+            <ul style="font-family: Arial;">
+                <li><strong>C FE and related tools/libraries/driver:</strong><br />
+                AIX - Philip Luk<br />
+                Linux - Philip Luk<br />
+                z/OS - Kendrick Wong<br />
+                CELL - Larry Lindsay<br />
+                UPC - Philip Luk</li>
+                <li><strong>C++ FE and related tools/libraries/driver:</strong><br />
+                AIX - Jeff Heath<br />
+                Linux - Sasha Kasapinovic<br />
+                z/OS - Michael Wong<br />
+                CELL - Kevin Shin<br />
+                </li>
+                <li><strong>Fortran FE, ASTI, PLIX, and related tools/libraries/driver:</strong><br />
+                AIX, PLIX - Rafik Zurob<br />
+                Linux - Xing Xue<br />
+                BG/L - Daniel Chen<br />
+                CELL - Kelvin Li </li>
+                <li><strong>PL/X Development:</strong><br />
+                Kirk Crane<br />
+                </li>
+                <li><strong>TPO and associated tools/libraries (libxlopt, SMPRT, MASS):</strong><br />
+                AIX - Arie Tal/Yan Zhang<br />
+                Linux - Tommy Wong<br />
+                z/OS - Chris Miclea<br />
+                BG - Damien Bonaventure<br />
+                CELL - Amy Wang</li>
+                <li><strong>TOBEY and associated tools/libraries: (dis, libxl, bolt)</strong><br />
+                AIX - Christopher Lapkowski<br />
+                Linux - Irina rada<br />
+                z/OS - Chwan-Hang Lee<br />
+                BG - Damien Bonaventure, Leon Ding (Xialoliang Ding/Piscataway/IBM@IBMUS)<br />
+                CELL - Dickson Chau<br />
+                dis - Ian McIntosh<br />
+                </li>
+                <li><strong>WCode:</strong><br />
+                Roland Froese</li>
+                <li><strong>Disassembler<br />
+                </strong>Ian McIntosh</li>
+                <li><strong>Information Development:</strong><br />
+                C/C++ - Wei Zhong Shan/China/IBM<br />
+                Fortran - Lisa Wilkinson<br />
+                </li>
+                <li><strong>Customer Service and Support:</strong><br />
+                AIX/Linux - Zoran Kulina<br />
+                z/OS - Youssef Himo <br />
+                Cell - Sean Kennedy </li>
+                <li><strong>Compiler Enablement:</strong><br />
+                Dwayne Moore </li>
+                <li><strong>Fortran Test:</strong><br />
+                Kobi Vinayagamoorthy<br />
+                </li>
+                <li><strong>C/C++ Test:</strong><br />
+                Thomas Lee(z/OS)<br />
+                Adrean Gatea (system p)<br />
+                </li>
+                <li><strong>PL/X Test:</strong><br />
+                Anne Wylie </li>
+                <li><strong>Build and Packaging Team:</strong><br />
+                AIX - Chris Taylor<br />
+                Linux - Viktor Ganich<br />
+                BG - Steven Chen<br />
+                Cell - Kevin Yuen<br />
+                z/OS - Steve Chen<br />
+                Dale Soldiuk (Please include Dale as optional on all reviews)</li>
+                <li><strong>Performance Measurement and Analysis Team:<br />
+                </strong>John Tam</li>
+                <li><strong>Planning</strong><br />
+                Mary Chan<br />
+                </li>
+            </ul>
+            <p>The following groups must be notified of a W-Code change or if a change affects their language. They are optional otherwise.</p>
+            <ul>
+                <li><strong>PL/I:</strong><br />
+                zOS and AIX - Peter Elderon (in SVL) </li>
+                <li><strong>Cobol:</strong><br />
+                AIX - Richard Nelson (in SVL) </li>
+            </ul>
+            <p>The following group must be notified of a front-end (C FE, or C++ FE) related change or other modification having a direct impact. Inclusion is optional otherwise.</p>
+            <ul>
+                <li><strong>Makedepend for USS:</strong><br />
+                Christopher Taylor </li>
+            </ul>
+            <p>The following group must be notified whenever a change in debug WCODE is made, and any debugger related issues are involved.</p>
+            <ul>
+                <li><strong>Common Debug Architecture Development (CDA):</strong><br />
+                Kendrick Wong </li>
+            </ul>
+            Use Access Control to add/delete people from this list.}%             <br />
+            %Component_Reviewers%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Team Reviewers</strong> (optional participation) </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">             %Note{List any additional people you feel need to participate in the review. These people do not have approval authority. Use Access Control to add/delete people from this list.}%<br />
+            %Team_Reviewers%</td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p><br />
+<br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td style="vertical-align: top; font-family: Arial;"><strong>Reviewers</strong>: Please click the 'Reviewed' checkbox beside your name to indicate your participation in the review. </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%Reviews%<br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td style="vertical-align: top; font-family: Arial;"><strong>Access Change History</strong> %Note{Authors: Access Change History will list any changes to the access control done to the document draft. These changes would not be visible in a review. In a review, this section would only list the access changes done to the review itself.<br />
+            Please note that changes to the access control of a review are not automatically reflected in the access control of the draft document.}% </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%CollapsedSection{<strong>Access Change History</strong>}{%Access_Change_History%}%<br />
+</p>
+<p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>Feature Overview</strong> </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+This feature will implement the CONTIGUOUS attribute, CONTIGUOUS attribute specification statement and IS_CONTIGUOUS intrinsic function as specified in the Fortran 2008 language standard.<br />
+<br />
+The Fortran 2008 language standard defines contiguous as:<br />
+- An array having array elements in order that are not separated by other data objects;<br />
+<br />
+The Fortran 2008 language standard defines simply contiguous as the following:<br />
+<br />
+6.5.4 Simply contiguous array designators<br />
+<ol>
+    <li>A section-subscript-list specifies a simply contiguous section if and only if it does not have a vector subscript and<br />
+    <ol>
+        <li>all but the last subscript-triplet is a colon,</li>
+        <li>the last subscript-triplet does not have a stride, and</li>
+        <li>no subscript-triplet is preceded by a section-subscript that is a subscript.</li>
+    </ol>
+    </li>
+    <li>An array designator is simply contiguous if and only if it is
+    <ol>
+        <li>an object-name that has the CONTIGUOUS attribute,</li>
+        <li>an object-name that is not a pointer or assumed-shape,</li>
+        <li>a structure-component whose final part-name is an array and that either has the CONTIGUOUS attribute or is not a pointer, or</li>
+        <li>an array section
+        <ol>
+            <li>that is not a complex-part-designator,</li>
+            <li>that does not have a substring-range,</li>
+            <li>whose final part-ref has nonzero rank,</li>
+            <li>whose rightmost part-name has the CONTIGUOUS attribute or is neither assumed-shape nor a pointer, and</li>
+            <li>which either does not have a section-subscript-list, or has a section-subscript-list which specifies a simply contiguous section.</li>
+        </ol>
+        </li>
+    </ol>
+    </li>
+    <li>An array variable is simply contiguous if and only if it is a simply contiguous array designator or a reference to a function that returns a pointer with the CONTIGUOUS attribute.
+    <ol>
+        <ol>
+            <li>NOTE 6.16: Array sections that are simply contiguous include column, plane, cube, and hypercube subobjects of a simply contiguous base object, for example:<br />
+            <font face="Courier New">ARRAY1 (10:20, 3)&nbsp;&nbsp; ! passes part of the third column of ARRAY1.<br />
+            X3D (:, i:j, 2)&nbsp;&nbsp;&nbsp;&nbsp; ! passes part of the second plane of X3D (or the whole<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ! plane if i==LBOUND(X3D,2) and j==UBOUND(X3D,2).<br />
+            Y5D (:, :, :, :, 7) ! passes the seventh hypercube of Y5D.</font></li>
+        </ol>
+    </ol>
+    </li>
+</ol>
+<br />
+Within this document the term &quot;simply contiguous&quot; is referring to an array that is known to be contiguous at compile time.<br />
+Within this document the term &quot;simply non-contiguous&quot; is referring to an array that is known to be not contiguous at compile time.<br />
+<br />
+<h2><strong>Key Requirements</strong></h2>
+This feature is necessitated by the Fortran 2008 language standard and XL Fortran's continued conformance with this standard.<br />
+<h2><strong>Key Design Issues</strong></h2>
+<ol>
+    <li>The IS_CONTIGUOUS intrinsic function can be folded by the front end in some cases.<!-- featureflow:comments:_73 --><!-- featureflow:newcomments:_73 --> <!-- featureflow:line:_74 -->For all other cases ASTI should generate code to determine contiguity at runtime.<!-- featureflow:comments:_74 --><!-- featureflow:newcomments:_74 --> <!-- featureflow:line:_75 -->The extent of this must be determined.</li>
+    <li>W-Code must be updat<font face="Arial">ed to communicate contiguous objects between  components.</font></li>
+    <li><font face="Arial">Full diagnostic testing for this feature would be very extensive. It must be determined what the compiler should and should not diagnose.</font></li>
+    <font face="Arial">     </font>
+    <li><font face="Arial">In section 5.3.7, the standard outlines six conditions that constitute an object guaranteed to be contiguous and four conditions that constitute an object guaranteed not to be contiguous. Anything that falls outside these conditions are compiler dependent. These compiler specific conditions for contiguity must be identified.</font></li>
+    <li><font face="Arial" color="#000000"><span id="comments37128"><span id="expanded37128"><span id="comments_content37128">When a non-contiguous array is passed to an assumed-shape array dummy argument with the CONTIGUOUS attribute, the compiler must ensure that the argument associated object is contiguous.<br />
+    </span></span></span></font></li>
+</ol>
+<h2><strong>Key Design Decisions</strong></h2>
+<ol>
+    <li>The Fortran front end will fold the IS_CONTIGUOUS intrinsic function that has an array designator argument that can be defined as simply contiguous or simply non-contiguous, except for array sections. In cases where it cannot be determined at compile-time that an array is or is not contiguous, FE will pass a BIF to ASTI which will get inlined accordingly. This includes coindexed and coarray objects.<br />
+    </li>
+    <li>A flag will be added to the w-code SYM to communicate between each component that the array has the contiguous attribute or is simply contiguous.</li>
+    <li>The XL Fortran compiler will only diagnose errors where constraints are known to be broken at compile time. For example, in a pointer assignment statement where the pointer has the contiguous attribute, the front end will only emit an error if the target is simply non-contiguous.<br />
+    </li>
+    <li>Compiler dependent contiguity:
+    <ol>
+        <li>Contiguous<br />
+        <ol>
+            <li><font face="Courier New"><font face="Arial">Objects containing a single component with compile-time padding or rta. The FE will attempt to determine if the object is contiguous by looking at the compile-time padding. If the padding is equal to 0, the object is contiguous. If there is runtime alignment it cannot be determined at compile time. Instead the FE&nbsp; will generate the ASTI __is_contiguous BIF. ASTI will generate code to determine if the rta is equal to the size of the component. If so, it is contiguous.</font> </font><font face="Courier New"><br />
+            <font face="Arial">             In the following example</font></font><font face="Courier New">, <font face="Courier New">x%i</font> has compile-time padding when the testcase is compiled with <font face="Courier New">-qautodbl=dblpad<font face="Arial">, which means it is not contiguous, however without this option it is contiguous.</font></font><br />
+            <strong><strong><strong>             </strong></strong></strong><font face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; program p1</font><font face="Courier New"><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; type dt</font><font face="Courier New"><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; integer i</font><font face="Courier New"><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end type</font><font face="Courier New"><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="Courier New">type(dt) x(10)</font><font face="Courier New"><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print *,IS_CONTIGUOUS(x)</font><font face="Courier New"><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print *,IS_CONTIGUOUS(x%i)</font><font face="Courier New"><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end</font><font face="Courier New"><br />
+            </font><font face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="Courier New">$ xlf2003 t.f 2&gt;/dev/null&nbsp; &amp;&amp; ./a.out </font><font face="Courier New"><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="Courier New">T</font><font face="Courier New"><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="Courier New">T</font><font face="Courier New"><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="Courier New">$ xlf2003 t.f -qautodbl=dblpad 2&gt;/dev/null&nbsp; &amp;&amp; ./a.out <br />
+            </font><font face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="Courier New">T<br />
+            </font><font face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="Courier New">F</font><br />
+            <font face="Courier New"><br />
+            </font></font></li>
+            <font face="Courier New">        </font></ol>
+            <font face="Courier New">        </font></li>
+            <font face="Courier New">
+            <li>Non-contiguous
+            <ol>
+                <li><font face="Courier New"><font face="Arial">A</font></font>rrays with vector subscripts</li>
+                <li><font face="Courier New"><font face="Arial">Objects containing components with run-time length and compile-time padding</font></font><font face="Courier New"><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; program p2</font><br />
+                <strong><strong><strong>             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></strong></strong><font face="Courier New">type t (k,j,l)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; integer, kind :: k, j<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; integer, len :: l<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; integer(k)::x<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; integer(j)::y(l)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end type<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; type(t(4,8,0)), allocatable:: t1(:)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; allocate(t1(2))&nbsp;&nbsp; ! t1%x is non-contiguous</font><font face="Courier New"><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print *,IS_CONTIGUOUS(t1)&nbsp;&nbsp; ! T</font><font face="Courier New"><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print *,IS_CONTIGUOUS(t1%x) ! F</font><br />
+                <font face="Courier New">             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end </font><font face="Courier New"><br />
+                </font></li>
+            </ol>
+            </li>
+            </font><font face="Courier New"></font></ol>
+            <font face="Courier New">             </font></li>
+            <font face="Courier New">
+            <li><font color="#000000">If the actual argument to <span id="comments50373"><span id="expanded50373"><span id="comments_content50373">an assumed-shape dummy argument</span></span></span></font><font color="#000000"> with the contiguous attribute is not contiguous, the compiler is expected, by the Fortran 2008 standard, to create a contiguous temporary actual argument to be argument associated. Furthermore, the compiler must perform copy-in/copy-out. This is a deviation from the original implementation of this feature, as this subtly was missed during design. The subtly was in the term &quot;effective argument&quot; which means the entity which is argument associated and not the user-specified actual argument. The appropriate lines in the standard are:<br />
+            </font>             <font face="Courier New" color="#000000">12.5.2.3.6: The entity that is argument associated with a dummy argument is called its effective argument.<br />
+            1.3.63: effective argument entity that is argument-associated with a dummy argument</font><font color="#000000"><br />
+            </font>             <font face="Courier New" color="#000000">5.3.7.1: The CONTIGUOUS attribute specifies that an assumed-shape array can only be argument associated with a contiguous effective argument<br />
+            </font><span id="comments50630"><span id="expanded50630"><span id="comments_content50630">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; with </span></span></span><font face="Courier New"><span id="comments50630"><span id="expanded50630"><span id="comments_content50630">interp F08/0061, modified to: </span></span></span></font><span id="comments50630"><span id="expanded50630"><span id="comments_content50630">&quot;The CONTIGUOUS attribute species that an assumed-shape array is contiguous&quot;</span></span></span><br />
+            <font face="Courier New" color="#000000">             12.5.2.7.1: Constraint 1241: The actual argument corresponding to a dummy pointer with the CONTIGUOUS attribute shall be simply contiguous.</font></li>
+            </font></ol>
+            <font face="Courier New">         <font face="Courier New"> </font>
+            <h2><font face="Courier New"><strong>Testing Strategy</strong></font></h2>
+            <font face="Courier New"><br />
+            Unit tests will include functional test cases of the IS_CONTIGUOUS intrinsic function, both folded by the Fortran front end and inlined by ASTI. It will also include diagnostic testing to ensure the proper use of the CONTIGUOUS attribute.<strong> </strong>Diagnostic testing will be limited to simply contiguous objects.<strong><br />
+            <br />
+            <strong style="font-size: 20px; color: rgb(0, 128, 0);"> </strong><strong style="font-size: 20px; color: rgb(0, 128, 0);"> </strong> </strong> </font>
+            <p><font face="Courier New"><strong> </strong></font></p>
+            <table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+                <tbody>
+                    <tr>
+                        <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>User Documentation</strong> </td>
+                    </tr>
+                </tbody>
+            </table>
+            <font face="Courier New"><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+            <h3>Overview</h3>
+            </strong> </strong> </font>
+            <p><font face="Courier New">This feature will provide the user with a new attribute CONTIGUOUS for type declaration statements, which will guarantee that the array object will be stored in contiguous memory. A new intrinsic function will be available to the user with the interface IS_CONTIGUOUS ( ARRAY ), where given an array will return a boolean value specifying whether ARRAY is stored in contiguous memory.<strong><br />
+            </strong></font></p>
+            <font face="Courier New"><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);"> </strong>  <strong style="font-size: 20px; color: rgb(0, 128, 0);">
+            <h3><strong style="font-size: 20px; color: rgb(0, 128, 0);"> </strong> </h3>
+            </strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+            <h3>User Benefits</h3>
+            </strong> </strong> </font>
+            <p><font face="Courier New"><strong> </strong>This feature will allow the compiler to further optimize runtime performance and storage. <strong><br />
+            </strong></font></p>
+            <font face="Courier New"><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+            <h3>Public Interface</h3>
+            </strong></strong><font face="Courier New"><font face="Arial"><u>Attribute:</u></font><br />
+            <br />
+            <strong>CONTIGUOUS</strong><br />
+            </font></font><blockquote><font face="Courier New"><font face="Courier New"><strong>Purpose:</strong> </font><br />
+            <font face="Courier New">The CONTIGUOUS attribute specifies that an array pointer or an assumed-shape array will have array elements in order that are not separated by other data objects.</font><br />
+            <font face="Courier New"><strong>Syntax:</strong></font><br />
+            <br />
+            <font face="Courier New">&gt;&gt;--- CONTIGUOUS ---+------+--- contiguous_array_list ----</font><br />
+            <font face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</font><br />
+            <font face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; +- :: -+</font><br />
+            </font></blockquote><font face="Courier New"><font face="Courier New"><font face="Arial"><br />
+            <u>Intrinsic Function:</u></font><br />
+            <br />
+            IS_CONTIGUOUS (ARRAY)<br />
+            Description. Test contiguity of an array<br />
+            Class. Inquiry function.<br />
+            Argument. </font> <font face="Courier New">ARRAY may be of any type. It must be an array. If it is a pointer it must be associated.<br />
+            Result Characteristics. Default logical scalar.<br />
+            Result Value. The result has the value true if </font><font face="Courier New">ARRAY is contiguous, and f</font>alse otherwise.<br />
+            <br />
+            Example. After the pointer assignment <font face="Courier New">AP =&gt; TARGET (1:10:2); IS CONTIGUOUS (AP)</font> has the value false.<strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+            <h3>Constraints</h3>
+            </strong> </strong> </font>
+            <p><font face="Courier New">A severe error will be emitted at compile-time if any of the following constraints are known to be broken:<br />
+            </font></p>
+            <ul> <font face="Courier New">
+                <li> An entity with the CONTIGUOUS attribute must be an array pointer or an assumed-shape array. </li>
+                <li>If the dummy argument is an array coarray that has the CONTIGUOUS attribute or is not of assumed shape, the corresponding actual argument must be simply contiguous.</li>
+                <li>The actual argument of the IS_CONTIGUOUS intrinsic function must be an array.</li>
+                <li>If the actual argument of the C_LOC or LOC intrinsic functions is an array, it must be contiguous.</li>
+                <li>If an actual argument is a nonpointer array that has the ASYNCHRONOUS or VOLATILE<br />
+                attribute but is not simply contiguous, and the corresponding dummy argument has either the<br />
+                VOLATILE or ASYNCHRONOUS attribute, that dummy argument must be an assumed-shape array<br />
+                that does not have the CONTIGUOUS attribute.</li>
+                <li>If an actual argument is an array pointer that has the ASYNCHRONOUS or VOLATILE<br />
+                attribute but does not have the CONTIGUOUS attribute, and the corresponding dummy argument has<br />
+                either the VOLATILE or ASYNCHRONOUS attribute, that dummy argument must be an array pointer<br />
+                or an assumed-shape array that does not have the CONTIGUOUS attribute.</li>
+                <li>The actual argument corresponding to a dummy pointer with the CONTIGUOUS attribute must be simply contiguous.</li>
+                <li><span id="comments37128"><span id="expanded37128"><span id="comments_content37128">If the pointer of a pointer assignment has CONTIGUOUS attribute, the target must be contiguous.<!-- featureflow:comments:37128_3 --><!-- featureflow:newcomments:37128_3 --><br />
+                </span></span></span>&nbsp;<strong>     </strong></li>
+                </font></ul>
+                <font face="Courier New"><strong><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+                <h3>Rules</h3>
+                </strong></strong></strong>The constraints that cannot be tested at compile-time will not be diagnosed, however they must be followed in the runtime case.  <strong> <strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+                <h3>Language Standard Considerations</h3>
+                </strong> </strong> </strong> </font>
+                <p><font face="Courier New">The CONTIGUOUS attribute and IS_CONTIGUOUS intrinsic function are Fortran 2008 features and will be flagged by -qlanglvl=2003std and below.</font></p>
+                <font face="Courier New"><strong><strong><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+                <h3>Messages</h3>
+                </strong></strong></strong></strong>Will be approved by the XLF Messages committee.<strong><strong><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+                <h3>Performance Considerations</h3>
+                </strong> </strong></strong> </strong> </font>
+                <p><font face="Courier New">The CONTIGUOUS attribute will give all components the opportunity to optimize the generated code due to the guarantee that the object is found in contiguous memory. There is no known negative performance impact.<br />
+                </font></p>
+                <font face="Courier New"><strong><strong><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+                <h3>Multi-Platform/Portability Considerations</h3>
+                </strong></strong></strong>None.&nbsp;<strong><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+                <h3>Migration/Co-Existence/Binary-Compatibility Considerations</h3>
+                </strong> </strong></strong> </strong> </font>
+                <p><font face="Courier New">Source must be compiled with a v14.1 compiler or greater to make use of the contiguous feature. Use-associated objects from modules compiled with v13.1 or earlier will not be marked as contiguous unless it can be determined to be simply contiguous.</font></p>
+                <font face="Courier New"><strong><strong><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+                <h3>Debug Considerations</h3>
+                </strong> </strong></strong> </strong> </font>
+                <p><font face="Courier New"><strong>%Note{How are debuggers affected by this? Is existing debug format on all relevant targets sufficient? Do debuggers need new capabilities to understand this?  Will there be known limitations with specific debuggers?  Will the debugger function better/worse at higher optimization levels?}%<strong><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">             </strong></strong></strong></strong></font></p>
+                <h3><font face="Courier New"><strong><strong><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">NLS (Unicode) Considerations</strong></strong></strong></strong></font></h3>
+                <font face="Courier New"><strong><strong><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">             </strong> </strong></strong></strong></font>
+                <p>&nbsp;</p>
+                <p><font face="Courier New"><strong>None.</strong></font></p>
+                <font face="Courier New"><strong><strong><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+                <h3>Samples</h3>
+                </strong> </strong></strong> </strong> </font><blockquote>
+                <pre><font face="Courier New"><font><font face="Courier New">type base (k,j,l)<br />  integer, kind :: k, j<br />  integer, len :: l<br />  integer(k) :: x<br />  integer(j) :: y(l)<br />end type</font></font><br /><font><font face="Courier New">type(base(4,8,0)), allocatable:: B(:)</font></font><br /><font face="Courier New"><font><br />integer, contiguous, pointer :: AP(:)<br />integer, target :: TARG(10)</font><font><br />integer, pointer :: IP(:)<br />logical :: contig</font></font></font></pre>
+                <pre><font face="Courier New"><font face="Courier New"><font><span id="comments37123"><span id="expanded37123"><span id="comments_content37123"><span id="comments37147"><span id="expanded37147"><span id="comments_content37147">AP =&gt; TARG(1:10:2)          ! User error<!-- featureflow:comments:37147_3 --><!-- featureflow:newcomments:37147_3 --><br /><!-- featureflow:line:37147_4 -->IP =&gt; TARG(1:10:2)          ! Valid<!-- featureflow:comments:37147_4 --><!-- featureflow:newcomments:37147_4 --><br /><!-- featureflow:line:37147_5 -->contig = IS_CONTIGUOUS (IP) ! contig has a value of .FALSE.<br /></span></span></span></span></span></span></font></font><font face="Courier New"><font><font><br />allocate(IP(10))<font><br />contig = IS_CONTIGUOUS (IP) ! contig has a value of .TRUE.</font></font></font><font><br /></font></font><font face="Courier New"><br />allocate(B(2))<br />contig = IS_CONTIGUOUS(B%x) ! contig has a value of .FALSE.</font><br /><font face="Courier New">end</font><br /><br /></font></pre>
+                </blockquote><font face="Courier New"> <strong><strong><strong><br />
+                </strong></strong> </strong>
+                <table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+                    <tbody>
+                        <tr>
+                            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>Architecture Review Board</strong> </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <strong><strong><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">  </strong> </strong></strong> </strong> </font>
+                <p><font face="Courier New"><strong>A review with the ARB is not necessary.<br />
+                </strong></font></p>
+                <p><font face="Courier New"><strong>%Note{ Describe whether a review before the Architecture Review Board is required.&nbsp; Should a review be conducted, the results should be pasted here.&nbsp; Otherwise, please place a comment here explaining why no review is required.}%<strong><strong><br />
+                </strong></strong></strong></font></p>
+                <table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+                    <tbody>
+                        <tr>
+                            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>Internal Compiler Team Information</strong> </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <font face="Courier New"><strong><strong><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+                <h3>Product Dependencies</h3>
+                </strong> </strong></strong> </strong> </font>
+                <p><font face="Courier New"><strong><br />
+                <strong><strong><strong> </strong></strong></strong></strong></font></p>
+                <font face="Courier New"><strong><strong><strong><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+                <h3>Patent/Disclosure Implications</h3>
+                </strong> </strong></strong></strong> </strong> </font>
+                <p><font face="Courier New"><strong>None</strong></font></p>
+                <p><font face="Courier New"><strong><strong><strong><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">             </strong></strong></strong></strong></strong></font></p>
+                <h3><font face="Courier New"><strong><strong><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">Scientific Research and Experimental Development</strong></strong></strong></strong></font></h3>
+                <font face="Courier New"><strong><strong><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">             </strong> </strong></strong></strong></font>
+                <p>&nbsp;</p>
+                <p><font face="Courier New"><strong>None to date.<br />
+                </strong></font></p>
+                <p><font face="Courier New"><strong>Technological Advancements: %Note{State the technological  objective of the feature. Describe the advancements in knowledge gained  through the experimentation performed.}%</strong></font></p>
+                <p><font face="Courier New"><strong>Technological Obstacles: %Note{List the limitations of the  current state of technology. Outline the technological uncertainty in  development and the systematic investigation performed. Focus on the  obstacles that must be overcome and not on the difficulty of the  feature.}%</strong></font></p>
+                <p><font face="Courier New"><strong>Work Performed: %Note{Describe the development of prototypes  and final implementations, including dates. Make sure to include failed  prototypes. Describe findings from any experimentation.}%</strong></font></p>
+                <font face="Courier New"><strong><strong><strong><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+                <h3>Build and Packaging Considerations</h3>
+                </strong></strong></strong></strong>None<strong><strong><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">                 </strong>
+                <h3><strong style="font-size: 20px; color: rgb(0, 128, 0);"><font face="Courier New">                 </font></strong><font face="Courier New">
+                <h3><strong style="font-size: 20px; color: rgb(0, 128, 0);"><font><font><strong><strong><strong><strong><strong><font face="Courier New"><font face="Courier New"><strong><strong><strong><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+                <h3>Information Development Impacts</h3>
+                </strong></strong></strong></strong></strong></font></font></strong></strong></strong></strong></strong></font></font></strong></h3>
+                </font></h3>
+                </strong></strong></strong></strong></font></font>
+                <h3><font><font face="Courier New"><strong>Updates to </strong></font></font><font face="Courier New"><font face="Courier New"><strong><font face="Courier New"><font face="Courier New">XLF v14.1 Language Reference</font></font></strong></font></font><strong style="font-size: 20px; color: rgb(0, 128, 0);"><font><font><strong><strong><strong><strong><strong><font face="Courier New"><font face="Courier New"><strong><strong><strong><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">                 </strong></strong></strong></strong></strong></font></font></strong></strong></strong></strong></strong></font></font></strong></h3>
+                <font face="Courier New"><font face="Courier New"><strong><strong><strong><strong>
+                <h3><font face="Courier New">                 </font></h3>
+                </strong> </strong></strong></strong>  </font>
+                <p><font face="Courier New">
+                <table width="759" height="803" cellspacing="1" cellpadding="1" border="1" align="left" summary="">
+                    <tbody>
+                        <tr>
+                            <td><strong>Chapter</strong></td>
+                            <td><strong>Topic</strong></td>
+                            <td><strong>Update summary</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Chapter 5: Array concepts</td>
+                            <td>&nbsp;Array decelerators</td>
+                            <td>Add CONTIGUOUS into the table</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;Array sections</td>
+                            <td>Restructure the topic; Add a sentence introducing that&nbsp; an array section can contain array elements which are contiguous or non-contiguous array<br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;Vector Subscripts</td>
+                            <td>Indicate that a nonzero-sized array section without a vector subscript is contiguous.</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;Contiguity (new)</td>
+                            <td>Describe what makes an object contiguous, not contiguous, and simply contiguous</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;(The whole chapter)</td>
+                            <td>Some sections and subsections are restructured (merged, split, etc) to be more user-friendly</td>
+                        </tr>
+                        <tr>
+                            <td>Chapter 6: Expressions and assignment</td>
+                            <td>&nbsp;Data pointer assignment</td>
+                            <td>&nbsp;Describe the rule of the data pointer object having the CONTIGUOUS attribute</td>
+                        </tr>
+                        <tr>
+                            <td>Chapter 7: Execution control</td>
+                            <td>&nbsp;Associate names</td>
+                            <td>&nbsp;Describe how an associating entity is contiguous</td>
+                        </tr>
+                        <tr>
+                            <td><font face="Courier New"><font face="Courier New">Chapter 8: Program units and procedures</font></font></td>
+                            <td>&nbsp;Interface concepts</td>
+                            <td>&nbsp;Add CONTIGUOUS concerns to the characteristics of a procedure and a function</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td><font color="#000000">&nbsp;Variables as dummy arguments</font></td>
+                            <td><font color="#000000">&nbsp;Add how the contiguity impacts<br />
+                            </font>                             </td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td><font color="#000000">&nbsp;Pointers as dummy arguments</font></td>
+                            <td><font color="#000000">&nbsp;Add how the contiguity impacts<br />
+                            </font>                             </td>
+                        </tr>
+                        <tr>
+                            <td>Chapter 11: Statements and attributes</td>
+                            <td><font color="#000000">&nbsp;Statements and attributes</font></td>
+                            <td><font color="#000000">&nbsp;Add CONTIGUOUS to the statement table</font></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td><font color="#000000">&nbsp;CONTIGUOUS (new)</font></td>
+                            <td><font color="#000000">&nbsp;Describe the new attribute CONTIGUOUS used for declaring array pointer or an assumed-shape array<br />
+                            </font></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;AUTOMATIC</td>
+                            <td>&nbsp;Mark as compatible with CONTIGUOUS</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;DIMENSION</td>
+                            <td>&nbsp;<font face="Courier New"><font face="Courier New">Mark as compatible with CONTIGUOUS</font></font></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;EXTERNAL</td>
+                            <td>&nbsp;<font face="Courier New"><font face="Courier New">Mark as compatible with CONTIGUOUS</font></font></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;INTENT</td>
+                            <td>&nbsp;<font face="Courier New"><font face="Courier New">Mark as compatible with CONTIGUOUS</font></font></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;OPTIONAL</td>
+                            <td>&nbsp;<font face="Courier New"><font face="Courier New">Mark as compatible with CONTIGUOUS</font></font></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;POINTER</td>
+                            <td>&nbsp;<font face="Courier New"><font face="Courier New">Mark as compatible with CONTIGUOUS</font></font></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;PRIVATE</td>
+                            <td>&nbsp;<font face="Courier New"><font face="Courier New">Mark as compatible with CONTIGUOUS</font></font></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;PROTECTED</td>
+                            <td>&nbsp;<font face="Courier New"><font face="Courier New">Mark as compatible with CONTIGUOUS</font></font></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;PUBLIC</td>
+                            <td>&nbsp;<font face="Courier New"><font face="Courier New">Mark as compatible with CONTIGUOUS</font></font></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;SAVE</td>
+                            <td>&nbsp;<font face="Courier New"><font face="Courier New">Mark as compatible with CONTIGUOUS</font></font></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;STATIC</td>
+                            <td>&nbsp;<font face="Courier New"><font face="Courier New">Mark as compatible with CONTIGUOUS</font></font></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;TARGET</td>
+                            <td>&nbsp;<font face="Courier New"><font face="Courier New">Mark as compatible with CONTIGUOUS<br />
+                            </font></font></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;VOLATILE</td>
+                            <td>&nbsp;<font face="Courier New"><font face="Courier New">Mark as compatible with CONTIGUOUS</font></font></td>
+                        </tr>
+                        <tr>
+                            <td>Chapter 14: Intrinsic procedures</td>
+                            <td>&nbsp;IS_CONTIGUOUS (new)</td>
+                            <td>&nbsp;Describe the new intrinsic function IS_CONTIGUOUS</td>
+                        </tr>
+                        <tr>
+                            <td>Chapter 17: Language interoperability features</td>
+                            <td>&nbsp;C_LOC(X)</td>
+                            <td>&nbsp;Indicate if X is an array, it must be contiguous</td>
+                        </tr>
+                        <tr>
+                            <td>Glossary</td>
+                            <td>&nbsp;(New terms)<br />
+                            </td>
+                            <td>&nbsp;contiguous</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;base object</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                <p><font face="Courier New"><br />
+                </font></p>
+                </font>
+                <h2><font face="Courier New">                 </font></h2>
+                <h3><font face="Courier New">
+                <p><strong><br />
+                </strong></p>
+                <p><strong>Updates to Other </strong>XLF V14.1 Documents</p>
+                </font></h3>
+                <h2><font face="Courier New">                 </font></h2>
+                <font face="Courier New">                 </font><font face="Courier New">
+                <p><br />
+                <font face="Courier New">
+                <table width="754" height="203" cellspacing="1" cellpadding="1" border="1" align="" summary="">
+                    <tbody>
+                        <tr>
+                            <td><strong>Document name</strong></td>
+                            <td><strong>Chapter</strong></td>
+                            <td><strong>Topic</strong></td>
+                            <td><strong>Update summary</strong></td>
+                        </tr>
+                        <tr>
+                            <td><font face="Courier New"><font face="Courier New"><strong><font face="Courier New"><font face="Courier New">Getting Started</font></font></strong></font></font></td>
+                            <td><font face="Courier New"><font face="Courier New">XL Fortran language related updates</font></font></td>
+                            <td><font face="Courier New"><font face="Courier New">The CONTIGUOUS attribute and IS_CONTIGUOUS intrinsic function (new)</font></font></td>
+                            <td><font face="Courier New"><font face="Courier New">Briefly introduce the new attribute and function</font></font></td>
+                        </tr>
+                        <tr>
+                            <td><font face="Courier New"><font face="Courier New"><font face="Courier New"><font face="Courier New"><strong>Optimization and Programming Guide</strong></font></font></font></font></td>
+                            <td>Chapter 5. Compiler-friendly programming techniques</td>
+                            <td>Arrays</td>
+                            <td>Describe the benefits of using contiguous objects</td>
+                        </tr>
+                        <tr>
+                            <td><font face="Courier New"><font face="Courier New"><font face="Courier New"><font face="Courier New"><strong>Compiler Reference</strong></font></font></font></font></td>
+                            <td><font face="Courier New"><font face="Courier New">Chapter 7. Detailed descriptions of the XL Fortran compiler<br />
+                            options</font></font></td>
+                            <td><font color="#000000">-qassert</font></td>
+                            <td><font color="#000000">States that <span class="ph synph"><span class="keyword kwd">using -qassert=contig</span></span> is different from specifying </font><font face="Courier New" color="#000000"><font face="Courier New"><span class="ph synph"><span class="keyword kwd">CONTIGUOUS</span></span> attribute for array pointers and assumed-shape arrays. Use the </font></font><font face="Courier New" color="#000000"><font face="Courier New"><font face="Courier New"><font face="Courier New"><span class="ph synph"><span class="keyword kwd">CONTIGUOUS</span></span> attribute to ensure the language semantics are defined in F2008 standards.</font></font></font></font></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </font></p>
+                <p>&nbsp;</p>
+                * The use of the term &quot;effective argument&quot; has been discouraged in our documentation.                 <font face="Courier New"><strong><strong><strong><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+                <h3>Testing Considerations</h3>
+                </strong> </strong></strong></strong> </strong> </font>
+                <p><font face="Courier New">Functional and diagnostic testing needs to be written to ensure that an object's contiguity corresponds to the standard, specifically the following sections: 5.3.7, 6.5.4, 7.2.2.3.7, 7.2.2.3.9, 12.5.2.7.1, 12.5.2.8.2.</font></p>
+                <p><font face="Courier New">Testing will include ensuring the proper behaviour of use-associated objects compiled in 13.1 modules with the IS_CONTIGUOUS intrinsic and constraints regarding simply contiguous objects. It will also ensure <span id="comments38468"><span id="expanded38468"><span id="comments_content38468">that IS_CONTIGUOUS is not allowed in constant expressions when the arguments are assumed-shape arrays or pointer arrays and that IS_CONTIGUOUS is allowed (and works) in specification expressions.</span></span></span></font></p>
+                <p><font face="Courier New"><strong><br />
+                </strong></font></p>
+                <table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+                    <tbody>
+                        <tr>
+                            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>High-Level Implementation Design</strong> </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <font face="Courier New"><strong><strong><strong><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+                <h3>Implementation Design Overview</h3>
+                </strong></strong></strong></strong></strong>The front end will parse the CONTIGUOUS attribute and set the contiguous flag <font face="Courier New">fedic.sld.d_has_contig_attr</font> within that objects dictionary entry and <font face="Courier New">Ss_t.seman_st.attr.is_contiguous</font> on the stack. Array expressions will have their contiguity evaluated as per the definition of simply contiguous and the contiguity flags <font face="Courier New">Ss_t.seman_st.is_simply_contig</font>, <font face="Courier New">fedic.sld.</font><font face="Courier New">d_is_simply_contig</font> or <font face="Courier New">fedic.sld.</font>d_is_not_contig will be set appropriately. If a dictionary entry is created from an object on the stack, the contiguous flag will be propagated. Module read and write will be updated to communicate the CONTIGUOUS attribute, however simply contiguous will not be communicated in modules. The IS_CONTIGUOUS intrinsic function will be folded by the front end for all simply contiguous array objects. In all other cases, FE generates a call to the __is_contiguous BIF. ASTI will generate code to determine contiguity at runtime. In cases where the ARRAY argument of IS_CONTIGUOUS is an array section, FE should create a temporary pointer object, pointer assign it to the section and pass the temporary descriptor to the __is_contiguous BIF. ASTI will setup the RTDF_IS_CONTIGUOUS flag on the descriptor during the pointer assignment and then generates code in place of the __is_contiguous BIF to check the RTD flag.&nbsp;<strong><strong><strong><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+                <h3>Inter-Component Communication/Interfaces</h3>
+                </strong> </strong></strong></strong> </strong> </font>
+                <p><font face="Courier New"><strong><strong><strong><strong> </strong></strong></strong></strong>A flag called SYMA_FL_IS_CONTIGUOUS_SHADOW will be added to the Sym{A} code within W-Code++. This will communicate that the sym was declared with the contiguous attribute.<br />
+                </font></p>
+                <font face="Courier New"><strong><strong><strong><strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+                <h3>Other Implementation Design Information</h3>
+                </strong> </strong></strong></strong> </strong> </font>
+                <p><font face="Courier New"><strong>%Note{Note anything here relevant to the review of the high-level implementation design that would be useful to reviewers that doesn't fit into any other section.  For example, &quot;The C front end will protect this code under the AIX_ONLY macro.&quot;  Another example, &quot;TOBEY will implement this using the ldxrwa PWR9 instruction, see the reference in the Appendix for details.&quot;}%</strong></font></p>
+                <table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+                    <tbody>
+                        <tr>
+                            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>Appendix/References</strong> </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><font face="Courier New"><strong><strong><strong><strong><br />
+                <br />
+                <br />
+                </strong></strong></strong></strong></font></p>
+                <p><font face="Courier New"><strong><strong><strong><strong><em>&nbsp;</em></strong></strong></strong></strong></font></p>
+                </font><!--HTML Wrapper--></body></html>

@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/mix/generic/functional/crossFeature/structConstr/structConstr002lk.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070808
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)structConstr002lk.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = structConstr002lk$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = structConstr002lk$(OBJ)
+#OUTPUT    = structConstr002lk$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = structConstr002lk$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = structConstr002lk.1 $(tcasedir)structConstr002lk.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

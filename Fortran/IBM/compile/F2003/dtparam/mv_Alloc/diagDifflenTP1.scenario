@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      diagDifflenTP1.f
+#FEATURE=
+#CREATOR=   Michelle Zhang
+#DATE=
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=      F_COMPILE
+#OPTS=     $(OPT_FREE_SOURCE_FORM)
+#INPUT=    $(tcasedir)diagDifflenTP1.f
+#OUTPUT=   diagDifflenTP1$(OBJ)
+#VALIDRCS= 1
+#STDERR=   diagDifflenTP1.err
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    diagDifflenTP1.err $($(tcasedir)diagDifflenTP1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+
+

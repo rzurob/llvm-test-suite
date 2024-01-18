@@ -1,0 +1,5 @@
+1525-219 A value of pomma is not allowed for the DECIMAL= specifier in the OPEN statement on unit 77. The value of the DECIMAL= specifier must be either COMMA or POINT. The program will recover by ignoring the DECIMAL= specifier.
+1525-219 A value of coint is not allowed for the DECIMAL= specifier in the READ statement on unit 77. The value of the DECIMAL= specifier must be either COMMA or POINT. The program will recover by ignoring the DECIMAL= specifier.
+1525-219 A value of  is not allowed for the DECIMAL= specifier in the WRITE statement on unit 88. The value of the DECIMAL= specifier must be either COMMA or POINT. The program will recover by ignoring the DECIMAL= specifier.
+1525-219 A value of notavalidvalue is not allowed for the DECIMAL= specifier in the READ statement on unit 77. The value of the DECIMAL= specifier must be either COMMA or POINT. The program will recover by ignoring the DECIMAL= specifier.
+1525-219 A value of commma is not allowed for the DECIMAL= specifier in the WRITE statement on unit 88. The value of the DECIMAL= specifier must be either COMMA or POINT. The program will recover by ignoring the DECIMAL= specifier.

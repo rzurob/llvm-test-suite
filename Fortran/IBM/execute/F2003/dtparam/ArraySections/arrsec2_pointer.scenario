@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/ArraySections/arrsec2_pointer.scenario
+#FEATURE   = 353925
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20081013
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)arrsec2_pointer.f
+#OUTPUT    = arrsec2_pointer$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = arrsec2_pointer$(OBJ)
+#OUTPUT    = arrsec2_pointer$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = arrsec2_pointer$(EXE)
+#STDOUT    = arrsec2_pointer.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)arrsec2_pointer$(product)vf) arrsec2_pointer.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

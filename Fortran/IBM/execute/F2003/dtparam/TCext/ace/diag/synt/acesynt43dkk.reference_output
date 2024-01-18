@@ -1,0 +1,6 @@
+** acesynt43dmod   === End of Compilation 1 ===
+"acesynt43dkk.f", line 68.17: 1516-300 (S) The argument to statement function fun1 must be a scalar.
+"acesynt43dkk.f", line 69.15: 1516-300 (S) The argument to statement function fun2 must be a scalar.
+"acesynt43dkk.f", line 70.15: 1516-300 (S) The argument to statement function dfun must be a scalar.
+** acesynt43dkk   === End of Compilation 2 ===
+1501-511  Compilation failed for file acesynt43dkk.f.

@@ -1,0 +1,27 @@
+This directory contains test cases for the following feature:
+FEATURE: F2008: DO CONCURRENT construct
+
+Overview: 
+Fortran 2008 standard introduced DO CONCURRENT construct that individual loop iterations have no inter-dependencies. 
+
+
+I0
+  Feature Flow: https://featureflow.torolab.ibm.com/featureflow/show/7830
+  CMVC: designs/i0/do_concurrent/do_concurrent.html
+        -> In the aix family, release des.dev, component design.i0
+
+IT1
+  Feature Flow: https://featureflow.torolab.ibm.com/featureflow/show/7856
+  CMVC: designs/it1/it1___f2008__do_concurrent/it1___f2008__do_concurrent.html
+        -> In the aix family, release des.dev, component design.it1
+
+IT2
+  Feature Flow: https://featureflow.torolab.ibm.com/featureflow/show/7993
+  CMVC: designs/it2/it2___f2008__do_concurrent/it2___f2008__do_concurrent.html
+        -> In the aix family, release des.dev, component design.it2
+
+See the ./doc subdirectory for details
+
+The func subdirectory contains functional test cases
+The diag subdirectory contains diagnostic test cases
+ 

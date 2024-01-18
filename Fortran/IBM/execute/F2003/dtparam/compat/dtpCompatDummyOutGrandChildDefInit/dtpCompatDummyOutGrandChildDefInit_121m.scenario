@@ -1,0 +1,58 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/compat/dtpCompatDummyOutGrandChildDefInit/dtpCompatDummyOutGrandChildDefInit_121m.scenario
+#FEATURE   = Broken Compatability Warning - use of default initialisation of DTP objects from within 12.1 is also broken
+! - manual compile, v12.1
+#CREATOR   = DF Manual Update
+#DATE      = 20090613
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT=bgq linuxle
+#ENDENV
+
+#BEGINCONTROL
+
+! Compile "post-DTP" files with the latest version of the latest compiler,
+! link with manually compiled (with 12.1 gold) object files, and run.
+! An error message should be generated.
+
+!!Since the files are manually compiled already, we do not need this step:
+!! Caution: do not just uncomment the next few lines: the name of the output
+!! file contains the product chain, which can't be good - it's just there for
+!! consistency with the next step, and to document the process.
+!#CMD      = V121_XLF2003_COMPILE
+!#INPUT    = $(tcasedir)dtpCompatDummyOutGrandChildDefInitPreDTP.f
+!#OUTPUT   = $(dtpCompatDummyOutGrandChildDefInitPreDTP.121$(Q32_64_MODE)$(product)$(OBJ))
+!#ENDCMD
+
+!!BUT: we do need the .mod file, which we copy here:
+#CMD       = COPY
+#INPUT     = $($(tcasedir)dtpcompatdummyoutgrandchilddefinitpredtpmod.121$(Q32_64_MODE)$(product).mod)
+#OUTPUT    = dtpcompatdummyoutgrandchilddefinitpredtpmod.mod
+#ENDCMD
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)dtpCompatDummyOutGrandChildDefInitPostDTP.f
+#OUTPUT    = dtpCompatDummyOutGrandChildDefInitPostDTP$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = dtpCompatDummyOutGrandChildDefInitPostDTP$(OBJ) $($(tcasedir)dtpCompatDummyOutGrandChildDefInitPreDTP.121$(Q32_64_MODE)$(product)$(OBJ))
+#OUTPUT    = dtpCompatDummyOutGrandChildDefInit$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpCompatDummyOutGrandChildDefInit$(EXE)
+#STDOUT    = dtpCompatDummyOutGrandChildDefInit.out
+#STDERR    = dtpCompatDummyOutGrandChildDefInit.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpCompatDummyOutGrandChildDefInit$(product)vf) dtpCompatDummyOutGrandChildDefInit.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

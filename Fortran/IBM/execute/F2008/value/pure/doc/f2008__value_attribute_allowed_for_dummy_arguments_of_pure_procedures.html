@@ -1,0 +1,584 @@
+<html><head><title>F2008: VALUE attribute allowed for dummy arguments of PURE procedures</title></head><body><table width="100%" cellspacing="0" cellpadding="0" border="1" style="background: none repeat scroll 0% 50% rgb(192, 225, 255); width: 100%;" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="padding: 2.5pt; width: 100%;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: navy; font-family: Helvetica;">Document Control Information:</span></strong><span style="font-size: 10pt; color: navy; font-family: Helvetica;"> </span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            <p>The official version of this document is kept in CMVC in the <span style="font-weight: bold; text-decoration: underline;">%CMVC_Family%</span> family, release <span style="font-weight: bold; text-decoration: underline;">%CMVC_Release%</span>, component <span style="font-weight: bold; text-decoration: underline;">%CMVC_Component%</span>, file <span style="font-weight: bold; color: rgb(255, 102, 102); text-decoration: underline;">%CMVC_PathName%</span>. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.<br />
+            <br />
+            CMVC Extraction Information: %W% %H% %I% sccsid<br />
+            </p>
+            <p>CMVC_Family=aix, CMVC_Release=test.dev, CMVC_Component=test.values</p>
+            <p><br />
+            This document is IBM Confidential.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Helvetica;"><u1:p></u1:p></span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<table width="100%" cellspacing="3" cellpadding="0" border="1" style="background: none repeat scroll 0% 50% rgb(204, 204, 255); width: 100%;" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td valign="top" style="padding: 1pt;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">Reviewers</span></strong><span style="font-size: 10pt; font-family: Helvetica;">: </span><span style="font-size: 10pt; font-family: Helvetica;">Please click the 'Reviewed' check-box beside your name to indicate your participation in the review.</span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin-bottom: 6pt;" class="MsoNormal"><span style="font-size: 10pt; font-family: Helvetica;"></span><u1:p></u1:p></p>
+<p style="margin-bottom: 12pt;" class="MsoNormal"><span style="font-size: 10pt; font-family: Helvetica;">%Reviews%</span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="background: none repeat scroll 0% 50% rgb(224, 255, 191); width: 100%;" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="21%" valign="top" style="padding: 2.5pt; width: 21.22%;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p>Document Title<u2:p></u2:p></span></strong><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+            <td width="78%" valign="top" style="padding: 2.5pt; background: none repeat scroll 0% 50% white; width: 78.78%;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%Document_Name%</span></strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%Note{or IT1 for name of the feature you are testing}%</span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="21%" valign="top" style="padding: 2.5pt; width: 21.22%;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">CMVC Feature Number:</span></strong><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+            <td width="78%" valign="top" style="padding: 2.5pt; background: none repeat scroll 0% 50% white; width: 78.78%;"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%CMVC_Feature% <u2:p></u2:p></span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="padding: 2.5pt;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">Feature Title:</span></strong><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="padding: 2.5pt; background: none repeat scroll 0% 50% white;"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%Note{Feature Title (usually contain feature number, editable by Properties Action)}%</span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="padding: 2.5pt;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">Author(s):</span></strong><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="padding: 2.5pt; background: none repeat scroll 0% 50% white;"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%Authors%</span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="padding: 2.5pt;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">Mandatory Reviewers:<u2:p></u2:p></span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">(Approver)</span></strong><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="padding: 2.5pt; background: none repeat scroll 0% 50% white;"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%Note{These reviewers have technical approval authority and MUST approve this IT1. Generally, only list reviewers from the Component Reviewer list whose component is directly affected by this feature. Use Access Control to add or delete a reviewer.}%</span></strong></p>
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%Approvers%<br />
+            </span></strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="padding: 2.5pt;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">Component Reviewers:(optional participation)</span></strong><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="padding: 2.5pt; background: none repeat scroll 0% 50% white;"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%Note{ These groups must be made aware of the IT1, assign one person representing each. The names are suggested contacts (</span></strong><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">The component leads directly affected by AIX/Linux are in the list by default</span></strong><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">):</span></strong></p>
+            <ul>
+                <li>
+                <div class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;"></span></strong><strong><span style="font-size: 10pt; font-family: Helvetica;"><strong><font face="Arial">C FE and related tools/libraries/driver:</font></strong></span></strong></div>
+                </li>
+            </ul>
+            <blockquote style="margin-right: 0px;" dir="ltr">
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><strong><font face="Arial"></font></strong>AIX - Enrique Varillas (<a href="mailto:enriquev@ca.ibm.com">enriquev@ca.ibm.com</a><a href="mailto:philipl@ca.ibm.com"></a>)</span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">Linux - David Salinas (<a href="mailto:dsalinas@ca.ibm.com">dsalinas@ca.ibm.com</a><a href="mailto:philipl@ca.ibm.com"></a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">zOS - Jing Chen (<a href="mailto:kendrick@ca.ibm.com">chenjing@ca.ibm.com</a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">CELL - Larry Lindsay (<a href="mailto:llindsay@ca.ibm.com">llindsay@ca.ibm.com</a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>UPC - Kevin Lou</strong> <strong>(<a href="mailto:kendrick@ca.ibm.com">gklou@ca.ibm.com</a></strong><strong>)</strong></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>C++ FE and related tools/libraries/driver:</strong></font></span></strong></div>
+                </li>
+            </ul>
+            <blockquote style="margin-right: 0px;" dir="ltr">
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"></span></strong><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">AIX/</font></span></strong><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">Linux - Sasha Kasapinovic (<a href="mailto:skasapin@ca.ibm.com">skasapin@ca.ibm.com</a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">zOS - Michael Wong (<a href="mailto:michaelw@ca.ibm.com">michaelw@ca.ibm.com</a>) </font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">BG/</font></span>CELL - Yan Liu (<a href="mailto:kevshin@ca.ibm.com">yanliu@ca.ibm.com</a>)</font></span></strong></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>Fortran FE, ASTI, PLIX, and related tools/libraries/driver:</strong></font></span></strong></div>
+                </li>
+            </ul>
+            <blockquote style="margin-right: 0px;" dir="ltr">
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">AIX, PLIX - Rafik Zurob (<a href="mailto:rzurob@ca.ibm.com">rzurob@ca.ibm.com</a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">Linux - Xing Xue (<a href="mailto:xingxue@ca.ibm.com">xingxue@ca.ibm.com</a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">BG/L - Daniel Chen (<a href="mailto:cdchen@ca.ibm.com">cdchen@ca.ibm.com</a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">CELL - Kelvin Li (<a href="mailto:kli@ca.ibm.com">kli@ca.ibm.com</a>) </font></span></strong></p>
+            </blockquote>
+            <ul>
+                <li>
+                <div align="left"><span><font size="1"><font face="Arial">PL/X Development: </font><font face="Arial">Kirk Crane (<a href="mailto:krcrane@ca.ibm.com">krcrane@ca.ibm.com</a>)</font></font></span></div>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                <div align="left"><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>TPO and associated tools/libraries (libxlopt, SMPRT, MASS):</strong></font></span></div>
+                </li>
+            </ul>
+            <blockquote style="margin-right: 0px;" dir="ltr">
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">AIX -&nbsp;<strong>Yan Zhang&nbsp;(<a href="mailto:edwinc@ca.ibm.com)">zhangyan@ca.ibm.com)</a></strong></font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"></span></strong><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">Linux - <strong>Tommy Wong (<a href="mailto:tomwong@ca.ibm.com">tomwong@ca.ibm.com</a>)</strong></font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">zOS - <strong>Chris Miclea (<a href="mailto:cmiclea@ca.ibm.com">cmiclea@ca.ibm.com</a>)</strong></font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>BG - Amy Wang (<a href="mailto:aktwang@ca.ibm.com">aktwang@ca.ibm.com</a>)</strong></font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"></span></strong><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>CELL -&nbsp;Yue Zhao&nbsp;(<a href="mailto:aktwang@ca.ibm.com">aktwang@ca.ibm.com</a>)</strong></font></span></strong></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>TOBEY and associated tools/libraries: (dis, libxl, bolt)</strong></font></span></strong></div>
+                </li>
+            </ul>
+            <blockquote style="margin-right: 0px;" dir="ltr">
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"></span></strong><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">AIX - Christopher Lapkowski</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">Linux - <strong>Irina Rada (<a href="mailto:irinar@ca.ibm.com">irinar@ca.ibm.com</a>)</strong></font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">zOS - Chwan-Hang Lee (<a href="mailto:chwan@ca.ibm.com">chwan@ca.ibm.com</a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>BG - Damien Bonaventure (damien@ca.ibm.com), Leon Ding (Xiaoliang Ding/Piscataway/IBM@IBMUS, <a href="mailto:dingxi@us.ibm.com">dingxi@us.ibm.com</a>)</strong></font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>CELL - Dickson Chau (<a href="mailto:dickchau@ca.ibm.com">dickchau@ca.ibm.com</a>)</strong></font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">dis (AIX/Linux) - Ian McIntosh (<a href="mailto:ianm@ca.ibm.com">ianm@ca.ibm.com</a>)</font></span></strong></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>WCode: </strong></font></span></strong><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">Roland Froese (<a href="mailto:froese@ca.ibm.com">froese@ca.ibm.com</a>) </font></span></strong></div>
+                </li>
+            </ul>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>Information Development:</strong></font></span></strong></div>
+                </li>
+            </ul>
+            <blockquote style="margin-right: 0px;" dir="ltr">
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">C/C++ - Kathleen Dowling (<a href="mailto:dowling@ca.ibm.com">dowling@ca.ibm.com</a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">Fortran - Joe Sobura (<a href="mailto:sobura@ca.ibm.com">sobura@ca.ibm.com</a>) </font></span></strong></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>Customer Service and Support:</strong></font></span></strong></div>
+                </li>
+            </ul>
+            <blockquote style="margin-right: 0px;" dir="ltr">
+            <p align="left" class="MsoNormal"><span><font face="Arial"><strong>AIX/Linux - </strong></font><font face="Arial"><strong>Cell -</strong> </font></span><span><font face="Arial" color="#ff0000"><font color="#000000" size="1">Youssef Himo <strong>(</strong></font><a href="mailto:himo@ca.ibm.com"><font size="1">himo@ca.ibm.com</font></a><strong><font color="#000000" size="1">)</font></strong></font></span></p>
+            <p align="left" class="MsoNormal">&nbsp;</p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><span><font face="Arial"><strong><font size="2">Compiler Enablement:Dwayne Moore (</font><a href="mailto:dwayne@ca.ibm.com"><font size="2">dwayne@ca.ibm.com</font></a><font size="2">) </font></strong></font></span></div>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                <div align="left"><span><font face="Arial"><font size="2"><strong>Fortran Test:</strong><strong>Kobi Vinayagamoorthy (<a href="mailto:kobiv@ca.ibm.com">kobiv@ca.ibm.com</a>) </strong></font></font></span></div>
+                </li>
+                <li>
+                <div align="left"><font size="2"><span><font face="Arial"><strong>C/C++ Test:</strong></font><font face="Arial" color="#ff0000"><strong> </strong></font></span><span></span><span><font face="Arial"><strong>Lu Yang(system p) (<a href="mailto:gatea@ca.ibm.com">luyang@ca.ibm.com</a>) </strong></font></span></font></div>
+                </li>
+                <li><strong><span><font size="2"><span>zOS C/C++ Test: </span><font color="#000000">Leon L Kiriliuk (z/OS) (</font></font><a href="mailto:leonk@ca.ibm.com)"><font face="Times New Roman"></font></a><font face="Times New Roman"><a href="mailto:leonk@ca.ibm.com)"><font size="2">leonk@ca.ibm.com)</font></a></font></span></strong><span><font face="Arial"><strong></strong></font></span> </li>
+                <li><font size="2"><span><font face="Arial"><strong>PL/X Test: </strong></font></span><span><font face="Arial"><strong>Anne Wylie (<a href="mailto:wylie@ca.ibm.com">wylie@ca.ibm.com</a>) </strong></font></span></font></li>
+                <li><span><font face="Arial" size="2"><strong>Build and Packaging Team: </strong></font></span></li>
+            </ul>
+            <blockquote style="margin-right: 0px;" dir="ltr">
+            <p align="left" class="MsoNormal"><span><font face="Arial"><strong><font size="2">AIX - Ray Kivisto (<a href="mailto:rkivisto@ca.ibm.com">rkivisto@ca.ibm.com</a></font><font size="2">) </font></strong></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><strong><font size="2">Linux - Viktor Ganich (</font><a href="mailto:vganich@ca.ibm.com"><font size="2">vganich@ca.ibm.com</font></a><font size="2">)</font></strong></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><strong><font size="2">BGL - Steven Chen (</font><a href="mailto:stevchen@ca.ibm.com"><font size="2">stevchen@ca.ibm.com</font></a><font size="2">)</font></strong></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><strong><font size="2">Cell - Kevin Yuen (</font><a href="mailto:kchyuen@ca.ibm.com"><font size="2">kchyuen@ca.ibm.com</font></a><font size="2">)</font></strong></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><strong><font size="2">z/OS - Steve Chen (</font><a href="mailto:schen@ca.ibm.com"><font size="2">schen@ca.ibm.com</font></a><font size="2">)</font></strong></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><strong><font size="2">Dale Soldiuk (</font><a href="mailto:soldiuk@ca.ibm.com"><font size="2">soldiuk@ca.ibm.com</font></a><font size="2">) (Please include Dale as optional on all reviews)</font></strong></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><span><font face="Arial"><font size="2"><strong>Performance Measurement and Analysis Team: </strong><strong>John Tam (<a href="mailto:johntam@ca.ibm.com">johntam@ca.ibm.com</a>)</strong></font></font></span></div>
+                </li>
+            </ul>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><font size="2"><span><font face="Arial"><strong>Planning: </strong></font></span><span><font face="Arial"><strong>Mary Chan (<a href="mailto:marychan@ca.ibm.com">marychan@ca.ibm.com</a>) </strong></font></span></font></div>
+                </li>
+            </ul>
+            <blockquote style="margin-right: 0px;" dir="ltr">
+            <p align="left" class="MsoNormal"><span></span><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">Use Access Control comments to add/delete people from this list.}%<br />
+            %Component_Reviewers%</span></strong></p>
+            </blockquote></td>
+        </tr>
+        <tr>
+            <td valign="top" style="padding: 2.5pt;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">Team Reviewers: (optional participation)</span></strong><u1:p></u1:p><span style="font-family: Helvetica;"></span></p>
+            </td>
+            <td valign="top" style="padding: 2.5pt; background: none repeat scroll 0% 50% white;"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%Note{List any additional reviewers assigned to the review. These reviewers do not have approval authority. </span></strong><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">Use Access Control to add or delete a reviewer.</span></strong><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">}%<br />
+            %Team_Reviewers%<br />
+            </span></strong></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin-bottom: 12pt;" class="MsoNormal"><span style="font-size: 10pt; font-family: Helvetica;"><u2:p></u2:p></span><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="background: none repeat scroll 0% 50% rgb(255, 102, 102); width: 100%;" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="padding: 2.5pt; width: 100%;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><u2:p></u2:p>IT1 Status: <!-- Start -->For Approval </span><!-- End --></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="MsoNormal"><u2:p><strong><span style="font-size: 10pt; font-family: Helvetica;">Approvers Only:</span></strong><span style="font-size: 10pt; font-family: Helvetica;"> Click on the 'Approve' checkbox beside your name in the table below if you agree with the technical and user interface content of this document; not checking your 'approve' checkbox signifies you do not approve.<o:p></o:p></span></u2:p></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Helvetica;">%Approvals%<o:p></o:p></span></p>
+<p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">Approval Comments</span></strong></p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td style="vertical-align: top; font-family: Arial;"><strong>Access Change History</strong> %Note{Authors: Access Change History will list any changes to the access control done to the document draft. These changes would not be visible in a review. In a review, this section would only list the access changes done to the review itself.<br />
+            Please note that changes to the access control of a review are not automatically reflected in the access control of the draft document.}% </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%CollapsedSection{<strong>Access Change History</strong>}{%Access_Change_History%}%<br />
+<br />
+<br />
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Helvetica;"></span></p>
+<p class="MsoNormal"><span style="font-family: Helvetica;"></span></p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="background: none repeat scroll 0% 50% rgb(191, 191, 255); width: 100%;" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="padding: 2.5pt; width: 100%;">
+            <p align="center" style="text-align: center;" class="MsoNormal"><strong><span style="font-size: 14pt; font-family: Helvetica;">Change History</span></strong></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"></span><span style="font-family: Helvetica;"></span></p>
+2011-01-20, rev 2<br />
+<br />
+1) fix typo<br />
+2) Add under Functional section: <br />
+- array actual argument passed to elemental function with scalar dummy arg having value attribute; include max rank (20) array actual argument<br />
+- pure procedures are also type-bound procedure components<br />
+3) updated purevalue07.scenario (change array from rank 1 to rank 20)<br />
+4) updated purevalue08.scenario (change array from rank 1 to rank 20)<br />
+5) added purevalue14.scenario and purevalue15.scenario
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Helvetica;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="background: none repeat scroll 0% 50% rgb(191, 191, 255); width: 100%;" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="padding: 2.5pt; width: 100%;">
+            <p align="center" style="text-align: center;" class="MsoNormal"><strong><span style="font-size: 14pt; font-family: Helvetica;"><u1:p></u1:p><u2:p></u2:p>Overview</span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><!-- Start Overview --><u2:p></u2:p></span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">Fortran 2008 standard specifies the following constraints for PURE procedures that apply to the VALUE attribute:<br />
+<br />
+&quot;C1276 The specification-part of a pure function subprogram shall specify that all its nonpointer dummy data objects have the INTENT (IN) or the VALUE attribute.<br />
+<br />
+C1277 The specification-part of a pure subroutine subprogram shall specify the intents of all its nonpointer dummy data objects that do not have the VALUE attribute.&quot;<br />
+<br />
+There is also this NOTE following the list of all constraints for PURE procedures:<br />
+<br />
+&quot;NOTE 12.49<br />
+The above constraints are designed to guarantee that a pure procedure is free from side effects (modifications of data visible outside the procedure),...&quot;</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"></span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><u2:p></u2:p></span><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="background: none repeat scroll 0% 50% rgb(191, 191, 255); width: 100%;" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="padding: 2.5pt; width: 100%;">
+            <p align="center" style="text-align: center;" class="MsoNormal"><strong><span style="font-size: 14pt; font-family: Helvetica;"><!-- End Overview --><u2:p></u2:p>Test Strategy</span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><u2:p></u2:p></span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">The feature includes functional and diagnostic tests:<br />
+<br />
+<u>Functional:</u><br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">- test the following types of dummy arguments with value attributes:<br />
+&nbsp;&nbsp;&nbsp; * all intrinsic data types (see *1 below)<br />
+&nbsp;&nbsp;&nbsp; * derived types including extended, nested and parameterized<br />
+&nbsp;&nbsp;&nbsp; * C/Fortran interoperable types (see *2 below)<br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">- dummy arguments of a pure subroutine include one or more of the attributes: value, intent(in), intent(out), intent(inout)<br />
+- dummy arguments of a pure function include one or more of the attributes: value, intent(in)<br />
+- derived type dummy arguments include components that are explicit, as well as allocatable, arrays<br />
+- array actual argument passed to elemental function with scalar dummy arg having value attribute; include max rank (20) array actual argument<br />
+- pure procedures are also type-bound procedure components<br />
+- pure procedures include: pure functions, pure subroutines, elemental functions, elemental subroutines<br />
+- all pure procedures verify the values in all dummy arguments<br />
+- all pure procedures return/set a result, caller verifies the result<br />
+- all pure procedures modify all dummy arguments that are declared with value attribute; on return, caller verifies corresponding actual arguments are unchanged<br />
+- pure procedures defined in modules, internal and external<br />
+<br />
+<u>Diagnostic:</u><br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">Verify the correct compiler error is emitted for these cases:<br />
+- use value attribute in dummy arguments of a defined operator<br />
+- declare dummy data objects with neither intent(in) nor value<br />
+- declare dummy procedure with value attribute, including nested functions and subroutines<br />
+- declare dummy data objects with value attribute and one of: POINTER, ALLOCATABLE, VOLATILE, INTENT(INOUT), or INTENT(OUT) attributes<br />
+- specify value attribute more than once for a dummy data object<br />
+- attempt to modify intent(in) dummy argument that also has value attribute<br />
+- declare dummy data objects as arrays with value attribute<br />
+<br />
+<u>*1: intrinsic data types tested:</u><br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">- INTEGER (kind=default,1,2,4,8)<br />
+- REAL (kind=default,1,2,4,8)<br />
+- COMPLEX (kind=default,8,16,32)<br />
+- BYTE<br />
+- LOGICAL (kind=default,1,2,4,8)<br />
+- CHARACTER (len=default,3)<br />
+- VECTOR: unsigned(1,2,4,8), integer(1,2,4,8), real(4,8), pixel; for BG/Q: real(8)<br />
+<br />
+<u>*2: C/Fortran interoperable types tested:</u><br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">- type INTEGER with kind type parameters:<br />
+C_SIGNED_CHAR <br />
+C_SHORT <br />
+C_INT <br />
+C_LONG <br />
+C_LONG_LONG <br />
+C_SIZE_T <br />
+C_INTPTR_T<br />
+C_INTMAX_T<br />
+C_INT8_T <br />
+C_INT16_T <br />
+C_INT32_T <br />
+C_INT64_T <br />
+C_INT_LEAST8_T <br />
+C_INT_LEAST16_T <br />
+C_INT_LEAST32_T <br />
+C_INT_LEAST64_T <br />
+C_INT_FAST8_T <br />
+C_INT_FAST16_T <br />
+C_INT_FAST32_T <br />
+C_INT_FAST64_T <br />
+<br />
+- type REAL with kind type parameters:<br />
+C_FLOAT <br />
+C_DOUBLE <br />
+C_LONG_DOUBLE <br />
+<br />
+- type COMPLEX with kind type parameters:<br />
+C_FLOAT_COMPLEX <br />
+C_DOUBLE_COMPLEX <br />
+C_LONG_DOUBLE_COMPLEX <br />
+<br />
+- type LOGICAL with the kind type parameter:<br />
+C_BOOL<br />
+<br />
+- type CHARACTER with the kind type parameter:<br />
+C_CHAR <br />
+<br />
+- type(C_PTR)<br />
+- type(C_FUNPTR)<br />
+<br />
+- type is a derived type that is interoperable with a C struct type<br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><u2:p></u2:p></span><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="background: none repeat scroll 0% 50% rgb(191, 191, 255); width: 100%;" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="padding: 2.5pt; width: 100%;">
+            <p align="center" style="text-align: center;" class="MsoNormal"><strong><span style="font-size: 14pt; font-family: Helvetica;"><!-- End Multi-Platform Considerations --><u2:p></u2:p>Test Procedures/Scenarios</span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><!-- Start Internal Interfaces --><u2:p></u2:p></span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><u>Functional unit tests:</u><br />
+<br />
+The following is common to the testcases below:<br />
+- pure procedures include: pure functions, pure subroutines, elemental functions, elemental subroutines<br />
+- pure procedures verify the values in all dummy arguments<br />
+- pure procedures return/set a result, caller verifies the result<br />
+- pure procedures modify all dummy arguments that are declared with value attribute; on return, caller verifies corresponding actual arguments are unchanged<br />
+<br />
+purevalue01.scenario (from Rafik)<br />
+- pure procedures with integer dummy arguments having value attributes, and others with intent(out)<br />
+- this testcase also include a diagnostic step, in which the source file is compiled with -qlanglvl=2003std; error expected:<br />
+&nbsp; 1513-262 (L) Dummy arguments of pure procedures are not permitted to have the VALUE attribute by the Fortran 2003 standard.<br />
+<br />
+purevalue02.scenario (from Rafik)<br />
+- dummy arguments are parameterized derived types that include type-bound procedure components<br />
+- test that we can pass a by-descriptor object by value to a pure subroutine<br />
+<br />
+purevalue03.scenario<br />
+- several pure procedures with mixed # of dummy arguments with value attribute preceded and succeeded by intent(in|out|inout)<br />
+<br />
+purevalue04.scenario<br />
+- pass all intrinsic data types as dummy args with value attributes to pure procedures<br />
+- pass higher than average # (32) of dummy arguments with value attribute to pure procedures<br />
+<br />
+purevalue05.scenario<br />
+- same as purevalue04.f, except dummy arguments that are declared with value attribute are also declared as intent(in)<br />
+- same behavior is expected<br />
+<br />
+purevalue06.scenario<br />
+- dummy data objects with value attribute before and after a procedure dummy argument<br />
+- the dummy procedure is also a pure function that takes a dummy argument with value attribute, also modifies its value dummy arguments<br />
+<br />
+purevalue07.scenario<br />
+- dummy data objects with value attribute before and after extended derived type dummy argument<br />
+- the derived type has an explicit as well as an allocatable rank-20 array that are modified in the pure procedures<br />
+<br />
+purevalue08.scenario<br />
+- rank-20 array actual argument passed to elemental function with scalar dummy arg having value attribute<br />
+- function modifies dummy arg and returns an array<br />
+- caller verifies actual argument array is not modified, and the array returned<br />
+- repeat test by passing pointer to the array to the same elemental function<br />
+<br />
+purevalue09.scenario<br />
+- C main calls Fortran pure procedures, passing all interoperable intrinsic types, declared with value attribute<br />
+<br />
+purevalue10.scenario<br />
+- C main calls Fortran pure function, passing a nested struct as argument, dummy argument derived type is defined with value attribute<br />
+<br />
+purevalue11.scenario<br />
+- C main calls Fortran pure procedures, passing a int*<br />
+- dummy arg is type(c_ptr) with value attribute<br />
+- procedures attempts to modify target in C's pointer<br />
+- C main verifies its value remains unchanged (see interp defect 384751 for this testcase)<br />
+<br />
+purevalue12.scenario<br />
+- C main calls Fortran pure procedures, passing pointer to a C function<br />
+- dummy arg is type(c_funptr) with value attribute<br />
+<br />
+purevalue13.scenario<br />
+- pass vector data types as dummy arguments with value attributes to pure procedures<br />
+<br />
+purevalue14.scenario<br />
+&nbsp;- this is a copy of purevalue03.f, modified to define the pure procedures externally in a separate file, and declare them through explicit interface, module interface, and use association<br />
+<br />
+purevalue15.scenario<br />
+- this is a copy of Rafik's purevalue02, extended to include pure functions as type-bound procedure components, with dummy arg having value attribute</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><u><br />
+</u></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><u>Functional - reuse of existing testcases</u><br />
+<br />
+I copied the following testcases from /tstdev/hpf_pure/ and replaced all non-array intent(in) dummy arguments with the value attribute. Here, 'pure procedures' refer to pure functions and pure subroutines (not elemental). The dummy arguments that have value attribute include only scalar intrinsic types.<br />
+<br />
+fxpure06a.scenario<br />
+- pure procedures with derived types dummy arguments and use internal i/o, and return derived types<br />
+- derived types include char(len) components, sequenced<br />
+<br />
+fxpure07a.scenario<br />
+- pure procedures with rank 2 derived types dummy arguments<br />
+- actual arguments are allocatable, also passed as array sections<br />
+- derived types include integer arrays components, sequenced<br />
+<br />
+fxpure12a.scenario<br />
+- pure procedures with recursive prefix, and include automatic variables<br />
+<br />
+fxpurs10.scenario<br />
+- pure function that calls another pure function<br />
+<br />
+fxpurs20.scenario<br />
+- pure function that calls a pure subroutine<br />
+<br />
+fxpurs30.scenario<br />
+- pure subroutine that calls a pure function<br />
+<br />
+fxpurs40.scenario<br />
+- pure subroutine that calls another pure subroutine<br />
+<br />
+I also copied the following from /tstdev/elemental/*/ and replaced all non-array intent(in) dummy arguments with the value attribute. The dummy arguments that have value attribute include scalar and array intrinsic types and derived types<br />
+<br />
+fxepmisc05.scenario<br />
+- elemental function with value attribute dummy arguments, one of which is optional<br />
+<br />
+fxepmisc07.scenario<br />
+- elemental functions accessed via a generic interface block.<br />
+<br />
+fxepmisc10.scenario<br />
+- calls to elemental functions from within parallel sections. Here the components of a derived type are evaluated in parallel<br />
+<br />
+fxepmp01.scenario<br />
+- use complex array pointers, passed as actual arguments from module procedures, to external user-defined elemental procedures<br />
+<br />
+elem07e.scenario<br />
+- external elemental function with ENTRY and derived type arguments with value attributes<br />
+<br />
+elem15e.scenario<br />
+- external elemental function with ENTRY and character(len) argument with value attribute<br />
+- actual arguments are assumed-shape arrays<br />
+<br />
+<br />
+<u>Diagnostic tests</u><br />
+<br />
+The following is common to the testcases below:<br />
+- pure procedures include: pure functions, pure subroutines, elemental functions, elemental subroutines<br />
+<br />
+purevalue01d.scenario<br />
+- use value attribute in dummy arguments of a defined operator; error expected:<br />
+&nbsp; &quot;1514-711 (S) Dummy argument a of procedure or binding foo must be specified with the INTENT(IN) attribute. foo will not be included in the OPERATOR(.def_op.) generic interface.&quot;<br />
+<br />
+purevalue02d.scenario<br />
+- declare dummy data objects with neither intent(in) nor the value attribute; error expected:<br />
+* for pure/elemental functions:<br />
+&nbsp;&nbsp; &quot;1513-164 (S) A dummy argument of a pure function that does not have the POINTER attribute and is not a dummy procedure must have the INTENT(IN) or VALUE attribute&quot;<br />
+* for pure/elemental subroutines:<br />
+&nbsp;&nbsp; &quot;1513-165 (S) A dummy argument of a pure subroutine must be given the INTENT or VALUE attribute, unless it is a dummy procedure, it is an asterisk, or it has the POINTER attribute.&quot;<br />
+<br />
+purevalue03d.scenario<br />
+- declare dummy procedure with value attribute; error expected:<br />
+&nbsp; &quot;1516-178 (S) Dummy procedure &lt;x&gt; must not be declared with the VALUE attribute.&quot;<br />
+- test above with also nested functions and subroutines<br />
+<br />
+purevalue04d.scenario<br />
+- declare dummy data objects with value attribute and one of: POINTER, ALLOCATABLE, VOLATILE, INTENT(INOUT), or INTENT(OUT) attributes; error expected:<br />
+&nbsp; &quot;1516-174 (S) Objects with the VALUE attribute must not be declared with the POINTER, ALLOCATABLE, VOLATILE, INTENT(INOUT), or INTENT(OUT) attributes.&quot;<br />
+- specify value attribute more than once for an object; error expected:<br />
+&nbsp; &quot;1514-180 (W) An entity must not be given explicitly any attribute more than once in a scoping unit&quot;<br />
+- attempt to modify intent(in) dummy argument that also has value attribute; error expected:<br />
+&nbsp; &quot;1516-055 (S) The INTENT(IN) attribute specifies that a dummy argument, or a subobject of a dummy argument, must not be redefined or become undefined during the execution of the procedure.&quot;<br />
+<br />
+purevalue05d.scenario<br />
+- declare dummy data objects as arrays with value attribute; error expected:<br />
+&nbsp; &quot;1516-177 (S) Arrays must not be declared with the VALUE attribute.&quot;<br />
+<br />
+purevalue06d.scenario<br />
+- same as purevalue02d.scenario, except this uses vector type<br />
+<br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"></span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><u2:p></u2:p></span><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="background: none repeat scroll 0% 50% rgb(191, 191, 255); width: 100%;" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="padding: 2.5pt; width: 100%;">
+            <p align="center" style="text-align: center;" class="MsoNormal"><strong><span style="font-size: 14pt; font-family: Helvetica;"><!-- End Internal Interfaces --><u2:p></u2:p>IT2 Information</span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><!-- Start Inter-Component Communication/Interfaces --><u2:p></u2:p></span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">Testcases are stored in CMVC:<br />
+- paths:<br />
+F2008/value/pure/unit_tests<br />
+F2008/value/pure/elemental<br />
+F2008/value/pure/hpf_pure<br />
+<br />
+- release: tstdev<br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"></span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><u2:p></u2:p></span><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="background: none repeat scroll 0% 50% rgb(191, 191, 255); width: 100%;" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="padding: 2.5pt; width: 100%;">
+            <p align="center" style="text-align: center;" class="MsoNormal"><strong><span style="font-size: 14pt; font-family: Helvetica;"><!-- End Inter-Component Communication/Interfaces --><u2:p></u2:p>Appendices/References</span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><u2:p></u2:p></span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">There is no I0 for this feature.</span><span style="font-family: Helvetica;"><o:p></o:p></span></p><!--HTML Wrapper--></body></html>

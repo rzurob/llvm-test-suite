@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BImplTypeAlloc.scenario
+#FEATURE   = F2008 BLOCK - implicit typing (var appears in ALLOCATABLE statement)
+#CREATOR   = DF Manual Update
+#DATE      = 20101214
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)BImplTypeAlloc.f
+#OUTPUT    = BImplTypeAlloc$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = BImplTypeAlloc$(OBJ)
+#OUTPUT    = BImplTypeAlloc$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = BImplTypeAlloc$(EXE)
+#STDOUT    = BImplTypeAlloc.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-8
+#INPUT     = $($(tcasedir)BImplTypeAlloc$(product)vf) BImplTypeAlloc.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

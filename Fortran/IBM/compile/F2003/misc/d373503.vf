@@ -1,0 +1,5 @@
+"d373503.f", line 34.29: 1514-531 (S) Entity plus, specified in procedure binding plus, must be a module procedure or an external procedure with an explicit interface.
+"d373503.f", 1513-083 (E) Internal or module function v3 was not set within the function.
+"d373503.f", 1513-083 (E) Internal or module function v3 was not set within the function.
+** generic_procedure_module   === End of Compilation 1 ===
+1501-511  Compilation failed for file d373503.f.

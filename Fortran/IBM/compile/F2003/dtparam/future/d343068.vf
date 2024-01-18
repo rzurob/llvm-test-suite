@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"d343068.f", line 67.40: 1514-560 (S) The component keyword base does not match a component of the derived type child.
+"d343068.f", line 68.40: 1514-560 (S) The component keyword base does not match a component of the derived type child.
+"d343068.f", line 69.80: 1514-560 (S) The component keyword base does not match a component of the derived type child.
+** d343068   === End of Compilation 2 ===
+1501-511  Compilation failed for file d343068.f.

@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dtParamOrder2
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       02-23-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dtParamOrder2.f
+#OUTPUT= dtParamOrder2$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  dtParamOrder2$(OBJ)
+#OUTPUT= dtParamOrder2$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dtParamOrder2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

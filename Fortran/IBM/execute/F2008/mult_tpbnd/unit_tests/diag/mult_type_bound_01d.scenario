@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2008/mult_tpbnd/unit_tests/diag/mult_type_bound_01d.scenario
+#FEATURE = 916819 F2008:Multiple type-bound procedures in a single procedure stmt
+#CREATOR = Paul Liu
+#DATE    = 20110525
+#TEST_TYPE=FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+! within module
+! interface shall not have " => binding "
+! procedure(iface), deferred, pass :: foo => real_foo,bar => real_bar !1st and 2nd both incorrect
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mult_type_bound_01d.f
+#OUTPUT    = mult_type_bound_01d$(OBJ)
+#STDERR    = mult_type_bound_01d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $(tcasedir)mult_type_bound_01d.vf mult_type_bound_01d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = initexprMaxvallanglvl.f
+#FEATURE   =
+#CREATOR   = Kelvin Li
+#DATE      = March 31, 2006
+#TEST_TYPE = Unit Test
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ = 60
+#ENDENV
+
+! $(OPT_ENABLE_MSG_NUM<1518-317>) added by William Chan to make result of smp run conform to noopt run
+#BEGINCONTROL
+#CMD      = F_COMPILE
+#OPTS     = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_LANG_LEVEL<2003std>) $(OPT_ENABLE_MSG_NUM<1518-317>)
+#INPUT    = $(tcasedir)initexprMaxvallanglvl.f
+#OUTPUT   = initexprMaxvallanglvl$(OBJ)
+#STDERR   = initexprMaxvallanglvl.err
+#VALIDRCS = 0
+#ENDCMD
+
+#CMD      = XLDIFF
+#INPUT    = initexprMaxvallanglvl.err $(tcasedir)initexprMaxvallanglvl.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

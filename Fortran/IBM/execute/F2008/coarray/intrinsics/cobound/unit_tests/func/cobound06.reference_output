@@ -1,0 +1,13 @@
+ c1 ucobounds:
+ 2 -2 11 2
+ 2 -2 11 2
+ 2 -2 11 2
+ 2 -2 11 2
+ 2 -2 11 2
+ coarray argument ucobounds:
+ 30
+ 34
+ c2 ucobounds:
+ 3 7 2
+ c3 ucobounds:
+ 60 1

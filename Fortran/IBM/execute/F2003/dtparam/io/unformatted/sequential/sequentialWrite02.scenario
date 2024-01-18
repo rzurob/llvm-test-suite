@@ -1,0 +1,51 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/io/unformatted/sequential/sequentialWrite02.scenario
+#FEATURE	= Unformatted Intrinsic I/O (with Derived Type Parameters)
+#CREATOR	= Glen Mateer
+#DATE		= 20081002
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)sequentialWrite02_mod.f
+#OUTPUT		= sequentialWrite02_mod$(OBJ)
+#ENDCMD
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)sequentialWrite02.f
+#OUTPUT		= sequentialWrite02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= sequentialWrite02$(OBJ) sequentialWrite02_mod$(OBJ)
+#OUTPUT		= sequentialWrite02$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= sequentialWrite02$(EXE)
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)sequentialWrite02_verify.f
+#OUTPUT     = sequentialWrite02_verify$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= sequentialWrite02_verify$(OBJ) sequentialWrite02_mod$(OBJ)
+#OUTPUT		= sequentialWrite02_verify$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= sequentialWrite02_verify$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

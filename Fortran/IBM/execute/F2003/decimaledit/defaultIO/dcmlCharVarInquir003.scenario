@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/deimaledit/defaultIO/dcmlCharVarInquir003.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dcmlCharVarInquir003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dcmlCharVarInquir003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dcmlCharVarInquir003$(OBJ)
+#OUTPUT    = dcmlCharVarInquir003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dcmlCharVarInquir003$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,9 @@
+"poppar.f", line 11.7: 1518-260 (L) The BYTE keyword is not permitted by the Fortran 2008 standard.
+"poppar.f", line 28.37: 1518-256 (L) The intrinsic procedure poppar (with these arguments) is not permitted by the Fortran 2008 standard.
+"poppar.f", line 29.37: 1518-256 (L) The intrinsic procedure poppar (with these arguments) is not permitted by the Fortran 2008 standard.
+"poppar.f", line 30.37: 1518-256 (L) The intrinsic procedure poppar (with these arguments) is not permitted by the Fortran 2008 standard.
+"poppar.f", line 31.37: 1518-256 (L) The intrinsic procedure poppar (with these arguments) is not permitted by the Fortran 2008 standard.
+"poppar.f", line 33.38: 1518-256 (L) The intrinsic procedure poppar (with these arguments) is not permitted by the Fortran 2008 standard.
+"poppar.f", line 34.38: 1518-256 (L) The intrinsic procedure poppar (with these arguments) is not permitted by the Fortran 2008 standard.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file poppar.f.

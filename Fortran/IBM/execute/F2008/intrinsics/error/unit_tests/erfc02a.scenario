@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2008/intrinsics/error/unit_tests/erfc02a.scenario
+#FEATURE = ERF and ERFC are now part of F2008
+#CREATOR = Rafik Zurob
+#DATE    = 20110302
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINENV
+#INVALID_XOPTS  = $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP) $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT)
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)erfc02.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<2003std>)
+#OUTPUT    = erfc02a$(OBJ)
+#STDERR    = erfc02a.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)erfc02a$(product)vf) erfc02a.err
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = erfc02a$(OBJ)
+#OUTPUT    = erfc02a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = erfc02a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

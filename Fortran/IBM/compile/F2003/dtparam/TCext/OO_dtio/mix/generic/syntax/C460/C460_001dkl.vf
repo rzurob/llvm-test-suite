@@ -1,0 +1,5 @@
+"C460_001dkl.f", line 41.43: 1514-658 (S) Entity write is not a specific binding for type base1. write must not be specified in a generic binding for this type.
+"C460_001dkl.f", line 48.49: 1514-658 (S) Entity read is not a specific binding for type base2. read must not be specified in a generic binding for this type.
+** m   === End of Compilation 1 ===
+** c460_001dkl   === End of Compilation 2 ===
+1501-511  Compilation failed for file C460_001dkl.f.

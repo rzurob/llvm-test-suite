@@ -1,0 +1,17 @@
+** m   === End of Compilation 1 ===
+"Allocate1.f", line 71.12: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"Allocate1.f", line 72.12: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"Allocate1.f", line 73.12: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"Allocate1.f", line 73.28: 1514-572 (S) The component id must be explicitly initialized in this structure constructor.
+"Allocate1.f", line 74.12: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"Allocate1.f", line 77.14: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"Allocate1.f", line 79.12: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"Allocate1.f", line 80.12: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"Allocate1.f", line 81.12: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"Allocate1.f", line 82.12: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"Allocate1.f", line 82.30: 1514-572 (S) The component id must be explicitly initialized in this structure constructor.
+"Allocate1.f", line 83.12: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"Allocate1.f", line 86.14: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+** allocate1   === End of Compilation 2 ===
+** fun   === End of Compilation 3 ===
+1501-511  Compilation failed for file Allocate1.f.

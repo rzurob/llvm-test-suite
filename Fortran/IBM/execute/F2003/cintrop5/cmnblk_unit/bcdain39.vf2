@@ -1,0 +1,4 @@
+"bcdain39.f", line 52.12: 1514-161 (S) Identifier "Sub" appearing as a specific interface procedure/result name was defined elsewhere with conflicting attributes.  This definition is ignored.
+"bcdain39.f", 1516-036 (S) Entity Sub has undefined type.
+** bcdain39   === End of Compilation 1 ===
+1501-511  Compilation failed for file bcdain39.f.

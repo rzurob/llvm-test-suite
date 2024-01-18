@@ -1,0 +1,4 @@
+"mxminConform02d.f", line 34.15: 1518-408 (L) All arguments to intrinsic procedure max are required to have the same kind type parameter by the Fortran 2003 standard.
+"mxminConform02d.f", line 36.15: 1518-408 (L) All arguments to intrinsic procedure min are required to have the same kind type parameter by the Fortran 2003 standard.
+** mxminconform02d   === End of Compilation 1 ===
+1501-510  Compilation successful for file mxminConform02d.f.

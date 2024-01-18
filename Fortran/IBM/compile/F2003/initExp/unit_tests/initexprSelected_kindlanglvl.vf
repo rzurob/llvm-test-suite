@@ -1,0 +1,6 @@
+"initexprSelected_kindlanglvl.f", 1518-317 (L) The INTSIZE option can cause the compiler to accept code that does not conform to the Fortran 2003 standard.
+** sub1   === End of Compilation 1 ===
+** sub2   === End of Compilation 2 ===
+"initexprSelected_kindlanglvl.f", 1518-317 (L) The INTSIZE option can cause the compiler to accept code that does not conform to the Fortran 2003 standard.
+** sub3   === End of Compilation 3 ===
+1501-510  Compilation successful for file initexprSelected_kindlanglvl.f.

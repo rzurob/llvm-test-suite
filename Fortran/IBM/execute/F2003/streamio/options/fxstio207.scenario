@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/streamio/options/fxstio207.scenario
+#FEATURE = streamio tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT = linuxle, aix
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)fxstio207.f
+#OPTS      = -qautodbl=dblpad
+#OUTPUT    = fxstio207$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = -qautodbl=dblpad
+#INPUT     =  fxstio207$(OBJ)
+#OUTPUT    = fxstio207$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxstio207$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

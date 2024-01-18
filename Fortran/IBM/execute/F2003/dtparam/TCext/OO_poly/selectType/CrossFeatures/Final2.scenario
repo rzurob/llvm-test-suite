@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/selectType/CrossFeatures/Final2.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071003
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)Final2.f
+#OPTS = -qxlf2003=dynamicacval
+#OUTPUT= Final2$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  Final2$(OBJ)
+#OUTPUT= Final2$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  Final2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

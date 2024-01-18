@@ -1,0 +1,4 @@
+"d374871.f", line 38.19: 1514-084 (S) Identifier dkvar is being declared with type name dk which has not been defined in a derived type definition.
+"d374871.f", line 38.27: 1514-718 (S) Identifier dk appearing as a type name has not been defined in a derived type definition.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file d374871.f.

@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_procptr/bindc2/procptrBindCtoF02.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_procptr/*
+#DATE      = 20071009
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)procptrBindCtoF02.c
+#OPTS      = $(C_COMPILER_OPTS)
+#OUTPUT    = Bindc02$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)procptrBindCtoF02.f
+#OUTPUT    = procptrBindCtoF02$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = procptrBindCtoF02$(OBJ) Bindc02$(OBJ)
+#OUTPUT    = procptrBindCtoF02$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = procptrBindCtoF02$(EXE)
+#STDOUT    = procptrBindCtoF02.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

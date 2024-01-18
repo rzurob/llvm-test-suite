@@ -1,0 +1,97 @@
+! GB DTP extension using:
+! ftcx_dtp -qck /tstdev/F2003/mProc/mProc/mProcDecRestrict5.f
+! opt variations: -qnock
+
+!*********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : mProcDecRestrict5.f  
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Mar. 10, 2006
+!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement 
+!*
+!*  SECONDARY FUNCTIONS TESTED : 
+!*
+!*  REFERENCE                  : Feature Number 296676 
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  : -qfree=f90
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*
+!*  
+!*  Within a scoping unit, two procedures that have the same generic name shall
+!*  both be subroutines or both be functions
+!*  
+!*  
+!*
+!*  
+!*  (317262)
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+
+  MODULE M
+
+
+  TYPE :: DT(K1,N1)    ! (1,1)
+    INTEGER, KIND             :: K1
+    INTEGER, LEN              :: N1
+    CHARACTER(kind=K1,len=N1) :: ID
+  CONTAINS
+    GENERIC    :: ASSIGNMENT(=) => ModSub 
+    GENERIC    :: OPERATOR(.OP.) => ModFun 
+    PROCEDURE, PASS(Arg2)  :: ModSub 
+    PROCEDURE  :: ModFun 
+  END TYPE
+
+  TYPE, EXTENDS(DT) :: DT1    ! (1,1)
+  END TYPE
+
+  CONTAINS
+
+  SUBROUTINE ModSub(Arg1, Arg2)
+  TYPE(DT(1,*)),  INTENT(OUT) :: Arg1
+  CLASS(DT(1,*)), INTENT(IN)  :: Arg2
+  END SUBROUTINE
+
+  FUNCTION ModFun(Arg1, Arg2)
+  TYPE(DT(1,1)) :: ModFun
+  CLASS(DT(1,*)), INTENT(IN) :: Arg1, Arg2
+    ModFun%ID = Arg1%ID // Arg2%ID
+  END FUNCTION
+
+  END MODULE
+ 
+  PROGRAM mProcDecRestrict5
+  USE M
+  PROCEDURE(ModFun), POINTER :: ProcPtr
+
+  CONTAINS
+
+  SUBROUTINE IntSub(Proc)
+  PROCEDURE(ModSub) :: Proc
+
+  INTERFACE ASSIGNMENT(=) 
+    PROCEDURE ProcPtr
+  END INTERFACE
+
+  INTERFACE OPERATOR( .OP. ) 
+    PROCEDURE Proc 
+  END INTERFACE
+
+  END SUBROUTINE
+ 
+  END
+
+

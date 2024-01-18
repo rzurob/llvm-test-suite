@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/format/formatDirectAccessReadWrite01.scenario
+#FEATURE   = 359704
+#CREATOR   = Nancy Wang
+#DATE      = Dec. 15 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)formatDirectAccessReadWrite01.f
+#OUTPUT= formatDirectAccessReadWrite01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = formatDirectAccessReadWrite01$(OBJ)
+#OUTPUT= formatDirectAccessReadWrite01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = formatDirectAccessReadWrite01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

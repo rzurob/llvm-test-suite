@@ -1,0 +1,4 @@
+"genericAssignmentPass004d.f", line 52.38: 1514-699 (S) Procedure "base1_base_ambig" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "base1_base", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** m   === End of Compilation 1 ===
+** genericassignmentpass004d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericAssignmentPass004d.f.

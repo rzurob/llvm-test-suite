@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = codimension_f001a.scenario
+#FEATURE  = CAF Intrinsics
+#CREATOR  = Francesco Cassullo
+#DATE     = October 2010
+#TEST_TYPE= FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)codimension_f001a.f
+#OUTPUT    = codimension_f001a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = codimension_f001a$(OBJ)
+#OUTPUT    = codimension_f001a$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = codimension_f001a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

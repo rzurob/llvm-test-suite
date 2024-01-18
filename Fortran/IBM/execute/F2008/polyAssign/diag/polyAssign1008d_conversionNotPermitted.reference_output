@@ -1,0 +1,4 @@
+"polyAssign1008d_conversionNotPermitted.f", line 75.9: 1516-044 (S) A conversion from type t2 is not permitted.
+"polyAssign1008d_conversionNotPermitted.f", line 78.9: 1516-044 (S) A conversion from type t2 is not permitted.
+** polyassign1008d   === End of Compilation 1 ===
+1501-511  Compilation failed for file polyAssign1008d_conversionNotPermitted.f.

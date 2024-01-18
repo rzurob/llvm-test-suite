@@ -1,0 +1,4 @@
+"Generic_TypeBound_diag05.f", line 52.35: 1514-699 (S) Procedure "sub1" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "sub0", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** mod1   === End of Compilation 1 ===
+** generic_typebound_diag05   === End of Compilation 2 ===
+1501-511  Compilation failed for file Generic_TypeBound_diag05.f.

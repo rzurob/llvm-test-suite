@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2008/intrinsics/error/unit_tests/erfc_scaled01d.scenario
+#FEATURE = F2008 ERFC_SCALED intrinsic
+#CREATOR = Rafik Zurob
+#DATE    = 20110501
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINENV
+#INVALID_XOPTS  = $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP) $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT)
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)erfc_scaled01.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<2008std>)
+#STDERR    = erfc_scaled01d.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)erfc_scaled01d$(product)vf) erfc_scaled01d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

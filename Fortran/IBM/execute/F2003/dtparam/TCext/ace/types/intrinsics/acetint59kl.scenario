@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/intrinsics/acetint59kl.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
+			   Self-Referential Assignment, Including Array Sections (integers))
+#CREATOR	= Glen Mateer (derived from work by David Forster)
+#DATE		= 20080125
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint59kl.f
+#OUTPUT		= acetint59kl$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint59kl$(OBJ)
+#OUTPUT		= acetint59kl$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint59kl$(EXE)
+#STDOUT		= acetint59kl.stdout
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetint59kl$(product)vf) acetint59kl.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

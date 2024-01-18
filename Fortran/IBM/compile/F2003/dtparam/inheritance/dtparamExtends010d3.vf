@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"dtparamExtends010d3.f", line 46.35: 1514-748 (S) Type parameter p is not permitted. p is the name of a binding that is inherited from type base.
+** dtparamextends010d3   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtparamExtends010d3.f.

@@ -1,0 +1,51 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=release/F2003/volatile/volatileSubobject01.f
+#FEATURE = VOLATILE 255728
+#CREATOR = William Zhang
+#DATE    = 05/30/2006
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD            = F_COMPILE
+#OPTS           = $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT          = $(tcasedir)volatileSubobject01.f
+#OUTPUT         = volatileSubobject01$(OBJ)
+#ENDCMD
+
+#CMD            = F_LINK
+#INPUT          = volatileSubobject01$(OBJ)
+#OUTPUT         = volatileSubobject01$(EXE)
+#ENDCMD
+
+#CMD            = RUN
+#INPUT          = volatileSubobject01$(EXE)
+#ENDCMD
+
+#CMD            = EGREP
+#OPTS           = -i '^a'
+#INPUT          = volatileSubobject01$(LST)
+#STDOUT         = volatileSubobject01.egrep.stdout
+#ENDCMD
+
+#CMD            = EGREP
+#OPTS           = 'Volatile'
+#INPUT          = volatileSubobject01.egrep.stdout
+#STDOUT         = volatileSubobject01.volatile.stdout
+#ENDCMD
+
+#IF ! ( in($$(F_COMPILE^OPT_GEN_CODE_FOR_ARCHITECTURE<.*>)) || in($(XLF_COMPILE^OPT_OPTIMIZE_LEVEL4)) || in($(XLF_COMPILE^OPT_OPTIMIZE_LEVEL5)) )
+#CMD            = XLDIFF
+#INPUT          = $($(tcasedir)volatileSubobject01$(product)vf)     \
+                               volatileSubobject01.volatile.stdout
+#ENDCMD
+#ENDIF
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/use/dtpUseSimple01o.scenario
+#FEATURE   = DTP and USE - reference only renamed module types in declarations
+#CREATOR   = DF Manual Update
+#DATE      = 20080919
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUseSimple01o.f
+#OUTPUT    = dtpUseSimple01o$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUseSimple01o$(OBJ)
+#OUTPUT    = dtpUseSimple01o$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUseSimple01o$(EXE)
+#STDOUT    = dtpUseSimple01o.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUseSimple01o$(product)vf) dtpUseSimple01o.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

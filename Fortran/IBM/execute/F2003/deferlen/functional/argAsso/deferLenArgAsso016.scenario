@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/deferlen/functional/argAsso/deferLenArgAsso016.scenario
+#FEATURE = character with deferred length type parameter
+#CREATOR = Robert Ma
+#DATE    = 20060501
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)deferLenArgAsso016.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = deferLenArgAsso016$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = deferLenArgAsso016$(OBJ)
+#OUTPUT    = deferLenArgAsso016$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = deferLenArgAsso016$(EXE)
+#STDOUT    = deferLenArgAsso016.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = deferLenArgAsso016.out $(tcasedir)deferLenArgAsso016.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

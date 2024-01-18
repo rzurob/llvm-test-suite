@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= dtparamExtends003.scenario
+#FEATURE =
+#CREATOR =  MZ adapted from F2003/dtparam/inheritance/dtparamExtends003.f
+#DATE    = 20100504
+#TEST_TYPE= functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_ALT_COMPILE
+#INPUT     = $(tcasedir)dtparamExtends003_mod.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamExtends003_mod$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamExtends003_main.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamExtends003_main$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dtparamExtends003_mod$(OBJ) dtparamExtends003_main$(OBJ)
+#OUTPUT    = dtparamExtends003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamExtends003$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

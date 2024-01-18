@@ -1,0 +1,4 @@
+"C1217_002d.f", line 47.56: 1515-116 (S) Procedure pointer p1 must not be declared with the NAME specifier in the BIND attribute.
+"C1217_002d.f", line 48.56: 1515-116 (S) Procedure pointer p2 must not be declared with the NAME specifier in the BIND attribute.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file C1217_002d.f.

@@ -1,0 +1,47 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /syncAll/saBasicStatusNMsg.scenario
+#FEATURE   = sync all - basic test of progress + status
+#CREATOR   = DF
+#DATE      = 20100727
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+
+! Just like saBasic, but with the "STAT" field.
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)saBasicStatusNMsg.f
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = saBasicStatusNMsg$(OBJ)
+#OUTPUT    = saBasicStatusNMsg$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = saBasicStatusNMsg$(EXE)
+#STDOUT    = count
+#ENDCMD
+
+#CMD       = CAT
+#OPTS      = o??? count
+#STDOUT    = saBasicStatusNMsg.out
+#ENDCMD
+
+#CMD       = AWK
+#OPTS      = -f $($(tcasedir)saBasicStatusNMsg$(product)awk)
+#STDIN     = saBasicStatusNMsg.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

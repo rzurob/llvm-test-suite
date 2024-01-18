@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpIAssignMainPolymorphic.scenario
+#FEATURE   = Intrinsic Assignment without Allocation - assign from polymorphic variables in main program
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAssignMainPolymorphic.f
+#OUTPUT    = dtpIAssignMainPolymorphic$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAssignMainPolymorphic$(OBJ)
+#OUTPUT    = dtpIAssignMainPolymorphic$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAssignMainPolymorphic$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

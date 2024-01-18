@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=achar_k1_f3.scenario
+#FEATURE = Support new Kind Parameter for Several Intrinsics
+#CREATOR = Vince Yuen
+#DATE    = 20060414
+#TEST_TYPE=functional ut
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)achar_k1_f3.f
+#OPTS      = $(OPT_INTSIZE_2)
+#OUTPUT    = achar_k1_f3$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = achar_k1_f3$(OBJ)
+#OUTPUT    = achar_k1_f3$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = achar_k1_f3$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

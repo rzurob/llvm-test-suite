@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/mix/interface/fdtio509a2.f
+#FEATURE = OO_dtio
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fdtio509a2.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fdtio509a2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fdtio509a2$(OBJ)
+#OUTPUT    = fdtio509a2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fdtio509a2$(EXE)
+#VALIDSIGNALS = ABRT
+#ENDCMD
+
+#CMD       = TEST
+#OPTS      = -s
+#INPUT     = fdtio509a2.data
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

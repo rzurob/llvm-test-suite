@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/extends/d335879.scenario
+#FEATURE   = OO_type tests - regression run bucket
+#CREATOR   = GB (for defect 335879)
+#DATE      = 20070420
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d335879.f
+#OUTPUT    = d335879$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d335879$(OBJ)
+#OUTPUT    = d335879$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d335879$(EXE)
+#STDOUT    = d335879.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)d335879$(product)vf) d335879.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

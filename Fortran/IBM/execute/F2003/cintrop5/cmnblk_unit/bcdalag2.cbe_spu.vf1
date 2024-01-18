@@ -1,0 +1,4 @@
+"bcdalag2.f", 1518-318 (L) The SIGNEDZERO option can cause the program to behave in a way that is different from that specified by the Fortran 90 standard.
+"bcdalag2.f", line 37.1: 1518-207 (L) The BIND attribute is not permitted by the Fortran 90 standard.
+** bcdalag2   === End of Compilation 1 ===
+1501-510  Compilation successful for file bcdalag2.f.

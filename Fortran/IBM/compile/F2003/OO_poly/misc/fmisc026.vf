@@ -1,0 +1,3 @@
+"fmisc026.f", line 55.15: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+** fmisc026   === End of Compilation 1 ===
+1501-511  Compilation failed for file fmisc026.f.

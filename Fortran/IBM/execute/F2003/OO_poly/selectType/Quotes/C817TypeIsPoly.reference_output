@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"C817TypeIsPoly.f", line 86.14: 1511-135 (E) Type level3 is specified in another TYPE IS statement.  The same type must not be specified in more than one TYPE IS statement within the same SELECT TYPE construct.  The statement is ignored.
+"C817TypeIsPoly.f", line 88.14: 1511-135 (E) Type level1 is specified in another TYPE IS statement.  The same type must not be specified in more than one TYPE IS statement within the same SELECT TYPE construct.  The statement is ignored.
+** c817typeispoly   === End of Compilation 2 ===
+1501-510  Compilation successful for file C817TypeIsPoly.f.

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_tpbnd/specific/ftpbnd528.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_tpbnd/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ftpbnd528.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ftpbnd528$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = ftpbnd528$(OBJ)
+#OUTPUT    = ftpbnd528$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ftpbnd528$(EXE)
+#STDOUT    = ftpbnd528.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = ftpbnd528.out $($(tcasedir)ftpbnd528$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

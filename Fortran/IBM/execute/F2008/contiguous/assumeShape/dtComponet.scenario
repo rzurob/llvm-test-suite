@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/contiguous/assumeShape/dtComponet.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20101025
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtComponet.f
+#OUTPUT    = dtComponet$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtComponet$(OBJ)
+#OUTPUT    = dtComponet$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtComponet$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

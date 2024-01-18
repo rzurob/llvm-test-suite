@@ -1,0 +1,6 @@
+"fxdmodprocstmt025.f", line 47.19: 1516-270 (E) Entity xx must be a procedure pointer, external procedure, dummy procedure, or a module procedure, and must have an explicit interface. xx is ignored.
+"fxdmodprocstmt025.f", line 53.19: 1516-270 (E) Entity yy must be a procedure pointer, external procedure, dummy procedure, or a module procedure, and must have an explicit interface. yy is ignored.
+"fxdmodprocstmt025.f", line 59.19: 1516-270 (E) Entity xxx must be a procedure pointer, external procedure, dummy procedure, or a module procedure, and must have an explicit interface. xxx is ignored.
+"fxdmodprocstmt025.f", line 65.19: 1516-270 (E) Entity yyy must be a procedure pointer, external procedure, dummy procedure, or a module procedure, and must have an explicit interface. yyy is ignored.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file fxdmodprocstmt025.f.

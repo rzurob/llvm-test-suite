@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/construct/selectType003m.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071219
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)selectType003m.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = selectType003m$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = selectType003m$(OBJ)
+#OUTPUT    = selectType003m$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = selectType003m$(EXE)
+#STDOUT    = selectType003m.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = selectType003m.out $($(tcasedir)selectType003m$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

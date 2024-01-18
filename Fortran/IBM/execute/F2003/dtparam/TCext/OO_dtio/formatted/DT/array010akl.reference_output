@@ -1,0 +1,10 @@
+DT_b1   5 1001DTdata   6   7   101    111
+DT_b2   5 2001DTdata  10       201
+DT_b1   5 1002DTdata   6   7   102    112
+DT_b2   5 2002DTdata  10       202
+DT_b1   5 1003DTdata   6   7   103    113
+DT_b2   5 2003DTdata  10       203
+DT_b3-1   5 3001DTdata   6   7   301    311
+DT_b3-2   5 3002DTdata  10       302
+DT_b3-1   5 3003DTdata   6   7   303    313
+

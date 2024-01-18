@@ -1,0 +1,5 @@
+"fext001d5.f", line 56.8: 1514-595 (S) Type child, specified with the EXTENDS attribute, must not contain the SEQUENCE statement.
+"fext001d5.f", line 65.28: 1514-528 (S) Type seq1 in the EXTENDS clause must be extensible.
+"fext001d5.f", line 66.8: 1514-595 (S) Type seq2, specified with the EXTENDS attribute, must not contain the SEQUENCE statement.
+** fext001d5   === End of Compilation 1 ===
+1501-511  Compilation failed for file fext001d5.f.

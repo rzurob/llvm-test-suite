@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME      = F2008/polyAssign/func/polyAssign1004f_4level.scenario
+#FEATURE   = LHS of intrinsic assignment is allowed to be polymorphic
+#CREATOR   = Aaron Liu
+#DATE      = 20150901
+#TEST_TYPE = functional
+#KEYWORDS  = F2008, polymorphic, LHS, intrinsic assignment
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)polyAssign1004f_4level.f
+#OUTPUT    = polyAssign1004f_4level$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = polyAssign1004f_4level$(OBJ)
+#OUTPUT    = polyAssign1004f_4level$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = polyAssign1004f_4level$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/dummy_arg/atpda/dtpATPDAOptional.scenario
+#FEATURE   = Assumed type parameters and dummy arguments - test the length passed in
+#CREATOR   = DF Manual Update
+#DATE      = 20081015
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpATPDAOptional.f
+#OUTPUT    = dtpATPDAOptional$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpATPDAOptional$(OBJ)
+#OUTPUT    = dtpATPDAOptional$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpATPDAOptional$(EXE)
+#STDOUT    = dtpATPDAOptional.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpATPDAOptional$(product)vf) dtpATPDAOptional.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

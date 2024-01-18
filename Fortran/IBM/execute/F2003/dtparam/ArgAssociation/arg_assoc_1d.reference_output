@@ -1,0 +1,12 @@
+ x - in main:
+ x%dta1= 1 2 3 4
+ x%dta2= 11 12 13 14 15
+ in sub:
+ d%dta1= 1 2 3 4
+ d%dta2= 11 12 13 14 15
+ y - in main:
+ y%dta1= 1 2 3 4
+ y%dta2= 11 12 13 14 15
+ in sub:
+ d%dta1= 1 2 3 4
+ d%dta2= 11 12 13 14 15

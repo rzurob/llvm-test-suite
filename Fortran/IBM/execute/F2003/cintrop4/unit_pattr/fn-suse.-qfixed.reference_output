@@ -1,0 +1,21 @@
+*** testcase variant:  -qfixed\n
+    0151001B 
+** f1bind   === End of Compilation 1 ===
+** f2   === End of Compilation 2 ===
+** f3   === End of Compilation 3 ===
+** f4   === End of Compilation 4 ===
+  41.32   01610192 =Ü
+  41.33   01610192 'F1Ü
+    0151001B 
+** fn1bind   === End of Compilation 5 ===
+** fn2   === End of Compilation 6 ===
+** fn3   === End of Compilation 7 ===
+** fn4   === End of Compilation 8 ===
+  63.32   01610192 =Ü
+  63.33   01610192 'fd1Ü
+    0151001B 
+** fd1bind   === End of Compilation 9 ===
+** fd2   === End of Compilation 10 ===
+** fd3   === End of Compilation 11 ===
+** fd4   === End of Compilation 12 ===
+1501-511  Compilation failed for file fn.f.

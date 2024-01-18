@@ -1,0 +1,57 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/asynch_communication/asynchcomm012f.scenario
+#FEATURE   = C_Interop_Asynch_Communication
+#CREATOR   = Tapti Vaid
+#DATE      = 2013-10-07
+#TEST_TYPE = functional
+#KEYWORDS =  C_Interop  ASYNCH
+#ENDDOC
+
+#BEGINENV
+#RESOURCES_REQ= POE
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = SET_DYN_ENV
+#OPTS      = -auto_set=procs -c_mode=dist -usehostname
+#ENDCMD
+
+#CMD       = F_R_COMPLINK
+#INPUT     = $(tcasedir)asynchcomm012f.f
+#IF on (aix)
+    #IF in ($(F_COMPILE^OPT_GEN_64BIT_COMPILER_MODE))
+      #OPTS      = -I$(POE_PATH)/include/thread64 -L$(POE_PATH)/lib -binitfini:poe_remote_main -lmpi_r
+    #ELSE
+      #OPTS      = -I$(POE_PATH)/include/thread -L$(POE_PATH)/lib -binitfini:poe_remote_main -lmpi_r
+    #ENDIF
+#ELSE
+        #IF on (linuxle)
+            #OPTS      = -I$(POE_PATH)/../mpich/gnu/include64
+            #OPTS      = -L$(POE_PATH)/../mpich/gnu/lib64/ -lmpigf
+        #ELSE
+          #IF in($(F_COMPILE^OPT_GEN_64BIT_COMPILER_MODE))
+            #OPTS      = -I$(POE_PATH)/include/thread64 -L$(POE_PATH)/lib/libmpi64 -lmpi_ibm -lpoe -L$(POE_PATH)/../lapi/lib/lapi64 -llapi
+          #ELSE
+            #OPTS      = -I$(POE_PATH)/include/thread -L$(POE_PATH)/lib/libmpi -lmpi_ibm -lpoe -L$(POE_PATH)/../lapi/lib/lapi32 -llapi
+          #ENDIF
+        #ENDIF
+#ENDIF
+#OUTPUT    = asynchcomm012f$(EXE)
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = poe asynchcomm012f$(EXE) -procs 2
+#STDOUT    = asynchcomm012f.out
+#STDERR    = asynchcomm012f.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)asynchcomm012f$(product)vf) asynchcomm012f.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

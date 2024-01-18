@@ -1,0 +1,8 @@
+"caflock01d.f", line 35.47: 1518-359 (L) Coarrays are not permitted by the Fortran 2003 standard.
+"caflock01d.f", line 41.6: 1518-285 (L) The LOCK statement is not permitted by the Fortran 2003 standard.
+"caflock01d.f", line 43.6: 1518-285 (L) The UNLOCK statement is not permitted by the Fortran 2003 standard.
+"caflock01d.f", line 49.6: 1518-285 (L) The LOCK statement is not permitted by the Fortran 2003 standard.
+"caflock01d.f", line 51.6: 1518-285 (L) The UNLOCK statement is not permitted by the Fortran 2003 standard.
+** lock_manager   === End of Compilation 1 ===
+** caflock01d   === End of Compilation 2 ===
+1501-510  Compilation successful for file caflock01d.f.

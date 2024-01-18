@@ -1,0 +1,72 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE = Character argument for MAX/MIN/MAXVAL/MINVAL/MAXLOC/MINLOC
+#CREATOR = John Zang
+#DATE    = 20051110
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#IF on(cbe_spu)
+
+ #CMD       = XLF95_COMPILE
+ #INPUT     = $(tcasedir)mxmnch33.cbe_spu.1.f
+ #OPTS      = $(OPT_FIXED_SOURCE_FORM)
+ #OUTPUT    = mxmnch33.1$(OBJ)
+ #ENDCMD
+
+ #CMD       = XLF95_LINK
+ #OPTS      = $(OPT_FIXED_SOURCE_FORM)
+ #INPUT     = mxmnch33.1$(OBJ)
+ #OUTPUT    = mxmnch33.1$(EXE)
+ #ENDCMD
+
+ #CMD       = RUN
+ #INPUT     = mxmnch33.1$(EXE)
+ #ENDCMD
+
+ #CMD       = XLF95_COMPILE
+ #INPUT     = $(tcasedir)mxmnch33.cbe_spu.2.f
+ #OPTS      = $(OPT_FIXED_SOURCE_FORM)
+ #OUTPUT    = mxmnch33.2$(OBJ)
+ #ENDCMD
+
+ #CMD       = XLF95_LINK
+ #OPTS      = $(OPT_FIXED_SOURCE_FORM)
+ #INPUT     = mxmnch33.2$(OBJ)
+ #OUTPUT    = mxmnch33.2$(EXE)
+ #ENDCMD
+
+ #CMD       = RUN
+ #INPUT     = mxmnch33.2$(EXE)
+ #ENDCMD
+
+#ELSE
+
+ #CMD       = XLF95_COMPILE
+ #INPUT     = $(tcasedir)mxmnch33.f
+ #OPTS      = $(OPT_FIXED_SOURCE_FORM)
+ #OUTPUT    = mxmnch33$(OBJ)
+ #ENDCMD
+
+ #CMD       = XLF95_LINK
+ #OPTS      = $(OPT_FIXED_SOURCE_FORM)
+ #INPUT     = mxmnch33$(OBJ)
+ #OUTPUT    = mxmnch33$(EXE)
+ #ENDCMD
+
+ #CMD       = RUN
+ #INPUT     = mxmnch33$(EXE)
+ #ENDCMD
+
+#ENDIF
+
+#ENDCONTROL
+#ENDSCENARIO

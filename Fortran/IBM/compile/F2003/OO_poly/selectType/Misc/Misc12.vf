@@ -1,0 +1,4 @@
+"Misc12.f", line 50.30: 1514-531 (S) Entity returnobj, specified in procedure binding returnobj, must be a module procedure or an external procedure with an explicit interface.
+** m   === End of Compilation 1 ===
+** misc12   === End of Compilation 2 ===
+1501-511  Compilation failed for file Misc12.f.

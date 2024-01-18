@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpSimpleBinaryMixedPrint.scenario
+#FEATURE   = User-Defined Operators - mixed result types, binary ops in print statements
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpSimpleBinaryMixedPrint.f
+#OUTPUT    = dtpUOpSimpleBinaryMixedPrint$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpSimpleBinaryMixedPrint$(OBJ)
+#OUTPUT    = dtpUOpSimpleBinaryMixedPrint$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpSimpleBinaryMixedPrint$(EXE)
+#STDOUT    = dtpUOpSimpleBinaryMixedPrint.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUOpSimpleBinaryMixedPrint$(product)vf) dtpUOpSimpleBinaryMixedPrint.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME      = F2008/value/pure/unit_tests/purevalue07.scenario
+#FEATURE   = 384867 \
+             F2008: VALUE attribute allowed for dummy args of PURE procedures
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20101201
+#TEST_TYPE = Unit test
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPLINK
+#INPUT     = $(tcasedir)purevalue07.f
+#OUTPUT    = purevalue07$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = purevalue07$(EXE)
+#STDOUT    = purevalue07.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

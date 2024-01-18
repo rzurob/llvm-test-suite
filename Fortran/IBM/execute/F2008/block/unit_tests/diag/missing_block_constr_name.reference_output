@@ -1,0 +1,3 @@
+"missing_block_constr_name.f", line 2.11: 1511-116 (E) The END BLOCK statement must not contain a construct name.  Construct name a is ignored.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file missing_block_constr_name.f.

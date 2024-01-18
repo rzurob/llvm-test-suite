@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/streamio/unit/nonseekstrm.scenario
+#FEATURE = streamio tests - regression run bucket
+#CREATOR = ST Manual conversion
+#DATE    = 20050106
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPLINK
+#INPUT     = $(tcasedir)nonseekstrm.f
+#OPTS      = $(OPT_SET_LANG_LANG_MSGS) $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = nonseekstrm$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = nonseekstrm$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

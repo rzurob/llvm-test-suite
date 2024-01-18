@@ -1,0 +1,34 @@
+ Long student numbers:
+ There are 4 students with first names of 6 or fewer characters, and last names of 8 or fewer characters
+ Jonas  Salk    : 1234567
+ Alex   Borodin : 2345678
+ Hilde  v.Bingen: 3456789
+ Isaac  Newton  : 4567890
+ Long student numbers:
+ There are 3 students with first names of 6 or fewer characters, and last names of 12 or fewer characters
+ Pyotr  Tschaikovsky: 1234567
+ Alex   Borodin     : 2345678
+ Hilde  von Bingen  : 3456789
+
+ Mid-length student numbers:
+ There are 6 students with first names of 3 or fewer characters, and last names of 3 or fewer characters
+ bbbbbbb| 5
+ ccccccc| 25
+ ddddddd| 125
+ eeeeeee| 625
+ fffffff| 3125
+ ggggggg| 15625
+ Mid-length student numbers:
+ There are 1 students with first names of 11 or fewer characters, and last names of 6 or fewer characters
+ Heironymous Bosch | 32767
+ 0 1 20
+ 2
+ 20 20
+ 2
+ T
+ T
+ T
+ 0
+ F
+ T
+ done

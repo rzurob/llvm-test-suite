@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = F2008/intrinsics/IEEESelectedRealKind/IEEESelectedRealKind01f.scenario
+#FEATURE  = IEEE_SELECTED_REAL_KIND tests
+#CREATOR  = Jin Li
+#DATE     = 20101020
+#TEST_TYPE= functional
+#ENDDOC
+
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)IEEESelectedRealKind01f.f
+#OUTPUT    = IEEESelectedRealKind01f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = IEEESelectedRealKind01f$(OBJ)
+#OUTPUT    = IEEESelectedRealKind01f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = IEEESelectedRealKind01f$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

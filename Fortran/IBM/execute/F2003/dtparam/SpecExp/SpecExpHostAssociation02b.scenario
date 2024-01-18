@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/SpecExp/SpecExpHostAssociation02b.scenario
+#FEATURE   = DTP - Specification expression - Host Association
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20090614
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)SpecExpHostAssociation02b.f
+#OUTPUT    = SpecExpHostAssociation02b$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = SpecExpHostAssociation02b$(OBJ)
+#OUTPUT    = SpecExpHostAssociation02b$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = SpecExpHostAssociation02b$(EXE)
+#STDOUT    = SpecExpHostAssociation02b.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

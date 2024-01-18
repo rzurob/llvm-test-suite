@@ -1,0 +1,8 @@
+*** testcase variant:  <-O4 and above> -qextchk
+
+** extchk   === End of Compilation 1 ===
+** f1c_via_f   === End of Compilation 2 ===
+** f2f_via_f   === End of Compilation 3 ===
+1501-510  Compilation successful for file extchk.f.
+1586-292 (S) A type mismatch was detected for symbol "f1_fB".
+1586-292 (S) A type mismatch was detected for symbol "f1_cB".

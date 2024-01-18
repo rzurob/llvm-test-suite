@@ -1,0 +1,18 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/InitExp/ACE/d365272.scenario
+#FEATURE   = DTP - Array constructor with TypeSpec
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20090414
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d365272.f
+#OUTPUT    = d365272$(OBJ)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

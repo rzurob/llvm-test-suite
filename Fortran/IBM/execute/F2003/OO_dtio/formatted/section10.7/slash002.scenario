@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/section10.7/slash002.scenario
+#FEATURE = OO_dtio/formatted tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)slash002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = slash002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  slash002$(OBJ)
+#OUTPUT    = slash002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = slash002$(EXE)
+#STDOUT    = slash002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)slash002$(product)vf) slash002.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

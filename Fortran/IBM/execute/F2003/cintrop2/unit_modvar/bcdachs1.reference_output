@@ -1,0 +1,5 @@
+         37 |character*1, bind(c) ::
+            .......................a
+a - "bcdachs1.f", line 37.23: 1515-019 (S) Syntax is incorrect.
+** mod   === End of Compilation 1 ===
+1501-511  Compilation failed for file bcdachs1.f.

@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/C503/implicit005.scenario
+#FEATURE   = OO_type/abstract tests - regression run bucket
+#CREATOR   = GB copy from OO_type/abstract/C503/implicit005.scenario
+#DATE      = 20070426
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)implicit005.f
+#OUTPUT    = implicit005$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = implicit005$(OBJ)
+#OUTPUT    = implicit005$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = implicit005$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

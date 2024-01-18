@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/C503/typeDeclr001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/abstract/C503/typeDeclr001.scenario
+#DATE      = 20070611
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)typeDeclr001.f
+#OPTS      = -qdebug=intmsg:shutup
+#OUTPUT    = typeDeclr001$(OBJ)
+#STDERR    = typeDeclr001.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)typeDeclr001$(product)vf) typeDeclr001.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

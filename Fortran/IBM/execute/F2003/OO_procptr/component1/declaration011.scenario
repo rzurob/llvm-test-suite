@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_procptr/component1/declaration011.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050418
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)declaration011.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = declaration011$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = declaration011$(OBJ)
+#OUTPUT    = declaration011$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = declaration011$(EXE)
+#STDOUT    = declaration011.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

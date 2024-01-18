@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/Misc/dataPtrTypBndElemental.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071217
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)dataPtrTypBndElemental.f
+#OUTPUT= dataPtrTypBndElemental$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  dataPtrTypBndElemental$(OBJ)
+#OUTPUT= dataPtrTypBndElemental$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dataPtrTypBndElemental$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

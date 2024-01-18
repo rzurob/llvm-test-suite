@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=iostatendovf001.scenario
+#FEATURE = 299314
+#CREATOR = Rob Wheeler
+#DATE    = 20060109
+#TEST_TYPE=fvt
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)iostatendovf001.f
+#OPTS      = $(OPT_INTSIZE_8)
+#OUTPUT    = iostatendovf001c$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_INTSIZE_8)
+#INPUT     = iostatendovf001c$(OBJ)
+#OUTPUT    = iostatendovf001c$(EXE)
+#ENDCMD
+
+
+#CMD       = RUN
+#INPUT     = iostatendovf001c$(EXE)
+#STDOUT    = iostatendovf001c.out
+#STDERR    = iostatendovf001c.out
+#ENDCMD
+
+#CMD	   = DIFF
+#OPTS	   = -b
+#INPUT     = iostatendovf001c.out $($(tcasedir)iostatendovf001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

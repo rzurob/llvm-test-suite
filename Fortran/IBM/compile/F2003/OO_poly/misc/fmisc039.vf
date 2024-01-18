@@ -1,0 +1,4 @@
+"fmisc039.f", line 28.13: 1516-009 (S) NAMELIST, ENTRY, PROGRAM, SUBROUTINE, and statement function names are not permitted in this context.
+"fmisc039.f", line 29.14: 1516-009 (S) NAMELIST, ENTRY, PROGRAM, SUBROUTINE, and statement function names are not permitted in this context.
+** fmisc039   === End of Compilation 1 ===
+1501-511  Compilation failed for file fmisc039.f.

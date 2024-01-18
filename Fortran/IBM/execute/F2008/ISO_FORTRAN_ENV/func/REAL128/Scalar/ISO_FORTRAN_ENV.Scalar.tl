@@ -1,0 +1,8 @@
+faddREAL128.scenario
+faddREAL128realsize.scenario
+fdivREAL128.scenario
+fdivREAL128realsize.scenario
+fmulREAL128.scenario
+fmulREAL128realsize.scenario
+fsubREAL128.scenario
+fsubREAL128realsize.scenario

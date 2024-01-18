@@ -1,0 +1,8 @@
+      Inf   NaN(S)     -Inf      Inf   NaN(Q)   NaN(Q)     -Inf   NaN(Q)   NaN(S)
+      Inf   NaN(S)     -Inf      Inf   NaN(Q)   NaN(Q)     -Inf   NaN(Q)   NaN(S)
+   NaN(Q)   NaN(S)      Inf      Inf   NaN(Q)   NaN(Q)      Inf   NaN(S)   NaN(Q)
+   NaN(Q)   NaN(S)      Inf      Inf   NaN(Q)   NaN(Q)      Inf   NaN(S)   NaN(Q)
+   NaN(Q)   NaN(S)      Inf      Inf   NaN(Q)   NaN(Q)     -Inf   NaN(Q)   NaN(S)
+   NaN(Q)   NaN(S)      Inf      Inf   NaN(Q)   NaN(Q)     -Inf   NaN(Q)   NaN(S)
+   NaN(Q)   NaN(S)      Inf   NaN(Q)     3,14   NaN(Q)     -Inf   NaN(Q)   NaN(Q)
+   NaN(Q)   NaN(S)      Inf   NaN(Q)     3.14   NaN(Q)     -Inf   NaN(Q)   NaN(Q)

@@ -1,0 +1,37 @@
+"submodule22d.f", line 35.8: 1518-285 (L) The MODULE statement is not permitted by the FORTRAN 77 standard.
+"submodule22d.f", line 37.1: 1518-285 (L) The IMPLICIT NONE statement is not permitted by the FORTRAN 77 standard.
+"submodule22d.f", line 38.2: 1518-285 (L) The INTERFACE statement is not permitted by the FORTRAN 77 standard.
+"submodule22d.f", line 39.4: 1518-260 (L) The MODULE keyword is not permitted by the FORTRAN 77 standard.
+"submodule22d.f", line 40.4: 1518-285 (L) The END SUBROUTINE statement is not permitted by the FORTRAN 77 standard.
+"submodule22d.f", line 42.4: 1518-260 (L) The MODULE keyword is not permitted by the FORTRAN 77 standard.
+"submodule22d.f", line 43.6: 1518-209 (L) The presence of an attribute or double colon, or the initialization of data within a type declaration or attribute statement is not permitted by the FORTRAN 77 standard.
+"submodule22d.f", line 44.4: 1518-285 (L) The END FUNCTION statement is not permitted by the FORTRAN 77 standard.
+"submodule22d.f", 1518-287 (L) IMPLICIT statements must precede declarations in the FORTRAN 77 standard.
+"submodule22d.f", 1518-317 (L) The ZEROSIZE option can cause the compiler to accept code that does not conform to the FORTRAN 77 standard.
+"submodule22d.f", 1518-318 (L) The XLF2003(NOOLDNANINF) option can cause the program to behave in a way that is different from that specified by the FORTRAN 77 standard.
+"submodule22d.f", 1518-264 (L) Lowercase characters have been detected in the source.  Lowercase characters are not permitted by the FORTRAN 77 standard.
+"submodule22d.f", 1518-318 (L) The SIGNEDZERO option can cause the program to behave in a way that is different from that specified by the FORTRAN 77 standard.
+"submodule22d.f", 1518-318 (L) The STOPEXCEPT option can cause the program to behave in a way that is different from that specified by the FORTRAN 77 standard.
+** m   === End of Compilation 1 ===
+"submodule22d.f", line 48.1: 1518-260 (L) The SUBMODULE keyword is not permitted by the FORTRAN 77 standard.
+"submodule22d.f", line 49.1: 1518-285 (L) The CONTAINS statement is not permitted by the FORTRAN 77 standard.
+"submodule22d.f", line 50.2: 1518-260 (L) The MODULE keyword is not permitted by the FORTRAN 77 standard.
+"submodule22d.f", line 51.4: 1518-209 (L) The presence of an attribute or double colon, or the initialization of data within a type declaration or attribute statement is not permitted by the FORTRAN 77 standard.
+"submodule22d.f", line 53.2: 1518-285 (L) The END FUNCTION statement is not permitted by the FORTRAN 77 standard.
+"submodule22d.f", line 55.2: 1518-260 (L) The MODULE keyword is not permitted by the FORTRAN 77 standard.
+"submodule22d.f", line 56.2: 1518-285 (L) The END SUBROUTINE statement is not permitted by the FORTRAN 77 standard.
+"submodule22d.f", 1518-318 (L) The XLF2003(NOOLDNANINF) option can cause the program to behave in a way that is different from that specified by the FORTRAN 77 standard.
+"submodule22d.f", 1518-318 (L) The STOPEXCEPT option can cause the program to behave in a way that is different from that specified by the FORTRAN 77 standard.
+"submodule22d.f", 1518-264 (L) Lowercase characters have been detected in the source.  Lowercase characters are not permitted by the FORTRAN 77 standard.
+"submodule22d.f", 1518-318 (L) The SIGNEDZERO option can cause the program to behave in a way that is different from that specified by the FORTRAN 77 standard.
+"submodule22d.f", 1518-317 (L) The ZEROSIZE option can cause the compiler to accept code that does not conform to the FORTRAN 77 standard.
+** n   === End of Compilation 2 ===
+"submodule22d.f", line 59.7: 1515-019 (S) Syntax is incorrect.
+"submodule22d.f", line 60.1: 1515-019 (S) Syntax is incorrect.
+"submodule22d.f", 1518-264 (L) Lowercase characters have been detected in the source.  Lowercase characters are not permitted by the FORTRAN 77 standard.
+"submodule22d.f", 1518-318 (L) The XLF2003(NOOLDNANINF) option can cause the program to behave in a way that is different from that specified by the FORTRAN 77 standard.
+"submodule22d.f", 1518-317 (L) The ZEROSIZE option can cause the compiler to accept code that does not conform to the FORTRAN 77 standard.
+"submodule22d.f", 1518-318 (L) The SIGNEDZERO option can cause the program to behave in a way that is different from that specified by the FORTRAN 77 standard.
+"submodule22d.f", 1518-318 (L) The STOPEXCEPT option can cause the program to behave in a way that is different from that specified by the FORTRAN 77 standard.
+** _main   === End of Compilation 3 ===
+1501-511  Compilation failed for file submodule22d.f.

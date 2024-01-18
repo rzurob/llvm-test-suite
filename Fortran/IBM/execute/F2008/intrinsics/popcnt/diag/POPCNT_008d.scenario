@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2008/intrinsics/popcnt/diag/POPCNT_008d.scenario
+#FEATURE = F2008 POPPAR and POPCNT
+#CREATOR = Denis Navotniy
+#DATE    = 20101130
+#TEST_TYPE=diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)POPCNT_008d.f
+#OUTPUT    = POPCNT_008d$(OBJ)
+#STDOUT    = POPCNT_008d.out
+#STDERR    = POPCNT_008d.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)POPCNT_008d$(product)vf) POPCNT_008d.out
+#ENDCMD
+
+#CMD       = XLF_LINK
+#INPUT     = POPCNT_008d$(OBJ)
+#OUTPUT    = POPCNT_008d$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = POPCNT_008d$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

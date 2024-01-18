@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/others/dataPtrExtDummyArgForall_SELFASSGN.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071217
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrExtDummyArgForall_SELFASSGN.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrExtDummyArgForall_SELFASSGN$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrExtDummyArgForall_SELFASSGN$(OBJ)
+#OUTPUT    = dataPtrExtDummyArgForall_SELFASSGN$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrExtDummyArgForall_SELFASSGN$(EXE)
+#STDOUT    = dataPtrExtDummyArgForall_SELFASSGN.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrExtDummyArgForall_SELFASSGN.out $($(tcasedir)dataPtrExtDummyArgForall_SELFASSGN$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

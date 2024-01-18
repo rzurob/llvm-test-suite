@@ -1,0 +1,5 @@
+** mod   === End of Compilation 1 ===
+"renameoperator006.f", line 64.5: 1514-697 (S) Defined operator (.addition.) is not publicly accessible from this module. (.addition.) must not appear in a USE statement in this module.
+"renameoperator006.f", line 69.6: 1516-065 (S) A generic interface defining the .plus. operator is not accessible.  The operation cannot be resolved.
+** main   === End of Compilation 2 ===
+1501-511  Compilation failed for file renameoperator006.f.

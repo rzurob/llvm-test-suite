@@ -1,0 +1,45 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_procptr/bindc1/functional/bindc026.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20060111 added product to .vf, CPR
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS)
+#INPUT     = $(tcasedir)bindc026.c
+#OUTPUT    = bindc026c$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)bindc026.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = bindc026$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = bindc026c$(OBJ) bindc026$(OBJ)
+#OUTPUT    = bindc026$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = bindc026$(EXE)
+#STDOUT    = bindc026.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)bindc026$(product)vf) bindc026.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,8 @@
+"AssumedType14d.f", line 35.23: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "max".
+** mod   === End of Compilation 1 ===
+"AssumedType14d.f", line 46.3: 1515-019 (S) Syntax is incorrect.
+"AssumedType14d.f", line 46.27: 1513-056 (S) This procedure is either missing its SUBROUTINE or FUNCTION statement or that statement had a syntax error in it.
+"AssumedType14d.f", line 53.13: 1516-356 (S) Entity a has assumed type. a must not be used in this context.
+"AssumedType14d.f", line 53.15: 1516-356 (S) Entity b has assumed type. b must not be used in this context.
+** assumedtype14d   === End of Compilation 2 ===
+1501-511  Compilation failed for file AssumedType14d.f.

@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/io/unformatted/direct/directRead01.scenario
+#FEATURE	= Unformatted Intrinsic I/O (with Derived Type Parameters)
+#CREATOR	= Glen Mateer
+#DATE		= 20080930
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)directRead01.f
+#OUTPUT		= directRead01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= directRead01$(OBJ)
+#OUTPUT		= directRead01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= directRead01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

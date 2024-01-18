@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/decimaledit/dtio/dcmlChildInquire002.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of decimaledit/*
+#DATE      = 20071213
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dcmlChildInquire002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dcmlChildInquire002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dcmlChildInquire002$(OBJ)
+#OUTPUT    = dcmlChildInquire002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dcmlChildInquire002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

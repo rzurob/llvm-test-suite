@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/round/test/roundRealRWEdit06.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of round/*
+#DATE      = 20071102
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)roundRealRWEdit06.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = roundRealRWEdit06$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = roundRealRWEdit06$(OBJ)
+#OUTPUT    = roundRealRWEdit06$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = roundRealRWEdit06$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,3 @@
+"AllocatableDummyArgument01d.f", line 41.41: 1513-264 (S) Procedure contig_sub is declared with the BIND(C) attribute.  Dummy argument arr of contig_sub must not have both the CONTIGUOUS and the POINTER attributes.
+** mod   === End of Compilation 1 ===
+1501-511  Compilation failed for file AllocatableDummyArgument01d.f.

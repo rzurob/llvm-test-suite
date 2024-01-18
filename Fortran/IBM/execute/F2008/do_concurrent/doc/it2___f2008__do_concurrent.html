@@ -1,0 +1,982 @@
+<html><head><title>IT2 - F2008: DO CONCURRENT</title></head><body><div class="Section1">
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="BACKGROUND: rgb(175,191,195) 0% 50%; WIDTH: 100%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; WIDTH: 100%">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica; COLOR: navy">Document Control Information:</span></strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica; COLOR: navy"> </span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            <p>The official version of this document is kept in CMVC in the <span style="FONT-WEIGHT: bold; TEXT-DECORATION: underline">%CMVC_Family%</span> family, release <span style="FONT-WEIGHT: bold; TEXT-DECORATION: underline">%CMVC_Release%</span>, component <span style="FONT-WEIGHT: bold; TEXT-DECORATION: underline">%CMVC_Component%</span>, file <span style="FONT-WEIGHT: bold; COLOR: rgb(255,102,102); TEXT-DECORATION: underline">%CMVC_PathName%</span>. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.<br />
+            <br />
+            CMVC Extraction Information: %W% %H% %I% sccsid<br />
+            </p>
+            <p>CMVC_Family=aix, CMVC_Release=test.dev, CMVC_Component=test.values<br />
+            </p>
+            <p>This document is IBM Confidential.<span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><u1:p></u1:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<table width="100%" cellspacing="3" cellpadding="0" border="1" style="BACKGROUND: rgb(255,204,153) 0% 50%; WIDTH: 100%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td valign="top" style="PADDING-BOTTOM: 1pt; PADDING-TOP: 1pt; PADDING-LEFT: 1pt; PADDING-RIGHT: 1pt">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Reviewers</span></strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">: </span><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Please click the 'Reviewed' check-box beside your name to indicate your participation in the review.</span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN-BOTTOM: 6pt" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN-BOTTOM: 12pt" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">%Reviews%</span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<u1:p></u1:p><u1:p></u1:p><u1:p></u1:p><u1:p></u1:p><u1:p></u1:p><u1:p></u1:p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="BACKGROUND: rgb(224,255,191) 0% 50%; WIDTH: 100%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="21%" valign="top" style="BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; WIDTH: 21.22%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p>Document Title<u1:p></u1:p></span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td width="78%" valign="top" style="BACKGROUND: white 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; WIDTH: 78.78%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica; COLOR: blue">%Document_Name%%Note{or IT2 for name of the feature you are testing}%</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="21%" valign="top" style="BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; WIDTH: 21.22%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">CMVC Feature Number:</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td width="78%" valign="top" style="BACKGROUND: white 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; WIDTH: 78.78%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica; COLOR: blue">%CMVC_Feature%</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Feature Title:</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="BACKGROUND: white 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica; COLOR: blue">%Note{Feature Title (please remember to change the title in the raw HTML, otherwise it shows up as ITSample in Web Review)}%</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Author(s):</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="BACKGROUND: white 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica; COLOR: blue">%Authors%</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Mandatory Reviewers:<u1:p></u1:p></span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">(Approver)</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="BACKGROUND: white 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica; COLOR: blue">%Note{These reviewers have technical approval authority and MUST approve this IT2. Generally, only list reviewers from the Component Reviewer list whose component is directly affected by this feature. Use Access Control to add or delete a reviewer}%</span></strong></p>
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica; COLOR: blue">%Approvers%</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Component Reviewers:(optional participation)</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="BACKGROUND: white 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica; COLOR: blue">%Note{ These groups must be made aware of the IT2, assign one person representing each. The names are suggested contacts (</span></strong><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica; COLOR: blue">The component leads directly affected by AIX/Linux are in the list by default</span></strong><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica; COLOR: blue">):</span></strong></p>
+            <ul>
+                <li>
+                <div><span><font face="Arial" color="#0000ff">C FE and related tools/libraries/driver:</font></span></div>
+                </li>
+            </ul>
+            <blockquote dir="ltr" style="MARGIN-RIGHT: 0px">
+            <p class="MsoNormal"><span><font face="Arial"><font color="#0000ff">AIX - Philip Luk (</font><a href="mailto:philipl@ca.ibm.com"><font color="#0000ff">philipl@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            </blockquote><blockquote dir="ltr" style="COLOR: blue; MARGIN-RIGHT: 0px" class="MsoNormal">
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">Linux - Philip Luk (</font><a href="mailto:philipl@ca.ibm.com"><font color="#0000ff">philipl@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">zOS - Kendrick Wong (</font><a href="mailto:kendrick@ca.ibm.com"><font color="#0000ff">kendrick@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">CELL - Larry Lindsay (</font><a href="mailto:llindsay@ca.ibm.com"><font color="#0000ff">llindsay@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">UPC - Philip Luk (</font><a href="mailto:philipl@ca.ibm.com"><font color="#0000ff">philipl@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            </blockquote>
+            <ul type="disc" style="MARGIN-TOP: 0in">
+                <li>
+                <div align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial" color="#0000ff">C++ FE and related tools/libraries/driver:</font></span></div>
+                </li>
+            </ul>
+            <blockquote dir="ltr" style="COLOR: blue; MARGIN-RIGHT: 0px" class="MsoNormal">
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font color="#0000ff">AIX - Jeff Heath (</font><a href="mailto:jrheath@ca.ibm.com"><font color="#0000ff">jrheath@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">Linux - Sasha Kasapinovic (</font><a href="mailto:skasapin@ca.ibm.com"><font color="#0000ff">skasapin@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">zOS - Michael Wong (</font><a href="mailto:michaelw@ca.ibm.com"><font color="#0000ff">michaelw@ca.ibm.com</font></a><font color="#0000ff">) </font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">CELL - Kevin Shin (</font><a href="mailto:kevshin@ca.ibm.com"><font color="#0000ff">kevshin@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            </blockquote>
+            <p>&nbsp;</p>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial" color="#0000ff">Fortran FE, ASTI, PLIX, and related tools/libraries/driver:</font></span></div>
+                </li>
+            </ul>
+            <p>&nbsp;</p>
+            <blockquote dir="ltr" style="MARGIN-RIGHT: 0px">
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">AIX, PLIX - Rafik Zurob (</font><a href="mailto:rzurob@ca.ibm.com"><font color="#0000ff">rzurob@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">Linux - Xing Xue (</font><a href="mailto:xingxue@ca.ibm.com"><font color="#0000ff">xingxue@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">BG/L - Daniel Chen (</font><a href="mailto:cdchen@ca.ibm.com"><font color="#0000ff">cdchen@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">CELL - Kelvin Li (</font><a href="mailto:kli@ca.ibm.com"><font color="#0000ff">kli@ca.ibm.com</font></a><font color="#0000ff">) </font></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><span><font size="2"><font color="#0000ff"><font face="Arial">PL/X Development: </font><font face="Arial">Kirk Crane (<a href="mailto:krcrane@ca.ibm.com">krcrane@ca.ibm.com</a>)</font></font></font></span></div>
+                </li>
+            </ul>
+            <blockquote dir="ltr" style="MARGIN-RIGHT: 0px">
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial" color="#0000ff">TPO and associated tools/libraries (libxlopt, SMPRT, MASS):</font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">AIX - Edwin Chan (<a href="mailto:edwinc@ca.ibm.com)">edwinc@ca.ibm.com)</a></font></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font color="#0000ff">Linux - Tommy Wong (<a href="mailto:tomwong@ca.ibm.com">tomwong@ca.ibm.com</a>)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">zOS - Chris Miclea (<a href="mailto:cmiclea@ca.ibm.com">cmiclea@ca.ibm.com</a>)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">BG - Damien Bonaventure (</font><a href="mailto:damien@ca.ibm.com"><font color="#0000ff">damien@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">CELL - Amy Wang (</font><a href="mailto:aktwang@ca.ibm.com"><font color="#0000ff">aktwang@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial" color="#0000ff">TOBEY and associated tools/libraries: (dis, libxl, bolt)</font></span></div>
+                </li>
+            </ul>
+            <blockquote dir="ltr" style="MARGIN-RIGHT: 0px">
+            <p align="left" class="MsoNormal"><span><font face="Arial" color="#0000ff">AIX - Christopher Lapkowski</font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">Linux - Irina Rada (<a href="mailto:irinar@ca.ibm.com">irinar@ca.ibm.com</a>)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">zOS - Chwan-Hang Lee (</font><a href="mailto:chwan@ca.ibm.com"><font color="#0000ff">chwan@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">BG - Damien Bonaventure (damien@ca.ibm.com), Leon Ding (Xiaoliang Ding/Piscataway/IBM@IBMUS, </font><a href="mailto:dingxi@us.ibm.com"><font color="#0000ff">dingxi@us.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">CELL - Dickson Chau (</font><a href="mailto:dickchau@ca.ibm.com"><font color="#0000ff">dickchau@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">dis (AIX/Linux) - Ian McIntosh (</font><a href="mailto:ianm@ca.ibm.com"><font color="#0000ff">ianm@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><font color="#0000ff"><span><font face="Arial">WCode: </font><font face="Arial">Roland Froese (<a href="mailto:froese@ca.ibm.com">froese@ca.ibm.com</a>) </font></span></font></div>
+                </li>
+            </ul>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial" color="#0000ff">Information Development:</font></span></div>
+                </li>
+            </ul>
+            <blockquote dir="ltr" style="MARGIN-RIGHT: 0px">
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">C/C++ - Kathleen Dowling (</font><a href="mailto:dowling@ca.ibm.com"><font color="#0000ff">dowling@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">Fortran - Joe Sobura (</font><a href="mailto:sobura@ca.ibm.com"><font color="#0000ff">sobura@ca.ibm.com</font></a><font color="#0000ff">) </font></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial" color="#0000ff">Customer Service and Support:</font></span></div>
+                </li>
+            </ul>
+            <blockquote dir="ltr" style="MARGIN-RIGHT: 0px">
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">AIX/Linux - Zoran Kulina (</font><a href="mailto:zoran@ca.ibm.com"><font color="#0000ff">zoran@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">Cell - Sean Kennedy (</font><a href="mailto:seanpk@ca.ibm.com"><font color="#0000ff">seanpk@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font size="2" color="#0000ff">Youssef Himo (</font><a href="mailto:himo@ca.ibm.com"><font size="2" color="#0000ff">himo@ca.ibm.com</font></a><font size="2" color="#0000ff">)</font></font></span></p>
+            </blockquote>
+            <ul>
+                <li>
+                <div align="left" class="MsoNormal"><span><font face="Arial"><font size="2" color="#0000ff">Compiler Enablement:Dwayne Moore (</font><a href="mailto:dwayne@ca.ibm.com"><font size="2" color="#0000ff">dwayne@ca.ibm.com</font></a><font size="2" color="#0000ff">) </font></font></span></div>
+                </li>
+                <li>
+                <div align="left" class="MsoNormal"><span><font face="Arial"><font size="2"><font color="#0000ff">Fortran Test:Kobi Vinayagamoorthy (<a href="mailto:kobiv@ca.ibm.com">kobiv@ca.ibm.com</a>) </font></font></font></span></div>
+                </li>
+                <li>
+                <div align="left" class="MsoNormal"><font size="2"><font color="#0000ff"><span><font face="Arial">C/C++ Test:</font><font face="Arial"> </font></span><span></span><span><font face="Arial">Adrian Gatea (system p) (<a href="mailto:gatea@ca.ibm.com">gatea@ca.ibm.com</a>) </font></span></font></font></div>
+                </li>
+                <li class="MsoNormal"><span><font size="2"><font color="#0000ff"><span>zOS C/C++ Test: </span>Leon L Kiriliuk (z/OS) (</font></font><a href="mailto:leonk@ca.ibm.com)"><font face="Times New Roman"></font></a><a href="mailto:leonk@ca.ibm.com)"><font size="2" color="#0000ff">leonk@ca.ibm.com)</font></a><font face="Arial"></font></span> </li>
+                <li class="MsoNormal"><font size="2"><font color="#0000ff"><span><font face="Arial">PL/X Test: </font></span><span><font face="Arial">Anne Wylie (<a href="mailto:wylie@ca.ibm.com">wylie@ca.ibm.com</a>) </font></span></font></font></li>
+                <li class="MsoNormal"><span><font size="2" face="Arial" color="#0000ff">Build and Packaging Team: </font></span></li>
+            </ul>
+            <blockquote dir="ltr" style="MARGIN-RIGHT: 0px">
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font size="2" color="#0000ff">AIX - Chris Taylor (</font><a href="mailto:cntaylor@ca.ibm.com"><font size="2" color="#0000ff">cntaylor@ca.ibm.com</font></a><font size="2" color="#0000ff">) </font></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font size="2" color="#0000ff">Linux - Viktor Ganich (</font><a href="mailto:vganich@ca.ibm.com"><font size="2" color="#0000ff">vganich@ca.ibm.com</font></a><font size="2" color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font size="2" color="#0000ff">BGL - Steven Chen (</font><a href="mailto:stevchen@ca.ibm.com"><font size="2" color="#0000ff">stevchen@ca.ibm.com</font></a><font size="2" color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font size="2" color="#0000ff">Cell - Kevin Yuen (</font><a href="mailto:kchyuen@ca.ibm.com"><font size="2" color="#0000ff">kchyuen@ca.ibm.com</font></a><font size="2" color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font size="2" color="#0000ff">z/OS - Steve Chen (</font><a href="mailto:schen@ca.ibm.com"><font size="2" color="#0000ff">schen@ca.ibm.com</font></a><font size="2" color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font size="2" color="#0000ff">Dale Soldiuk (</font><a href="mailto:soldiuk@ca.ibm.com"><font size="2" color="#0000ff">soldiuk@ca.ibm.com</font></a><font size="2" color="#0000ff">) (Please include Dale as optional on all reviews)</font></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><span><font face="Arial"><font size="2"><font color="#0000ff">Performance Measurement and Analysis Team: John Tam (<a href="mailto:johntam@ca.ibm.com">johntam@ca.ibm.com</a>)</font></font></font></span></div>
+                </li>
+            </ul>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><font size="2"><span><font face="Arial" color="#0000ff">Planning: </font></span><span><font face="Arial"><font color="#0000ff">Mary Chan (</font><a href="mailto:marychan@ca.ibm.com"><font color="#0000ff">marychan@ca.ibm.com</font></a><font color="#0000ff">)</font> </font></span></font></div>
+                </li>
+            </ul>
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica; COLOR: blue"><span class="GramE"></span>Use Access Control comments to add/delete people from this list.}%<br />
+            <br />
+            %Component_Reviewers%</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Team Reviewers: (optional participation)</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="BACKGROUND: white 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica; COLOR: blue"><span class="GramE">%Note{</span>List any additional reviewers assigned to the review. These reviewers do not have approval authority. </span></strong><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica; COLOR: blue">Use Access Control to add or delete a reviewer.</span></strong><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica; COLOR: blue">}%<u1:p></u1:p><o:p></o:p></span></strong></p>
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica; COLOR: blue">%Team_Reviewers%<o:p></o:p></span></strong></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN-BOTTOM: 12pt" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><u1:p></u1:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<u1:p></u1:p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="BACKGROUND: rgb(184,213,226) 0% 50%; WIDTH: 100%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; WIDTH: 100%">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">IT2 Status: <!-- Start -->For Approval </span><!-- End --></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Approvers Only:</span></strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"> Click on the 'Approve' check-box beside your name in the table below if you agree with the technical and user interface content of this document; not checking your 'approve' check-box signifies you do not approve.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">%Approvals%<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><strong>Approval Comments</strong></span></p>
+<p class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><strong><br />
+</strong></span></p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="FONT-SIZE: 12pt; FONT-FAMILY: Arial; TEXT-ALIGN: left; WIDTH: 100%; BACKGROUND-COLOR: rgb(200,175,200)">
+    <tbody>
+        <tr>
+            <td style="FONT-FAMILY: Arial; VERTICAL-ALIGN: top"><strong>Access Change History</strong> %Note{Authors: Access Change History will list any changes to the access control done to the document draft. These changes would not be visible in a review. In a review, this section would only list the access changes done to the review itself.<br />
+            Please note that changes to the access control of a review are not automatically reflected in the access control of the draft document.}% </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%CollapsedSection{<strong>Access Change History</strong>}{%Access_Change_History%}%
+<p class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in" class="MsoNormal"><span style="FONT-SIZE: 11pt; FONT-FAMILY: Helvetica"></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<u1:p></u1:p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="BACKGROUND: rgb(200,175,200) 0% 50%; WIDTH: 100%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; WIDTH: 100%">
+            <p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong><span style="FONT-SIZE: 14pt; FONT-FAMILY: Helvetica">Test Cases</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><u1:p><o:p></o:p></u1:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">%Note { <o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><u><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">General Comments:<u1:p></u1:p></span></u><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">&lt;<span class="GramE">comments</span>&gt;<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><u><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Comments Specific to Individual Test Cases:<u1:p></u1:p></span></u><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">
+<list all="" your="" scenarios="" here="" eg=""></list>
+<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span lang="PT-BR" style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">xxxxx001f.scenario<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span lang="PT-BR" style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">xxxxx002f.scenario<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span lang="PT-BR" style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">xxxxx003f.scenario<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><!-- End Overview -->xxxxx004f.scenario<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">...<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">}%<o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<u1:p></u1:p>Below are the new TCs written for this feature along with an overview of each one.<br />
+<br />
+We are testing nesting up to 3-levels deep for nested do concurrent loops unless otherwise specified. All user-defined procedures are pure (constraint on DO CONCURRENT construct; DO CONCURRENT construct can only act upon pure procedures and can only call pure procedures in the <tt>scalar-mask-expr</tt>).<br />
+<br />
+We will only be acceptance testing OMP directives because OMP will not do anything for the  customer in terms of parallelizing iterations of the DO CONCURRENT loops  at this time. For example, the <tt>!$OMP PARALLEL</tt> directive does not parallelize the iterations of a DO CONCURRENT loop - it executes the loop completely once per thread. Also, OMP does not currently support F2008 and <tt>!$OMP DO</tt> or <tt>!$OMP PARALLEL DO</tt> does not accept the DO CONCURRENT construct as an acceptable DO construct for the directive at this time.<br />
+<br />
+<strong>Note:</strong> Functional test cases are located at <tt>$(tsrcdir)F2008/do_concurrent/func/</tt> and diagnostic test cases are located at <tt>$(tsrcdir)F2008/do_concurrent/diag/</tt>.<br />
+<br />
+<table width="1300" border="1" style="BORDER-COLLAPSE: collapse">
+    <tbody>
+        <tr>
+            <td colspan="4"><center><strong>FUNCTIONAL TEST CASES</strong></center></td>
+        </tr>
+        <tr>
+            <td><center><strong>Scenario Name</strong></center></td>
+            <td><center><strong>Test Focus</strong></center></td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f001.scenario<br />
+            Nicole<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>Various kinds of integer variables in DO CONCURRENT loops including nested DO CONCURRENT loops</li>
+                <li><tt>concurrent-limit</tt> contains a variable with the parameter attribute</li>
+                <li><tt>scalar-mask-expr</tt> contains arrays of various integer types and logicals</li>
+                <li>Declaring type of <tt>index-name</tt> using a parameter variable to specify kind</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f002.scenario<br />
+            Nicole<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>Various kinds of integers, reals and double variables in DO CONCURRENT loops including nested DO CONCURRENT loops</li>
+                <li><tt>concurrent-limit</tt> contains a variable with the parameter attribute</li>
+                <li><tt>scalar-mask-expr</tt> contains arrays of various real kinds and logicals</li>
+                <li>Use of intrinsic procedures inside DO CONCURRENT loops</li>
+                <li>Use of intrinsic procedures in the <tt>scalar-mask-expr</tt></li>
+                <li>Use of ASSOCIATE in DO CONCURRENT loops</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f003.scenario<br />
+            Nicole<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>Allocatable integer arrays of various kinds in DO CONCURRENT loops including nested DO CONCURRENT loops</li>
+                <li><tt>concurrent-limit</tt> contains a variable with the parameter attribute</li>
+                <li><tt>scalar-mask-expr</tt> contains various integer kind allocatable arrays and logicals</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f004.scenario<br />
+            Nicole<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>Various kinds of integers, reals and double allocatable arrays in DO CONCURRENT loops including nested DO CONCURRENT loops</li>
+                <li><tt>concurrent-limit</tt> contains a variable with the parameter attribute</li>
+                <li><tt>scalar-mask-expr</tt> contains logicals and allocatable arrays of various real kinds</li>
+                <li>Use of intrinsic procedures inside DO CONCURRENT loops</li>
+                <li>Use of intrinsic procedures in the <tt>scalar-mask-expr</tt></li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f005.scenario<br />
+            Nicole<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>Various kinds of integer pointers in DO CONCURRENT loops including nested DO CONCURRENT loops</li>
+                <li><tt>concurrent-limit</tt> contains a variable with the parameter attribute</li>
+                <li><tt>scalar-mask-expr</tt> contains integer and logical pointers</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f006.scenario<br />
+            Nicole<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>Various kinds of real pointers and double pointers in DO CONCURRENT loops including nested DO CONCURRENT loops</li>
+                <li><tt>concurrent-limit</tt> contains a variable with the parameter attribute</li>
+                <li><tt>scalar-mask-expr</tt> contains real pointers and logical pointers</li>
+                <li>Use of user-defined and intrinsic procedures inside DO CONCURRENT loops with pointers as arguments</li>
+                <li>Use of user-defined and intrinsic procedures in the <tt>scalar-mask-expr</tt> with pointers as arguments</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f007.scenario<br />
+            Nicole</center></td>
+            <td>
+            <ul>
+                <li>Various kinds of real pointers and double pointers in DO CONCURRENT loops including nested DO CONCURRENT loops</li>
+                <li><tt>concurrent-limit</tt> contains a variable with the parameter attribute</li>
+                <li><tt>scalar-mask-expr</tt> contains real pointers and logical pointers</li>
+                <li>Use of pointers to user-defined procedures inside DO CONCURRENT loops with pointers as arguments</li>
+                <li>Use of pointers to user-defined procedures in the <tt>scalar-mask-expr</tt> with pointers as arguments</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f008.scenario<br />
+            Nicole</center></td>
+            <td>
+            <ul>
+                <li>Various kinds of real, complex, double, logical and character arrays and scalars in DO CONCURRENT loops including nested DO CONCURRENT loops</li>
+                <li><tt>scalar-mask-expr</tt> contains logicals and character arrays<br />
+                </li>
+                <li>DATA statements used to initialize values </li>
+                <li>Select statements inside DO CONCURRENT loop </li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f009.scenario<br />
+            Nicole<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>DO CONCURRENT loops (including nested DO CONCURRENT loops) with variables of user-defined types without the ALLOCATABLE or POINTER attribute with nonpointer default-initialized subcomponents</li>
+                <li>User-defined types containing reals, logicals, characters, complex and doubles</li>
+                <li><tt>scalar-mask-expr</tt> contains user-defined data types</li>
+                <li>Select statement inside DO CONCURRENT loop with user-defined data types inside</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f010.scenario<br />
+            Nicole<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>DO CONCURRENT loops (including nested DO CONCURRENT loops) with iterators in named and blank common blocks</li>
+                <li>DO CONCURRENT loops (including nested DO CONCURRENT loops) with user-defined data types from named and blank common blocks</li>
+                <li><tt>scalar-mask-expr</tt> contains user-defined data types from named and blank common blocks</li>
+                <li>Select statement inside DO CONCURRENT loop with user-defined data types inside that are from named and blank common blocks</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f011.scenario<br />
+            Nicole</center></td>
+            <td>
+            <ul>
+                <li>DO CONCURRENT loops (including nested DO CONCURRENT loops) with blocks inside them</li>
+                <li>User-defined data types containing reals, logicals, characters, complex and doubles</li>
+                <li><tt>scalar-mask-expr</tt> contains user-defined data types</li>
+                <li>DO CONCURRENT loops (including nested DO CONCURRENT loops) acting on BLOCK local variables</li>
+                <li>Select statement inside DO CONCURRENT loop with user-defined data types inside</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f012.scenario<br />
+            Bernard</center></td>
+            <td>
+            <ul>
+                <li>Module variables initialized inside in a C program via bind(c) </li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f013.scenario<br />
+            Nicole</center></td>
+            <td>
+            <ul>
+                <li>DO CONCURRENT loops (including nested DO CONCURRENT loops) inside block statements</li>
+                <li>User-defined data types containing reals, logicals, characters, complex and doubles</li>
+                <li><tt>scalar-mask-expr</tt> contains user-defined data types</li>
+                <li>DO CONCURRENT loops (including nested DO CONCURRENT loops) acting on BLOCK local variables</li>
+                <li>Select statement inside DO CONCURRENT loop with user-defined data types inside</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f014.scenario<br />
+            Nicole</center></td>
+            <td>
+            <ul>
+                <li>Block statements with DO CONCURRENT loops in them with block statements in them (including nested DO CONCURRENT loops)</li>
+                <li>User-defined data types containing reals, logicals, characters, complex and doubles</li>
+                <li><tt>scalar-mask-expr</tt> contains user-defined data types</li>
+                <li>DO CONCURRENT loops (including nested DO CONCURRENT loops) acting on BLOCK local variables</li>
+                <li>Select statement inside DO CONCURRENT loop with user-defined data types inside<br />
+                </li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f015.scenario<br />
+            Nicole<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>DO CONCURRENT loops (including nested DO CONCURRENT loops) inside external subroutines and functions (in same file)</li>
+                <li><tt>concurrent-limit</tt> contains a variable with the parameter attribute</li>
+                <li><tt>scalar-mask-expr</tt> contains logicals and user-defined procedures</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f016.scenario<br />
+            Nicole<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>DO CONCURRENT loops (including nested DO CONCURRENT loops) inside external subroutines and functions from external files</li>
+                <li><tt>concurrent-limit</tt> contains a variable with the parameter attribute</li>
+                <li><tt>scalar-mask-expr</tt> contains logicals and intrinsic procedures<br />
+                </li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f017.scenario<br />
+            Nicole<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>DO CONCURRENT loops (including nested DO CONCURRENT loops) inside subroutines and functions inside modules from external files</li>
+                <li><tt>concurrent-limit</tt> contains a variable with the parameter attribute</li>
+                <li><tt>scalar-mask-expr</tt> contains logicals and intrinsic procedures<br />
+                </li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f018.scenario<br />
+            Nicole<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>DO CONCURRENT loops (including nested DO CONCURRENT loops) inside subroutines and functions inside contains section<br />
+                </li>
+                <li><tt>concurrent-limit</tt> contains a variable with the parameter attribute</li>
+                <li><tt>scalar-mask-expr</tt> contains logicals and intrinsic procedures</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f019.scenario<br />
+            Bernard</center></td>
+            <td>
+            <ul>
+                <li>Various levels of other loop constructs (FORALL and DO) nested in DO CONCURRENT loops</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f020.scenario<br />
+            Bernard</center></td>
+            <td>
+            <ul>
+                <li>DO CONCURRENT loops nested inside DO loop and other structures</li>
+                <li>Also checks interactions with other keywords that apply to the internal DO loop</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f021.scenario<br />
+            Bernard</center></td>
+            <td>
+            <ul>
+                <li>DO CONCURRENT loops with bind(c) functions or subroutines inside</li>
+                <li>if, select statements inside DO CONCURRENT</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f022.scenario<br />
+            Bernard</center></td>
+            <td>
+            <ul>
+                <li>DO CONCURRENT loops placed in module procedures </li>
+                <li>The interface module procedure declaration could be as module procedure, module subroutine or module function</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f023.scenario<br />
+            Nicole<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>READ/WRITE statements inside DO CONCURRENT loops (including nested DO CONCURRENT loops) using:<br />
+                <ul>
+                    <li>READ/WRITE statements on units opened with NEWUNIT </li>
+                </ul>
+                <ul>
+                    <li>READ/WRITE statements using IOSTAT </li>
+                </ul>
+                <ul>
+                    <li>READ/WRITE statements using IOMSG </li>
+                </ul>
+                <ul>
+                    <li>READ/WRITE statements using FMT=* </li>
+                </ul>
+                </li>
+                <li><tt>concurrent-limit</tt> contains a variable with the parameter attribute</li>
+                <li><tt>scalar-mask-expr</tt> contains logicals and procedures</li>
+                <li>Test case is only valid for serial implementation, will probably have to be updated once parallel implementation is available</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f024.scenario<br />
+            Bernard<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>Acceptance test for DO CONCURRENT loops with very deep level nesting (22-levels deep)<br />
+                </li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f025.scenario<br />
+            Bernard<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>Acceptance test for DO CONCURRENT loops with very deep level nesting (22-levels deep), with OMP </li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f026.scenario<br />
+            Bernard<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>Polymorphic procedure used inside a DO CONCURRENT loop</li>
+                <li>Tests derived type polymorphism with functions inside the derived type</li>
+                <li>use of SELECT TYPE construct inside a DO CONCURRENT loop</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f027.scenario<br />
+            Bernard<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>Polymorphic procedure used inside a do concurrent loop</li>
+                <li>Tests derived type polymorphism with subroutines inside the derived type (note that this can only be an acceptance test because pure procedures cannot have side effects - return values are not tested)</li>
+                <li>use of SELECT TYPE construct inside a nested DO CONCURRENT loop</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f028.scenario<br />
+            Bernard<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>Missed coverage in response to RTC defect 117242</li>
+                <li>Acceptance test for different declarations of the index variable in the integer_type_spec<br />
+                DO CONCURRENT keyword should be case insensitive                 </li>
+                <li>Specify the kind of the index variable by parameter values<br />
+                </li>
+                <li>Specify concurrent-step and concurrent index by parameter values</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f029.scenario<br />
+            Bernard<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>Pure procedure in a scalar-mask-expression that could be defined:</li>
+                <li>locally</li>
+                <li>externally (i.e. in a c program, outside the program, in a module or submodule, etc)</li>
+                <li>Also covers using the pure procedure in a nested do concurrent loop</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f030.scenario<br />
+            Bernard<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>Using a CYCLE statement in the loop</li>
+                <li>Also covers the nested case, expect the CYCLE statement to be valid within the innermost loop in which it appears</li>
+                <li>RTC defect 118336: SIGILL with CYCLE</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_f031.scenario<br />
+            Bernard<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>DO CONCURRENT with implicitly defined iterators in various scopes</li>
+                <li>the variable may be specified with the implicit keyword or not specified</li>
+                <li>Also covers the nested case<br />
+                </li>
+                <li>internal, external (i.e. module/submodule), in other constructs, etc</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_omp_f001.scenario<br />
+            Nicole<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>Acceptance test for DO CONCURRENT loops (including nested DO CONCURRENT loops) in <tt>!$OMP WORKSHARE</tt> and <tt>!$OMP PARALLEL WORKSHARE</tt></li>
+                <li>DO CONCURRENT loops with <tt>scalar-mask-expr</tt></li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_omp_f002.scenario<br />
+            Nicole<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>Acceptance test for DO CONCURRENT loops (including nested DO CONCURRENT loops) in <tt>!$OMP PARALLEL</tt> with clauses:
+                <ul>
+                    <li>PRIVATE</li>
+                    <li>NUM_THREADS</li>
+                </ul>
+                </li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_omp_f003.scenario<br />
+            Nicole<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>Acceptance test for DO CONCURRENT loops (including nested DO CONCURRENT loops) with <tt>!$OMP THREADPRIVATE</tt></li>
+                <li>Acceptance test for DO CONCURRENT loops (including nested DO CONCURRENT loops) in <tt>!$OMP PARALLEL</tt> with clauses:
+                <ul>
+                    <li>COPYIN</li>
+                    <li>NUM_THREADS</li>
+                </ul>
+                </li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_omp_f004.scenario<br />
+            Nicole<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>Acceptance test for DO CONCURRENT loops with OMP_WAIT_POLICY environment variable</li>
+                <li>Nested DO CONCURRENT in external procedure from module and internal procedures</li>
+                <li>Acceptance test for DO CONCURRENT loops inside procedures in <tt>!$OMP PARALLEL</tt> with clauses:
+                <ul>
+                    <li>PRIVATE</li>
+                    <li>REDUCTION</li>
+                </ul>
+                </li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_omp_f005.scenario<br />
+            Nicole<br />
+            </center></td>
+            <td>
+            <ul>
+                <li>Acceptance test for DO CONCURRENT loops (including nested DO CONCURRENT loops) with <tt>!$OMP PARALLEL</tt> with clauses:
+                <ul>
+                    <li>PRIVATE</li>
+                    <li>FIRSTPRIVATE</li>
+                    <li>SHARED</li>
+                    <li>NUM_THREADS</li>
+                </ul>
+                </li>
+                <li>DO CONCURRENT loops (including nested DO CONCURRENT loops) with procedures inside</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>do_concurrent_omp_f006.scenario<br />
+            <div align="center">Nicole</div>
+            </td>
+            <td>
+            <ul>
+                <li>Acceptance test for DO CONCURRENT loops (including nested DO CONCURRENT loops) with <tt>!$OMP PARALLEL</tt> with clauses:
+                <ul>
+                    <li>NUM_THREADS</li>
+                </ul>
+                </li>
+                <li>Acceptance test for DO CONCURRENT loops (including nested DO CONCURRENT loops) with <tt>!$OMP TASK</tt> with clauses:
+                <ul>
+                    <li>DEFAULT</li>
+                    <li>PRIVATE</li>
+                </ul>
+                </li>
+                <li>Acceptance test for DO CONCURRENT loops (including nested DO CONCURRENT loops) with <tt>!$OMP TASKWAIT</tt></li>
+                <li>Acceptance test for DO CONCURRENT loops (including nested DO CONCURRENT loops) with <tt>!$OMP CRITICAL</tt></li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>do_concurrent_omp_f007.scenario<br />
+            <div align="center">Nicole</div>
+            </td>
+            <td>
+            <ul>
+                <li>&nbsp;Acceptance test for DO CONCURRENT loops (including nested DO CONCURRENT loops) with <tt>!$OMP PARALLEL</tt>                                  </li>
+                <li>Acceptance test for DO CONCURRENT loops (including nested DO CONCURRENT loops) with <tt>!$OMP SINGLE</tt> with clauses:
+                <ul>
+                    <li>FIRSTPRIVATE</li>
+                    <li>PRIVATE</li>
+                    <li>NOWAIT</li>
+                </ul>
+                </li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>do_concurrent_omp_f008.scenario<br />
+            <div align="center">Nicole</div>
+            </td>
+            <td>
+            <ul>
+                <li>Acceptance test for DO CONCURRENT loops (including nested DO CONCURRENT loops) with <tt>!$OMP THREADPRIVATE</tt></li>
+                <li>Acceptance test for DO CONCURRENT loops (including nested DO CONCURRENT loops) with <tt>!$OMP PARALLEL</tt> with clauses:
+                <ul>
+                    <li>DEFAULT</li>
+                    <li>COPYIN</li>
+                    <li>PRIVATE</li>
+                    <li>SHARED</li>
+                </ul>
+                </li>
+                <li>Acceptance test for DO CONCURRENT loops (including nested DO CONCURRENT loops) with <tt>!$OMP SECTIONS</tt> and <tt>!$OMP PARALLEL SECTIONS</tt> with clauses:
+                <ul>
+                    <li>PRIVATE</li>
+                    <li>DEFAULT</li>
+                    <li>COPYIN</li>
+                    <li>SHARED</li>
+                </ul>
+                </li>
+                <li>Acceptance test for DO CONCURRENT loops with <tt>!$OMP SINGLE</tt></li>
+            </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+For diagnostic tests, the constraints listed in the &quot;Constraints Tested&quot; column correspond to the language constraints listed in the Overview of the IT1.<br />
+<br />
+<strong>Note:</strong> xxx in a scenario name represents a numeric value between 001 and 999. <br />
+<table width="1300" border="1" style="BORDER-COLLAPSE: collapse">
+    <tbody>
+        <tr>
+            <td colspan="4"><center><strong>DIAGNOSTIC TEST CASES</strong></center></td>
+        </tr>
+        <tr>
+            <td><center><strong>Scenario Name</strong></center></td>
+            <td><center><strong>Test Focus</strong></center></td>
+            <td><center><strong>Constraints Tested</strong></center></td>
+            <td><center><strong>Notes</strong></center></td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_d001.scenario<br />
+            Bernard</center></td>
+            <td>&nbsp;impure procedure in <tt>scalar-mask-expr<br />
+            </tt></td>
+            <td>&nbsp;c1</td>
+            <td>&nbsp;expect an error message</td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_d002.scenario<br />
+            Bernard</center></td>
+            <td>&nbsp;<tt>index-name</tt> is not an integer</td>
+            <td>&nbsp;c2</td>
+            <td>&nbsp;expect an error message, RTC 112503</td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_d003.scenario<br />
+            Bernard</center></td>
+            <td>&nbsp;<tt>concurrent-limit</tt> or <tt>concurrent-step</tt> is a reference to an index name</td>
+            <td>&nbsp;c3</td>
+            <td>&nbsp;expect an error message, RTC 118104 - the compiler does not flag the nested loop case<br />
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_d004.scenario<br />
+            Bernard</center></td>
+            <td>&nbsp;<tt>do-statemt</tt> specifies a name, but <tt>end-do</tt> doesnt. <tt>do-statemt</tt> does not specify a name, but <tt>end-do</tt> does<br />
+            </td>
+            <td>&nbsp;c4, c11, c12<br />
+            </td>
+            <td>&nbsp;expect an error message, RTC 118177 - the compiler does not flag when the name of the DO loop is the same as the name of a BLOCK<br />
+            </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_d005.scenario<br />
+            Bernard</center></td>
+            <td>&nbsp;CYCLE statement appears inside a DO CONCURRENT construct that belongs to an outer construct</td>
+            <td>&nbsp;c5</td>
+            <td>&nbsp;expect an error message, RTC 109645</td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_d006.scenario<br />
+            Bernard</center></td>
+            <td>&nbsp;RETURN statement appears inside a DO CONCURRENT construct</td>
+            <td>&nbsp;c6</td>
+            <td>&nbsp;expect an error message</td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_d007.scenario<br />
+            Bernard</center></td>
+            <td>&nbsp;A branch in a DO CONCURRENT construct branches outside the construct</td>
+            <td>&nbsp;c7</td>
+            <td>&nbsp;expect an error message</td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_d008.scenario<br />
+            Bernard</center></td>
+            <td>&nbsp;A reference to a nonpure procedure appears inside a DO CONCURRENT construct</td>
+            <td>&nbsp;c8</td>
+            <td>&nbsp;expect an error message</td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_d009.scenario<br />
+            Bernard</center></td>
+            <td>&nbsp;A reference to IEEE_GET_FLAG, IEEE_SET_HALTING_MODE, IEEE_GET_HALTING_MODE from IEEE_EXCEPTIONS&nbsp; appears in a DO CONCURRENT construct</td>
+            <td>&nbsp;c9</td>
+            <td>&nbsp;expect an error message</td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_d010.scenario<br />
+            Bernard</center></td>
+            <td>&nbsp;An <tt>exit-statemt</tt> appears in a DO CONCURRENT construct</td>
+            <td>&nbsp;c10</td>
+            <td>&nbsp;expect an error message, RTC 113737 </td>
+        </tr>
+        <tr>
+            <td><center>do_concurrent_d011.scenario<br />
+            Bernard</center></td>
+            <td>&nbsp;DO CONCURRENT construct appears inside a FORALL construct</td>
+            <td>&nbsp;---</td>
+            <td>&nbsp; an error message consistent with when a DO construct appears inside a FORALL construct </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="BACKGROUND: rgb(200,175,200) 0% 50%; WIDTH: 100%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; WIDTH: 100%">
+            <p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong><span style="FONT-SIZE: 14pt; FONT-FAMILY: Helvetica"><u1:p></u1:p></span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            <p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong><span style="FONT-SIZE: 14pt; FONT-FAMILY: Helvetica">IT2 Information</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 11pt; FONT-FAMILY: Helvetica"><u1:p></u1:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">%Note{<span class="GramE"></span>IT2 location and other related information}%<o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 11pt; FONT-FAMILY: Helvetica"><u1:p></u1:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<u1:p></u1:p>
+<table width="800" height="79" cellspacing="1" cellpadding="1" border="0" summary="">
+    <tbody>
+        <tr>
+            <td><strong>CMVC Family:</strong></td>
+            <td>aix@aix.torolab.ibm.com@1500<br />
+            </td>
+        </tr>
+        <tr>
+            <td><strong>CMVC Component:</strong></td>
+            <td>xlftest.F2008<br />
+            </td>
+        </tr>
+        <tr>
+            <td><strong>CMVC Release:</strong></td>
+            <td>tstdev<br />
+            tst151</td>
+        </tr>
+        <tr>
+            <td style="VERTICAL-ALIGN: top"><strong>CMVC path:</strong></td>
+            <td>F2008/do_concurrent/func<br />
+            F2008/do_concurrent/diag </td>
+        </tr>
+    </tbody>
+</table>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="BACKGROUND: rgb(200,175,200) 0% 50%; WIDTH: 100%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; WIDTH: 100%">
+            <p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong><span style="FONT-SIZE: 14pt; FONT-FAMILY: Helvetica"><!-- End Multi-Platform Considerations -->Appendices/References</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 11pt; FONT-FAMILY: Helvetica"><u1:p></u1:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><span class="GramE">%Note{</span>I0 and IT1 location and other related information}%<o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><u1:p></u1:p><o:p></o:p></span></p>
+</div>
+<strong>I0:</strong> <a href="https://featureflow.torolab.ibm.com/featureflow/show/7830">https://featureflow.torolab.ibm.com/featureflow/show/7830</a> <strong><br />
+IT1:</strong> <a href="https://featureflow.torolab.ibm.com/featureflow/show/7856">https://featureflow.torolab.ibm.com/featureflow/show/7856</a> <!-- End Internal Interfaces --><!--HTML Wrapper--></body></html>

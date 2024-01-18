@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/component/misc007.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)misc007.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = misc007$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = misc007$(OBJ)
+#OUTPUT    = misc007$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = misc007$(EXE)
+#STDOUT    = misc007.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = misc007.out $($(tcasedir)dtparamPassObj003$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

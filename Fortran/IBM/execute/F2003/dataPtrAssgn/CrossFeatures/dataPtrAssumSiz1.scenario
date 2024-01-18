@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dataPtrAssumSiz1.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       02-10-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dataPtrAssumSiz1.f
+#OUTPUT= dataPtrAssumSiz1$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  dataPtrAssumSiz1$(OBJ)
+#OUTPUT= dataPtrAssumSiz1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dataPtrAssumSiz1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

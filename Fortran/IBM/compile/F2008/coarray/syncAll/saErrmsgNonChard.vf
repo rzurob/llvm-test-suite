@@ -1,0 +1,8 @@
+"saErrmsgNonChard.f", line 41.21: 1516-218 (S) Entity rerrmsg, specified for the SYNC statement, must be a scalar character variable.
+"saErrmsgNonChard.f", line 42.21: 1516-218 (S) Entity lerrmsg, specified for the SYNC statement, must be a scalar character variable.
+"saErrmsgNonChard.f", line 43.21: 1516-218 (S) Entity zerrmsg, specified for the SYNC statement, must be a scalar character variable.
+"saErrmsgNonChard.f", line 44.21: 1516-218 (S) Entity derrmsg, specified for the SYNC statement, must be a scalar character variable.
+"saErrmsgNonChard.f", line 45.21: 1516-218 (S) Entity ierrmsg, specified for the SYNC statement, must be a scalar character variable.
+"saErrmsgNonChard.f", line 46.21: 1516-218 (S) Entity aerrmsg, specified for the SYNC statement, must be a scalar character variable.
+** saerrmsgnonchard   === End of Compilation 1 ===
+1501-511  Compilation failed for file saErrmsgNonChard.f.

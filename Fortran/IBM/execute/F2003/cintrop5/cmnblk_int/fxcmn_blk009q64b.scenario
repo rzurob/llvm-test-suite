@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= cintrop5/cmnblk_int/fxcmn_blk009q64b.scenario
+#FEATURE	= cintrop5 tests - regression run bucket
+#CREATOR	= CPR Manual Update
+#DATE		= 20060816
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#IF in($(F_COMPILE^OPT_GEN_64BIT_COMPILER_MODE)) || on(default64)
+  FTCARG="fxcmn_blk009q64b"
+  CTCARG="cxcmn_blk009q64"
+#ELSE
+  FTCARG="fxcmn_blk009b"
+  CTCARG="cxcmn_blk009"
+#ENDIF
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#INCLUDE   = cmn_blk001.shinclude
+
+#ENDCONTROL
+#ENDSCENARIO

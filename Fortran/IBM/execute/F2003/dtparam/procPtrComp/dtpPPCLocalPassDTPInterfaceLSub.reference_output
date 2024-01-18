@@ -1,0 +1,80 @@
+ in disp1: 127 4 0 0 ><
+ in disp1a: -127 4 0 0 ><
+ in disp1: 1 4 3 3 >ijk<
+ in disp1a: -1 4 3 3 >lmn<
+ in disp1: 1 4 3 3 >ijk<
+ in disp1: 32000 4 4 4 >abcd<
+ in disp1a: -12345 4 4 4 >efgh<
+ 
+ in disp2: 127 4 0 0 127 4 0 0 >/<
+ in disp2: 127 4 0 0 -127 4 0 0 >/<
+ in disp2: 127 4 0 0 1 4 3 3 >/ijk<
+ in disp2: 127 4 0 0 1 4 3 3 >/ijk<
+ in disp2: 1 4 3 3 1 4 3 3 >ijk/ijk<
+ in disp2: 1 4 3 3 1 4 3 3 >ijk/ijk<
+ in disp2: 32000 4 4 4 1 4 3 3 >abcd/ijk<
+ 
+ in disp1a: 0 4 3 3 >2a:<
+ in disp1a: -254 4 3 3 >2a:<
+ in disp1a: -128 4 6 6 >2a:lmn<
+ in disp1a: 0 4 9 9 >2a:lmnijk<
+ in disp1a: -12344 4 10 10 >2a:efghijk<
+ 
+ in disp3: 1 1 1 1 4 4 (/u/v/w/x/) 1 4 3 3 127 4 0 0 >ijk/<
+ in disp3: 1 1 1 1 4 4 (/u/v/w/x/) 1 4 3 3 -127 4 0 0 >ijk/<
+ in disp3: 1 1 1 1 4 4 (/u/v/w/x/) 1 4 3 3 1 4 3 3 >ijk/ijk<
+ in disp3: 1 1 1 1 4 4 (/u/v/w/x/) 1 4 3 3 -1 4 3 3 >ijk/lmn<
+ in disp3: 1 1 1 1 4 4 (/u/v/w/x/) 1 4 3 3 1 4 3 3 >ijk/ijk<
+ in disp3: 1 1 1 1 4 4 (/u/v/w/x/) 1 4 3 3 32000 4 4 4 >ijk/abcd<
+ in disp3: 1 1 1 1 4 4 (/u/v/w/x/) 1 4 3 3 -12345 4 4 4 >ijk/efgh<
+ 
+ in disp2: 127 4 0 0 127 4 12 12 >/3a:op.qr.st.<
+ in disp1a: -254 4 15 15 >2a:3a:op.qr.st.<
+ in disp2: 1 4 3 3 1 4 12 12 >ijk/3a:op.qr.st.<
+ in disp1a: -2 4 18 18 >2a:lmn3a:op.qr.st.<
+ in disp2: 1 4 3 3 1 4 12 12 >ijk/3a:op.qr.st.<
+ in disp2: 32000 4 4 4 32000 4 12 12 >abcd/3a:op.qr.st.<
+ in disp1a: -24690 4 19 19 >2a:efgh3a:op.qr.st.<
+ 
+ in disp1a: 127 4 0 0 ><
+ in disp1: -127 4 0 0 ><
+ in disp1a: 1 4 3 3 >ijk<
+ in disp1: -1 4 3 3 >lmn<
+ in disp1a: 0 4 5 5 >opqrs<
+ in disp1a: 32000 4 4 4 >abcd<
+ in disp1: -12345 4 4 4 >efgh<
+ 
+ in disp1a: 254 4 3 3 >2a:<
+ in disp1a: 0 4 3 3 >2a:<
+ in disp1a: 128 4 6 6 >2a:ijk<
+ in disp1a: 127 4 8 8 >2a:opqrs<
+ in disp1a: 1 4 11 11 >2a:ijkopqrs<
+ in disp1a: 0 4 13 13 >2a:opqrsopqrs<
+ in disp1a: 32000 4 12 12 >2a:abcdopqrs<
+ 
+ in disp2: -127 4 0 0 127 4 0 0 >/<
+ in disp2: -127 4 0 0 -127 4 0 0 >/<
+ in disp2: -127 4 0 0 -1 4 3 3 >/lmn<
+ in disp2: -1 4 3 3 0 4 5 5 >lmn/opqrs<
+ in disp2: -12345 4 4 4 0 4 5 5 >efgh/opqrs<
+ 
+ in disp1a: 254 4 14 14 >2a:3a:u.v.w.x.<
+ in disp2: -127 4 0 0 -127 4 11 11 >/3a:u.v.w.x.<
+ in disp1a: 2 4 17 17 >2a:ijk3a:u.v.w.x.<
+ in disp2: -1 4 3 3 -1 4 11 11 >lmn/3a:u.v.w.x.<
+ in disp1a: 0 4 19 19 >2a:opqrs3a:u.v.w.x.<
+ in disp1a: 64000 4 18 18 >2a:abcd3a:u.v.w.x.<
+ in disp2: -12345 4 4 4 -12345 4 11 11 >efgh/3a:u.v.w.x.<
+ 
+ in disp3: 1 1 2 2 3 3 (/op/qr/st/) -12345 4 4 4 127 4 0 0 >efgh/<
+ in disp3: 1 1 2 2 3 3 (/op/qr/st/) -12345 4 4 4 -127 4 0 0 >efgh/<
+ in disp3: 1 1 2 2 3 3 (/op/qr/st/) -12345 4 4 4 1 4 3 3 >efgh/ijk<
+ in disp3: 1 1 2 2 3 3 (/op/qr/st/) -12345 4 4 4 -1 4 3 3 >efgh/lmn<
+ in disp3: 1 1 2 2 3 3 (/op/qr/st/) -12345 4 4 4 0 4 5 5 >efgh/opqrs<
+ in disp3: 1 1 2 2 3 3 (/op/qr/st/) -12345 4 4 4 32000 4 4 4 >efgh/abcd<
+ in disp3: 1 1 2 2 3 3 (/op/qr/st/) -12345 4 4 4 -12345 4 4 4 >efgh/efgh<
+ 
+ in disp1: 123454321 4 5 5 >opqrs<
+ in disp2: 123454321 4 5 5 123454321 4 5 5 >opqrs/opqrs<
+ in disp3: 1 1 0 0 0 0 (/) 123454321 4 5 5 543212345 4 3 3 >opqrs/tuv<
+ done

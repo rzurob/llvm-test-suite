@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/AssumedType/func/AssumedType05f.scenario
+#FEATURE   = C Interop: Assumed Type
+#CREATOR   = Dorra Bouchiha
+#DATE      = 2012-06-20
+#TEST_TYPE = functional
+#KEYWORDS  = C Interop, Assumed Type
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AssumedType05f.f
+#OUTPUT    = AssumedType05f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = AssumedType05f$(OBJ)
+#OUTPUT    = AssumedType05f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = AssumedType05f$(EXE)
+#STDOUT    = AssumedType05f.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

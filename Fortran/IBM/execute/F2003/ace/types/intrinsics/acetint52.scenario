@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint52.scenario
+#FEATURE	= Array constructor enhancement - ac-do-variable name scope
+#CREATOR	= DF Manual Update
+#DATE		= 20061117
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint52.f
+#OUTPUT		= acetint52$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint52$(OBJ)
+#OUTPUT		= acetint52$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint52$(EXE)
+#STDOUT		= acetint52.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetint52$(product)vf) acetint52.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

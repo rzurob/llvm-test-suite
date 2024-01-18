@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/section10.7/position002a.scenario
+#FEATURE = OO_dtio/formatted tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)position002a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = position002a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  position002a$(OBJ)
+#OUTPUT    = position002a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = position002a$(EXE)
+#STDOUT    = position002a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)position002a$(product)vf) position002a.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"dtSpec002d.f", line 37.21: 1514-084 (S) Identifier a1 is being declared with type name a which has not been defined in a derived type definition.
+"dtSpec002d.f", line 38.33: 1514-084 (S) Identifier a2 is being declared with type name a which has not been defined in a derived type definition.
+** dtspec002d   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtSpec002d.f.

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/mxminAll/var/mxminVal/mxminvalVarIntrin.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mxminvalVarIntrin.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = mxminvalVarIntrin$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = mxminvalVarIntrin$(OBJ)
+#OUTPUT    = mxminvalVarIntrin$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminvalVarIntrin$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

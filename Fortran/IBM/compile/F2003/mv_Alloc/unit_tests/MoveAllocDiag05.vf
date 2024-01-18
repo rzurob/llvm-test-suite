@@ -1,0 +1,3 @@
+"MoveAllocDiag05.f", line 27.19: 1516-288 (S) The rank of the TO argument to the intrinsic procedure MOVE_ALLOC must be equal to the rank of the FROM argument.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file MoveAllocDiag05.f.

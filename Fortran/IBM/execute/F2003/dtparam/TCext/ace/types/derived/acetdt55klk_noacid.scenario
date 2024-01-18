@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/derived/acetdt55klk_noacid.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement	\
+			   ALLOCATE of Polymorphic Entity with AC SOURCE)
+#CREATOR	= Glen Mateer (based on work by David Forster)
+#DATE		= 20080123
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt55klk_noacid.f
+#OUTPUT		= acetdt55klk_noacid$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt55klk_noacid$(OBJ)
+#OUTPUT		= acetdt55klk_noacid$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt55klk_noacid$(EXE)
+#STDOUT		= acetdt55klk_noacid.stdout
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetdt55klk_noacid$(product)vf)	\
+				acetdt55klk_noacid.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,50 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = errorstop04.scenario
+#FEATURE   = 351605.31.2
+#CREATOR   = Xing Xue
+#DATE      = 08-10-10
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINENV
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      = F_COMPILE
+#INPUT    = $(tcasedir)errorstop04.f
+#OUTPUT   = errorstop04$(OBJ)
+#ENDCMD
+
+#CMD      = F_LINK
+#INPUT    = errorstop04$(OBJ)
+#OUTPUT   = errorstop04$(EXE)
+#ENDCMD
+
+#CMD      = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD      = MPRUN
+	#ENVAR    = XLFRTEOPTS=$(XLFRTEOPTS):errimagenum=yes:errloc=no
+	#INPUT    = errorstop04$(EXE)
+	#STDERR   = errorstop04.err
+	#VALIDRCS = $(RC_FAIL)
+	#ENDCMD
+	
+	#CMD      = SED
+        #INPUT    = errorstop04.err
+        #OPTS     = -e '/ERROR: 0031-300  Forcing all remote tasks to exit due to exit code 1 in task 0/d' \
+                        -e '/ERROR: 0031-250  task [0-9]*: Terminated/d'
+        #STDOUT   = errorstop04.err2
+        #ENDCMD
+
+!	#CMD      = DIFF
+!	#INPUT    = errorstop04.err2 $(tcasedir)errorstop04.vf
+!	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

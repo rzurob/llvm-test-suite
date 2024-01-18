@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/encoding/unit_tests/encodingspecifier003.scenario
+#FEATURE	= Round Specifier
+#CREATOR	= Thomas Tewoldemedhin
+#DATE		= 20070401
+#TEST_TYPE	= unit test
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)encodingspecifier003.f
+#OUTPUT		= encodingspecifier003$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= encodingspecifier003$(OBJ)
+#OUTPUT		= encodingspecifier003$(EXE)
+#ENDCMD
+
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)real4.dat
+#OUTPUT		= .
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= encodingspecifier003$(EXE)
+#STDERR		= encodingspecifier003.err
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= encodingspecifier003.err $($(tcasedir)encodingspecifier003$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

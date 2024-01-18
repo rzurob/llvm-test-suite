@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2008/intrinsics/poppar/unit_tests/poppar02.scenario
+#FEATURE = F2008 POPPAR and POPCNT
+#CREATOR = Rafik Zurob
+#DATE    = 20101027
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)poppar.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<2008std>) $(OPT_ENABLE_MSG_NUM<1518-317>)
+#OUTPUT    = poppar02$(OBJ)
+#STDERR    = poppar02.err
+#VALIDRCS  = 0
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)poppar02$(product)vf) poppar02.err
+#ENDCMD
+
+#CMD       = XLF_LINK
+#INPUT     = poppar02$(OBJ)
+#OUTPUT    = poppar02$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = poppar02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

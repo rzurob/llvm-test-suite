@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/associate/CrossFeatures/DoWhile.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071005
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)DoWhile.f
+#OUTPUT= DoWhile$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  DoWhile$(OBJ)
+#OUTPUT= DoWhile$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  DoWhile$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

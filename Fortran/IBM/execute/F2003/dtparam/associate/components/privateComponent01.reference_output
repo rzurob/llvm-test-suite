@@ -1,0 +1,14 @@
+pt%k =  4, KIND(pt%coord) =  4, pt%l = 1, SIZE(pt%coord) = 1, pt%coord = 1.0 
+pt%k =  4, KIND(pt%coord) =  4, pt%l = 2, SIZE(pt%coord) = 2, pt%coord = 2.0 2.0 
+pt%k =  4, KIND(pt%coord) =  4, pt%l = 3, SIZE(pt%coord) = 3, pt%coord = 3.0 3.0 3.0 
+pt%k =  4, KIND(pt%coord) =  4, pt%l = 4, SIZE(pt%coord) = 4, pt%coord = 4.0 4.0 4.0 4.0 
+ 
+pt%k =  8, KIND(pt%coord) =  8, pt%l = 1, SIZE(pt%coord) = 1, pt%coord = 1.0 
+pt%k =  8, KIND(pt%coord) =  8, pt%l = 2, SIZE(pt%coord) = 2, pt%coord = 2.0 2.0 
+pt%k =  8, KIND(pt%coord) =  8, pt%l = 3, SIZE(pt%coord) = 3, pt%coord = 3.0 3.0 3.0 
+pt%k =  8, KIND(pt%coord) =  8, pt%l = 4, SIZE(pt%coord) = 4, pt%coord = 4.0 4.0 4.0 4.0 
+ 
+pt%k = 16, KIND(pt%coord) = 16, pt%l = 1, SIZE(pt%coord) = 1, pt%coord = 1.0 
+pt%k = 16, KIND(pt%coord) = 16, pt%l = 2, SIZE(pt%coord) = 2, pt%coord = 2.0 2.0 
+pt%k = 16, KIND(pt%coord) = 16, pt%l = 3, SIZE(pt%coord) = 3, pt%coord = 3.0 3.0 3.0 
+pt%k = 16, KIND(pt%coord) = 16, pt%l = 4, SIZE(pt%coord) = 4, pt%coord = 4.0 4.0 4.0 4.0 

@@ -1,0 +1,4 @@
+ c1's component ordering
+ 100 1.000000000 2.000000000 Child type           T T
+ t1's component ordering
+ 100 1.000000000 2.000000000 third Generation     T T (10.00000000,5.000000000) -1.00000000000000000 10000

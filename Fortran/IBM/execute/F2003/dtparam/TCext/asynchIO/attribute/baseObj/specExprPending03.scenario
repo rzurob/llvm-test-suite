@@ -1,0 +1,57 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/asynchIO/attribute/baseObj/specExprPending03.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of asynchIO/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=bgq
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)specExprPending03.f
+#OUTPUT		= specExprPending03$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= specExprPending03$(OBJ)
+#OUTPUT		= specExprPending03$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= specExprPending03$(EXE)
+#ENDCMD
+
+#CMD		= SED
+#OPTS		= -e '1,/^\*\* mpixel   === End of Compilation 1 ===$/d'
+#INPUT		= specExprPending03$(LST)
+#STDOUT		= specExprPending03.sed-start.stdout
+#ENDCMD
+
+#CMD		= SED
+#OPTS		= -e '/^\*\* specexprpending03   === End of Compilation 2 ===$/,$d'
+#INPUT		= specExprPending03.sed-start.stdout
+#STDOUT		= specExprPending03.sed-end.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i '^asynchPixel[ 	]'
+#INPUT		= specExprPending03.sed-end.stdout
+#STDOUT		= specExprPending03.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= specExprPending03.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

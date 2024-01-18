@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BVarRedefined.scenario
+#FEATURE   = F2008 BLOCK - (re)definition of variable name
+#CREATOR   = DF Manual Update
+#DATE      = 20101214
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)BVarRedefined.f
+#OUTPUT    = BVarRedefined$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = BVarRedefined$(OBJ)
+#OUTPUT    = BVarRedefined$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = BVarRedefined$(EXE)
+#STDOUT    = BVarRedefined.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)BVarRedefined$(product)vf) BVarRedefined.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

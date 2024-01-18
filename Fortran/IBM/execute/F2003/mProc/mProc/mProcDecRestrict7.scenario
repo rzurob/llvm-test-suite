@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       mProcDecRestrict7.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       03-13-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)mProcDecRestrict7.f
+#OUTPUT= mProcDecRestrict7$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  mProcDecRestrict7$(OBJ)
+#OUTPUT= mProcDecRestrict7$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  mProcDecRestrict7$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

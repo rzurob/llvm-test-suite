@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/intrinsic/dataPtrMergeReal.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071216
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrMergeReal.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrMergeReal$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrMergeReal$(OBJ)
+#OUTPUT    = dataPtrMergeReal$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrMergeReal$(EXE)
+#STDOUT    = dataPtrMergeReal.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrMergeReal.out $($(tcasedir)dataPtrMergeReal$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

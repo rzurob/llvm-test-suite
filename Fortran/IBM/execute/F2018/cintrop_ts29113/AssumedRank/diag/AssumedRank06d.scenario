@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/AssumedRank/diag/AssumedRank06d.scenario
+#FEATURE   = C Interop, Assumed Rank
+#CREATOR   = Dorra Bouchiha
+#DATE      = 2013-10-22
+#TEST_TYPE = diagnostic
+#KEYWORDS  = C Interop, Assumed Rank
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AssumedRank06d.f
+#OUTPUT    = AssumedRank06d$(OBJ)
+#STDERR    = AssumedRank06d.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)AssumedRank06d$(product)vf) AssumedRank06d.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

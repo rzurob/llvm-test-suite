@@ -1,0 +1,55 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       finternalsub
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)finternalsub.f
+#OUTPUT= finternalsub$(OBJ)
+#ENDCMD
+
+#CMD=    XLF_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  finternalsub$(OBJ)
+#OUTPUT= finternalsub$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  finternalsub$(EXE)
+#STDOUT=  finternalsub.out
+#ENDCMD
+
+#CMD=    XLF_COMPILE
+#OPTS=   -qversion
+#INPUT=  $(tcasedir)finternalsub.f
+#STDOUT= finternalsub_qversion.out
+#ENDCMD
+
+#CMD = SED
+#OPTS = -e '$!N;s/\n/ /' -e 's/://g' -e 's/^/ /g'
+#INPUT = finternalsub_qversion.out
+#STDOUT = finternalsub_qversion.sed
+#ENDCMD
+
+#CMD = SED
+#OPTS = -e 's/(DEV) //g'
+#INPUT = finternalsub.out
+#STDOUT = finternalsub.sed
+#ENDCMD
+
+#CMD = DIFF
+#INPUT = finternalsub_qversion.sed finternalsub.sed
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

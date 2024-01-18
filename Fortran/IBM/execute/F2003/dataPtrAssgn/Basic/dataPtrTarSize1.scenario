@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dataPtrTarSize1.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       02-07-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dataPtrTarSize1.f
+#OUTPUT= dataPtrTarSize1$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  dataPtrTarSize1$(OBJ)
+#OUTPUT= dataPtrTarSize1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dataPtrTarSize1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

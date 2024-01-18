@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/basic/char/unAllocCharacter03.scenario
+#FEATURE	= Intrinsic Assignment -- Basic Tests: CHARACTER Intrinsic Type
+#CREATOR	= GM Manual Creation
+#DATE		= 20060912
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)unAllocCharacter03.f
+#OUTPUT		= unAllocCharacter03$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= unAllocCharacter03$(OBJ)
+#OUTPUT		= unAllocCharacter03$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= unAllocCharacter03$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

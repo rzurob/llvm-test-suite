@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"selectType002.f", line 81.16: 1514-645 (S) b1 is an abstract type. b1 is not permitted in this context.
+"selectType002.f", line 82.9: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+** selecttype002   === End of Compilation 2 ===
+1501-511  Compilation failed for file selectType002.f.

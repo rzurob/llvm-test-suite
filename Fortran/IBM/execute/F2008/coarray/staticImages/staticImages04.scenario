@@ -1,0 +1,60 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/coarray/array_intrinsics/staticImages04.scenario
+#FEATURE   =
+#CREATOR   = Shahid Alam
+#DATE      = 20110120
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#INVALID_XOPTS = $$(F_COMPILE^OPT_COARRAY_IMAGES<.*>) $$(F_COMPILE^OPT_COARRAY_DNODES<.*>)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_COARRAY_IMAGES<8>)
+#INPUT     = $(tcasedir)staticImages02a.f
+#OUTPUT    = staticImages04a$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_COARRAY_IMAGES<8>)
+#INPUT     = $(tcasedir)staticImages02b.f
+#OUTPUT    = staticImages04b$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_COARRAY_IMAGES<8>)
+#INPUT     = staticImages04a$(OBJ) staticImages04b$(OBJ)
+#OUTPUT    = staticImages04$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+   #CMD       = RUN
+   #ENVAR     = CAF_NUM_IMAGES=8
+   #ENVAR     = MP_PROCS=8
+   #INPUT     = staticImages04$(EXE)
+   #STDOUT    = staticImages04.out
+   #STDERR    = staticImages04.out
+   #ENDCMD
+#ENDFOR
+
+#CMD       = SORT
+#INPUT     = staticImages04.out > staticImages04.sort
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $(tcasedir)staticImages04.vf staticImages04.sort
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

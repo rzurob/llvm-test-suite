@@ -1,0 +1,5 @@
+"override006d.f", line 44.33: 1514-592 (S) The dummy argument in position 2 of overridden binding setid is named j.  The corresponding dummy argument in overriding binding setid must also be named j.
+"override006d.f", line 50.33: 1514-670 (S) Dummy argument j of overridden binding setid and the corresponding dummy argument of overriding binding setid must have the same type and type parameters.
+** n   === End of Compilation 1 ===
+** override006d   === End of Compilation 2 ===
+1501-511  Compilation failed for file override006d.f.

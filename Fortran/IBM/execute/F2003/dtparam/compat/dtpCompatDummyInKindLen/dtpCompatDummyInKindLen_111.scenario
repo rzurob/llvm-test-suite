@@ -1,0 +1,53 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/compat/dtpCompatDummyInKindLen/dtpCompatDummyInKindLen_111.scenario
+#FEATURE   = Broken Compatability Warning - DTP code passes reference to extended type with both KIND and LEN type parameters in to subroutine
+! - latest PTF, v. 11.1
+#CREATOR   = DF Manual Update
+#DATE      = 20090613
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+! See F2003/dtparam/compat/README for details (especially if this TC produces a NORESOURCES error).
+#IF on(linux)
+  #REQUIRED_RESOURCES = SUSE10
+#ENDIF
+#INVALID_PRODUCT=bgq linuxle
+#ENDENV
+
+#BEGINCONTROL
+
+! Compile "pre-DTP" files with the latest 11.1 PTF compiler,
+! compile "post-DTP" files with the latest version of the latest compiler,
+! link with the latest version of the latest compiler,
+! run:  Since no DTP data is actually defined, no error message should be generated.
+
+#CMD       = V111_XLF2003_COMPILE
+#INPUT     = $(tcasedir)dtpCompatDummyInKindLenPreDTP.f
+#OUTPUT    = dtpCompatDummyInKindLenPreDTP$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)dtpCompatDummyInKindLenPostDTP.f
+#OUTPUT    = dtpCompatDummyInKindLenPostDTP$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = dtpCompatDummyInKindLenPostDTP$(OBJ) dtpCompatDummyInKindLenPreDTP$(OBJ)
+#OUTPUT    = dtpCompatDummyInKindLen$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpCompatDummyInKindLen$(EXE)
+#STDOUT    = dtpCompatDummyInKindLen.out
+#STDERR    = dtpCompatDummyInKindLen.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpCompatDummyInKindLen$(product)vf) dtpCompatDummyInKindLen.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

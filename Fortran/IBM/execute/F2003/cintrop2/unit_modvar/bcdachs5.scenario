@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/cintrop2/unit_modvar/bcdachs5.scenario
+#FEATURE = cintrop2 tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF95_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) $(F_COMPILE^OPT_FREE_SOURCE_FORM) $(F_COMPILE^OPT_SHOW_SOURCE_CODE)  $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+! Deconstructing a SCRIPT : PREdeconSCRIPT
+! Valid line : ${COMPILER} $TR_SRC/$1.f ${OPTIONS} 2>$1.err
+
+#CMD       = XLF95_COMPLINK
+#INPUT     = $(tcasedir)bcdachs5.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_SHOW_SOURCE_CODE)
+#STDERR    = bcdachs5.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+! Valid line : xldiff $1.err $TR_SRC/$1.vf
+
+#CMD       = XLDIFF
+#INPUT     = bcdachs5.err $($(tcasedir)bcdachs5$(product)vf)
+#ENDCMD
+! Valid line : rm -f $1.err $1.lst *.mod a.out
+! Valid line : exit 0
+
+#ENDCONTROL
+#ENDSCENARIO

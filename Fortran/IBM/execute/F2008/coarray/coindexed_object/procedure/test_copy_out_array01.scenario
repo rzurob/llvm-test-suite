@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)test_copy_out_array01.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = test_copy_out_array01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = test_copy_out_array01$(OBJ)
+#OUTPUT    = test_copy_out_array01$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = test_copy_out_array01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

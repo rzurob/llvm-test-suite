@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/ieee/unit/symtest06.scenario
+#FEATURE = ieee tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#INVALID_PRODUCT= mac
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)symtest06.f
+#OPTS      = -qnostrictieeemod $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = symtest06$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = -qnostrictieeemod $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  symtest06$(OBJ)
+#OUTPUT    = symtest06$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = symtest06$(EXE)
+#STDOUT    = symtest06.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)symtest06$(product)vf) symtest06.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

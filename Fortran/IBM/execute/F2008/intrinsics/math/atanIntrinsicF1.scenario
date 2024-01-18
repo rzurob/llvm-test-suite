@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/intrinsics/math/atanIntrinsicF1.scenario
+#FEATURE   = Math intrinsic functions
+#CREATOR   = Shahid Alam
+#DATE      = 20101116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPILE
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     = $(tcasedir)atanIntrinsicF1.f
+#OUTPUT    = atanIntrinsicF1$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     = atanIntrinsicF1$(OBJ)
+#OUTPUT    = atanIntrinsicF1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = atanIntrinsicF1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

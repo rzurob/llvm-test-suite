@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_tpbnd/final/ffinal515a_noIMPDO.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ffinal515a_noIMPDO.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ffinal515a_noIMPDO$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = ffinal515a_noIMPDO$(OBJ)
+#OUTPUT    = ffinal515a_noIMPDO$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ffinal515a_noIMPDO$(EXE)
+#STDOUT    = ffinal515a_noIMPDO.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = ffinal515a_noIMPDO.out $($(tcasedir)ffinal515a_noIMPDO$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,9 @@
+** mpoint   === End of Compilation 1 ===
+"asynchPointerAttr02d.f", line 64.29: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"asynchPointerAttr02d.f", line 64.31: 1515-022 (S) Syntax Error: Extra token " extends " was found. The token is ignored.
+"asynchPointerAttr02d.f", line 64.38: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"asynchPointerAttr02d.f", line 64.40: 1515-022 (S) Syntax Error: Extra token " tpoint " was found. The token is ignored.
+"asynchPointerAttr02d.f", line 64.47: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+** mpixel   === End of Compilation 2 ===
+"asynchPointerAttr02d.f", line 76.9: 1514-219 (S) Unable to access module symbol file for module mpixel. Check path and file permissions of file. Use association not done for this module.
+1501-511  Compilation failed for file asynchPointerAttr02d.f.

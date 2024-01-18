@@ -1,0 +1,4 @@
+"fdtio004d.f", line 57.8: 1514-602 (S) Dummy argument iotype of the derived-type I/O procedure formattedread must not be an array.
+** m   === End of Compilation 1 ===
+** fdtio004d   === End of Compilation 2 ===
+1501-511  Compilation failed for file fdtio004d.f.

@@ -1,0 +1,6 @@
+"dataPtrC722.f", line 57.5: 1515-038 (S) Only an object with the POINTER attribute is permitted on the left hand side of a pointer assignment.
+"dataPtrC722.f", line 58.5: 1515-038 (S) Only an object with the POINTER attribute is permitted on the left hand side of a pointer assignment.
+"dataPtrC722.f", line 61.3: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"dataPtrC722.f", line 62.3: 1515-042 (S) The pointer on the left hand side of a pointer assignment may not be an array element, array section or substring.
+** dataptrc722   === End of Compilation 1 ===
+1501-511  Compilation failed for file dataPtrC722.f.

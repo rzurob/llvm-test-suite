@@ -1,0 +1,197 @@
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : abstracti007kl1_k3
+!*
+!*  PROGRAMMER                 : Glen Mateer (derived from abstracti007 by Alberto Alvarez-Mesquida)
+!*  DATE                       : 2007-10-11 (original: 02/20/2006)
+!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
+!*                             :
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
+!*  SECONDARY FUNCTIONS TESTED : Abstract Interface
+!*  REFERENCE                  : Feature Number 289057(.F2003TCx)
+!*
+!*  DRIVER STANZA              : xlf2003 (original: xlf95)
+!*
+!*  DESCRIPTION                : Section 4.5.4 Type Bound Procedures 
+!*                               (generic-binding)
+!*                               - Specific Binding
+!*                               - deferred specific type bound procedure
+!*                               - deferred binding in two parent types, 
+!*                                 and implemented in gen3 type
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!* ===================================================================
+!*
+!*  REVISION HISTORY
+!*
+!*  MM/DD/YY:  Init:  Comments:
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+module m
+
+   type, abstract :: base (kbase1) ! kbase1=1
+      integer, kind :: kbase1
+      character(3) :: c = 'xxx'
+      contains
+         procedure(wbinf), deferred, pass :: write
+         procedure(rbinf), deferred, pass :: read
+         generic :: write(formatted) => write
+         generic :: read(formatted)  => read
+   end type
+
+   type, abstract, extends(base) :: child
+      integer(4) :: i = -999
+      contains
+         procedure(wcinf), deferred, pass :: write
+         procedure(rcinf), deferred, pass :: read
+   end type
+
+   type, extends(child) :: gen3 (kgen3_1) ! kgen3_1=4
+      integer, kind :: kgen3_1
+      integer(kgen3_1) :: j = -999
+      contains
+         procedure, pass :: write => writeg
+         procedure, pass :: read  => readg
+   end type
+
+   abstract interface
+      subroutine wbinf (dtv, unit, iotype, v_list, iostat, iomsg)
+         import base
+         class(base(1)), intent(in) :: dtv ! tcx: (1)
+         integer, intent(in) :: unit
+         character(*), intent(in) :: iotype
+         integer, intent(in)  :: v_list(:)
+         integer, intent(out) :: iostat
+         character(*), intent(inout) :: iomsg
+      end subroutine
+   end interface
+
+   abstract interface
+      subroutine rbinf (dtv, unit, iotype, v_list, iostat, iomsg)
+         import base
+         class(base(1)), intent(inout) :: dtv ! tcx: (1)
+         integer, intent(in) :: unit
+         character(*), intent(in) :: iotype
+         integer, intent(in)  :: v_list(:)
+         integer, intent(out) :: iostat
+         character(*), intent(inout) :: iomsg
+      end subroutine
+   end interface
+
+   abstract interface
+      subroutine wcinf (dtv, unit, iotype, v_list, iostat, iomsg)
+         import child
+         class(child(1)), intent(in) :: dtv ! tcx: (1)
+         integer, intent(in) :: unit
+         character(*), intent(in) :: iotype
+         integer, intent(in)  :: v_list(:)
+         integer, intent(out) :: iostat
+         character(*), intent(inout) :: iomsg
+      end subroutine
+   end interface
+
+   abstract interface
+      subroutine rcinf (dtv, unit, iotype, v_list, iostat, iomsg)
+         import child
+         class(child(1)), intent(inout) :: dtv ! tcx: (1)
+         integer, intent(in) :: unit
+         character(*), intent(in) :: iotype
+         integer, intent(in)  :: v_list(:)
+         integer, intent(out) :: iostat
+         character(*), intent(inout) :: iomsg
+      end subroutine
+   end interface
+
+   contains
+
+      subroutine writeg (dtv, unit, iotype, v_list, iostat, iomsg)
+         class(gen3(1,4)), intent(in) :: dtv ! tcx: (1,4)
+         integer, intent(in) :: unit
+         character(*), intent(in) :: iotype
+         integer, intent(in)  :: v_list(:)
+         integer, intent(out) :: iostat
+         character(*), intent(inout) :: iomsg
+
+         write (unit, "(A3,1X,I4,1X,I4)", iostat=iostat, iomsg=iomsg)   dtv%c, dtv%i, dtv%j
+         iomsg = 'dtiowriteg'
+
+      end subroutine
+
+      subroutine readg (dtv, unit, iotype, v_list, iostat, iomsg)
+         class(gen3(1,4)), intent(inout) :: dtv ! tcx: (1,4)
+         integer, intent(in) :: unit
+         character(*), intent(in) :: iotype
+         integer, intent(in)  :: v_list(:)
+         integer, intent(out) :: iostat
+         character(*), intent(inout) :: iomsg
+
+         read (unit, "(A3,1X,I4,1X,I4)", iostat=iostat, iomsg=iomsg) dtv%c, dtv%i, dtv%j
+         iomsg = 'dtioreadg'
+
+      end subroutine
+
+end module
+
+program abstracti007kl1_k3
+   use m
+
+   integer(4) :: stat
+   character(200) :: msg
+
+   class(base(1)), allocatable  :: b1 ! tcx: (1)
+   class(child(1)), pointer     :: c1 ! tcx: (1)
+   class(gen3(1,4)), pointer      :: g1 ! tcx: (1,4)
+
+   type(gen3(1,4))                :: g2 ! tcx: (1,4)
+   type(gen3(1,4)), parameter     :: g3 = gen3(1,4)('mno',501,502) ! tcx: (1,4) ! tcx: (1,4)
+
+   open ( 1, file = 'abstracti007kl1_k3.1', form='formatted', access='sequential' )
+
+   allocate ( b1, source = gen3(1,4)('abc',101, 102)) ! tcx: (1,4)
+   allocate ( c1, source = gen3(1,4)('def',201, 202)) ! tcx: (1,4)
+   allocate ( g1, source = gen3(1,4)('ghi',301, 302)) ! tcx: (1,4)
+
+   g2 = gen3(1,4)('jkl',401,402) ! tcx: (1,4)
+
+   write ( 1, *, iostat = stat, iomsg = msg )  b1, c1, g1
+   if ( ( stat /= 0 ) .or. ( msg /= 'dtiowriteg' ) ) error stop 1_4
+
+   write ( 1, *, iostat = stat, iomsg = msg )  g2, g3
+   if ( ( stat /= 0 ) .or. ( msg /= 'dtiowriteg' ) ) error stop 2_4
+
+   rewind 1
+
+   deallocate ( b1, c1, g1 )
+   allocate ( gen3(1,4) :: b1, c1, g1 ) ! tcx: (1,4)
+
+   read ( 1, *, iostat = stat, iomsg = msg )  b1, c1, g1
+   if ( ( stat /= 0 ) .or. ( msg /= 'dtioreadg' ) ) error stop 3_4
+
+   read ( 1, *, iostat = stat, iomsg = msg )  g2, g2
+   if ( ( stat /= 0 ) .or. ( msg /= 'dtioreadg' ) ) error stop 4_4
+
+   select type ( b1 )
+      type is ( gen3(1,4) ) ! tcx: (1,4)
+         select type ( c1 )
+            type is ( gen3(1,4) ) ! tcx: (1,4)
+               if ( ( b1%c /= 'abc' ) .or. ( b1%i /= 101 ) .or. ( b1%j /= 102 ) .or. &
+                    ( c1%c /= 'def' ) .or. ( c1%i /= 201 ) .or. ( c1%j /= 202 ) .or. &
+                    ( g1%c /= 'ghi' ) .or. ( g1%i /= 301 ) .or. ( g1%j /= 302 ) .or. &
+                    ( g2%c /= 'mno' ) .or. ( g2%i /= 501 ) .or. ( g2%j /= 502 ) ) error stop 5_4
+         end select
+   end select
+
+   close (1, status = 'delete' )
+
+end program abstracti007kl1_k3
+
+
+! Extensions to introduce derived type parameters:
+! type: base - added parameters (kbase1,lbase1) to invoke with (1) / declare with (1) - 3 changes
+! type: child - added parameters () to invoke with (1) / declare with (1) - 3 changes
+! type: gen3 - added parameters (kgen3_1) to invoke with (1,4) / declare with (1,4) - 13 changes

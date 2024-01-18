@@ -1,0 +1,58 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/volatile/test/volatileUseAssociation03d.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of volatile/*
+#DATE      = 20071101
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)volatileUseAssociation03d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qxlf2003=novolatile
+#OUTPUT    = volatileUseAssociation01$(OBJ)
+#STDERR    = volatileUseAssociation01.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)volatileUseAssociation03d$(product)vf) volatileUseAssociation01.err
+#ENDCMD
+
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)volatileUseAssociation03d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = volatileUseAssociation02$(OBJ)
+#STDERR    = volatileUseAssociation02.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)volatileUseAssociation03d$(product)vf) volatileUseAssociation02.err
+#ENDCMD
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)volatileUseAssociation03d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = volatileUseAssociation03$(OBJ)
+#STDERR    = volatileUseAssociation03.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)volatileUseAssociation03d$(product)vf) volatileUseAssociation03.err
+#ENDCMD
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)volatileUseAssociation03d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = volatileUseAssociation04$(OBJ)
+#STDERR    = volatileUseAssociation04.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)volatileUseAssociation03d$(product)vf) volatileUseAssociation04.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

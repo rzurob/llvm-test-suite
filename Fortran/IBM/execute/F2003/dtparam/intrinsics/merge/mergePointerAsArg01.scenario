@@ -1,0 +1,32 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/intrinsics/merge/mergePointerAsArg01.scenario
+#FEATURE= 355754
+#CREATOR= Nancy Wang
+#DATE   = Sept. 21 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)mergePointerAsArg01.f
+#OUTPUT= mergePointerAsArg01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = mergePointerAsArg01$(OBJ)
+#OUTPUT= mergePointerAsArg01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = mergePointerAsArg01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

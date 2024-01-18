@@ -1,0 +1,10 @@
+status 0
+call display(l2In)
+print *, "    i",x%i
+(dummy argument)  dtl2 x
+integer*4 i
+-2
+dtl3 l3
+real*4  r
+2.0
+i -2

@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/userename/userenametypes002.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of userename/*
+#DATE      = 20071102
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)userenametypes002.f
+#OUTPUT    = userenametypes002$(OBJ)
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = userenametypes002$(OBJ)
+#OUTPUT    = userenametypes002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = userenametypes002$(EXE)
+#STDOUT    = userenametypes002.out
+#STDERR    = userenametypes002.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = userenametypes002.out $($(tcasedir)userenametypes002$(product)vf)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

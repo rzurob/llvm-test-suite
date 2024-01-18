@@ -1,0 +1,3 @@
++nan(q) xlf -nan(q) 'ibm' +nan(s) -nan(s) +inf -Inf
++nan "xlf" -nan() ibm +nan(s) -nan(s) +infinity -Infinity
+nan() "xlf" -nan ibm +nan(s) -nan(s) +infinity -Infinity

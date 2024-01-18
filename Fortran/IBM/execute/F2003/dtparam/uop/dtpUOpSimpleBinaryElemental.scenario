@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpSimpleBinaryElemental.scenario
+#FEATURE   = User-Defined Operators - correct binary operators are used for a given TKR (mixed elemental and non-elemental, generic interface)
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpSimpleBinaryElemental.f
+#OUTPUT    = dtpUOpSimpleBinaryElemental$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpSimpleBinaryElemental$(OBJ)
+#OUTPUT    = dtpUOpSimpleBinaryElemental$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpSimpleBinaryElemental$(EXE)
+#STDOUT    = dtpUOpSimpleBinaryElemental.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUOpSimpleBinaryElemental$(product)vf) dtpUOpSimpleBinaryElemental.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

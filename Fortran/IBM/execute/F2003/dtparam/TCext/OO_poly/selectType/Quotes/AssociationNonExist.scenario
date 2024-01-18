@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/selectType/Quotes/AssociationNonExist.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071004
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS  = -qdebug=allowrpdt
+#INPUT=  $(tcasedir)AssociationNonExist.f
+#OUTPUT= AssociationNonExist$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  AssociationNonExist$(OBJ)
+#OUTPUT= AssociationNonExist$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  AssociationNonExist$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

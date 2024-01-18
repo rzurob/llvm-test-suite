@@ -1,0 +1,51 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/TCext/OO_dtio/formatted/listDirected/fdtio058a2kl.scenario
+#CREATOR = David Forster (derived from work by Jim Xia)
+#DATE    = 20070620
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fdtio058kl.1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fdtio058kl.1$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fdtio058kl.2.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fdtio058kl.2$(OBJ)
+#ENDCMD
+
+#CMD       = MAKELIB
+#ENVAR     = OBJECT_MODE=32_64
+#INPUT     = fdtio058kl.1$(OBJ) fdtio058kl.2$(OBJ)
+#OUTPUT    = libtemp$(LIB)
+#OPTS      = -q
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fdtio058a2kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fdtio058a2kl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -L./ -ltemp
+#INPUT     = fdtio058a2kl$(OBJ)
+#OUTPUT    = fdtio058a2kl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fdtio058a2kl$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,4 @@
+** mod   === End of Compilation 1 ===
+"d346022.f", line 46.16: 1514-718 (S) Identifier derived appearing as a type name has not been defined in a derived type definition.
+** d346022   === End of Compilation 2 ===
+1501-511  Compilation failed for file d346022.f.

@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = mt_static2.scenario
+#FEATURE  =
+#CREATOR  = Francesco Cassullo
+#DATE     = December 2010
+#TEST_TYPE= FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mt_static2.f
+#OUTPUT    = mt_static2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = mt_static2$(OBJ)
+#OUTPUT    = mt_static2$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD       = MPRUN
+	#INPUT     = mt_static2$(EXE)
+	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

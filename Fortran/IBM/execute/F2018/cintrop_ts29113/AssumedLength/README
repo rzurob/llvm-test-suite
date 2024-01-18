@@ -1,0 +1,28 @@
+!*******************************************************************************
+!* Bucket brief description.
+!*
+!* DESCRIPTION:C Interop:TS29113: Assumed-length Character arguments (master story) 
+!*
+!* 
+!*******************************************************************************
+Feature XLC/XLF V13.1.2/V15.1.2
+
+   RTC Master Story 72333: C Interop:TS29113: Assumed-length Character arguments
+    https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/72333 
+
+   I0  document is kept in CMVC
+     family: aix, release: des.dev, component: design.i0,
+     file:designs/i0/assumed_length_arg_for_bind_c_/assumed_length_arg_for_bind_c_.html 
+     FF: https://featureflow.torolab.ibm.com/featureflow/show/7827  
+
+   IT1 document is kept in CMVC
+     family:aix,  release: des.dev, component: design.it1,
+     file: designs/it1/it1___c_interop__assumed_length_character_arguments/it1___c_interop__assumed_length_character_arguments.html
+     FF:https://featureflow.torolab.ibm.com/featureflow/show/7883 
+
+   IT2 document is kept in CMVC
+     family:aix,  release: des.dev, component: design.it2,
+     file:  designs/it2/it2___c_interop__assumed_length_character_arguments/it2___c_interop__assumed_length_character_arguments.html
+     FF: https://featureflow.torolab.ibm.com/featureflow/show/7808
+            
+  See the ./doc subdirectory for details

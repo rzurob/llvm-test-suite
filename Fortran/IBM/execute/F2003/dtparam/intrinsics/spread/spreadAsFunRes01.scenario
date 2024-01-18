@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/spread/spreadAsFunRes01.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Oct. 20 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)spreadAsFunRes01.f
+#OUTPUT= spreadAsFunRes01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = spreadAsFunRes01$(OBJ)
+#OUTPUT= spreadAsFunRes01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = spreadAsFunRes01$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

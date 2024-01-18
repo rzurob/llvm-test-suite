@@ -1,0 +1,4 @@
+"genericAmbiguityTypeBound037d.f", line 43.32: 1514-700 (S) Procedure "twoargs2" must have a nonoptional dummy argument that corresponds by argument keyword to a dummy argument not present in procedure "twoargs1", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** genericname   === End of Compilation 1 ===
+** genericambiguitytypebound037d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericAmbiguityTypeBound037d.f.

@@ -1,0 +1,12 @@
+"merge_bits01d.f", line 51.49: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "merge_bits".
+"merge_bits01d.f", line 52.52: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "merge_bits".
+"merge_bits01d.f", line 53.51: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "merge_bits".
+"merge_bits01d.f", line 56.49: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "merge_bits".
+"merge_bits01d.f", line 57.50: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "merge_bits".
+"merge_bits01d.f", line 58.51: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "merge_bits".
+"merge_bits01d.f", line 61.65: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "merge_bits".
+"merge_bits01d.f", line 66.60: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "merge_bits".
+"merge_bits01d.f", line 67.55: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "merge_bits".
+"merge_bits01d.f", line 68.87: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "merge_bits".
+** maskl_maskr   === End of Compilation 1 ===
+1501-511  Compilation failed for file merge_bits01d.f.

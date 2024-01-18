@@ -1,0 +1,35 @@
+! Test Cases for:
+! Bucket:	F2003
+! Sub-Bucket:	asynchIO/statements/stmt
+asynchSpecOpen01.scenario
+asynchSpecOpen02d.scenario
+asynchSpecOpen03.scenario
+asynchSpecOpen04d.scenario
+asynchSpecOpen05d.scenario
+asynchSpecOpen06d.scenario
+asynchSpecOpen07d.scenario
+asynchSpecOpen08d.scenario
+asynchSpecOpen09d.scenario
+asynchSpecOpen10d.scenario
+asynchSpecOpen11d.scenario
+asynchSpecOpen12.scenario
+
+asynchSpecDataXfer01.scenario
+asynchSpecDataXfer02d.scenario
+asynchSpecDataXfer03d.scenario
+asynchSpecDataXfer04d.scenario
+asynchSpecDataXfer05d.scenario
+asynchSpecDataXfer06d.scenario
+asynchSpecDataXfer07.scenario
+asynchSpecDataXfer08d.scenario
+asynchSpecDataXfer09d.scenario
+
+asynchSpecInquire01.scenario
+asynchSpecInquire02.scenario
+asynchSpecInquire03d.scenario
+asynchSpecInquire04.scenario
+asynchSpecInquire05.scenario
+asynchSpecInquire06.scenario
+asynchSpecInquire07.scenario
+asynchSpecInquire08.scenario
+asynchSpecInquire09.scenario

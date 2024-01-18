@@ -1,0 +1,21 @@
+ A DL 0 0 ><
+ B DL 2 2 >uv<
+ C DL 3 3 >wxy<
+ D DL 5 5 >abcde<
+ E DL 6 6 >fghijk<
+ F DL 6 6 >lmnopq<
+ G DL 5 5 >uvwxy<
+ H DL 6 6 >wxywxy<
+ I DL 6 6 >rstwxy<
+ J DKL 2 2 2 5 5 5 1 2 3 4 5 >uvwxy<
+ K DKL 4 4 4 6 6 6 100000000 100020001 100040004 100060009 100080016 100100025 >rstwxy<
+ L DKL 8 8 8 1 1 1 12345678987654321 >z<
+ M DKL 4 4 4 6 6 6 1 2 3 4 5 99 >uvwxyA<
+ N DKL 8 8 8 1 1 1 31415 >B<
+ O DK 2 2 240
+ P DK 4 4 49330
+ Q DK 8 8 61884
+ R DKL 4 4 4 6 6 6 0 0 0 0 0 0 >      <
+ S DKL 4 4 4 6 6 6 1 2 3 4 5 99 >uvwxyA<
+ T DKL 8 8 8 1 1 1 89765432 >C<
+ done

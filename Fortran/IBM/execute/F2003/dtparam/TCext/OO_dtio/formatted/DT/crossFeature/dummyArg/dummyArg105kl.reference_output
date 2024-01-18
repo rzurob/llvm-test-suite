@@ -1,0 +1,15 @@
+ 101 102 103 104
+ 111 112 113 114
+ 121 123 125 127
+ -999 -999 -999 -999
+ 105 106 107 108
+ 115 116 117 118
+ 124 126 128 130
+ 125 127 129 131
+ 201 203 205 207
+ 202 204 206 208
+ 211 213 215 217
+ 212 214 216 218
+ 221 223 225 227
+ 222 224 226 228
+  DT_foo 5            DT_foo 6            DT_foo 5            DT_foo 6            DT_foo 5            DT_foo 6            DT_foo 5            DT_foo 6            DT_foo 5            DT_foo 6            DT_foo 5            DT_foo 6            DT_bar 4 5          DT_bar 5 6          DT_bar 6 7          DT_bar 7 8          DT_bar 4 5          DT_bar 5 6          DT_bar 6 7          DT_bar 7 8          DT_bar 4 5          DT_bar 5 6          DT_bar 6 7          DT_bar 7 8          DT_bar 4 5          DT_bar 5 6          DT_bar 6 7          DT_bar 7 8          DT_bar 4 5          DT_bar 5 6          DT_bar 6 7          DT_bar 7 8          DT_bar 4 5          DT_bar 5 6          DT_bar 6 7          DT_bar 7 8         

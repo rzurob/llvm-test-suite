@@ -1,0 +1,166 @@
+"acetint10rd.f", line 43.18: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint10rd.f", line 44.18: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint10rd.f", line 45.18: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint10rd.f", line 46.18: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint10rd.f", line 47.18: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint10rd.f", line 48.23: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint10rd.f", line 49.23: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint10rd.f", line 50.23: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint10rd.f", line 51.23: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint10rd.f", line 52.23: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint10rd.f", line 54.17: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint10rd.f", line 55.17: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint10rd.f", line 56.17: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint10rd.f", line 57.17: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint10rd.f", line 58.17: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"acetint10rd.f", line 59.18: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint10rd.f", line 60.18: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint10rd.f", line 61.18: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint10rd.f", line 62.18: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint10rd.f", line 63.18: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint10rd.f", line 67.13: 1511-142 (S) Identifier double specified in the array constructor has not been defined in a derived type definition.
+"acetint10rd.f", line 67.20: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acetint10rd.f", line 67.29: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint10rd.f", line 67.30: 1515-022 (S) Syntax Error: Extra token " kind " was found. The token is ignored.
+"acetint10rd.f", line 67.34: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint10rd.f", line 67.35: 1515-022 (S) Syntax Error: Extra token " 4 " was found. The token is ignored.
+"acetint10rd.f", line 67.36: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acetint10rd.f", line 68.13: 1511-142 (S) Identifier double specified in the array constructor has not been defined in a derived type definition.
+"acetint10rd.f", line 68.20: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acetint10rd.f", line 68.29: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint10rd.f", line 68.30: 1515-022 (S) Syntax Error: Extra token " kind " was found. The token is ignored.
+"acetint10rd.f", line 68.34: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint10rd.f", line 68.35: 1515-022 (S) Syntax Error: Extra token " 8 " was found. The token is ignored.
+"acetint10rd.f", line 68.36: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acetint10rd.f", line 69.13: 1511-142 (S) Identifier double specified in the array constructor has not been defined in a derived type definition.
+"acetint10rd.f", line 69.20: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acetint10rd.f", line 69.29: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint10rd.f", line 69.30: 1515-022 (S) Syntax Error: Extra token " kind " was found. The token is ignored.
+"acetint10rd.f", line 69.34: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint10rd.f", line 69.35: 1515-022 (S) Syntax Error: Extra token " 16 " was found. The token is ignored.
+"acetint10rd.f", line 69.37: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acetint10rd.f", line 70.13: 1511-142 (S) Identifier double specified in the array constructor has not been defined in a derived type definition.
+"acetint10rd.f", line 70.20: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acetint10rd.f", line 70.29: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint10rd.f", line 70.30: 1515-022 (S) Syntax Error: Extra token " kind " was found. The token is ignored.
+"acetint10rd.f", line 70.34: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint10rd.f", line 70.35: 1515-022 (S) Syntax Error: Extra token " - " was found. The token is ignored.
+"acetint10rd.f", line 70.36: 1515-022 (S) Syntax Error: Extra token " 1 " was found. The token is ignored.
+"acetint10rd.f", line 70.37: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acetint10rd.f", line 71.13: 1511-142 (S) Identifier double specified in the array constructor has not been defined in a derived type definition.
+"acetint10rd.f", line 71.20: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acetint10rd.f", line 71.29: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint10rd.f", line 71.30: 1515-022 (S) Syntax Error: Extra token " kind " was found. The token is ignored.
+"acetint10rd.f", line 71.34: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint10rd.f", line 71.35: 1515-022 (S) Syntax Error: Extra token " 3 " was found. The token is ignored.
+"acetint10rd.f", line 71.36: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acetint10rd.f", line 72.13: 1511-142 (S) Identifier double specified in the array constructor has not been defined in a derived type definition.
+"acetint10rd.f", line 72.20: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acetint10rd.f", line 72.29: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint10rd.f", line 72.30: 1515-022 (S) Syntax Error: Extra token " kind " was found. The token is ignored.
+"acetint10rd.f", line 72.34: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint10rd.f", line 72.35: 1515-022 (S) Syntax Error: Extra token " 9 " was found. The token is ignored.
+"acetint10rd.f", line 72.36: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acetint10rd.f", line 73.13: 1511-142 (S) Identifier double specified in the array constructor has not been defined in a derived type definition.
+"acetint10rd.f", line 73.20: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acetint10rd.f", line 73.29: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint10rd.f", line 73.30: 1515-022 (S) Syntax Error: Extra token " kind " was found. The token is ignored.
+"acetint10rd.f", line 73.34: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint10rd.f", line 73.35: 1515-022 (S) Syntax Error: Extra token " 100 " was found. The token is ignored.
+"acetint10rd.f", line 73.38: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acetint10rd.f", line 74.13: 1511-142 (S) Identifier double specified in the array constructor has not been defined in a derived type definition.
+"acetint10rd.f", line 74.20: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acetint10rd.f", line 74.29: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint10rd.f", line 74.30: 1515-022 (S) Syntax Error: Extra token " kind " was found. The token is ignored.
+"acetint10rd.f", line 74.34: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint10rd.f", line 74.35: 1515-022 (S) Syntax Error: Extra token " '4 " was found. The token is ignored.
+"acetint10rd.f", line 74.38: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acetint10rd.f", line 75.13: 1511-142 (S) Identifier double specified in the array constructor has not been defined in a derived type definition.
+"acetint10rd.f", line 75.20: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acetint10rd.f", line 75.29: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint10rd.f", line 75.30: 1515-022 (S) Syntax Error: Extra token " kind " was found. The token is ignored.
+"acetint10rd.f", line 75.34: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint10rd.f", line 75.35: 1515-022 (S) Syntax Error: Extra token " 4.4 " was found. The token is ignored.
+"acetint10rd.f", line 75.38: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acetint10rd.f", line 76.20: 1515-019 (S) Syntax is incorrect.
+"acetint10rd.f", line 77.13: 1511-142 (S) Identifier double specified in the array constructor has not been defined in a derived type definition.
+"acetint10rd.f", line 77.20: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acetint10rd.f", line 77.29: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint10rd.f", line 77.30: 1515-022 (S) Syntax Error: Extra token " kind " was found. The token is ignored.
+"acetint10rd.f", line 77.34: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint10rd.f", line 77.35: 1515-022 (S) Syntax Error: Extra token " .TRUE. " was found. The token is ignored.
+"acetint10rd.f", line 77.41: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acetint10rd.f", line 78.13: 1511-142 (S) Identifier double specified in the array constructor has not been defined in a derived type definition.
+"acetint10rd.f", line 78.20: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acetint10rd.f", line 78.29: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint10rd.f", line 78.30: 1515-022 (S) Syntax Error: Extra token " kind " was found. The token is ignored.
+"acetint10rd.f", line 78.34: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint10rd.f", line 78.35: 1515-022 (S) Syntax Error: Extra token " .FALSE. " was found. The token is ignored.
+"acetint10rd.f", line 78.42: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acetint10rd.f", line 80.13: 1511-142 (S) Identifier double specified in the array constructor has not been defined in a derived type definition.
+"acetint10rd.f", line 80.20: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acetint10rd.f", line 80.29: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint10rd.f", line 80.30: 1515-022 (S) Syntax Error: Extra token " 4 " was found. The token is ignored.
+"acetint10rd.f", line 80.31: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acetint10rd.f", line 81.13: 1511-142 (S) Identifier double specified in the array constructor has not been defined in a derived type definition.
+"acetint10rd.f", line 81.20: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acetint10rd.f", line 81.29: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint10rd.f", line 81.30: 1515-022 (S) Syntax Error: Extra token " 8 " was found. The token is ignored.
+"acetint10rd.f", line 81.31: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acetint10rd.f", line 82.13: 1511-142 (S) Identifier double specified in the array constructor has not been defined in a derived type definition.
+"acetint10rd.f", line 82.20: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acetint10rd.f", line 82.29: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint10rd.f", line 82.30: 1515-022 (S) Syntax Error: Extra token " 16 " was found. The token is ignored.
+"acetint10rd.f", line 82.32: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acetint10rd.f", line 83.13: 1511-142 (S) Identifier double specified in the array constructor has not been defined in a derived type definition.
+"acetint10rd.f", line 83.20: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acetint10rd.f", line 83.29: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint10rd.f", line 83.30: 1515-022 (S) Syntax Error: Extra token " - " was found. The token is ignored.
+"acetint10rd.f", line 83.31: 1515-022 (S) Syntax Error: Extra token " 1 " was found. The token is ignored.
+"acetint10rd.f", line 83.32: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acetint10rd.f", line 84.13: 1511-142 (S) Identifier double specified in the array constructor has not been defined in a derived type definition.
+"acetint10rd.f", line 84.20: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acetint10rd.f", line 84.29: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint10rd.f", line 84.30: 1515-022 (S) Syntax Error: Extra token " 3 " was found. The token is ignored.
+"acetint10rd.f", line 84.31: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acetint10rd.f", line 85.13: 1511-142 (S) Identifier double specified in the array constructor has not been defined in a derived type definition.
+"acetint10rd.f", line 85.20: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acetint10rd.f", line 85.29: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint10rd.f", line 85.30: 1515-022 (S) Syntax Error: Extra token " 9 " was found. The token is ignored.
+"acetint10rd.f", line 85.31: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acetint10rd.f", line 86.13: 1511-142 (S) Identifier double specified in the array constructor has not been defined in a derived type definition.
+"acetint10rd.f", line 86.20: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acetint10rd.f", line 86.29: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint10rd.f", line 86.30: 1515-022 (S) Syntax Error: Extra token " 100 " was found. The token is ignored.
+"acetint10rd.f", line 86.33: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acetint10rd.f", line 87.13: 1511-142 (S) Identifier double specified in the array constructor has not been defined in a derived type definition.
+"acetint10rd.f", line 87.20: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acetint10rd.f", line 87.29: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint10rd.f", line 87.30: 1515-022 (S) Syntax Error: Extra token " '4 " was found. The token is ignored.
+"acetint10rd.f", line 87.33: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acetint10rd.f", line 88.13: 1511-142 (S) Identifier double specified in the array constructor has not been defined in a derived type definition.
+"acetint10rd.f", line 88.20: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acetint10rd.f", line 88.29: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint10rd.f", line 88.30: 1515-022 (S) Syntax Error: Extra token " 4.4 " was found. The token is ignored.
+"acetint10rd.f", line 88.33: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acetint10rd.f", line 89.13: 1511-142 (S) Identifier double specified in the array constructor has not been defined in a derived type definition.
+"acetint10rd.f", line 89.20: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acetint10rd.f", line 89.29: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint10rd.f", line 89.30: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint10rd.f", line 89.31: 1515-022 (S) Syntax Error: Extra token " 4.4 " was found. The token is ignored.
+"acetint10rd.f", line 89.34: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acetint10rd.f", line 89.35: 1515-022 (S) Syntax Error: Extra token " 8.8 " was found. The token is ignored.
+"acetint10rd.f", line 89.38: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acetint10rd.f", line 89.39: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acetint10rd.f", line 90.13: 1511-142 (S) Identifier double specified in the array constructor has not been defined in a derived type definition.
+"acetint10rd.f", line 90.20: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acetint10rd.f", line 90.29: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint10rd.f", line 90.30: 1515-022 (S) Syntax Error: Extra token " .TRUE. " was found. The token is ignored.
+"acetint10rd.f", line 90.36: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acetint10rd.f", line 91.13: 1511-142 (S) Identifier double specified in the array constructor has not been defined in a derived type definition.
+"acetint10rd.f", line 91.20: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acetint10rd.f", line 91.29: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acetint10rd.f", line 91.30: 1515-022 (S) Syntax Error: Extra token " .FALSE. " was found. The token is ignored.
+"acetint10rd.f", line 91.37: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+** acetint10rd   === End of Compilation 1 ===
+1501-511  Compilation failed for file acetint10rd.f.

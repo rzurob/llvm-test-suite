@@ -1,0 +1,4 @@
+"bcdana01.f", line 40.1: 1516-191 (S) An identical binding label was specified for another entity.
+** mod   === End of Compilation 1 ===
+** bcdana01   === End of Compilation 2 ===
+1501-511  Compilation failed for file bcdana01.f.

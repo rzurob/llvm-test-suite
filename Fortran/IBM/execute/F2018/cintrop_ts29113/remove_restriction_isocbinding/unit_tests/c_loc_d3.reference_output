@@ -1,0 +1,4 @@
+"c_loc_d3.f", line 12.14: 1518-394 (L) Argument d1 to the intrinsic procedure C_LOC has the POINTER attribute. d1 must be a scalar by the Fortran 2003 standard.
+"c_loc_d3.f", line 12.14: 1518-395 (L) Argument d1 to the intrinsic procedure C_LOC does not have interoperable type and type parameters. d1 must be a scalar nonpolymorphic variable with no length type parameters by the Fortran 2003 standard.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file c_loc_d3.f.

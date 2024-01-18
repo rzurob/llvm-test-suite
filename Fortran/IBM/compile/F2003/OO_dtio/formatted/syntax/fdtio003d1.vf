@@ -1,0 +1,4 @@
+"fdtio003d1.f", line 57.8: 1514-602 (S) Dummy argument dtv of the derived-type I/O procedure formattedread must not be an array.
+** m   === End of Compilation 1 ===
+** fdtio003d1   === End of Compilation 2 ===
+1501-511  Compilation failed for file fdtio003d1.f.

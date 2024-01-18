@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       typeboundpoly1a.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)typeboundpoly1a.f
+#OUTPUT= typeboundpoly1a$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  typeboundpoly1a$(OBJ)
+#OUTPUT= typeboundpoly1a$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  typeboundpoly1a$(EXE)
+#STDOUT= typeboundpoly1a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = typeboundpoly1a.out $(tcasedir)typeboundpoly1a.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

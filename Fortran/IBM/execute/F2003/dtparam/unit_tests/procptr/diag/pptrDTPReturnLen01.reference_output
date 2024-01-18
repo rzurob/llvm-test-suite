@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"pptrDTPReturnLen01.f", line 21.21: 1515-123 (S) The procedure pointer assignment statement target must be declared with the same type and type parameters as the procedure pointer.
+** _main   === End of Compilation 2 ===
+** func1   === End of Compilation 3 ===
+1501-511  Compilation failed for file pptrDTPReturnLen01.f.

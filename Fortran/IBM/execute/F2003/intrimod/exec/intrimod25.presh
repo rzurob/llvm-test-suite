@@ -1,0 +1,37 @@
+#!/usr/bin/ksh
+
+F_NAME=$1
+C_NAME=$2
+
+IS64=`echo $OPTIONS | awk '/q64/ {print "-q64"}'`
+
+echo $KILL xlc -c $IS64 $TR_SRC/${C_NAME}.c
+$KILL xlc -c $IS64 $TR_SRC/${C_NAME}.c
+
+if [ $? -ne 0 ] 
+then 
+    echo "Failed to compile the C code."
+    exit 31
+fi
+
+echo $KILL $COMPILER $TR_SRC/${F_NAME}.f ${C_NAME}.o $OPTIONS -o $F_NAME
+$KILL $COMPILER $TR_SRC/${F_NAME}.f ${C_NAME}.o $OPTIONS -o $F_NAME
+if [ $? -ne 0 ] 
+then 
+    echo "Failed to compile the Fortran code."
+    exit 32
+fi
+
+echo $KILL $F_NAME
+$KILL $F_NAME 
+if [ $? -ne 0 ] 
+then 
+    echo "Failed in execution."
+    exit 33
+fi
+
+
+if [[ $TRUN_SAVE != "YES" && $TRUN_SAVE != "yes" ]]
+then
+   rm -f $F_NAME ${C_NAME}.o 
+fi

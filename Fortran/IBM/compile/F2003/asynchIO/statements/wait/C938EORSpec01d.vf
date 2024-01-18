@@ -1,0 +1,3 @@
+"C938EORSpec01d.f", line 57.43: 1512-017 (E) The EOR keyword has already been specified on this I/O statement.  Keyword is ignored.
+** c938eorspec01d   === End of Compilation 1 ===
+1501-510  Compilation successful for file C938EORSpec01d.f.

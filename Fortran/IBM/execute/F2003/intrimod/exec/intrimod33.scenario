@@ -1,0 +1,69 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = intrimod/exec/intrimod33.scenario
+#FEATURE = intrimod tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD	= DELETETREE
+#INPUT	= /tmp/intrimod33
+#OPTS	= -f
+#ENDCMD
+
+#CMD	= MAKEDIR
+#INPUT	= /tmp/intrimod33
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)/../fake_ieee_modules.f
+#OUTPUT = fake_ieee_modules$(OBJ)
+#OPTS   = -I/tmp/intrimod33
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)/../ieeeconsts.f
+#OUTPUT = ieeeconsts$(OBJ)
+#OPTS   = -I/tmp/intrimod33
+#ENDCMD
+
+#CMD	= RENAME
+#INPUT	= ieee_*.mod xlf_fp_util.mod constants_for_ieee.mod /tmp/intrimod33
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)intrimod33.f
+#OUTPUT = intrimod33$(OBJ)
+#OPTS 	= -I/tmp/intrimod33
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = intrimod33$(OBJ) ieeeconsts$(OBJ) fake_ieee_modules$(OBJ)
+#OUTPUT = intrimod33$(EXE)
+#OPTS	= -I/tmp/intrimod33
+#ENDCMD
+
+#CMD	= RUN
+#INPUT	= intrimod33$(EXE)
+#STDOUT	= intrimod33.out
+#ENDCMD
+
+#CMD 	= DIFF
+#INPUT 	= intrimod33.out $($(tcasedir)fakeout1$(product)vf)
+#ENDCMD
+
+#CMD    = DELETETREE
+#INPUT  = /tmp/intrimod33
+#OPTS   = -f
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/pointer/noBounds/d361857.scenario
+#FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - problems due to defect 361857
+#CREATOR   = DF Manual Update
+#DATE      = 20090121
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d361857.f
+#OUTPUT    = d361857$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d361857$(OBJ)
+#OUTPUT    = d361857$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d361857$(EXE)
+#STDOUT    = d361857.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)d361857$(product)vf) d361857.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

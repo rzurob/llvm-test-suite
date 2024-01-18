@@ -1,0 +1,6 @@
+"genericC462Operator001d.f", line 47.37: 1514-207 (S) When extending an intrinsic operator, the number of function dummy arguments must be consistent with the intrinsic uses of that operator. Procedure "mypower" will not be included in this defined operator definition.
+"genericC462Operator001d.f", line 55.37: 1514-207 (S) When extending an intrinsic operator, the number of function dummy arguments must be consistent with the intrinsic uses of that operator. Procedure "concat" will not be included in this defined operator definition.
+"genericC462Operator001d.f", line 58.40: 1514-207 (S) When extending an intrinsic operator, the number of function dummy arguments must be consistent with the intrinsic uses of that operator. Procedure "not" will not be included in this defined operator definition.
+** m   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericC462Operator001d.f.

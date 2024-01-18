@@ -1,0 +1,127 @@
+!#######################################################################
+! SCCS ID Information
+! %W%, %I%
+! Extract Date/Time: %D% %T%
+! Checkin Date/Time: %E% %U%
+!#######################################################################
+! *********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: associate102.f
+! %VERIFY: associate102.1:associate102.vf
+! %STDIN:
+! %STDOUT:
+! %EXECARGS:
+! %POSTCMD:
+! %END
+! *********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*  ===================================================================
+!*
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Robert Ma
+!*  DATE                       : 11/08/2004
+!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
+!*                             :
+!*
+!*  PRIMARY FUNCTIONS TESTED   :
+!*                             :
+!*  SECONDARY FUNCTIONS TESTED :
+!*
+!*  DRIVER STANZA              : xlf95
+!*
+!*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
+!*                                        Try namelist formatting with associate construct (Output)
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!* ===================================================================
+!*
+!*  REVISION HISTORY
+!*
+!*  MM/DD/YY:  Init:  Comments:
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+module m
+   type base
+      integer, pointer :: i
+   end type
+
+   interface read(formatted)
+      subroutine readformatted(dtv, unit, iotype, v_list, iostat, iomsg )
+         import base
+         class(base), intent(inout) :: dtv
+         integer,  intent(in) :: unit
+         character(*), intent(in) :: iotype
+         integer, intent(in)     :: v_list(:)
+         integer,  intent(out) :: iostat
+         character(*),  intent(inout) :: iomsg
+      end subroutine
+   end interface
+
+end module
+
+program associate102
+   use m
+
+   integer :: stat
+   character(200) :: msg = ''
+   class(base), allocatable :: b1
+   integer, target :: i1, i2, i3
+
+   namelist /nml/ b1
+
+   open (1, file = 'associate102.1', form='formatted', access='sequential' )
+   allocate(b1)
+
+   i1 = -999
+   i2 = -999
+   i3 = -999
+
+   b1%i => i1
+
+   associate ( b11 => b1 )
+      read (1,NML=nml, iostat=stat, iomsg=msg)
+      if (( stat /=  0 ) .or. ( msg /= 'dtioread' ) ) error stop 1_4
+      if (( b11%i /= 1 ) .or. ( b1%i /=1 ) .or. ( i1 /= 1 ) ) error stop 2_4
+
+      b11%i => i2
+      read (1,NML=nml, iostat=stat, iomsg=msg)
+      if (( stat /=  0 ) .or. ( msg /= 'dtioread' ) ) error stop 3_4
+      if (( b11%i /= 2 ) .or. ( b1%i /=2 ) .or. ( i2 /= 2 ) ) error stop 4_4
+
+      b11%i => i3
+      read (1,NML=nml, iostat=stat, iomsg=msg)
+      if (( stat /=  0 ) .or. ( msg /= 'dtioread' ) ) error stop 5_4
+      if (( b11%i /= 3 ) .or. ( b1%i /=3 ) .or. ( i3 /= 3 ) ) error stop 6_4
+
+   end associate
+
+
+
+end program
+
+
+subroutine readformatted (dtv, unit, iotype, v_list, iostat, iomsg)
+   use m, only: base
+
+   class(base), intent(inout) :: dtv
+   integer, intent(in) :: unit
+   character(*), intent(in) :: iotype
+   integer, intent(in)     :: v_list(:)
+   integer, intent(out) :: iostat
+   character(*), intent(inout) :: iomsg
+
+   if ( iotype /= "NAMELIST" ) error stop 7_4
+   if ( size(v_list, 1) /= 0 ) error stop 8_4
+
+   read (unit, "(I1)", iostat=iostat )      dtv%i
+
+   iomsg = 'dtioread'
+
+end subroutine

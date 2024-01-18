@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME	 = cmdline/LangFeatures/fxcllf51.scenario
+#FEATURE = cmdline tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041204
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+CmdLine="fxcllf51 -1 -2 -3|fxcllf51 -1 -2 -3|fxcllf51 -1 -2 -3"
+#ENDDEFS
+#INVALID_PRODUCT = bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       =  XLF95_COMPILE
+#INPUT     =  $(tcasedir)fxcllf51.f
+#OPTS      =  $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    =  fxcllf51$(OBJ)
+#ENDCMD
+
+#CMD       =  XLF95_LINK
+#INPUT     =  fxcllf51$(OBJ)
+#OPTS      =  $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    =  fxcllf51$(EXE)
+#ENDCMD
+
+#CMD       =  RUN
+#INPUT     =  fxcllf51$(EXE)
+#OPTS      =  -1 -2 -3\|fxcllf51 -1 -2 -3\|fxcllf51 -1 -2 -3
+#STDOUT    =  fxcllf51.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

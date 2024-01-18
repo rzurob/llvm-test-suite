@@ -1,0 +1,12 @@
+ The FE set the IEEE_FPSCR bit on xx, yy, and _main
+ zz does not have the bit set.
+ The IO library functions also have the bit set.
+  
+               1       2      3         4         5
+ val() = (/ overflow, dbz, invalid, underflow, inexact
+  
+ If there are errors, they will appear below:
+ Fail - div_by_zero should be clear
+ Fail - val( 1 ) is not  T
+ Fail - val( 2 ) is not  T
+ Fail - rounding mode changed

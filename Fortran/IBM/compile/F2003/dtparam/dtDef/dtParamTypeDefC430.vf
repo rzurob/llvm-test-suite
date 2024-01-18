@@ -1,0 +1,8 @@
+"dtParamTypeDefC430.f", line 55.6: 1514-236 (E) Multiple PRIVATE statements seen in derived type definition.
+"dtParamTypeDefC430.f", line 63.6: 1514-093 (E) Multiple sequence statements specified for derived type.
+"dtParamTypeDefC430.f", line 64.6: 1514-236 (E) Multiple PRIVATE statements seen in derived type definition.
+"dtParamTypeDefC430.f", line 72.6: 1514-093 (E) Multiple sequence statements specified for derived type.
+"dtParamTypeDefC430.f", line 73.6: 1514-093 (E) Multiple sequence statements specified for derived type.
+** m   === End of Compilation 1 ===
+** dtparamtypedefc430   === End of Compilation 2 ===
+1501-510  Compilation successful for file dtParamTypeDefC430.f.

@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/streamio/options/fxstio214.scenario
+#FEATURE = streamio tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF95_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) $(F_COMPILE^OPT_XLF77_COMPAT<noleadzero>)  $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)fxstio214.f
+#OPTS      = $(OPT_XLF77_COMPAT<noleadzero>)
+#OUTPUT    = fxstio214$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_XLF77_COMPAT<noleadzero>)
+#INPUT     =  fxstio214$(OBJ)
+#OUTPUT    = fxstio214$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxstio214$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fxstio214.dat $($(tcasedir)fxstio214$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

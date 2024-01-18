@@ -1,0 +1,92 @@
+XL Fortran Enterprise Edition DEV Version for AIX (XL Fortran DEV)  Version 10.01.0000.9999 --- deferlen01.f 02/27/06 11:25:16
+ 
+>>>>> OPTIONS SECTION <<<<<
+***   Options In Effect   ***
+  
+         ==  On / Off Options  ==
+         32              CR              ESCAPE          I4
+         NOLIBESSL       NOLIBPOSIX      OBJECT          STDFRAMEWORK
+         SWAPOMP         UNWIND          ZEROSIZE
+  
+         ==  Options Of Integer Type ==
+         MAXMEM(8192)          SPILLSIZE(512)        STACKTEMP(0)
+  
+  
+         ==  Options Of Character Type  ==
+         ALIAS(STD,NOINTPTR)   ALIGN(BINDC(POWER),STRUCT(NATURAL))
+         ARCH(COM)             AUTODBL(NONE)         DIRECTIVE(IBM*)
+         ENUM()                FLAG(I,I)             FLOAT(MAF,FOLD,RNGCHK)
+         FREE(F90)             HALT(S)               IEEE(NEAR)
+         INTSIZE(4)            LIST()                LANGLVL(EXTENDED)
+         REALSIZE(4)           TUNE(PWR3)            UNROLL(AUTO)
+         XFLAG()               XLF2003(NOPOLYMORPHIC,NOBOZLITARGS)
+         XLF77(LEADZERO,BLANKPAD)
+         XLF90(NOSIGNEDZERO,NOAUTODEALLOC)
+  
+>>>>> SOURCE SECTION <<<<<
+Generated from: = wtraceil..119 gen_udr0_pl..2071 procgen..272 proc_begin..112 p4_fmai..664 process_non_terminal4..1009
+      pass4..934 get_fpo..110 ftphas1..93 dophase..375 ftroot..111 ftmain..317 f8ent..52 ..00000240
+     0:   ENT   id#=1 (_main)
+Generated from: = wtraceil..119 gen_u5_pl..609 procgen..284 proc_begin..112 p4_fmai..664 process_non_terminal4..1009
+      pass4..934 get_fpo..110 ftphas1..93 dophase..375 ftroot..111 ftmain..317 f8ent..52 ..00000240
+     0:   LOC   stmt#=1 line#=0 annot#=0 src#=0 stmt_type=STMT_PROCENTRY
+Generated from: = wtraceil..119 gen_u1_pl..259 procgen..291 proc_begin..112 p4_fmai..664 process_non_terminal4..1009
+      pass4..934 get_fpo..110 ftphas1..93 dophase..375 ftroot..111 ftmain..317 f8ent..52 ..00000240
+     0:   DIR   dir=105 (PROLOG START)
+Generated from: = wtraceil..119 gen_u1_pl..259 procgen..356 proc_begin..112 p4_fmai..664 process_non_terminal4..1009
+      pass4..934 get_fpo..110 ftphas1..93 dophase..375 ftroot..111 ftmain..317 f8ent..52 ..00000240
+     0:   DIR   dir=106 (PROLOG END)
+Generated from: = wtraceil..119 gen_u5_pl..609 p4_fmai..45 process_non_terminal4..1009 pass4..946 get_fpo..110
+      ftphas1..93 dophase..375 ftroot..111 ftmain..317 f8ent..52 ..00000240
+    32:   LOC   stmt#=1 line#=32 annot#=32 src#=0 stmt_type=STMT_STMT
+Generated from: = wtraceil..119 gen_ulit0_pl..2503 lit_hash_it..600 genlit..295 genlitld..155 main_return..70
+      proc_end..205 p4_fmai..144 process_non_terminal4..1009 pass4..946 get_fpo..110 ftphas1..93 dophase..375
+      ftroot..111 ftmain..317 f8ent..5
+    32:   LIT   cindex=1 dt=DT_INTEGER       special=0
+Generated from: = wtraceil..119 gen_udr0_pl..2071 genlitld..165 main_return..70 proc_end..205 p4_fmai..144
+      process_non_terminal4..1009 pass4..946 get_fpo..110 ftphas1..93 dophase..375 ftroot..111 ftmain..317 f8ent..52
+      ..00000240
+    32:   LDC   cindex=1
+Generated from: = wtraceil..119 gen_u0_pl..167 main_return..74 proc_end..205 p4_fmai..144 process_non_terminal4..1009
+      pass4..946 get_fpo..110 ftphas1..93 dophase..375 ftroot..111 ftmain..317 f8ent..52 ..00000240
+    32:   RSTR
+Generated from: = wtraceil..119 gen_u0_pl..167 main_return..75 proc_end..205 p4_fmai..144 process_non_terminal4..1009
+      pass4..946 get_fpo..110 ftphas1..93 dophase..375 ftroot..111 ftmain..317 f8ent..52 ..00000240
+    32:   RET
+Generated from: = wtraceil..119 gen_udr0_pl..2071 proc_end..230 p4_fmai..144 process_non_terminal4..1009 pass4..946
+      get_fpo..110 ftphas1..93 dophase..375 ftroot..111 ftmain..317 f8ent..52 ..00000240
+    32:   END   id#=1 (_main)
+ "deferlen01.f", line 30.28: 1514-004 (S) Name given for constant with PARAMETER attribute was defined elsewhere with conflicting attributes. Name is ignored.
+ "deferlen01.f", 1514-704 (S) Entity char3 is declared with a deferred type parameter. char3 must have the POINTER or ALLOCATABLE attribute.
+ "deferlen01.f", 1514-704 (S) Entity char2 is declared with a deferred type parameter. char2 must have the POINTER or ALLOCATABLE attribute.
+ "deferlen01.f", 1514-704 (S) Entity char is declared with a deferred type parameter. char must have the POINTER or ALLOCATABLE attribute.
+ "deferlen01.f", 1514-704 (S) Entity char1 is declared with a deferred type parameter. char1 must have the POINTER or ALLOCATABLE attribute.
+** _main   === End of Compilation 1 ===
+ 
+>>>>> LOOP TRANSFORMATION SECTION <<<<<
+ 
+ 
+>>>>> OBJECT SECTION <<<<<
+ 
+ 
+>>>>> FILE TABLE SECTION <<<<<
+ 
+ 
+                                       FILE CREATION        FROM
+FILE NO   FILENAME                    DATE       TIME       FILE    LINE
+     0    deferlen01.f                02/27/06   11:18:39
+ 
+ 
+>>>>> COMPILATION EPILOGUE SECTION <<<<<
+ 
+ 
+FORTRAN Summary of Diagnosed Conditions
+ 
+TOTAL   UNRECOVERABLE  SEVERE       ERROR     WARNING    INFORMATIONAL
+               (U)       (S)         (E)        (W)          (I)
+    5           0         5           0          0            0
+ 
+ 
+    Source records read.......................................      32
+1501-511  Compilation failed for file deferlen01.f.
+1501-544  Object file not created.

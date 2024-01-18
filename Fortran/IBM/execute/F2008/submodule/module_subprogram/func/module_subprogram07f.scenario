@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/submodule/func/module_subprogram07f.scenario
+#FEATURE   = F2008 Submodule
+#CREATOR   = Bernard Kan
+#DATE      = 20121206
+#TEST_TYPE = Functional
+#KEYWORDS  = F2008, submodule, F2008 submodule, OMP3.1, OMP4.0, Atomic Capture, OpenMP
+#ENDDOC
+
+#BEGINENV
+#REQUIRED_XOPTS = $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP) $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD          = F_COMPILE
+#INPUT        = $(tcasedir)module_subprogram07f.f
+#OUTPUT       = module_subprogram07f$(OBJ)
+#ENDCMD
+
+#CMD          = F_LINK
+#INPUT        = module_subprogram07f$(OBJ)
+#OUTPUT       = module_subprogram07f$(EXE)
+#ENDCMD
+
+#FOR i=1 TO 10 STEP 1
+  #CMD          = RUN
+  #INPUT        = module_subprogram07f$(EXE)
+  #ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME		= F2008/generic/func/d401514.scenario
+#FEATURE        = #917301 F2008: Generic resolution extensions
+#CREATOR        = Grigor Nikolov
+#DATE           = 20120713
+#TEST_TYPE      = Functional
+#KEYWORDS       = F2008 GENERIC resolution
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)d401514.f
+#OUTPUT		= d401514$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= d401514$(OBJ)
+#OUTPUT		= d401514$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= d401514$(EXE)
+#STDOUT         = d401514.out
+#STDERR         = d401514.out
+#ENDCMD
+
+#CMD            = XLDIFF
+#INPUT          = d401514.out $($(tcasedir)d401514$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

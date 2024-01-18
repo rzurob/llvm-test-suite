@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_access/specific/assignment/csCharacterComponent
+#FEATURE        = CAF coarray access (specific) - assignment - in main program, assign character component of derived type variables to coarray variables and vice-versa
+#CREATOR        = DF
+#DATE           = 2010-10-04
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)csCharacterComponent.f
+#OUTPUT = csCharacterComponent$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = csCharacterComponent$(OBJ)
+#OUTPUT = csCharacterComponent$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = csCharacterComponent$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,54 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/allocate/falloc018a1.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_poly/*
+#DATE      = 20071218
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qsuffix=f=f90
+#INPUT     = $(tcasedir)falloc018a1_1.f90
+#OUTPUT    = falloc018a1_1$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qsuffix=f=f90
+#INPUT     = $(tcasedir)falloc018a1_2.f90
+#OUTPUT    = falloc018a1_2$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qsuffix=f=f90
+#INPUT     = $(tcasedir)falloc018a1_3.f90
+#OUTPUT    = falloc018a1_3$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = $(tcasedir)falloc018a1.f
+#OUTPUT    = falloc018a1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = falloc018a1$(OBJ) \
+             falloc018a1_1$(OBJ) \
+             falloc018a1_2$(OBJ) \
+             falloc018a1_3$(OBJ)
+#OUTPUT    = falloc018a1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = falloc018a1$(EXE)
+#STDOUT    = falloc018a1.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)falloc018a1$(product)vf) falloc018a1.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

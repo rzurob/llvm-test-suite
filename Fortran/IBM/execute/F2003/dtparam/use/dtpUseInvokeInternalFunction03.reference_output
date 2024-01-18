@@ -1,0 +1,10 @@
+ A: start
+ B: tkl(4,*) k= 4 4 l= 5 5 data= 144 145 146 147 148
+ C: tk(4) k= 4 4 data= -102
+ D: tl, l= 5 data= 101 101 101 101 101
+ E: tkl(2,*) k= 2 2 l= 3 3 data= 484 441 400
+ F: tk(2) k= 2 2 data= 576
+ G: tkl(2,*) k= 2 2 l= 3 3 data= 576 529 484
+ H: tk(2) k= 2 2 data= 676
+ I: tl, l= 3 data= 29 31 33
+ J: end

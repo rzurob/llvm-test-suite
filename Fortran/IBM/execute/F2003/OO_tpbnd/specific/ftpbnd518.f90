@@ -1,0 +1,95 @@
+!#######################################################################
+! SCCS ID Information
+! %W%, %I%
+! Extract Date/Time: %D% %T%
+! Checkin Date/Time: %E% %U%
+!#######################################################################
+! *********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: ftpbnd518.f
+! %VERIFY: 
+! %STDIN:
+! %STDOUT:
+! %EXECARGS:
+! %POSTCMD: 
+! %END
+! *********************************************************************
+!*  =================================================================== 
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
+!*  =================================================================== 
+!*  =================================================================== 
+!*
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Jim Xia
+!*  DATE                       : 04/05/2004
+!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
+!*                             :
+!*
+!*  PRIMARY FUNCTIONS TESTED   :
+!*                             :
+!*  SECONDARY FUNCTIONS TESTED : 
+!*
+!*  DRIVER STANZA              : xlf90
+!*
+!*  DESCRIPTION                : specific type bound (type-bound used as
+!*                               specification expression)
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!* ===================================================================
+!*
+!*  REVISION HISTORY
+!*
+!*  MM/DD/YY:  Init:  Comments:
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+module m
+    type base
+        CONTAINS
+
+        procedure, nopass :: lbound => lowerBound
+        procedure, nopass :: ubound => upperBound
+    end type
+
+    contains
+
+    integer function lowerBound (x)
+        class (*), intent(in) :: x(:)
+
+        lowerBound = lbound(x, 1)
+    end function
+
+    integer function upperBound (x)
+        class (*), intent(in) :: x(:)
+
+        upperBound = ubound(x, 1)
+    end function
+end module
+
+program ftpbnd518
+use m
+    real*4 :: r1 (3:10)
+    real*4, pointer :: r2(:)
+
+    type (base) :: b1
+
+    call creatArray (r2, b1%lbound(r1), b1%ubound(r1))
+
+    if (size (r2) /= size(r1)) error stop 1_4
+
+    deallocate (r2)
+
+    contains
+
+    subroutine creatArray (r, lb, ub)
+        real*4, pointer, intent(out) :: r(:)
+        integer, intent(in) :: lb, ub
+
+        allocate (r(ub-lb+1))
+    end subroutine
+end

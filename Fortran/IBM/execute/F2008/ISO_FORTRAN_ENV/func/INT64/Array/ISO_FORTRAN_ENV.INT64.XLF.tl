@@ -1,0 +1,5 @@
+faddINT64_XLF.scenario
+fdivideINT64_XLF.scenario
+fgeneralINT64_XLF.scenario
+fmultiplyINT64_XLF.scenario
+fsubtractINT64_XLF.scenario

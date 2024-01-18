@@ -1,0 +1,4 @@
+"genericC703OpName003.f", line 36.30: 1515-045 (E) A defined operator must not contain more than 63 letters.  Truncation will occur.
+** m   === End of Compilation 1 ===
+** genericc703opname003   === End of Compilation 2 ===
+1501-510  Compilation successful for file genericC703OpName003.f.

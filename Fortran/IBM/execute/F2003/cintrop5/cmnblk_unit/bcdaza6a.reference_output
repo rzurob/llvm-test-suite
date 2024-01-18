@@ -1,0 +1,4 @@
+"bcdaza6a.f", line 40.9: 1516-195 (S) The BIND(C) attribute must not be specified for a zero-sized array. 
+** sub   === End of Compilation 1 ===
+** bcdaza6a   === End of Compilation 2 ===
+1501-511  Compilation failed for file bcdaza6a.f.

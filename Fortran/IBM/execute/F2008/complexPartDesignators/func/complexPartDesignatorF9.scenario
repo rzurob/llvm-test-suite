@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/complexPartDesignator/func/complexPartDesignatorF9.scenario
+#FEATURE   = Complex Part Designator
+#CREATOR   = Shahid Alam
+#DATE      = 20110128
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     = $(tcasedir)complexPartDesignatorF9.f
+#OUTPUT    = complexPartDesignatorF9$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     = complexPartDesignatorF9$(OBJ)
+#OUTPUT    = complexPartDesignatorF9$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = complexPartDesignatorF9$(EXE)
+#STDOUT    = complexPartDesignatorF9.out
+#STDERR    = complexPartDesignatorF9.out
+#ENDCMD
+
+#CMD       = SPIFF
+#INPUT     = $(tcasedir)complexPartDesignatorF9.vf complexPartDesignatorF9.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,58 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/allocate/falloc506.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_poly/*
+#DATE      = 20070820
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)falloc506.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_INFO_INFO_MSGS) -qdebug=intmsg:shutup
+#OUTPUT    = falloc506$(OBJ)
+#STDERR    = falloc506.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+! this is for -g or -g0-g9 and is only needed for aix
+#IF ( in ($(F_COMPILE^OPT_GEN_DEBUG_INFO)) || in ($$(F_COMPILE^OPT_GEN_DEBUG_INFO_LEVEL<[0-9]>)) ) && on (aix)
+
+#CMD       = GREP
+#OPTS      = -v 010109C4
+#INPUT     = falloc506.err
+#STDOUT    = falloc506.grep
+#ENDCMD
+
+#CMD       = RENAME
+#INPUT     = falloc506.grep
+#OUTPUT    = falloc506.err
+#ENDCMD
+
+#ENDIF
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)falloc506$(product)vf) falloc506.err
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)falloc506.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_INFO_INFO_MSGS)
+#OUTPUT    = falloc506$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_SET_INFO_INFO_MSGS)
+#INPUT     = falloc506$(OBJ)
+#OUTPUT    = falloc506$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = falloc506$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

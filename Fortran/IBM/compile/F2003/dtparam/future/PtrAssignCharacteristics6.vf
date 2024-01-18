@@ -1,0 +1,10 @@
+** m   === End of Compilation 1 ===
+"PtrAssignCharacteristics6.f", line 197.3: 1515-123 (S) The procedure pointer assignment statement target must be declared with the same type and type parameters as the procedure pointer.
+"PtrAssignCharacteristics6.f", line 199.3: 1515-123 (S) The procedure pointer assignment statement target must be declared with the same type and type parameters as the procedure pointer.
+"PtrAssignCharacteristics6.f", line 201.3: 1515-132 (S) The function result of the procedure pointer was declared without the ALLOCATABLE attribute.  The function result of the procedure pointer assignment target must not be declared with the ALLOCATABLE attribute.
+"PtrAssignCharacteristics6.f", line 205.3: 1515-132 (S) The function result of the procedure pointer was declared without the ALLOCATABLE attribute.  The function result of the procedure pointer assignment target must not be declared with the ALLOCATABLE attribute.
+"PtrAssignCharacteristics6.f", line 207.3: 1515-123 (S) The procedure pointer assignment statement target must be declared with the same type and type parameters as the procedure pointer.
+"PtrAssignCharacteristics6.f", line 209.3: 1515-135 (S) The function result of the procedure pointer and the function result of the procedure pointer assignment target must have the same shape.
+??? not enough ??
+** ptrassigncharacteristics6   === End of Compilation 2 ===
+1501-511  Compilation failed for file PtrAssignCharacteristics6.f.

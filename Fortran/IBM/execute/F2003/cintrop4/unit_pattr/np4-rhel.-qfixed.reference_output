@@ -1,0 +1,9 @@
+*** testcase variant:  -qfixed\n
+    0151001B 
+** f1   === End of Compilation 1 ===
+  31.17   01610086 
+  31.17   016100CD 
+** 31main   === End of Compilation 2 ===
+** s1   === End of Compilation 3 ===
+** s2   === End of Compilation 4 ===
+1501-511  Compilation failed for file np4.f.

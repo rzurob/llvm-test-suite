@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = datastmnt_d01.scenario
+#FEATURE  = CAF Intrinsics
+#CREATOR  = Francesco Cassullo
+#DATE     = November 2010
+#TEST_TYPE= DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)datastmnt_d01.f
+#OUTPUT    = datastmnt_d01$(OBJ)
+#STDOUT    = datastmnt_d01.out
+#STDERR    = datastmnt_d01.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)datastmnt_d01$(product)vf) datastmnt_d01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

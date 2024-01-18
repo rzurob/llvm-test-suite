@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = multAlloWithWrongRank1S.f
+#FEATURE   = DTP - Allocate with source expression
+#CREATOR   = Izhak Jakov
+#DATE      = 20150629
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)multAlloWithWrongRank1S.f
+#OUTPUT    = multAlloWithWrongRank1S$(OBJ)
+#STDERR    = multAlloWithWrongRank1S.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $(tcasedir)multAlloWithWrongRank1S.vf multAlloWithWrongRank1S.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

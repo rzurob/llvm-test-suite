@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/unformatted/misc/final001.scenario
+#FEATURE = OO_dtio/unformatted tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)final001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = final001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  final001$(OBJ)
+#OUTPUT    = final001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = final001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

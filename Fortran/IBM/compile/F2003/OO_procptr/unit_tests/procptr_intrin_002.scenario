@@ -1,0 +1,21 @@
+#BEGINSCENARIO
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD=      XLF90_COMPILE
+#INPUT=    $(tcasedir)procptr_intrin_002.f
+#STDERR=   procptr_intrin_002.err
+#VALIDRCS= $(RC_COMP_E)
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    procptr_intrin_002.err $($(tcasedir)procptr_intrin_002$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

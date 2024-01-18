@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/transfer/transfer017.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071001
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)transfer017.f
+#OUTPUT    = transfer017$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = transfer017$(OBJ)
+#OUTPUT    = transfer017$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = transfer017$(EXE)
+#STDOUT    = transfer017.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)transfer017$(product)vf) transfer017.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

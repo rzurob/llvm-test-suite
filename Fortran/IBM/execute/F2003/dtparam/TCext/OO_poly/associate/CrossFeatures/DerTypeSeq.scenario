@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/associate/CrossFeatures/DerTypeSeq.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070912
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)DerTypeSeq.f
+#OUTPUT= DerTypeSeq$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  DerTypeSeq$(OBJ)
+#OUTPUT= DerTypeSeq$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  DerTypeSeq$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

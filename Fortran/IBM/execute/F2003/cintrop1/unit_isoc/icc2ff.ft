@@ -1,0 +1,7 @@
+      subroutine foo(ARGNAME)
+        use iso_c_binding
+        ARGTYPE VALUE_ATTR :: ARGNAME
+        FPTR_DECL
+        CFPTR_CALL
+        if (COMPARISON) error stop 1
+      end

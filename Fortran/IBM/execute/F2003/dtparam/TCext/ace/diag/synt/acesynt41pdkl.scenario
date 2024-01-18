@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/diag/synt/acesynt41pdkl.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement zort)
+#CREATOR	= Glen Mateer (based on work by David Forster)
+#DATE		= 20071116
+#TEST_TYPE	= Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acesynt41pdkl.f
+#OUTPUT		= acesynt41pdkl$(OBJ)
+#STDERR		= acesynt41pdkl.stderr
+#VALIDRCS	= $(RC_COMP_S)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)acesynt41pdkl$(product)vf) acesynt41pdkl.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,7 @@
+"C1218_001d.f", line 32.6: 1515-019 (S) Syntax is incorrect.
+"C1218_001d.f", line 33.6: 1515-019 (S) Syntax is incorrect.
+** m   === End of Compilation 1 ===
+"C1218_001d.f", line 36.14: 1516-231 (S) The interface name interface specified in the PROCEDURE statement must be previously defined.
+"C1218_001d.f", line 37.14: 1516-231 (S) The interface name interface specified in the PROCEDURE statement must be previously defined.
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file C1218_001d.f.

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/allocEnh/construct/associate005a.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)associate005a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = associate005a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = associate005a$(OBJ)
+#OUTPUT    = associate005a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = associate005a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

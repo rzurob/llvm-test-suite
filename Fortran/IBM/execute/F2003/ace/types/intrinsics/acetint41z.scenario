@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint41z.scenario
+#FEATURE	= Array constructor enhancement AC containing dummy arguments, including arrays (complex numbers)
+#CREATOR	= DF Manual Update
+#DATE		= 20061018
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint41z.f
+#OUTPUT		= acetint41z$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint41z$(OBJ)
+#OUTPUT		= acetint41z$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint41z$(EXE)
+#STDOUT		= acetint41z.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -a1-e6
+#INPUT		= $(tcasedir)acetint41z.vf acetint41z.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

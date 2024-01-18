@@ -1,0 +1,11 @@
+ iotype:DT empty v_list 100 abc
+ iotype:DT empty v_list 101 def
+ iotype:DT_b1 v_list: 4 102 ghi
+ iotype:DTb2-1 v_list: -5 neg v_list:  200 ABC
+ iotype:DTb2-2 v_list: -6 neg v_list:   201 DEF
+ iotype:DTb2-3 v_list: -7 neg v_list:    202 GHI
+ iotype:DTb2-4 v_list: -8 neg v_list:     203 JKL
+ iotype:DTb3-1 v_list: 10       300 abc
+ iotype:DTb3-2 v_list: -10 neg v_list:       301 def
+ iotype:DTb3-1 v_list: 10       302 ghi
+

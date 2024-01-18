@@ -1,0 +1,17 @@
+ &NML1
+ B2=i=    2 , &NMLC
+ C=def
+ /
+ /
+ &NML2
+ B1=i=    1 , &NMLC
+ C=abc
+ /
+ /
+ &NML3
+ B3=i=    3 , &NMLC
+ C=ghi
+ /, B4=i=    4 , &NMLC
+ C=jkl
+ /
+ /

@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/inquire/C947AsynchSpec01d.scenario
+#FEATURE	= Asynchronous I/O -- INQUIRE Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060320
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)C947AsynchSpec01d.f
+#OUTPUT		= C947AsynchSpec01d$(OBJ)
+#STDERR		= C947AsynchSpec01d.stderr
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)C947AsynchSpec01d$(product)vf)	\
+				C947AsynchSpec01d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

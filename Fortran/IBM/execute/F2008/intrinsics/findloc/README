@@ -1,0 +1,11 @@
+RTC Story 44833: F2008: FINDLOC Transformational Intrinsic Function
+
+FINDLOC is a TIF that finds the location of a specific value in an array.
+It is described in the Fortran 2008 standard under section 13.7.61.
+
+Unit tests are located @:
+./unit_tests/diag
+./unit_tests/func
+
+The I0 can be found in ./doc subdirectory.
+This was a unit tests-only feature, so there is not IT1 or IT2.

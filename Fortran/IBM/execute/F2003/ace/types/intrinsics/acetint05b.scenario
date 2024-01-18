@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2005/ace/types/intrinsics/acetint05b.scenario
+#FEATURE	= Array constructor enhancement - assign AC with constants to int array
+#CREATOR	= DF Manual Update
+#DATE		= 20060614
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint05.f
+#OUTPUT		= acetint05$(OBJ)
+#OPTS		= $(OPT_INTSIZE_4)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint05$(OBJ)
+#OUTPUT		= acetint05$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint05$(EXE)
+#STDOUT		= acetint05.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

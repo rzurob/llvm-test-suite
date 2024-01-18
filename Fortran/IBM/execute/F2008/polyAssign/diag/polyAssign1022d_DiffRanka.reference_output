@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"polyAssign1022d_DiffRanka.f", line 132.10: 1516-078 (S) Operands must be conformable.
+"polyAssign1022d_DiffRanka.f", line 133.10: 1516-078 (S) Operands must be conformable.
+"polyAssign1022d_DiffRanka.f", line 134.10: 1516-078 (S) Operands must be conformable.
+"polyAssign1022d_DiffRanka.f", line 135.10: 1516-078 (S) Operands must be conformable.
+** polyassign1022d   === End of Compilation 2 ===
+1501-511  Compilation failed for file polyAssign1022d_DiffRanka.f.

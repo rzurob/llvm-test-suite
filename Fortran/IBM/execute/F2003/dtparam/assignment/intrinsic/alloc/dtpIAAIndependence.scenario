@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/assignment/intrinsic/alloc/dtpIAAIndependence.scenario
+#FEATURE   = Intrinsic Assignment with Allocation - verify that LHS and RHS are independent in intrinsic assignment of allocatable objects
+#CREATOR   = DF Manual Update
+#DATE      = 20090601
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAAIndependence.f
+#OUTPUT    = dtpIAAIndependence$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAAIndependence$(OBJ)
+#OUTPUT    = dtpIAAIndependence$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAAIndependence$(EXE)
+#STDOUT    = dtpIAAIndependence.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpIAAIndependence$(product)vf) dtpIAAIndependence.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

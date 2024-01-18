@@ -1,0 +1,4 @@
+"AssumedType05d.f", line 36.15: 1516-356 (S) Entity a has assumed type. a must not be used in this context.
+"AssumedType05d.f", line 37.19: 1516-356 (S) Entity a has assumed type. a must not be used in this context.
+** assumedtype05d   === End of Compilation 1 ===
+1501-511  Compilation failed for file AssumedType05d.f.

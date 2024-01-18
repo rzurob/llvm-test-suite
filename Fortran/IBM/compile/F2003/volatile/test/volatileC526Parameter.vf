@@ -1,0 +1,5 @@
+"volatileC526Parameter.f", line 23.15: 1516-237 (E) Entity volatile with the PARAMETER attribute must not be declared with the VOLATILE attribute.  The VOLATILE attribute will be ignored.
+"volatileC526Parameter.f", line 25.38: 1516-237 (E) Entity y with the VOLATILE attribute must not be declared with the PARAMETER attribute.  The VOLATILE attribute will be ignored.
+"volatileC526Parameter.f", line 28.16: 1516-237 (E) Entity z with the VOLATILE attribute must not be declared with the PARAMETER attribute.  The VOLATILE attribute will be ignored.
+** volatilec526parameter   === End of Compilation 1 ===
+1501-510  Compilation successful for file volatileC526Parameter.f.

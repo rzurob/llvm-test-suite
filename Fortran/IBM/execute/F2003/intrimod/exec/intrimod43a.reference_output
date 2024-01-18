@@ -1,0 +1,3 @@
+ld: 0711-317 ERROR: Undefined symbol: .__my_mod_MOD_sub1
+ld: 0711-317 ERROR: Undefined symbol: .__constants_MOD_sub2
+ld: 0711-345 Use the -bloadmap or -bnoquiet option to obtain more information.

@@ -1,0 +1,471 @@
+<script language="JavaScript1.2" type="text/javaScript" src="/scripts/scripts.js"></script>
+<link rel="stylesheet" type="text/css" href="/stylesheets/v4-screen.css" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/featureflow.css" />
+<style type="text/css" media="all">
+<!--
+@import url("/stylesheets/screen.css");
+@import url("/stylesheets/interior.css");
+@import url("/stylesheets/icons.css");
+@import url("/stylesheets/tables.css");
+-->
+</style>
+<!-- print stylesheet MUST follow imported stylesheets -->
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/print.css" />
+	<script type="text/javascript" language="JavaScript1.2">
+	<!-- 
+	function msover(image) { // Mouse Over 
+		if (document.images) { 
+			document[image].src = eval(image + "on.src") 
+		} 
+	} 
+	function msout(image) { // Mouse Out 
+		if (document.images) { 
+			document[image].src = eval(image + ".src") 
+		} 
+	} 
+	/* ----------------------------------------- */ 
+	function popup(hp, f3) { 
+		if (document.layers) { 
+			document[hp].visibility = "visible" 
+			document[hp].top = 0 
+			document[hp].left = f3.x + 23 
+			//document[hp].top = f3.pageY + 10 
+		} else { 
+			if (document.all) { 
+				document.all[hp].style.visibility = "visible" 
+				document.all[hp].style.left = f3.x + 23 
+				//document.all[hp].style.top = f3.y + 10 
+				document.all[hp].style.top = 0 
+			} 
+		} 
+	} 
+	function cpopup(hp) { 
+		if (document.layers) { 
+			document[hp].visibility = "hidden" 
+		} else { 
+			if (document.all) { 
+				document.all[hp].style.visibility = "hidden" 
+			} 
+		} 
+	} 
+	function lpopup(lyr) { 
+		if (document.layers) { 
+			if (document[lyr].visibility == "show") { 
+				document[lyr].visibility = "hidden" 
+			} else { 
+				document[lyr].visibility = "visible" 
+			} 
+		} else { 
+			if (document.all) { 
+				if (document.all[lyr].style.visibility == "visible") { 
+					document.all[lyr].style.visibility = "hidden" 
+				} else { 
+					document.all[lyr].style.visibility = "visible" 
+				} 
+			} 
+		} 
+	} 
+function selectAll() { for(var i=0;i<document.theform.elements.length;i++) {if(document.theform.elements[i].type == "checkbox"){document.theform.elements[i].checked = true;};};}
+function DeselectAll() { for(var i=0;i<document.theform.elements.length;i++) {if(document.theform.elements[i].type == "checkbox"){document.theform.elements[i].checked = false;};};}
+function goback() { 
+    if (true) 
+         history.back() 
+} 
+function fixdays(d_obj, m_obj) {
+   var numdays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+   for (var i = (eval(d_obj).length-1); i>=0; i--) {
+      eval(d_obj).options[i] = null;
+   }
+
+   for (var i = 1; i<=numdays[eval(m_obj).value]; i++) {
+      var optionadd = new Option(i, i);
+      eval(d_obj).options[eval(d_obj).length] = optionadd;
+   }
+}
+	//--> 
+</script><noscript> <!--  //--> </noscript>
+<script src="/javascripts/prototype.js?1147089354" type="text/javascript"></script>
+<script src="/javascripts/effects.js?1147089354" type="text/javascript"></script>
+<script src="/javascripts/dragdrop.js?1147089354" type="text/javascript"></script>
+<script src="/javascripts/controls.js?1150924188" type="text/javascript"></script>
+</head>
+<body  id="w3-ibm-com" class="article">
+   <div id="content-main">
+      <head>
+  <script src="/javascripts/prototype.js?1147089354" type="text/javascript"></script>
+<script src="/javascripts/effects.js?1147089354" type="text/javascript"></script>
+<script src="/javascripts/dragdrop.js?1147089354" type="text/javascript"></script>
+<script src="/javascripts/controls.js?1150924188" type="text/javascript"></script>
+  <script src="/javascripts/fckeditor.js?1147879719" type="text/javascript"></script>
+  <script src="/javascripts/effects.js?1147089354" type="text/javascript"></script>
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/featureflow.css" />
+<title>
+Reviewing IT1/IT2  for Coarray Module Variables rev.1 - F E A T U R E - F L O W
+</title>
+
+</head>
+<span id="dummy" style="position: absolute; overflow:hidden; width:0; height:0">
+<form>
+<textarea id="dummytext">
+</textarea>
+</form>
+</span>
+<script>
+   var oFCKeditor = new FCKeditor( 'dummytext' ) ;
+   oFCKeditor.Config['LinkBrowser'] = false ; 
+   oFCKeditor.Config['ImageBrowser'] = true ;
+   oFCKeditor.Config["CustomConfigurationsPath"] =
+          '/javascripts/railsfck_comments.js?1230049472';
+/*   oFCKeditor.Config["SkinPath"] = 'skins/SilverNarrow/' ; */
+   oFCKeditor.ReplaceTextarea() ;   
+function edit(comment_id, id)
+{
+   var ac ;
+   var entry='' ;
+   var ref=comment_id ;
+   if (!id) {
+      entry='_entry' ;
+   } else {
+      ref = id ;
+   }
+   var parent_id=null;
+   var match=comment_id.match(/(\d+)_(\d+)/) ;
+   if (match) {
+      parent_id = match[1] ;
+   }
+
+   var old_comment_type		= null;
+   var comment_type_element	= document.getElementById('ctype'+id+'_'+comment_id);
+   if (comment_type_element != null) {
+	   old_comment_type	= comment_type_element.selectedIndex;
+   }
+
+   ac = document.getElementById('comments'+entry+ref) ;
+   if (!id && ac.innerHTML!='') {
+      var myb=document.getElementById('mycancelbutton'+ref) ;
+      myb.scrollIntoView(false) ;
+      return ;
+   }
+   var con = document.getElementById('comments_content'+id) ;
+   var content = '' ;
+   if (con) {
+      content = unlinkfy(con.innerHTML) ;
+      /* remove response */
+      content = content.replace(/<p><font size=\"?-1\"?>\(reply\)<\/font><\/p>\s*$/i,'');
+
+      /* Defect 336615: escape &lt and &gt so that the FCK editor does not treat these as HTML tags */
+      content = content.replace(/&lt;/g, '&amp;lt;');
+      content = content.replace(/&gt;/g, '&amp;gt;');
+   }
+   ac.originalInnerHTML = ac.innerHTML ;
+   ac.innerHTML='<table border=0 style="text-decoration:none;font-size:13px;">'+
+'<tr><td width="100%">'+
+'<form id="text_comments_form'+comment_id+'"'+
+' method="post" '+
+' onsubmit="myCommentEditorSubmit(\''+comment_id+'\', \''+id+'\'); return false ;">'+
+'<input id="id" name="id" size="30" type="hidden" value="'+id+'">'+
+'<input id="commentid" name="commentid" size="30" type="hidden" value="'+comment_id+'">'+
+'<input id="document_id" name="document_id" size="30" type="hidden" value="'+4629+'">'+
+'<table bgcolor="80FF80" width="600" border=1 cellpadding=0 cellspacing=0>'+
+'<tr><td>'+
+'<font color=blue>User:</font> denisna@ca.ibm.com '+
+((parent_id == null) ?  '<font color=blue>Type:</font> <select id="ctype_edit' + id + '_' + comment_id + '" name="ctype">'+
+   '<option value="Typo">Typo</option>'+
+   '<option value="Comment" selected>Comment</option>'+
+   '<option value="Problem">Problem</option>'+
+   '<option value="Issue">Issue</option>'+
+   '</select>'+
+   ' <font color=blue>Disposition:</font>'+ 
+   '<input id="disposition" name="disposition" value="Unassigned" type="hidden"/>'+
+   'Unassigned'
+: '') +
+'</td></tr>'+
+'<tr><td width="100%">'+
+'<table border=0 cellpadding=1 width="100%">'+
+'<tr><td td width="100%">'+
+'<textarea id="text_comment'+comment_id+'" name="text_comment'+comment_id+'" cols=76 rows=12 style="font-family:courier; background:#80FF80">'+
+content+
+'</textarea></td></tr>'+
+'</td></tr>'+
+'</table>'+
+'<tr><td>'+
+'<input type="button" value="Clear" onclick="var oEditor=FCKeditorAPI.GetInstance(\'text_comment'+comment_id+'\'); oEditor.SetHTML(\'\') ; return false;">'+
+'<input type="submit" value="Submit">'+
+'<input type="submit" value="Submit+Notify" onclick="myCommentEditorSubmit(\''+comment_id+'\', \''+id+'\', true); return false ;">'+
+'<input id="mycancelbutton'+ref+'" type="button" value="Cancel" onclick="hideEditor(\''+entry+ref+'\'); return false;">'+
+'</td></tr>'+
+'</table>'+
+'</form>'+
+'</td></tr></table>';
+
+   if (old_comment_type != null) {
+	   document.getElementById('ctype_edit' + id + '_' + comment_id).selectedIndex	= old_comment_type;
+   }
+
+   var part='text_comment' + comment_id ;
+   var oFCKeditor = new FCKeditor( part ) ;
+   oFCKeditor.Height=200;
+/* work around an IE bug here that temporarily blanks the screen */
+   if ( navigator.userAgent.toLowerCase().indexOf("msie") == -1) {
+     oFCKeditor.Config['StartupFocus'] = true ; 
+   } 
+   oFCKeditor.Config['LinkBrowser'] = false ; 
+   oFCKeditor.Config['ImageBrowser'] = true ;
+   oFCKeditor.Config["CustomConfigurationsPath"] =
+          '/javascripts/railsfck_comments.js?1230049472';
+/*   oFCKeditor.Config["SkinPath"] = 'skins/SilverNarrow/' ; */
+   var ta=document.getElementById(part) ;
+   ta.style.height='0px';
+   oFCKeditor.ReplaceTextarea() ; 
+   var myb=document.getElementById('mycancelbutton'+ref) ;
+   myb.scrollIntoView(false) ;
+}
+function hideEditor(where)
+{
+   var ac = document.getElementById('comments'+where) ;
+   ac.innerHTML=ac.originalInnerHTML; 
+}
+
+function myCommentEditorSubmit(comment_id, id, notify)
+{
+   var entry='' ;
+   var ref=comment_id ;
+   if (!id || id == 'undefined') {
+      entry='_entry' ;
+   } else {
+      ref = id ;
+   }
+  var submit_notify=0
+  var parent_id=null;
+  var match=comment_id.match(/(\d+)_(\d+)/) ;
+  if (match) {
+     parent_id = match[1];
+  }
+  if (notify) {
+     if (parent_id) {
+        if (confirm("Send a notification to the participants in this comment thread (and the author) about this reply ?")) {
+           submit_notify=1;
+        }
+     } else if (confirm("Send a notification to the author about this comment?")) {
+        submit_notify=1;
+     }
+  }
+
+  var frm = document.getElementById('text_comments_form'+comment_id) ; 
+  var oEditor=FCKeditorAPI.GetInstance('text_comment'+comment_id); 
+  var textArea = document.getElementById('text_comment'+comment_id) ; 
+  textArea.value = oEditor.GetXHTML() +  '<p><font size=\"-1\">(reply)</font></p>' ;
+  var params = Form.serialize(frm) ;
+  params = params + '&notify='+submit_notify
+  var ac=document.getElementById('comments'+entry+ref) ;
+  var editSave = ac.innerHTML ;
+  var errFunc = function(t) {
+       alert('Error ' + t.status + ' -- ' + t.statusText +'  - try re-submitting ');
+  }
+  var succFunc = function(t) {
+       hideEditor(entry+ref) ;
+  }
+  if (ref != id) {
+    new Ajax.Updater('comments'+comment_id,'/featureflow/update_comment', {method:'post', 
+          parameters: params, asynchronous:true, evalScripts:true, insertion:Insertion.Bottom, 
+          onFailure:errFunc, onSuccess:succFunc});
+  } else {
+    new Ajax.Updater('comments'+id,'/featureflow/update_comment', {method:'post', 
+          parameters: params, asynchronous:true, evalScripts:true, 
+          onFailure:errFunc, onSuccess:succFunc});
+  }
+  return false;
+}
+function changeCommentAttribute(document_id, inp, param, currentValue, last_comment_id)
+{
+  var s=document.getElementById(inp) ;
+  var v=s.options[s.selectedIndex].value; 
+  var errFunc = function(t) {
+       alert('Error ' + t.status + ' -- ' + t.statusText +'  - try re-submitting ');
+  }
+  new Ajax.Updater('comments'+last_comment_id, '/featureflow/update_comment', 
+        {method:'post', 
+        parameters:'id=undefined'+
+           '&commentid='+last_comment_id+
+           '&document_id='+document_id+
+           '&'+param+'='+encodeURIComponent(v),
+        asynchronous:true, evalScripts:true, insertion:Insertion.Bottom,
+        onFailure:errFunc});
+}
+function unlinkfy(str)
+{
+   var s1=str.replace(/<a class=\"?review\"? .*?><span id=\"?line_(.*?)\"?>/ig, "") ;
+   var s2=s1.replace(/<\/span><\/a><span id=\"?comments(.*?)>/ig, "") ;
+   var s3 = s2.replace(/<\/span><span id=\"?comments_entry(.*?)\"?><\/span>/ig, "") ;
+   // Adam D'Andrea: February 19, 2007: remove (reply) when it goes into editor
+   var s4 = s3.replace(/<font size=\"?-1\"?>\(reply\)<\/font>/ig, "");
+   return s4;
+}
+
+function collapse(expander, lineBreak)
+{
+   var ac=document.getElementById('expander'+expander) ;
+   ac.innerHTML='<a href="javascript:expand(\''+expander+'\');"><img src="/images/expand_small.gif" alt="Expand"></a>' ;
+   var expanded=document.getElementById('expanded'+expander) ;
+   expanded.saveHTML = expanded.innerHTML ;
+   expanded.innerHTML = (lineBreak) ? '<br>' : '' ;
+}
+function expand(expander)
+{
+   var ac=document.getElementById('expander'+expander) ;
+   ac.innerHTML='<a href="javascript:collapse(\''+expander+'\');"><img src="/images/collapse_small.gif" alt="Collapse"></a>'
+   var expanded=document.getElementById('expanded'+expander) ;
+   if (typeof expanded.saveHTML == 'undefined')
+      expanded.innerHTML = document.sections['expanded'+expander]
+   else
+      expanded.innerHTML = expanded.saveHTML ;
+}
+</script>
+
+
+  <head>  <title></title> </head>  <table cellspacing="0" class="MsoNormalTable" border="1" cellpadding="0" width="100%" style="background:rgb(192,225,255);width:100%"> <tbody> <tr> <td valign="top" width="100%" style="padding-bottom:2.5pt;padding-left:2.5pt;padding-right:2.5pt;padding-top:2.5pt;width:100%"> <p class="MsoNormal"><a href='javascript:edit(\'_1\');' title='Click on the text to add a comment' class='review'><span id='line__1'><strong><span style='color:navy;font-family:Helvetica;font-size:10pt'>Document Control Information:</span></strong></span></a><span id="comments_1"></span><span id="comments_entry_1"></span></p> <p><a href='javascript:edit(\'_2\');' title='Click on the text to add a comment' class='review'><span id='line__2'>The official version of this document is kept in CMVC in the</span></a> <span id="comments_2"></span><span id="comments_entry_2"></span><span style="font-weight:bold;text-decoration:underline"><a href='javascript:edit(\'_3\');' title='Click on the text to add a comment' class='review'><span id='line__3'>aix</span></a><span id="comments_3"></span><span id="comments_entry_3"></span></span> <a href='javascript:edit(\'_4\');' title='Click on the text to add a comment' class='review'><span id='line__4'>family, release</span></a> <span id="comments_4"></span><span id="comments_entry_4"></span><span style="font-weight:bold;text-decoration:underline"><a href='javascript:edit(\'_5\');' title='Click on the text to add a comment' class='review'><span id='line__5'>des.dev</span></a><span id="comments_5"></span><span id="comments_entry_5"></span></span><a href='javascript:edit(\'_6\');' title='Click on the text to add a comment' class='review'><span id='line__6'>, component</span></a> <span id="comments_6"></span><span id="comments_entry_6"></span><span style="font-weight:bold;text-decoration:underline"><a href='javascript:edit(\'_7\');' title='Click on the text to add a comment' class='review'><span id='line__7'>design.it2</span></a><span id="comments_7"></span><span id="comments_entry_7"></span></span><a href='javascript:edit(\'_8\');' title='Click on the text to add a comment' class='review'><span id='line__8'>, file</span></a> <span id="comments_8"></span><span id="comments_entry_8"></span><span style="color:rgb(255,102,102);font-weight:bold;text-decoration:underline"><a href='javascript:edit(\'_9\');' title='Click on the text to add a comment' class='review'><span id='line__9'>designs/it2/it2_for_coindex_object__assignment_statement_/it2_for_coindex_object__assignment_statement_.html</span></a><span id="comments_9"></span><span id="comments_entry_9"></span></span><a title='Click on the text to add a comment' class='review'><span id='line__10'>.</span></a><span id="comments_10"></span><span id="comments_entry_10"></span> <a href='javascript:edit(\'_10\');' title='Click on the text to add a comment' class='review'><span id='line__10'>Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version.</span></a><span id="comments_10"></span><span id="comments_entry_10"></span> <a href='javascript:edit(\'_11\');' title='Click on the text to add a comment' class='review'><span id='line__11'>If this document is not a copy of the official version, it is obsolete.</span></a><span id="comments_11"></span><span id="comments_entry_11"></span><br> <br> <a href='javascript:edit(\'_12\');' title='Click on the text to add a comment' class='review'><span id='line__12'>CMVC Extraction Information:</span></a> <span id="comments_12"></span><span id="comments_entry_12"></span>%W% %H% %I% <a href='javascript:edit(\'_13\');' title='Click on the text to add a comment' class='review'><span id='line__13'>sccsid</span></a><span id="comments_13"></span><span id="comments_entry_13"></span><br></p> <p><a href='javascript:edit(\'_14\');' title='Click on the text to add a comment' class='review'><span id='line__14'>CMVC_Family=aix, CMVC_Release=test.dev, CMVC_Component=test.values</span></a><span id="comments_14"></span><span id="comments_entry_14"></span><br></p> <p><a href='javascript:edit(\'_15\');' title='Click on the text to add a comment' class='review'><span id='line__15'>This document is IBM Confidential.</span></a><span id="comments_15"></span><span id="comments_entry_15"></span></p> </td> </tr> </tbody> </table> <p class="MsoNormal"></p> <table cellspacing="3" class="MsoNormalTable" border="1" cellpadding="0" width="100%" style="background:rgb(204,204,255);width:100%"> <tbody> <tr> <td valign="top" style="padding-bottom:1pt;padding-left:1pt;padding-right:1pt;padding-top:1pt"> <p class="MsoNormal"><!-- featureflow:line:_17 --><strong><span style="font-family:Helvetica;font-size:10pt">Reviewers</span></strong><span style="font-family:Helvetica;font-size:10pt">:</span> <span style="font-family:Helvetica;font-size:10pt">Please click the 'Reviewed' check-box beside your name to indicate your participation in the review.</span><!-- featureflow:comments:_17 --><!-- featureflow:newcomments:_17 --></p> </td> </tr> </tbody> </table> <p class="MsoNormal" style="margin-bottom:6pt"></p> <p class="MsoNormal" style="margin-bottom:12pt"><span style="font-family:Helvetica;font-size:10pt"><table border=0 cellpadding=0 cellspacing=20><tr><td><table border=3 cellpadding=0 cellspacing=0><tr><th>Reviewer</th><th>Reviewed</th></tr><tr><td>Almon Ng</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1407"  disabled onClick="var cb=document.getElementById('review_1407'); new Ajax.Updater('review_span_1407',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1407',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1407"></span></form></td></tr><tr><td>Bardia Mahjour</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1399"  disabled onClick="var cb=document.getElementById('review_1399'); new Ajax.Updater('review_span_1399',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1399',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1399"></span></form></td></tr><tr><td>Barnaby Dalton</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1697"  disabled onClick="var cb=document.getElementById('review_1697'); new Ajax.Updater('review_span_1697',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1697',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1697"></span></form></td></tr><tr><td>Bernard Kan</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1726"  disabled onClick="var cb=document.getElementById('review_1726'); new Ajax.Updater('review_span_1726',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1726',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1726"></span></form></td></tr><tr><td>Chris Lord</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1522"  disabled onClick="var cb=document.getElementById('review_1522'); new Ajax.Updater('review_span_1522',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1522',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1522"></span></form></td></tr><tr><td>Claudio Rossi</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1324"  disabled onClick="var cb=document.getElementById('review_1324'); new Ajax.Updater('review_span_1324',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1324',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1324"></span></form></td></tr><tr><td>Dale Soldiuk</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1455"  disabled onClick="var cb=document.getElementById('review_1455'); new Ajax.Updater('review_span_1455',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1455',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1455"></span></form></td></tr><tr><td>Daniel C Chen</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1350" checked disabled onClick="var cb=document.getElementById('review_1350'); new Ajax.Updater('review_span_1350',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1350',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1350"></span></form></td></tr><tr><td>David Forster</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1287"  disabled onClick="var cb=document.getElementById('review_1287'); new Ajax.Updater('review_span_1287',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1287',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1287"></span></form></td></tr><tr><td>David Nichols</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1650"  disabled onClick="var cb=document.getElementById('review_1650'); new Ajax.Updater('review_span_1650',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1650',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1650"></span></form></td></tr><tr><td>Dorra Bouchiha</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1662"  disabled onClick="var cb=document.getElementById('review_1662'); new Ajax.Updater('review_span_1662',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1662',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1662"></span></form></td></tr><tr><td>Dwayne Moore</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1288"  disabled onClick="var cb=document.getElementById('review_1288'); new Ajax.Updater('review_span_1288',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1288',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1288"></span></form></td></tr><tr><td>Feng Ye</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1341"  disabled onClick="var cb=document.getElementById('review_1341'); new Ajax.Updater('review_span_1341',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1341',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1341"></span></form></td></tr></table></td><td><table border=3 cellpadding=0 cellspacing=0><tr><th>Reviewer</th><th>Reviewed</th></tr><tr><td>Francesco Cassullo</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1693"  disabled onClick="var cb=document.getElementById('review_1693'); new Ajax.Updater('review_span_1693',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1693',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1693"></span></form></td></tr><tr><td>Grigor Nikolov</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1360" checked disabled onClick="var cb=document.getElementById('review_1360'); new Ajax.Updater('review_span_1360',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1360',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1360"></span></form></td></tr><tr><td>Jim Xia</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1380"  disabled onClick="var cb=document.getElementById('review_1380'); new Ajax.Updater('review_span_1380',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1380',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1380"></span></form></td></tr><tr><td>Jin L Li</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1979"  disabled onClick="var cb=document.getElementById('review_1979'); new Ajax.Updater('review_span_1979',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1979',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1979"></span></form></td></tr><tr><td>Joel Boulet</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1986"  disabled onClick="var cb=document.getElementById('review_1986'); new Ajax.Updater('review_span_1986',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1986',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1986"></span></form></td></tr><tr><td>Kathleen Dowling</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1429"  disabled onClick="var cb=document.getElementById('review_1429'); new Ajax.Updater('review_span_1429',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1429',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1429"></span></form></td></tr><tr><td>Kelvin Li</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1377"  disabled onClick="var cb=document.getElementById('review_1377'); new Ajax.Updater('review_span_1377',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1377',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1377"></span></form></td></tr><tr><td>Kobi Vinayagamoorthy</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1289"  disabled onClick="var cb=document.getElementById('review_1289'); new Ajax.Updater('review_span_1289',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1289',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1289"></span></form></td></tr><tr><td>Leon L Kiriliuk</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1478"  disabled onClick="var cb=document.getElementById('review_1478'); new Ajax.Updater('review_span_1478',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1478',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1478"></span></form></td></tr><tr><td>Liang Chang Guo</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1359"  disabled onClick="var cb=document.getElementById('review_1359'); new Ajax.Updater('review_span_1359',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1359',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1359"></span></form></td></tr><tr><td>Mary Chan</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1489"  disabled onClick="var cb=document.getElementById('review_1489'); new Ajax.Updater('review_span_1489',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1489',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1489"></span></form></td></tr><tr><td>Morteza Ershad-Manesh</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1566"  disabled onClick="var cb=document.getElementById('review_1566'); new Ajax.Updater('review_span_1566',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1566',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1566"></span></form></td></tr><tr><td>Murtadha Al-Tameemi</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1997"  disabled onClick="var cb=document.getElementById('review_1997'); new Ajax.Updater('review_span_1997',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1997',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1997"></span></form></td></tr></table></td><td><table border=3 cellpadding=0 cellspacing=0><tr><th>Reviewer</th><th>Reviewed</th></tr><tr><td>Pooja Dayanand</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1651"  disabled onClick="var cb=document.getElementById('review_1651'); new Ajax.Updater('review_span_1651',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1651',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1651"></span></form></td></tr><tr><td>Rafik Zurob</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1405"  disabled onClick="var cb=document.getElementById('review_1405'); new Ajax.Updater('review_span_1405',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1405',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1405"></span></form></td></tr><tr><td>Rosanne Jolin</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1470"  disabled onClick="var cb=document.getElementById('review_1470'); new Ajax.Updater('review_span_1470',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1470',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1470"></span></form></td></tr><tr><td>Sa Kouchaki-Ramezan</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1311"  disabled onClick="var cb=document.getElementById('review_1311'); new Ajax.Updater('review_span_1311',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1311',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1311"></span></form></td></tr><tr><td>Shahid Alam</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1973"  disabled onClick="var cb=document.getElementById('review_1973'); new Ajax.Updater('review_span_1973',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1973',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1973"></span></form></td></tr><tr><td>Xing Xue</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1331" checked disabled onClick="var cb=document.getElementById('review_1331'); new Ajax.Updater('review_span_1331',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1331',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1331"></span></form></td></tr><tr><td>Ying Zhang</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1401"  disabled onClick="var cb=document.getElementById('review_1401'); new Ajax.Updater('review_span_1401',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1401',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_1401"></span></form></td></tr><tr><td>aferan@ca.ibm.com</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_2019"  disabled onClick="var cb=document.getElementById('review_2019'); new Ajax.Updater('review_span_2019',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=2019',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_2019"></span></form></td></tr><tr><td>andychen@ca.ibm.com</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_2021"  disabled onClick="var cb=document.getElementById('review_2021'); new Ajax.Updater('review_span_2021',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=2021',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_2021"></span></form></td></tr><tr><td>denisna@ca.ibm.com</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_2090"  disabled onClick="var cb=document.getElementById('review_2090'); new Ajax.Updater('review_span_2090',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=2090',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_2090"></span></form></td></tr><tr><td>justinds@ca.ibm.com</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_2102"  disabled onClick="var cb=document.getElementById('review_2102'); new Ajax.Updater('review_span_2102',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=2102',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_2102"></span></form></td></tr><tr><td>nemanjai@ca.ibm.com</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_2041"  disabled onClick="var cb=document.getElementById('review_2041'); new Ajax.Updater('review_span_2041',    '/featureflow/mark_approval_review_status?id=4629&status=Reviewed&value='+(cb.checked ? '1' : '0')+'&user_profile_id=2041',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="review_span_2041"></span></form></td></tr></table></td></tr></table></span></p> <table cellspacing="0" class="MsoNormalTable" border="1" cellpadding="0" width="100%" style="background:rgb(224,255,191);width:100%"> <tbody> <tr> <td valign="top" width="21%" style="padding-bottom:2.5pt;padding-left:2.5pt;padding-right:2.5pt;padding-top:2.5pt;width:21.22%"> <p class="MsoNormal"><!-- featureflow:line:_18 --><strong><span style="font-family:Helvetica;font-size:10pt">Document Title</span></strong><!-- featureflow:comments:_18 --><!-- featureflow:newcomments:_18 --></p> </td> <td valign="top" width="78%" style="background:white;padding-bottom:2.5pt;padding-left:2.5pt;padding-right:2.5pt;padding-top:2.5pt;width:78.78%"> <p class="MsoNormal"><a href='javascript:edit(\'_16\');' title='Click on the text to add a comment' class='review'><strong><span style='color:blue;font-family:Helvetica;font-size:10pt'>IT1/IT2 for Coarray Module Variables rev.1</span></strong></a><span id="comments_16"></span><span id="comments_entry_16"></span></p> </td> </tr> <tr> <td valign="top" width="21%" style="padding-bottom:2.5pt;padding-left:2.5pt;padding-right:2.5pt;padding-top:2.5pt;width:21.22%"> <p class="MsoNormal"><!-- featureflow:line:_20 --><strong><span style="font-family:Helvetica;font-size:10pt">CMVC Feature Number:</span></strong><!-- featureflow:comments:_20 --><!-- featureflow:newcomments:_20 --></p> </td> <td valign="top" width="78%" style="background:white;padding-bottom:2.5pt;padding-left:2.5pt;padding-right:2.5pt;padding-top:2.5pt;width:78.78%"><!-- Start --> <p class="MsoNormal"><!-- featureflow:line:_21 --><strong><span style="color:blue;font-family:Helvetica;font-size:10pt">381883</span></strong><!-- featureflow:comments:_21 --><!-- featureflow:newcomments:_21 --></p> </td> </tr> <tr> <td valign="top" style="padding-bottom:2.5pt;padding-left:2.5pt;padding-right:2.5pt;padding-top:2.5pt"> <p class="MsoNormal"><!-- featureflow:line:_22 --><strong><span style="font-family:Helvetica;font-size:10pt">Feature Title:</span></strong><!-- featureflow:comments:_22 --><!-- featureflow:newcomments:_22 --></p> </td> <td valign="top" style="background:white;padding-bottom:2.5pt;padding-left:2.5pt;padding-right:2.5pt;padding-top:2.5pt"><!-- Start --> <p class="MsoNormal"></p> </td> </tr> <tr> <td valign="top" style="padding-bottom:2.5pt;padding-left:2.5pt;padding-right:2.5pt;padding-top:2.5pt"> <p class="MsoNormal"><!-- featureflow:line:_23 --><strong><span style="font-family:Helvetica;font-size:10pt">Author(s):</span></strong><!-- featureflow:comments:_23 --><!-- featureflow:newcomments:_23 --></p> </td> <td valign="top" style="background:white;padding-bottom:2.5pt;padding-left:2.5pt;padding-right:2.5pt;padding-top:2.5pt"><!-- Start --> <p class="MsoNormal"><!-- featureflow:line:_24 --><strong><span style="color:blue;font-family:Helvetica;font-size:10pt">Denis Navotniy</span></strong><!-- featureflow:comments:_24 --><!-- featureflow:newcomments:_24 --></p> </td> </tr> <tr> <td valign="top" style="padding-bottom:2.5pt;padding-left:2.5pt;padding-right:2.5pt;padding-top:2.5pt"> <p class="MsoNormal"><!-- featureflow:line:_25 --><strong><span style="font-family:Helvetica;font-size:10pt">Mandatory Reviewers:</span></strong><!-- featureflow:comments:_25 --><!-- featureflow:newcomments:_25 --></p> <p class="MsoNormal"><!-- featureflow:line:_26 --><strong><span style="font-family:Helvetica;font-size:10pt">(Approver)</span></strong><!-- featureflow:comments:_26 --><!-- featureflow:newcomments:_26 --></p> </td> <td valign="top" style="background:white;padding-bottom:2.5pt;padding-left:2.5pt;padding-right:2.5pt;padding-top:2.5pt"><!-- Start --> <p class="MsoNormal"></p> <p class="MsoNormal"><!-- featureflow:line:_27 --><strong><span style="color:blue;font-family:Helvetica;font-size:10pt">Xing Xue, Daniel C Chen</span></strong><!-- featureflow:comments:_27 --><!-- featureflow:newcomments:_27 --></p> </td> </tr> <tr> <td valign="top" style="padding-bottom:2.5pt;padding-left:2.5pt;padding-right:2.5pt;padding-top:2.5pt"> <p class="MsoNormal"><!-- featureflow:line:_28 --><strong><span style="font-family:Helvetica;font-size:10pt">Component Reviewers:(optional participation)</span></strong><!-- featureflow:comments:_28 --><!-- featureflow:newcomments:_28 --></p> </td> <td valign="top" style="background:white;padding-bottom:2.5pt;padding-left:2.5pt;padding-right:2.5pt;padding-top:2.5pt"><!-- Start --> <p class="MsoNormal"><!-- featureflow:line:_29 --><strong><span style="color:blue;font-family:Helvetica;font-size:10pt">Bardia Mahjour, Barnaby Dalton, Chris Lord, Dale Soldiuk, David Nichols, Dwayne Moore, Feng Ye, Jim Xia, Kathleen Dowling, Kelvin Li, Kobi Vinayagamoorthy, Leon L Kiriliuk, Mary Chan, Pooja Dayanand, Rafik Zurob</span></strong><!-- featureflow:comments:_29 --><!-- featureflow:newcomments:_29 --></p> </td> </tr> <tr> <td valign="top" style="padding-bottom:2.5pt;padding-left:2.5pt;padding-right:2.5pt;padding-top:2.5pt"> <p class="MsoNormal"><!-- featureflow:line:_30 --><strong><span style="font-family:Helvetica;font-size:10pt">Team Reviewers: (optional participation)</span></strong><!-- featureflow:comments:_30 --><!-- featureflow:newcomments:_30 --></p> </td> <td valign="top" style="background:white;padding-bottom:2.5pt;padding-left:2.5pt;padding-right:2.5pt;padding-top:2.5pt"><!-- Start --> <p class="MsoNormal"><!-- featureflow:line:_31 --><strong><span style="color:blue;font-family:Helvetica;font-size:10pt">Almon Ng, Bernard Kan, Claudio Rossi, David Forster, Dorra Bouchiha, Francesco Cassullo, Grigor Nikolov, Jin L Li, Joel Boulet, Liang Chang Guo, Morteza Ershad-Manesh, Murtadha Al-Tameemi, Rosanne Jolin, Sa Kouchaki-Ramezan, Shahid Alam, Ying Zhang, aferan@ca.ibm.com, andychen@ca.ibm.com, justinds@ca.ibm.com, nemanjai@ca.ibm.com</span></strong><!-- featureflow:comments:_31 --><!-- featureflow:newcomments:_31 --></p> </td> </tr> </tbody> </table> <p class="MsoNormal" style="margin-bottom:12pt"></p> <table cellspacing="0" class="MsoNormalTable" border="1" cellpadding="0" width="100%" style="background:rgb(255,102,102);width:100%"> <tbody> <tr> <td valign="top" width="100%" style="padding-bottom:2.5pt;padding-left:2.5pt;padding-right:2.5pt;padding-top:2.5pt;width:100%"> <p class="MsoNormal"><!-- featureflow:line:_32 --><strong><span style="font-family:Helvetica;font-size:10pt">IT1 Status: <!-- Start -->For Approval</span> <!-- End --></strong><!-- featureflow:comments:_32 --><!-- featureflow:newcomments:_32 --></p> </td> </tr> </tbody> </table> <p class="MsoNormal"><!-- featureflow:line:_33 --><strong><span style="font-family:Helvetica;font-size:10pt">Approvers Only:</span></strong> <span style="font-family:Helvetica;font-size:10pt">Click on the 'Approve' checkbox beside your name in the table below if you agree with the technical and user interface content of this document; not checking your 'approve' checkbox signifies you do not approve.</span><!-- featureflow:comments:_33 --><!-- featureflow:newcomments:_33 --></p> <p class="MsoNormal"><span style="font-family:Helvetica;font-size:10pt"><table border=0 cellpadding=0 cellspacing=20><tr><td><table border=3 cellpadding=0 cellspacing=0><tr><th>Approver</th><th>Approved</th></tr><tr><td>Daniel C Chen</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="approval_1350" checked disabled onClick="var cb=document.getElementById('approval_1350'); new Ajax.Updater('approval_span_1350',    '/featureflow/mark_approval_review_status?id=4629&status=Approved&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1350',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="approval_span_1350"></span></form></td></tr><tr><td>Grigor Nikolov</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="approval_1360" checked disabled onClick="var cb=document.getElementById('approval_1360'); new Ajax.Updater('approval_span_1360',    '/featureflow/mark_approval_review_status?id=4629&status=Approved&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1360',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="approval_span_1360"></span></form></td></tr><tr><td>Xing Xue</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="approval_1331" checked disabled onClick="var cb=document.getElementById('approval_1331'); new Ajax.Updater('approval_span_1331',    '/featureflow/mark_approval_review_status?id=4629&status=Approved&value='+(cb.checked ? '1' : '0')+'&user_profile_id=1331',   {evalScripts:true, onFailure:function() { alert('Unable to update review/approval status'); }});"><span id="approval_span_1331"></span></form></td></tr></table></td></tr></table></span></p> <p class="MsoNormal"><!-- featureflow:line:_34 --><strong><span style="font-family:Helvetica;font-size:10pt">Approval Comments</span></strong><!-- featureflow:comments:_34 --><!-- featureflow:newcomments:_34 --></p> <table cellspacing="2" border="1" cellpadding="2" style="background-color:rgb(224,255,191);font-family:Arial;font-size:12pt;text-align:left;width:100%"> <tbody> <tr> <td style="font-family:Arial;vertical-align:top"><!-- featureflow:line:_35 --><strong>Access Change History</strong><!-- featureflow:comments:_35 --><!-- featureflow:newcomments:_35 --></td> </tr> </tbody> </table> <span id="expander_sec1"><a href="javascript:expand('_sec1');"><img src="/images/expand_small.gif" alt="Expand"></a></span>&nbsp;<!-- featureflow:line:_36 --><strong>Access Change History</strong><!-- featureflow:comments:_36 --><!-- featureflow:newcomments:_36 --><div id="expanded_sec1"></div> <p class="MsoNormal"></p> <p class="MsoNormal"></p> <table cellspacing="0" class="MsoNormalTable" border="1" cellpadding="0" width="100%" style="background:rgb(191,191,255);width:100%"> <tbody> <tr> <td valign="top" width="100%" style="padding-bottom:2.5pt;padding-left:2.5pt;padding-right:2.5pt;padding-top:2.5pt;width:100%"> <p class="MsoNormal" align="center" style="text-align:center"><!-- featureflow:line:_37 --><strong><span style="font-family:Helvetica;font-size:14pt">Overview</span></strong><!-- featureflow:comments:_37 --><!-- featureflow:newcomments:_37 --></p> </td> </tr> </tbody> </table> <p style="margin:2pt"><!-- featureflow:line:_38 --><span style="font-family:Helvetica;font-size:11pt"><!-- Start Overview --></span><!-- featureflow:comments:_38 --><!-- featureflow:newcomments:_38 --></p> <p style="margin:2pt"><span style="font-family:Helvetica;font-size:11pt"><span id="line__17"><span style="font-family:Helvetica;font-size:11pt"><a href='javascript:edit(\'_23\');' title='Click on the text to add a comment' class='review'><font color='#000000'>According to Fortran 2008 standard, modules provide a way to share data between program unit. Modules may contain regular and coarray variables. In this phase of testing of module variables, we will only consider intrinsics type (Integer, Real, Complex, Character, Logical). Derived types will be tested in the next step</font></a></span></span></span></p> <p style="margin:2pt"></p> <p style="margin:2pt"></p> <table cellspacing="0" class="MsoNormalTable" border="1" cellpadding="0" width="100%" style="background:rgb(191,191,255);width:100%"> <tbody> <tr> <td valign="top" width="100%" style="padding-bottom:2.5pt;padding-left:2.5pt;padding-right:2.5pt;padding-top:2.5pt;width:100%"> <p class="MsoNormal" align="center" style="text-align:center"><!-- featureflow:line:_43 --><strong><span style="font-family:Helvetica;font-size:14pt"><!-- End Overview -->Test Strategy</span></strong><!-- featureflow:comments:_43 --><!-- featureflow:newcomments:_43 --></p> </td> </tr> </tbody> </table> <p style="margin:2pt"></p> <p style="margin:2pt"><!-- featureflow:line:_44 -->The real module variable use in CAF will be tested by using them when develop code for all of other CAF features.<!-- featureflow:comments:_44 --><!-- featureflow:newcomments:_44 --></p> <p style="margin:2pt"><!-- featureflow:line:_45 -->The purpose of this feature is to provide basic covarege of that functionality.<!-- featureflow:comments:_45 --><!-- featureflow:newcomments:_45 --></p> <p style="margin:2pt"> </p> <p style="margin:2pt"><!-- featureflow:line:_46 --> In general the testing will be divided into two parts: Diagnostic and Functional Testing.<!-- featureflow:comments:_46 --><!-- featureflow:newcomments:_46 --></p> <p style="margin:2pt"> </p> <p style="margin:2pt"><!-- featureflow:line:_47 -->During diagnostic test we will consider compile-time error message issued when the module and main program are compiled with different parameters -qcaf and -qnocaf.<!-- featureflow:comments:_47 --><!-- featureflow:newcomments:_47 --></p> <p style="margin:2pt"> </p> <p style="margin:2pt"><!-- featureflow:line:_48 -->During functional (cover access to the coarray module variables from the main program) test we will consider:<!-- featureflow:comments:_48 --><!-- featureflow:newcomments:_48 --></p> <p style="margin:2pt"><!-- featureflow:line:_49 -->1.<!-- featureflow:comments:_49 --><!-- featureflow:newcomments:_49 --> <!-- featureflow:line:_50 -->Access to the module variables (for both scalar and array coarray types) from the main program<!-- featureflow:comments:_50 --><!-- featureflow:newcomments:_50 --></p> <p style="margin:2pt"><!-- featureflow:line:_51 -->2.<!-- featureflow:comments:_51 --><!-- featureflow:newcomments:_51 --> <!-- featureflow:line:_52 -->Access to the module variables (for both scalar and array coarray types) if there is a USE statement with ONLY qualifier, and with rename-list.<!-- featureflow:comments:_52 --><!-- featureflow:newcomments:_52 --></p> <p style="margin:2pt"></p> <table cellspacing="0" class="MsoNormalTable" border="1" cellpadding="0" width="100%" style="background:rgb(191,191,255);width:100%"> <tbody> <tr> <td valign="top" width="100%" style="padding-bottom:2.5pt;padding-left:2.5pt;padding-right:2.5pt;padding-top:2.5pt;width:100%"> <p class="MsoNormal" align="center" style="text-align:center"><!-- featureflow:line:_53 --><strong><span style="font-family:Helvetica;font-size:14pt"><!-- End Multi-Platform Considerations -->Test Procedures/Scenarios</span></strong><!-- featureflow:comments:_53 --><!-- featureflow:newcomments:_53 --></p> </td> </tr> </tbody> </table> <p style="margin:2pt"><!-- featureflow:line:_54 --><span style="font-family:Helvetica;font-size:11pt"><!-- Start Internal Interfaces --></span><!-- featureflow:comments:_54 --><!-- featureflow:newcomments:_54 --></p> <p style="margin:2pt"></p> <p style="margin:2pt"><span style="font-family:Helvetica;font-size:11pt"><!-- featureflow:line:_55 --><span id="line__71"></span><!-- featureflow:comments:_55 --><!-- featureflow:newcomments:_55 --></span><strong><font size="+0"><a title='Click on the text to add a comment' class='review'><span id='line__54'><strong><span class='review'><span id='line__129'></span></strong></span></a></font></strong></p> <p style="margin:2pt"></p> <p style="margin:2pt"></p> <table cellspacing="1" border="1" summary="" cellpadding="1" width="900"> <tbody> <tr> <td width="300"><!-- featureflow:line:_57 --><strong>Scenario name</strong><!-- featureflow:comments:_57 --><!-- featureflow:newcomments:_57 --></td> <td><!-- featureflow:line:_58 --> <strong>Type of test / Comments</strong><!-- featureflow:comments:_58 -->
+
+<a name="40972"></a>
+<span id='comments40972'>
+<table bgcolor="80FF80" border=1 cellpadding=0 cellspacing=0 width="100%">
+<tr><td>&nbsp;
+
+<span id='expander40972'><a href="javascript:collapse('40972',false);"><img src="/images/collapse_small.gif" alt="Collapse"></a></span>
+
+	
+
+ <font size=1>
+  <font color="0000FF">Created by:</font> Xing Xue
+<font color="0000FF">on</font> 10-Nov-10
+	  <font color="0000FF">at</font> 13:08
+
+<font color="0000FF">Type:</font> 
+
+<select id="ctype40972__58" name="ctype_58" 
+    onchange="changeCommentAttribute('4629', 'ctype40972__58', 'ctype', 'Comment', '40972_2')">
+
+   <option value="Typo" >Typo</option>
+
+   <option value="Comment" selected>Comment</option>
+
+   <option value="Problem" >Problem</option>
+
+   <option value="Issue" >Issue</option>
+
+</select>
+
+<font color="0000FF">Disposition:</font> 
+
+<select id="disposition40972__58" name="disposition_58"
+    onchange="changeCommentAttribute('4629', 'disposition40972__58', 'disposition', 'Rejected', '40972_2')">
+
+   <option value="Unassigned" >Unassigned</option>
+
+   <option value="Accepted" >Accepted</option>
+
+   <option value="Rejected" selected>Rejected</option>
+
+</select>
+
+
+
+</font></td></tr>
+<tr><td>
+  <span id="expanded40972">
+  <table border=0 cellpadding=1 width="100%">
+  <tr><td>
+    <table border=1 width="100%" cellpadding=5 cellspacing=0 bgcolor=white>
+    <tr><td>
+      <span id="comments_content40972">
+        <head>  <title></title> </head><!-- featureflow:line:40972_1 -->  There are a couple of other scenarios to consider, e.g., initialized module scalar/array variables, module array sections, and substrings. <!-- featureflow:comments:40972_1 --><!-- featureflow:newcomments:40972_1 --><p><!-- featureflow:line:40972_2 --><font size="-1">(reply)</font><!-- featureflow:comments:40972_2 -->
+
+<a name="41462"></a>
+<span id='comments41462'>
+<table bgcolor="FF8080" border=1 cellpadding=0 cellspacing=0 width="100%">
+<tr><td>&nbsp;
+
+<span id='expander41462'><a href="javascript:collapse('41462',false);"><img src="/images/collapse_small.gif" alt="Collapse"></a></span>
+
+	
+
+ <font size=1>
+  <font color="0000FF">Created by:</font> Grigor Nikolov
+<font color="0000FF">on</font> 29-Nov-10
+	  <font color="0000FF">at</font> 10:33
+
+
+</font></td></tr>
+<tr><td>
+  <span id="expanded41462">
+  <table border=0 cellpadding=1 width="100%">
+  <tr><td>
+    <table border=1 width="100%" cellpadding=5 cellspacing=0 bgcolor=white>
+    <tr><td>
+      <span id="comments_content41462">
+        <head>  <title></title> </head>  <p><!-- featureflow:line:41462_1 --><font size="1">Above proposition will be covered in Part #2 of this feature.</font><!-- featureflow:comments:41462_1 --><!-- featureflow:newcomments:41462_1 --></p> <p><!-- featureflow:line:41462_2 --><font size="-1">(reply)</font><!-- featureflow:comments:41462_2 --><!-- featureflow:newcomments:41462_2 --></p>   
+      </span>
+    </td></tr>
+    </table>
+  </td></tr>
+  </table>
+  </span>
+</td></tr>
+</table>
+</span>
+
+
+<a name="41490"></a>
+<span id='comments41490'>
+<table bgcolor="80FF80" border=1 cellpadding=0 cellspacing=0 width="100%">
+<tr><td>&nbsp;
+
+<span id='expander41490'><a href="javascript:collapse('41490',false);"><img src="/images/collapse_small.gif" alt="Collapse"></a></span>
+
+	
+
+ <font size=1>
+  <font color="0000FF">Created by:</font> denisna@ca.ibm.com
+<font color="0000FF">on</font> 29-Nov-10
+	  <font color="0000FF">at</font> 12:01
+
+
+</font></td></tr>
+<tr><td>
+  <span id="expanded41490">
+  <table border=0 cellpadding=1 width="100%">
+  <tr><td>
+    <table border=1 width="100%" cellpadding=5 cellspacing=0 bgcolor=white>
+    <tr><td>
+      <span id="comments_content41490">
+        <head>  <title></title> </head><!-- featureflow:line:41490_1 -->  Modified disposition from Unassigned to <!-- featureflow:comments:41490_1 --><!-- featureflow:newcomments:41490_1 --><b><!-- featureflow:line:41490_2 -->Rejected<!-- featureflow:comments:41490_2 --><!-- featureflow:newcomments:41490_2 --></b> <p><!-- featureflow:line:41490_3 --><font size="-1">(reply)</font><!-- featureflow:comments:41490_3 --><!-- featureflow:newcomments:41490_3 --></p>   
+      </span>
+    </td></tr>
+    </table>
+  </td></tr>
+  </table>
+  </span>
+</td></tr>
+</table>
+</span>
+<!-- featureflow:newcomments:40972_2 --></p>   
+      </span>
+    </td></tr>
+    </table>
+  </td></tr>
+  </table>
+  </span>
+</td></tr>
+</table>
+</span>
+<!-- featureflow:newcomments:_58 --></td> </tr> <tr> <td width="300"><!-- featureflow:line:_59 --><strong>Functional</strong><!-- featureflow:comments:_59 --><!-- featureflow:newcomments:_59 --></td> <td> </td> </tr> <tr> <td width="300"><a href='javascript:edit(\'_18\');' title='Click on the text to add a comment' class='review'>module_variables_001f.scenario  -qcaf</a><span id="comments_18"></span><span id="comments_entry_18"></span></td> <td> <a href='javascript:edit(\'_21\');' title='Click on the text to add a comment' class='review'>Test scalar coarray module variables: Integer, Real, Complex, Character, Logical</a><span id="comments_21"></span><span id="comments_entry_21"></span></td> </tr> <tr> <td width="300"><a href='javascript:edit(\'_19\');' title='Click on the text to add a comment' class='review'>module_variables_002f.scenario  -qcaf</a><span id="comments_19"></span><span id="comments_entry_19"></span></td> <td> <a href='javascript:edit(\'_22\');' title='Click on the text to add a comment' class='review'>Test array coarray module variables: Integer, Real, Complex, Character, Logical</a><span id="comments_22"></span><span id="comments_entry_22"></span></td> </tr> <tr> <td width="300"><a href='javascript:edit(\'_100\');' title='Click on the text to add a comment' class='review'>module_variables_003f.scenario -qcaf</a><span id="comments_100"></span><span id="comments_entry_100"></span></td> <td><a href='javascript:edit(\'_101\');' title='Click on the text to add a comment' class='review'> Test coarray module variables for scalar: INTEGER, REAL, CHARACTER, LOGICAL: USE mod ONLY: A,B, ....</a><span id="comments_101"></span><span id="comments_entry_101"></span></td> </tr> <tr> <td width="300"><a href='javascript:edit(\'_102\');' title='Click on the text to add a comment' class='review'>module_variables_004f.scenario -qcaf</a><span id="comments_102"></span><span id="comments_entry_102"></span></td> <td><a href='javascript:edit(\'_103\');' title='Click on the text to add a comment' class='review'>Test coarray module variables for scalar: INTEGER, REAL, CHARACTER, LOGICAL: USE module, local_name =&gt; module_name</a><span id="comments_103"></span><span id="comments_entry_103"></span></td> </tr> <tr> <td width="300"><a href='javascript:edit(\'_104\');' title='Click on the text to add a comment' class='review'>module_variables_005f.scenario -qcaf</a><span id="comments_104"></span><span id="comments_entry_104"></span></td> <td><a href='javascript:edit(\'_105\');' title='Click on the text to add a comment' class='review'>Same as above just add ONLY: USE module, ONLY: local_name =&gt; module_name</a><span id="comments_105"></span><span id="comments_entry_105"></span></td> </tr> <tr> <td width="300"><!-- featureflow:line:_70 --><strong>Diagnostic</strong><!-- featureflow:comments:_70 --><!-- featureflow:newcomments:_70 --></td> <td> </td> </tr> <tr> <td width="300"><a href='javascript:edit(\'_106\');' title='Click on the text to add a comment' class='review'>module_variables_001d.scenario</a><span id="comments_107"></span><span id="comments_entry_106"></span></td> <td><a href='javascript:edit(\'_107\');' title='Click on the text to add a comment' class='review'> <p><!-- featureflow:line:_72 -->Test compiler error message, when module and main program are compiled with different parameters:<!-- featureflow:comments:_72 --><!-- featureflow:newcomments:_72 --></p> <p><!-- featureflow:line:_73 -->module                    main program<!-- featureflow:comments:_73 --><!-- featureflow:newcomments:_73 --></p> <p><!-- featureflow:line:_74 -->-<strong>qcaf                          -qcaf</strong><!-- featureflow:comments:_74 --><!-- featureflow:newcomments:_74 --></p> <p><!-- featureflow:line:_75 --><strong>-qcaf                          -qnocaf</strong><!-- featureflow:comments:_75 --><!-- featureflow:newcomments:_75 --></p> <p><!-- featureflow:line:_76 --><strong>-qnocaq                    -qcaf</strong><!-- featureflow:comments:_76 --><!-- featureflow:newcomments:_76 --></p> <span id="comments_107"></span><span id="comments_entry_107"></span></td> </tr> <tr> <td width="300"><a href='javascript:edit(\'_108\');' title='Click on the text to add a comment' class='review'>module_variables_002d.scenario<span id='comments_108'><span id='comments_entry_108'></a></td> <td><a href='javascript:edit(\'_111\');' title='Click on the text to add a comment' class='review'>Same as above: module to share sabroutine<span id='comments_111'><span id='comments_entry_111'></a></td> </tr> <tr> <td width="300"><a href='javascript:edit(\'_109\');' title='Click on the text to add a comment' class='review'>module_variables_003d.scenario<span id='comments_109'><span id='comments_entry_109'></a></td> <td><a href='javascript:edit(\'_112\');' title='Click on the text to add a comment' class='review'>Same as above: module to share function<span id='comments_112'><span id='comments_entry_112'></a></td> </tr> <tr> <td width="300"><a href='javascript:edit(\'_110\');' title='Click on the text to add a comment' class='review'>module_variables_004d.scenario<span id='comments_110'><span id='comments_entry_110'></a></td> <td><a href='javascript:edit(\'_113\');' title='Click on the text to add a comment' class='review'>Test error message: USE mod ONLY: A,B, ....<span id='comments_113'><span id='comments_entry_113'></a></td> </tr> </tbody> </table> <p style="margin:2pt"> </p> <p style="margin:2pt"> </p> <p style="margin:2pt"></p> <p style="margin:2pt"></p> <table cellspacing="0" class="MsoNormalTable" border="1" cellpadding="0" width="100%" style="background:rgb(191,191,255);width:100%"> <tbody> <tr> <td valign="top" width="100%" style="padding-bottom:2.5pt;padding-left:2.5pt;padding-right:2.5pt;padding-top:2.5pt;width:100%"> <p class="MsoNormal" align="center" style="text-align:center"><!-- featureflow:line:_83 --><strong><span style="font-family:Helvetica;font-size:14pt"><!-- End Internal Interfaces -->IT2 Information</span></strong><!-- featureflow:comments:_83 --><!-- featureflow:newcomments:_83 --></p> </td> </tr> </tbody> </table> <p style="margin:2pt"><!-- featureflow:line:_84 --><span style="font-family:Helvetica;font-size:11pt"><!-- Start Inter-Component Communication/Interfaces --></span><!-- featureflow:comments:_84 --><!-- featureflow:newcomments:_84 --></p> <p><font color="#000000"><!-- featureflow:line:_85 -->The scenarios and sources can be found on:<!-- featureflow:comments:_85 --><!-- featureflow:newcomments:_85 --><br><!-- featureflow:line:_86 --> &lt;release&gt;/F2008/coarray/module_variables<!-- featureflow:comments:_86 --><!-- featureflow:newcomments:_86 --><br><!-- featureflow:line:_87 --> Functional TCs: &lt;release&gt;/F2008/coarray/module_variables/func<!-- featureflow:comments:_87 --><!-- featureflow:newcomments:_87 --></font></p> <p><font color="#000000"><!-- featureflow:line:_88 -->Diagnostic TCs: &lt;release&gt;/F2008/coarray/module_variables/diag<!-- featureflow:comments:_88 --><!-- featureflow:newcomments:_88 --><br> <br><!-- featureflow:line:_89 --> Unit TCs: &lt;release&gt;/F2008/coarray/unit_test/<!-- featureflow:comments:_89 --><!-- featureflow:newcomments:_89 --><br><!-- featureflow:line:_90 --> For I0, IT1, IT2 docs etc.: &lt;release&gt;/F2008/coarray/module_variables/doc<!-- featureflow:comments:_90 --><!-- featureflow:newcomments:_90 --><br> <br><!-- featureflow:line:_91 --> Component: xlftest.F2008<!-- featureflow:comments:_91 --><!-- featureflow:newcomments:_91 --><br><!-- featureflow:line:_92 --> Release(s): tstdev<!-- featureflow:comments:_92 --><!-- featureflow:newcomments:_92 --><br></font></p> <p style="margin:2pt"></p> <p style="margin:2pt"></p> <table cellspacing="0" class="MsoNormalTable" border="1" cellpadding="0" width="100%" style="background:rgb(191,191,255);width:100%"> <tbody> <tr> <td valign="top" width="100%" style="padding-bottom:2.5pt;padding-left:2.5pt;padding-right:2.5pt;padding-top:2.5pt;width:100%"> <p class="MsoNormal" align="center" style="text-align:center"><!-- featureflow:line:_93 --><strong><span style="font-family:Helvetica;font-size:14pt"><!-- End Inter-Component Communication/Interfaces -->Appendices/References</span></strong><!-- featureflow:comments:_93 --><!-- featureflow:newcomments:_93 --></p> </td> </tr> </tbody> </table> <p style="margin:2pt"></p> <p style="margin:2pt"></p> <p> </p> <p> </p> <p style="margin:2pt"><br></p>   <script>document.sections={};</script><script>document.sections['expanded_sec1']='<p><table border=1 cellspacing=0 cellpadding=0><tr><th>Change Date</th><th>Updater</th><th>Access Change</th></tr><tr><td><p>05-Nov-10 13:28</p></td><td><p>denisna@ca.ibm.com</p></td><td><p>Modified Grigor Nikolov (gnikolov@ca.ibm.com) role from Team Reviewer to <b>Approver</b></p></td></tr></table></p>';</script><br>
+
+
+
+		<!--END MAIN BODY CONTENT-->
+		<a href="http://w3.ibm.com/w3/info_terms_of_use.html" class="terms">Terms of use</a><br />
+   </div>
+</body>
+</html>
+

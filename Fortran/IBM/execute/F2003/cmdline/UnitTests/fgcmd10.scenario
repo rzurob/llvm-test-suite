@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/cmdline/UnitTests/fgcmd10.scenario
+#FEATURE = cmdline tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041204
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)fgcmd10.f
+#OPTS      = $(OPT_INTSIZE_4)
+#OUTPUT    = fgcmd10$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_INTSIZE_4)
+#INPUT     =  fgcmd10$(OBJ)
+#OUTPUT    = fgcmd10$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fgcmd10$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,4 @@
+"bcdapt06.f", line 39.21: 1516-198 (S) Variables which are pointers must not be declared with the TARGET, INTRINSIC, ALLOCATABLE, VALUE, or BIND(C) attributes.  Pointer variables must not appear as integer pointers, pointees, automatic objects, statement functions, character objects with inherited length, or as members of BIND(C) common block.
+** sub   === End of Compilation 1 ===
+** bcdapt06   === End of Compilation 2 ===
+1501-511  Compilation failed for file bcdapt06.f.

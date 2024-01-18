@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       intproc_arg_5.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       11-04-25
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)intproc_arg_5.f
+#OUTPUT= intproc_arg_5$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  intproc_arg_5$(OBJ)
+#OUTPUT= intproc_arg_5$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  intproc_arg_5$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

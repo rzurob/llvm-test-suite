@@ -1,0 +1,11 @@
+ second call to test1
+ b1 allocated
+ b2 allocated, size =  2
+ b3 allocated, shape =  2 2
+ calling test2
+ finalizeChild
+ finalizeBase
+ finalizeChildRank1
+ finalizeBase
+ finalizeBase
+ end

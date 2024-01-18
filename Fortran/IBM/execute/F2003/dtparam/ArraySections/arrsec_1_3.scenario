@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/ArraySections/arrsec_1_3.scenario
+#FEATURE   = 353925
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20080918
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINENV
+#INVALID_XOPTS= $(F_COMPILE^OPT_CHECK_RT_EXCEPTIONS_ALL)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)arrsec_1_3.f
+#OUTPUT    = arrsec_1_3$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = arrsec_1_3$(OBJ)
+#OUTPUT    = arrsec_1_3$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = arrsec_1_3$(EXE)
+#STDOUT    = arrsec_1_3.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)arrsec_1_3$(product)vf) arrsec_1_3.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

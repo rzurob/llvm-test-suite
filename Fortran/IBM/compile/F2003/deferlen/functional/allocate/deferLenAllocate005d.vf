@@ -1,0 +1,9 @@
+** n   === End of Compilation 1 ===
+"deferLenAllocate005d.f", line 46.31: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"deferLenAllocate005d.f", line 46.39: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"deferLenAllocate005d.f", line 47.45: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"deferLenAllocate005d.f", line 47.70: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"deferLenAllocate005d.f", line 49.28: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"deferLenAllocate005d.f", line 49.36: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+** deferlenallocate005d   === End of Compilation 2 ===
+1501-511  Compilation failed for file deferLenAllocate005d.f.

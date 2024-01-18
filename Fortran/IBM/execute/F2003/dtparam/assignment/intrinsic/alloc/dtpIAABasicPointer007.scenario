@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/assignment/intrinsic/alloc/dtpIAABasicPointer007.scenario
+#FEATURE   = Intrinsic Assignment with Allocation - allocate basic DTP variable (container) with allocatable components via intrinsic assignment and assign to pointer
+#CREATOR   = DF Manual Update
+#DATE      = 20090522
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAABasicPointer007.f
+#OUTPUT    = dtpIAABasicPointer007$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAABasicPointer007$(OBJ)
+#OUTPUT    = dtpIAABasicPointer007$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAABasicPointer007$(EXE)
+#STDOUT    = dtpIAABasicPointer007.out
+#ENDCMD
+
+#CMD       = SORT
+#INPUT     = dtpIAABasicPointer007.out
+#STDOUT    = dtpIAABasicPointer007.out1
+#ENDCMD
+
+#CMD       = SORT
+#INPUT     = $($(tcasedir)dtpIAABasicPointer007$(product)vf)
+#STDOUT    = dtpIAABasicPointer007.vf1
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dtpIAABasicPointer007.vf1 dtpIAABasicPointer007.out1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

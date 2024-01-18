@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME	  =F2003/dtparam/TCext/ace/types/derived/acetdt476akl_rb_noacid.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement \
+			  Derived Type Specifier Tests) -- With No ac-implied-do Constructs
+#CREATOR	= Glen Mateer (derived from work by David Forster)
+#DATE		= 20080117
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt476akl_rb_noacid.f
+#OUTPUT		= acetdt476akl_rb_noacid$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt476akl_rb_noacid$(OBJ)
+#OUTPUT		= acetdt476akl_rb_noacid$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt476akl_rb_noacid$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

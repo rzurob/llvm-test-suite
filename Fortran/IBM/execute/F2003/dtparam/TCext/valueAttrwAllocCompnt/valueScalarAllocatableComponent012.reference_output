@@ -1,0 +1,40 @@
+ inside foo 100
+ inside bar 100
+ after bar F
+ T
+ F
+ after foo F
+ ==========
+ main b1 T T 100
+ ==========
+ inside foo 200
+ inside bar 200
+ after bar F
+ T
+ F
+ after foo F
+ ==========
+ main c1 T T 200
+ ==========
+ inside bar 200
+ after bar F
+ ==========
+ main c1%inb T T 200
+ ==========
+ inside bar 300
+ after bar F
+ ==========
+ main c1%inc T T 300
+ ==========
+ inside boo 200
+ inside foo 200
+ inside bar 200
+ after bar F
+ T
+ F
+ after foo F
+ inside boo 2 200
+ after boo T
+ ==========
+ main c1 T T 500
+ ==========

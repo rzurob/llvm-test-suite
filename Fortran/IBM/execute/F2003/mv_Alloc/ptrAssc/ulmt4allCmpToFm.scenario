@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       ulmt4allCmpToFm.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)ulmt4allCmpToFm.f
+#OUTPUT= ulmt4allCmpToFm$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  ulmt4allCmpToFm$(OBJ)
+#OUTPUT= ulmt4allCmpToFm$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  ulmt4allCmpToFm$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/scalarExpr/scalarFuncResultExpr02.scenario
+#FEATURE	= Intrinsic Assignment -- expr is a Scalar and variable is an Array
+#CREATOR	= GM Manual Creation
+#DATE		= 20061031
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)scalarFuncResultExpr02.f
+#OUTPUT		= scalarFuncResultExpr02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= scalarFuncResultExpr02$(OBJ)
+#OUTPUT		= scalarFuncResultExpr02$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= scalarFuncResultExpr02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

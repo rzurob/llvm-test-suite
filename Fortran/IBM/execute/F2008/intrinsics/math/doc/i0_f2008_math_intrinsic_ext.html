@@ -1,0 +1,615 @@
+<html><head><title>I0_F2008_MATH_INTRINSIC_EXT</title></head><body><table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#c0e1ff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="left" style="font-size: 12pt; color: rgb(0, 0, 128); font-family: Arial;"><strong>Document Control Information:</strong>
+            <p style="color: rgb(0, 0, 0);">The official version of this document is kept in CMVC in the <span style="font-weight: bold; text-decoration: underline;">%CMVC_Family%</span> family, release <span style="font-weight: bold; text-decoration: underline;">%CMVC_Release%</span>, component <span style="font-weight: bold; text-decoration: underline;">%CMVC_Component%</span>, file <span style="font-weight: bold; color: rgb(255, 102, 102); text-decoration: underline;">%CMVC_PathName%</span>. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.<br />
+            <br />
+            CMVC Extraction Information: %W% %H% %I% sccsid<br />
+            <br />
+            This document is IBM Confidential.<br />
+            </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table cellspacing="0" cellpadding="5" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td width="20%" valign="top" align="left"><strong>CMVC Feature Number</strong> </td>
+            <td width="80%" valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%CMVC_Feature%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Feature Title</strong> </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Document_Name%  %Note{By default the feature title and document name are the same. You can either change the document name (through Properties), or replace the tag with the title of the feature}%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Author(s)</strong> </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Authors%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Applicable Product Releases</strong> </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">XL Fortran 14.1 for AIX<br />
+            XL Fortran 14.1 for Linux<br />
+            XL Fortran for BGQ (if it is based on the 14.1 code base)</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Affected Components</strong> </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">Fortran FE<br />
+            Fortran RTE<br />
+            XLF test<br />
+            ID</td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#ff6666">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial; text-align: left;"><strong>Document Status: For Approval</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<p><strong>Approvers Only:</strong> Click on the 'Approve' check-box beside your name in the table below if you agree with the technical and user interface content of this document; not checking your 'approve' check-box signifies you do not approve.</p>
+<p>%Approvals%</p>
+<p>Approval Comments</p>
+<p>
+<table cellspacing="0" cellpadding="5" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td valign="top" align="left"><strong>Approvers</strong> (mandatory participation) </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Note{Insert the names of people who will have approval authority for this review. These people, in aggregate, are responsible for approving the technical and user interface content of the document. Generally, this list should include people who represent compiler components that will need to change if this review is approved.<br />
+            The I0 Process document provides detailed guidance on choosing your list of approvers.<br />
+            Use Access Control to add/delete people from this list. The initial access control list is populated with the people from the Component Reviewers section below. You can use Access Control to change their role to Approver, or add additional approvers.}%<br />
+            %Approvers%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Release Management Contact</strong> (optional participation) </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Release_Management_Contact% <br />
+            %Note{Release Manager/Development Manager/Team Lead,<br />
+            usually your team's representative at product status meetings. Use Access Control to add/change Release Management Contact.}%<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Component Reviewers</strong> (optional participation) </td>
+            <td valign="top" align="left" style="color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Note{These groups must be made aware of the I0. Assign at least one person representing each group. The names listed below are suggested contacts only, please assign whoever is appropriate:<br />
+            <ul style="font-family: Arial;">
+                <li><strong>C FE and related tools/libraries/driver:</strong><br />
+                AIX - Philip Luk<br />
+                Linux - Philip Luk<br />
+                z/OS - Kendrick Wong<br />
+                CELL - Larry Lindsay<br />
+                UPC - Philip Luk</li>
+                <li><strong>C++ FE and related tools/libraries/driver:</strong><br />
+                AIX - Jeff Heath<br />
+                Linux - Sasha Kasapinovic<br />
+                z/OS - Michael Wong<br />
+                CELL - Kevin Shin<br />
+                </li>
+                <li><strong>Fortran FE, ASTI, PLIX, and related tools/libraries/driver:</strong><br />
+                AIX, PLIX - Rafik Zurob<br />
+                Linux - Xing Xue<br />
+                BG/L - Daniel Chen<br />
+                CELL - Kelvin Li </li>
+                <li><strong>PL/X Development:</strong><br />
+                Kirk Crane<br />
+                </li>
+                <li><strong>TPO and associated tools/libraries (libxlopt, SMPRT, MASS):</strong><br />
+                AIX - Arie Tal/Yan Zhang<br />
+                Linux - Tommy Wong<br />
+                z/OS - Chris Miclea<br />
+                BG - Damien Bonaventure<br />
+                CELL - Amy Wang</li>
+                <li><strong>TOBEY and associated tools/libraries: (dis, libxl, bolt)</strong><br />
+                AIX - Christopher Lapkowski<br />
+                Linux - Irina rada<br />
+                z/OS - Chwan-Hang Lee<br />
+                BG - Damien Bonaventure, Leon Ding (Xialoliang Ding/Piscataway/IBM@IBMUS)<br />
+                CELL - Dickson Chau<br />
+                dis - Ian McIntosh<br />
+                </li>
+                <li><strong>WCode:</strong><br />
+                Roland Froese</li>
+                <li><strong>Disassembler<br />
+                </strong>Ian McIntosh</li>
+                <li><strong>Information Development:</strong><br />
+                C/C++ - Wei Zhong Shan/China/IBM<br />
+                Fortran - Lisa Wilkinson<br />
+                </li>
+                <li><strong>Customer Service and Support:</strong><br />
+                AIX/Linux - Zoran Kulina<br />
+                z/OS - Youssef Himo <br />
+                Cell - Sean Kennedy </li>
+                <li><strong>Compiler Enablement:</strong><br />
+                Dwayne Moore </li>
+                <li><strong>Fortran Test:</strong><br />
+                Kobi Vinayagamoorthy<br />
+                </li>
+                <li><strong>C/C++ Test:</strong><br />
+                Thomas Lee(z/OS)<br />
+                Adrean Gatea (system p)<br />
+                </li>
+                <li><strong>PL/X Test:</strong><br />
+                Anne Wylie </li>
+                <li><strong>Build and Packaging Team:</strong><br />
+                AIX - Chris Taylor<br />
+                Linux - Viktor Ganich<br />
+                BG - Steven Chen<br />
+                Cell - Kevin Yuen<br />
+                z/OS - Steve Chen<br />
+                Dale Soldiuk (Please include Dale as optional on all reviews)</li>
+                <li><strong>Performance Measurement and Analysis Team:<br />
+                </strong>John Tam</li>
+                <li><strong>Planning</strong><br />
+                Mary Chan<br />
+                </li>
+            </ul>
+            <p>The following groups must be notified of a W-Code change or if a change affects their language. They are optional otherwise.</p>
+            <ul>
+                <li><strong>PL/I:</strong><br />
+                zOS and AIX - Peter Elderon (in SVL) </li>
+                <li><strong>Cobol:</strong><br />
+                AIX - Richard Nelson (in SVL) </li>
+            </ul>
+            <p>The following group must be notified of a front-end (C FE, or C++ FE) related change or other modification having a direct impact. Inclusion is optional otherwise.</p>
+            <ul>
+                <li><strong>Makedepend for USS:</strong><br />
+                Christopher Taylor </li>
+            </ul>
+            <p>The following group must be notified whenever a change in debug WCODE is made, and any debugger related issues are involved.</p>
+            <ul>
+                <li><strong>Common Debug Architecture Development (CDA):</strong><br />
+                Kendrick Wong </li>
+            </ul>
+            Use Access Control to add/delete people from this list.}%             <br />
+            %Component_Reviewers%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Team Reviewers</strong> (optional participation) </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">             %Note{List any additional people you feel need to participate in the review. These people do not have approval authority. Use Access Control to add/delete people from this list.}%<br />
+            %Team_Reviewers%</td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p><br />
+<br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td style="vertical-align: top; font-family: Arial;"><strong>Reviewers</strong>: Please click the 'Reviewed' checkbox beside your name to indicate your participation in the review. </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%Reviews%<br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td style="vertical-align: top; font-family: Arial;"><strong>Access Change History</strong> %Note{Authors: Access Change History will list any changes to the access control done to the document draft. These changes would not be visible in a review. In a review, this section would only list the access changes done to the review itself.<br />
+            Please note that changes to the access control of a review are not automatically reflected in the access control of the draft document.}% </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%CollapsedSection{<strong>Access Change History</strong>}{%Access_Change_History%}%<br />
+</p>
+<p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>Feature Overview</strong> </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>The Fortran 2008 standard introduces new math intrinsics and extends several existing intrinsics.&nbsp; This feature will implement the following: </p>
+<ol>
+    <li>Adding complex argument support to: ACOS, ASIN, ATAN, COSH, SINH, TAN, and TANH</li>
+    <li>No longer marking GAMMA as an IBM extension</li>
+    <li>Adding new intrinsics: ACOSH, ASINH, ATANH, and LOG_GAMMA</li>
+    <li>Referencing ATAN2 via ATAN (with two arguments)</li>
+</ol>
+<p> </p>
+<h2>Key Requirements</h2>
+<p>Comply with the Fortran 2008 standard.</p>
+<p> </p>
+<h2>Key Design Issues</h2>
+<ul>
+    <li>libm provides support for the new math functions, but passing and returning complex types differs on AIX and Linux.  Calling libm on linux would require using the calling convention enabled by -qfloat=complexgcc to communicate with libm.  -qfloat=complexgcc is not the default for XLF.</li>
+    <li>The representation of real(16) values differs on AIX and Linux.  GCC's real(16) (aka long double) format is a more strict subset of the AIX format.  Calling libm would require us to convert real(16) arguments to GCC's format first.</li>
+    <li>The AIX libm library is missing the implementation of acoshl128 even though math.h has a prototype for it.  The AIX team acknowledged the omission, but prefer not to add the implementation unless there is a customer request. </li>
+</ul>
+<p> </p>
+<h2>Key Design Decisions</h2>
+<ul>
+    <li>We decided not to call libm.  Instead, we got permission to incorporate the source for the needed AIX libm functions into the XLF math library.  This way, we have one implementation on AIX, Linux, and BlueGene, and we don't have to worry about complex and long double arguments and results.</li>
+    <li>Like AIX, we will not provide an implementation for ACOSH with real(16) arguments on AIX or Linux unless users report a problem.  We will not document this.</li>
+</ul>
+<h2>Testing Strategy</h2>
+Testing will involve functional and diagnostic test. <br />
+Functional:<br />
+Funtional testing based on descriptions outlined in the F2008 standard.<br />
+Diagnostic:<br />
+Since this is a F2008 feature, there will be diagnostic test cases for warning messages when older language standard is specified.
+<p> </p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);"> </strong><strong style="font-size: 20px; color: rgb(0, 128, 0);"> </strong>
+<p> </p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>User Documentation</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Overview</h3>
+</strong>
+<p>Complex arguments are now supported in the following intrinsics: ACOS, ASIN, ATAN, COSH, SINH, TAN, and TANH.&nbsp; The following new intrinsics have been added:&nbsp; ACOSH, ASINH, and ATANH.&nbsp; The GAMMA intrinsic is now Fortran 2008 standard compliant.&nbsp; The LGAMMA intrinsic now has a Fortran 2008 standard compliant alias named LOG_GAMMA.&nbsp; The ATAN intrinsic can now optionally take two arguments and have the same results as the ATAN2 intrinsic.</p>
+<p> </p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>User Benefits</h3>
+</strong>
+<p>The new intrinsics provide standard, portable additions to Fortran's math library.</p>
+<p> </p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Public Interface</h3>
+</strong>
+<p><font size="4"><strong>Modified functions:</strong></font> (Note: only the modified sections are shown.  The remaining sections are as described in the LR.)</p>
+<p><strong>ACOS(X)</strong></p>
+<p><strong>Argument type and attributes:</strong></p>
+<p><strong>X</strong>&nbsp;&nbsp;&nbsp; must be of type real with a value that satisfied the inequality |X| &le; 1, [F2008&gt;or be of type complex&lt;F2008].</p>
+<p><strong>Result value</strong></p>
+<p>If X is of type real, the result value</p>
+<ul>
+    <li>is expressed in radians, and approximates arccos(X)</li>
+    <li>is in the range 0 &le; ACOS(X) &le; &pi;</li>
+</ul>
+If X is of type complex, the real part of the result value<br />
+<ul>
+    <li>is expressed in radians</li>
+    <li>is in the range 0 &le; REAL(ACOS(X)) &le; &pi;</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>ASIN(X)</strong></p>
+<p><strong>Argument type and attributes</strong></p>
+<p><strong>X</strong>&nbsp;&nbsp;&nbsp; must be of type real. Its value must satisfy the inequality |X| &le; 1, [F2008&gt;or be of type complex&lt;F2008].<br />
+</p>
+<p><strong>Result value</strong></p>
+<p>If X is of type real, the result value</p>
+<ul>
+    <li>is expressed in radians, and approximates arcsin(X)</li>
+    <li>is in the range -&pi;/2 &le; ASIN(X) &le; &pi;/2</li>
+</ul>
+If X is of type complex, the real part of the result value<br />
+<ul>
+    <li>is expressed in radians</li>
+    <li>is in the range -&pi;/2 &le; REAL(ASIN(X)) &le; &pi;/2</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>ATAN(X)</strong></p>
+<p><strong>Argument type and attributes</strong></p>
+<p><strong>X</strong>&nbsp;&nbsp;&nbsp; must be of type real, [F2008&gt;or be of type complex&lt;F2008].</p>
+<p><strong>Result value</strong></p>
+<p>If X is of type real, the result value</p>
+<ul>
+    <li>is expressed in radians, and approximates arctan(X)</li>
+    <li>is in the range -&pi;/2 &le; ATAN(X) &le; &pi;/2</li>
+</ul>
+If X is of type complex, the real part of the result value<br />
+<ul>
+    <li>is expressed in radians</li>
+    <li>is in the range -&pi;/2 &le; REAL(ATAN(X)) &le; &pi;/2</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>ATAN(Y, X) (Fortran 2008)</strong></p>
+<p><strong>Argument type and attributes</strong></p>
+<p><strong>Y</strong>&nbsp;&nbsp;&nbsp; must be of type real </p>
+<p><strong>X</strong>&nbsp;&nbsp;&nbsp; must be of the same type and kind type parameter as Y. If Y has the value zero, X must not have the value zero.</p>
+<p><strong>Result value</strong></p>
+<p>The result is the same as the result of ATAN2(Y, X). </p>
+<p>&nbsp;</p>
+<p><strong>COSH(X)</strong></p>
+<p><strong>Argument type and attributes</strong></p>
+<p><strong>X</strong>&nbsp;&nbsp;&nbsp; must be of type real, [F2008&gt;or be of type complex&lt;F2008].</p>
+<p><strong>Result value</strong></p>
+<p>The result value approximates cosh(X).</p>
+<p>If X is of type complex, its imaginary part is considered a value in radians.</p>
+<p>&nbsp;</p>
+<p><strong>SINH(X)</strong></p>
+<p><strong>Argument type and attributes</strong></p>
+<p><strong>X</strong>&nbsp;&nbsp;&nbsp; must be of type real, [F2008&gt;or be of type complex&lt;F2008].</p>
+<p><strong>Result value</strong></p>
+<p>The result value approximates sinh(X).</p>
+<p>If X is of type complex, its imaginary part is considered a value in radians.</p>
+<p>&nbsp;</p>
+<p><strong>TAN(X)</strong></p>
+<p><strong>Argument type and attributes</strong></p>
+<p><strong>X</strong>&nbsp;&nbsp;&nbsp; must be of type real, [F2008&gt;or be of type complex&lt;F2008].</p>
+<p><strong>Result value</strong></p>
+<p>The result value approximates tan(X).</p>
+<p>If X is of type real, it is considered a value in radians.</p>
+<p>If X is of type complex, its real part is considered a value in radians.</p>
+<p>&nbsp;</p>
+<p><strong>TANH(X)</strong></p>
+<p><strong>Argument type and attributes</strong></p>
+<p><strong>X</strong>&nbsp;&nbsp;&nbsp; must be of type real, [F2008&gt;or be of type complex&lt;F2008].</p>
+<p><strong>Result value</strong></p>
+<p>The result value approximates tanh(X).</p>
+<p>If X is of type complex, its imaginary part is considered a value in radians.</p>
+<p>&nbsp;</p>
+<p><font size="4"><strong>New functions:</strong></font></p>
+<p><strong>ACOSH(X) (Fortran 2008)</strong></p>
+<p><strong>Purpose</strong> </p>
+<p>Inverse hyperbolic cosine function.</p>
+<p><strong>Class</strong> </p>
+<p>Elemental function</p>
+<p><strong>Argument type and attributes</strong></p>
+<p><strong>X</strong>&nbsp;&nbsp;&nbsp; must be of type real, or complex.</p>
+<p><strong>Result type and attributes</strong></p>
+<p>Same as X</p>
+<p><strong>Result value</strong></p>
+<p>The result value approximates the inverse hyperbolic cosine of X.</p>
+<p>If X is of type complex, the result value</p>
+<ul>
+    <li>is expressed in radians</li>
+    <li>is in the range 0 &le; AIMAG(ACOSH(X)) &le; &pi;</li>
+</ul>
+<p>Examples</p>
+<p>ACOSH (1.5430806) has the value 1.0 (approximately).</p>
+<p>&nbsp;</p>
+<p><strong>ASINH(X) (Fortran 2008)</strong></p>
+<p><strong>Purpose</strong> </p>
+<p>Inverse hyperbolic cosine function.</p>
+<p><strong>Class</strong> </p>
+<p>Elemental function</p>
+<p><strong>Argument type and attributes</strong></p>
+<p><strong>X</strong>&nbsp;&nbsp;&nbsp; must be of type real, or complex.</p>
+<p><strong>Result type and attributes</strong></p>
+<p>Same as X</p>
+<p><strong>Result value</strong></p>
+<p>The result value approximates the inverse hyperbolic cosine of X.</p>
+<p>If X is of type complex, the imaginary part of the result value</p>
+<ul>
+    <li>is expressed in radians</li>
+    <li>is in the range 0 &le; AIMAG(ACOSH(X)) &le; &pi;</li>
+</ul>
+<p>Examples</p>
+<p>ASINH (1.1752012) has the value 1.0 (approximately).</p>
+<p>&nbsp;</p>
+<p><strong>ATANH(X) (Fortran 2008)</strong></p>
+<p><strong>Purpose</strong> </p>
+<p>Inverse hyperbolic tangent function.</p>
+<p><strong>Class</strong> </p>
+<p>Elemental function</p>
+<p><strong>Argument type and attributes</strong></p>
+<p><strong>X</strong>&nbsp;&nbsp;&nbsp; must be of type real, or complex.</p>
+<p><strong>Result type and attributes</strong></p>
+<p>Same as X</p>
+<p><strong>Result value</strong></p>
+<p>The result value approximates the inverse hyperbolic tangent of X.</p>
+<p>If X is of type complex, the imaginary part of the result value</p>
+<ul>
+    <li>is expressed in radians</li>
+    <li>is in the range -&pi;/2 &le; AIMAG(ATANH(X)) &le; &pi;/2</li>
+</ul>
+<p>Examples</p>
+<p>ATANH (0.76159416) has the value 1.0 (approximately).</p>
+<p>&nbsp;</p>
+<p><strong>LOG_GAMMA(X) (Fortran 2008)</strong></p>
+<p><strong>Purpose</strong> </p>
+<p>Logarithm of the absolute value of the gamma function.</p>
+<p><strong>Class</strong> </p>
+<p>Elemental function</p>
+<p><strong>Argument type and attributes</strong></p>
+<p><strong>X</strong>&nbsp;&nbsp;&nbsp; must be of type real.  Must not be a negative integer or zero.</p>
+<p><strong>Result type and attributes</strong></p>
+<p>Same as X</p>
+<p><strong>Result value</strong></p>
+<p>The result value approximates the natural logarithm of the absolute value of the gamma function of X.</p>
+<p>Examples</p>
+<p>LOG_GAMMA (1.0) has the value 0.0 (approximately).</p>
+<p><strong>Related functions</strong></p>
+<p>LGAMMA</p>
+<p>&nbsp;</p>
+<p> </p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Constraints</h3>
+</strong>
+<p>Please refer to the function descriptions above.</p>
+<p> </p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Rules</h3>
+</strong>
+<p>Please refer to the function descriptions above.</p>
+<p> </p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Language Standard Considerations</h3>
+</strong>
+<ul>
+    <li>The new and modified functions conform to the Fortran 2008 standard.</li>
+    <li>GAMMA is no longer an IBM extension.  It now conforms to the Fortran 2008 standard.</li>
+    <li>LGAMMA is still an IBM extension.</li>
+</ul>
+<p> </p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Messages</h3>
+</strong>
+<p>There are no new messages added.</p>
+<p>The compiler will issue a langlvl message with langlvl prior to F2008 in the following situations: </p>
+<ol>
+    <li>when using complex arguments in ACOS, ASIN, ATAN, COSH, SINH, TAN and TANH.</li>
+    <li>when using the intrinsics ACOSH, ASINH, ATANH, GAMMA, and LOG_GAMMA</li>
+    <li>when using two arguments in ATAN</li>
+</ol>
+<p>In langlvl F2008, none of the above langlvl messages will be issued by the compiler.</p>
+<p> </p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Performance Considerations</h3>
+</strong>
+<p>None.</p>
+<p> </p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Multi-Platform/Portability Considerations</h3>
+</strong>
+<p>Since the functions are implemented in the XLF RTE, the function results will be the same on all platforms.  It is possible for the results to differ slightly for the results of the corresponding libm functions, especially on Linux and BG.  Any differences will not be significant.</p>
+<p> </p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Migration/Co-Existence/Binary-Compatibility Considerations</h3>
+</strong>
+<p>Existing user code that called these intrinsics will now resolve to the XLF libray instead of libm.  We know of one test case (SLATEC) where this is the case.  This should not adversely affect users since the results from the XLF library and comparable to libm's results.  The user can also force the compiler to use libm by declaring the functions external.</p>
+<p> </p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Debug Considerations</h3>
+</strong>
+<p>If the user calls any of these functions in the debugger's expression evaluator, and the debugger supports calling these functions, the debugger will call libm, not the XLF RTE.  (Even though the user code will call the RTE.)  This is consistent with our other intrinsics.</p>
+<p> </p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>NLS (Unicode) Considerations</h3>
+</strong>
+<p>None</p>
+<p> </p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Samples</h3>
+</strong>
+<p>Please refer to the function descriptions above.</p>
+<p> </p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>Architecture Review Board</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">  </strong>
+<p>No ARB review is required.  The functions are standard functions.  The choice to use the AIX code instead of calling libm is due to calling conventions that would impede performance.</p>
+<p> </p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>Internal Compiler Team Information</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Product Dependencies</h3>
+</strong>
+<p>None.</p>
+<p> </p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Patent/Disclosure Implications</h3>
+</strong>
+<p>None</p>
+<p> </p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Scientific Research and Experimental Development</h3>
+</strong>
+<p><strong>Technological Advancements</strong>: %Note{State the technological  objective of the feature. Describe the advancements in knowledge gained  through the experimentation performed.}%</p>
+<p><strong>Technological Obstacles</strong>: %Note{List the limitations of the  current state of technology. Outline the technological uncertainty in  development and the systematic investigation performed. Focus on the  obstacles that must be overcome and not on the difficulty of the  feature.}%</p>
+<p><strong>Work Performed</strong>: %Note{Describe the development of prototypes  and final implementations, including dates. Make sure to include failed  prototypes. Describe findings from any experimentation.}%</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Build and Packaging Considerations</h3>
+</strong>
+<p>None.</p>
+<p> </p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Information Development Impacts</h3>
+</strong>
+<ul>
+    <li>Update the LR sections for ACOS, ASIN, ATAN, COSH, SINH, TAN, and TANH.</li>
+    <li>Add new intrinsics to the LR: ATAN(Y, X), ACOSH, ASINH, ATANH, and LOG_GAMMA</li>
+    <li>Remove &quot;(IBM extension)&quot; for GAMMA in the LR.   </li>
+    <li>Add a &quot;Related functions&quot; or &quot;Related information&quot; section to LGAMMA pointing to LOG_GAMMA.</li>
+    <li>Update the &quot;What's new in 14.1&quot; section in the Getting Started guide.</li>
+</ul>
+<p> </p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Testing Considerations</h3>
+</strong>
+<p>Test results of the new modified intrinsics.  Make sure to use precision_r* to compare results.  Testing should include testing in constant expressions and nonconstant expressions.  Language level testing is being done in unit tests.&nbsp; Do not test acosh with real(16).</p>
+<p> </p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>High-Level Implementation Design</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Implementation Design Overview</h3>
+</strong>
+<p> 1) Adding complex argument support:&nbsp; ACOS, ASIN, ATAN, COSH, SINH, TAN and TANH</p>
+<p>The math table is updated, routines will be created. These routines will borrow code from AIX team. <br />
+</p>
+<p>2) New intrinsics: ACOSH, ASINH, ATANH, GAMMA, and LOG_GAMMA</p>
+<p>For ACOSH, ASINH, ATANH, the new math routines will be added to the math table. Real and integer type arguments will be handled by routines that generate calls from the math library.&nbsp; Complex types will be handled by routines that borrow code from the AIX team.</p>
+<p>For LOG_GAMMA, the new name will be added to the math tables. It will use the same routines as lgamma.<br />
+</p>
+<p>3) ATAN2 can be referenced by ATAN</p>
+<p>ATAN will be modified in the math table to allow an optional second argument. If the second argument exists, it will make call to ATAN2.<br />
+</p>
+<p>%Note{The remainder of this document should not be used or needed to develop end-user documentation.}% </p>
+<p>%Note{Describe, in general high-level terms, how the compiler will implement this. For example, &quot;The front end will parse a new option and set a W-Code bit which TOBEY will read...&quot;  }%<br />
+</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Inter-Component Communication/Interfaces</h3>
+</strong>
+<p> %Note{List the requirements or assumptions placed on all affected components.  Describe how components (e.g. FE, ASTI, TPO, TOBEY, driver, runtime...) will communicate where that is necessary. Are new W-Code interfaces required? Will the driver need to recognize a new return code?}% </p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Other Implementation Design Information</h3>
+</strong>
+<p>%Note{Note anything here relevant to the review of the high-level implementation design that would be useful to reviewers that doesn't fit into any other section.  For example, &quot;The C front end will protect this code under the AIX_ONLY macro.&quot;  Another example, &quot;TOBEY will implement this using the ldxrwa PWR9 instruction, see the reference in the Appendix for details.&quot;}%</p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>Appendix/References</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<p>Following are sections from the F2008 standard that describes each intrinsic.</p>
+<p>13.7.4 ACOS (X)</p>
+<p>13.7.14 ASIN (X)</p>
+<p>13.7.17 ATAN (X) or ATAN (Y, X)</p>
+<p>13.7.40 COSH (X)</p>
+<p>13.7.155 SINH (X)</p>
+<p>13.7.163 TAN (X)</p>
+<p>13.7.164 TANH (X)</p>
+<p>&nbsp;</p>
+<p>13.7.5 ACOSH (X)</p>
+<p>13.7.15 ASINH (X)</p>
+<p>13.7.19 ATANH (X)</p>
+<p>13.7.64 GAMMA (X)</p>
+<p>13.7.100 LOG GAMMA (X)</p>
+<p>13.7.18 ATAN2 (Y, X)<br />
+</p>
+<p><br />
+<br />
+%Note{This section provides additional information to be used when writing the I0.  This is not intended for inclusion in the I0 so this section should be removed from the I0 once it is written. </p>
+<h4>Rules for file name generation on Z/OS</h4>
+<p> </p>
+<ol>
+    <li>There are 4 types of invocation: JCL, TSO, c89 utility and xlc utility</li>
+    <li>JCL invocation is processed separate from all other invocation types. A default destination name is generated based on the source file name. Output file names are then generated based on this default destination name. For example:
+    <ul>
+        <li>If I compile a source file //'TSCTEST.PDS.C(FOO)' the generated name of the DBRM file would be //'MILOS.PDS.C.DBRM(FOO)'</li>
+        <li>If I compile a source file //'TSCTEST.SEQ.C' the generated name of the DBRM file would be //'MILOS.SEQ.C.DBRM'</li>
+        <li>If I compile a source file /home/milos/foo.c the generated DBRM file would be ./foo.dbrm</li>
+    </ul>
+    </li>
+    <li>TSO invocation relies on REXX execs which specify a default destination pattern &quot;//~.DEST&quot;. The default destination pattern is passed to the compiler as an argument. This pattern causes the compiler to generate output file names using the same logic as in the JCL case.</li>
+    <li>The xlc utility always generates a default destination name based on the source file name (this can not be changed by the user). The default destination name is passed to the compiler as an argument. The compiler uses the default destination name to generate output file names in a similar fashion as in the JCL case, but with slightly different results. For example:
+    <ul>
+        <li>If I compile a source file //'TSCTEST.PDS.C(FOO)' the generated name of the DBRM file would be //'MILOS.PDS.DBRM(FOO)'</li>
+        <li>If I compile a source file //'TSCTEST.SEQ.C' the generated name of the DBRM file would be //'MILOS.SEQ.DBRM'</li>
+        <li>If I compile a z/OS UNIX file /home/milos/foo.c the generated DBRM file would be ./foo.dbrm </li>
+    </ul>
+    </li>
+    <li>Like xlc, the c89 utility always generates a default destination name based on the source file name. By default the behavior is the same as in the xlc case. However, this can be changed by setting _OSUFFIX_HOSTQUAL  and _OSUFFIX_HOSTRULE to 0 which yields the same behavior as in the JCL case.}%</li>
+</ol>
+<p>&nbsp;</p><!--HTML Wrapper--></body></html>

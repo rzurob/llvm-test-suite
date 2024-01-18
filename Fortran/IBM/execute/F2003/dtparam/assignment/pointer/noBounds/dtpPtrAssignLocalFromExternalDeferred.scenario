@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignLocalFromExternalDeferred.scenario
+#FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - via deferred-length pointers, assign to local variables in external subprogram
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPtrAssignLocalFromExternalDeferred.f
+#OUTPUT    = dtpPtrAssignLocalFromExternalDeferred$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPtrAssignLocalFromExternalDeferred$(OBJ)
+#OUTPUT    = dtpPtrAssignLocalFromExternalDeferred$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPtrAssignLocalFromExternalDeferred$(EXE)
+#STDOUT    = dtpPtrAssignLocalFromExternalDeferred.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpPtrAssignLocalFromExternalDeferred$(product)vf) dtpPtrAssignLocalFromExternalDeferred.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

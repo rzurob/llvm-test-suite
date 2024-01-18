@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"fArg005d.f", line 88.22: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"fArg005d.f", line 90.24: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+** farg005d   === End of Compilation 2 ===
+1501-511  Compilation failed for file fArg005d.f.

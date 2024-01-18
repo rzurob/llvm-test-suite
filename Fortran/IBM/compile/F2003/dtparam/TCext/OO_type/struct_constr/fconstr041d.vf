@@ -1,0 +1,5 @@
+"fconstr041d.f", line 48.10: 1516-130 (S) The data object, c1_m, must not appear in a data statement, because it is of a derived type with default initialization.
+"fconstr041d.f", line 50.10: 1516-130 (S) The data object, c2_m, must not appear in a data statement, because it is of a derived type with default initialization.
+** m   === End of Compilation 1 ===
+** fconstr041d   === End of Compilation 2 ===
+1501-511  Compilation failed for file fconstr041d.f.

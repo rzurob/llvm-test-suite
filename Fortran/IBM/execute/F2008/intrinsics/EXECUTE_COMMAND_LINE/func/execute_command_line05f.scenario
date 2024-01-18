@@ -1,0 +1,46 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/intrinsics/EXECUTE_COMMAND_LINE/func/execute_command_line05f.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20101215
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)execute_command_line05f.f
+#OUTPUT   =  execute_command_line05f$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  execute_command_line05f$(OBJ)
+#OUTPUT   =  execute_command_line05f$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  execute_command_line05f$(EXE)
+#STDOUT   =  execute_command_line05f.out
+#STDERR   =  execute_command_line05f.err
+#ENDCMD
+
+#CMD      = DIFF
+#OPTS     = -b
+#INPUT    = execute_command_line05f.out $($(tcasedir)execute_command_line05f$(product)vf)
+#ENDCMD
+
+! should not get error from XLF
+#CMD      = GREP
+#INPUT    = "1525-610" execute_command_line05f.err
+#VALIDRCS = $(RC_FAIL)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

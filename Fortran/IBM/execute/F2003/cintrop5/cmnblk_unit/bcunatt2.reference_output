@@ -1,0 +1,37 @@
+>>>>> SOURCE SECTION <<<<<
+ 
+>>>>> ATTRIBUTE AND CROSS REFERENCE SECTION <<<<<
+ 
+ 
+ 
+IDENTIFIER NAME                  CROSS REFERENCE AND ATTRIBUTES
+ 
+blk                              Common Block, BIND(C), binding label: foo, Alignment: double word
+                                 0-39.9$  0-40.21$
+ 
+mod                              Nonintrinsic Module
+                                 0-35.8$
+ 
+x                                Public, BIND(C) Common member, Integer(4), Offset: 0, Alignment: full word
+                                 0-37.9$  0-39.14$
+ 
+y                                Public, BIND(C) Common member, Real(4), Offset: 4, Alignment: full word
+                                 0-38.6$  0-39.17$
+ 
+** mod   === End of Compilation 1 ===
+ 
+>>>>> OBJECT SECTION <<<<<
+>>>>> SOURCE SECTION <<<<<
+ 
+>>>>> ATTRIBUTE AND CROSS REFERENCE SECTION <<<<<
+ 
+ 
+ 
+IDENTIFIER NAME                  CROSS REFERENCE AND ATTRIBUTES
+ 
+bcunatt2                         Program
+                                 0-42.9$
+ 
+** bcunatt2   === End of Compilation 2 ===
+ 
+>>>>> OBJECT SECTION <<<<<

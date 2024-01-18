@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/F2003/dtparam/generic/ambiguity/Generic_TypeBound_diag07.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20081015
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD      = F_COMPILE
+#OPTS     = $(OPT_FREE_SOURCE_FORM)
+#INPUT    = $(tcasedir)Generic_TypeBound_diag07.f
+#OUTPUT   = Generic_TypeBound_diag07$(OBJ)
+#STDERR   = Generic_TypeBound_diag07.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = Generic_TypeBound_diag07.err $(tcasedir)Generic_TypeBound_diag07.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

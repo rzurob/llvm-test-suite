@@ -1,0 +1,41 @@
+ There are 4 students with first names of 6 or fewer characters, and last names of 8 or fewer characters
+ Jonas  Salk    : 1234567
+ Alex   Borodin : 2345678
+ Hilde  v.Bingen: 3456789
+ Isaac  Newton  : 4567890
+ There are 3 students with first names of 6 or fewer characters, and last names of 12 or fewer characters
+ Pyotr  Tschaikovsky: 1234567
+ Alex   Borodin     : 2345678
+ Hilde  von Bingen  : 3456789
+ There are 4 students with first names of 3 or fewer characters, and last names of 8 or fewer characters
+ Ptr Tschaiko: 1234567
+ Alx Borodin : 2345678
+ Ser Prokofie: 4567890
+ Hld v.Bingen: 3456789
+ There are 1 students with first names of 6 or fewer characters, and last names of 8 or fewer characters
+ Pyotr  Tschaiko: 1234567
+ There are 4 students with first names of 6 or fewer characters, and last names of 3 or fewer characters
+ Pyotr  Tsc: 1534567
+ Jonas  Sal: 1254567
+ Hilde  v.B: 1235567
+ Isaac  New: 1234557
+ 4 6 8
+ 4 6 8
+ 4 6 8
+ 4 6 8
+ 4 6 8
+ 4 6 8
+ 4 6 8
+ 6 8
+ 6 8
+ 6 8
+ 60 57 < 20 20 20 | 22 | 15 >
+ 1 6 8
+ 4 3 8
+ 4 6 3
+ 4 3 8
+ 3 6 12
+ 4 3 8
+ 3 8
+ 6 12
+ done

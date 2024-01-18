@@ -1,0 +1,98 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= intrimod/exec/intrimod42.scenario
+#FEATURE	= intrimod tests - regression run bucket
+#CREATOR	= GM Manual Conversion - fixed CPR 20090120
+#DATE		= 20050408
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_XOPTS = -qdescriptor=v2
+#ENDENV
+
+#BEGINCONTROL
+
+#IF in($(F_COMPILE^OPT_GEN_64BIT_COMPILER_MODE))
+	#CMD	= WHICH_FILE
+	#ENVAR	= FILE_SRC=$(tcasedir)
+	#INPUT	= TARGET:my_mod$(OBJ) AIX:my_mod$(OBJ).AIX_64.81			\
+				RHEL:my_mod$(OBJ).RHEL_64.81 SUSE:my_mod$(OBJ).LX_64.81	\
+				YHPC:my_mod$(OBJ).LX_64.81 FC:my_mod$(OBJ).LX_64.81
+	#ENDCMD
+
+	#CMD	= WHICH_FILE
+	#ENVAR	= FILE_SRC=$(tcasedir)
+	#INPUT	= TARGET:my_mod.mod AIX:my_mod.mod.AIX_64.81			\
+				RHEL:my_mod.mod.RHEL_64.81 SUSE:my_mod.mod.LX_64.81	\
+				YHPC:my_mod.mod.LX_64.81 FC:my_mod.mod.LX_64.81
+	#ENDCMD
+
+	!
+	!  There is no 64-bit RHEL specific version "constants.mod".  Using
+	!  the Linux ("LX_64") version.
+	!
+	#CMD	= WHICH_FILE
+	#ENVAR	= FILE_SRC=$(tcasedir)
+	#INPUT	= TARGET:constants.mod AIX:constants.mod.AIX_64.81	\
+				DEFAULT:constants.mod.LX_64.81
+	#ENDCMD
+#ELSE
+	#CMD	= WHICH_FILE
+	#ENVAR	= FILE_SRC=$(tcasedir)
+	#INPUT	= TARGET:my_mod$(OBJ) AIX:my_mod$(OBJ).AIX.81			\
+				RHEL:my_mod$(OBJ).RHEL.81 SUSE:my_mod$(OBJ).LX.81	\
+				YHPC:my_mod$(OBJ).LX.81 FC:my_mod$(OBJ).LX.81 MAC:my_mod$(OBJ).MAC.81
+	#ENDCMD
+
+	#CMD	= WHICH_FILE
+	#ENVAR	= FILE_SRC=$(tcasedir)
+	#INPUT	= TARGET:my_mod.mod AIX:my_mod.mod.AIX.81			\
+				RHEL:my_mod.mod.RHEL.81 SUSE:my_mod.mod.LX.81	\
+				YHPC:my_mod.mod.LX.81 FC:my_mod.mod.LX.81 MAC:my_mod.mod.MAC.81
+	#ENDCMD
+
+	!
+	!  There is no 32-bit RHEL specific version "constants.mod".  Using
+	!  the Linux ("LX") version.
+	!
+	#CMD	= WHICH_FILE
+	#ENVAR	= FILE_SRC=$(tcasedir)
+	#INPUT	= TARGET:constants.mod AIX:constants.mod.AIX.81	\
+				MAC:constants.mod.MAC.81 DEFAULT:constants.mod.LX.81
+	#ENDCMD
+#ENDIF
+
+#CMD		= XLF95_COMPILE
+#OPTS		= $(OPT_HALT_ON_WARNING)
+#INPUT		= $(tcasedir)../fake_ieee_modules.f
+#OUTPUT		= fake_ieee_modules$(OBJ)
+#ENDCMD
+
+#CMD		= XLF95_COMPILE
+#IF on(linux)
+	#OPTS	= $(OPT_HALT_ON_WARNING) -qmodule=mangle81 -qoldmod=compat
+#ELSE
+	#OPTS	= $(OPT_HALT_ON_WARNING) -qmodule=mangle81
+#ENDIF
+#INPUT		= $(tcasedir)intrimod42.f
+#OUTPUT		= intrimod42$(OBJ)
+#ENDCMD
+
+#CMD		= XLF95_LINK
+#OPTS		= $(OPT_HALT_ON_WARNING)
+#INPUT		= intrimod42$(OBJ) fake_ieee_modules$(OBJ) my_mod$(OBJ)
+#OUTPUT		= intrimod42$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= intrimod42$(EXE)
+#STDOUT		= intrimod42.stdout
+#ENDCMD
+
+#CMD		= DIFF
+#OPTS		= $($(tcasedir)fakeout1$(product)vf) intrimod42.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

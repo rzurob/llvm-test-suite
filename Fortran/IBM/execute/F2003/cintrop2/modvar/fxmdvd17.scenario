@@ -1,0 +1,89 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop2/modvar/fxmdvd17.scenario
+#FEATURE = cintrop2 tests - regression run bucket
+#CREATOR = Manual conversion CPR
+#DATE    = 20060711
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#IF on(aix)
+  #RESOURCES_REQ  = AIX52UP
+#ENDIF
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = XLC_COMPILE
+#OPTS   = $(C_COMPILER_OPTS)
+#INPUT  = $(tcasedir)cxmdvd17a.c
+#OUTPUT = cxmdvd17a$(OBJ)
+#ENDCMD
+
+#CMD    = XLC_COMPILE
+#OPTS   = $(C_COMPILER_OPTS)
+#INPUT  = $(tcasedir)cxmdvd17b.c
+#OUTPUT = cxmdvd17b$(OBJ)
+#ENDCMD
+
+#CMD    = XLC_COMPILE
+#OPTS   = $(C_COMPILER_OPTS)
+#INPUT  = $(tcasedir)cxmdvd17c.c
+#OUTPUT = cxmdvd17c$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#OPTS   =
+#INPUT  = $(tcasedir)fxmdvd17.f
+#OUTPUT = fxmdvd17$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#OPTS   =
+#INPUT  = cxmdvd17a$(OBJ) cxmdvd17b$(OBJ) cxmdvd17c$(OBJ) fxmdvd17$(OBJ)
+#OUTPUT = fxmdvd17$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = fxmdvd17$(EXE)
+#ENDCMD
+
+#IF !on(aix)
+  #CMD    = GCC_COMPILE
+  #OPTS   = $(GCC_COMPILER_OPTS)
+  #INPUT  = $(tcasedir)cxmdvd17a.c
+  #OUTPUT = cxmdvd17a$(OBJ)
+  #ENDCMD
+
+  #CMD    = GCC_COMPILE
+  #OPTS   = $(GCC_COMPILER_OPTS)
+  #INPUT  = $(tcasedir)cxmdvd17b.c
+  #OUTPUT = cxmdvd17b$(OBJ)
+  #ENDCMD
+
+  #CMD    = GCC_COMPILE
+  #OPTS   = $(GCC_COMPILER_OPTS)
+  #INPUT  = $(tcasedir)cxmdvd17c.c
+  #OUTPUT = cxmdvd17c$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_COMPILE
+  #OPTS   =
+  #INPUT  = $(tcasedir)fxmdvd17.f
+  #OUTPUT = fxmdvd17$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_LINK
+  #OPTS   =
+  #INPUT  = cxmdvd17a$(OBJ) cxmdvd17b$(OBJ) cxmdvd17c$(OBJ) fxmdvd17$(OBJ)
+  #OUTPUT = fxmdvd17$(EXE)
+  #ENDCMD
+
+  #CMD    = RUN
+  #INPUT  = fxmdvd17$(EXE)
+  #ENDCMD
+#ENDIF
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_access/specific/assignment/csIntegerComponent
+#FEATURE        = CAF coarray access (specific) - assignment - in main program, assign integer component of derived type variables to coarray variables and vice-versa
+#CREATOR        = DF
+#DATE           = 2010-10-04
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)csIntegerComponent.f
+#OUTPUT = csIntegerComponent$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = csIntegerComponent$(OBJ)
+#OUTPUT = csIntegerComponent$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = csIntegerComponent$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

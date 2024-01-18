@@ -1,0 +1,119 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       complex_r32
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2008_COMPILE
+#INPUT=  $(tcasedir)complex_r32.f
+#OUTPUT= complex_r32$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_LINK
+#INPUT=  complex_r32$(OBJ)
+#OUTPUT= complex_r32$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  complex_r32$(EXE)
+#STDOUT=  complex_r32_F2008.out
+#ENDCMD
+
+
+#CMD=    XLF2003_COMPILE
+#INPUT=  $(tcasedir)complex_r32.f
+#OUTPUT= complex_r32$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2003_LINK
+#INPUT=  complex_r32$(OBJ)
+#OUTPUT= complex_r32$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  complex_r32$(EXE)
+#STDOUT=  complex_r32_F2003.out
+#ENDCMD
+
+
+#CMD=    XLF_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)complex_r32.f
+#OUTPUT= complex_r32$(OBJ)
+#ENDCMD
+
+#CMD=    XLF_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  complex_r32$(OBJ)
+#OUTPUT= complex_r32$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  complex_r32$(EXE)
+#STDOUT=  complex_r32_XLF.out
+#ENDCMD
+
+
+
+!due to precision issue we will use two different verification file
+!complex_r32.vf will be used for Noopt
+!complex_r32_highopts.vf will be used for O2 or higher
+
+#IF in($(F_COMPILE^OPT_OPTIMIZE_LEVEL3)) || in($(F_COMPILE^OPT_OPTIMIZE_LEVEL4)) || in($(F_COMPILE^OPT_OPTIMIZE_LEVEL5))
+
+ #CMD = SPIFF
+ #OPTS = -r1e-6
+ #INPUT = complex_r32_F2008.out $($(tcasedir)complex_r32_highopts$(product)vf)
+ #ENDCMD
+
+ #CMD = SPIFF
+ #OPTS= -r1e-6
+ #INPUT = complex_r32_F2003.out $($(tcasedir)complex_r32_highopts$(product)vf)
+ #ENDCMD
+
+ #CMD = SPIFF
+ #OPTS= -r1e-6
+ #INPUT = complex_r32_XLF.out $($(tcasedir)complex_r32_highopts$(product)vf)
+ #ENDCMD
+
+#ELSE
+
+ #CMD = SPIFF
+ #OPTS = -r1e-6
+ #INPUT = complex_r32_F2008.out $($(tcasedir)complex_r32$(product)vf)
+ #ENDCMD
+
+ #CMD = SPIFF
+ #OPTS = -r1e-6
+ #INPUT = complex_r32_F2003.out $($(tcasedir)complex_r32$(product)vf)
+ #ENDCMD
+
+ #CMD = SPIFF
+ #OPTS = -r1e-6
+ #INPUT = complex_r32_XLF.out $($(tcasedir)complex_r32$(product)vf)
+ #ENDCMD
+
+#ENDIF
+
+#CMD = DIFF
+#INPUT = complex_r32_F2008.out complex_r32_F2003.out
+#ENDCMD
+
+#CMD = DIFF
+#INPUT = complex_r32_F2008.out complex_r32_XLF.out
+#ENDCMD
+
+#CMD = DIFF
+#INPUT = complex_r32_F2003.out complex_r32_XLF.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

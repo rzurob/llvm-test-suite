@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/crossFeature/allocate/alloc001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/abstract/crossFeature/allocate/alloc001.scenario
+#DATE      = 20070612
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)alloc001.f
+#OPTS = -qxlf2003=dynamicacval
+#OUTPUT    = alloc001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = alloc001$(OBJ)
+#OUTPUT    = alloc001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = alloc001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

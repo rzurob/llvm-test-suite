@@ -1,0 +1,4 @@
+"ftybn091q.f", line 53.31: 1514-561 (S) The inherited binding bind with the NON_OVERRIDABLE attribute must not be overridden.
+** mod   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file ftybn091q.f.

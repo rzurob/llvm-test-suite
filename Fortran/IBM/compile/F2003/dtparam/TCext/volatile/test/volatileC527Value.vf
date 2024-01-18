@@ -1,0 +1,4 @@
+** mod   === End of Compilation 1 ===
+"volatileC527Value.f", line 40.19: 1516-179 (S) Volatile objects must not be declared with the VALUE attribute.
+** volatilec527value   === End of Compilation 2 ===
+1501-511  Compilation failed for file volatileC527Value.f.

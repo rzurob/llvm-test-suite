@@ -1,0 +1,9 @@
+ &NAME_OUT1
+ DTI_OUT=12, -1234, 234, 673, 0, 123456789, DTR_OUT=-0.9999999975E-06, 0.100000000000000005E+300, -0.10000000000000000000000229902632340E-300
+ /
+ &NAME_OUT2
+ DTX_OUT=(3.140000105,-1.000000000), (0.000000000000000000E+00,-0.000000000000000000E+00), (-0.99999999999999694493275028976919694E-310,0.10000000000000000000000000000000005E+309), DTL_OUT=T, F, T, F, F, T
+ /
+ &NAME_OUT3
+ DTC_OUT="C", "D", "e", "f", " XLFortran V8.1", "'This is just for fun /' ", "C", "D", "e", "f", " XLFortran V8.1", "'This is just for fun /' ", "C", "D", "e", "f", " XLFortran V8.1", "'This is just for fun /' ", "C", "D", "e", "f", " XLFortran V8.1", "'This is just for fun /' "
+ /

@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_tpbnd/specific/ftpbnd500d2.scenario
+#FEATURE = OO_tpbnd
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ftpbnd500d2.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ftpbnd500d2$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = ftpbnd500d2.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = ftpbnd500d2.err $($(tcasedir)ftpbnd500d2$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

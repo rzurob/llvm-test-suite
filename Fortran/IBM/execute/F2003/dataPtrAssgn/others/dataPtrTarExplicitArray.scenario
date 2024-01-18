@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrTarExplicitArray.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrTarExplicitArray.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrTarExplicitArray$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrTarExplicitArray$(OBJ)
+#OUTPUT    = dataPtrTarExplicitArray$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrTarExplicitArray$(EXE)
+#STDOUT    = dataPtrTarExplicitArray.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrTarExplicitArray.out $($(tcasedir)dataPtrTarExplicitArray$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

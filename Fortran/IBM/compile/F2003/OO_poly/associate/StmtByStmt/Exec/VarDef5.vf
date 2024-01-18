@@ -1,0 +1,3 @@
+"VarDef5.f", line 60.18: 1511-139 (S) Associate name j is not associated with an entity that can be defined. j must not be redefined or become undefined.
+** vardef5   === End of Compilation 1 ===
+1501-511  Compilation failed for file VarDef5.f.

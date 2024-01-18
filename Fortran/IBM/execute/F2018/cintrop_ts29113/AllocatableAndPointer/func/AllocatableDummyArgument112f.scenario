@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/AllocatableAndPointer/func/AllocatableDummyArgument112f.scenario
+#FEATURE   = C Interop, Allocatable, Pointer
+#CREATOR   = Dorra Bouchiha
+#DATE      = 2013-01-22
+#TEST_TYPE = functional
+#KEYWORDS  = C Interop, Allocatable, Pointer
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AllocatableDummyArgument112f.f
+#OUTPUT    = AllocatableDummyArgument112f$(OBJ)
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION<precision>)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = AllocatableDummyArgument112f$(OBJ)
+#OUTPUT    = AllocatableDummyArgument112f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = AllocatableDummyArgument112f$(EXE)
+#STDOUT    = AllocatableDummyArgument112f.out
+#ENDCMD
+
+#CMD       = DIFF
+#OPTS      = -b
+#INPUT     = $($(tcasedir)AllocatableDummyArgument112f$(product)vf) AllocatableDummyArgument112f.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

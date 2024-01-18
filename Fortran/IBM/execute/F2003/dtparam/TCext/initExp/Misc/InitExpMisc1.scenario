@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/initExp/Misc/InitExpMisc1.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of F2003/initExp/*
+#DATE      = 20071108
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)InitExpMisc1.f
+#OUTPUT= InitExpMisc1$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  InitExpMisc1$(OBJ)
+#OUTPUT= InitExpMisc1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  InitExpMisc1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = multAllocSameVarM.f
+#FEATURE   = DTP - Allocate with source expression
+#CREATOR   = Izhak Jakov
+#DATE      = 20150629
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)multAllocSameVarM.f
+#OUTPUT    = multAllocSameVarM$(OBJ)
+#STDERR    = multAllocSameVarM.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $(tcasedir)multAllocSameVarM.vf multAllocSameVarM.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

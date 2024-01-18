@@ -1,0 +1,8 @@
+"initexprCoslanglvl.f", line 17.19: 1518-256 (L) The intrinsic procedure cos (with these arguments) is not permitted by the Fortran 2003 standard.
+"initexprCoslanglvl.f", line 19.21: 1518-256 (L) The intrinsic procedure cos (with these arguments) is not permitted by the Fortran 2003 standard.
+"initexprCoslanglvl.f", line 20.21: 1518-256 (L) The intrinsic procedure cos (with these arguments) is not permitted by the Fortran 2003 standard.
+"initexprCoslanglvl.f", line 21.23: 1518-256 (L) The intrinsic procedure cos (with these arguments) is not permitted by the Fortran 2003 standard.
+"initexprCoslanglvl.f", line 21.31: 1518-016 (L) The letter Q is not permitted as an exponent letter in real constants by the Fortran 2003 standard.
+"initexprCoslanglvl.f", line 21.38: 1518-016 (L) The letter Q is not permitted as an exponent letter in real constants by the Fortran 2003 standard.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file initexprCoslanglvl.f.

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetnone05.scenario
+#FEATURE	= Array constructor enhancement - no type specifier, character lengths in assign
+#CREATOR	= DF Manual Update
+#DATE		= 20060728
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetnone05.f
+#OUTPUT		= acetnone05$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetnone05$(OBJ)
+#OUTPUT		= acetnone05$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetnone05$(EXE)
+#STDOUT		= acetnone05.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= acetnone05.out $(tcasedir)acetnone05.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,9 @@
+** m   === End of Compilation 1 ===
+** b   === End of Compilation 2 ===
+** c   === End of Compilation 3 ===
+"submodule13d.f", line 52.15: 1513-085 (S) Improper END statement specified. This END statement will be matched with the program unit or procedure named c.
+** c   === End of Compilation 4 ===
+"submodule13d.f", line 56.15: 1513-085 (S) Improper END statement specified. This END statement will be matched with the program unit or procedure named e.
+** e   === End of Compilation 5 ===
+** submodule13d   === End of Compilation 6 ===
+1501-511  Compilation failed for file submodule13d.f.

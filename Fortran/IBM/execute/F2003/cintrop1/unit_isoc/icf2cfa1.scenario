@@ -1,0 +1,21 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop1/unit_isoc/icf2cfa1.scenario
+#FEATURE = cintrop1 tests - regression run bucket
+#CREATOR = Manual conversion CPR
+#DATE    = 20060607
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TCARG="a1"
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#INCLUDE=icf2c.shinclude
+
+#ENDCONTROL
+#ENDSCENARIO

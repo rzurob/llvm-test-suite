@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/unit_tests/func/allocptr01.scenario
+#FEATURE = Generic extensions
+#CREATOR = Rafik Zurob
+#DATE    = 20120620
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)allocptr01.f
+#OUTPUT    = allocptr01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = allocptr01$(OBJ)
+#OUTPUT    = allocptr01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = allocptr01$(EXE)
+#STDOUT    = allocptr01.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)allocptr01$(product)vf) allocptr01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

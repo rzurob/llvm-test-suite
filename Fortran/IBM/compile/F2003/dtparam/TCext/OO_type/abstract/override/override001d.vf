@@ -1,0 +1,5 @@
+"override001d.f", line 46.29: 1514-670 (S) Dummy argument dtv of overridden binding getid and the corresponding dummy argument of overriding binding getid must have the same type and type parameters.
+"override001d.f", line 46.29: 1514-562 (S) Inherited binding getid has the NOPASS attribute.  The overriding binding must have the NOPASS attribute.
+** m   === End of Compilation 1 ===
+** override001d   === End of Compilation 2 ===
+1501-511  Compilation failed for file override001d.f.

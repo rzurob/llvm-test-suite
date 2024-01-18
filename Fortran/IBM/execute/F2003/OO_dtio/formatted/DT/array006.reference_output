@@ -1,0 +1,7 @@
+ iotype:DTb1-1 v_list: 5  100 abc iotype:DTb1-2 v_list: 6   101 def
+ iotype:DTb1-1 v_list: 5  102 ghi iotype:DTb1-2 v_list: 6   103 jkl
+ iotype:DTb2-1 empty v_list 102 ghi
+ iotype:DTb2-2 v_list: 7    100 abc
+ iotype:DTb3 v_list: 10       300 abc
+ iotype:DTb3 v_list: 10       301 def
+ iotype:DTb3 v_list: 10       303 ghi

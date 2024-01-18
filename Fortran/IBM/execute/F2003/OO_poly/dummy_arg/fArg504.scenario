@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/dummy_arg/fArg504.f
+#FEATURE = OO_poly
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fArg504.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fArg504$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fArg504$(OBJ)
+#OUTPUT    = fArg504$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fArg504$(EXE)
+#STDOUT    = fArg504.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fArg504.out $($(tcasedir)fArg504$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2003/dtparam/intrinsics/transpose/fDefLentp6a.scenario
+#FEATURE = dtp intrinsics
+#CREATOR = Adrian Green
+#DATE    = 20080821
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)fDefLentp6a.f
+#OUTPUT   = fDefLentp6a$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = fDefLentp6a$(OBJ)
+#OUTPUT   = fDefLentp6a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fDefLentp6a$(EXE)
+#STDOUT   = fDefLentp6a.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

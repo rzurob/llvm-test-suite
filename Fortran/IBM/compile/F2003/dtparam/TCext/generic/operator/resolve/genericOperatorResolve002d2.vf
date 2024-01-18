@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+** elementaladd   === End of Compilation 2 ===
+"genericOperatorResolve002d2.f", line 72.6: 1514-699 (S) Procedure "elementaladd" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "add", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** n   === End of Compilation 3 ===
+** genericoperatorresolve002d2   === End of Compilation 4 ===
+1501-511  Compilation failed for file genericOperatorResolve002d2.f.

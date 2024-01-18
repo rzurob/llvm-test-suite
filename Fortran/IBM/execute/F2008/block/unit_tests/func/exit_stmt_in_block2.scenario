@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=exit_stmt_in_block2.scenario
+#FEATURE = F2008 BLOCK construct
+#CREATOR = Pooja Dayanand
+#DATE    = 20101021
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)exit_stmt_in_block2.f
+#OUTPUT    = exit_stmt_in_block2$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#INPUT     = exit_stmt_in_block2$(OBJ)
+#OUTPUT    = exit_stmt_in_block2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = exit_stmt_in_block2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

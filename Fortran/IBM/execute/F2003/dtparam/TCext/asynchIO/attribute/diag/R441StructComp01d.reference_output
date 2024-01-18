@@ -1,0 +1,3 @@
+"R441StructComp01d.f", line 68.22: 1514-195 (E) Invalid attribute specified for a component declaration statement.  Attribute is ignored.
+** r441structcomp01d   === End of Compilation 1 ===
+1501-510  Compilation successful for file R441StructComp01d.f.

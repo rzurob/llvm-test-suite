@@ -1,0 +1,6 @@
+ abc  def  ghi  jkl  mno  |
+   abc  def  ghi  jkl  mno|
+ abc  def  ghi  jkl  mno  |
+   abc  def  ghi  jkl  mno|
+           <-11 spaces here
+ 10 spaces here->          |

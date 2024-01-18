@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"Misc27.f", line 63.40: 1514-560 (S) The component keyword baseid does not match a component of the derived type dt.
+** misc27   === End of Compilation 2 ===
+1501-511  Compilation failed for file Misc27.f.

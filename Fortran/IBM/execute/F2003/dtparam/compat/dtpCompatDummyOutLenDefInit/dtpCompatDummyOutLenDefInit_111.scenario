@@ -1,0 +1,53 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/compat/dtpCompatDummyOutLenDefInit/dtpCompatDummyOutLenDefInit_111.scenario
+#FEATURE   = Broken Compatability Warning - use of default initialisation of DTP objects from within 12.1 is broken (LEN)
+! - latest PTF, v. 11.1
+#CREATOR   = DF Manual Update
+#DATE      = 20090613
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+! See F2003/dtparam/compat/README for details (especially if this TC produces a NORESOURCES error).
+#IF on(linux)
+  #REQUIRED_RESOURCES = SUSE10
+#ENDIF
+#INVALID_PRODUCT=bgq linuxle
+#ENDENV
+
+#BEGINCONTROL
+
+! Compile "pre-DTP" files with the latest 11.1 PTF compiler,
+! compile "post-DTP" files with the latest version of the latest compiler,
+! link with the latest version of the latest compiler,
+! run:  Since no DTP data is actually defined, no error message should be generated.
+
+#CMD       = V111_XLF2003_COMPILE
+#INPUT     = $(tcasedir)dtpCompatDummyOutLenDefInitPreDTP.f
+#OUTPUT    = dtpCompatDummyOutLenDefInitPreDTP$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)dtpCompatDummyOutLenDefInitPostDTP.f
+#OUTPUT    = dtpCompatDummyOutLenDefInitPostDTP$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = dtpCompatDummyOutLenDefInitPostDTP$(OBJ) dtpCompatDummyOutLenDefInitPreDTP$(OBJ)
+#OUTPUT    = dtpCompatDummyOutLenDefInit$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpCompatDummyOutLenDefInit$(EXE)
+#STDOUT    = dtpCompatDummyOutLenDefInit.out
+#STDERR    = dtpCompatDummyOutLenDefInit.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpCompatDummyOutLenDefInit$(product)vf) dtpCompatDummyOutLenDefInit.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

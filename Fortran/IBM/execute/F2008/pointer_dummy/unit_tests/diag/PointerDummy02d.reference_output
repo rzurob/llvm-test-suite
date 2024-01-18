@@ -1,0 +1,9 @@
+** m   === End of Compilation 1 ===
+"PointerDummy02d.f", line 63.3: 1518-379 (L) An internal procedure is not permitted as the target of a procedure pointer assignment statement by the Fortran 2003 standard.
+"PointerDummy02d.f", line 66.8: 1518-383 (L) Dummy argument dmy_pp of the procedure ext_test has the POINTER attribute.  The corresponding actual argument is required to also have the POINTER attribute by the Fortran 2003 standard.
+"PointerDummy02d.f", line 67.8: 1518-383 (L) Dummy argument dmy_pp of the procedure inter_test has the POINTER attribute.  The corresponding actual argument is required to also have the POINTER attribute by the Fortran 2003 standard.
+"PointerDummy02d.f", line 67.19: 1518-362 (L) inter_proc is an internal procedure. Internal procedures are not permitted as actual arguments by the Fortran 2003 standard.
+"PointerDummy02d.f", line 68.8: 1518-383 (L) Dummy argument dmy_pp of the procedure mod_test has the POINTER attribute.  The corresponding actual argument is required to also have the POINTER attribute by the Fortran 2003 standard.
+** pointerdummydiag2   === End of Compilation 2 ===
+** ext_proc   === End of Compilation 3 ===
+1501-510  Compilation successful for file PointerDummy02d.f.

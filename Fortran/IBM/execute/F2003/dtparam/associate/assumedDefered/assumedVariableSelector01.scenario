@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/associate/assumedDefered/assumedVariableSelector01.scenario
+#FEATURE	= ASSOCIATE Contruct (with Derived Type Parameters) --	\
+				selector is a Variable with Assumed Length Type Parameter(s)
+#CREATOR	= Glen Mateer
+#DATE		= 20080815
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)assumedVariableSelector01.f
+#OUTPUT		= assumedVariableSelector01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= assumedVariableSelector01$(OBJ)
+#OUTPUT		= assumedVariableSelector01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= assumedVariableSelector01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

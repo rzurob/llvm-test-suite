@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/associate/misc/nestedAssociate01.scenario
+#FEATURE	= ASSOCIATE Contruct (with Derived Type Parameters) --	\
+				Nested ASSOCIATE Constructs
+#CREATOR	= Glen Mateer
+#DATE		= 20080822
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)nestedAssociate01.f
+#OUTPUT		= nestedAssociate01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= nestedAssociate01$(OBJ)
+#OUTPUT		= nestedAssociate01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= nestedAssociate01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

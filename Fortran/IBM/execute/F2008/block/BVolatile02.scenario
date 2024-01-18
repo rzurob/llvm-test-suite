@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BVolatile02.scenario
+#FEATURE   = F2008 BLOCK - very long variable name in volatile statement in block
+#CREATOR   = DF Manual Update
+#DATE      = 20101214
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)BVolatile02.f
+#OUTPUT    = BVolatile02$(OBJ)
+#STDERR    = BVolatile02.err
+#STDOUT    = BVolatile02.err
+#ENDCMD
+
+#CMD      = XLDIFF
+#INPUT    = $($(tcasedir)BVolatile02$(product)vf) BVolatile02.err
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = BVolatile02$(OBJ)
+#OUTPUT    = BVolatile02$(EXE)
+#ENDCMD
+
+! Make sure it works
+#CMD       = RUN
+#INPUT     = BVolatile02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

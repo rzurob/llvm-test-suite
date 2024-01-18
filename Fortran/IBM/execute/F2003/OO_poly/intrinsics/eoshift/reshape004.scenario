@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/eoshift/reshape004.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050204
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)reshape004.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = reshape004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = reshape004$(OBJ)
+#OUTPUT    = reshape004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = reshape004$(EXE)
+#STDOUT    = reshape004.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)reshape004$(product)vf) reshape004.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/spread/structureComponent001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070928
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)structureComponent001.f
+#OUTPUT    = structureComponent001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = structureComponent001$(OBJ)
+#OUTPUT    = structureComponent001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = structureComponent001$(EXE)
+#STDOUT    = structureComponent001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)structureComponent001$(product)vf) structureComponent001.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

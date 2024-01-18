@@ -1,0 +1,74 @@
+ whole array:
+ print_b_b1darray:
+ b00
+ b11b12b13
+ print_b_b2darray:
+ b00
+ b21b22b23b24
+ print_b_b1darray:
+ b00
+ c11c12c13
+ 101 102 103
+ print_b_b2darray:
+ b00
+ c21c22c23c24
+ 201 202 203 204
+ print_c_c1darray:
+ c00
+ 1
+ b11b12b13
+ print_b_b2darray:
+ c00
+ 1
+ b21b22b23b24
+ print_c_c1darray:
+ c00
+ 1
+ c11c12c13
+ 101 102 103
+ print_b_b2darray:
+ c00
+ 1
+ c21c22c23c24
+ 201 202 203 204
+ array section:
+ print_b_b1darray:
+ b00
+ b13b14b15
+ print_b_b2darray:
+ b00
+ c22c23c25c26
+ 202 203 205 206
+ print_c_c1darray:
+ c00
+ 1
+ c12c13c14
+ 102 103 104
+ print_b_b2darray:
+ c00
+ 1
+ b24b25b21b22
+ print_b_b1darray:
+ b00
+ 1xx2xx3xx
+ print_b_b1darray:
+ b00
+ 1xx2xx3xx
+ -999 -999 -999
+ print_b_b2darray:
+ b00
+ 1xx2xx3xx4xx
+ print_c_c1darray:
+ c00
+ 1
+ abcdefghi
+ print_c_c1darray:
+ c00
+ 1
+ jklmnopqr
+ 100 -999 300
+ print_b_b2darray:
+ c00
+ 1
+ x1xx2xx3xx4x
+ -999 -999 -999 -999

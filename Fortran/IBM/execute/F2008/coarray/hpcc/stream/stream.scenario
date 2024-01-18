@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)../util/timers.F
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = timers$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)stream.F
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = stream$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = timers$(OBJ) stream$(OBJ)
+#OUTPUT    = stream$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = stream$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

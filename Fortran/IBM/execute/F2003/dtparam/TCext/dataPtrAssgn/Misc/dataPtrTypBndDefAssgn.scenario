@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/Misc/dataPtrTypBndDefAssgn.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071217
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)dataPtrTypBndDefAssgn.f
+#OPTS=   -qalias=nostd
+#OUTPUT= dataPtrTypBndDefAssgn$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  dataPtrTypBndDefAssgn$(OBJ)
+#OUTPUT= dataPtrTypBndDefAssgn$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dataPtrTypBndDefAssgn$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

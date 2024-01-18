@@ -1,0 +1,9 @@
+"kindArgVerify.f", line 49.34: 1513-133 (S) KIND must be an integer constant.
+"kindArgVerify.f", line 50.59: 1513-040 (S) The argument KIND must be a scalar.
+"kindArgVerify.f", line 52.58: 1513-040 (S) The argument KIND must be a scalar.
+"kindArgVerify.f", line 54.36: 1513-133 (S) KIND must be an integer constant.
+"kindArgVerify.f", line 55.36: 1513-133 (S) KIND must be an integer constant.
+"kindArgVerify.f", line 56.36: 1513-133 (S) KIND must be an integer constant.
+"kindArgVerify.f", line 57.36: 1513-133 (S) KIND must be an integer constant.
+** kindargverify   === End of Compilation 1 ===
+1501-511  Compilation failed for file kindArgVerify.f.

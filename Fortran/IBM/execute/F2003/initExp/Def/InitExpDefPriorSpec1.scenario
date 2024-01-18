@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       InitExpDefPriorSpec1.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       04-06-07
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)InitExpDefPriorSpec1.f
+#OUTPUT= InitExpDefPriorSpec1$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  InitExpDefPriorSpec1$(OBJ)
+#OUTPUT= InitExpDefPriorSpec1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  InitExpDefPriorSpec1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

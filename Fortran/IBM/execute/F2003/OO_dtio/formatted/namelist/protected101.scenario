@@ -1,0 +1,44 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/namelist/protected101.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)protected101.1 .
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)protected101.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = protected101$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = protected101$(OBJ)
+#OUTPUT    = protected101$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = protected101$(EXE)
+#STDOUT     = protected101.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)protected101$(product)vf) protected101.out
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,1 @@
+"iofilenamelineno004.f", line 42: 1525-006 The STATUS= specifier in the OPEN statement for unit 2 cannot be set to OLD because the file iofilenamelineno004.dat does not exist.  The program will stop.

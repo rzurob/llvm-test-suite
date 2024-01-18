@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/others/dataPtrTarFunc.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071217
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrTarFunc.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrTarFunc$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrTarFunc$(OBJ)
+#OUTPUT    = dataPtrTarFunc$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrTarFunc$(EXE)
+#STDOUT    = dataPtrTarFunc.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrTarFunc.out $($(tcasedir)dataPtrTarFunc$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

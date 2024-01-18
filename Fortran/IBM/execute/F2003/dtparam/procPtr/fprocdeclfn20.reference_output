@@ -1,0 +1,22 @@
+ TEST PART 1
+ ALLOCATING
+ myBase0 is allocated: T
+ myBase1 is allocated: T
+ COPYING RESULT FROM myBase0 to myBase1
+ 0 10 33.33000183 (30.00000000,-4.000000000) T
+ 0 10 33.33000183 (30.00000000,-4.000000000) T
+ DEALLOCATING
+ myBase0 is allocated: F
+ myBase1 is allocated: F
+ 
+ TEST PART 2
+ ALLOCATING
+ myBase0 is deallocated: T
+ myBase1 is deallocated: T
+ COPYING RESULT FROM myBase0 to myBase1
+ 0 20 28372.62500 (304.0000000,40.00000000) T
+ 0 20 28372.62500 (304.0000000,40.00000000) T
+ DEALLOCATING
+ myBase0 is deallocated: F
+ myBase1 is deallocated: F
+ 

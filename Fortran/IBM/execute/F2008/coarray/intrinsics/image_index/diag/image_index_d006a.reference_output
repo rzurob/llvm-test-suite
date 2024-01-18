@@ -1,0 +1,8 @@
+"image_index_d006a.f", line 29.11: 1513-146 (S) Missing argument "coarray".
+"image_index_d006a.f", line 32.11: 1513-146 (S) Missing argument "sub".
+"image_index_d006a.f", line 35.11: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "image_index".
+"image_index_d006a.f", line 36.11: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "image_index".
+"image_index_d006a.f", line 37.11: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "image_index".
+"image_index_d006a.f", line 40.11: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "image_index".
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file image_index_d006a.f.

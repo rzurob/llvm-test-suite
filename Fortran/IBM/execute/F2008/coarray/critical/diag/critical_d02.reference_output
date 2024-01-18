@@ -1,0 +1,4 @@
+"critical_d01.f", line 28.2: 1518-285 (L) The CRITICAL statement is not permitted by the Fortran 2003 standard.
+"critical_d01.f", 1518-296 (L) Tab characters have been detected in the source.  The tab character is not permitted by the Fortran 2003 standard.
+** fdc   === End of Compilation 1 ===
+1501-510  Compilation successful for file critical_d01.f.

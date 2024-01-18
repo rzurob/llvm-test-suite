@@ -1,0 +1,1 @@
+1525-199 The value stream for the ACCESS= specifier in the OPEN statement on unit number 11 is not allowed in Fortran 90 and Fortran 95 but is allowed in Fortran 2003 and XL Fortran.  The program will recover by allowing stream access.

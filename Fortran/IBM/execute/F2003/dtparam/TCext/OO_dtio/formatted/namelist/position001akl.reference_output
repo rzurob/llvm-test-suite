@@ -1,0 +1,8 @@
+ &NML1
+ B1= c=ibm  i=1001
+ i=1001 c= ibm
+ /
+ &NML2
+ B2= c=ftn  i=2002
+ i=2002 c= ftn
+ /

@@ -1,0 +1,7 @@
+** mod   === End of Compilation 1 ===
+"acetdt33d.f", line 77.28: 1511-142 (S) Identifier associate specified in the array constructor has not been defined in a derived type definition.
+"acetdt33d.f", line 77.50: 1516-022 (S) Subscript, stride, or substring expression must be a valid arithmetic expression.
+"acetdt33d.f", line 82.26: 1511-142 (S) Identifier derived specified in the array constructor has not been defined in a derived type definition.
+"acetdt33d.f", line 82.44: 1516-022 (S) Subscript, stride, or substring expression must be a valid arithmetic expression.
+** acetdt33d   === End of Compilation 2 ===
+1501-511  Compilation failed for file acetdt33d.f.

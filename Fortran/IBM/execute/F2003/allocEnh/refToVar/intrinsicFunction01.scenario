@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/refToVar/intrinsicFunction01.scenario
+#FEATURE	= Intrinsic Assignment -- variable and/or expr Reference variable
+#CREATOR	= GM Manual Creation
+#DATE		= 20061017
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)intrinsicFunction01.f
+#OUTPUT		= intrinsicFunction01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= intrinsicFunction01$(OBJ)
+#OUTPUT		= intrinsicFunction01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= intrinsicFunction01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

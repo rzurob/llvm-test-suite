@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/typCompatible/realkind8a.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071105
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)realkind8a.f
+#OUTPUT= realkind8a$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  realkind8a$(OBJ)
+#OUTPUT= realkind8a$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  realkind8a$(EXE)
+#STDOUT= realkind8a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = realkind8a.out $(tcasedir)realkind8a.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

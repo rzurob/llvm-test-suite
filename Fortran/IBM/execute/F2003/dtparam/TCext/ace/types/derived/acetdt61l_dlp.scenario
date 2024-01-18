@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/intrinsics/acetdt61l_dlp.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
+				Rank Remapped Pointers in AC)
+#CREATOR	= Glen Mateer (derived from work by David Forster)
+#DATE		= 20080123
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt61l_dlp.f
+#OUTPUT		= acetdt61l_dlp$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt61l_dlp$(OBJ)
+#OUTPUT		= acetdt61l_dlp$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt61l_dlp$(EXE)
+#STDOUT		= acetdt61l_dlp.stdout
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -r1e-6
+#INPUT		= $($(tcasedir)acetdt61l_dlp$(product)vf) acetdt61l_dlp.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

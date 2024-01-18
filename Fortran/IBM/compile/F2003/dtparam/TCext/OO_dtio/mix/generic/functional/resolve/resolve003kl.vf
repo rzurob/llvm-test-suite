@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"resolve003kl.f", line 146.6: 1514-699 (S) Procedure "writebaseext" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "writeb", present and type incompatible, present with different kind type parameters, or present with a different rank.
+"resolve003kl.f", line 158.6: 1514-699 (S) Procedure "readbaseext" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "readb", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** resolve003kl   === End of Compilation 2 ===
+** writebaseext   === End of Compilation 3 ===
+** readbaseext   === End of Compilation 4 ===
+1501-511  Compilation failed for file resolve003kl.f.

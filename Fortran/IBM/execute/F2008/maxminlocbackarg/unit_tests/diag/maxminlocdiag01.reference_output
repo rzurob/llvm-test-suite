@@ -1,0 +1,4 @@
+"maxminlocdiag01.f", line 3.86: 1513-133 (S) KIND must be an integer constant.
+"maxminlocdiag01.f", line 6.45: 1513-133 (S) KIND must be an integer constant.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file maxminlocdiag01.f.

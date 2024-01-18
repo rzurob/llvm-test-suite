@@ -1,0 +1,4 @@
+"ftpbnd500d1.f", line 56.8: 1514-629 (S) The derived type btype with the BIND(C) attribute must not contain type-bound procedures.
+** m   === End of Compilation 1 ===
+** ftpbnd500d1   === End of Compilation 2 ===
+1501-511  Compilation failed for file ftpbnd500d1.f.

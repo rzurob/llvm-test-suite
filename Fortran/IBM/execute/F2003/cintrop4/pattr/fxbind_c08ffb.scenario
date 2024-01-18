@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop4/pattr/fxbind_c08ffb.scenario
+#FEATURE = cintrop4 tests - regression run bucket
+#CREATOR = CPR Manual conversion
+#DATE    = 20041200
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+FTCARG="fxbind_c08ffb"
+CTCARG="cxbind_c08ffb"
+#ENDDEFS
+#INVALID_PRODUCT=bgl_system
+#ENDENV
+
+#BEGINCONTROL
+
+#INCLUDE   = run.shinclude
+
+#ENDCONTROL
+#ENDSCENARIO

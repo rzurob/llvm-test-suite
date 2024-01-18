@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/complexPartDesignator/caf/complexPartDesignatorCoarray2.scenario
+#FEATURE   = Complex Part Designator
+#CREATOR   = Shahid Alam
+#DATE      = 20110119
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)complexPartDesignatorCoarray2.f
+#OUTPUT    = complexPartDesignatorCoarray2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = complexPartDesignatorCoarray2$(OBJ)
+#OUTPUT    = complexPartDesignatorCoarray2$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+   #CMD       = MPRUN
+   #INPUT     = complexPartDesignatorCoarray2$(EXE)
+   #STDOUT    = complexPartDesignatorCoarray2$(i).out
+   #STDERR    = complexPartDesignatorCoarray2$(i).out
+   #ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

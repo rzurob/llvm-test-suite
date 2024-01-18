@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"d326451_1.f", line 37.24: 1512-019 (S) WRITE statement specifier must be a simple variable or array element.  Statement is ignored.
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file d326451_1.f.

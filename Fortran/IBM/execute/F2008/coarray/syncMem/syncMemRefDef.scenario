@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/syncMemRefDef
+#FEATURE        = CAF SYNC MEMORY - coarray variable reference precedes (re)definition
+#CREATOR        = DF
+#DATE           = 2010-09-22
+#TEST_TYPE      = sanity
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)syncMemRefDef.f
+#OUTPUT = syncMemRefDef$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = syncMemRefDef$(OBJ)
+#OUTPUT = syncMemRefDef$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = syncMemRefDef$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

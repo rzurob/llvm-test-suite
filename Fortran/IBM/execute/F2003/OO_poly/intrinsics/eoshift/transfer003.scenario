@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/eoshift/transfer003.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050203
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)transfer003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = transfer003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = transfer003$(OBJ)
+#OUTPUT    = transfer003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = transfer003$(EXE)
+#STDOUT    = transfer003.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)transfer003$(product)vf) transfer003.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

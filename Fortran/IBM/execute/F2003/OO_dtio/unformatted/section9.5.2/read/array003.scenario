@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/unformatted/section9.5.2/read/array003.scenario
+#FEATURE = OO_dtio
+#CREATOR = Robert Ma
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)array003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = array003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  array003$(OBJ)
+#OUTPUT    = array003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = array003$(EXE)
+#STDOUT    = array003.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)array003$(product)vf) array003.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

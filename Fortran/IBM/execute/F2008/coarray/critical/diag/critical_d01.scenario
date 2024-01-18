@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = critical_d01.scenario
+#FEATURE  = 381021
+#CREATOR  = Francesco Cassullo
+#DATE     = Jan 2011
+#TEST_TYPE= DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_NOCOARRAY)
+#INPUT     = $(tcasedir)critical_d01.f
+#OUTPUT    = critical_d01$(OBJ)
+#STDOUT    = critical_d01.err
+#STDERR    = critical_d01.err
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)critical_d01$(product)vf) critical_d01.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

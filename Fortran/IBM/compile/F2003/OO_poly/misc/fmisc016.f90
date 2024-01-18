@@ -1,0 +1,68 @@
+!#######################################################################
+! SCCS ID Information
+! %W%, %I%
+! Extract Date/Time: %D% %T%
+! Checkin Date/Time: %E% %U%
+!#######################################################################
+! *********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY: 
+! %STDIN:
+! %STDOUT:
+! %EXECARGS:
+! %POSTCMD: tcomp fmisc016.f
+! %END
+! *********************************************************************
+!*  =================================================================== 
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
+!*  =================================================================== 
+!*  =================================================================== 
+!*
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Jim Xia
+!*  DATE                       : 10/06/2004
+!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
+!*                             :
+!*
+!*  PRIMARY FUNCTIONS TESTED   :
+!*                             :
+!*  SECONDARY FUNCTIONS TESTED : 
+!*
+!*  DRIVER STANZA              : xlf95
+!*
+!*  DESCRIPTION                : miscellaneous items (defect 293002)
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!* ===================================================================
+!*
+!*  REVISION HISTORY
+!*
+!*  MM/DD/YY:  Init:  Comments:
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+program fmisc016
+    integer, parameter :: const = 10
+
+    integer, pointer :: j
+    associate (x => 10)
+        allocate (j, stat = x)    !<-- illegal
+
+        print *, x
+    end associate
+
+    allocate (j, stat=const)    !<-- illegal
+    allocate (j, stat=if1())     !<-- illegal
+    allocate (j, stat=10)    !<-- illegal
+end
+
+integer function if1()
+    if1 = 10
+end function
+

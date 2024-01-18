@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"diagnose007.f", line 44.29: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "pack".
+** diagnose007   === End of Compilation 2 ===
+1501-511  Compilation failed for file diagnose007.f.

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/class/fclass003.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070917
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fclass003.f
+#OUTPUT    = fclass003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fclass003$(OBJ)
+#OUTPUT    = fclass003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fclass003$(EXE)
+#STDOUT    = fclass003.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)fclass003$(product)vf) fclass003.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

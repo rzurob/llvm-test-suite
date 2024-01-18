@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       intkind8.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)intkind8.f
+#OUTPUT= intkind8$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  intkind8$(OBJ)
+#OUTPUT= intkind8$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  intkind8$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

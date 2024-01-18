@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/exit/unit_tests/func/exit03f.scenario
+#FEATURE    = F386895 - F2008 Exit Statement
+#CREATOR    = David Nichols
+#DATE       = 20110308
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)exit03f.f
+#OUTPUT     = exit03f$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#INPUT      = exit03f$(OBJ)
+#OUTPUT     = exit03f$(EXE)
+#ENDCMD
+
+#CMD        = RUN
+#INPUT      = exit03f$(EXE)
+#STDOUT     = exit03f.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

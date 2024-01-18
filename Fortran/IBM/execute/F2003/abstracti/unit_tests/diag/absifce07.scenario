@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE =
+#CREATOR = James Ren
+#DATE    = 20051110
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)absifce07.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=ooall
+#STDERR    = absifce07.err
+#OUTPUT    = absifce07$(OBJ)
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)absifce07$(product)vf) absifce07.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

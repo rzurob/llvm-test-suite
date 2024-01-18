@@ -1,0 +1,5 @@
+ type base with id =  1
+ type Child with id =  2 ; name = c1                  
+ type base with id =  2
+ type Child with id =  2 ; name = c1                  
+ type base with id =  2

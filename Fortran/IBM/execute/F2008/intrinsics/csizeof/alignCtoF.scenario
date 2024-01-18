@@ -1,0 +1,167 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    =  F2008/intrinsics/csizeof/alignCtoF.scenario
+#FEATURE =  F2008 ISO_C_BINDING C_SIZEOF function 381475
+#CREATOR =  Michelle Zhang
+#DATE    =  2011/01/14
+#TEST_TYPE= functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+  C_OPTS = $(XLC_COMPILE^OPT_BIGGER_LONG_DOUBLE) $(C_COMPILER_OPTS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)alignCtoF.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qalign=bindc=packed
+#OUTPUT    = alignCtoF_f$(OBJ)
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)alignCtoF.c
+#OPTS      = $C_OPTS $(OPT_SET_LANG_LEVEL_EXTENDED) $(OPT_GEN_64BIT_LONGLONG) $(OPT_ALIGN_PACKED)
+#OUTPUT    = alignCtoF_c$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = alignCtoF_f$(OBJ) alignCtoF_c$(OBJ)
+#OUTPUT    = alignCtoF$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = alignCtoF$(EXE)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)alignCtoF.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qalign=bindc=natural
+#OUTPUT    = alignCtoF_f$(OBJ)
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)alignCtoF.c
+#OPTS      = $C_OPTS $(OPT_SET_LANG_LEVEL_EXTENDED) $(OPT_GEN_64BIT_LONGLONG) $(OPT_ALIGN_NATURAL)
+#OUTPUT    = alignCtoF_c$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = alignCtoF_f$(OBJ) alignCtoF_c$(OBJ)
+#OUTPUT    = alignCtoF$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = alignCtoF$(EXE)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)alignCtoF.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qalign=bindc=power
+#OUTPUT    = alignCtoF_f$(OBJ)
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)alignCtoF.c
+#OPTS      = $C_OPTS $(OPT_SET_LANG_LEVEL_EXTENDED) $(OPT_GEN_64BIT_LONGLONG) $(OPT_ALIGN_POWER)
+#OUTPUT    = alignCtoF_c$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = alignCtoF_f$(OBJ) alignCtoF_c$(OBJ)
+#OUTPUT    = alignCtoF$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = alignCtoF$(EXE)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)alignCtoF.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qalign=bindc=bit_packed
+#OUTPUT    = alignCtoF_f$(OBJ)
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)alignCtoF.c
+#OPTS      = $C_OPTS $(OPT_SET_LANG_LEVEL_EXTENDED) $(OPT_GEN_64BIT_LONGLONG) $(OPT_ALIGN_BIT_PACKED)
+#OUTPUT    = alignCtoF_c$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = alignCtoF_f$(OBJ) alignCtoF_c$(OBJ)
+#OUTPUT    = alignCtoF$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = alignCtoF$(EXE)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)alignCtoF.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qalign=bindc=full
+#OUTPUT    = alignCtoF_f$(OBJ)
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)alignCtoF.c
+#OPTS      = $C_OPTS $(OPT_SET_LANG_LEVEL_EXTENDED) $(OPT_GEN_64BIT_LONGLONG) $(OPT_ALIGN_BYTE<full>)
+#OUTPUT    = alignCtoF_c$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = alignCtoF_f$(OBJ) alignCtoF_c$(OBJ)
+#OUTPUT    = alignCtoF$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = alignCtoF$(EXE)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)alignCtoF.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qalign=bindc=mac68k
+#OUTPUT    = alignCtoF_f$(OBJ)
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)alignCtoF.c
+#OPTS      = $C_OPTS $(OPT_SET_LANG_LEVEL_EXTENDED) $(OPT_GEN_64BIT_LONGLONG) $(OPT_ALIGN_MAC68K)
+#OUTPUT    = alignCtoF_c$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = alignCtoF_f$(OBJ) alignCtoF_c$(OBJ)
+#OUTPUT    = alignCtoF$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = alignCtoF$(EXE)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)alignCtoF.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)  -qalign=bindc=twobyte
+#OUTPUT    = alignCtoF_f$(OBJ)
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)alignCtoF.c
+#OPTS      = $C_OPTS $(OPT_SET_LANG_LEVEL_EXTENDED) $(OPT_GEN_64BIT_LONGLONG) $(OPT_ALIGN_TWOBYTE)
+#OUTPUT    = alignCtoF_c$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = alignCtoF_f$(OBJ) alignCtoF_c$(OBJ)
+#OUTPUT    = alignCtoF$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = alignCtoF$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

@@ -1,0 +1,17 @@
+B1_content:
+ iotype: DT Data not using DTIO: v_list is: 5  100 abc
+ iotype: DT Data not using DTIO: v_list is: 5  101 def
+ iotype: DT Data not using DTIO: v_list is: 5  102 ghi
+ iotype: DT Data not using DTIO: v_list is: 5  103 jkl
+
+B2_content:
+ iotype: DTb2Data using DTIO:    v_list is: 6 7   200    ABC
+ iotype: DTb2Data using DTIO:    v_list is: 6 7   201    DEF
+ iotype: DTb2-3Data using DTIO:    v_list is: 7 8    202     GHI
+B3_content:
+ iotype: DTb3Data using DTIO:    v_list is: 8 9     302      ghi
+ iotype: DTb3Data using DTIO:    v_list is: 8 9     303      JKL
+ iotype: DTb3Data using DTIO:    v_list is: 8 9     300      abc
+ iotype: DTb3Data using DTIO:    v_list is: 8 9     301      DEF
+
+

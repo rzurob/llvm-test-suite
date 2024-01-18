@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+** m1   === End of Compilation 2 ===
+** m2   === End of Compilation 3 ===
+"ffinal514a18dk.f", line 110.14: 1512-125 (S) A derived-type entity containing a component with the POINTER attribute must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+"ffinal514a18dk.f", line 111.14: 1512-125 (S) A derived-type entity containing a component with the POINTER attribute must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+** ffinal514a18dk   === End of Compilation 4 ===
+1501-511  Compilation failed for file ffinal514a18dk.f.

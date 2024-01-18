@@ -1,0 +1,34 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dtpObjDecAttr18.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       05-31-07
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM) -qdebug=allowrpdt
+#INPUT=  $(tcasedir)dtpObjDecAttr18.f
+#OUTPUT= dtpObjDecAttr18$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  dtpObjDecAttr18$(OBJ)
+#OUTPUT= dtpObjDecAttr18$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dtpObjDecAttr18$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

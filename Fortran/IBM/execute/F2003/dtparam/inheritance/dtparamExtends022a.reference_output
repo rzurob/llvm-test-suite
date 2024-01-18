@@ -1,0 +1,17 @@
+ Type Circle, kind 4
+Center:       1.00      2.00
+Radius:      12.10
+ Type Polygon, kind 8, size =  4
+Vertex  1   0.0       0.0    
+Vertex  2   10.       0.0    
+Vertex  3   10.       10.    
+Vertex  4   0.0       10.    
+ Type Polygon, kind 4, size =  5
+Vertex  1      0.00      0.00
+Vertex  2     10.00      0.00
+Vertex  3     10.00      5.00
+Vertex  4      5.00     10.00
+Vertex  5      0.00      5.00
+ Type Circle, kind 8
+Center:    5.0       0.0    
+Radius:    5.0    

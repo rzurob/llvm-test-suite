@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpPtrAssignArrayFixed.scenario
+#FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - via pointers with fixed length parameters, assign scalars to arrays in main program
+#CREATOR   = DF Manual Update
+#DATE      = 20090112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPtrAssignArrayFixed.f
+#OUTPUT    = dtpPtrAssignArrayFixed$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPtrAssignArrayFixed$(OBJ)
+#OUTPUT    = dtpPtrAssignArrayFixed$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPtrAssignArrayFixed$(EXE)
+#STDOUT    = dtpPtrAssignArrayFixed.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpPtrAssignArrayFixed$(product)vf) dtpPtrAssignArrayFixed.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

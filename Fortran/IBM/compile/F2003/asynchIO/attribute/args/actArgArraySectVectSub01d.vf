@@ -1,0 +1,4 @@
+"actArgArraySectVectSub01d.f", line 59.17: 1516-271 (S) Dummy argument dataarray of procedure asynchdump was specified with the ASYNCHRONOUS attribute.  The corresponding actual argument must be definable.
+** actargarraysectvectsub01d   === End of Compilation 1 ===
+** asynchdump   === End of Compilation 2 ===
+1501-511  Compilation failed for file actArgArraySectVectSub01d.f.

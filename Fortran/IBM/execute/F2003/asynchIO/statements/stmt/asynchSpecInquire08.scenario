@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/stmt/asynchSpecInquire08.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS= Specifier in I/O Statements
+#CREATOR	= GM Manual Creation
+#DATE		= 20060317
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)asynchSpecInquire08.f
+#OUTPUT		= asynchSpecInquire08$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= asynchSpecInquire08$(OBJ)
+#OUTPUT		= asynchSpecInquire08$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= asynchSpecInquire08$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

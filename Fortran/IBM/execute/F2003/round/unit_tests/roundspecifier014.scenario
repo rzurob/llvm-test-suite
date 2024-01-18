@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=roundspecifier014.scenario
+#FEATURE = Round Specifier
+#CREATOR = Michael Selvanayagam
+#DATE    = 20060501
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+
+#CMD       = F_COMPLINK
+#INPUT     = $(tcasedir)roundspecifier014.f
+#OUTPUT    = roundspecifier014$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = roundspecifier014$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = roundspecifier014.out $($(tcasedir)roundspecifier014$(product)vf)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

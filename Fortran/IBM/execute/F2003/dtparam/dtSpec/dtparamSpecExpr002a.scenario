@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/dtSpec/dtparamSpecExpr002a.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamSpecExpr002a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamSpecExpr002a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dtparamSpecExpr002a$(OBJ)
+#OUTPUT    = dtparamSpecExpr002a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamSpecExpr002a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

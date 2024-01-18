@@ -1,0 +1,50 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=naninfio025.scenario
+#FEATURE =
+#CREATOR = Michael Selvanayagam
+#DATE    = 20060331
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)nanqinputext.dat $(tcasedir)nansinputext.dat $(tcasedir)nansinput2003std.dat $(tcasedir)nanqinput2003std.dat $(tcasedir)infinputneg.dat $(tcasedir)infinputpos.dat $(tcasedir)naninfio025.f $(tcasedir)naninfio025b.f
+#OUTPUT   = ./
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)naninfio025.f
+#OPTS      = -qxlf2003=oldnaninf
+#OUTPUT    = naninfio025_2$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)naninfio025b.f
+#OPTS      = -qxlf2003=nooldnaninf
+#OUTPUT    = naninfio025_1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = naninfio025_1$(OBJ) naninfio025_2$(OBJ)
+#OUTPUT    = naninfio025$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = naninfio025$(EXE)
+#STDOUT    = naninfio025.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = naninfio025.out  $($(tcasedir)naninfio025$(product)vf)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

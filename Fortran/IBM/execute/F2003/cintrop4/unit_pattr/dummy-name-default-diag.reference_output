@@ -1,0 +1,9 @@
+** s0   === End of Compilation 1 ===
+** f0   === End of Compilation 2 ===
+** dummyproc   === End of Compilation 3 ===
+"dummy-name-default-diag.f", line 44.10: 1513-228 (S) The NAME specifier must not appear in the BIND(C) attribute for dummy procedure dummyproc.
+** rcv1   === End of Compilation 4 ===
+"dummy-name-default-diag.f", line 54.10: 1513-228 (S) The NAME specifier must not appear in the BIND(C) attribute for dummy procedure dummyproc.
+** rcv2   === End of Compilation 5 ===
+** m0   === End of Compilation 6 ===
+1501-511  Compilation failed for file dummy-name-default-diag.f.

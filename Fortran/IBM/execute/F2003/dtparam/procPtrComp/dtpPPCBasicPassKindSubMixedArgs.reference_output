@@ -1,0 +1,9 @@
+ 127 in disp1 >one< 111111111
+ 127 in disp1a >two< 222222222
+ 32000 in disp2 >three< 333333333
+ 32000 in disp2a >four< 444444444
+ 127 in disp1a >five< 555555555
+ 127 in disp1 >< 666666666
+ 32000 in disp2a >seven< 777777777
+ 32000 in disp2 >eight< 888888888
+ done

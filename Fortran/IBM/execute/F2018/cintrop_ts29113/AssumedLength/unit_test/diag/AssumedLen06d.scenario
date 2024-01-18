@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/AssumedLen/diag/AssumedLen06d.scenario
+#FEATURE   = C Interop, Assumed length
+#CREATOR   = Maryam Moghadas
+#DATE      = 2014-06-27
+#TEST_TYPE = diagnostic
+#KEYWORDS  = C Interop, Assumed Length
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AssumedLen06d.f
+#OPTS      = $(OPT_INTERNAL_DEBUG_OPTION<BCASSUMEDLEN>) $(OPT_SET_LANG_LEVEL<2008std>) $(OPT_DISABLE_MSG_NUM<1518-317>)
+#OUTPUT    = AssumedLen06d$(OBJ)
+#STDERR    = AssumedLen06d.out
+!#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)AssumedLen06d$(product)vf) AssumedLen06d.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

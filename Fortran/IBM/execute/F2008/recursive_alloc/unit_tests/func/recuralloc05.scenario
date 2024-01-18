@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME		= F2008/recursive_alloc/unit_tests/func/recuralloc05.scenario
+#FEATURE        = RTC 146334 F2008: Omitting an allocatable component in a structure constructor
+#CREATOR        = Rafik Zurob
+#DATE           = 20190725
+#TEST_TYPE      = Functional
+#KEYWORDS       = F2008 recursive allocatable component
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)recuralloc05.f
+#OUTPUT		= recuralloc05$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= recuralloc05$(OBJ)
+#OUTPUT		= recuralloc05$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= recuralloc05$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

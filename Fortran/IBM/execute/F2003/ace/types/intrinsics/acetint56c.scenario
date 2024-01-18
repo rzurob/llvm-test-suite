@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint56c.scenario
+#FEATURE	= Array constructor enhancement - AC as function return value (character)
+#CREATOR	= DF Manual Update
+#DATE		= 20061123
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint56c.f
+#OUTPUT		= acetint56c$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint56c$(OBJ)
+#OUTPUT		= acetint56c$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint56c$(EXE)
+#STDOUT		= acetint56c.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetint56c$(product)vf) acetint56c.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

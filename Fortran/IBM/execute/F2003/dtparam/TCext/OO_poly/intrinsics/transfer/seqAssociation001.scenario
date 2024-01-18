@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/transfer/seqAssociation001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071001
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)seqAssociation001.f
+#OUTPUT    = seqAssociation001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = seqAssociation001$(OBJ)
+#OUTPUT    = seqAssociation001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = seqAssociation001$(EXE)
+#STDOUT    = seqAssociation001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)seqAssociation001$(product)vf) seqAssociation001.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

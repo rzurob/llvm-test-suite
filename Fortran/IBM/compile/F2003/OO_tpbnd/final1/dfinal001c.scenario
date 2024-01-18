@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_tpbnd/final1/dfinal001c.scenario
+#FEATURE = OO_tpbnd
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dfinal001c.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dfinal001c$(OBJ)
+#STDERR    = dfinal001c.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)dfinal001c$(product)vf) dfinal001c.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

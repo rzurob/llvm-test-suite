@@ -1,0 +1,26 @@
+-INF, -INF
+-iNF, -inf
+-inF, -inf
+-inf, -infinity
+-Inf, -InFiNIty
+-INf, -infinity
+-INFINITY, -INF
+-iNFinity, -inf
+-inFiNity, -inf
+-infinity, -infinity
+-Infinity, -InFiNIty
+-INfinity, -infinity
+-INFINITY, -INF
+-iNFinity, -inf
+-inFinity, -inf
+-infinity, -infinity
+-Infinity, -InFiNIty
+-INfinitY, -infinity
+ -InF, -Infinity
+  -Infinity,  -infinity
+  -InF,-inf
+  -inf,-inf
+  -inf,-infinity
+ -Infinity,-infinity
+ -infinity, -inf
+  -INFINITY,-inf

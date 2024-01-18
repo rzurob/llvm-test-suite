@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME		= F2008/generic/func/generic_allocatable_pointer_d001.scenario
+#FEATURE        = #917301 F2008: Generic resolution extensions
+#CREATOR        = Grigor Nikolov
+#DATE           = 20120629
+#TEST_TYPE      = Functional
+#KEYWORDS       = F2008 GENERIC resolution
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)generic_allocatable_pointer_d001.f
+#OUTPUT		= generic_allocatable_pointer_d001$(OBJ)
+#STDOUT         = generic_allocatable_pointer_d001.out
+#STDERR         = generic_allocatable_pointer_d001.out
+#VALIDRCS       = $(RC_FAIL)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT          = generic_allocatable_pointer_d001.out $($(tcasedir)generic_allocatable_pointer_d001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

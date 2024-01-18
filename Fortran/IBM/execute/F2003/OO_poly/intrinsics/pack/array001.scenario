@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/pack/array001.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050221
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)array001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = array001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = array001$(OBJ)
+#OUTPUT    = array001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = array001$(EXE)
+#STDOUT    = array001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)array001$(product)vf) array001.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

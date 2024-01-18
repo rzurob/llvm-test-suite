@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME = allocMoldEnhexec11.scenario
+#FEATURE = Allocate stmt f2008 enhancement
+#CREATOR = Charu Jain
+#DATE    = 20150702
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF2008_COMPILE
+
+#INPUT     = $(tcasedir)allocMoldEnhexec11.f
+#OUTPUT    = allocMoldEnhexec11$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2008_LINK
+
+#INPUT     = allocMoldEnhexec11$(OBJ)
+#OUTPUT    = allocMoldEnhexec11$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = allocMoldEnhexec11$(EXE)
+#STDOUT    = allocMoldEnhexec11.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = allocMoldEnhexec11.out $(tcasedir)allocMoldEnhexec11.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

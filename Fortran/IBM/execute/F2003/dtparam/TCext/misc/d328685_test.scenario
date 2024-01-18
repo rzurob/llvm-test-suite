@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/misc/d328685_test.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of misc/*
+#DATE      = 20071107
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)d328685_test.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = d328685_test$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#INPUT     = d328685_test$(OBJ)
+#OUTPUT    = d328685_test$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d328685_test$(EXE)
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)d328685_test.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = d328685_test$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = d328685_test$(OBJ)
+#OUTPUT    = d328685_test$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d328685_test$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

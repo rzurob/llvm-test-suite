@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2003/dtparam/intrinsics/pack/fAsLenp12b.scenario
+#FEATURE = dtp intrinsics
+#CREATOR = Adrian Green
+#DATE    = 20080821
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)fAsLenp12b.f
+#OUTPUT   = fAsLenp12b$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = fAsLenp12b$(OBJ)
+#OUTPUT   = fAsLenp12b$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fAsLenp12b$(EXE)
+#STDOUT   = fAsLenp12b.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $(tcasedir)fAsLenp12b.vf fAsLenp12b.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

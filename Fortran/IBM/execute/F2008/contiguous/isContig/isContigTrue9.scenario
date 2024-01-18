@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/contiguous/isContig/isContigTrue9.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20101028
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)isContigTrue9.f
+#OUTPUT    = isContigTrue9$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = isContigTrue9$(OBJ)
+#OUTPUT    = isContigTrue9$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = isContigTrue9$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

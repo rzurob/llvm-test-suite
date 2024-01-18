@@ -1,0 +1,9 @@
+** m   === End of Compilation 1 ===
+"Null1.f", line 80.3: 1515-136 (S) The procedure pointer has 1 arguments.  The procedure pointer assignment target must have the same number of arguments.
+"Null1.f", line 82.3: 1515-136 (S) The procedure pointer has 1 arguments.  The procedure pointer assignment target must have the same number of arguments.
+"Null1.f", line 85.16: 1516-263 (S) The MOLD argument of the NULL intrinsic must have the POINTER or ALLOCATABLE attribute.
+"Null1.f", line 87.3: 1515-136 (S) The procedure pointer has 1 arguments.  The procedure pointer assignment target must have the same number of arguments.
+"Null1.f", line 89.3: 1515-136 (S) The procedure pointer has 0 arguments.  The procedure pointer assignment target must have the same number of arguments.
+"Null1.f", line 90.3: 1515-136 (S) The procedure pointer has 0 arguments.  The procedure pointer assignment target must have the same number of arguments.
+** null1   === End of Compilation 2 ===
+1501-511  Compilation failed for file Null1.f.

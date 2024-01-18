@@ -1,0 +1,116 @@
+"acetint21d.f", line 45.23: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint21d.f", line 46.23: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint21d.f", line 47.27: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint21d.f", line 48.27: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint21d.f", line 50.23: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint21d.f", line 51.23: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint21d.f", line 52.27: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint21d.f", line 53.27: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint21d.f", line 55.23: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint21d.f", line 56.23: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint21d.f", line 57.27: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint21d.f", line 58.27: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint21d.f", line 60.34: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint21d.f", line 61.34: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint21d.f", line 64.22: 1514-214 (E) Invalid KIND number for CHARACTER. Assuming default KIND.  Acceptable value(s): 1
+"acetint21d.f", line 65.22: 1514-214 (E) Invalid KIND number for CHARACTER. Assuming default KIND.  Acceptable value(s): 1
+"acetint21d.f", line 66.23: 1514-214 (E) Invalid KIND number for CHARACTER. Assuming default KIND.  Acceptable value(s): 1
+"acetint21d.f", line 67.23: 1514-214 (E) Invalid KIND number for CHARACTER. Assuming default KIND.  Acceptable value(s): 1
+"acetint21d.f", line 69.25: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"acetint21d.f", line 70.30: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"acetint21d.f", line 71.28: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"acetint21d.f", line 72.28: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"acetint21d.f", line 74.25: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"acetint21d.f", line 75.30: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"acetint21d.f", line 76.28: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"acetint21d.f", line 77.28: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"acetint21d.f", line 80.12: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint21d.f", line 81.12: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint21d.f", line 82.24: 1516-036 (S) Entity len has undefined type.
+"acetint21d.f", line 82.27: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint21d.f", line 82.28: 1515-022 (S) Syntax Error: Extra token " * " was found. The token is ignored.
+"acetint21d.f", line 83.27: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint21d.f", line 83.28: 1515-022 (S) Syntax Error: Extra token " : " was found. The token is ignored.
+"acetint21d.f", line 85.12: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint21d.f", line 85.25: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acetint21d.f", line 85.26: 1515-022 (S) Syntax Error: Extra token " 1 " was found. The token is ignored.
+"acetint21d.f", line 86.12: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint21d.f", line 86.25: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acetint21d.f", line 86.26: 1515-022 (S) Syntax Error: Extra token " 1 " was found. The token is ignored.
+"acetint21d.f", line 87.27: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint21d.f", line 87.28: 1515-022 (S) Syntax Error: Extra token " * " was found. The token is ignored.
+"acetint21d.f", line 87.29: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acetint21d.f", line 87.30: 1515-022 (S) Syntax Error: Extra token " 1 " was found. The token is ignored.
+"acetint21d.f", line 88.27: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint21d.f", line 88.28: 1515-022 (S) Syntax Error: Extra token " : " was found. The token is ignored.
+"acetint21d.f", line 88.29: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acetint21d.f", line 88.30: 1515-022 (S) Syntax Error: Extra token " 1 " was found. The token is ignored.
+"acetint21d.f", line 90.12: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint21d.f", line 90.25: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acetint21d.f", line 90.26: 1515-022 (S) Syntax Error: Extra token " kind " was found. The token is ignored.
+"acetint21d.f", line 90.30: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint21d.f", line 90.31: 1515-022 (S) Syntax Error: Extra token " 1 " was found. The token is ignored.
+"acetint21d.f", line 91.12: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint21d.f", line 91.25: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acetint21d.f", line 91.26: 1515-022 (S) Syntax Error: Extra token " kind " was found. The token is ignored.
+"acetint21d.f", line 91.30: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint21d.f", line 91.31: 1515-022 (S) Syntax Error: Extra token " 1 " was found. The token is ignored.
+"acetint21d.f", line 92.27: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint21d.f", line 92.28: 1515-022 (S) Syntax Error: Extra token " * " was found. The token is ignored.
+"acetint21d.f", line 92.29: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acetint21d.f", line 92.30: 1515-022 (S) Syntax Error: Extra token " kind " was found. The token is ignored.
+"acetint21d.f", line 92.34: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint21d.f", line 92.35: 1515-022 (S) Syntax Error: Extra token " 1 " was found. The token is ignored.
+"acetint21d.f", line 93.27: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint21d.f", line 93.28: 1515-022 (S) Syntax Error: Extra token " : " was found. The token is ignored.
+"acetint21d.f", line 93.29: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acetint21d.f", line 93.30: 1515-022 (S) Syntax Error: Extra token " kind " was found. The token is ignored.
+"acetint21d.f", line 93.34: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint21d.f", line 93.35: 1515-022 (S) Syntax Error: Extra token " 1 " was found. The token is ignored.
+"acetint21d.f", line 95.24: 1516-036 (S) Entity kind has undefined type.
+"acetint21d.f", line 95.28: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint21d.f", line 95.29: 1515-022 (S) Syntax Error: Extra token " 1 " was found. The token is ignored.
+"acetint21d.f", line 95.30: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acetint21d.f", line 95.31: 1515-022 (S) Syntax Error: Extra token " len " was found. The token is ignored.
+"acetint21d.f", line 95.34: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint21d.f", line 95.35: 1515-022 (S) Syntax Error: Extra token " * " was found. The token is ignored.
+"acetint21d.f", line 96.28: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint21d.f", line 96.29: 1515-022 (S) Syntax Error: Extra token " 1 " was found. The token is ignored.
+"acetint21d.f", line 96.30: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acetint21d.f", line 96.31: 1515-022 (S) Syntax Error: Extra token " len " was found. The token is ignored.
+"acetint21d.f", line 96.34: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint21d.f", line 96.35: 1515-022 (S) Syntax Error: Extra token " : " was found. The token is ignored.
+"acetint21d.f", line 98.25: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acetint21d.f", line 98.26: 1515-022 (S) Syntax Error: Extra token " 2 " was found. The token is ignored.
+"acetint21d.f", line 99.25: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acetint21d.f", line 99.26: 1515-022 (S) Syntax Error: Extra token " kind " was found. The token is ignored.
+"acetint21d.f", line 99.30: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint21d.f", line 99.31: 1515-022 (S) Syntax Error: Extra token " 2 " was found. The token is ignored.
+"acetint21d.f", line 100.28: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint21d.f", line 100.29: 1515-022 (S) Syntax Error: Extra token " 2 " was found. The token is ignored.
+"acetint21d.f", line 101.28: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint21d.f", line 101.29: 1515-022 (S) Syntax Error: Extra token " 2 " was found. The token is ignored.
+"acetint21d.f", line 101.30: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acetint21d.f", line 101.31: 1515-022 (S) Syntax Error: Extra token " len " was found. The token is ignored.
+"acetint21d.f", line 101.34: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint21d.f", line 101.35: 1515-022 (S) Syntax Error: Extra token " 1 " was found. The token is ignored.
+"acetint21d.f", line 103.25: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acetint21d.f", line 103.26: 1515-022 (S) Syntax Error: Extra token " un " was found. The token is ignored.
+"acetint21d.f", line 104.25: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acetint21d.f", line 104.26: 1515-022 (S) Syntax Error: Extra token " kind " was found. The token is ignored.
+"acetint21d.f", line 104.30: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint21d.f", line 104.31: 1515-022 (S) Syntax Error: Extra token " un " was found. The token is ignored.
+"acetint21d.f", line 105.28: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint21d.f", line 105.29: 1515-022 (S) Syntax Error: Extra token " un " was found. The token is ignored.
+"acetint21d.f", line 106.28: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint21d.f", line 106.29: 1515-022 (S) Syntax Error: Extra token " un " was found. The token is ignored.
+"acetint21d.f", line 106.31: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acetint21d.f", line 106.32: 1515-022 (S) Syntax Error: Extra token " len " was found. The token is ignored.
+"acetint21d.f", line 106.35: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"acetint21d.f", line 106.36: 1515-022 (S) Syntax Error: Extra token " 1 " was found. The token is ignored.
+"acetint21d.f", line 108.25: 1515-019 (S) Syntax is incorrect.
+"acetint21d.f", line 109.25: 1515-019 (S) Syntax is incorrect.
+"acetint21d.f", line 110.28: 1515-019 (S) Syntax is incorrect.
+"acetint21d.f", line 111.28: 1515-019 (S) Syntax is incorrect.
+** acetint21d   === End of Compilation 1 ===
+1501-511  Compilation failed for file acetint21d.f.

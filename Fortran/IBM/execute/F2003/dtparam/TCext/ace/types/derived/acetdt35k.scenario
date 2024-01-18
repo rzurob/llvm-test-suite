@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/derived/acetdt35k.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement	\
+				AC's in Static Initialisation)
+#CREATOR	= Glen Mateer (based on work by David Forster)
+#DATE		= 20080115
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt35k.f
+#OUTPUT		= acetdt35k$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt35k$(OBJ)
+#OUTPUT		= acetdt35k$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt35k$(EXE)
+#STDOUT		= acetdt35k.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -r1e-6
+#INPUT		= $($(tcasedir)acetdt35k$(product)vf) acetdt35k.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

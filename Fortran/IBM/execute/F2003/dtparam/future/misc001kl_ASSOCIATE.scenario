@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/formatted/namelist/misc001kl_ASSOCIATE.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070705
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)misc001kl_ASSOCIATE.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = misc001kl_ASSOCIATE$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = misc001kl_ASSOCIATE$(OBJ)
+#OUTPUT    = misc001kl_ASSOCIATE$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = misc001kl_ASSOCIATE$(EXE)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)misc001kl_ASSOCIATE$(product)vf) misc001kl_ASSOCIATE.1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

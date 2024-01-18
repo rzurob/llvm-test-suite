@@ -1,0 +1,17 @@
+intrinsictype01f.scenario
+intrinsictype02f.scenario
+intrinsictype03f.scenario
+intrinsictype04f.scenario
+intrinsictype05f.scenario
+intrinsictype06f.scenario
+intrinsictype07f.scenario
+intrinsictype08f.scenario
+intrinsictype09f.scenario
+intrinsictype10f.scenario
+intrinsictype11f.scenario
+intrinsictype12f.scenario
+intrinsictype13f.scenario
+intrinsictype14f.scenario
+intrinsictype15f.scenario
+intrinsictype17f.scenario
+intrinsictype18f.scenario

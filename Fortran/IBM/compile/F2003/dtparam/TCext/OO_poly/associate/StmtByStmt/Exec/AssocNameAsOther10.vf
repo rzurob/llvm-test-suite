@@ -1,0 +1,7 @@
+"AssocNameAsOther10.f", line 63.20: 1514-692 (S) Type parameter k1 must be specified in this derived-type specifier.
+"AssocNameAsOther10.f", line 66.20: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"AssocNameAsOther10.f", line 69.20: 1514-188 (S) Identifier sub was defined elsewhere with conflicting attributes. Identifier is ignored in this context.
+"AssocNameAsOther10.f", 1513-005 (E) PROGRAM name assocnameasother10 has been used in a context which is not allowed.
+"AssocNameAsOther10.f", 1516-036 (S) Entity cmblk has undefined type.
+** assocnameasother10   === End of Compilation 1 ===
+1501-511  Compilation failed for file AssocNameAsOther10.f.

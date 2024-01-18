@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/stmt/openAccessSpec03.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS= Specifier in I/O Statements
+#CREATOR	= GM Manual Creation
+#DATE		= 20060220
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)openAccessSpec03.dat .
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)openAccessSpec03.f
+#OUTPUT		= openAccessSpec03$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= openAccessSpec03$(OBJ)
+#OUTPUT		= openAccessSpec03$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= openAccessSpec03$(EXE)
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)openAccessSpec03$(product)vf) fort.4
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

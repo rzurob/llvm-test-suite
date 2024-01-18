@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=roundR8WriteEdit02.scenario
+#FEATURE = 289037
+#CREATOR = William Zhang
+#DATE    = 07/24/2006
+#TEST_TYPE= functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)roundR8WriteEdit02.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = roundR8WriteEdit02$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = roundR8WriteEdit02$(OBJ)
+#OUTPUT    = roundR8WriteEdit02$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = roundR8WriteEdit02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

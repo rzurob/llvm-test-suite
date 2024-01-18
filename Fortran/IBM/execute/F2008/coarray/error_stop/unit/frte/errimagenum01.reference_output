@@ -1,0 +1,15 @@
+<Image 1>
+<Image 1>  Signal received: SIGTRAP - Trace trap
+<Image 1>    Signal generated for floating-point exception:
+<Image 1>      FP division by zero
+<Image 1>
+<Image 1>  Instruction that generated the exception:
+<Image 1>    fdivs fr01,fr01,fr02
+<Image 1>    Source Operand values:
+<Image 1>      fr01 =   1.00000000000000e+00
+<Image 1>      fr02 =   0.00000000000000e+00
+<Image 1>
+<Image 1>  Traceback:
+<Image 1>    Offset in procedure errimagenum01
+<Image 1>    Offset in procedure _pthread_body
+<Image 1>    --- End of call chain ---

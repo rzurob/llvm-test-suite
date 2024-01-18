@@ -1,0 +1,46 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       fmodule
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    F_ALT_COMPILE
+#INPUT=  $(tcasedir)mathmodule.f
+#OUTPUT= mathmodule$(OBJ)
+#ENDCMD
+
+#CMD=    F_ALT_COMPILE
+#INPUT=  $(tcasedir)utilities.f
+#OUTPUT= utilities$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_COMPILE
+#INPUT=  $(tcasedir)main.f
+#OUTPUT= main$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_LINK
+#INPUT=  mathmodule$(OBJ) utilities$(OBJ) main$(OBJ)
+#OUTPUT= fmodule$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fmodule$(EXE)
+#STDOUT=  fmodule.out
+#ENDCMD
+
+#CMD = DIFF
+#INPUT = fmodule.out $($(tcasedir)fmodule$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

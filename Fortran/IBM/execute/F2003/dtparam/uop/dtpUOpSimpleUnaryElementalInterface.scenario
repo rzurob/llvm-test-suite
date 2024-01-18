@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpSimpleUnaryElementalInterface.scenario
+#FEATURE   = User-Defined Operators - correct unary operators are used for a given TKR (elemental) (generic interface)
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpSimpleUnaryElementalInterface.f
+#OUTPUT    = dtpUOpSimpleUnaryElementalInterface$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpSimpleUnaryElementalInterface$(OBJ)
+#OUTPUT    = dtpUOpSimpleUnaryElementalInterface$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpSimpleUnaryElementalInterface$(EXE)
+#STDOUT    = dtpUOpSimpleUnaryElementalInterface.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUOpSimpleUnaryElementalInterface$(product)vf) dtpUOpSimpleUnaryElementalInterface.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,9 @@
+** m   === End of Compilation 1 ===
+"selectType003.f", line 52.17: 1514-645 (S) abstractbase is an abstract type. abstractbase is not permitted in this context.
+"selectType003.f", line 53.9: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"selectType003.f", line 57.17: 1514-645 (S) abstractbase is an abstract type. abstractbase is not permitted in this context.
+"selectType003.f", line 58.9: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"selectType003.f", line 59.17: 1514-645 (S) abstractchild is an abstract type. abstractchild is not permitted in this context.
+"selectType003.f", line 60.9: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+** selecttype003   === End of Compilation 2 ===
+1501-511  Compilation failed for file selectType003.f.

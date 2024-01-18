@@ -1,0 +1,4 @@
+IOSTAT= Specifier  9956 18679     0
+ REWIND(ERR=) < -1 > 1525-001 The READ statement on the file pendingRewind02.dat cannot be completed because the end of the file was reached.  The program will stop.
+                                                                                                               
+   ERR= Specifier  9956 18679     0

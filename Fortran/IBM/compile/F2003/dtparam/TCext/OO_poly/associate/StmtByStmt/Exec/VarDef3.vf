@@ -1,0 +1,3 @@
+"VarDef3.f", line 60.5: 1511-139 (S) Associate name as%intp is not associated with an entity that can be defined. as%intp must not be redefined or become undefined.
+** vardef3   === End of Compilation 1 ===
+1501-511  Compilation failed for file VarDef3.f.

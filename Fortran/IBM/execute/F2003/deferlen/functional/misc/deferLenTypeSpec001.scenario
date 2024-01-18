@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/deferlen/functional/misc/deferLenTypeSpec001.scenario
+#FEATURE = character with deferred length type parameter
+#CREATOR = Robert Ma
+#DATE    = 20060501
+#TEST_TYPE=sanity
+#ENDDOC	
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)deferLenTypeSpec001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = deferLenTypeSpec001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = deferLenTypeSpec001$(OBJ)
+#OUTPUT    = deferLenTypeSpec001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = deferLenTypeSpec001$(EXE)
+#STDOUT    = deferLenTypeSpec001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = deferLenTypeSpec001.out $(tcasedir)deferLenTypeSpec001.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

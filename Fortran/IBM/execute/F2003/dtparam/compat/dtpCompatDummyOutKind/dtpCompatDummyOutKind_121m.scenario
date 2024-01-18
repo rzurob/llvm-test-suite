@@ -1,0 +1,57 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/compat/dtpCompatDummyOutKind/dtpCompatDummyOutKind_121m.scenario
+#FEATURE   = Broken Compatability Warning - DTP code expects "old" code to copy extended type with KIND type parameter (success)
+! - manual compile, v12.1
+#CREATOR   = DF Manual Update
+#DATE      = 20090613
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT=linuxle
+#ENDENV
+
+#BEGINCONTROL
+
+! Compile "post-DTP" files with the latest version of the latest compiler,
+! link with manually compiled (with 12.1 gold) object files, and run.
+! run:  DTP with KIND parameters alone generates no error message
+
+!!Since the files are manually compiled already, we do not need this step:
+!! Caution: do not just uncomment the next few lines: the name of the output
+!! file contains the product chain, which can't be good - it's just there for
+!! consistency with the next step, and to document the process.
+!#CMD      = V121_XLF2003_COMPILE
+!#INPUT    = $(tcasedir)dtpCompatDummyOutKindPreDTP.f
+!#OUTPUT   = $(dtpCompatDummyOutKindPreDTP.121$(Q32_64_MODE)$(product)$(OBJ))
+!#ENDCMD
+
+!!BUT: we do need the .mod file, which we copy here:
+#CMD       = COPY
+#INPUT     = $($(tcasedir)dtpcompatdummyoutkindpredtpmod.121$(Q32_64_MODE)$(product).mod)
+#OUTPUT    = dtpcompatdummyoutkindpredtpmod.mod
+#ENDCMD
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)dtpCompatDummyOutKindPostDTP.f
+#OUTPUT    = dtpCompatDummyOutKindPostDTP$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = dtpCompatDummyOutKindPostDTP$(OBJ) $($(tcasedir)dtpCompatDummyOutKindPreDTP.121$(Q32_64_MODE)$(product)$(OBJ))
+#OUTPUT    = dtpCompatDummyOutKind$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpCompatDummyOutKind$(EXE)
+#STDOUT    = dtpCompatDummyOutKind.out
+#STDERR    = dtpCompatDummyOutKind.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpCompatDummyOutKind$(product)vf) dtpCompatDummyOutKind.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

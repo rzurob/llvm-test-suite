@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/associate/basic/variableSelector02.scenario
+#FEATURE	= ASSOCIATE Contruct (with Derived Type Parameters) --	\
+				selector is a variable of Derived Type with Many Type Parameters
+#CREATOR	= Glen Mateer
+#DATE		= 20080707
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)variableSelector02.f
+#OUTPUT		= variableSelector02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= variableSelector02$(OBJ)
+#OUTPUT		= variableSelector02$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= variableSelector02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

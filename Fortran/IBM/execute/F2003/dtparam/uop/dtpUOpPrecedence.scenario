@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpPrecedence.scenario
+#FEATURE   = User-Defined Operators - correct pairings of operators and operands, given precedence (e.g., Ta+Tb*Tc yields plus(Ta,star(Tb,Tc))) - all same type
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpPrecedence.f
+#OUTPUT    = dtpUOpPrecedence$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpPrecedence$(OBJ)
+#OUTPUT    = dtpUOpPrecedence$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpPrecedence$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

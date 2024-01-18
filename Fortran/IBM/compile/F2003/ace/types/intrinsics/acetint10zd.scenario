@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint10zd.scenario
+#FEATURE	= Array constructor enhancement Intrinsic type specifier with incorrect KIND in assignment (COMPLEX)
+#CREATOR	= DF Manual Update
+#DATE		= 20060824
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint10zd.f
+#OUTPUT		= acetint10zd$(OBJ)
+#STDERR		= acetint10zd.stderr
+#ENDCMD
+
+#CMD            = XLDIFF
+#INPUT          = $(tcasedir)acetint10zd.vf acetint10zd.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

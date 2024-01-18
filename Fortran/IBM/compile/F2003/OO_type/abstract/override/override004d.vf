@@ -1,0 +1,5 @@
+"override004d.f", line 42.29: 1514-591 (S) Overridden binding setid, defined in type child1, has 2 arguments.  Overriding binding setid must have the same number of arguments.
+"override004d.f", line 48.29: 1514-591 (S) Overridden binding setid, defined in type child2, has 2 arguments.  Overriding binding setid must have the same number of arguments.
+** n   === End of Compilation 1 ===
+** override004d   === End of Compilation 2 ===
+1501-511  Compilation failed for file override004d.f.

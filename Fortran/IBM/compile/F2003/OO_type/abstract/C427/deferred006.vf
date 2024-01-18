@@ -1,0 +1,5 @@
+** m1   === End of Compilation 1 ===
+"deferred006.f", line 54.28: 1514-585 (S) The derived type b2 inheriting a deferred binding must be abstract.
+** m2   === End of Compilation 2 ===
+** deferred006   === End of Compilation 3 ===
+1501-511  Compilation failed for file deferred006.f.

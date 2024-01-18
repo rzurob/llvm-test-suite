@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/assignment/intrinsic/alloc/dtpIAABasicInternal006.scenario
+#FEATURE   = Intrinsic Assignment with Allocation - allocate basic DTP variable (container) with indirectly allocatable components via intrinsic assignment (in internal subroutine)
+#CREATOR   = DF Manual Update
+#DATE      = 20090522
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAABasicInternal006.f
+#OUTPUT    = dtpIAABasicInternal006$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAABasicInternal006$(OBJ)
+#OUTPUT    = dtpIAABasicInternal006$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAABasicInternal006$(EXE)
+#STDOUT    = dtpIAABasicInternal006.out
+#ENDCMD
+
+#CMD       = SORT
+#INPUT     = dtpIAABasicInternal006.out
+#STDOUT    = dtpIAABasicInternal006.out1
+#ENDCMD
+
+#CMD       = SORT
+#INPUT     = $($(tcasedir)dtpIAABasicInternal006$(product)vf)
+#STDOUT    = dtpIAABasicInternal006.vf1
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dtpIAABasicInternal006.vf1 dtpIAABasicInternal006.out1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

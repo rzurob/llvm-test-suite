@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/reshape/functionReturn007.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070928
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)functionReturn007.f
+#OUTPUT    = functionReturn007$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = functionReturn007$(OBJ)
+#OUTPUT    = functionReturn007$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = functionReturn007$(EXE)
+#STDOUT    = functionReturn007.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)functionReturn007$(product)vf) functionReturn007.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

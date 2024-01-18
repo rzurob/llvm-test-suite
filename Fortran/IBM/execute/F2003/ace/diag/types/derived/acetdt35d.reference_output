@@ -1,0 +1,28 @@
+** acetdt35dmod   === End of Compilation 1 ===
+"acetdt35d.f", line 78.37: 1514-496 (S) Variables which are allocatable objects, or are structures containing allocatable objects must not have the PARAMETER attribute, appear in DATA statements, or be initially defined in a type declaration statement.
+"acetdt35d.f", line 85.57: 1514-526 (S) The POINTER or ALLOCATABLE object can only be initialized to be NULL().
+"acetdt35d.f", line 86.64: 1514-526 (S) The POINTER or ALLOCATABLE object can only be initialized to be NULL().
+"acetdt35d.f", line 87.71: 1514-526 (S) The POINTER or ALLOCATABLE object can only be initialized to be NULL().
+"acetdt35d.f", line 88.78: 1514-526 (S) The POINTER or ALLOCATABLE object can only be initialized to be NULL().
+"acetdt35d.f", line 89.85: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"acetdt35d.f", line 90.92: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"acetdt35d.f", line 91.99: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"acetdt35d.f", line 92.106: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"acetdt35d.f", line 94.58: 1514-526 (S) The POINTER or ALLOCATABLE object can only be initialized to be NULL().
+"acetdt35d.f", line 95.65: 1514-526 (S) The POINTER or ALLOCATABLE object can only be initialized to be NULL().
+"acetdt35d.f", line 96.72: 1514-526 (S) The POINTER or ALLOCATABLE object can only be initialized to be NULL().
+"acetdt35d.f", line 97.79: 1514-526 (S) The POINTER or ALLOCATABLE object can only be initialized to be NULL().
+"acetdt35d.f", line 100.59: 1514-526 (S) The POINTER or ALLOCATABLE object can only be initialized to be NULL().
+"acetdt35d.f", line 101.66: 1514-526 (S) The POINTER or ALLOCATABLE object can only be initialized to be NULL().
+"acetdt35d.f", line 102.73: 1514-526 (S) The POINTER or ALLOCATABLE object can only be initialized to be NULL().
+"acetdt35d.f", line 103.80: 1514-526 (S) The POINTER or ALLOCATABLE object can only be initialized to be NULL().
+"acetdt35d.f", line 104.87: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"acetdt35d.f", line 105.94: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"acetdt35d.f", line 106.101: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"acetdt35d.f", line 107.108: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"acetdt35d.f", line 109.60: 1514-526 (S) The POINTER or ALLOCATABLE object can only be initialized to be NULL().
+"acetdt35d.f", line 110.67: 1514-526 (S) The POINTER or ALLOCATABLE object can only be initialized to be NULL().
+"acetdt35d.f", line 111.74: 1514-526 (S) The POINTER or ALLOCATABLE object can only be initialized to be NULL().
+"acetdt35d.f", line 112.81: 1514-526 (S) The POINTER or ALLOCATABLE object can only be initialized to be NULL().
+** acetdt35d   === End of Compilation 2 ===
+1501-511  Compilation failed for file acetdt35d.f.

@@ -1,0 +1,54 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = stop_unit2_caf.scenario
+#FEATURE    = F2008 extension to stop code
+#CREATOR    = Tarique Islam
+#DATE       = 20100929
+#TEST_TYPE  = Functional
+#ENDDOC
+
+! Scenario Environment Tags
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+
+#BEGINCONTROL
+
+  #CMD        = XLF2003_COMPILE
+  #INPUT      = $(tcasedir)stop_unit2_caf.f
+  #OPTS       = -qxlf2003=nostopexcept
+  #OUTPUT     = stop_unit2_caf$(OBJ)
+  #ENDCMD
+
+  #CMD        = XLF2003_LINK
+  #OPTS       = -qxlf2003=nostopexcept
+  #INPUT      = stop_unit2_caf$(OBJ)
+  #OUTPUT     = stop_unit2_caf$(EXE)
+  #ENDCMD
+
+  #CMD        = SET_DYN_ENV
+  #ENDCMD
+
+  #CMD        = MPRUN
+  #INPUT      = stop_unit2_caf$(EXE)
+  #STDERR     = stop_unit2_caf.err
+  #VALIDRCS   = 0
+  #ENDCMD
+
+  #CMD        = GREP
+  #OPTS       = "STOP 30"
+  #INPUT      = stop_unit2_caf.err
+  #ENDCMD
+
+  #CMD        = GREP
+  #OPTS       = "1525-705 The STOP statement with stop code 30 will terminate the program with return code 0."
+  #INPUT      = stop_unit2_caf.err
+  #ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

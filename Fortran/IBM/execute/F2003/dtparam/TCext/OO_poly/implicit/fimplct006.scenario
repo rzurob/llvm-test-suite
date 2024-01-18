@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/implicit/fimplct006.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070924
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fimplct006.f
+#OUTPUT    = fimplct006$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fimplct006$(OBJ)
+#OUTPUT    = fimplct006$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fimplct006$(EXE)
+#STDOUT    = fimplct006.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)fimplct006$(product)vf) fimplct006.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

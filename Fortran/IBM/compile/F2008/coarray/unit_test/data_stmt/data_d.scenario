@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=data_d.scenario
+#FEATURE = coarray in data stmt
+#CREATOR = Feng Ye
+#DATE    = 20100602
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#OPTS      = -qcaf=images=8
+#INPUT     = $(tcasedir)data_d.f
+#STDERR    = data_d.err
+#VALIDRCS  = $(RC_COMP_E)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = data_d.err  $($(tcasedir)data_d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

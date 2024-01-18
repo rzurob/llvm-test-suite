@@ -1,0 +1,11 @@
+"critical05d.f", line 14.8: 1516-341 (S) An image control statement must not appear within the CRITICAL construct.
+"critical05d.f", line 19.8: 1516-341 (S) An image control statement must not appear within the CRITICAL construct.
+"critical05d.f", line 24.8: 1516-341 (S) An image control statement must not appear within the CRITICAL construct.
+"critical05d.f", line 37.8: 1516-341 (S) An image control statement must not appear within the CRITICAL construct.
+"critical05d.f", line 38.8: 1516-341 (S) An image control statement must not appear within the CRITICAL construct.
+"critical05d.f", line 49.8: 1516-341 (S) An image control statement must not appear within the CRITICAL construct.
+"critical05d.f", line 50.8: 1516-341 (S) An image control statement must not appear within the CRITICAL construct.
+"critical05d.f", line 51.8: 1516-341 (S) An image control statement must not appear within the CRITICAL construct.
+"critical05d.f", line 55.6: 1516-256 (S) The CRITICAL construct is missing the corresponding END CRITICAL statement.
+** critical05d   === End of Compilation 1 ===
+1501-511  Compilation failed for file critical05d.f.

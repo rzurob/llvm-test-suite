@@ -1,0 +1,3 @@
+"missing_end_block_constr_name.f", 1516-246 (E) The construct name for the END BLOCK statement is missing.  The statement will be matched with the previous BLOCK statement.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file missing_end_block_constr_name.f.

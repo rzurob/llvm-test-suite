@@ -1,0 +1,44 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = errimagenum02.scenario
+#FEATURE   = 351605.31.2
+#CREATOR   = Xing Xue
+#DATE      = 08-10-10
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINENV
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_COARRAY_IMAGES<1>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = $(tcasedir)errimagenum02.f
+#OUTPUT    = errimagenum02$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_COARRAY_IMAGES<1>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = errimagenum02$(OBJ)
+#OUTPUT    = errimagenum02$(EXE)
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD       = RUN
+	#ENVAR     = XLFRTEOPTS=$(XLFRTEOPTS):errimagenum=yes:errloc=no
+	#ENVAR     = CAF_NUM_IMAGES=1
+	#ENVAR     = MP_PROCS=1
+	#INPUT     = errimagenum02$(EXE)
+	#STDERR    = errimagenum02.err
+	#VALIDRCS  = $(RC_FAIL)
+	#ENDCMD
+
+	#CMD       = DIFF
+	#INPUT     = errimagenum02.err $(tcasedir)errimagenum02.vf
+	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

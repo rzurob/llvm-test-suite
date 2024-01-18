@@ -1,0 +1,56 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop4/unit_pattr/dummy-name-default.scenario
+#FEATURE = cintrop4 tests - regression run bucket
+#CREATOR = CPR Manual update
+#DATE    = 20060811
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)dummy-name-default.f
+#STDERR    = dummy-name-default.out1
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = dummy-name-default$(OBJ)
+#OUTPUT    = dummy-name-default$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dummy-name-default$(EXE)
+#STDOUT    = dummy-name-default.out2
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dummy-name-default.out2 $(tcasedir)dummy-name-default.vf
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)dummy-name-default.f
+#STDERR    = dummy-name-default.out1
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = dummy-name-default$(OBJ)
+#OUTPUT    = dummy-name-default$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dummy-name-default$(EXE)
+#STDOUT    = dummy-name-default.out2
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dummy-name-default.out2 $(tcasedir)dummy-name-default.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

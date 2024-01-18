@@ -1,0 +1,124 @@
+!*********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : kindArgShape8
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Jun. 29, 2006
+!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*
+!*  SECONDARY FUNCTIONS TESTED : SHAPE 
+!*
+!*  REFERENCE                  : Feature Number 289083 
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  : -qfree=f90
+!*
+!*  KEYWORD(S)                 :
+!*  TARGEK(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*
+!*   
+!*  Result Value. The value of the result is the shape of SOURCE. 
+!*
+!*  - scalar 
+!*    
+!*  (324382) 
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+
+  PROGRAM kindArgShape8
+  IMPLICIT NONE
+
+  INTEGER(1), ALLOCATABLE :: I1(:,:)
+  INTEGER(2), ALLOCATABLE :: I2(:,:)
+  INTEGER(4), ALLOCATABLE :: I4(:,:)
+  INTEGER(8), ALLOCATABLE :: I8(:,:)
+
+  LOGICAl(1), POINTER     :: L1(:,:)
+  LOGICAl(2), POINTER     :: L2(:,:)
+  LOGICAl(4), POINTER     :: L4(:,:)
+  LOGICAl(8), POINTER     :: L8(:,:)
+
+  REAL(4),    ALLOCATABLE :: R4(:,:)
+  REAL(8),    ALLOCATABLE :: R8(:,:)
+  REAL(16),   ALLOCATABLE :: R6(:,:)
+
+  COMPLEX(4),  POINTER    :: Z4(:,:)
+  COMPLEX(8),  POINTER    :: Z8(:,:)
+  COMPLEX(16), POINTER    :: Z6(:,:)
+
+  CHARACTER(:), POINTER   :: C(:,:)
+
+  INTEGER, PARAMETER      :: II(2)=(/3,3/)
+
+
+  ALLOCATE(I1(-1:1,127:129))
+  ALLOCATE(I2(-1:1,127:129))
+  ALLOCATE(I4(-1:1,127:129))
+  ALLOCATE(I8(-1:1,127:129))
+
+  IF (ANY( SHAPE(SOURCE=I1, KIND=I1%KIND )  .NE. II ))  STOP 11
+  IF (KIND(SHAPE(SOURCE=I1, KIND=I1%KIND )) .NE. 1 )    STOP 12
+  IF (ANY( SHAPE(SOURCE=I2, KIND=I2%KIND )  .NE. II ))  STOP 13
+  IF (KIND(SHAPE(SOURCE=I2, KIND=I2%KIND )) .NE. 2 )    STOP 14
+  IF (ANY( SHAPE(SOURCE=I4, KIND=I4%KIND )  .NE. II ))  STOP 15
+  IF (KIND(SHAPE(SOURCE=I4, KIND=I4%KIND )) .NE. 4 )    STOP 16
+  IF (ANY( SHAPE(SOURCE=I8, KIND=I8%KIND )  .NE. II ))  STOP 17
+  IF (KIND(SHAPE(SOURCE=I8, KIND=I8%KIND )) .NE. 8 )    STOP 18
+
+
+  ALLOCATE(L1(-1:1,127:129))
+  ALLOCATE(L2(-1:1,127:129))
+  ALLOCATE(L4(-1:1,127:129))
+  ALLOCATE(L8(-1:1,127:129))
+
+  IF (ANY( SHAPE(SOURCE=L1, KIND=L1%KIND )  .NE. II ))  STOP 21
+  IF (KIND(SHAPE(SOURCE=L1, KIND=L1%KIND )) .NE. 1 )    STOP 22
+  IF (ANY( SHAPE(SOURCE=L2, KIND=L2%KIND )  .NE. II ))  STOP 23
+  IF (KIND(SHAPE(SOURCE=L2, KIND=L2%KIND )) .NE. 2 )    STOP 24
+  IF (ANY( SHAPE(SOURCE=L4, KIND=L4%KIND )  .NE. II ))  STOP 25
+  IF (KIND(SHAPE(SOURCE=L4, KIND=L4%KIND )) .NE. 4 )    STOP 26
+  IF (ANY( SHAPE(SOURCE=L8, KIND=L8%KIND )  .NE. II ))  STOP 27
+  IF (KIND(SHAPE(SOURCE=L8, KIND=L8%KIND )) .NE. 8 )    STOP 28
+
+
+  ALLOCATE(R4(-1:1,127:129))
+  ALLOCATE(R8(-1:1,127:129))
+  ALLOCATE(R6(-1:1,127:129))
+
+  IF (ANY( SHAPE(SOURCE=R4, KIND=R4%KIND )  .NE. II ))  STOP 31
+  IF (KIND(SHAPE(SOURCE=R4, KIND=R4%KIND )) .NE. 4 )    STOP 32
+  IF (ANY( SHAPE(SOURCE=R8, KIND=R8%KIND )  .NE. II ))  STOP 33
+  IF (KIND(SHAPE(SOURCE=R8, KIND=R8%KIND )) .NE. 8 )    STOP 34
+  IF (ANY( SHAPE(SOURCE=R6, KIND=R6%KIND-8) .NE. II ))  STOP 35
+  IF (KIND(SHAPE(SOURCE=R6, KIND=R6%KIND-8)).NE. 8 )    STOP 36
+
+
+  ALLOCATE(Z4(-1:1,127:129))
+  ALLOCATE(Z8(-1:1,127:129))
+  ALLOCATE(Z6(-1:1,127:129))
+
+  IF (ANY( SHAPE(SOURCE=Z4, KIND=Z4%KIND )     .NE. II ))  STOP 41
+  IF (KIND(SHAPE(SOURCE=Z4, KIND=Z4%KIND ))    .NE. 4 )    STOP 42
+  IF (ANY( SHAPE(SOURCE=Z8, KIND=Z8%KIND )     .NE. II ))  STOP 43
+  IF (KIND(SHAPE(SOURCE=Z8, KIND=Z8%KIND ))    .NE. 8 )    STOP 44
+  IF (ANY( SHAPE(SOURCE=Z6, KIND=Z6%KIND-12 )  .NE. II ))  STOP 45
+  IF (KIND(SHAPE(SOURCE=Z6, KIND=Z6%KIND-12 )) .NE. 4 )    STOP 46
+
+
+  ALLOCATE(C(-1:1,127:129), SOURCE="123")
+
+  IF (ANY( SHAPE(SOURCE=C, KIND=C%KIND )  .NE. II ))  STOP 51
+  IF (KIND(SHAPE(SOURCE=C, KIND=C%KIND )) .NE. 1 )    STOP 52
+
+  END
+

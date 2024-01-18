@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/typCompatible/diffDTpolyDT1.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071105
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)diffDTpolyDT1.f
+#OUTPUT= diffDTpolyDT1$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  diffDTpolyDT1$(OBJ)
+#OUTPUT= diffDTpolyDT1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  diffDTpolyDT1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

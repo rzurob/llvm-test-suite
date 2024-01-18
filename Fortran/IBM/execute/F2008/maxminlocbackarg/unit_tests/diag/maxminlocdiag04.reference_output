@@ -1,0 +1,4 @@
+"maxminlocdiag04.f", line 5.26: 1518-257 (L) The intrinsic function maxloc (with these arguments) is not permitted in an initialization expression by the Fortran 90 standard.
+"maxminlocdiag04.f", line 8.12: 1518-256 (L) The intrinsic procedure maxloc (with these arguments) is not permitted by the Fortran 90 standard.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file maxminlocdiag04.f.

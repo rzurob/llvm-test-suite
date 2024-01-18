@@ -1,0 +1,30 @@
+  20.8   0111064A BIND(C)Ü
+  21.8   0111064A BIND(C)Ü
+  24.8   0111064A BIND(C)Ü
+  29.25   0111064A BIND(C)Ü
+  30.21   0111064A BIND(C)Ü
+  32.22   0111064A BIND(C)Ü
+  34.20   0111064A BIND(C)Ü
+  39.26   0111064A BIND(C)Ü
+  40.22   0111064A BIND(C)Ü
+  42.23   0111064A BIND(C)Ü
+  44.21   0111064A BIND(C)Ü
+** langlvl   === End of Compilation 1 ===
+  51.22   0111064A BIND(C)Ü
+  52.18   0111064A BIND(C)Ü
+** s   === End of Compilation 2 ===
+  54.19   0111064A BIND(C)Ü
+  56.17   0111064A BIND(C)Ü
+** f   === End of Compilation 3 ===
+  61.23   0111064A BIND(C)Ü
+  62.19   0111064A BIND(C)Ü
+** s2   === End of Compilation 4 ===
+  64.20   0111064A BIND(C)Ü
+  66.18   0111064A BIND(C)Ü
+** f2   === End of Compilation 5 ===
+  78.8   0111064A BIND(C)Ü
+  79.8   0111064A BIND(C)Ü
+  82.8   0111064A BIND(C)Ü
+  83.8   0111064A BIND(C)Ü
+** p   === End of Compilation 6 ===
+1501-510  Compilation successful for file langlvl.f.

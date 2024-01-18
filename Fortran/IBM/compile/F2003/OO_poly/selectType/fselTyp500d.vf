@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"fselTyp500d.f", line 70.18: 1514-645 (S) base is an abstract type. base is not permitted in this context.
+** fseltyp500d   === End of Compilation 2 ===
+1501-511  Compilation failed for file fselTyp500d.f.

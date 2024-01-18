@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/mix/generic/C460/C460_004.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070813
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)C460_004kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = C460_004kl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = C460_004kl$(OBJ)
+#OUTPUT    = C460_004kl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = C460_004kl$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)C460_004kl$(product)vf) C460_004kl.1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

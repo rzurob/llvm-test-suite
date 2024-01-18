@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/TCext/OO_dtio/formatted/namelist/array101bkl.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070620
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)array101bkl.1 .
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)array101bkl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = array101bkl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = array101bkl$(OBJ)
+#OUTPUT    = array101bkl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = array101bkl$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

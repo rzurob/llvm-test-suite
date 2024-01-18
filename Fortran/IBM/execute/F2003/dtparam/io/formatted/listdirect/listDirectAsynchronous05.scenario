@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/listdirect/listDirectAsynchronous05.scenario
+#FEATURE   = 360757
+#CREATOR   = Nancy Wang
+#DATE      = Jan. 27 2009
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=bgq
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = COPY
+#INPUT = $(tcasedir)listDirectAsynchronous05.dat .
+#ENDCMD
+
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)listDirectAsynchronous05.f
+#OUTPUT= listDirectAsynchronous05$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = listDirectAsynchronous05$(OBJ)
+#OUTPUT= listDirectAsynchronous05$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = listDirectAsynchronous05$(EXE)
+#STDOUT= listDirectAsynchronous05.out
+#ULIMIT= FILESIZE=5000
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT  = $($(tcasedir)listDirectAsynchronous05$(product)vf) listDirectAsynchronous05.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

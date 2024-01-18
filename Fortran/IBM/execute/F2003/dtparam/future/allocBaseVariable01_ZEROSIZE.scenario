@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/allocate/allocBaseVariable01_ZEROSIZE.scenario
+#FEATURE	= ALLOCATE() Statement with DTP
+#CREATOR	= Glen Mateer
+#DATE		= 20081204
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)allocBaseVariable01_ZEROSIZE.f
+#OUTPUT		= allocBaseVariable01_ZEROSIZE$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= allocBaseVariable01_ZEROSIZE$(OBJ)
+#OUTPUT		= allocBaseVariable01_ZEROSIZE$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= allocBaseVariable01_ZEROSIZE$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

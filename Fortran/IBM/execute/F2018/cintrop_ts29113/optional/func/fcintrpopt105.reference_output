@@ -1,0 +1,28 @@
+ 1
+ 2
+ 3
+ 4
+ 5
+ arg2 in sub1 not presnet
+ arg1 in sub1 not presnet
+ 2
+ 3
+ 3
+ 4
+ 4
+ 5
+ 1 101
+ 2 101
+ 1 102
+ 2 102
+ 1 103
+ 2 103
+ arg2 in func1 not presnet
+ F
+ arg1 in func1 not presnet
+ 1
+ 1
+ 1
+ 1
+ 1
+ F

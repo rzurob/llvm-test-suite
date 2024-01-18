@@ -1,0 +1,3 @@
+"error_stop_do_label.f", line 37.6: 1511-004 (S) Type of statement specified may not be used to end a DO-loop or DO WHILE-loop.  Specify a proper statement type.
+** error_stop_do_label   === End of Compilation 1 ===
+1501-511  Compilation failed for file error_stop_do_label.f.

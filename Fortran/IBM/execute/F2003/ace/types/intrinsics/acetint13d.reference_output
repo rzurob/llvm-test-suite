@@ -1,0 +1,8 @@
+** mod   === End of Compilation 1 ===
+"acetint13d.f", line 153.44: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acetint13d.f", line 153.60: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acetint13d.f", line 160.38: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acetint13d.f", line 160.54: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acetint13d.f", line 162.33: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+** acetint13d   === End of Compilation 2 ===
+1501-510  Compilation successful for file acetint13d.f.

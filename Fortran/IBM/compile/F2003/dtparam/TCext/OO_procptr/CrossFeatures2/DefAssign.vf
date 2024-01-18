@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"DefAssign.f", line 76.7: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"DefAssign.f", line 78.3: 1516-062 (S) The assignment statement operands must be compatible with intrinsic assignment or with a specific interface within an accessible defined assignment generic interface.
+"DefAssign.f", line 78.7: 1516-275 (S) Operands of a defined operator must not be procedure pointers.
+** defassign   === End of Compilation 2 ===
+1501-511  Compilation failed for file DefAssign.f.

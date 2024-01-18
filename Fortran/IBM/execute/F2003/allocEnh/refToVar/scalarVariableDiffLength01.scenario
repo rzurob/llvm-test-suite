@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/refToVar/scalarVariableDiffLength01.scenario
+#FEATURE	= Intrinsic Assignment -- variable and/or expr Reference variable
+#CREATOR	= GM Manual Creation
+#DATE		= 20061024
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)scalarVariableDiffLength01.f
+#OUTPUT		= scalarVariableDiffLength01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= scalarVariableDiffLength01$(OBJ)
+#OUTPUT		= scalarVariableDiffLength01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= scalarVariableDiffLength01$(EXE)
+#STDOUT		= scalarVariableDiffLength01.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)scalarVariableDiffLength01$(product)vf)	\
+				scalarVariableDiffLength01.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

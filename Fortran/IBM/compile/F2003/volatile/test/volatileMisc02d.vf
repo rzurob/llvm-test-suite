@@ -1,0 +1,4 @@
+"volatileMisc02d.f", line 27.16: 1514-171 (E) If VOLATILE is specified for a derived type name, it must be specified before the type name is used in a type declaration statement.
+"volatileMisc02d.f", 1518-360 (L) The name volatile was already encountered as the name of another entity in this scope.  This is not permitted by the Fortran 2003 standard, except that the name of a generic procedure may be the same as the name of one of its specific procedures, or the same as the name of a derived type.
+** volatilemisc02d   === End of Compilation 1 ===
+1501-511  Compilation failed for file volatileMisc02d.f.

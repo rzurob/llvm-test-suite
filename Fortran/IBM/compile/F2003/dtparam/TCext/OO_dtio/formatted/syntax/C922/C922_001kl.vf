@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"C922_001kl.f", line 79.3: 1512-092 (E) The EOR specifier can only be specified when ADVANCE=NO has also been specified.  Keyword is ignored.
+** c922_001kl   === End of Compilation 2 ===
+"C922_001kl.f", line 95.3: 1512-092 (E) The EOR specifier can only be specified when ADVANCE=NO has also been specified.  Keyword is ignored.
+** readformatted   === End of Compilation 3 ===
+** writeformatted   === End of Compilation 4 ===
+1501-510  Compilation successful for file C922_001kl.f.

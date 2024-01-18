@@ -1,0 +1,4 @@
+** mod   === End of Compilation 1 ===
+"bcdain23.f", line 56.12: 1514-161 (S) Identifier "sub" appearing as a specific interface procedure/result name was defined elsewhere with conflicting attributes.  This definition is ignored.
+** bcdain23   === End of Compilation 2 ===
+1501-511  Compilation failed for file bcdain23.f.

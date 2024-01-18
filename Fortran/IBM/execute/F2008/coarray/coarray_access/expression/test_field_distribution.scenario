@@ -1,0 +1,50 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)field_distribution.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = field_distribution$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)verify_field.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = verify_field$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)test_field_distribution.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = test_field_distribution$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = field_distribution$(OBJ) verify_field$(OBJ) test_field_distribution$(OBJ)
+#OUTPUT    = test_field_distribution$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = test_field_distribution$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

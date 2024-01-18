@@ -1,0 +1,8 @@
+** m   === End of Compilation 1 ===
+"fpAssgn001d.f", line 72.5: 1515-104 (S) The target in the pointer assignment statement is not unlimited polymorphic.  The pointer must be type compatible with the target, and the corresponding nondeferred type parameters must be equal.
+"fpAssgn001d.f", line 74.5: 1515-104 (S) The target in the pointer assignment statement is not unlimited polymorphic.  The pointer must be type compatible with the target, and the corresponding nondeferred type parameters must be equal.
+"fpAssgn001d.f", line 76.5: 1515-104 (S) The target in the pointer assignment statement is not unlimited polymorphic.  The pointer must be type compatible with the target, and the corresponding nondeferred type parameters must be equal.
+"fpAssgn001d.f", line 78.5: 1515-105 (S) The target in the pointer assignment statement is unlimited polymorphic.  The pointer must be unlimited polymorphic, or of a non-extensible derived type.
+"fpAssgn001d.f", line 80.5: 1515-104 (S) The target in the pointer assignment statement is not unlimited polymorphic.  The pointer must be type compatible with the target, and the corresponding nondeferred type parameters must be equal.
+** fpassgn001d   === End of Compilation 2 ===
+1501-511  Compilation failed for file fpAssgn001d.f.

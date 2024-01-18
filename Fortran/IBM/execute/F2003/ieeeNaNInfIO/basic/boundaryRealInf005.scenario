@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = boundaryRealInf005.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 12, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)boundaryRealInf005.f
+#OUTPUT   =  boundaryRealInf005$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  boundaryRealInf005$(OBJ)
+#OUTPUT   =  boundaryRealInf005$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  boundaryRealInf005$(EXE)
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = boundaryRealInf005.out $(tcasedir)boundaryRealInf005.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

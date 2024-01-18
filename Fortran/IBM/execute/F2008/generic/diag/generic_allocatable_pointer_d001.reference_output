@@ -1,0 +1,6 @@
+"generic_allocatable_pointer_d001.f", line 39.38: 1514-710 (S) Dummy argument y of procedure or binding assgn_alloc must not be specified with the ALLOCATABLE attribute. assgn_alloc will not be included in the ASSIGNMENT(=) generic interface.
+"generic_allocatable_pointer_d001.f", line 49.36: 1514-699 (S) Procedure "add_ptr" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "add_alloc", present and type incompatible, present with different kind type parameters, or present with a different rank.
+"generic_allocatable_pointer_d001.f", line 52.38: 1514-710 (S) Dummy argument y of procedure or binding assgn_ptr must not be specified with the POINTER attribute. assgn_ptr will not be included in the ASSIGNMENT(=) generic interface.
+** f2008_generic   === End of Compilation 1 ===
+"generic_allocatable_pointer_d001.f", line 106.5: 1514-219 (S) Unable to access module symbol file for module f2008_generic. Check path and file permissions of file. Use association not done for this module.
+1501-511  Compilation failed for file generic_allocatable_pointer_d001.f.

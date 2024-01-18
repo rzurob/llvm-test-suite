@@ -1,0 +1,14 @@
+ start
+ b - base:  100
+ b2 - base:  100
+ c - child: 101 >x<
+ c2 - child: 101 >x<
+ c2 - base:  101
+ d - kchild(4): 102 12481632
+ d2 - base:  102
+ e - lchild(*): 103 5 5 >abcde<
+ e2 - base:  103
+ f - grandchild(1,*): 99 >z< 3 3 >abc< 3 123 45 67 89 3 >def<
+ f%child - child: 99 >z<
+ f2 - child: 99 >z<
+ end

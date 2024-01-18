@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = nmlInputReal002.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 21, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)nmlInputReal002.dat
+#OUTPUT   = nmlInputReal002.dat
+#ENDCMD
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)nmlInputReal002.f
+#OUTPUT   =  nmlInputReal002$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  nmlInputReal002$(OBJ)
+#OUTPUT   =  nmlInputReal002$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  nmlInputReal002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

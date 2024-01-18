@@ -1,0 +1,16 @@
+ x - in main:
+ x%dta1= 1 2 3 4
+ x%dta2= 11 12 13 14 15
+ in sub:
+ d1%dta1= 1 2 3 4
+ d1%dta2= 11 12 13 14 15
+ d2%dta1= 0 0 0 0
+ d2%dta2= 0 0 0 0 0
+ y - in main:
+ y%dta1= 1 2 3 4
+ y%dta2= 11 12 13 14 15
+ in sub:
+ d1%dta1= 1 2 3 4
+ d1%dta2= 11 12 13 14 15
+ d2%dta1= 1 2 3 4
+ d2%dta2= 11 12 13 14 15

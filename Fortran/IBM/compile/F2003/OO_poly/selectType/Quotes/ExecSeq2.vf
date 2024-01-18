@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"ExecSeq2.f", line 76.17: 1511-122 (E) Arithmetic IF statement refers to statement inside a DO-loop, IF block, CASE construct, SELECT TYPE construct, ASSOCIATE construct, WHERE construct or FORALL construct with label 2.  Transfer of control into a DO-loop, IF block, CASE construct, SELECT TYPE construct, ASSOCIATE construct, WHERE construct or FORALL construct is not permitted.
+** execseq2   === End of Compilation 2 ===
+1501-510  Compilation successful for file ExecSeq2.f.

@@ -1,0 +1,29 @@
+ 2 2 1 1
+ -1 -2 -3
+ abABefEF
+ 1 2 5 6
+ T F F F F T F
+ cdCD
+ 3 4
+ F T
+ -4 -5
+ cdCDghGH
+ 3 4 7 8
+ F T T
+ abAB
+ 1 2
+ T F F
+ -6
+ ghGH
+ 7 8
+ T
+ cdCD
+ 3 4
+ F T
+ -7 -8 -9
+ abAB
+ 1 2
+ T F F
+ ghGH
+ 7 8
+ T

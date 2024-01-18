@@ -1,0 +1,16 @@
+"cobound_d005.f", line 44.29: 1513-133 (S) KIND must be an integer constant.
+"cobound_d005.f", line 45.29: 1513-133 (S) KIND must be an integer constant.
+"cobound_d005.f", line 46.29: 1513-133 (S) KIND must be an integer constant.
+"cobound_d005.f", line 47.29: 1513-133 (S) KIND must be an integer constant.
+"cobound_d005.f", line 49.29: 1513-133 (S) KIND must be an integer constant.
+"cobound_d005.f", line 50.29: 1513-133 (S) KIND must be an integer constant.
+"cobound_d005.f", line 51.29: 1513-133 (S) KIND must be an integer constant.
+"cobound_d005.f", line 61.29: 1513-133 (S) KIND must be an integer constant.
+"cobound_d005.f", line 62.29: 1513-133 (S) KIND must be an integer constant.
+"cobound_d005.f", line 63.29: 1513-133 (S) KIND must be an integer constant.
+"cobound_d005.f", line 64.29: 1513-133 (S) KIND must be an integer constant.
+"cobound_d005.f", line 66.29: 1513-133 (S) KIND must be an integer constant.
+"cobound_d005.f", line 67.29: 1513-133 (S) KIND must be an integer constant.
+** main   === End of Compilation 1 ===
+** func1   === End of Compilation 2 ===
+1501-511  Compilation failed for file cobound_d005.f.

@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/syntax/fdtio003d2.scenario
+#FEATURE = OO_dtio/formatted
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fdtio003d2.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fdtio003d2$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = fdtio003d2.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = fdtio003d2.err $($(tcasedir)fdtio003d2$(product)vf)
+#ENDCMD
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,57 @@
+"findloc01d.f", line 45.1: 1514-185 (E) Double colon in type declaration statement is missing.  One is assumed.
+"findloc01d.f", line 86.18: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "findloc".
+"findloc01d.f", line 89.18: 1513-134 (S) Array argument required.
+"findloc01d.f", line 90.18: 1513-134 (S) Array argument required.
+"findloc01d.f", line 91.18: 1513-134 (S) Array argument required.
+"findloc01d.f", line 92.18: 1513-134 (S) Array argument required.
+"findloc01d.f", line 93.18: 1513-134 (S) Array argument required.
+"findloc01d.f", line 94.18: 1513-134 (S) Array argument required.
+"findloc01d.f", line 97.28: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "findloc".
+"findloc01d.f", line 98.28: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "findloc".
+"findloc01d.f", line 99.29: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "findloc".
+"findloc01d.f", line 100.29: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "findloc".
+"findloc01d.f", line 101.30: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "findloc".
+"findloc01d.f", line 102.28: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "findloc".
+"findloc01d.f", line 105.37: 1513-131 (S) DIM must be a scalar of type integer.
+"findloc01d.f", line 106.37: 1513-129 (S) The value of DIM is greater than the rank of the corresponding array argument.
+"findloc01d.f", line 107.37: 1513-130 (S) The DIM argument must have a value greater than or equal to 1.
+"findloc01d.f", line 110.40: 1513-132 (S) Conformable argument required.
+"findloc01d.f", line 111.40: 1513-132 (S) Conformable argument required.
+"findloc01d.f", line 112.42: 1513-132 (S) Conformable argument required.
+"findloc01d.f", line 113.42: 1513-132 (S) Conformable argument required.
+"findloc01d.f", line 114.44: 1513-132 (S) Conformable argument required.
+"findloc01d.f", line 115.40: 1513-132 (S) Conformable argument required.
+"findloc01d.f", line 117.40: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "findloc".
+"findloc01d.f", line 120.40: 1513-133 (S) KIND must be an integer constant.
+"findloc01d.f", line 121.40: 1513-143 (S) Invalid KIND value.
+"findloc01d.f", line 122.40: 1513-040 (S) The argument KIND must be a scalar.
+"findloc01d.f", line 124.40: 1513-133 (S) KIND must be an integer constant.
+"findloc01d.f", line 125.40: 1513-143 (S) Invalid KIND value.
+"findloc01d.f", line 126.40: 1513-040 (S) The argument KIND must be a scalar.
+"findloc01d.f", line 129.42: 1513-133 (S) KIND must be an integer constant.
+"findloc01d.f", line 130.42: 1513-143 (S) Invalid KIND value.
+"findloc01d.f", line 131.42: 1513-040 (S) The argument KIND must be a scalar.
+"findloc01d.f", line 134.42: 1513-133 (S) KIND must be an integer constant.
+"findloc01d.f", line 135.42: 1513-143 (S) Invalid KIND value.
+"findloc01d.f", line 136.42: 1513-040 (S) The argument KIND must be a scalar.
+"findloc01d.f", line 139.44: 1513-133 (S) KIND must be an integer constant.
+"findloc01d.f", line 140.44: 1513-143 (S) Invalid KIND value.
+"findloc01d.f", line 141.44: 1513-040 (S) The argument KIND must be a scalar.
+"findloc01d.f", line 144.40: 1513-133 (S) KIND must be an integer constant.
+"findloc01d.f", line 145.40: 1513-143 (S) Invalid KIND value.
+"findloc01d.f", line 146.40: 1513-040 (S) The argument KIND must be a scalar.
+"findloc01d.f", line 146.51: 1515-020 (S) Syntax Error: Token " ) " is missing. A token is supplied.
+"findloc01d.f", line 149.40: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "findloc".
+"findloc01d.f", line 150.40: 1513-040 (S) The argument BACK must be a scalar.
+"findloc01d.f", line 153.40: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "findloc".
+"findloc01d.f", line 154.40: 1513-040 (S) The argument BACK must be a scalar.
+"findloc01d.f", line 157.42: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "findloc".
+"findloc01d.f", line 158.42: 1513-040 (S) The argument BACK must be a scalar.
+"findloc01d.f", line 161.44: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "findloc".
+"findloc01d.f", line 162.44: 1513-040 (S) The argument BACK must be a scalar.
+"findloc01d.f", line 165.40: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "findloc".
+"findloc01d.f", line 166.40: 1513-040 (S) The argument BACK must be a scalar.
+"findloc01d.f", line 170.42: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "findloc".
+"findloc01d.f", line 171.42: 1513-040 (S) The argument BACK must be a scalar.
+** findloc_diag   === End of Compilation 1 ===
+1501-511  Compilation failed for file findloc01d.f.

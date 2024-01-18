@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/unit_tests/ptrassign024_workaround.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071217
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ptrassign024_workaround.f
+#OUTPUT    = ptrassign024_workaround$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = ptrassign024_workaround$(OBJ)
+#OUTPUT    = ptrassign024_workaround$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ptrassign024_workaround$(EXE)
+#STDERR    = ptrassign024_workaround.err
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/coarray/coarray_access/specific/procedure_call/csValueArg
+#FEATURE   = CAF coarray access (specific) - procedure call - pass coarray actual arguments to procedure, into dummy argument with value attribute
+#CREATOR   = DF
+#DATE      = 2010-10-04
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)csValueArg.f
+#OUTPUT = csValueArg$(OBJ)
+#STDOUT = csValueArg.out
+#STDERR = csValueArg.out
+#VALIDRCS = $(RC_FAIL)
+#ENDCMD
+
+#CMD    = XLDIFF
+#INPUT  = $($(tcasedir)csValueArg$(product)vf) csValueArg.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

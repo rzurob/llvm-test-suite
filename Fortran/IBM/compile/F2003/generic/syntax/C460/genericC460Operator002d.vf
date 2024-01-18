@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"genericC460Operator002d.f", line 59.19: 1516-065 (S) A generic interface defining the + operator is not accessible.  The operation cannot be resolved.
+"genericC460Operator002d.f", line 61.12: 1516-065 (S) A generic interface defining the + operator is not accessible.  The operation cannot be resolved.
+** genericc460operator002d   === End of Compilation 2 ===
+** add   === End of Compilation 3 ===
+1501-511  Compilation failed for file genericC460Operator002d.f.

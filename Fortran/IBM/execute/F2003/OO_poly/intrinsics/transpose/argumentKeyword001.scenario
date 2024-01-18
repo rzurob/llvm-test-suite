@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/intrinsics/transpose/argumentKeyword001.scenario
+#FEATURE = OO_poly/intrinsics tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)argumentKeyword001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = argumentKeyword001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  argumentKeyword001$(OBJ)
+#OUTPUT    = argumentKeyword001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = argumentKeyword001$(EXE)
+#STDOUT    = argumentKeyword001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)argumentKeyword001$(product)vf) argumentKeyword001.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

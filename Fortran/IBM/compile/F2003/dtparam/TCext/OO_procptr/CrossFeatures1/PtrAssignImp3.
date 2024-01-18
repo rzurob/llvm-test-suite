@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+** extsub   === End of Compilation 2 ===
+** extfun   === End of Compilation 3 ===
+"../OO_procptr/CrossFeatures1/PtrAssignImp3.f", line 86.14: 1515-122 (S) Procedure pointer procptr was declared as a subroutine, or is referenced as a subroutine.  The procedure pointer assignment target extfun must be declared as a subroutine.
+"../OO_procptr/CrossFeatures1/PtrAssignImp3.f", line 87.15: 1515-121 (S) Procedure pointer cprocptr was declared as a function, or is referenced as a function.  The procedure pointer assignment target extsub must be declared as a function.
+** ptrassignimp3   === End of Compilation 4 ===
+1501-511  Compilation failed for file PtrAssignImp3.f.

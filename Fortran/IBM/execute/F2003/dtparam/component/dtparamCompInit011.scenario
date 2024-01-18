@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/component/dtparamCompInit011.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamCompInit011.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamCompInit011$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtparamCompInit011$(OBJ)
+#OUTPUT    = dtparamCompInit011$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamCompInit011$(EXE)
+#STDOUT    = dtparamCompInit011.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dtparamCompInit011.out $($(tcasedir)dtparamCompInit011$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

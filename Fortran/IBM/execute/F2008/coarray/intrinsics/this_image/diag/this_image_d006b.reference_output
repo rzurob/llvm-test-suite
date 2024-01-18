@@ -1,0 +1,8 @@
+"this_image_d006b.f", line 51.26: 1516-334 (S) The value of DIM is greater than the corank of the corresponding coarray argument.
+"this_image_d006b.f", line 52.26: 1516-334 (S) The value of DIM is greater than the corank of the corresponding coarray argument.
+"this_image_d006b.f", line 53.26: 1516-334 (S) The value of DIM is greater than the corank of the corresponding coarray argument.
+"this_image_d006b.f", line 54.26: 1516-334 (S) The value of DIM is greater than the corank of the corresponding coarray argument.
+"this_image_d006b.f", line 55.26: 1516-334 (S) The value of DIM is greater than the corank of the corresponding coarray argument.
+"this_image_d006b.f", line 56.26: 1516-334 (S) The value of DIM is greater than the corank of the corresponding coarray argument.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file this_image_d006b.f.

@@ -1,0 +1,5 @@
+"C811ExpSmp.f", line 50.18: 1511-106 (S) The selector in the SELECT TYPE statement is not a named variable.  An associate name should appear.
+"C811ExpSmp.f", line 51.13: 1511-112 (S) The selector in the SELECT TYPE statement is not unlimited polymorphic.  Intrinsic type CHARACTER must not appear in the TYPE IS statement.
+"C811ExpSmp.f", line 53.13: 1511-112 (S) The selector in the SELECT TYPE statement is not unlimited polymorphic.  Intrinsic type INTEGER must not appear in the TYPE IS statement.
+** c811expsmp   === End of Compilation 1 ===
+1501-511  Compilation failed for file C811ExpSmp.f.

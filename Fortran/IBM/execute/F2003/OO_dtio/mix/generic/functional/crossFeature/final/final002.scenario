@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/mix/generic/functional/crossFeature/final/final002.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)final002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = final002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = final002$(OBJ)
+#OUTPUT    = final002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = final002$(EXE)
+#STDOUT    = final002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $(tcasedir)final002.vf final002.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

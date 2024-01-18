@@ -1,0 +1,45 @@
+#!/usr/bin/ksh
+
+OS=`isAIX | awk '/0/ {print "AIX"} /1/ {print "LX"} /2/ {print "MAC"}'`
+IS64=`echo $OPTIONS | awk '/q64/ {print "_64"}'`
+OPT64=`echo $OPTIONS | awk '/q64/ {print "-q64"}'`
+
+
+rm -f ./*.o ./*.mod
+
+echo "cp $TR_SRC/my_main.o.${OS}${IS64}.81 ./my_main.o"
+cp $TR_SRC/my_main.o.${OS}${IS64}.81 ./my_main.o
+
+
+echo "$KILL $COMPILER $TR_SRC/../fake_ieee_modules.f $TR_SRC/intrimod43.f ./my_mod.o $OPT64 -o intrimod43 2> intrimod43a.err "
+$KILL $COMPILER $TR_SRC/fake_ieee_modules.f $TR_SRC/intrimod43.f ./my_main.o $OPT64 -o intrimod43 2> intrimod43a.err
+
+
+
+if [ $OS -eq "LX" ]; then
+
+  echo $OPTIONS | grep "q64"
+  rc=$?
+  if [ ${rc} -eq 0 ]  # this is 64-bit compile/linking
+  then
+    xldiff ./intrimod43a.err $TR_SRC/intrimod43a.lx64.vf
+  else
+    xldiff ./intrimod43a.err $TR_SRC/intrimod43a.lx.vf
+  fi
+
+else
+  xldiff ./intrimod43a.err $TR_SRC/intrimod43a.vf
+fi
+
+rc=$?
+if [ $rc -ne 0 ]; then
+  echo "Verification Failed!"
+  exit 33
+fi
+
+
+if [[ $TRUN_SAVE != "YES" && $TRUN_SAVE != "yes" ]]
+then
+  rm -f ./intrimod43.err ./my_mod.o ./my_main.o
+  rm -f ./*.mod 
+fi

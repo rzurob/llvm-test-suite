@@ -1,0 +1,270 @@
+XL Fortran Enterprise Edition DEV Version for AIX (XL Fortran DEV)  Version 10.01.0000.9999 --- deferlen08.f 02/27/06 11:27:43
+ 
+>>>>> OPTIONS SECTION <<<<<
+***   Options In Effect   ***
+  
+         ==  On / Off Options  ==
+         32              CR              ESCAPE          I4
+         NOLIBESSL       NOLIBPOSIX      OBJECT          STDFRAMEWORK
+         SWAPOMP         UNWIND          ZEROSIZE
+  
+         ==  Options Of Integer Type ==
+         MAXMEM(8192)          SPILLSIZE(512)        STACKTEMP(0)
+  
+  
+         ==  Options Of Character Type  ==
+         ALIAS(STD,NOINTPTR)   ALIGN(BINDC(POWER),STRUCT(NATURAL))
+         ARCH(COM)             AUTODBL(NONE)         DIRECTIVE(IBM*)
+         ENUM()                FLAG(I,I)             FLOAT(MAF,FOLD,RNGCHK)
+         FREE(F90)             HALT(S)               IEEE(NEAR)
+         INTSIZE(4)            LIST()                LANGLVL(EXTENDED)
+         REALSIZE(4)           TUNE(PWR3)            UNROLL(AUTO)
+         XFLAG()               XLF2003(NOPOLYMORPHIC,NOBOZLITARGS)
+         XLF77(LEADZERO,BLANKPAD)
+         XLF90(NOSIGNEDZERO,NOAUTODEALLOC)
+  
+>>>>> SOURCE SECTION <<<<<
+Generated from: = wtraceil..119 gen_udr0_pl..2071 procgen..272 proc_begin..112 p4_fmai..664 process_non_terminal4..1009
+      pass4..934 get_fpo..110 ftphas1..93 dophase..375 ftroot..111 ftmain..317 f8ent..52 ..00000240
+     0:   ENT   id#=1 (_main)
+Generated from: = wtraceil..119 gen_u5_pl..609 procgen..284 proc_begin..112 p4_fmai..664 process_non_terminal4..1009
+      pass4..934 get_fpo..110 ftphas1..93 dophase..375 ftroot..111 ftmain..317 f8ent..52 ..00000240
+     0:   LOC   stmt#=1 line#=0 annot#=0 src#=0 stmt_type=STMT_PROCENTRY
+Generated from: = wtraceil..119 gen_u1_pl..259 procgen..291 proc_begin..112 p4_fmai..664 process_non_terminal4..1009
+      pass4..934 get_fpo..110 ftphas1..93 dophase..375 ftroot..111 ftmain..317 f8ent..52 ..00000240
+     0:   DIR   dir=105 (PROLOG START)
+Generated from: = wtraceil..119 gen_u1_pl..259 procgen..356 proc_begin..112 p4_fmai..664 process_non_terminal4..1009
+      pass4..934 get_fpo..110 ftphas1..93 dophase..375 ftroot..111 ftmain..317 f8ent..52 ..00000240
+     0:   DIR   dir=106 (PROLOG END)
+Generated from: = wtraceil..119 gen_u5_pl..609 p4_fmai..45 process_non_terminal4..1009 pass4..946 get_fpo..110
+      ftphas1..93 dophase..375 ftroot..111 ftmain..317 f8ent..52 ..00000240
+    27:   LOC   stmt#=1 line#=27 annot#=27 src#=0 stmt_type=STMT_STMT
+Generated from: = wtraceil..119 gen_ulit0_pl..2503 lit_hash_it..600 genlit..295 genlitld..155 main_return..70
+      proc_end..205 p4_fmai..144 process_non_terminal4..1009 pass4..946 get_fpo..110 ftphas1..93 dophase..375
+      ftroot..111 ftmain..317 f8ent..5
+    27:   LIT   cindex=1 dt=DT_INTEGER       special=0
+Generated from: = wtraceil..119 gen_udr0_pl..2071 genlitld..165 main_return..70 proc_end..205 p4_fmai..144
+      process_non_terminal4..1009 pass4..946 get_fpo..110 ftphas1..93 dophase..375 ftroot..111 ftmain..317 f8ent..52
+      ..00000240
+    27:   LDC   cindex=1
+Generated from: = wtraceil..119 gen_u0_pl..167 main_return..74 proc_end..205 p4_fmai..144 process_non_terminal4..1009
+      pass4..946 get_fpo..110 ftphas1..93 dophase..375 ftroot..111 ftmain..317 f8ent..52 ..00000240
+    27:   RSTR
+Generated from: = wtraceil..119 gen_u0_pl..167 main_return..75 proc_end..205 p4_fmai..144 process_non_terminal4..1009
+      pass4..946 get_fpo..110 ftphas1..93 dophase..375 ftroot..111 ftmain..317 f8ent..52 ..00000240
+    27:   RET
+Generated from: = wtraceil..119 gen_udr0_pl..2071 proc_end..230 p4_fmai..144 process_non_terminal4..1009 pass4..946
+      get_fpo..110 ftphas1..93 dophase..375 ftroot..111 ftmain..317 f8ent..52 ..00000240
+    27:   END   id#=1 (_main)
+Generated from: = wtraceil..119 gen_u4..485 w_end..213 ftroot..147 ftmain..317 f8ent..52 ..00000240
+     0:   ENV   version=291 char=CS_ASCII byte_rev=BR_INT_NORM lang=SRC_LANG_FORTRAN
+ 
+Generated from: = wtraceil..119 gen_u3..425 w_end..225 ftroot..147 ftmain..317 f8ent..52 ..00000240
+     0:   DEF   table=TAB_SYM 0 1
+Generated from: = wtraceil..119 gen_u3..425 w_end..231 ftroot..147 ftmain..317 f8ent..52 ..00000240
+     0:   DEF   table=TAB_TYP 0 1
+Generated from: = wtraceil..119 gen_u3..425 w_end..248 ftroot..147 ftmain..317 f8ent..52 ..00000240
+     0:   DEF   table=TAB_LIT 0 0
+Generated from: = wtraceil..119 gen_u3..425 w_end..253 ftroot..147 ftmain..317 f8ent..52 ..00000240
+     0:   DEF   table=TAB_STRG_SIZE 0 0
+Generated from: = wtraceil..119 gen_u3..425 w_end..258 ftroot..147 ftmain..317 f8ent..52 ..00000240
+     0:   DEF   table=TAB_FN 0 0
+Generated from: = wtraceil..119 gen_u3..425 w_end..279 ftroot..147 ftmain..317 f8ent..52 ..00000240
+     0:   DEF   table=TAB_DBG_SYM 0 0
+Generated from: = wtraceil..119 gen_u3..425 w_end..280 ftroot..147 ftmain..317 f8ent..52 ..00000240
+     0:   DEF   table=TAB_DBG_TYP 0 0
+Generated from: = wtraceil..119 gen_u3..425 w_end..281 ftroot..147 ftmain..317 f8ent..52 ..00000240
+     0:   DEF   table=TAB_DBG_BLK 0 0
+Generated from: = wtraceil..119 gen_u3..425 w_end..287 ftroot..147 ftmain..317 f8ent..52 ..00000240
+     0:   DEF   table=TAB_SRC 0 0
+Generated from: = wtraceil..119 gen_unamed..1267 w_end..291 ftroot..147 ftmain..317 f8ent..52 ..00000240
+     0:   SRC   src_no=0 nlen=12 name=152 "deferlen08.f"
+Generated from: = wtraceil..119 gen_uinfo..1053 emit_tobey_new_infoop..439 emitinfoop..60 w_end..301 ftroot..147
+      ftmain..317 f8ent..52 ..00000240
+     0:   INFO  infotype=53 nlen=104 nameoffset=168
+ 
+          Tobey INFO op:
+          -- Floating Point Options --
+          NORNDSNGL   FOLD        MAF         NORRM       NOFLTINT
+          NOHSFLT     NOSPNANS    NOHSSNGL    NORSQRT     NOFPLOG
+          NORELAX     NOEMULATE   NOSTRICTNMAF
+ 
+          -- Floating Point Exceptions --
+          NONE
+ 
+          -- Value Option Settings --
+          Architecture : Common      Scheduling : POWER3     OS ENV     : AIX
+          Rounding Mode: Near        Opt Level  : 0          Pdf Level  : 0
+          Page Size    : N/A         Page Width : N/A        Max Mem    : 8388608
+          Ext Data     : N/A         Ext Proc   : N/A        Init Auto  : N/A
+          Unroll_Con   : AutoUnroll  Rcheck     : No_Check   Spill Size : 512
+          Debug Format : Default     Term_SEV   : 0          Profiling  : None
+          Debug Level  : 0           Report_SEV : 0          Alias Size : 0
+          Float Mode   : DEFAULT     List Type  : TEXT       Last Page# : 0
+             Tag Table  : DEFAULT
+ 
+          -- Bit Option Settings --
+          ASUMnonTHRD   GEN_OBJ       OBJ_LIST      DIV_0_CHECK   STRICT
+          NOERRNO       ROCONST
+ 
+Generated from: = wtraceil..119 gen_uinfo..1053 emit_asti_infoop..570 emitinfoop..61 w_end..301 ftroot..147 ftmain..317
+      f8ent..52 ..00000240
+     0:   INFO  infotype=46 nlen=24 nameoffset=276
+ 
+          -- ASTI Options --
+          alias(aryovrlap)   assert(deps)       noarraypad
+          nocheck            strict             noinline           zerosize
+          noonetrip          nohpf              nopurecomm         nocompact
+          HPF Overlap = 0    itercnt = 1024     tuning: POWER3     -qhot: 0
+          Rounding: Near     float=fold         noinitf90ptr       nopersistent
+          nocommoninit       transform listing: ( none  ) sclk(centi)
+ 
+Generated from: = wtraceil..119 gen_uinfo..1053 emit_time_infoop..649 emitinfoop..63 w_end..301 ftroot..147 ftmain..317
+      f8ent..52 ..00000240
+     0:   INFO  infotype=1 nlen=36 nameoffset=304
+Generated from: = wtraceil..119 gen_uinfo..1053 emit_fe_infoop..662 emitinfoop..64 w_end..301 ftroot..147 ftmain..317
+      f8ent..52 ..00000240
+     0:   INFO  infotype=47 nlen=91 nameoffset=344
+          compiler version stamp: XL Fortran Enterprise Edition DEV Version for AIX (XL Fortran DEV)  Version 10.01.0000.9999
+ 
+Generated from: = wtraceil..119 gen_uinfo..1053 emit_hot_infoop..691 emitinfoop..65 w_end..301 ftroot..147 ftmain..317
+      f8ent..52 ..00000240
+     0:   INFO  infotype=52 nlen=20 nameoffset=440
+ 
+          -- HOT Options --
+          nohot            hot(noarraypad)  hot(nosimd)      hot(vector)      report(nohotlist)
+          hot(arraypad=0)  hot(level=0)     assert(itercount=1024)
+ 
+Generated from: = wtraceil..119 gen_uild..1521 build_ild_sym..1328 build_syms..661 build_ild..417 gen_wcode_syms..166
+      w_end..317 ftroot..147 ftmain..317 f8ent..52 ..00000240
+     0:   SYM   (ild) id#=1 len=0 owner=0 sym_flags=(SYM_FL_IS_MAIN SYM_FL_IS_NOT_RECURS ) flags=() dt=DT_FUNC          mt=PT_EXT_DEF align=00000000 seg_no=0 nlen=5 name=70 "_main"
+ 
+Generated from: = wtraceil..119 gen_utyp..1764 build_symt_entry..4130 build_ilde_sym..1885 build_syms..662
+      build_ild..417 gen_wcode_syms..166 w_end..317 ftroot..147 ftmain..317 f8ent..52 ..00000240
+     0:   SYMT  type#=1 offs=0 len=4 xtra1=0 xtra2=0 flags=() dt=DT_INTEGER       linkage=0
+ 
+Generated from: = wtraceil..119 gen_uilde..1596 build_ilde_sym..2015 build_syms..662 build_ild..417 gen_wcode_syms..166
+      w_end..317 ftroot..147 ftmain..317 f8ent..52 ..00000240
+     0:   SYM   (ilde) id#=1 (_main) type#=1 alias#=0 linkage=LN_FORTRAN       scope=1 parms=0 hash_len=0 hash=0 "" ualias_no=0
+ 
+Generated from: = wtraceil..119 gen_u3..425 w_end..374 ftroot..147 ftmain..317 f8ent..52 ..00000240
+     0:   DEF   table=TAB_LAB 1 0
+Generated from: = wtraceil..119 gen_u2..257 w_end..394 ftroot..147 ftmain..317 f8ent..52 ..00000240
+     0:   EOF   count=0 0
+Generated from: = wtraceil..119 gen_u2..257 w_end..395 ftroot..147 ftmain..317 f8ent..52 ..00000240
+     0:   EOF   count=0 0
+Generated from: = wtraceil..119 gen_u3..425 w_end..434 ftroot..147 ftmain..317 f8ent..52 ..00000240
+     0:   DEF   table=TAB_LIT 0 1
+Generated from: = wtraceil..119 gen_u3..425 w_end..439 ftroot..147 ftmain..317 f8ent..52 ..00000240
+     0:   DEF   table=TAB_STRG_SIZE 0 460
+Generated from: = wtraceil..119 gen_u3..425 w_end..444 ftroot..147 ftmain..317 f8ent..52 ..00000240
+     0:   DEF   table=TAB_FN 0 1
+Generated from: = wtraceil..119 gen_ut..1102 w_end..453 ftroot..147 ftmain..317 f8ent..52 ..00000240
+     0:   BGN   modtype=MOD_PROGRAM
+** _main   === End of Compilation 1 ===
+Generated from: = wtraceil..119 gen_ut..1102 w_init..140 ftroot..203 ftmain..317 f8ent..52 ..00000240
+     0:   BGN   modtype=MOD_SEGMENT
+ 
+>>>>> LOOP TRANSFORMATION SECTION <<<<<
+ 
+ 
+>>>>> OBJECT SECTION <<<<<
+ 
+ 
+>>>>> COMPILATION UNIT EPILOGUE SECTION <<<<<
+ 
+ 
+TOTAL   UNRECOVERABLE  SEVERE       ERROR     WARNING    INFORMATIONAL
+               (U)       (S)         (E)        (W)          (I)
+    0           0         0           0          0            0
+ 
+>>>>> OPTIONS SECTION <<<<<
+***   Options In Effect   ***
+  
+         ==  On / Off Options  ==
+         32              CR              ESCAPE          I4
+         NOLIBESSL       NOLIBPOSIX      OBJECT          STDFRAMEWORK
+         SWAPOMP         UNWIND          ZEROSIZE
+  
+         ==  Options Of Integer Type ==
+         MAXMEM(8192)          SPILLSIZE(512)        STACKTEMP(0)
+  
+  
+         ==  Options Of Character Type  ==
+         ALIAS(STD,NOINTPTR)   ALIGN(BINDC(POWER),STRUCT(NATURAL))
+         ARCH(COM)             AUTODBL(NONE)         DIRECTIVE(IBM*)
+         ENUM()                FLAG(I,I)             FLOAT(MAF,FOLD,RNGCHK)
+         FREE(F90)             HALT(S)               IEEE(NEAR)
+         INTSIZE(4)            LIST()                LANGLVL(EXTENDED)
+         REALSIZE(4)           TUNE(PWR3)            UNROLL(AUTO)
+         XFLAG()               XLF2003(NOPOLYMORPHIC,NOBOZLITARGS)
+         XLF77(LEADZERO,BLANKPAD)
+         XLF90(NOSIGNEDZERO,NOAUTODEALLOC)
+  
+>>>>> SOURCE SECTION <<<<<
+Generated from: = wtraceil..119 gen_u5_pl..609 cleanup..423 procgen..221 proc_begin..112 p4_fmai..674
+      process_non_terminal4..1009 pass4..934 get_fpo..110 ftphas1..93 dophase..375 ftroot..111 ftmain..317 f8ent..52
+      ..00000240
+    29:   LOC   stmt#=1 line#=29 annot#=0 src#=0 stmt_type=STMT_PROCENTRY
+Generated from: = wtraceil..119 gen_udr0_pl..2071 cleanup..430 procgen..221 proc_begin..112 p4_fmai..674
+      process_non_terminal4..1009 pass4..934 get_fpo..110 ftphas1..93 dophase..375 ftroot..111 ftmain..317 f8ent..52
+      ..00000240
+    29:   ENT   id#=1 (pfnc)
+Generated from: = wtraceil..119 gen_ulit0_pl..2503 lit_hash_it..600 genlit..295 genlitld..155 genutrap..67 cleanup..454
+      procgen..221 proc_begin..112 p4_fmai..674 process_non_terminal4..1009 pass4..934 get_fpo..110 ftphas1..93
+      dophase..375 ftroot.
+     0:   LIT   cindex=1 dt=DT_INTEGER       special=3
+Generated from: = wtraceil..119 gen_udr0_pl..2071 genlitld..165 genutrap..67 cleanup..454 procgen..221 proc_begin..112
+      p4_fmai..674 process_non_terminal4..1009 pass4..934 get_fpo..110 ftphas1..93 dophase..375 ftroot..111 ftmain..317
+      f8ent..52 ..0
+     0:   LDC   cindex=1
+Generated from: = wtraceil..119 gen_ucupd_pl..2183 genbif..667 genutrap..68 cleanup..454 procgen..221 proc_begin..112
+      p4_fmai..674 process_non_terminal4..1009 pass4..934 get_fpo..110 ftphas1..93 dophase..375 ftroot..111 ftmain..317
+      f8ent..52 ..00
+     0:   CUP   id#=2 (__trap) parms=1
+Generated from: = wtraceil..119 gen_u5_pl..609 p4_fmai..45 process_non_terminal4..1009 pass4..934 get_fpo..110
+      ftphas1..93 dophase..375 ftroot..111 ftmain..317 f8ent..52 ..00000240
+    31:   LOC   stmt#=1 line#=31 annot#=31 src#=0 stmt_type=STMT_STMT
+Generated from: = wtraceil..119 gen_u0_pl..167 sub_return..181 proc_end..199 p4_fmai..144 process_non_terminal4..1009
+      pass4..946 get_fpo..110 ftphas1..93 dophase..375 ftroot..111 ftmain..317 f8ent..52 ..00000240
+    31:   RET
+Generated from: = wtraceil..119 gen_udr0_pl..2071 proc_end..230 p4_fmai..144 process_non_terminal4..1009 pass4..946
+      get_fpo..110 ftphas1..93 dophase..375 ftroot..111 ftmain..317 f8ent..52 ..00000240
+    31:   END   id#=1 (pfnc)
+ "deferlen08.f", 1514-704 (S) Entity pfnc is declared with a deferred type parameter. pfnc must have the POINTER or ALLOCATABLE attribute.
+** pfnc   === End of Compilation 2 ===
+ 
+>>>>> LOOP TRANSFORMATION SECTION <<<<<
+ 
+ 
+>>>>> OBJECT SECTION <<<<<
+ 
+ 
+>>>>> COMPILATION UNIT EPILOGUE SECTION <<<<<
+ 
+ 
+TOTAL   UNRECOVERABLE  SEVERE       ERROR     WARNING    INFORMATIONAL
+               (U)       (S)         (E)        (W)          (I)
+    1           0         1           0          0            0
+ 
+>>>>> FILE TABLE SECTION <<<<<
+ 
+ 
+                                       FILE CREATION        FROM
+FILE NO   FILENAME                    DATE       TIME       FILE    LINE
+     0    deferlen08.f                02/27/06   11:26:57
+ 
+ 
+>>>>> COMPILATION EPILOGUE SECTION <<<<<
+ 
+ 
+FORTRAN Summary of Diagnosed Conditions
+ 
+TOTAL   UNRECOVERABLE  SEVERE       ERROR     WARNING    INFORMATIONAL
+               (U)       (S)         (E)        (W)          (I)
+    1           0         1           0          0            0
+ 
+ 
+    Source records read.......................................      32
+1501-511  Compilation failed for file deferlen08.f.
+1501-544  Object file not created.

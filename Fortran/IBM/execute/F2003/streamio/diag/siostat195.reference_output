@@ -1,0 +1,1 @@
+1525-195 The I/O statement on unit 11 cannot be processed because the POS= specifier has a value of -20, which is less than 1.  The program will recover by ignoring the I/O statement.

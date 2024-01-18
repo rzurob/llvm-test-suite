@@ -1,0 +1,60 @@
+!#######################################################################
+! SCCS ID Information
+! %W%, %I%
+! Extract Date/Time: %D% %T%
+! Checkin Date/Time: %E% %U%
+!#######################################################################
+! *********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD: $KILL $COMPILER -o falloc501d1 $OPTIONS $TR_SRC/falloc501d1.f
+! %COMPOPTS: -qfree=f90 -C -qsigtrap=xl__trce
+! %GROUP: redherring.f
+! %VERIFY:
+! %STDIN:
+! %STDOUT:
+! %EXECARGS:
+! %POSTCMD: ./falloc501d1 2>falloc501d1.out; grep SIGTRAP falloc501d1.out && rm -f falloc501d1.out falloc501d1
+! %END
+! *********************************************************************
+!*  =================================================================== 
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
+!*  =================================================================== 
+!*  =================================================================== 
+!*
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Jim Xia
+!*  DATE                       : 07/05/2004
+!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
+!*                             :
+!*
+!*  PRIMARY FUNCTIONS TESTED   :
+!*                             :
+!*  SECONDARY FUNCTIONS TESTED : 
+!*
+!*  DRIVER STANZA              : xlf95
+!*
+!*  DESCRIPTION                : ALLOCATE (run-time array bounds checking using
+!                               -C; NOTE the execution is intentionally to fail)
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!* ===================================================================
+!*
+!*  REVISION HISTORY
+!*
+!*  MM/DD/YY:  Init:  Comments:
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+program falloc501d1
+    integer*4 :: size1, init1(3)
+    integer*4, allocatable :: i1(:)
+
+    init1 = (/1,2,3/)
+    size1 = 5
+
+    allocate (i1 (size1), source=init1)
+
+end

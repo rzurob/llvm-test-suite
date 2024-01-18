@@ -1,0 +1,6 @@
+"dataPtrC721.f", line 55.3: 1515-038 (S) Only an object with the POINTER attribute is permitted on the left hand side of a pointer assignment.
+"dataPtrC721.f", line 56.3: 1515-038 (S) Only an object with the POINTER attribute is permitted on the left hand side of a pointer assignment.
+"dataPtrC721.f", line 59.5: 1515-038 (S) Only an object with the POINTER attribute is permitted on the left hand side of a pointer assignment.
+"dataPtrC721.f", line 60.5: 1515-038 (S) Only an object with the POINTER attribute is permitted on the left hand side of a pointer assignment.
+** dataptrc721   === End of Compilation 1 ===
+1501-511  Compilation failed for file dataPtrC721.f.

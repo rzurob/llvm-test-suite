@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/dummy_arg/atpda/dtpATPDAElemental.scenario
+#FEATURE   = Assumed type parameters and dummy arguments - elemental procedures
+#CREATOR   = DF Manual Update
+#DATE      = 20081015
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpATPDAElemental.f
+#OUTPUT    = dtpATPDAElemental$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpATPDAElemental$(OBJ)
+#OUTPUT    = dtpATPDAElemental$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpATPDAElemental$(EXE)
+#STDOUT    = dtpATPDAElemental.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpATPDAElemental$(product)vf) dtpATPDAElemental.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

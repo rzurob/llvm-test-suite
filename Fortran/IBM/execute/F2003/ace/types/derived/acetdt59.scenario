@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/derived/acetdt59.scenario
+#FEATURE	= Array constructor enhancement self-referential assignment, including array sections (derived)
+#CREATOR	= DF Manual Update
+#DATE		= 20061124
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt59.f
+#OUTPUT		= acetdt59$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt59$(OBJ)
+#OUTPUT		= acetdt59$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt59$(EXE)
+#STDOUT		= acetdt59.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetdt59$(product)vf) acetdt59.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/dummy_arg/deferlen/d359210.scenario
+#FEATURE   = 358458
+#CREATOR   = Nancy Wang
+#DATE      = Nov. 20 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)d359210.f
+#OUTPUT= d359210$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = d359210$(OBJ)
+#OUTPUT= d359210$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = d359210$(EXE)
+#STDOUT= d359210.out
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT  = $($(tcasedir)d359210$(product)vf) d359210.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

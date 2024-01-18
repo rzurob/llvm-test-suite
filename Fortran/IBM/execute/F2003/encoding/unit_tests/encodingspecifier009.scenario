@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/encoding/unit_tests/encodingspecifier009.scenario
+#FEATURE	= Encoding Specifier
+#CREATOR	= Thomas Tewoldemedhin
+#DATE		= 20070430
+#TEST_TYPE	= unit test
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)encodingspecifier009.f
+#OUTPUT		= encodingspecifier009$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= encodingspecifier009$(OBJ)
+#OUTPUT		= encodingspecifier009$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= encodingspecifier009$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/others/dataPtrTypcmptble.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071217
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrTypcmptble.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrTypcmptble$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrTypcmptble$(OBJ)
+#OUTPUT    = dataPtrTypcmptble$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrTypcmptble$(EXE)
+#STDOUT    = dataPtrTypcmptble.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrTypcmptble.out $($(tcasedir)dataPtrTypcmptble$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

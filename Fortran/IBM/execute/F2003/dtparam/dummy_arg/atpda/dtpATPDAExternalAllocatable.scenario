@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/dummy_arg/atpda/dtpATPDAExternalAllocatable.scenario
+#FEATURE   = Assumed type parameters and dummy arguments - test the length passed in
+#CREATOR   = DF Manual Update
+#DATE      = 20081015
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpATPDAExternalAllocatable.f
+#OUTPUT    = dtpATPDAExternalAllocatable$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpATPDAExternalAllocatable$(OBJ)
+#OUTPUT    = dtpATPDAExternalAllocatable$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpATPDAExternalAllocatable$(EXE)
+#STDOUT    = dtpATPDAExternalAllocatable.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpATPDAExternalAllocatable$(product)vf) dtpATPDAExternalAllocatable.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

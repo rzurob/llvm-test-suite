@@ -1,0 +1,8 @@
+"do_concurrent_d003.f", line 29.37: 1511-164 (S) Index name j must not be referenced in the same DO CONCURRENT statement.
+"do_concurrent_d003.f", line 33.39: 1511-164 (S) Index name j must not be referenced in the same DO CONCURRENT statement.
+"do_concurrent_d003.f", line 50.39: 1511-164 (S) Index name j1 must not be referenced in the same DO CONCURRENT statement.
+"do_concurrent_d003.f", line 54.41: 1511-164 (S) Index name j1 must not be referenced in the same DO CONCURRENT statement.
+"do_concurrent_d003.f", line 71.48: 1511-164 (S) Index name j must not be referenced in the same DO CONCURRENT statement.
+"do_concurrent_d003.f", line 75.50: 1511-164 (S) Index name j must not be referenced in the same DO CONCURRENT statement.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file do_concurrent_d003.f.

@@ -1,0 +1,22 @@
+"bozC408digit001d.f", line 38.0: 1515-010 (S) String is missing a closing delimiter.  Closing delimiter assumed at end of line.
+"bozC408digit001d.f", line 38.9: 1514-028 (S) Incorrect digit in hexadecimal, binary, or octal constant.  Variable i1 is not initialized.
+"bozC408digit001d.f", line 38.13: 1515-020 (S) Syntax Error: Token " / " is missing. A token is supplied.
+"bozC408digit001d.f", line 39.0: 1515-010 (S) String is missing a closing delimiter.  Closing delimiter assumed at end of line.
+"bozC408digit001d.f", line 39.9: 1514-028 (S) Incorrect digit in hexadecimal, binary, or octal constant.  Variable i2 is not initialized.
+"bozC408digit001d.f", line 39.13: 1515-020 (S) Syntax Error: Token " / " is missing. A token is supplied.
+"bozC408digit001d.f", line 40.3: 1514-047 (S) No initializations for this DATA statement will be done because of presence of syntax error.
+"bozC408digit001d.f", line 40.15: 1515-019 (S) Syntax is incorrect.
+"bozC408digit001d.f", line 41.0: 1515-010 (S) String is missing a closing delimiter.  Closing delimiter assumed at end of line.
+"bozC408digit001d.f", line 41.9: 1514-028 (S) Incorrect digit in hexadecimal, binary, or octal constant.  Variable i4 is not initialized.
+"bozC408digit001d.f", line 41.13: 1515-020 (S) Syntax Error: Token " / " is missing. A token is supplied.
+"bozC408digit001d.f", line 42.0: 1515-010 (S) String is missing a closing delimiter.  Closing delimiter assumed at end of line.
+"bozC408digit001d.f", line 42.3: 1514-047 (S) No initializations for this DATA statement will be done because of presence of syntax error.
+"bozC408digit001d.f", line 42.15: 1515-019 (S) Syntax is incorrect.
+"bozC408digit001d.f", line 43.0: 1515-010 (S) String is missing a closing delimiter.  Closing delimiter assumed at end of line.
+"bozC408digit001d.f", line 43.9: 1514-028 (S) Incorrect digit in hexadecimal, binary, or octal constant.  Variable i6 is not initialized.
+"bozC408digit001d.f", line 43.13: 1515-020 (S) Syntax Error: Token " / " is missing. A token is supplied.
+"bozC408digit001d.f", line 44.0: 1515-010 (S) String is missing a closing delimiter.  Closing delimiter assumed at end of line.
+"bozC408digit001d.f", line 44.3: 1514-047 (S) No initializations for this DATA statement will be done because of presence of syntax error.
+"bozC408digit001d.f", line 44.15: 1515-019 (S) Syntax is incorrect.
+** bozc408digit001d   === End of Compilation 1 ===
+1501-511  Compilation failed for file bozC408digit001d.f.

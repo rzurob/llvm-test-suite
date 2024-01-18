@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/F2003/dtparam/generic/ambiguity/Generic_Assign01c.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20081031
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)Generic_Assign01c.f
+#OUTPUT= Generic_Assign01c$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  Generic_Assign01c$(OBJ)
+#OUTPUT= Generic_Assign01c$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  Generic_Assign01c$(EXE)
+#STDOUT= Generic_Assign01c.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

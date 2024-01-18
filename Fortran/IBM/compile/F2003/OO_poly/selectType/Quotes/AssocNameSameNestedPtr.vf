@@ -1,0 +1,5 @@
+"AssocNameSameNestedPtr.f", line 64.7: 1515-038 (S) Only an object with the POINTER attribute is permitted on the left hand side of a pointer assignment.
+"AssocNameSameNestedPtr.f", line 71.3: 1515-038 (S) Only an object with the POINTER attribute is permitted on the left hand side of a pointer assignment.
+"AssocNameSameNestedPtr.f", line 76.7: 1515-038 (S) Only an object with the POINTER attribute is permitted on the left hand side of a pointer assignment.
+** assocnamesamenestedptr   === End of Compilation 1 ===
+1501-511  Compilation failed for file AssocNameSameNestedPtr.f.

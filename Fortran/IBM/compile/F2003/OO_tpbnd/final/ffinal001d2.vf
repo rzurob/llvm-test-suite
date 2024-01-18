@@ -1,0 +1,8 @@
+** m   === End of Compilation 1 ===
+"ffinal001d2.f", line 83.34: 1516-261 (S) Pure procedure asgnb2tob1 must not finalize an object with non-pure final subroutine finalizebase.
+** asgnb2tob1   === End of Compilation 2 ===
+"ffinal001d2.f", 1516-261 (S) Pure procedure invalid must not finalize an object with non-pure final subroutine finalizebase.
+"ffinal001d2.f", 1516-261 (S) Pure procedure invalid must not finalize an object with non-pure final subroutine finalizebase.
+** invalid   === End of Compilation 3 ===
+** ffinal001d2   === End of Compilation 4 ===
+1501-511  Compilation failed for file ffinal001d2.f.

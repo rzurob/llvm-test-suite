@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008: BIND attribute on internal procedures (33410)
+#COMPONENT  = xlftest
+#DATE       = May 19, 2015
+#CREATOR    = Charu Jain
+#TEST_TYPE  = Unit Test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD          = XLC_COMPILE
+#INPUT        = $(tcasedir)/fxisopca04c.c
+#OUTPUT       = fxisopca04c$(OBJ)
+#ENDCMD
+
+#CMD          = F_COMPILE
+#INPUT        = $(tcasedir)/fxisopca04f.f
+#OUTPUT       = fxisopca04f$(OBJ)
+#STDERR       = fxisopca04f.out
+#VALIDRCS     = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)fxisopca04f$(product)vf) fxisopca04f.out
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

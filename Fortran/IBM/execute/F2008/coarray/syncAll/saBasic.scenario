@@ -1,0 +1,54 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /syncAll/saBasic.scenario
+#FEATURE   = sync all - basic test of progress
+#CREATOR   = DF
+#DATE      = 20100727
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+
+! Compile/link/run a program which prints "Before" before the first
+! SYNC ALL and "After" after the first SYNC ALL in each image to a
+! different file for each image; image one also outputs the number of
+! images to the standard output (written to file 'count').  Gather the
+! results together (CAT) and analyse them (AWK): for each image, there
+! should be one line of "Before" and one line of "After", and the very
+! last line should be the number of images.  The awk script succeeds
+! if there are as many "Before" and "After" lines as there are images.
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)saBasic.f
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = saBasic$(OBJ)
+#OUTPUT    = saBasic$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = saBasic$(EXE)
+#STDOUT    = count
+#ENDCMD
+
+#CMD       = CAT
+#OPTS      = o??? count
+#STDOUT    = saBasic.out
+#ENDCMD
+
+#CMD       = AWK
+#OPTS      = -f $($(tcasedir)saBasic$(product)awk)
+#STDIN     = saBasic.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

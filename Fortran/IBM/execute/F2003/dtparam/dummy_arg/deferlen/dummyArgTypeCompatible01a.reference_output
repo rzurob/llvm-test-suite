@@ -1,0 +1,10 @@
+ in sub1
+ type is child
+ 1 -1
+ in sub2
+ in sub3
+ in sub4
+ type is base
+ 1
+ type is child
+ 99 -1

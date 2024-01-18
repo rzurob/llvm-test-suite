@@ -1,0 +1,14 @@
+Unit tests for the MOVE_ALLOC intrinsic procedure
+=================================================
+
+The MoveAllocDiag* test cases are to ensure proper error detection
+for the arguments to the MOVE_ALLOC intrinsic procedure.
+
+The MoveAllocRank1Array* test cases test the functionality of 
+MOVE_ALLOC with rank-1 allocatable arrays.
+
+The MoveAllocRank2Array* test cases test the functionality of 
+MOVE_ALLOC with rank-2 allocatable arrays.
+
+The MoveAllocScalar* test cases test the functionality of MOVE_ALLOC
+with allocatable scalars.

@@ -1,0 +1,5 @@
+"iachar_badk_d1.f", line 24.26: 1513-143 (S) Invalid KIND value.
+"iachar_badk_d1.f", line 26.26: 1513-143 (S) Invalid KIND value.
+"iachar_badk_d1.f", line 28.21: 1513-133 (S) KIND must be an integer constant.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file iachar_badk_d1.f.

@@ -1,0 +1,9 @@
+** m   === End of Compilation 1 ===
+"proceRef002.f", line 95.9: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+"proceRef002.f", line 96.9: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+"proceRef002.f", line 97.9: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+"proceRef002.f", line 99.9: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+"proceRef002.f", line 100.9: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+"proceRef002.f", line 101.9: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+** proceref002   === End of Compilation 2 ===
+1501-511  Compilation failed for file proceRef002.f.

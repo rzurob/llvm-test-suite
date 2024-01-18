@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/pack/reshape003.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070927
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)reshape003.f
+#OUTPUT    = reshape003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = reshape003$(OBJ)
+#OUTPUT    = reshape003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = reshape003$(EXE)
+#STDOUT    = reshape003.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)reshape003$(product)vf) reshape003.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

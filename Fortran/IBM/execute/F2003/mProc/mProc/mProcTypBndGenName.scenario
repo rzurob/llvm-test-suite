@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       mProcTypBndGenName.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       03-06-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)mProcTypBndGenName.f
+#OUTPUT= mProcTypBndGenName$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  mProcTypBndGenName$(OBJ)
+#OUTPUT= mProcTypBndGenName$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  mProcTypBndGenName$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

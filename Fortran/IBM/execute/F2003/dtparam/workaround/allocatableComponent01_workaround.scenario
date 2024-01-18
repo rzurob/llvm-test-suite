@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/associate/components/allocatableComponent01_workaround.scenario
+#FEATURE	= ASSOCIATE Contruct (with Derived Type Parameters)
+#CREATOR	= Glen Mateer
+#DATE		= 20080818
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)allocatableComponent01_workaround.f
+#OUTPUT		= allocatableComponent01_workaround$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= allocatableComponent01_workaround$(OBJ)
+#OUTPUT		= allocatableComponent01_workaround$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= allocatableComponent01_workaround$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

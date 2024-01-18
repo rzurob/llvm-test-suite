@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpPtrAssignCommonFromMainFixedChk.scenario
+#FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - assign to COMMON variables in main program and check values via pointers with fixed length parameters
+#CREATOR   = DF Manual Update
+#DATE      = 20090112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPtrAssignCommonFromMainFixedChk.f
+#OUTPUT    = dtpPtrAssignCommonFromMainFixedChk$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPtrAssignCommonFromMainFixedChk$(OBJ)
+#OUTPUT    = dtpPtrAssignCommonFromMainFixedChk$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPtrAssignCommonFromMainFixedChk$(EXE)
+#STDOUT    = dtpPtrAssignCommonFromMainFixedChk.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpPtrAssignCommonFromMainFixedChk$(product)vf) dtpPtrAssignCommonFromMainFixedChk.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

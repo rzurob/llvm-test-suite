@@ -1,0 +1,6 @@
+"arg.F", line 51.13: 1513-265 (S) The ENTRY statement is obsolescent in the Fortran 2008 standard.  The ENTRY statement must not be used in conjunction with language features introduced in the Fortran 2008 or newer standards.
+** s1   === End of Compilation 1 ===
+** s2   === End of Compilation 2 ===
+"arg.F", line 69.13: 1513-265 (S) The ENTRY statement is obsolescent in the Fortran 2008 standard.  The ENTRY statement must not be used in conjunction with language features introduced in the Fortran 2008 or newer standards.
+** s3   === End of Compilation 3 ===
+1501-511  Compilation failed for file arg.F.

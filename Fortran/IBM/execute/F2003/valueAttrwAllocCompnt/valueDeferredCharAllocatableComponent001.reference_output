@@ -1,0 +1,36 @@
+ foo:
+ 0 
+ 0 
+ 5 zzzzz
+ 0 
+ end:
+ zzzzz
+ 
+ foo:
+ 5 zzzzz
+ 0 
+ 5 zzzzz
+ 0 
+ end:
+ zzzzz
+ 
+ zzzzz
+ 
+ foo:
+ 3 ibm
+ 7 ftn2003
+ 5 zzzzz
+ 0 
+ end:
+ zzzzz
+ 
+ foo:
+ 3 ibm
+ 7 ftn2003
+ 5 zzzzz
+ 0 
+ end:
+ ibm
+ ftn2003
+ zzzzz
+ 

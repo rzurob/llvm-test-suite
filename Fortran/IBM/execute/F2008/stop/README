@@ -1,0 +1,16 @@
+Feature 381018 F2008: Constant expression as stop code in STOP statement
+
+Here STOP statement means STOP and ERROR STOP statments.
+
+In Fortran 2008 the STOP statement has been updated and in addition to accepting a sequence of digits and a scalar character constant as the stop code now it also supports an integer or a character constant expression. This directory contains the testcases for testing these new additions to the STOP and ERROR STOP statements.
+
+Unit tests are located @:
+./unit_tests/diag
+./unit_tests/func
+
+CAF tests are located @:
+../coarray/stop/const_expr/unit
+../coarray/stop/const_expr
+../coarray/error_stop/const_expr
+
+The design documents, I0, IT1 and IT2, can be found in ./doc subdirectory.

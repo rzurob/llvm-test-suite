@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrAndLog.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrAndLog.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrAndLog$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrAndLog$(OBJ)
+#OUTPUT    = dataPtrAndLog$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrAndLog$(EXE)
+#STDOUT    = dataPtrAndLog.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrAndLog.out $($(tcasedir)dataPtrAndLog$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

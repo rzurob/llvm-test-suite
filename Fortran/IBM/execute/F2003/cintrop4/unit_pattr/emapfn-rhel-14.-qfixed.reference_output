@@ -1,0 +1,43 @@
+*** testcase variant: -WF,-DFTYPE=real*4 -qfixed\n
+** emapfn   === End of Compilation 1 ===
+1501-510  Compilation successful for file emapfn-fmain.f.
+** f1_f   === End of Compilation 1 ===
+** f1f_via_f   === End of Compilation 2 ===
+** f1c_via_f   === End of Compilation 3 ===
+1501-510  Compilation successful for file emapfn-f.F.
+
+Fortran program
+
+F calling f1_f
+f1_f entered
+ rv = 4.000000000
+
+F calling f1_c
+f1_cB entered
+ rv = 3.000000000
+
+C calling f1_fB
+f1_f entered
+ rv = 4.000000000
+
+C calling f1_cB
+f1_cB entered
+ rv = 3.000000000
+
+C main()
+
+F calling f1_f
+f1_f entered
+ rv = 4.000000000
+
+F calling f1_c
+f1_cB entered
+ rv = 3.000000000
+
+C calling f1_fB
+f1_f entered
+ rv = 4.000000000
+
+C calling f1_cB
+f1_cB entered
+ rv = 3.000000000

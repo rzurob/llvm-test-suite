@@ -1,0 +1,7 @@
+"fmisc015a1.f", line 31.9: 1511-139 (S) Associate name x is not associated with an entity that can be defined. x must not be redefined or become undefined.
+"fmisc015a1.f", line 32.30: 1511-139 (S) Associate name x is not associated with an entity that can be defined. x must not be redefined or become undefined.
+"fmisc015a1.f", line 34.28: 1511-139 (S) Associate name x is not associated with an entity that can be defined. x must not be redefined or become undefined.
+"fmisc015a1.f", line 36.12: 1511-139 (S) Associate name x is not associated with an entity that can be defined. x must not be redefined or become undefined.
+"fmisc015a1.f", line 41.13: 1511-139 (S) Associate name y is not associated with an entity that can be defined. y must not be redefined or become undefined.
+** fmisc015a1   === End of Compilation 1 ===
+1501-511  Compilation failed for file fmisc015a1.f.

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/associat/nest/fxass050.scenario
+#FEATURE = associat tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)fxass050.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fxass050$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  fxass050$(OBJ)
+#OUTPUT    = fxass050$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxass050$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

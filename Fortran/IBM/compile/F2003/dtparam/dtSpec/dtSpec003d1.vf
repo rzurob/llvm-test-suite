@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"dtSpec003d1.f", line 41.11: 1514-692 (S) Type parameter n must be specified in this derived-type specifier.
+"dtSpec003d1.f", line 42.11: 1514-692 (S) Type parameter k must be specified in this derived-type specifier.
+** dtspec003d1   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtSpec003d1.f.

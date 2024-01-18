@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/mxminAll/var/mxminLoc/mxminLocVarArrArgSub1.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mxminLocVarArrArgSub1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = mxminLocVarArrArgSub1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = mxminLocVarArrArgSub1$(OBJ)
+#OUTPUT    = mxminLocVarArrArgSub1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminLocVarArrArgSub1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

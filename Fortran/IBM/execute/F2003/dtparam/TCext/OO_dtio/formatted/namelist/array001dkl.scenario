@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/TCext/OO_dtio/formatted/namelist/array001dkl.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070620
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)array001dkl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = array001dkl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = array001dkl$(OBJ)
+#OUTPUT    = array001dkl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = array001dkl$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)array001dkl$(product)vf) array001dkl.1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

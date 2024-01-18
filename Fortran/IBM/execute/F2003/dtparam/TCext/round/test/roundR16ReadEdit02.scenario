@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/round/test/roundR16ReadEdit02.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of round/*
+#DATE      = 20071102
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)roundR16ReadEdit02.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = roundR16ReadEdit02$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = roundR16ReadEdit02$(OBJ)
+#OUTPUT    = roundR16ReadEdit02$(EXE)
+#ENDCMD
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)roundR16ReadEdit01.dat
+#OUTPUT   = ./
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = roundR16ReadEdit02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

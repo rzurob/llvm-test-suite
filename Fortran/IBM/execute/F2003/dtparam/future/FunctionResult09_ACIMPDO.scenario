@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/FuncResult/FunctionResult09_ACIMPDO.scenario
+#FEATURE   = DTP - Function Result
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20090326
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)FunctionResult09_ACIMPDO.f
+#OUTPUT    = FunctionResult09_ACIMPDO$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = FunctionResult09_ACIMPDO$(OBJ)
+#OUTPUT    = FunctionResult09_ACIMPDO$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = FunctionResult09_ACIMPDO$(EXE)
+#STDOUT    = FunctionResult09_ACIMPDO.out
+#ENDCMD
+
+#CMD       = DIFF
+#OPTS      = -b
+#INPUT     = $($(tcasedir)FunctionResult09_ACIMPDO$(product)vf) FunctionResult09_ACIMPDO.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

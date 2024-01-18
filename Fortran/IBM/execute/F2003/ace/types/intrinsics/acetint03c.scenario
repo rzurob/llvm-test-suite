@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint03c.scenario
+#FEATURE	= Array constructor enhancement - correct values from different elements
+#CREATOR	= DF Manual Update
+#DATE		= 20060614
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint03.f
+#OUTPUT		= acetint03$(OBJ)
+#OPTS		= $(OPT_INTSIZE_8)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint03$(OBJ)
+#OUTPUT		= acetint03$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint03$(EXE)
+#STDOUT		= acetint03.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

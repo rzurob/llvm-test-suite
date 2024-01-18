@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=roundRealRWEdit02.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)roundRealRWEdit02.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = roundRealRWEdit02$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = roundRealRWEdit02$(OBJ)
+#OUTPUT    = roundRealRWEdit02$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = roundRealRWEdit02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

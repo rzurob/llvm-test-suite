@@ -1,0 +1,85 @@
+!=======================================================================
+! XL Fortran Test Case                             IBM INTERNAL USE ONLY
+!=======================================================================
+! TEST BUCKET                : OO_poly/intrinsics/unpack
+! PROGRAMMER                 : Yong Du
+! DATE                       : 02/25/2005
+! PRIMARY FUNCTIONS TESTED   : unpack
+! DRIVER STANZA              : xlf90
+! DESCRIPTION                : VECTOR or FIELD is a dummy argument. Dummy
+!                              argument is non-pointer, non-allocatable,
+!                              unlimited poly, and is array.
+!=======================================================================
+! REVISION HISTORY
+!                   MM/DD/YY :
+!                       Init :
+!                   Comments :
+!=======================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+module m
+    type Base
+        integer i
+    end type
+
+    type, extends(Base) :: Child
+        integer j
+    end type
+
+    contains
+
+    subroutine sub1(arg1, arg2, arg3, arg4, arg5)
+        class(*) :: arg1(10)
+        class(*) :: arg2(:,:)
+        class(*) :: arg3(:)
+        class(*) :: arg4(2,2)
+        class(*) :: arg5(:,:,:)
+        logical :: m1(15)
+
+        m1 = (/.FALSE.,.TRUE.,.TRUE.,.FALSE.,.TRUE., &
+               .TRUE.,.FALSE.,.FALSE.,.TRUE.,.FALSE., &
+               .TRUE.,.FALSE.,.FALSE.,.TRUE.,.FALSE./) 
+
+        select type(name1=>unpack(arg1, reshape(m1,(/3,2,2/)), arg5))
+            type is (Base)
+                print *, name1
+                print *, shape(name1)
+            class default
+                error stop 1_4
+        end select
+
+        select type(name1=>unpack(arg3, reshape(m1,(/2,3/)), arg2))
+            type is (Child)
+                print *, name1
+                print *, shape(name1)
+            class default
+                error stop 2_4
+        end select
+
+        select type(name1=>unpack(arg3, reshape(m1,(/2,2/)), arg4))
+            type is (Child)
+                print *, name1
+                print *, shape(name1)
+            class default
+                error stop 3_4
+        end select
+    end subroutine
+end module
+
+program argAssociation003
+use m
+    type(Base) :: b1(10)
+    type(Child) :: c1(2,3)
+    class(Base), pointer :: b2(:)
+    class(Child), allocatable :: c2(:,:)
+    class(*), allocatable :: u1(:,:,:)
+
+    b1 = (/ (Base(i),i=1,10) /)
+    c1 = reshape((/(Child(i,i+1),i=5,15,2)/),(/2,3/))
+    allocate(b2(6), SOURCE=(/(Child(i,i+1),i=2,7)/))
+    allocate(c2(2,2), SOURCE=reshape((/(Child(j=i-1,i=i), &
+     i=12,15)/), (/2,2/)))
+    allocate(u1(3,2,2), SOURCE=reshape((/(Base(i),i=4,15)/),(/3,2,2/)))
+
+    call sub1(b1, c1, b2, c2, u1)
+end

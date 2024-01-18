@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpIAssignCommonFromExternal.scenario
+#FEATURE   = Intrinsic Assignment without Allocation - assign to common variables in external subprograms
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAssignCommonFromExternal.f
+#OUTPUT    = dtpIAssignCommonFromExternal$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAssignCommonFromExternal$(OBJ)
+#OUTPUT    = dtpIAssignCommonFromExternal$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAssignCommonFromExternal$(EXE)
+#STDOUT    = dtpIAssignCommonFromExternal.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpIAssignCommonFromExternal$(product)vf) dtpIAssignCommonFromExternal.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

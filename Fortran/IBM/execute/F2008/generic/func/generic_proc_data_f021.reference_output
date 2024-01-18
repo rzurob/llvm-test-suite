@@ -1,0 +1,12 @@
+    inside data_sub()
+        inside fun1 ()
+    inside proc_sub()
+        inside fun1 ()
+    inside proc_sub()
+    inside data_func()
+    inside data_func()
+        inside fun1 ()
+    inside proc_func()
+        inside fun1 ()
+    inside data_func()
+  .... end

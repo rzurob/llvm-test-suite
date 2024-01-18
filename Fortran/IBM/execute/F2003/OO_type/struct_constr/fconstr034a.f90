@@ -1,0 +1,140 @@
+!#######################################################################
+! SCCS ID Information
+! %W%, %I%
+! Extract Date/Time: %D% %T%
+! Checkin Date/Time: %E% %U%
+!#######################################################################
+! *********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: fconstr034a.f
+! %VERIFY: fconstr034a.out:fconstr034a.vf
+! %STDIN:
+! %STDOUT: fconstr034a.out
+! %EXECARGS:
+! %POSTCMD: 
+! %END
+! *********************************************************************
+!*  =================================================================== 
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
+!*  =================================================================== 
+!*  =================================================================== 
+!*
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Jim Xia
+!*  DATE                       : 10/20/2004
+!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
+!*                             :
+!*
+!*  PRIMARY FUNCTIONS TESTED   :
+!*                             :
+!*  SECONDARY FUNCTIONS TESTED : 
+!*
+!*  DRIVER STANZA              : xlf95
+!*
+!*  DESCRIPTION                : structure constructor (unlimited
+!                               poly-allocatable scalar component; data-source
+!                               is of derived type with bindings, including
+!                               the final binding)
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!* ===================================================================
+!*
+!*  REVISION HISTORY
+!*
+!*  MM/DD/YY:  Init:  Comments:
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+module m
+    type container
+        class(*), allocatable :: data
+    end type
+end module
+
+module n
+    type base
+        integer(8) :: id
+
+        contains
+
+        procedure :: print => printBase
+        final :: finalizeBase
+    end type
+
+    type, extends(base) :: child
+        character(18) :: name
+
+        contains
+
+        procedure :: print => printChild
+
+        final finalizeChild
+    end type
+
+    contains
+
+    subroutine printBase (b)
+        class (base), intent(in) :: b
+
+        print *, b%id
+    end subroutine
+
+    subroutine printChild (b)
+        class (child), intent(in) :: b
+
+        print *, b%id, b%name
+    end subroutine
+
+    subroutine finalizeBase (b)
+        type(base) b
+
+        print *, 'finalizeBase'
+    end subroutine
+
+    subroutine finalizeChild (c)
+        type (child) c
+
+        print *, 'finalizeChild'
+    end subroutine
+end module
+
+program fconstr034a
+use n
+use m
+    class(*), allocatable :: x1
+    class (*), pointer :: x2(:)
+
+    type (child), target :: c1 (2:10)
+
+    allocate (x1, source=child(100, 'x1'))
+
+    c1%id = (/(i,i=2,10)/)
+    c1%name = 'c1_array_of_9'
+
+    x2 => c1
+
+    print *, 'begin'
+
+    associate (y1 => container(x1), y2 => container(x2(5)))
+        select type (z => y1%data)
+            class is (base)
+                call z%print
+            class default
+                error stop 1_4
+        end select
+
+        select type (z => y2%data)
+            class is (base)
+                call z%print
+            class default
+                error stop 2_4
+        end select
+    end associate
+
+    print *, 'end'
+end

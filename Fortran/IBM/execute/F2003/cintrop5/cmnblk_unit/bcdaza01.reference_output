@@ -1,0 +1,4 @@
+"bcdaza01.f", line 40.9: 1516-195 (S) The BIND(C) attribute must not be specified for a zero-sized array. 
+** mod   === End of Compilation 1 ===
+** bcdaza01   === End of Compilation 2 ===
+1501-511  Compilation failed for file bcdaza01.f.

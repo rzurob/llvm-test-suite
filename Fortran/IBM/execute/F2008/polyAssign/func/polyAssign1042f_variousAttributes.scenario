@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/polyAssign/func/polyAssign1042f_variousAttributes.scenario
+#FEATURE   = LHS of intrinsic assignment is allowed to be polymorphic
+#CREATOR   = Aaron Liu
+#DATE      = 20150901
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)polyAssign1042f_variousAttributes.f
+#OUTPUT    = polyAssign1042f_variousAttributes$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = polyAssign1042f_variousAttributes$(OBJ)
+#OUTPUT    = polyAssign1042f_variousAttributes$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = polyAssign1042f_variousAttributes$(EXE)
+#STDOUT    = polyAssign1042f_variousAttributes.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)polyAssign1042f_variousAttributes$(product)vf) polyAssign1042f_variousAttributes.out
+#ENDCMD
+#ENDCONTROL
+
+#ENDSCENARIO
+

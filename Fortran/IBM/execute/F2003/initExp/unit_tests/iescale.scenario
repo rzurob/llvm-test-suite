@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE = Initialization Expression Enhancement
+#CREATOR = James Ren
+#DATE    = 20060404
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)iescale.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = iescale$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = iescale$(OBJ)
+#OUTPUT    = iescale$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = iescale$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

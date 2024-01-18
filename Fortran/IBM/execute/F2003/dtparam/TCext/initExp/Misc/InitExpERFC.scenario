@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/initExp/Misc/InitExpERFC.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of F2003/initExp/*
+#DATE      = 20071128
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)InitExpERFC.f
+#OUTPUT= InitExpERFC$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  InitExpERFC$(OBJ)
+#OUTPUT= InitExpERFC$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  InitExpERFC$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrGEInt.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrGEInt.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrGEInt$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrGEInt$(OBJ)
+#OUTPUT    = dataPtrGEInt$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrGEInt$(EXE)
+#STDOUT    = dataPtrGEInt.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrGEInt.out $($(tcasedir)dataPtrGEInt$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

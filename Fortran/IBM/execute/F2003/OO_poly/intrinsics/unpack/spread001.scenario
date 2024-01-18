@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/unpack/spread001.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050224
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)spread001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = spread001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = spread001$(OBJ)
+#OUTPUT    = spread001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = spread001$(EXE)
+#STDOUT    = spread001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)spread001$(product)vf) spread001.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

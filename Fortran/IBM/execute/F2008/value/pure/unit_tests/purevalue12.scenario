@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME      = F2008/value/pure/unit_tests/purevalue12.scenario
+#FEATURE   = 384867 \
+             F2008: VALUE attribute allowed for dummy args of PURE procedures
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20101201
+#TEST_TYPE = Unit test
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS)
+#INPUT     = $(tcasedir)purevalue12.c
+#OUTPUT    = purevalue12c$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#OPTS      = $CPPFLAGS
+#INPUT     = $(tcasedir)purevalue12.f
+#OUTPUT    = purevalue12f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = purevalue12c$(OBJ) purevalue12f$(OBJ)
+#OUTPUT    = purevalue12$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = purevalue12$(EXE)
+#STDOUT    = purevalue12.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

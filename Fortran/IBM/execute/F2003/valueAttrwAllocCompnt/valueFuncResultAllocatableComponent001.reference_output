@@ -1,0 +1,24 @@
+ inside foo 100
+ inside bar 100
+ after bar F
+ inside foo1 100
+ after foo T -999
+ ======
+ inside foo 200
+ inside bar 200
+ after bar F
+ inside foo1 200
+ after foo T -999
+ ======
+ inside foo 10
+ inside bar 10
+ after bar F
+ inside foo1 10
+ after foo T -999
+ ======
+ inside foo 100
+ inside bar 100
+ after bar F
+ inside foo1 100
+ after foo T -999
+ 100

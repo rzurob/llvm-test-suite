@@ -1,0 +1,50 @@
+ b1 ( F F F F ) T
+ e1 ( F F F F ) T -- F T
+ e2 ( F F F F ) T -- F T
+ e3 ( F F F F ) T -- F T
+ 
+ C1 20
+ b1 25
+ C2 30
+ e1 35
+ e1 40
+ C3 45
+ e2 50
+ e1 55
+ C3 60
+ e2 65
+ C4 70
+ e3 75
+ b1 80
+ C2 85
+ e1 90
+ C3 95
+ e2 100
+ C4 105
+ e3 110
+ C1 115
+ b1 120
+ C2 125
+ e1 130
+ 
+ C1 80
+ b1 85
+ C2 90
+ e1 95
+ 
+ C4 55
+ e3 60
+ C1 65
+ b1 70
+ 
+ C3 40
+ e2 45
+ C4 50
+ e3 55
+ C1 60
+ b1 65
+ 
+ b1 ( T T T T ) T
+ e1 ( T T T T ) T -- T T
+ e2 ( T T T T ) T -- T T
+ e3 ( T T T T ) T -- T T

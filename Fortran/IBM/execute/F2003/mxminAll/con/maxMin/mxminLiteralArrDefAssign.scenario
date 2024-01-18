@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/mxminAll/con/maxMin/mxminLiteralArrDefAssign.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mxminLiteralArrDefAssign.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = mxminLiteralArrDefAssign$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = mxminLiteralArrDefAssign$(OBJ)
+#OUTPUT    = mxminLiteralArrDefAssign$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminLiteralArrDefAssign$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

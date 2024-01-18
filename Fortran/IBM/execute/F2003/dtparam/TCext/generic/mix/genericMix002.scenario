@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/mix/genericMix002.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071221
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericMix002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericMix002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericMix002$(OBJ)
+#OUTPUT    = genericMix002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericMix002$(EXE)
+#STDOUT    = genericMix002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericMix002.out $(tcasedir)genericMix002.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,4 @@
+ 1525-082 The number of digits after a decimal point for the D edit descriptor is missing in a format specification.  The program will recover by assuming a default value.
+                                                                                                                                 
+ 1525-082 The number of digits after a decimal point for the B edit descriptor is missing in a format specification.  The program will recover by assuming a default value.
+                                                                                                                                 

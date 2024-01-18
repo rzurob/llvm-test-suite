@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/format/formatBasic03b.scenario
+#FEATURE   = 359704
+#CREATOR   = Nancy Wang
+#DATE      = Dec. 5 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)formatBasic03b.f
+#OUTPUT= formatBasic03b$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = formatBasic03b$(OBJ)
+#OUTPUT= formatBasic03b$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = formatBasic03b$(EXE)
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT  = $($(tcasedir)formatBasic03b$(product)vf) formatBasic03b.out
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

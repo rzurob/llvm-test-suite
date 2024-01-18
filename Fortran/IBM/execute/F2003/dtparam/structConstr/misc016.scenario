@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/structConstr/misc016.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)misc016.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = misc016$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = misc016$(OBJ)
+#OUTPUT    = misc016$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = misc016$(EXE)
+#STDOUT    = misc016.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = misc016.out $($(tcasedir)misc016$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

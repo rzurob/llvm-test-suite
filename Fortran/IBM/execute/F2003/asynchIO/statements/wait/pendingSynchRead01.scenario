@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/wait/pendingSynchRead01.scenario
+#FEATURE	= Asynchronous I/O -- Wait Operation
+#CREATOR	= GM Manual Creation
+#DATE		= 20060328
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#IF on (linuxle)
+    XLFRTEOPTS=$(CONVERT_UFMT_IO_ENDIANESS<100>)
+#ENDIF
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)pendingSynchRead01.f
+#OUTPUT		= pendingSynchRead01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= pendingSynchRead01$(OBJ)
+#OUTPUT		= pendingSynchRead01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= pendingSynchRead01$(EXE)
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)pendingSynchRead01$(product)vf) fort.100
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

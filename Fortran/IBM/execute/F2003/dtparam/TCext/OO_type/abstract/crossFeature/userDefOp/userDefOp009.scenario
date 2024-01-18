@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/crossFeature/userDefOp/userDefOp009.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/*
+#DATE      = 20070621
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)userDefOp009.f
+#OUTPUT    = userDefOp009$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = userDefOp009$(OBJ)
+#OUTPUT    = userDefOp009$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = userDefOp009$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

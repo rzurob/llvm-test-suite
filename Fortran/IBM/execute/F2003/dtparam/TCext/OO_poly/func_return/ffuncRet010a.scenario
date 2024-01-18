@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/func_return/ffuncRet010a.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070920
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ffuncRet010a.f
+#OUTPUT    = ffuncRet010a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = ffuncRet010a$(OBJ)
+#OUTPUT    = ffuncRet010a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ffuncRet010a$(EXE)
+#STDOUT    = ffuncRet010a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = ffuncRet010a.out $($(tcasedir)ffuncRet010a$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

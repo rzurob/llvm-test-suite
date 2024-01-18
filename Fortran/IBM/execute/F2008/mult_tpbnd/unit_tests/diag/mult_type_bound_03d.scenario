@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2008/mult_tpbnd/unit_tests/diag/mult_type_bound_03d.scenario
+#FEATURE = 916819 F2008:Multiple type-bound procedures in a single procedure stmt
+#CREATOR = Paul Liu
+#DATE    = 20110525
+#TEST_TYPE=FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+! no module
+! redefinition
+! procedure,nopass :: foo,foo ! 2 foo
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mult_type_bound_03d.f
+#OUTPUT    = mult_type_bound_03d$(OBJ)
+#STDERR    = mult_type_bound_03d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $(tcasedir)mult_type_bound_03d.vf mult_type_bound_03d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

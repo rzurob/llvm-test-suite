@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"eoshiftdtp46.f", line 51.7: 1516-044 (S) A conversion from type dtp is not permitted.
+** a   === End of Compilation 2 ===
+1501-511  Compilation failed for file eoshiftdtp46.f.

@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/ieee/support/supdtype04.scenario
+#FEATURE = ieee tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)supdtype04.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = supdtype04$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  supdtype04$(OBJ)
+#OUTPUT    = supdtype04$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = supdtype04$(EXE)
+#STDOUT    = supdtype04.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

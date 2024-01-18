@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"SltAbs.f", line 95.12: 1514-645 (S) abs is an abstract type. abs is not permitted in this context.
+"SltAbs.f", line 97.12: 1514-645 (S) base is an abstract type. base is not permitted in this context.
+** sltabs   === End of Compilation 2 ===
+1501-511  Compilation failed for file SltAbs.f.

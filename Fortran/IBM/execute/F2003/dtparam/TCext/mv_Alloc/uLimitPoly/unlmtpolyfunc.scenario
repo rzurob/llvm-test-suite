@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/uLimitPoly/unlmtpolyfunc.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071106
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)unlmtpolyfunc.f
+#OUTPUT= unlmtpolyfunc$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  unlmtpolyfunc$(OBJ)
+#OUTPUT= unlmtpolyfunc$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  unlmtpolyfunc$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

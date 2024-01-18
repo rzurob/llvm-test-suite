@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE =
+#CREATOR = Andy Chen
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_COARRAY_IMAGES<12>) $(OPT_COARRAY_DNODES<2>)
+#INPUT     = $(tcasedir)coindex_procedure_010f.f
+#OUTPUT    = coindex_procedure_010f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_COARRAY_IMAGES<12>) $(OPT_COARRAY_DNODES<2>)
+#INPUT     = coindex_procedure_010f$(OBJ)
+#OUTPUT    = coindex_procedure_010f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#ENVAR     = CAF_NUM_IMAGES=12
+#ENVAR     = MP_PROCS=2
+#INPUT     = coindex_procedure_010f$(EXE)
+#STDOUT    = coindex_procedure_010f.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

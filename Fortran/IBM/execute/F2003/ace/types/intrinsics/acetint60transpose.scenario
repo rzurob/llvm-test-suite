@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint60transpose.scenario
+#FEATURE	= Array constructor enhancement - array construction intrinsics
+#CREATOR	= DF Manual Update
+#DATE		= 20061124
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint60transpose.f
+#OUTPUT		= acetint60transpose$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint60transpose$(OBJ)
+#OUTPUT		= acetint60transpose$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint60transpose$(EXE)
+#STDOUT		= acetint60transpose.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -r1e-5
+#INPUT		= $($(tcasedir)acetint60transpose$(product)vf) acetint60transpose.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/charVal/misc/valueAttrMultiSameArg001.scenario
+#FEATURE	= VALUE Attribute -- Character Length > 1
+#CREATOR	= GM Manual Creation
+#DATE		= 20060425
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)valueAttrMultiSameArg001.f
+#OUTPUT		= valueAttrMultiSameArg001$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= valueAttrMultiSameArg001$(OBJ)
+#OUTPUT		= valueAttrMultiSameArg001$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= valueAttrMultiSameArg001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,23 @@
+"acesynt41pd.f", line 97.30: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41pd.f", line 103.30: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41pd.f", line 109.30: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41pd.f", line 116.30: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41pd.f", line 122.30: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41pd.f", line 128.30: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41pd.f", line 135.30: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41pd.f", line 141.30: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41pd.f", line 147.30: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41pd.f", line 154.27: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41pd.f", line 160.27: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41pd.f", line 166.27: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41pd.f", line 173.32: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41pd.f", line 179.32: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41pd.f", line 185.32: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41pd.f", line 192.27: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41pd.f", line 193.31: 1516-081 (S) Upper bound for the last dimension of an assumed-size array must be specified.
+"acesynt41pd.f", line 199.27: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41pd.f", line 200.31: 1516-081 (S) Upper bound for the last dimension of an assumed-size array must be specified.
+"acesynt41pd.f", line 206.27: 1513-038 (S) Assumed-size array is not permitted in this context.
+"acesynt41pd.f", line 207.31: 1516-081 (S) Upper bound for the last dimension of an assumed-size array must be specified.
+** acesynt41pd   === End of Compilation 1 ===
+1501-511  Compilation failed for file acesynt41pd.f.

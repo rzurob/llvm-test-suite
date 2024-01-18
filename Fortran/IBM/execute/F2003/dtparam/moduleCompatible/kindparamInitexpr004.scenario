@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = kindparamInitexpr004.scenario
+#FEATURE   =
+#CREATOR   = MZ adapted from dtparam/typeparam/kindparamInitexpr004.f
+#DATE      = 20100504
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_ALT_COMPILE
+#INPUT     = $(tcasedir)kindparamInitexpr004_mod.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=allowrpdt
+#OUTPUT    = kindparamInitexpr004_mod$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)kindparamInitexpr004_main.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=allowrpdt
+#OUTPUT    = kindparamInitexpr004_main$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = kindparamInitexpr004_mod$(OBJ) kindparamInitexpr004_main$(OBJ)
+#OUTPUT    = kindparamInitexpr004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = kindparamInitexpr004$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

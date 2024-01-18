@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/procPtrComp/dtpPPCDummyPassDTPInterfaceKLFunDTPInh.scenario
+#FEATURE   = Procedure Pointers as Components - reference to pass function with DTP dummy args, K+L, DTP result, ref via dummy arg
+#CREATOR   = DF Manual Update
+#DATE      = 20090324
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPPCDummyPassDTPInterfaceKLFunDTPInh.f
+#OUTPUT    = dtpPPCDummyPassDTPInterfaceKLFunDTPInh$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPPCDummyPassDTPInterfaceKLFunDTPInh$(OBJ)
+#OUTPUT    = dtpPPCDummyPassDTPInterfaceKLFunDTPInh$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPPCDummyPassDTPInterfaceKLFunDTPInh$(EXE)
+#STDOUT    = dtpPPCDummyPassDTPInterfaceKLFunDTPInh.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpPPCDummyPassDTPInterfaceKLFunDTPInh$(product)vf) dtpPPCDummyPassDTPInterfaceKLFunDTPInh.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

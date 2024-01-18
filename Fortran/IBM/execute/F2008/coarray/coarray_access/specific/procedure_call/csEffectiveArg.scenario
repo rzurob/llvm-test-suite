@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_access/specific/procedure_call/csEffectiveArg
+#FEATURE        = CAF coarray access (specific) - procedure call - procedure invokes procedure with a coarray variable as the effective argument
+#CREATOR        = DF
+#DATE           = 2010-10-04
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)csEffectiveArg.f
+#OUTPUT = csEffectiveArg$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = csEffectiveArg$(OBJ)
+#OUTPUT = csEffectiveArg$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD    = MPRUN
+	#INPUT  = csEffectiveArg$(EXE)
+	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

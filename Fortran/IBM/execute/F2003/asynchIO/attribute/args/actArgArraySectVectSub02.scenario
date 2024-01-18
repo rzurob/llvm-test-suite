@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/attribute/args/actArgArraySectVectSub02.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Attribute
+#CREATOR	= GM Manual Creation
+#DATE		= 20060406
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#IF on (linuxle)
+    XLFRTEOPTS=$(CONVERT_UFMT_IO_ENDIANESS<1225>)
+#ENDIF
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)actArgArraySectVectSub02.f
+#OUTPUT		= actArgArraySectVectSub02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= actArgArraySectVectSub02$(OBJ)
+#OUTPUT		= actArgArraySectVectSub02$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= actArgArraySectVectSub02$(EXE)
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)actArgArraySectVectSub02$(product)vf) fort.1225
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = image_index_f002.scenario
+#FEATURE  = CAF Intrinsics
+#CREATOR  = Francesco Cassullo
+#DATE     = August 2010
+#TEST_TYPE= FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)image_index_f002.f
+#OUTPUT    = image_index_f002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = image_index_f002$(OBJ)
+#OUTPUT    = image_index_f002$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = image_index_f002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

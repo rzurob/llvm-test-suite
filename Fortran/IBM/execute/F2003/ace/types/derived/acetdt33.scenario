@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/derived/acetdt33.scenario
+#FEATURE	= Array constructor enhancement - derived TS in AC same as associate name in ASSOCIATE construct
+#CREATOR	= DF Manual Update
+#DATE		= 20060927
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt33.f
+#OUTPUT		= acetdt33$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt33$(OBJ)
+#OUTPUT		= acetdt33$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt33$(EXE)
+#STDOUT		= acetdt33.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -r1e-5
+#INPUT		= $($(tcasedir)acetdt33$(product)vf) acetdt33.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

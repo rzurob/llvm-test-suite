@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2003/dtparam/TCext/OO_dtio/unformatted/section9.9/pos001ll.scenario
+#FEATURE = OO_dtio/unformatted tests - regression run bucket + derived type parameters
+#CREATOR = automated conversion script
+#DATE    = 20071002
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)pos001ll.f
+#OPTS      = -qxlf2003=dynamicacval $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = pos001ll$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  pos001ll$(OBJ)
+#OUTPUT    = pos001ll$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = pos001ll$(EXE)
+#STDOUT    = pos001ll.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)pos001ll$(product)vf) pos001ll.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

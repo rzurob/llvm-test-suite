@@ -1,0 +1,52 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/asynchIO/attribute/baseObj/baseObjPending04.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of asynchIO/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=bgq
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)baseObjPending04.f
+#OUTPUT		= baseObjPending04$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= baseObjPending04$(OBJ)
+#OUTPUT		= baseObjPending04$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= baseObjPending04$(EXE)
+#ENDCMD
+
+#CMD		= SED
+#OPTS		= -e '1,/^\*\* asynchronouswrite   === End of Compilation 3 ===$/d'
+#INPUT		= baseObjPending04$(LST)
+#STDOUT		= baseObjPending04.sed.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i '^aP[ 	]'
+#INPUT		= baseObjPending04.sed.stdout
+#STDOUT		= baseObjPending04.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= baseObjPending04.stdout
+#VALIDRCS	= $(GREP_FAIL)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

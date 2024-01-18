@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignDummyArgAutoFixed.scenario
+#FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - via dummy arg pointers (with fixed length parameter), assign values to variables
+#CREATOR   = DF Manual Update
+#DATE      = 20090127
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPtrAssignDummyArgAutoFixed.f
+#OUTPUT    = dtpPtrAssignDummyArgAutoFixed$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPtrAssignDummyArgAutoFixed$(OBJ)
+#OUTPUT    = dtpPtrAssignDummyArgAutoFixed$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPtrAssignDummyArgAutoFixed$(EXE)
+#STDOUT    = dtpPtrAssignDummyArgAutoFixed.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpPtrAssignDummyArgAutoFixed$(product)vf) dtpPtrAssignDummyArgAutoFixed.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

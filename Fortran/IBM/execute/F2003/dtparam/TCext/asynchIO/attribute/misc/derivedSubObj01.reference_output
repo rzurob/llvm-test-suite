@@ -1,0 +1,3 @@
+asynchpoint                      Asynchronous, Automatic, Derived type: tpoint, Offset: 0, Alignment: full word
+asynchpoint%x                    Asynchronous, Automatic, Real(4), Offset: 0, Alignment: quadruple word
+asynchpoint%y                    Asynchronous, Automatic, Real(4), Offset: 4, Alignment: full word

@@ -1,0 +1,10 @@
+"leadztrailz02.f", line 15.45: 1518-256 (L) The intrinsic procedure leadz (with these arguments) is not permitted by the Fortran 2003 standard.
+"leadztrailz02.f", line 16.46: 1518-256 (L) The intrinsic procedure trailz (with these arguments) is not permitted by the Fortran 2003 standard.
+"leadztrailz02.f", line 18.45: 1518-256 (L) The intrinsic procedure leadz (with these arguments) is not permitted by the Fortran 2003 standard.
+"leadztrailz02.f", line 19.46: 1518-256 (L) The intrinsic procedure trailz (with these arguments) is not permitted by the Fortran 2003 standard.
+"leadztrailz02.f", line 21.45: 1518-256 (L) The intrinsic procedure leadz (with these arguments) is not permitted by the Fortran 2003 standard.
+"leadztrailz02.f", line 22.46: 1518-256 (L) The intrinsic procedure trailz (with these arguments) is not permitted by the Fortran 2003 standard.
+"leadztrailz02.f", line 24.45: 1518-256 (L) The intrinsic procedure leadz (with these arguments) is not permitted by the Fortran 2003 standard.
+"leadztrailz02.f", line 25.46: 1518-256 (L) The intrinsic procedure trailz (with these arguments) is not permitted by the Fortran 2003 standard.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file leadztrailz02.f.

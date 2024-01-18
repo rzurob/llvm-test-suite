@@ -1,0 +1,11 @@
+"decimaleditd015.f", line 46.18: 1512-040 (W) Repeat specification 3, in literal FMT specifier, for DC edit descriptor is not allowed.  Repeat specification is ignored.
+"decimaleditd015.f", line 47.18: 1512-040 (W) Repeat specification 3, in literal FMT specifier, for DP edit descriptor is not allowed.  Repeat specification is ignored.
+"decimaleditd015.f", line 48.17: 1512-050 (W) Field separator is missing, in literal FMT specifier, after edit descriptor DC.  A comma is assumed.
+"decimaleditd015.f", line 48.20: 1512-053 (E) Edit descriptor in literal FMT specifier is invalid and will be ignored.
+"decimaleditd015.f", line 49.17: 1512-050 (W) Field separator is missing, in literal FMT specifier, after edit descriptor DP.  A comma is assumed.
+"decimaleditd015.f", line 49.20: 1512-053 (E) Edit descriptor in literal FMT specifier is invalid and will be ignored.
+"decimaleditd015.f", line 50.17: 1512-050 (W) Field separator is missing, in literal FMT specifier, after edit descriptor DP.  A comma is assumed.
+"decimaleditd015.f", line 50.19: 1512-053 (E) Edit descriptor in literal FMT specifier is invalid and will be ignored.
+"decimaleditd015.f", line 51.17: 1512-053 (E) Edit descriptor in literal FMT specifier is invalid and will be ignored.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file decimaleditd015.f.

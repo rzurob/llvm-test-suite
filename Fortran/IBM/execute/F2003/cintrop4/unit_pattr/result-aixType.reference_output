@@ -1,0 +1,18 @@
+  17.6   01610747 f1‹BIND(C) attribute‹interoperable type and type parameters‹
+  24.8   01610747 f1e2‹BIND(C) attribute‹interoperable type and type parameters‹
+  30.8   01610747 g1‹BIND(C) attribute‹interoperable type and type parameters‹
+  35.8   01610747 g3‹BIND(C) attribute‹interoperable type and type parameters‹
+  41.8   01610747 f1e1‹BIND(C) attribute‹interoperable type and type parameters‹
+  46.8   01610747 g2‹BIND(C) attribute‹interoperable type and type parameters‹
+** f1   === End of Compilation 1 ===
+  52.6   01610747 f2‹BIND(C) attribute‹interoperable type and type parameters‹
+** f2   === End of Compilation 2 ===
+  61.6   01610747 f5‹BIND(C) attribute‹interoperable type and type parameters‹
+** f5   === End of Compilation 3 ===
+  69.6   01610747 f4‹BIND(C) attribute‹interoperable type and type parameters‹
+** f4   === End of Compilation 4 ===
+  76.6   01610747 f3‹BIND(C) attribute‹interoperable type and type parameters‹
+** f3   === End of Compilation 5 ===
+  87.10   01610747 fa‹BIND(C) attribute‹interoperable type and type parameters‹
+** p1   === End of Compilation 6 ===
+1501-511  Compilation failed for file resultType.f.

@@ -1,0 +1,42 @@
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE TITLE            : Argument association with DTP
+!*                             :
+!*  PROGRAMMER                 : Huiwen Li
+!*  ORIGIN                     : AIX Compiler Development,
+!*                             : IBM Software Solutions Toronto Lab
+!*
+!*  DIAGNOSTIC TESTED          : using sizeof() on automatic object
+!*
+!*
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!* ===================================================================
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+    type base (k, n)
+        integer, kind :: k
+        integer, len  :: n
+
+        integer(k) :: data(n) = 0
+    end type
+
+    call sub1(20)
+    contains
+      subroutine sub1(len_tp)
+        integer len_tp
+        type(base(4, len_tp)) :: local_var
+        if (local_var%k /= 4) stop 1
+        if (local_var%n /= 20) stop 2
+        if (sizeof(local_var) .ne. 80) stop 8
+      end subroutine
+
+end

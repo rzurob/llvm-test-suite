@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/intrinsics/math/sinhIntrinsicF1.scenario
+#FEATURE   = Math intrinsic functions
+#CREATOR   = Shahid Alam
+#DATE      = 20101116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPILE
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     = $(tcasedir)sinhIntrinsicF1.f
+#OUTPUT    = sinhIntrinsicF1$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     = sinhIntrinsicF1$(OBJ)
+#OUTPUT    = sinhIntrinsicF1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = sinhIntrinsicF1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,5 @@
+"d300558.f", line 28.15: 1516-162 (E) The entity abc is not permitted for the PROTECTED statement.  Entity is ignored.
+"d300558.f", line 28.20: 1516-162 (E) The entity xyz is not permitted for the PROTECTED statement.  Entity is ignored.
+** m   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file d300558.f.

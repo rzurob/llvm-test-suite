@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      dtParamAllocLenInquiry01.scenario
+#FEATURE=   Derived Type Parameters - deferred len type param inquiry
+#CREATOR=   Rafik Zurob
+#DATE=      20070413
+#TEST_TYPE= unit
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=      F_COMPILE
+#INPUT=    $(tcasedir)dtParamAllocLenInquiry01.f
+#OUTPUT=   dtParamAllocLenInquiry01$(OBJ)
+#ENDCMD
+
+#CMD=      F_LINK
+#INPUT=    dtParamAllocLenInquiry01$(OBJ)
+#OUTPUT=   dtParamAllocLenInquiry01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtParamAllocLenInquiry01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,86 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop4/unit_pattr/emapoverload.scenario
+#FEATURE = cintrop4 tests - regression run bucket
+#CREATOR = CPR Manual update
+#DATE    = 20060811
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS)
+#INPUT     = $(tcasedir)emapoverload-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS)
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)emapoverload-f.f
+#STDERR    = emapoverload.out1
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = emapoverload-c$(OBJ) emapoverload-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapoverload$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapoverload$(EXE)
+#STDOUT    = emapoverload.out2
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapoverload.out1 emapoverload.out2
+#STDOUT    = emapoverload.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapoverload.out $(tcasedir)emapoverload.vf
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS)
+#INPUT     = $(tcasedir)emapoverload-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS)
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)emapoverload-f.f
+#STDERR    = emapoverload.out1
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = emapoverload-c$(OBJ) emapoverload-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapoverload$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapoverload$(EXE)
+#STDOUT    = emapoverload.out2
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapoverload.out1 emapoverload.out2
+#STDOUT    = emapoverload.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapoverload.out $(tcasedir)emapoverload.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

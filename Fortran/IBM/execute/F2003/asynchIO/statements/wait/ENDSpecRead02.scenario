@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/wait/ENDSpecRead02.scenario
+#FEATURE	= Asynchronous I/O -- WAIT() Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060308
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)ENDSpecRead02.dat fort.811
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)ENDSpecRead02.f
+#OUTPUT		= ENDSpecRead02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= ENDSpecRead02$(OBJ)
+#OUTPUT		= ENDSpecRead02$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= ENDSpecRead02$(EXE)
+#STDOUT		= ENDSpecRead02.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)ENDSpecRead02$(product)vf) ENDSpecRead02.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

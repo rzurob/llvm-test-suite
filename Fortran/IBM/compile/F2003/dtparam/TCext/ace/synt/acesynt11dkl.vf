@@ -1,0 +1,30 @@
+** mod   === End of Compilation 1 ===
+"acesynt11dkl.f", line 68.39: 1515-019 (S) Syntax is incorrect.
+"acesynt11dkl.f", line 69.44: 1515-019 (S) Syntax is incorrect.
+"acesynt11dkl.f", line 70.42: 1516-036 (S) Entity double has undefined type.
+"acesynt11dkl.f", line 70.49: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acesynt11dkl.f", line 70.58: 1515-022 (S) Syntax Error: Extra token " :: " was found. The token is ignored.
+"acesynt11dkl.f", line 70.61: 1515-022 (S) Syntax Error: Extra token " - " was found. The token is ignored.
+"acesynt11dkl.f", line 70.62: 1515-022 (S) Syntax Error: Extra token " 1.0 " was found. The token is ignored.
+"acesynt11dkl.f", line 71.47: 1515-022 (S) Syntax Error: Extra token " double " was found. The token is ignored.
+"acesynt11dkl.f", line 71.54: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acesynt11dkl.f", line 71.63: 1515-022 (S) Syntax Error: Extra token " :: " was found. The token is ignored.
+"acesynt11dkl.f", line 72.15: 1515-019 (S) Syntax is incorrect.
+"acesynt11dkl.f", line 73.41: 1515-022 (S) Syntax Error: Extra token " precision " was found. The token is ignored.
+"acesynt11dkl.f", line 73.50: 1515-022 (S) Syntax Error: Extra token " :: " was found. The token is ignored.
+"acesynt11dkl.f", line 77.39: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt11dkl.f", line 78.39: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt11dkl.f", line 79.39: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt11dkl.f", line 79.61: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt11dkl.f", line 79.87: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt11dkl.f", line 80.39: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt11dkl.f", line 80.61: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt11dkl.f", line 80.87: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt11dkl.f", line 81.39: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt11dkl.f", line 82.39: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt11dkl.f", line 83.39: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt11dkl.f", line 89.58: 1516-044 (S) A conversion from type LOGICAL is not permitted.
+"acesynt11dkl.f", line 90.58: 1516-044 (S) A conversion from type CHARACTER is not permitted.
+"acesynt11dkl.f", line 91.58: 1516-044 (S) A conversion from type derived is not permitted.
+** acesynt11dkl   === End of Compilation 2 ===
+1501-511  Compilation failed for file acesynt11dkl.f.

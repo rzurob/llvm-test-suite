@@ -1,0 +1,8 @@
+** m   === End of Compilation 1 ===
+"Intent.f", line 86.7: 1516-055 (S) The INTENT(IN) attribute specifies that a dummy argument, or a subobject of a dummy argument, must not be redefined or become undefined during the execution of the procedure.
+"Intent.f", line 92.15: 1516-147 (S) procptr has the attribute INTENT(IN).  It may not appear as the pointer object in a pointer assignment statement, or in an ALLOCATE, DEALLOCATE, or NULLIFY statement.
+"Intent.f", line 98.15: 1516-147 (S) procptr has the attribute INTENT(IN).  It may not appear as the pointer object in a pointer assignment statement, or in an ALLOCATE, DEALLOCATE, or NULLIFY statement.
+"Intent.f", line 99.7: 1516-055 (S) The INTENT(IN) attribute specifies that a dummy argument, or a subobject of a dummy argument, must not be redefined or become undefined during the execution of the procedure.
+** intent   === End of Compilation 2 ===
+** extsub   === End of Compilation 3 ===
+1501-511  Compilation failed for file Intent.f.

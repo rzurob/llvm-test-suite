@@ -1,0 +1,14 @@
+"cobound04d.f", line 31.32: 1513-133 (S) KIND must be an integer constant.
+"cobound04d.f", line 32.32: 1513-040 (S) The argument KIND must be a scalar.
+"cobound04d.f", line 33.32: 1513-133 (S) KIND must be an integer constant.
+"cobound04d.f", line 34.32: 1513-133 (S) KIND must be an integer constant.
+"cobound04d.f", line 35.32: 1513-133 (S) KIND must be an integer constant.
+"cobound04d.f", line 36.35: 1513-133 (S) KIND must be an integer constant.
+"cobound04d.f", line 39.32: 1513-133 (S) KIND must be an integer constant.
+"cobound04d.f", line 40.32: 1513-040 (S) The argument KIND must be a scalar.
+"cobound04d.f", line 41.32: 1513-133 (S) KIND must be an integer constant.
+"cobound04d.f", line 42.32: 1513-133 (S) KIND must be an integer constant.
+"cobound04d.f", line 43.32: 1513-133 (S) KIND must be an integer constant.
+"cobound04d.f", line 44.35: 1513-133 (S) KIND must be an integer constant.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file cobound04d.f.

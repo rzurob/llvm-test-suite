@@ -1,0 +1,10 @@
+ Base: id = 1
+ Child: id = 6 name =c1                  
+ Base: id = 2
+ Child: id = 7 name =c1                  
+ Base: id = 3
+ Child: id = 8 name =c1                  
+ Base: id = 4
+ Child: id = 9 name =c1                  
+ Base: id = 5
+ Child: id = 10 name =c1                  

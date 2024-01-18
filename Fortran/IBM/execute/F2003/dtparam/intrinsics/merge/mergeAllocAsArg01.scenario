@@ -1,0 +1,32 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/intrinsics/merge/mergeAllocAsArg01.scenario
+#FEATURE= 355754
+#CREATOR= Nancy Wang
+#DATE   = Sept. 21 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)mergeAllocAsArg01.f
+#OUTPUT= mergeAllocAsArg01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = mergeAllocAsArg01$(OBJ)
+#OUTPUT= mergeAllocAsArg01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = mergeAllocAsArg01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

@@ -1,0 +1,8 @@
+"cobound_d002a.f", line 30.11: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "lcobound".
+"cobound_d002a.f", line 31.11: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "ucobound".
+"cobound_d002a.f", line 34.11: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "lcobound".
+"cobound_d002a.f", line 35.11: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "ucobound".
+"cobound_d002a.f", line 38.11: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "lcobound".
+"cobound_d002a.f", line 39.11: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "ucobound".
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file cobound_d002a.f.

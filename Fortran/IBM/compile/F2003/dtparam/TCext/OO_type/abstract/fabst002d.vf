@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"fabst002d.f", line 70.10: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file fabst002d.f.

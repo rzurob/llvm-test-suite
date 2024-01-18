@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/crossFeature/funcRetrn/funcRetrn009.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/abstract/crossFeature/funcRetrn/funcRetrn009.scenario
+#DATE      = 20070613
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)funcRetrn009.f
+#OUTPUT    = funcRetrn009$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = funcRetrn009$(OBJ)
+#OUTPUT    = funcRetrn009$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = funcRetrn009$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

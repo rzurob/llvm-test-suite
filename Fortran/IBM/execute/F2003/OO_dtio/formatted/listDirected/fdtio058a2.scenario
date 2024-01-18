@@ -1,0 +1,51 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/listDirected/fdtio058a2.scenario
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fdtio058.1.f90
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qsuffix=f=f90
+#OUTPUT    = fdtio058.1$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fdtio058.2.f90
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qsuffix=f=f90
+#OUTPUT    = fdtio058.2$(OBJ)
+#ENDCMD
+
+#CMD       = MAKELIB
+#ENVAR     = OBJECT_MODE=32_64
+#INPUT     = fdtio058.1$(OBJ) fdtio058.2$(OBJ)
+#OUTPUT    = libtemp$(LIB)
+#OPTS      = -q
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fdtio058a2.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fdtio058a2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -L./ -ltemp
+#INPUT     = fdtio058a2$(OBJ)
+#OUTPUT    = fdtio058a2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fdtio058a2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

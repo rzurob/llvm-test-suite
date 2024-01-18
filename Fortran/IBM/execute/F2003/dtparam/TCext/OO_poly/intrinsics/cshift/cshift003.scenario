@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/cshift/cshift003.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070924
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)cshift003.f
+#OUTPUT    = cshift003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = cshift003$(OBJ)
+#OUTPUT    = cshift003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = cshift003$(EXE)
+#STDOUT    = cshift003.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)cshift003$(product)vf) cshift003.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

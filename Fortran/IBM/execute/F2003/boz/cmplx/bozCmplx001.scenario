@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/F2003/boz/cmplx/bozCmplx001.scenario
+#FEATURE = boz-literal-constant in CMPLX intrinsic
+#CREATOR = Vicram Uppal
+#DATE    = 20060202
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)bozCmplx001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = bozCmplx001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = bozCmplx001$(OBJ)
+#OUTPUT    = bozCmplx001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = bozCmplx001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

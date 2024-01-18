@@ -1,0 +1,6 @@
+"TypeDecl2.f", line 62.19: 1516-237 (E) Entity extfun with the EXTERNAL attribute must not be declared with the PROTECTED attribute.  The PROTECTED attribute will be ignored.
+"TypeDecl2.f", line 68.38: 1516-237 (E) Entity procptr1 with the EXTERNAL attribute must not be declared with the PROTECTED attribute.  The PROTECTED attribute will be ignored.
+** m   === End of Compilation 1 ===
+"TypeDecl2.f", line 75.8: 1516-332 (S) The stop code in the STOP statement must be a scalar constant expression of character or integer type.
+** typedecl2   === End of Compilation 2 ===
+1501-511  Compilation failed for file TypeDecl2.f.

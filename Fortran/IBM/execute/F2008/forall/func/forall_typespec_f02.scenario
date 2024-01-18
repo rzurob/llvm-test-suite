@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME             = forall_typespec_f02.scenario
+#CREATOR          = Bernard Kan
+#FEATURE          = 400906 Support typespec on FORALL
+#DATE             = June 18, 2012
+#TEST_TYPE        = DIAGNOSTIC
+#ENDDOC
+
+
+#BEGINCONTROL
+
+#CMD              = XLF2008_COMPILE
+#INPUT            = $(tcasedir)forall_typespec_f02.f
+#OUTPUT           = forall_typespec_f02$(OBJ)
+#ENDCMD
+
+#CMD              = XLF2008_LINK
+#INPUT            = forall_typespec_f02$(OBJ)
+#OUTPUT           = forall_typespec_f02$(EXE)
+#ENDCMD
+
+#CMD              = RUN
+#INPUT            = forall_typespec_f02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

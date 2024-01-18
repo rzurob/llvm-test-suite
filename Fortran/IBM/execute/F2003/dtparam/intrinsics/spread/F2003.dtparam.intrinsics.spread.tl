@@ -1,0 +1,56 @@
+!
+!  Automatically Generated .tl file
+!  Bucket:      F2003/dtparam
+!  Sub-Bucket:  intrinsics/spread
+!
+d354613_2.scenario
+d356964_2.scenario
+d357409.scenario
+d357422.scenario
+d357448.scenario
+d357450.scenario
+d357486.scenario
+d357496.scenario
+d357502.scenario
+d357506.scenario
+d357751.scenario
+d357760.scenario
+d357831_1.scenario
+d357831_2.scenario
+d357837.scenario
+d357859.scenario
+d358038.scenario
+spreadAsActualArg01.scenario
+spreadAsActualArg02.scenario
+spreadAsFunRes01.scenario
+spreadAsFunRes02.scenario
+spreadAsFunRes03.scenario
+spreadAsInitExp01.scenario
+spreadAsInitExp02.scenario
+spreadDiagRangeOfDIM01.scenario
+spreadDiagTypeOfDIM01.scenario
+spreadDiagTypeOfNC01.scenario
+spreadMis01.scenario
+spreadMis02.scenario
+spreadSourceIsArrayCharComp01.scenario
+spreadSourceIsArrayCharComp02.scenario
+spreadSourceIsArrayDTComp01.scenario
+spreadSourceIsArrayDTComp02.scenario
+spreadSourceIsArrayIntComp01.scenario
+spreadSourceIsArrayIntComp02.scenario
+spreadSourceIsArrayPolyComp01.scenario
+spreadSourceIsArrayProcPtrComp01.scenario
+! spreadSourceIsComp01.scenario  !moved to future
+spreadSourceIsComp02.scenario
+spreadSourceIsScalarCharComp01.scenario
+spreadSourceIsScalarCharComp02.scenario
+spreadSourceIsScalarDTComp01.scenario
+spreadSourceIsScalarDTComp02.scenario
+spreadSourceIsScalarIntComp01.scenario
+spreadSourceIsScalarIntComp02.scenario
+spreadSourceIsScalarPolyComp01.scenario
+spreadSourceIsScalarPolyComp02.scenario
+spreadSourceIsScalarProcPtrComp01.scenario
+spreadSourceIsScalarProcPtrComp02.scenario
+spreadWithAssociate01.scenario
+spreadWithAssociate02.scenario

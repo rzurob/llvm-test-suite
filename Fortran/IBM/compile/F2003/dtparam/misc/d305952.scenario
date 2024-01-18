@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/misc/d305952.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d305952.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = d305952$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = d305952.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = d305952.err $($(tcasedir)d305952$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

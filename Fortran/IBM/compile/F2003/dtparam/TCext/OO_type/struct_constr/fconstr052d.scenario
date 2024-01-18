@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/struct_constr/fconstr052d.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/*
+#DATE      = 20070710
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fconstr052d.f
+#OPTS      = -qdebug=intmsg:shutup
+#OUTPUT    = fconstr052d$(OBJ)
+#STDERR    = fconstr052d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)fconstr052d$(product)vf) fconstr052d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       AttrOptionalArrPtr.f
+#FEATURE= ASSOCIATE STATEMENT
+#CREATOR=    Feng Ye
+#DATE=       11-01-05
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)AttrOptionalArrPtr.f
+#OUTPUT= AttrOptionalArrPtr$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  AttrOptionalArrPtr$(OBJ)
+#OUTPUT= AttrOptionalArrPtr$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  AttrOptionalArrPtr$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

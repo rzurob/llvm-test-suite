@@ -1,0 +1,8 @@
+"dtParamTypeDecIntrinsic3.f", line 47.14: 1515-019 (S) Syntax is incorrect.
+"dtParamTypeDecIntrinsic3.f", line 49.14: 1515-019 (S) Syntax is incorrect.
+"dtParamTypeDecIntrinsic3.f", line 51.11: 1515-019 (S) Syntax is incorrect.
+"dtParamTypeDecIntrinsic3.f", line 53.14: 1515-019 (S) Syntax is incorrect.
+"dtParamTypeDecIntrinsic3.f", line 55.11: 1514-205 (E) Invalid type parameter. This syntax is only valid for the CHARACTER type specifier.
+"dtParamTypeDecIntrinsic3.f", line 57.10: 1515-019 (S) Syntax is incorrect.
+** dtparamtypedecintrinsic3   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtParamTypeDecIntrinsic3.f.

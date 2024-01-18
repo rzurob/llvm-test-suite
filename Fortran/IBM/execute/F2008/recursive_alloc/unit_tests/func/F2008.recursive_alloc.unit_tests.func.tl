@@ -1,0 +1,5 @@
+recuralloc01.scenario
+recuralloc02.scenario
+recuralloc03.scenario
+recuralloc04.scenario
+recuralloc05.scenario

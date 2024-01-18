@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrMoveAlloc1.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrMoveAlloc1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrMoveAlloc1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrMoveAlloc1$(OBJ)
+#OUTPUT    = dataPtrMoveAlloc1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrMoveAlloc1$(EXE)
+#STDOUT    = dataPtrMoveAlloc1.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrMoveAlloc1.out $($(tcasedir)dataPtrMoveAlloc1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

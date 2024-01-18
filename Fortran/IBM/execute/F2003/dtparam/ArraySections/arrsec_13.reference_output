@@ -1,0 +1,10 @@
+ in sub2 dummy-arr= 4 8 12 16 20
+ in sub2 this->arr= 1 2 3 4
+ in sub2 dummy-arr= 8 12 16 20
+ in sub2 this->arr= 2 4 6 8
+ in sub2 dummy-arr= 12 16 20
+ in sub2 this->arr= 3 6 9 12
+ in sub2 dummy-arr= 16 20
+ in sub2 this->arr= 4 8 12 16
+ in sub2 dummy-arr= 20
+ in sub2 this->arr= 5 10 15 20

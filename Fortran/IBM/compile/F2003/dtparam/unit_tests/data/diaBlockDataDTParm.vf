@@ -1,0 +1,5 @@
+** exam   === End of Compilation 1 ===
+"diaBlockDataDTParm.f", line 74.44: 1514-213 (S) A type parameter in this position must be a scalar integer initialization expression.
+"diaBlockDataDTParm.f", line 74.50: 1514-213 (S) A type parameter in this position must be a scalar integer initialization expression.
+** (block)   === End of Compilation 2 ===
+1501-511  Compilation failed for file diaBlockDataDTParm.f.

@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/null/fnull501.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070925
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fnull501.f
+#OUTPUT    = fnull501$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fnull501$(OBJ)
+#OUTPUT    = fnull501$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fnull501$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

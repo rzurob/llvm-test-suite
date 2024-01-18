@@ -1,0 +1,7 @@
+"AssumedType11d.f", line 33.30: 1514-809 (S) Entity c has assumed type. c must not have the ALLOCATABLE attribute.
+** mod   === End of Compilation 1 ===
+"AssumedType11d.f", line 46.31: 1514-809 (S) Entity a has assumed type. a must not have the ALLOCATABLE attribute.
+"AssumedType11d.f", line 51.31: 1514-809 (S) Entity a has assumed type. a must not have the ALLOCATABLE attribute.
+"AssumedType11d.f", line 58.31: 1514-809 (S) Entity a has assumed type. a must not have the ALLOCATABLE attribute.
+** assumedtype11d   === End of Compilation 2 ===
+1501-511  Compilation failed for file AssumedType11d.f.

@@ -1,0 +1,15 @@
+** m   === End of Compilation 1 ===
+"move_allocDiagArraySect01.f", line 44.20: 1516-287 (S) The FROM argument to the intrinsic procedure MOVE_ALLOC must have the ALLOCATABLE attribute.
+"move_allocDiagArraySect01.f", line 44.28: 1516-287 (S) The TO argument to the intrinsic procedure MOVE_ALLOC must have the ALLOCATABLE attribute.
+"move_allocDiagArraySect01.f", line 45.20: 1516-287 (S) The FROM argument to the intrinsic procedure MOVE_ALLOC must have the ALLOCATABLE attribute.
+"move_allocDiagArraySect01.f", line 45.30: 1516-287 (S) The TO argument to the intrinsic procedure MOVE_ALLOC must have the ALLOCATABLE attribute.
+"move_allocDiagArraySect01.f", line 46.20: 1516-287 (S) The FROM argument to the intrinsic procedure MOVE_ALLOC must have the ALLOCATABLE attribute.
+"move_allocDiagArraySect01.f", line 46.28: 1516-287 (S) The TO argument to the intrinsic procedure MOVE_ALLOC must have the ALLOCATABLE attribute.
+"move_allocDiagArraySect01.f", line 47.14: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"move_allocDiagArraySect01.f", line 48.14: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"move_allocDiagArraySect01.f", line 54.26: 1516-287 (S) The FROM argument to the intrinsic procedure MOVE_ALLOC must have the ALLOCATABLE attribute.
+"move_allocDiagArraySect01.f", line 54.34: 1516-287 (S) The TO argument to the intrinsic procedure MOVE_ALLOC must have the ALLOCATABLE attribute.
+"move_allocDiagArraySect01.f", line 61.26: 1516-287 (S) The FROM argument to the intrinsic procedure MOVE_ALLOC must have the ALLOCATABLE attribute.
+"move_allocDiagArraySect01.f", line 61.34: 1516-287 (S) The TO argument to the intrinsic procedure MOVE_ALLOC must have the ALLOCATABLE attribute.
+** move_allocdiagarraysect01   === End of Compilation 2 ===
+1501-511  Compilation failed for file move_allocDiagArraySect01.f.

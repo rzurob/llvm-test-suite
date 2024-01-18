@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/use/dtpUseAC01.scenario
+#FEATURE   = DTP and USE - array constructor
+#CREATOR   = DF Manual Update
+#DATE      = 20080903
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUseAC01.f
+#OUTPUT    = dtpUseAC01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUseAC01$(OBJ)
+#OUTPUT    = dtpUseAC01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUseAC01$(EXE)
+#STDOUT    = dtpUseAC01.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUseAC01$(product)vf) dtpUseAC01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

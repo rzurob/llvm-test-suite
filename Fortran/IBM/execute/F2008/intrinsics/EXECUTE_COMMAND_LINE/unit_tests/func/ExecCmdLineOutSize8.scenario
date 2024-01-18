@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = $(tcasedir)ExecCmdLineOutSize8.scenario
+#FEATURE   = 381472
+#CREATOR   = Ren Jian Gang
+#DATE      = December 05, 2010
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)ExecCmdLineOutSize8.f
+#OPTS     =  $(OPT_INTSIZE_8)
+#OUTPUT   =  ExecCmdLineOutSize8$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  ExecCmdLineOutSize8$(OBJ)
+#OUTPUT   =  ExecCmdLineOutSize8$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  ExecCmdLineOutSize8$(EXE)
+#STDOUT   =  ExecCmdLineOutSize8.out
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = ExecCmdLineOutSize8.out $(tcasedir)ExecCmdLineOutSize8.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

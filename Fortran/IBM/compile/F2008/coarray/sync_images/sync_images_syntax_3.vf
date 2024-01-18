@@ -1,0 +1,11 @@
+"sync_images_syntax_3.f", line 43.15: 1515-019 (S) Syntax is incorrect.
+"sync_images_syntax_3.f", line 44.15: 1511-156 (S) The image set in the SYNC statement must be either an asterisk, or an integer expression that is scalar or of rank one.
+"sync_images_syntax_3.f", line 45.15: 1511-156 (S) The image set in the SYNC statement must be either an asterisk, or an integer expression that is scalar or of rank one.
+"sync_images_syntax_3.f", line 46.15: 1511-156 (S) The image set in the SYNC statement must be either an asterisk, or an integer expression that is scalar or of rank one.
+"sync_images_syntax_3.f", line 47.15: 1511-157 (S) The value of the image set in the SYNC statement must be positive.
+"sync_images_syntax_3.f", line 48.15: 1511-158 (S) The value of each element of the image set in the SYNC statement must be positive.
+"sync_images_syntax_3.f", line 49.24: 1515-019 (S) Syntax is incorrect.
+"sync_images_syntax_3.f", line 50.24: 1515-019 (S) Syntax is incorrect.
+"sync_images_syntax_3.f", line 51.39: 1515-019 (S) Syntax is incorrect.
+** sync_images_syntax_2   === End of Compilation 1 ===
+1501-511  Compilation failed for file sync_images_syntax_3.f.

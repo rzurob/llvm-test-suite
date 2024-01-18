@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/unformatted/syntax/C920/C920_001.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070910
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)C920_001k.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = C920_001k$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = C920_001k$(OBJ)
+#OUTPUT    = C920_001k$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = C920_001k$(EXE)
+#STDOUT    = C920_001k.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = C920_001k.out $(tcasedir)C920_001k.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

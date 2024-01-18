@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/intrinsics/merge/d356111.scenario
+#FEATURE= 355754
+#CREATOR= Nancy Wang
+#DATE   = Sept. 12 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)d356111.f
+#OUTPUT= d356111$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = d356111$(OBJ)
+#OUTPUT= d356111$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = d356111$(EXE)
+#STDOUT = d356111.out
+#ENDCMD
+
+#CMD    = DIFF
+#INPUT  = $($(tcasedir)d356111$(product)vf) d356111.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

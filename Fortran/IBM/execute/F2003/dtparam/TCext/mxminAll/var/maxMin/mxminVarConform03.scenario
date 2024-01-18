@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mxminAll/var/maxMin/mxminVarConform03.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mxminAll/*
+#DATE      = 20071105
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mxminVarConform03.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = mxminVarConform03$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = mxminVarConform03$(OBJ)
+#OUTPUT    = mxminVarConform03$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminVarConform03$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

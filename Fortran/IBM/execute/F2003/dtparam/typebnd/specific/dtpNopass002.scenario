@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/typebnd/specific/dtpNopass002.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpNopass002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtpNopass002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpNopass002$(OBJ)
+#OUTPUT    = dtpNopass002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpNopass002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+ Before Setting Values
+ --------------------
+ CUBE's Property:
+ Cube name: Object
+ Cube SIDES LENGHT: 0.0000000000E+00
+ Cube Volume: 0.0000000000E+00
+ Cube Surface: 0.0000000000E+00
+ 4.000000000 --- 64.00000000 -| 64.00000000
+ 
+ After Setting Values
+ --------------------
+ CUBE's Property:
+ Cube name: MyCube
+ Cube SIDES LENGHT: 4.000000000
+ Cube Volume: 64.00000000
+ Cube Surface: 96.00000000
+ |--------------------|
+ Before Setting Values
+ --------------------
+ Rectangular Prism Property:
+ RP name: Object
+ RP SIDES LENGHT: 0.0000000000E+00 0.0000000000E+00 0.0000000000E+00
+ RP Volume: 0.0000000000E+00
+ RP Surface: 0.0000000000E+00
+ 
+ After Setting Values
+ --------------------
+ Rectangular Prism Property:
+ RP name: MyRP
+ RP SIDES LENGHT: 64.00000000 33.00000000 96.00000000
+ RP Volume: 202752.0000
+ RP Surface: 22848.00000

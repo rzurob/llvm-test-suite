@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/defAssignn/defAssignDTComp03b.scenario
+#FEATURE   = 361704
+#CREATOR   = Nancy Wang
+#DATE      = Feb. 3 2009
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)defAssignDTComp03b.f
+#OUTPUT= defAssignDTComp03b$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = defAssignDTComp03b$(OBJ)
+#OUTPUT= defAssignDTComp03b$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = defAssignDTComp03b$(EXE)
+#STDOUT= defAssignDTComp03b.out
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT  = $($(tcasedir)defAssignDTComp03b$(product)vf) defAssignDTComp03b.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

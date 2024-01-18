@@ -1,0 +1,76 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/asynchIO/attribute/otherAttr/asynchTargetAttr01.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of asynchIO/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=bgq
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)asynchTargetAttr01.f
+#OUTPUT		= asynchTargetAttr01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= asynchTargetAttr01$(OBJ)
+#OUTPUT		= asynchTargetAttr01$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= asynchTargetAttr01$(EXE)
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)asynchTargetAttr01$(product)vf)	\
+				asynchTargetAttr01.dat
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= -i '^pixel[ 	]'
+#INPUT		= asynchTargetAttr01$(LST)
+#STDOUT		= asynchTargetAttr01.pixel.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i '^ptr[ 	]'
+#INPUT		= asynchTargetAttr01$(LST)
+#STDOUT		= asynchTargetAttr01.ptr.stdout
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= 'Target'
+#INPUT		= asynchTargetAttr01.pixel.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= asynchTargetAttr01.pixel.stdout
+#VALIDRCS	= $(GREP_FAIL)
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= 'Target'
+#INPUT		= asynchTargetAttr01.ptr.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= asynchTargetAttr01.ptr.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

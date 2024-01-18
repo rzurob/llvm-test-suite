@@ -1,0 +1,26 @@
+** m   === End of Compilation 1 ===
+** subm   === End of Compilation 2 ===
+"do_concurrent_d008.f", line 86.17: 1516-380 (S) Procedure p is not pure. p must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d008.f", line 87.18: 1516-380 (S) Procedure __m_NMOD_modp is not pure. __m_NMOD_modp must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d008.f", line 88.18: 1516-380 (S) Procedure modp2 is not pure. modp2 must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d008.f", line 89.18: 1516-380 (S) Procedure c_func is not pure. c_func must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d008.f", line 90.18: 1516-380 (S) Procedure internalp is not pure. internalp must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d008.f", line 95.16: 1516-380 (S) Procedure s is not pure. s must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d008.f", line 96.16: 1516-380 (S) Procedure __m_NMOD_mods is not pure. __m_NMOD_mods must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d008.f", line 97.16: 1516-380 (S) Procedure mods2 is not pure. mods2 must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d008.f", line 98.16: 1516-380 (S) Procedure c_sub is not pure. c_sub must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d008.f", line 99.16: 1516-380 (S) Procedure internals is not pure. internals must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d008.f", line 106.17: 1516-380 (S) Procedure p is not pure. p must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d008.f", line 107.18: 1516-380 (S) Procedure __m_NMOD_modp is not pure. __m_NMOD_modp must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d008.f", line 108.18: 1516-380 (S) Procedure modp2 is not pure. modp2 must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d008.f", line 109.18: 1516-380 (S) Procedure c_func is not pure. c_func must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d008.f", line 110.18: 1516-380 (S) Procedure internalp is not pure. internalp must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d008.f", line 117.16: 1516-380 (S) Procedure s is not pure. s must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d008.f", line 118.16: 1516-380 (S) Procedure __m_NMOD_mods is not pure. __m_NMOD_mods must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d008.f", line 119.16: 1516-380 (S) Procedure mods2 is not pure. mods2 must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d008.f", line 120.16: 1516-380 (S) Procedure c_sub is not pure. c_sub must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d008.f", line 121.16: 1516-380 (S) Procedure internals is not pure. internals must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+** prog   === End of Compilation 3 ===
+** p   === End of Compilation 4 ===
+** s   === End of Compilation 5 ===
+1501-511  Compilation failed for file do_concurrent_d008.f.

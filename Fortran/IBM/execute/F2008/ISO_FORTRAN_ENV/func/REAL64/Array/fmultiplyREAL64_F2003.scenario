@@ -1,0 +1,63 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       fmultiplyREAL64
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2003_COMPILE
+#INPUT=  $(tcasedir)fmultiplyREAL64.f
+#OUTPUT= fmultiplyREAL64$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2003_LINK
+#INPUT=  fmultiplyREAL64$(OBJ)
+#OUTPUT= fmultiplyREAL64$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fmultiplyREAL64$(EXE)
+#ENDCMD
+
+#CMD=    XLF2003_COMPILE
+#OPTS=   $(OPT_REALSIZE_4)
+#INPUT=  $(tcasedir)fmultiplyREAL64.f
+#OUTPUT= fmultiplyREAL64_1$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2003_LINK
+#OPTS=   $(OPT_REALSIZE_4)
+#INPUT=  fmultiplyREAL64_1$(OBJ)
+#OUTPUT= fmultiplyREAL64_1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fmultiplyREAL64_1$(EXE)
+#ENDCMD
+
+#CMD=    XLF2003_COMPILE
+#OPTS=   -qautodbl=dbl
+#INPUT=  $(tcasedir)fmultiplyREAL64.f
+#OUTPUT= fmultiplyREAL64_2$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2003_LINK
+#OPTS=   -qautodbl=dbl
+#INPUT=  fmultiplyREAL64_2$(OBJ)
+#OUTPUT= fmultiplyREAL64_2$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fmultiplyREAL64_2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

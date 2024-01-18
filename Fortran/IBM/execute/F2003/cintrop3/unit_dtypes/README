@@ -1,0 +1,15 @@
+This test bucket contains unit tests for derived types with the BIND(C)
+attribute.
+
+bddiag*
+These are diagnostic tests involving bad syntax, as well as having components
+of all types (both interoperable and non-interoperable) in BIND(C) derived
+types.
+
+bdfunc01*
+These tests involve passing an object of a BIND(C) derived type to a C 
+routine, both by reference and by value, and using various lignment options.
+
+bdfunc02*
+These tests involve passing an object of a BIND(C) derived type to a Fortran
+routine, both by reference and by value, and using various alignment options.

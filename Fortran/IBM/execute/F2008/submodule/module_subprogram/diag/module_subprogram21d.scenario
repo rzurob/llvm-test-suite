@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/submodule/diag/module_subprogram21d.scenario
+#FEATURE   = F2008 Submodule
+#CREATOR   = Bernard Kan
+#DATE      = 20121208
+#TEST_TYPE = Diagnostic
+#KEYWORDS  = F2008, submodule, F2008 submodule
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD          = F_COMPLINK
+#INPUT        = $(tcasedir)module_subprogram21d.f
+#OUTPUT       = module_subprogram21d$(OBJ)
+#STDOUT       = module_subprogram21d.out
+#STDERR       = module_subprogram21d.out
+#IF on (linux)
+#VALIDRCS     = $(RC_COMP_E) $(RC_LINK_E)
+#ENDIF
+#ENDCMD
+
+#IF on (aix)
+#CMD          = XLDIFF
+#INPUT        = module_subprogram21d.out $($(tcasedir)module_subprogram21d$(product)vf)
+#ENDCMD
+#ENDIF
+
+#IF on (linux)
+#CMD          = EGREP
+#OPTS         = "multiple definition of.*n'"
+#INPUT        = module_subprogram21d.out
+#ENDCMD
+#ENDIF
+
+#ENDCONTROL
+#ENDSCENARIO
+

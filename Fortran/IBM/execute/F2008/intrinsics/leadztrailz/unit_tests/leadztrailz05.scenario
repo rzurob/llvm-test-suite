@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2008/intrinsics/leadztrailz/unit_tests/leadztrailz05.scenario
+#FEATURE = F2008 LEADZ and TRAILZ intrinsics
+#CREATOR = Rafik Zurob
+#DATE    = 20110504
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)leadztrailz05.f
+#OUTPUT    = leadztrailz05$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = leadztrailz05$(OBJ)
+#OUTPUT    = leadztrailz05$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = leadztrailz05$(EXE)
+#STDOUT    = leadztrailz05.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)leadztrailz05$(product)vf) leadztrailz05.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

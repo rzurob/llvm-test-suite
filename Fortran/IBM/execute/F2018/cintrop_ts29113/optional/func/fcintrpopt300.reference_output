@@ -1,0 +1,45 @@
+ num is not present in f_func_test
+ num is present in f_func_test
+ arg is present in f_func_test
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ num is not present in f_func_test
+ num is present in f_func_test
+ arg is present in f_func_test
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ num is not present in f_func_test
+ num is present in f_func_test
+ arg is present in f_func_test
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+a = absent
+b = absent
+a = 110
+b = absent
+a = 120
+112,113,113,114,

@@ -1,0 +1,2 @@
+1525-213 A NAMELIST item name encountered by the NAMELIST READ statement was not followed by an equals ('=').  The program will recover by assuming an equals after the NAMELIST item name.
+1525-213 A NAMELIST item name encountered by the NAMELIST READ statement was not followed by an equals ('=').  The program will recover by assuming an equals after the NAMELIST item name.

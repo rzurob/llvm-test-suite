@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/../enhDummyArg13.scenario
+#FEATURE   = Enhancement to determining dummy argument presence
+#CREATOR   = Ying Zhang
+#DATE      = 20110901
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tsrcdir)F2003/valueAttrwAllocCompnt/valueOptionalDummyArg001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qxlf2008=checkpresence
+#OUTPUT    = valueOptionalDummyArg001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qxlf2008=checkpresence
+#INPUT     = valueOptionalDummyArg001$(OBJ)
+#OUTPUT    = valueOptionalDummyArg001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = valueOptionalDummyArg001$(EXE)
+#STDOUT    = valueOptionalDummyArg001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = valueOptionalDummyArg001.out $(tsrcdir)F2003/valueAttrwAllocCompnt/valueOptionalDummyArg001.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,5 @@
+"specific001d.f", line 46.29: 1514-561 (S) The inherited binding write with the NON_OVERRIDABLE attribute must not be overridden.
+"specific001d.f", line 47.29: 1514-561 (S) The inherited binding read with the NON_OVERRIDABLE attribute must not be overridden.
+** m   === End of Compilation 1 ===
+** specific001d   === End of Compilation 2 ===
+1501-511  Compilation failed for file specific001d.f.

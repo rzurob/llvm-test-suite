@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/spread/argAssociation003.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050120
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)argAssociation003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = argAssociation003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = argAssociation003$(OBJ)
+#OUTPUT    = argAssociation003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = argAssociation003$(EXE)
+#STDOUT    = argAssociation003.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)argAssociation003$(product)vf) argAssociation003.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

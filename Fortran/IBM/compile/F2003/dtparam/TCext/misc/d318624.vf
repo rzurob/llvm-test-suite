@@ -1,0 +1,4 @@
+"d318624.f", line 38.41: 1514-699 (S) Procedure "writeb" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "writebaseext", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** m   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file d318624.f.

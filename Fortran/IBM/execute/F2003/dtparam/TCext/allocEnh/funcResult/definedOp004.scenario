@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/funcResult/definedOp004.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071220
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)definedOp004.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = definedOp004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = definedOp004$(OBJ)
+#OUTPUT    = definedOp004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = definedOp004$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

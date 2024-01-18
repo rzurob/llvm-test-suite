@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      dtparamSpecExpr003.scenario
+#FEATURE =
+#CREATOR =  MZ adapted from F2003/dtparam/dtSpec/dtparamSpecExpr003.f
+#DATE    =  20100504
+#TEST_TYPE= functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_ALT_COMPILE
+#INPUT     = $(tcasedir)dtparamSpecExpr003_mod.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamSpecExpr003_mod$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamSpecExpr003_main.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamSpecExpr003_main$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dtparamSpecExpr003_mod$(OBJ) dtparamSpecExpr003_main$(OBJ)
+#OUTPUT    = dtparamSpecExpr003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamSpecExpr003$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

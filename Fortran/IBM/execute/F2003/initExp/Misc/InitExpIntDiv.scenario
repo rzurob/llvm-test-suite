@@ -1,0 +1,33 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       InitExpIntDiv.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       09-07-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)InitExpIntDiv.f
+#OUTPUT= InitExpIntDiv$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  InitExpIntDiv$(OBJ)
+#OUTPUT= InitExpIntDiv$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  InitExpIntDiv$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

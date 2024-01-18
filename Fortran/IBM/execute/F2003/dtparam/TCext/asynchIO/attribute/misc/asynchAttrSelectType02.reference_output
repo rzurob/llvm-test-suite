@@ -1,0 +1,3 @@
+tDerived2 = "Derived2", Value = "5.678"
+tDerived1 = "Derived1", Value = "8765"
+tBase     = "Base    ", No Value 

@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/associate/CrossFeatures/InterfaceProc.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071005
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)InterfaceProc.f
+#OUTPUT= InterfaceProc$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  InterfaceProc$(OBJ)
+#OUTPUT= InterfaceProc$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  InterfaceProc$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

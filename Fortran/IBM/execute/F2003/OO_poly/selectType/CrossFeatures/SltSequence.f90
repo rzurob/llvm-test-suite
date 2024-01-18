@@ -1,0 +1,107 @@
+! *********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD: 
+! %COMPOPTS: -qfree=f90 
+! %GROUP:  SltSequence.f 
+! %VERIFY:  
+! %STDIN:
+! %STDOUT: 
+! %EXECARGS:
+! %POSTCMD: 
+! %END
+! *********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : SltSequence 
+!*  TEST CASE TITLE            : 
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Jan. 28, 2005
+!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*
+!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*
+!*  REFERENCE                  : Feature 219934.OO_poly
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*     
+!*  componet of  sequence type 
+!* 
+!*  () 
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+  MODULE M
+    TYPE  :: DT0
+      SEQUENCE
+      INTEGER(4)      :: IArr(2)=-1 
+      CHARACTER(1025) :: CArr(2)="!" 
+    END TYPE
+
+    TYPE :: DT1
+      TYPE(DT0) :: Seq
+    END TYPE
+  
+    TYPE, EXTENDS(DT1) :: DT
+    END TYPE
+  
+  END MODULE
+
+  PROGRAM SltSequence  
+  USE M
+  IMPLICIT NONE
+  TYPE(DT) :: V(2,2,2)
+
+  CALL Sub(V)
+
+  CONTAINS
+
+  SUBROUTINE Sub(U)
+  CLASS(DT1)  :: U(:,:,:)
+
+S1: SELECT TYPE (S2 => U)
+    CLASS DEFAULT
+
+S2: SELECT TYPE (U => S2 )
+    CLASS DEFAULT
+      STOP 20 
+    CLASS IS (DT1)
+
+        IF (ANY(U(:,:,:)%Seq%IArr(1)  .NE. -1)) STOP 21
+        IF (ANY(U(:,:,:)%Seq%IArr(2)  .NE. -1)) STOP 22
+        IF (TRIM(U(1,1,1)%Seq%CArr(1))  .NE. "!") STOP 23
+        IF (TRIM(U(1,1,1)%Seq%CArr(2))  .NE. "!") STOP 24
+
+        U%Seq%IArr(1) = 1
+        U%Seq%IArr(2) = 2
+        U%Seq%CArr(1) = "K" 
+        U%Seq%CArr(2) = "Q" 
+
+        IF (SIZE(U(2,2,2)%Seq%IArr)   .NE. 2)  STOP 30
+        IF (KIND(U(2,2,2)%Seq%IArr)   .NE. 4)  STOP 31
+        IF (ANY(U(:,:,:)%Seq%IArr(1)  .NE. 1)) STOP 32
+        IF (ANY(U(:,:,:)%Seq%IArr(2)  .NE. 2)) STOP 33
+        IF (ANY(U(:,:,:)%Seq%CArr(1)  .NE. "K")) STOP 22
+        IF (ANY(U(:,:,:)%Seq%CArr(2)  .NE. "Q")) STOP 23
+
+    END SELECT S2
+    END SELECT S1
+
+  END SUBROUTINE
+
+  END
+
+
+

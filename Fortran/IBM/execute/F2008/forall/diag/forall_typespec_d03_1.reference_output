@@ -1,0 +1,3 @@
+"forall_typespec_d03.f", line 29.7: 1518-386 (L) The type specifier in the FORALL construct is not permitted by the Fortran 2003 standard.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file forall_typespec_d03.f.

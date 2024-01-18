@@ -1,0 +1,92 @@
+!*********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : kindArgSize4
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Jun. 30, 2006
+!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*
+!*  SECONDARY FUNCTIONS TESTED : SIZE 
+!*
+!*  REFERENCE                  : Feature Number 289083 
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  : -qfree=f90
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*
+!*   
+!*   
+!*  Size the number of true elements of ARRAY along dimension DIM 
+!*    
+!*  () 
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+
+  PROGRAM kindArgSize4
+  IMPLICIT NONE
+  
+  CLASS(*), ALLOCATABLE    :: CC(:,:,:,:,:,:,:,:,:)
+
+  TYPE :: DT
+  END TYPE
+
+  INTEGER :: I
+     
+  ALLOCATE(CHARACTER(128) :: CC(1:1,2:2,3:3,4:4,5:5,6:6,7:7,8:8,9:9))
+ 
+  DO I =1, 9
+    IF (SIZE(CC, KIND=1_1, DIM=I ) .NE. 1 ) STOP 11
+    IF (SIZE(CC, KIND=1_2, DIM=I ) .NE. 1 ) STOP 12
+    IF (SIZE(CC, KIND=1_4, DIM=I ) .NE. 1 ) STOP 13
+    IF (SIZE(CC, KIND=1_8, DIM=I ) .NE. 1 ) STOP 14
+  END DO
+
+  IF (SIZE(ARRAY=CC, KIND=1_1 ) .NE. 1 ) STOP 21
+  IF (SIZE(ARRAY=CC, KIND=2_2 ) .NE. 1 ) STOP 22
+  IF (SIZE(ARRAY=CC, KIND=4_4 ) .NE. 1 ) STOP 23
+  IF (SIZE(ARRAY=CC, KIND=8_8 ) .NE. 1 ) STOP 24
+
+  DEALLOCATE(CC)
+  ALLOCATE(COMPLEX(16) :: CC(0:0,0:0,0:0,0:0,0:0,0:0,0:0,0:0,0:0))
+ 
+  DO I =1, 9
+    IF (SIZE(CC, KIND=1_1, DIM=I ) .NE. 1 ) STOP 31
+    IF (SIZE(CC, KIND=1_2, DIM=I ) .NE. 1 ) STOP 32
+    IF (SIZE(CC, KIND=1_4, DIM=I ) .NE. 1 ) STOP 33
+    IF (SIZE(CC, KIND=1_8, DIM=I ) .NE. 1 ) STOP 34
+  END DO
+
+  IF (SIZE(ARRAY=CC, KIND=1_1 ) .NE. 1 ) STOP 41
+  IF (SIZE(ARRAY=CC, KIND=2_2 ) .NE. 1 ) STOP 42
+  IF (SIZE(ARRAY=CC, KIND=4_4 ) .NE. 1 ) STOP 43
+  IF (SIZE(ARRAY=CC, KIND=8_8 ) .NE. 1 ) STOP 44
+
+  DEALLOCATE(CC)
+  ALLOCATE(DT :: CC(-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0))
+ 
+  DO I =1, 9
+    IF (SIZE(CC, KIND=1_1, DIM=I ) .NE. 2 ) STOP 51
+    IF (SIZE(CC, KIND=1_2, DIM=I ) .NE. 2 ) STOP 52
+    IF (SIZE(CC, KIND=1_4, DIM=I ) .NE. 2 ) STOP 53
+    IF (SIZE(CC, KIND=1_8, DIM=I ) .NE. 2 ) STOP 54
+  END DO
+
+!  IF (SIZE(ARRAY=CC, KIND=1_1 ) .NE. 2**9 ) STOP 61
+  IF (SIZE(ARRAY=CC, KIND=2_2 ) .NE. 2**9 ) STOP 62
+  IF (SIZE(ARRAY=CC, KIND=4_4 ) .NE. 2**9 ) STOP 63
+  IF (SIZE(ARRAY=CC, KIND=8_8 ) .NE. 2**9 ) STOP 64
+
+  END
+

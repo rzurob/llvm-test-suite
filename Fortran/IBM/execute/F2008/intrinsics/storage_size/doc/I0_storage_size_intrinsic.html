@@ -1,0 +1,382 @@
+<html><head><title>STORAGE_SIZE intrinsic</title></head><body><table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#c0e1ff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="left" style="font-family: Arial; color: rgb(0, 0, 128); font-size: 12pt;"><strong>Document Control Information:</strong>
+            <p style="color: rgb(0, 0, 0);">The official version of this document is kept in CMVC in the <span style="font-weight: bold; text-decoration: underline;">%CMVC_Family%</span> family, release <span style="font-weight: bold; text-decoration: underline;">%CMVC_Release%</span>, component <span style="font-weight: bold; text-decoration: underline;">%CMVC_Component%</span>, file <span style="color: rgb(255, 102, 102); font-weight: bold; text-decoration: underline;">%CMVC_PathName%</span>. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.<br />
+            <br />
+            CMVC Extraction Information: %W% %H% %I% sccsid<br />
+            <br />
+            This document is IBM Confidential.<br />
+            </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table cellspacing="0" cellpadding="5" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td width="20%" valign="top" align="left"><strong>CMVC Feature Number</strong> </td>
+            <td width="80%" valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%CMVC_Feature%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Feature Title</strong> </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Document_Name% %Note{By default the feature title and document name are the same. You can either change the document name (through Properties), or replace the tag with the title of the feature}%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Author(s)</strong> </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Authors%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Applicable Product Releases</strong>       </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">XLF 15.1 PTF2, OpenPOWER 1.1, XLF 16.1 </td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Affected Components</strong>       </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">Front Ends: Fortran<br />
+            Documentation: LR, Errata and TechNote for PTF.<br />
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#ff6666">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="text-align: left; font-family: Arial; font-size: 12pt;"><strong>Document Status: For Approval</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<p><strong>Approvers Only:</strong> Click on the 'Approve' check-box beside your name in the table below if you agree with the technical and user interface content of this document; not checking your 'approve' check-box signifies you do not approve.</p>
+<p>%Approvals%</p>
+<p>Approval Comments</p>
+<p>
+<table cellspacing="0" cellpadding="5" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td valign="top" align="left"><strong>Approvers</strong> (mandatory participation) </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Note{Insert the names of people who will have approval authority for this review. These people, in aggregate, are responsible for approving the technical and user interface content of the document. Generally, this list should include people who represent compiler components that will need to change if this review is approved.<br />
+            The I0 Process document provides detailed guidance on choosing your list of approvers.<br />
+            A member of the Option Review Board must approve any i0 that adds an option or pragma.<br />
+            Use Access Control to add/delete people from this list. The initial access control list is populated with the people from the Component Reviewers section below. You can use Access Control to change their role to Approver, or add additional approvers.}%<br />
+            %Approvers%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Release Management Contact</strong> (optional participation) </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Release_Management_Contact% <br />
+            %Note{Choose the appropriate Release Managers from the BlueGroup FeatureFlow-ReleaseManagers}%<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Component Reviewers</strong> (optional participation) </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255);">%Note{Each member of the BlueGroup FeatureFlow-ReleaseLeadsFocals must be made aware of the i0 review.&nbsp; Use Access Control to add/delete people from this list.}%       <br />
+            %Component_Reviewers%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Team Reviewers</strong> (optional participation) </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Note{List any additional people you feel need to participate in the review. These people do not have approval authority. Use Access Control to add/delete people from this list.}%<br />
+            %Team_Reviewers%</td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p><br />
+<br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td style="font-family: Arial; vertical-align: top;"><strong>Reviewers</strong>: Please click the 'Reviewed' checkbox beside your name to indicate your participation in the review. </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%Reviews%<br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td style="font-family: Arial; vertical-align: top;"><strong>Access Change History</strong> %Note{Authors: Access Change History will list any changes to the access control done to the document draft. These changes would not be visible in a review. In a review, this section would only list the access changes done to the review itself.<br />
+            Please note that changes to the access control of a review are not automatically reflected in the access control of the draft document.}% </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%CollapsedSection{<strong>Access Change History</strong>}{%Access_Change_History%}%<br />
+</p>
+<p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Feature Overview</strong> </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<font size="2">Fortran 2008 standard introduced a new intrinsic  STORAGE_SIZE that returns the size expressed in bits for an element of  an array that has the dynamic type and type parameters of its argument.</font>
+<h2>Key Requirements</h2>
+To implement this new intrinsic.<br />
+<h2>Key Design Issues</h2>
+Since the intrinsic returns the size of the object as the element of an array as if it were to store into the memory, determine the padding and interaction with -qautodbl, -qinitsize or -qrealsize is important.<br />
+<h2>Key Design Decisions</h2>
+The compiler already takes a variety of options into account when setting up the length at both compile time and runtime. It sets the compile time length or the length field in the descriptor for runtime correctly. This intrinsic then can be folded at the compile time.<br />
+<h2>Testing Strategy</h2>
+This is a unit test only feature.<br />
+<br />
+For diagnose testing, invalid argument (expression, array constructor, structure constructor) should trigger a compile time message.<br />
+For diagnose testing, a langlvl message is issued when the -qlanglvl option specifies a standard prior to F2008.<br />
+Fort function testing,<br />
+<ul>
+    <li>scalar or array of different intrinsic types and derived types.</li>
+    <li>variables with allocatable or pointer attribute.</li>
+    <li>polymorphic entities.</li>
+    <li>assumed-length dummy argument.</li>
+    <li>runtime length automatic object.</li>
+    <li>interaction with -qintsize, -qrealsize</li>
+    <li>interaction with -qautodbl option</li>
+</ul>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<p>&nbsp;</p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>User Documentation</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Overview</h3>
+</strong></strong></strong>
+<p><font size="2">Fortran 2008 standard introduced a new intrinsic STORAGE_SIZE that returns the size expressed in bits for an element of an array that has the dynamic type and type parameters of its argument.</font><br />
+</p>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"> <strong style="color: rgb(0, 128, 0); font-size: 20px;">  <strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>User Benefits</h3>
+</strong> </strong></strong></strong>
+<p><font size="2">It allows users to retrieve the size of a data object as if it were to store to the memory.</font><br />
+</p>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"> <strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Public Interface</h3>
+</strong></strong></strong></strong><font size="2">STORAGE SIZE (A [, KIND])<br />
+<br />
+Description. Storage size in bits.<br />
+<br />
+Class. Inquiry function.<br />
+<br />
+Arguments.<br />
+A shall be a data object of any type. If it is polymorphic it shall not be an undefined pointer. If it is unlimited polymorphic or has any deferred type parameters, it shall not be an unallocated allocatable variable or a disassociated or undefined pointer.<br />
+KIND (optional) shall be a scalar integer constant expression.<br />
+<br />
+Result Characteristics. Integer scalar. If KIND is present, the kind type parameter is that specified by the value of KIND; otherwise, the kind type parameter is that of default integer type.<br />
+<br />
+Result Value. The result value is the size expressed in bits for an element of an array that has the dynamic type and type parameters of A. If the type and type parameters are such that storage association (16.5.3) applies, the result is consistent with the named constants defined in the intrinsic module ISO FORTRAN ENV.</font><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Constraints</h3>
+</strong></strong></strong></strong>
+<p><font size="2">The argument of STORAGE_SIZE must be a date object, namely, constant, variables or subobject of constant. It cannot be an expression, an array constructor, a structure constructor.</font><br />
+</p>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Rules</h3>
+</strong> </strong></strong></strong>
+<p><font size="2">None.</font><br />
+</p>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"> <strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Language Standard Considerations</h3>
+</strong> </strong></strong></strong>
+<p><font size="2">STORAGE_SIZE is introduced in F2008 standard. The compiler will issue a language level message when the -qlanglvl option specifies a previous standard.</font><br />
+</p>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"> <strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Messages</h3>
+</strong></strong></strong></strong>
+<p><font size="2">No new messages.</font><br />
+</p>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"> <strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Runtime and Compile Time Performance Considerations</h3>
+</strong> </strong></strong></strong>
+<p><font size="2">None.</font><br />
+</p>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Multi-Platform/Portability Considerations</h3>
+</strong>
+<p><font size="2">None.</font><br />
+</p>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Migration/Co-Existence/Binary-Compatibility Considerations</h3>
+</strong>
+<p><font size="2">None.</font><br />
+</p>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Debug Considerations</h3>
+</strong>
+<p><font size="2">None.</font><br />
+</p>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>NLS (Unicode) Considerations</h3>
+</strong>
+<p><font size="2">None.</font><br />
+</p>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Samples</h3>
+</strong>
+<p><font size="3"><code>integer i, j<br />
+i = storage_size(j) !! i is assigned the value of default integer size, 32bits.<br />
+end</code></font></p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Architecture Review Board</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<p><font size="2">None.</font><br />
+</p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Internal Compiler Team Information</strong>       </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Product Dependencies</h3>
+</strong>
+<p><font size="2">None.</font><br />
+</p>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Patent/Disclosure Implications</h3>
+</strong>
+<p><font size="2">None.</font></p>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Scientific Research and Experimental Development</h3>
+</strong>
+<p><strong>Technological Advancements</strong>: <font size="2">None.</font></p>
+<p><strong>Technological Obstacles</strong>: <font size="2">None.</font></p>
+<p><strong>Work Performed</strong>: <font size="2">None.</font></p>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Build and Packaging Considerations</h3>
+</strong><font size="2">None.</font>esting Considerations<strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Information Development Impacts</h3>
+<p>%Note{List any documentation impacts. What books/chapters/sections  are affected? Do the man pages need updating? Are there any new terms or  phrases that need to be added to the glossary? See template below.&nbsp; Add  new rows as necessary.}% </p>
+<table cellspacing="2" cellpadding="2" border="1" style="text-align: left; width: 100%; height: 408px;">
+    <tbody>
+        <tr>
+            <td colspan="2" rowspan="1" style="vertical-align: top;"><span style="font-weight: bold;">Overview</span>: %Note{In order to support this requirement, the information of the supported operating systems needs to be updated. ...... }%<br />
+            </td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top;"><font size="4"><span style="font-weight: bold;">New terminology</span><br />
+            (to be updated in index/glossaries)<br />
+            </font>             <font size="4"><br />
+            </font>             <font size="4"><br />
+            </font>             <font size="4"><br />
+            </font>             </td>
+            <td style="vertical-align: top;"><font size="4">Add the<strong> </strong>procedure name as an item in the Index section.<br />
+            </font>             </td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top;">
+            <ul>
+                <li><font size="4" face="Arial">Publication Name: XL Fortran for Linux, V15.1.1 and V15.1 (both LE and BE) &gt; LR <br />
+                </font></li>
+                <li><font size="4" face="Arial">Chapter: <span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;">Classes of intrinsic procedures <br />
+                </span></span></span></span></font></li>
+                <li><font size="4" face="Arial">Section: <span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><font color="#000000">Inquiry intrinsic functions</font></span></span></span></span></span></span></span></span></font></li>
+                <li><font size="4" face="Arial">             Update/New/Delete:&nbsp; In the table, add the &quot;STORAGE_SIZE&quot; procedure</font></li>
+            </ul>
+            <font size="4" face="Arial">             </font><font size="4"><br />
+            </font>             </td>
+            <td style="vertical-align: top;"><font size="4"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;">Draft checking:<br />
+            http://vaidbld.torolab.ibm.com:11201/help/topic/com.ibm.xlf1511.lelinux.doc/language_ref/inqintr.html</span></span></span></span></span></span></span></span></span></span></font>             </td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top;">
+            <ul>
+                <li><font size="4" face="Arial"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;">Publication Name: XL Fortran for Linux,&nbsp;</span></span></span></span><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"> V15.1.1 and V15.1 (both LE and BE) </span></span></span></span>&gt; LR <br />
+                </span></span></span></span></font></li>
+                <li><font size="4" face="Arial"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;">             Chapter:&nbsp;<span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"> Intrinsic procedures</span></span></span></span></span></span></span></span></font></li>
+                <li><font size="4" face="Arial"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;">Section: <span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;">D</span></span></span></span></span></span></span></span></span></span></span></span><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;">etailed descriptions of intrinsic procedures</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></font></li>
+                <li><font size="4" face="Arial"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>Update/New/Delete: add a new topic &quot;STORAGE<strong>_</strong>SIZE&quot; procedure</span></span></span></span></font></li>
+            </ul>
+            </td>
+            <td style="vertical-align: top;"><font size="4"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;">Draft checking: </span></span></span></span></span></span></span></span></span></span><strong><br />
+            </strong><font face="Arial">http://vaidbld.torolab.ibm.com:11201/help/topic/com.ibm.xlf1511.lelinux.doc/language_ref/storage_size.html</font><strong><br />
+            </strong><font size="2" /></font><br />
+            </td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top;"><font size="3"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;">             </span></span></span></span></font>
+            <ul>
+                <li><font size="3"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;">
+                <p><font face="Arial"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;">Publication Name: XL Fortran for AIX/Linux,&nbsp;</span></span></span></span></font><font face="Arial"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"></span></span></span></span></font></p>
+                </span></span></span></span></font></li>
+                <li><font size="3"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;">
+                <p><font face="Arial"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"> V13.1/15.1 (for BE) </span></span></span></span></span></span></span></span><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;">&gt; Getting StartedChapter:</span></span></span></span></font><font face="Arial"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><font face="Arial"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><strong> </strong>What's new for IBM XL Fortran</span></span></span></span></font></span></span></span></span></span></span></span></span></span></span></span></span></font><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"></span></span></span></span></p>
+                </span></span></span></span></font></li>
+            </ul>
+            <ul>
+                <li><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;">Section: <span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;">Directives and intrinsic procedures<br />
+                </span></span></span></span></span></span></span></span></span></span></span></span></li>
+            </ul>
+            <span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"></span></span></span></span></span></span></span></span></span></span></span></span>
+            <ul>
+                <li><font face="Arial"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;">Update/New/Delete: add the &quot;STORAGE<strong>_</strong>SIZE&quot; procedure in this topic properly<br />
+                </span></span></span></span></span></font></li>
+            </ul>
+            <font size="3"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;">             </span></span></span></span></font></td>
+            <td style="vertical-align: top;"><font size="3"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;">Draft checking:<br />
+            http://vaidbld.torolab.ibm.com:10301/help/topic/com.ibm.xlf1511.belinux.doc/getstart/new_builtins_v13v15.html<br />
+            </span></span></span></span></span></font></td>
+        </tr>
+    </tbody>
+</table>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Testing Considerations</h3>
+</strong></strong></strong></strong></strong></h3>
+</strong></strong></strong></strong></strong><strong style="color: rgb(0, 128, 0); font-size: 20px;"> </strong></strong>
+<p><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"> </strong></strong></strong></p>
+<p><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">%Note{ List any information here that would assist the test teams.<br />
+How big is the work being done for this feature? (lots of code changed, or tricky code changed, redesign, etc.)<br />
+How is a customer expected to use this functionality most often?<br />
+What interactions with existing functionality may be introduced?<br />
+What architectures, operating systems, debuggers, etc. need special testing?<br />
+Can existing test coverage be used or adapted for this feature?<br />
+etc.<br />
+</strong></strong></strong></p>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<p>}%</p>
+</strong></strong></strong>
+<p>&nbsp;</p>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Internal or Hidden Options</h3>
+</strong> </strong>
+<p><font size="2">None.</font><br />
+</p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>High-Level Implementation Design</strong>       </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Implementation Design Overview</h3>
+</strong><font size="2">Fortran FE will always fold the intrinsic. It should always return the element length of the entity. If it is known at the compile time, FFE will get it from SS(arg_stk).lngth. If it is only known at the runtime, FFE will load the argument and call __len_with_kind. ASTI will then get the value from the element_len field of the runtime descriptor.</font><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Inter-Component Communication/Interfaces</h3>
+</strong>
+<p><font size="2">None.</font></p>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Other Implementation Design Information</h3>
+</strong>
+<p><font size="2">None.</font></p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Appendix/References</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<p><br />
+<font size="2">Fortran 2008 standard.</font></p><!--HTML Wrapper--></body></html>

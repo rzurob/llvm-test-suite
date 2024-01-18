@@ -1,0 +1,3 @@
+"volatileHostAssociation03d.f", line 45.25: 1514-091 (S) Invalid structure component reference.  The object name and all component names (except the rightmost) must be of type derived.
+** volatilehostassociation03d   === End of Compilation 1 ===
+1501-511  Compilation failed for file volatileHostAssociation03d.f.

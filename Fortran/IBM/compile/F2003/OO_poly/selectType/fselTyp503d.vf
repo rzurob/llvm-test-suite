@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"fselTyp503d.f", line 77.23: 1511-101 (S) The selector in the SELECT TYPE statement is not polymorphic.
+** fseltyp503d   === End of Compilation 2 ===
+1501-511  Compilation failed for file fselTyp503d.f.

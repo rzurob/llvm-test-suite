@@ -1,0 +1,69 @@
+!*********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : submodule01d
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Bernard Kan
+!*  DATE                       : 6 December, 2012
+!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : submodule
+!*  SECONDARY FUNCTIONS TESTED :
+!*
+!*  DRIVER STANZA              : xlf2008
+!*  REQUIRED COMPILER OPTIONS  : 
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*
+!*    Setup subroutine naming conflict between the host module and a USE
+!*  associated module, expecting a severe message at compile.
+!*
+!* ===================================================================
+!*
+!*  REVISION HISTORY
+!*
+!*  MM/DD/YY:  Init:  Comments:
+!* ===================================================================
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+MODULE m
+  INTERFACE 
+    module subroutine sub(x, y)
+      integer, intent(in) :: x
+      integer, intent(out) :: y
+    end subroutine sub
+  END INTERFACE
+END MODULE m
+
+MODULE m2
+  INTERFACE 
+    module subroutine sub(x, y)
+      integer, intent(in) :: x
+      integer, intent(out) :: y
+    end subroutine sub
+  END INTERFACE
+END MODULE m2
+
+SUBMODULE (m) b
+USE m2
+CONTAINS
+  module subroutine sub(x, y)
+    integer, intent(in) :: x
+    integer, intent(out) :: y
+    y = x *2
+  end subroutine sub
+END SUBMODULE b
+
+PROGRAM submodule01d
+USE m
+integer :: a = 2, aa
+call sub(a, aa)
+print *, "a =", a, ", 2a=", aa
+END PROGRAM submodule01d

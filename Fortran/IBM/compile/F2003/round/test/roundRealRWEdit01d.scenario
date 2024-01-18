@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=roundRealRWEdit01d.f
+#FEATURE = 289037
+#CREATOR = William Zhang
+#DATE    = 07/24/2006
+#TEST_TYPE= functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)roundRealRWEdit01d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = roundRealRWEdit01d$(OBJ)
+#STDERR    = roundRealRWEdit01d.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)roundRealRWEdit01d$(product)vf) roundRealRWEdit01d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

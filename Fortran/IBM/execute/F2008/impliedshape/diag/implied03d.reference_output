@@ -1,0 +1,7 @@
+"implied03d.f", line 7.31: 1513-112 (S) Invalid array-spec for array a.  An array-spec must be either an explicit-shape-spec-list, an assumed-shape-spec-list, a deferred-shape-spec-list, an assumed-size-spec-list or an implied-shape-spec-list.
+"implied03d.f", line 8.31: 1514-004 (S) Name given for constant with PARAMETER attribute was defined elsewhere with conflicting attributes. Name is ignored.
+"implied03d.f", line 9.31: 1513-112 (S) Invalid array-spec for array c.  An array-spec must be either an explicit-shape-spec-list, an assumed-shape-spec-list, a deferred-shape-spec-list, an assumed-size-spec-list or an implied-shape-spec-list.
+"implied03d.f", line 10.31: 1514-004 (S) Name given for constant with PARAMETER attribute was defined elsewhere with conflicting attributes. Name is ignored.
+"implied03d.f", line 13.36: 1515-019 (S) Syntax is incorrect.
+** sub   === End of Compilation 1 ===
+1501-511  Compilation failed for file implied03d.f.

@@ -1,0 +1,47 @@
+Fetaure number 385616
+
+This feature tests the static number of images in the CAF environment. The number of static images are specified at the command line i.e; -qcaf=images<N>, where N is the number of static images. All the compilation units should have the same number (in this case N) of images. The following is the list of testcases (TCs) with details to test this functionality:
+
+staticImages01.scenario:
+staticImages02.scenario:
+These TCs use 4 and 8 images and test the output from 4 images. One program is compiled and linked with the same number of images. The TCs output the image number. This output is sorted and then compared with the verification file.
+
+staticImages03.scenario:
+staticImages04.scenario:
+These TCs use 4 and 8 images and test the output from 4 images. Two programs (compilation units) are compiled and linked with the same number of images. The TCs output is sorted and then compared with the verification file. e.g the output for 4 images:
+ Image 1 : 34
+ Image 1 : calling the fibonacci routine.
+ Image 2 : 34
+ Image 2 : calling the fibonacci routine.
+ Image 3 : 34
+ Image 3 : calling the fibonacci routine.
+ Image 4 : 34
+ Image 4 : calling the fibonacci routine.
+
+staticImages05.scenario:
+This TC use 4 and 8 images to compile different programs and test the runtime error. Two programs (compilation units) are compiled for 4 and 8 images respectively. Then they are linked for 4 images. The TC should output a runtime error message. This output is validated with the verification file. The runtime error message is:
+PGAS Runtime Error -1: ___pgasrt_hbrd_set_threads: attempt to set threads twice
+
+staticImages06.scenario:
+This TC use 4 images and test the output from 4 images. Four programs (compilation units) are compiled and linked. Only two of the programs are compiled for 4 images, the rest are compiled with no compiler option. They are linked with no linker option. The output from the executable is sorted and then compared with the verification file. The output is:
+ Image 1 : 13
+ Image 1 : calling the fibonacci routine.
+ Image 2 : 13
+ Image 2 : calling the fibonacci routine.
+ Image 3 : 13
+ Image 3 : calling the fibonacci routine.
+ Image 4 : 13
+ Image 4 : calling the fibonacci routine.
+ Printing Image 1
+ Printing Image 2
+ Printing Image 3
+ Printing Image 4
+ Printing Number of Images 4
+ Printing Number of Images 4
+ Printing Number of Images 4
+ Printing Number of Images 4
+
+staticImages07.scenario:
+This TC use 4 and 8 images to compile different programs and test the runtime error. Four programs (compilation units) are compiled and linked. Only one of the programs is compiled for 8 images, the rest are compiled for 4 images. They are linked for 4 images. The TC should output a runtime error message. This output is validated with the verification file. The runtime error message is:
+PGAS Runtime Error -1: ___pgasrt_hbrd_set_threads: attempt to set threads twice
+

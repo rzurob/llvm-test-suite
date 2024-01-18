@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = stop01.scenario
+#FEATURE   = 351605.31.2
+#CREATOR   = Xing Xue
+#DATE      = 08-10-10
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINENV
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)stop01.f
+#OUTPUT   =  stop01$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  stop01$(OBJ)
+#OUTPUT   =  stop01$(EXE)
+#ENDCMD
+
+#CMD      =  SET_DYN_ENV
+#ENDCMD
+
+#CMD      =  MPRUN
+#ENVAR    =  XLFRTEOPTS=$(XLFRTEOPTS):errimagenum=yes:errloc=no
+#INPUT    =  stop01$(EXE)
+#STDERR   =  stop01.err
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = stop01.err $(tcasedir)stop01.vf
+#ENDCMD
+#ENDCONTROL
+#ENDSCENARIO

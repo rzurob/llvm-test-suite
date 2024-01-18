@@ -1,0 +1,13 @@
+ c1assgn
+ c1assgn
+ child
+ 100 100 200 300 400 F
+ c1assgn
+ c1assgn
+ child
+ 100 100 200 300 400 F
+ T 500 600
+ c1assgn
+ c1assgn
+ child
+ 100 100 200 300 400 500 600 T T

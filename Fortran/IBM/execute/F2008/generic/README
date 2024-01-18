@@ -1,0 +1,17 @@
+
+
+    Feature (test) #917301 F2008: Generic resolution extensions
+
+  I0  document is kept in CMVC
+     family:aix,  release: des.dev, component: design.i0,
+     file: designs/i0/f2008_generic_extensions/f2008_generic_extensions.html
+         FF: https://featureflow.torolab.ibm.com/featureflow/show/6276
+
+  IT1 document
+     there is NO IT1 for this feature
+
+  IT2 document
+     there is NO IT2 for this feature
+
+  See the ./doc subdirectory for details
+

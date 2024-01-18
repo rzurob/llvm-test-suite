@@ -1,0 +1,16 @@
+"dtParamTypParamSyn2.f", line 38.13: 1515-019 (S) Syntax is incorrect.
+"dtParamTypParamSyn2.f", line 38.28: 1514-095 (S) Invalid statement within derived type definition.
+"dtParamTypParamSyn2.f", line 42.13: 1515-019 (S) Syntax is incorrect.
+"dtParamTypParamSyn2.f", line 42.25: 1514-095 (S) Invalid statement within derived type definition.
+"dtParamTypParamSyn2.f", line 46.14: 1515-019 (S) Syntax is incorrect.
+"dtParamTypParamSyn2.f", line 46.28: 1514-095 (S) Invalid statement within derived type definition.
+"dtParamTypParamSyn2.f", line 50.26: 1515-019 (S) Syntax is incorrect.
+"dtParamTypParamSyn2.f", line 50.32: 1514-095 (S) Invalid statement within derived type definition.
+"dtParamTypParamSyn2.f", line 54.26: 1514-687 (E) A KIND attribute has already been specified for this type parameter.  The LEN attribute has been ignored.
+"dtParamTypParamSyn2.f", line 58.4: 1515-019 (S) Syntax is incorrect.
+"dtParamTypParamSyn2.f", line 58.34: 1514-095 (S) Invalid statement within derived type definition.
+"dtParamTypParamSyn2.f", line 62.27: 1514-686 (S) Type parameter k must be of type integer.
+"dtParamTypParamSyn2.f", line 66.30: 1514-686 (S) Type parameter k must be of type integer.
+"dtParamTypParamSyn2.f", line 70.29: 1514-686 (S) Type parameter l must be of type integer.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtParamTypParamSyn2.f.

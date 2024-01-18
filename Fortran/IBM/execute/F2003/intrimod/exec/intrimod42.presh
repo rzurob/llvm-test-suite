@@ -1,0 +1,50 @@
+#!/usr/bin/ksh
+
+NAME=$1
+OS=`isAIX | awk '/0/ {print "AIX"} /1/ {print "LX"} /2/ {print "MAC"}'`
+IS64=`echo $OPTIONS | awk '/q64/ {print "_64"}'`
+
+if [ `whichLx` -eq 1 ]; then
+  OS='RHEL'
+fi
+
+
+rm -f ./*.o ./*.mod
+
+echo "cp $TR_SRC/my_mod.o.${OS}${IS64}.81 ./my_mod.o"
+cp $TR_SRC/my_mod.o.${OS}${IS64}.81 ./my_mod.o
+
+echo "cp $TR_SRC/my_mod.mod.${OS}${IS64}.81 ./my_mod.mod"
+cp $TR_SRC/my_mod.mod.${OS}${IS64}.81 ./my_mod.mod
+
+echo "cp $TR_SRC/constants.mod.${OS}${IS64}.81 ./constants.mod"
+cp $TR_SRC/constants.mod.${OS}${IS64}.81 ./constants.mod
+
+echo "$KILL $COMPILER $TR_SRC/../fake_ieee_modules.f $TR_SRC/${NAME}.f ./my_mod.o $OPTIONS -o ${NAME}" 
+$KILL $COMPILER $TR_SRC/../fake_ieee_modules.f $TR_SRC/${NAME}.f ./my_mod.o $OPTIONS -o ${NAME}
+
+rc=$?
+if [ $rc -ne 0 ]; then
+   echo "Compilation Failed!"
+   exit $rc
+fi
+
+$KILL ./${NAME} > ${NAME}.out
+rc=$?
+if [ $rc -ne 0 ]; then
+   echo "Execution Failed!"
+   exit $rc
+fi
+
+diff ./${NAME}.out $TR_SRC/fakeout1.vf
+rc=$?
+if [ $rc -ne 0 ]; then
+   echo "Verification failed!"
+   exit $rc
+fi
+
+if [[ $TRUN_SAVE != "YES" && $TRUN_SAVE != "yes" ]]
+then
+   rm -f ./${NAME}.out ./${NAME} ./my_mod.o 
+   rm -f ./*.mod 
+fi

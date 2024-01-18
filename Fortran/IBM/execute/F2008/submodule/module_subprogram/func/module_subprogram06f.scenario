@@ -1,0 +1,80 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/submodule/func/module_subprogram06f.scenario
+#FEATURE   = F2008 Submodule
+#CREATOR   = Bernard Kan
+#DATE      = 20121206
+#TEST_TYPE = Functional
+#KEYWORDS  = F2008, submodule, F2008 submodule
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD          = F_COMPILE
+#INPUT        = $(tcasedir)module_subprogram06f.f
+#OUTPUT       = module_subprogram06f$(OBJ)
+#ENDCMD
+
+#CMD          = F_COMPILE
+#INPUT        = $(tcasedir)module_subprogram06af.f
+#OUTPUT       = module_subprogram06af$(OBJ)
+#ENDCMD
+
+#CMD          = F_COMPILE
+#INPUT        = $(tcasedir)module_subprogram06bf.f
+#OUTPUT       = module_subprogram06bf$(OBJ)
+#ENDCMD
+
+#CMD          = F_LINK
+#INPUT        = module_subprogram06*f$(OBJ)
+#OUTPUT       = module_subprogram06f$(EXE)
+#ENDCMD
+
+#CMD          = RUN
+#INPUT        = module_subprogram06f$(EXE)
+#STDOUT       = module_subprogram06f.1.out
+#STDERR       = module_subprogram06f.1.out
+#ENDCMD
+
+#CMD          = GREP
+#OPTS         = "hello"
+#INPUT        = module_subprogram06f.1.out
+#ENDCMD
+
+#CMD          = DELETE
+#OPTS         = m_b.smod module_subprogram06af$(OBJ)
+#ENDCMD
+
+! now compile a new m_b.smod file and replace the existing one, without recompiling the entire program
+#CMD          = COPY
+#INPUT        = $(tcasedir)module_subprogram06cf.f
+#OUTPUT       = module_subprogram06af.f
+#ENDCMD
+
+#CMD          = F_COMPILE
+#INPUT        = module_subprogram06af.f
+#OUTPUT       = module_subprogram06af$(OBJ)
+#ENDCMD
+
+#CMD          = F_LINK
+#INPUT        = module_subprogram06*f$(OBJ)
+#OUTPUT       = module_subprogram06f$(EXE)
+#ENDCMD
+
+#CMD          = RUN
+#INPUT        = module_subprogram06f$(EXE)
+#STDOUT       = module_subprogram06f.2.out
+#STDERR       = module_subprogram06f.2.out
+#ENDCMD
+
+#CMD          = GREP
+#OPTS         = "goodbye"
+#INPUT        = module_subprogram06f.2.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

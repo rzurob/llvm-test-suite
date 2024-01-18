@@ -1,0 +1,4 @@
+"fext001d4.f", line 64.28: 1514-528 (S) Type seq1 in the EXTENDS clause must be extensible.
+"fext001d4.f", line 67.30: 1514-528 (S) Type btype in the EXTENDS clause must be extensible.
+** fext001d4   === End of Compilation 1 ===
+1501-511  Compilation failed for file fext001d4.f.

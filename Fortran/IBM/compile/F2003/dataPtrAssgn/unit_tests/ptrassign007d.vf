@@ -1,0 +1,4 @@
+"ptrassign007d.f", line 43.3: 1513-247 (S) A pointer that has appeared in a SUBSCRIPTORDER directive must not appear as the pointer in a pointer assignment statement with lower bounds specification or bounds remapping.
+"ptrassign007d.f", line 45.3: 1513-247 (S) A pointer that has appeared in a SUBSCRIPTORDER directive must not appear as the pointer in a pointer assignment statement with lower bounds specification or bounds remapping.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file ptrassign007d.f.

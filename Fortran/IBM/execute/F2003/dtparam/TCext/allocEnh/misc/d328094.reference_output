@@ -1,0 +1,4 @@
+"d328094.f", line 47.38: 1516-234 (S) The interface name unitpoint in the PROCEDURE statement is elemental.  The procedure gen declared in the PROCEDURE statement must be an external procedure.
+** m   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file d328094.f.

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/null/selectType002.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050302
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)selectType002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = selectType002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = selectType002$(OBJ)
+#OUTPUT    = selectType002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = selectType002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

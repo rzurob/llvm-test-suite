@@ -1,0 +1,74 @@
+! *********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD: 
+! %COMPOPTS: -qfree=f90 
+! %GROUP:  SpecChar.f  
+! %VERIFY:  
+! %STDIN:
+! %STDOUT: 
+! %EXECARGS:
+! %POSTCMD:  
+! %END
+! *********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : SpecChar 
+!*  TEST CASE TITLE            : 
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Nov. 02, 2004
+!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Associate
+!*
+!*  SECONDARY FUNCTIONS TESTED : 
+!*
+!*  REFERENCE                  : Feature 219934
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*    The selector is a special char 
+!*    () 
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+
+  PROGRAM SpecChar 
+  IMPLICIT NONE
+ 
+  ASSOCIATE ( As => "\b" )
+  ASSOCIATE ( As => "\n" )
+  ASSOCIATE ( As => "\t" )
+  ASSOCIATE ( As => "\'" )
+  ASSOCIATE ( As => "\"" )
+  ASSOCIATE ( As => "\\" )
+  ASSOCIATE ( As => "\x" )
+    IF ( As .NE. "\x" ) STOP 26
+  END ASSOCIATE 
+    IF ( As .NE. "\\" ) STOP 25
+  END ASSOCIATE 
+    IF ( As .NE. "\"" ) STOP 24
+  END ASSOCIATE 
+    IF ( As .NE. "\'" ) STOP 23
+  END ASSOCIATE 
+    IF ( As .NE. "\t" ) STOP 22
+  END ASSOCIATE 
+    IF ( As .NE. "\n" ) STOP 21
+  END ASSOCIATE 
+    IF ( As .NE. "\b" ) STOP 20
+  END ASSOCIATE 
+
+  ASSOCIATE ( As0 => "\x", As1 => "\n", As2 => "\"" )
+    IF ( As0 // As1 // As2 .NE. "\x" // "\n" // "\"" ) STOP 27
+  END ASSOCIATE 
+
+  END

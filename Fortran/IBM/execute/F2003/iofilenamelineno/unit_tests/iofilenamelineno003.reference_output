@@ -1,0 +1,2 @@
+"iofilenamelineno003.f", line 40: 1525-036 A unit number of -2 is not allowed in the OPEN statement.  Unit numbers must be non-negative.  The program will recover by ignoring the OPEN statement.
+"iofilenamelineno003.f", line 42: 1525-036 A unit number of -2 is not allowed in the REWIND statement.  Unit numbers must be non-negative.  The program will recover by ignoring the REWIND statement.

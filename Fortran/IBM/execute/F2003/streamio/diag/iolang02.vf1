@@ -1,0 +1,11 @@
+  42.1   011107BC "STREAM"‹ACCESS=‹Fortran 90‹
+  43.1   011102EA POS‹
+  44.1   011102EA POS‹
+  45.17   011107DC STREAM‹INQUIRE‹Fortran 90‹
+  45.27   011107DC POS‹INQUIRE‹Fortran 90‹
+  45.34   011107DC SIZE‹INQUIRE‹Fortran 90‹
+    011107D1 SIGNEDZERO‹Fortran 90‹
+    011107D0 -qsmp‹Fortran 90‹
+    011107D1 NOOLDPAD‹Fortran 90‹
+** iolang02   === End of Compilation 1 ===
+1501-510  Compilation successful for file iolang02.f.

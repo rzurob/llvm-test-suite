@@ -1,0 +1,132 @@
+! GB DTP extension using:
+! ftcx_dtp -qck -qk -ql -qreuse=all -qdeferredlp /tstdev/OO_poly/associate/StmtByStmt/Exec/HostAssocArrPoly.f
+! *********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD: 
+! %COMPOPTS: -qfree=f90 
+! %GROUP:  HostAssocArrPoly.f  
+! %VERIFY:  
+! %STDIN:
+! %STDOUT: 
+! %EXECARGS:
+! %POSTCMD:  
+! %END
+! *********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : HostAssocArrPoly
+!*  TEST CASE TITLE            : 
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Nov. 02, 2004
+!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Associate
+!*
+!*  SECONDARY FUNCTIONS TESTED : 
+!*
+!*  REFERENCE                  : Feature 219934
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*    The selector is an associate name associating to a poly array variable of derived types
+!*    (ICE) 
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+  MODULE M
+
+    TYPE :: Base(K1)    ! (4)
+      INTEGER, KIND :: K1
+      INTEGER(K1)   :: BaseId = 1
+    CONTAINS
+      PROCEDURE, PASS   :: GetId => GetBaseId
+    END TYPE
+
+    TYPE, EXTENDS(Base) :: Child    ! (4)
+      INTEGER(K1)  :: ChildId = 2
+    CONTAINS
+      PROCEDURE, PASS   :: GetId => GetChildId 
+    END TYPE
+
+    CONTAINS
+
+    ELEMENTAL FUNCTION GetChildId(Arg)
+    CLASS(Child(4)), INTENT(IN) :: Arg
+    INTEGER      :: GetChildId
+      GetChildId = Arg%ChildId
+    END FUNCTION
+
+    ELEMENTAL FUNCTION GetBaseId(Arg)
+    CLASS(Base(4)), INTENT(IN) :: Arg
+    INTEGER      :: GetBaseId
+      GetBaseId = Arg%BaseId
+    END FUNCTION
+
+  END MODULE
+
+  PROGRAM HostAssocArrPoly
+  USE M
+  IMPLICIT NONE
+ 
+  CLASS(Base(4)), ALLOCATABLE :: V(:)
+  CLASS(*),    ALLOCATABLE :: U(:)
+
+  ALLOCATE(V(3), SOURCE=Child(4)(BaseId=-1, ChildId=-2))
+  ALLOCATE(U(3), SOURCE=Child(4)(BaseId=-1, ChildId=-2))
+
+  ASSOCIATE ( T1 => V, T2 => U )
+    SELECT TYPE ( T1 )
+      TYPE IS ( Child(4) )
+        IF (ANY(T1%GetId() .NE. -2) )      STOP 30
+        IF (ANY(T1%Base%GetId() .NE. -1) ) STOP 31
+        T1%BaseId  = 1
+        T1%ChildId = 2
+      CLASS DEFAULT
+        STOP 32
+    END SELECT
+
+    SELECT TYPE ( T2 )
+      TYPE IS ( Child(4) )
+        IF (ANY(T2%GetId()      .NE. -2) ) STOP 40
+        IF (ANY(T2%Base%GetId() .NE. -1) ) STOP 41
+        T2%BaseId  = 1
+        T2%ChildId = 2
+      CLASS DEFAULT
+        STOP 42
+    END SELECT
+
+    ASSOCIATE ( As1 => T1, As2 => T2 )
+      SELECT TYPE ( As1 )
+        TYPE IS (Child(4) )
+          IF (ANY(As1%GetId()      .NE. 2) ) STOP 50
+          IF (ANY(As1%Base%GetId() .NE. 1) ) STOP 51
+        CLASS DEFAULT
+          STOP 52
+      END SELECT 
+
+      SELECT TYPE ( As2 )
+        TYPE IS (Child(4) )
+          IF (ANY(As2%GetId()      .NE. 2) ) STOP 60
+          IF (ANY(As2%Base%GetId() .NE. 1) ) STOP 61
+        CLASS DEFAULT
+          STOP 62
+      END SELECT 
+    END ASSOCIATE
+
+  END ASSOCIATE
+
+  
+  DEALLOCATE(V)
+  DEALLOCATE(U) 
+
+  END

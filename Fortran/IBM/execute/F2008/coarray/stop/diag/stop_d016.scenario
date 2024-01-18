@@ -1,0 +1,144 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/coarray/stop/diag/stop_d016.scenario
+#FEATURE    = CAF: STOP statement (feature #351605.31)
+#CREATOR    = Grigor Nikolov
+#DATE       = 20101019
+#TEST_TYPE  = Diagnostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+! -----------------------------------
+#CMD        = F_COMPILE
+#OPTS       = $(OPT_NOCOARRAY)
+#INPUT      = $(tcasedir)stop_d001_1.f
+#OUTPUT     = stop_d001_1$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#OPTS       = $(OPT_NOCOARRAY)
+#INPUT      = stop_d001_1$(OBJ)
+#OUTPUT     = stop_d001_1$(EXE)
+#ENDCMD
+
+#CMD        = RUN
+#ENVAR      = XLFRTEOPTS=$(XLFRTEOPTS):errimagenum=no
+#INPUT      = stop_d001_1$(EXE)
+#STDOUT     = stop_d001_1.out
+#STDERR     = stop_d001_1.err
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "Before stop statement"
+#INPUT      = stop_d001_1.out
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "After stop statement"
+#INPUT      = stop_d001_1.out
+#VALIDRCS   = 1
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "STOP"
+#INPUT      = stop_d001_1.err
+#VALIDRCS   = 1
+#ENDCMD
+
+! -----------------------------------
+#CMD        = F_COMPILE
+#OPTS       = $(OPT_NOCOARRAY)
+#INPUT      = $(tcasedir)stop_d001_2.f
+#OUTPUT     = stop_d001_2$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#OPTS       = $(OPT_NOCOARRAY)
+#INPUT      = stop_d001_2$(OBJ)
+#OUTPUT     = stop_d001_2$(EXE)
+#ENDCMD
+
+#CMD        = RUN
+#ENVAR      = XLFRTEOPTS=$(XLFRTEOPTS):errimagenum=no
+#INPUT      = stop_d001_2$(EXE)
+#STDOUT     = stop_d001_2.out
+#STDERR     = stop_d001_2.err
+#VALIDRCS   = 7
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "Before stop statement"
+#INPUT      = stop_d001_2.out
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "After stop statement"
+#INPUT      = stop_d001_2.out
+#VALIDRCS   = 1
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "STOP 7"
+#INPUT      = stop_d001_2.err
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "<Image .*> STOP 7"
+#INPUT      = stop_d001_2.err
+#VALIDRCS   = 1
+#ENDCMD
+
+! -----------------------------------
+#CMD        = F_COMPILE
+#OPTS       = $(OPT_NOCOARRAY)
+#INPUT      = $(tcasedir)stop_d001_3.f
+#OUTPUT     = stop_d001_3$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#OPTS       = $(OPT_NOCOARRAY)
+#INPUT      = stop_d001_3$(OBJ)
+#OUTPUT     = stop_d001_3$(EXE)
+#ENDCMD
+
+#CMD        = RUN
+#ENVAR      = XLFRTEOPTS=$(XLFRTEOPTS):errimagenum=no
+#INPUT      = stop_d001_3$(EXE)
+#STDOUT     = stop_d001_3.out
+#STDERR     = stop_d001_3.err
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "Before stop statement"
+#INPUT      = stop_d001_3.out
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "After stop statement"
+#INPUT      = stop_d001_3.out
+#VALIDRCS   = 1
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "STOP es_string"
+#INPUT      = stop_d001_3.err
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "<Image .*> STOP es_string"
+#INPUT      = stop_d001_3.err
+#VALIDRCS   = 1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

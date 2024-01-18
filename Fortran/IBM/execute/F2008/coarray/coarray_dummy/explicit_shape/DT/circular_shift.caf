@@ -1,0 +1,212 @@
+! *********************************************************************
+!*  =================================================================== 
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
+!*  =================================================================== 
+!*  =================================================================== 
+!*
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Jim Xia
+!*  DATE                       : 2011-07-25
+!*  ORIGIN                     :
+!*                             :
+!*
+!*  PRIMARY FUNCTIONS TESTED   :
+!*                             :
+!*  SECONDARY FUNCTIONS TESTED : 
+!*
+!*  DRIVER STANZA              :
+!*
+!*  DESCRIPTION                : a test case that tests the global left shift
+!                               by one element on a coarray of explicit shape.
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!* ===================================================================
+!*
+!*  REVISION HISTORY
+!*
+!*  MM/DD/YY:  Init:  Comments:
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+module m
+    implicit none
+
+    type dT
+        character(30) :: desc
+        complex(8) :: cx(3)
+    end type
+
+    contains
+
+    ! the subroutine does a global left shift of input array x by one element
+    ! it is assumed the number of images of the system is more than 2
+    subroutine do_shift(n, x)
+        integer, intent(in) :: n
+        type(dt), intent(inout), dimension(n), codimension[*] :: x
+
+        integer me, np, left, right, i
+        type(dt) tmp
+        integer neighbors(2)
+
+        me = this_image()
+        np = num_images()
+
+        if (me == 1) then
+            left = np
+        else
+            left = me - 1
+        end if
+
+        if (me == np) then
+            right = 1
+        else
+            right = me + 1
+        end if
+
+        neighbors = [left, right]
+
+        tmp = x(1)
+        ! first, shift elements from 2..n by 1 to left
+        do i = 2, n
+            x(i-1) = x(i)
+        end do
+
+        sync images (neighbors)
+
+        ! set last element on the left image
+        x(n)[left] = tmp
+
+        sync images (neighbors)
+    end subroutine
+
+    ! the function that initializes the input array
+    ! The array are set this way: x(i)%desc contains image number and element
+    ! number, x(i)%cx == (cmplx(image#,0), cmplx(0, n),
+    ! cmplx(sub-element#, sub-element#))
+    integer function initialize(x,n) result(res)
+        integer, intent(in) :: n
+        type(dT), intent(out) :: x(n)[*]
+
+        integer me, i
+
+        me = this_image()
+
+        do i = 1, n
+            write(x(i)%desc, *) 'image=',me,', element=', n
+
+            x(i)%cx = [cmplx(me,0,8), cmplx(0,n,8), cmplx(i,i,8)]
+        end do
+
+        sync all
+        res = 0
+    end function
+end module
+
+program circular_shift
+use m
+    type(dT), save, dimension(10,2), codimension[0:*] :: arr1
+    type(dT), save, dimension(12), codimension[*] :: arr2
+
+    if (initialize(arr1, size(arr1)) /= 0) then
+        print *, 'Error: initialization failed for arr1'
+        error stop 1
+    end if
+
+    if (initialize(arr2, size(arr2)) /= 0) then
+        print *, 'Error: initialization failed for arr2'
+        error stop 1
+    end if
+
+    call do_shift (size(arr1), arr1)
+    call do_shift (12, arr2)
+
+    ! now let's verify
+    call verify_shift(arr2, 12)
+
+    if (this_image() == 1) print *, 'verify arr2 done'
+
+    call verify_shift(arr1, 20)
+
+    contains
+
+    subroutine verify_shift(x, n)
+        integer, intent(in) :: n
+        type(dT), intent(in), dimension(n), codimension[*] :: x
+
+        integer me, np, right, i
+        character(30) local_stream
+        logical, external :: precision_x6
+
+        me = this_image()
+        np = num_images()
+
+        if (me == np) then
+            right = 1
+        else
+            right = me + 1
+        end if
+
+        write (local_stream, *) 'image=', me,', element=', n
+        !! note this is the global array shifted left by one
+        do i = 1, n-1
+            if (local_stream /= x(i)%desc) then
+                print *, 'Error: verification for x(i)%desc failed on image', &
+                    me, ', i=',i,': ',local_stream,' vs ', x(i)%desc
+
+                error stop 2
+            end if
+
+            if (.not. precision_x6(x(i)%cx(1), cmplx(me,0,8))) then
+                print *, 'Error: verification for x(i)%cx(1) failed on image',&
+                    me, ', i=', i,':', x(i)%cx(1), 'vs', cmplx(me,0,8)
+
+                error stop 3
+            end if
+
+            if (.not. precision_x6(x(i)%cx(2), cmplx(0,n,8))) then
+                print *, 'Error: verification for x(i)%cx(2) failed on image',&
+                    me, ', i=', i,':', x(i)%cx(2), 'vs', cmplx(0,n,8)
+
+                error stop 4
+            end if
+
+            if (.not. precision_x6(x(i)%cx(3), cmplx(i+1,i+1,8))) then
+                print *, 'Error: verification for x(i)%cx(3) failed on image',&
+                    me, ', i=', i,':', x(i)%cx(3), 'vs', cmplx(i+1,i+1,8)
+
+                error stop 5
+            end if
+        end do
+
+        !now check for the last element
+        write (local_stream, *) 'image=', right,', element=', n
+        if (local_stream /= x(n)%desc) then
+            print *, 'Error: verification for x(n)%desc failed on image', &
+                me, ', n=',n,': ',local_stream,' vs ', x(n)%desc
+
+            error stop 8
+        end if
+
+        if (.not. precision_x6(x(n)%cx(1), cmplx(right,0,8))) then
+            print *, 'Error: verification for x(n)%cx(1) failed on image',&
+                me, ', n=', n,':', x(n)%cx(1), 'vs', cmplx(right,0,8)
+
+            error stop 9
+        end if
+
+        if (.not. precision_x6(x(n)%cx(2), cmplx(0,n,8))) then
+            print *, 'Error: verification for x(n)%cx(2) failed on image',&
+                me, ', n=', n,':', x(n)%cx(2), 'vs', cmplx(0,n,8)
+
+            error stop 10
+        end if
+
+        if (.not. precision_x6(x(n)%cx(3), cmplx(1,1,8))) then
+            print *, 'Error: verification for x(n)%cx(3) failed on image',&
+                me, ', n=', n,':', x(n)%cx(3), 'vs', cmplx(1,1,8)
+
+            error stop 11
+        end if
+    end subroutine
+end

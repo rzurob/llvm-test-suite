@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/decimaledit/defaultIO/arrayConstr001.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)arrayConstr001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = arrayConstr001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = arrayConstr001$(OBJ)
+#OUTPUT    = arrayConstr001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = arrayConstr001$(EXE)
+#STDOUT    = arrayConstr001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = arrayConstr001.out $($(tcasedir)arrayConstr001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

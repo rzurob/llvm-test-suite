@@ -1,0 +1,4 @@
+"bcdapt1a.f", line 39.14: 1516-208 (S) Variable x that has the POINTER attribute may not appear as a member of a COMMON block with the BIND(C) attribute.
+** mod   === End of Compilation 1 ===
+** bcdapt1a   === End of Compilation 2 ===
+1501-511  Compilation failed for file bcdapt1a.f.

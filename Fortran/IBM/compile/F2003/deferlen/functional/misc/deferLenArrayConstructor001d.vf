@@ -1,0 +1,5 @@
+** n   === End of Compilation 1 ===
+"deferLenArrayConstructor001d.f", line 36.26: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"deferLenArrayConstructor001d.f", line 37.44: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+** deferlenmovealloc002   === End of Compilation 2 ===
+1501-511  Compilation failed for file deferLenArrayConstructor001d.f.

@@ -1,0 +1,45 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/section10.7/blank001a.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)blank001a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = blank001a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = blank001a$(OBJ)
+#OUTPUT    = blank001a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = blank001a$(EXE)
+#STDOUT    = blank001a.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)blank001a$(product)vf) blank001a.out
+#ENDCMD
+
+#CMD       = DELETE
+#INPUT     = blank001a.out
+#ENDCMD
+
+
+
+#ENDCONTROL
+#ENDSCENARIO

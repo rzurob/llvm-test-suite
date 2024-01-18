@@ -1,0 +1,7 @@
+"genericR452Assignment001d.f", line 41.19: 1515-019 (S) Syntax is incorrect.
+"genericR452Assignment001d.f", line 41.45: 1514-095 (S) Invalid statement within derived type definition.
+"genericR452Assignment001d.f", line 42.9: 1515-019 (S) Syntax is incorrect.
+"genericR452Assignment001d.f", line 42.36: 1514-095 (S) Invalid statement within derived type definition.
+** m   === End of Compilation 1 ===
+** genericr452assignment001d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericR452Assignment001d.f.

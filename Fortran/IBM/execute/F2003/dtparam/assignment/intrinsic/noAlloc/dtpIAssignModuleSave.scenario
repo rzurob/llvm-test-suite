@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpIAssignModuleSave.scenario
+#FEATURE   = Assumed type parameters and dummy arguments - initial assignment to SAVEd module variable
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAssignModuleSave.f
+#OUTPUT    = dtpIAssignModuleSave$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAssignModuleSave$(OBJ)
+#OUTPUT    = dtpIAssignModuleSave$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAssignModuleSave$(EXE)
+#STDOUT    = dtpIAssignModuleSave.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpIAssignModuleSave$(product)vf) dtpIAssignModuleSave.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

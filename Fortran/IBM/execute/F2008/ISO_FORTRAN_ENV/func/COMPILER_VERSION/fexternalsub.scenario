@@ -1,0 +1,53 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       fexternalsub
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2008_COMPILE
+#INPUT=  $(tcasedir)fexternalsub.f
+#OUTPUT= fexternalsub$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_LINK
+#INPUT=  fexternalsub$(OBJ)
+#OUTPUT= fexternalsub$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fexternalsub$(EXE)
+#STDOUT=  fexternalsub.out
+#ENDCMD
+
+#CMD=    XLF2008_COMPILE
+#OPTS=   -qversion
+#INPUT=  $(tcasedir)fexternalsub.f
+#STDOUT= fexternalsub_qversion.out
+#ENDCMD
+
+#CMD = SED
+#OPTS = -e '$!N;s/\n/ /' -e 's/://g' -e 's/^/ /g'
+#INPUT = fexternalsub_qversion.out
+#STDOUT = fexternalsub_qversion.sed
+#ENDCMD
+
+#CMD = SED
+#OPTS = -e 's/(DEV) //g'
+#INPUT = fexternalsub.out
+#STDOUT = fexternalsub.sed
+#ENDCMD
+
+#CMD = DIFF
+#INPUT = fexternalsub_qversion.sed fexternalsub.sed
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,3 @@
+fxif0001.scenario
+fxif0001_F2003.scenario
+fxif0001_F2008.scenario

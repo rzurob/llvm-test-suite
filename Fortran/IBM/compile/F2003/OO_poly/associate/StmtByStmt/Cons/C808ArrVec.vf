@@ -1,0 +1,5 @@
+"C808ArrVec.f", line 51.7: 1511-139 (S) Associate name as is not associated with an entity that can be defined. as must not be redefined or become undefined.
+"C808ArrVec.f", line 56.7: 1511-139 (S) Associate name as is not associated with an entity that can be defined. as must not be redefined or become undefined.
+"C808ArrVec.f", line 60.7: 1511-139 (S) Associate name as is not associated with an entity that can be defined. as must not be redefined or become undefined.
+** c808arrvec   === End of Compilation 1 ===
+1501-511  Compilation failed for file C808ArrVec.f.

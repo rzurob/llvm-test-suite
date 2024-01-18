@@ -1,0 +1,1500 @@
+ old value of sum is:  2
+ sum inside impure is:  2
+ 3
+ old value of sum is:  2
+ sum inside impure is:  12
+ 18
+ old value of sum is:  12
+ sum inside impure is:  22
+ 33
+ old value of sum is:  22
+ sum inside impure is:  32
+ 48
+ old value of sum is:  32
+ sum inside impure is:  42
+ 63
+ old value of sum is:  42
+ sum inside impure is:  52
+ 78
+ old value of sum is:  52
+ sum inside impure is:  62
+ 93
+ old value of sum is:  62
+ sum inside impure is:  72
+ 108
+ old value of sum is:  72
+ sum inside impure is:  82
+ 123
+ old value of sum is:  82
+ sum inside impure is:  92
+ 138
+ old value of sum is:  92
+ sum inside impure is:  102
+ 153
+ old value of sum is:  102
+ sum inside impure is:  112
+ 168
+ old value of sum is:  112
+ sum inside impure is:  122
+ 183
+ old value of sum is:  122
+ sum inside impure is:  132
+ 198
+ old value of sum is:  132
+ sum inside impure is:  142
+ 213
+ old value of sum is:  142
+ sum inside impure is:  152
+ 228
+ old value of sum is:  152
+ sum inside impure is:  162
+ 243
+ old value of sum is:  162
+ sum inside impure is:  172
+ 258
+ old value of sum is:  172
+ sum inside impure is:  182
+ 273
+ old value of sum is:  182
+ sum inside impure is:  192
+ 288
+ old value of sum is:  192
+ sum inside impure is:  202
+ 303
+ old value of sum is:  202
+ sum inside impure is:  212
+ 318
+ old value of sum is:  212
+ sum inside impure is:  222
+ 333
+ old value of sum is:  222
+ sum inside impure is:  232
+ 348
+ old value of sum is:  232
+ sum inside impure is:  242
+ 363
+ old value of sum is:  242
+ sum inside impure is:  252
+ 378
+ old value of sum is:  252
+ sum inside impure is:  262
+ 393
+ old value of sum is:  262
+ sum inside impure is:  272
+ 408
+ old value of sum is:  272
+ sum inside impure is:  282
+ 423
+ old value of sum is:  282
+ sum inside impure is:  292
+ 438
+ old value of sum is:  292
+ sum inside impure is:  302
+ 453
+ old value of sum is:  302
+ sum inside impure is:  312
+ 468
+ old value of sum is:  312
+ sum inside impure is:  322
+ 483
+ old value of sum is:  322
+ sum inside impure is:  332
+ 498
+ old value of sum is:  332
+ sum inside impure is:  342
+ 513
+ old value of sum is:  342
+ sum inside impure is:  352
+ 528
+ old value of sum is:  352
+ sum inside impure is:  362
+ 543
+ old value of sum is:  362
+ sum inside impure is:  372
+ 558
+ old value of sum is:  372
+ sum inside impure is:  382
+ 573
+ old value of sum is:  382
+ sum inside impure is:  392
+ 588
+ old value of sum is:  392
+ sum inside impure is:  402
+ 603
+ old value of sum is:  402
+ sum inside impure is:  412
+ 618
+ old value of sum is:  412
+ sum inside impure is:  422
+ 633
+ old value of sum is:  422
+ sum inside impure is:  432
+ 648
+ old value of sum is:  432
+ sum inside impure is:  442
+ 663
+ old value of sum is:  442
+ sum inside impure is:  452
+ 678
+ old value of sum is:  452
+ sum inside impure is:  462
+ 693
+ old value of sum is:  462
+ sum inside impure is:  472
+ 708
+ old value of sum is:  472
+ sum inside impure is:  482
+ 723
+ old value of sum is:  482
+ sum inside impure is:  492
+ 738
+ old value of sum is:  492
+ sum inside impure is:  502
+ 753
+ old value of sum is:  502
+ sum inside impure is:  512
+ 768
+ old value of sum is:  512
+ sum inside impure is:  522
+ 783
+ old value of sum is:  522
+ sum inside impure is:  532
+ 798
+ old value of sum is:  532
+ sum inside impure is:  542
+ 813
+ old value of sum is:  542
+ sum inside impure is:  552
+ 828
+ old value of sum is:  552
+ sum inside impure is:  562
+ 843
+ old value of sum is:  562
+ sum inside impure is:  572
+ 858
+ old value of sum is:  572
+ sum inside impure is:  582
+ 873
+ old value of sum is:  582
+ sum inside impure is:  592
+ 888
+ old value of sum is:  592
+ sum inside impure is:  602
+ 903
+ old value of sum is:  602
+ sum inside impure is:  612
+ 918
+ old value of sum is:  612
+ sum inside impure is:  622
+ 933
+ old value of sum is:  622
+ sum inside impure is:  632
+ 948
+ old value of sum is:  632
+ sum inside impure is:  642
+ 963
+ old value of sum is:  642
+ sum inside impure is:  652
+ 978
+ old value of sum is:  652
+ sum inside impure is:  662
+ 993
+ old value of sum is:  662
+ sum inside impure is:  672
+ 1008
+ old value of sum is:  672
+ sum inside impure is:  682
+ 1023
+ old value of sum is:  682
+ sum inside impure is:  692
+ 1038
+ old value of sum is:  692
+ sum inside impure is:  702
+ 1053
+ old value of sum is:  702
+ sum inside impure is:  712
+ 1068
+ old value of sum is:  712
+ sum inside impure is:  722
+ 1083
+ old value of sum is:  722
+ sum inside impure is:  732
+ 1098
+ old value of sum is:  732
+ sum inside impure is:  742
+ 1113
+ old value of sum is:  742
+ sum inside impure is:  752
+ 1128
+ old value of sum is:  752
+ sum inside impure is:  762
+ 1143
+ old value of sum is:  762
+ sum inside impure is:  772
+ 1158
+ old value of sum is:  772
+ sum inside impure is:  782
+ 1173
+ old value of sum is:  782
+ sum inside impure is:  792
+ 1188
+ old value of sum is:  792
+ sum inside impure is:  802
+ 1203
+ old value of sum is:  802
+ sum inside impure is:  812
+ 1218
+ old value of sum is:  812
+ sum inside impure is:  822
+ 1233
+ old value of sum is:  822
+ sum inside impure is:  832
+ 1248
+ old value of sum is:  832
+ sum inside impure is:  842
+ 1263
+ old value of sum is:  842
+ sum inside impure is:  852
+ 1278
+ old value of sum is:  852
+ sum inside impure is:  862
+ 1293
+ old value of sum is:  862
+ sum inside impure is:  872
+ 1308
+ old value of sum is:  872
+ sum inside impure is:  882
+ 1323
+ old value of sum is:  882
+ sum inside impure is:  892
+ 1338
+ old value of sum is:  892
+ sum inside impure is:  902
+ 1353
+ old value of sum is:  902
+ sum inside impure is:  912
+ 1368
+ old value of sum is:  912
+ sum inside impure is:  922
+ 1383
+ old value of sum is:  922
+ sum inside impure is:  932
+ 1398
+ old value of sum is:  932
+ sum inside impure is:  942
+ 1413
+ old value of sum is:  942
+ sum inside impure is:  952
+ 1428
+ old value of sum is:  952
+ sum inside impure is:  962
+ 1443
+ old value of sum is:  962
+ sum inside impure is:  972
+ 1458
+ old value of sum is:  972
+ sum inside impure is:  982
+ 1473
+ old value of sum is:  982
+ sum inside impure is:  992
+ 1488
+ old value of sum is:  992
+ sum inside impure is:  1002
+ 1503
+ old value of sum is:  1002
+ sum inside impure is:  1012
+ 1518
+ old value of sum is:  1012
+ sum inside impure is:  1022
+ 1533
+ old value of sum is:  1022
+ sum inside impure is:  1032
+ 1548
+ old value of sum is:  1032
+ sum inside impure is:  1042
+ 1563
+ old value of sum is:  1042
+ sum inside impure is:  1052
+ 1578
+ old value of sum is:  1052
+ sum inside impure is:  1062
+ 1593
+ old value of sum is:  1062
+ sum inside impure is:  1072
+ 1608
+ old value of sum is:  1072
+ sum inside impure is:  1082
+ 1623
+ old value of sum is:  1082
+ sum inside impure is:  1092
+ 1638
+ old value of sum is:  1092
+ sum inside impure is:  1102
+ 1653
+ old value of sum is:  1102
+ sum inside impure is:  1112
+ 1668
+ old value of sum is:  1112
+ sum inside impure is:  1122
+ 1683
+ old value of sum is:  1122
+ sum inside impure is:  1132
+ 1698
+ old value of sum is:  1132
+ sum inside impure is:  1142
+ 1713
+ old value of sum is:  1142
+ sum inside impure is:  1152
+ 1728
+ old value of sum is:  1152
+ sum inside impure is:  1162
+ 1743
+ old value of sum is:  1162
+ sum inside impure is:  1172
+ 1758
+ old value of sum is:  1172
+ sum inside impure is:  1182
+ 1773
+ old value of sum is:  1182
+ sum inside impure is:  1192
+ 1788
+ old value of sum is:  1192
+ sum inside impure is:  1202
+ 1803
+ old value of sum is:  1202
+ sum inside impure is:  1212
+ 1818
+ old value of sum is:  1212
+ sum inside impure is:  1222
+ 1833
+ old value of sum is:  1222
+ sum inside impure is:  1232
+ 1848
+ old value of sum is:  1232
+ sum inside impure is:  1242
+ 1863
+ old value of sum is:  1242
+ sum inside impure is:  1252
+ 1878
+ old value of sum is:  1252
+ sum inside impure is:  1262
+ 1893
+ old value of sum is:  1262
+ sum inside impure is:  1272
+ 1908
+ old value of sum is:  1272
+ sum inside impure is:  1282
+ 1923
+ old value of sum is:  1282
+ sum inside impure is:  1292
+ 1938
+ old value of sum is:  1292
+ sum inside impure is:  1302
+ 1953
+ old value of sum is:  1302
+ sum inside impure is:  1312
+ 1968
+ old value of sum is:  1312
+ sum inside impure is:  1322
+ 1983
+ old value of sum is:  1322
+ sum inside impure is:  1332
+ 1998
+ old value of sum is:  1332
+ sum inside impure is:  1342
+ 2013
+ old value of sum is:  1342
+ sum inside impure is:  1352
+ 2028
+ old value of sum is:  1352
+ sum inside impure is:  1362
+ 2043
+ old value of sum is:  1362
+ sum inside impure is:  1372
+ 2058
+ old value of sum is:  1372
+ sum inside impure is:  1382
+ 2073
+ old value of sum is:  1382
+ sum inside impure is:  1392
+ 2088
+ old value of sum is:  1392
+ sum inside impure is:  1402
+ 2103
+ old value of sum is:  1402
+ sum inside impure is:  1412
+ 2118
+ old value of sum is:  1412
+ sum inside impure is:  1422
+ 2133
+ old value of sum is:  1422
+ sum inside impure is:  1432
+ 2148
+ old value of sum is:  1432
+ sum inside impure is:  1442
+ 2163
+ old value of sum is:  1442
+ sum inside impure is:  1452
+ 2178
+ old value of sum is:  1452
+ sum inside impure is:  1462
+ 2193
+ old value of sum is:  1462
+ sum inside impure is:  1472
+ 2208
+ old value of sum is:  1472
+ sum inside impure is:  1482
+ 2223
+ old value of sum is:  1482
+ sum inside impure is:  1492
+ 2238
+ old value of sum is:  1492
+ sum inside impure is:  1502
+ 2253
+ old value of sum is:  1502
+ sum inside impure is:  1512
+ 2268
+ old value of sum is:  1512
+ sum inside impure is:  1522
+ 2283
+ old value of sum is:  1522
+ sum inside impure is:  1532
+ 2298
+ old value of sum is:  1532
+ sum inside impure is:  1542
+ 2313
+ old value of sum is:  1542
+ sum inside impure is:  1552
+ 2328
+ old value of sum is:  1552
+ sum inside impure is:  1562
+ 2343
+ old value of sum is:  1562
+ sum inside impure is:  1572
+ 2358
+ old value of sum is:  1572
+ sum inside impure is:  1582
+ 2373
+ old value of sum is:  1582
+ sum inside impure is:  1592
+ 2388
+ old value of sum is:  1592
+ sum inside impure is:  1602
+ 2403
+ old value of sum is:  1602
+ sum inside impure is:  1612
+ 2418
+ old value of sum is:  1612
+ sum inside impure is:  1622
+ 2433
+ old value of sum is:  1622
+ sum inside impure is:  1632
+ 2448
+ old value of sum is:  1632
+ sum inside impure is:  1642
+ 2463
+ old value of sum is:  1642
+ sum inside impure is:  1652
+ 2478
+ old value of sum is:  1652
+ sum inside impure is:  1662
+ 2493
+ old value of sum is:  1662
+ sum inside impure is:  1672
+ 2508
+ old value of sum is:  1672
+ sum inside impure is:  1682
+ 2523
+ old value of sum is:  1682
+ sum inside impure is:  1692
+ 2538
+ old value of sum is:  1692
+ sum inside impure is:  1702
+ 2553
+ old value of sum is:  1702
+ sum inside impure is:  1712
+ 2568
+ old value of sum is:  1712
+ sum inside impure is:  1722
+ 2583
+ old value of sum is:  1722
+ sum inside impure is:  1732
+ 2598
+ old value of sum is:  1732
+ sum inside impure is:  1742
+ 2613
+ old value of sum is:  1742
+ sum inside impure is:  1752
+ 2628
+ old value of sum is:  1752
+ sum inside impure is:  1762
+ 2643
+ old value of sum is:  1762
+ sum inside impure is:  1772
+ 2658
+ old value of sum is:  1772
+ sum inside impure is:  1782
+ 2673
+ old value of sum is:  1782
+ sum inside impure is:  1792
+ 2688
+ old value of sum is:  1792
+ sum inside impure is:  1802
+ 2703
+ old value of sum is:  1802
+ sum inside impure is:  1812
+ 2718
+ old value of sum is:  1812
+ sum inside impure is:  1822
+ 2733
+ old value of sum is:  1822
+ sum inside impure is:  1832
+ 2748
+ old value of sum is:  1832
+ sum inside impure is:  1842
+ 2763
+ old value of sum is:  1842
+ sum inside impure is:  1852
+ 2778
+ old value of sum is:  1852
+ sum inside impure is:  1862
+ 2793
+ old value of sum is:  1862
+ sum inside impure is:  1872
+ 2808
+ old value of sum is:  1872
+ sum inside impure is:  1882
+ 2823
+ old value of sum is:  1882
+ sum inside impure is:  1892
+ 2838
+ old value of sum is:  1892
+ sum inside impure is:  1902
+ 2853
+ old value of sum is:  1902
+ sum inside impure is:  1912
+ 2868
+ old value of sum is:  1912
+ sum inside impure is:  1922
+ 2883
+ old value of sum is:  1922
+ sum inside impure is:  1932
+ 2898
+ old value of sum is:  1932
+ sum inside impure is:  1942
+ 2913
+ old value of sum is:  1942
+ sum inside impure is:  1952
+ 2928
+ old value of sum is:  1952
+ sum inside impure is:  1962
+ 2943
+ old value of sum is:  1962
+ sum inside impure is:  1972
+ 2958
+ old value of sum is:  1972
+ sum inside impure is:  1982
+ 2973
+ old value of sum is:  1982
+ sum inside impure is:  1992
+ 2988
+ old value of sum is:  1992
+ sum inside impure is:  2002
+ 3003
+ old value of sum is:  2002
+ sum inside impure is:  2012
+ 3018
+ old value of sum is:  2012
+ sum inside impure is:  2022
+ 3033
+ old value of sum is:  2022
+ sum inside impure is:  2032
+ 3048
+ old value of sum is:  2032
+ sum inside impure is:  2042
+ 3063
+ old value of sum is:  2042
+ sum inside impure is:  2052
+ 3078
+ old value of sum is:  2052
+ sum inside impure is:  2062
+ 3093
+ old value of sum is:  2062
+ sum inside impure is:  2072
+ 3108
+ old value of sum is:  2072
+ sum inside impure is:  2082
+ 3123
+ old value of sum is:  2082
+ sum inside impure is:  2092
+ 3138
+ old value of sum is:  2092
+ sum inside impure is:  2102
+ 3153
+ old value of sum is:  2102
+ sum inside impure is:  2112
+ 3168
+ old value of sum is:  2112
+ sum inside impure is:  2122
+ 3183
+ old value of sum is:  2122
+ sum inside impure is:  2132
+ 3198
+ old value of sum is:  2132
+ sum inside impure is:  2142
+ 3213
+ old value of sum is:  2142
+ sum inside impure is:  2152
+ 3228
+ old value of sum is:  2152
+ sum inside impure is:  2162
+ 3243
+ old value of sum is:  2162
+ sum inside impure is:  2172
+ 3258
+ old value of sum is:  2172
+ sum inside impure is:  2182
+ 3273
+ old value of sum is:  2182
+ sum inside impure is:  2192
+ 3288
+ old value of sum is:  2192
+ sum inside impure is:  2202
+ 3303
+ old value of sum is:  2202
+ sum inside impure is:  2212
+ 3318
+ old value of sum is:  2212
+ sum inside impure is:  2222
+ 3333
+ old value of sum is:  2222
+ sum inside impure is:  2232
+ 3348
+ old value of sum is:  2232
+ sum inside impure is:  2242
+ 3363
+ old value of sum is:  2242
+ sum inside impure is:  2252
+ 3378
+ old value of sum is:  2252
+ sum inside impure is:  2262
+ 3393
+ old value of sum is:  2262
+ sum inside impure is:  2272
+ 3408
+ old value of sum is:  2272
+ sum inside impure is:  2282
+ 3423
+ old value of sum is:  2282
+ sum inside impure is:  2292
+ 3438
+ old value of sum is:  2292
+ sum inside impure is:  2302
+ 3453
+ old value of sum is:  2302
+ sum inside impure is:  2312
+ 3468
+ old value of sum is:  2312
+ sum inside impure is:  2322
+ 3483
+ old value of sum is:  2322
+ sum inside impure is:  2332
+ 3498
+ old value of sum is:  2332
+ sum inside impure is:  2342
+ 3513
+ old value of sum is:  2342
+ sum inside impure is:  2352
+ 3528
+ old value of sum is:  2352
+ sum inside impure is:  2362
+ 3543
+ old value of sum is:  2362
+ sum inside impure is:  2372
+ 3558
+ old value of sum is:  2372
+ sum inside impure is:  2382
+ 3573
+ old value of sum is:  2382
+ sum inside impure is:  2392
+ 3588
+ old value of sum is:  2392
+ sum inside impure is:  2402
+ 3603
+ old value of sum is:  2402
+ sum inside impure is:  2412
+ 3618
+ old value of sum is:  2412
+ sum inside impure is:  2422
+ 3633
+ old value of sum is:  2422
+ sum inside impure is:  2432
+ 3648
+ old value of sum is:  2432
+ sum inside impure is:  2442
+ 3663
+ old value of sum is:  2442
+ sum inside impure is:  2452
+ 3678
+ old value of sum is:  2452
+ sum inside impure is:  2462
+ 3693
+ old value of sum is:  2462
+ sum inside impure is:  2472
+ 3708
+ old value of sum is:  2472
+ sum inside impure is:  2482
+ 3723
+ old value of sum is:  2482
+ sum inside impure is:  2492
+ 3738
+ old value of sum is:  2492
+ sum inside impure is:  2502
+ 3753
+ old value of sum is:  2502
+ sum inside impure is:  2512
+ 3768
+ old value of sum is:  2512
+ sum inside impure is:  2522
+ 3783
+ old value of sum is:  2522
+ sum inside impure is:  2532
+ 3798
+ old value of sum is:  2532
+ sum inside impure is:  2542
+ 3813
+ old value of sum is:  2542
+ sum inside impure is:  2552
+ 3828
+ old value of sum is:  2552
+ sum inside impure is:  2562
+ 3843
+ old value of sum is:  2562
+ sum inside impure is:  2572
+ 3858
+ old value of sum is:  2572
+ sum inside impure is:  2582
+ 3873
+ old value of sum is:  2582
+ sum inside impure is:  2592
+ 3888
+ old value of sum is:  2592
+ sum inside impure is:  2602
+ 3903
+ old value of sum is:  2602
+ sum inside impure is:  2612
+ 3918
+ old value of sum is:  2612
+ sum inside impure is:  2622
+ 3933
+ old value of sum is:  2622
+ sum inside impure is:  2632
+ 3948
+ old value of sum is:  2632
+ sum inside impure is:  2642
+ 3963
+ old value of sum is:  2642
+ sum inside impure is:  2652
+ 3978
+ old value of sum is:  2652
+ sum inside impure is:  2662
+ 3993
+ old value of sum is:  2662
+ sum inside impure is:  2672
+ 4008
+ old value of sum is:  2672
+ sum inside impure is:  2682
+ 4023
+ old value of sum is:  2682
+ sum inside impure is:  2692
+ 4038
+ old value of sum is:  2692
+ sum inside impure is:  2702
+ 4053
+ old value of sum is:  2702
+ sum inside impure is:  2712
+ 4068
+ old value of sum is:  2712
+ sum inside impure is:  2722
+ 4083
+ old value of sum is:  2722
+ sum inside impure is:  2732
+ 4098
+ old value of sum is:  2732
+ sum inside impure is:  2742
+ 4113
+ old value of sum is:  2742
+ sum inside impure is:  2752
+ 4128
+ old value of sum is:  2752
+ sum inside impure is:  2762
+ 4143
+ old value of sum is:  2762
+ sum inside impure is:  2772
+ 4158
+ old value of sum is:  2772
+ sum inside impure is:  2782
+ 4173
+ old value of sum is:  2782
+ sum inside impure is:  2792
+ 4188
+ old value of sum is:  2792
+ sum inside impure is:  2802
+ 4203
+ old value of sum is:  2802
+ sum inside impure is:  2812
+ 4218
+ old value of sum is:  2812
+ sum inside impure is:  2822
+ 4233
+ old value of sum is:  2822
+ sum inside impure is:  2832
+ 4248
+ old value of sum is:  2832
+ sum inside impure is:  2842
+ 4263
+ old value of sum is:  2842
+ sum inside impure is:  2852
+ 4278
+ old value of sum is:  2852
+ sum inside impure is:  2862
+ 4293
+ old value of sum is:  2862
+ sum inside impure is:  2872
+ 4308
+ old value of sum is:  2872
+ sum inside impure is:  2882
+ 4323
+ old value of sum is:  2882
+ sum inside impure is:  2892
+ 4338
+ old value of sum is:  2892
+ sum inside impure is:  2902
+ 4353
+ old value of sum is:  2902
+ sum inside impure is:  2912
+ 4368
+ old value of sum is:  2912
+ sum inside impure is:  2922
+ 4383
+ old value of sum is:  2922
+ sum inside impure is:  2932
+ 4398
+ old value of sum is:  2932
+ sum inside impure is:  2942
+ 4413
+ old value of sum is:  2942
+ sum inside impure is:  2952
+ 4428
+ old value of sum is:  2952
+ sum inside impure is:  2962
+ 4443
+ old value of sum is:  2962
+ sum inside impure is:  2972
+ 4458
+ old value of sum is:  2972
+ sum inside impure is:  2982
+ 4473
+ old value of sum is:  2982
+ sum inside impure is:  2992
+ 4488
+ old value of sum is:  2992
+ sum inside impure is:  3002
+ 4503
+ old value of sum is:  3002
+ sum inside impure is:  3012
+ 4518
+ old value of sum is:  3012
+ sum inside impure is:  3022
+ 4533
+ old value of sum is:  3022
+ sum inside impure is:  3032
+ 4548
+ old value of sum is:  3032
+ sum inside impure is:  3042
+ 4563
+ old value of sum is:  3042
+ sum inside impure is:  3052
+ 4578
+ old value of sum is:  3052
+ sum inside impure is:  3062
+ 4593
+ old value of sum is:  3062
+ sum inside impure is:  3072
+ 4608
+ old value of sum is:  3072
+ sum inside impure is:  3082
+ 4623
+ old value of sum is:  3082
+ sum inside impure is:  3092
+ 4638
+ old value of sum is:  3092
+ sum inside impure is:  3102
+ 4653
+ old value of sum is:  3102
+ sum inside impure is:  3112
+ 4668
+ old value of sum is:  3112
+ sum inside impure is:  3122
+ 4683
+ old value of sum is:  3122
+ sum inside impure is:  3132
+ 4698
+ old value of sum is:  3132
+ sum inside impure is:  3142
+ 4713
+ old value of sum is:  3142
+ sum inside impure is:  3152
+ 4728
+ old value of sum is:  3152
+ sum inside impure is:  3162
+ 4743
+ old value of sum is:  3162
+ sum inside impure is:  3172
+ 4758
+ old value of sum is:  3172
+ sum inside impure is:  3182
+ 4773
+ old value of sum is:  3182
+ sum inside impure is:  3192
+ 4788
+ old value of sum is:  3192
+ sum inside impure is:  3202
+ 4803
+ old value of sum is:  3202
+ sum inside impure is:  3212
+ 4818
+ old value of sum is:  3212
+ sum inside impure is:  3222
+ 4833
+ old value of sum is:  3222
+ sum inside impure is:  3232
+ 4848
+ old value of sum is:  3232
+ sum inside impure is:  3242
+ 4863
+ old value of sum is:  3242
+ sum inside impure is:  3252
+ 4878
+ old value of sum is:  3252
+ sum inside impure is:  3262
+ 4893
+ old value of sum is:  3262
+ sum inside impure is:  3272
+ 4908
+ old value of sum is:  3272
+ sum inside impure is:  3282
+ 4923
+ old value of sum is:  3282
+ sum inside impure is:  3292
+ 4938
+ old value of sum is:  3292
+ sum inside impure is:  3302
+ 4953
+ old value of sum is:  3302
+ sum inside impure is:  3312
+ 4968
+ old value of sum is:  3312
+ sum inside impure is:  3322
+ 4983
+ old value of sum is:  3322
+ sum inside impure is:  3332
+ 4998
+ old value of sum is:  3332
+ sum inside impure is:  3342
+ 5013
+ old value of sum is:  3342
+ sum inside impure is:  3352
+ 5028
+ old value of sum is:  3352
+ sum inside impure is:  3362
+ 5043
+ old value of sum is:  3362
+ sum inside impure is:  3372
+ 5058
+ old value of sum is:  3372
+ sum inside impure is:  3382
+ 5073
+ old value of sum is:  3382
+ sum inside impure is:  3392
+ 5088
+ old value of sum is:  3392
+ sum inside impure is:  3402
+ 5103
+ old value of sum is:  3402
+ sum inside impure is:  3412
+ 5118
+ old value of sum is:  3412
+ sum inside impure is:  3422
+ 5133
+ old value of sum is:  3422
+ sum inside impure is:  3432
+ 5148
+ old value of sum is:  3432
+ sum inside impure is:  3442
+ 5163
+ old value of sum is:  3442
+ sum inside impure is:  3452
+ 5178
+ old value of sum is:  3452
+ sum inside impure is:  3462
+ 5193
+ old value of sum is:  3462
+ sum inside impure is:  3472
+ 5208
+ old value of sum is:  3472
+ sum inside impure is:  3482
+ 5223
+ old value of sum is:  3482
+ sum inside impure is:  3492
+ 5238
+ old value of sum is:  3492
+ sum inside impure is:  3502
+ 5253
+ old value of sum is:  3502
+ sum inside impure is:  3512
+ 5268
+ old value of sum is:  3512
+ sum inside impure is:  3522
+ 5283
+ old value of sum is:  3522
+ sum inside impure is:  3532
+ 5298
+ old value of sum is:  3532
+ sum inside impure is:  3542
+ 5313
+ old value of sum is:  3542
+ sum inside impure is:  3552
+ 5328
+ old value of sum is:  3552
+ sum inside impure is:  3562
+ 5343
+ old value of sum is:  3562
+ sum inside impure is:  3572
+ 5358
+ old value of sum is:  3572
+ sum inside impure is:  3582
+ 5373
+ old value of sum is:  3582
+ sum inside impure is:  3592
+ 5388
+ old value of sum is:  3592
+ sum inside impure is:  3602
+ 5403
+ old value of sum is:  3602
+ sum inside impure is:  3612
+ 5418
+ old value of sum is:  3612
+ sum inside impure is:  3622
+ 5433
+ old value of sum is:  3622
+ sum inside impure is:  3632
+ 5448
+ old value of sum is:  3632
+ sum inside impure is:  3642
+ 5463
+ old value of sum is:  3642
+ sum inside impure is:  3652
+ 5478
+ old value of sum is:  3652
+ sum inside impure is:  3662
+ 5493
+ old value of sum is:  3662
+ sum inside impure is:  3672
+ 5508
+ old value of sum is:  3672
+ sum inside impure is:  3682
+ 5523
+ old value of sum is:  3682
+ sum inside impure is:  3692
+ 5538
+ old value of sum is:  3692
+ sum inside impure is:  3702
+ 5553
+ old value of sum is:  3702
+ sum inside impure is:  3712
+ 5568
+ old value of sum is:  3712
+ sum inside impure is:  3722
+ 5583
+ old value of sum is:  3722
+ sum inside impure is:  3732
+ 5598
+ old value of sum is:  3732
+ sum inside impure is:  3742
+ 5613
+ old value of sum is:  3742
+ sum inside impure is:  3752
+ 5628
+ old value of sum is:  3752
+ sum inside impure is:  3762
+ 5643
+ old value of sum is:  3762
+ sum inside impure is:  3772
+ 5658
+ old value of sum is:  3772
+ sum inside impure is:  3782
+ 5673
+ old value of sum is:  3782
+ sum inside impure is:  3792
+ 5688
+ old value of sum is:  3792
+ sum inside impure is:  3802
+ 5703
+ old value of sum is:  3802
+ sum inside impure is:  3812
+ 5718
+ old value of sum is:  3812
+ sum inside impure is:  3822
+ 5733
+ old value of sum is:  3822
+ sum inside impure is:  3832
+ 5748
+ old value of sum is:  3832
+ sum inside impure is:  3842
+ 5763
+ old value of sum is:  3842
+ sum inside impure is:  3852
+ 5778
+ old value of sum is:  3852
+ sum inside impure is:  3862
+ 5793
+ old value of sum is:  3862
+ sum inside impure is:  3872
+ 5808
+ old value of sum is:  3872
+ sum inside impure is:  3882
+ 5823
+ old value of sum is:  3882
+ sum inside impure is:  3892
+ 5838
+ old value of sum is:  3892
+ sum inside impure is:  3902
+ 5853
+ old value of sum is:  3902
+ sum inside impure is:  3912
+ 5868
+ old value of sum is:  3912
+ sum inside impure is:  3922
+ 5883
+ old value of sum is:  3922
+ sum inside impure is:  3932
+ 5898
+ old value of sum is:  3932
+ sum inside impure is:  3942
+ 5913
+ old value of sum is:  3942
+ sum inside impure is:  3952
+ 5928
+ old value of sum is:  3952
+ sum inside impure is:  3962
+ 5943
+ old value of sum is:  3962
+ sum inside impure is:  3972
+ 5958
+ old value of sum is:  3972
+ sum inside impure is:  3982
+ 5973
+ old value of sum is:  3982
+ sum inside impure is:  3992
+ 5988
+ old value of sum is:  3992
+ sum inside impure is:  4002
+ 6003
+ old value of sum is:  4002
+ sum inside impure is:  4012
+ 6018
+ old value of sum is:  4012
+ sum inside impure is:  4022
+ 6033
+ old value of sum is:  4022
+ sum inside impure is:  4032
+ 6048
+ old value of sum is:  4032
+ sum inside impure is:  4042
+ 6063
+ old value of sum is:  4042
+ sum inside impure is:  4052
+ 6078
+ old value of sum is:  4052
+ sum inside impure is:  4062
+ 6093
+ old value of sum is:  4062
+ sum inside impure is:  4072
+ 6108
+ old value of sum is:  4072
+ sum inside impure is:  4082
+ 6123
+ old value of sum is:  4082
+ sum inside impure is:  4092
+ 6138
+ old value of sum is:  4092
+ sum inside impure is:  4102
+ 6153
+ old value of sum is:  4102
+ sum inside impure is:  4112
+ 6168
+ old value of sum is:  4112
+ sum inside impure is:  4122
+ 6183
+ old value of sum is:  4122
+ sum inside impure is:  4132
+ 6198
+ old value of sum is:  4132
+ sum inside impure is:  4142
+ 6213
+ old value of sum is:  4142
+ sum inside impure is:  4152
+ 6228
+ old value of sum is:  4152
+ sum inside impure is:  4162
+ 6243
+ old value of sum is:  4162
+ sum inside impure is:  4172
+ 6258
+ old value of sum is:  4172
+ sum inside impure is:  4182
+ 6273
+ old value of sum is:  4182
+ sum inside impure is:  4192
+ 6288
+ old value of sum is:  4192
+ sum inside impure is:  4202
+ 6303
+ old value of sum is:  4202
+ sum inside impure is:  4212
+ 6318
+ old value of sum is:  4212
+ sum inside impure is:  4222
+ 6333
+ old value of sum is:  4222
+ sum inside impure is:  4232
+ 6348
+ old value of sum is:  4232
+ sum inside impure is:  4242
+ 6363
+ old value of sum is:  4242
+ sum inside impure is:  4252
+ 6378
+ old value of sum is:  4252
+ sum inside impure is:  4262
+ 6393
+ old value of sum is:  4262
+ sum inside impure is:  4272
+ 6408
+ old value of sum is:  4272
+ sum inside impure is:  4282
+ 6423
+ old value of sum is:  4282
+ sum inside impure is:  4292
+ 6438
+ old value of sum is:  4292
+ sum inside impure is:  4302
+ 6453
+ old value of sum is:  4302
+ sum inside impure is:  4312
+ 6468
+ old value of sum is:  4312
+ sum inside impure is:  4322
+ 6483
+ old value of sum is:  4322
+ sum inside impure is:  4332
+ 6498
+ old value of sum is:  4332
+ sum inside impure is:  4342
+ 6513
+ old value of sum is:  4342
+ sum inside impure is:  4352
+ 6528
+ old value of sum is:  4352
+ sum inside impure is:  4362
+ 6543
+ old value of sum is:  4362
+ sum inside impure is:  4372
+ 6558
+ old value of sum is:  4372
+ sum inside impure is:  4382
+ 6573
+ old value of sum is:  4382
+ sum inside impure is:  4392
+ 6588
+ old value of sum is:  4392
+ sum inside impure is:  4402
+ 6603
+ old value of sum is:  4402
+ sum inside impure is:  4412
+ 6618
+ old value of sum is:  4412
+ sum inside impure is:  4422
+ 6633
+ old value of sum is:  4422
+ sum inside impure is:  4432
+ 6648
+ old value of sum is:  4432
+ sum inside impure is:  4442
+ 6663
+ old value of sum is:  4442
+ sum inside impure is:  4452
+ 6678
+ old value of sum is:  4452
+ sum inside impure is:  4462
+ 6693
+ old value of sum is:  4462
+ sum inside impure is:  4472
+ 6708
+ old value of sum is:  4472
+ sum inside impure is:  4482
+ 6723
+ old value of sum is:  4482
+ sum inside impure is:  4492
+ 6738
+ old value of sum is:  4492
+ sum inside impure is:  4502
+ 6753
+ old value of sum is:  4502
+ sum inside impure is:  4512
+ 6768
+ old value of sum is:  4512
+ sum inside impure is:  4522
+ 6783
+ old value of sum is:  4522
+ sum inside impure is:  4532
+ 6798
+ old value of sum is:  4532
+ sum inside impure is:  4542
+ 6813
+ old value of sum is:  4542
+ sum inside impure is:  4552
+ 6828
+ old value of sum is:  4552
+ sum inside impure is:  4562
+ 6843
+ old value of sum is:  4562
+ sum inside impure is:  4572
+ 6858
+ old value of sum is:  4572
+ sum inside impure is:  4582
+ 6873
+ old value of sum is:  4582
+ sum inside impure is:  4592
+ 6888
+ old value of sum is:  4592
+ sum inside impure is:  4602
+ 6903
+ old value of sum is:  4602
+ sum inside impure is:  4612
+ 6918
+ old value of sum is:  4612
+ sum inside impure is:  4622
+ 6933
+ old value of sum is:  4622
+ sum inside impure is:  4632
+ 6948
+ old value of sum is:  4632
+ sum inside impure is:  4642
+ 6963
+ old value of sum is:  4642
+ sum inside impure is:  4652
+ 6978
+ old value of sum is:  4652
+ sum inside impure is:  4662
+ 6993
+ old value of sum is:  4662
+ sum inside impure is:  4672
+ 7008
+ old value of sum is:  4672
+ sum inside impure is:  4682
+ 7023
+ old value of sum is:  4682
+ sum inside impure is:  4692
+ 7038
+ old value of sum is:  4692
+ sum inside impure is:  4702
+ 7053
+ old value of sum is:  4702
+ sum inside impure is:  4712
+ 7068
+ old value of sum is:  4712
+ sum inside impure is:  4722
+ 7083
+ old value of sum is:  4722
+ sum inside impure is:  4732
+ 7098
+ old value of sum is:  4732
+ sum inside impure is:  4742
+ 7113
+ old value of sum is:  4742
+ sum inside impure is:  4752
+ 7128
+ old value of sum is:  4752
+ sum inside impure is:  4762
+ 7143
+ old value of sum is:  4762
+ sum inside impure is:  4772
+ 7158
+ old value of sum is:  4772
+ sum inside impure is:  4782
+ 7173
+ old value of sum is:  4782
+ sum inside impure is:  4792
+ 7188
+ old value of sum is:  4792
+ sum inside impure is:  4802
+ 7203
+ old value of sum is:  4802
+ sum inside impure is:  4812
+ 7218
+ old value of sum is:  4812
+ sum inside impure is:  4822
+ 7233
+ old value of sum is:  4822
+ sum inside impure is:  4832
+ 7248
+ old value of sum is:  4832
+ sum inside impure is:  4842
+ 7263
+ old value of sum is:  4842
+ sum inside impure is:  4852
+ 7278
+ old value of sum is:  4852
+ sum inside impure is:  4862
+ 7293
+ old value of sum is:  4862
+ sum inside impure is:  4872
+ 7308
+ old value of sum is:  4872
+ sum inside impure is:  4882
+ 7323
+ old value of sum is:  4882
+ sum inside impure is:  4892
+ 7338
+ old value of sum is:  4892
+ sum inside impure is:  4902
+ 7353
+ old value of sum is:  4902
+ sum inside impure is:  4912
+ 7368
+ old value of sum is:  4912
+ sum inside impure is:  4922
+ 7383
+ old value of sum is:  4922
+ sum inside impure is:  4932
+ 7398
+ old value of sum is:  4932
+ sum inside impure is:  4942
+ 7413
+ old value of sum is:  4942
+ sum inside impure is:  4952
+ 7428
+ old value of sum is:  4952
+ sum inside impure is:  4962
+ 7443
+ old value of sum is:  4962
+ sum inside impure is:  4972
+ 7458
+ old value of sum is:  4972
+ sum inside impure is:  4982
+ 7473
+ old value of sum is:  4982
+ sum inside impure is:  4992
+ 7488

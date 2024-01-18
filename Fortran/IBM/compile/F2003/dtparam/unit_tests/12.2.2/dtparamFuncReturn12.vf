@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"dtparamFuncReturn12.f", line 48.28: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtparamFuncReturn12.f.

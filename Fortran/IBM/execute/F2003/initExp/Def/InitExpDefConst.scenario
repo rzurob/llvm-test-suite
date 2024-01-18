@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       InitExpDefConst.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       03-17-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)InitExpDefConst.f
+#OUTPUT= InitExpDefConst$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  InitExpDefConst$(OBJ)
+#OUTPUT= InitExpDefConst$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  InitExpDefConst$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

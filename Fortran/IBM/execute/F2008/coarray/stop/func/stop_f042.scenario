@@ -1,0 +1,63 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/coarray/stop/func/stop_f042.scenario
+#FEATURE    = CAF: STOP statement (feature #351605.31)
+#CREATOR    = Grigor Nikolov
+#DATE       = 20101019
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)stop_f042.f
+#OUTPUT     = stop_f042$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#INPUT      = stop_f042$(OBJ)
+#OUTPUT     = stop_f042$(EXE)
+#ENDCMD
+
+#CMD        = MPRUN
+#INPUT      = stop_f042$(EXE)
+#STDOUT     = stop_f042.out
+#STDERR     = stop_f042.out
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "STOP Correct end with STOP"
+#INPUT      = stop_f042.out
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -c "Begin of image #"
+#INPUT      = stop_f042.out
+#STDOUT     = stop_f042_begin
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -c "End of image #"
+#INPUT      = stop_f042.out
+#STDOUT     = stop_f042_end
+#ENDCMD
+
+#CMD        = DIFF
+#INPUT      = stop_f042_begin stop_f042_end
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

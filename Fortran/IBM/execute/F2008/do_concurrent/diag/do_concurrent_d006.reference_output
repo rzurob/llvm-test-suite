@@ -1,0 +1,8 @@
+"do_concurrent_d006.f", line 27.10: 1512-123 (S) The RETURN statement may not appear within a DO CONCURRENT construct.
+"do_concurrent_d006.f", line 31.10: 1512-123 (S) The RETURN statement may not appear within a DO CONCURRENT construct.
+"do_concurrent_d006.f", line 36.10: 1512-123 (S) The RETURN statement may not appear within a DO CONCURRENT construct.
+"do_concurrent_d006.f", line 43.8: 1512-123 (S) The RETURN statement may not appear within a DO CONCURRENT construct.
+"do_concurrent_d006.f", line 48.10: 1512-123 (S) The RETURN statement may not appear within a DO CONCURRENT construct.
+"do_concurrent_d006.f", line 55.8: 1512-123 (S) The RETURN statement may not appear within a DO CONCURRENT construct.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file do_concurrent_d006.f.

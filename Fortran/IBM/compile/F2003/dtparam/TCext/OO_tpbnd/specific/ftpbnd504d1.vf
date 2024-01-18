@@ -1,0 +1,5 @@
+"ftpbnd504d1.f", line 36.39: 1514-235 (E) PRIVATE and PUBLIC are only allowed within the specification section of a module.
+"ftpbnd504d1.f", line 36.48: 1514-531 (S) Entity printbase, specified in procedure binding print, must be a module procedure or an external procedure with an explicit interface.
+** ftpbnd504d1   === End of Compilation 1 ===
+** printbase   === End of Compilation 2 ===
+1501-511  Compilation failed for file ftpbnd504d1.f.

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_procptr/declaration2/functionReturn001a.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_procptr/*
+#DATE      = 20071012
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)functionReturn001a.f
+#OUTPUT    = functionReturn001a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = functionReturn001a$(OBJ)
+#OUTPUT    = functionReturn001a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = functionReturn001a$(EXE)
+#STDOUT    = functionReturn001a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)functionReturn001a$(product)vf) functionReturn001a.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

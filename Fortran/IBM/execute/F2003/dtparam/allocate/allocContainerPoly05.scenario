@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/allocate/allocContainerPoly05.scenario
+#FEATURE	= ALLOCATE() Statement with DTP
+#CREATOR	= Glen Mateer
+#DATE		= 20090113
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)allocContainerPoly05.f
+#OUTPUT		= allocContainerPoly05$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= allocContainerPoly05$(OBJ)
+#OUTPUT		= allocContainerPoly05$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= allocContainerPoly05$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

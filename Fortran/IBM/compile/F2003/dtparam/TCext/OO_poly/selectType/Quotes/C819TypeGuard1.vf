@@ -1,0 +1,4 @@
+"C819TypeGuard1.f", line 67.26: 1511-118 (E) Construct name slec on the type guard statement does not match the one specified on the corresponding SELECT TYPE statement.  The construct name on the type guard statement is ignored.
+"C819TypeGuard1.f", 1516-036 (S) Entity slec has undefined type.
+** c819typeguard1   === End of Compilation 1 ===
+1501-511  Compilation failed for file C819TypeGuard1.f.

@@ -1,0 +1,8 @@
+** mod   === End of Compilation 1 ===
+"renameoperator005.f", line 56.11: 1514-698 (S) Defined operator (*) must not have the same name as an intrinsic operator in a rename-list or only-list of a USE statement.
+"renameoperator005.f", line 56.26: 1514-698 (S) Defined operator (+) must not have the same name as an intrinsic operator in a rename-list or only-list of a USE statement.
+** mod2   === End of Compilation 2 ===
+"renameoperator005.f", line 60.42: 1514-698 (S) Defined operator (+) must not have the same name as an intrinsic operator in a rename-list or only-list of a USE statement.
+"renameoperator005.f", line 65.7: 1514-088 (S) Invalid component name.
+** main   === End of Compilation 3 ===
+1501-511  Compilation failed for file renameoperator005.f.

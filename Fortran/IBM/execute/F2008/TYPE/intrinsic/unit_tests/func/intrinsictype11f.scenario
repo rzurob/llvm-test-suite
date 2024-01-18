@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/TYPE/intrinsic/unit_tests/func/intrinsictype11f.scenario
+#FEATURE    = F386894 - F2008: Intrinsic types in TYPE spec
+#CREATOR    = David Nichols
+#DATE       = 20110310
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#OPTS       = '-WF,-DITYPE=TYPE(character(1)),-DIVAL="A"' $(OPT_FIXED_SOURCE_FORM)
+#INPUT      = $(tcasedir)intrinsictype01f.F
+#OUTPUT     = intrinsictype11f$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#INPUT      = intrinsictype11f$(OBJ)
+#OUTPUT     = intrinsictype11f$(EXE)
+#ENDCMD
+
+#CMD        = RUN
+#INPUT      = intrinsictype11f$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

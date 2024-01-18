@@ -1,0 +1,6 @@
+"dtparamScope001d.f", line 42.30: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+line 50 is illegal too
+"dtparamScope001d.f", line 56.19: 1515-130 (S) Identifier abs must be a procedure that has an explicit interface.
+"dtparamScope001d.f", line 62.19: 1515-130 (S) Identifier test must be a procedure that has an explicit interface.
+** dtparamscope001d   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtparamScope001d.f.

@@ -1,0 +1,32 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/intrinsics/merge/mergeAsActualArg01_workaround.scenario
+#FEATURE= 355754
+#CREATOR= Nancy Wang
+#DATE   = Sept. 17 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)mergeAsActualArg01_workaround.f
+#OUTPUT= mergeAsActualArg01_workaround$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = mergeAsActualArg01_workaround$(OBJ)
+#OUTPUT= mergeAsActualArg01_workaround$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = mergeAsActualArg01_workaround$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

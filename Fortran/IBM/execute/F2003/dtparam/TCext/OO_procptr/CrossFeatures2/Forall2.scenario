@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_procptr/CrossFeatures2/Forall2.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_procptr/*
+#DATE      = 20071011
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS  = -qdebug=allowrpdt
+#INPUT=  $(tcasedir)Forall2.f
+#OUTPUT= Forall2$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  Forall2$(OBJ)
+#OUTPUT= Forall2$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  Forall2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

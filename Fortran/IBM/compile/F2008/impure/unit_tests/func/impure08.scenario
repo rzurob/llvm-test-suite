@@ -1,0 +1,18 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2008/impure/unit_tests/func/impure08.scenario
+#FEATURE = 917300 impure procedures
+#CREATOR = Paul Liu
+#DATE    = 20120308
+#TEST_TYPE=FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)impure08.f
+#OUTPUT    = impure08$(OBJ)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

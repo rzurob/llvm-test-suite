@@ -1,0 +1,6 @@
+"execute_command_line04d.f", line 48.33: 1513-040 (S) The argument COMMAND must be a scalar.
+"execute_command_line04d.f", line 49.54: 1513-040 (S) The argument CMDMSG must be a scalar.
+"execute_command_line04d.f", line 50.54: 1513-040 (S) The argument EXITSTAT must be a scalar.
+"execute_command_line04d.f", line 51.66: 1513-040 (S) The argument EXITSTAT must be a scalar.
+** execute_command_line02d   === End of Compilation 1 ===
+1501-511  Compilation failed for file execute_command_line04d.f.

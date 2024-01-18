@@ -1,0 +1,28 @@
+3.14NaN
+1.1NaN(Q)9.9  
+NaNInf6.6 
+InfNaN(S)7.7  
++NaN-NaN(S)
+-Inf+3-NaN(S)
+NaN(________)4.44
+5.44NaN(________)
+NAN(1234567890)98
+99NAN(1234567890)
+99NAN(1234567890)-InfInf
+Infinitynaninfnan-inf
++infinitY+inf-inf+5.9
+-7.0+NaN(Q)-Inf712.0
+3.14 NaN
+1.1,NaN(Q) 9.9  
+NaN Inf,6.6 
+Inf NaN(S) 7.7  
+ +NaN-NaN(S) 
+     -Inf+3 , -NaN(S)
+NaN(________), 4.44
+5.44  NaN(________)
+NAN(1234567890)  98
+99,NAN(1234567890)
+99 ,NAN(1234567890)  -Inf Inf
+Infinitynan infnan-inf
++infinitY+inf-inf, +5.9
+-7.0,+NaN(Q) -Inf     712.0             

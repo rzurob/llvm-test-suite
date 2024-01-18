@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/unit_tests/data/diaDataDTParmNested.scenario
+#FEATURE	= 333315
+#CREATOR	= Zheming Gu
+#DATE		= May 11,2007
+#TEST_TYPE	= diagnostic test
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)diaDataDTParmNested.f
+#STDERR		= diaDataDTParmNested.out
+#VALIDRCS	= $(RC_COMP_E)
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= diaDataDTParmNested.out $($(tcasedir)diaDataDTParmNested$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

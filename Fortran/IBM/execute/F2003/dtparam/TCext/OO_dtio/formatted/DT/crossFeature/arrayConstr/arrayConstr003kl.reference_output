@@ -1,0 +1,9 @@
+  iotype:DT_base-1 v_list: 4 4 101 abc
+  iotype:DT_base-2 v_list: 5 5  102  def
+  iotype:DT_base-3 v_list: 6 6   103   ghi
+  iotype:DT_base-1 v_list: 5 5  201  abc
+  iotype:DT_base-1 v_list: 5 5  301  ibm
+  iotype:DT_base-1 v_list: 5 5  202  def
+  iotype:DT_base-1 v_list: 5 5  302  ibm
+  iotype:DT_base-1 v_list: 5 5  203  ghi
+  iotype:DT_base-1 v_list: 5 5  303  ibm

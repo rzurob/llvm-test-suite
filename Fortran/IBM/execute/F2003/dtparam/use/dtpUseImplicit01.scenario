@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/use/dtpUseImplicit01.scenario
+#FEATURE   = DTP and USE - USEd type in implicit statement
+#CREATOR   = DF
+#DATE      = 20080825
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUseImplicit01.f
+#OUTPUT    = dtpUseImplicit01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUseImplicit01$(OBJ)
+#OUTPUT    = dtpUseImplicit01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUseImplicit01$(EXE)
+#STDOUT    = dtpUseImplicit01.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUseImplicit01$(product)vf) dtpUseImplicit01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

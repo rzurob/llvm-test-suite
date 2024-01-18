@@ -1,0 +1,208 @@
+!#######################################################################
+! SCCS ID Information
+! %W%, %I%
+! Extract Date/Time: %D% %T%
+! Checkin Date/Time: %E% %U%
+!#######################################################################
+!***********************************************************************
+! %START
+! %MAIN:
+! %PRECMD: ${TR_SRC}/scrisoa00.presh fxisol06 cxisol06
+! %COMPOPTS:
+! %GROUP: redherring.f
+! %VERIFY: 
+! %STDIN:
+! %STDOUT:
+! %EXECARGS:
+! %POSTCMD:
+! %END
+!***********************************************************************
+!***********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE TITLE            : Support for ISO_C_BINDING module
+!*
+!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
+!*  DATE                       : 4/23/2002
+!*  ORIGIN                     : AIX Compiler Development,
+!*                             : IBM Software Solutions Toronto Lab
+!*
+!*
+!*  PRIMARY FUNCTIONS TESTED   : ISO_C_BINDING module
+!*  SECONDARY FUNCTIONS TESTED : see below 
+!*
+!*  DRIVER STANZA              : 
+!*  REQUIRED COMPILER OPTIONS  : 
+!*
+!*  KEYWORD(S)                 : C_FLOAT, C_DOUBLE
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION                : 
+!*
+!*	- testing C_FLOAT and C_DOUBLE
+!*	- using external FORTRAN functions
+!*	- passing 1-dim and 2-dim array arguments
+!*	- main written in C
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+real(C_FLOAT) function fnt1(a,b)
+   use ISO_C_BINDING
+
+   real(C_FLOAT) :: a(5)
+   real(C_DOUBLE) :: b(5)
+   
+   do i = 1, 5
+      if ( a(i) /= real(i,C_FLOAT) ) error stop 20
+      a(i) = real(i+1,C_FLOAT)
+      if ( b(i) /= real(i,C_DOUBLE) ) error stop 22
+      b(i) = real(i+1,C_DOUBLE)
+   end do
+
+   fnt1 = 0
+end function fnt1
+
+real(C_FLOAT) function fnt2(a,b)
+   use ISO_C_BINDING
+
+   real(C_FLOAT), intent(in) :: a(5)
+   real(C_DOUBLE), intent(in) :: b(5)
+
+   do i = 1, 5
+      if ( a(i) /= real(i,C_FLOAT) ) error stop 24
+      if ( b(i) /= real(i,C_DOUBLE) ) error stop 26
+   end do
+
+   fnt2 = 0
+end function fnt2
+
+real(C_FLOAT) function fnt2a(a,b)
+   use ISO_C_BINDING
+
+   real(C_FLOAT), intent(in) :: a(5)
+   real(C_DOUBLE), intent(in) :: b(5)
+
+   do i = 1, 5
+      if ( a(i) /= real(i,C_FLOAT) ) error stop 28
+      if ( b(i) /= real(i,C_DOUBLE) ) error stop 30
+   end do
+
+   fnt2a = 0
+end function fnt2a
+
+real(C_FLOAT) function fnt3(a,b)
+   use ISO_C_BINDING
+
+   real(C_FLOAT), intent(inout) :: a(5)
+   real(C_DOUBLE), intent(inout) :: b(5)
+
+   do i = 1, 5
+      if ( a(i) /= real(i,C_FLOAT) ) error stop 32
+      a(i) = real(i+1,C_FLOAT)
+      if ( b(i) /= real(i,C_DOUBLE) ) error stop 34
+      b(i) = real(i+1,C_DOUBLE)
+   end do
+
+   fnt3 = 0
+end function fnt3
+
+real(C_FLOAT) function fnt4(a,b)
+   use ISO_C_BINDING
+
+   real(C_FLOAT), intent(out) :: a(5)
+   real(C_DOUBLE), intent(out) :: b(5)
+
+   do i = 1, 5
+      a(i) = real(i+1,C_FLOAT)
+      b(i) = real(i+1,C_DOUBLE)
+   end do
+
+   fnt4 = 0
+end function fnt4
+
+real(C_FLOAT) function fnt5(aa,bb)
+   use ISO_C_BINDING
+
+   real(C_FLOAT) :: aa(10,5)
+   real(C_DOUBLE) :: bb(10,5)
+   
+   do i = 1, 5
+      do j = 1, 10
+         if ( aa(j,i) /= real(i+j-1,C_FLOAT) ) error stop 36
+         aa(j,i) = real(i+j,C_FLOAT)
+         if ( bb(j,i) /= real(i+j-1,C_DOUBLE) ) error stop 38
+         bb(j,i) = real(i+j,C_DOUBLE)
+      end do
+   end do
+
+   fnt5 = 0
+end function fnt5
+
+real(C_FLOAT) function fnt6(aa,bb)
+   use ISO_C_BINDING
+
+   real(C_FLOAT), intent(in) :: aa(10,5)
+   real(C_DOUBLE), intent(in) :: bb(10,5)
+
+   do i = 1, 5
+      do j = 1, 10
+         if ( aa(j,i) /= real(i+j-1,C_FLOAT) ) error stop 40
+         if ( bb(j,i) /= real(i+j-1,C_DOUBLE) ) error stop 42
+      end do
+   end do
+
+   fnt6 = 0
+end function fnt6
+
+real(C_FLOAT) function fnt6a(aa,bb)
+   use ISO_C_BINDING
+
+   real(C_FLOAT), intent(in) :: aa(10,5)
+   real(C_DOUBLE), intent(in) :: bb(10,5)
+
+   do i = 1, 5
+      do j = 1, 10
+         if ( aa(j,i) /= real(i+j-1,C_FLOAT) ) error stop 44
+         if ( bb(j,i) /= real(i+j-1,C_DOUBLE) ) error stop 46
+      end do
+   end do
+
+   fnt6a = 0
+end function fnt6a
+
+real(C_FLOAT) function fnt7(aa,bb)
+   use ISO_C_BINDING
+
+   real(C_FLOAT), intent(inout) :: aa(10,5)
+   real(C_DOUBLE), intent(inout) :: bb(10,5)
+   
+   do i = 1, 5
+      do j = 1, 10
+         if ( aa(j,i) /= real(i+j-1,C_FLOAT) ) error stop 48
+         aa(j,i) = real(i+j,C_FLOAT)
+         if ( bb(j,i) /= real(i+j-1,C_DOUBLE) ) error stop 50
+         bb(j,i) = real(i+j,C_DOUBLE)
+      end do
+   end do
+
+   fnt7 = 0
+end function fnt7
+
+real(C_FLOAT) function fnt8(aa,bb)
+   use ISO_C_BINDING
+
+   real(C_FLOAT), intent(out) :: aa(10,5)
+   real(C_DOUBLE), intent(out) :: bb(10,5)
+   
+   do i = 1, 5
+      do j = 1, 10
+         aa(j,i) = real(i+j,C_FLOAT)
+         bb(j,i) = real(i+j,C_DOUBLE)
+      end do
+   end do
+
+   fnt8 = 0
+end function fnt8

@@ -1,0 +1,15 @@
+** m   === End of Compilation 1 ===
+"move_allocDiagNonAlloc01.f", line 47.19: 1516-287 (S) The FROM argument to the intrinsic procedure MOVE_ALLOC must have the ALLOCATABLE attribute.
+"move_allocDiagNonAlloc01.f", line 47.25: 1516-287 (S) The TO argument to the intrinsic procedure MOVE_ALLOC must have the ALLOCATABLE attribute.
+"move_allocDiagNonAlloc01.f", line 48.19: 1516-287 (S) The FROM argument to the intrinsic procedure MOVE_ALLOC must have the ALLOCATABLE attribute.
+"move_allocDiagNonAlloc01.f", line 48.25: 1516-287 (S) The TO argument to the intrinsic procedure MOVE_ALLOC must have the ALLOCATABLE attribute.
+"move_allocDiagNonAlloc01.f", line 49.19: 1516-287 (S) The FROM argument to the intrinsic procedure MOVE_ALLOC must have the ALLOCATABLE attribute.
+"move_allocDiagNonAlloc01.f", line 49.25: 1516-287 (S) The TO argument to the intrinsic procedure MOVE_ALLOC must have the ALLOCATABLE attribute.
+"move_allocDiagNonAlloc01.f", line 50.19: 1516-287 (S) The FROM argument to the intrinsic procedure MOVE_ALLOC must have the ALLOCATABLE attribute.
+"move_allocDiagNonAlloc01.f", line 50.25: 1516-287 (S) The TO argument to the intrinsic procedure MOVE_ALLOC must have the ALLOCATABLE attribute.
+"move_allocDiagNonAlloc01.f", line 51.19: 1516-287 (S) The FROM argument to the intrinsic procedure MOVE_ALLOC must have the ALLOCATABLE attribute.
+"move_allocDiagNonAlloc01.f", line 51.25: 1516-287 (S) The TO argument to the intrinsic procedure MOVE_ALLOC must have the ALLOCATABLE attribute.
+"move_allocDiagNonAlloc01.f", line 52.19: 1516-287 (S) The FROM argument to the intrinsic procedure MOVE_ALLOC must have the ALLOCATABLE attribute.
+"move_allocDiagNonAlloc01.f", line 52.25: 1516-287 (S) The TO argument to the intrinsic procedure MOVE_ALLOC must have the ALLOCATABLE attribute.
+** move_allocdiagnonalloc01   === End of Compilation 2 ===
+1501-511  Compilation failed for file move_allocDiagNonAlloc01.f.

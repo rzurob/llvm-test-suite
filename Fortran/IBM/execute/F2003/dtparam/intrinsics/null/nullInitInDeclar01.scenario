@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/intrinsics/null/nullInitInDeclar01.scenario
+#FEATURE= 355754
+#CREATOR= Nancy Wang
+#DATE   = Sept. 26 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)nullInitInDeclar01.f
+#OUTPUT= nullInitInDeclar01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = nullInitInDeclar01$(OBJ)
+#OUTPUT= nullInitInDeclar01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = nullInitInDeclar01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

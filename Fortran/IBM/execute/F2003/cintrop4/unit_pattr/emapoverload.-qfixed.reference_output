@@ -1,0 +1,16 @@
+*** testcase variant:  -qfixed
+
+** p1   === End of Compilation 1 ===
+1501-510  Compilation successful for file emapoverload-f.f.
+f1a_B entered (no args)
+ rv = 1.000000000
+f1b_B entered (args 2.000000)
+ rv = 3.000000000
+f1c_B entered (args 2.000000, 3.000000)
+ rv = 5.000000000
+f1a_B entered (no args)
+ rv = 1.000000000
+f1b_B entered (args 2.000000)
+ rv = 3.000000000
+f1c_B entered (args 2.000000, 3.000000)
+ rv = 5.000000000

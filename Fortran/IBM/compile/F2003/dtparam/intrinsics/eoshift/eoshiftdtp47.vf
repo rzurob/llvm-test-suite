@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"eoshiftdtp47.f", line 54.32: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "eoshift".
+** a   === End of Compilation 2 ===
+1501-511  Compilation failed for file eoshiftdtp47.f.

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/typCompatible/typeboundpoly2.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071126
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)typeboundpoly2.f
+#OUTPUT= typeboundpoly2$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  typeboundpoly2$(OBJ)
+#OUTPUT= typeboundpoly2$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  typeboundpoly2$(EXE)
+#STDOUT= typeboundpoly2.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = typeboundpoly2.out $(tcasedir)typeboundpoly2.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/associate/CrossFeatures/InterfaceGen.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071005
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)InterfaceGen.f
+#OUTPUT= InterfaceGen$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  InterfaceGen$(OBJ)
+#OUTPUT= InterfaceGen$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  InterfaceGen$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

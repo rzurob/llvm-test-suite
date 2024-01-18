@@ -1,0 +1,58 @@
+ =============================================
+ assumedsize
+ ab
+ 101 102 103 104
+ assumedsize
+ ab
+ 110 120 130 140
+ assumedsize
+ ab
+ 110 120 120 140
+ assumedsize2d
+ ab
+ 101 102 103 104
+ assumedsize2d
+ ab
+ 110 120 130 140
+ assumedsize2d
+ ab
+ 110 120 120 140
+ =============================================
+ assumedsize
+ c
+ 3000 3000 3000 3000
+ assumedsize
+ c
+ 3000 3000 3000 3000
+ assumedsize
+ c
+ 3002 3006 3006 3020
+ assumedsize2d
+ c
+ 3000 3000 3000 3000
+ assumedsize2d
+ c
+ 3000 3000 3000 3000
+ assumedsize2d
+ c
+ 3002 3006 3006 3020
+ =============================================
+ assumedsize
+ c
+ 300 300 300 300
+ assumedsize
+ c
+ 300 300 300 300
+ assumedsize
+ c
+ 302 306 306 320
+ assumedsize2d
+ c
+ 300 300 300 300
+ assumedsize2d
+ c
+ 300 300 300 300
+ assumedsize2d
+ c
+ 302 306 306 320
+ =============================================

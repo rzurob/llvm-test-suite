@@ -1,0 +1,14 @@
+ 1001 111 112
+ -9 -9 -9
+ 1002 121 122
+ -9 -9 -9
+ 1003 131 132
+ 2001 211
+ 2002 221 222
+ 2002 231
+ 2004 241 242
+ 3001 311 312
+ 3003 321 322
+ 3002 331 332
+ 3004 341 342
+  DTb1-1 5 6 7   DTdata 6 7     DTb1-2 5 7 8   DTdata 7 8     DTb1-3 5 8 9   DTdata 8 9     DTb2-1 5 6     DTdata 6       DTb2-2 5 6 7   DTdata 6 7     DTb2-3 5 6     DTdata 6       DTb2-4 5 6 7   DTdata 6 7     DTb3 7 8 9     DTdata 8 9     DTb3 7 8 9     DTdata 8 9     DTb3 7 8 9     DTdata 8 9     DTb3 7 8 9     DTdata 8 9    

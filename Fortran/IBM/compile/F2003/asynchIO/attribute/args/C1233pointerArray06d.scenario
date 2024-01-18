@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/attribute/args/C1233pointerArray06d.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Attribute
+#CREATOR	= GM Manual Creation
+#DATE		= 20060408
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)C1233pointerArray06d.f
+#OUTPUT		= C1233pointerArray06d$(OBJ)
+#STDERR		= C1233pointerArray06d.stderr
+#VALIDRCS	= $(RC_COMP_S)
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)C1233pointerArray06d$(product)vf)	\
+				C1233pointerArray06d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

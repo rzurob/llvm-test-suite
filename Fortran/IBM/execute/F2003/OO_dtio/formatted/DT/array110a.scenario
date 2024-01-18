@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/DT/array110a.scenario
+#FEATURE = OO_dtio
+#CREATOR = Robert Ma
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)array110a.1 .
+#ENDCMD
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)array110a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = array110a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = array110a$(OBJ)
+#OUTPUT    = array110a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = array110a$(EXE)
+#STDOUT    = array110a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)array110a$(product)vf) array110a.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

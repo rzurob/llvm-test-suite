@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/attribute/args/actArgArraySectVectSub03.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Attribute
+#CREATOR	= GM Manual Creation
+#DATE		= 20060410
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= XLC_COMPILE
+#OPTS		= $(C_COMPILER_OPTS)
+#INPUT		= $(tcasedir)actArgArraySectVectSub03c.c
+#OUTPUT		= actArgArraySectVectSub03c$(OBJ)
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)actArgArraySectVectSub03.f
+#OUTPUT		= actArgArraySectVectSub03$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= actArgArraySectVectSub03$(OBJ) actArgArraySectVectSub03c$(OBJ)
+#OUTPUT		= actArgArraySectVectSub03$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= actArgArraySectVectSub03$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

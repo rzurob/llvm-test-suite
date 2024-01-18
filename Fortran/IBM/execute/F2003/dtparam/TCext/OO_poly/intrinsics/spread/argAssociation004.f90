@@ -1,0 +1,112 @@
+! GB DTP extension using:
+! ftcx_dtp -qnol -qreuse=base /tstdev/OO_poly/intrinsics/spread/argAssociation004.f
+! opt variations: -ql -qreuse=none
+
+! *********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: argAssociation004.f
+! %VERIFY: argAssociation004.out:argAssociation004.vf
+! %STDIN:
+! %STDOUT: argAssociation004.out
+! %EXECARGS:
+! %POSTCMD:
+! %END
+! *********************************************************************
+!*  =================================================================== 
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
+!*  =================================================================== 
+!*  TEST CASE TITLE            :
+!*  PROGRAMMER                 : Yong Du
+!*  DATE                       : 01/20/2005
+!*  ORIGIN                     :
+!*  PRIMARY FUNCTIONS TESTED   : spread
+!*  SECONDARY FUNCTIONS TESTED :
+!*  DRIVER STANZA              : xlf90
+!*  DESCRIPTION                :
+!*    SOURCE is a dummy argument. Dummy argument is non-pointer,
+!*  non-allocatable, poly, and is array.
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  ===================================================================
+!*  REVISION HISTORY
+!*                    MM/DD/YY :
+!*                        Init :
+!*                    Comments :
+!*  ===================================================================
+!2345678901234567890123456789012345678901234567890123456789012345678901
+
+module m
+    type Base(k1)    ! (4)
+        integer, kind :: k1
+        integer(k1)      i
+    end type
+
+    type, extends(Base) :: Child    ! (4)
+        integer(k1) j
+    end type
+
+    contains
+
+    subroutine sub1(arg1, arg2, arg3, arg4)
+        class(Base(4)) :: arg1(10)
+        class(Base(4)) :: arg2(:,:)
+        class(Base(4)) :: arg3(:)
+        class(Base(4)) :: arg4(2,2)
+
+        select type(name1=>spread(arg1, 2, 2))
+            type is (Base(4))
+                print *, name1
+                print *, size(name1)
+                print *, shape(name1)
+            class default
+                error stop 1_4
+        end select
+
+        select type(name1=>spread(arg2, 3, 2))
+            type is (Child(4))
+                print *, name1
+                print *, size(name1)
+                print *, shape(name1)
+            class default
+                error stop 2_4
+        end select
+
+        select type(name1=>spread(arg3, 1, 3))
+            type is (Child(4))
+                print *, name1
+                print *, size(name1)
+                print *, shape(name1)
+            class default
+                error stop 3_4
+        end select
+
+        select type(name1=>spread(arg4, 1, 3))
+            type is (Child(4))
+                print *, name1
+                print *, size(name1)
+                print *, shape(name1)
+            class default
+                error stop 4_4
+        end select
+    end subroutine
+end module
+
+program argAssociation004
+use m
+    type(Base(4)) :: b1(10)
+    type(Child(4)) :: c1(2,3)
+    class(Base(4)), pointer :: b2(:)
+    class(Child(4)), allocatable :: c2(:,:)
+
+    b1 = (/ (Base(4)(i),i=1,10) /)
+    c1 = reshape((/(Child(4)(i, i+1),i=5,15,2)/),(/2,3/))
+    allocate(b2(6), SOURCE=(/(Child(4)(i,i+1),i=2,7)/))
+    allocate(c2(2,2), SOURCE=reshape((/(Child(4)(j=i-1,i=i), &
+     i=12,15)/), (/2,2/)))
+
+    call sub1(b1, c1, b2, c2)
+end

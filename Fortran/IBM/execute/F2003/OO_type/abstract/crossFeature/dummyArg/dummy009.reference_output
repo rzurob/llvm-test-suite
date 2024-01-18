@@ -1,0 +1,6 @@
+ foo: not present(b)
+ foo: not present(b)
+ foo: not present(b)
+ foo: present(b)
+ foo: present(b)
+ foo: present(b)

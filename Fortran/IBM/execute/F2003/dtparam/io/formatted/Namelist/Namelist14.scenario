@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/Namelist/Namelist14.scenario
+#FEATURE   = DTP - Namelist
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20081127
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)Namelist14.In .
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)Namelist14.f
+#OUTPUT    = Namelist14$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = Namelist14$(OBJ)
+#OUTPUT    = Namelist14$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = Namelist14$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

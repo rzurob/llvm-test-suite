@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= cintrop2/modvar/fxmdvn01.scenario
+#REFERENCE	= fdpr/cinterop/fxmdvn01.scenario
+#REF_TYPE	= FDPR -- XL FORTRAN/C Interoperability Tests
+#FEATURE = cintrop2 tests - regression run bucket
+#CREATOR	= GM Manual Update
+#DATE		= 20050429
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+FTCARG="fxmdvn01"
+CTCARG="cxmdvn01"
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#INCLUDE   = fxmdvn01.shinclude
+
+#ENDCONTROL
+#ENDSCENARIO

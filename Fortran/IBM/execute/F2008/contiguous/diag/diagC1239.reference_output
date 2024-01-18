@@ -1,0 +1,9 @@
+** mod   === End of Compilation 1 ===
+"diagC1239.f", line 77.25: 1516-339 (S) Dummy argument arg of procedure sub_volatile an assumed-shape array declared with the VOLATILE and CONTIGUOUS attributes.  The corresponding non-pointer actual argument with the VOLATILE attribute must be simply contiguous.
+"diagC1239.f", line 78.25: 1516-339 (S) Dummy argument arg of procedure sub_volatile an assumed-shape array declared with the VOLATILE and CONTIGUOUS attributes.  The corresponding non-pointer actual argument with the VOLATILE attribute must be simply contiguous.
+"diagC1239.f", line 79.25: 1516-339 (S) Dummy argument arg of procedure sub_volatile an assumed-shape array declared with the VOLATILE and CONTIGUOUS attributes.  The corresponding non-pointer actual argument with the VOLATILE attribute must be simply contiguous.
+"diagC1239.f", line 96.21: 1516-339 (S) Dummy argument arg of procedure sub_asyn an assumed-shape array declared with the ASYNCHRONOUS and CONTIGUOUS attributes.  The corresponding non-pointer actual argument with the ASYNCHRONOUS attribute must be simply contiguous.
+"diagC1239.f", line 97.21: 1516-339 (S) Dummy argument arg of procedure sub_asyn an assumed-shape array declared with the ASYNCHRONOUS and CONTIGUOUS attributes.  The corresponding non-pointer actual argument with the ASYNCHRONOUS attribute must be simply contiguous.
+"diagC1239.f", line 98.21: 1516-339 (S) Dummy argument arg of procedure sub_asyn an assumed-shape array declared with the ASYNCHRONOUS and CONTIGUOUS attributes.  The corresponding non-pointer actual argument with the ASYNCHRONOUS attribute must be simply contiguous.
+** diagc1239   === End of Compilation 2 ===
+1501-511  Compilation failed for file diagC1239.f.

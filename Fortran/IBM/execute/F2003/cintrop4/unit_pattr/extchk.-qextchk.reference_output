@@ -1,0 +1,10 @@
+*** testcase variant:  <below -O4> -qextchk
+
+** extchk   === End of Compilation 1 ===
+** f1c_via_f   === End of Compilation 2 ===
+** f2f_via_f   === End of Compilation 3 ===
+1501-510  Compilation successful for file extchk.f.
+ld: 0711-197 ERROR: Type mismatches for symbol: .f1_cB
+ld: 0711-345 Use the -bloadmap or -bnoquiet option to obtain more information.
+ld: 0711-197 ERROR: Type mismatches for symbol: .f1_fB
+ld: 0711-197 ERROR: Type mismatches for symbol: .f2_fB

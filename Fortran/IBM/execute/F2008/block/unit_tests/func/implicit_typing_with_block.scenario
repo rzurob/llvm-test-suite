@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=implicit_typing_with_block.scenario
+#FEATURE = F2008 BLOCK construct
+#CREATOR = Pooja Dayanand
+#DATE    = 20101021
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)implicit_typing_with_block.f
+#OUTPUT    = implicit_typing_with_block$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#INPUT     = implicit_typing_with_block$(OBJ)
+#OUTPUT    = implicit_typing_with_block$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = implicit_typing_with_block$(EXE)
+#STDOUT    = implicit_typing_with_block.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = implicit_typing_with_block.out $(tcasedir)implicit_typing_with_block.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

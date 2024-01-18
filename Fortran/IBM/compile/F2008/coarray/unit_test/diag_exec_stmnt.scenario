@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = diag_exec_stmnt.scenario
+#FEATURE  =
+#CREATOR  = Francesco Cassullo
+#DATE     = December 2010
+#TEST_TYPE= DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_NOCOARRAY)
+#INPUT     = $(tcasedir)diag_exec_stmnt.f
+#OUTPUT    = diag_exec_stmnt$(OBJ)
+#STDOUT    = diag_exec_stmnt.err
+#STDERR    = diag_exec_stmnt.err
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)diag_exec_stmnt$(product)vf) diag_exec_stmnt.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

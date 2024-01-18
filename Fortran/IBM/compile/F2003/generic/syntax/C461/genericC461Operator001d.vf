@@ -1,0 +1,5 @@
+"genericC461Operator001d.f", line 37.33: 1514-672 (S) Specific binding add with the NOPASS attribute must not be specified for the generic binding with the generic specification OPERATOR(+).
+"genericC461Operator001d.f", line 37.38: 1514-672 (S) Specific binding addwithint with the NOPASS attribute must not be specified for the generic binding with the generic specification OPERATOR(+).
+** m   === End of Compilation 1 ===
+** genericc461operator001d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericC461Operator001d.f.

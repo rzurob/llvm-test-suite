@@ -1,0 +1,31 @@
+*** testcase variant:  -qfixed\n
+  20.8   0111064A BIND(C)Ü
+  21.8   0111064A BIND(C)Ü
+  24.8   0111064A BIND(C)Ü
+  29.24   0111064A BIND(C)Ü
+  30.20   0111064A BIND(C)Ü
+  32.21   0111064A BIND(C)Ü
+  34.19   0111064A BIND(C)Ü
+  39.25   0111064A BIND(C)Ü
+  40.21   0111064A BIND(C)Ü
+  42.22   0111064A BIND(C)Ü
+  44.20   0111064A BIND(C)Ü
+** langlvl   === End of Compilation 1 ===
+  51.21   0111064A BIND(C)Ü
+  52.17   0111064A BIND(C)Ü
+** s   === End of Compilation 2 ===
+  54.18   0111064A BIND(C)Ü
+  56.16   0111064A BIND(C)Ü
+** f   === End of Compilation 3 ===
+  61.22   0111064A BIND(C)Ü
+  62.18   0111064A BIND(C)Ü
+** s2   === End of Compilation 4 ===
+  64.19   0111064A BIND(C)Ü
+  66.17   0111064A BIND(C)Ü
+** f2   === End of Compilation 5 ===
+  78.8   0111064A BIND(C)Ü
+  79.8   0111064A BIND(C)Ü
+  82.8   0111064A BIND(C)Ü
+  83.8   0111064A BIND(C)Ü
+** p   === End of Compilation 6 ===
+1501-510  Compilation successful for file langlvl.f.

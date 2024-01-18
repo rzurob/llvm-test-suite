@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"dtparamConstr019d.f", line 70.21: 1514-560 (S) The component keyword val does not match a component of the derived type base.
+"dtparamConstr019d.f", line 74.10: 1514-090 (S) Wrong number of arguments specified for structure constructor.
+** dtparamconstr019d   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtparamConstr019d.f.

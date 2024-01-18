@@ -1,0 +1,3 @@
+"fpAssgn001d1.f", line 48.5: 1515-104 (S) The target in the pointer assignment statement is not unlimited polymorphic.  The pointer must be type compatible with the target, and the corresponding nondeferred type parameters must be equal.
+** fpassgn001d1   === End of Compilation 1 ===
+1501-511  Compilation failed for file fpAssgn001d1.f.

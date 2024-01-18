@@ -1,0 +1,9 @@
+ &NML1
+ B1=1, 2, abc, B1=1, 2, abc, B2=3, 4, def, B2=3, 4, def
+ /
+ &NML2
+ B3=5, 6, ghi, B1=11, 12, IBM, B4=7, 8, jkl, B5=9, 10, mno
+ /
+ &NML3
+ B5=9, 10, mno, B3=13, 14, FTN
+ /

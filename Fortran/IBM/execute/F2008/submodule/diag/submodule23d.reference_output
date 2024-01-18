@@ -1,0 +1,8 @@
+** m   === End of Compilation 1 ===
+** n   === End of Compilation 2 ===
+"submodule23d.f", line 59.21: 1514-245 (S) Identifier sub2 is accessed by use association. It must not be redeclared or initialized.
+"submodule23d.f", line 59.21: 1513-269 (S) Separate module procedure sub2 must be declared in a separate interface body in the containing program unit or an ancestor of that program unit.
+"submodule23d.f", line 62.19: 1514-245 (S) Identifier func2 is accessed by use association. It must not be redeclared or initialized.
+"submodule23d.f", line 62.19: 1513-269 (S) Separate module procedure func2 must be declared in a separate interface body in the containing program unit or an ancestor of that program unit.
+** m2   === End of Compilation 3 ===
+1501-511  Compilation failed for file submodule23d.f.

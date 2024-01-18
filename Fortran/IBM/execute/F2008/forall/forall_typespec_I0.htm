@@ -1,0 +1,932 @@
+
+
+<script language="JavaScript1.2" type="text/javaScript" src="/scripts/scripts.js"></script>
+<link rel="stylesheet" type="text/css" href="/stylesheets/v4-screen.css" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/featureflow.css" />
+<style type="text/css" media="all">
+<!--
+@import url("/stylesheets/screen.css");
+@import url("/stylesheets/interior.css");
+@import url("/stylesheets/icons.css");
+@import url("/stylesheets/tables.css");
+-->
+</style>
+<!-- print stylesheet MUST follow imported stylesheets -->
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/print.css" />
+	<script type="text/javascript" language="JavaScript1.2">
+	var pageExitWarn = false;
+
+	<!-- 
+	function msover(image) { // Mouse Over 
+		if (document.images) { 
+			document[image].src = eval(image + "on.src") 
+		} 
+	} 
+	function msout(image) { // Mouse Out 
+		if (document.images) { 
+			document[image].src = eval(image + ".src") 
+		} 
+	} 
+	/* ----------------------------------------- */ 
+	function popup(hp, f3) { 
+		if (document.layers) { 
+			document[hp].visibility = "visible" 
+			document[hp].top = 0 
+			document[hp].left = f3.x + 23 
+			//document[hp].top = f3.pageY + 10 
+		} else { 
+			if (document.all) { 
+				document.all[hp].style.visibility = "visible" 
+				document.all[hp].style.left = f3.x + 23 
+				//document.all[hp].style.top = f3.y + 10 
+				document.all[hp].style.top = 0 
+			} 
+		} 
+	} 
+	function cpopup(hp) { 
+		if (document.layers) { 
+			document[hp].visibility = "hidden" 
+		} else { 
+			if (document.all) { 
+				document.all[hp].style.visibility = "hidden" 
+			} 
+		} 
+	} 
+	function lpopup(lyr) { 
+		if (document.layers) { 
+			if (document[lyr].visibility == "show") { 
+				document[lyr].visibility = "hidden" 
+			} else { 
+				document[lyr].visibility = "visible" 
+			} 
+		} else { 
+			if (document.all) { 
+				if (document.all[lyr].style.visibility == "visible") { 
+					document.all[lyr].style.visibility = "hidden" 
+				} else { 
+					document.all[lyr].style.visibility = "visible" 
+				} 
+			} 
+		} 
+	} 
+function selectAll() { for(var i=0;i<document.theform.elements.length;i++) {if(document.theform.elements[i].type == "checkbox"){document.theform.elements[i].checked = true;};};}
+function DeselectAll() { for(var i=0;i<document.theform.elements.length;i++) {if(document.theform.elements[i].type == "checkbox"){document.theform.elements[i].checked = false;};};}
+function goback() { 
+    if (true) 
+         history.back() 
+} 
+function fixdays(d_obj, m_obj) {
+   var numdays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+   for (var i = (eval(d_obj).length-1); i>=0; i--) {
+      eval(d_obj).options[i] = null;
+   }
+
+   for (var i = 1; i<=numdays[eval(m_obj).value]; i++) {
+      var optionadd = new Option(i, i);
+      eval(d_obj).options[eval(d_obj).length] = optionadd;
+   }
+}
+	//--> 
+
+function jsPageExitEnable() {
+    pageExitWarn = true;
+}
+
+function jsPageExitDisable() {
+    pageExitWarn = false;
+}
+    
+function pageExitWarning(){
+    if (pageExitWarn) {
+	return "All changes will be lost by leaving this page.";
+    }
+}
+
+
+
+</script><noscript> <!--  //--> </noscript>
+<TITLE> Support typespec on FORALL -  F E A T U R E - F L O W</TITLE>
+<script src="/javascripts/prototype.js?1321281883" type="text/javascript"></script>
+<script src="/javascripts/effects.js?1321281883" type="text/javascript"></script>
+<script src="/javascripts/dragdrop.js?1321281883" type="text/javascript"></script>
+<script src="/javascripts/controls.js?1321281883" type="text/javascript"></script>
+</head>
+<body  id="w3-ibm-com" class="article" onbeforeunload="return pageExitWarning();">
+<!-- start accessibility prolog -->
+<div class="skip"><a href="#content-main" accesskey="2">Skip to main content</a></div>
+<div class="skip"><a href="#left-nav" accesskey="n">Skip to navigation</a></div>
+<div id="access-info">
+	<p class="access">The access keys for this page are:</p>
+	<ul class="access">
+		<li>ALT plus 0 links to this site's <a href="https://w3.ibm.com/w3/access-stmt.html" accesskey="0">Accessibility Statement.</a></li>
+		<li>ALT plus 1 links to the w3.ibm.com home page.</li>
+		<li>ALT plus 2 skips to main content.</li>
+		<li>ALT plus 4 skips to the search form.</li>
+		<li>ALT plus 9 links to the feedback page.</li>
+		<li>ALT plus N skips to navigation.</li>
+	</ul>
+	<p class="access">Additional accessibility information for w3.ibm.com can be found <a href="https://w3.ibm.com/w3/access-stmt.html">on the w3 Accessibility Statement page.</a></p>
+</div>
+<!-- end accessibility prolog -->
+<!-- start masthead -->
+<div id="masthead">
+	<h2 class="access">Start of masthead</h2>
+	<div id="prt-w3-sitemark"><img src="/stylesheets/images/id-w3-sitemark-simple.gif" alt="" width="54" height="33" /></div>
+	<div id="prt-ibm-logo"><img src="/stylesheets/images/id-ibm-logo-black.gif" alt="IBM Logo" width="44" height="15" /></div>
+	<div id="w3-sitemark"><img src="/stylesheets/images/id-w3-sitemark-large.gif" alt="" width="266" height="70" usemap="#sitemark_map" /><map id="sitemark_map" name="sitemark_map"><area shape="rect" alt="Link to W3 Home Page" coords="0,0,130,70" href="http://w3.ibm.com/"  accesskey="1" /></map></div>
+   
+   <div id="personalization-links">
+      Logged on as bkan@ca.ibm.com |
+      <a class="wpsToolbarLink" href="/featureflow/user_profile">User Profile</a> |
+
+      <a class="wpsToolbarLink" href="/login/logout">Sign Out</a>
+   </div>
+   
+	<div id="site-title-only">F E A T U R E - F L O W</div>
+	<div id="ibm-logo"><img src="/stylesheets/images/id-ibm-logo.gif" alt="IBM Logo" width="44" height="15" /></div>
+	<div id="persistent-nav"><a id="w3home" href="http://w3.canlab.ibm.com/"> w3 home </a><a id="bluepages" href="http://w3.ibm.com/bluepages/"> BluePages </a><a id="helpnow" href="/featureflow/help"> Help </a><a id="feedback" href="mailto:kwongray@ca.ibm.com,cntaylor@ca.ibm.com" accesskey="9"> Feedback </a></div>
+	<div id="header-search">
+		<form action="http://w3.ibm.com/search/w3results.jsp" method="get" id="search">
+		<table cellspacing="0" cellpadding="0" class="header-search">
+		<tr><td class="label"><label for="header-search-field">Search w3</label></td><td class="field"><input id="header-search-field" name="qt" type="text" accesskey="4" /></td><td class="submit"><input id="header-search-btn" type="image" alt="Go" src="/stylesheets/images/btn-go-dark.gif" /></td></tr>
+		</table>
+		</form>
+	</div>
+	<div id="browser-warning"><img src="/stylesheets/images/icon-system-status-alert.gif" alt="Error" width="12" height="10" /> This Web page is best used in a modern browser. Since your browser is no longer supported by IBM, please upgrade your web browser at the <a href="http://w3.ibm.com/download/">ISSI site</a>.</div>
+</div>
+<!-- stop masthead -->
+<!-- start navigation -->
+<div id="navigation">
+	<h2 class="access">Start of left navigation</h2>
+	<!-- left nav -->
+	<div id="left-nav">
+		<div class="top-level">
+			<a href="http://w3.ibm.com/">w3 Home</a>
+			<a  href="https://bluepages.ibm.com/tools/groups/protect/groupsgui.wss">BlueGroups</a>
+         
+         <a href="/featureflow">Feature Flow</a>
+         <div class="second-level">
+            <a href="/featureflow/documents">Documents</a>
+            <a href="/featureflow/reviews">Reviews</a>
+            <a href="/featureflow/search">Search (Beta)</a>
+        </div>
+         
+		</div>
+      <div name="document_control" id="document_control" style="border-bottom:1px solid #fff;">
+      
+<p>&nbsp;</p>
+<span style="width: 140px; overflow:hidden;">
+<table style="width: 140px; overflow:hidden;" border=1 width="100%" cellpadding=0 cellspacing=0 bgcolor="#CCE5FF">
+
+<tr><td align=center><b>Document Actions</b></td></tr>
+<tr><td>
+<table style="width: 148px; overflow:hidden;">
+<tr><td>
+<a href="/featureflow/show/6226">Show</a>
+<a href="/featureflow/show/6226?fullscreen=true"><font size=-2>(print/!frame)</font></a>
+</tr></td>
+<tr><td>
+
+
+<div style='padding-left: 1em'><a href="/featureflow/show/6288">Most Recent Review...</a></span>
+
+</tr></td>
+<tr><td>
+
+<a href="/featureflow/edit/6226">Edit</a>
+
+</tr></td>
+<tr><td>
+
+<a href="/featureflow/delete/6226" onclick="return confirm('Really delete Support typespec on FORALL');">Delete...</a>
+
+</td></tr>
+<tr><td>
+<a href="/featureflow/properties/6226">Properties...</a>
+</td></tr>
+<tr><td>
+<a href="/featureflow/access_control/6226">Access Control...</a>
+</td></tr>
+<tr><td>
+
+
+<a href="/featureflow/review_close/6288">Close Existing Review...</a>
+
+</td></tr>
+</table>
+
+<tr><td><table style="width: 148px; overflow:hidden;"><tr><td>Compare To:</td></tr><tr><td align='center'><form action="/featureflow/show"><select id="compare_to" style="width: 120px; overflow:hidden;" name="compare_to" onchange="var s=document.getElementById('compare_to'); var v=s.options[s.selectedIndex].value; location.href='/featureflow/show/6226'+ ((v != 0) ? '?compare_to='+v : '');"><option value=0>None</option><option value=6258>rev. 1</option><option value=6275>rev. 2</option><option value=6288>rev. 3</option></select></form></td></tr></table></td></tr>
+<tr><td><font color="red"></font></td></tr>
+</table>
+</span>
+
+      </div>
+      <div name="document_info" id="document_info" style="border-bottom:1px solid #fff;">
+      
+      </div>
+	</div>
+	<!-- start related links -->
+	<!-- ** If there's related links, html goes here.  Otherwise, remove this line ** -->
+	<!-- stop related links -->
+</div>
+<!-- stop navigation -->
+<!-- start content -->
+<div id="content">
+	<h1 class="access">Start of main content</h1>
+	<!-- start content head -->
+	<div id="content-head">
+	<!-- <p id="breadcrumbs"></p> -->
+	</div>
+	<!-- stop content head -->
+	<!-- start main content -->
+	<div id="content-main">
+		<!--BEGIN MAIN BODY CONTENT-->
+      <head>
+  <script src="/javascripts/prototype.js?1321281883" type="text/javascript"></script>
+<script src="/javascripts/effects.js?1321281883" type="text/javascript"></script>
+<script src="/javascripts/dragdrop.js?1321281883" type="text/javascript"></script>
+<script src="/javascripts/controls.js?1321281883" type="text/javascript"></script>
+  <script src="/javascripts/fckeditor.js?1321281883" type="text/javascript"></script>
+  <script src="/javascripts/effects.js?1321281883" type="text/javascript"></script>
+
+</head>
+<span id="dummy" style="position: absolute; overflow:hidden; width:0; height:0">
+<form>
+<textarea id="dummytext">
+</textarea>
+</form>
+</span>
+<script>
+   var oFCKeditor = new FCKeditor( 'dummytext' ) ;
+   oFCKeditor.Config['LinkBrowser'] = false ; 
+   oFCKeditor.Config['ImageBrowser'] = true ;
+   oFCKeditor.Config["CustomConfigurationsPath"] =
+          '/javascripts/railsfck_comments.js?1321281883';
+/*   oFCKeditor.Config["SkinPath"] = 'skins/SilverNarrow/' ; */
+   oFCKeditor.ReplaceTextarea() ;   
+function edit(comment_id, id)
+{
+   var ac ;
+   var entry='' ;
+   var ref=comment_id ;
+   if (!id) {
+      entry='_entry' ;
+   } else {
+      ref = id ;
+   }
+   var parent_id=null;
+   var match=comment_id.match(/(\d+)_(\d+)/) ;
+   if (match) {
+      parent_id = match[1] ;
+   }
+
+   var old_comment_type		= null;
+   var comment_type_element	= document.getElementById('ctype'+id+'_'+comment_id);
+   if (comment_type_element != null) {
+	   old_comment_type	= comment_type_element.selectedIndex;
+   }
+
+   ac = document.getElementById('comments'+entry+ref) ;
+   if (!id && ac.innerHTML!='') {
+      var myb=document.getElementById('mycancelbutton'+ref) ;
+      myb.scrollIntoView(false) ;
+      return ;
+   }
+   var con = document.getElementById('comments_content'+id) ;
+   var content = '' ;
+   if (con) {
+      content = unlinkfy(con.innerHTML) ;
+      /* remove response */
+      content = content.replace(/<p><font size=\"?-1\"?>\(reply\)<\/font><\/p>\s*$/i,'');
+
+      /* Defect 336615: escape &lt and &gt so that the FCK editor does not treat these as HTML tags */
+      content = content.replace(/&lt;/g, '&amp;lt;');
+      content = content.replace(/&gt;/g, '&amp;gt;');
+   }
+   ac.originalInnerHTML = ac.innerHTML ;
+   ac.innerHTML='<table border=0 style="text-decoration:none;font-size:13px;">'+
+'<tr><td width="100%">'+
+'<form id="text_comments_form'+comment_id+'"'+
+' method="post" '+
+' onsubmit="myCommentEditorSubmit(\''+comment_id+'\', \''+id+'\'); return false ;">'+
+'<input id="id" name="id" size="30" type="hidden" value="'+id+'">'+
+'<input id="commentid" name="commentid" size="30" type="hidden" value="'+comment_id+'">'+
+'<input id="document_id" name="document_id" size="30" type="hidden" value="'+6226+'">'+
+'<table bgcolor="FFFF00" width="600" border=1 cellpadding=0 cellspacing=0>'+
+'<tr><td>'+
+'<font color=blue>User:</font> Bernard Kan '+
+((parent_id == null) ?  '<font color=blue>Type:</font> <select id="ctype_edit' + id + '_' + comment_id + '" name="ctype">'+
+   '<option value="Typo">Typo</option>'+
+   '<option value="Comment" selected>Comment</option>'+
+   '<option value="Problem">Problem</option>'+
+   '<option value="Issue">Issue</option>'+
+   '</select>'+
+   ' <font color=blue>Disposition:</font>'+ 
+   '<input id="disposition" name="disposition" value="Unassigned" type="hidden"/>'+
+   'Unassigned'
+: '') +
+'</td></tr>'+
+'<tr><td width="100%">'+
+'<table border=0 cellpadding=1 width="100%">'+
+'<tr><td td width="100%">'+
+'<textarea id="text_comment'+comment_id+'" name="text_comment'+comment_id+'" cols=76 rows=12 style="font-family:courier; background:#FFFF00">'+
+content+
+'</textarea></td></tr>'+
+'</td></tr>'+
+'</table>'+
+'<tr><td>'+
+'<input type="button" value="Clear" onclick="var oEditor=FCKeditorAPI.GetInstance(\'text_comment'+comment_id+'\'); oEditor.SetHTML(\'\') ; return false;">'+
+'<input type="submit" value="Submit">'+
+'<input type="submit" value="Submit+Notify" onclick="myCommentEditorSubmit(\''+comment_id+'\', \''+id+'\', true); return false ;">'+
+'<input id="mycancelbutton'+ref+'" type="button" value="Cancel" onclick="hideEditor(\''+entry+ref+'\'); return false;">'+
+'</td></tr>'+
+'</table>'+
+'</form>'+
+'</td></tr></table>';
+
+   if (old_comment_type != null) {
+	   document.getElementById('ctype_edit' + id + '_' + comment_id).selectedIndex	= old_comment_type;
+   }
+
+   var part='text_comment' + comment_id ;
+   var oFCKeditor = new FCKeditor( part ) ;
+   oFCKeditor.Height=200;
+/* work around an IE bug here that temporarily blanks the screen */
+   if ( navigator.userAgent.toLowerCase().indexOf("msie") == -1) {
+     oFCKeditor.Config['StartupFocus'] = true ; 
+   } 
+   oFCKeditor.Config['LinkBrowser'] = false ; 
+   oFCKeditor.Config['ImageBrowser'] = true ;
+   oFCKeditor.Config["CustomConfigurationsPath"] =
+          '/javascripts/railsfck_comments.js?1321281883';
+/*   oFCKeditor.Config["SkinPath"] = 'skins/SilverNarrow/' ; */
+   var ta=document.getElementById(part) ;
+   ta.style.height='0px';
+   oFCKeditor.ReplaceTextarea() ; 
+   var myb=document.getElementById('mycancelbutton'+ref) ;
+   myb.scrollIntoView(false) ;
+}
+function hideEditor(where)
+{
+   var ac = document.getElementById('comments'+where) ;
+   ac.innerHTML=ac.originalInnerHTML; 
+}
+
+function myCommentEditorSubmit(comment_id, id, notify)
+{
+   var entry='' ;
+   var ref=comment_id ;
+   if (!id || id == 'undefined') {
+      entry='_entry' ;
+   } else {
+      ref = id ;
+   }
+  var submit_notify=0
+  var parent_id=null;
+  var match=comment_id.match(/(\d+)_(\d+)/) ;
+  if (match) {
+     parent_id = match[1];
+  }
+  if (notify) {
+     if (parent_id) {
+        if (confirm("Send a notification to the participants in this comment thread (and the author) about this reply ?")) {
+           submit_notify=1;
+        }
+     } else if (confirm("Send a notification to the author about this comment?")) {
+        submit_notify=1;
+     }
+  }
+
+  var frm = document.getElementById('text_comments_form'+comment_id) ; 
+  var oEditor=FCKeditorAPI.GetInstance('text_comment'+comment_id); 
+  var textArea = document.getElementById('text_comment'+comment_id) ; 
+  textArea.value = oEditor.GetXHTML() +  '<p><font size=\"-1\">(reply)</font></p>' ;
+  var params = Form.serialize(frm) ;
+  params = params + '&notify='+submit_notify
+  var ac=document.getElementById('comments'+entry+ref) ;
+  var editSave = ac.innerHTML ;
+  var errFunc = function(t) {
+       alert('Error ' + t.status + ' -- ' + t.statusText +'  - try re-submitting ');
+  }
+  var succFunc = function(t) {
+       hideEditor(entry+ref) ;
+  }
+  if (ref != id) {
+    new Ajax.Updater('comments'+comment_id,'/featureflow/update_comment', {method:'post', 
+          parameters: params, asynchronous:true, evalScripts:true, insertion:Insertion.Bottom, 
+          onFailure:errFunc, onSuccess:succFunc});
+  } else {
+    new Ajax.Updater('comments'+id,'/featureflow/update_comment', {method:'post', 
+          parameters: params, asynchronous:true, evalScripts:true, 
+          onFailure:errFunc, onSuccess:succFunc});
+  }
+  return false;
+}
+function changeCommentAttribute(document_id, inp, param, currentValue, last_comment_id)
+{
+  var s=document.getElementById(inp) ;
+  var v=s.options[s.selectedIndex].value; 
+  var errFunc = function(t) {
+       alert('Error ' + t.status + ' -- ' + t.statusText +'  - try re-submitting ');
+  }
+  new Ajax.Updater('comments'+last_comment_id, '/featureflow/update_comment', 
+        {method:'post', 
+        parameters:'id=undefined'+
+           '&commentid='+last_comment_id+
+           '&document_id='+document_id+
+           '&'+param+'='+encodeURIComponent(v),
+        asynchronous:true, evalScripts:true, insertion:Insertion.Bottom,
+        onFailure:errFunc});
+}
+function unlinkfy(str)
+{
+   var s1=str.replace(/<a class=\"?review\"? .*?><span id=\"?line_(.*?)\"?>/ig, "") ;
+   var s2=s1.replace(/<\/span><\/a><span id=\"?comments(.*?)>/ig, "") ;
+   var s3 = s2.replace(/<\/span><span id=\"?comments_entry(.*?)\"?><\/span>/ig, "") ;
+   // Adam D'Andrea: February 19, 2007: remove (reply) when it goes into editor
+   var s4 = s3.replace(/<font size=\"?-1\"?>\(reply\)<\/font>/ig, "");
+   return s4;
+}
+
+function collapse(expander, lineBreak)
+{
+   var ac=document.getElementById('expander'+expander) ;
+   ac.innerHTML='<a href="javascript:expand(\''+expander+'\');"><img src="/images/expand_small.gif" alt="Expand"></a>' ;
+   var expanded=document.getElementById('expanded'+expander) ;
+   expanded.saveHTML = expanded.innerHTML ;
+   expanded.innerHTML = (lineBreak) ? '<br>' : '' ;
+}
+function expand(expander)
+{
+   var ac=document.getElementById('expander'+expander) ;
+   ac.innerHTML='<a href="javascript:collapse(\''+expander+'\');"><img src="/images/collapse_small.gif" alt="Collapse"></a>'
+   var expanded=document.getElementById('expanded'+expander) ;
+   if (typeof expanded.saveHTML == 'undefined')
+      expanded.innerHTML = document.sections['expanded'+expander]
+   else
+      expanded.innerHTML = expanded.saveHTML ;
+}
+</script>
+
+
+<table border=1 cellspacing=0 cellpadding=2 frame=sunken><tr><td>
+<div id="show_scroller" style="width:100%; height:400px; overflow:scroll;">
+<script type="text/javascript">
+function resizeScroller() 
+{
+  var e=document.getElementById('show_scroller') ;
+  e.style.height = document.body.clientHeight-120 ; 
+  e.style.width = document.body.clientWidth-180 ;
+}
+resizeScroller() ;
+window.onresize = resizeScroller ;
+</script>
+
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#c0e1ff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="left" style="FONT-FAMILY: Arial; COLOR: rgb(0,0,128); FONT-SIZE: 12pt"><strong>Document Control Information:</strong>
+            <p style="COLOR: rgb(0,0,0)">The official version of this document is kept in CMVC in the <span style="FONT-WEIGHT: bold; TEXT-DECORATION: underline">aix</span> family, release <span style="FONT-WEIGHT: bold; TEXT-DECORATION: underline">des.dev</span>, component <span style="FONT-WEIGHT: bold; TEXT-DECORATION: underline">design.i0</span>, file <span style="COLOR: rgb(255,102,102); FONT-WEIGHT: bold; TEXT-DECORATION: underline">designs/i0/support_typespec_on_forall/support_typespec_on_forall.html</span>. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.<br />
+            <br />
+            CMVC Extraction Information: %W% %H% %I% sccsid<br />
+            <br />
+            This document is IBM Confidential.<br />
+            </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table cellspacing="0" cellpadding="5" border="1" style="TEXT-ALIGN: left; BACKGROUND-COLOR: rgb(224,255,191); WIDTH: 100%; FONT-FAMILY: Arial; FONT-SIZE: 12pt">
+    <tbody>
+        <tr>
+            <td width="20%" valign="top" align="left"><strong>CMVC Feature Number</strong> </td>
+            <td width="80%" valign="top" align="left" style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(0,0,255); FONT-WEIGHT: bold">400906</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Feature Title</strong> </td>
+            <td valign="top" align="left" style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(0,0,255); FONT-WEIGHT: bold">Support typespec on FORALL </td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Author(s)</strong> </td>
+            <td valign="top" align="left" style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(0,0,255); FONT-WEIGHT: bold"> Bernard Kan,  Lin SH Fu,  Tarique Islam (primary)</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Applicable Product Releases</strong> </td>
+            <td valign="top" align="left" style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(0,0,255); FONT-WEIGHT: bold">
+            XL Fortran V15.1 on Linux and AIX</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Affected Components</strong> </td>
+            <td valign="top" align="left" style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(0,0,255); FONT-WEIGHT: bold">
+            Front Ends: Fortran<br />
+            Documentation: Product documentation<br />
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#ff6666">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="TEXT-ALIGN: left; FONT-FAMILY: Arial; FONT-SIZE: 12pt"><strong>Document Status: For Approval</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<p><strong>Approvers Only:</strong> Click on the 'Approve' check-box beside your name in the table below if you agree with the technical and user interface content of this document; not checking your 'approve' check-box signifies you do not approve.</p>
+<p><table border=0 cellpadding=0 cellspacing=20><tr><td><table border=3 cellpadding=0 cellspacing=0><tr><th>Approver</th><th>Approved</th></tr><tr><td>Rafik Zurob</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="approval_1405" disabled></form></td></tr></table></td></tr></table></p>
+<p>Approval Comments</p>
+<p>
+<table cellspacing="0" cellpadding="5" border="1" style="TEXT-ALIGN: left; BACKGROUND-COLOR: rgb(224,255,191); WIDTH: 100%; FONT-FAMILY: Arial; FONT-SIZE: 12pt">
+    <tbody>
+        <tr>
+            <td valign="top" align="left"><strong>Approvers</strong> (mandatory participation) </td>
+            <td valign="top" align="left" style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(0,0,255); FONT-WEIGHT: bold">
+            Rafik Zurob</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Release Management Contact</strong> (optional participation) </td>
+            <td valign="top" align="left" style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(0,0,255); FONT-WEIGHT: bold">Dave Paulmark, Jeff Heath, Larry Lindsay, Rene Matteau, Sarah McNamara, Si Yuan Zhang, Wang Chen, shereen@ca.ibm.com <br />
+            
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Component Reviewers</strong> (optional participation) </td>
+            <td valign="top" align="left" style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(0,0,255)"> <br />
+            Chad McIntyre, Enrique Varillas, Ian McIntosh, Irina Rada, Jim McInnes, Kelvin Li, Kendrick Wong, Kobi Vinayagamoorthy, Leon L Kiriliuk, Lu Yang, Michelle Zhang, Raul Silvera, Raymond Mak, Roch Archambault, Sasha Kasapinovic, Sean Perry, Vicky Chin, Yan Liu, denispal@ca.ibm.com, linka@cn.ibm.com</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Team Reviewers</strong> (optional participation) </td>
+            <td valign="top" align="left" style="BACKGROUND-COLOR: rgb(255,255,255); COLOR: rgb(0,0,255); FONT-WEIGHT: bold">
+            Bardia Mahjour, Daniel C Chen, Dorra Bouchiha, Grigor Nikolov, Pooja Dayanand, Ying Zhang</td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p><br />
+<br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="TEXT-ALIGN: left; BACKGROUND-COLOR: rgb(224,255,191); WIDTH: 100%; FONT-FAMILY: Arial; FONT-SIZE: 12pt">
+    <tbody>
+        <tr>
+            <td style="FONT-FAMILY: Arial; VERTICAL-ALIGN: top"><strong>Reviewers</strong>: Please click the 'Reviewed' checkbox beside your name to indicate your participation in the review. </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p><table border=0 cellpadding=0 cellspacing=20><tr><td><table border=3 cellpadding=0 cellspacing=0><tr><th>Reviewer</th><th>Reviewed</th></tr><tr><td>Bardia Mahjour</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1399" disabled></form></td></tr><tr><td>Bernard Kan</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1726" disabled></form></td></tr><tr><td>Chad McIntyre</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1640" disabled></form></td></tr><tr><td>Daniel C Chen</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1350" disabled></form></td></tr><tr><td>Dave Paulmark</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1371" disabled></form></td></tr><tr><td>Dorra Bouchiha</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1662" disabled></form></td></tr><tr><td>Enrique Varillas</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1293" disabled></form></td></tr><tr><td>Grigor Nikolov</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1360" disabled></form></td></tr><tr><td>Ian McIntosh</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1332" disabled></form></td></tr><tr><td>Irina Rada</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1300" disabled></form></td></tr><tr><td>Jeff Heath</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1284" disabled></form></td></tr><tr><td>Jim McInnes</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1398" disabled></form></td></tr><tr><td>Kelvin Li</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1377" disabled></form></td></tr></table></td><td><table border=3 cellpadding=0 cellspacing=0><tr><th>Reviewer</th><th>Reviewed</th></tr><tr><td>Kendrick Wong</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1318" disabled></form></td></tr><tr><td>Kobi Vinayagamoorthy</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1289" disabled></form></td></tr><tr><td>Larry Lindsay</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1357" disabled></form></td></tr><tr><td>Leon L Kiriliuk</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1478" disabled></form></td></tr><tr><td>Lin SH Fu</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1792" disabled></form></td></tr><tr><td>Lu Yang</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1346" disabled></form></td></tr><tr><td>Michelle Zhang</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1335" disabled></form></td></tr><tr><td>Pooja Dayanand</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1651" disabled></form></td></tr><tr><td>Rafik Zurob</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1405" disabled></form></td></tr><tr><td>Raul Silvera</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1372" disabled></form></td></tr><tr><td>Raymond Mak</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1322" disabled></form></td></tr><tr><td>Rene Matteau</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1435" disabled></form></td></tr><tr><td>Roch Archambault</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1457" disabled></form></td></tr></table></td><td><table border=3 cellpadding=0 cellspacing=0><tr><th>Reviewer</th><th>Reviewed</th></tr><tr><td>Sarah McNamara</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1518" disabled></form></td></tr><tr><td>Sasha Kasapinovic</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1415" disabled></form></td></tr><tr><td>Sean Perry</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1408" disabled></form></td></tr><tr><td>Si Yuan Zhang</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1948" disabled></form></td></tr><tr><td>Vicky Chin</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1418" disabled></form></td></tr><tr><td>Wang Chen</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1366" disabled></form></td></tr><tr><td>Yan Liu</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1373" disabled></form></td></tr><tr><td>Ying Zhang</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1401" disabled></form></td></tr><tr><td>denispal@ca.ibm.com</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_2277" disabled></form></td></tr><tr><td>linka@cn.ibm.com</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_2049" disabled></form></td></tr><tr><td>shereen@ca.ibm.com</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_2168" disabled></form></td></tr></table></td></tr></table>
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="TEXT-ALIGN: left; BACKGROUND-COLOR: rgb(224,255,191); WIDTH: 100%; FONT-FAMILY: Arial; FONT-SIZE: 12pt">
+    <tbody>
+        <tr>
+            <td style="FONT-FAMILY: Arial; VERTICAL-ALIGN: top"><strong>Access Change History</strong>  </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p><span id="expander_sec1"><a href="javascript:expand('_sec1');"><img src="/images/expand_small.gif" alt="Expand"></a></span>&nbsp;<strong>Access Change History</strong><div id="expanded_sec1"></div>
+</p>
+<p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="FONT-FAMILY: Arial; FONT-SIZE: 12pt"><strong>Feature Overview</strong> </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p></p>
+<h2>Key Requirements</h2>
+
+<br />
+Fortran 2008 standard allows optional type specifications for index variables in a FORALL statement/construct. The current feature work will add support for this extension to FORALL. The compiler will issue a language level message in cases when source program includes the extension but Fortran 2008 is not the language level in effect.<br />
+<h2>Key Design Issues</h2>
+
+In the absence of any type specification in FORALL header, the compiler can declare the index variables in the innermost executable construct or scoping unit that encloses the FORALL statement/construct. However, when a type specification is included in the FORALL header, the corresponding index variables have to be declared within the scope of the FORALL statement/construct (i.e. not in an enclosing user-defined scope). <br />
+<br />
+<h2>Key Design Decisions</h2>
+
+<br />
+When FORALL header includes a type specification, the frontend can declare the index variable(s) in one of the following ways.<br />
+<br />
+<ol>
+    <li>The frontend can create a new BLOCK enclosing the FORALL and declare the index variable(s) as local to the newly created block. </li>
+    <li>The frontend can declare the index variable(s) in the procedure scope that contains the FORALL (similar to the case when Forall-header does not include a type-spec). The existing infrastructure will ensure that any FORALL index variable is visible only in the scope of the corresponding FORALL. </li>
+</ol>
+<p>The feature team prefers solution 2 as it avoids generating an extra block per FORALL and it does not require major changes in the FORALL code-gen in the frontend. <br />
+</p>
+<h2>Testing Strategy</h2>
+
+<br />
+The testing will be split into two groups, diagnostic and functional.<br />
+<br />
+Diagnostic tests will verify that appropriate error messages are emitted when forall is given an invalid type specifier, such as a non-integer type.&nbsp; Various other invalid uses are expected to generate suitable error messages.&nbsp; A language level (L) message is also expected when a forall declaration is correctly used but with an invalid langlevel in effect.<br />
+<br />
+Functional tests will include basic valid use cases as well as nesting of the forall construct.&nbsp; It can be nested within itself, with do, omp, SE, TM, or in other constructs.&nbsp; If general, where a forall loop was valid before the extension, it should be verified that the forall loop is still valid using the extension and an appropriate type specifier.<strong style="COLOR: rgb(0,128,0); FONT-SIZE: 20px">
+<p>&nbsp;</p>
+</strong>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="FONT-FAMILY: Arial; FONT-SIZE: 12pt"><strong>User Documentation</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="COLOR: rgb(0,128,0); FONT-SIZE: 20px">
+<h3>Overview</h3>
+</strong>
+<p>
+</p>
+The users can include a type specification in the FORALL header for the corresponding index variables. The type specification must specify an integer type. The specification applies to all indices in the Forall-header. <strong style="COLOR: rgb(0,128,0); FONT-SIZE: 20px">
+<h3>User Benefits</h3>
+</strong>
+<p></p>
+The FORALL index variables require explicit declarations in the following cases.<br />
+<br />
+<ul>
+    <li>The range of values for the index variable exceeds the range of default integer type. </li>
+    <li>IMPLICIT NONE is in effect. </li>
+</ul>
+The extension to the FORALL syntax allows users to declare the type of index variables within the scope of the FORALL statement/construct.<br />
+<br />
+<span id="comments55441"><span id="expanded55441"><span id="comments_content55441"><span id="comments55452"><span id="expanded55452"><span id="comments_content55452">In  case, no type specification is included in the FORALL header, the index  name must not be the same as an accessible identifier unless the later  is a common block name or a scalar variable name. A type specification allows users to reuse any visible name as an index variable</span></span></span></span></span></span>. <strong style="COLOR: rgb(0,128,0); FONT-SIZE: 20px">
+<h3>Public Interface</h3>
+</strong>
+<p></p>
+<font face="Courier New">&nbsp;&nbsp;&nbsp; <em>forall_header</em> is ( <font color="#0000ff">[ <em>type_spec</em> :: ]</font> <em>forall_triplet_spec_list</em> [, <em>scalar_mask_expr</em> ] )</font> <strong style="COLOR: rgb(0,128,0); FONT-SIZE: 20px">
+<h3>Constraints</h3>
+</strong>
+<p></p>
+The type specification (if included) must specify an integer type.  <strong style="COLOR: rgb(0,128,0); FONT-SIZE: 20px">
+<h3>Rules</h3>
+</strong>
+<p></p>
+None. <strong style="COLOR: rgb(0,128,0); FONT-SIZE: 20px">
+<h3>Language Standard Considerations</h3>
+</strong>
+<p> </p>
+The feature is a Fortran 2008 specific extension to FORALL. The type-spec in the Forall-header will be flagged by a language level message in case language level F2003 or lower is in effect.&nbsp; <strong style="COLOR: rgb(0,128,0); FONT-SIZE: 20px">
+<h3>Messages</h3>
+</strong>
+<p> The language level checking will require the following new message (approved by the XLF Message committee).<br />
+<br />
+&nbsp;&nbsp;&nbsp; The type specifier in the %1$s construct is not permitted by the %2$s standard.<br />
+<br />
+Here, &quot;FORALL&quot; will be used as the substitution text for %1$s. The substitution text for &quot;%2$s&quot; will be determined by the language standard in effect.<br />
+<br />
+No new message is needed for the FORALL statement case (will reuse an existing message). <strong style="COLOR: rgb(0,128,0); FONT-SIZE: 20px">
+<h3>Runtime and Compile Time Performance Considerations</h3>
+</strong>
+<p>
+</p>
+None. <strong style="COLOR: rgb(0,128,0); FONT-SIZE: 20px">
+<h3>Multi-Platform/Portability Considerations</h3>
+</strong>
+<p></p>
+Not applicable. <strong style="COLOR: rgb(0,128,0); FONT-SIZE: 20px">
+<h3>Migration/Co-Existence/Binary-Compatibility Considerations</h3>
+</strong>
+<p></p>
+Not applicable. <strong style="COLOR: rgb(0,128,0); FONT-SIZE: 20px">
+<h3>Debug Considerations</h3>
+</strong>
+<p></p>
+For debug purposes, we consider FORALL as a single step. The index variable declared using a type-spec will not be visible in the debugger. <strong style="COLOR: rgb(0,128,0); FONT-SIZE: 20px">
+<h3>NLS (Unicode) Considerations</h3>
+</strong>
+<p></p>
+Not applicable. <strong style="COLOR: rgb(0,128,0); FONT-SIZE: 20px">
+<h3>Samples</h3>
+</strong>
+<p></p>
+<br />
+<br />
+<br />
+<pre>Example 1:<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; implicit none <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; integer, parameter :: LIMIT = 60000<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; integer(1) :: flag(LIMIT) <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flag = 0 <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FORALL ( integer(4) ::&nbsp; i = 2 : LIMIT : 2)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flag(i) = 1<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END FORALL <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print *, flag(LIMIT) <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END<br /><br />Example 2:<br /><br />       implicit none<br />       integer, parameter :: LIMIT = 1000<br />       logical(1) :: A(LIMIT, LIMIT)<br />       integer(1) :: i<br /><br />       A = 0<br /><br />       ! In the following, both i and j are of type integer(4)<br />       FORALL ( integer(4) ::  i = 2 : LIMIT : 2, j = 2 : LIMIT : 2 )<br />         A(i, j) = 1<br />       END FORALL<br /><br />       print *, A(LIMIT, LIMIT)<br /><br />       END<br /><br />       </pre>
+<br />
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="FONT-FAMILY: Arial; FONT-SIZE: 12pt"><strong>Architecture Review Board</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<p></p>
+<p>The feature work is contained within the Fortran frontend. An architecture review is not needed. <br />
+</p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="FONT-FAMILY: Arial; FONT-SIZE: 12pt"><strong>Internal Compiler Team Information</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="COLOR: rgb(0,128,0); FONT-SIZE: 20px">
+<h3>Product Dependencies</h3>
+</strong>
+<p>
+</p>
+None <strong style="COLOR: rgb(0,128,0); FONT-SIZE: 20px">
+<h3>Patent/Disclosure Implications</h3>
+</strong>
+<p></p>
+None <strong style="COLOR: rgb(0,128,0); FONT-SIZE: 20px">
+<h3>Scientific Research and Experimental Development</h3>
+</strong>
+<p><strong>Technological Advancements</strong>:  None<br />
+</p>
+<p><strong>Technological Obstacles</strong>:  None<br />
+</p>
+<p><strong>Work Performed</strong>:  None<br />
+</p>
+<strong style="COLOR: rgb(0,128,0); FONT-SIZE: 20px">
+<h3>Build and Packaging Considerations</h3>
+</strong>
+None<strong style="COLOR: rgb(0,128,0); FONT-SIZE: 20px">
+<h3>Information Development Impacts</h3>
+</strong>
+<p> </p>
+<table cellspacing="2" cellpadding="2" border="1" style="TEXT-ALIGN: left; WIDTH: 100%; HEIGHT: 408px">
+    <tbody>
+        <tr>
+            <td style="VERTICAL-ALIGN: top" colspan="2"><span style="FONT-WEIGHT: bold">Overview</span>: 
+            </td>
+        </tr>
+        <tr>
+            <td style="VERTICAL-ALIGN: top"><span style="FONT-WEIGHT: bold">New terminology</span><br />
+            (to be updated in index/glossaries)<br />
+            <br />
+            <br />
+            <br />
+            </td>
+            <td style="VERTICAL-ALIGN: top">
+            <br />
+            </td>
+        </tr>
+        <tr>
+            <td style="VERTICAL-ALIGN: top"><span style="FONT-WEIGHT: bold">Publication Name</span>: 
+            <br />
+            <span style="FONT-WEIGHT: bold">Chapter: </span>
+            <br />
+            <span style="FONT-WEIGHT: bold">Section: </span>
+            <br />
+            <span style="FONT-WEIGHT: bold">Update/New/Delete: </span>
+            <br />
+            </td>
+            <td style="VERTICAL-ALIGN: top"><span style="FONT-WEIGHT: bold">Description:</span><br />
+            
+            <br />
+            <span style="FONT-WEIGHT: bold">Related cross references/links:</span><br />
+            
+            <br />
+            <span style="FONT-WEIGHT: bold">Impact on external interfaces:</span><br />
+            
+            <br />
+            <span style="FONT-WEIGHT: bold">Other dependencies:</span><br />
+            
+            <br />
+            </td>
+        </tr>
+        <tr>
+            <td style="VERTICAL-ALIGN: top">
+            <p><strong>Publication Name:</strong> Getting Started (AIX and Linux)</p>
+            <p><strong>Chapter 2:</strong> What's new for IBM XL Fortran for AIX(Linux), V15.1</p>
+            <p><strong>Section:</strong> Fortran 2008 features </p>
+            </td>
+            <td style="VERTICAL-ALIGN: top">
+            <p><strong>Details:</strong></p>
+            <p>Add&nbsp;a bullet:</p>
+            <ul>
+                <li><font color="#0000ff">Type specification support in <strong>FORALL</strong> statement and construct</font> </li>
+            </ul>
+            <p>Add a paragraph:</p>
+            <p><font color="#0000ff">Type specification support in FORALL statement and construct</font></p>
+            <p><font color="#0000ff">You can optionally include type specifications for index variables in a <strong>FORALL</strong> statement or construct.</font></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="VERTICAL-ALIGN: top">
+            <p><strong>Publication Name</strong>: Language Reference (AIX and Linux)</p>
+            <p><strong>Chapter 1</strong>: XL Fortran for AIX(Linux)</p>
+            <p><strong>Section</strong>: Fortran Language standards=&gt;<strong>Fortran 2008</strong></p>
+            </td>
+            <td style="VERTICAL-ALIGN: top">
+            <p><strong>Details:</strong></p>
+            <p>Add a bullet:</p>
+            <ul>
+                <li><font color="#0000ff">Type specification support in FORALL and FORALL (construct)</font> </li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td style="VERTICAL-ALIGN: top">
+            <p><strong>Publication Name:</strong> Language Reference (AIX and Linux)</p>
+            <p><strong>Chapter 11:</strong> Statements and attributes</p>
+            <p><strong>Section:</strong> FORALL</p>
+            </td>
+            <td style="VERTICAL-ALIGN: top">
+            <p><strong>Details:</strong></p>
+            <p>Add <font color="#0000ff"><em>type-spec</em> : : as </font><font color="#000000">optional to the <em>forall_header</em> syntax diagram</font></p>
+            <p><font color="#0000ff">&lt;F2008&gt;<em><strong> type-spec </strong></em></font></p>
+            <p><font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; specifies an integer type&lt;/F2008&gt;</font></p>
+            <p><font color="#000000">Add the following&nbsp;under the 2nd paragraph of 'Rules':</font></p>
+            <p><font color="#0000ff">The FORALL index variables require explicit declarations in the following cases:</font></p>
+            <ul>
+                <li><font color="#0000ff">The value range for the index variable exceeds the range of the default integer type.</font> </li>
+                <li><font color="#0000ff">IMPLICIT NONE is in effect.</font> </li>
+            </ul>
+            <p><font color="#0000ff">&lt;F2008&gt;<em>type-spec : :</em> declares the type of index variables within the scope of the FORALL statement. Any visible name can be reused as an index if a type specification is included in <em>forall_header</em>.&lt;/F2008&gt;</font></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="VERTICAL-ALIGN: top">
+            <p><strong>Publication Name:</strong> Language Reference (AIX and Linux)</p>
+            <p><strong>Chapter 11:</strong> Statements and attributes</p>
+            <p><strong>Section:</strong> FORALL (construct)</p>
+            </td>
+            <td style="VERTICAL-ALIGN: top">
+            <p><strong>Details:</strong></p>
+            <p>Add <font color="#0000ff"><em>type-spec</em> : : as </font><font color="#000000">optional to the <em>forall_header</em> syntax diagram</font></p>
+            <p><font color="#0000ff">&lt;F2008&gt; type-spec : :</font></p>
+            <p><font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;specifies an integer type&lt;/F2008&gt;</font></p>
+            <p><font color="#000000">Add the following&nbsp;under the 2nd paragraph&nbsp;of 'Rules':</font></p>
+            <p><font color="#0000ff">The FORALL index variables require explicit declarations in the following cases:</font></p>
+            <ul>
+                <li><font color="#0000ff">The value rang for the index variable exceeds the rang of the default integer type.</font> </li>
+                <li><font color="#0000ff">IMPLICIT NONE is in effect.</font> </li>
+            </ul>
+            <p><font color="#0000ff">&lt;F2008&gt;<em>type-spec : :</em> declares the type of index variables within the scope of the FORALL construct. Any visible name can be reused as an index if a type specification is included in <em>forall_header</em>.&lt;/F2008&gt;</font></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="COLOR: rgb(0,128,0); FONT-SIZE: 20px">
+<h3>Testing Considerations</h3>
+</strong>
+<p></p>
+<p>Test cases that involve nesting with SE and TM will be specific to blue gene Q, if they are applicable. <br />
+</p>
+<p>Iterator variables are also expected to be local, so that a reused variable name will not cause the external variable to be modified.<br />
+</p>
+<strong style="COLOR: rgb(0,128,0); FONT-SIZE: 20px">
+<h3>Internal or Hidden Options</h3>
+</strong>
+<p></p>
+<p>None.<br />
+</p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="FONT-FAMILY: Arial; FONT-SIZE: 12pt"><strong>High-Level Implementation Design</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="COLOR: rgb(0,128,0); FONT-SIZE: 20px">
+<h3>Implementation Design Overview</h3>
+</strong>
+<p> </p>
+<p></p>
+<p>Frontend will update the lex processor and grammar rules to accept the extended FORALL syntax. The type specification in the FORALL header only affects the type of the index variables. There will be no major change in the Wcode++. No changes are expected for downstream components (i.e. ASTI, TPO, Tobey).<br />
+</p>
+<strong style="COLOR: rgb(0,128,0); FONT-SIZE: 20px">
+<h3>Inter-Component Communication/Interfaces</h3>
+</strong>
+<p> </p>
+None. <strong style="COLOR: rgb(0,128,0); FONT-SIZE: 20px">
+<h3>Other Implementation Design Information</h3>
+</strong>
+<p></p>
+<p>None.<br />
+</p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="FONT-FAMILY: Arial; FONT-SIZE: 12pt"><strong>Appendix/References</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<p><br />
+Section 7.2.4 in the Fortran 2008 Standard.<br />
+<br />
+<br />
+ </li>
+</ol><script>document.sections={};</script><script>document.sections['expanded_sec1']='<p><table border=1 cellspacing=0 cellpadding=0><tr><th>Change Date</th><th>Updater</th><th>Access Change</th></tr><tr><td><p>28-May-12 09:20</p></td><td><p>Tarique Islam</p></td><td><p>Added Roch Archambault (archie@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Rene Matteau (matteau@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Sean Perry (perry@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Sarah McNamara (mcnamara@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Enrique Varillas (enriquev@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Pooja Dayanand (dayanand@ca.ibm.com) as <b>Team Reviewer</b></p><p>Added Jim McInnes (jimm@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Ian McIntosh (ianm@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Chad McIntyre (cmcintyr@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Si Yuan Zhang (siyuan.zhang@cn.ibm.com) as <b>Release Management Contact</b></p><p>Added shereen@ca.ibm.com (shereen@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Sasha Kasapinovic (skasapin@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Dave Paulmark (dvp@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Bardia Mahjour (bmahjour@ca.ibm.com) as <b>Team Reviewer</b></p><p>Added Irina Rada (irinar@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Raymond Mak (rmak@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Kobi Vinayagamoorthy (kobiv@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Kelvin Li (kli@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Wang Chen (wdchen@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Rafik Zurob (rzurob@ca.ibm.com) as <b>Approver</b></p><p>Added Raul Silvera (rauls@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Daniel C Chen (cdchen@ca.ibm.com) as <b>Team Reviewer</b></p><p>Added Jeff Heath (jrheath@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Kendrick Wong (kendrick@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Ying Zhang (zhangy@ca.ibm.com) as <b>Team Reviewer</b></p><p>Added Michelle Zhang (zhangmy@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Leon L Kiriliuk (leonk@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Larry Lindsay (llindsay@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Lin SH Fu (ceciliafoo@cn.ibm.com) as <b>Author</b></p><p>Added Vicky Chin (vwkchin@ca.ibm.com) as <b>Component Reviewer</b></p></td></tr><tr><td><p>30-May-12 11:53</p></td><td><p>Tarique Islam</p></td><td><p>Added Bernard Kan (bkan@ca.ibm.com) as <b>Author</b></p></td></tr><tr><td><p>12-Jun-12 15:02</p></td><td><p>Tarique Islam</p></td><td><p>Added denispal@ca.ibm.com (denispal@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added linka@cn.ibm.com (linka@cn.ibm.com) as <b>Component Reviewer</b></p><p>Added Yan Liu (yanliu@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Lu Yang (luyang@ca.ibm.com) as <b>Component Reviewer</b></p></td></tr><tr><td><p>12-Jun-12 15:04</p></td><td><p>Tarique Islam</p></td><td><p>Added Dorra Bouchiha (dorrab@ca.ibm.com) as <b>Team Reviewer</b></p><p>Added Grigor Nikolov (gnikolov@ca.ibm.com) as <b>Team Reviewer</b></p></td></tr></table></p>';</script><br>
+
+
+</div></td></tr></table>
+
+
+		<!--END MAIN BODY CONTENT-->
+		<a href="http://w3.ibm.com/w3/info_terms_of_use.html" class="terms">Terms of use</a><br />
+	</div>
+	<!-- stop main content -->
+</div>
+<!-- stop content -->
+</body>
+</html>
+

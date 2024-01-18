@@ -1,0 +1,12 @@
+** m   === End of Compilation 1 ===
+"PtrAssignCharacteristics4.f", line 257.3: 1515-137 (S) Dummy argument arg of the procedure pointer and the corresponding dummy argument of the procedure pointer assignment target must have the same type and type parameters.
+"PtrAssignCharacteristics4.f", line 261.3: 1515-143 (S) Dummy argument arg of the procedure pointer and the corresponding dummy argument of the procedure pointer assignment target must have the same shape.
+"PtrAssignCharacteristics4.f", line 263.3: 1515-139 (S) Dummy argument arg of the procedure pointer was declared without the INTENT(INOUT) attribute.  The corresponding dummy argument of the procedure pointer assignment target must not be declared with the INTENT(INOUT) attribute.
+"PtrAssignCharacteristics4.f", line 265.3: 1515-140 (S) Dummy argument arg of the procedure pointer was declared with the OPTIONAL attribute.  The corresponding dummy argument of the procedure pointer assignment target must also be declared with the OPTIONAL attribute.
+"PtrAssignCharacteristics4.f", line 269.3: 1515-139 (S) Dummy argument arg of the procedure pointer was declared without the ALLOCATABLE attribute.  The corresponding dummy argument of the procedure pointer assignment target must not be declared with the ALLOCATABLE attribute.
+"PtrAssignCharacteristics4.f", line 271.3: 1515-139 (S) Dummy argument arg of the procedure pointer was declared without the VALUE attribute.  The corresponding dummy argument of the procedure pointer assignment target must not be declared with the VALUE attribute.
+"PtrAssignCharacteristics4.f", line 275.3: 1515-139 (S) Dummy argument arg of the procedure pointer was declared without the VOLATILE attribute.  The corresponding dummy argument of the procedure pointer assignment target must not be declared with the VOLATILE attribute.
+"PtrAssignCharacteristics4.f", line 277.3: 1515-143 (S) Dummy argument arg of the procedure pointer and the corresponding dummy argument of the procedure pointer assignment target must have the same shape.
+"PtrAssignCharacteristics4.f", line 277.3: 1515-137 (S) Dummy argument arg of the procedure pointer and the corresponding dummy argument of the procedure pointer assignment target must have the same type and type parameters.
+** ptrassigncharacteristics4   === End of Compilation 2 ===
+1501-511  Compilation failed for file PtrAssignCharacteristics4.f.

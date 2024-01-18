@@ -1,0 +1,13 @@
+
+
+
+
+
+#define ARGTYPE void(*)(void)
+#define DEREF *
+#define TDEF_STMT typedef ARGTYPE DEREF TDEF_NAME
+#define TARGET_DECL int targ = 42
+#define MALLOC_CALL arg = malloc(sizeof(arg))
+#define FREE_CALL free(arg)
+#define VALUE 0
+#include "icc2fc.h"

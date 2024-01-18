@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"mProcDecRestrict3.f", line 83.15: 1514-699 (S) Procedure "procptr" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "modsub", present and type incompatible, present with different kind type parameters, or present with a different rank.
+"mProcDecRestrict3.f", line 87.15: 1514-699 (S) Procedure "proc" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "modfun", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** mprocdecrestrict3   === End of Compilation 2 ===
+1501-511  Compilation failed for file mProcDecRestrict3.f.

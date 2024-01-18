@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/intrinsics/IEEESelectedRealKind/unit_tests/func/IEEESelRKindSpec.scenario
+#FEATURE   = 376076
+#CREATOR   = Ren Jian Gang
+#DATE      = November 05, 2010
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)IEEESelRKindSpec.f
+#OUTPUT   =  IEEESelRKindSpec$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  IEEESelRKindSpec$(OBJ)
+#OUTPUT   =  IEEESelRKindSpec$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  IEEESelRKindSpec$(EXE)
+#STDOUT   =  IEEESelRKindSpec.out
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = IEEESelRKindSpec.out $(tcasedir)IEEESelRKindSpec.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

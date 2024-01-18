@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/dtparam/unit_tests/declaration/dtparamdecl001.scenario
+#FEATURE = type parameters
+#CREATOR = chris tandy
+#DATE    = 20050920
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamdecl001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamdecl001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  dtparamdecl001$(OBJ)
+#OUTPUT    = dtparamdecl001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamdecl001$(EXE)
+#STDOUT    = dtparamdecl001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtparamdecl001$(product)vf) dtparamdecl001.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,4 @@
+ 36 1525-036 A unit number of -2 is not allowed in the FLUSH statement.  Unit numbers must be non-negative.  The program will recover by ignoring the FLUSH statement.
+                                     
+ 36 1525-036 A unit number of -2 is not allowed in the FLUSH statement.  Unit numbers must be non-negative.  The program will recover by ignoring the FLUSH statement.
+                                     

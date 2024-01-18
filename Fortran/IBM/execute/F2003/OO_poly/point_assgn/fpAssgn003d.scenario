@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/point_assgn/fpAssgn003d.f
+#FEATURE = OO_poly
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fpAssgn003d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fpAssgn003d$(OBJ)
+#STDERR    = fpAssgn003d.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = fpAssgn003d.err $($(tcasedir)fpAssgn003d$(product)vf)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fpAssgn003d$(OBJ)
+#OUTPUT    = fpAssgn003d$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fpAssgn003d$(EXE)
+#STDOUT    = fpAssgn003d.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = fpAssgn003d.out $($(tcasedir)fpAssgn003d$(product)vf1)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

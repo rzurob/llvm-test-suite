@@ -1,0 +1,8 @@
+"saStatNonIntd.f", line 41.19: 1511-074 (S) The stat-variable in the SYNC statement must be a scalar integer variable.
+"saStatNonIntd.f", line 42.19: 1511-074 (S) The stat-variable in the SYNC statement must be a scalar integer variable.
+"saStatNonIntd.f", line 43.19: 1511-074 (S) The stat-variable in the SYNC statement must be a scalar integer variable.
+"saStatNonIntd.f", line 44.19: 1511-074 (S) The stat-variable in the SYNC statement must be a scalar integer variable.
+"saStatNonIntd.f", line 45.19: 1511-074 (S) The stat-variable in the SYNC statement must be a scalar integer variable.
+"saStatNonIntd.f", line 46.19: 1511-074 (S) The stat-variable in the SYNC statement must be a scalar integer variable.
+** sastatnonintd   === End of Compilation 1 ===
+1501-511  Compilation failed for file saStatNonIntd.f.

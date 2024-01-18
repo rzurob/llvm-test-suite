@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/ace/aceStrConstrSelector01_defer.scenario
+#FEATURE	= Basic (non-Polymorphic) Array Constructors with DTP
+#CREATOR	= Glen Mateer
+#DATE		= 20081113
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)aceStrConstrSelector01_defer.f
+#OUTPUT		= aceStrConstrSelector01_defer$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= aceStrConstrSelector01_defer$(OBJ)
+#OUTPUT		= aceStrConstrSelector01_defer$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= aceStrConstrSelector01_defer$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

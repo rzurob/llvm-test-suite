@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/ArgAssociation/arg_assoc_1k.scenario
+#FEATURE   = 361232
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20090119
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)arg_assoc_1k.f
+#OUTPUT    = arg_assoc_1k$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = arg_assoc_1k$(OBJ)
+#OUTPUT    = arg_assoc_1k$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = arg_assoc_1k$(EXE)
+#STDOUT    = arg_assoc_1k.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)arg_assoc_1k$(product)vf) arg_assoc_1k.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

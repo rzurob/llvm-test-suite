@@ -1,0 +1,8 @@
+ before call merge
+ 4 8 8
+ after call merge
+ 4 8 8
+ before assignment
+ 4 8 8
+ after assignment
+ 4 8 8

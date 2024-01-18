@@ -1,0 +1,137 @@
+Document Control Information:
+
+The official version of this document is kept in CMVC in the aix family, release des.dev, component design.it1, file designs/it1/it1_2_for_caf_coarray_dummy_argument_scalar/it1_2_for_caf_coarray_dummy_argument_scalar.html. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.
+
+CMVC Extraction Information: %W% %H% %I% sccsid
+
+CMVC_Family=aix, CMVC_Release=test.dev, CMVC_Component=test.values
+
+
+This document is IBM Confidential.
+
+Reviewers: Please click the 'Reviewed' check-box beside your name to indicate your participation in the review.
+
+Reviewer	Reviewed
+Almon Ng	
+Bardia Mahjour	
+Barnaby Dalton	
+Bernard Kan	
+Chris Lord	
+Claudio Rossi	
+Dale Soldiuk	
+Daniel C Chen	
+David Forster	
+David Nichols	
+Dorra Bouchiha	
+Dwayne Moore	
+Feng Ye	
+	
+Reviewer	Reviewed
+Francesco Cassullo	
+Grigor Nikolov	
+Jim Xia	
+Jin L Li	
+Joel Boulet	
+Kathleen Dowling	
+Kelvin Li	
+Kobi Vinayagamoorthy	
+Leon L Kiriliuk	
+Liang Chang Guo	
+Mary Chan	
+Morteza Ershad-Manesh	
+Murtadha Al-Tameemi	
+	
+Reviewer	Reviewed
+Pooja Dayanand	
+Rafik Zurob	
+Rosanne Jolin	
+Sa Kouchaki-Ramezan	
+Shahid Alam	
+Xing Xue	
+Ying Zhang	
+aferan@ca.ibm.com	
+andychen@ca.ibm.com	
+denisna@ca.ibm.com	
+justinds@ca.ibm.com	
+nemanjai@ca.ibm.com	
+
+Document Title
+	
+
+IT1/2 for CAF coarray dummy argument scalar
+
+CMVC Feature Number:
+	
+
+383540
+
+Feature Title:
+	
+
+Author(s):
+	
+
+David Forster
+
+Mandatory Reviewers:
+
+(Approver)
+	
+
+Xing Xue, Jim Xia
+
+Component Reviewers:(optional participation)
+	
+
+Bardia Mahjour, Barnaby Dalton, Chris Lord, Dale Soldiuk, Daniel C Chen, David Nichols, Dwayne Moore, Feng Ye, Kathleen Dowling, Kelvin Li, Kobi Vinayagamoorthy, Leon L Kiriliuk, Mary Chan, Pooja Dayanand, Rafik Zurob
+
+Team Reviewers: (optional participation)
+	
+
+Almon Ng, Bernard Kan, Claudio Rossi, Dorra Bouchiha, Francesco Cassullo, Grigor Nikolov, Jin L Li, Joel Boulet, Liang Chang Guo, Morteza Ershad-Manesh, Murtadha Al-Tameemi, Rosanne Jolin, Sa Kouchaki-Ramezan, Shahid Alam, Ying Zhang, aferan@ca.ibm.com, andychen@ca.ibm.com, denisna@ca.ibm.com, justinds@ca.ibm.com, nemanjai@ca.ibm.com
+
+IT1 Status: For Approval
+
+Approvers Only: Click on the 'Approve' checkbox beside your name in the table below if you agree with the technical and user interface content of this document; not checking your 'approve' checkbox signifies you do not approve.
+
+Approver	Approved
+Jim Xia	
+Xing Xue	
+
+Approval Comments
+
+Access Change History
+Expand Access Change History
+
+Overview
+
+Coarray scalars (sometimes referred to by the team as "coscalars") can be passed in as arguments to procedures. This feature deals only with intrinsic types, avoiding some of the more involved issues of connected with derived types (especially polymorphism).
+
+Test Strategy
+
+A number of tests already exist for coarray dummy arguments which are arrays of explicit or assumed size (F2008/coarray/coarray_dummy/explicit_shape and F2008/coarray/coarray_dummy/assumed_size). Access to scalars and to arrays is similar enough that these can be adapted simply by removing array indexing. Some such cases will be uninteresting variations on one another, once the indexing is removed, so, to avoid duplication, only some of these will be taken into the final collection.
+
+In addition, there is a test for storage association: an array element is passed in as a scalar to a procedure expecting an array, which then accesses the actual argument as if the array element passed in were the first element in the array.
+
+Test Procedures/Scenarios
+
+Name 	Description
+cdasBasic 	access only, same bounds in actual and dummy
+cdasBasicCopy 	copy data from specific image (Q) to "this" (P)
+cdasBasicSet 	set only
+cdasCodimensionChg 	different codimensions, but same corank
+cdasCorankChg 	corank is different
+cdasModule 	coarray variables from a module
+cdasMultiple 	multiple images
+cdasStgAssoc 	storage association
+cdas_d380692 	multiple images
+cdasStgAssoc
+
+IT2 Information
+
+Appendices/References
+
+Files are located in:
+F2008/coarray/coarray_dummy/scalar
+
+Terms of use

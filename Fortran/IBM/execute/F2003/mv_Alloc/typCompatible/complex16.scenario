@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       complex16.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)complex16.f
+#OUTPUT= complex16$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  complex16$(OBJ)
+#OUTPUT= complex16$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  complex16$(EXE)
+#STDOUT= complex16.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = complex16.out $(tcasedir)complex16.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

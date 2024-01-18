@@ -1,0 +1,5 @@
+"C808Param4.f", line 60.7: 1511-139 (S) Associate name as is not associated with an entity that can be defined. as must not be redefined or become undefined.
+"C808Param4.f", line 64.7: 1515-025 (S) Only a name of a variable, array element, or character substring is permitted on the left hand side of an assignment statement.
+"C808Param4.f", line 68.7: 1511-139 (S) Associate name as is not associated with an entity that can be defined. as must not be redefined or become undefined.
+** c808param4   === End of Compilation 1 ===
+1501-511  Compilation failed for file C808Param4.f.

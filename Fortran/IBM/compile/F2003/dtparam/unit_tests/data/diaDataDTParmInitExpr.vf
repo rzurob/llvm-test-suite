@@ -1,0 +1,5 @@
+"diaDataDTParmInitExpr.f", line 49.22: 1514-213 (S) A type parameter in this position must be a scalar integer initialization expression.
+"diaDataDTParmInitExpr.f", line 49.24: 1514-213 (S) A type parameter in this position must be a scalar integer initialization expression.
+"diaDataDTParmInitExpr.f", line 49.26: 1514-213 (S) A type parameter in this position must be a scalar integer initialization expression.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file diaDataDTParmInitExpr.f.

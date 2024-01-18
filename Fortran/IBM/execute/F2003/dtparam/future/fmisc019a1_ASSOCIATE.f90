@@ -1,0 +1,49 @@
+! GB DTP extension using:
+! ftcx_dtp -ql /tstdev/OO_poly/misc/fmisc019a1.f
+! opt variations: -qnol
+
+!#######################################################################
+! SCCS ID Information
+! %W%, %I%
+! Extract Date/Time: %D% %T%
+! Checkin Date/Time: %E% %U%
+!#######################################################################
+! *********************************************************************
+!*  =================================================================== 
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
+!*  =================================================================== 
+!*  =================================================================== 
+!*
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Jim Xia
+!*  DATE                       : 05/30/2005
+!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
+!*
+!*
+!*  DESCRIPTION                : miscellaneous (defect 294132)
+!*
+!*
+!*
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+program fmisc019a1
+    type base(n1,k1)    ! (20,4)
+        integer, kind            :: k1
+        integer, len             :: n1
+        integer(k1), allocatable :: data(:)
+    end type
+
+    integer(8), allocatable :: i1(:)
+    integer(8) k
+
+    allocate (i1(0:7))
+    
+    i1 = (/(k,k=0_8,7_8)/)
+
+    associate (x => base(20,4)(i1(::2)), y => base(20,4)(i1))
+        if (any (x%data /= (/0,2,4,6/))) error stop 1_4
+        if (any (y%data /= i1)) error stop 2_4
+    end associate
+end

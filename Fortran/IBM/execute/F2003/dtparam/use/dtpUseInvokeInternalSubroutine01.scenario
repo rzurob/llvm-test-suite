@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/use/dtpUseInvokeInternalSubroutine01.scenario
+#FEATURE   = DTP and USE - type specifier in ACE
+#CREATOR   = DF Manual Update
+#DATE      = 20080903
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUseInvokeInternalSubroutine01.f
+#OUTPUT    = dtpUseInvokeInternalSubroutine01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUseInvokeInternalSubroutine01$(OBJ)
+#OUTPUT    = dtpUseInvokeInternalSubroutine01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUseInvokeInternalSubroutine01$(EXE)
+#STDOUT    = dtpUseInvokeInternalSubroutine01.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUseInvokeInternalSubroutine01$(product)vf) dtpUseInvokeInternalSubroutine01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

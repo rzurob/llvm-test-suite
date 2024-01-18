@@ -1,0 +1,93 @@
+ SPHERE's Property:
+ SPHERE name: Sphere1
+ SPHERE Position:
+     10.00     30.00
+ SPHERE Radius:
+      4.00
+ SPHERE Mass:
+      2.40
+ SPHERE Volume:
+    200.96
+ SPHERE Surface:
+    200.96
+ SPHERE Time Required to reach position  ~0:
+      2.47
+ SPHERE Speed :
+     12.12
+ SPHERE Velocity :
+     24.25
+ SPHERE Acceleration :
+      9.80
+ SPHERE Force (F=ma) :
+     23.52
+ 
+ SPHERE's Property:
+ SPHERE name: Sphere2
+ SPHERE Position:
+      1.00    550.00
+ SPHERE Radius:
+     10.00
+ SPHERE Mass:
+    700.00
+ SPHERE Volume:
+   3140.00
+ SPHERE Surface:
+   1256.00
+ SPHERE Time Required to reach position  ~0:
+     10.59
+ SPHERE Speed :
+     51.91
+ SPHERE Velocity :
+    103.83
+ SPHERE Acceleration :
+      9.80
+ SPHERE Force (F=ma) :
+   6860.00
+ 
+ Direct Call
+ SPHERE's Property:
+ SPHERE name: Sphere3
+ SPHERE Position:
+      1.00   3140.00
+ SPHERE Radius:
+      6.00
+ SPHERE Mass:
+      5.00
+ SPHERE Volume:
+    678.24
+ SPHERE Surface:
+    452.16
+ SPHERE Time Required to reach position  ~0:
+     25.31
+ SPHERE Speed :
+    124.04
+ SPHERE Velocity :
+    248.08
+ SPHERE Acceleration :
+      9.80
+ SPHERE Force (F=ma) :
+     49.00
+ 
+ Call using procptr
+ SPHERE's Property:
+ SPHERE name: Sphere4
+ SPHERE Position:
+      1.00    678.24
+ SPHERE Radius:
+      6.00
+ SPHERE Mass:
+      5.00
+ SPHERE Volume:
+    678.24
+ SPHERE Surface:
+    452.16
+ SPHERE Time Required to reach position  ~0:
+     11.77
+ SPHERE Speed :
+     57.65
+ SPHERE Velocity :
+    115.30
+ SPHERE Acceleration :
+      9.80
+ SPHERE Force (F=ma) :
+     49.00

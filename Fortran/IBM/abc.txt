@@ -1,0 +1,4 @@
+call zzrc (10_4)
+call zzrc(abc)
+Call ZZRC(3)
+CALL ZZRC(4)

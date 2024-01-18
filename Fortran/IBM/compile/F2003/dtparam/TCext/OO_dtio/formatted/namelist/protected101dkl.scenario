@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/formatted/namelist/protected101dkl.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070706
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+! This chunk was DCOMP
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)protected101dkl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=intmsg -qdebug=shutup
+#OUTPUT    = protected101dkl$(OBJ)
+#STDERR    = protected101dkl.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)protected101dkl$(product)vf) protected101dkl.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

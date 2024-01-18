@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/ArraySections/arrsec3_lenlen.scenario
+#FEATURE   = 353925
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20081013
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)arrsec3_lenlen.f
+#OUTPUT    = arrsec3_lenlen$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = arrsec3_lenlen$(OBJ)
+#OUTPUT    = arrsec3_lenlen$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = arrsec3_lenlen$(EXE)
+#STDOUT    = arrsec3_lenlen.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)arrsec3_lenlen$(product)vf) arrsec3_lenlen.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

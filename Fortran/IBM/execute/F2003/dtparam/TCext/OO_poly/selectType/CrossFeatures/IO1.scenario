@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/selectType/CrossFeatures/IO1.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071003
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)IO1.f
+#OUTPUT= IO1$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  IO1$(OBJ)
+#OUTPUT= IO1$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  IO1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

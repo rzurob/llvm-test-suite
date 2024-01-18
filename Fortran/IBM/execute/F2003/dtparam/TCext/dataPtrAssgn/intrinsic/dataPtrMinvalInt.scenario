@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/intrinsic/dataPtrMinvalInt.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071216
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrMinvalInt.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrMinvalInt$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrMinvalInt$(OBJ)
+#OUTPUT    = dataPtrMinvalInt$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrMinvalInt$(EXE)
+#STDOUT    = dataPtrMinvalInt.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrMinvalInt.out $($(tcasedir)dataPtrMinvalInt$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

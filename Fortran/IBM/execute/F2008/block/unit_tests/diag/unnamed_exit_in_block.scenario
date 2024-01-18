@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=unnamed_exit_in_block.scenario
+#FEATURE = F2008 BLOCK construct
+#CREATOR = Pooja Dayanand
+#DATE    = 20101021
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)unnamed_exit_in_block.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#STDERR    = unnamed_exit_in_block.out
+#VALIDRCS  = $(RC_COMP_E)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = unnamed_exit_in_block.out $(tcasedir)unnamed_exit_in_block.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

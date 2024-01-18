@@ -1,0 +1,25 @@
+** mod   === End of Compilation 1 ===
+"acesynt14dc.f", line 71.23: 1516-036 (S) Entity complex has undefined type.
+"acesynt14dc.f", line 71.31: 1515-023 (S) Syntax Error: Illegal token " :: " is replaced by token " , ".
+"acesynt14dc.f", line 72.42: 1515-023 (S) Syntax Error: Illegal token " :: " is replaced by token " , ".
+"acesynt14dc.f", line 73.52: 1515-019 (S) Syntax is incorrect.
+"acesynt14dc.f", line 74.57: 1515-022 (S) Syntax Error: Extra token " complex " was found. The token is ignored.
+"acesynt14dc.f", line 74.64: 1515-022 (S) Syntax Error: Extra token " :: " was found. The token is ignored.
+"acesynt14dc.f", line 75.15: 1515-019 (S) Syntax is incorrect.
+"acesynt14dc.f", line 76.32: 1515-022 (S) Syntax Error: Extra token " :: " was found. The token is ignored.
+"acesynt14dc.f", line 80.38: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt14dc.f", line 81.38: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt14dc.f", line 82.38: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt14dc.f", line 82.62: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt14dc.f", line 82.87: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt14dc.f", line 83.38: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt14dc.f", line 83.62: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt14dc.f", line 83.87: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt14dc.f", line 84.38: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt14dc.f", line 85.38: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt14dc.f", line 86.38: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt14dc.f", line 92.48: 1516-044 (S) A conversion from type derived is not permitted.
+"acesynt14dc.f", line 93.48: 1516-044 (S) A conversion from type LOGICAL is not permitted.
+"acesynt14dc.f", line 94.48: 1516-044 (S) A conversion from type CHARACTER is not permitted.
+** acesynt14dc   === End of Compilation 2 ===
+1501-511  Compilation failed for file acesynt14dc.f.

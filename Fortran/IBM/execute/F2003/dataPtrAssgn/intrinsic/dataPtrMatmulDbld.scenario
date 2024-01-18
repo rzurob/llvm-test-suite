@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrMatmulDbld.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrMatmulDbld.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrMatmulDbld$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrMatmulDbld$(OBJ)
+#OUTPUT    = dataPtrMatmulDbld$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrMatmulDbld$(EXE)
+#STDOUT    = dataPtrMatmulDbld.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrMatmulDbld.out $($(tcasedir)dataPtrMatmulDbld$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

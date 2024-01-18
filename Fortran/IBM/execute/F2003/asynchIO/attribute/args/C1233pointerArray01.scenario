@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/attribute/args/C1233pointerArray01.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Attribute
+#CREATOR	= GM Manual Creation
+#DATE		= 20060407
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)C1233pointerArray01.f
+#OUTPUT		= C1233pointerArray01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= C1233pointerArray01$(OBJ)
+#OUTPUT		= C1233pointerArray01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= C1233pointerArray01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

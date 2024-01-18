@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/assignment/intrinsic/alloc/dtpIAAArraySection003.scenario
+#FEATURE   = Intrinsic Assignment with Allocation - allocate DTP array (container) via intrinsic assignment and check lower and upper bounds - array sections as source
+#CREATOR   = DF Manual Update
+#DATE      = 20090522
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAAArraySection003.f
+#OUTPUT    = dtpIAAArraySection003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAAArraySection003$(OBJ)
+#OUTPUT    = dtpIAAArraySection003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAAArraySection003$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

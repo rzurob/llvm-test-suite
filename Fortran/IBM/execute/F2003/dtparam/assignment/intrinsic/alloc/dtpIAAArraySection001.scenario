@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/assignment/intrinsic/alloc/dtpIAAArraySection001.scenario
+#FEATURE   = Intrinsic Assignment with Allocation - allocate DTP (kind) array and manipulate array sections via intrinsic assignment
+#CREATOR   = DF Manual Update
+#DATE      = 20090522
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAAArraySection001.f
+#OUTPUT    = dtpIAAArraySection001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAAArraySection001$(OBJ)
+#OUTPUT    = dtpIAAArraySection001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAAArraySection001$(EXE)
+#STDOUT    = dtpIAAArraySection001.out
+#ENDCMD
+
+#CMD       = SORT
+#INPUT     = dtpIAAArraySection001.out
+#STDOUT    = dtpIAAArraySection001.out1
+#ENDCMD
+
+#CMD       = SORT
+#INPUT     = $($(tcasedir)dtpIAAArraySection001$(product)vf)
+#STDOUT    = dtpIAAArraySection001.vf1
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dtpIAAArraySection001.vf1 dtpIAAArraySection001.out1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

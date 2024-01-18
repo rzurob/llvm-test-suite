@@ -1,0 +1,13 @@
+"ptrassign001d.f", line 44.15: 1518-351 (L) Type parameters are not permitted by the Fortran 95 standard.
+"ptrassign001d.f", line 53.3: 1513-248 (L) Pointer assignment with lower bounds specification is not permitted by the Fortran 95 standard.
+"ptrassign001d.f", line 55.3: 1513-248 (L) Pointer assignment with lower bounds specification is not permitted by the Fortran 95 standard.
+"ptrassign001d.f", line 57.3: 1513-248 (L) Pointer assignment with lower bounds specification is not permitted by the Fortran 95 standard.
+"ptrassign001d.f", line 59.3: 1513-248 (L) Pointer assignment with lower bounds specification is not permitted by the Fortran 95 standard.
+"ptrassign001d.f", line 62.3: 1513-249 (L) Pointer assignment with bounds remapping is not permitted by the Fortran 95 standard.
+"ptrassign001d.f", line 64.3: 1513-249 (L) Pointer assignment with bounds remapping is not permitted by the Fortran 95 standard.
+"ptrassign001d.f", line 66.3: 1513-249 (L) Pointer assignment with bounds remapping is not permitted by the Fortran 95 standard.
+"ptrassign001d.f", line 68.3: 1513-249 (L) Pointer assignment with bounds remapping is not permitted by the Fortran 95 standard.
+"ptrassign001d.f", line 70.3: 1513-249 (L) Pointer assignment with bounds remapping is not permitted by the Fortran 95 standard.
+"ptrassign001d.f", line 72.3: 1513-249 (L) Pointer assignment with bounds remapping is not permitted by the Fortran 95 standard.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file ptrassign001d.f.

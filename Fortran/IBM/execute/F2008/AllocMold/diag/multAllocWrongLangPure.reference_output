@@ -1,0 +1,4 @@
+"multAllocWrongLang.f", line 7.2: 1518-398 (L) An ALLOCATE statement with the SOURCE= specifier is not permitted to allocate more than one object by the Fortran 2003 standard.
+"multAllocWrongLang.f", line 8.20: 1518-283 (L) The MOLD= specifier is not permitted by the Fortran 2003 standard.
+** main   === End of Compilation 1 ===
+1501-510  Compilation successful for file multAllocWrongLang.f.

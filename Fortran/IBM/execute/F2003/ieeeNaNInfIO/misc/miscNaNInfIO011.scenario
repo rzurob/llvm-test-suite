@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = miscNaNInfIO011.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = July 11, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)miscNaNInfIO011.dat
+#OUTPUT   = miscNaNInfIO011.dat
+#ENDCMD
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)miscNaNInfIO011.f
+#OUTPUT   =  miscNaNInfIO011$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  miscNaNInfIO011$(OBJ)
+#OUTPUT   =  miscNaNInfIO011$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  miscNaNInfIO011$(EXE)
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = miscNaNInfIO011.out $(tcasedir)miscNaNInfIO011.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

@@ -1,0 +1,32 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/intrinsics/merge/mergePolyComp01_workaround.scenario
+#FEATURE= 355754
+#CREATOR= Nancy Wang
+#DATE   = Sept. 22 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)mergePolyComp01_workaround.f
+#OUTPUT= mergePolyComp01_workaround$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = mergePolyComp01_workaround$(OBJ)
+#OUTPUT= mergePolyComp01_workaround$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = mergePolyComp01_workaround$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

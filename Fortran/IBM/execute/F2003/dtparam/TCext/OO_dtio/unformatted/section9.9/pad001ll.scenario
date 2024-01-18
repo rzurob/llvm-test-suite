@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2003/dtparam/TCext/OO_dtio/unformatted/section9.9/pad001ll.scenario
+#FEATURE = OO_dtio/unformatted tests - regression run bucket + derived type parameters
+#CREATOR = automated conversion script
+#DATE    = 20071002
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT=bgl_system
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)pad001ll.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = pad001ll$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  pad001ll$(OBJ)
+#OUTPUT    = pad001ll$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = pad001ll$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

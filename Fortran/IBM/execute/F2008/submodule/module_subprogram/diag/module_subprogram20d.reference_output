@@ -1,0 +1,16 @@
+"module_subprogram20d.f", line 36.1: 1514-235 (E) PRIVATE and PUBLIC are only allowed within the specification section of a module.
+"module_subprogram20d.f", line 36.16: 1515-022 (S) Syntax Error: Extra token " m " was found. The token is ignored.
+"module_subprogram20d.f", line 40.21: 1516-364 (S) Procedure intsub is not declared in a module or submodule. intsub must not have the MODULE prefix specifier.
+"module_subprogram20d.f", line 43.19: 1516-364 (S) Procedure intfunc is not declared in a module or submodule. intfunc must not have the MODULE prefix specifier.
+"module_subprogram20d.f", line 55.1: 1513-085 (S) Improper END statement specified. This END statement will be matched with the program unit or procedure named _main.
+"module_subprogram20d.f", 1513-083 (E) Internal or module function func was not set within the function.
+"module_subprogram20d.f", 1516-036 (S) Entity module has undefined type.
+** _main   === End of Compilation 1 ===
+"module_subprogram20d.f", line 57.1: 1514-235 (E) PRIVATE and PUBLIC are only allowed within the specification section of a module.
+"module_subprogram20d.f", line 57.19: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"module_subprogram20d.f", line 57.20: 1515-022 (S) Syntax Error: Extra token " m " was found. The token is ignored.
+"module_subprogram20d.f", line 57.21: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"module_subprogram20d.f", line 57.23: 1515-022 (S) Syntax Error: Extra token " n " was found. The token is ignored.
+"module_subprogram20d.f", line 58.1: 1513-085 (S) Improper END statement specified. This END statement will be matched with the program unit or procedure named _main.
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file module_subprogram20d.f.

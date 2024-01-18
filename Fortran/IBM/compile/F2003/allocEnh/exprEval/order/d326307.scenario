@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/exprEval/order/d326307.scenario
+#FEATURE	= Intrinsic Assignment -- Order of Expression Evaluation
+#CREATOR	= GM Manual Creation
+#DATE		= 20061005
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)d326307.f
+#OUTPUT		= d326307$(OBJ)
+#STDERR		= d326307.out
+#STDOUT		= d326307.out
+#VALIDRCS	= $(RC_COMP_E)
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)d326307$(product)vf) d326307.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

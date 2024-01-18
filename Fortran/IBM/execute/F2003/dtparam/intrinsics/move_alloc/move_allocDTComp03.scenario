@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/move_alloc/move_allocDTComp03.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Oct. 1 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)move_allocDTComp03.f
+#OUTPUT= move_allocDTComp03$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = move_allocDTComp03$(OBJ)
+#OUTPUT= move_allocDTComp03$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = move_allocDTComp03$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

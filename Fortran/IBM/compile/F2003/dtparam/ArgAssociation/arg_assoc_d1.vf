@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"arg_assoc_d1.f", line 44.21: 1514-780 (S) Dummy argument n was declared with the OPTIONAL attribute. n, or a subobject of n, must not appear in a specification expression.
+"arg_assoc_d1.f", line 51.19: 1514-780 (S) Dummy argument x was declared with the OPTIONAL attribute. x, or a subobject of x, must not appear in a specification expression.
+"arg_assoc_d1.f", line 58.19: 1514-780 (S) Dummy argument p was declared with the OPTIONAL attribute. p, or a subobject of p, must not appear in a specification expression.
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file arg_assoc_d1.f.

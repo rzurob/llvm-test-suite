@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/diag/selectorTo.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071105
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = $(tcasedir)selectorTo.f
+#OUTPUT    = selectorTo$(OBJ)
+#STDERR    = selectorTo.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    selectorTo.err $($(tcasedir)selectorTo$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

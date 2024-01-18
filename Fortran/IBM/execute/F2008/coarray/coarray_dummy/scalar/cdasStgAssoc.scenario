@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = coarray_dummy/scalar/cdasStgAssoc.scenario
+#FEATURE   = CAF coarray dummy arguments - scalar - storage association
+#CREATOR   = DF
+#DATE      = 2010-11-17
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      = F_COMPILE
+#INPUT    = $(tcasedir)cdasStgAssoc.f
+#OUTPUT   = cdasStgAssoc$(OBJ)
+#ENDCMD
+
+#CMD      = F_LINK
+#INPUT    = cdasStgAssoc$(OBJ)
+#OUTPUT   = cdasStgAssoc$(EXE)
+#ENDCMD
+
+#CMD      = SET_DYN_ENV
+#ENDCMD
+
+#FOR ITER = 1 TO 1
+
+   #CMD      = MPRUN
+   #INPUT    = cdasStgAssoc$(EXE)
+   #STDOUT   = cdasStgAssoc.out
+   #ENDCMD
+
+   #CMD      = DIFF
+   #INPUT    = $($(tcasedir)cdasStgAssoc$(product)vf) cdasStgAssoc.out
+   #ENDCMD
+
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

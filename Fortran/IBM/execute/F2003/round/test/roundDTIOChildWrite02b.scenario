@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=roundDTIOChildWrite02b.scenario
+#FEATURE = 289037
+#CREATOR = William Zhang
+#DATE    = 07/24/2006
+#TEST_TYPE= functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)roundDTIOChildWrite02b.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = roundDTIOChildWrite02b$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = roundDTIOChildWrite02b$(OBJ)
+#OUTPUT    = roundDTIOChildWrite02b$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = roundDTIOChildWrite02b$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = roundDTIOChildWrite02b.out $($(tcasedir)roundDTIOChildWrite02b$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

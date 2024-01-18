@@ -1,0 +1,25 @@
+** acetint31ldmod   === End of Compilation 1 ===
+"acetint31ldk.f", line 97.14: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint31ldk.f", line 97.26: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint31ldk.f", line 99.24: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint31ldk.f", line 99.36: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint31ldk.f", line 103.14: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint31ldk.f", line 103.26: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint31ldk.f", line 105.24: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint31ldk.f", line 105.36: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint31ldk.f", line 109.14: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint31ldk.f", line 109.27: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint31ldk.f", line 111.24: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint31ldk.f", line 111.37: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint31ldk.f", line 116.14: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint31ldk.f", line 116.25: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint31ldk.f", line 118.24: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint31ldk.f", line 118.35: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint31ldk.f", line 123.14: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint31ldk.f", line 123.24: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint31ldk.f", line 125.24: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetint31ldk.f", line 125.34: 1513-020 (S) Procedure names must be specified with arguments in this context.
+** acetint31ldk   === End of Compilation 2 ===
+** externfunc   === End of Compilation 3 ===
+** anotherfunc   === End of Compilation 4 ===
+1501-511  Compilation failed for file acetint31ldk.f.

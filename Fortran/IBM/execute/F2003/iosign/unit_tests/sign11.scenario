@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE =
+#CREATOR = James Ren
+#DATE    = 20051010
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)sign11.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = sign11$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = sign11$(OBJ)
+#OUTPUT    = sign11$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = sign11$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)sign11$(product)vf) sign11.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

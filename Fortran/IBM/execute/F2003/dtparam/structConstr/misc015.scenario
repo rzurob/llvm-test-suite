@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/structConstr/misc015.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)misc015.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = misc015$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = misc015$(OBJ)
+#OUTPUT    = misc015$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = misc015$(EXE)
+#STDOUT    = misc015.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1.0e-7
+#INPUT     = misc015.out $($(tcasedir)misc015$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

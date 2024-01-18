@@ -1,0 +1,5 @@
+"asynchSpecOpen06d.f", line 65.33: 1516-276 (E) The ASYNCHRONOUS and ASYNCH specifiers must not appear in the same statement.  The ASYNCH specifier is ignored.
+"asynchSpecOpen06d.f", line 100.26: 1516-276 (E) The ASYNCH and ASYNCHRONOUS specifiers must not appear in the same statement.  The ASYNCHRONOUS specifier is ignored.
+"asynchSpecOpen06d.f", line 135.32: 1512-017 (E) The ASYNCHRONOUS keyword has already been specified on this I/O statement.  Keyword is ignored.
+** asynchspecopen06d   === End of Compilation 1 ===
+1501-510  Compilation successful for file asynchSpecOpen06d.f.

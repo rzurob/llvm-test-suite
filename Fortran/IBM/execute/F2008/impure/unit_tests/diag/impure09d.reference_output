@@ -1,0 +1,4 @@
+** logical_func   === End of Compilation 1 ===
+"impure09d.f", line 44.22: 1516-105 (S) Any procedure referenced within a FORALL mask expression, a FORALL body or a FORALL assignment must be pure.
+** t_main   === End of Compilation 2 ===
+1501-511  Compilation failed for file impure09d.f.

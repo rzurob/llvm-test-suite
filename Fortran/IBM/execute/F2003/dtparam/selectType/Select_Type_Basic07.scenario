@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/selectType/Select_Type_Basic07.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20080826
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)Select_Type_Basic07.f
+#OUTPUT= Select_Type_Basic07$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  Select_Type_Basic07$(OBJ)
+#OUTPUT= Select_Type_Basic07$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  Select_Type_Basic07$(EXE)
+#STDOUT= Select_Type_Basic07.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = Select_Type_Basic07.out $(tcasedir)Select_Type_Basic07.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

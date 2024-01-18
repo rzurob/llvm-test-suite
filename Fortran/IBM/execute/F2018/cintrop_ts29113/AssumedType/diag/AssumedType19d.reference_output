@@ -1,0 +1,7 @@
+"AssumedType19d.f", line 33.17: 1514-808 (S) Entity c has assumed type. c must not be an explicit-shape array.
+** mod   === End of Compilation 1 ===
+"AssumedType19d.f", line 45.18: 1514-808 (S) Entity a has assumed type. a must not be an explicit-shape array.
+"AssumedType19d.f", line 49.18: 1514-808 (S) Entity a has assumed type. a must not be an explicit-shape array.
+"AssumedType19d.f", line 55.18: 1514-808 (S) Entity a has assumed type. a must not be an explicit-shape array.
+** assumedtype19d   === End of Compilation 2 ===
+1501-511  Compilation failed for file AssumedType19d.f.

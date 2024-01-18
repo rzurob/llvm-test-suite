@@ -1,0 +1,9 @@
+pt2Func = absent in c_func_1
+pt2Func = present in c_func_1
+pt2Func = present in c_func_2
+a = 200 : present in realfunc
+pt2Func in c_func_2 returns 201
+pt2Func = absent in c_func_2
+pt2Func = present in c_func_2
+a = 200 : present in realfunc
+pt2Func in c_func_2 returns 201

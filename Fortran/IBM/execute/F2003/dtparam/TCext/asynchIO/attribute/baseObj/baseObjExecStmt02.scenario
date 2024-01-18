@@ -1,0 +1,58 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/asynchIO/attribute/baseObj/baseObjExecStmt02.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of asynchIO/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=bgq
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)baseObjExecStmt02.f
+#OUTPUT		= baseObjExecStmt02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= baseObjExecStmt02$(OBJ)
+#OUTPUT		= baseObjExecStmt02$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= baseObjExecStmt02$(EXE)
+#ENDCMD
+
+#CMD		= SED
+#OPTS		= -e '1,/^\*\* mtimestamp   === End of Compilation 1 ===$/d'
+#INPUT		= baseObjExecStmt02$(LST)
+#STDOUT		= baseObjExecStmt02.sed-start.stdout
+#ENDCMD
+
+#CMD	  = SED
+#OPTS	  = -e '/^\*\* baseobjexecstmt02   === End of Compilation 2 ===$/,$d'
+#INPUT	  = baseObjExecStmt02.sed-start.stdout
+#STDOUT	  = baseObjExecStmt02.sed-end.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i '^aTimeStamp[ 	]'
+#INPUT		= baseObjExecStmt02.sed-end.stdout
+#STDOUT		= baseObjExecStmt02.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= baseObjExecStmt02.stdout
+#VALIDRCS	= $(GREP_FAIL)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

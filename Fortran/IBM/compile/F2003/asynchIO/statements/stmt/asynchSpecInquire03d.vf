@@ -1,0 +1,3 @@
+"asynchSpecInquire03d.f", line 96.4: 1516-281 (S) The INQUIRE statement contains the ID= specifier.  It must also contain the PENDING= specifier.
+** asynchspecinquire03d   === End of Compilation 1 ===
+1501-511  Compilation failed for file asynchSpecInquire03d.f.

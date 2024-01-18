@@ -1,0 +1,53 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       fpurefunc
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2003_COMPILE
+#INPUT=  $(tcasedir)fpurefunc.f
+#OUTPUT= fpurefunc$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2003_LINK
+#INPUT=  fpurefunc$(OBJ)
+#OUTPUT= fpurefunc$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fpurefunc$(EXE)
+#STDOUT=  fpurefunc.out
+#ENDCMD
+
+#CMD=    XLF2003_COMPILE
+#OPTS=   -qversion
+#INPUT=  $(tcasedir)fpurefunc.f
+#STDOUT= fpurefunc_qversion.out
+#ENDCMD
+
+#CMD = SED
+#OPTS = -e '$!N;s/\n/ /' -e 's/://g' -e 's/^/ /g'
+#INPUT = fpurefunc_qversion.out
+#STDOUT = fpurefunc_qversion.sed
+#ENDCMD
+
+#CMD = SED
+#OPTS = -e 's/(DEV) //g'
+#INPUT = fpurefunc.out
+#STDOUT = fpurefunc.sed
+#ENDCMD
+
+#CMD = SPIFF
+#INPUT = fpurefunc_qversion.sed fpurefunc.sed
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

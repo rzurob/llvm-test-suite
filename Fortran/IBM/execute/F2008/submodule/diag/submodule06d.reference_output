@@ -1,0 +1,3 @@
+"submodule06bd.f", line 39.12: 1514-219 (S) Unable to access module symbol file for module m. Check path and file permissions of file. Use association not done for this module.
+"submodule06bd.f", line 39.15: 1513-101 (S) Global entity m was seen elsewhere as a global entity with conflicting attributes.
+1501-511  Compilation failed for file submodule06bd.f.

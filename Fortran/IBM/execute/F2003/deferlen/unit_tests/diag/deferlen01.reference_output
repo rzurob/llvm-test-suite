@@ -1,0 +1,7 @@
+"deferlen01.f", line 24.20: 1514-704 (S) Entity char is declared with a deferred type parameter. char must have the POINTER or ALLOCATABLE attribute.
+"deferlen01.f", line 27.17: 1514-704 (S) Entity char1 is declared with a deferred type parameter. char1 must have the POINTER or ALLOCATABLE attribute.
+"deferlen01.f", line 28.37: 1514-704 (S) Entity char2 is declared with a deferred type parameter. char2 must have the POINTER or ALLOCATABLE attribute.
+"deferlen01.f", line 29.15: 1514-704 (S) Entity char3 is declared with a deferred type parameter. char3 must have the POINTER or ALLOCATABLE attribute.
+"deferlen01.f", line 30.28: 1514-004 (S) Name given for constant with PARAMETER attribute was defined elsewhere with conflicting attributes. Name is ignored.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file deferlen01.f.

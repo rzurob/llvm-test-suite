@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/spread/spreadWithAssociate02.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Oct. 24 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)spreadWithAssociate02.f
+#OUTPUT= spreadWithAssociate02$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = spreadWithAssociate02$(OBJ)
+#OUTPUT= spreadWithAssociate02$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = spreadWithAssociate02$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/polyAssign/diag/polyAssign1012d_LHSnonallocAssign.f
+#FEATURE   = LHS of intrinsic assignment is allowed to be polymorphic
+#CREATOR   = Aaron Liu
+#DATE      = 20150901
+#TEST_TYPE = diagnostic
+#KEYWORDS  = F2008, polymorphic, LHS, intrinsic assignment
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)polyAssign1012d_LHSnonallocAssign.f
+#OUTPUT    = polyAssign1012d_LHSnonallocAssign$(OBJ)
+#STDOUT    = polyAssign1012d_LHSnonallocAssign.out
+#STDERR    = polyAssign1012d_LHSnonallocAssign.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)polyAssign1012d_LHSnonallocAssign$(product)vf) polyAssign1012d_LHSnonallocAssign.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

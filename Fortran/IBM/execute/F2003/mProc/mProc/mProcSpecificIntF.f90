@@ -1,0 +1,109 @@
+!*********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : mProcSpecificIntF.f  
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Mar 02, 2006
+!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement 
+!*
+!*  SECONDARY FUNCTIONS TESTED : 
+!*
+!*  REFERENCE                  : Feature Number 296676 
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  : -qfree=f90
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*
+!*  
+!*  Any procedure may be referenced via its specific interface if 
+!*  the specific interface is accessible. 
+!*
+!*  ()
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+
+
+  MODULE M
+
+  TYPE :: DT
+    INTEGER :: ID
+  END TYPE
+ 
+  TYPE, EXTENDS(DT) :: DT1
+  END TYPE
+
+  END MODULE
+
+  MODULE M1
+  USE M
+ 
+  INTERFACE Fun 
+    PROCEDURE ModSub
+  END INTERFACE  
+
+  CONTAINS
+
+  SUBROUTINE ModSub(Arg1, Arg2)
+  TYPE(DT), INTENT(INOUT) :: Arg1 
+  TYPE(DT), INTENT(IN)    :: Arg2 
+    Arg1 = Arg2 
+  END SUBROUTINE 
+
+  SUBROUTINE ModSub1(Arg1, Arg2)
+  TYPE(DT1), INTENT(INOUT) :: Arg1 
+  TYPE(DT1), INTENT(IN)    :: Arg2 
+    Arg1 = Arg2 
+  END SUBROUTINE 
+
+  END MODULE
+
+
+  PROGRAM mProcSpecificIntF 
+  USE M
+  USE M1, ModSub11 => ModSub1, Fun1 => Fun, ModSub1=>ModSub1 
+
+  PROCEDURE(ModSub11), POINTER :: ProcPtr
+
+
+  INTERFACE Fun1 
+    MODULE PROCEDURE ModSub1
+    PROCEDURE        ModSub11 
+    PROCEDURE        ModSub1 
+  END INTERFACE
+
+  INTERFACE Fun2 
+    PROCEDURE ModSub
+    PROCEDURE ProcPtr 
+  END INTERFACE
+
+  TYPE(DT)  :: T
+  TYPE(DT1) :: T1
+
+  CALL Fun1(T, DT(-1))
+  CALL Fun1(T1, DT1(1))
+
+  IF (T%ID  .NE. -1 ) STOP 11
+  IF (T1%ID  .NE. 1 ) STOP 12
+
+  ProcPtr => ModSub1
+
+  CALL Fun2(T, DT(-2))
+  CALL Fun2(T1, DT1(2))
+
+  IF (T%ID  .NE. -2 ) STOP 21
+  IF (T1%ID  .NE. 2 ) STOP 22
+
+  END
+

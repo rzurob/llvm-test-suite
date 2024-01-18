@@ -1,0 +1,1 @@
+1525-221 The DECIMAL= specifier in the OPEN statement for unit 77 is not allowed because the FORM= specifier is set to UNFORMATTED.  The program will recover by ignoring the DECIMAL= specifier.

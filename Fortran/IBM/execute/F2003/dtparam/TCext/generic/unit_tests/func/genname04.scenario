@@ -1,0 +1,22 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/unit_tests/func/genname04.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPLINK
+#INPUT     = $(tcasedir)genname04.f
+#OUTPUT    = genname04$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genname04$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

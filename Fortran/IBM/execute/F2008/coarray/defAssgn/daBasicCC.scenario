@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/coarray/defAssgn/daBasicCC.scenario
+#FEATURE   = F2008 CAF coarray defined assignment - simple test of same type but mismatched rank, dummy args are coarrays
+#CREATOR   = DF
+#DATE      = 20101220
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)daBasicCC.f
+#OUTPUT    = daBasicCC$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = daBasicCC$(OBJ)
+#OUTPUT    = daBasicCC$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD       = MPRUN
+	#INPUT     = daBasicCC$(EXE)
+	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

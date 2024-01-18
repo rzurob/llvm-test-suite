@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/dummy_arg/fArg520a.f
+#FEATURE = OO_poly
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fArg520a.f
+#OPTS      = -qxlf2003=dynamicacval $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fArg520a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fArg520a$(OBJ)
+#OUTPUT    = fArg520a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fArg520a$(EXE)
+#STDOUT    = fArg520a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fArg520a.out $($(tcasedir)fArg520a$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

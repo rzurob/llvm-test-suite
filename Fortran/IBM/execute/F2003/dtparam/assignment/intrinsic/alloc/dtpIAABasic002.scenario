@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/assignment/intrinsic/alloc/dtpIAABasic002.scenario
+#FEATURE   = Intrinsic Assignment with Allocation - allocate basic DTP variable (length parameter) via intrinsic assignment
+#CREATOR   = DF Manual Update
+#DATE      = 20090522
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAABasic002.f
+#OUTPUT    = dtpIAABasic002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAABasic002$(OBJ)
+#OUTPUT    = dtpIAABasic002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAABasic002$(EXE)
+#STDOUT    = dtpIAABasic002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpIAABasic002$(product)vf) dtpIAABasic002.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

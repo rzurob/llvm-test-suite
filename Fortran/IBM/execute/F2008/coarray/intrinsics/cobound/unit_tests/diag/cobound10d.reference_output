@@ -1,0 +1,8 @@
+"cobound10d.f", line 30.34: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"cobound10d.f", line 31.37: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"cobound10d.f", line 33.34: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"cobound10d.f", line 34.15: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"cobound10d.f", line 42.22: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"cobound10d.f", line 43.22: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file cobound10d.f.

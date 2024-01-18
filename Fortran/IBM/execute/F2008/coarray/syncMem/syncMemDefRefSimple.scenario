@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/syncMemDefRefSimple
+#FEATURE        = CAF SYNC MEMORY - simple remote definition and reference
+#CREATOR        = DF
+#DATE           = 2010-09-17
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)syncMemDefRefSimple.f
+#OUTPUT = syncMemDefRefSimple$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = syncMemDefRefSimple$(OBJ)
+#OUTPUT = syncMemDefRefSimple$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = syncMemDefRefSimple$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

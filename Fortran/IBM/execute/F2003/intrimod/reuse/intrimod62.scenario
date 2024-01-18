@@ -1,0 +1,45 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/intrimod/reuse/intrimod62.scenario
+#FEATURE = intrimod tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)../fake_xlfutility_extname_module.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM) $(OPT_EXTNAME)
+#OUTPUT    = fake_xlfutility_extname_module$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)intrimod62.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM) $(OPT_EXTNAME)
+#OUTPUT    = intrimod62$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM) $(OPT_EXTNAME)
+#INPUT     =  fake_xlfutility_extname_module$(OBJ) intrimod62$(OBJ)
+#OUTPUT    = intrimod62$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = intrimod62$(EXE)
+#STDOUT    = intrimod62.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)../emptyout$(product)vf) intrimod62.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

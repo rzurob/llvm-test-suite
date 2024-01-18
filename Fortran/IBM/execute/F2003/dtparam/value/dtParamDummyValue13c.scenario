@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = dtParamDummyValue13c.scenario
+#FEATURE        = Derived Type Parameter - VALUE Attribute
+#CREATOR        = Andy Sheung
+#DATE           = July 2008
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD            = F_COMPILE
+#INPUT          = $(tcasedir)dtParamDummyValue13c.f
+#OUTPUT         = dtParamDummyValue13c$(OBJ)
+#ENDCMD
+
+#CMD            = F_LINK
+#INPUT          = dtParamDummyValue13c$(OBJ)
+#OUTPUT         = dtParamDummyValue13c$(EXE)
+#ENDCMD
+
+
+#CMD            = RUN
+#INPUT          = dtParamDummyValue13c$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

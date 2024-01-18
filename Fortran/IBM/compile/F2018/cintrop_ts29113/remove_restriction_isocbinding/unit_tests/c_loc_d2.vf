@@ -1,0 +1,3 @@
+"c_loc_d2.f", line 11.14: 1516-169 (S) A variable that is specified as an argument to the intrinsic procedure C_LOC must either have type and type parameters that are interoperable with a C type, or be a nonpolymorphic variable with no length type parameters.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file c_loc_d2.f.

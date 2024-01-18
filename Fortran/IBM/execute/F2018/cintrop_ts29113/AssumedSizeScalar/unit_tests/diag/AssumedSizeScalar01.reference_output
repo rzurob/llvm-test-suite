@@ -1,0 +1,4 @@
+"AssumedSizeScalar01.f", line 8.12: 1518-393 (L) Dummy argument arg of procedure sub has assumed size.  The corresponding actual argument must not be scalar by the Fortran 2008 standard.
+"AssumedSizeScalar01.f", line 11.6: 1518-388 (L) TYPE(*) is not permitted by the Fortran 2008 standard.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file AssumedSizeScalar01.f.

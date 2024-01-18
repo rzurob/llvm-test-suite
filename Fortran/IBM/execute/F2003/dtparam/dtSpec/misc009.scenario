@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/dtSpec/misc009.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)misc009.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = misc009$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = misc009$(OBJ)
+#OUTPUT    = misc009$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = misc009$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

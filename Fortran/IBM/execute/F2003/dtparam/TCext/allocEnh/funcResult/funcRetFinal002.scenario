@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/funcResult/funcRetFinal002.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071220
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)funcRetFinal002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = funcRetFinal002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = funcRetFinal002$(OBJ)
+#OUTPUT    = funcRetFinal002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = funcRetFinal002$(EXE)
+#STDOUT    = funcRetFinal002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = funcRetFinal002.out $($(tcasedir)funcRetFinal002$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

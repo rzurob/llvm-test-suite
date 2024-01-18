@@ -1,0 +1,4 @@
+"genericGenericNameScalar010d.f", line 45.30: 1514-699 (S) Procedure "printchild" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "printbase", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** m   === End of Compilation 1 ===
+** genericgenericnamescalar010d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericGenericNameScalar010d.f.

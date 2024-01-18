@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/ptrAssc/ulmt4pntTodeferFrom.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071128
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)ulmt4pntTodeferFrom.f
+#OUTPUT= ulmt4pntTodeferFrom$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  ulmt4pntTodeferFrom$(OBJ)
+#OUTPUT= ulmt4pntTodeferFrom$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  ulmt4pntTodeferFrom$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

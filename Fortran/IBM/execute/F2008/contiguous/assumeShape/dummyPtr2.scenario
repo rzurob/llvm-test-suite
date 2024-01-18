@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/contiguous/assumeShape/dummyPtr2.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20101025
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dummyPtr2.f
+#OUTPUT    = dummyPtr2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dummyPtr2$(OBJ)
+#OUTPUT    = dummyPtr2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dummyPtr2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

@@ -1,0 +1,4 @@
+"fpAssgn003d4.f", line 33.26: 1513-139 (S) The argument must have the POINTER attribute.
+"fpAssgn003d4.f", line 34.26: 1513-139 (S) The argument must have the POINTER attribute.
+** fpassgn003d4   === End of Compilation 1 ===
+1501-511  Compilation failed for file fpAssgn003d4.f.

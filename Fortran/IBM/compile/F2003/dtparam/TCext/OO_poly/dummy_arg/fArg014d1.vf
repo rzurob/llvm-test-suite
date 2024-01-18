@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"fArg014d1.f", line 79.31: 1513-110 (S) The optional intrinsic argument DIM must be present in this context.
+** farg014d1   === End of Compilation 2 ===
+1501-511  Compilation failed for file fArg014d1.f.

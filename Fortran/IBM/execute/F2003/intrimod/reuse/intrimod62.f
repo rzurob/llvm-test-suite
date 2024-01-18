@@ -1,0 +1,106 @@
+!***********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD: 
+! %COMPOPTS: -qfixed -qextname
+! %GROUP: ../fake_xlfutility_extname_module.f intrimod62.f
+! %VERIFY: intrimod62.out:../emptyout.vf
+! %STDIN:
+! %STDOUT: intrimod62.out
+! %EXECARGS:
+! %POSTCMD: rm -f xlfutility_extname.mod
+! %END
+!**********************************************************************
+      PROGRAM intrimod62
+C**********************************************************************
+C*  =================================================================== 
+C*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY 
+C*  =================================================================== 
+C*                                                                     
+C*  TEST CASE NAME             : intrimod62
+C*  TEST CASE TITLE            : INTRINSIC Module nature with Service and
+C*                             : Utility Procedure Interfaces
+C*
+C*  PROGRAMMER                 : Bahram Chehrazy
+C*  DATE                       : January 13, 2004
+C*  ORIGIN                     : AIX Compiler Development, 
+C*                             : IBM SWS Toronto Lab     
+C*                                                                      
+C*  PRIMARY FUNCTIONS TESTED   : GMTIME_ & TIME_
+C*  SECONDARY FUNCTIONS TESTED : None                                   
+C*                                                                     
+C*  DESCRIPTION                : Procedures GMTIME_ & TIME_,correct calls,  
+C*                             : module XLFUTILITY_EXTNAME
+C*  KEYWORD(S)                 :                
+C*  TARGET(S)                  : 
+C*  NUMBER OF TESTS            :  5                                       
+C*  STATUS                     :     
+C*                                               
+C*  STRUCTURE                  : Main program    
+C*  EXECUTABLE                 : Yes           
+C*                                           
+C*  INPUTS                     : None        
+C*  OUTPUTS                    : None      
+C*                                       
+C*  SETUP REQUIREMENTS         : N/A     
+C*  DEPENDENCIES               :                
+C*  REQUIRED COMPILER OPTIONS  : None                            
+C*                                                             
+C*  NORMAL COMPLETION          : Return code = 0        
+C*  ABNORMAL COMPLETION        : Return code ^= 0         
+C*                                                        
+C*  RUN TIME ESTIMATE          : <60 SECS                   
+C*                                                          
+C*  CONDITIONS TESTED          : Listed below.                
+C*                                                            
+C/  COND.   DESCRIPTION
+C/  -----   ------------------------------------------------------------
+C/      1   Type of the arguments - INTEGER(4)
+C/      2   An actual argument - HEXADECIMAL CONSTANT
+C/      3   An actual argument - OCTAL CONSTANT
+C/      4   An actual argument - BINARY CONSTANT
+C/      5   An actual argument - HOLLERITH CONSTANT
+C/
+C* =================================================================== 
+C*
+C*  REVISION HISTORY            
+C*  
+C*  MM/DD/YY:  Init:  Comments:
+C*  07/27/94   EB     -Initial Version (utility_proc/fxut083e_LDT.f)
+C*  01/13/04   BC     -Modifyed and reused for INTRINSIC/NON_INTRINSIC module
+C*                     nature.
+C*                                                                    
+C* =================================================================== 
+C234567890123456789012345678901234567890123456789012345678901234567890
+
+       use, intrinsic :: xlfutility_extname
+
+C DEFINES
+       
+       integer (kind=TIME_SIZE) TI
+       integer (4) tarray(9)
+
+C CALLS OF TIME_ & GMTIME_
+
+       TI = time()
+       call gmtime(TI,tarray)
+      
+C  ACTUAL ARGUMENT - HEXADECIMAL CONSTANT
+
+       call gmtime(Z'1',tarray)
+       call gmtime(Z'a4580',tarray)
+       call gmtime(Z'1ba45680',tarray)
+
+C  ACTUAL ARGUMENT - OCTAL CONSTANT
+
+       call gmtime(O'1',tarray)
+       call gmtime(O'670127',tarray)
+       call gmtime(O'12345670127',tarray)
+
+C  ACTUAL ARGUMENT - BINARY CONSTANT
+
+       call gmtime(B"1",tarray)
+       call gmtime(B"1010100",tarray)
+       call gmtime(B"11010010110110010101011001101010",tarray)
+
+       end 

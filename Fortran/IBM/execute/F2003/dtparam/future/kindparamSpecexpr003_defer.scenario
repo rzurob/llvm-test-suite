@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/typeparam/kindparamSpecexpr003_defer.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)kindparamSpecexpr003_defer.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = kindparamSpecexpr003_defer$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = kindparamSpecexpr003_defer$(OBJ)
+#OUTPUT    = kindparamSpecexpr003_defer$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = kindparamSpecexpr003_defer$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

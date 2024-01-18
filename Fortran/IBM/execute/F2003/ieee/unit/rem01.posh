@@ -1,0 +1,17 @@
+	#!/bin/ksh
+
+	test -f /etc/issue  && linuxDist=`whichLx`
+
+	case `isAIX`.$linuxDist in
+	   0.*) echo  aix
+        	 xldiff $1.out $TR_SRC/$1.vf -o "-i" ;;  # AIX
+	   1.1) echo rhel
+        	 diff $1.out $TR_SRC/$1.vfr;;  # RedHat Enterprise Linux
+	   1.0) echo suse
+        	 diff $1.out $TR_SRC/$1.vfl  ;;  # SuSE Linux
+
+	   2.*) echo  mac
+        	diff $1.out $TR_SRC/$1.vfm ;;  # MacOSX
+	   *) echo unknownOS ;;  # facilitate debugging: user will eventually get an
+	   #                     # error like `file unknownOS-<testcase>.vf not found'.
+	esac

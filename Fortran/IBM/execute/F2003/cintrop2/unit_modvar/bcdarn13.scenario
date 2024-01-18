@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop2/unit_modvar/bcdarn13.scenario
+#FEATURE   = cintrop2 tests - regression run bucket
+#CREATOR   = CPR&SH&ST Manual conversion
+#DATE      = 20050303
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT=bgl, cbe_smp, aix
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF95_R_COMPLINK
+#INPUT     = $(tcasedir)bcdarn13.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_OPTIMIZE_FOR_SMP)
+#STDERR    = bcdarn13.err
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = bcdarn13.err $($(tcasedir)bcdarn13$(product)vf1)
+#ENDCMD
+
+#CMD       = XLF95_R_COMPLINK
+#INPUT     = $(tcasedir)bcdarn13.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qmixed $(OPT_OPTIMIZE_FOR_SMP)
+#STDERR    = bcdarn13.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = bcdarn13.err $($(tcasedir)bcdarn13$(product)vf2)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

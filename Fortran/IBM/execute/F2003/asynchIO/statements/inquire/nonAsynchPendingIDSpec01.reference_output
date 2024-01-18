@@ -1,0 +1,4 @@
+ INQUIRE(ASYNCHRONOUS=no,ID= 6543 ) < 226 > 1525-226 There is no outstanding asynchronous data transfer 6543 specified by the ID= specifier. The program will recover by ignoring the INQUIRE statement.
+                                                                                                   
+ INQUIRE(ID= 6543 ) < 226 > 1525-226 There is no outstanding asynchronous data transfer 6543 specified by the ID= specifier. The program will recover by ignoring the INQUIRE statement.
+                                                                                                   

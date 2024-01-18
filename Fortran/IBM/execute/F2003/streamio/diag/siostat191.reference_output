@@ -1,0 +1,1 @@
+1525-191 The RECL= specifier in the OPEN statement for unit 11 is not allowed because the ACCESS= specifier is set to STREAM.  The program will recover by ignoring the RECL= specifier.

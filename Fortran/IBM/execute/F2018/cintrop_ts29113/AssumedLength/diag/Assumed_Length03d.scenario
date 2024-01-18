@@ -1,0 +1,44 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = C Interop: Assumed-length Character arguments  (405423)
+#COMPONENT  = xlftest.cinterop_ts29113.assumed_length
+#DATE       = February 06, 2015
+#CREATOR    = Umme Hunny
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD          = XLC_COMPILE
+#INPUT        = $(tcasedir)/Assumed_Length03dc.c
+#OUTPUT       = Assumed_Length03dc$(OBJ)
+#OPTS         = $(C_COMPILER_OPTS) -I$(xlf_include)
+#ENDCMD
+
+#CMD          = F_COMPILE
+#INPUT        = $(tcasedir)/Assumed_Length03df.f
+#OUTPUT       = Assumed_Length03df$(OBJ)
+#ENDCMD
+
+#CMD          = F_LINK
+#INPUT        = Assumed_Length03dc$(OBJ) Assumed_Length03df$(OBJ)
+#OUTPUT       = Assumed_Length03df$(EXE)
+#ENDCMD
+
+#CMD          = RUN
+#INPUT        = Assumed_Length03df$(EXE)
+#STDOUT       = Assumed_Length03d.out
+#STDERR       = Assumed_Length03d.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)Assumed_Length03d$(product)vf) Assumed_Length03d.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

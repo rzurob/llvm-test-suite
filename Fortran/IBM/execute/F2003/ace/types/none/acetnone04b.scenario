@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetnone04b.scenario
+#FEATURE	= Array constructor enhancement - no type specifier, various KINDs
+#CREATOR	= DF Manual Update
+#DATE		= 20060726
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetnone04.f
+#OUTPUT		= acetnone04$(OBJ)
+#OPTS		= $(OPT_INTSIZE_4)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetnone04$(OBJ)
+#OUTPUT		= acetnone04$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetnone04$(EXE)
+#STDOUT		= acetnone04.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

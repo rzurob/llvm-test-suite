@@ -1,0 +1,36 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       kindArgUbound3.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       07-05-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)kindArgUbound3.f
+#OUTPUT= kindArgUbound3$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  kindArgUbound3$(OBJ)
+#OUTPUT= kindArgUbound3$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  kindArgUbound3$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

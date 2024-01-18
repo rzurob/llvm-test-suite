@@ -1,0 +1,35 @@
+#!/bin/ksh
+
+rm -f newStreamFile
+echo 'Compiling Fortran files: ===Diagnostic Test Case: test language level==='
+echo ${COMPILER} ${TR_SRC}/$1.f ${OPTIONS} 2>$1.out
+${COMPILER} ${TR_SRC}/$1.f ${OPTIONS} 2>$1.out
+
+echo ${OPTIONS} | grep "qsmp"
+RC=$?
+
+if [ $RC = 0 ]
+then
+  xldiff $1.out ${TR_SRC}/$1.vf1
+  RC=$?
+  if [ $RC = 0 ]
+  then
+    echo 'Verification successful'
+  else
+    echo 'Verification failed'; exit $RC
+  fi
+else
+  xldiff $1.out ${TR_SRC}/$1.vf2
+  RC=$?
+  if [ $RC = 0 ]
+  then
+    echo 'Verification successful'
+  else
+    echo 'Verification failed'; exit $RC
+  fi
+fi
+
+rm -f *.out
+rm -f *.mod
+rm -f newStreamFile
+exit 0

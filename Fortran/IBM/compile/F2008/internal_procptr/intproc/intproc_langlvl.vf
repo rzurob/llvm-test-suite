@@ -1,0 +1,6 @@
+"intproc_langlvl.f", line 40.16: 1518-362 (L) intsub is an internal procedure. Internal procedures are not permitted as actual arguments by the Fortran 2003 standard.
+"intproc_langlvl.f", line 41.24: 1518-362 (L) intsub is an internal procedure. Internal procedures are not permitted as actual arguments by the Fortran 2003 standard.
+"intproc_langlvl.f", line 43.3: 1518-379 (L) An internal procedure is not permitted as the target of a procedure pointer assignment statement by the Fortran 2003 standard.
+"intproc_langlvl.f", line 44.22: 1518-362 (L) intsub is an internal procedure. Internal procedures are not permitted as actual arguments by the Fortran 2003 standard.
+** intproc_langlvl   === End of Compilation 1 ===
+1501-510  Compilation successful for file intproc_langlvl.f.

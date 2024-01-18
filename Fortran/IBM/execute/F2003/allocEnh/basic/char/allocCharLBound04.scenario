@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/basic/char/allocCharLBound04.scenario
+#FEATURE	= Intrinsic Assignment -- Basic Tests: CHARACTER Intrinsic Type
+#CREATOR	= GM Manual Creation
+#DATE		= 20060912
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)allocCharLBound04.f
+#OUTPUT		= allocCharLBound04$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= allocCharLBound04$(OBJ)
+#OUTPUT		= allocCharLBound04$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= allocCharLBound04$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

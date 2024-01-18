@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/ArraySections/c618d2.scenario
+#FEATURE   = 353925
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20080710
+#TEST_TYPE = Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)c618d2.f
+#VALIDRCS  = 1
+#STDERR    = c618d2.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)c618d2$(product)vf) c618d2.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

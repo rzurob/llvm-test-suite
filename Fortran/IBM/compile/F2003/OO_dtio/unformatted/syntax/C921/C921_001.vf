@@ -1,0 +1,11 @@
+** m1   === End of Compilation 1 ===
+"C921_001.f", line 112.3: 1512-127 (E) The ADVANCE= specifier can only be specified for a format-directed, external, sequential or stream, READ or WRITE statement.  Keyword is ignored.
+"C921_001.f", line 113.3: 1512-127 (E) The ADVANCE= specifier can only be specified for a format-directed, external, sequential or stream, READ or WRITE statement.  Keyword is ignored.
+"C921_001.f", line 114.3: 1512-127 (E) The ADVANCE= specifier can only be specified for a format-directed, external, sequential or stream, READ or WRITE statement.  Keyword is ignored.
+"C921_001.f", line 115.3: 1512-127 (E) The ADVANCE= specifier can only be specified for a format-directed, external, sequential or stream, READ or WRITE statement.  Keyword is ignored.
+** c921_001   === End of Compilation 2 ===
+** readunformatted   === End of Compilation 3 ===
+** writeunformatted   === End of Compilation 4 ===
+** formattedread   === End of Compilation 5 ===
+** formattedwrite   === End of Compilation 6 ===
+1501-510  Compilation successful for file C921_001.f.

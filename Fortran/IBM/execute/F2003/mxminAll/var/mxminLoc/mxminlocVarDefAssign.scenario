@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/mxminAll/var/mxminLoc/mxminlocVarDefAssign.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mxminlocVarDefAssign.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = mxminlocVarDefAssign$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = mxminlocVarDefAssign$(OBJ)
+#OUTPUT    = mxminlocVarDefAssign$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminlocVarDefAssign$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

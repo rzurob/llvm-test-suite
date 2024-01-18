@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/abstracti/abstracti024l_dlp_dpv_ra.scenario
+#FEATURE	= Derived Type Parameters + Abstract Interface Tests
+#CREATOR	= Glen Mateer (derived from work by automated conversion script)
+#DATE		= 20071030
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS       = -qdebug=allowrpdt
+#INPUT		= $(tcasedir)abstracti024l_dlp_dpv_ra.f
+#OUTPUT		= abstracti024l_dlp_dpv_ra$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= abstracti024l_dlp_dpv_ra$(OBJ)
+#OUTPUT		= abstracti024l_dlp_dpv_ra$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= abstracti024l_dlp_dpv_ra$(EXE)
+#STDOUT		= abstracti024l_dlp_dpv_ra.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= abstracti024l_dlp_dpv_ra.out	\
+			  $($(tcasedir)abstracti024l_dlp_dpv_ra$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

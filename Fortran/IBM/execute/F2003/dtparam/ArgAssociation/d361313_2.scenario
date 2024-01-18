@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/ArgAssociation/d361313_2.scenario
+#FEATURE   = 361232
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20090119
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d361313_2.f
+#OUTPUT    = d361313_2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d361313_2$(OBJ)
+#OUTPUT    = d361313_2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d361313_2$(EXE)
+#STDOUT    = d361313_2.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)d361313_2$(product)vf) d361313_2.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

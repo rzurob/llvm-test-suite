@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_procptr/CrossFeatures2/PtrAssignProcNameTypBnd.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_procptr/*
+#DATE      = 20071011
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)PtrAssignProcNameTypBnd.f
+#OUTPUT= PtrAssignProcNameTypBnd$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  PtrAssignProcNameTypBnd$(OBJ)
+#OUTPUT= PtrAssignProcNameTypBnd$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  PtrAssignProcNameTypBnd$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME	 = OO_type/abstract/fabst002d.scenario
+#FEATURE = OO_type tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD	= F_COMPILE
+#INPUT	= $(tcasedir)fabst002d.f
+#OUTPUT	= fabst002d$(OBJ)
+#OPTS	= $(OPT_FREE_SOURCE_FORM)
+#STDERR	= fabst002d.err
+#VALIDRCS = $(RC_FAIL)
+#ENDCMD
+
+#CMD	= XLDIFF
+#INPUT	= fabst002d.err $($(tcasedir)fabst002d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

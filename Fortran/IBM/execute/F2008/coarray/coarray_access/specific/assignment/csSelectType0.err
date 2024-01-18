@@ -1,0 +1,18 @@
+Exception: reason = 1
+Traceback:
+Line     ? Displ 000000F8  Ast_substring_type::Ast_substring_type(Ast_base_type*,Ast_base_type*,int,int)
+Line     ? Displ 00006618  p3_fexp(int,int,int)
+Line     ? Displ 00000264  process_non_terminal3(int)
+Line     ? Displ 000002DC  pass3()
+Line     ? Displ 00000304  get_fpo()
+Line     ? Displ 000000C4  ftphas1()
+Line     ? Displ 000001FC  ftroot()
+Line     ? Displ 0000155C  ftmain(ParamVaryingChar,int&)
+Line     ? Displ 000000AC  f8ent
+Line     ? Displ 000002C4  main
+
+"/gsa/tlbgsa/home/d/f/dforster/tcd/coarray_access/specific/assignment/csSelectType.f", line 132.26: 1514-192 (S) Arrays with the ALLOCATABLE or POINTER attribute must be declared with deferred-shape spec lists.
+"/gsa/tlbgsa/home/d/f/dforster/tcd/coarray_access/specific/assignment/csSelectType.f", line 142.19: 1516-036 (S) Entity v has undefined type.
+/gsa/tlbgsa/projects/x/xlcmpbld/run/xlf/dev/aix/daily/101015/usr/bin/.orig/xlf2003_r: 1501-230 (S) Internal compiler error; please contact your Service Representative. For more information visit:
+http://www.ibm.com/support/docview.wss?uid=swg21110810
+1501-511  Compilation failed for file csSelectType.f.

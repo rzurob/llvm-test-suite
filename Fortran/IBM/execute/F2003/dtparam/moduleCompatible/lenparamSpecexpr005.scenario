@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = lenparamSpecexpr005.scenario
+#FEATURE   =
+#CREATOR   = MZ adapted from F2003/dtparam/typeparam/lenparamSpecexpr005.f
+#DATE      = 20100504
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_ALT_COMPILE
+#INPUT     = $(tcasedir)lenparamSpecexpr005_mod.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = lenparamSpecexpr005_mod$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)lenparamSpecexpr005_main.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = lenparamSpecexpr005_main$(OBJ)
+#ENDCMD
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = lenparamSpecexpr005_mod$(OBJ) lenparamSpecexpr005_main$(OBJ)
+#OUTPUT    = lenparamSpecexpr005$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = lenparamSpecexpr005$(EXE)
+#STDOUT    = lenparamSpecexpr005.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = lenparamSpecexpr005.out $($(tcasedir)lenparamSpecexpr005$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

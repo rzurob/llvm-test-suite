@@ -1,0 +1,12 @@
+ start
+ b - base:  100
+ e - child: 101 >x<
+ calling old implementation to copy b; not expecting runtime error message
+ b2 - base:  100
+ calling old implementation to copy e; not expecting runtime error message
+ e2 - child: 101 >x<
+ c - grandchild(1,*): 99 >z< 3 3 >abc< 3 123 45 67 89 3 >def<
+ local copy; no failure expected
+ d - grandchild(1,*): 99 >z< 3 3 >abc< 3 123 45 67 89 3 >def<
+ calling old implementation to copy; expecting runtime error message
+1525-239 XL Fortran detected a mismatch in a compiler-generated routine. If your code contains compilation units compiled with XL Fortran V11.1 or V12.1, recompile them with the latest XL Fortran compiler.

@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=ptrassign031.scenario
+#FEATURE = Pointer Assignment Enhancement
+#CREATOR = Michael Selvanayagam
+#DATE    = 20060331
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ptrassign031.f
+#OUTPUT    = ptrassign031$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = ptrassign031$(OBJ)
+#OUTPUT    = ptrassign031$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ptrassign031$(EXE)
+#STDERR    = ptrassign031.err
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

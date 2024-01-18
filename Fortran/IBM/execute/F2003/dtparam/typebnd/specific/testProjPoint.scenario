@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/typebnd/specific/testProjPoint.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)testProjPoint.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = testProjPoint$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = testProjPoint$(OBJ)
+#OUTPUT    = testProjPoint$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = testProjPoint$(EXE)
+#STDIN     = $(tcasedir)testRun1.in
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = testProjPoint$(EXE)
+#STDIN     = $(tcasedir)testRun2.in
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = testProjPoint$(EXE)
+#STDIN     = $(tcasedir)testRun3.in
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

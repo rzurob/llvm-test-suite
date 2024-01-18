@@ -1,0 +1,932 @@
+<html><head><title>IT2 - C Interop: Assumed-length Character arguments</title></head><body><div class="Section1">
+<table width="100%" cellspacing="0" cellpadding="0" style="BACKGROUND: rgb(175,191,195) 0% 50%; WIDTH: 100%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-BOTTOM: 2.5pt; WIDTH: 100%; PADDING-TOP: 2.5pt">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; COLOR: navy; FONT-FAMILY: Helvetica">Document Control Information:</span></strong><span style="FONT-SIZE: 10pt; COLOR: navy; FONT-FAMILY: Helvetica"> </span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            <p>The official version of this document is kept in CMVC in the <span style="FONT-WEIGHT: bold; TEXT-DECORATION: underline">%CMVC_Family%</span> family, release <span style="FONT-WEIGHT: bold; TEXT-DECORATION: underline">%CMVC_Release%</span>, component <span style="FONT-WEIGHT: bold; TEXT-DECORATION: underline">%CMVC_Component%</span>, file <span style="FONT-WEIGHT: bold; COLOR: rgb(255,102,102); TEXT-DECORATION: underline">%CMVC_PathName%</span>. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.<br />
+            <br />
+            CMVC Extraction Information: %W% %H% %I% sccsid<br />
+            </p>
+            <p>CMVC_Family=aix, CMVC_Release=test.dev, CMVC_Component=test.values<br />
+            </p>
+            <p>This document is IBM Confidential.<span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><u1:p></u1:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<table width="100%" cellspacing="3" cellpadding="0" style="BACKGROUND: rgb(255,204,153) 0% 50%; WIDTH: 100%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td valign="top" style="PADDING-RIGHT: 1pt; PADDING-LEFT: 1pt; PADDING-BOTTOM: 1pt; PADDING-TOP: 1pt">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Reviewers</span></strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">: </span><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Please click the 'Reviewed' check-box beside your name to indicate your participation in the review.</span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN-BOTTOM: 6pt" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN-BOTTOM: 12pt" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">%Reviews%</span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<u1:p></u1:p><u1:p></u1:p><u1:p></u1:p><u1:p></u1:p><u1:p></u1:p><u1:p></u1:p>
+<table width="100%" cellspacing="0" cellpadding="0" style="BACKGROUND: rgb(224,255,191) 0% 50%; WIDTH: 100%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="21%" valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-BOTTOM: 2.5pt; WIDTH: 21.22%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p>Document Title<u1:p></u1:p></span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td width="78%" valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-BOTTOM: 2.5pt; WIDTH: 78.78%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica">%Document_Name%%Note{or IT2 for name of the feature you are testing}%</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="21%" valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-BOTTOM: 2.5pt; WIDTH: 21.22%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">CMVC Feature Number:</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td width="78%" valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-BOTTOM: 2.5pt; WIDTH: 78.78%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica">%CMVC_Feature%</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Feature Title:</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica">%Note{Feature Title (please remember to change the title in the raw HTML, otherwise it shows up as ITSample in Web Review)}% </span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Author(s):</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica">%Authors% </span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Mandatory Reviewers:<u1:p></u1:p></span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">(Approver)</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica">%Note{These reviewers have technical approval authority and MUST approve this IT2. Generally, only list reviewers from the Component Reviewer list whose component is directly affected by this feature. Use Access Control to add or delete a reviewer}%</span></strong></p>
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica">%Approvers%</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Component Reviewers:(optional participation)</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica">%Note{ These groups must be made aware of the IT2, assign one person representing each. The names are suggested contacts (</span></strong><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica">The component leads directly affected by AIX/Linux are in the list by default</span></strong><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica">):</span></strong></p>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial" color="#0000ff">Fortran FE, ASTI, PLIX, and related tools/libraries/driver:</font></span></div>
+                </li>
+            </ul>
+            <p>&nbsp;</p>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">AIX, PLIX - Rafik Zurob (</font><a href="mailto:rzurob@ca.ibm.com"><font color="#0000ff">rzurob@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">Linux - Xing Xue (</font><a href="mailto:xingxue@ca.ibm.com"><font color="#0000ff">xingxue@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">BG/L - Daniel Chen (</font><a href="mailto:cdchen@ca.ibm.com"><font color="#0000ff">cdchen@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">CELL - Kelvin Li (</font><a href="mailto:kli@ca.ibm.com"><font color="#0000ff">kli@ca.ibm.com</font></a><font color="#0000ff">) </font></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><span><font size="2"><font color="#0000ff"><font face="Arial">PL/X Development: </font><font face="Arial">Kirk Crane (<a href="mailto:krcrane@ca.ibm.com">krcrane@ca.ibm.com</a>)</font></font></font></span></div>
+                </li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial" color="#0000ff">TPO and associated tools/libraries (libxlopt, SMPRT, MASS):</font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">AIX - Edwin Chan (<a href="mailto:edwinc@ca.ibm.com)">edwinc@ca.ibm.com)</a></font></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font color="#0000ff">Linux - Tommy Wong (<a href="mailto:tomwong@ca.ibm.com">tomwong@ca.ibm.com</a>)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">zOS - Chris Miclea (<a href="mailto:cmiclea@ca.ibm.com">cmiclea@ca.ibm.com</a>)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">BG - Damien Bonaventure (</font><a href="mailto:damien@ca.ibm.com"><font color="#0000ff">damien@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">CELL - Amy Wang (</font><a href="mailto:aktwang@ca.ibm.com"><font color="#0000ff">aktwang@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial" color="#0000ff">TOBEY and associated tools/libraries: (dis, libxl, bolt)</font></span></div>
+                </li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p align="left" class="MsoNormal"><span><font face="Arial" color="#0000ff">AIX - Christopher Lapkowski</font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">Linux - Irina Rada (<a href="mailto:irinar@ca.ibm.com">irinar@ca.ibm.com</a>)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">zOS - Chwan-Hang Lee (</font><a href="mailto:chwan@ca.ibm.com"><font color="#0000ff">chwan@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">BG - Damien Bonaventure (damien@ca.ibm.com), Leon Ding (Xiaoliang Ding/Piscataway/IBM@IBMUS, </font><a href="mailto:dingxi@us.ibm.com"><font color="#0000ff">dingxi@us.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">CELL - Dickson Chau (</font><a href="mailto:dickchau@ca.ibm.com"><font color="#0000ff">dickchau@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">dis (AIX/Linux) - Ian McIntosh (</font><a href="mailto:ianm@ca.ibm.com"><font color="#0000ff">ianm@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><font color="#0000ff"><span><font face="Arial">WCode: </font><font face="Arial">Roland Froese (<a href="mailto:froese@ca.ibm.com">froese@ca.ibm.com</a>) </font></span></font></div>
+                </li>
+            </ul>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial" color="#0000ff">Information Development:</font></span></div>
+                </li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">C/C++ - Kathleen Dowling (</font><a href="mailto:dowling@ca.ibm.com"><font color="#0000ff">dowling@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">Fortran - Joe Sobura (</font><a href="mailto:sobura@ca.ibm.com"><font color="#0000ff">sobura@ca.ibm.com</font></a><font color="#0000ff">) </font></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial" color="#0000ff">Customer Service and Support:</font></span></div>
+                </li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">AIX/Linux - Zoran Kulina (</font><a href="mailto:zoran@ca.ibm.com"><font color="#0000ff">zoran@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">Cell - Sean Kennedy (</font><a href="mailto:seanpk@ca.ibm.com"><font color="#0000ff">seanpk@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font size="2" color="#0000ff">Youssef Himo (</font><a href="mailto:himo@ca.ibm.com"><font size="2" color="#0000ff">himo@ca.ibm.com</font></a><font size="2" color="#0000ff">)</font></font></span></p>
+            </blockquote>
+            <ul>
+                <li>
+                <div align="left" class="MsoNormal"><span><font face="Arial"><font size="2" color="#0000ff">Compiler Enablement:Dwayne Moore (</font><a href="mailto:dwayne@ca.ibm.com"><font size="2" color="#0000ff">dwayne@ca.ibm.com</font></a><font size="2" color="#0000ff">) </font></font></span></div>
+                </li>
+                <li>
+                <div align="left" class="MsoNormal"><span><font face="Arial"><font size="2"><font color="#0000ff">Fortran Test:Kobi Vinayagamoorthy (<a href="mailto:kobiv@ca.ibm.com">kobiv@ca.ibm.com</a>) </font></font></font></span></div>
+                </li>
+                <li>
+                <div align="left" class="MsoNormal"><font size="2"><font color="#0000ff"><span><font face="Arial">C/C++ Test:</font><font face="Arial"> </font></span><span></span><span><font face="Arial">Adrian Gatea (system p) (<a href="mailto:gatea@ca.ibm.com">gatea@ca.ibm.com</a>) </font></span></font></font></div>
+                </li>
+                <li class="MsoNormal"><span><font size="2"><font color="#0000ff"><span>zOS C/C++ Test: </span>Leon L Kiriliuk (z/OS) (</font></font><a href="mailto:leonk@ca.ibm.com)"><font size="2" color="#0000ff">leonk@ca.ibm.com)</font></a></span> </li>
+                <li class="MsoNormal"><font size="2"><font color="#0000ff"><span><font face="Arial">PL/X Test: </font></span><span><font face="Arial">Anne Wylie (<a href="mailto:wylie@ca.ibm.com">wylie@ca.ibm.com</a>) </font></span></font></font></li>
+                <li class="MsoNormal"><span><font size="2" face="Arial" color="#0000ff">Build and Packaging Team: </font></span></li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font size="2" color="#0000ff">AIX - Chris Taylor (</font><a href="mailto:cntaylor@ca.ibm.com"><font size="2" color="#0000ff">cntaylor@ca.ibm.com</font></a><font size="2" color="#0000ff">) </font></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font size="2" color="#0000ff">Linux - Viktor Ganich (</font><a href="mailto:vganich@ca.ibm.com"><font size="2" color="#0000ff">vganich@ca.ibm.com</font></a><font size="2" color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font size="2" color="#0000ff">BGL - Steven Chen (</font><a href="mailto:stevchen@ca.ibm.com"><font size="2" color="#0000ff">stevchen@ca.ibm.com</font></a><font size="2" color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font size="2" color="#0000ff">Cell - Kevin Yuen (</font><a href="mailto:kchyuen@ca.ibm.com"><font size="2" color="#0000ff">kchyuen@ca.ibm.com</font></a><font size="2" color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font size="2" color="#0000ff">z/OS - Steve Chen (</font><a href="mailto:schen@ca.ibm.com"><font size="2" color="#0000ff">schen@ca.ibm.com</font></a><font size="2" color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font size="2" color="#0000ff">Dale Soldiuk (</font><a href="mailto:soldiuk@ca.ibm.com"><font size="2" color="#0000ff">soldiuk@ca.ibm.com</font></a><font size="2" color="#0000ff">) (Please include Dale as optional on all reviews)</font></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><span><font face="Arial"><font size="2"><font color="#0000ff">Performance Measurement and Analysis Team: John Tam (<a href="mailto:johntam@ca.ibm.com">johntam@ca.ibm.com</a>)</font></font></font></span></div>
+                </li>
+            </ul>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><font size="2"><span><font face="Arial" color="#0000ff">Planning: </font></span><span><font face="Arial"><font color="#0000ff">Mary Chan (</font><a href="mailto:marychan@ca.ibm.com"><font color="#0000ff">marychan@ca.ibm.com</font></a><font color="#0000ff">)</font> </font></span></font></div>
+                </li>
+            </ul>
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica"><span class="GramE"></span>Use Access Control comments to add/delete people from this list.}%<br />
+            <br />
+            %Component_Reviewers%</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Team Reviewers: (optional participation)</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica"><span class="GramE">%Note{</span>List any additional reviewers assigned to the review. These reviewers do not have approval authority. </span></strong><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica">Use Access Control to add or delete a reviewer.</span></strong><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica">}%<u1:p></u1:p><o:p></o:p></span></strong></p>
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica">%Team_Reviewers%<o:p></o:p></span></strong></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN-BOTTOM: 12pt" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><u1:p></u1:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<u1:p></u1:p>
+<table width="100%" cellspacing="0" cellpadding="0" style="BACKGROUND: rgb(184,213,226) 0% 50%; WIDTH: 100%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-BOTTOM: 2.5pt; WIDTH: 100%; PADDING-TOP: 2.5pt">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">IT2 Status: <!-- Start -->For Approval </span><!-- End --></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Approvers Only:</span></strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"> Click on the 'Approve' check-box beside your name in the table below if you agree with the technical and user interface content of this document; not checking your 'approve' check-box signifies you do not approve.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">%Approvals%<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><strong>Approval Comments</strong></span></p>
+<p class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><strong><br />
+</strong></span></p>
+<p>
+<table cellspacing="2" cellpadding="2" style="FONT-SIZE: 12pt; WIDTH: 100%; FONT-FAMILY: Arial; BACKGROUND-COLOR: rgb(200,175,200); TEXT-ALIGN: left">
+    <tbody>
+        <tr>
+            <td style="VERTICAL-ALIGN: top; FONT-FAMILY: Arial"><strong>Access Change History</strong> %Note{Authors: Access Change History will list any changes to the access control done to the document draft. These changes would not be visible in a review. In a review, this section would only list the access changes done to the review itself.<br />
+            Please note that changes to the access control of a review are not automatically reflected in the access control of the draft document.}% </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%CollapsedSection{<strong>Access Change History</strong>}{%Access_Change_History%}%
+<p class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in" class="MsoNormal"><span style="FONT-SIZE: 11pt; FONT-FAMILY: Helvetica"></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<u1:p></u1:p>
+<table width="100%" cellspacing="0" cellpadding="0" style="BACKGROUND: rgb(200,175,200) 0% 50%; WIDTH: 100%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-BOTTOM: 2.5pt; WIDTH: 100%; PADDING-TOP: 2.5pt">
+            <p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong><span style="FONT-SIZE: 14pt; FONT-FAMILY: Helvetica">IT2 Comments</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><!-- Start Overview -->Reviewers, add you IT2 comments in this section.<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><u1:p><o:p></o:p></u1:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">%Note { <o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><u><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">General Comments:<u1:p></u1:p></span></u><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">&lt;<span class="GramE">comments</span>&gt;<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><u><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Comments Specific to Individual Test Cases:<u1:p></u1:p></span></u><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">
+<list all="" your="" scenarios="" here="" eg=""></list>
+<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span lang="PT-BR" style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">xxxxx001f.scenario<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span lang="PT-BR" style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">xxxxx002f.scenario<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span lang="PT-BR" style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">xxxxx003f.scenario<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><!-- End Overview -->xxxxx004f.scenario<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">...<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">}%</span></p>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><br />
+</span></p>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><strong>Dummy argument type: Scalar </strong><br />
+</span></p>
+<br />
+<table cellspacing="1" border="1" cols="6">
+    <colgroup><col></col><col></col><col></col><col></col><col></col><col></col></colgroup>
+    <tbody>
+        <tr>
+            <td align="LEFT"><strong>Scenario name </strong></td>
+            <td align="LEFT"><strong>Test objective </strong></td>
+            <td align="LEFT"><strong>Call Type</strong></td>
+            <td align="LEFT"><strong>Actual argument </strong></td>
+            <td align="LEFT"><strong>Tested in C callee </strong></td>
+            <td align="LEFT"><strong>Tested in Fortran callee</strong></td>
+        </tr>
+        <tr>
+            <td align="LEFT">nc_sca_c2f_1.scenario</td>
+            <td align="LEFT">Testing bind(c) calls from main program </td>
+            <td align="LEFT">C-&gt;F, C-&gt;F-&gt;F, C-&gt;F-&gt;C </td>
+            <td align="LEFT">CFI</td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content </td>
+            <td align="LEFT">LEN, RANK, CONTENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT">nc_sca_c2f_intent_1.scenario</td>
+            <td align="LEFT">Testing bind(c) calls when dummy has intent </td>
+            <td align="LEFT">C-&gt;F, C-&gt;F-&gt;F, C-&gt;F-&gt;C</td>
+            <td align="LEFT">CFI</td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content </td>
+            <td align="LEFT">N/A</td>
+        </tr>
+        <tr>
+            <td align="LEFT">nc_sca_c2f_opt_1.scenario</td>
+            <td align="LEFT">Testing bind(c) calls when dummy is optional </td>
+            <td align="LEFT">C-&gt;F, C-&gt;F-&gt;F, C-&gt;F-&gt;C</td>
+            <td align="LEFT">CFI</td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content Cor descriptor is null</td>
+            <td align="LEFT">LEN, RANK, CONTENT, PRESENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT">nc_sca_const_f2c_1.scenario</td>
+            <td align="LEFT">Scalar character literals used as actual argument</td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT">Scalar character constants<br />
+            </td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content </td>
+            <td align="LEFT">LEN, RANK, CONTENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT">nc_sca_f2c_1.scenario</td>
+            <td align="LEFT">Testing bind(c) subroutine from main program </td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT">Scalar </td>
+            <td align="LEFT">base_addr, CFI_address, elem_len, attribute, type, rank, content </td>
+            <td align="LEFT">LEN, RANK, CONTENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT">nc_sca_f2c_ex_1.scenario</td>
+            <td align="LEFT">Testing bind(c) calls from external subroutine </td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F </td>
+            <td align="LEFT">Scalar </td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content </td>
+            <td align="LEFT">LEN, RANK, CONTENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT">nc_sca_f2c_intent_1.scenario</td>
+            <td align="LEFT">Testing bind(c) calls when dummy has intent </td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT">Scalar </td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank</td>
+            <td align="LEFT">N/A</td>
+        </tr>
+        <tr>
+            <td align="LEFT">nc_sca_f2c_is_r1.scenario</td>
+            <td align="LEFT">Calling  bind(c) from internal subroutine</td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT">Scalar </td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content </td>
+            <td align="LEFT">LEN, RANK, CONTENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT">nc_sca_f2c_mod_1.scenario</td>
+            <td align="LEFT">Testing bind(c)  from  module subprogram</td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT">Scalar </td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content </td>
+            <td align="LEFT">LEN, RANK, CONTENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT">nc_sca_f2c_mod_func_1.scenario</td>
+            <td align="LEFT">Bind(c) is module subprogram</td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT">Scalar </td>
+            <td align="LEFT">base_addr, CFI_address, elem_len, attribute, type, rank, content </td>
+            <td align="LEFT">LEN, RANK, CONTENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT">nc_sca_f2c_opt_1.scenario</td>
+            <td align="LEFT">Testing bind(c) calls when dummy is optional </td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT">None</td>
+            <td align="LEFT">CFI descriptor is null</td>
+            <td align="LEFT">PRESENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT">nc_sca_func_f2c_1.scenario</td>
+            <td align="LEFT">Testing bind(c) function </td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT">Scalar </td>
+            <td align="LEFT">base_addr, CFI_address, elem_len, attribute, type, rank, content </td>
+            <td align="LEFT">LEN, RANK, CONTENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT">nc_sca_sca_var_f2c_1.scenario</td>
+            <td align="LEFT">Scalar character variables used as actual argument </td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT">Scalar with/ with out attributes,<br />
+            derived type scalar component, <br />
+            array element, <br />
+            expressions involving character variables, <br />
+            function return values (intrinsic/ user defined) )</td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content </td>
+            <td align="LEFT">LEN, RANK, CONTENT</td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><strong><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+Dummy argument type: Explicit shape array</strong></span><br />
+<br />
+<table cellspacing="1" border="1" cols="6">
+    <colgroup><col></col><col></col><col></col><col></col><col></col><col></col></colgroup>
+    <tbody>
+        <tr>
+            <td align="LEFT"><strong>Scenario name </strong></td>
+            <td align="LEFT"><strong>Test objective </strong></td>
+            <td align="LEFT"><strong>Call Type</strong></td>
+            <td align="LEFT"><strong>Actual argument </strong></td>
+            <td align="LEFT"><strong>Tested in C callee </strong></td>
+            <td align="LEFT"><strong>Tested in Fortran callee</strong></td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_esa_r1_const_f2c_1.scenario</td>
+            <td align="LEFT">Scalar character literals used as actual argument</td>
+            <td align="LEFT">F-&gt;C </td>
+            <td align="LEFT">Scalar character constants </td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content </td>
+            <td align="LEFT">N/A</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_sca_ar_c2f_1.scenario</td>
+            <td align="LEFT">Testing bind(c) calls from main </td>
+            <td align="LEFT">C-&gt;F, C-&gt;F-&gt;F, C-&gt;F-&gt;C </td>
+            <td align="LEFT">CFI</td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content </td>
+            <td align="LEFT">LEN, RANK, CONTENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_esa_c2f_r1_1.scenario</td>
+            <td align="LEFT">Testing bind(c) calls from main </td>
+            <td align="LEFT">C-&gt;F, C-&gt;F-&gt;F, C-&gt;F-&gt;C </td>
+            <td align="LEFT">CFI</td>
+            <td align="LEFT">base_addr, CFI_address, elem_len, attribute, type, rank, content </td>
+            <td align="LEFT">LEN,LBOUND,UBOUND,SIZE, CONTENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_esa_f2c_mod_r1_1.scenario</td>
+            <td align="LEFT">Testing bind(c)  from  module subprogram</td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F </td>
+            <td align="LEFT">Explicit Shape </td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, contiguity, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">LEN,LBOUND,UBOUND,SIZE, CONTENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_esa_f2c_r1_2.scenario</td>
+            <td align="LEFT">Testing bind(c) subroutine from main program </td>
+            <td align="LEFT">F&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F </td>
+            <td align="LEFT">Explicit Shape </td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, contiguity, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">LEN,LBOUND,UBOUND,SIZE, CONTENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_esa_f2c_mod_func_r1_1.scenario</td>
+            <td align="LEFT">Bind(c) is module subprogram</td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F </td>
+            <td align="LEFT">Explicit Shape </td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, contiguity, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">LEN,LBOUND,UBOUND,SIZE, CONTENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_esa_f2c_ex_r1_1.scenario</td>
+            <td align="LEFT">Testing bind(c) calls from external subroutine </td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT">Explicit Shape </td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, contiguity, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">LEN,LBOUND,UBOUND,SIZE, CONTENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_esa_f2c_is_r1_1.scenario</td>
+            <td align="LEFT">Calling  bind(c) from internal subroutine</td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT">Explicit Shape </td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, contiguity, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">LEN,LBOUND,UBOUND,SIZE, CONTENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_esa_f2c_r1_1.scenario</td>
+            <td align="LEFT">Testing explicit shape array variable as actual argument </td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT">Explicit Shape </td>
+            <td align="LEFT">base_addr, CFI_address, elem_len, attribute, type, rank, content </td>
+            <td align="LEFT">LEN,LBOUND,UBOUND,SIZE, CONTENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_esa_r1_1_arr_f2c_1.scenario</td>
+            <td align="LEFT">Array character variables as actual argument</td>
+            <td align="LEFT">F-&gt;C</td>
+            <td align="LEFT">complete array, array section, array constructor, array expression, derived type component</td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, CFI_address (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">N/A</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_esa_r2_2_arr_f2c_1.scenario</td>
+            <td align="LEFT">Different types of array variables are tested when dummy is rank 2 </td>
+            <td align="LEFT">F-&gt;C</td>
+            <td align="LEFT">complete array, array section, array constructor, array expression, derived type component</td>
+            <td align="LEFT">base_addr, CFI_address, elem_len, attribute, type, rank, content </td>
+            <td align="LEFT">N/A</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_esa_r1_sca_var_f2c_1.scenario</td>
+            <td align="LEFT">Scalar character variables used as actual argument </td>
+            <td align="LEFT">F-&gt;C</td>
+            <td align="LEFT">Scalar character variable</td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content </td>
+            <td align="LEFT">N/A</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_esa_r1_2_arr_f2c_1.scenario</td>
+            <td align="LEFT">Different types of array variables are tested when dummy is rank 1</td>
+            <td align="LEFT">F-&gt;C</td>
+            <td align="LEFT">complete array, array section, array constructor, array expression, derived type component</td>
+            <td align="LEFT">base_addr, CFI_address, elem_len, attribute, type, rank, content </td>
+            <td align="LEFT">N/A</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_esa_r2_3_arr_f2c_1.scenario</td>
+            <td align="LEFT">Different types of array variables are tested when dummy is rank 2</td>
+            <td align="LEFT">F-&gt;C</td>
+            <td align="LEFT">complete array, array section, array constructor, array expression, derived type component</td>
+            <td align="LEFT">base_addr, CFI_address, elem_len, attribute, type, rank, content </td>
+            <td align="LEFT">N/A</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_esa_r1_3_arr_f2c_1.scenario</td>
+            <td align="LEFT">Different types of array variables are tested when dummy is rank 1</td>
+            <td align="LEFT">F-&gt;C</td>
+            <td align="LEFT">complete array, array section, array constructor, array expression, derived type component</td>
+            <td align="LEFT">base_addr, CFI_address, elem_len, attribute, type, rank, content </td>
+            <td align="LEFT">N/A</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_esa_r3_1_arr_f2c_1.scenario</td>
+            <td align="LEFT">Different types of array variables are tested when dummy is rank 3</td>
+            <td align="LEFT">F-&gt;C</td>
+            <td align="LEFT">complete array, array section, array constructor, array expression, derived type component</td>
+            <td align="LEFT">base_addr, CFI_address, elem_len, attribute, type, rank, content </td>
+            <td align="LEFT">N/A</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_esa_r2_1_arr_f2c_1.scenario</td>
+            <td align="LEFT">Different types of array variables are tested when dummy is rank 2</td>
+            <td align="LEFT">F-&gt;C</td>
+            <td align="LEFT">complete array, array section, array constructor, array expression, derived type component</td>
+            <td align="LEFT">base_addr, CFI_address, elem_len, attribute, type, rank, content </td>
+            <td align="LEFT">N/A</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_esa_f2c_opt_r1_1.scenario</td>
+            <td align="LEFT">Testing bind(c) calls when dummy is optional </td>
+            <td align="LEFT">C-&gt;F, C-&gt;F-&gt;F, C-&gt;F-&gt;C</td>
+            <td align="LEFT">None</td>
+            <td align="LEFT">CFI descriptor is null</td>
+            <td align="LEFT">PRESENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_esa_c2f_r1_2.scenario</td>
+            <td align="LEFT">Testing bind(c) calls with rank 1 actual argument </td>
+            <td align="LEFT">C-&gt;F, C-&gt;F-&gt;F, C-&gt;F-&gt;C</td>
+            <td align="LEFT">CFI</td>
+            <td align="LEFT"><br />
+            </td>
+            <td align="LEFT"><br />
+            </td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_esa_f2c_r1_intent_1.scenario</td>
+            <td align="LEFT">Testing bind(c) calls when dummy has intent </td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT">Explicit Shape </td>
+            <td align="LEFT">base_addr, attribute, type, rank,  contiguity, (dimension extent, lower bound)</td>
+            <td align="LEFT"><br />
+            </td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_esa_f2c_submod_r1_1.scenario</td>
+            <td align="LEFT">Testing bind(c) when its submodule subprogram </td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT"><br />
+            </td>
+            <td align="LEFT"><br />
+            </td>
+            <td align="LEFT"><br />
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><strong><br />
+<br />
+Dummy argument type: Assumed size array<br />
+</strong></span><br />
+<span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><strong> </strong></span>
+<table cellspacing="1" border="1" cols="6">
+    <colgroup><col width="325"></col><col></col><col></col><col></col><col></col><col></col></colgroup>
+    <tbody>
+        <tr>
+            <td align="LEFT"><strong>Scenario name </strong></td>
+            <td align="LEFT"><strong>Test objective </strong></td>
+            <td align="LEFT"><strong>Call Type</strong></td>
+            <td align="LEFT"><strong>Actual argument </strong></td>
+            <td align="LEFT"><strong>Tested in C callee </strong></td>
+            <td align="LEFT"><strong>Tested in Fortan callee</strong></td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_asa_c2f_r1_3.scenario</td>
+            <td align="LEFT">Testing bind(c) calls with rank 1 actual argument </td>
+            <td align="LEFT">C-&gt;F, C-&gt;F-&gt;F, C-&gt;F-&gt;C </td>
+            <td align="LEFT">CFI </td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, contiguity, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">LEN, RANK, LBOUND, CONTENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_asa_f2c_r1_intent_2.scenario</td>
+            <td align="LEFT">Testing bind(c) calls with dummy with intent attribute </td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT">Explicit Shape </td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, contiguity, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">?</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_asa_f2c_is_r1_2.scenario</td>
+            <td align="LEFT">Calling  bind(c) from internal subroutine </td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT">Explicit Shape </td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, contiguity, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">LEN, RANK, LBOUND, CONTENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_asa_c2f_r1_2.scenario</td>
+            <td align="LEFT">Testing bind(c) calls with rank 1 actual argument</td>
+            <td align="LEFT">C-&gt;F, C-&gt;F-&gt;F, C-&gt;F-&gt;C</td>
+            <td align="LEFT">complete array, array section, array constructor, array expression, derived type component</td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, contiguity, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">LEN, RANK, LBOUND, CONTENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_asa_f2c_ex_r1_2.scenario</td>
+            <td align="LEFT">Testing bind(c) calls from external subroutine </td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT">Explicit Shape </td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, contiguity, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">LEN, RANK, LBOUND, CONTENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_asa_f2c_mod_func_r1_2.scenario</td>
+            <td align="LEFT">Testing bind(c)  from  module subprogram</td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT">Explicit Shape </td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">LEN, RANK, LBOUND, CONTENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_asa_f2c_mod_r1_2.scenario</td>
+            <td align="LEFT">Testing bind(c)  from  module subprogram</td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT">Explicit Shape </td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">LEN, RANK, LBOUND, CONTENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_asa_f2c_submod_r1_2.scenario</td>
+            <td align="LEFT">Testing bind(c) when its submodule subprogram </td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT">Explicit Shape </td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">LEN, RANK, LBOUND, CONTENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_asa_r1_3_arr_f2c_1.scenario</td>
+            <td align="LEFT">Different types of array variables are tested when dummy is rank 1 </td>
+            <td align="LEFT">F-&gt;C</td>
+            <td align="LEFT">complete array, array section, array constructor, array expression, derived type component</td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, contiguity, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">N/A</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_asa_f2c_r1_1.scenario</td>
+            <td align="LEFT">Different types of array variables are tested when dummy is rank 1 </td>
+            <td align="LEFT">F-&gt;C</td>
+            <td align="LEFT">complete array, array section, array constructor, array expression, derived type component</td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, contiguity, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">N/A</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_asa_r2_1_arr_f2c_1.scenario</td>
+            <td align="LEFT">Different types of array variables are tested when dummy is rank 2</td>
+            <td align="LEFT">F-&gt;C</td>
+            <td align="LEFT">complete array, array section, array constructor, array expression, derived type component</td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, contiguity, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">N/A</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_asa_c2f_r1_1.scenario</td>
+            <td align="LEFT">Testing bind(c) calls with rank 1 actual argument </td>
+            <td align="LEFT">C-&gt;F, C-&gt;F-&gt;F, C-&gt;F-&gt;C </td>
+            <td align="LEFT">complete array, array section, array constructor, array expression, derived type component</td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, contiguity, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">N/A</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_asa_f2c_r1_2.scenario</td>
+            <td align="LEFT">Different types of array variables are tested when dummy is rank 1 </td>
+            <td align="LEFT">F-&gt;C</td>
+            <td align="LEFT">complete array, array section, array constructor, array expression, derived type component</td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, contiguity, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">N/A</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_asa_r2_2_arr_f2c_1.scenario</td>
+            <td align="LEFT">Different types of array variables are tested when dummy is rank 2 </td>
+            <td align="LEFT">F-&gt;C</td>
+            <td align="LEFT">complete array, array section, array constructor, array expression, derived type component</td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, contiguity, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">N/A</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_asa_r1_1_arr_f2c_1.scenario</td>
+            <td align="LEFT">Different types of array variables are tested when dummy is rank 1 </td>
+            <td align="LEFT">F-&gt;C</td>
+            <td align="LEFT">complete array, array section, array constructor, array expression, derived type component</td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, contiguity, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">N/A</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_asa_r1_const_f2c_1.scenario</td>
+            <td align="LEFT">Character constant actual arguments are tested  </td>
+            <td align="LEFT">F-&gt;C</td>
+            <td align="LEFT">Scalar character constant</td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, contiguity, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">N/A</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_asa_f2c_r1_3.scenario</td>
+            <td align="LEFT">Different types of array variables are tested when dummy is rank 1 </td>
+            <td align="LEFT">F-&gt;C</td>
+            <td align="LEFT">complete array, array section, array constructor, array expression, derived type component</td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, contiguity, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">N/A</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_asa_r1_2_arr_f2c_1.scenario</td>
+            <td align="LEFT">Different types of array variables are tested when dummy is rank 1 </td>
+            <td align="LEFT">F-&gt;C</td>
+            <td align="LEFT">complete array, array section, array constructor, array expression, derived type component</td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, contiguity, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">N/A</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_asa_r1_sca_var_f2c_1.scenario</td>
+            <td align="LEFT">Different types of array variables are tested when dummy is rank 1 </td>
+            <td align="LEFT">F-&gt;C</td>
+            <td align="LEFT">Scalar with/ with out attributes,<br />
+            derived type scalar component, <br />
+            array element, <br />
+            expressions involving character variables, <br />
+            function return values (intrinsic/ user defined) )</td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, contiguity, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">N/A</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_asa_f2c_opt_r1_2.scenario</td>
+            <td align="LEFT">Testing bind(c) calls with dummy with optional attribute </td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT">None</td>
+            <td align="LEFT">CFI descriptor is null</td>
+            <td align="LEFT">PRESENT</td>
+        </tr>
+    </tbody>
+</table>
+<span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><strong> <br />
+</strong></span><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><br />
+<br />
+<br />
+Dummy argument type:</span><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><strong> </strong></span>Assumed rank object<br />
+</strong></span><br />
+<span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><strong> </strong></span>
+<table cellspacing="1" border="1" cols="6">
+    <colgroup><col></col><col></col><col></col><col></col><col></col><col></col></colgroup>
+    <tbody>
+        <tr>
+            <td align="LEFT"><strong>Scenario name </strong></td>
+            <td align="LEFT"><strong>Test objective </strong></td>
+            <td align="LEFT"><strong>Call Type</strong></td>
+            <td align="LEFT"><strong>Actual argument </strong></td>
+            <td align="LEFT"><strong>Tested in C callee </strong></td>
+            <td align="LEFT"><strong>Tested in Fortan callee</strong></td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_aro_f2c_mod_func_r1_1.scenario</td>
+            <td align="LEFT">Testing bind(c) when it is called from module subprogram </td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT">Explicit shape array</td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, contiguity, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">LEN, RANK, UBOUND, LBOUND, SIZE</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_aro_arr_f2c_1.scenario</td>
+            <td align="LEFT">Array hrarecter  with different attributes as actual argument sare tested  </td>
+            <td align="LEFT">F-&gt;C, F-F </td>
+            <td align="LEFT">complete array, array section, array constructor, array expression, derived type component</td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, CFI_address (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">LEN, RANK</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_aro_c2f_r1_1.scenario</td>
+            <td align="LEFT">Testing bind(c) calls </td>
+            <td align="LEFT">C-&gt;F, C-&gt;F-&gt;F, C-&gt;F-&gt;C </td>
+            <td align="LEFT">Explicit shape array</td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">LEN, RANK, UBOUND, LBOUND, SIZE</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_aro_f2c_opt_r1_1.scenario</td>
+            <td align="LEFT">Testing bind(c) calls with dummy with optional attribute </td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F </td>
+            <td align="LEFT">Explicit shape array</td>
+            <td align="LEFT">CFI descriptor is null</td>
+            <td align="LEFT">PRESENT</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_aro_f2c_r1_1.scenario</td>
+            <td align="LEFT">Testing bind(c) call from main </td>
+            <td align="LEFT">F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT">Explicit shape array</td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, contiguity, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">LEN, RANK, UBOUND, LBOUND, SIZE</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_aro_f2c_sub_mod_r1_1.scenario</td>
+            <td align="LEFT">Testing bind(c) module subprogram </td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT">Explicit shape array</td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content, contiguity, (dimension extent, lower bound, stride)</td>
+            <td align="LEFT">LEN, RANK, UBOUND, LBOUND, SIZE</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_aro_r1_const_f2c_1.scenario</td>
+            <td align="LEFT">Character constant actual arguments are tested  </td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT">Scalar character constants<br />
+            </td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content </td>
+            <td align="LEFT">LEN, RANK</td>
+        </tr>
+        <tr>
+            <td align="LEFT"> nc_aro_r1_sca_var_f2c_1.scenario</td>
+            <td align="LEFT">Scalar character  variables  with different attributes as actual argument  are tested</td>
+            <td align="LEFT">F-&gt;C, F-F, F-&gt;F-&gt;C, F-&gt;F-&gt;F, F-&gt;C-&gt;F</td>
+            <td align="LEFT">Scalar with/ with out attributes,<br />
+            derived type scalar component, <br />
+            array element, <br />
+            expressions involving character variables, <br />
+            function return values (intrinsic/ user defined) )</td>
+            <td align="LEFT">base_addr, elem_len, attribute, type, rank, content </td>
+            <td align="LEFT">LEN, RANK</td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<strong><br />
+<br />
+Diagnostic Tests:</strong><br />
+<span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><strong> <br />
+</strong>1. Assumed_Length01d.scenario: Intent(IN) F-&gt;F call test<br />
+2. Assumed_Length02d.scenario</span><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">: Verify that the attribute &quot;VALUE&quot; is not accepted<br />
+3. Assumed_Length03d.scenario:&nbsp; CFI_allocate and CFI_deallocate test<strong><br />
+<br />
+</strong></span>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<u1:p></u1:p>
+<table width="100%" cellspacing="0" cellpadding="0" style="BACKGROUND: rgb(200,175,200) 0% 50%; WIDTH: 100%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-BOTTOM: 2.5pt; WIDTH: 100%; PADDING-TOP: 2.5pt">
+            <p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong><span style="FONT-SIZE: 14pt; FONT-FAMILY: Helvetica"><u1:p></u1:p></span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            <p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong><span style="FONT-SIZE: 14pt; FONT-FAMILY: Helvetica">IT2 Information</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">%Note{<span class="GramE"></span>IT2 location and other related information}%</span></p>
+<p> <strong>Test Case location:</strong><br />
+</p>
+<p>Path:cintrop_ts29113/AssumedLength/<br />
+Family: aix <br />
+Release: tstdev, tst1512<br />
+<br />
+</p>
+<strong>Buckets:</strong><br />
+<p> functional : cintrop_ts29113/AssumedLength/func<br />
+diagnostic: cintrop_ts29113/AssumedLength/diag<br />
+documentation: cintrop_ts29113/AssumedLength/doc<br />
+</p>
+<p style="margin:2pt"> </p>
+<a title="Click on the text to add a comment" class="review"><span id="line__343"></span></a><span id="comments_343"></span><span id="comments_entry_343"></span>
+<p style="margin:2pt"><a title="Click on the text to add a comment" class="review"><span id="line__344"></span></a></p>
+<a title="Click on the text to add a comment" class="review"><span id="line__345"></span></a>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 11pt; FONT-FAMILY: Helvetica"><u1:p></u1:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<u1:p></u1:p>
+<table width="100%" cellspacing="0" cellpadding="0" style="BACKGROUND: rgb(200,175,200) 0% 50%; WIDTH: 100%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-BOTTOM: 2.5pt; WIDTH: 100%; PADDING-TOP: 2.5pt">
+            <p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong><span style="FONT-SIZE: 14pt; FONT-FAMILY: Helvetica"><!-- End Multi-Platform Considerations -->Appendices/References</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 11pt; FONT-FAMILY: Helvetica"><u1:p></u1:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><span class="GramE">%Note{</span>I0 and IT1 location and other related information}%</span></p>
+<p style="MARGIN: 2pt 0in"><strong><strong><strong><br />
+</strong></strong></strong></p>
+<p style="MARGIN: 2pt 0in"><strong><strong><strong>Design documents:</strong></strong></strong></p>
+<p style="MARGIN: 2pt 0in"><strong><strong><strong><br />
+</strong></strong></strong></p>
+<p style="MARGIN: 2pt 0in"><strong><strong><strong>RTC Master Story</strong></strong></strong></p>
+<p style="MARGIN: 2pt 0in">&nbsp;<a href="https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/72333" itemid="_7EfHwKuZEeOhaun8Z8lqUw">C Interop:TS29113: Assumed-length Character arguments (master story) (72333)</a></p>
+<p style="MARGIN: 2pt 0in"><strong><strong><strong><br />
+</strong></strong></strong></p>
+<p style="MARGIN: 2pt 0in"><strong><strong><strong>I0 <br />
+</strong></strong>Link: </strong><a href="javascript:void(0);/*1428676809035*/"><strong>https://featureflow.torolab.ibm.com/featureflow/show/7788</strong></a></p>
+<p style="MARGIN: 2pt 0in"><strong><strong></strong>CMVC<strong><strong>: </strong></strong><span style="color: rgb(255, 102, 102); font-weight: bold; text-decoration: underline;">designs/i0/assumed_length_arg_for_bind_c_/assumed_length_arg_for_bind_c_.html</span></strong></p>
+<strong>
+<p style="MARGIN: 2pt 0in"><strong><strong><br />
+</strong></strong></p>
+<p style="MARGIN: 2pt 0in"><strong><strong> <strong>IT1(Fortran/C/C++) <br />
+</strong></strong></strong></p>
+<strong> </strong>
+<p style="MARGIN: 2pt 0in">Link: <a href="javascript:void(0);/*1428676817616*/">https://featureflow.torolab.ibm.com/featureflow/show/7883</a></p>
+<strong> </strong></strong><strong><strong>
+<p style="MARGIN: 2pt 0in">CMVC: <strong><strong><span style="color: rgb(255, 102, 102); font-weight: bold; text-decoration: underline;">designs/it1/it1___c_interop__assumed_length_character_arguments/it1___c_interop__assumed_length_character_arguments.html</span>&nbsp; </strong></strong> </p>
+<p style="MARGIN: 2pt 0in"><strong> </strong> <br />
+<strong><font size="2">References</font></strong></p>
+<p style="MARGIN: 2pt 0in"><br />
+</p>
+</strong>
+<ol>
+    <li><strong><font size="2">TS 29113 Further Interoperability of Fortran with C</font></strong><strong><font size="2">.</font></strong></li>
+    <li><font size="2"><strong>https://ctweb.torolab.ibm.com/wiki/index.php/C_interop:_Assumed-length_Character_Argument</strong><br />
+    </font></li>
+</ol>
+<strong>
+<p style="MARGIN: 2pt 0in"><strong> </strong></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><u1:p></u1:p><o:p></o:p></span></p>
+</strong></strong></div>
+<strong> <!-- End Internal Interfaces --></strong><!--HTML Wrapper--></body></html>

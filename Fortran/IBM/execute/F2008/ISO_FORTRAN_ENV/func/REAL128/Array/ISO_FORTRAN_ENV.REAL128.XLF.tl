@@ -1,0 +1,5 @@
+faddREAL128_XLF.scenario
+fdivideREAL128_XLF.scenario
+fgeneralREAL128_XLF.scenario
+fmultiplyREAL128_XLF.scenario
+fsubtractREAL128_XLF.scenario

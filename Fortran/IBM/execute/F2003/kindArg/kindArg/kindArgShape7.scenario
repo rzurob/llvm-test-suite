@@ -1,0 +1,36 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       kindArgShape7.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       06-29-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)kindArgShape7.f
+#OUTPUT= kindArgShape7$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  kindArgShape7$(OBJ)
+#OUTPUT= kindArgShape7$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  kindArgShape7$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

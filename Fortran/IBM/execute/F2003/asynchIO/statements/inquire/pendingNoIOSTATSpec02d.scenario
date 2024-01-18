@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME	   = F2003/asynchIO/statements/inquire/pendingNoIOSTATSpec02d.scenario
+#FEATURE   = Asynchronous I/O -- INQUIRE Statement
+#CREATOR   = GM Manual Creation
+#DATE	   = 20060329
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)pendingNoIOSTATSpec02d.f
+#OUTPUT		= pendingNoIOSTATSpec02d$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= pendingNoIOSTATSpec02d$(OBJ)
+#OUTPUT		= pendingNoIOSTATSpec02d$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= pendingNoIOSTATSpec02d$(EXE)
+#STDERR		= pendingNoIOSTATSpec02d.stderr
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)pendingNoIOSTATSpec02d$(product)vf)	\
+				pendingNoIOSTATSpec02d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,5 @@
+** mod   === End of Compilation 1 ===
+"ftybn092h.f", line 55.40: 1514-586 (S) Overridden binding bind_b, defined in type base, does not have the PRIVATE attribute.  The overriding binding must not have the PRIVATE attribute.
+** mod1   === End of Compilation 2 ===
+** _main   === End of Compilation 3 ===
+1501-511  Compilation failed for file ftybn092h.f.

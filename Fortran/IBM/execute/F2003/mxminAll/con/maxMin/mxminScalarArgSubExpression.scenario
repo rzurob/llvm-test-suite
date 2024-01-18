@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/mxminAll/con/maxMin/mxminScalarArgSubExpression.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mxminScalarArgSubExpression.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = mxminScalarArgSubExpression$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = mxminScalarArgSubExpression$(OBJ)
+#OUTPUT    = mxminScalarArgSubExpression$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminScalarArgSubExpression$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

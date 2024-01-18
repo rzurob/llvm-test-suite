@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2003/dtparam/procPtr/dprocdeclfn03.scenario
+#FEATURE = Procedure Declaration statement
+#CREATOR = Morteza Ershad-Manesh
+#DATE    = 20080805
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)dprocdeclfn03.f
+#OUTPUT    = dprocdeclfn03$(OBJ)
+#STDERR    = dprocdeclfn03.err
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+!Need to add a verification file once defect 355130 has been fix.
+!#CMD       = DIFF
+!#INPUT     = dprocdeclfn03.err $($(tcasedir)dprocdeclfn03$(product)vf)
+!#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

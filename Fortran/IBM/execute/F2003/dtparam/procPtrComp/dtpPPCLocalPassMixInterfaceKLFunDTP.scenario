@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/procPtrComp/dtpPPCLocalPassMixInterfaceKLFunDTP.scenario
+#FEATURE   = Procedure Pointers as Components - reference to pass function with mixed dummy args, K+L, DTP result
+#CREATOR   = DF Manual Update
+#DATE      = 20090324
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPPCLocalPassMixInterfaceKLFunDTP.f
+#OUTPUT    = dtpPPCLocalPassMixInterfaceKLFunDTP$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPPCLocalPassMixInterfaceKLFunDTP$(OBJ)
+#OUTPUT    = dtpPPCLocalPassMixInterfaceKLFunDTP$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPPCLocalPassMixInterfaceKLFunDTP$(EXE)
+#STDOUT    = dtpPPCLocalPassMixInterfaceKLFunDTP.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpPPCLocalPassMixInterfaceKLFunDTP$(product)vf) dtpPPCLocalPassMixInterfaceKLFunDTP.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

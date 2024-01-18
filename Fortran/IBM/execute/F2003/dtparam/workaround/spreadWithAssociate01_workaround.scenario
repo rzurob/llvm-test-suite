@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/spread/spreadWithAssociate01_workaround.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Oct. 24 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)spreadWithAssociate01_workaround.f
+#OUTPUT= spreadWithAssociate01_workaround$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = spreadWithAssociate01_workaround$(OBJ)
+#OUTPUT= spreadWithAssociate01_workaround$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = spreadWithAssociate01_workaround$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

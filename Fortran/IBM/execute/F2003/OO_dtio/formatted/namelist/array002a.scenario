@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/namelist/array002a.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)array002a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = array002a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = array002a$(OBJ)
+#OUTPUT    = array002a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = array002a$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)array002a$(product)vf) array002a.1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

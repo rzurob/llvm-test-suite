@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/unformatted/misc/allocate001kl.scenario
+#FEATURE = OO_dtio + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070910
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)allocate001kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = allocate001kl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  allocate001kl$(OBJ)
+#OUTPUT    = allocate001kl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = allocate001kl$(EXE)
+#STDOUT    = allocate001kl.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = allocate001kl.out $($(tcasedir)allocate001kl$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

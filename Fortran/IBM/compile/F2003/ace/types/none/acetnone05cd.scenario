@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetnone05cd.scenario
+#FEATURE	= Array constructor enhancement - no type specifier, diff character lengths called
+#CREATOR	= DF Manual Update
+#DATE		= 20060728
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetnone05cd.f
+#OUTPUT		= acetnone05cd$(OBJ)
+#STDERR		= acetnone05cd.err
+#VALIDRCS	= $(RC_COMP_S)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= acetnone05cd.err $(tcasedir)acetnone05cd.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

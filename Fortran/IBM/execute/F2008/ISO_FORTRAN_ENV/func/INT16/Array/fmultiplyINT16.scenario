@@ -1,0 +1,46 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       fmultiplyINT16
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2008_COMPILE
+#INPUT=  $(tcasedir)fmultiplyINT16.f
+#OUTPUT= fmultiplyINT16$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_LINK
+#INPUT=  fmultiplyINT16$(OBJ)
+#OUTPUT= fmultiplyINT16$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fmultiplyINT16$(EXE)
+#ENDCMD
+
+#CMD=    XLF2008_COMPILE
+#OPTS=   $(OPT_INTSIZE_2)
+#INPUT=  $(tcasedir)fmultiplyINT16.f
+#OUTPUT= fmultiplyINT16_1$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_LINK
+#OPTS=   $(OPT_INTSIZE_2)
+#INPUT=  fmultiplyINT16_1$(OBJ)
+#OUTPUT= fmultiplyINT16_1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fmultiplyINT16_1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

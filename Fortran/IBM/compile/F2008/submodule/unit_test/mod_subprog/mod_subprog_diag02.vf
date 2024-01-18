@@ -1,0 +1,7 @@
+** mmm   === End of Compilation 1 ===
+** nnn   === End of Compilation 2 ===
+"mod_subprog_diag02.f", line 29.5: 1516-055 (S) The INTENT(IN) attribute specifies that a dummy argument, or a subobject of a dummy argument, must not be redefined or become undefined during the execution of the procedure.
+"mod_subprog_diag02.f", line 39.13: 1516-036 (S) Entity yyy has undefined type.
+** submod   === End of Compilation 3 ===
+** mod_subprog   === End of Compilation 4 ===
+1501-511  Compilation failed for file mod_subprog_diag02.f.

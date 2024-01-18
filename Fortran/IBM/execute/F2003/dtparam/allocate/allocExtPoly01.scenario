@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/allocate/allocExtPoly01.scenario
+#FEATURE	= ALLOCATE() Statement with DTP
+#CREATOR	= Glen Mateer
+#DATE		= 20090105
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)allocExtPoly01.f
+#OUTPUT		= allocExtPoly01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= allocExtPoly01$(OBJ)
+#OUTPUT		= allocExtPoly01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= allocExtPoly01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

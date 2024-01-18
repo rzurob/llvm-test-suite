@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       deferFrmCmpPntUlmCmpTo.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)deferFrmCmpPntUlmCmpTo.f
+#OUTPUT= deferFrmCmpPntUlmCmpTo$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  deferFrmCmpPntUlmCmpTo$(OBJ)
+#OUTPUT= deferFrmCmpPntUlmCmpTo$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  deferFrmCmpPntUlmCmpTo$(EXE)
+#STDOUT= deferFrmCmpPntUlmCmpTo.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = deferFrmCmpPntUlmCmpTo.out $(tcasedir)deferFrmCmpPntUlmCmpTo.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

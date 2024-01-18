@@ -1,0 +1,63 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       fsubtractREAL64
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2008_COMPILE
+#INPUT=  $(tcasedir)fsubtractREAL64.f
+#OUTPUT= fsubtractREAL64$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_LINK
+#INPUT=  fsubtractREAL64$(OBJ)
+#OUTPUT= fsubtractREAL64$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fsubtractREAL64$(EXE)
+#ENDCMD
+
+#CMD=    XLF2008_COMPILE
+#OPTS=   $(OPT_REALSIZE_4)
+#INPUT=  $(tcasedir)fsubtractREAL64.f
+#OUTPUT= fsubtractREAL64_1$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_LINK
+#OPTS=   $(OPT_REALSIZE_4)
+#INPUT=  fsubtractREAL64_1$(OBJ)
+#OUTPUT= fsubtractREAL64_1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fsubtractREAL64_1$(EXE)
+#ENDCMD
+
+#CMD=    XLF2008_COMPILE
+#OPTS=   -qautodbl=dbl
+#INPUT=  $(tcasedir)fsubtractREAL64.f
+#OUTPUT= fsubtractREAL64_2$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_LINK
+#OPTS=   -qautodbl=dbl
+#INPUT=  fsubtractREAL64_2$(OBJ)
+#OUTPUT= fsubtractREAL64_2$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fsubtractREAL64_2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

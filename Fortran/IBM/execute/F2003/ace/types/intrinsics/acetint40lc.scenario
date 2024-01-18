@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2004/ace/types/intrinsics/acetint40lc.scenario
+#FEATURE	= Array constructor enhancement - call subroutine with AC of logical constants of different kinds
+#CREATOR	= DF Manual Update
+#DATE		= 2006c06c14
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint40lc.f
+#OUTPUT		= acetint40lc$(OBJ)
+#STDERR		= acetint40lc.err
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= acetint40lc.err $(tcasedir)acetint40lc.vf
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint40lc$(OBJ)
+#OUTPUT		= acetint40lc$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint40lc$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

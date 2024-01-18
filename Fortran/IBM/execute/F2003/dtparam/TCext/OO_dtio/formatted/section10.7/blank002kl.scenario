@@ -1,0 +1,45 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/formatted/section10.7/blank002kl.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070720
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)blank002kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = blank002kl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = blank002kl$(OBJ)
+#OUTPUT    = blank002kl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = blank002kl$(EXE)
+#STDOUT    = blank002kl.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)blank002kl$(product)vf) blank002kl.out
+#ENDCMD
+
+#CMD       = DELETE
+#INPUT     = blank002kl.out
+#ENDCMD
+
+
+
+#ENDCONTROL
+#ENDSCENARIO

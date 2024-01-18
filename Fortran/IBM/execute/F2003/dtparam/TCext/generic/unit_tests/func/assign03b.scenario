@@ -1,0 +1,22 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/unit_tests/func/assign03b.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPLINK
+#INPUT     = $(tcasedir)assign03b.f
+#OUTPUT    = assign03b$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = assign03b$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

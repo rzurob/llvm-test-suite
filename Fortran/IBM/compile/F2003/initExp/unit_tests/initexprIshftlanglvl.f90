@@ -1,0 +1,23 @@
+!* ===================================================================
+!* XL FORTRAN TEST CASE                          IBM INTERNAL USE ONLY
+!* ===================================================================
+!* TEST CASE TITLE            : Initialization expression
+!*
+!* PROGRAMMER                 : Kelvin Li
+!* DATE                       : March 31, 2006
+!* ORIGIN                     : XL Compiler Development, Toronto Lab
+!*
+!* PRIMARY FUNCTIONS TESTED   : ISHFT intrinsic
+!*
+!* DESCRIPTION                : langlvl message
+!* ===================================================================
+
+implicit none
+
+integer :: i1=ishft(3_1,1)
+integer :: i2=ishft(31_2,1)
+integer :: i4=ishft(311_4,1)
+integer :: i8=ishft(3112_8,1)
+
+end
+

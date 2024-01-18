@@ -1,0 +1,6 @@
+"valuearray_d401.f", line 21.6: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"valuearray_d401.f", line 21.17: 1515-022 (S) Syntax Error: Extra token " / " was found. The token is ignored.
+"valuearray_d401.f", line 21.19: 1515-022 (S) Syntax Error: Extra token " 100 " was found. The token is ignored.
+"valuearray_d401.f", line 21.22: 1515-022 (S) Syntax Error: Extra token " / " was found. The token is ignored.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file valuearray_d401.f.

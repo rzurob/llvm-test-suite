@@ -1,0 +1,20 @@
+ inside foo 100
+ inside bar 100
+ after bar F
+ T
+ F
+ after foo F
+ ===
+ inside bar 200
+ after bar F
+ ===
+ inside boo 300
+ inside foo 300
+ inside bar 300
+ after bar F
+ T
+ F
+ after foo F
+ inside boo 2 300
+ after boo T
+ ===

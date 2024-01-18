@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/use/dtpUseExtends02.scenario
+#FEATURE   = DTP and USE - inheritance
+#CREATOR   = DF Manual Update
+#DATE      = 20080903
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUseExtends02.f
+#OUTPUT    = dtpUseExtends02$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUseExtends02$(OBJ)
+#OUTPUT    = dtpUseExtends02$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUseExtends02$(EXE)
+#STDOUT    = dtpUseExtends02.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUseExtends02$(product)vf) dtpUseExtends02.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,158 @@
+#!/bin/ksh
+
+# This script precompiles object files in two different XL Fortran releases for different OS's and
+# different bit compilation modes on certain types of machines by creating a scenario and
+# dispatching it to the named machines with appropriate options.  It then copies the resulting
+# object files and module files to a subdirectory of the given directory, with names to indicate the
+# OS, word size and compiler version.
+#
+# Use:
+#   makePrecompiledFiles tc dir 111aixMachine 111rhelMachine 111slesMachine 121aixMachine 121LoPMachine
+#
+# where tc is the name of the test case (a file named '<tc>PreDTP.f' must exist, e.g.,
+#          if tc is 'dtpCompatDummyInKind', file 'dtpCompatDummyInKindPreDTP.f' must exist)
+# and dir is a directory shared by all named machines, e.g., a subdirectory of the xlftest common directory,
+#         which contains a directory named like the tc above, which in turn contains a source file named above,
+#         and which will receive the object files
+# and *Machine is the name of a machine to which to dispatch a scenario to compile the "pre" file
+#
+# Ex.:
+#   makePrecompiledFiles foo /home/xlftest/common/bar A1 R1 S1 A2 L2
+#   - compiles the file /home/xlftest/common/bar/foo/fooPreDTP.f in -q32/-q64, AIX/SLES/RHEL, v11.1/v12.1
+#     on systems A1, R1, S1, A2, and L2, and copies the .o and .mod files to files with names like
+#     fooPreDTP.111.32.aix.o (v11.1, 32 bit, AIX object file) and
+#     foopredtpmod.121.64.linux.o (v12.1, 64 bit, LoP module file -- note lower case)
+#     to /home/xlftest/common/bar/foo/.
+#   - note that each file is expected to contain a like-named module (fooPreDTP.f would contain a module
+#     named fooPreDTPmod)
+#
+# There are conditions on the operating systems which must be running on these machines:
+#   111aixMachine:  AIX 5.2
+#   111rhelMachine: RHEL 5.1
+#   111slesMachine: SLES 10
+#   121aixMachine:  AIX 5.3
+#   121LoPMachine:  SLES 10 or RHEL 5.1
+
+target=${2:-/home/xlftest/common/dforster/F2003/dtparam/compat/}
+aix111Machine=${3:-swgc129}
+rhel111Machine=${4:-swgc81}
+sles111Machine=${5:-swgc161}
+aix121Machine=${6:-swgc162}
+LoP121Machine=${7:-swgc161}
+
+if [[ "$1" == "-h" || $# < 1 ]] then
+  echo Use: makePrecompiledFiles tc target aix111Machine rhel111Machine sles111Machine aix121Machine LoP121Machine
+  echo "'tc' is the test case name with no extension and no 'PreDTP'"
+  echo "machine defaults: aix111Machine:$aix111Machine rhel111Machine:$rhel111Machine sles111Machine:$sles111Machine aix121Machine:$aix121Machine LoP121Machine:$LoP121Machine"
+  exit
+fi
+
+tc=${1}
+name=${tc}PreDTP
+shortname=${name##*/}
+lowername=`echo ${shortname} | tr '[:upper:]' '[:lower:]'`
+tgt=${target}/${tc}
+
+if [[ $# > 7 ]]
+then
+    shift 7
+    xoptsbase="$@"
+else
+    xoptsbase=""
+fi
+
+if [[ ${#xoptsbase} > 0 ]]
+then
+    xopts32="-xopts='$xoptsbase'"
+    xopts64="-xopts='-q64 $xoptsbase'"
+else
+    xopts32=""
+    xopts64="-xopts='-q64'"
+fi
+
+# We will compile each version using the same temporary scenario file, using options to the driver command to control which compiler we use:
+cat >| /tmp/precompileFile.$$.scenario <<EOF
+#BEGINSCENARIO
+#BEGINCONTROL
+#CMD = XLF2003_COMPILE
+#INPUT = $tgt/$name.f
+#ENDCMD
+#ENDCONTROL
+#ENDSCENARIO
+EOF
+
+
+makePrecompiledFile()
+{
+  # Precompile a single source file on the given machine and copy the object and module files to the source directory, renaming to match the options.
+
+  release=$1
+  bit=$2
+  osname=$3
+  oscfg=$4
+  osversion=$5
+  machine=$6
+  if [[ $bit == 64 ]]
+  then
+      xopts="$xopts64"
+  else
+      xopts="$xopts32"
+  fi
+
+  if ! driver -saveoutput=all -dispatch=yes -machine=:${machine} -outdir=/tmp/precompileFile.$$.results -clobber -cf=/tst${release}1/config/${oscfg}/driver.cfg -ignoreos=yes -tproddir=/.../torolab.ibm.com/fs/projects/vabld/run/xlf/${release}1/${osversion}/solution/${release}.1.0.0 ${xopts} /tmp/precompileFile.$$.scenario >/tmp/precompileFile.$$.out 2>&1
+  then
+    ret=$?
+    cat /tmp/precompileFile.$$.out
+    echo Error $ret in "'driver -saveoutput=all -dispatch=yes -machine=:${machine} -outdir=/tmp/precompileFile.$$.results -clobber -cf=/tst${release}1/config/${oscfg}/driver.cfg -ignoreos=yes -tproddir=/.../torolab.ibm.com/fs/projects/vabld/run/xlf/${release}1/${osversion}/solution/${release}.1.0.0 \"${xopts}\" /tmp/precompileFile.$$.scenario'"
+    echo Results in /tmp/precompileFile.$$.results/precompileFile.$$.scenario and /tmp/precompileFile.$$.out
+    exit $ret
+  fi
+
+  if ! cp /tmp/precompileFile.$$.results/precompileFile.$$.scenario/${shortname}.o ${tgt}/${shortname}.${release}1.${bit}.${osname}.o
+  then
+    ret=$?
+    echo Error $ret in "'cp /tmp/precompileFile.$$.results/precompileFile.$$.scenario/${shortname}.o ${tgt}/${shortname}.${release}1.${bit}.${osname}.o'"
+    exit $ret
+  fi
+
+
+  if ! cp /tmp/precompileFile.$$.results/precompileFile.$$.scenario/${lowername}mod.mod ${tgt}/${lowername}mod.${release}1.${bit}.${osname}.mod
+  then
+    ret=$?
+    echo Error $ret in "'cp /tmp/precompileFile.$$.results/precompileFile.$$.scenario/${lowername}mod.mod ${tgt}/${lowername}mod.${release}1.${bit}.${osname}.mod'"
+    exit $ret
+  fi
+
+  if ! chmod +r ${tgt}/*.o ${tgt}/*.mod
+  then
+    ret=$?
+    echo Error $ret in "'chmod +r ${tgt}/*.o ${tgt}/*.mod'"
+    exit $ret
+  fi
+
+  # clean up after ourselves:
+  rm -rf /tmp/precompileFile.$$.out /tmp/precompileFile.$$.results
+}
+
+chmod +r ${tgt}/${tc}*[of]
+
+cd /home/xlftest/dforster
+
+makePrecompiledFile 11 32 aix aix aix $aix111Machine
+makePrecompiledFile 11 64 aix aix aix $aix111Machine
+
+makePrecompiledFile 11 32 rhel rhel rhel5_ppc $rhel111Machine
+makePrecompiledFile 11 64 rhel rhel rhel5_ppc $rhel111Machine
+
+makePrecompiledFile 11 32 sles sles sles10_ppc $sles111Machine
+makePrecompiledFile 11 64 sles sles sles10_ppc $sles111Machine
+
+makePrecompiledFile 12 32 aix aix aix $aix121Machine
+makePrecompiledFile 12 64 aix aix aix $aix121Machine
+
+# rhel5_ppc and sles10_ppc are identical for LoP in 12.1 (rhel5_ppc is a soft link to sles10_ppc), so we choose the one linked to:
+makePrecompiledFile 12 32 linux LoP sles10_ppc $LoP121Machine
+makePrecompiledFile 12 64 linux LoP sles10_ppc $LoP121Machine
+
+# final clean up:
+rm -f /tmp/precompileFile.$$.scenario

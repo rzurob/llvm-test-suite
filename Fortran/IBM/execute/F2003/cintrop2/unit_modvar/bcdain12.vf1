@@ -1,0 +1,4 @@
+"bcdain12.f", line 46.12: 1514-161 (E) Identifier "blk" appearing as a specific interface procedure/result name was defined elsewhere with conflicting attributes.  This definition is ignored.
+** mod   === End of Compilation 1 ===
+** bcdain12   === End of Compilation 2 ===
+1501-510  Compilation successful for file bcdain12.f.

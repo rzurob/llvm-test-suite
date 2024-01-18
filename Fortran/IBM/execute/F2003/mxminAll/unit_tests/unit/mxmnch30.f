@@ -1,0 +1,162 @@
+!**********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD:
+! %COMPOPTS: -qfixed
+! %GROUP: mxmnch30.f 
+! %VERIFY:
+! %STDIN:
+! %STDOUT:
+! %EXECARGS:
+! %POSTCMD:
+! %END
+!**********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE TITLE            : mxmnch30
+!*
+!*  PROGRAMMER                 : John Zang
+!*  DATE                       : Oct. 20, 2005
+!*  ORIGIN                     : AIX Compiler Development,
+!*                             : IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Support character argument for MAX/
+!*                               MIN/MAXVAL/MINVAL/MAXLOC/MINLOC
+!*  SECONDARY FUNCTIONS TESTED : Functional test
+!*
+!*  DRIVER STANZA              : xlf90
+!*  REQUIRED COMPILER OPTIONS  : -qfixed
+!*
+!*  DESCRIPTION                : MAX/MIN - Maximum or minimum value
+!*                               according to their collating sequence
+!*                               of ASCII characters. 
+!*                               MAXVAL/MINVAL - Maximum or minimum value
+!*                               of elements in a character array.
+!*                               MAXLOC/MINLOC - The location of maximum
+!*                               or minimum value of elements in a character
+!*                               array.
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+      implicit none
+      character(10), parameter :: aa(2,2) = 
+     + reshape((/'a','b','c','d'/), (/2,2/))
+      character(10) bb(2,3,4)
+      integer uu(2), ww(2,3), xx(3), yy(3,4), zz(2,4)
+
+      bb = '!'
+      bb(2,1,3) = 'ibm'
+      bb(1,2,4) = 'usa'
+      bb(1,2,2) = 'can'
+      bb(1,3,1) = 'bel'
+      bb(2,2,1) = 'jan'
+      bb(2,3,4) = 'gb'
+      
+      ww = maxloc(bb,dim=3)
+      if (ww(1,1) /= 1) error stop 1
+      if (ww(2,1) /= 3) error stop 2
+      if (ww(1,2) /= 4) error stop 3
+      if (ww(2,2) /= 1) error stop 4
+      if (ww(1,3) /= 1) error stop 5
+      if (ww(2,3) /= 4) error stop 6
+
+      xx = maxloc(bb)
+      if (xx(1) /= 1) error stop 7
+      if (xx(2) /= 2) error stop 8
+      if (xx(3) /= 4) error stop 9
+
+      yy = maxloc(bb, dim=1,mask=bb .ne. 'x')
+      if (yy(1,1) /= 1) error stop 10
+      if (yy(2,1) /= 2) error stop 11
+      if (yy(3,1) /= 1) error stop 12
+      if (yy(1,2) /= 1) error stop 13
+      if (yy(2,2) /= 1) error stop 14
+      if (yy(3,2) /= 1) error stop 15
+      if (yy(1,3) /= 2) error stop 16
+      if (yy(2,3) /= 1) error stop 16
+      if (yy(3,3) /= 1) error stop 17
+      if (yy(1,4) /= 1) error stop 18
+      if (yy(2,4) /= 1) error stop 19
+      if (yy(3,4) /= 2) error stop 20
+
+      zz = maxloc(bb, dim=2,mask=bb .ne. 'a')
+      if (zz(1,1) /= 3) error stop 21
+      if (zz(2,1) /= 2) error stop 22
+      if (zz(1,2) /= 2) error stop 23
+      if (zz(2,2) /= 1) error stop 24
+      if (zz(1,3) /= 1) error stop 25
+      if (zz(2,3) /= 1) error stop 26
+      if (zz(1,4) /= 2) error stop 27
+      if (zz(2,4) /= 3) error stop 28
+
+      bb = '~'
+      bb(2,1,3) = 'ibm'
+      bb(1,2,4) = 'usa'
+      bb(1,2,2) = 'can'
+      bb(1,3,1) = 'bel'
+      bb(2,2,1) = 'jan'
+      bb(2,3,4) = 'gb'
+
+      ww = minloc(bb,dim=3)
+      if (ww(1,1) /= 1) error stop 29
+      if (ww(2,1) /= 3) error stop 30
+      if (ww(1,2) /= 2) error stop 31
+      if (ww(2,2) /= 1) error stop 32
+      if (ww(1,3) /= 1) error stop 33
+      if (ww(2,3) /= 4) error stop 34
+
+      xx = minloc(bb)
+      if (xx(1) /= 1) error stop 35
+      if (xx(2) /= 3) error stop 36
+      if (xx(3) /= 1) error stop 37
+
+      yy = minloc(bb, dim=1,mask=bb .ne. 'x')
+      if (yy(1,1) /= 1) error stop 38
+      if (yy(2,1) /= 2) error stop 39
+      if (yy(3,1) /= 1) error stop 40
+      if (yy(1,2) /= 1) error stop 41
+      if (yy(2,2) /= 1) error stop 42
+      if (yy(3,2) /= 1) error stop 43
+      if (yy(1,3) /= 2) error stop 44
+      if (yy(2,3) /= 1) error stop 45
+      if (yy(3,3) /= 1) error stop 46
+      if (yy(1,4) /= 1) error stop 47
+      if (yy(2,4) /= 1) error stop 48
+      if (yy(3,4) /= 2) error stop 49
+
+      zz = minloc(bb, dim=2,mask=bb .ne. 'a')
+      if (zz(1,1) /= 3) error stop 50
+      if (zz(2,1) /= 2) error stop 51
+      if (zz(1,2) /= 2) error stop 52
+      if (zz(2,2) /= 1) error stop 53
+      if (zz(1,3) /= 1) error stop 54
+      if (zz(2,3) /= 1) error stop 55
+      if (zz(1,4) /= 2) error stop 56
+      if (zz(2,4) /= 3) error stop 57
+
+      uu = maxloc(aa)
+      if (uu(1) /= 2) error stop 58
+      if (uu(2) /= 2) error stop 59
+
+      uu = maxloc(aa,dim=1,mask=aa .ne. 'b')
+      if (uu(1) /= 1) error stop 60
+      if (uu(2) /= 2) error stop 61
+
+      uu = maxloc(aa,dim=1,mask=aa .eq. 'c' .or. aa .eq. 'b')
+      if (uu(1) /= 2) error stop 62
+      if (uu(2) /= 1) error stop 63
+
+      uu = minloc(aa)
+      if (uu(1) /= 1) error stop 64
+      if (uu(2) /= 1) error stop 65
+
+      uu = minloc(aa,dim=1,mask=aa .ne. 'a')
+      if (uu(1) /= 2) error stop 66
+      if (uu(2) /= 1) error stop 67
+
+      uu = minloc(aa,dim=1,mask=aa .eq. 'c' .or. aa .eq. 'b')
+      if (uu(1) /= 2) error stop 68
+      if (uu(2) /= 1) error stop 69
+
+      end

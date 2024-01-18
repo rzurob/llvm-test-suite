@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2008/impure/unit_tests/diag/impure03d.scenario
+#FEATURE = 917300 impure procedures
+#CREATOR = Paul Liu
+#DATE    = 20120308
+#TEST_TYPE=FUNCTIONAL
+#ENDDOC
+
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)impure03d.f
+#OUTPUT    = impure03d$(OBJ)
+#STDERR    = impure03d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $(tcasedir)impure03d.vf impure03d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

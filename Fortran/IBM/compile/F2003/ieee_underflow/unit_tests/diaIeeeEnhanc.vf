@@ -1,0 +1,5 @@
+"diaIeeeEnhanc.f", line 36.57: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_support_underflow_control".
+"diaIeeeEnhanc.f", line 42.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_get_underflow_mode".
+"diaIeeeEnhanc.f", line 43.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_set_underflow_mode".
+** diaieeeenhanc   === End of Compilation 1 ===
+1501-511  Compilation failed for file diaIeeeEnhanc.f.

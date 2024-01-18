@@ -1,0 +1,10 @@
+ p 1
+   101  - base: 1
+   102  - base: 2
+ p2 1
+   101  - base: 1
+   44  - base: 2
+ p2 2
+   101  - base: 1
+   55  - base: 2
+1525-239 XL Fortran detected a mismatch in a compiler-generated routine. If your code contains compilation units compiled with XL Fortran V11.1 or V12.1, recompile them with the latest XL Fortran compiler.

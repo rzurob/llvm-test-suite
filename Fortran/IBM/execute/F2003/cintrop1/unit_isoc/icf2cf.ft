@@ -1,0 +1,18 @@
+      program PROGRAM_NAME
+        use iso_c_binding
+        interface
+          function foo(bar)
+            use iso_c_binding
+            logical(C_BOOL) :: foo
+            ARGTYPE VALUE_ATTR :: bar
+          end function
+        end interface
+        ARGTYPE :: x
+#ifdef TESTING_C_PTR
+        integer(c_int), target :: z
+#endif
+        logical(C_BOOL) :: retval
+        x = ARGVALUE
+        retval = foo(x)
+        if (.not.retval) error stop 1
+      end program PROGRAM_NAME

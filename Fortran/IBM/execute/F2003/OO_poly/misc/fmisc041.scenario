@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/misc/fmisc041.f
+#FEATURE = OO_poly
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fmisc041.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fmisc041$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fmisc041$(OBJ)
+#OUTPUT    = fmisc041$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fmisc041$(EXE)
+#STDOUT    = fmisc041.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fmisc041.out $($(tcasedir)fmisc041$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,7 @@
+ in func1: 2 34 ab 35 36 2
+ fin1: 2 9    0 0
+ fin1: 2 34 ab 35 36
+ returning from func1
+ fin1: 2 0    0 0
+ fin1: 2 34 ab 35 36
+ done

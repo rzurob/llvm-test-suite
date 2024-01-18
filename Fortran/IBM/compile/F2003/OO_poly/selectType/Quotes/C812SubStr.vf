@@ -1,0 +1,3 @@
+"C812SubStr.f", line 59.9: 1511-139 (S) Associate name as is not associated with an entity that can be defined. as must not be redefined or become undefined.
+** c812substr   === End of Compilation 1 ===
+1501-511  Compilation failed for file C812SubStr.f.

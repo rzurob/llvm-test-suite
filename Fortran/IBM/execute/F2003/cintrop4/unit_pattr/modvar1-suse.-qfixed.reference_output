@@ -1,0 +1,5 @@
+*** testcase variant:  -qfixed\n
+** modvar1   === End of Compilation 1 ===
+  24.40   016106B0 
+** p1   === End of Compilation 2 ===
+1501-511  Compilation failed for file modvar1.f.

@@ -1,0 +1,6 @@
+"fext001d6.f", line 57.4: 1514-529 (S) Type child was declared with the BIND attribute. child must not be declared with the EXTENDS attribute.
+"fext001d6.f", line 65.4: 1514-529 (S) Type btype2 was declared with the BIND attribute. btype2 must not be declared with the EXTENDS attribute.
+"fext001d6.f", line 65.39: 1514-528 (S) Type btype1 in the EXTENDS clause must be extensible.
+"fext001d6.f", 1516-186 (S) A derived type with the BIND(C) attribute must only contain components that have type and type parameters that are interoperable with some C type.
+** fext001d6   === End of Compilation 1 ===
+1501-511  Compilation failed for file fext001d6.f.

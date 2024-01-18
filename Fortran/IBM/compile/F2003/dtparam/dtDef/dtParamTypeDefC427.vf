@@ -1,0 +1,10 @@
+"dtParamTypeDefC427.f", line 52.18: 1514-583 (S) Binding tbp with the DEFERRED attribute must only be specified for an abstract type.
+"dtParamTypeDefC427.f", line 58.23: 1514-583 (S) Binding tbp with the DEFERRED attribute must only be specified for an abstract type.
+"dtParamTypeDefC427.f", line 66.21: 1514-583 (S) Binding tbp with the DEFERRED attribute must only be specified for an abstract type.
+"dtParamTypeDefC427.f", line 72.20: 1514-583 (S) Binding tbp with the DEFERRED attribute must only be specified for an abstract type.
+"dtParamTypeDefC427.f", line 84.27: 1514-585 (S) The derived type dt11 inheriting a deferred binding must be abstract.
+"dtParamTypeDefC427.f", line 94.27: 1514-585 (S) The derived type dt13 inheriting a deferred binding must be abstract.
+"dtParamTypeDefC427.f", line 104.27: 1514-585 (S) The derived type dt15 inheriting a deferred binding must be abstract.
+"dtParamTypeDefC427.f", line 114.27: 1514-585 (S) The derived type dt17 inheriting a deferred binding must be abstract.
+** dtparamtypedefc427   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtParamTypeDefC427.f.

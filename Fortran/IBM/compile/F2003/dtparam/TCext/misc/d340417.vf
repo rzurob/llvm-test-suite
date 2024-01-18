@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"d340417.f", line 37.19: 1515-165 (S) The object to be allocated containing assumed length type parameter ptr1 must be a dummy argument.
+"d340417.f", line 38.19: 1515-165 (S) The object to be allocated containing assumed length type parameter ptr2 must be a dummy argument.
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file d340417.f.

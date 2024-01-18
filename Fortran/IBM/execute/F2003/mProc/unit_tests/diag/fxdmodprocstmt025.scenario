@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=fxdmodprocstmt025.scenario
+#FEATURE = diagnostic for generalization of mod proc stmts in F2003
+#CREATOR = Bardia Mahjour
+#DATE    = 20060411
+#TEST_TYPE=diag test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)fxdmodprocstmt025.f
+#OUTPUT    = fxdmodprocstmt025.f
+#ENDCMD
+
+#CMD       = XLF90_COMPILE
+#INPUT     = fxdmodprocstmt025.f
+#OPTS      = -Q -O -lxlfzz2 -c
+#STDERR    = fxdmodprocstmt025.out
+#STDOUT    = fxdmodprocstmt025.out
+#OUTPUT    = fxdmodprocstmt025$(OBJ)
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fxdmodprocstmt025.out $($(tcasedir)fxdmodprocstmt025$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

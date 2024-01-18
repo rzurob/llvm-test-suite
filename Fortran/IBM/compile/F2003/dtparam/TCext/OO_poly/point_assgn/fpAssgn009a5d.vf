@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"fpAssgn009a5d.f", line 85.5: 1515-105 (S) The target in the pointer assignment statement is unlimited polymorphic.  The pointer must be unlimited polymorphic, or of a non-extensible derived type.
+"fpAssgn009a5d.f", line 87.5: 1515-105 (S) The target in the pointer assignment statement is unlimited polymorphic.  The pointer must be unlimited polymorphic, or of a non-extensible derived type.
+** fpassgn009a5d   === End of Compilation 2 ===
+1501-511  Compilation failed for file fpAssgn009a5d.f.

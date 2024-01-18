@@ -1,0 +1,25 @@
+"poppar.f", line 11.7: 1518-260 (L) The BYTE keyword is not permitted by the Fortran 2003 standard.
+"poppar.f", line 21.37: 1518-256 (L) The intrinsic procedure poppar (with these arguments) is not permitted by the Fortran 2003 standard.
+"poppar.f", line 22.37: 1518-256 (L) The intrinsic procedure poppar (with these arguments) is not permitted by the Fortran 2003 standard.
+"poppar.f", line 23.37: 1518-256 (L) The intrinsic procedure poppar (with these arguments) is not permitted by the Fortran 2003 standard.
+"poppar.f", line 24.37: 1518-256 (L) The intrinsic procedure poppar (with these arguments) is not permitted by the Fortran 2003 standard.
+"poppar.f", line 26.37: 1518-256 (L) The intrinsic procedure poppar (with these arguments) is not permitted by the Fortran 2003 standard.
+"poppar.f", line 28.37: 1518-256 (L) The intrinsic procedure poppar (with these arguments) is not permitted by the Fortran 2003 standard.
+"poppar.f", line 29.37: 1518-256 (L) The intrinsic procedure poppar (with these arguments) is not permitted by the Fortran 2003 standard.
+"poppar.f", line 30.37: 1518-256 (L) The intrinsic procedure poppar (with these arguments) is not permitted by the Fortran 2003 standard.
+"poppar.f", line 31.37: 1518-256 (L) The intrinsic procedure poppar (with these arguments) is not permitted by the Fortran 2003 standard.
+"poppar.f", line 33.38: 1518-256 (L) The intrinsic procedure poppar (with these arguments) is not permitted by the Fortran 2003 standard.
+"poppar.f", line 34.38: 1518-256 (L) The intrinsic procedure poppar (with these arguments) is not permitted by the Fortran 2003 standard.
+"poppar.f", line 36.22: 1518-285 (L) The ERROR STOP statement is not permitted by the Fortran 2003 standard.
+"poppar.f", line 37.22: 1518-285 (L) The ERROR STOP statement is not permitted by the Fortran 2003 standard.
+"poppar.f", line 38.22: 1518-285 (L) The ERROR STOP statement is not permitted by the Fortran 2003 standard.
+"poppar.f", line 39.22: 1518-285 (L) The ERROR STOP statement is not permitted by the Fortran 2003 standard.
+"poppar.f", line 41.22: 1518-285 (L) The ERROR STOP statement is not permitted by the Fortran 2003 standard.
+"poppar.f", line 43.22: 1518-285 (L) The ERROR STOP statement is not permitted by the Fortran 2003 standard.
+"poppar.f", line 44.22: 1518-285 (L) The ERROR STOP statement is not permitted by the Fortran 2003 standard.
+"poppar.f", line 45.22: 1518-285 (L) The ERROR STOP statement is not permitted by the Fortran 2003 standard.
+"poppar.f", line 46.22: 1518-285 (L) The ERROR STOP statement is not permitted by the Fortran 2003 standard.
+"poppar.f", line 48.23: 1518-285 (L) The ERROR STOP statement is not permitted by the Fortran 2003 standard.
+"poppar.f", line 49.23: 1518-285 (L) The ERROR STOP statement is not permitted by the Fortran 2003 standard.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file poppar.f.

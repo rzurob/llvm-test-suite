@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrMergeChar.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrMergeChar.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrMergeChar$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrMergeChar$(OBJ)
+#OUTPUT    = dataPtrMergeChar$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrMergeChar$(EXE)
+#STDOUT    = dataPtrMergeChar.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrMergeChar.out $($(tcasedir)dataPtrMergeChar$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,5 @@
+"ftybn093c.f", line 53.31: 1514-632 (S) The function results of the overridden binding bind_b and overridding binding bind_b must have the same type and type parameters.
+"ftybn093c.f", line 58.32: 1514-631 (S) Overridden binding bind_b is a function.  Overriding binding bind_b must also be a function.
+** mod   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file ftybn093c.f.

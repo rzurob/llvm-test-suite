@@ -1,0 +1,5 @@
+"kindArgMaxloc1.f", line 43.38: 1513-143 (S) Invalid KIND value.
+"kindArgMaxloc1.f", line 44.30: 1513-143 (S) Invalid KIND value.
+"kindArgMaxloc1.f", line 45.18: 1513-143 (S) Invalid KIND value.
+** kindargmaxlog1   === End of Compilation 1 ===
+1501-511  Compilation failed for file kindArgMaxloc1.f.

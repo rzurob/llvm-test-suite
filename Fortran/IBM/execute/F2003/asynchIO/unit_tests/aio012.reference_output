@@ -1,0 +1,1 @@
+1525-145 The READ or WRITE statement cannot be performed on unit 11 because the file is positioned after the endfile record.  The program will recover by ignoring the I/O statement.

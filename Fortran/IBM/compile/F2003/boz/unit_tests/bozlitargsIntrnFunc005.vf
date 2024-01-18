@@ -1,0 +1,3 @@
+"bozlitargsIntrnFunc005.f", 1518-318 (L) The PORT(TYPLSSARG) option can cause the program to behave in a way that is different from that specified by the Fortran 2003 standard.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file bozlitargsIntrnFunc005.f.

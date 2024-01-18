@@ -1,0 +1,38 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/typeParamInquiry/functional/dtparam/dtParameterInquiryMis04.scenario
+#FEATURE = Type Parameter Inquiry(354612)
+#CREATOR = Nancy Wang
+#DATE    = July 31 2008
+#TEST_TYPE=  Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)dtParameterInquiryMis04.f
+#OUTPUT= dtParameterInquiryMis04$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  dtParameterInquiryMis04$(OBJ)
+#OUTPUT= dtParameterInquiryMis04$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dtParameterInquiryMis04$(EXE)
+#STDIN  = $(tcasedir)dtParameterInquiryMis04.in
+#STDOUT = dtParameterInquiryMis04.out
+#ENDCMD
+
+#CMD    = DIFF
+#INPUT  = $($(tcasedir)dtParameterInquiryMis04$(product)vf)  dtParameterInquiryMis04.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

@@ -1,0 +1,4 @@
++NaN(Q) -NaN(S) 3.14 +Inf
+-Inf 3.14 NaN(S) -NaN(Q) 
+nan(_abcd_123_) -nan() 3.14 +NaN
+ infinity -nan 3,14 -infinity

@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME = $(tcasedir)ExecCmdLineWait.scenario
+#FEATURE = unit_tests - regression run bucket
+#CREATOR = Ren Jian Gang
+#DATE    = December 05, 2010
+#TEST_TYPE = Diagnostic
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)ExecCmdLineWait.f
+#OUTPUT   =  ExecCmdLineWait$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  ExecCmdLineWait$(OBJ)
+#OUTPUT   =  ExecCmdLineWait$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  ExecCmdLineWait$(EXE)
+#STDOUT   =  ExecCmdLineWait.out
+#STDERR   =  ExecCmdLineWait.err
+#ENDCMD
+
+#CMD      = DIFF
+#OPTS     = -b
+#INPUT    = ExecCmdLineWait.out $(tcasedir)ExecCmdLineWait1.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

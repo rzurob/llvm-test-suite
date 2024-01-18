@@ -1,0 +1,4 @@
+"Misc9.f", line 56.14: 1511-110 (S) Identifier w specified in the type guard statement has not been defined in a derived type definition.
+"Misc9.f", line 57.6: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file Misc9.f.

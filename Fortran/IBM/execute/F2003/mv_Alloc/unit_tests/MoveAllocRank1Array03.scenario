@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=move_alloc/MoveAllocRank1Array03
+#FEATURE = MOVE_ALLOC intrinsic procedure
+#CREATOR = Rob James
+#DATE    = 20060411
+#TEST_TYPE=Functional unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)MoveAllocRank1Array03.f
+#OUTPUT    = MoveAllocRank1Array03$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = MoveAllocRank1Array03$(OBJ)
+#OUTPUT    = MoveAllocRank1Array03$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = MoveAllocRank1Array03$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

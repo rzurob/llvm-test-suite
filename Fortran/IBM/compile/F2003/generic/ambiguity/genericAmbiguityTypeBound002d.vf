@@ -1,0 +1,6 @@
+"genericAmbiguityTypeBound002d.f", line 38.38: 1514-699 (S) Procedure "printj" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "printi", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** m   === End of Compilation 1 ===
+"genericAmbiguityTypeBound002d.f", line 63.42: 1514-699 (S) Procedure "negj" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "negi", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** unaryop   === End of Compilation 2 ===
+** genericambiguitytypebound002d   === End of Compilation 3 ===
+1501-511  Compilation failed for file genericAmbiguityTypeBound002d.f.

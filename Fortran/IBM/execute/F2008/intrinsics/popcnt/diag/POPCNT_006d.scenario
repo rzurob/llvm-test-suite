@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2008/intrinsics/popcnt/diag/POPCNT_006d.scenario
+#FEATURE = F2008 POPPAR and POPCNT
+#CREATOR = Denis Navotniy
+#DATE    = 20101130
+#TEST_TYPE=diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)POPCNT_006d.f
+#OUTPUT    = POPCNT_006d$(OBJ)
+#STDOUT    = POPCNT_006d.out
+#STDERR    = POPCNT_006d.out
+
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)POPCNT_006d$(product)vf) POPCNT_006d.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

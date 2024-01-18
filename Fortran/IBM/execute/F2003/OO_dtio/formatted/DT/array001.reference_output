@@ -1,0 +1,7 @@
+ iotype:DT empty v_list 100
+ iotype:DT empty v_list 101
+ iotype:DT empty v_list 102
+ iotype:DTb2-1 v_list: 5  200 iotype:DTb2-2 v_list: 10       201
+ iotype:DTb2-1 v_list: 5  202 iotype:DTb2-2 v_list: 10       203
+ iotype:DTb3-1 v_list: 5  300 iotype:DTb3-2 v_list: 10       301 iotype:DTb3-3 v_list: 15            302
+ iotype:DTb3-1 v_list: 5  303

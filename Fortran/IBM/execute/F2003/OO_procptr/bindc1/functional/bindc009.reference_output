@@ -1,0 +1,7 @@
+here are the elements of i1[0-2]: 101, 102, 103
+here are the elements of i2[0][0-2]: 201, 202, 203
+here are the elements of i2[1][0-2]: 211, 212, 213
+here are the elements of i1[0-2]: 101, 102, 103
+here are the elements of i2[0][0-2]: 201, 202, 203
+here are the elements of i2[1][0-2]: 211, 212, 213
+here are the elements of SUM of i1[0-2] and i2[1][0-2]: 312, 314, 316

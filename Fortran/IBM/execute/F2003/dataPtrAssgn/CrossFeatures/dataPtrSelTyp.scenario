@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dataPtrSelTyp.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       02-17-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dataPtrSelTyp.f
+#OUTPUT= dataPtrSelTyp$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  dataPtrSelTyp$(OBJ)
+#OUTPUT= dataPtrSelTyp$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dataPtrSelTyp$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

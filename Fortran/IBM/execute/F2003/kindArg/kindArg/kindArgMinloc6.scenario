@@ -1,0 +1,36 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       kindArgMinloc6.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       06-27-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)kindArgMinloc6.f
+#OUTPUT= kindArgMinloc6$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  kindArgMinloc6$(OBJ)
+#OUTPUT= kindArgMinloc6$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  kindArgMinloc6$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

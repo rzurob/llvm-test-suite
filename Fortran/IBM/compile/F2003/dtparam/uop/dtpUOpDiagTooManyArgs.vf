@@ -1,0 +1,6 @@
+"dtpUOpDiagTooManyArgs.f", line 42.40: 1514-707 (S) manyargproc1 must have one or two dummy arguments. manyargproc1 will not be included in the OPERATOR(.manyarg.) generic interface.
+"dtpUOpDiagTooManyArgs.f", line 42.54: 1514-707 (S) manyargproc2 must have one or two dummy arguments. manyargproc2 will not be included in the OPERATOR(.manyarg.) generic interface.
+"dtpUOpDiagTooManyArgs.f", line 50.40: 1514-707 (S) manyargproc1l must have one or two dummy arguments. manyargproc1l will not be included in the OPERATOR(.manyarg.) generic interface.
+"dtpUOpDiagTooManyArgs.f", line 50.55: 1514-707 (S) manyargproc2l must have one or two dummy arguments. manyargproc2l will not be included in the OPERATOR(.manyarg.) generic interface.
+** dtpuopdiagtoomanyargsmod   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtpUOpDiagTooManyArgs.f.

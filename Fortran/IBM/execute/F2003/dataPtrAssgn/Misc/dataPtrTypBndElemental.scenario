@@ -1,0 +1,33 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dataPtrTypBndElemental.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       07-31-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)dataPtrTypBndElemental.f
+#OUTPUT= dataPtrTypBndElemental$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  dataPtrTypBndElemental$(OBJ)
+#OUTPUT= dataPtrTypBndElemental$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dataPtrTypBndElemental$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

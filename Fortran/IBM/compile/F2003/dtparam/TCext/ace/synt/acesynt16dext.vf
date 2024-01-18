@@ -1,0 +1,24 @@
+** mod   === End of Compilation 1 ===
+"acesynt16dext.f", line 70.30: 1515-019 (S) Syntax is incorrect.
+"acesynt16dext.f", line 71.39: 1515-019 (S) Syntax is incorrect.
+"acesynt16dext.f", line 72.47: 1515-019 (S) Syntax is incorrect.
+"acesynt16dext.f", line 73.40: 1515-019 (S) Syntax is incorrect.
+"acesynt16dext.f", line 74.15: 1515-019 (S) Syntax is incorrect.
+"acesynt16dext.f", line 75.25: 1516-036 (S) Entity logical has undefined type.
+"acesynt16dext.f", line 75.32: 1515-022 (S) Syntax Error: Extra token " :: " was found. The token is ignored.
+"acesynt16dext.f", line 79.36: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt16dext.f", line 80.36: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt16dext.f", line 81.36: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt16dext.f", line 82.36: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt16dext.f", line 83.36: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt16dext.f", line 84.36: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt16dext.f", line 85.36: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt16dext.f", line 87.46: 1516-044 (S) A conversion from type REAL*4 is not permitted.
+"acesynt16dext.f", line 88.46: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"acesynt16dext.f", line 89.46: 1516-044 (S) A conversion from type COMPLEX*16 is not permitted.
+"acesynt16dext.f", line 90.46: 1516-044 (S) A conversion from type REAL*8 is not permitted.
+"acesynt16dext.f", line 91.46: 1516-044 (S) A conversion from type COMPLEX*8 is not permitted.
+"acesynt16dext.f", line 92.46: 1516-044 (S) A conversion from type derived is not permitted.
+"acesynt16dext.f", line 93.46: 1516-044 (S) A conversion from type CHARACTER is not permitted.
+** acesynt16dext   === End of Compilation 2 ===
+1501-511  Compilation failed for file acesynt16dext.f.

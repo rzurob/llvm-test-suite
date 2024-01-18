@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/abstracti/abstracti019l.scenario
+#FEATURE	= Derived Type Parameters (+ Abstract Interface Tests)
+#CREATOR	= Glen Mateer (derived from work by Alberto Alvarez-Mesquida)
+#DATE		= 20071025
+#TEST_TYPE	= Diagnostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)abstracti019l.f
+#OPTS		= -qdebug=intmsg
+#OUTPUT		= abstracti019l$(OBJ)
+#STDERR		= abstracti019l.stderr
+#VALIDRCS	= $(RC_COMP_E)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)abstracti019l$(product)vf) abstracti019l.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

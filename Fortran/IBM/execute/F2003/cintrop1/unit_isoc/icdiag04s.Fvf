@@ -1,0 +1,10 @@
+1501-510  Compilation successful for file icdiag04s.F.
+** icdiag04s   === End of Compilation 1 ===
+"icdiag04.ft", line 10.19: 1518-407 (L) The actual argument to the C_LOC intrinsic procedure is of type character.  The length type parameter of the argument is required to be interoperable with a C type by the Fortran 2003 standard.
+"icdiag04.ft", line 11.19: 1518-395 (L) Argument c to the intrinsic procedure C_LOC does not have interoperable type and type parameters. c must be a scalar nonpolymorphic variable with no length type parameters by the Fortran 2003 standard.
+"icdiag04.ft", line 11.19: 1518-407 (L) The actual argument to the C_LOC intrinsic procedure is of type character.  The length type parameter of the argument is required to be interoperable with a C type by the Fortran 2003 standard.
+"icdiag04.ft", line 12.19: 1518-394 (L) Argument d to the intrinsic procedure C_LOC has the POINTER attribute. d must be a scalar by the Fortran 2003 standard.
+"icdiag04.ft", line 12.19: 1518-395 (L) Argument d to the intrinsic procedure C_LOC does not have interoperable type and type parameters. d must be a scalar nonpolymorphic variable with no length type parameters by the Fortran 2003 standard.
+"icdiag04.ft", line 12.19: 1518-407 (L) The actual argument to the C_LOC intrinsic procedure is of type character.  The length type parameter of the argument is required to be interoperable with a C type by the Fortran 2003 standard.
+"icdiag04.ft", line 9.19: 1518-407 (L) The actual argument to the C_LOC intrinsic procedure is of type character.  The length type parameter of the argument is required to be interoperable with a C type by the Fortran 2003 standard.
+"icdiag04s.F", line 42.1: 1518-234 (L) The #line directive is not permitted by the Fortran 2003 standard.

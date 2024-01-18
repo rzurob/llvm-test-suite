@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/mix/generic/stmtByStmt/extend001.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)extend001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = extend001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = extend001$(OBJ)
+#OUTPUT    = extend001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = extend001$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $(tcasedir)extend001.vf extend001.1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

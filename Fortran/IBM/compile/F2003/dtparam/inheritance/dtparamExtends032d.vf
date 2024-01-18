@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"dtparamExtends032d.f", 1514-587 (S) Component k is not permitted. k is the name of a component, binding, or type parameter that is inherited from type k.
+** dtparamextends032d   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtparamExtends032d.f.

@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"mult_type_bound_08d.f", line 71.18: 1514-088 (S) Invalid component name.
+"mult_type_bound_08d.f", line 72.18: 1514-088 (S) Invalid component name.
+** t   === End of Compilation 2 ===
+1501-511  Compilation failed for file mult_type_bound_08d.f.

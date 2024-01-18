@@ -1,0 +1,11 @@
+ start
+ b - base:  100
+ calling old implementation to copy object of type base; not expecting runtime error message
+ p #1 - base:  100
+ allocating child
+ c - child: 99 >abc< 123 45 67 89 >def<
+ local copy; no failure expected
+ d - child: 99 >abc< 123 45 67 89 >def<
+ calling old implementation to copy; not expecting runtime error message
+ old implementation successfully copied.
+ p #2 - child: 99 >abc< 123 45 67 89 >def<

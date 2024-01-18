@@ -1,0 +1,4 @@
+"diag_exec_stmnt.f", line 31.6: 1515-019 (S) Syntax is incorrect.
+"diag_exec_stmnt.f", line 31.13: 1515-019 (S) Syntax is incorrect.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file diag_exec_stmnt.f.

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/deferlen/functional/allocate/deferLenAllocate021.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of deferlen/*
+#DATE      = 20071213
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)deferLenAllocate021.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = deferLenAllocate021$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = deferLenAllocate021$(OBJ)
+#OUTPUT    = deferLenAllocate021$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = deferLenAllocate021$(EXE)
+#STDOUT    = deferLenAllocate021.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = deferLenAllocate021.out $(tcasedir)deferLenAllocate021.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

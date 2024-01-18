@@ -1,0 +1,4 @@
+** mexplicitshapearray   === End of Compilation 1 ===
+"C1233pointerArray06d.f", line 70.35: 1516-273 (S) Dummy argument arrayexplicitinshape of procedure explicitshapearray was specified with the ASYNCHRONOUS attribute. arrayexplicitinshape is not an assumed-shape array or a pointer array.  The corresponding actual argument must not be a pointer array.
+** c1233pointerarray06d   === End of Compilation 2 ===
+1501-511  Compilation failed for file C1233pointerArray06d.f.

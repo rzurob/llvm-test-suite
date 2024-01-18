@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/intrinsic/dataPtrCshiftChar.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071216
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrCshiftChar.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrCshiftChar$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrCshiftChar$(OBJ)
+#OUTPUT    = dataPtrCshiftChar$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrCshiftChar$(EXE)
+#STDOUT    = dataPtrCshiftChar.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrCshiftChar.out $($(tcasedir)dataPtrCshiftChar$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

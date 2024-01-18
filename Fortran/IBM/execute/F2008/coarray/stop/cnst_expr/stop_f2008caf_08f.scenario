@@ -1,0 +1,55 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/coarray/stop/cnst_expr/stop_f2008caf_08f.scenario
+#FEATURE   = Constant expression as stop code in STOP statement
+#CREATOR   = Shahid Alam
+#DATE      = 20101026
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)stop_f2008caf_08f.f
+#OUTPUT    = stop_f2008caf_08f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = stop_f2008caf_08f$(OBJ)
+#OUTPUT    = stop_f2008caf_08f$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = stop_f2008caf_08f$(EXE)
+#STDOUT    = stop_f2008caf_08f.out
+#STDERR    = stop_f2008caf_08f.out
+!#VALIDRCS  = 101
+#ENDCMD
+
+#CMD       = GREP
+#OPTS      = "SUM(A) = 10710"
+#INPUT     = stop_f2008caf_08f.out
+#ENDCMD
+
+#CMD       = GREP
+#OPTS      = "STOP 101"
+#INPUT     = stop_f2008caf_08f.out
+#ENDCMD
+
+#CMD       = GREP
+#OPTS      = "ERROR: After STOP"
+#INPUT     = stop_f2008caf_08f.out
+#VALIDRCS  = 1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

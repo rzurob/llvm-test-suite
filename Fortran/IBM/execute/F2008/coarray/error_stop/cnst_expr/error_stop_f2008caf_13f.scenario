@@ -1,0 +1,50 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/coarray/stop/cnst_expr/error_stop_f2008caf_13f.scenario
+#FEATURE   = Constant expression as stop code in ERROR STOP statement
+#CREATOR   = Shahid Alam
+#DATE      = 20101026
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)error_stop_f2008caf_11f.f
+#OUTPUT    = error_stop_f2008caf_13f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = error_stop_f2008caf_13f$(OBJ)
+#OUTPUT    = error_stop_f2008caf_13f$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#ENVAR     = XLFRTEOPTS=$(XLFRTEOPTS):errimagenum=yes
+#INPUT     = error_stop_f2008caf_13f$(EXE)
+#STDOUT    = error_stop_f2008caf_13f.out
+#STDERR    = error_stop_f2008caf_13f.out
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = GREP
+#OPTS      = "Result: 34"
+#INPUT     = error_stop_f2008caf_13f.out
+#ENDCMD
+
+#CMD       = GREP
+#OPTS      = "<Image .*> ERROR STOP 9"
+#INPUT     = error_stop_f2008caf_13f.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

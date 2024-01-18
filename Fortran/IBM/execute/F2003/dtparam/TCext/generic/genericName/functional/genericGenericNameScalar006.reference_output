@@ -1,0 +1,11 @@
+ noarg:  100
+ noarg:  200
+ onearg:  100 200
+ onearg:  200 100
+ onearg:  100 50
+ twoarg:  100 100 200
+ twoarg:  200 200 100
+ twoarg:  100 100 100
+ noarg:  100
+ onearg:  200 100
+ twoarg:  100 100 100

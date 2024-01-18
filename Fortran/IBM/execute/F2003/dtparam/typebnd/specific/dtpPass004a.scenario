@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/typebnd/specific/dtpPass004a.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPass004a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=allowrpdt
+#OUTPUT    = dtpPass004a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPass004a$(OBJ)
+#OUTPUT    = dtpPass004a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPass004a$(EXE)
+#STDOUT    = dtpPass004a.out
+#VALIDRCS  = 10
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dtpPass004a.out $($(tcasedir)dtpPass004a$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

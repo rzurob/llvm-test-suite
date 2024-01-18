@@ -1,0 +1,110 @@
+!*********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : InitExpDefInqIEEE_SUPPORT_ROUNDING.f  
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Apr. 05, 2006
+!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*
+!*  SECONDARY FUNCTIONS TESTED : 
+!*
+!*  REFERENCE                  : Feature Number 289074 
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  : -qfree=f90
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*
+!*  
+!*  a reference to an IEEE inquiry function
+!* 
+!*  -  IEEE_SUPPORT_ROUNDING 
+!* 
+!*  (319320)
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+
+
+  PROGRAM   InitExpDefInqIEEE_SUPPORT_ROUNDING 
+  USE IEEE_ARITHMETIC
+  IMPLICIT NONE
+  INTEGER :: I, J, K
+
+  TYPE(IEEE_ROUND_TYPE), PARAMETER :: NEAREST = IEEE_NEAREST
+  TYPE(IEEE_ROUND_TYPE), PARAMETER :: TO_ZERO = IEEE_TO_ZERO
+  TYPE(IEEE_ROUND_TYPE), PARAMETER :: UP      = IEEE_UP
+  TYPE(IEEE_ROUND_TYPE), PARAMETER :: DOWN    = IEEE_DOWN
+
+  TYPE(IEEE_ROUND_TYPE) :: S1 = IEEE_NEAREST
+  TYPE(IEEE_ROUND_TYPE) :: S2 = IEEE_TO_ZERO
+  TYPE(IEEE_ROUND_TYPE) :: S3 = IEEE_UP
+  TYPE(IEEE_ROUND_TYPE) :: S4 = IEEE_DOWN
+
+
+  REAL(4),   PARAMETER :: R4 = 10
+  REAL(8),   PARAMETER :: R8(-2147483648:-2147483647, 2147483646:2147483647) = 1
+  REAL(16),  PARAMETER :: R6(1:0) = -1
+
+  LOGICAL  :: T41= IEEE_SUPPORT_ROUNDING(NEAREST, R4)
+  LOGICAL  :: T42= IEEE_SUPPORT_ROUNDING(TO_ZERO, R4)
+  LOGICAL  :: T43= IEEE_SUPPORT_ROUNDING(UP,      R4)
+  LOGICAL  :: T44= IEEE_SUPPORT_ROUNDING(DOWN,    R4)
+
+  LOGICAL  :: T81= IEEE_SUPPORT_ROUNDING(NEAREST, R8)
+  LOGICAL  :: T82= IEEE_SUPPORT_ROUNDING(TO_ZERO, R8)
+  LOGICAL  :: T83= IEEE_SUPPORT_ROUNDING(UP,      R8)
+  LOGICAL  :: T84= IEEE_SUPPORT_ROUNDING(DOWN,    R8)
+
+  LOGICAL  :: T61= IEEE_SUPPORT_ROUNDING(NEAREST, R6)
+  LOGICAL  :: T62= IEEE_SUPPORT_ROUNDING(TO_ZERO, R6)
+  LOGICAL  :: T63= IEEE_SUPPORT_ROUNDING(UP,      R6)
+  LOGICAL  :: T64= IEEE_SUPPORT_ROUNDING(DOWN,    R6)
+
+
+  LOGICAL  :: T1= IEEE_SUPPORT_ROUNDING(NEAREST)
+  LOGICAL  :: T2= IEEE_SUPPORT_ROUNDING(TO_ZERO)
+  LOGICAL  :: T3= IEEE_SUPPORT_ROUNDING(UP)
+  LOGICAL  :: T4= IEEE_SUPPORT_ROUNDING(DOWN)
+  LOGICAL  :: T5= IEEE_SUPPORT_ROUNDING(IEEE_DOWN)
+
+  ! not support real(16)
+  IF ( IEEE_SUPPORT_ROUNDING(S1)  )   STOP 7
+  IF ( IEEE_SUPPORT_ROUNDING(S2)  )   STOP 8
+  IF ( IEEE_SUPPORT_ROUNDING(S3)  )   STOP 9
+  IF ( IEEE_SUPPORT_ROUNDING(S4)  )   STOP 10
+
+  IF ( .NOT.  T41  )   STOP 11
+  IF ( .NOT.  T42  )   STOP 12
+  IF ( .NOT.  T43  )   STOP 13
+  IF ( .NOT.  T44  )   STOP 14
+
+  IF ( .NOT.  T81  )   STOP 21
+  IF ( .NOT.  T82  )   STOP 22
+  IF ( .NOT.  T83  )   STOP 23
+  IF ( .NOT.  T84  )   STOP 24
+
+  IF (        T61  )   STOP 31
+  IF (        T62  )   STOP 32
+  IF (        T63  )   STOP 33
+  IF (        T64  )   STOP 34
+
+  IF (        T1   )   STOP 41
+  IF (        T2   )   STOP 42
+  IF (        T3   )   STOP 43
+  IF (        T4   )   STOP 44
+
+  END
+
+
+ 

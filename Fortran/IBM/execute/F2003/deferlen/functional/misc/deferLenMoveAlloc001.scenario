@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/deferlen/functional/misc/deferLenMoveAlloc001.scenario
+#FEATURE = character with deferred length type parameter
+#CREATOR = Robert Ma
+#DATE    = 20060501
+#TEST_TYPE=sanity
+#ENDDOC	
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)deferLenMoveAlloc001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = deferLenMoveAlloc001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = deferLenMoveAlloc001$(OBJ)
+#OUTPUT    = deferLenMoveAlloc001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = deferLenMoveAlloc001$(EXE)
+#STDOUT    = deferLenMoveAlloc001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = deferLenMoveAlloc001.out $(tcasedir)deferLenMoveAlloc001.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

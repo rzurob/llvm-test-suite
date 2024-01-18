@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/intrinsics/null/nullData01.scenario
+#FEATURE= 355754
+#CREATOR= Nancy Wang
+#DATE   = Sept. 25 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)nullData01.f
+#OUTPUT= nullData01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = nullData01$(OBJ)
+#OUTPUT= nullData01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = nullData01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

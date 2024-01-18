@@ -1,0 +1,9 @@
+"num_images_d001b.f", line 32.8: 1516-036 (S) Entity num_images has undefined type.
+"num_images_d001b.f", line 35.9: 1516-026 (S) Non-arrays must not be subscripted.
+"num_images_d001b.f", line 38.8: 1516-026 (S) Non-arrays must not be subscripted.
+"num_images_d001b.f", line 44.8: 1516-026 (S) Non-arrays must not be subscripted.
+"num_images_d001b.f", line 45.8: 1516-026 (S) Non-arrays must not be subscripted.
+** main   === End of Compilation 1 ===
+"num_images_d001b.f", line 55.6: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "num_images".
+** sub1   === End of Compilation 2 ===
+1501-511  Compilation failed for file num_images_d001b.f.

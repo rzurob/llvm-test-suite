@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+missing other err msgs???????
+"PtrAssignCharacteristics2.f", line 138.3: 1515-123 (S) The procedure pointer assignment statement target must be declared with the same type and type parameters as the procedure pointer.
+"PtrAssignCharacteristics2.f", line 140.3: 1515-134 (S) The function result of the procedure pointer is not polymorphic.  The function result of the procedure pointer assignment target must not be polymorphic.
+** ptrassigncharacteristics2   === End of Compilation 2 ===
+1501-511  Compilation failed for file PtrAssignCharacteristics2.f.

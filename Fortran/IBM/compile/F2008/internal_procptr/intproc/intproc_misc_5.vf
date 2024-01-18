@@ -1,0 +1,5 @@
+"intproc_misc_5.f", line 39.11: 1515-120 (S) A non-intrinsic elemental procedure must not be used as a procedure pointer assignment target.
+"intproc_misc_5.f", line 40.13: 1513-200 (S) User-defined elemental procedures may not be passed as actual arguments.
+"intproc_misc_5.f", line 41.13: 1513-200 (S) User-defined elemental procedures may not be passed as actual arguments.
+** intproc_misc_5   === End of Compilation 1 ===
+1501-511  Compilation failed for file intproc_misc_5.f.

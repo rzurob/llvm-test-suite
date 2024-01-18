@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME      = F2008/value/array/func/valuearray_f305.scenario
+#FEATURE   = VALUE(F2008 extension) - dummy argument arrays allowed with value
+#CREATOR   = Cezar Lutac
+#DATE      = 20150924
+#TEST_TYPE = functional
+#KEYWORDS  = F2008, value, arrays, array
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)valuearray_f305a.f
+#OUTPUT    =  valuearray_f305a$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)valuearray_f305b.f
+#OUTPUT    =  valuearray_f305b$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     =  valuearray_f305a$(OBJ)
+#INPUT     =  valuearray_f305b$(OBJ)
+#OUTPUT    =  valuearray_f305$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     =  valuearray_f305$(EXE)
+#STDOUT    =  valuearray_f305.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

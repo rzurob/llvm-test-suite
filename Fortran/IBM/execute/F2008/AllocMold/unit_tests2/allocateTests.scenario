@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/allocate/SourceExp/allocateTests.f
+#FEATURE   = DTP - Allocate with source expression
+#CREATOR   = Izhak Jakov
+#DATE      = 20090126
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)allocateTests.f
+#OUTPUT    = allocateTests$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = allocateTests$(OBJ)
+#OUTPUT    = allocateTests$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = allocateTests$(EXE)
+#STDOUT    = allocateTests.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

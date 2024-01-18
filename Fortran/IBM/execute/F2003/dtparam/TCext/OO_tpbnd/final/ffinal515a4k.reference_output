@@ -1,0 +1,5 @@
+ T
+ finalizeData
+ deallocating d%data
+ finalizeBase
+ end

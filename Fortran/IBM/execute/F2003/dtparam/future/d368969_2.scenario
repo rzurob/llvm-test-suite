@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      =
+#FEATURE   =
+#CREATOR   =
+#DATE      =
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d368969_2.f
+#OUTPUT    = d368969_2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d368969_2$(OBJ)
+#OUTPUT    = d368969_2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d368969_2$(EXE)
+#STDOUT    = d368969_2.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)d368969_2$(product)vf) d368969_2.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

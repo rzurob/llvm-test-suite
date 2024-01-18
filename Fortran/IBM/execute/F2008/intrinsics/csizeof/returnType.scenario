@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    =  F2008/intrinsics/csizeof/returnType.scenario
+#FEATURE =  F2008 ISO_C_BINDING C_SIZEOF function 381475
+#CREATOR =  Michelle Zhang
+#DATE    =  2011/01/14
+#TEST_TYPE= functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)returnType.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = returnType$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = returnType$(OBJ)
+#OUTPUT    = returnType$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = returnType$(EXE)
+#STDOUT    = returnType.out
+#ENDCMD
+
+#CMD       = DIFF
+#IF in($(F_COMPILE^OPT_GEN_64BIT_COMPILER_MODE)) || on(default64)
+#INPUT     = returnType.out $($(tcasedir)returnType$(product)64.vf)
+#ELSE
+#INPUT     = returnType.out $($(tcasedir)returnType$(product)vf)
+#ENDIF
+#ENDCMD
+#ENDCONTROL
+#ENDSCENARIO
+

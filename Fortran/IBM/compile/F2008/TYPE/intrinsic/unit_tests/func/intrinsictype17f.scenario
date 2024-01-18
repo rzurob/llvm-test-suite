@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/TYPE/intrinsic/unit_tests/func/intrinsictype17f.scenario
+#FEATURE    = F386894 - F2008: Intrinsic types in TYPE spec
+#CREATOR    = David Nichols
+#DATE       = 20110310
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINENV
+#RESOURCES_REQ = VSX
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#OPTS       = $(OPT_GEN_CODE_FOR_NATIVE_ARCHITECTURE) $(OPT_TUNE_CODE_FOR_NATIVE_ARCHITECTURE) $(OPT_ENABLE_VECTOR_INSTRUCTIONS_GENERATION)
+#INPUT      = $(tcasedir)intrinsictype17f.F
+#STDERR     = intrinsictype17f.out
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = intrinsictype17f.out $($(tcasedir)intrinsictype17f$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

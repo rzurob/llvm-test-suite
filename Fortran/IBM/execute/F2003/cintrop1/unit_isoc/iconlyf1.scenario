@@ -1,0 +1,21 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop1/unit_isoc/iconlyf1.scenario
+#FEATURE = cintrop1 tests - regression run bucket
+#CREATOR = Manual conversion CPR
+#DATE    = 20060607
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TCARG="1"
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#INCLUDE = iconly.shinclude
+
+#ENDCONTROL
+#ENDSCENARIO

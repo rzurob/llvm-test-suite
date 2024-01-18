@@ -1,0 +1,383 @@
+<html><head><title>ERFC_SCALED</title></head><body><table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#c0e1ff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="left" style="font-size: 12pt; color: rgb(0, 0, 128); font-family: Arial;"><strong>Document Control Information:</strong>
+            <p style="color: rgb(0, 0, 0);">The official version of this document is kept in CMVC in the <span style="font-weight: bold; text-decoration: underline;">%CMVC_Family%</span> family, release <span style="font-weight: bold; text-decoration: underline;">%CMVC_Release%</span>, component <span style="font-weight: bold; text-decoration: underline;">%CMVC_Component%</span>, file <span style="font-weight: bold; color: rgb(255, 102, 102); text-decoration: underline;">%CMVC_PathName%</span>. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.<br />
+            <br />
+            CMVC Extraction Information: %W% %H% %I% sccsid<br />
+            <br />
+            This document is IBM Confidential.<br />
+            </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table cellspacing="0" cellpadding="5" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td width="20%" valign="top" align="left"><strong>CMVC Feature Number</strong> </td>
+            <td width="80%" valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%CMVC_Feature%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Feature Title</strong> </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Document_Name%  %Note{By default the feature title and document name are the same. You can either change the document name (through Properties), or replace the tag with the title of the feature}%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Author(s)</strong> </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Authors%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Applicable Product Releases</strong> </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">XL Fortran 14.1 on AIX, Linux, and BGQ</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Affected Components</strong> </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);"> Front Ends:  Fortran<br />
+            Libraries: Fortran RT<br />
+            Documentation<br />
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#ff6666">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial; text-align: left;"><strong>Document Status: For Approval</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<p><strong>Approvers Only:</strong> Click on the 'Approve' check-box beside your name in the table below if you agree with the technical and user interface content of this document; not checking your 'approve' check-box signifies you do not approve.</p>
+<p>%Approvals%</p>
+<p>Approval Comments</p>
+<p>
+<table cellspacing="0" cellpadding="5" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td valign="top" align="left"><strong>Approvers</strong> (mandatory participation) </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Note{Insert the names of people who will have approval authority for this review. These people, in aggregate, are responsible for approving the technical and user interface content of the document. Generally, this list should include people who represent compiler components that will need to change if this review is approved.<br />
+            The I0 Process document provides detailed guidance on choosing your list of approvers.<br />
+            Use Access Control to add/delete people from this list. The initial access control list is populated with the people from the Component Reviewers section below. You can use Access Control to change their role to Approver, or add additional approvers.}%<br />
+            %Approvers%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Release Management Contact</strong> (optional participation) </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Release_Management_Contact% <br />
+            %Note{Release Manager/Development Manager/Team Lead,<br />
+            usually your team's representative at product status meetings. Use Access Control to add/change Release Management Contact.}%<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Component Reviewers</strong> (optional participation) </td>
+            <td valign="top" align="left" style="color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Note{These groups must be made aware of the I0. Assign at least one person representing each group. The names listed below are suggested contacts only, please assign whoever is appropriate:<br />
+            <ul style="font-family: Arial;">
+                <li><strong>C FE and related tools/libraries/driver:</strong><br />
+                AIX - Philip Luk<br />
+                Linux - Philip Luk<br />
+                z/OS - Kendrick Wong<br />
+                CELL - Larry Lindsay<br />
+                UPC - Philip Luk</li>
+                <li><strong>C++ FE and related tools/libraries/driver:</strong><br />
+                AIX - Jeff Heath<br />
+                Linux - Sasha Kasapinovic<br />
+                z/OS - Michael Wong<br />
+                CELL - Kevin Shin<br />
+                </li>
+                <li><strong>Fortran FE, ASTI, PLIX, and related tools/libraries/driver:</strong><br />
+                AIX, PLIX - Rafik Zurob<br />
+                Linux - Xing Xue<br />
+                BG/L - Daniel Chen<br />
+                CELL - Kelvin Li </li>
+                <li><strong>PL/X Development:</strong><br />
+                Kirk Crane<br />
+                </li>
+                <li><strong>TPO and associated tools/libraries (libxlopt, SMPRT, MASS):</strong><br />
+                AIX - Arie Tal/Yan Zhang<br />
+                Linux - Tommy Wong<br />
+                z/OS - Chris Miclea<br />
+                BG - Damien Bonaventure<br />
+                CELL - Amy Wang</li>
+                <li><strong>TOBEY and associated tools/libraries: (dis, libxl, bolt)</strong><br />
+                AIX - Christopher Lapkowski<br />
+                Linux - Irina rada<br />
+                z/OS - Chwan-Hang Lee<br />
+                BG - Damien Bonaventure, Leon Ding (Xialoliang Ding/Piscataway/IBM@IBMUS)<br />
+                CELL - Dickson Chau<br />
+                dis - Ian McIntosh<br />
+                </li>
+                <li><strong>WCode:</strong><br />
+                Roland Froese</li>
+                <li><strong>Disassembler<br />
+                </strong>Ian McIntosh</li>
+                <li><strong>Information Development:</strong><br />
+                C/C++ - Wei Zhong Shan/China/IBM<br />
+                Fortran - Lisa Wilkinson<br />
+                </li>
+                <li><strong>Customer Service and Support:</strong><br />
+                AIX/Linux - Zoran Kulina<br />
+                z/OS - Youssef Himo <br />
+                Cell - Sean Kennedy </li>
+                <li><strong>Compiler Enablement:</strong><br />
+                Dwayne Moore </li>
+                <li><strong>Fortran Test:</strong><br />
+                Kobi Vinayagamoorthy<br />
+                </li>
+                <li><strong>C/C++ Test:</strong><br />
+                Thomas Lee(z/OS)<br />
+                Adrean Gatea (system p)<br />
+                </li>
+                <li><strong>PL/X Test:</strong><br />
+                Anne Wylie </li>
+                <li><strong>Build and Packaging Team:</strong><br />
+                AIX - Chris Taylor<br />
+                Linux - Viktor Ganich<br />
+                BG - Steven Chen<br />
+                Cell - Kevin Yuen<br />
+                z/OS - Steve Chen<br />
+                Dale Soldiuk (Please include Dale as optional on all reviews)</li>
+                <li><strong>Performance Measurement and Analysis Team:<br />
+                </strong>John Tam</li>
+                <li><strong>Planning</strong><br />
+                Mary Chan<br />
+                </li>
+            </ul>
+            <p>The following groups must be notified of a W-Code change or if a change affects their language. They are optional otherwise.</p>
+            <ul>
+                <li><strong>PL/I:</strong><br />
+                zOS and AIX - Peter Elderon (in SVL) </li>
+                <li><strong>Cobol:</strong><br />
+                AIX - Richard Nelson (in SVL) </li>
+            </ul>
+            <p>The following group must be notified of a front-end (C FE, or C++ FE) related change or other modification having a direct impact. Inclusion is optional otherwise.</p>
+            <ul>
+                <li><strong>Makedepend for USS:</strong><br />
+                Christopher Taylor </li>
+            </ul>
+            <p>The following group must be notified whenever a change in debug WCODE is made, and any debugger related issues are involved.</p>
+            <ul>
+                <li><strong>Common Debug Architecture Development (CDA):</strong><br />
+                Kendrick Wong </li>
+            </ul>
+            Use Access Control to add/delete people from this list.}%             <br />
+            %Component_Reviewers%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Team Reviewers</strong> (optional participation) </td>
+            <td valign="top" align="left" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">             %Note{List any additional people you feel need to participate in the review. These people do not have approval authority. Use Access Control to add/delete people from this list.}%<br />
+            %Team_Reviewers%</td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p><br />
+<br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td style="vertical-align: top; font-family: Arial;"><strong>Reviewers</strong>: Please click the 'Reviewed' checkbox beside your name to indicate your participation in the review. </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%Reviews%<br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td style="vertical-align: top; font-family: Arial;"><strong>Access Change History</strong> %Note{Authors: Access Change History will list any changes to the access control done to the document draft. These changes would not be visible in a review. In a review, this section would only list the access changes done to the review itself.<br />
+            Please note that changes to the access control of a review are not automatically reflected in the access control of the draft document.}% </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%CollapsedSection{<strong>Access Change History</strong>}{%Access_Change_History%}%<br />
+</p>
+<p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>Feature Overview</strong> </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%Note{ General description of the feature. The contents of this section are intended to guide reviewers as to what they will be reviewing. Any information relevant to an external product user must appear in the User Documentation section; that content must not only appear here.<br />
+</p>
+<p> The rest of this section outlines the key issues and design decisions that should be noted by the reviewers. The purpose of these subsections is to give reviewers a 'birds-eye' view of the design, to see if any key requirements or issues were missed or design decisions made that need to call out special attention. This is also a good vehicle for identifying whether anyone should be added as a reviewer for the design}%</p>
+<h2>Key Requirements</h2>
+<p>Provide an reasonable elemental implementation of erfc_scaled.</p>
+<h2>Key Design Issues</h2>
+<p>Should the FE inline the function or call the RTE?  Should we provide a version of the function in MASS?</p>
+<h2>Key Design Decisions</h2>
+<p>The FE can inline the scalar case, but can't easily inline the array (scalarized) case because the scalarization occurs in ASTI and the implementation of the function requires a temp.  The temp is used to store the value of X to avoid repeating side effects when squaring X and calling erfc(x).  Also, the formula provided in the standard (exp(x*x) * erfc(x)) is prone to precision errors for large values of x because exp(x*x) becomes very large while erfc(x) becomes very small.&nbsp; We will therefore implement ERFC_SCALED in the runtime using an implementation that Robert will provide to address the precision issue.&nbsp; As for MASS, we will consdier adding a P7 MASS function as a stretch goal for this release.</p>
+<h2>Testing Strategy</h2>
+<p>This feature will be tested via unit tests only.  Please refer to the Testing Considerations section for specific information on what will be tested.</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);"> </strong><strong style="font-size: 20px; color: rgb(0, 128, 0);"> </strong>
+<p> </p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>User Documentation</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Overview</h3>
+</strong>
+<p>The ERFC_SCALED intrinsic provides a scaled approximation of the complementary error function.</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>User Benefits</h3>
+</strong>
+<p>The new ERFC_SCALED intrinsic provides a standard, portable addition to the Fortran math library.</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Public Interface</h3>
+</strong>
+<p><strong>ERFC_SCALED(X) (Fortran 2008)</strong></p>
+<p>Scaled complementary error function</p>
+<p>erfc_scaled(x) = exp(x**2) * erfc(x) = exp(x**2) * (formula from erfc lr page)</p>
+<p><strong>Argument type and attributes:</strong></p>
+<p><strong>X</strong>&nbsp;&nbsp;&nbsp; must be of type real</p>
+<p><strong>Result value</strong></p>
+<p>The result value approximates exp(X**2) * erfc(X)</p>
+<p><strong>Example</strong></p>
+<p>ERFC_SCALED(1.0) has the value 0.4275836 (approximately)</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Constraints</h3>
+</strong>
+<p>None</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Rules</h3>
+</strong>
+<p>None</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Language Standard Considerations</h3>
+</strong>
+<p>ERFC_SCALED conforms to the Fortran 2008 standard.  It will be flagged with (L) messages when checking for conformance with earlier standards.</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Messages</h3>
+</strong>
+<p>Existing messages will be used.  (We use the same messages for all intrinsics.)</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Performance Considerations</h3>
+</strong>
+<p>This function is implemented in the XLF runtime.  We may be able to get better performance by adding MASS versions in the future.&nbsp; (P7 version is a stretch goal for this release.)<br />
+</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Multi-Platform/Portability Considerations</h3>
+</strong>
+<p>None</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Migration/Co-Existence/Binary-Compatibility Considerations</h3>
+</strong>
+<p>None</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Debug Considerations</h3>
+</strong>
+<p>None</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>NLS (Unicode) Considerations</h3>
+</strong>
+<p>None</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Samples</h3>
+</strong>
+<p>ERFC_SCALED(1.0) has the value 0.4275836 (approximately)</p>
+<br />
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>Architecture Review Board</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">  </strong>
+<p>Not required.</p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>Internal Compiler Team Information</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Product Dependencies</h3>
+</strong>
+<p>None</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Patent/Disclosure Implications</h3>
+</strong>
+<p>None</p>
+<p><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Scientific Research and Experimental Development</h3>
+</strong> </p>
+<p><strong>Technological Advancements</strong>: N/A</p>
+<p><strong>Technological Obstacles</strong>: N/A</p>
+<p><strong>Work Performed</strong>: N/A</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Build and Packaging Considerations</h3>
+</strong>
+<p>None</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Information Development Impacts</h3>
+</strong>
+<p> </p>
+<ul>
+    <li>Language Reference:
+    <ul>
+        <li>Add a link to ERFC_SCALED to the table in the &quot;Elemental intrinsic procedures&quot; subsection of the &quot;Classes of intrinsic procedures&quot; section in chapter 14.  Add a footnote to indicate that the function conforms to Fortran 2008.</li>
+        <li>Add the detailed deescription of ERFC_SCALED to chapter 14.</li>
+    </ul>
+    </li>
+    <li>Getting Started: Add ERFC_SCALED to the list of new Fortran 2008 intrinsics.</li>
+</ul>
+<p>&nbsp;</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Testing Considerations</h3>
+</strong>
+<p>&nbsp;</p>
+<ul>
+    <li>Test language level checking</li>
+    <li>Test the result value using the following formula:  exp(x*x) * erfc(x)</li>
+    <li>Test scalarization</li>
+    <li>Test erfc_scaled in constant expressions</li>
+</ul>
+<p>&nbsp;</p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>High-Level Implementation Design</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Implementation Design Overview</h3>
+</strong>
+<p>The frontend will call a pure runtime function that implements erfc_scaled(x) as exp(x*x) * erfc(x).</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Inter-Component Communication/Interfaces</h3>
+</strong>
+<p>Runtime functions: </p>
+<ul>
+    <li>_xlrerfcs: real(4)</li>
+    <li>_xlderfcs: real(8)</li>
+    <li>_xlqerfcs: real(16)</li>
+</ul>
+<p>&nbsp;</p>
+<strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Other Implementation Design Information</h3>
+</strong>
+<p>None</p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-size: 12pt; font-family: Arial;"><strong>Appendix/References</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<p>Section 13.7.56 ERFC_SCALED in the Fortran 2008 standard.</p><!--HTML Wrapper--></body></html>

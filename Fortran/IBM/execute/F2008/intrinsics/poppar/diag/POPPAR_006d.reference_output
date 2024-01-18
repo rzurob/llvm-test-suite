@@ -1,0 +1,4 @@
+"POPPAR_006d.f", line 36.17: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"POPPAR_006d.f", line 38.17: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+** poppar_006d   === End of Compilation 1 ===
+1501-511  Compilation failed for file POPPAR_006d.f.

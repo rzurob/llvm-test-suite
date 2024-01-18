@@ -1,0 +1,8 @@
+assumeShapeTypeCheck.scenario
+combinedAttr1.scenario
+combinedAttr2.scenario
+combinedAttr3.scenario
+combinedAttr5.scenario
+pointerTypeCheck.scenario
+ptrCompTypeCheck.scenario
+d383523.scenario

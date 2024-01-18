@@ -1,0 +1,3 @@
+"bcdabl11.f", line 50.9: 1514-180 (W) An entity must not be given explicitly any attribute more than once in a scoping unit.
+** bcdabl11   === End of Compilation 1 ===
+1501-510  Compilation successful for file bcdabl11.f.

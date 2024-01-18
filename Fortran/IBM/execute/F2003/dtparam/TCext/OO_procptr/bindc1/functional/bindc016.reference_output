@@ -1,0 +1,24 @@
+before setting  : 0.000000
+after setting   : 101.000000
+before setting  : 0.000000
+after setting   : 102.000000
+===== setandprint2 =====
+before setting  : 0.000000
+after setting   : 201.000000
+===== end of setandprint2 =====
+===== setandprint2 =====
+before setting  : 0.000000
+after setting   : 202.000000
+===== end of setandprint2 =====
+===== setandprint2 =====
+before setting  : 201.000000
+after setting   : 301.000000
+===== end of setandprint2 =====
+===== setandprint2 =====
+before setting  : 202.000000
+after setting   : 302.000000
+===== end of setandprint2 =====
+before setting  : 301.000000
+after setting   : 401.000000
+before setting  : 302.000000
+after setting   : 402.000000

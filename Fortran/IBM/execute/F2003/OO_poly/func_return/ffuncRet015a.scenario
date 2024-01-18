@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/func_return/ffuncRet015a.f
+#FEATURE = OO_poly
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ffuncRet015a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ffuncRet015a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = ffuncRet015a$(OBJ)
+#OUTPUT    = ffuncRet015a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ffuncRet015a$(EXE)
+#STDOUT    = ffuncRet015a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = ffuncRet015a.out $($(tcasedir)ffuncRet015a$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

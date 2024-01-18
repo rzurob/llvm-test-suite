@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2003/dtparam/intrinsics/pack/fp1a.scenario
+#FEATURE = dtp intrinsics
+#CREATOR = Adrian Green
+#DATE    = 20080821
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)fp1a.f
+#OUTPUT   = fp1a$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = fp1a$(OBJ)
+#OUTPUT   = fp1a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fp1a$(EXE)
+#STDOUT   = fp1a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $(tcasedir)fp1a.vf fp1a.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

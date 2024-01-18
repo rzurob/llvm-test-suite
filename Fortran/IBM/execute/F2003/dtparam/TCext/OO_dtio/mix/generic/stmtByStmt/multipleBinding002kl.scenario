@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/mix/generic/stmtByStmt/multipleBinding002kl.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070813
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)multipleBinding002kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = multipleBinding002kl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = multipleBinding002kl$(OBJ)
+#OUTPUT    = multipleBinding002kl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = multipleBinding002kl$(EXE)
+#STDOUT    = multipleBinding002kl.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

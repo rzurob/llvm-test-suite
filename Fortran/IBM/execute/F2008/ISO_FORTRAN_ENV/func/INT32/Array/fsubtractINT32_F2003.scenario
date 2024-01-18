@@ -1,0 +1,46 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       fsubtractINT32
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2003_COMPILE
+#INPUT=  $(tcasedir)fsubtractINT32.f
+#OUTPUT= fsubtractINT32$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2003_LINK
+#INPUT=  fsubtractINT32$(OBJ)
+#OUTPUT= fsubtractINT32$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fsubtractINT32$(EXE)
+#ENDCMD
+
+#CMD=    XLF2003_COMPILE
+#OPTS=   $(OPT_INTSIZE_2)
+#INPUT=  $(tcasedir)fsubtractINT32.f
+#OUTPUT= fsubtractINT32_1$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2003_LINK
+#OPTS=   $(OPT_INTSIZE_2)
+#INPUT=  fsubtractINT32_1$(OBJ)
+#OUTPUT= fsubtractINT32_1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fsubtractINT32_1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

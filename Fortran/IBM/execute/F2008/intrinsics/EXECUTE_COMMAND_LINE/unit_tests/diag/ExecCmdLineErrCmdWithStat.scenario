@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME = $(tcasedir)ExecCmdLineErrCmdWithStat.scenario
+#FEATURE = unit_tests - regression run bucket
+#CREATOR = Ren Jian Gang
+#DATE    = December 05, 2010
+#TEST_TYPE = Diagnostic
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)ExecCmdLineErrCmdWithStat.f
+#OUTPUT   =  ExecCmdLineErrCmdWithStat$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  ExecCmdLineErrCmdWithStat$(OBJ)
+#OUTPUT   =  ExecCmdLineErrCmdWithStat$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  ExecCmdLineErrCmdWithStat$(EXE)
+#STDOUT   =  ExecCmdLineErrCmdWithStat.out
+#STDERR   =  ExecCmdLineErrCmdWithStat.err
+#VALIDRCS = $(RC_ANY)
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = ExecCmdLineErrCmdWithStat.out $($(tcasedir)ExecCmdLineErrCmdWithStat$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

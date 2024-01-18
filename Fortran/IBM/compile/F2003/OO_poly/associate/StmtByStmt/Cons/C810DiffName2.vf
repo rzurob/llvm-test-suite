@@ -1,0 +1,4 @@
+"C810DiffName2.f", line 55.20: 1511-116 (E) The END ASSOCIATE statement must not contain a construct name.  Construct name as is ignored.
+"C810DiffName2.f", 1516-036 (S) Entity as has undefined type.
+** c810diffname2   === End of Compilation 1 ===
+1501-511  Compilation failed for file C810DiffName2.f.

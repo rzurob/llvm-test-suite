@@ -1,0 +1,34 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/contiguous/diag/contiguous06d.scenario
+#FEATURE    = F375705 - F2008: support CONTIGUOUS attribute & IS_CONTIGUOUS intrinsic
+#CREATOR    = David Nichols
+#DATE       = 20100920
+#TEST_TYPE  = Diagnostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  !#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)contiguous06d.f
+#OUTPUT     = contiguous06d$(OBJ)
+#STDOUT     = contiguous06d.out
+#STDERR     = contiguous06d.err
+#VALIDRCS   = $(RC_COMP_E)
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = contiguous06d.err $($(tcasedir)contiguous06d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/associate/StmtByStmt/Exec/HostAssocVarDummy.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070914
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=    -qalias=nostd
+#INPUT=  $(tcasedir)HostAssocVarDummy.f
+#OUTPUT= HostAssocVarDummy$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  HostAssocVarDummy$(OBJ)
+#OUTPUT= HostAssocVarDummy$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  HostAssocVarDummy$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

@@ -1,0 +1,12 @@
+"cobound_d002b.f", line 32.11: 1516-026 (S) Non-arrays must not be subscripted.
+"cobound_d002b.f", line 33.11: 1516-026 (S) Non-arrays must not be subscripted.
+"cobound_d002b.f", line 35.11: 1516-026 (S) Non-arrays must not be subscripted.
+"cobound_d002b.f", line 36.11: 1516-026 (S) Non-arrays must not be subscripted.
+"cobound_d002b.f", line 38.11: 1516-026 (S) Non-arrays must not be subscripted.
+"cobound_d002b.f", line 38.33: 1513-068 (E) Argument keywords may only be used for procedures with an explicit interface. The keyword will be ignored.
+"cobound_d002b.f", line 38.40: 1513-068 (E) Argument keywords may only be used for procedures with an explicit interface. The keyword will be ignored.
+"cobound_d002b.f", line 39.11: 1516-026 (S) Non-arrays must not be subscripted.
+"cobound_d002b.f", line 39.33: 1513-068 (E) Argument keywords may only be used for procedures with an explicit interface. The keyword will be ignored.
+"cobound_d002b.f", line 39.41: 1513-068 (E) Argument keywords may only be used for procedures with an explicit interface. The keyword will be ignored.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file cobound_d002b.f.

@@ -1,0 +1,4 @@
+"VarDef8.f", line 52.27: 1511-139 (S) Associate name iostat is not associated with an entity that can be defined. iostat must not be redefined or become undefined.
+"VarDef8.f", line 52.44: 1511-139 (S) Associate name iomsg is not associated with an entity that can be defined. iomsg must not be redefined or become undefined.
+** vardef8   === End of Compilation 1 ===
+1501-511  Compilation failed for file VarDef8.f.

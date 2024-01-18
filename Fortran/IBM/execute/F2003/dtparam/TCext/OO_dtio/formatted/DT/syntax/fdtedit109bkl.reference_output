@@ -1,0 +1,3 @@
+  BASE:DT_1 1  dtv%i= 101  CHILD:DT_2 2  dtv%i= 102  dtv%j= 103  BASE:DT_2 2  dtv%i= 104  BASE:DT_3 3  dtv%i= 105
+  BASE:DT_2 2  dtv%i= 106  CHILD:DT_2 2  dtv%i= 201  dtv%j= 202  CHILD:DT_3 3  dtv%i= 203  dtv%j= 204
+  CHILD:DT_2 2  dtv%i= 205  dtv%j= 206  CHILD:DT_2 2  dtv%i= 207  dtv%j= 208  CHILD:DT_3 3  dtv%i= 209  dtv%j= 210

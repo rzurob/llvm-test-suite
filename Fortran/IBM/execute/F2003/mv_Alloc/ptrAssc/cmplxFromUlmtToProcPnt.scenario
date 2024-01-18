@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       cmplxFromUlmtToProcPnt.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)cmplxFromUlmtToProcPnt.f
+#OUTPUT= cmplxFromUlmtToProcPnt$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  cmplxFromUlmtToProcPnt$(OBJ)
+#OUTPUT= cmplxFromUlmtToProcPnt$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  cmplxFromUlmtToProcPnt$(EXE)
+#STDOUT= cmplxFromUlmtToProcPnt.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

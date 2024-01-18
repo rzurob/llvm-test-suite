@@ -1,0 +1,3 @@
+"stmt_func_in_block.f", line 5.4: 1516-340 (S) A statement function definition must not appear in the BLOCK construct.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file stmt_func_in_block.f.

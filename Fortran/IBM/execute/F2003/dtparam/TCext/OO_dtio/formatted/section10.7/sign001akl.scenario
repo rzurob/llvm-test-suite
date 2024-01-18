@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/sign001akl.scenario
+#FEATURE = OO_dtio tests - regression run bucket + derived type parameters
+#CREATOR = automated conversion script
+#DATE    = 20070723
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)sign001akl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = sign001akl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  sign001akl$(OBJ)
+#OUTPUT    = sign001akl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = sign001akl$(EXE)
+#STDOUT    = sign001akl.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)sign001akl$(product)vf) sign001akl.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

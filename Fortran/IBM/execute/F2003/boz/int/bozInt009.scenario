@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/F2003/boz/int/bozInt009.scenario
+#FEATURE = boz-literal-constant in INT intrinsic
+#CREATOR = Vicram Uppal
+#DATE    = 20070103
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)bozInt009.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_INTSIZE_2)
+#OUTPUT    = bozInt009$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_INTSIZE_2)
+#INPUT     = bozInt009$(OBJ)
+#OUTPUT    = bozInt009$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = bozInt009$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

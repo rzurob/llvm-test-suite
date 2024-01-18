@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/listdirect/listDirectMixedTypeReadWrite02.scenario
+#FEATURE   = 360757
+#CREATOR   = Nancy Wang
+#DATE      = Jan. 19 2009
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = COPY
+#INPUT = $(tcasedir)listDirectMixedTypeReadWrite02.dat .
+#ENDCMD
+
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)listDirectMixedTypeReadWrite02.f
+#OUTPUT= listDirectMixedTypeReadWrite02$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = listDirectMixedTypeReadWrite02$(OBJ)
+#OUTPUT= listDirectMixedTypeReadWrite02$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = listDirectMixedTypeReadWrite02$(EXE)
+#STDOUT= listDirectMixedTypeReadWrite02.out
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT  = $($(tcasedir)listDirectMixedTypeReadWrite02$(product)vf) listDirectMixedTypeReadWrite02.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/formatted/syntax/fdtio010d1kl.scenario
+#FEATURE = OO_dtio/formatted tests - regression run bucket + derived type parameters
+#CREATOR = David Forster (derived from work by Jim Xia)
+#DATE    = 20070723
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fdtio010d1kl.f
+#OUTPUT    = fdtio010d1kl$(OBJ)
+#VALIDRCS  = $(RC_COMP_E)
+#STDERR    = fdtio010d1kl.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = fdtio010d1kl.err $($(tcasedir)fdtio010d1kl$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

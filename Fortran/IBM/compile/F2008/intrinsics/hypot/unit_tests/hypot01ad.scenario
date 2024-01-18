@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2008/intrinsics/hypot/unit_tests/hypot01ad.scenario
+#FEATURE = F2008 HYPOT intrinsic
+#CREATOR = Rafik Zurob
+#DATE    = 20110701
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINENV
+#INVALID_XOPTS  = $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP) $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT)
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)hypot01a.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<2003std>)
+#STDERR    = hypot01ad.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)hypot01ad$(product)vf) hypot01ad.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

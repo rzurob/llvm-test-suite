@@ -1,0 +1,8 @@
+"C819TypeGuard.f", line 65.25: 1511-115 (E) The type guard statement must not contain a construct name.  Construct name type is ignored.
+"C819TypeGuard.f", line 67.25: 1511-115 (E) The type guard statement must not contain a construct name.  Construct name class is ignored.
+"C819TypeGuard.f", line 69.19: 1511-115 (E) The type guard statement must not contain a construct name.  Construct name default is ignored.
+"C819TypeGuard.f", 1516-036 (S) Entity type has undefined type.
+"C819TypeGuard.f", 1516-036 (S) Entity class has undefined type.
+"C819TypeGuard.f", 1516-036 (S) Entity default has undefined type.
+** c819typeguard   === End of Compilation 1 ===
+1501-511  Compilation failed for file C819TypeGuard.f.

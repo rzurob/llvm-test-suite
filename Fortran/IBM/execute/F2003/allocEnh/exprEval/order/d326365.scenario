@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/exprEval/order/d326365.scenario
+#FEATURE	= Intrinsic Assignment -- Order of Expression Evaluation
+#CREATOR	= GM Manual Creation
+#DATE		= 20061006
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)d326365.f
+#OUTPUT		= d326365$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= d326365$(OBJ)
+#OUTPUT		= d326365$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= d326365$(EXE)
+#STDOUT		= d326365.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)d326365$(product)vf) d326365.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

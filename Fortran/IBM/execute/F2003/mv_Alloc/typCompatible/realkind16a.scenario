@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       realkind16a.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)realkind16a.f
+#OUTPUT= realkind16a$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  realkind16a$(OBJ)
+#OUTPUT= realkind16a$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  realkind16a$(EXE)
+#STDOUT= realkind16a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = realkind16a.out $(tcasedir)realkind16a.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

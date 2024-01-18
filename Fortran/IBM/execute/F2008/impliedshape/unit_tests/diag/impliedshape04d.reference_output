@@ -1,0 +1,100 @@
+"impliedshape04d.f", line 47.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 47.24: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 48.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 48.24: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 49.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 49.25: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 50.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 50.25: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 51.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 51.25: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 52.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 52.24: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 53.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 53.24: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 54.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 54.25: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 56.14: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 56.18: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 56.22: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 56.27: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 56.32: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 56.37: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 56.41: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 56.45: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+** impliedshape04d_mod   === End of Compilation 1 ===
+"impliedshape04d.f", line 85.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 85.24: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 86.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 86.24: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 87.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 87.25: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 88.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 88.25: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 89.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 89.25: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 90.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 90.24: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 91.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 91.24: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 92.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 92.25: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 94.14: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 94.18: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 94.22: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 94.27: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 94.32: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 94.37: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 94.41: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 94.45: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 122.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 122.24: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 123.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 123.24: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 124.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 124.25: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 125.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 125.25: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 126.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 126.25: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 127.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 127.24: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 128.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 128.24: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 129.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 129.25: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 131.14: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 131.18: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 131.22: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 131.27: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 131.32: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 131.37: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 131.41: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 131.45: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+** impliedshape04d   === End of Compilation 2 ===
+"impliedshape04d.f", line 162.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 162.24: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 163.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 163.24: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 164.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 164.25: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 165.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 165.25: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 166.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 166.25: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 167.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 167.24: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 168.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 168.24: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 169.20: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 169.25: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"impliedshape04d.f", line 171.14: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 171.18: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 171.22: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 171.27: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 171.32: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 171.37: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 171.41: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+"impliedshape04d.f", line 171.45: 1514-010 (S) Named constant is not permitted in a COMMON block.  Named constant is ignored.
+** bar   === End of Compilation 3 ===
+1501-511  Compilation failed for file impliedshape04d.f.

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/associate/components/componentSelector02.scenario
+#FEATURE	= ASSOCIATE Contruct (with Derived Type Parameters) --	\
+				Component Selector
+#CREATOR	= Glen Mateer
+#DATE		= 20080904
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)componentSelector02.f
+#OUTPUT		= componentSelector02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= componentSelector02$(OBJ)
+#OUTPUT		= componentSelector02$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= componentSelector02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

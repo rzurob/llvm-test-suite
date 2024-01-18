@@ -1,0 +1,20 @@
+ Before:
+'1abcd','abcde','bcdef','cdefg','defgh','efghi','fghij','ghijk','hijkl','ijklm',
+'jklmn','klmno','lmnop','mnopq','nopqr','opqrs','pqrst','qrstu','rstuv','stuvw',
+'tuvwx','uvwxy','vwxyz','wxyz2','xyz2A','yz2AB','z2ABC','2ABCD','ABCDE','BCDEF',
+'CDEFG','DEFGH','EFGHI','FGHIJ','GHIJK','HIJKL','IJKLM','JKLMN','KLMNO','LMNOP',
+'MNOPQ','NOPQR','OPQRS','PQRST','QRSTU','RSTUV','STUVW','TUVWX','UVWXY','VWXYZ',
+'1abcd','abcde','bcdef','cdefg','defgh','efghi','fghij','ghijk','hijkl','ijklm',
+'jklmn','klmno','lmnop','mnopq','nopqr','opqrs','pqrst','qrstu','rstuv','stuvw',
+'tuvwx','uvwxy','vwxyz','wxyz2','xyz2A','yz2AB','z2ABC','2ABCD','ABCDE','BCDEF',
+'CDEFG','DEFGH','EFGHI','FGHIJ','GHIJK','HIJKL','IJKLM','JKLMN','KLMNO','LMNOP',
+'MNOPQ','NOPQR','OPQRS','PQRST','QRSTU','RSTUV','STUVW','TUVWX','UVWXY','VWXYZ',
+ 
+'bcdef','efghi','hijkl',
+'OPQRS','RSTUV','UVWXY',
+'EFGHI','HIJKL','KLMNO',
+ 
+ After:
+'fedcb','ihgfe','lkjih',
+'SRQPO','VUTSR','YXWVU',
+'IHGFE','LKJIH','ONMLK',

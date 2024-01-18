@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/dummy_arg/deferlen/dummyArgDeferDiag01.scenario
+#FEATURE   = 358458
+#CREATOR   = Nancy Wang
+#DATE      = Nov. 4 2008
+#TEST_TYPE = Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)dummyArgDeferDiag01.f
+#STDERR = dummyArgDeferDiag01.err
+#VALIDRCS = $(RC_COMP_E)
+#ENDCMD
+
+#CMD    = XLDIFF
+#INPUT  = dummyArgDeferDiag01.err $($(tcasedir)dummyArgDeferDiag01$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

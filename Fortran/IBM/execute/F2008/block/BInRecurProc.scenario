@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BInRecurProc.scenario
+#FEATURE   = F2008 BLOCK - block in different contexts (recursive)
+#CREATOR   = DF Manual Update
+#DATE      = 20101214
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)BInRecurProc.f
+#OUTPUT    = BInRecurProc$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = BInRecurProc$(OBJ)
+#OUTPUT    = BInRecurProc$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = BInRecurProc$(EXE)
+#STDOUT    = BInRecurProc.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)BInRecurProc$(product)vf) BInRecurProc.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

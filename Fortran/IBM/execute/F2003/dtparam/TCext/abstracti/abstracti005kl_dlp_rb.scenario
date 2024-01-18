@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/abstracti/abstracti005kl_dlp_rb.scenario
+#FEATURE	= Derived Type Parameters + Abstract Interface Tests
+#CREATOR	= Glen Mateer (derived from work by Alberto Alvarez-Mesquida)
+#DATE		= 20071005
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)abstracti005kl_dlp_rb.1 .
+#ENDCMD
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)abstracti005kl_dlp_rb.f
+#OUTPUT		= abstracti005kl_dlp_rb$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= abstracti005kl_dlp_rb$(OBJ)
+#OUTPUT		= abstracti005kl_dlp_rb$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= abstracti005kl_dlp_rb$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      dtParamTypeDeclC528_01.scenario
+#FEATURE=   Derived Type Parameters - Derived type declaration
+#CREATOR=   Rafik Zurob
+#DATE=      20060711
+#TEST_TYPE= unit
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=      F_COMPILE
+#INPUT=    $(tcasedir)dtParamTypeDeclC528_01.f
+#OPTS=     $(OPT_FREE_SOURCE_FORM) -qdebug=intmsg:shutup
+#STDERR=   dtParamTypeDeclC528_01.err
+#VALIDRCS= 1
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    $($(tcasedir)dtParamTypeDeclC528_01$(product)vf) dtParamTypeDeclC528_01.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

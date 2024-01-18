@@ -1,0 +1,62 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       fmultiplyREAL32
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2008_COMPILE
+#INPUT=  $(tcasedir)fmultiplyREAL32.f
+#OUTPUT= fmultiplyREAL32$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_LINK
+#INPUT=  fmultiplyREAL32$(OBJ)
+#OUTPUT= fmultiplyREAL32$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fmultiplyREAL32$(EXE)
+#ENDCMD
+
+#CMD=    XLF2008_COMPILE
+#OPTS=   $(OPT_REALSIZE_8)
+#INPUT=  $(tcasedir)fmultiplyREAL32.f
+#OUTPUT= fmultiplyREAL32_1$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_LINK
+#OPTS=   $(OPT_REALSIZE_8)
+#INPUT=  fmultiplyREAL32_1$(OBJ)
+#OUTPUT= fmultiplyREAL32_1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fmultiplyREAL32_1$(EXE)
+#ENDCMD
+
+#CMD=    XLF2008_COMPILE
+#OPTS=   -qautodbl=dbl
+#INPUT=  $(tcasedir)fmultiplyREAL32.f
+#OUTPUT= fmultiplyREAL32_2$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_LINK
+#OPTS=   -qautodbl=dbl
+#INPUT=  fmultiplyREAL32_2$(OBJ)
+#OUTPUT= fmultiplyREAL32_2$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fmultiplyREAL32_2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

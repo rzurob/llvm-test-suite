@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/intrinsics/null/fnull502.f
+#FEATURE = OO_poly
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fnull502.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fnull502$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fnull502$(OBJ)
+#OUTPUT    = fnull502$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fnull502$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

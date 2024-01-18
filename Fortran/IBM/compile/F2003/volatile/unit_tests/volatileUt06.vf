@@ -1,0 +1,4 @@
+"volatileUt06.f", line 33.14: 1516-271 (S) Dummy argument arg1 of procedure sub1 was specified with the VOLATILE attribute.  The corresponding actual argument must be definable.
+** vec   === End of Compilation 1 ===
+** sub1   === End of Compilation 2 ===
+1501-511  Compilation failed for file volatileUt06.f.

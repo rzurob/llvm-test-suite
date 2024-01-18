@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=roundSpecifierRW01.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)roundSpecifierRW01.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = roundSpecifierRW01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = roundSpecifierRW01$(OBJ)
+#OUTPUT    = roundSpecifierRW01$(EXE)
+#ENDCMD
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)tstIn.dat
+#OUTPUT   = ./
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = roundSpecifierRW01$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = roundSpecifierRW01.out $($(tcasedir)roundSpecifierRW01$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

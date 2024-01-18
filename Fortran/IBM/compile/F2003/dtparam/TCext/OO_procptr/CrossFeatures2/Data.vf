@@ -1,0 +1,8 @@
+** m   === End of Compilation 1 ===
+"Data.f", line 75.8: 1514-030 (W) Variable procptr is initialized more than once.
+"Data.f", line 75.22: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"Data.f", line 78.23: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"Data.f", line 78.34: 1514-030 (W) Variable procptr1 is initialized more than once.
+"Data.f", line 79.18: 1514-030 (W) Variable procptr2 is initialized more than once.
+** data   === End of Compilation 2 ===
+1501-511  Compilation failed for file Data.f.

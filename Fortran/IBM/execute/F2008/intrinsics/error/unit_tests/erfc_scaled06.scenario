@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2008/intrinsics/error/unit_tests/erfc_scaled06.scenario
+#FEATURE = F2008 ERFC_SCALED intrinsic
+#CREATOR = Robert Enenkel & Bardia Mahjour
+#DATE    = 20111114
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)erfc_scaled06.f
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#OUTPUT    = erfc_scaled06$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = erfc_scaled06$(OBJ)
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#OUTPUT    = erfc_scaled06$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = erfc_scaled06$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

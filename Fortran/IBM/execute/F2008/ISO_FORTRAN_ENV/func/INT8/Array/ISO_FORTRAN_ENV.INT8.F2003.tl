@@ -1,0 +1,5 @@
+faddINT8_F2003.scenario
+fdivideINT8_F2003.scenario
+fgeneralINT8_F2003.scenario
+fmultiplyINT8_F2003.scenario
+fsubtractINT8_F2003.scenario

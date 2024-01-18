@@ -1,0 +1,2 @@
+1525-235 The ENCODING= specifier in the OPEN statement for unit 2 is not allowed because the FORM= specifier is set to UNFORMATTED. The program will recover by ignoring the ENCODING= specifier.
+1525-235 The ENCODING= specifier in the OPEN statement for unit 2 is not allowed because the FORM= specifier is set to UNFORMATTED. The program will recover by ignoring the ENCODING= specifier.

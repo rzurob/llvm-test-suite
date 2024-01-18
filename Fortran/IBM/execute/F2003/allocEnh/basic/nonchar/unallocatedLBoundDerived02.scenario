@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/basic/nonchar/unallocatedLBoundDerived02.scenario
+#FEATURE	=Intrinsic Assignment-Basic Tests:Non-CHARACTER Array of Derived Type
+#CREATOR	= GM Manual Creation
+#DATE		= 20060829
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)unallocatedLBoundDerived02.f
+#OUTPUT		= unallocatedLBoundDerived02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= unallocatedLBoundDerived02$(OBJ)
+#OUTPUT		= unallocatedLBoundDerived02$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= unallocatedLBoundDerived02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

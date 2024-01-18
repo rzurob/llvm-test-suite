@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/none/acetnone11.scenario
+#FEATURE	= Array constructor enhancement automatic arrays and array sections
+#CREATOR	= DF Manual Update
+#DATE		= 20060811
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetnone11.f
+#OUTPUT		= acetnone11$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetnone11$(OBJ)
+#OUTPUT		= acetnone11$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetnone11$(EXE)
+#STDOUT		= acetnone11.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $(tcasedir)acetnone11.vf acetnone11.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

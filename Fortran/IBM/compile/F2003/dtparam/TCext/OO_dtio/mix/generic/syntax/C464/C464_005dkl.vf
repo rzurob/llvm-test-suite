@@ -1,0 +1,9 @@
+"C464_005dkl.f", line 48.29: 1514-599 (S) Passed-object dummy argument dtv of binding fread must not be an array.
+"C464_005dkl.f", line 51.52: 1514-604 (S) Dummy argument dtv of the derived-type I/O procedure uread must be specified with the INTENT(INOUT) attribute.
+"C464_005dkl.f", line 52.52: 1514-604 (S) Dummy argument iomsg of the derived-type I/O procedure uwrite must be specified with the INTENT(INOUT) attribute.
+"C464_005dkl.f", line 52.52: 1514-604 (S) Dummy argument iostat of the derived-type I/O procedure uwrite must be specified with the INTENT(OUT) attribute.
+"C464_005dkl.f", line 52.52: 1514-604 (S) Dummy argument dtv of the derived-type I/O procedure uwrite must be specified with the INTENT(IN) attribute.
+"C464_005dkl.f", line 54.43: 1514-613 (S) Dummy argument v_list of the derived-type I/O procedure fwrite must be an array of rank 1.
+** m   === End of Compilation 1 ===
+** c464_005dkl   === End of Compilation 2 ===
+1501-511  Compilation failed for file C464_005dkl.f.

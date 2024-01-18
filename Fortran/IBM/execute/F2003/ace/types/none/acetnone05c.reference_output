@@ -1,0 +1,28 @@
+ 0 1
+ 0 2
+ 0 1
+ 0 2
+ 3 1 abc
+ 3 0 
+ 3 2 abcdef
+ 3 4 abcdefghijkl
+ 3 0 
+ 3 4 abcdefghijkl
+ 2 1 ab
+ 4 0 
+ 3 4 aaaabbbbcccc
+ 2 3 aaabbb
+ 2 4 aaaabbbb
+ 3 1 aaa
+ 3 2 ababab
+ 3 0 
+ 3 4 abcdabcdabcd
+ 3 4 abcdabcdabcd
+ 0 4
+ 3 2 gjhkil
+ 3 4 gjkphlmqinor
+ 2 4 aaaaaaaa
+ 4 5 aaaaaaaaaaaaaaaaaaaa
+ 1 5 aaaaa
+ 2 5 aaaaaaaaaa
+ 3 5 aaaaaaaaaaaaaaa

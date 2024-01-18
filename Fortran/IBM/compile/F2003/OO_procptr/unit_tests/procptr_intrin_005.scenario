@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF90_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+! This chunk was DCOMP
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)procptr_intrin_005.f
+#OUTPUT    = procptr_intrin_005$(OBJ)
+#STDERR    = procptr_intrin_005.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)procptr_intrin_005$(product)vf) procptr_intrin_005.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

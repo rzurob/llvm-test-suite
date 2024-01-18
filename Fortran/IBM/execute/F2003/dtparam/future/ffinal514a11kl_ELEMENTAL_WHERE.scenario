@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2003/dtparam/TCext/OO_tpbnd/final/ffinal514a11kl_ELEMENTAL_WHERE.f
+#FEATURE = OO_tpbnd + derived type parameters
+#CREATOR = David Forster (derived from work by Jim Xia)
+#DATE    = 20071102
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ffinal514a11kl_ELEMENTAL_WHERE.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ffinal514a11kl_ELEMENTAL_WHERE$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = ffinal514a11kl_ELEMENTAL_WHERE$(OBJ)
+#OUTPUT    = ffinal514a11kl_ELEMENTAL_WHERE$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ffinal514a11kl_ELEMENTAL_WHERE$(EXE)
+#STDOUT    = ffinal514a11kl_ELEMENTAL_WHERE.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = ffinal514a11kl_ELEMENTAL_WHERE.out $($(tcasedir)ffinal514a11kl_ELEMENTAL_WHERE$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

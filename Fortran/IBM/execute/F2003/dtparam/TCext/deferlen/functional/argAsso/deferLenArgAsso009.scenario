@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/deferlen/functional/argAsso/deferLenArgAsso009.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of deferlen/*
+#DATE      = 20071213
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)deferLenArgAsso009.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = deferLenArgAsso009$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = deferLenArgAsso009$(OBJ)
+#OUTPUT    = deferLenArgAsso009$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = deferLenArgAsso009$(EXE)
+#STDOUT    = deferLenArgAsso009.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = deferLenArgAsso009.out $(tcasedir)deferLenArgAsso009.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME      = F2008/polyAssign/func/polyAssign1010f_8LvlIntLogicals.scenario
+#FEATURE   = LHS of intrinsic assignment is allowed to be polymorphic
+#CREATOR   = Aaron Liu
+#DATE      = 20150901
+#TEST_TYPE = functional
+#KEYWORDS  = F2008, polymorphic, LHS, intrinsic assignment
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)polyAssign1010f_8LvlIntLogicals.f
+#OUTPUT    =  polyAssign1010f_8LvlIntLogicals$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     =  polyAssign1010f_8LvlIntLogicals$(OBJ)
+#OUTPUT    =  polyAssign1010f_8LvlIntLogicals$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     =  polyAssign1010f_8LvlIntLogicals$(EXE)
+#STDOUT    =  polyAssign1010f_8LvlIntLogicals.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

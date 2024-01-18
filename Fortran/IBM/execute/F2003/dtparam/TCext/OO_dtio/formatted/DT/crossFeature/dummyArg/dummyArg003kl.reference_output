@@ -1,0 +1,27 @@
+  iotype:DT_type_base1 v_list: 5  101
+  iotype:DT_type_base2 v_list: 6   102
+  iotype:DT_type_base3 v_list: 7    103
+  iotype:DT_type_base1 v_list: 5  111
+  iotype:DT_type_base2 v_list: 6   112
+  iotype:DT_type_base3 v_list: 7    113
+  iotype:DT_type_base1 v_list: 5  121
+  iotype:DT_type_base2 v_list: 6   123
+  iotype:DT_type_base3 v_list: 7    125
+  iotype:DT_class_base1 v_list: 4 5 101
+  iotype:DT_class_base1 v_list: 5 6  102
+  iotype:DT_class_base1 v_list: 6 7   103
+  iotype:DT_class_base1 v_list: 4 5 111
+  iotype:DT_class_base1 v_list: 5 6  112
+  iotype:DT_class_base1 v_list: 6 7   113
+  iotype:DT_class_base1 v_list: 4 5 121  122
+  iotype:DT_class_base1 v_list: 5 6  123   124
+  iotype:DT_class_base1 v_list: 6 7   125    126
+  iotype:DT_class_base1 v_list: 4 5 201  202
+  iotype:DT_class_base1 v_list: 5 6  203   204
+  iotype:DT_class_base1 v_list: 6 7   205    206
+  iotype:DT_class_base1 v_list: 4 5 211  212
+  iotype:DT_class_base1 v_list: 5 6  213   214
+  iotype:DT_class_base1 v_list: 6 7   215    216
+  iotype:DT_class_base1 v_list: 4 5 221  222
+  iotype:DT_class_base1 v_list: 5 6  223   224
+  iotype:DT_class_base1 v_list: 6 7   225    226

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = outputRealInf002.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 9, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)outputRealInf002.f
+#OUTPUT   =  outputRealInf002$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  outputRealInf002$(OBJ)
+#OUTPUT   =  outputRealInf002$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  outputRealInf002$(EXE)
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = outputRealInf002.out $(tcasedir)outputRealInf002.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

@@ -1,0 +1,10 @@
+selectedRealKind01f.scenario
+selectedRealKind02f.scenario
+selectedRealKind03f.scenario
+selectedRealKind04f.scenario
+selectedRealKind05f.scenario
+selectedRealKind06f.scenario
+selectedRealKind01d.scenario
+selectedRealKind02d.scenario
+selectedRealKind03d.scenario
+.im unit_tests/F2008.intrinsics.selectedRealKind.unit_tests.tl

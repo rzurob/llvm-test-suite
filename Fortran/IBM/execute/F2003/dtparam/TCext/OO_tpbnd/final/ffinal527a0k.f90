@@ -1,0 +1,78 @@
+! *********************************************************************
+!*  =================================================================== 
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
+!*  =================================================================== 
+!*  =================================================================== 
+!*
+!*  TEST CASE NAME             : ffinal527a0k
+!*
+!*  PROGRAMMER                 : David Forster (derived from ffinal527a0 by Jim Xia)
+!*  DATE                       : 2007-11-11 (original: 04/23/2004)
+!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
+!*                             :
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
+!*  SECONDARY FUNCTIONS TESTED : type bound 
+!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
+!*
+!*  DRIVER STANZA              : xlf2003 (original: xlf95)
+!*
+!*  DESCRIPTION                : final sub (elemental finalizer)
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!* ===================================================================
+!*
+!*  REVISION HISTORY
+!*
+!*  MM/DD/YY:  Init:  Comments:
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+module m
+    type base (kbase_1) ! kbase_1=4
+       integer, kind :: kbase_1
+        integer(kbase_1) :: id
+
+        contains
+
+        final :: finalizeBase
+        final :: finalizeBaseRank1
+    end type
+
+    contains
+
+    elemental subroutine finalizeBase (b)
+        type (base(4)), intent(inout) :: b ! tcx: (4)
+
+        b%id = -1
+    end subroutine
+
+    subroutine finalizeBaseRank1 (b)
+        type (base(4)), intent(inout) :: b(:) ! tcx: (4)
+
+        print *, 'finalizeBaseRank1'
+        b%id = -2
+    end subroutine
+end module
+
+program ffinal527a0k
+use m
+    type (base(4)) :: b1(3) ! tcx: (4)
+
+    b1%id = 0
+
+    call abc (b1)
+
+    contains
+
+    subroutine abc (b)
+        class (base(4)), intent(out) :: b(:) ! tcx: (4)
+
+        if (any(b%id /= -2)) error stop 101_4
+    end subroutine
+end
+
+
+! Extensions to introduce derived type parameters:
+! type: base - added parameters (kbase_1) to invoke with (4) / declare with (4) - 4 changes

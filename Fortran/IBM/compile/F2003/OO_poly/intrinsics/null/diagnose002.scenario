@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/null/diagnose002.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050227
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(F_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) $(F_COMPILE^OPT_FREE_SOURCE_FORM) $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)diagnose002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = diagnose002$(OBJ)
+#STDERR    = diagnose002.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)diagnose002$(product)vf) diagnose002.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

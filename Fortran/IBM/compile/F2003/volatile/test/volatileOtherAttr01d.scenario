@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=release/F2003/volatile/volatileOtherAttr01d.f
+#FEATURE = VOLATILE 255728
+#CREATOR = William Zhang
+#DATE    = 06/12/2006
+#TEST_TYPE= diagnostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)volatileOtherAttr01d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_LANG_LEVEL<2003pure>) -qxlf2003=novolatile
+#OUTPUT    = volatileOtherAttr01d$(OBJ)
+#STDERR    = volatileOtherAttr01d.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#IF in($(F_COMPILE^OPT_OPTIMIZE_FOR_SMP))  ||  in($(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT))
+        #INPUT  = $($(tcasedir)volatileOtherAttr01d.smp$(product)vf)\
+                                volatileOtherAttr01d.err
+#ELSE
+        #INPUT  = $($(tcasedir)volatileOtherAttr01d$(product)vf)   \
+                                volatileOtherAttr01d.err
+#ENDIF
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

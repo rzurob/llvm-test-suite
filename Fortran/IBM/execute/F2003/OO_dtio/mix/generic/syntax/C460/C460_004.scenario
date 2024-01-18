@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/mix/generic/C460/C460_004.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)C460_004.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = C460_004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = C460_004$(OBJ)
+#OUTPUT    = C460_004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = C460_004$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)C460_004$(product)vf) C460_004.1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

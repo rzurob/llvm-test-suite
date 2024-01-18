@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/unformatted/section9.9/readwrite001.scenario
+#FEATURE = OO_dtio/unformatted tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)readwrite001.1 .
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)readwrite001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = readwrite001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  readwrite001$(OBJ)
+#OUTPUT    = readwrite001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = readwrite001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

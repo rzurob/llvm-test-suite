@@ -1,0 +1,7 @@
+ BASE:  abc
+ CHILD: def 1001
+ BASE:  ghi
+ CHILD: jkl 1002
+ CHILD: mno 1003
+ BASE:  pqr
+ CHILD: stu 1004

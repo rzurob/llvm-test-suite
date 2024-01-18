@@ -1,0 +1,3 @@
+ &NANINF
+ REAL_ARR1=NaN(Q), -Inf, +3.140000105, NaN(S), +Inf, NaN(Q), REAL_ARR2=+Inf, NaN(Q), NaN(S), -Inf, NaN(Q), NaN(Q), CX_ARR1=(NaN(Q),NaN(Q)), (+Inf,-Inf), CX_ARR2=(-3.140000105,NaN(S)), (NaN(Q),NaN(Q)), (+Inf,+Inf), (NaN(Q),-Inf)
+ /

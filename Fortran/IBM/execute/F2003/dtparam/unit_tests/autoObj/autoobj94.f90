@@ -1,0 +1,108 @@
+!*********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : autoobj94
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Jan. 31, 2009
+!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : DTPARAM: Automatic objects
+!*
+!*  SECONDARY FUNCTIONS TESTED :
+!*
+!*  REFERENCE                  : Feature Number 333321
+!*********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : autoobj83
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Jan. 31, 2009
+!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : DTPARAM: Automatic objects
+!*
+!*  SECONDARY FUNCTIONS TESTED :
+!*
+!*  REFERENCE                  : Feature Number 333321
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*
+!*
+!*
+!*  Multi levels of type -- array dummy
+!*
+!*  ()
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+
+  PROGRAM autoobj03
+
+  TYPE dt0(l)
+    INTEGER, LEN :: l
+    integer :: arr(l)
+  END TYPE
+
+  TYPE dt1(l)
+    INTEGER, LEN :: l
+    TYPE(dt0(l)) :: arr(l)!=dt0(4)(-1)
+  END TYPE
+
+  TYPE dt2(l)
+    INTEGER, LEN :: l
+    TYPE(dt1(l)) :: arr(1:l)
+  END TYPE
+
+  CALL Sub(4)
+
+  CONTAINS
+
+  SUBROUTINE Sub(N)
+
+  TYPE(dt2(n)) t(N)
+
+    t(1)%arr(1)%arr = dt0(4)(-1)
+
+    IF (t%l                   .NE. 4)   STOP 11
+    IF (t(1)%arr%l            .NE. 4)   STOP 12
+    IF (t(1)%arr(1)%arr%l     .NE. 4)   STOP 13
+    IF (t(1)%arr(1)%arr(1)%l  .NE. 4)   STOP 14
+
+    IF (UBOUND(t, 1)                      .NE. 4)   STOP 21
+    IF (UBOUND(t(1)%arr, 1)               .NE. 4)   STOP 22
+    IF (UBOUND(t(1)%arr(1)%arr, 1)        .NE. 4)   STOP 23
+    IF (UBOUND(t(1)%arr(1)%arr(1)%arr, 1) .NE. 4)   STOP 24
+
+    IF (SIZE(t)                           .NE. 4)   STOP 31
+    IF (SIZE(t(1)%arr)                    .NE. 4)   STOP 32
+    IF (SIZE(t(1)%arr(1)%arr)             .NE. 4)   STOP 33
+    IF (SIZE(t(1)%arr(1)%arr(1)%arr)      .NE. 4)   STOP 34
+
+    IF (ANY(t(1)%arr(1)%arr(1)%arr        .NE. -1) )   STOP 41
+    IF (ANY(t(1)%arr(1)%arr%arr(1)        .NE. -1) )   STOP 42
+
+    t(1)%arr%arr(1) = dt0(4)(-1)
+    IF (ANY(t(1)%arr%arr(1)%arr(1)        .NE. -1) )   STOP 43
+
+    t%arr(1)%arr(1) = dt0(4)(-1)
+    IF (ANY(t%arr(1)%arr(1)%arr(1)        .NE. -1) )   STOP 44
+
+  END SUBROUTINE
+
+  END
+

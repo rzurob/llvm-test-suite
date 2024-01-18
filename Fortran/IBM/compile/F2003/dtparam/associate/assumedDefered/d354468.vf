@@ -1,0 +1,4 @@
+"d354468.f", line 48.19: 1514-718 (S) Identifier bases appearing as a type name has not been defined in a derived type definition.
+"d354468.f", line 49.12: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+** d354468   === End of Compilation 1 ===
+1501-511  Compilation failed for file d354468.f.

@@ -1,0 +1,7 @@
+ block: xyz
+ inner: character:xyz
+ inner: real: 3.5
+ inner: b= 3.5
+ block 2: T
+ inner: logical: T
+ inner: b= 3.5

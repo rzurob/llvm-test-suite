@@ -1,0 +1,8 @@
+** m   === End of Compilation 1 ===
+"Associated5.f", line 74.14: 1515-118 (S) The target of the procedure pointer assignment statement must be: an external procedure, a module procedure, an internal procedure, a dummy procedure, a function reference that returns a procedure pointer or another procedure pointer.
+"Associated5.f", line 76.3: 1515-039 (S) The target in the pointer assignment must have the TARGET or POINTER attribute.
+"Associated5.f", line 78.15: 1515-118 (S) The target of the procedure pointer assignment statement must be: an external procedure, a module procedure, an internal procedure, a dummy procedure, a function reference that returns a procedure pointer or another procedure pointer.
+"Associated5.f", line 80.3: 1515-039 (S) The target in the pointer assignment must have the TARGET or POINTER attribute.
+** associated5   === End of Compilation 2 ===
+** fun   === End of Compilation 3 ===
+1501-511  Compilation failed for file Associated5.f.

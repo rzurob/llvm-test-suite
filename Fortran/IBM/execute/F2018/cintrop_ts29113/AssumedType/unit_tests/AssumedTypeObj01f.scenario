@@ -1,0 +1,41 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = AssumedTypeObj01f.scenario
+#FEATURE    = 926303 - C Interop: Assumed-type objects
+#CREATOR    = Ren, Jian Gang
+#DATE       = Apr 2012
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS)
+#INPUT     = $(tcasedir)AssumedTypeObj01f.c
+#OUTPUT    = AssumedTypeObj01f_c$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AssumedTypeObj01f.f
+#OUTPUT    = AssumedTypeObj01f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = AssumedTypeObj01f$(OBJ) AssumedTypeObj01f_c$(OBJ)
+#OUTPUT    = AssumedTypeObj01f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = AssumedTypeObj01f$(EXE)
+#STDOUT    = AssumedTypeObj01f.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = AssumedTypeObj01f.out $($(tcasedir)AssumedTypeObj01f$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

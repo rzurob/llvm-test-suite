@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/assignment/intrinsic/alloc/dtpIAABasic001.scenario
+#FEATURE   = Intrinsic Assignment with Allocation - allocate basic DTP variable (kind parameter) via intrinsic assignment
+#CREATOR   = DF Manual Update
+#DATE      = 20090522
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAABasic001.f
+#OUTPUT    = dtpIAABasic001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAABasic001$(OBJ)
+#OUTPUT    = dtpIAABasic001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAABasic001$(EXE)
+#STDOUT    = dtpIAABasic001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpIAABasic001$(product)vf) dtpIAABasic001.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

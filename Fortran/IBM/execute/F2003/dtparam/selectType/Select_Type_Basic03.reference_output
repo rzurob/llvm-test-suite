@@ -1,0 +1,8 @@
+ My shape may or may not be a square: More tests needed
+ My shape is a square and the area is 100
+ My shape may or may not be a rectangle: More tests needed
+ My shape is rectangle and the area is 100
+ My shape may be a square or a rectangle: More tests needed
+ My shape is a square and the area is precisely 101
+ My shape may be a square or a rectangle: More tests needed
+ My shape is rectangle and the area is precisely 101

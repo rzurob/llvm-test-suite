@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"structComp001.f", line 81.19: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+"structComp001.f", line 84.22: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+"structComp001.f", line 85.15: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+** structcomp001   === End of Compilation 2 ===
+** foo   === End of Compilation 3 ===
+1501-511  Compilation failed for file structComp001.f.

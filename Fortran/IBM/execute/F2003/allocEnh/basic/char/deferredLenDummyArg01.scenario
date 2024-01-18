@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/basic/char/deferredLenDummyArg01.scenario
+#FEATURE	= Intrinsic Assignment -- Basic Tests: CHARACTER Intrinsic Type
+#CREATOR	= GM Manual Creation
+#DATE		= 20060919
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)deferredLenDummyArg01.f
+#OUTPUT		= deferredLenDummyArg01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= deferredLenDummyArg01$(OBJ)
+#OUTPUT		= deferredLenDummyArg01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= deferredLenDummyArg01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/use/dtpUseSC01.scenario
+#FEATURE   = DTP and USE - structure constructor
+#CREATOR   = DF Manual Update
+#DATE      = 20080903
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUseSC01.f
+#OUTPUT    = dtpUseSC01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUseSC01$(OBJ)
+#OUTPUT    = dtpUseSC01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUseSC01$(EXE)
+#STDOUT    = dtpUseSC01.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpUseSC01$(product)vf) dtpUseSC01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

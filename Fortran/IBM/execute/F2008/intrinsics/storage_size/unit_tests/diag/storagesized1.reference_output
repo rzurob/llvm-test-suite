@@ -1,0 +1,7 @@
+"storagesized1.f", line 8.18: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "storage_size".
+"storagesized1.f", line 9.18: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "storage_size".
+"storagesized1.f", line 10.18: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "storage_size".
+"storagesized1.f", line 11.18: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "storage_size".
+"storagesized1.f", line 12.18: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "storage_size".
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file storagesized1.f.

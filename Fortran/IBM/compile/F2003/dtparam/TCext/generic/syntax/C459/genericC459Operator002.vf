@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"genericC459Operator002.f", line 62.9: 1514-703 (S) All generic bindings with generic specification OPERATOR(*) in type child must have the same accessibility.
+** n   === End of Compilation 2 ===
+** genericc459operator002   === End of Compilation 3 ===
+1501-511  Compilation failed for file genericC459Operator002.f.

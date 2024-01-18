@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       PtrAssignProcNameElemIntrin.f
+#FEATURE= PROCEDURE POINTER
+#CREATOR=    Feng Ye
+#DATE=       06-06-05
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)PtrAssignProcNameElemIntrin.f
+#OUTPUT= PtrAssignProcNameElemIntrin$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  PtrAssignProcNameElemIntrin$(OBJ)
+#OUTPUT= PtrAssignProcNameElemIntrin$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  PtrAssignProcNameElemIntrin$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"alloc003.f", line 70.14: 1514-645 (S) base is an abstract type. base is not permitted in this context.
+"alloc003.f", line 71.14: 1514-645 (S) base is an abstract type. base is not permitted in this context.
+** alloc003   === End of Compilation 2 ===
+1501-511  Compilation failed for file alloc003.f.

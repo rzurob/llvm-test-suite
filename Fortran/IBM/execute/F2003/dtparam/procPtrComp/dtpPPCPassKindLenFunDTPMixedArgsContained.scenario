@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/procPtrComp/dtpPPCPassKindLenFunDTPMixedArgsContained.scenario
+#FEATURE   = Procedure Pointers as Components - function pointers spec'd by contained procedures (PASS, mixed, kind+len)
+#CREATOR   = DF Manual Update
+#DATE      = 20090323
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = -qdebug=allowrpdt
+#INPUT     = $(tcasedir)dtpPPCPassKindLenFunDTPMixedArgsContained.f
+#OUTPUT    = dtpPPCPassKindLenFunDTPMixedArgsContained$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPPCPassKindLenFunDTPMixedArgsContained$(OBJ)
+#OUTPUT    = dtpPPCPassKindLenFunDTPMixedArgsContained$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPPCPassKindLenFunDTPMixedArgsContained$(EXE)
+#STDOUT    = dtpPPCPassKindLenFunDTPMixedArgsContained.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpPPCPassKindLenFunDTPMixedArgsContained$(product)vf) dtpPPCPassKindLenFunDTPMixedArgsContained.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

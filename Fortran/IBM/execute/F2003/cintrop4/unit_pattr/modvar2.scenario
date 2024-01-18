@@ -1,0 +1,66 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop4/unit_pattr/modvar2.scenario
+#FEATURE = cintrop4 tests - regression run bucket
+#CREATOR = CPR Manual update
+#DATE    = 20060811
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)modvar2.f
+#STDERR    = modvar2.out1
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = modvar2$(OBJ)
+#OUTPUT    = modvar2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = modvar2$(EXE)
+#STDOUT    = modvar2.out2
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = modvar2.out1 modvar2.out2
+#STDOUT    = modvar2.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = modvar2.out $(tcasedir)modvar2.vf
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)modvar2.f
+#STDERR    = modvar2.out1
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = modvar2$(OBJ)
+#OUTPUT    = modvar2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = modvar2$(EXE)
+#STDOUT    = modvar2.out2
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = modvar2.out1 modvar2.out2
+#STDOUT    = modvar2.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = modvar2.out $(tcasedir)modvar2.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

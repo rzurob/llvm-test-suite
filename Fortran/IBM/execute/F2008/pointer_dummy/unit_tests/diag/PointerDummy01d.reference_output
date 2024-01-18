@@ -1,0 +1,11 @@
+"PointerDummy01d.f", line 55.6: 1518-383 (L) Dummy argument p2 of the procedure sub has the POINTER attribute.  The corresponding actual argument is required to also have the POINTER attribute by the Fortran 2003 standard.
+"PointerDummy01d.f", line 55.6: 1518-383 (L) Dummy argument p1 of the procedure sub has the POINTER attribute.  The corresponding actual argument is required to also have the POINTER attribute by the Fortran 2003 standard.
+"PointerDummy01d.f", line 59.6: 1518-383 (L) Dummy argument p2 of the procedure sub has the POINTER attribute.  The corresponding actual argument is required to also have the POINTER attribute by the Fortran 2003 standard.
+"PointerDummy01d.f", line 59.6: 1518-383 (L) Dummy argument p1 of the procedure sub has the POINTER attribute.  The corresponding actual argument is required to also have the POINTER attribute by the Fortran 2003 standard.
+"PointerDummy01d.f", line 65.17: 1518-383 (L) Dummy argument r2 of the procedure minfloat has the POINTER attribute.  The corresponding actual argument is required to also have the POINTER attribute by the Fortran 2003 standard.
+"PointerDummy01d.f", line 65.17: 1518-383 (L) Dummy argument r1 of the procedure minfloat has the POINTER attribute.  The corresponding actual argument is required to also have the POINTER attribute by the Fortran 2003 standard.
+"PointerDummy01d.f", line 70.17: 1518-383 (L) Dummy argument r2 of the procedure minfloat has the POINTER attribute.  The corresponding actual argument is required to also have the POINTER attribute by the Fortran 2003 standard.
+"PointerDummy01d.f", line 70.17: 1518-383 (L) Dummy argument r1 of the procedure minfloat has the POINTER attribute.  The corresponding actual argument is required to also have the POINTER attribute by the Fortran 2003 standard.
+** _main   === End of Compilation 1 ===
+** sub   === End of Compilation 2 ===
+1501-510  Compilation successful for file PointerDummy01d.f.

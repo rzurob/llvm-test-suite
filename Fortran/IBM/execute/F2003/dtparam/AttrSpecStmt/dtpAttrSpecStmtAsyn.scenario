@@ -1,0 +1,37 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dtpAttrSpecStmtAsyn.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       06-08-07
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#TIME_REQ=60
+#INVALID_PRODUCT=bgq
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM) -qdebug=allowrpdt
+#INPUT=  $(tcasedir)dtpAttrSpecStmtAsyn.f
+#OUTPUT= dtpAttrSpecStmtAsyn$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  dtpAttrSpecStmtAsyn$(OBJ)
+#OUTPUT= dtpAttrSpecStmtAsyn$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dtpAttrSpecStmtAsyn$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

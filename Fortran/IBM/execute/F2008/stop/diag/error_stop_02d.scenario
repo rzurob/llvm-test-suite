@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/stop/error_stop_02d.scenario
+#FEATURE   = Constant expression as stop code in ERROR STOP statement
+#CREATOR   = Shahid Alam
+#DATE      = 20101020
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)error_stop_02d.f
+#OUTPUT    = error_stop_02d$(OBJ)
+#STDOUT    = error_stop_02d.out
+#STDERR    = error_stop_02d.out
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = SED
+#OPTS      = 's/.*line/line/g' error_stop_02d.out | grep '^line' > error_stop_02d.sed.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = error_stop_02d.sed.out $(tcasedir)error_stop_02d.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

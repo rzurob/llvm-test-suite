@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/allocEnh/funcResult/funcRetFinal002.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)funcRetFinal002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = funcRetFinal002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = funcRetFinal002$(OBJ)
+#OUTPUT    = funcRetFinal002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = funcRetFinal002$(EXE)
+#STDOUT    = funcRetFinal002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = funcRetFinal002.out $($(tcasedir)funcRetFinal002$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

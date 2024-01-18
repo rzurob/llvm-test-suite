@@ -1,0 +1,10 @@
+** m   === End of Compilation 1 ===
+"C916_001.f", line 87.24: 1512-109 (E) The FMT= and NML= specifiers are not allowed in the same READ or WRITE statement.  Specifier is ignored.
+"C916_001.f", line 89.16: 1512-109 (E) The FMT= and NML= specifiers are not allowed in the same READ or WRITE statement.  Specifier is ignored.
+** c916_001   === End of Compilation 2 ===
+"C916_001.f", line 110.26: 1512-109 (E) The FMT= and NML= specifiers are not allowed in the same READ or WRITE statement.  Specifier is ignored.
+"C916_001.f", line 110.54: 1512-021 (W) NAMELIST I/O statement must not have I/O list present.
+** readformatted   === End of Compilation 3 ===
+"C916_001.f", line 130.20: 1512-109 (E) The FMT= and NML= specifiers are not allowed in the same READ or WRITE statement.  Specifier is ignored.
+** writeformatted   === End of Compilation 4 ===
+1501-510  Compilation successful for file C916_001.f.

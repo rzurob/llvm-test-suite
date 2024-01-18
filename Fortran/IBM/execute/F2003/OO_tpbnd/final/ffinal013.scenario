@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_tpbnd/final/ffinal013.f
+#FEATURE = OO_tpbnd
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ffinal013.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ffinal013$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = ffinal013$(OBJ)
+#OUTPUT    = ffinal013$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ffinal013$(EXE)
+#STDOUT    = ffinal013.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = ffinal013.out $($(tcasedir)ffinal013$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

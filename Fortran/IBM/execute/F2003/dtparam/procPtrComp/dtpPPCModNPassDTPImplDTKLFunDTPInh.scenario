@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/procPtrComp/dtpPPCModNPassDTPImplDTKLFunDTPInh.scenario
+#FEATURE   = Procedure Pointers as Components - reference to nopass function but DTP arg and result w/ K+L parameters, implied DT interface, using inheritance, ref via module var
+#CREATOR   = DF Manual Update
+#DATE      = 20090324
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPPCModNPassDTPImplDTKLFunDTPInh.f
+#OUTPUT    = dtpPPCModNPassDTPImplDTKLFunDTPInh$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPPCModNPassDTPImplDTKLFunDTPInh$(OBJ)
+#OUTPUT    = dtpPPCModNPassDTPImplDTKLFunDTPInh$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPPCModNPassDTPImplDTKLFunDTPInh$(EXE)
+#STDOUT    = dtpPPCModNPassDTPImplDTKLFunDTPInh.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpPPCModNPassDTPImplDTKLFunDTPInh$(product)vf) dtpPPCModNPassDTPImplDTKLFunDTPInh.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

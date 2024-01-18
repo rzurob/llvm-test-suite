@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrSeqptr.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrSeqptr.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrSeqptr$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrSeqptr$(OBJ)
+#OUTPUT    = dataPtrSeqptr$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrSeqptr$(EXE)
+#STDOUT    = dataPtrSeqptr.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrSeqptr.out $($(tcasedir)dataPtrSeqptr$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = lstLongNaNInput001.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 26, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)lstLongNaNInput001.dat
+#OUTPUT   = lstLongNaNInput001.dat
+#ENDCMD
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)lstLongNaNInput001.f
+#OUTPUT   =  lstLongNaNInput001$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  lstLongNaNInput001$(OBJ)
+#OUTPUT   =  lstLongNaNInput001$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  lstLongNaNInput001$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

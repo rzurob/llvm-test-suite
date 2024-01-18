@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/use/dtpUseDeferredDT.scenario
+#FEATURE   = DTP and USE - misc defects
+#CREATOR   = DF Manual Update
+#DATE      = 20080903
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUseDeferredDT.f
+#OUTPUT    = dtpUseDeferredDT$(OBJ)
+#STDERR    = dtpUseDeferredDT.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)dtpUseDeferredDT$(product)vf) dtpUseDeferredDT.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

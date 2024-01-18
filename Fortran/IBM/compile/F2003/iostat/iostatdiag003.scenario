@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=iostatdiag003.scenario
+#FEATURE = 299314
+#CREATOR = Rob Wheeler
+#DATE    = 20060109
+#TEST_TYPE=fvt
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)iostatdiag003.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM) -qdebug=intmsg
+#OUTPUT    = iostatdiag003$(OBJ)
+#STDOUT    = iostatdiag003.out
+#STDERR    = iostatdiag003.out
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+
+
+
+
+#CMD	   = DIFF
+#OPTS	   = -b
+#INPUT     = iostatdiag003.out $($(tcasedir)iostatdiag003$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

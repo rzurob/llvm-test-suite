@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/assignment/functional/genericAssignmentPass007d.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071114
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericAssignmentPass007d.f
+#OUTPUT    = genericAssignmentPass007d$(OBJ)
+#STDERR    = genericAssignmentPass007d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = genericAssignmentPass007d.err $($(tcasedir)genericAssignmentPass007d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

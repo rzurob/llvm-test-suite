@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = F2003/selectedRealKind/functional/selectedRealKind5.scenario
+#FEATURE  = SELECTED_REAL_KIND tests
+#CREATOR  = Salma Elshatanoufy
+#DATE     = 20070827
+#TEST_TYPE= functional
+#ENDDOC
+
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)selectedRealKind5.f
+#OUTPUT    = selectedRealKind5$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = selectedRealKind5$(OBJ)
+#OUTPUT    = selectedRealKind5$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = selectedRealKind5$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

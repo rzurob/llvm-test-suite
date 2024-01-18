@@ -1,0 +1,11 @@
+ &NML
+ B1= &BASEDTIO
+ DUMMY1=basedatacontent: 567 890
+ /, B2= &CHILDDTIO
+ DUMMY1=basedatacontent: 123 234
+childdatacontent: 345 456
+, DUMMY2=basedatacontent: 567 678
+childdatacontent: 789 890
+
+ /
+ /

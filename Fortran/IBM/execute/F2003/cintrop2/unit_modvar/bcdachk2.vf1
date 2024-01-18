@@ -1,0 +1,13 @@
+** _main   === End of Compilation 3 ===
+** mod   === End of Compilation 1 ===
+** mod   === End of Compilation 2 ===
+1501-510  Compilation successful for file bcdachk2.f.
+ld: 0711-197 ERROR: Type mismatches for symbol: ca
+ld: 0711-197 ERROR: Type mismatches for symbol: cc
+ld: 0711-197 ERROR: Type mismatches for symbol: cf
+ld: 0711-197 ERROR: Type mismatches for symbol: ci
+ld: 0711-224 WARNING: Duplicate symbol: ca
+ld: 0711-224 WARNING: Duplicate symbol: cc
+ld: 0711-224 WARNING: Duplicate symbol: cf
+ld: 0711-224 WARNING: Duplicate symbol: ci
+ld: 0711-345 Use the -bloadmap or -bnoquiet option to obtain more information.

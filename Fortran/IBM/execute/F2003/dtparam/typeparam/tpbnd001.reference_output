@@ -1,0 +1,12 @@
+ b1 in main           100
+ b2:0 in main         1099511627776
+ b2:1 in main         2199023255552
+ b2:2 in main         3298534883328
+ b2:3 in main         4398046511104
+ b2:4 in main         5497558138880
+ b2:5 in main         6597069766656
+ b2:6 in main         7696581394432
+ b2:7 in main         8796093022208
+ b2:8 in main         9895604649984
+ b2:9 in main         10995116277760
+ b3 in main           -1

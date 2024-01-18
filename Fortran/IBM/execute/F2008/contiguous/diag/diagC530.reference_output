@@ -1,0 +1,9 @@
+"diagC530.f", line 108.32: 1514-788 (S) t1 was declared with the CONTIGUOUS attribute. t1 must be an array pointer, an array pointer component, an assumed-shape array, or an assumed-rank object.
+"diagC530.f", line 109.40: 1514-788 (S) t2 was declared with the CONTIGUOUS attribute. t2 must be an array pointer, an array pointer component, an assumed-shape array, or an assumed-rank object.
+"diagC530.f", line 110.52: 1514-788 (S) t3 was declared with the CONTIGUOUS attribute. t3 must be an array pointer, an array pointer component, an assumed-shape array, or an assumed-rank object.
+"diagC530.f", line 113.41: 1514-788 (S) t4 was declared with the CONTIGUOUS attribute. t4 must be an array pointer, an array pointer component, an assumed-shape array, or an assumed-rank object.
+"diagC530.f", line 114.65: 1514-788 (S) t5 was declared with the CONTIGUOUS attribute. t5 must be an array pointer, an array pointer component, an assumed-shape array, or an assumed-rank object.
+"diagC530.f", line 122.32: 1514-788 (S) obj was declared with the CONTIGUOUS attribute. obj must be an array pointer, an array pointer component, an assumed-shape array, or an assumed-rank object.
+** mod   === End of Compilation 1 ===
+"diagC530.f", line 128.11: 1514-219 (S) Unable to access module symbol file for module mod. Check path and file permissions of file. Use association not done for this module.
+1501-511  Compilation failed for file diagC530.f.

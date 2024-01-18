@@ -1,0 +1,16 @@
+stop_d001.scenario
+stop_d002.scenario
+stop_d011.scenario
+stop_d012.scenario
+stop_d013.scenario
+stop_d015.scenario
+stop_d016.scenario
+stop_d017.scenario
+stop_d021.scenario
+stop_d022.scenario
+stop_d025.scenario
+stop_d026.scenario
+stop_d031.scenario
+stop_d032.scenario
+stop_d041.scenario
+stop_d042.scenario

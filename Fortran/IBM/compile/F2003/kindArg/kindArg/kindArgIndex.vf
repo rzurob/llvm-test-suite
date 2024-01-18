@@ -1,0 +1,9 @@
+"kindArgIndex.f", line 49.33: 1513-133 (S) KIND must be an integer constant.
+"kindArgIndex.f", line 50.58: 1513-040 (S) The argument KIND must be a scalar.
+"kindArgIndex.f", line 52.57: 1513-040 (S) The argument KIND must be a scalar.
+"kindArgIndex.f", line 54.41: 1513-133 (S) KIND must be an integer constant.
+"kindArgIndex.f", line 55.41: 1513-133 (S) KIND must be an integer constant.
+"kindArgIndex.f", line 56.41: 1513-133 (S) KIND must be an integer constant.
+"kindArgIndex.f", line 57.41: 1513-133 (S) KIND must be an integer constant.
+** kindargindex   === End of Compilation 1 ===
+1501-511  Compilation failed for file kindArgIndex.f.

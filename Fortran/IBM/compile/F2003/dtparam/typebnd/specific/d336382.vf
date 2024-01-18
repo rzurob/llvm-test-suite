@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"d336382.f", line 50.30: 1514-562 (S) Inherited binding p has the PASS attribute.  The overriding binding must have the PASS attribute.
+** m1   === End of Compilation 2 ===
+** _main   === End of Compilation 3 ===
+1501-511  Compilation failed for file d336382.f.

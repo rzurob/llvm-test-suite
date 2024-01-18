@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrMulInt.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrMulInt.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrMulInt$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrMulInt$(OBJ)
+#OUTPUT    = dataPtrMulInt$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrMulInt$(EXE)
+#STDOUT    = dataPtrMulInt.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrMulInt.out $($(tcasedir)dataPtrMulInt$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

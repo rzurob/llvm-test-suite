@@ -1,0 +1,15 @@
+ Before Setting Values
+ --------------------
+ CUBE's Property:
+ Cube name: Object
+ Cube SIDES LENGHT: 0.0000000000E+00
+ Cube Volume: 0.0000000000E+00
+ Cube Surface: 0.0000000000E+00
+ 
+ After Setting Values
+ --------------------
+ CUBE's Property:
+ Cube name: MyCube
+ Cube SIDES LENGHT: 10.00000000
+ Cube Volume: 1000.000000
+ Cube Surface: 600.0000000

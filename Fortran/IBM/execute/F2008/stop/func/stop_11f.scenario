@@ -1,0 +1,44 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/stop/stop_11f.scenario
+#FEATURE   = Constant expression as stop code in STOP statement
+#CREATOR   = Shahid Alam
+#DATE      = 20101020
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)stop_11f.f
+#OUTPUT    = stop_11f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = stop_11f$(OBJ)
+#OUTPUT    = stop_11f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = stop_11f$(EXE)
+#STDOUT    = stop_11f.out
+#STDERR    = stop_11f.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = stop_11f.out $($(tcasedir)stop_11f$(product)vf)
+#ENDCMD
+
+#CMD       = GREP
+#OPTS      = "STOP 9"
+#INPUT     = stop_11f.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,4 @@
+"volatileUt09a.f", line 39.15: 1516-273 (S) Dummy argument arg1 of procedure sub1 was specified with the VOLATILE attribute. arg1 is not an assumed-shape array or a pointer array.  The corresponding actual argument must not be a pointer array.
+** non   === End of Compilation 1 ===
+** sub1   === End of Compilation 2 ===
+1501-511  Compilation failed for file volatileUt09a.f.

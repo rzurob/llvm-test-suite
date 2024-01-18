@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint36a.scenario
+#FEATURE	= Array constructor enhancement - AC in specification expressions
+#CREATOR	= DF Manual Update
+#DATE		= 20060927
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint36a.f
+#OUTPUT		= acetint36a$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint36a$(OBJ)
+#OUTPUT		= acetint36a$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint36a$(EXE)
+#STDOUT		= acetint36a.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $(tcasedir)acetint36a.vf acetint36a.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

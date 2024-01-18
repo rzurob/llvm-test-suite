@@ -1,0 +1,4 @@
+"volatileC1233PointerArray01d.f", line 35.24: 1516-273 (S) Dummy argument x of procedure explicitarray was specified with the VOLATILE attribute. x is not an assumed-shape array or a pointer array.  The corresponding actual argument must not be a pointer array.
+** volatilec1233pointerarray01d   === End of Compilation 1 ===
+** explicitarray   === End of Compilation 2 ===
+1501-511  Compilation failed for file volatileC1233PointerArray01d.f.

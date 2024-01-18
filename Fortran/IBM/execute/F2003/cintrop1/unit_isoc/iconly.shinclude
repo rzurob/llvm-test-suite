@@ -1,0 +1,20 @@
+! This include replaces iconly.sh
+#CMD    = XLC_COMPILE
+#OPTS   = $(C_COMPILER_OPTS) $(OPT_SET_LANG_LEVEL_STDC99)
+#INPUT  = $(tcasedir)iconlyc$TCARG.c
+#OUTPUT = iconlyc$TCARG$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)iconlyf$TCARG.f
+#OUTPUT = iconlyf$TCARG$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = iconlyf$TCARG$(OBJ) iconlyc$TCARG$(OBJ)
+#OUTPUT = iconly$TCARG$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = iconly$TCARG$(EXE)
+#ENDCMD

@@ -1,0 +1,68 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/submodule/module_subprogram/func/module_subprogram24f.scenario
+#FEATURE   = F2008 submodule
+#CREATOR   = Bernard Kan
+#DATE      = 20130516
+#TEST_TYPE = Functional
+#KEYWORDS  = F2008 Submodule
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+XLFRTEOPTS=buffering=disable_preconn
+#ENDDEFS
+#INVALID_PRODUCT = bgq
+#INVALID_XOPTS = $$(F_COMPILE^OPT_OPTIMIZE_LEVEL<.*>) $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP) $$(F_COMPILE^OPT_OPTIMIZE_FOR_SMP<.*>)
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#OPTS      = $(OPT_AUTO_INLINE_FUNCTION_OFF) $(OPT_INIT_AUTOMATICS) $(OPT_GEN_DEBUG_INFO)
+#INPUT     = $(tcasedir)module_subprogram24f.f
+#OUTPUT    = module_subprogram24f$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#OPTS      = $(OPT_AUTO_INLINE_FUNCTION_OFF) $(OPT_INIT_AUTOMATICS) $(OPT_GEN_DEBUG_INFO)
+#INPUT     = module_subprogram24f$(OBJ)
+#OUTPUT    = module_subprogram24f$(EXE)
+#ENDCMD
+
+#IF on(aix)
+#CMD       = DBX
+#ELSE
+#CMD       = GDB
+#ENDIF
+#STDIN     = $($(tcasedir)module_subprogram24f$(product)in)
+#INPUT     = module_subprogram24f$(EXE)
+#STDOUT    = module_subprogram24f.out
+#ENDCMD
+
+! ensure submodule is recognized in the debugger
+#CMD       = GREP
+#IF on(aix)
+#OPTS      = "module_subprogram24f.__(mod)submod1_NMOD__&&_(mod)submod1.__mod_NMOD_displayl2"
+#ELSE
+#OPTS      = "(mod)submod1::displayl2"
+#ENDIF
+#INPUT     = module_subprogram24f.out
+#ENDCMD
+
+#CMD       = SED
+#OPTS      = ":a;$!N;s/)\n[[:blank:]]*at/) at/;ta;P;D"
+#INPUT     = module_subprogram24f.out
+#STDOUT    = module_subprogram24f.out.sed
+#ENDCMD
+
+#CMD       = PARSE_DEBUG_OUTPUT
+#INPUT     = module_subprogram24f.out.sed
+#OUTPUT    = module_subprogram24f.parsed
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = module_subprogram24f.parsed $($(tcasedir)module_subprogram24f$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

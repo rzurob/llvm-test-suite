@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/attribute/args/C1232arraySect03.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Attribute
+#CREATOR	= GM Manual Creation
+#DATE		= 20060406
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#IF on (linuxle)
+    XLFRTEOPTS=$(CONVERT_UFMT_IO_ENDIANESS<1232>)
+#ENDIF
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)C1232arraySect03.f
+#OUTPUT		= C1232arraySect03$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= C1232arraySect03$(OBJ)
+#OUTPUT		= C1232arraySect03$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= C1232arraySect03$(EXE)
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)C1232arraySect03$(product)vf) fort.1232
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrDefineAssgn2.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrDefineAssgn2.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrDefineAssgn2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrDefineAssgn2$(OBJ)
+#OUTPUT    = dataPtrDefineAssgn2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrDefineAssgn2$(EXE)
+#STDOUT    = dataPtrDefineAssgn2.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrDefineAssgn2.out $($(tcasedir)dataPtrDefineAssgn2$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

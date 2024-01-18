@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/valueAttrwAllocCompnt/valueAllocatableComponentDefinedOp001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of valueAttrwAllocCompnt/*
+#DATE      = 20071102
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)valueAllocatableComponentDefinedOp001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = valueAllocatableComponentDefinedOp001$(OBJ)
+#STDERR    = valueAllocatableComponentDefinedOp001.err
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = valueAllocatableComponentDefinedOp001$(OBJ)
+#OUTPUT    = valueAllocatableComponentDefinedOp001$(EXE)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = valueAllocatableComponentDefinedOp001.err $(tcasedir)valueAllocatableComponentDefinedOp001.err.vf
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = valueAllocatableComponentDefinedOp001$(EXE)
+#STDOUT    = valueAllocatableComponentDefinedOp001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = valueAllocatableComponentDefinedOp001.out $(tcasedir)valueAllocatableComponentDefinedOp001.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

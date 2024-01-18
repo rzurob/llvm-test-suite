@@ -1,0 +1,48 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = streamio/options/fxstio231.scenario
+#FEATURE   = streamio tests - regression run bucket
+#CREATOR   = automated conversion script
+#DATE      = 20081130
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+	XLFRTEOPTS=buffering=disable_all
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#IF on(aix)
+        #CMD    = XLC_COMPILE
+        #INPUT  = $(tcasedir)in.c
+        #OUTPUT = in$(OBJ)
+        #OPTS   = $(C_COMPILER_OPTS)
+        #ENDCMD
+#ELSE
+        #CMD    = GCC_COMPILE
+        #INPUT  = $(tcasedir)in.c
+        #OUTPUT = in$(OBJ)
+        #OPTS   = $(GCC_COMPILER_OPTS)
+        #ENDCMD
+#ENDIF
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)fxstio231.f
+#OUTPUT = fxstio231$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = fxstio231$(OBJ) in$(OBJ)
+#OUTPUT = fxstio231$(EXE)
+#ENDCMD
+
+#CMD 	= RUN
+#INPUT 	= fxstio231$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

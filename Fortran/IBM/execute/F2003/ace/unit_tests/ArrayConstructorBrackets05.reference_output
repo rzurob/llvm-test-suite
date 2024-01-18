@@ -1,0 +1,3 @@
+"ArrayConstructorBrackets05.f", line 26.16: 1518-352 (L) The "[" and "]" characters are not permitted to delimit an array constructor by the Fortran 95 standard.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file ArrayConstructorBrackets05.f.

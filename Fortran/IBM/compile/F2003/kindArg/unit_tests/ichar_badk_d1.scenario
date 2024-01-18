@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=ichar_badk_d1.scenario
+#FEATURE = Support new Kind Parameter for Several Intrinsics
+#CREATOR = Vince Yuen
+#DATE    = 20060414
+#TEST_TYPE=diagnostic ut
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = -qdebug=kindarg
+#INPUT     = $(tcasedir)ichar_badk_d1.f
+#STDERR    = ichar_badk_d1.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = ichar_badk_d1.out $(tcasedir)ichar_badk_d1.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

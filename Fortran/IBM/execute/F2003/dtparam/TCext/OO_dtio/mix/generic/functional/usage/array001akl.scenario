@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/mix/generic/functional/usage/array001akl.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070809
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)array001akl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = array001akl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = array001akl$(OBJ)
+#OUTPUT    = array001akl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = array001akl$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

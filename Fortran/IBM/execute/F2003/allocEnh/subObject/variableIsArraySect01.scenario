@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/subObject/variableIsArraySect01.scenario
+#FEATURE	= Intrinsic Assignment -- variable is a Subobject
+#CREATOR	= GM Manual Creation
+#DATE		= 20061108
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)variableIsArraySect01.f
+#OUTPUT		= variableIsArraySect01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= variableIsArraySect01$(OBJ)
+#OUTPUT		= variableIsArraySect01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= variableIsArraySect01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

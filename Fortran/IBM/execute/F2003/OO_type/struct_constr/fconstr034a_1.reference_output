@@ -1,0 +1,10 @@
+ finalizeChild
+ finalizeBase
+ begin
+ 100 x1                
+ 5 c1_array_of_9     
+ finalizeChild
+ finalizeBase
+ finalizeChild
+ finalizeBase
+ end

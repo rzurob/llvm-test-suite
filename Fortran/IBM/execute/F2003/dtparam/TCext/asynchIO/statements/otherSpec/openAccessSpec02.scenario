@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/asynchIO/statements/otherSpec/openAccessSpec02.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of asynchIO/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=bgq
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_INTSIZE_8)
+#INPUT		= $(tcasedir)openAccessSpec02.f
+#OUTPUT		= openAccessSpec02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#OPTS		= $(OPT_INTSIZE_8)
+#INPUT		= openAccessSpec02$(OBJ)
+#OUTPUT		= openAccessSpec02$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= openAccessSpec02$(EXE)
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)openAccessSpec02$(product)vf) openAccessSpec02.dat
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

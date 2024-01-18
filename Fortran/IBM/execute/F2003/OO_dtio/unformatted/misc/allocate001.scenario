@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/unformatted/misc/allocate001.scenario
+#FEATURE = OO_dtio
+#CREATOR = Robert Ma
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)allocate001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = allocate001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  allocate001$(OBJ)
+#OUTPUT    = allocate001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = allocate001$(EXE)
+#STDOUT    = allocate001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = allocate001.out $($(tcasedir)allocate001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

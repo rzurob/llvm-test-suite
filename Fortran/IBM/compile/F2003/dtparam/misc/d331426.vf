@@ -1,0 +1,7 @@
+"d331426.f", line 27.13: 1515-019 (S) Syntax is incorrect.
+"d331426.f", line 29.5: 1515-019 (S) Syntax is incorrect.
+"d331426.f", line 30.4: 1514-050 (S) Specification statement is out of order.  Statement is ignored.
+"d331426.f", line 31.14: 1511-130 (S) The type specification must specify an accessible derived type or an intrinsic type.
+"d331426.f", line 31.14: 1514-690 (S) Type parameter values must not be specified for type dt.  Type dt does not have type parameters.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file d331426.f.

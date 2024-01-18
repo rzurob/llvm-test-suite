@@ -1,0 +1,33 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dataPtrTypBndDefOp.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       Jul-31-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)dataPtrTypBndDefOp.f
+#OUTPUT= dataPtrTypBndDefOp$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  dataPtrTypBndDefOp$(OBJ)
+#OUTPUT= dataPtrTypBndDefOp$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dataPtrTypBndDefOp$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

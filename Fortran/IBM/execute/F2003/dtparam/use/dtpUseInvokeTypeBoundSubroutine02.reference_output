@@ -1,0 +1,53 @@
+ start
+ this=tkl(4,*): k= 4 , l= 5 5 0 1 2 3 4
+ a1=tkl(4,*): k= 4 , l= 5 5 0 1 2 3 4
+ same type, kind and len; content is same     
+ this=tk(4): k= 4 4 100000010
+ a1=tk(4): k= 4 4 100000010
+ same type; content is same     
+ this=tl(*): l= 5 5 20 21 22 23 24
+ a1=tl(*): l= 5 5 20 21 22 23 24
+ same type and len; content is same     
+ this=tkl(2,*): k= 2 , l= 3 3 10030 10031 10032
+ a1=tkl(2,*): k= 2 , l= 3 3 10030 10031 10032
+ same type, kind and len; content is same     
+ this=tk(2): k= 2 2 10040
+ a1=tk(2): k= 2 2 10040
+ same type; content is same     
+ this=tl(*): l= 3 3 50 51 52
+ a1=tl(*): l= 3 3 50 51 52
+ same type and len; content is same     
+ this=tkl(4,*): k= 4 , l= 5 5 0 1 2 3 4
+ a1=tkl(4,*): k= 4 , l= 5 5 1 2 2 3 4
+ same type, kind and len; content is different
+ this=tk(4): k= 4 4 100000010
+ different type, can't compare
+ this=tl(*): l= 5 5 20 21 22 23 24
+ a1=tl(*): l= 3 3 50 51 52
+ same type, but not len: 5 3
+ this=tkl(2,*): k= 2 , l= 3 3 10030 10031 10032
+ different type, can't compare
+ this=tk(2): k= 2 2 10040
+ different type, can't compare
+ this=tl(*): l= 3 3 50 51 52
+ a1=tl(*): l= 5 5 20 21 22 23 24
+ same type, but not len: 3 5
+ this=tkl(4,*): k= 4 , l= 5 5 100 101 102 103 104
+ a1=tkl(4,*): k= 4 , l= 5 5 100 101 102 103 104
+ same type, kind and len; content is same     
+ this=tk(4): k= 4 4 100000110
+ a1=tk(4): k= 4 4 100000010
+ same type; content is different
+ this=tl(*): l= 5 5 120 121 122 123 124
+ a1=tl(*): l= 5 5 120 121 122 123 124
+ same type and len; content is same     
+ this=tkl(2,*): k= 2 , l= 3 3 10130 10131 10132
+ a1=tkl(2,*): k= 2 , l= 3 3 10030 10031 10032
+ same type, kind and len; content is different
+ this=tk(2): k= 2 2 10140
+ a1=tk(2): k= 2 2 10140
+ same type; content is same     
+ this=tl(*): l= 3 3 53 54 55
+ a1=tl(*): l= 3 3 50 51 52
+ same type and len; content is different
+ end

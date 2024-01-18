@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = initexprSelected_kindlanglvl.f
+#FEATURE   =
+#CREATOR   = Kelvin Li
+#DATE      = March 31, 2006
+#TEST_TYPE = Unit Test
+#ENDDOC
+
+! $(OPT_OPTIMIZE_FOR_SMP) $(OPT_OPTIMIZE_FOR_SMP_NOOPT) added by William Chan to prevent smp from being ran
+#BEGINENV
+#TIME_REQ = 60
+#INVALID_XOPTS = $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP) $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT)
+#ENDENV
+
+#BEGINCONTROL
+#CMD      = F_COMPILE
+#OPTS     = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_LANG_LEVEL<2003std>)
+#INPUT    = $(tcasedir)initexprSelected_kindlanglvl.f
+#OUTPUT   = initexprSelected_kindlanglvl$(OBJ)
+#STDERR   = initexprSelected_kindlanglvl.err
+#VALIDRCS = 0
+#ENDCMD
+
+#CMD      = XLDIFF
+#INPUT    = initexprSelected_kindlanglvl.err $(tcasedir)initexprSelected_kindlanglvl.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

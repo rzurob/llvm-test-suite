@@ -1,0 +1,48 @@
+ in disp1: 127 1 1 0 0 >< 32000 2 2 4 4 >abcd< 123454321 4 4 5 5 >opqrs<
+ in disp1: 127 1 1 0 0 >< 32000 2 2 4 4 >abcd< 123454321 4 4 5 5 >opqrs<
+ in disp1: 127 1 1 0 0 >< 32000 2 2 4 4 >abcd< 123454321 4 4 5 5 >opqrs<
+ in dispR: 32000 2 2 4 4 >abcd< 5.099999905
+ in dispCI: 123454321 4 4 5 5 >opqrs/tuvw< 123454321
+ 
+ in disp1a: -127 1 1 0 0 >< 32000 2 2 4 4 >abcd< 123454321 4 4 5 5 >opqrs<
+ in disp1a: 127 1 1 0 0 >< -12345 2 2 4 4 >efgh< 123454321 4 4 5 5 >opqrs<
+ in disp1a: 127 1 1 0 0 >< 32000 2 2 4 4 >abcd< 123454321 4 4 5 5 >tuvwx<
+ in dispRa: -12345 2 2 4 4 >efgh< 5.099999905
+ in dispCIa: 123454321 4 4 5 5 >tuvwx/xyzab< 123454321
+ 
+ in disp1: 1 1 1 3 3 >ijk< 32000 2 2 4 4 >abcd< 123454321 4 4 5 5 >opqrs<
+ in disp1: 1 1 1 3 3 >ijk< 32000 2 2 4 4 >abcd< 123454321 4 4 5 5 >opqrs<
+ in disp1: 1 1 1 3 3 >ijk< 32000 2 2 4 4 >abcd< 123454321 4 4 5 5 >opqrs<
+ 
+ in disp1a: -1 1 1 3 3 >lmn< -12345 2 2 4 4 >efgh< 123454321 4 4 5 5 >tuvwx<
+ in disp1: -1 1 1 3 3 >lmn< 32000 2 2 4 4 >abcd< 123454321 4 4 5 5 >tuvwx<
+ in disp1: -1 1 1 3 3 >lmn< -12345 2 2 4 4 >efgh< 123454321 4 4 5 5 >opqrs<
+ 
+ in disp1a: -1 1 1 3 3 >lmn< -12345 2 2 4 4 >efgh< 123454321 4 4 5 5 >tuvwx<
+ in disp1a: -1 1 1 3 3 >lmn< -12345 2 2 4 4 >efgh< 123454321 4 4 5 5 >tuvwx<
+ 
+ in disp1a: 127 1 1 0 0 >< 32000 2 2 4 4 >abcd< 123454321 4 4 5 5 >opqrs<
+ in disp1a: 127 1 1 0 0 >< 32000 2 2 4 4 >abcd< 123454321 4 4 5 5 >opqrs<
+ in disp1: 127 1 1 0 0 >< 32000 2 2 4 4 >abcd< 123454321 4 4 5 5 >opqrs<
+ in dispRa: 32000 2 2 4 4 >abcd< 5.099999905
+ in dispCI: 123454321 4 4 5 5 >opqrs/cd< 123454321
+ 
+ in disp1a: -127 1 1 0 0 >< 32000 2 2 4 4 >abcd< 123454321 4 4 5 5 >opqrs<
+ in disp1a: 127 1 1 0 0 >< -12345 2 2 4 4 >efgh< 123454321 4 4 5 5 >opqrs<
+ in disp1: 127 1 1 0 0 >< 32000 2 2 4 4 >abcd< 123454321 4 4 5 5 >tuvwx<
+ in dispR: -12345 2 2 4 4 >efgh< 5.099999905
+ in dispCI: 123454321 4 4 5 5 >tuvwx/efghijkl< 123454321
+ 
+ in disp1a: 1 1 1 3 3 >ijk< 32000 2 2 4 4 >abcd< 123454321 4 4 5 5 >opqrs<
+ in disp1a: 1 1 1 3 3 >ijk< 32000 2 2 4 4 >abcd< 123454321 4 4 5 5 >opqrs<
+ in disp1: 1 1 1 3 3 >ijk< 32000 2 2 4 4 >abcd< 123454321 4 4 5 5 >opqrs<
+ 
+ in disp1: -1 1 1 3 3 >lmn< -12345 2 2 4 4 >efgh< 123454321 4 4 5 5 >tuvwx<
+ in disp1a: -1 1 1 3 3 >lmn< 32000 2 2 4 4 >abcd< 123454321 4 4 5 5 >tuvwx<
+ in disp1: -1 1 1 3 3 >lmn< -12345 2 2 4 4 >efgh< 123454321 4 4 5 5 >opqrs<
+ 
+ in disp1a: -1 1 1 3 3 >lmn< -12345 2 2 4 4 >efgh< 123454321 4 4 5 5 >tuvwx<
+ in disp1: -1 1 1 3 3 >lmn< -12345 2 2 4 4 >efgh< 123454321 4 4 5 5 >tuvwx<
+ 
+ in disp1: -57 1 1 4 4 >WXYZ< 5518 2 2 2 2 >AB< 123454321 4 4 5 5 >opqrs<
+ done

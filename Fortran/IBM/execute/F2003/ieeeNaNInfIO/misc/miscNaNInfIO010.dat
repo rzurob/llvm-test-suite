@@ -1,0 +1,3 @@
+ &NANINF
+   REAL_ARR1(1:3)=NaN(Q); -Inf;+3,14 ;REAL_ARR1(4:6)=-NaN(S); +Infinity;  NaN ; REAL_ARR2=inf;NAN();   nan(s); -infinity -nan    nan(_1a_) CX_ARR1=  (nan(_); -nan(1));( +infiniTy;-INFinIty);   CX_ARR2= (-3,14 ;nan(s) )  (nan;       nan);      (inf  ;   inf) (-nan();-inf)
+/

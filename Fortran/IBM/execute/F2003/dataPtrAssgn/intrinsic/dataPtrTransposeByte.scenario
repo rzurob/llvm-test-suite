@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrTransposeByte.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrTransposeByte.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrTransposeByte$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrTransposeByte$(OBJ)
+#OUTPUT    = dataPtrTransposeByte$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrTransposeByte$(EXE)
+#STDOUT    = dataPtrTransposeByte.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrTransposeByte.out $($(tcasedir)dataPtrTransposeByte$(product)vf)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

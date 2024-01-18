@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/basic/nonchar/allocatedScalarDerived01.scenario
+#FEATURE	= Intrinsic Assignment -- Basic Tests: Non-CHARACTER Derived Type
+#CREATOR	= GM Manual Creation
+#DATE		= 20060808
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)allocatedScalarDerived01.f
+#OUTPUT		= allocatedScalarDerived01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= allocatedScalarDerived01$(OBJ)
+#OUTPUT		= allocatedScalarDerived01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= allocatedScalarDerived01$(EXE)
+#STDOUT		= allocatedScalarDerived01.out
+#STDERR		= allocatedScalarDerived01.out
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)allocatedScalarDerived01$(product)vf)	\
+				allocatedScalarDerived01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

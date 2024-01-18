@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/struct_constr/fconstr500.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/*
+#DATE      = 20070720
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fconstr500.f
+#OUTPUT    = fconstr500$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fconstr500$(OBJ)
+#OUTPUT    = fconstr500$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fconstr500$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/intrinsics/selectedRealKind/unit_tests/func/SelRKindInit.scenario
+#FEATURE   = 376076
+#CREATOR   = Ren Jian Gang
+#DATE      = November 05, 2010
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)SelRKindInit.f
+#OUTPUT   =  SelRKindInit$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  SelRKindInit$(OBJ)
+#OUTPUT   =  SelRKindInit$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  SelRKindInit$(EXE)
+#STDOUT   =  SelRKindInit.out
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = SelRKindInit.out $(tcasedir)SelRKindInit.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

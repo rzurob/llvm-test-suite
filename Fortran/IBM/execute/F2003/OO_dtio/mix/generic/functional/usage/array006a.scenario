@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/mix/generic/functional/usage/array006a.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)array006a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = array006a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = array006a$(OBJ)
+#OUTPUT    = array006a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = array006a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

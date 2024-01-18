@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/assignment/functional/genericAssignmentElemental004.scenario
+#FEATURE = generic tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericAssignmentElemental004.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericAssignmentElemental004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericAssignmentElemental004$(OBJ)
+#OUTPUT    = genericAssignmentElemental004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericAssignmentElemental004$(EXE)
+#STDOUT    = genericAssignmentElemental004.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericAssignmentElemental004.out $(tcasedir)genericAssignmentElemental004.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,55 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)distribute_field.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = distribute_field$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)compute_avg.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = compute_avg$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)field_avg.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = field_avg$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = distribute_field$(OBJ) compute_avg$(OBJ) field_avg$(OBJ)
+#OUTPUT    = field_avg$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = field_avg$(EXE)
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1.0e-10
+#INPUT     = average.out average.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

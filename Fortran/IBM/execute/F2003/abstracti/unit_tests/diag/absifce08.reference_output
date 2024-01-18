@@ -1,0 +1,3 @@
+"absifce08.f", line 26.27: 1513-242 (S) Dummy argument func must not be an abstract interface.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file absifce08.f.

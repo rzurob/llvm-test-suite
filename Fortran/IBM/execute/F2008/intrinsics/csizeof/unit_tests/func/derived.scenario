@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/intrinsics/csizeof/unit_tests/func/derived.scenario
+#FEATURE   = F2008 ISO_C_BINDING - C_SIZEOF
+#CREATOR   = Paul Liu, Rafik Zurob
+#DATE      = 20101226
+#TEST_TYPE = unit tests
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) $(OPT_BIGGER_LONG_DOUBLE)
+#INPUT     = $(tcasedir)cderived.c
+#OUTPUT    = cderived$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#OPTS      =
+#INPUT     = $(tcasedir)derived.f
+#OUTPUT    = derived$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = derived$(OBJ) cderived$(OBJ)
+#OUTPUT    = derived$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = derived$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

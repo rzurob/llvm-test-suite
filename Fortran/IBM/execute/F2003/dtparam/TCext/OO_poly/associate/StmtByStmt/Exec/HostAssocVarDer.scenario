@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/associate/StmtByStmt/Exec/HostAssocVarDer.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070914
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS  = -qdebug=allowrpdt
+#INPUT=  $(tcasedir)HostAssocVarDer.f
+#OUTPUT= HostAssocVarDer$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  HostAssocVarDer$(OBJ)
+#OUTPUT= HostAssocVarDer$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  HostAssocVarDer$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

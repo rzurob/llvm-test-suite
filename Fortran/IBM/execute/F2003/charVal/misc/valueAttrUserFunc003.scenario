@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/charVal/misc/valueAttrUserFunc003.scenario
+#FEATURE	= VALUE Attribute -- Character Length > 1
+#CREATOR	= GM Manual Creation
+#DATE		= 20060426
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)valueAttrUserFunc003.f
+#OUTPUT		= valueAttrUserFunc003$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= valueAttrUserFunc003$(OBJ)
+#OUTPUT		= valueAttrUserFunc003$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= valueAttrUserFunc003$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

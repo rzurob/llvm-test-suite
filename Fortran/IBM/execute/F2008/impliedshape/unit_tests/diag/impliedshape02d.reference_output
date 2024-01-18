@@ -1,0 +1,36 @@
+"impliedshape02d.f", line 37.46: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 38.43: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 39.56: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 40.47: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 41.52: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 42.46: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 43.43: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 44.50: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+** impliedshape02d_mod   === End of Compilation 1 ===
+"impliedshape02d.f", line 63.46: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 64.43: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 65.56: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 66.47: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 67.52: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 68.46: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 69.43: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 70.50: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 88.46: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 89.43: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 90.56: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 91.47: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 92.52: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 93.46: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 94.43: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 95.50: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+** impliedshape02d   === End of Compilation 2 ===
+"impliedshape02d.f", line 116.46: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 117.43: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 118.56: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 119.47: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 120.52: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 121.46: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 122.43: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"impliedshape02d.f", line 123.50: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+** bar   === End of Compilation 3 ===
+1501-511  Compilation failed for file impliedshape02d.f.

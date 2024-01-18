@@ -1,0 +1,10 @@
+  iotype:DT_foo1 v_list: 5 6  101
+  iotype:DT_foo1 v_list: 5 6  111
+  iotype:DT_foo1 v_list: 5 6  121   122
+  iotype:DT_foo1 v_list: 5 6  201   202
+  iotype:DT_foo1 v_list: 5 6  211   212
+  iotype:DT_foo1 v_list: 5 6  221   222
+  iotype:DT_foo1 v_list: 5 6  101
+  iotype:DT_bar1 v_list: 4 5 101
+  iotype:DT_bar4 v_list: 5 6  221   222
+  iotype:DT_boo1 v_list: 4 5 201  202

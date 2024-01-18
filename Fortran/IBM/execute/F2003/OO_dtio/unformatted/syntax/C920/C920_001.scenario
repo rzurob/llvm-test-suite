@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/unformatted/syntax/C920/C920_001.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)C920_001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = C920_001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = C920_001$(OBJ)
+#OUTPUT    = C920_001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = C920_001$(EXE)
+#STDOUT    = C920_001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = C920_001.out $(tcasedir)C920_001.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

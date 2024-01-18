@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrTarProcptr.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrTarProcptr.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrTarProcptr$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrTarProcptr$(OBJ)
+#OUTPUT    = dataPtrTarProcptr$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrTarProcptr$(EXE)
+#STDOUT    = dataPtrTarProcptr.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrTarProcptr.out $($(tcasedir)dataPtrTarProcptr$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

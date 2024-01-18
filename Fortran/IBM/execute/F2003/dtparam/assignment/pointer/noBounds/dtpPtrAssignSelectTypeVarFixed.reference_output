@@ -1,0 +1,23 @@
+ found Base:Q<
+ found Base:W<
+ 
+ found Child(*):Aabc 3 <
+ found Child(*):Fbc+ 3 <
+ 
+ found GChild(*,4):Ddefgh 123456789 5 4 <
+ found GChild(*,4):Gefgh% 123456889 5 4 <
+ 
+ found GChild(*,8):Gij 44332211 2 8 <
+ found GChild(*,8):Kj* 44332111 2 8 <
+ 
+ found GGChild(*,4):Jklmnop 123456789 Mqrstuv 123454321 6 4 <
+ found GChild(*,4):Mqrstuv 123454321 6 4 <
+ found GGChild(*,4):Klmnop# 123456790 L#qrstu 123454320 6 4 <
+ found GChild(*,4):L#qrstu 123454320 6 4 <
+ 
+ found GGChild(*,8):Pw 123456789123456789 Sx 111222333444555 1 8 <
+ found GChild(*,8):Sx 111222333444555 1 8 <
+ found GGChild(*,8):R@ 123456789123456799 Q@ 111222333444545 1 8 <
+ found GChild(*,8):Q@ 111222333444545 1 8 <
+ 
+ done

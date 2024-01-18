@@ -1,0 +1,36 @@
+"userenamediag001.f", line 38.8: 1518-285 (L) The MODULE statement is not permitted by the SAA standard.
+"userenamediag001.f", line 40.8: 1518-320 (L) Derived types are not permitted by the SAA standard.
+"userenamediag001.f", line 40.15: 1518-351 (L) Type parameters are not permitted by the SAA standard.
+"userenamediag001.f", line 45.4: 1518-331 (L) Type-bound procedures are not permittted by the SAA standard.
+"userenamediag001.f", line 52.2: 1518-285 (L) The INTERFACE statement is not permitted by the SAA standard.
+"userenamediag001.f", line 56.2: 1518-285 (L) The CONTAINS statement is not permitted by the SAA standard.
+"userenamediag001.f", line 58.12: 1518-209 (L) The presence of an attribute or double colon, or the initialization of data within a type declaration or attribute statement is not permitted by the SAA standard.
+"userenamediag001.f", line 59.6: 1518-260 (L) The CLASS keyword is not permitted by the SAA standard.
+"userenamediag001.f", line 59.13: 1518-207 (L) The INTENT attribute is not permitted by the SAA standard.
+"userenamediag001.f", line 59.13: 1518-209 (L) The presence of an attribute or double colon, or the initialization of data within a type declaration or attribute statement is not permitted by the SAA standard.
+"userenamediag001.f", line 61.4: 1518-285 (L) The END FUNCTION statement is not permitted by the SAA standard.
+"userenamediag001.f", 1518-270 (L) Named constants must not be arrays in the SAA standard.
+"userenamediag001.f", 1518-203 (L) Array expressions are not permitted by the SAA standard.
+"userenamediag001.f", 1518-203 (L) Array expressions are not permitted by the SAA standard.
+"userenamediag001.f", 1518-203 (L) Array expressions are not permitted by the SAA standard.
+"userenamediag001.f", 1518-270 (L) Named constants must not be arrays in the SAA standard.
+"userenamediag001.f", 1518-270 (L) Named constants must not be arrays in the SAA standard.
+"userenamediag001.f", 1518-318 (L) The SIGNEDZERO option can cause the program to behave in a way that is different from that specified by the SAA standard.
+"userenamediag001.f", 1518-317 (L) The ZEROSIZE option can cause the compiler to accept code that does not conform to the SAA standard.
+"userenamediag001.f", 1518-318 (L) The STOPEXCEPT option can cause the program to behave in a way that is different from that specified by the SAA standard.
+"userenamediag001.f", 1518-203 (L) Array expressions are not permitted by the SAA standard.
+"userenamediag001.f", 1518-318 (L) The XLF2003(NOOLDNANINF) option can cause the program to behave in a way that is different from that specified by the SAA standard.
+** opmod   === End of Compilation 1 ===
+"userenamediag001.f", line 68.1: 1518-285 (L) The USE statement is not permitted by the SAA standard.
+"userenamediag001.f", line 69.8: 1518-209 (L) The presence of an attribute or double colon, or the initialization of data within a type declaration or attribute statement is not permitted by the SAA standard.
+"userenamediag001.f", line 69.19: 1518-270 (L) Named constants must not be arrays in the SAA standard.
+"userenamediag001.f", line 71.1: 1518-285 (L) The END PROGRAM statement is not permitted by the SAA standard.
+"userenamediag001.f", 1518-203 (L) Array expressions are not permitted by the SAA standard.
+"userenamediag001.f", 1518-270 (L) Named constants must not be arrays in the SAA standard.
+"userenamediag001.f", 1518-203 (L) Array expressions are not permitted by the SAA standard.
+"userenamediag001.f", 1518-318 (L) The STOPEXCEPT option can cause the program to behave in a way that is different from that specified by the SAA standard.
+"userenamediag001.f", 1518-318 (L) The SIGNEDZERO option can cause the program to behave in a way that is different from that specified by the SAA standard.
+"userenamediag001.f", 1518-317 (L) The ZEROSIZE option can cause the compiler to accept code that does not conform to the SAA standard.
+"userenamediag001.f", 1518-318 (L) The XLF2003(NOOLDNANINF) option can cause the program to behave in a way that is different from that specified by the SAA standard.
+** main   === End of Compilation 2 ===
+1501-510  Compilation successful for file userenamediag001.f.

@@ -1,0 +1,14 @@
+** error_stop_d   === End of Compilation 1 ===
+"error_stop_d.f", line 54.16: 1516-332 (S) The stop code in the ERROR STOP statement must be a scalar constant expression of character or integer type.
+"error_stop_d.f", line 55.16: 1516-332 (S) The stop code in the ERROR STOP statement must be a scalar constant expression of character or integer type.
+"error_stop_d.f", line 56.16: 1516-332 (S) The stop code in the ERROR STOP statement must be a scalar constant expression of character or integer type.
+"error_stop_d.f", line 58.19: 1515-019 (S) Syntax is incorrect.
+"error_stop_d.f", line 59.15: 1515-019 (S) Syntax is incorrect.
+"error_stop_d.f", line 60.13: 1515-019 (S) Syntax is incorrect.
+"error_stop_d.f", line 63.4: 1511-004 (S) Type of statement specified may not be used to end a DO-loop or DO WHILE-loop.  Specify a proper statement type.
+** s   === End of Compilation 2 ===
+"error_stop_d.f", line 69.4: 1516-333 (S) A pure subprogram must not contain the ERROR STOP statement.
+"error_stop_d.f", line 70.4: 1516-333 (S) A pure subprogram must not contain the ERROR STOP statement.
+"error_stop_d.f", line 71.4: 1516-333 (S) A pure subprogram must not contain the ERROR STOP statement.
+** s1   === End of Compilation 3 ===
+1501-511  Compilation failed for file error_stop_d.f.

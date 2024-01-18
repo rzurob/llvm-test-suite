@@ -1,0 +1,143 @@
+
+module m
+    implicit none
+
+    type field
+        real(8), allocatable :: f(:)
+        real(8) halo_val(2)
+    end type
+
+    contains
+
+    integer function get_size(this)
+        type(field), intent(in) :: this
+
+        if (.not. allocated(this%f)) error stop 2
+
+        get_size = size(this%f)
+    end function
+
+    real(8) function get_f(this, i)
+        type(field), intent(in) :: this
+        integer, intent(in) :: i
+
+        if ((i <= 0) .or. (i > size(this%f))) then
+            print *, 'Error: index value:', i
+            error stop 1
+        end if
+
+        get_f = this%f(i)
+    end function
+
+    subroutine set_field(this, f)
+        type(field), intent(out) :: this
+        real(8), intent(inout), allocatable :: f(:)
+
+        call move_alloc(f, this%f)
+    end subroutine
+end module
+
+module m1
+    implicit none
+    contains
+
+    subroutine set_halo (x)
+        use m
+        type(field), intent(inout), codimension[*] :: x
+
+        integer me, np, left, right
+
+        me = this_image()
+        np = num_images()
+
+        if (me == 1) then
+            left = np
+        else
+            left = me - 1
+        end if
+
+        if (me == np) then
+            right = 1
+        else
+            right = me + 1
+        end if
+
+        x[left]%halo_val(2) = get_f(x, 1)
+        x[right]%halo_val(1) = get_f(x, get_size(x))
+
+        sync images([left, right])
+
+    end subroutine
+end module
+
+module data_mod
+use m, only:field
+    type(field), save :: global[*]
+end module
+
+program type_bound002a
+use m
+use m1
+use data_mod, only: global
+    implicit none
+
+    real(8), allocatable :: local_array(:)
+
+    integer me, np,i
+
+    me = this_image()
+    np = num_images()
+
+    if (np < 3) then
+        stop 'need at least 3 images to run'
+    end if
+
+    local_array = me * [(i, i = 1, 1024)]
+
+    call set_field(global, local_array)
+
+    call set_halo(global)
+
+    ! now let's verify the halo_val of global
+
+    call verify_halo
+
+    contains
+
+    subroutine verify_halo
+        integer left, right
+        logical, external :: precision_r8
+
+        if (me == 1) then
+            left = np
+        else
+            left = me - 1
+        end if
+
+        if (me == np) then
+            right = 1
+        else
+            right = me + 1
+        end if
+
+        if (.not. precision_r8(global%halo_val(1), &
+                left*1.0d0*get_size(global))) then
+
+            print *, 'Error: on image', me, 'global%halo_val(1)', &
+                global%halo_val(1),'does not match the expectation',&
+                left*1.0d0*get_size(global)
+
+            error stop 10
+        end if
+
+        if (.not. precision_r8(global%halo_val(2), &
+                right*1.0d0)) then
+
+            print *, 'Error: on image', me, 'global%halo_val(2)', &
+                global%halo_val(2),'does not match the expectation',&
+                right*1.0d0
+
+            error stop 20
+        end if
+    end subroutine
+end

@@ -1,0 +1,4 @@
+"C1233pointerArray03d.f", line 63.35: 1516-273 (S) Dummy argument arrayshapeexplicit of procedure explicitshapearray was specified with the ASYNCHRONOUS attribute. arrayshapeexplicit is not an assumed-shape array or a pointer array.  The corresponding actual argument must not be a pointer array.
+** c1233pointerarray03d   === End of Compilation 1 ===
+** explicitshapearray   === End of Compilation 2 ===
+1501-511  Compilation failed for file C1233pointerArray03d.f.

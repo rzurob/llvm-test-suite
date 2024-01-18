@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrNamelist.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrNamelist.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrNamelist$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrNamelist$(OBJ)
+#OUTPUT    = dataPtrNamelist$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrNamelist$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrNamelist.out $($(tcasedir)dataPtrNamelist$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/block/BUse01
+#FEATURE        = F2008 - BLOCK - USE: definitions available to block
+#CREATOR        = DF
+#DATE           = 2010-11-05
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)BUse01.f
+#OUTPUT = BUse01$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = BUse01$(OBJ)
+#OUTPUT = BUse01$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = BUse01$(EXE)
+#STDOUT = BUse01.out
+#ENDCMD
+
+#CMD    = SPIFF
+#OPTS   = -r1e-6
+#INPUT  = $($(tcasedir)BUse01$(product)vf) BUse01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

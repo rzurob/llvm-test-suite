@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/mxminAll/con/maxMin/mxminScalarArgBindC1.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)mxminScalarBindC1.c
+#OPTS      = $(C_COMPILER_OPTS)
+#OUTPUT    = mxminScalarBindC1$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mxminScalarArgBindC1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qxflag=callby
+#OUTPUT    = mxminScalarArgBindC1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = -qxflag=callby
+#INPUT     = mxminScalarArgBindC1$(OBJ) mxminScalarBindC1$(OBJ)
+#OUTPUT    = mxminScalarArgBindC1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminScalarArgBindC1$(EXE)
+#STDOUT    = mxminScalarArgBindC1.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

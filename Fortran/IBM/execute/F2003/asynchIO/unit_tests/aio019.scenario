@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#INVALID_PRODUCT= bgl
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)aio019.f
+#OUTPUT    = aio019$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#INPUT     = aio019$(OBJ)
+#OUTPUT    = aio019$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = aio019$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

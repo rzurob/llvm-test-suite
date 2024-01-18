@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/contiguous/other/pointerTypeCheck.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20101025
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)pointerTypeCheck.f
+#OUTPUT    = pointerTypeCheck$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = pointerTypeCheck$(OBJ)
+#OUTPUT    = pointerTypeCheck$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = pointerTypeCheck$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

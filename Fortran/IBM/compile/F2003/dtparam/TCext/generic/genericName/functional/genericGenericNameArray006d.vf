@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"genericGenericNameArray006d.f", line 78.9: 1513-062 (S) Generic procedure reference can not be resolved due to incorrect actual argument attributes.
+"genericGenericNameArray006d.f", line 79.9: 1513-062 (S) Generic procedure reference can not be resolved due to incorrect actual argument attributes.
+** genericgenericnamearray006d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericGenericNameArray006d.f.

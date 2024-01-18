@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/ieee/flag/fi3eflg05.scenario
+#FEATURE = ieee tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)fi3eflg05.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fi3eflg05$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  fi3eflg05$(OBJ)
+#OUTPUT    = fi3eflg05$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fi3eflg05$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

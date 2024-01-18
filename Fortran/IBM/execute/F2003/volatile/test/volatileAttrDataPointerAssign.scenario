@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=release/F2003/volatile/volatileAttrDataPointerAssign.f
+#FEATURE = VOLATILE 255728
+#CREATOR = William Zhang
+#DATE    = 05/30/2006
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD            = F_COMPILE
+#OPTS           = $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT          = $(tcasedir)volatileAttrDataPointerAssign.f
+#OUTPUT         = volatileAttrDataPointerAssign$(OBJ)
+#ENDCMD
+
+#CMD            = F_LINK
+#INPUT          = volatileAttrDataPointerAssign$(OBJ)
+#OUTPUT         = volatileAttrDataPointerAssign$(EXE)
+#ENDCMD
+
+#CMD            = RUN
+#INPUT          = volatileAttrDataPointerAssign$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

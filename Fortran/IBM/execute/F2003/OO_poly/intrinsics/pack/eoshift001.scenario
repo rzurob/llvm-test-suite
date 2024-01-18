@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/pack/eoshift001.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050221
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)eoshift001.f
+#OPTS      = -qxlf2003=dynamicacval $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = eoshift001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = eoshift001$(OBJ)
+#OUTPUT    = eoshift001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = eoshift001$(EXE)
+#STDOUT    = eoshift001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)eoshift001$(product)vf) eoshift001.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

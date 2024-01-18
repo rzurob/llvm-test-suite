@@ -1,0 +1,7 @@
+"kindArgLen2.f", line 43.28: 1513-145 (S) Argument keyword "kindd" does not match the dummy argument specified in the interface for the intrinsic procedure "len".
+"kindArgLen2.f", line 44.28: 1513-145 (S) Argument keyword "kid" does not match the dummy argument specified in the interface for the intrinsic procedure "len".
+"kindArgLen2.f", line 45.26: 1513-067 (S) Argument keyword "kind" was already specified for an actual argument.
+"kindArgLen2.f", line 46.11: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "len".
+"kindArgLen2.f", line 47.15: 1513-145 (S) Argument keyword "len" does not match the dummy argument specified in the interface for the intrinsic procedure "len".
+** kindarglen2   === End of Compilation 1 ===
+1501-511  Compilation failed for file kindArgLen2.f.

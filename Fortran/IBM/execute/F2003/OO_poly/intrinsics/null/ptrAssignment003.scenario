@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/null/ptrAssignment003.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050227
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ptrAssignment003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ptrAssignment003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = ptrAssignment003$(OBJ)
+#OUTPUT    = ptrAssignment003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ptrAssignment003$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

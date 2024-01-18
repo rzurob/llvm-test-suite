@@ -1,0 +1,2 @@
+ 1525-151 The FILE= specifier is missing in the OPEN statement for unit 8 when the value of the STATUS= specifier is not SCRATCH.  This is not allowed in Fortran 90, Fortran 95, and Fortran 2003 but is allowed in XL Fortran.  The program will recover by using the implicit connection file name for unit 8.
+                                                                                               

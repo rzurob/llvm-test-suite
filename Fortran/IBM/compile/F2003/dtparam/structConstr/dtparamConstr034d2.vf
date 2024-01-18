@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"dtparamConstr034d2.f", line 47.10: 1515-104 (S) The target in the pointer assignment statement is not unlimited polymorphic.  The pointer must be type compatible with the target, and the corresponding nondeferred type parameters must be equal.
+"dtparamConstr034d2.f", line 49.10: 1515-041 (S) Pointer and target must have the same rank in the pointer assignment statement.
+** dtparamconstr034d2   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtparamConstr034d2.f.

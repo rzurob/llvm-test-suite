@@ -1,0 +1,30 @@
+ WAIT() < 224 > 1525-224 There is no outstanding asynchronous data transfer 1 specified by the ID= specifier.  The program will recover by ignoring the WAIT statement. 
+                                                                                                       
+ WAIT() < 224 > 1525-224 There is no outstanding asynchronous data transfer 1 specified by the ID= specifier.  The program will recover by ignoring the WAIT statement. 
+                                                                                                       
+ WAIT() < 224 > 1525-224 There is no outstanding asynchronous data transfer 1 specified by the ID= specifier.  The program will recover by ignoring the WAIT statement. 
+                                                                                                       
+ WAIT() < 224 > 1525-224 There is no outstanding asynchronous data transfer 1 specified by the ID= specifier.  The program will recover by ignoring the WAIT statement. 
+                                                                                                       
+ WAIT() < 224 > 1525-224 There is no outstanding asynchronous data transfer 1 specified by the ID= specifier.  The program will recover by ignoring the WAIT statement. 
+                                                                                                       
+ WAIT() < 224 > 1525-224 There is no outstanding asynchronous data transfer 1 specified by the ID= specifier.  The program will recover by ignoring the WAIT statement. 
+                                                                                                       
+ WAIT() < 224 > 1525-224 There is no outstanding asynchronous data transfer 1 specified by the ID= specifier.  The program will recover by ignoring the WAIT statement. 
+                                                                                                       
+ WAIT() < 224 > 1525-224 There is no outstanding asynchronous data transfer 1 specified by the ID= specifier.  The program will recover by ignoring the WAIT statement. 
+                                                                                                       
+ WAIT() < 224 > 1525-224 There is no outstanding asynchronous data transfer 1 specified by the ID= specifier.  The program will recover by ignoring the WAIT statement. 
+                                                                                                       
+ 
+ Data Values Read:
+ dataValue( 10 ) = 1
+ dataValue( 9 ) = 2
+ dataValue( 8 ) = 3
+ dataValue( 7 ) = 4
+ dataValue( 6 ) = 5
+ dataValue( 5 ) = 6
+ dataValue( 4 ) = 7
+ dataValue( 3 ) = 8
+ dataValue( 2 ) = 9
+ dataValue( 1 ) = 10

@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BGotoNested.scenario
+#FEATURE   = F2008 BLOCK - goto out of a block to an including scope
+#CREATOR   = DF Manual Update
+#DATE      = 20101214
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)BGotoNested.f
+#OUTPUT    = BGotoNested$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = BGotoNested$(OBJ)
+#OUTPUT    = BGotoNested$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = BGotoNested$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/dummy_arg/fArg518.f
+#FEATURE = OO_poly
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fArg518.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fArg518$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fArg518$(OBJ)
+#OUTPUT    = fArg518$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fArg518$(EXE)
+#STDOUT    = fArg518.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fArg518.out $($(tcasedir)fArg518$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

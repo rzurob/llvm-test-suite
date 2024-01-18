@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/unit_tests/MoveAllocRank2Array22.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071106
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)MoveAllocRank2Array22.f
+#OUTPUT    = MoveAllocRank2Array22$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = MoveAllocRank2Array22$(OBJ)
+#OUTPUT    = MoveAllocRank2Array22$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = MoveAllocRank2Array22$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,4 @@
+"bcdain02.f", line 52.12: 1514-161 (S) Identifier "sub" appearing as a specific interface procedure/result name was defined elsewhere with conflicting attributes.  This definition is ignored.
+** mod   === End of Compilation 1 ===
+** bcdain02   === End of Compilation 2 ===
+1501-511  Compilation failed for file bcdain02.f.

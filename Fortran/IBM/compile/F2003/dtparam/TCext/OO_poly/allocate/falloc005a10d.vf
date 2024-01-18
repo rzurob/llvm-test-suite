@@ -1,0 +1,8 @@
+** m   === End of Compilation 1 ===
+"falloc005a10d.f", line 78.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"falloc005a10d.f", line 80.31: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"falloc005a10d.f", line 82.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+** falloc005a10d   === End of Compilation 2 ===
+** producebaseobj   === End of Compilation 3 ===
+** producechildobj   === End of Compilation 4 ===
+1501-511  Compilation failed for file falloc005a10d.f.

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/derived/acetdt37kkl.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement	\
+				AC in I/O, as output-item, no DTIO)
+#CREATOR	= Glen Mateer (based on work by David Forster)
+#DATE		= 20080115
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt37kkl.f
+#OUTPUT		= acetdt37kkl$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt37kkl$(OBJ)
+#OUTPUT		= acetdt37kkl$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt37kkl$(EXE)
+#STDOUT		= acetdt37kkl.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -r1e-6
+#INPUT		= $($(tcasedir)acetdt37kkl$(product)vf) acetdt37kkl.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

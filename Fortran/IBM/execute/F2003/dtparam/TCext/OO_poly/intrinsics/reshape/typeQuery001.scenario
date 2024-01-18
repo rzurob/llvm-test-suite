@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/reshape/typeQuery001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071006
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)typeQuery001.f
+#OUTPUT    = typeQuery001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = typeQuery001$(OBJ)
+#OUTPUT    = typeQuery001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = typeQuery001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

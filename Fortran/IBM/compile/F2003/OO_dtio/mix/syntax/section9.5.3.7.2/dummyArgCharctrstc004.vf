@@ -1,0 +1,9 @@
+** m1   === End of Compilation 1 ===
+  65.6   0161070D v_list‹write‹1‹
+  65.6   01610702 unit‹write‹
+  65.6   01610702 dtv‹write‹
+  78.7   01610702 iomsg‹read‹
+  78.7   01610819 v_list‹read‹
+  78.7   01610702 iotype‹read‹
+** dummyargcharctrstc004   === End of Compilation 2 ===
+1501-511  Compilation failed for file dummyArgCharctrstc004.f.

@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint21.scenario
+#FEATURE	= Array constructor enhancement - character type specifier variations
+#CREATOR	= DF Manual Update
+#DATE		= 20060919
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint21.f
+#OUTPUT		= acetint21$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint21$(OBJ)
+#OUTPUT		= acetint21$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint21$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

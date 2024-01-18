@@ -1,0 +1,65 @@
+! Replacing fxbindc.sh
+
+#CMD    = XLC_COMPILE
+#IF on(aix)
+  #OPTS   = $(C_COMPILER_OPTS) $(OPT_SET_LANG_LEVEL_STDC99) $(OPT_BIGGER_LONG_DOUBLE) -lm 
+#ELSE
+  #OPTS   = $(C_COMPILER_OPTS) $(OPT_SET_LANG_LEVEL_STDC99) -qdebug=aixldbl128 -lm
+#ENDIF
+#INPUT  = $(tcasedir)$CTCARG.c
+#OUTPUT = $CTCARG$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#OPTS    = -qfree=f90
+#INPUT  = $(tcasedir)$FTCARG.f
+#OUTPUT = $FTCARG$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#OPTS    = -qfree=f90
+#INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+#OUTPUT = $FTCARG$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = $FTCARG$(EXE)
+#ENDCMD
+
+#IF !on(aix)
+  #CMD    = COPY
+  #INPUT  = $(tcasedir)cmplx.h .
+  #ENDCMD
+
+  #CMD    = WHICH_FILE
+  #ENVAR  = FILE_SRC=$(tcasedir)
+  #INPUT  = TARGET:ctest.c gcc4:$CTCARG.c DEFAULT:empty.c
+  #ENDCMD
+
+  #CMD    = WHICH_FILE
+  #ENVAR  = FILE_SRC=$(tcasedir)
+  #INPUT  = TARGET:ftest.f gcc4:$FTCARG.f DEFAULT:empty.f
+  #ENDCMD
+
+  #CMD    = GCC_COMPILE
+  #OPTS   = $(GCC_COMPILER_OPTS) -std=c99 $(OPT_GCC_LONG_DOUBLE) -lm
+  #INPUT  = ctest.c
+  #OUTPUT = $CTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_COMPILE
+  #OPTS   = -qfree=f90
+  #INPUT  = ftest.f
+  #OUTPUT = $FTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_LINK
+  #OPTS   = -qfree=f90
+  #INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+  #OUTPUT = $FTCARG$(EXE)
+  #ENDCMD
+
+  #CMD    = RUN
+  #INPUT  = $FTCARG$(EXE)
+  #ENDCMD
+#ENDIF

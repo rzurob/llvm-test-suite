@@ -1,0 +1,8 @@
+  iotype:DT_con1-1 v_list: 4 5 abc  ABC
+  iotype:DT_con1-2 v_list: 5 6  def   DEF
+  iotype:DT_con1-3 v_list: 6 7   ghi    GHI
+  iotype:DT_con1-4 v_list: 7 8    jkl     JKL
+  iotype:DT_con2 v_list: 4 5 mno  MNO
+  iotype:DT_con2 v_list: 4 5 pqr  PQR
+  iotype:DT_con2 v_list: 4 5 stu  STU
+  iotype:DT_con2 v_list: 4 5 vwx  VWX

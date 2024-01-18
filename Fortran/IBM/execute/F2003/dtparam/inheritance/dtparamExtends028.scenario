@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/inheritance/dtparamExtends028.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamExtends028.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamExtends028$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dtparamExtends028$(OBJ)
+#OUTPUT    = dtparamExtends028$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamExtends028$(EXE)
+#STDOUT    = dtparamExtends028.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dtparamExtends028.out $($(tcasedir)dtparamExtends028$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

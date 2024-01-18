@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/intrinsics/spread/spread004.scenario
+#FEATURE = OO_poly/intrinsics tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)spread004.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = spread004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  spread004$(OBJ)
+#OUTPUT    = spread004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = spread004$(EXE)
+#STDOUT    = spread004.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)spread004$(product)vf) spread004.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

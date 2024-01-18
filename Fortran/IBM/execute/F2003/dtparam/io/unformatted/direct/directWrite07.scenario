@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/io/unformatted/direct/directWrite07.scenario
+#FEATURE	= Unformatted Intrinsic I/O (with Derived Type Parameters)
+#CREATOR	= Glen Mateer
+#DATE		= 20081104
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)directWrite07.f
+#OUTPUT		= directWrite07$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= directWrite07$(OBJ)
+#OUTPUT		= directWrite07$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= directWrite07$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

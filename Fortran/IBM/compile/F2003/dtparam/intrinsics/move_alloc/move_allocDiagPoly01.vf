@@ -1,0 +1,10 @@
+** m   === End of Compilation 1 ===
+"move_allocDiagPoly01.f", line 45.29: 1516-291 (S) The FROM argument to the MOVE_ALLOC intrinsic procedure is polymorphic.  The TO argument must also be polymorphic.
+"move_allocDiagPoly01.f", line 46.29: 1516-291 (S) The FROM argument to the MOVE_ALLOC intrinsic procedure is polymorphic.  The TO argument must also be polymorphic.
+"move_allocDiagPoly01.f", line 47.29: 1516-289 (S) The TO argument of the intrinsic procedure MOVE_ALLOC must be type compatible with the FROM argument.
+"move_allocDiagPoly01.f", line 48.29: 1516-289 (S) The TO argument of the intrinsic procedure MOVE_ALLOC must be type compatible with the FROM argument.
+"move_allocDiagPoly01.f", line 48.29: 1516-291 (S) The FROM argument to the MOVE_ALLOC intrinsic procedure is polymorphic.  The TO argument must also be polymorphic.
+"move_allocDiagPoly01.f", line 49.29: 1516-289 (S) The TO argument of the intrinsic procedure MOVE_ALLOC must be type compatible with the FROM argument.
+"move_allocDiagPoly01.f", line 49.29: 1516-291 (S) The FROM argument to the MOVE_ALLOC intrinsic procedure is polymorphic.  The TO argument must also be polymorphic.
+** move_allocdiagpoly01   === End of Compilation 2 ===
+1501-511  Compilation failed for file move_allocDiagPoly01.f.

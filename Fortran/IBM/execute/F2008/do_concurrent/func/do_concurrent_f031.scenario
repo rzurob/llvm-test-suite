@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/do_concurrent/do_concurrent_f031.scenario
+#FEATURE   = F2008 DO CONCURRENT
+#CREATOR   = Bernard Kan
+#DATE      = 20150921
+#TEST_TYPE = Functional
+#KEYWORDS  = F2008 DO CONCURRENT
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+PROCS=4
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)do_concurrent_f031.f
+#OPTS      =  $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = do_concurrent_f031$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#INPUT     = do_concurrent_f031$(OBJ)
+#OUTPUT    = do_concurrent_f031$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = do_concurrent_f031$(EXE)
+#STDOUT    = do_concurrent_f031.out
+#ENDCMD
+
+#CMD       = SPIFF
+#INPUT     = $($(tcasedir)do_concurrent_f031$(product)vf) do_concurrent_f031.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

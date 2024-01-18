@@ -1,0 +1,4 @@
+"lenparamInitexpr001d.f", line 34.14: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"lenparamInitexpr001d.f", line 40.25: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+** lenparaminitexpr001d   === End of Compilation 1 ===
+1501-511  Compilation failed for file lenparamInitexpr001d.f.

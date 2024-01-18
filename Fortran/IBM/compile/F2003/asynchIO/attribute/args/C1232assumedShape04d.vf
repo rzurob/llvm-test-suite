@@ -1,0 +1,4 @@
+** implicitasynch   === End of Compilation 1 ===
+"C1232assumedShape04d.f", line 76.38: 1516-272 (S) Dummy argument shouldbeassumeshape of procedure asynchwrite was specified with the ASYNCHRONOUS attribute. shouldbeassumeshape is not an assumed-shape array.  The corresponding actual argument must not be an array section or an assumed-shape array.
+** c1232assumedshape04d   === End of Compilation 2 ===
+1501-511  Compilation failed for file C1232assumedShape04d.f.

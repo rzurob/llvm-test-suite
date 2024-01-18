@@ -1,0 +1,26 @@
+"cobound_d006.f", line 57.7: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"cobound_d006.f", line 58.7: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"cobound_d006.f", line 59.7: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"cobound_d006.f", line 60.7: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"cobound_d006.f", line 61.7: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"cobound_d006.f", line 63.2: 1516-077 (S) Conformable array is required in this context.
+"cobound_d006.f", line 64.2: 1516-077 (S) Conformable array is required in this context.
+"cobound_d006.f", line 65.2: 1516-077 (S) Conformable array is required in this context.
+"cobound_d006.f", line 66.2: 1516-077 (S) Conformable array is required in this context.
+"cobound_d006.f", line 67.2: 1516-077 (S) Conformable array is required in this context.
+"cobound_d006.f", line 68.7: 1516-078 (S) Operands must be conformable.
+"cobound_d006.f", line 69.7: 1516-078 (S) Operands must be conformable.
+"cobound_d006.f", line 83.7: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"cobound_d006.f", line 84.7: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"cobound_d006.f", line 85.7: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"cobound_d006.f", line 86.7: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"cobound_d006.f", line 87.7: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"cobound_d006.f", line 89.2: 1516-077 (S) Conformable array is required in this context.
+"cobound_d006.f", line 90.2: 1516-077 (S) Conformable array is required in this context.
+"cobound_d006.f", line 91.2: 1516-077 (S) Conformable array is required in this context.
+"cobound_d006.f", line 92.2: 1516-077 (S) Conformable array is required in this context.
+"cobound_d006.f", line 93.2: 1516-077 (S) Conformable array is required in this context.
+"cobound_d006.f", line 94.7: 1516-078 (S) Operands must be conformable.
+"cobound_d006.f", line 95.7: 1516-078 (S) Operands must be conformable.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file cobound_d006.f.

@@ -1,0 +1,26 @@
+#!/bin/ksh
+$KILL $COMPILER -o $1 $TR_SRC/$1.f $OPTIONS
+
+if [ $? -ne 0 ]
+then
+   echo "Compilation Failed!"
+   rm -f $1
+   exit 1
+fi
+
+# We have to redirect STDIN, STDOUT, STDERR to some file otherwise it will
+# be by default redirected to /dev/null by the Load_levelor. This causes
+# run-time error when the testcase trys to open /dev/null (B.C. -defect 249979)
+touch stdin.txt
+./$1 < stdin.txt > /tmp/stdout.txt 2>&1 
+
+rc=$?
+rm -f stdin.txt stdin.txt
+
+if [ $rc -ne 0 ]
+then
+   echo " Execition failed. "
+   exit $rc
+fi
+
+rm -f $1

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/misc/d318289.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of misc/*
+#DATE      = 20071107
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d318289.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = d318289$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d318289$(OBJ)
+#OUTPUT    = d318289$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d318289$(EXE)
+#STDOUT    = d318289.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = d318289.out $($(tcasedir)d318289$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

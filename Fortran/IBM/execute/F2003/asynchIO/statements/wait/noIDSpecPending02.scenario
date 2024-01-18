@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/wait/noIDSpecPending02.scenario
+#FEATURE	= Asynchronous I/O -- WAIT() Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060307
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#IF on (linuxle)
+    XLFRTEOPTS=$(CONVERT_UFMT_IO_ENDIANESS<77>)
+#ENDIF
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)noIDSpecPending02.f
+#OUTPUT		= noIDSpecPending02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= noIDSpecPending02$(OBJ)
+#OUTPUT		= noIDSpecPending02$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= noIDSpecPending02$(EXE)
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)noIDSpecPending02$(product)vf) fort.77
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

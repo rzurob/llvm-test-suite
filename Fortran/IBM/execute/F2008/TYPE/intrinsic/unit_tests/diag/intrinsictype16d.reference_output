@@ -1,0 +1,7 @@
+"intrinsictype16d.F", line 24.27: 1514-084 (S) Identifier b4 is being declared with type name byte which has not been defined in a derived type definition.
+"intrinsictype16d.F", line 26.24: 1514-084 (S) Identifier bb4 is being declared with type name byte which has not been defined in a derived type definition.
+** intrinsictype16d   === End of Compilation 1 ===
+"intrinsictype16d.F", line 42.16: 1514-690 (S) Type parameter values must not be specified for type byte.  Type byte does not have type parameters.
+"intrinsictype16d.F", line 44.16: 1514-690 (S) Type parameter values must not be specified for type byte.  Type byte does not have type parameters.
+** intrinsictype16d_func   === End of Compilation 2 ===
+1501-511  Compilation failed for file intrinsictype16d.F.

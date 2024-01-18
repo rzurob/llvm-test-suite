@@ -1,0 +1,46 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_tpbnd/specific/ftpbnd509a1.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_tpbnd/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qsuffix=f=f90
+#INPUT     = $(tcasedir)ftpbnd509a1_1.f90
+#ENDCMD
+
+#CMD       = MAKELIB
+#ENVAR     = OBJECT_MODE=32_64
+#INPUT     = ftpbnd509a1_1$(OBJ)
+#OUTPUT    = libftpbnd509a1_1$(LIB)
+#OPTS      = -q
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ftpbnd509a1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ftpbnd509a1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -L./ -lftpbnd509a1_1
+#INPUT     = ftpbnd509a1$(OBJ)
+#OUTPUT    = ftpbnd509a1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ftpbnd509a1$(EXE)
+#STDOUT    = ftpbnd509a1.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)ftpbnd509a1$(product)vf) ftpbnd509a1.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

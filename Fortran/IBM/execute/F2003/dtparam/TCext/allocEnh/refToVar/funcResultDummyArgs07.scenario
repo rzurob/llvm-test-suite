@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/refToVar/funcResultDummyArgs07.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071220
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)funcResultDummyArgs07.f
+#OUTPUT		= funcResultDummyArgs07$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= funcResultDummyArgs07$(OBJ)
+#OUTPUT		= funcResultDummyArgs07$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= funcResultDummyArgs07$(EXE)
+#STDOUT		= funcResultDummyArgs07.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)funcResultDummyArgs07$(product)vf)	\
+				funcResultDummyArgs07.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

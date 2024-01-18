@@ -1,0 +1,6 @@
+"dtSpec004d.f", line 42.24: 1514-689 (S) Once a type parameter keyword has been specified in a derived-type specifier, all subsequent values must have a keyword specified.
+"dtSpec004d.f", line 43.23: 1514-689 (S) Once a type parameter keyword has been specified in a derived-type specifier, all subsequent values must have a keyword specified.
+"dtSpec004d.f", line 44.23: 1514-689 (S) Once a type parameter keyword has been specified in a derived-type specifier, all subsequent values must have a keyword specified.
+** m   === End of Compilation 1 ===
+** dtspec004d   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtSpec004d.f.

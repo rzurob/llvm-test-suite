@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"module_subprogram21d.f", line 51.13: 1514-071 (W) Identifier func2 was previously defined with same type.
+** n   === End of Compilation 2 ===
+** n   === End of Compilation 3 ===
+** p   === End of Compilation 4 ===
+1501-510  Compilation successful for file module_subprogram21d.f.

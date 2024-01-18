@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_type/extends/fext047.f
+#FEATURE = OO_type
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fext047.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fext047$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fext047$(OBJ)
+#OUTPUT    = fext047$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fext047$(EXE)
+#STDOUT    = fext047.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fext047.out $($(tcasedir)fext047$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

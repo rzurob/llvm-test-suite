@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/none/acetnone10b.scenario
+#FEATURE	= Array constructor enhancement arrays and array sections (complex)
+#CREATOR	= DF Manual Update
+#DATE		= 20060811
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+!added for fixing rtc defect 74243
+#OPTS           = -qstrict=ieeefp
+#INPUT		= $(tcasedir)acetnone10b.f
+#OUTPUT		= acetnone10b$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+!added for fixing rtc defect 74243
+#OPTS           = -qstrict=ieeefp
+#INPUT		= acetnone10b$(OBJ)
+#OUTPUT		= acetnone10b$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetnone10b$(EXE)
+#STDOUT		= acetnone10b.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -a1-e6
+#INPUT		= $(tcasedir)acetnone10b.vf acetnone10b.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

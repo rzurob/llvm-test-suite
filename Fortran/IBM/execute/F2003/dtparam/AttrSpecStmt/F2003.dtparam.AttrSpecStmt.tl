@@ -1,0 +1,45 @@
+!
+!  Automatically Generated .tl file
+!  Bucket:      F2003/dtparam
+!  Sub-Bucket:  AttrSpecStmt
+!
+338155.scenario
+dtpAttrSpecStmtAccess.scenario
+dtpAttrSpecStmtAlloc.scenario
+dtpAttrSpecStmtAsyn.scenario
+dtpAttrSpecStmtData.scenario
+dtpAttrSpecStmtData1.scenario
+dtpAttrSpecStmtData10.scenario
+dtpAttrSpecStmtData11.scenario
+dtpAttrSpecStmtData12.scenario
+dtpAttrSpecStmtData13.scenario
+dtpAttrSpecStmtData14.scenario
+dtpAttrSpecStmtData14a.scenario
+dtpAttrSpecStmtData15.scenario
+dtpAttrSpecStmtData16.scenario
+dtpAttrSpecStmtData17.scenario
+dtpAttrSpecStmtData2.scenario
+dtpAttrSpecStmtData2a.scenario
+dtpAttrSpecStmtData3.scenario
+dtpAttrSpecStmtData4.scenario
+dtpAttrSpecStmtData5.scenario
+dtpAttrSpecStmtData6.scenario
+dtpAttrSpecStmtData7.scenario
+dtpAttrSpecStmtData8.scenario
+dtpAttrSpecStmtData9.scenario
+dtpAttrSpecStmtDim.scenario
+dtpAttrSpecStmtIntent.scenario
+dtpAttrSpecStmtOptional.scenario
+dtpAttrSpecStmtParam.scenario
+dtpAttrSpecStmtParam1.scenario
+dtpAttrSpecStmtParam2.scenario
+dtpAttrSpecStmtParam3.scenario
+dtpAttrSpecStmtParam4.scenario
+dtpAttrSpecStmtPtr.scenario
+dtpAttrSpecStmtSave.scenario
+dtpAttrSpecStmtSave1.scenario
+dtpAttrSpecStmtSaveC569.scenario
+dtpAttrSpecStmtSaveC570.scenario
+dtpAttrSpecStmtTar.scenario
+dtpAttrSpecStmtVal.scenario
+dtpAttrSpecStmtVola.scenario

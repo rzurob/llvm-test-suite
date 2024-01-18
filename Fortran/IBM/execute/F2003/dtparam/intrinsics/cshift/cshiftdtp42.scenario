@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= cshiftdtp42.scenario
+#FEATURE= cshift with parameterized derived types
+#CREATOR= Andy Sheung
+#DATE= 200807
+#TEST_TYPE= functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)cshiftdtp42.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = cshiftdtp42$(OBJ)
+#ENDCMD
+
+#CMD       = XLF_LINK
+#INPUT     = cshiftdtp42$(OBJ)
+#OUTPUT    = cshiftdtp42$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = cshiftdtp42$(EXE)
+#STDOUT    = cshiftdtp42.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = cshiftdtp42.out $(tcasedir)cshiftdtp42.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

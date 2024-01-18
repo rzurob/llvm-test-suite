@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF2008_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+! This chunk was DCOMP
+
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)allocMoldEnhdiag03.f
+#OUTPUT    = allocMoldEnhdiag03$(OBJ)
+#STDERR    = allocMoldEnhdiag03.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $(tcasedir)allocMoldEnhdiag03.vf allocMoldEnhdiag03.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,5 @@
+ finalizeBase
+ finalizer for rank 1 array of base type
+ size of the finalized array is: 4
+ finalizer for rank 1 array of base type
+ size of the finalized array is: 10

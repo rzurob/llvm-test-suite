@@ -1,0 +1,4 @@
+"volatileC1232ArraySection08d.f", line 54.16: 1516-272 (S) Dummy argument x of procedure ptr was specified with the VOLATILE attribute. x is not an assumed-shape array.  The corresponding actual argument must not be an array section or an assumed-shape array.
+** volatilec1232arraysection08d   === End of Compilation 1 ===
+** arraysectionvolatile   === End of Compilation 2 ===
+1501-511  Compilation failed for file volatileC1232ArraySection08d.f.

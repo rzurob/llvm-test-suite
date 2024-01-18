@@ -1,0 +1,3 @@
+"initexprAtanlanglvl.f", line 18.15: 1518-256 (L) The intrinsic procedure atan (with these arguments) is not permitted by the Fortran 2003 standard.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file initexprAtanlanglvl.f.

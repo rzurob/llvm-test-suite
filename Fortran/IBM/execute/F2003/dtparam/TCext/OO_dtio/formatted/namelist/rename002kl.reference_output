@@ -1,0 +1,6 @@
+ &NML1
+ B1=c= abc , B2=c= def
+ /
+ &NML2
+ B3=c= ibm , B2=c= def , B1=c= abc
+ /

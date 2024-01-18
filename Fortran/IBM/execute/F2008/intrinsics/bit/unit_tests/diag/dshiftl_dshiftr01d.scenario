@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      =
+#FEATURE   =
+#CREATOR   = Maryam Moghadas
+#DATE      = 20130227
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dshiftl_dshiftr01d.f
+#OUTPUT    = dshiftl_dshiftr01d$(OBJ)
+#STDERR    = dshiftl_dshiftr01d.err
+#VALIDRCS  = $(RC_COMP_E)
+#ENDCMD
+
+
+#CMD       = XLDIFF
+#INPUT     = dshiftl_dshiftr01d.err $(tcasedir)dshiftl_dshiftr01d.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

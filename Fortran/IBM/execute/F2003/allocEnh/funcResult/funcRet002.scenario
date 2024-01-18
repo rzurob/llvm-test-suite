@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/allocEnh/funcResult/funcRet002.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)funcRet002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = funcRet002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = funcRet002$(OBJ)
+#OUTPUT    = funcRet002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = funcRet002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

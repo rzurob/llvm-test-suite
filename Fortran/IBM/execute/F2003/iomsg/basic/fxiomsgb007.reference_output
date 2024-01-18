@@ -1,0 +1,4 @@
+ 1525-019 The unformatted I/O statement on unit 10 cannot be completed because the unit is connected to the formatted file fort.10.  The program will recover by ignoring the I/O statement.
+                                                                                                                
+ 1525-020 The formatted I/O statement on unit 11 cannot be completed because the unit is connected to the unformatted file fort.11.  The program will recover by ignoring the I/O statement.
+                                                                                                                

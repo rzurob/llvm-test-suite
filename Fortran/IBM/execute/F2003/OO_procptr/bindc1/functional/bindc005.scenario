@@ -1,0 +1,57 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_procptr/bindc1/functional/bindc005.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#IF on(aix)
+#RESOURCES_REQ = AIX52UP
+#ENDIF
+#ENDENV
+#BEGINCONTROL
+
+#IF on(linux)
+  #CMD       = XLC_COMPILE
+  #OPTS      = $(C_COMPILER_OPTS) -qfloat=nocomplexgcc
+  #INPUT     = $(tcasedir)bindc005.c
+  #OUTPUT    = bindc005c$(OBJ)
+  #ENDCMD
+#ELSE
+  #CMD       = XLC_COMPILE
+  #OPTS      = $(C_COMPILER_OPTS)
+  #INPUT     = $(tcasedir)bindc005.c
+  #OUTPUT    = bindc005c$(OBJ)
+  #ENDCMD
+#ENDIF
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)bindc005.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = bindc005$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = bindc005c$(OBJ) bindc005$(OBJ)
+#OUTPUT    = bindc005$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = bindc005$(EXE)
+#STDOUT    = bindc005.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)bindc005$(product)vf) bindc005.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

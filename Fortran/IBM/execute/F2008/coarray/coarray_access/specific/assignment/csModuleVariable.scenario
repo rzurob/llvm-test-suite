@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_access/specific/assignment/csModuleVariable
+#FEATURE        = CAF coarray access (specific) - assignment - in procedures internal to module procedure, assign to and query module coarray variables
+#CREATOR        = DF
+#DATE           = 2010-10-04
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)csModuleVariable.f
+#OUTPUT = csModuleVariable$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = csModuleVariable$(OBJ)
+#OUTPUT = csModuleVariable$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = csModuleVariable$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

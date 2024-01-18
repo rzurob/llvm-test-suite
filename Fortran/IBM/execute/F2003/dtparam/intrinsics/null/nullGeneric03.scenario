@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/intrinsics/null/nullGeneric03.scenario
+#FEATURE= 355754
+#CREATOR= Nancy Wang
+#DATE   = Sept. 23 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)nullGeneric03.f
+#OUTPUT= nullGeneric03$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = nullGeneric03$(OBJ)
+#OUTPUT= nullGeneric03$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = nullGeneric03$(EXE)
+#STDOUT= nullGeneric03.out
+#ENDCMD
+
+#CMD  = DIFF
+#INPUT= $($(tcasedir)nullGeneric03$(product)vf) nullGeneric03.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/submodule/func/submodule13f.scenario
+#FEATURE   = F2008 Submodule
+#CREATOR   = DF Manual Update
+#DATE      = 20130220
+#TEST_TYPE = functional
+#KEYWORDS  = F2008, submodule, F2008 submodule
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)submodule13f.f
+#OUTPUT    = submodule13f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = submodule13f$(OBJ)
+#OUTPUT    = submodule13f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = submodule13f$(EXE)
+#STDOUT    = submodule13f.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)submodule13f$(product)vf) submodule13f.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

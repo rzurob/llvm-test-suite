@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_tpbnd/specific/ftpbnd524.f
+#FEATURE = OO_tpbnd
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ftpbnd524.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ftpbnd524$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = ftpbnd524$(OBJ)
+#OUTPUT    = ftpbnd524$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ftpbnd524$(EXE)
+#STDOUT    = ftpbnd524.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = ftpbnd524.out $($(tcasedir)ftpbnd524$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

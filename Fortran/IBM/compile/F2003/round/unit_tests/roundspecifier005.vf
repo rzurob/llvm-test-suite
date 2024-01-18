@@ -1,0 +1,6 @@
+"roundspecifier005.f", line 43.44: 1512-024 (S) The ROUND specifier must be a CHARACTER expression.
+"roundspecifier005.f", line 47.30: 1512-024 (S) The ROUND specifier must be a CHARACTER expression.
+"roundspecifier005.f", line 49.32: 1512-024 (S) The ROUND specifier must be a CHARACTER expression.
+"roundspecifier005.f", line 53.14: 1512-015 (S) The ROUND specifier must be a CHARACTER variable or array element.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file roundspecifier005.f.

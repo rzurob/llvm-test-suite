@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= eoshiftdtp47.scenario
+#FEATURE= eoshift with parameterized derived types
+#CREATOR= Andy Sheung
+#DATE= 200807
+#TEST_TYPE= diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)eoshiftdtp47.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = eoshiftdtp47$(OBJ)
+#STDERR    = eoshiftdtp47.out
+#STDOUT    = eoshiftdtp47.out
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = eoshiftdtp47.out $(tcasedir)eoshiftdtp47.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+
+

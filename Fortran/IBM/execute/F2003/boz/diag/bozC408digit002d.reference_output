@@ -1,0 +1,13 @@
+"bozC408digit002d.f", line 39.10: 1514-028 (S) Incorrect digit in hexadecimal, binary, or octal constant.  Variable i1 is not initialized.
+"bozC408digit002d.f", line 42.10: 1514-028 (S) Incorrect digit in hexadecimal, binary, or octal constant.  Variable i2 is not initialized.
+"bozC408digit002d.f", line 45.10: 1514-028 (S) Incorrect digit in hexadecimal, binary, or octal constant.  Variable i3 is not initialized.
+"bozC408digit002d.f", line 48.10: 1514-028 (S) Incorrect digit in hexadecimal, binary, or octal constant.  Variable i4 is not initialized.
+"bozC408digit002d.f", line 51.10: 1514-028 (S) Incorrect digit in hexadecimal, binary, or octal constant.  Variable i5 is not initialized.
+"bozC408digit002d.f", line 54.10: 1514-028 (S) Incorrect digit in hexadecimal, binary, or octal constant.  Variable i6 is not initialized.
+"bozC408digit002d.f", line 57.10: 1516-045 (E) Source is longer than target. Truncation will occur on the left.
+"bozC408digit002d.f", line 60.10: 1514-028 (S) Incorrect digit in hexadecimal, binary, or octal constant.  Variable i8 is not initialized.
+"bozC408digit002d.f", line 63.10: 1516-045 (E) Source is longer than target. Truncation will occur on the left.
+"bozC408digit002d.f", line 64.10: 1514-028 (S) Incorrect digit in hexadecimal, binary, or octal constant.  Variable i10 is not initialized.
+"bozC408digit002d.f", line 65.10: 1514-028 (S) Incorrect digit in hexadecimal, binary, or octal constant.  Variable i11 is not initialized.
+** bozc408digit001d   === End of Compilation 1 ===
+1501-511  Compilation failed for file bozC408digit002d.f.

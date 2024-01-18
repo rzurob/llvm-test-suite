@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/class/fclass003a2.f
+#FEATURE = OO_poly
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fclass003a2.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fclass003a2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fclass003a2$(OBJ)
+#OUTPUT    = fclass003a2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fclass003a2$(EXE)
+#STDOUT    = fclass003a2.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fclass003a2.out $($(tcasedir)fclass003a2$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

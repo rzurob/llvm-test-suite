@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      dtParamSpecifierC478_03.scenario
+#FEATURE=   Derived Type Parameters - Derived type specifier
+#CREATOR=   Rafik Zurob
+#DATE=      20060627
+#TEST_TYPE= unit
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=      F_COMPLINK
+#INPUT=    $(tcasedir)dtParamSpecifierC478_03.f
+#OPTS=     $(OPT_FREE_SOURCE_FORM) -qdebug=intmsg:shutup
+#STDERR=   dtParamSpecifierC478_03.err
+#VALIDRCS= 1
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    $($(tcasedir)dtParamSpecifierC478_03$(product)vf) dtParamSpecifierC478_03.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

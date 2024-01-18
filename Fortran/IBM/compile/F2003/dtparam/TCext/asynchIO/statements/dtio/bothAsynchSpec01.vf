@@ -1,0 +1,7 @@
+** mbothasynchspec01   === End of Compilation 1 ===
+** bothasynchspecwrite   === End of Compilation 2 ===
+** bothasynchspecread   === End of Compilation 3 ===
+"bothAsynchSpec01.f", line 152.71: 1512-684 (S) A parent data transfer statement must not be asynchronous.
+"bothAsynchSpec01.f", line 171.61: 1512-684 (S) A parent data transfer statement must not be asynchronous.
+** bothasynchspec01   === End of Compilation 4 ===
+1501-511  Compilation failed for file bothAsynchSpec01.f.

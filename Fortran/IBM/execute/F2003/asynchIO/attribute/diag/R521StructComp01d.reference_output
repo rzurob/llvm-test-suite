@@ -1,0 +1,4 @@
+"R521StructComp01d.f", line 58.32: 1515-022 (S) Syntax Error: Extra token " % " was found. The token is ignored.
+"R521StructComp01d.f", line 58.33: 1515-022 (S) Syntax Error: Extra token " x " was found. The token is ignored.
+** r521structcomp01d   === End of Compilation 1 ===
+1501-511  Compilation failed for file R521StructComp01d.f.

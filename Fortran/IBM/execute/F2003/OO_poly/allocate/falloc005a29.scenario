@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/allocate/falloc005a29.f
+#FEATURE = OO_poly
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)falloc005a29.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = falloc005a29$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = falloc005a29$(OBJ)
+#OUTPUT    = falloc005a29$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = falloc005a29$(EXE)
+#STDOUT    = falloc005a29.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = falloc005a29.out $($(tcasedir)falloc005a29$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

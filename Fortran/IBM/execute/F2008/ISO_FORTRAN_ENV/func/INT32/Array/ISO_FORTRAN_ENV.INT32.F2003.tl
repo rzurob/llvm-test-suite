@@ -1,0 +1,5 @@
+faddINT32_F2003.scenario
+fdivideINT32_F2003.scenario
+fgeneralINT32_F2003.scenario
+fmultiplyINT32_F2003.scenario
+fsubtractINT32_F2003.scenario

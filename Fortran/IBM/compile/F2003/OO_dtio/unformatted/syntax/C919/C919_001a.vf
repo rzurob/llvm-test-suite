@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"C919_001a.f", line 90.3: 1512-073 (S) Asterisk unit specifier is not permitted for DIRECT I/O .  Statement is ignored.
+"C919_001a.f", line 91.3: 1512-073 (S) Asterisk unit specifier is not permitted for DIRECT I/O .  Statement is ignored.
+** c919_001a   === End of Compilation 2 ===
+** writeformatted   === End of Compilation 3 ===
+** readformatted   === End of Compilation 4 ===
+1501-511  Compilation failed for file C919_001a.f.

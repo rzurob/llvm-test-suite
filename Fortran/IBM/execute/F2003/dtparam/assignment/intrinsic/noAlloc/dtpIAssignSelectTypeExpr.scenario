@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpIAssignSelectTypeExpr.scenario
+#FEATURE   = Intrinsic Assignment without Allocation - assign from expr in select type
+#CREATOR   = DF Manual Update
+#DATE      = 20081201
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAssignSelectTypeExpr.f
+#OUTPUT    = dtpIAssignSelectTypeExpr$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAssignSelectTypeExpr$(OBJ)
+#OUTPUT    = dtpIAssignSelectTypeExpr$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAssignSelectTypeExpr$(EXE)
+#STDOUT    = dtpIAssignSelectTypeExpr.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpIAssignSelectTypeExpr$(product)vf) dtpIAssignSelectTypeExpr.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,19 @@
+ >xx/yy< 127 -27
+  >/< 100 -127
+  >abcde/fghij< -100 17
+ >xx/yy< 20000 -27
+  >klm/nop< -1000 1127
+  >abcde/fghij< 1000 1117
+ 14 >xxyyabcdefghij<
+ 22217
+ 7 >xxabcde<
+ 2217
+ 14 >xxyyabcdefghij<
+ 22217
+ 7 >yyabcde<
+ 22244
+ 14 >xxyyabcdefghij<
+ 22217
+ 7 >yyfghij<
+ 20000
+ done

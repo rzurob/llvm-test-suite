@@ -1,0 +1,3 @@
+'ibm' NaN NaN(S) +Infinity (nan(q),nan()) xlf -Inf -NaN(Q) -infinity (inf,-nan(s))
+'IBM' -NaN +NaN(S) -Inf (-nan(); nan()) 'XLF';3,14 -NaN(S) +infinity (nan(s);inf)
+NAN , NaN(q) -NaN(S), +Infinity ( -nan(_), nan(1)) (inf, nan(_s_) ), Inf -Inf -NaN(_1a) -infinity 

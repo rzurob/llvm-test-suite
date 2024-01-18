@@ -1,0 +1,65 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=release/F2003/volatile/volatileAttrEquivalence.f
+#FEATURE = VOLATILE 255728
+#CREATOR = William Zhang
+#DATE    = 05/30/2006
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD            = F_COMPILE
+#OPTS           = $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT          = $(tcasedir)volatileAttrEquivalence.f
+#OUTPUT         = volatileAttrEquivalence$(OBJ)
+#ENDCMD
+
+#CMD            = F_LINK
+#INPUT          = volatileAttrEquivalence$(OBJ)
+#OUTPUT         = volatileAttrEquivalence$(EXE)
+#ENDCMD
+
+#CMD            = RUN
+#INPUT          = volatileAttrEquivalence$(EXE)
+#ENDCMD
+
+#CMD            = EGREP
+#OPTS           = -i '^b[   ]'
+#INPUT          = volatileAttrEquivalence$(LST)
+#STDOUT         = volatileAttrEquivalence.egrepb.stdout
+#ENDCMD
+
+#CMD            = EGREP
+#OPTS           = 'Volatile'
+#INPUT          = volatileAttrEquivalence.egrepb.stdout
+#ENDCMD
+
+#CMD            = EGREP
+#OPTS           = -i '^c[   ]'
+#INPUT          = volatileAttrEquivalence$(LST)
+#STDOUT         = volatileAttrEquivalence.egrepc.stdout
+#ENDCMD
+
+#CMD            = EGREP
+#OPTS           = 'Volatile'
+#INPUT          = volatileAttrEquivalence.egrepc.stdout
+#ENDCMD
+
+#CMD            = EGREP
+#OPTS           = -i '^d[   ]'
+#INPUT          = volatileAttrEquivalence$(LST)
+#STDOUT         = volatileAttrEquivalence.egrepd.stdout
+#ENDCMD
+
+#CMD            = EGREP
+#OPTS           = 'Volatile'
+#INPUT          = volatileAttrEquivalence.egrepd.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

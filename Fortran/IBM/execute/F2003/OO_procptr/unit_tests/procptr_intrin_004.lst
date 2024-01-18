@@ -1,0 +1,214 @@
+IBM XL Fortran for AIX Version 10.01.0000.9999 --- procptr_intrin_004.f 10/20/05 22:59:21
+ 
+>>>>> OPTIONS SECTION <<<<<
+***   Options In Effect   ***
+  
+         ==  On / Off Options  ==
+         32              CR              ESCAPE          I4
+         NOLIBESSL       NOLIBPOSIX      OBJECT          STDFRAMEWORK
+         SWAPOMP         UNWIND          ZEROSIZE
+  
+         ==  Options Of Integer Type ==
+         MAXMEM(8192)          SPILLSIZE(512)        STACKTEMP(0)
+  
+  
+         ==  Options Of Character Type  ==
+         ALIAS(STD,NOINTPTR)   ALIGN(BINDC(POWER),STRUCT(NATURAL))
+         ARCH(COM)             AUTODBL(NONE)         DIRECTIVE(IBM*)
+         ENUM()                FLAG(I,I)             FLOAT(MAF,FOLD)
+         FREE(F90)             HALT(S)               IEEE(NEAR)
+         INTSIZE(4)            LIST()                LANGLVL(EXTENDED)
+         REALSIZE(4)           TUNE(PWR3)            UNROLL(AUTO)
+         XFLAG()               XLF2003(POLYMORPHIC)  XLF77(LEADZERO,BLANKPAD)
+         XLF90(NOSIGNEDZERO,NOAUTODEALLOC)
+  
+>>>>> SOURCE SECTION <<<<<
+** mod   === End of Compilation 1 ===
+ 
+>>>>> OBJECT SECTION <<<<<
+
+
+-qdebug=OOALL:EXCEPT:
+
+ GPR's set/used:   ---- ---- ---- ----  ---- ---- ---- ----
+ FPR's set/used:   ---- ---- ---- ----  ---- ---- ---- ----
+ CCR's set/used:   ---- ----
+
+     | 000000                           PDEF     __mod_NMOD__&&_mod
+    1|                                  PROC      
+    7|                              CL.1:
+    7| 000000 bclr     4E800020   0     BA        lr
+     |               Tag Table
+     | 000004        00000000 00012040 00000001 00000004 00125F5F 6D6F645F
+     | 00001C        4E4D4F44 5F5F2626 5F6D6F64
+     |               Instruction count            1
+     |               Straight-line exec time      0
+
+ 
+ 
+>>>>> COMPILATION UNIT EPILOGUE SECTION <<<<<
+ 
+ 
+TOTAL   UNRECOVERABLE  SEVERE       ERROR     WARNING    INFORMATIONAL
+               (U)       (S)         (E)        (W)          (I)
+    0           0         0           0          0            0
+ 
+>>>>> OPTIONS SECTION <<<<<
+***   Options In Effect   ***
+  
+         ==  On / Off Options  ==
+         32              CR              ESCAPE          I4
+         NOLIBESSL       NOLIBPOSIX      OBJECT          STDFRAMEWORK
+         SWAPOMP         UNWIND          ZEROSIZE
+  
+         ==  Options Of Integer Type ==
+         MAXMEM(8192)          SPILLSIZE(512)        STACKTEMP(0)
+  
+  
+         ==  Options Of Character Type  ==
+         ALIAS(STD,NOINTPTR)   ALIGN(BINDC(POWER),STRUCT(NATURAL))
+         ARCH(COM)             AUTODBL(NONE)         DIRECTIVE(IBM*)
+         ENUM()                FLAG(I,I)             FLOAT(MAF,FOLD)
+         FREE(F90)             HALT(S)               IEEE(NEAR)
+         INTSIZE(4)            LIST()                LANGLVL(EXTENDED)
+         REALSIZE(4)           TUNE(PWR3)            UNROLL(AUTO)
+         XFLAG()               XLF2003(POLYMORPHIC)  XLF77(LEADZERO,BLANKPAD)
+         XLF90(NOSIGNEDZERO,NOAUTODEALLOC)
+  
+>>>>> SOURCE SECTION <<<<<
+** _main   === End of Compilation 2 ===
+ 
+>>>>> OBJECT SECTION <<<<<
+
+
+-qdebug=OOALL:EXCEPT:
+
+ GPR's set/used:   ss-s ssss ssss s---  ---- ---- ---- ----
+ FPR's set/used:   ssss ssss ssss ss--  ---- ---- ---- ----
+ CCR's set/used:   ss-- -sss
+
+     | 000000                           PDEF     _main
+    0|                                  PROC      
+    0| 000000 mfspr    7C0802A6   1     LFLR      gr0=lr
+    0| 000004 stwu     9421FFA0   1     ST4U      gr1,#stack(gr1,-96)=gr1
+    0| 000008 stw      90010068   1     ST4A      #stack(gr1,104)=gr0
+   14| 00000C bl       4BFFFFF5   0     CALL      gr3=func1,0,func1",gr1,cr[01567]",gr0",gr4"-gr12",fp0"-fp13"
+   14| 000010 ori      60000000   1
+   14| 000014 ori      606B0000   1     LR        gr11=gr3
+   14| 000018 stw      91610040   1     ST4A     *pp1(gr1,64)=gr11
+   15| 00001C addi     38610048   1     AI        gr3=gr1,72
+   15| 000020 addi     3880000A   1     LI        gr4=10
+   15| 000024 bl       4BFFFFDD   0     CALL      gr3=gr11,2,char1",gr3,gr4,pp1",gr1,cr[01567]",gr0",gr4"-gr12",fp0"-fp13",pp1"
+   15| 000028 lwz      80410014   1
+   16| 00002C cmpwi    2C03000A   1     C4        cr0=gr3,10
+   15| 000030 stw      90610054   1     ST4A      kkk(gr1,84)=gr3
+   16| 000034 bc       4182001C   0     BT        CL.1,cr0,0x4/eq ,
+   16| 000038 addi     38600000   2     LI        gr3=0
+   16| 00003C addi     3880FFFF   1     LI        gr4=-1
+   16| 000040 addi     38A0000B   1     LI        gr5=11
+   16| 000044 bl       4BFFFFBD   0     CALL      _xlfStop,3,gr3-gr5,_xlfStop",gr1,cr[01567]",gr0",gr3"-gr12",fp0"-fp13"
+   16| 000048 ori      60000000   1
+   16| 00004C tw       7C8E7008   1     TRAP      9
+   16|                              CL.1:
+   16|                              CL.2:
+   17| 000050 addi     38600000   1     LI        gr3=0
+   17| 000054 bl       4BFFFFAD   0     CALL      _xlfExit,1,gr3,_xlfExit",gr1,cr[01567]",gr0",gr3"-gr12",fp0"-fp13"
+   17| 000058 ori      60000000   1
+   17| 00005C tw       7C8E7008   1     TRAP      9
+   17| 000060 addi     38600000   1     LI        gr3=0
+   17|                              CL.3:
+   17| 000064 lwz      80010068   1     L4A       gr0=#stack(gr1,104)
+   17| 000068 mtspr    7C0803A6   2     LLR       lr=gr0
+   17| 00006C addi     38210060   1     AI        gr1=gr1,96
+   17| 000070 bclr     4E800020   2     BA        lr
+     |               Tag Table
+     | 000074        00000000 00012041 80000001 00000074 00055F6D 61696E
+     |               Instruction count           29
+     |               Straight-line exec time     27
+
+ 
+ 
+>>>>> COMPILATION UNIT EPILOGUE SECTION <<<<<
+ 
+ 
+TOTAL   UNRECOVERABLE  SEVERE       ERROR     WARNING    INFORMATIONAL
+               (U)       (S)         (E)        (W)          (I)
+    0           0         0           0          0            0
+ 
+>>>>> OPTIONS SECTION <<<<<
+***   Options In Effect   ***
+  
+         ==  On / Off Options  ==
+         32              CR              ESCAPE          I4
+         NOLIBESSL       NOLIBPOSIX      OBJECT          STDFRAMEWORK
+         SWAPOMP         UNWIND          ZEROSIZE
+  
+         ==  Options Of Integer Type ==
+         MAXMEM(8192)          SPILLSIZE(512)        STACKTEMP(0)
+  
+  
+         ==  Options Of Character Type  ==
+         ALIAS(STD,NOINTPTR)   ALIGN(BINDC(POWER),STRUCT(NATURAL))
+         ARCH(COM)             AUTODBL(NONE)         DIRECTIVE(IBM*)
+         ENUM()                FLAG(I,I)             FLOAT(MAF,FOLD)
+         FREE(F90)             HALT(S)               IEEE(NEAR)
+         INTSIZE(4)            LIST()                LANGLVL(EXTENDED)
+         REALSIZE(4)           TUNE(PWR3)            UNROLL(AUTO)
+         XFLAG()               XLF2003(POLYMORPHIC)  XLF77(LEADZERO,BLANKPAD)
+         XLF90(NOSIGNEDZERO,NOAUTODEALLOC)
+  
+>>>>> SOURCE SECTION <<<<<
+** func1   === End of Compilation 3 ===
+ 
+>>>>> OBJECT SECTION <<<<<
+
+
+-qdebug=OOALL:EXCEPT:
+
+ GPR's set/used:   -s-s ---- ---- ----  ---- ---- ---- ----
+ FPR's set/used:   ---- ---- ---- ----  ---- ---- ---- ----
+ CCR's set/used:   ---- ----
+
+     | 000000                           PDEF     func1
+   19|                                  PROC      
+    0| 000000 stwu     9421FFB0   1     ST4U      gr1,#stack(gr1,-80)=gr1
+   21| 000004 lwz      80620004   1     L4A       gr3=._xlilen(gr2,0)
+   21| 000008 stw      90610040   2     ST4A     *func1(gr1,64)=gr3
+   22|                              CL.1:
+   22| 00000C addi     38210050   1     AI        gr1=gr1,80
+   22| 000010 bclr     4E800020   0     BA        lr
+     |               Tag Table
+     | 000014        00000000 00012040 80000001 00000014 00056675 6E6331
+     |               Instruction count            5
+     |               Straight-line exec time      5
+
+ 
+ 
+>>>>> COMPILATION UNIT EPILOGUE SECTION <<<<<
+ 
+ 
+TOTAL   UNRECOVERABLE  SEVERE       ERROR     WARNING    INFORMATIONAL
+               (U)       (S)         (E)        (W)          (I)
+    0           0         0           0          0            0
+ 
+>>>>> FILE TABLE SECTION <<<<<
+ 
+ 
+                                       FILE CREATION        FROM
+FILE NO   FILENAME                    DATE       TIME       FILE    LINE
+     0    procptr_intrin_004.f        10/13/05   15:47:55
+ 
+ 
+>>>>> COMPILATION EPILOGUE SECTION <<<<<
+ 
+ 
+FORTRAN Summary of Diagnosed Conditions
+ 
+TOTAL   UNRECOVERABLE  SEVERE       ERROR     WARNING    INFORMATIONAL
+               (U)       (S)         (E)        (W)          (I)
+    0           0         0           0          0            0
+ 
+ 
+    Source records read.......................................      22
+1501-510  Compilation successful for file procptr_intrin_004.f.
+1501-543  Object file created.

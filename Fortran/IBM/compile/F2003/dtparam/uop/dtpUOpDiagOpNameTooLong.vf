@@ -1,0 +1,6 @@
+"dtpUOpDiagOpNameTooLong.f", line 45.26: 1515-045 (E) A defined operator must not contain more than 63 letters.  Truncation will occur.
+"dtpUOpDiagOpNameTooLong.f", line 47.26: 1515-045 (E) A defined operator must not contain more than 63 letters.  Truncation will occur.
+"dtpUOpDiagOpNameTooLong.f", line 58.26: 1515-045 (E) A defined operator must not contain more than 63 letters.  Truncation will occur.
+"dtpUOpDiagOpNameTooLong.f", line 60.26: 1515-045 (E) A defined operator must not contain more than 63 letters.  Truncation will occur.
+** dtpuopdiagopnametoolongmod   === End of Compilation 1 ===
+1501-510  Compilation successful for file dtpUOpDiagOpNameTooLong.f.

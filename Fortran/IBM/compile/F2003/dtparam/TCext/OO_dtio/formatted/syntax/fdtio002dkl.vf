@@ -1,0 +1,4 @@
+"fdtio002dkl.f", line 39.8: 1514-604 (S) Dummy argument unit of the derived-type I/O procedure formattedread must be specified with the INTENT(IN) attribute.
+** m   === End of Compilation 1 ===
+** fdtio002dkl   === End of Compilation 2 ===
+1501-511  Compilation failed for file fdtio002dkl.f.

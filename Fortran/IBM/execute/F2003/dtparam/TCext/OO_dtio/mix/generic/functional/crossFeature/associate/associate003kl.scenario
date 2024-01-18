@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/mix/generic/functional/crossFeature/associate/associate003kl.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070802
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)associate003kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = associate003kl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = associate003kl$(OBJ)
+#OUTPUT    = associate003kl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = associate003kl$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $(tcasedir)associate003kl.vf associate003kl.1
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

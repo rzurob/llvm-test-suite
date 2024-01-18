@@ -1,0 +1,5 @@
+"roundRealRWEdit01d.f", line 31.4: 1512-089 (E) The ROUND specifier is not allowed when opening an unformatted file.  Keyword is ignored.
+"roundRealRWEdit01d.f", line 33.4: 1512-143 (E) The ROUND= specifier is not permitted for unformatted I/O.  The ROUND= specifier is ignored.
+"roundRealRWEdit01d.f", line 35.4: 1512-143 (E) The ROUND= specifier is not permitted for unformatted I/O.  The ROUND= specifier is ignored.
+** roundrealrwedit01d   === End of Compilation 1 ===
+1501-510  Compilation successful for file roundRealRWEdit01d.f.

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/contiguous/isContig/isContigTrue3.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20101028
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)isContigTrue3.f
+#OUTPUT    = isContigTrue3$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = isContigTrue3$(OBJ)
+#OUTPUT    = isContigTrue3$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = isContigTrue3$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

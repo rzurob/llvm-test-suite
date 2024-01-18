@@ -1,0 +1,57 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/submodule/func/submodule02f.scenario
+#FEATURE   = F2008 Submodule
+#CREATOR   = Bernard Kan
+#DATE      = 20221206
+#TEST_TYPE = Functional
+#KEYWORDS  = F2008, submodule, F2008 submodule
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD          = F_COMPILE
+#INPUT        = $(tcasedir)submodule02af.f
+#OUTPUT       = submodule02af$(OBJ)
+#ENDCMD
+
+#CMD          = F_COMPILE
+#INPUT        = $(tcasedir)submodule02bf.f
+#OUTPUT       = submodule02bf$(OBJ)
+#ENDCMD
+
+#CMD          = F_COMPILE
+#INPUT        = $(tcasedir)submodule02cf.f
+#OUTPUT       = submodule02cf$(OBJ)
+#ENDCMD
+
+#CMD          = F_LINK
+#INPUT        = submodule02*f$(OBJ)
+#OUTPUT       = submodule02f$(EXE)
+#ENDCMD
+
+#CMD          = RUN
+#INPUT        = submodule02f$(EXE)
+#ENDCMD
+
+#CMD          = LS
+#STDOUT       = ls.out
+#STDERR       = ls.out
+#ENDCMD
+
+#CMD          = GREP
+#OPTS         = m.mod
+#INPUT        = ls.out
+#ENDCMD
+
+#CMD          = GREP
+#OPTS         = m_b.smod
+#INPUT        = ls.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

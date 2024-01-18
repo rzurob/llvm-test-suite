@@ -1,0 +1,4 @@
+"abstract002.f", line 53.3: 1514-529 (S) Type b2 was declared with the ABSTRACT attribute. b2 must not be declared with the BIND attribute.
+** m   === End of Compilation 1 ===
+** abstract002   === End of Compilation 2 ===
+1501-511  Compilation failed for file abstract002.f.

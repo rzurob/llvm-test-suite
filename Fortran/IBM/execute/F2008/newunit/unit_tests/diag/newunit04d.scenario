@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2008/newunit/unit_tests/diag/newunit04d.scenario
+#FEATURE = NEWUNIT= specifier
+#CREATOR = Rafik Zurob
+#DATE    = 20100816
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)newunit04d.f
+#OUTPUT    = newunit04d$(OBJ)
+#STDERR    = newunit04d.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)newunit04d$(product)vf) newunit04d.err
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = newunit04d$(OBJ)
+#OUTPUT    = newunit04d$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = newunit04d$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

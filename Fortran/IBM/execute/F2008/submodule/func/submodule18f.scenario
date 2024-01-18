@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/submodule/func/submodule18f.scenario
+#FEATURE   = F2008 submodule
+#CREATOR   = Bernard Kan
+#DATE      = 20130220
+#TEST_TYPE = functional
+#KEYWORDS  = F2008, submodule, F2008 submodule
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+!#OPTS      = $(OPT_SET_LANG_LEVEL<2003pure>)
+#INPUT     = $(tcasedir)submodule18f.f
+#OUTPUT    = submodule18f$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#INPUT     = submodule18f$(OBJ)
+#OUTPUT    = submodule18f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = submodule18f$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

@@ -1,0 +1,3 @@
+SelRKindReturnVal.scenario
+SelRKindInit.scenario
+SelRKindSpec.scenario
