@@ -90,6 +90,6 @@ program acetint53
      end do
   end do
 
-  if (any([integer:: logical, integer] < 0)) stop 2
+  if (any([integer:: logical, integer] < 0)) error stop 2
 
 end program acetint53

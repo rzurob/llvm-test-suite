@@ -66,15 +66,15 @@ use m
    class(base), allocatable :: bs
 
    allocate(b1%l2(2,1))
-   if ( .not. allocated(b1%l2) ) stop 20
+   if ( .not. allocated(b1%l2) ) error stop 20
 
    ! allocate zero size array
    allocate( base :: b1%l2(1,1)%l1(6:5))
-   if ( .not. allocated(b1%l2(1,1)%l1) ) stop 30
+   if ( .not. allocated(b1%l2(1,1)%l1) ) error stop 30
 
 
    allocate( b1%l2(2,1)%l1(2:5), source = (/ (child('FORTRAN'), i = 1,4) /) )
-   if ( .not. allocated(b1%l2(2,1)%l1) ) stop 40
+   if ( .not. allocated(b1%l2(2,1)%l1) ) error stop 40
 
    cNumrZero = 0
    cNumrOne = 0
@@ -82,16 +82,16 @@ use m
 
    call move_alloc( b1%l2(1,1)%l1, b1%l2(2,1)%l1 )
 
-   if ( cNumrOne /= 1 ) stop 41
-   if ( cNumrZero /= 0 ) stop 43
-   if ( bNum /= 4 ) stop 45
+   if ( cNumrOne /= 1 ) error stop 41
+   if ( cNumrZero /= 0 ) error stop 43
+   if ( bNum /= 4 ) error stop 45
 
-   if ( allocated(b1%l2(1,1)%l1) ) stop 50
-   if ( .not. allocated(b1%l2(2,1)%l1) ) stop 60
+   if ( allocated(b1%l2(1,1)%l1) ) error stop 50
+   if ( .not. allocated(b1%l2(2,1)%l1) ) error stop 60
 
-   if ( same_type_as(bs, b1%l2(2,1)%l1) .neqv. .true. ) stop 69
+   if ( same_type_as(bs, b1%l2(2,1)%l1) .neqv. .true. ) error stop 69
 
-   if ( size(b1%l2(2,1)%l1) /= 0 ) stop 70
+   if ( size(b1%l2(2,1)%l1) /= 0 ) error stop 70
 
 end
 

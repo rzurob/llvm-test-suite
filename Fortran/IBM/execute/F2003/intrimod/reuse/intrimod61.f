@@ -79,7 +79,7 @@ C    CALLS OF IRTC
        m = 2
        d = date(m)
 
-       if ( d .ne. 7 ) stop 17
+       if ( d .ne. 7 ) error stop 17
 
         end
 

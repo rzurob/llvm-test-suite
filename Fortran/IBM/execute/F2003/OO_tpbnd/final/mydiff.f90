@@ -6,7 +6,7 @@
 program mydiff
     character(200) :: argv(3)
 
-    if (command_argument_count() /= 3) stop 100
+    if (command_argument_count() /= 3) error stop 100
 
     call get_command_argument(1, argv(1))
     call get_command_argument(2, argv(2))

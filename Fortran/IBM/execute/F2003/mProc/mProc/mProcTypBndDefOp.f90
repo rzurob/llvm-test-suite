@@ -129,10 +129,10 @@
   T2 = DT2("2") + DT2("2")
   T3 = DT3("3") + DT3("3")
 
-  IF (TRIM(T%ID)   .NE. "ModFun-00" )  STOP 11
-  IF (TRIM(T1%ID)  .NE. "ModFun1-11" ) STOP 12
-  IF (TRIM(T2%ID)  .NE. "ModFun2-22" ) STOP 13
-  IF (TRIM(T3%ID)  .NE. "ExtFun-33" )  STOP 14
+  IF (TRIM(T%ID)   .NE. "ModFun-00" )  ERROR STOP 11
+  IF (TRIM(T1%ID)  .NE. "ModFun1-11" ) ERROR STOP 12
+  IF (TRIM(T2%ID)  .NE. "ModFun2-22" ) ERROR STOP 13
+  IF (TRIM(T3%ID)  .NE. "ExtFun-33" )  ERROR STOP 14
 
   END  SUBROUTINE
 

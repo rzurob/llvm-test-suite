@@ -23,7 +23,7 @@ integer, pointer :: p
 allocate(a(3)%x)
 p => a(3)%x
 call move_alloc(a(3)%x,b(5)%x)
-if (allocated(a(3)%x)) stop 1
-if (.not.allocated(b(5)%x)) stop 2
-if (.not.associated(p,b(5)%x)) stop 3
+if (allocated(a(3)%x)) error stop 1
+if (.not.allocated(b(5)%x)) error stop 2
+if (.not.associated(p,b(5)%x)) error stop 3
 end

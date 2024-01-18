@@ -39,21 +39,21 @@
   COMPLEX(KIND=LBOUND(Z4,1)+7),       PARAMETER :: Z8(128)= R8
   COMPLEX(KIND=2*R8%KIND),            PARAMETER :: Z6(128)= R6
 
-  IF ( KIND(R4) .NE. 4      ) STOP 12
-  IF ( KIND(R8) .NE. 8      ) STOP 13
-  IF ( KIND(R6) .NE. 16     ) STOP 14
+  IF ( KIND(R4) .NE. 4      ) ERROR STOP 12
+  IF ( KIND(R8) .NE. 8      ) ERROR STOP 13
+  IF ( KIND(R6) .NE. 16     ) ERROR STOP 14
 
-  IF ( ANY(R4   .NE. (/(-I, I=1, 128)/) ) ) STOP 22
-  IF ( ANY(R8   .NE. (/(-I, I=1, 128)/) ) ) STOP 23
-  IF ( ANY(R6   .NE. (/(-I, I=1, 128)/) ) ) STOP 24
+  IF ( ANY(R4   .NE. (/(-I, I=1, 128)/) ) ) ERROR STOP 22
+  IF ( ANY(R8   .NE. (/(-I, I=1, 128)/) ) ) ERROR STOP 23
+  IF ( ANY(R6   .NE. (/(-I, I=1, 128)/) ) ) ERROR STOP 24
 
-  IF ( KIND(Z4) .NE. 4      ) STOP 32
-  IF ( KIND(Z8) .NE. 8      ) STOP 33
-  IF ( KIND(Z6) .NE. 16     ) STOP 34
+  IF ( KIND(Z4) .NE. 4      ) ERROR STOP 32
+  IF ( KIND(Z8) .NE. 8      ) ERROR STOP 33
+  IF ( KIND(Z6) .NE. 16     ) ERROR STOP 34
 
-  IF ( ANY(Z4   .NE. R4 ) ) STOP 42
-  IF ( ANY(Z8   .NE. R8 ) ) STOP 43
-  IF ( ANY(Z6   .NE. R6 ) ) STOP 44
+  IF ( ANY(Z4   .NE. R4 ) ) ERROR STOP 42
+  IF ( ANY(Z8   .NE. R8 ) ) ERROR STOP 43
+  IF ( ANY(Z6   .NE. R6 ) ) ERROR STOP 44
 
   END
 

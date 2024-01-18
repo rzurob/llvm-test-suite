@@ -41,7 +41,7 @@
         use m
 
 	allocate(integer*2 :: b1%P(20,20))
-	if ( .not. associated(b1%p)) stop 1
+	if ( .not. associated(b1%p)) error stop 1
 
 	select type ( x => b1%p)
 	    type is (integer*2)
@@ -58,9 +58,9 @@
 
 	call sub( (/7, -1/), (/11, 1/) )
 
-	if ( .not. associated(b1%p)) stop 11
-	if ( any(lbound(b1%p) .ne. (/7,-1/))) stop 5
-	if ( any(ubound(b1%p) .ne. (/11,1/))) stop 7
+	if ( .not. associated(b1%p)) error stop 11
+	if ( any(lbound(b1%p) .ne. (/7,-1/))) error stop 5
+	if ( any(ubound(b1%p) .ne. (/11,1/))) error stop 7
 
 	select type ( x => b1%p)
 	    type is (integer*2)

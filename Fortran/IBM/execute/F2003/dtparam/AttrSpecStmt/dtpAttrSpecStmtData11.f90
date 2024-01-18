@@ -127,18 +127,18 @@
   DO I=1, N
   DO J=1, N
 
-    IF ( S0(I,J)%ModFun0()              .NE. S0(I,J)%L0    )  STOP 19
-    IF ( ANY( S1(I,J)%R                      .NE. C1%R          ) ) STOP 20
-    IF ( ANY( S1(I,J)%ModFun1() .NE. [(1,3),(4,5)] ) ) STOP 21
+    IF ( S0(I,J)%ModFun0()              .NE. S0(I,J)%L0    )  ERROR STOP 19
+    IF ( ANY( S1(I,J)%R                      .NE. C1%R          ) ) ERROR STOP 20
+    IF ( ANY( S1(I,J)%ModFun1() .NE. [(1,3),(4,5)] ) ) ERROR STOP 21
 
-    IF ( ANY( S2(I,J)%R .NE. [1,2,3,4,5]           ) ) STOP 22
-    IF ( ANY( S2(I,J)%I .NE. C2%I                  ) ) STOP 23
-    IF ( ANY( S2(I,J)%C .NE. CHAR([1,2,3,4,5,6,7]) ) ) STOP 24
-    IF ( ASSOCIATED(S2(I,J)%Ptr) )                STOP 25
+    IF ( ANY( S2(I,J)%R .NE. [1,2,3,4,5]           ) ) ERROR STOP 22
+    IF ( ANY( S2(I,J)%I .NE. C2%I                  ) ) ERROR STOP 23
+    IF ( ANY( S2(I,J)%C .NE. CHAR([1,2,3,4,5,6,7]) ) ) ERROR STOP 24
+    IF ( ASSOCIATED(S2(I,J)%Ptr) )                ERROR STOP 25
 
     IArr = S2(I,J)%ModFun2()
-    IF ( ANY( IArr .NE. [-1,-2,-3,-4,-5,-6,-7]   ) ) STOP 26
-    IF ( ANY( S2(I,J)%ModFun1() .NE. [(1,3),(4,5)] ) ) STOP 27
+    IF ( ANY( IArr .NE. [-1,-2,-3,-4,-5,-6,-7]   ) ) ERROR STOP 26
+    IF ( ANY( S2(I,J)%ModFun1() .NE. [(1,3),(4,5)] ) ) ERROR STOP 27
 
   END DO
   END DO

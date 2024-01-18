@@ -40,7 +40,7 @@ module m
 
         if (.not. allocated(x1%str)) allocate (x1%str)
 
-        if (ndigits >= 9) stop 10
+        if (ndigits >= 9) error stop 10
 
         write (localFmt, '("(f10.",i1,")")') ndigits
 

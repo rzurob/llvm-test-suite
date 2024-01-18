@@ -23,12 +23,12 @@
        integer(4) :: j4=abs(i4)
        integer(8) :: j8=abs(i8)
 
-       if (x4 /= abs(y4)) stop 1
-       if (x8 /= abs(y8)) stop 2
-       if (x16 /= abs(y16)) stop 3
+       if (x4 /= abs(y4)) error stop 1
+       if (x8 /= abs(y8)) error stop 2
+       if (x16 /= abs(y16)) error stop 3
 
-       if (j1 /= abs(i1)) stop 4
-       if (j2 /= abs(j2)) stop 5
-       if (j4 /= abs(j4)) stop 6
-       if (j8 /= abs(j8)) stop 7
+       if (j1 /= abs(i1)) error stop 4
+       if (j2 /= abs(j2)) error stop 5
+       if (j4 /= abs(j4)) error stop 6
+       if (j8 /= abs(j8)) error stop 7
        end program

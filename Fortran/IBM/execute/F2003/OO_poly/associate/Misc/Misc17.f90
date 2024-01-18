@@ -52,8 +52,8 @@
     print*, SHAPE(As)
     print*, SHAPE(As%BaseArr(1,1)%BaseId)
     print*, As%BaseArr(1,1)%BaseId
-    IF ( ANY (SHAPE(As%BaseArr(1,1)%BaseId) .NE. (/2,2/) ) )  STOP 35
-    IF ( ANY(As%BaseArr(1,1)%BaseId  .NE. 1) ) STOP 36
+    IF ( ANY (SHAPE(As%BaseArr(1,1)%BaseId) .NE. (/2,2/) ) )  ERROR STOP 35
+    IF ( ANY(As%BaseArr(1,1)%BaseId  .NE. 1) ) ERROR STOP 36
 
   END SELECT
 

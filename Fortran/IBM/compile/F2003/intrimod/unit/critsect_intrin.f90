@@ -34,6 +34,6 @@
           end do
 !SMP$  END PARALLEL DO
 
-          if (yr /= 360.0) stop 12
+          if (yr /= 360.0) error stop 12
        end
 

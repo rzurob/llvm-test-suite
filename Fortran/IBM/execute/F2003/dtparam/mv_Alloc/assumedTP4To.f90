@@ -29,11 +29,11 @@ use m
 
    call sub(a2, a1)
 
-   if ( allocated(a2) ) stop 11
+   if ( allocated(a2) ) error stop 11
 
    select type (a1)
         type is (A(*))
-            if ( a1%ch /= 'abcde' ) stop 21
+            if ( a1%ch /= 'abcde' ) error stop 21
         class default
             stop 23
    end select

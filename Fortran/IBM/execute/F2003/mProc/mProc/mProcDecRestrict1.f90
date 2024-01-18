@@ -94,8 +94,8 @@
   T  = Fun(DT ("0"))
   T1 = Fun(DT1("1"))
 
-  IF (TRIM(T%ID)   .NE. "M-0" )  STOP 11
-  IF (TRIM(T1%ID)  .NE. "M1-1" ) STOP 12
+  IF (TRIM(T%ID)   .NE. "M-0" )  ERROR STOP 11
+  IF (TRIM(T1%ID)  .NE. "M1-1" ) ERROR STOP 12
 
   END
 

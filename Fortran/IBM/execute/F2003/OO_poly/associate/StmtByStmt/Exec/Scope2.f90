@@ -26,8 +26,8 @@
   INTEGER :: A = 5, B=1
 
   CALL Sub(A)
-  IF ( A .NE. 3 ) STOP 22
-  IF ( B .NE. 1 ) STOP 23
+  IF ( A .NE. 3 ) ERROR STOP 22
+  IF ( B .NE. 1 ) ERROR STOP 23
 
   CONTAINS
 
@@ -38,10 +38,10 @@
   TYPE IS (INTEGER)
 
     ASSOCIATE ( A => B )
-      IF ( A .NE. 5 ) STOP 11
+      IF ( A .NE. 5 ) ERROR STOP 11
       A = 3
       ASSOCIATE ( A => A )
-        IF ( A .NE. 3 ) STOP 13
+        IF ( A .NE. 3 ) ERROR STOP 13
       END ASSOCIATE
     END ASSOCIATE
 

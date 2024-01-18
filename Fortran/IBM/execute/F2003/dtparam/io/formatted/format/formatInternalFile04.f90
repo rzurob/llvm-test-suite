@@ -65,15 +65,15 @@ program formatInternalFile04
             read(10,'(a20)') buffer1(i)
           end do
 
-          if(buffer1(1)%buffer /= "bcdefghij")           stop 10
-          if(buffer1(2)%buffer /= "BCDEFGHIJ")           stop 11
+          if(buffer1(1)%buffer /= "bcdefghij")           error stop 10
+          if(buffer1(2)%buffer /= "BCDEFGHIJ")           error stop 11
 
           do i=1,2
              read(buffer1(i)%buffer,'(3a3)') dtp1(3-i)%c1
           end do
 
-          if(any(dtp1(1)%c1 /= ["BCD","EFG","HIJ"]))     stop 12
-          if(any(dtp1(2)%c1 /= ["bcd","efg","hij"]))     stop 13
+          if(any(dtp1(1)%c1 /= ["BCD","EFG","HIJ"]))     error stop 12
+          if(any(dtp1(2)%c1 /= ["bcd","efg","hij"]))     error stop 13
 
       end if
 
@@ -102,11 +102,11 @@ program formatInternalFile04
      read(buffer1(1)%buffer,'(3a3)') dtp1(2)
   end if
 
-  if(buffer1(1)%buffer /= "BCDEFGHIJ")                  stop 14
-  if(buffer1(2)%buffer /= "bcdefghij")                  stop 15
+  if(buffer1(1)%buffer /= "BCDEFGHIJ")                  error stop 14
+  if(buffer1(2)%buffer /= "bcdefghij")                  error stop 15
 
-  if(any(dtp1(1)%c1 /= ["bcd","efg","hij"]))            stop 16
-  if(any(dtp1(2)%c1 /= ["BCD","EFG","HIJ"]))            stop 17
+  if(any(dtp1(1)%c1 /= ["bcd","efg","hij"]))            error stop 16
+  if(any(dtp1(2)%c1 /= ["BCD","EFG","HIJ"]))            error stop 17
 
   close(10,status='delete')
 

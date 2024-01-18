@@ -72,7 +72,7 @@
     ModFun2%R = -Arg%R
     ModFun2%I = -Arg%I
     ModFun2%C = CHAR(Arg%L2)
-    IF ( SIZE( ModFun2%I ) .NE. Arg%L2 ) STOP 22
+    IF ( SIZE( ModFun2%I ) .NE. Arg%L2 ) ERROR STOP 22
   END FUNCTION
 
   END MODULE
@@ -86,29 +86,29 @@
 
   INTEGER :: IArr(7)=0
 
-  IF ( R%ModFun0() .NE. R%L0 ) STOP 11
+  IF ( R%ModFun0() .NE. R%L0 ) ERROR STOP 11
 
-  IF ( SIZE( S%R )      .NE. S%L1          )  STOP 12
-  IF ( S%R%KIND         .NE. S%K1            ) STOP 13
-  IF ( ANY ( S%R        .NE. S%K1          ) ) STOP 14
-  IF ( ANY( S%ModFun1() .NE. [(1,3),(4,5)] ) ) STOP 15
+  IF ( SIZE( S%R )      .NE. S%L1          )  ERROR STOP 12
+  IF ( S%R%KIND         .NE. S%K1            ) ERROR STOP 13
+  IF ( ANY ( S%R        .NE. S%K1          ) ) ERROR STOP 14
+  IF ( ANY( S%ModFun1() .NE. [(1,3),(4,5)] ) ) ERROR STOP 15
 
-  IF ( SIZE( T%R )      .NE. T%L1       )  STOP 21
-  IF ( T%R%KIND         .NE. T%K1         ) STOP 22
-  IF ( ANY ( T%R        .NE. T%K1       ) ) STOP 23
-  IF ( SIZE( T%I )      .NE. T%L2       )  STOP 24
-  IF ( T%I%KIND         .NE. T%K2         ) STOP 25
-  IF ( ANY ( T%I        .NE. T%K2       ) ) STOP 26
-  IF ( SIZE( T%C )      .NE. T%L2       )  STOP 27
-  IF ( T%C%LEN          .NE. T%l2         ) STOP 28
-  IF ( ANY (T%C         .NE. CHAR(T%K2) ) ) STOP 29
+  IF ( SIZE( T%R )      .NE. T%L1       )  ERROR STOP 21
+  IF ( T%R%KIND         .NE. T%K1         ) ERROR STOP 22
+  IF ( ANY ( T%R        .NE. T%K1       ) ) ERROR STOP 23
+  IF ( SIZE( T%I )      .NE. T%L2       )  ERROR STOP 24
+  IF ( T%I%KIND         .NE. T%K2         ) ERROR STOP 25
+  IF ( ANY ( T%I        .NE. T%K2       ) ) ERROR STOP 26
+  IF ( SIZE( T%C )      .NE. T%L2       )  ERROR STOP 27
+  IF ( T%C%LEN          .NE. T%l2         ) ERROR STOP 28
+  IF ( ANY (T%C         .NE. CHAR(T%K2) ) ) ERROR STOP 29
 
-  IF ( T%ModFun0()   .NE. T%L0            ) STOP 31
-  IF ( any(T%ModFun1()   .NE. [(1,3),(4,5)])   ) STOP 32
+  IF ( T%ModFun0()   .NE. T%L0            ) ERROR STOP 31
+  IF ( any(T%ModFun1()   .NE. [(1,3),(4,5)])   ) ERROR STOP 32
   TT = T%ModFun2( )
-  IF ( ANY ( TT%R    .NE. -T2%R       ) ) STOP 33
-  IF ( ANY ( TT%I    .NE. -T2%I       ) ) STOP 34
-  IF ( ANY ( TT%C    .NE. CHAR(T%L2)  ) ) STOP 35
+  IF ( ANY ( TT%R    .NE. -T2%R       ) ) ERROR STOP 33
+  IF ( ANY ( TT%I    .NE. -T2%I       ) ) ERROR STOP 34
+  IF ( ANY ( TT%C    .NE. CHAR(T%L2)  ) ) ERROR STOP 35
 
 
   R =  DT0(1,3)()
@@ -120,14 +120,14 @@
             Ptr=NULL() )
 
 
-  IF ( R%ModFun0() .NE. R%L0 ) STOP 41
+  IF ( R%ModFun0() .NE. R%L0 ) ERROR STOP 41
 
-  IF ( ANY ( S%R         .NE. [1,2,3,4,5]   ) ) STOP 42
-  IF ( ANY ( S%ModFun1() .NE. [(1,3),(4,5)] ) ) STOP 43
+  IF ( ANY ( S%R         .NE. [1,2,3,4,5]   ) ) ERROR STOP 42
+  IF ( ANY ( S%ModFun1() .NE. [(1,3),(4,5)] ) ) ERROR STOP 43
 
-  IF ( ANY ( T%R        .NE. [1,2,3,4,5]           ) ) STOP 44
-  IF ( ANY ( T%I        .NE. [1,2,3,4,5,6,7]       ) ) STOP 45
-  IF ( ANY ( T%C        .NE. CHAR([1,2,3,4,5,6,7]) ) ) STOP 46
+  IF ( ANY ( T%R        .NE. [1,2,3,4,5]           ) ) ERROR STOP 44
+  IF ( ANY ( T%I        .NE. [1,2,3,4,5,6,7]       ) ) ERROR STOP 45
+  IF ( ANY ( T%C        .NE. CHAR([1,2,3,4,5,6,7]) ) ) ERROR STOP 46
 
 
   END

@@ -89,26 +89,26 @@
 
   ASSOCIATE ( As => Arr(S1, S2) )
 
-    IF ( ANY (LBOUND(As)  .NE. (/1,1/) ) )             STOP 30
-    IF ( ANY (UBOUND(As)  .NE. (/2,2/) ) )             STOP 31
-    IF ( ANY (SHAPE(As)   .NE. (/2,2/) ) )             STOP 32
-    IF ( ANY (As%GetID()  .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) STOP 33
-    IF ( ANY (As%BaseID   .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) STOP 36
-    IF ( LEN(As%C)        .NE. 1023)                   STOP 34
-    IF ( TRIM(As(1,1)%C)  .NE. "!" )                   STOP 35
+    IF ( ANY (LBOUND(As)  .NE. (/1,1/) ) )             ERROR STOP 30
+    IF ( ANY (UBOUND(As)  .NE. (/2,2/) ) )             ERROR STOP 31
+    IF ( ANY (SHAPE(As)   .NE. (/2,2/) ) )             ERROR STOP 32
+    IF ( ANY (As%GetID()  .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) ERROR STOP 33
+    IF ( ANY (As%BaseID   .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) ERROR STOP 36
+    IF ( LEN(As%C)        .NE. 1023)                   ERROR STOP 34
+    IF ( TRIM(As(1,1)%C)  .NE. "!" )                   ERROR STOP 35
 
   SELECT TYPE (As => As(:,:))
   CLASS IS ( Child)
 
-    IF ( ANY (LBOUND(As)  .NE. (/1,1/) ) )             STOP 40
-    IF ( ANY (UBOUND(As)  .NE. (/2,2/) ) )             STOP 41
-    IF ( ANY (SHAPE(As)   .NE. (/2,2/) ) )             STOP 42
-    IF ( ANY (As%GetID()       .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) STOP 43
-    IF ( ANY (As%Base%GetID()  .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) STOP 46
-    IF ( ANY (As%ChildID       .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) STOP 47
-    IF ( ANY (As%BaseID        .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) STOP 48
-    IF ( LEN(As%C)        .NE. 1023)                   STOP 44
-    IF ( TRIM(As(2,2)%C)  .NE. "!" )                   STOP 45
+    IF ( ANY (LBOUND(As)  .NE. (/1,1/) ) )             ERROR STOP 40
+    IF ( ANY (UBOUND(As)  .NE. (/2,2/) ) )             ERROR STOP 41
+    IF ( ANY (SHAPE(As)   .NE. (/2,2/) ) )             ERROR STOP 42
+    IF ( ANY (As%GetID()       .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) ERROR STOP 43
+    IF ( ANY (As%Base%GetID()  .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) ERROR STOP 46
+    IF ( ANY (As%ChildID       .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) ERROR STOP 47
+    IF ( ANY (As%BaseID        .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) ERROR STOP 48
+    IF ( LEN(As%C)        .NE. 1023)                   ERROR STOP 44
+    IF ( TRIM(As(2,2)%C)  .NE. "!" )                   ERROR STOP 45
 
   CLASS DEFAULT
     STOP 99

@@ -111,31 +111,31 @@ use m2
    call readData(ot,10)
 
    ! verify the results
-   if(.not. precision_r4(pt(2)%r(1),-9.9_4))               stop 11
-   if(.not. precision_r4(pt(2)%r(2),1.3_4))                stop 12
-   if(.not. precision_r4(pt(2)%r(3),-5.1e-10))             stop 13
-   if(any( pt(2)%c2 /= ["she","wil","cal","you"]))         stop 14
+   if(.not. precision_r4(pt(2)%r(1),-9.9_4))               error stop 11
+   if(.not. precision_r4(pt(2)%r(2),1.3_4))                error stop 12
+   if(.not. precision_r4(pt(2)%r(3),-5.1e-10))             error stop 13
+   if(any( pt(2)%c2 /= ["she","wil","cal","you"]))         error stop 14
 
-   if(.not. precision_x6(pt(2)%x(1),(-3.2_8,-8.3_8)))      stop 15
-   if(.not. precision_x6(pt(2)%x(2),(6.3_8,-0.5_8)))       stop 16
-   if(.not. precision_x6(pt(2)%x(3),(-9.9_8,9.9_8)))       stop 17
+   if(.not. precision_x6(pt(2)%x(1),(-3.2_8,-8.3_8)))      error stop 15
+   if(.not. precision_x6(pt(2)%x(2),(6.3_8,-0.5_8)))       error stop 16
+   if(.not. precision_x6(pt(2)%x(3),(-9.9_8,9.9_8)))       error stop 17
 
-   if(any(pt(2)%inn1%c1 /=  ["XLF","IBM"]))                stop 18
-   if(any(pt(2)%inn1%i /= [12,-13,14] ))                   stop 19
-   if(any(pt(2)%inn1%g .neqv. [.false.,.true.,.false.]))   stop 20
+   if(any(pt(2)%inn1%c1 /=  ["XLF","IBM"]))                error stop 18
+   if(any(pt(2)%inn1%i /= [12,-13,14] ))                   error stop 19
+   if(any(pt(2)%inn1%g .neqv. [.false.,.true.,.false.]))   error stop 20
 
-   if(.not. precision_r4(pt(3)%r(1),-4.10_4))              stop 21
-   if(.not. precision_r4(pt(3)%r(2),0.1e-3))               stop 22
-   if(.not. precision_r4(pt(3)%r(3),-0.15e15))             stop 23
-   if(any( pt(3)%c2 /= ["xlf","IBM","tes","xlc"]))         stop 24
+   if(.not. precision_r4(pt(3)%r(1),-4.10_4))              error stop 21
+   if(.not. precision_r4(pt(3)%r(2),0.1e-3))               error stop 22
+   if(.not. precision_r4(pt(3)%r(3),-0.15e15))             error stop 23
+   if(any( pt(3)%c2 /= ["xlf","IBM","tes","xlc"]))         error stop 24
 
-   if(.not. precision_x6(pt(3)%x(1),(-1.2_8,1.2_8)))       stop 25
-   if(.not. precision_x6(pt(3)%x(2),(-0.34d-2,0.86e6_8)))  stop 26
-   if(.not. precision_x6(pt(3)%x(3),(32.7_8,7.1_8)))       stop 27
+   if(.not. precision_x6(pt(3)%x(1),(-1.2_8,1.2_8)))       error stop 25
+   if(.not. precision_x6(pt(3)%x(2),(-0.34d-2,0.86e6_8)))  error stop 26
+   if(.not. precision_x6(pt(3)%x(3),(32.7_8,7.1_8)))       error stop 27
 
-   if(any(pt(3)%inn1%c1 /=  ["ABC","abc"]))                stop 28
-   if(any(pt(3)%inn1%i /= [-12,45,-34] ))                  stop 29
-   if(any(pt(3)%inn1%g .neqv. [.true.,.false.,.true.]))    stop 30
+   if(any(pt(3)%inn1%c1 /=  ["ABC","abc"]))                error stop 28
+   if(any(pt(3)%inn1%i /= [-12,45,-34] ))                  error stop 29
+   if(any(pt(3)%inn1%g .neqv. [.true.,.false.,.true.]))    error stop 30
 
    close(10)
 

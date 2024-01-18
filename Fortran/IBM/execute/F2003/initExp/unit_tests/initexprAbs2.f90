@@ -18,7 +18,7 @@
          write(*,'(2z10.8)') x4, abs(y4)
          stop 1
        endif
-       if (x8 /= abs(y8)) stop 2
-       if (x16 /= abs(y16)) stop 3
+       if (x8 /= abs(y8)) error stop 2
+       if (x16 /= abs(y16)) error stop 3
 
        end program

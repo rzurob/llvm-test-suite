@@ -41,15 +41,15 @@
 
 		fv(2:3, (0):0, 3:5) => bT(::2)
 
-		if ( .not. associated(fv)) stop 11
+		if ( .not. associated(fv)) error stop 11
 
 	        fv = unpack(a, mask, fv)
 
 	    end subroutine
 
 	    subroutine output()
-		if ( any ( lbound(fv) .ne. (/2,0,3/))) stop 23
-		if ( any ( ubound(fv) .ne. (/3,0,5/))) stop 25
+		if ( any ( lbound(fv) .ne. (/2,0,3/))) error stop 23
+		if ( any ( ubound(fv) .ne. (/3,0,5/))) error stop 25
 		print *, fv%x
 	    end subroutine
     end module

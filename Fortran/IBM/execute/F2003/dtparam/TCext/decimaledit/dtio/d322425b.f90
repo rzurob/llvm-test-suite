@@ -41,10 +41,10 @@ use m
         type is (base(4,*))
             select type (y => x%data%x)
                 type is (real)
-                    if (size(y) /= 3) stop 1
+                    if (size(y) /= 3) error stop 1
 
                     do i = 1, 3
-                        if (.not. precision_r4(y(i), sin(i*1.0))) stop 2
+                        if (.not. precision_r4(y(i), sin(i*1.0))) error stop 2
                     end do
 
                 class default

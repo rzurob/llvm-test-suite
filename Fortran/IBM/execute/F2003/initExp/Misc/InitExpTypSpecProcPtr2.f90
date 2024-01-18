@@ -63,9 +63,9 @@
   C3ProcPtr => C3
 
 
-  IF ( C1ProcPtr() .NE. "1"    ) STOP 11
-  IF ( C2ProcPtr() .NE. "12"   ) STOP 12
-  IF ( C3ProcPtr() .NE. "123"  ) STOP 13
+  IF ( C1ProcPtr() .NE. "1"    ) ERROR STOP 11
+  IF ( C2ProcPtr() .NE. "12"   ) ERROR STOP 12
+  IF ( C3ProcPtr() .NE. "123"  ) ERROR STOP 13
 
   END
 

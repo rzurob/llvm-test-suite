@@ -66,26 +66,26 @@
       A_dsquare%name = 'a square'
 
       ALLOCATE(My_shape, source = A_square)
-      IF ( .NOT. ASSOCIATED(My_shape)) STOP 10
+      IF ( .NOT. ASSOCIATED(My_shape)) ERROR STOP 10
 
       My_kind=k1
 
       CALL compute_area(My_kind,My_shape)
 
       ALLOCATE (My_shape , SOURCE = Rectangle(k1,len1)(area=0.0,name='rectangle',width=12.5000002D0,height=8.00000012D0))
-      IF ( .NOT. ASSOCIATED(My_shape)) STOP 11
+      IF ( .NOT. ASSOCIATED(My_shape)) ERROR STOP 11
 
       CALL compute_area(My_kind,My_shape)
 
       My_kind=8
 
       ALLOCATE(My_shape, source = A_dsquare)
-      IF ( .NOT. ASSOCIATED(My_shape)) STOP 12
+      IF ( .NOT. ASSOCIATED(My_shape)) ERROR STOP 12
 
       CALL compute_area(My_kind,My_shape)
 
       ALLOCATE (My_shape , SOURCE = Rectangle(2*k1,len1/2)(area=0.0,name='rectangle',width=12.5000002D0,height=8.00000012D0))
-      IF ( .NOT. ASSOCIATED(My_shape)) STOP 13
+      IF ( .NOT. ASSOCIATED(My_shape)) ERROR STOP 13
 
       CALL compute_area(My_kind,My_shape)
 
@@ -100,19 +100,19 @@
 
       SELECT TYPE (A => My_shape)
         CLASS IS (Square(4,*))
-          IF (My_kind .NE. 4) STOP 20
+          IF (My_kind .NE. 4) ERROR STOP 20
           print *, 'My shape may or may not be a square: More tests needed'
 
  		! Nested SELECT TYPE
             	SELECT TYPE (A)
                   TYPE IS (Square(4,*))
-                    IF (My_kind .NE. 4) STOP 31
+                    IF (My_kind .NE. 4) ERROR STOP 31
                     A%area = A%width**2
 
                     print *, 'My shape is ', TRIM(A%name), ' and the area is', CEILING(A%area)
 
                   TYPE IS (Rectangle(4,*))
-                    IF (My_kind .NE. 4) STOP 32
+                    IF (My_kind .NE. 4) ERROR STOP 32
                     A%area = A%width*A%height
 
                     print *, 'My shape is ', TRIM(A%name), ' and the area is', CEILING(A%area)
@@ -124,13 +124,13 @@
  		! END Nested SELECT TYPE
 
         CLASS IS (Rectangle(4,*))
-          IF (My_kind .NE. 4) STOP 21
+          IF (My_kind .NE. 4) ERROR STOP 21
           print *, 'My shape may or may not be a rectangle: More tests needed'
 
  		! Nested SELECT TYPE
             	SELECT TYPE (A)
                   TYPE IS (Rectangle(4,*))
-                    IF (My_kind .NE. 4) STOP 42
+                    IF (My_kind .NE. 4) ERROR STOP 42
                     A%area = A%width*A%height
 
                     print *, 'My shape is ', TRIM(A%name), ' and the area is', CEILING(A%area)
@@ -143,19 +143,19 @@
 
 
         CLASS IS (Shape(8,*))
-          IF (My_kind .NE. 8) STOP 22
+          IF (My_kind .NE. 8) ERROR STOP 22
           print *, 'My shape may be a square or a rectangle: More tests needed'
 
  		! Nested SELECT TYPE
             	SELECT TYPE (A)
                   TYPE IS (Square(8,*))
-                    IF (My_kind .NE. 8) STOP 51
+                    IF (My_kind .NE. 8) ERROR STOP 51
           	    A%area = A%width**2
 
                     print *, 'My shape is ', TRIM(A%name), ' and the area is precisely', CEILING(A%area)
 
                   TYPE IS (Rectangle(8,*))
-                    IF (My_kind .NE. 8) STOP 52
+                    IF (My_kind .NE. 8) ERROR STOP 52
                     A%area = A%width*A%height
 
                     print *, 'My shape is ', TRIM(A%name), ' and the area is precisely', CEILING(A%area)

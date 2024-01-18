@@ -67,20 +67,20 @@
 
   ASSOCIATE ( T1  => BasePtr, T2 => ChildPtr, T3 => V, T4 => U  )
   ASSOCIATE ( As1 => T1, As2 => T2  )
-    IF ( As1%GetID() .NE. 1) STOP 50
-    IF ( As2%GetID() .NE. 2) STOP 51
+    IF ( As1%GetID() .NE. 1) ERROR STOP 50
+    IF ( As2%GetID() .NE. 2) ERROR STOP 51
 
     T1%BasePtr  => T3
     T2%ChildPtr => T4
 
-    IF ( .NOT. ASSOCIATED( As1%BasePtr, V) )  STOP 60
-    IF ( .NOT. ASSOCIATED( As2%ChildPtr, U) ) STOP 61
+    IF ( .NOT. ASSOCIATED( As1%BasePtr, V) )  ERROR STOP 60
+    IF ( .NOT. ASSOCIATED( As2%ChildPtr, U) ) ERROR STOP 61
 
     U%BaseId  = -1
     U%ChildId = -2
 
-    IF ( As2%Base%GetID() .NE. -1) STOP 70
-    IF ( As2%GetID()      .NE. -2) STOP 71
+    IF ( As2%Base%GetID() .NE. -1) ERROR STOP 70
+    IF ( As2%GetID()      .NE. -2) ERROR STOP 71
 
   END ASSOCIATE
   END ASSOCIATE

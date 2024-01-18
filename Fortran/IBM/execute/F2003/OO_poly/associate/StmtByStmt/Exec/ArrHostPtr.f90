@@ -94,19 +94,19 @@
     SELECT TYPE ( As => As)
     CLASS IS (Child)
       ASSOCIATE (As => As(:), As1 => Arr(::1))
-          IF (ANY(SHAPE(As) .NE. (/3/)))      STOP 33
-          IF ( ANY(As%Base%GetId() .NE. -1) ) STOP 34
-          IF ( ANY(As%GetId()      .NE. -2) ) STOP 35
-          IF ( ANY(As%BaseId       .NE. -1) ) STOP 36
-          IF ( ANY(As%ChildId      .NE. -2) ) STOP 37
+          IF (ANY(SHAPE(As) .NE. (/3/)))      ERROR STOP 33
+          IF ( ANY(As%Base%GetId() .NE. -1) ) ERROR STOP 34
+          IF ( ANY(As%GetId()      .NE. -2) ) ERROR STOP 35
+          IF ( ANY(As%BaseId       .NE. -1) ) ERROR STOP 36
+          IF ( ANY(As%ChildId      .NE. -2) ) ERROR STOP 37
 
           CALL As1(1)%SetId(As1)
           CALL As1(1)%Base%SetId(As1%Base)
 
-          IF ( ANY(As%Base%GetId() .NE. 1 ) ) STOP 44
-          IF ( ANY(As%GetId()      .NE. 2 ) ) STOP 45
-          IF ( ANY(As%BaseId       .NE. 1 ) ) STOP 46
-          IF ( ANY(As%ChildId      .NE. 2 ) ) STOP 47
+          IF ( ANY(As%Base%GetId() .NE. 1 ) ) ERROR STOP 44
+          IF ( ANY(As%GetId()      .NE. 2 ) ) ERROR STOP 45
+          IF ( ANY(As%BaseId       .NE. 1 ) ) ERROR STOP 46
+          IF ( ANY(As%ChildId      .NE. 2 ) ) ERROR STOP 47
 
       END ASSOCIATE
 

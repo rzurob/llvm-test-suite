@@ -132,15 +132,15 @@ contains
     end subroutine
 
     subroutine checkres
-        if (a /= 1) stop 1
-        if (b /= 2) stop 2
-        if (x /= (a+b)) stop 3
-        if (co%i /= 12) stop 4
-        if (co%c /= 'abc') stop 5
-        if (co%ii /= 34) stop 6
-        if (co%jj /= 56) stop 7
-        if (co%cc /= 'xyz') stop 8
-        if (co%c /= 'abc') stop 9
-        if (any(co%aiarr /= aiarr)) stop 10
+        if (a /= 1) error stop 1
+        if (b /= 2) error stop 2
+        if (x /= (a+b)) error stop 3
+        if (co%i /= 12) error stop 4
+        if (co%c /= 'abc') error stop 5
+        if (co%ii /= 34) error stop 6
+        if (co%jj /= 56) error stop 7
+        if (co%cc /= 'xyz') error stop 8
+        if (co%c /= 'abc') error stop 9
+        if (any(co%aiarr /= aiarr)) error stop 10
     end subroutine
 end

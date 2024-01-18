@@ -117,14 +117,14 @@
       SUBROUTINE test_1 ()
 
       b_var = C1 + C2
-      IF ( B_var%value .NE. 14 ) STOP 10
+      IF ( B_var%value .NE. 14 ) ERROR STOP 10
       b_var = C1 + B1
-      IF ( B_var%value .NE. 14 ) STOP 11
+      IF ( B_var%value .NE. 14 ) ERROR STOP 11
 
       d_var = K1 + D1
-      IF ( D_var%value .NE. 18 ) STOP 12
+      IF ( D_var%value .NE. 18 ) ERROR STOP 12
       d_var = K1 + K2
-      IF ( D_var%value .NE. 18 ) STOP 13
+      IF ( D_var%value .NE. 18 ) ERROR STOP 13
 
       END SUBROUTINE test_1
 
@@ -142,14 +142,14 @@
       SUBROUTINE test_2 ()
 
       b_var = C1 + C2
-      IF ( B_var%value .NE. 24 ) STOP 14
+      IF ( B_var%value .NE. 24 ) ERROR STOP 14
       b_var = C1 + B1
-      IF ( B_var%value .NE. 24 ) STOP 15
+      IF ( B_var%value .NE. 24 ) ERROR STOP 15
 
       d_var = K1 + D1
-      IF ( D_var%value .NE. 28 ) STOP 16
+      IF ( D_var%value .NE. 28 ) ERROR STOP 16
       d_var = K1 + K2
-      IF ( D_var%value .NE. 28 ) STOP 17
+      IF ( D_var%value .NE. 28 ) ERROR STOP 17
 
       END SUBROUTINE test_2
 

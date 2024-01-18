@@ -68,11 +68,11 @@
     SELECT TYPE (U => Arg(S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S))
     CLASS DEFAULT
 
-      IF ( .NOT. SAME_TYPE_AS(U, Arg))        STOP 30
-      IF ( SIZE(U)          .NE. 4 )          STOP 31
-      IF ( ANY (LBOUND(U)   .NE. (/1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1/) ) ) STOP 32
-      IF ( ANY (UBOUND(U)   .NE. (/2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2/) ) ) STOP 33
-      IF ( ANY(SHAPE(U)     .NE. (/2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2/)) )  STOP 34
+      IF ( .NOT. SAME_TYPE_AS(U, Arg))        ERROR STOP 30
+      IF ( SIZE(U)          .NE. 4 )          ERROR STOP 31
+      IF ( ANY (LBOUND(U)   .NE. (/1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1/) ) ) ERROR STOP 32
+      IF ( ANY (UBOUND(U)   .NE. (/2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2/) ) ) ERROR STOP 33
+      IF ( ANY(SHAPE(U)     .NE. (/2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2/)) )  ERROR STOP 34
 
     ASSOCIATE ( W => U )
 
@@ -80,8 +80,8 @@
 
       TYPE IS (DT(*,4))
         DTVPtr => DTV
-        IF ( ANY(U%Id      .NE. DTVPtr%Id ) )      STOP 42
-        IF ( ANY(U%GetId() .NE. DTVPtr%GetId()))   STOP 43
+        IF ( ANY(U%Id      .NE. DTVPtr%Id ) )      ERROR STOP 42
+        IF ( ANY(U%GetId() .NE. DTVPtr%GetId()))   ERROR STOP 43
 
         U%Id = 0  !Var Def Context
         DTVPtr => U

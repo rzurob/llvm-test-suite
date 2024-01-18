@@ -39,45 +39,45 @@ PROGRAM dtCompTar
 
       Iarr = [(I, I=1,10)]
       tgt = 2* Iarr
-      IF ( .NOT. IS_CONTIGUOUS(Iarr) )    STOP 10
-      IF ( .NOT. IS_CONTIGUOUS(tgt)  )    STOP 11
-      IF (ANY(Iarr .NE.   [(I, I=1,10)])) STOP 12
-      IF (ANY(tgt  .NE. [(2*I, I=1,10)])) STOP 13
+      IF ( .NOT. IS_CONTIGUOUS(Iarr) )    ERROR STOP 10
+      IF ( .NOT. IS_CONTIGUOUS(tgt)  )    ERROR STOP 11
+      IF (ANY(Iarr .NE.   [(I, I=1,10)])) ERROR STOP 12
+      IF (ANY(tgt  .NE. [(2*I, I=1,10)])) ERROR STOP 13
 
       P0 => T0
-      IF ( .NOT. ASSOCIATED(P0)    ) STOP 14
-      IF ( .NOT. IS_CONTIGUOUS(P0) ) STOP 15
-      IF ( .NOT. IS_CONTIGUOUS(T0) ) STOP 16
-      IF ( P0%K0 .NE. 4  ) STOP 32
-      IF ( P0%L0 .NE. 10 ) STOP 33
+      IF ( .NOT. ASSOCIATED(P0)    ) ERROR STOP 14
+      IF ( .NOT. IS_CONTIGUOUS(P0) ) ERROR STOP 15
+      IF ( .NOT. IS_CONTIGUOUS(T0) ) ERROR STOP 16
+      IF ( P0%K0 .NE. 4  ) ERROR STOP 32
+      IF ( P0%L0 .NE. 10 ) ERROR STOP 33
 
       DO I = 1, SIZE(P0)
           P0(I)%cp => tgt(:I)
-          IF ( .NOT. IS_CONTIGUOUS(P0(I)%cp) ) STOP 17
+          IF ( .NOT. IS_CONTIGUOUS(P0(I)%cp) ) ERROR STOP 17
       END DO
 
       DO I = 1, SIZE(P0)
-          IF (ANY(P0(I)%cp .NE. [(2*J, J=1,I)])) STOP 18
+          IF (ANY(P0(I)%cp .NE. [(2*J, J=1,I)])) ERROR STOP 18
       END DO
 
       T1 = T0
-      IF ( .NOT. ALLOCATED(T1)     ) STOP 19
-      IF ( .NOT. IS_CONTIGUOUS(T1) ) STOP 20
+      IF ( .NOT. ALLOCATED(T1)     ) ERROR STOP 19
+      IF ( .NOT. IS_CONTIGUOUS(T1) ) ERROR STOP 20
 
       P0 => T1
 
-      IF ( .NOT. ASSOCIATED(P0)    ) STOP 21
-      IF ( .NOT. IS_CONTIGUOUS(P0) ) STOP 22
-      IF ( .NOT. IS_CONTIGUOUS(T0) ) STOP 23
-      IF ( P0%K0 .NE. 4  ) STOP 24
-      IF ( P0%L0 .NE. 10 ) STOP 25
+      IF ( .NOT. ASSOCIATED(P0)    ) ERROR STOP 21
+      IF ( .NOT. IS_CONTIGUOUS(P0) ) ERROR STOP 22
+      IF ( .NOT. IS_CONTIGUOUS(T0) ) ERROR STOP 23
+      IF ( P0%K0 .NE. 4  ) ERROR STOP 24
+      IF ( P0%L0 .NE. 10 ) ERROR STOP 25
 
       DO I = 1, SIZE(P0)
           P0(I)%cp => tgt(:I)
-          IF ( .NOT. IS_CONTIGUOUS(P0(I)%cp) ) STOP 26
+          IF ( .NOT. IS_CONTIGUOUS(P0(I)%cp) ) ERROR STOP 26
       END DO
 
       DO I = 1, SIZE(P0)
-          IF (ANY(P0(I)%cp .NE. [(2*J, J=1,I)])) STOP 27
+          IF (ANY(P0(I)%cp .NE. [(2*J, J=1,I)])) ERROR STOP 27
       END DO
 END PROGRAM dtCompTar

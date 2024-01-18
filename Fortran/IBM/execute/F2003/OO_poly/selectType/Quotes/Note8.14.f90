@@ -47,7 +47,7 @@
       TYPE IS ( POINT_3D )
         ! "TYPE ( POINT_3D ) :: P_OR_C" implied here
         PRINT *, P_OR_C%X, P_OR_C%Y, P_OR_C%Z ! This block gets executed
-        IF (P_OR_C%X .NE. 1.0 .OR. P_OR_C%Y .NE. 1.0 .OR. P_OR_C%Z .NE. 1.0 ) STOP 11
+        IF (P_OR_C%X .NE. 1.0 .OR. P_OR_C%Y .NE. 1.0 .OR. P_OR_C%Z .NE. 1.0 ) ERROR STOP 11
       END SELECT
 
 

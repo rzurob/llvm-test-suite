@@ -57,13 +57,13 @@
   integer i
 
     ASSOCIATE ( Child => (/(Child(4,20)(i), i =1, 3) /) )
-      IF ( ANY(SHAPE(Child)  .NE. (/3/)) )    STOP 50
-      IF ( ANY(Child%GetId() .NE. (/1,2,3/))) STOP 51
+      IF ( ANY(SHAPE(Child)  .NE. (/3/)) )    ERROR STOP 50
+      IF ( ANY(Child%GetId() .NE. (/1,2,3/))) ERROR STOP 51
 
       ASSOCIATE ( Child => Child  )
-        IF ( ANY(SHAPE(Child)  .NE. (/3/)) )    STOP 52
-        IF ( ANY(Child%Id      .NE. (/1,2,3/))) STOP 53
-        IF ( ANY(Child%GetId() .NE. (/1,2,3/))) STOP 54
+        IF ( ANY(SHAPE(Child)  .NE. (/3/)) )    ERROR STOP 52
+        IF ( ANY(Child%Id      .NE. (/1,2,3/))) ERROR STOP 53
+        IF ( ANY(Child%GetId() .NE. (/1,2,3/))) ERROR STOP 54
       END ASSOCIATE
     END ASSOCIATE
 

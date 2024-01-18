@@ -48,30 +48,30 @@
   SELECT TYPE ( C1 )
   !TYPE IS (CHARACTER(KIND=KIND([-1_1]),LEN=*))
   TYPE IS (CHARACTER(KIND=1,LEN=*))
-    IF ( KIND(C1) .NE. 1  )                       STOP 11
-    IF (  LEN(C1) .NE. 1  )                       STOP 12
-    IF (  ANY(C1  .NE. (/(CHAR(I), I=0, 127)/)) ) STOP 13
+    IF ( KIND(C1) .NE. 1  )                       ERROR STOP 11
+    IF (  LEN(C1) .NE. 1  )                       ERROR STOP 12
+    IF (  ANY(C1  .NE. (/(CHAR(I), I=0, 127)/)) ) ERROR STOP 13
   CLASS DEFAULT
     STOP 24
   END SELECT
 
   SELECT TYPE ( C2 )
   TYPE IS (CHARACTER(KIND=KIND([CHARACTER(LEN=A%LEN+1, KIND=A%KIND):: [(CHAR(I)//CHAR(I), I=0, 127)] ]), LEN=*))
-    IF ( KIND(C2) .NE. 1  )                       STOP 21
-    IF (  LEN(C2) .NE. 2  )                       STOP 22
-    IF (  ANY(C2(:)(1:1)  .NE. (/(CHAR(I), I=0, 127)/)) ) STOP 23
-    IF (  ANY(C2(:)(2:2)  .NE. (/(CHAR(I), I=0, 127)/)) ) STOP 24
+    IF ( KIND(C2) .NE. 1  )                       ERROR STOP 21
+    IF (  LEN(C2) .NE. 2  )                       ERROR STOP 22
+    IF (  ANY(C2(:)(1:1)  .NE. (/(CHAR(I), I=0, 127)/)) ) ERROR STOP 23
+    IF (  ANY(C2(:)(2:2)  .NE. (/(CHAR(I), I=0, 127)/)) ) ERROR STOP 24
   CLASS DEFAULT
     STOP 24
   END SELECT
 
   SELECT TYPE ( C3 )
   TYPE IS (CHARACTER(KIND=KIND([CHARACTER(B%LEN+1,KIND=B%KIND)::[CHARACTER(B%LEN+1,KIND=B%KIND)::(" "//CHAR(I)//" ", I=0, 127)] ]), LEN=*))
-    IF ( KIND(C3) .NE. 1  )                       STOP 31
-    IF (  LEN(C3) .NE. 3  )                       STOP 32
-    IF (  ANY(C3(:)(1:1)  .NE. " ") )                     STOP 33
-    IF (  ANY(C3(:)(2:2)  .NE. (/(CHAR(I), I=0, 127)/)) ) STOP 34
-    IF (  ANY(C3(:)(3:3)  .NE. " ") )                     STOP 35
+    IF ( KIND(C3) .NE. 1  )                       ERROR STOP 31
+    IF (  LEN(C3) .NE. 3  )                       ERROR STOP 32
+    IF (  ANY(C3(:)(1:1)  .NE. " ") )                     ERROR STOP 33
+    IF (  ANY(C3(:)(2:2)  .NE. (/(CHAR(I), I=0, 127)/)) ) ERROR STOP 34
+    IF (  ANY(C3(:)(3:3)  .NE. " ") )                     ERROR STOP 35
   CLASS DEFAULT
     STOP 34
   END SELECT

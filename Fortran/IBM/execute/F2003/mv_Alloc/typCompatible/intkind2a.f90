@@ -48,8 +48,8 @@
       associate ( x => p1%b1 )
           associate ( y => p1%a1 )
               call move_alloc(x%i1, y%j1)
-              if ( allocated(x%i1) ) stop 21
-              if ( .not. allocated(y%j1) ) stop 23
+              if ( allocated(x%i1) ) error stop 21
+              if ( .not. allocated(y%j1) ) error stop 23
           end associate
       end associate
 

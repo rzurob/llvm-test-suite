@@ -51,15 +51,15 @@ program acetdt43
 
   darr  = [derived:: derived(3)]
 
-  if (darr(1) % val /= -3 .or. darr(1) % v2 /= -6) stop 2
+  if (darr(1) % val /= -3 .or. darr(1) % v2 /= -6) error stop 2
 
   darr  = [derived:: (derived(3), i=1,1)]
 
-  if (darr(1) % val /= -3 .or. darr(1) % v2 /= -6) stop 3
+  if (darr(1) % val /= -3 .or. darr(1) % v2 /= -6) error stop 3
 
   darr  = [derived:: (derived(i), i=1,1)]
 
-  if (darr(1) % val /= -1 .or. darr(1) % v2 /= -6) stop 4
+  if (darr(1) % val /= -1 .or. darr(1) % v2 /= -6) error stop 4
 
 contains
 

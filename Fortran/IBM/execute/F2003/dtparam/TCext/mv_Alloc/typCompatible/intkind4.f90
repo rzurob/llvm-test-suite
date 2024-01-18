@@ -54,8 +54,8 @@ use m
                        , base(20,4)( (/ (i, i=-9,-1,2) /) )  ))
           call sub(c)
 
-          if ( allocated( c%i1) ) stop 21
-          if ( .not. allocated(c%b%i1) ) stop 23
+          if ( allocated( c%i1) ) error stop 21
+          if ( .not. allocated(c%b%i1) ) error stop 23
 
           print *, c%b%i1
           end

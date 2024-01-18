@@ -34,7 +34,7 @@ program main
 
     call sub(p2)
 
-    if ( any (p1 .ne. (/3,5,7,9,11,13,17,19,23/))) stop 11
+    if ( any (p1 .ne. (/3,5,7,9,11,13,17,19,23/))) error stop 11
 
     contains
         subroutine sub(x)

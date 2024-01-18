@@ -21,9 +21,9 @@ program d361150
   open(10,file='d361150.dat')
   read(10,*) x1,x2,x3
 
-  if(.not. precision_x8(x1,(1.2_4,1.2_4)))     stop 1
-  if(.not. precision_x6(x2,(1.2_8,1.2_8)))     stop 2
-  if(.not. precision_x3(x3,(1.2_16,1.2_16)))   stop 3
+  if(.not. precision_x8(x1,(1.2_4,1.2_4)))     error stop 1
+  if(.not. precision_x6(x2,(1.2_8,1.2_8)))     error stop 2
+  if(.not. precision_x3(x3,(1.2_16,1.2_16)))   error stop 3
 
   close(10)
 

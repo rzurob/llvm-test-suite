@@ -41,9 +41,9 @@ end module
 
 	bp(0:0) => tmp_P
 
-	if ( .not. associated(bp, tmp_p)) stop 2
-	if ( any(lbound(bp,1) .ne. (/0/))) stop 4
-	if ( any(lbound(bp,1) .ne. (/0/))) stop 6
+	if ( .not. associated(bp, tmp_p)) error stop 2
+	if ( any(lbound(bp,1) .ne. (/0/))) error stop 4
+	if ( any(lbound(bp,1) .ne. (/0/))) error stop 6
 
 	call sub
 
@@ -63,13 +63,13 @@ end module
 
 	tmp_p(2:) => p
 
-	if ( .not. associated(tmp_p, p)) stop 12
-	if ( any(lbound(tmp_p,1) .ne. (/2/))) stop 14
-	if ( any(lbound(tmp_p,1) .ne. (/2/))) stop 16
+	if ( .not. associated(tmp_p, p)) error stop 12
+	if ( any(lbound(tmp_p,1) .ne. (/2/))) error stop 14
+	if ( any(lbound(tmp_p,1) .ne. (/2/))) error stop 16
 
-	if ( .not. associated(tmp_p(2)%p, rtar(::2))) stop 29
-	if ( any(lbound(tmp_p(2)%p,1) .ne. (/8/))) stop 31
-	if ( any(ubound(tmp_p(2)%p,1) .ne. (/ 17/))) stop 33
-	if ( .not. precision_r4( -tmp_p(2)%p,(/(real(-i*2.0,8),i=1,20,2)/))) stop 37
+	if ( .not. associated(tmp_p(2)%p, rtar(::2))) error stop 29
+	if ( any(lbound(tmp_p(2)%p,1) .ne. (/8/))) error stop 31
+	if ( any(ubound(tmp_p(2)%p,1) .ne. (/ 17/))) error stop 33
+	if ( .not. precision_r4( -tmp_p(2)%p,(/(real(-i*2.0,8),i=1,20,2)/))) error stop 37
 
  end subroutine

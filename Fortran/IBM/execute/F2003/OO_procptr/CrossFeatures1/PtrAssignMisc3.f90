@@ -57,16 +57,16 @@
   PROCEDURE(ProcPtr3), POINTER :: ProcPtr4
 
   ProcPtr1 => ModFun
-    IF ( ProcPtr1() .NE. "mod" )  STOP 11
+    IF ( ProcPtr1() .NE. "mod" )  ERROR STOP 11
 
   ProcPtr2 => ExtFun
-    IF (  ProcPtr2() .NE. "ext" ) STOP 21
+    IF (  ProcPtr2() .NE. "ext" ) ERROR STOP 21
 
   ProcPtr3 => ModFun
-    IF ( ProcPtr3() .NE. "mod" )  STOP 31
+    IF ( ProcPtr3() .NE. "mod" )  ERROR STOP 31
 
   ProcPtr4 => ExtFun
-    IF ( ProcPtr4() .NE. "ext" )  STOP 41
+    IF ( ProcPtr4() .NE. "ext" )  ERROR STOP 41
 
 
   END

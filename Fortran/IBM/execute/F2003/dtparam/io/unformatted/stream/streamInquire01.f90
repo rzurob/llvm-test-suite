@@ -184,33 +184,33 @@ PROGRAM streamInquire01
 
     b4Len = b4%DumpB( )
     PRINT *, 'b4%DumpB( ) =', b4Len
-    IF (b4Len /= 20) STOP 10
+    IF (b4Len /= 20) ERROR STOP 10
 
     e4Len = e4%DumpE( )
     PRINT *, 'e4%DumpE( ) =', e4Len
-    IF (e4Len /= 20) STOP 11
+    IF (e4Len /= 20) ERROR STOP 11
 
     PRINT *
 
 
     b8Len = b8%DumpB( )
     PRINT *, 'b8%DumpB( ) =', b8Len
-    IF (b8Len /= 40) STOP 20
+    IF (b8Len /= 40) ERROR STOP 20
 
     e8Len = e8%DumpE( )
     PRINT *, 'e8%DumpE( ) =', e8Len
-    IF (e8Len /= 40) STOP 21
+    IF (e8Len /= 40) ERROR STOP 21
 
     PRINT *
 
 
     b16Len = b16%DumpB( )
     PRINT *, 'b16%DumpB( ) =', b16Len
-    IF (b16Len /= 80) STOP 30
+    IF (b16Len /= 80) ERROR STOP 30
 
     e16Len = e16%DumpE( )
     PRINT *, 'e16%DumpE( ) =', e16Len
-    IF (e16Len /= 80) STOP 31
+    IF (e16Len /= 80) ERROR STOP 31
 
     PRINT *
 

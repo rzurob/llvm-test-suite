@@ -45,10 +45,10 @@
   ENTRY Sub1(n)
 
 
-  IF (b%l            .NE. 4)  STOP 11
-  IF (SIZE(b(1)%arr) .NE. 4)  STOP 12
-  IF (SIZE(b)        .NE. 4)  STOP 13
-  IF (ANY(b(1)%arr   .NE. -1 ))  STOP 14
+  IF (b%l            .NE. 4)  ERROR STOP 11
+  IF (SIZE(b(1)%arr) .NE. 4)  ERROR STOP 12
+  IF (SIZE(b)        .NE. 4)  ERROR STOP 13
+  IF (ANY(b(1)%arr   .NE. -1 ))  ERROR STOP 14
 
   END SUBROUTINE
 

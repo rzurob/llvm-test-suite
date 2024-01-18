@@ -46,18 +46,18 @@
 
 		call move_alloc(from, to)
 
-		if ( allocated(from) ) stop 11
-		if ( .not. allocated(to) ) stop 13
+		if ( allocated(from) ) error stop 11
+		if ( .not. allocated(to) ) error stop 13
 
 		select type(to)
 		    type is (child(*,4))
-			if ( .not. associated(ptr)) stop 15
+			if ( .not. associated(ptr)) error stop 15
 		    class default
 			stop 17
 		end select
 
-		if ( any(lbound(ptr) .ne. (/1,4,8,16/))) stop 17
-		If ( any(ubound(ptr) .ne. (/2,5,9,17 /))) stop 21
+		if ( any(lbound(ptr) .ne. (/1,4,8,16/))) error stop 17
+		If ( any(ubound(ptr) .ne. (/2,5,9,17 /))) error stop 21
 
 		select type(ptr)
 	  	    type is (child(*,4))

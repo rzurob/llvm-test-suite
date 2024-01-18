@@ -41,9 +41,9 @@ program d357263
 
   to1=from1%procptr(b1)
 
-  if(.not. allocated(to1))                       stop 1
-  if(to1%l1 /= 2)                                stop 2
-  if(.not. associated(to1%procptr,fun2))         stop 3
+  if(.not. allocated(to1))                       error stop 1
+  if(to1%l1 /= 2)                                error stop 2
+  if(.not. associated(to1%procptr,fun2))         error stop 3
 
 end program
 

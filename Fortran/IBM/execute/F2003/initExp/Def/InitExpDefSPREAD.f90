@@ -67,56 +67,56 @@
   COMPLEX(KIND(SPREAD(SZ82, 1, NC11))) :: TZ84(SIZE(SPREAD(SZ82(1), 1, NCZ81)),6) = SPREAD(SZ82, 1, NCZ81)
 
 
-  IF(  KIND(TI11)     .NE. 1 )      STOP 11
-  IF(  TI11           .NE. 0 )      STOP 12
-  IF(  KIND(TI12)     .NE. 1 )      STOP 13
-  IF(  SIZE(TI12)     .NE. NC11 )   STOP 14
-  IF(  ANY(TI12       .NE. 6 ))     STOP 15
-  IF(  KIND(TI13)     .NE. 1 )      STOP 16
-  IF(  ANY(TI13       .NE. (/0,6/))) STOP 17
-  IF(  KIND(TI14)     .NE. 1 )      STOP 18
-  IF(  SIZE(TI14,1) .NE. NC11 )   STOP 19
+  IF(  KIND(TI11)     .NE. 1 )      ERROR STOP 11
+  IF(  TI11           .NE. 0 )      ERROR STOP 12
+  IF(  KIND(TI12)     .NE. 1 )      ERROR STOP 13
+  IF(  SIZE(TI12)     .NE. NC11 )   ERROR STOP 14
+  IF(  ANY(TI12       .NE. 6 ))     ERROR STOP 15
+  IF(  KIND(TI13)     .NE. 1 )      ERROR STOP 16
+  IF(  ANY(TI13       .NE. (/0,6/))) ERROR STOP 17
+  IF(  KIND(TI14)     .NE. 1 )      ERROR STOP 18
+  IF(  SIZE(TI14,1) .NE. NC11 )   ERROR STOP 19
   DO I=1,NC11
-    IF(  ANY(TI14(I,:)  .NE. S12 )) STOP 10
+    IF(  ANY(TI14(I,:)  .NE. S12 )) ERROR STOP 10
   END DO
 
-  IF(  KIND(TL21)     .NE. 2 )           STOP 21
-  IF(  TL21           .NE. 0 )           STOP 22
-  IF(  KIND(TL22)     .NE. 2 )           STOP 23
-  IF(  SIZE(TL22)     .NE. NCL21 )       STOP 24
-  IF(  ANY(TL22       .NEQV. .TRUE. ))   STOP 25
-  IF(  KIND(TL23)     .NE. 2 )           STOP 26
-  IF(  ANY(TL23       .NE. (/0,6/) ))    STOP 27
-  IF(  KIND(TL24)     .NE. 2 )           STOP 28
-  IF(  SIZE(TL24,1)   .NE. NCL21 )       STOP 29
+  IF(  KIND(TL21)     .NE. 2 )           ERROR STOP 21
+  IF(  TL21           .NE. 0 )           ERROR STOP 22
+  IF(  KIND(TL22)     .NE. 2 )           ERROR STOP 23
+  IF(  SIZE(TL22)     .NE. NCL21 )       ERROR STOP 24
+  IF(  ANY(TL22       .NEQV. .TRUE. ))   ERROR STOP 25
+  IF(  KIND(TL23)     .NE. 2 )           ERROR STOP 26
+  IF(  ANY(TL23       .NE. (/0,6/) ))    ERROR STOP 27
+  IF(  KIND(TL24)     .NE. 2 )           ERROR STOP 28
+  IF(  SIZE(TL24,1)   .NE. NCL21 )       ERROR STOP 29
   DO I=1,NC11
-    IF(  ANY(TL24(I,:)  .NEQV. SL22 ))   STOP 20
+    IF(  ANY(TL24(I,:)  .NEQV. SL22 ))   ERROR STOP 20
   END DO
 
-  IF(  KIND(TR41)     .NE. 4 )      STOP 31
-  IF(  TR41           .NE. 0 )      STOP 32
-  IF(  KIND(TR42)     .NE. 4 )      STOP 33
-  IF(  SIZE(TR42)     .NE. NCR41 )  STOP 34
-  IF(  ANY(TR42       .NE. 6 ))     STOP 35
-  IF(  KIND(TR43)     .NE. 4 )      STOP 36
-  IF(  ANY(TR43       .NE. (/0,6/)))STOP 37
-  IF(  KIND(TR44)     .NE. 4 )      STOP 38
-  IF(  SIZE(TR44,1)   .NE. NCR41 )  STOP 39
+  IF(  KIND(TR41)     .NE. 4 )      ERROR STOP 31
+  IF(  TR41           .NE. 0 )      ERROR STOP 32
+  IF(  KIND(TR42)     .NE. 4 )      ERROR STOP 33
+  IF(  SIZE(TR42)     .NE. NCR41 )  ERROR STOP 34
+  IF(  ANY(TR42       .NE. 6 ))     ERROR STOP 35
+  IF(  KIND(TR43)     .NE. 4 )      ERROR STOP 36
+  IF(  ANY(TR43       .NE. (/0,6/)))ERROR STOP 37
+  IF(  KIND(TR44)     .NE. 4 )      ERROR STOP 38
+  IF(  SIZE(TR44,1)   .NE. NCR41 )  ERROR STOP 39
   DO I=1,NC11
-    IF(  ANY(TR44(I,:)  .NE. SR42 ))STOP 30
+    IF(  ANY(TR44(I,:)  .NE. SR42 ))ERROR STOP 30
   END DO
 
-  IF(  KIND(TZ81)     .NE. 8 )      STOP 41
-  IF(  TZ81           .NE. 0 )      STOP 42
-  IF(  KIND(TZ82)     .NE. 8 )      STOP 43
-  IF(  SIZE(TZ82)     .NE. 6 )      STOP 44
-  IF(  ANY(TZ82       .NE. SZ81 ))  STOP 45
-  IF(  KIND(TZ83)     .NE. 8 )      STOP 46
-  IF(  ANY(TZ83       .NE. (/0,6/)))STOP 47
-  IF(  KIND(TZ84)     .NE. 8 )      STOP 48
-  IF(  SIZE(TZ84,1) .NE. NCZ81 )    STOP 49
+  IF(  KIND(TZ81)     .NE. 8 )      ERROR STOP 41
+  IF(  TZ81           .NE. 0 )      ERROR STOP 42
+  IF(  KIND(TZ82)     .NE. 8 )      ERROR STOP 43
+  IF(  SIZE(TZ82)     .NE. 6 )      ERROR STOP 44
+  IF(  ANY(TZ82       .NE. SZ81 ))  ERROR STOP 45
+  IF(  KIND(TZ83)     .NE. 8 )      ERROR STOP 46
+  IF(  ANY(TZ83       .NE. (/0,6/)))ERROR STOP 47
+  IF(  KIND(TZ84)     .NE. 8 )      ERROR STOP 48
+  IF(  SIZE(TZ84,1) .NE. NCZ81 )    ERROR STOP 49
   DO I=1,NC11
-    IF(  ANY(TZ84(I,:)  .NE. SZ82 ))STOP 40
+    IF(  ANY(TZ84(I,:)  .NE. SZ82 ))ERROR STOP 40
   END DO
 
 

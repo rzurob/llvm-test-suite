@@ -68,34 +68,34 @@
 
   SUBROUTINE ModSub1(Arg)
   CLASS(DT1(1,*)) :: Arg
-    IF ( Arg%K             .NE. Arg%KK )          STOP 11
-    IF ( Arg%K             .NE. KIND(Arg%KK) )    STOP 12
-    IF ( ANY(SHAPE(Arg%LL) .NE. (/Arg%L, Arg%L/)))STOP 13
-    IF ( ANY(Arg%LL        .NE. 1) )              STOP 14
+    IF ( Arg%K             .NE. Arg%KK )          ERROR STOP 11
+    IF ( Arg%K             .NE. KIND(Arg%KK) )    ERROR STOP 12
+    IF ( ANY(SHAPE(Arg%LL) .NE. (/Arg%L, Arg%L/)))ERROR STOP 13
+    IF ( ANY(Arg%LL        .NE. 1) )              ERROR STOP 14
   END SUBROUTINE
 
   SUBROUTINE ModSub2(Arg)
   CLASS(DT2(2,*)) :: Arg
-    IF ( Arg%K             .NE. Arg%KK )          STOP 21
-    IF ( Arg%K             .NE. KIND(Arg%KK) )    STOP 22
-    IF ( ANY(SHAPE(Arg%LL) .NE. (/Arg%L, Arg%L/)))STOP 23
-    IF ( ANY(Arg%LL        .NE. 1) )              STOP 24
+    IF ( Arg%K             .NE. Arg%KK )          ERROR STOP 21
+    IF ( Arg%K             .NE. KIND(Arg%KK) )    ERROR STOP 22
+    IF ( ANY(SHAPE(Arg%LL) .NE. (/Arg%L, Arg%L/)))ERROR STOP 23
+    IF ( ANY(Arg%LL        .NE. 1) )              ERROR STOP 24
   END SUBROUTINE
 
   SUBROUTINE ModSub4(Arg)
   CLASS(DT4(4,*)) :: Arg
-    IF ( Arg%K             .NE. Arg%KK )          STOP 41
-    IF ( Arg%K             .NE. KIND(Arg%KK) )    STOP 42
-    IF ( ANY(SHAPE(Arg%LL) .NE. (/Arg%L, Arg%L/)))STOP 43
-    IF ( ANY(Arg%LL        .NE. 1) )              STOP 44
+    IF ( Arg%K             .NE. Arg%KK )          ERROR STOP 41
+    IF ( Arg%K             .NE. KIND(Arg%KK) )    ERROR STOP 42
+    IF ( ANY(SHAPE(Arg%LL) .NE. (/Arg%L, Arg%L/)))ERROR STOP 43
+    IF ( ANY(Arg%LL        .NE. 1) )              ERROR STOP 44
   END SUBROUTINE
 
   SUBROUTINE ModSub8(Arg)
   CLASS(DT8(8,*)) :: Arg
-    IF ( Arg%K             .NE. Arg%KK )          STOP 81
-    IF ( Arg%K             .NE. KIND(Arg%KK) )    STOP 82
-    IF ( ANY(SHAPE(Arg%LL) .NE. (/Arg%L, Arg%L/)))STOP 83
-    IF ( ANY(Arg%LL        .NE. 1) )              STOP 84
+    IF ( Arg%K             .NE. Arg%KK )          ERROR STOP 81
+    IF ( Arg%K             .NE. KIND(Arg%KK) )    ERROR STOP 82
+    IF ( ANY(SHAPE(Arg%LL) .NE. (/Arg%L, Arg%L/)))ERROR STOP 83
+    IF ( ANY(Arg%LL        .NE. 1) )              ERROR STOP 84
   END SUBROUTINE
 
   END MODULE

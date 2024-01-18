@@ -45,8 +45,8 @@ program main
 
        call sub(x)
 
-       if ( .not. allocated(x) ) stop 21
-       if ( allocated(a1) ) stop 23
+       if ( .not. allocated(x) ) error stop 21
+       if ( allocated(a1) ) error stop 23
 
        write (6, 100) x(1,1,1,1,1)
 

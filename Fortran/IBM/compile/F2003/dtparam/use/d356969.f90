@@ -28,8 +28,8 @@
 program d356969
   implicit none
 
-  if (len(fun(3)) /= 3) stop 10
-  if (fun(5) /= 'abcde') stop 11
+  if (len(fun(3)) /= 3) error stop 10
+  if (fun(5) /= 'abcde') error stop 11
 
 contains
 

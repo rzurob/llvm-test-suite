@@ -37,21 +37,21 @@
 
                call ieee_get_flag(ieee_all, flag_values)
                do k = 1, 5
-                  if (flag_values(k) .neqv. .false. ) stop 10
+                  if (flag_values(k) .neqv. .false. ) error stop 10
                enddo
 
                call ieee_get_status(status_value)
                call ieee_set_rounding_mode(rt_nearest)
                call ieee_get_rounding_mode(rtype)
-               if (rtype /= rt_nearest) stop 15
+               if (rtype /= rt_nearest) error stop 15
                yr = ieee_rint(1.1)
-               if (yr /= 1.0) stop 16
+               if (yr /= 1.0) error stop 16
                call ieee_set_status(status_value)
 
                call set_fpscr_flags(flags(1))
                call clr_fpscr_flags(flags(5))
-               if ( get_fpscr_flags(flags(1)) .eq. 0 ) stop 17
-               if ( get_fpscr_flags(flags(5)) .ne. 0 ) stop 18
+               if ( get_fpscr_flags(flags(1)) .eq. 0 ) error stop 17
+               if ( get_fpscr_flags(flags(5)) .ne. 0 ) error stop 18
 
             end subroutine sub1
 
@@ -63,21 +63,21 @@
 
                call ieee_get_flag(ieee_all, flag_values)
                do k = 1, 5
-                  if (flag_values(k) .neqv. .false. ) stop 30
+                  if (flag_values(k) .neqv. .false. ) error stop 30
                enddo
 
                call ieee_get_status(status_value)
                call ieee_set_rounding_mode(rt_nearest)
                call ieee_get_rounding_mode(rtype)
-               if (rtype /= rt_nearest) stop 35
+               if (rtype /= rt_nearest) error stop 35
                yr = ieee_rint(1.1)
-               if (yr /= 1.0) stop 36
+               if (yr /= 1.0) error stop 36
                call ieee_set_status(status_value)
 
                call set_fpscr_flags(flags(1))
                call clr_fpscr_flags(flags(5))
-               if ( get_fpscr_flags(flags(1)) .eq. 0 ) stop 37
-               if ( get_fpscr_flags(flags(5)) .ne. 0 ) stop 38
+               if ( get_fpscr_flags(flags(1)) .eq. 0 ) error stop 37
+               if ( get_fpscr_flags(flags(5)) .ne. 0 ) error stop 38
 
                fun1=.true.
             end function fun1
@@ -89,5 +89,5 @@
       program xlf_fp_util
          use mod1
          call sub1()
-         if ( .not. fun1() ) stop 20
+         if ( .not. fun1() ) error stop 20
       end program

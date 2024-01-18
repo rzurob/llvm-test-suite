@@ -22,7 +22,7 @@ contains
 subroutine fun(arg1, arg2)
 integer, intent(in) :: arg1, arg2
 type(base(l=arg1,k=4, m=arg2)) :: c
-if (c%l /= 10) stop 1
+if (c%l /= 10) error stop 1
 end  subroutine
 end
 

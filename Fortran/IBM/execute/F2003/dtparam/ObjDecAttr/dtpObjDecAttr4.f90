@@ -61,45 +61,45 @@
   TYPE(DT1(1,1,K1=2,L1=L)), DIMENSION(N:2*N-1,N:2*N-1) :: P3
   INTEGER :: I, J
 
-  IF ( ANY( ubound(P1) .NE. N )) STOP 60
-  IF ( ANY( LBOUND(P2) .NE. N )) STOP 61
-  IF ( ANY( LBOUND(P3) .NE. N )) STOP 62
+  IF ( ANY( ubound(P1) .NE. N )) ERROR STOP 60
+  IF ( ANY( LBOUND(P2) .NE. N )) ERROR STOP 61
+  IF ( ANY( LBOUND(P3) .NE. N )) ERROR STOP 62
 
-  IF ( SIZE( P1 ) .NE. N*N ) STOP 70
-  IF ( SIZE( P2 ) .NE. N*N ) STOP 71
-  IF ( SIZE( P3 ) .NE. N*N ) STOP 72
+  IF ( SIZE( P1 ) .NE. N*N ) ERROR STOP 70
+  IF ( SIZE( P2 ) .NE. N*N ) ERROR STOP 71
+  IF ( SIZE( P3 ) .NE. N*N ) ERROR STOP 72
 
   DO I = 1, N
   DO J = 1, N
 
-    IF ( P1(I,J)%K0               .NE.   0          ) STOP 11
-    IF ( P1(I,J)%L0               .NE.   0          ) STOP 12
+    IF ( P1(I,J)%K0               .NE.   0          ) ERROR STOP 11
+    IF ( P1(I,J)%L0               .NE.   0          ) ERROR STOP 12
 
-    IF ( P2(n-1+I,n-1+J)%K0               .NE.   2          ) STOP 21
-    IF ( P2(n-1+I,n-1+J)%L0               .NE.   2          ) STOP 22
-    IF ( P2(n-1+I,n-1+J)%K1%KIND          .NE.   2          ) STOP 23
-    IF ( P2(n-1+I,n-1+J)%L1%KIND          .NE.   2          ) STOP 24
-    IF ( P2(n-1+I,n-1+J)%K1               .NE.   4          ) STOP 25
-    IF ( P2(n-1+I,n-1+J)%L1               .NE.   4          ) STOP 26
-    IF ( P2(n-1+I,n-1+J)%I%KIND           .NE.   4          ) STOP 27
-    IF ( SIZE(P2(n-1+I,n-1+J)%I)          .NE.   1          ) STOP 28
-    IF ( ANY(P2(n-1+I,n-1+J)%I            .NE.  -1        ) ) STOP 29
-    IF ( P2(n-1+I,n-1+J)%C%LEN            .NE.   2          ) STOP 30
-    IF ( SIZE(P2(n-1+I,n-1+J)%C)          .NE.   1          ) STOP 31
-    IF ( ANY(P2(n-1+I,n-1+J)%C            .NE.   "X"      ) ) STOP 32
+    IF ( P2(n-1+I,n-1+J)%K0               .NE.   2          ) ERROR STOP 21
+    IF ( P2(n-1+I,n-1+J)%L0               .NE.   2          ) ERROR STOP 22
+    IF ( P2(n-1+I,n-1+J)%K1%KIND          .NE.   2          ) ERROR STOP 23
+    IF ( P2(n-1+I,n-1+J)%L1%KIND          .NE.   2          ) ERROR STOP 24
+    IF ( P2(n-1+I,n-1+J)%K1               .NE.   4          ) ERROR STOP 25
+    IF ( P2(n-1+I,n-1+J)%L1               .NE.   4          ) ERROR STOP 26
+    IF ( P2(n-1+I,n-1+J)%I%KIND           .NE.   4          ) ERROR STOP 27
+    IF ( SIZE(P2(n-1+I,n-1+J)%I)          .NE.   1          ) ERROR STOP 28
+    IF ( ANY(P2(n-1+I,n-1+J)%I            .NE.  -1        ) ) ERROR STOP 29
+    IF ( P2(n-1+I,n-1+J)%C%LEN            .NE.   2          ) ERROR STOP 30
+    IF ( SIZE(P2(n-1+I,n-1+J)%C)          .NE.   1          ) ERROR STOP 31
+    IF ( ANY(P2(n-1+I,n-1+J)%C            .NE.   "X"      ) ) ERROR STOP 32
 
-    IF ( P3(n-1+I,n-1+J)%K0               .NE.   1          ) STOP 41
-    IF ( P3(n-1+I,n-1+J)%L0               .NE.   1          ) STOP 42
-    IF ( P3(n-1+I,n-1+J)%K1%KIND          .NE.   1          ) STOP 43
-    IF ( P3(n-1+I,n-1+J)%L1%KIND          .NE.   1          ) STOP 44
-    IF ( P3(n-1+I,n-1+J)%K1               .NE.   2          ) STOP 45
-    IF ( P3(n-1+I,n-1+J)%L1               .NE.   2          ) STOP 46
-    IF ( P3(n-1+I,n-1+J)%I%KIND           .NE.   2          ) STOP 47
-    IF ( SIZE(P3(n-1+I,n-1+J)%I)          .NE.   2          ) STOP 48
-    IF ( ANY(P3(n-1+I,n-1+J)%I            .NE.  -1        ) ) STOP 49
-    IF ( P3(n-1+I,n-1+J)%C%LEN            .NE.   1          ) STOP 50
-    IF ( SIZE(P3(n-1+I,n-1+J)%C)          .NE.   2          ) STOP 51
-    IF ( ANY(P3(n-1+I,n-1+J)%C            .NE.   "X"      ) ) STOP 52
+    IF ( P3(n-1+I,n-1+J)%K0               .NE.   1          ) ERROR STOP 41
+    IF ( P3(n-1+I,n-1+J)%L0               .NE.   1          ) ERROR STOP 42
+    IF ( P3(n-1+I,n-1+J)%K1%KIND          .NE.   1          ) ERROR STOP 43
+    IF ( P3(n-1+I,n-1+J)%L1%KIND          .NE.   1          ) ERROR STOP 44
+    IF ( P3(n-1+I,n-1+J)%K1               .NE.   2          ) ERROR STOP 45
+    IF ( P3(n-1+I,n-1+J)%L1               .NE.   2          ) ERROR STOP 46
+    IF ( P3(n-1+I,n-1+J)%I%KIND           .NE.   2          ) ERROR STOP 47
+    IF ( SIZE(P3(n-1+I,n-1+J)%I)          .NE.   2          ) ERROR STOP 48
+    IF ( ANY(P3(n-1+I,n-1+J)%I            .NE.  -1        ) ) ERROR STOP 49
+    IF ( P3(n-1+I,n-1+J)%C%LEN            .NE.   1          ) ERROR STOP 50
+    IF ( SIZE(P3(n-1+I,n-1+J)%C)          .NE.   2          ) ERROR STOP 51
+    IF ( ANY(P3(n-1+I,n-1+J)%C            .NE.   "X"      ) ) ERROR STOP 52
 
   END DO
   END DO

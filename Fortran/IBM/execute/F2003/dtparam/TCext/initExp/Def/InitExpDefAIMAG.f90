@@ -65,22 +65,22 @@
   PARAMETER  (  Arr1=(/(DT1(20,4)(Z=(/Z,Z,Z,Z,Z/)), I=1,5)/) )
 
 
-  IF (X2             .NE. 2   )                       STOP 11
-  IF (X3             .NE. 3   )                       STOP 12
-  IF (X4             .NE. 4   )                       STOP 13
-  IF (X10            .NE. 10  )                       STOP 14
+  IF (X2             .NE. 2   )                       ERROR STOP 11
+  IF (X3             .NE. 3   )                       ERROR STOP 12
+  IF (X4             .NE. 4   )                       ERROR STOP 13
+  IF (X10            .NE. 10  )                       ERROR STOP 14
 
 
-  IF (ANY(LBOUND(T1%Z)   .NE. (/1/)) )                STOP 21
-  IF (ANY(UBOUND(T1%Z)   .NE. (/5/)) )                STOP 22
-  !IF (ANY(T1%Z          .NE. (/((AIMAG(Z),AIMAG(Z)), I=One,X2+X3)/)) )     STOP 23
-  IF (ANY(T1%Z           .NE. (/((AIMAG(Z),AIMAG(Z)), I=1,5)/)) )           STOP 24
+  IF (ANY(LBOUND(T1%Z)   .NE. (/1/)) )                ERROR STOP 21
+  IF (ANY(UBOUND(T1%Z)   .NE. (/5/)) )                ERROR STOP 22
+  !IF (ANY(T1%Z          .NE. (/((AIMAG(Z),AIMAG(Z)), I=One,X2+X3)/)) )     ERROR STOP 23
+  IF (ANY(T1%Z           .NE. (/((AIMAG(Z),AIMAG(Z)), I=1,5)/)) )           ERROR STOP 24
 
 
-  IF (ANY(LBOUND(Arr1)   .NE. (/1/)  ))                STOP 31
-  IF (ANY(UBOUND(Arr1)   .NE. (/5/) ))                 STOP 32
+  IF (ANY(LBOUND(Arr1)   .NE. (/1/)  ))                ERROR STOP 31
+  IF (ANY(UBOUND(Arr1)   .NE. (/5/) ))                 ERROR STOP 32
   DO I=1, 5
-    IF (ANY(Arr1(I)%Z    .NE. Z ))                     STOP 33
+    IF (ANY(Arr1(I)%Z    .NE. Z ))                     ERROR STOP 33
   END DO
 
   END

@@ -49,7 +49,7 @@
 
   ProcPtr => ExtFun
   CALL IntSub()
-  IF ( ASSOCIATED(ProcPtr) ) STOP 13
+  IF ( ASSOCIATED(ProcPtr) ) ERROR STOP 13
 
 
   CONTAINS
@@ -62,7 +62,7 @@
 
   SELECT TYPE ( As => ProcPtr(V))
   TYPE IS (INTEGER)
-    IF ( ANY(As .NE. (/(I, I=1,1025)/)) ) STOP 11
+    IF ( ANY(As .NE. (/(I, I=1,1025)/)) ) ERROR STOP 11
   CLASS DEFAULT
     STOP 12
   END SELECT

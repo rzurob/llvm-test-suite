@@ -50,7 +50,7 @@
   SUBROUTINE S()
 
     ProcPtr => F  ! Test if affect the definition of proc ptr component
-    IF ( ProcPtr() .NE. 1 ) STOP 11
+    IF ( ProcPtr() .NE. 1 ) ERROR STOP 11
 
     L = .TRUE.
     PRINT*, "In Sub"
@@ -66,17 +66,17 @@
   L = .FALSE.
   V%PRocPtr => S
   CALL V%ProcPtr()
-  IF( .NOT. L) STOP 11
+  IF( .NOT. L) ERROR STOP 11
 
   L = .FALSE.
   U(1)%ProcPtr => S
   CALL U(1)%ProcPtr()
-  IF( .NOT. L) STOP 12
+  IF( .NOT. L) ERROR STOP 12
 
   L = .FALSE.
   W%ProcPtr => F
   PRINT*, W%ProcPtr()
-  IF( .NOT. L) STOP 13
+  IF( .NOT. L) ERROR STOP 13
 
 END
 

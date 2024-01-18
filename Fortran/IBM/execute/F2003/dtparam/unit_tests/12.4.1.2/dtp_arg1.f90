@@ -38,18 +38,18 @@ rest1 = aptr%element(1, 2)
 rest2 = aptr%element
 
 ! - verify type parameter information
-if (aptr%d .ne. 4) stop 1
-if (any(ubound(aptr%element) .ne. (/4, 2/))) stop 2
+if (aptr%d .ne. 4) error stop 1
+if (any(ubound(aptr%element) .ne. (/4, 2/))) error stop 2
 
 
 ! - verify the component values
-if (rest1 .ne. 22) stop 4
+if (rest1 .ne. 22) error stop 4
 
 rp = reshape((/11, 11, 11, 11, 22, 22, 22, 22/), (/4, 2/))
-if (any(aptr%element .ne. rp)) stop 5
+if (any(aptr%element .ne. rp)) error stop 5
 
 rp1 = reshape((/11, 11, 11, 11, 22, 22, 22, 22/), (/2, 4/))
-if (any(reshape(aptr%element, (/2, 4/)) .ne. rp1)) stop 6
+if (any(reshape(aptr%element, (/2, 4/)) .ne. rp1)) error stop 6
 
-if (aptr%avar .ne. 102) stop 7
+if (aptr%avar .ne. 102) error stop 7
 end

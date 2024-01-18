@@ -53,20 +53,20 @@
 
   ALLOCATE(T(1), SOURCE=(/Seq2(4, 4)((/Seq1(4, 4)(Seq0(4, 4)("1234"))/))/))
 
-  IF ( .NOT. ALLOCATED(T) )       STOP 11
-  IF ( ANY(SHAPE(T) .NE. (/1/)))  STOP 12
-  IF ( T%K          .NE. 4 )      STOP 13
-  IF ( T%L          .NE. 4 )      STOP 14
+  IF ( .NOT. ALLOCATED(T) )       ERROR STOP 11
+  IF ( ANY(SHAPE(T) .NE. (/1/)))  ERROR STOP 12
+  IF ( T%K          .NE. 4 )      ERROR STOP 13
+  IF ( T%L          .NE. 4 )      ERROR STOP 14
 
-  IF ( ANY(SHAPE(T(1)%Comp) .NE. (/1/)))  STOP 21
-  IF ( T(1)%Comp%K      .NE. 4 )     STOP 22
-  IF ( T(1)%Comp%L      .NE. 4 )     STOP 23
+  IF ( ANY(SHAPE(T(1)%Comp) .NE. (/1/)))  ERROR STOP 21
+  IF ( T(1)%Comp%K      .NE. 4 )     ERROR STOP 22
+  IF ( T(1)%Comp%L      .NE. 4 )     ERROR STOP 23
 
-  IF ( T(1)%Comp(1)%Comp%K      .NE. 4 )     STOP 32
-  IF ( T(1)%Comp(1)%Comp%L      .NE. 4 )     STOP 33
+  IF ( T(1)%Comp(1)%Comp%K      .NE. 4 )     ERROR STOP 32
+  IF ( T(1)%Comp(1)%Comp%L      .NE. 4 )     ERROR STOP 33
 
-  IF ( LEN(T(1)%Comp(1)%Comp%Comp)   .NE. 4 )       STOP 42
-  IF ( T(1)%Comp(1)%Comp%Comp        .NE. "1234" )  STOP 43
+  IF ( LEN(T(1)%Comp(1)%Comp%Comp)   .NE. 4 )       ERROR STOP 42
+  IF ( T(1)%Comp(1)%Comp%Comp        .NE. "1234" )  ERROR STOP 43
 
   END
 

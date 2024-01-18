@@ -32,20 +32,20 @@ END MODULE
         INTEGER :: N, M
         TYPE(Child(KIND(c1%ptr%I1),c1%ptr%I1,KIND(c1%ptr%I1),2*c1%ptr%I1)) :: Obj
 
-         IF ( Obj%k1 .NE. N ) STOP 24
-         IF ( Obj%l1 .NE. M ) STOP 25
-         IF ( Obj%k2 .NE. N ) STOP 26
-         IF ( Obj%l2 .NE. 2*M ) STOP 27
-         IF ( SIZE(Obj%A1) .NE. M ) STOP 28
-         IF ( LEN(Obj%C1)  .NE. M ) STOP 29
+         IF ( Obj%k1 .NE. N ) ERROR STOP 24
+         IF ( Obj%l1 .NE. M ) ERROR STOP 25
+         IF ( Obj%k2 .NE. N ) ERROR STOP 26
+         IF ( Obj%l2 .NE. 2*M ) ERROR STOP 27
+         IF ( SIZE(Obj%A1) .NE. M ) ERROR STOP 28
+         IF ( LEN(Obj%C1)  .NE. M ) ERROR STOP 29
 
          print*, KIND(c1%ptr%I1),2*c1%ptr%I1
          print*, Obj%k2,Obj%l2
          ALLOCATE( Base(Obj%k2,Obj%l2) :: Obj%ptr )
          print*, Obj%ptr%k1, Obj%ptr%l1
-         IF ( Obj%ptr%k1 .NE.   N ) STOP 30
-         IF ( Obj%ptr%l1 .NE. 2*M ) STOP 31
-         IF ( SIZE(Obj%ptr%A1) .NE. 2*M ) STOP 32
-         IF ( LEN(Obj%ptr%C1)  .NE. 2*M ) STOP 33
+         IF ( Obj%ptr%k1 .NE.   N ) ERROR STOP 30
+         IF ( Obj%ptr%l1 .NE. 2*M ) ERROR STOP 31
+         IF ( SIZE(Obj%ptr%A1) .NE. 2*M ) ERROR STOP 32
+         IF ( LEN(Obj%ptr%C1)  .NE. 2*M ) ERROR STOP 33
       END SUBROUTINE Sub13
 END

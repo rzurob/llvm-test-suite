@@ -61,39 +61,39 @@
   TYPE(DT(4,       L=SIZE([(T1%I, I=1,100)])))  :: T3(1)
 
 
-  IF ( T0%K               .NE.   4          ) STOP 41
-  IF ( T0%L               .NE.   1          ) STOP 42
-  IF ( T0%KIND            .NE.   4          ) STOP 43
-  IF ( T0%LEN             .NE.   1          ) STOP 44
-  IF ( ANY( T0%I          .NE.   4        ) ) STOP 45
-  !IF ( T0%DT0%K           .NE.   4          ) STOP 48
-  !IF ( T0%DT0%L           .NE.   1          ) STOP 49
-  IF ( T0%K               .NE.   4          ) STOP 48
-  IF ( T0%L               .NE.   1          ) STOP 49
+  IF ( T0%K               .NE.   4          ) ERROR STOP 41
+  IF ( T0%L               .NE.   1          ) ERROR STOP 42
+  IF ( T0%KIND            .NE.   4          ) ERROR STOP 43
+  IF ( T0%LEN             .NE.   1          ) ERROR STOP 44
+  IF ( ANY( T0%I          .NE.   4        ) ) ERROR STOP 45
+  !IF ( T0%DT0%K           .NE.   4          ) ERROR STOP 48
+  !IF ( T0%DT0%L           .NE.   1          ) ERROR STOP 49
+  IF ( T0%K               .NE.   4          ) ERROR STOP 48
+  IF ( T0%L               .NE.   1          ) ERROR STOP 49
 
-  IF ( T1%K               .NE.   4          ) STOP 11
-  IF ( T1%L               .NE.   1          ) STOP 12
-  IF ( T1%KIND            .NE.   4          ) STOP 13
-  IF ( T1%LEN             .NE.   1          ) STOP 14
-  IF ( ANY( T1%I          .NE.   4        ) ) STOP 15
-  IF ( T1%T%K             .NE.   4          ) STOP 18
-  IF ( T1%T%L             .NE.   1          ) STOP 19
+  IF ( T1%K               .NE.   4          ) ERROR STOP 11
+  IF ( T1%L               .NE.   1          ) ERROR STOP 12
+  IF ( T1%KIND            .NE.   4          ) ERROR STOP 13
+  IF ( T1%LEN             .NE.   1          ) ERROR STOP 14
+  IF ( ANY( T1%I          .NE.   4        ) ) ERROR STOP 15
+  IF ( T1%T%K             .NE.   4          ) ERROR STOP 18
+  IF ( T1%T%L             .NE.   1          ) ERROR STOP 19
 
-  IF ( T2%K               .NE.   4          ) STOP 21
-  IF ( T2%L               .NE.   1          ) STOP 22
-  IF ( T2%KIND            .NE.   4          ) STOP 23
-  IF ( T2%LEN             .NE.   100        ) STOP 24
-  IF ( ANY( T2%I          .NE.   4        ) ) STOP 25
-  IF ( T2%T%K             .NE.   4          ) STOP 28
-  IF ( T2%T%L             .NE.   100        ) STOP 29
+  IF ( T2%K               .NE.   4          ) ERROR STOP 21
+  IF ( T2%L               .NE.   1          ) ERROR STOP 22
+  IF ( T2%KIND            .NE.   4          ) ERROR STOP 23
+  IF ( T2%LEN             .NE.   100        ) ERROR STOP 24
+  IF ( ANY( T2%I          .NE.   4        ) ) ERROR STOP 25
+  IF ( T2%T%K             .NE.   4          ) ERROR STOP 28
+  IF ( T2%T%L             .NE.   100        ) ERROR STOP 29
 
-  IF ( T3%K               .NE.   4          ) STOP 31
-  IF ( T3%L               .NE.   100        ) STOP 32
-  IF ( T3%KIND            .NE.   4          ) STOP 33
-  IF ( T3%LEN             .NE.   4          ) STOP 34
-  IF ( ANY( T3%I          .NE.   4        ) ) STOP 35
-  IF ( T3%T%K             .NE.   4          ) STOP 38
-  IF ( T3%T%L             .NE.   4          ) STOP 39
+  IF ( T3%K               .NE.   4          ) ERROR STOP 31
+  IF ( T3%L               .NE.   100        ) ERROR STOP 32
+  IF ( T3%KIND            .NE.   4          ) ERROR STOP 33
+  IF ( T3%LEN             .NE.   4          ) ERROR STOP 34
+  IF ( ANY( T3%I          .NE.   4        ) ) ERROR STOP 35
+  IF ( T3%T%K             .NE.   4          ) ERROR STOP 38
+  IF ( T3%T%L             .NE.   4          ) ERROR STOP 39
 
   END SUBROUTINE
 

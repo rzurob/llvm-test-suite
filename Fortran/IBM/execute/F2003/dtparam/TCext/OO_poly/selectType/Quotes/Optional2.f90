@@ -86,7 +86,7 @@
     SELECT TYPE (U => Arg)
     CLASS DEFAULT
 
-      IF ( .NOT. SAME_TYPE_AS(U, Arg))       STOP 30
+      IF ( .NOT. SAME_TYPE_AS(U, Arg))       ERROR STOP 30
 
     ASSOCIATE ( W => U )
 
@@ -94,33 +94,33 @@
 
       TYPE IS (INTEGER(KIND(IntPtr)))
         IntPtr => U
-        IF ( U   .NE. IntPtr )      STOP 35
-        IF ( KIND(U) .NE. KIND(IntPtr) ) STOP 36
+        IF ( U   .NE. IntPtr )      ERROR STOP 35
+        IF ( KIND(U) .NE. KIND(IntPtr) ) ERROR STOP 36
 
       TYPE IS (COMPLEX(KIND(CplxPtr)))
         CplxPtr => U
-        IF ( U   .NE. CplxPtr )     STOP 37
-        IF ( KIND(U) .NE. KIND(CplxPtr) )STOP 38
+        IF ( U   .NE. CplxPtr )     ERROR STOP 37
+        IF ( KIND(U) .NE. KIND(CplxPtr) )ERROR STOP 38
 
       TYPE IS (REAL(KIND(RPtr)))
         RPtr => U
-        IF ( U   .NE. RPtr )       STOP 37
-        IF ( KIND(U) .NE. KIND(RPtr) )  STOP 38
+        IF ( U   .NE. RPtr )       ERROR STOP 37
+        IF ( KIND(U) .NE. KIND(RPtr) )  ERROR STOP 38
 
       TYPE IS (LOGICAL(KIND(LPtr)))
         LPtr => U
-        IF ( U   .NEQV. LPtr)       STOP 40
-        IF ( KIND(U) .NE. KIND(LPtr) )   STOP 41
+        IF ( U   .NEQV. LPtr)       ERROR STOP 40
+        IF ( KIND(U) .NE. KIND(LPtr) )   ERROR STOP 41
 
       TYPE IS (CHARACTER(*))
         CPtr => U
-        IF ( U  .NE. CPtr )       STOP 42
-        IF ( LEN(U) .NE. LEN(CPtr) )   STOP 43
+        IF ( U  .NE. CPtr )       ERROR STOP 42
+        IF ( LEN(U) .NE. LEN(CPtr) )   ERROR STOP 43
 
       TYPE IS (DT(4))
         DTVPtr => DTV
-        IF ( U%Id      .NE. DTVPtr%Id )      STOP 42
-        IF ( U%GetId() .NE. DTVPtr%GetId())   STOP 43
+        IF ( U%Id      .NE. DTVPtr%Id )      ERROR STOP 42
+        IF ( U%GetId() .NE. DTVPtr%GetId())   ERROR STOP 43
 
       CLASS DEFAULT
         STOP 51

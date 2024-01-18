@@ -26,8 +26,8 @@
       allocate(i2(1,2,2,1), source=reshape((/ (con-i,i=1,4)/), (/1,2,2,1/)))
       call move_alloc(i2, j2)
 
-      if ( allocated(i2) ) stop 21
-      if ( .not. allocated(j2) ) stop 31
+      if ( allocated(i2) ) error stop 21
+      if ( .not. allocated(j2) ) error stop 31
 
       select type (j2)
           type is (integer*2)

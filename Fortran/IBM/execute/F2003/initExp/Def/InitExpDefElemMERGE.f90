@@ -100,43 +100,43 @@
 
 
 
-  IF ( KIND(T1%I1)   .NE.  1 ) STOP 11
-  IF ( KIND(T1%I2)   .NE.  2 ) STOP 12
-  IF ( KIND(T1%I4)   .NE.  4 ) STOP 13
-  IF ( KIND(T1%I8)   .NE.  8 ) STOP 14
+  IF ( KIND(T1%I1)   .NE.  1 ) ERROR STOP 11
+  IF ( KIND(T1%I2)   .NE.  2 ) ERROR STOP 12
+  IF ( KIND(T1%I4)   .NE.  4 ) ERROR STOP 13
+  IF ( KIND(T1%I8)   .NE.  8 ) ERROR STOP 14
 
-  IF ( KIND(T1%R4)   .NE.  4 ) STOP 21
-  IF ( KIND(T1%R8)   .NE.  8 ) STOP 22
-  IF ( KIND(T1%R6)   .NE.  16) STOP 23
+  IF ( KIND(T1%R4)   .NE.  4 ) ERROR STOP 21
+  IF ( KIND(T1%R8)   .NE.  8 ) ERROR STOP 22
+  IF ( KIND(T1%R6)   .NE.  16) ERROR STOP 23
 
-  IF ( KIND(T1%L1)   .NE.  1 ) STOP 31
-  IF ( KIND(T1%L2)   .NE.  2 ) STOP 32
-  IF ( KIND(T1%L4)   .NE.  4 ) STOP 33
-  IF ( KIND(T1%L8)   .NE.  8 ) STOP 34
+  IF ( KIND(T1%L1)   .NE.  1 ) ERROR STOP 31
+  IF ( KIND(T1%L2)   .NE.  2 ) ERROR STOP 32
+  IF ( KIND(T1%L4)   .NE.  4 ) ERROR STOP 33
+  IF ( KIND(T1%L8)   .NE.  8 ) ERROR STOP 34
 
-  IF ( KIND(T1%Z4)   .NE.  4 ) STOP 41
-  IF ( KIND(T1%Z8)   .NE.  8 ) STOP 42
-  IF ( KIND(T1%Z6)   .NE.  16) STOP 43
+  IF ( KIND(T1%Z4)   .NE.  4 ) ERROR STOP 41
+  IF ( KIND(T1%Z8)   .NE.  8 ) ERROR STOP 42
+  IF ( KIND(T1%Z6)   .NE.  16) ERROR STOP 43
 
-  IF ( ANY (T1%I1    .NE. 1 )) STOP 51
-  IF ( ANY (T1%I2    .NE. 1 )) STOP 52
-  IF ( ANY (T1%I4    .NE. 1 )) STOP 53
-  IF ( ANY (T1%I8    .NE. 1 )) STOP 54
+  IF ( ANY (T1%I1    .NE. 1 )) ERROR STOP 51
+  IF ( ANY (T1%I2    .NE. 1 )) ERROR STOP 52
+  IF ( ANY (T1%I4    .NE. 1 )) ERROR STOP 53
+  IF ( ANY (T1%I8    .NE. 1 )) ERROR STOP 54
 
-  IF ( ANY (T1%R4    .NE. 1 )) STOP 61
-  IF ( ANY (T1%R8    .NE. 1 )) STOP 62
-  IF ( ANY (T1%R6    .NE. 1 )) STOP 63
+  IF ( ANY (T1%R4    .NE. 1 )) ERROR STOP 61
+  IF ( ANY (T1%R8    .NE. 1 )) ERROR STOP 62
+  IF ( ANY (T1%R6    .NE. 1 )) ERROR STOP 63
 
-  IF ( ANY (T1%L1    .NEQV. .TRUE. )) STOP 71
-  IF ( ANY (T1%L2    .NEQV. .TRUE. )) STOP 72
-  IF ( ANY (T1%L4    .NEQV. .TRUE. )) STOP 73
-  IF ( ANY (T1%L8    .NEQV. .TRUE. )) STOP 74
+  IF ( ANY (T1%L1    .NEQV. .TRUE. )) ERROR STOP 71
+  IF ( ANY (T1%L2    .NEQV. .TRUE. )) ERROR STOP 72
+  IF ( ANY (T1%L4    .NEQV. .TRUE. )) ERROR STOP 73
+  IF ( ANY (T1%L8    .NEQV. .TRUE. )) ERROR STOP 74
 
-  IF ( ANY (T1%Z4    .NE. (1.,0.) )) STOP 81
-  IF ( ANY (T1%Z8    .NE. (1.,0.) )) STOP 82
-  IF ( ANY (T1%Z6    .NE. (1.,0.) )) STOP 83
+  IF ( ANY (T1%Z4    .NE. (1.,0.) )) ERROR STOP 81
+  IF ( ANY (T1%Z8    .NE. (1.,0.) )) ERROR STOP 82
+  IF ( ANY (T1%Z6    .NE. (1.,0.) )) ERROR STOP 83
 
-  IF ( ANY (T1%C     .NE. ACHAR(1) )) STOP 99
+  IF ( ANY (T1%C     .NE. ACHAR(1) )) ERROR STOP 99
 
   END
 

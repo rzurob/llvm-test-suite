@@ -16,12 +16,12 @@
     implicit none
     character(*), parameter :: string = 'string literal'
 
-    if (fun2(0_8) /= 8) stop 1
-    if (fun2(1*2_8) /= 8) stop 2
+    if (fun2(0_8) /= 8) error stop 1
+    if (fun2(1*2_8) /= 8) error stop 2
 
-    if (fun1('abcd') /= 'xlft') stop 3
-    if (fun1(string) /= 'xlftest') stop 4
-    if (len(fun1(string)) /= len(string)) stop 5
+    if (fun1('abcd') /= 'xlft') error stop 3
+    if (fun1(string) /= 'xlftest') error stop 4
+    if (len(fun1(string)) /= len(string)) error stop 5
 
     contains
 

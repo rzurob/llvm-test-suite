@@ -91,45 +91,45 @@ program defAssignIntrinsicComp01b
 
      dtp1=dtp2 ! call assign1
 
-     if(any(dtp1%c1 /= "XLF"))                                       stop 10
-     if(any(dtp1%i1 /= [10,11]))                                     stop 11
-     if(any(dtp1%g1 .neqv. [.true.,.false.,.true.]))                 stop 12
-     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-2),1.2))        stop 13
-     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-1),-3.5))       stop 14
-     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)),6.7E-2))       stop 15
+     if(any(dtp1%c1 /= "XLF"))                                       error stop 10
+     if(any(dtp1%i1 /= [10,11]))                                     error stop 11
+     if(any(dtp1%g1 .neqv. [.true.,.false.,.true.]))                 error stop 12
+     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-2),1.2))        error stop 13
+     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-1),-3.5))       error stop 14
+     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)),6.7E-2))       error stop 15
 
      dtp1=dtp() ! call assign1
 
-     if(any(dtp1%c1 /= "***"))                                       stop 16
-     if(any(dtp1%i1 /= -99))                                         stop 17
-     if(any(dtp1%g1 .neqv. .false.))                                 stop 18
-     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-2),-9.9))       stop 19
-     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-1),-9.9))       stop 20
-     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)),-9.9))         stop 21
+     if(any(dtp1%c1 /= "***"))                                       error stop 16
+     if(any(dtp1%i1 /= -99))                                         error stop 17
+     if(any(dtp1%g1 .neqv. .false.))                                 error stop 18
+     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-2),-9.9))       error stop 19
+     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-1),-9.9))       error stop 20
+     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)),-9.9))         error stop 21
 
      dtp3=[dtp1,dtp1,dtp1] ! call intrinsic assignment
 
-     if(.not. allocated(dtp3))                                       stop 22
-     if(size(dtp3,1) /= 3)                                           stop 23
+     if(.not. allocated(dtp3))                                       error stop 22
+     if(size(dtp3,1) /= 3)                                           error stop 23
 
      dtp1=dtp3 ! call assign2
 
-     if(any(dtp1%c1 /= "A*B"))                                       stop 24
-     if(any(dtp1%i1 /= 1))                                           stop 25
-     if(any(dtp1%g1 .neqv. .true.))                                  stop 26
-     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-2),4.5))        stop 27
-     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-1),4.5))        stop 28
-     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)),4.5))          stop 29
+     if(any(dtp1%c1 /= "A*B"))                                       error stop 24
+     if(any(dtp1%i1 /= 1))                                           error stop 25
+     if(any(dtp1%g1 .neqv. .true.))                                  error stop 26
+     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-2),4.5))        error stop 27
+     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-1),4.5))        error stop 28
+     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)),4.5))          error stop 29
 
      dtp4=dtp(8,3)() ! call intrinsic assignment
 
      dtp1=dtp4 ! call assign3
 
-     if(any(dtp1%c1 /= "***"))                                       stop 30
-     if(any(dtp1%i1 /= -99))                                         stop 31
-     if(any(dtp1%g1 .neqv. .false.))                                 stop 32
-     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-2),-9.9))       stop 33
-     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-1),-9.9))       stop 34
-     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)),-9.9))         stop 35
+     if(any(dtp1%c1 /= "***"))                                       error stop 30
+     if(any(dtp1%i1 /= -99))                                         error stop 31
+     if(any(dtp1%g1 .neqv. .false.))                                 error stop 32
+     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-2),-9.9))       error stop 33
+     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-1),-9.9))       error stop 34
+     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)),-9.9))         error stop 35
 
 end program

@@ -55,14 +55,14 @@
 
   CALL Sub(V)
 
-  IF (.NOT. ASSOCIATED(V))        STOP 50
-  IF ( ANY(V%BaseID  .NE. -1 ) )  STOP 51
-  IF ( ANY(V%ChildID .NE.  2 ) )  STOP 52
+  IF (.NOT. ASSOCIATED(V))        ERROR STOP 50
+  IF ( ANY(V%BaseID  .NE. -1 ) )  ERROR STOP 51
+  IF ( ANY(V%ChildID .NE.  2 ) )  ERROR STOP 52
 
   SELECT TYPE ( As => V(1)%Unknown  )
     TYPE IS (CHARACTER(*))
-      IF ( ANY(SHAPE(As) .NE. (/2/) ) )  STOP 60
-      IF ( ANY(As        .NE. "123" ) )  STOP 61
+      IF ( ANY(SHAPE(As) .NE. (/2/) ) )  ERROR STOP 60
+      IF ( ANY(As        .NE. "123" ) )  ERROR STOP 61
     CLASS DEFAULT
       STOP 63
     END SELECT
@@ -72,23 +72,23 @@
   SUBROUTINE Sub(Arg)
   CLASS(DT), POINTER, INTENT(OUT) :: Arg(:)
 
-!  IF ( ASSOCIATED(Arg)) STOP 40 ! unpredicatble
+!  IF ( ASSOCIATED(Arg)) ERROR STOP 40 ! unpredicatble
 
   ALLOCATE (Arg(3), SOURCE=DT(BaseID=-1, Unknown=(/"123","123"/)) )
 
   ASSOCIATE( As => (/DT(Base=Arg(1)%Base, ChildID=-2), &
                      DT(Base=Arg(2)%Base, ChildID=-2) /) )
 
-    IF ( ANY(SHAPE(As)  .NE. (/2/) ) ) STOP 20
-    IF ( ANY(As%BaseID  .NE. -1 ) )     STOP 21
-    IF ( ANY(As%ChildID .NE. -2 ) )     STOP 22
+    IF ( ANY(SHAPE(As)  .NE. (/2/) ) ) ERROR STOP 20
+    IF ( ANY(As%BaseID  .NE. -1 ) )     ERROR STOP 21
+    IF ( ANY(As%ChildID .NE. -2 ) )     ERROR STOP 22
 
-    IF ( As%Bnd(2)  .NE. 2  )          STOP 23
+    IF ( As%Bnd(2)  .NE. 2  )          ERROR STOP 23
 
     SELECT TYPE ( As => As(2)%Unknown  )
     TYPE IS (CHARACTER(*))
-      IF ( ANY(SHAPE(As) .NE. (/2/) ) )  STOP 30
-      IF ( ANY(As        .NE. "123" ) )  STOP 31
+      IF ( ANY(SHAPE(As) .NE. (/2/) ) )  ERROR STOP 30
+      IF ( ANY(As        .NE. "123" ) )  ERROR STOP 31
     CLASS DEFAULT
       STOP 33
     END SELECT

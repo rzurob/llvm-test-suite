@@ -33,9 +33,9 @@
 
 	b1(2:) => b2(::2)
 
-	if ( .not. associated(b1, b2(::2)) ) stop 21
-	if ( lbound(b1,1) /= 2 ) stop 25
-	if ( ubound(b1,1) /= 6 ) stop 27
+	if ( .not. associated(b1, b2(::2)) ) error stop 21
+	if ( lbound(b1,1) /= 2 ) error stop 25
+	if ( ubound(b1,1) /= 6 ) error stop 27
 
 	!do i = 2, 6
 	 !   print *, b1(i)%ip

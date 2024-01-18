@@ -96,16 +96,16 @@
        STOP 43
     TYPE IS (Child)
       ! Check U
-      IF ( SIZE(U)          .NE. 4 )          STOP 31
-      IF ( ANY (LBOUND(U)   .NE. (/2, 3/) ) ) STOP 32
-      IF ( ANY (UBOUND(U)   .NE. (/3, 4/) ) ) STOP 33
-      IF ( ANY(SHAPE(U)     .NE. (/2,2/)) )   STOP 24
-      IF ( ANY(U%Base%GetId() .NE. -1) )      STOP 35
-      IF ( ANY(U%GetId()      .NE. -2) )      STOP 36
-      IF ( ANY(U%BaseId       .NE. -1) )      STOP 37
-      IF ( ANY(U%ChildId      .NE. -2) )      STOP 38
+      IF ( SIZE(U)          .NE. 4 )          ERROR STOP 31
+      IF ( ANY (LBOUND(U)   .NE. (/2, 3/) ) ) ERROR STOP 32
+      IF ( ANY (UBOUND(U)   .NE. (/3, 4/) ) ) ERROR STOP 33
+      IF ( ANY(SHAPE(U)     .NE. (/2,2/)) )   ERROR STOP 24
+      IF ( ANY(U%Base%GetId() .NE. -1) )      ERROR STOP 35
+      IF ( ANY(U%GetId()      .NE. -2) )      ERROR STOP 36
+      IF ( ANY(U%BaseId       .NE. -1) )      ERROR STOP 37
+      IF ( ANY(U%ChildId      .NE. -2) )      ERROR STOP 38
 
-      IF ( .NOT. U%Called() ) STOP 45
+      IF ( .NOT. U%Called() ) ERROR STOP 45
 
     TYPE IS (Base)
        STOP 40

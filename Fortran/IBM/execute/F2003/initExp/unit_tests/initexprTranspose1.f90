@@ -32,9 +32,9 @@ integer(2), dimension(2,11) :: res2=transpose(B)
 integer(4), dimension(2,2) :: res3=transpose(C)
 integer(8), dimension(1,7) :: res4=transpose(D)
 
-if (.not. all(res1 .eq. transpose(a))) stop 1
-if (.not. all(res2 .eq. transpose(B))) stop 2
-if (.not. all(res3 .eq. transpose(C))) stop 3
-if (.not. all(res4 .eq. transpose(D))) stop 4
+if (.not. all(res1 .eq. transpose(a))) error stop 1
+if (.not. all(res2 .eq. transpose(B))) error stop 2
+if (.not. all(res3 .eq. transpose(C))) error stop 3
+if (.not. all(res4 .eq. transpose(D))) error stop 4
 
 end

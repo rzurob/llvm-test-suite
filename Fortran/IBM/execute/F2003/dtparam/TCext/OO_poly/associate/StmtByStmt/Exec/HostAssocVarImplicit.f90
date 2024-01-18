@@ -61,28 +61,28 @@
 
   ASSOCIATE ( T1 => U, T2 => U  )
 
-    IF ( As%GetID()   .NE. 2) STOP 40
-    IF ( As%ChildID   .NE. 2) STOP 41
-    IF ( As%BaseID    .NE. 1) STOP 42
+    IF ( As%GetID()   .NE. 2) ERROR STOP 40
+    IF ( As%ChildID   .NE. 2) ERROR STOP 41
+    IF ( As%BaseID    .NE. 1) ERROR STOP 42
 
     U%BaseId  = -1
     U%ChildId = -2
 
-    IF ( T2%GetID()   .NE. -2) STOP 50
-    IF ( T2%ChildID   .NE. -2) STOP 51
-    IF ( T2%BaseID    .NE. -1) STOP 52
+    IF ( T2%GetID()   .NE. -2) ERROR STOP 50
+    IF ( T2%ChildID   .NE. -2) ERROR STOP 51
+    IF ( T2%BaseID    .NE. -1) ERROR STOP 52
 
     ASSOCIATE ( As1 => T1, As2 => T1 )
-      IF ( As1%GetID()   .NE. -2) STOP 60
-      IF ( As2%ChildID   .NE. -2) STOP 61
-      IF ( As2%BaseID    .NE. -1) STOP 62
+      IF ( As1%GetID()   .NE. -2) ERROR STOP 60
+      IF ( As2%ChildID   .NE. -2) ERROR STOP 61
+      IF ( As2%BaseID    .NE. -1) ERROR STOP 62
 
       As2%BaseId  = 1
       As2%ChildId = 2
 
-      IF ( U%GetID()   .NE. 2) STOP 70
-      IF ( U%ChildID   .NE. 2) STOP 71
-      IF ( U%BaseID    .NE. 1) STOP 72
+      IF ( U%GetID()   .NE. 2) ERROR STOP 70
+      IF ( U%ChildID   .NE. 2) ERROR STOP 71
+      IF ( U%BaseID    .NE. 1) ERROR STOP 72
     END ASSOCIATE
 
   END ASSOCIATE

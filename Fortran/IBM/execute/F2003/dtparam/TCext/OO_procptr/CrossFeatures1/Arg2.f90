@@ -92,26 +92,26 @@
 
 
   ProcPtr1 => Fun1
-  IF ( .NOT. ASSOCIATED(ProcPtr1, Fun2)) STOP 71
+  IF ( .NOT. ASSOCIATED(ProcPtr1, Fun2)) ERROR STOP 71
 
   ProcPtr2 => ProcPtr1
-  IF ( .NOT. ASSOCIATED(ProcPtr2, Fun1)) STOP 72
+  IF ( .NOT. ASSOCIATED(ProcPtr2, Fun1)) ERROR STOP 72
 
   V = Fun1(Base(4,3)("abc", Tar))
-  IF ( V%C .NE. "abc") STOP 11
-  IF ( .NOT. ASSOCIATED(V%BPtr, Tar)) STOP 13
+  IF ( V%C .NE. "abc") ERROR STOP 11
+  IF ( .NOT. ASSOCIATED(V%BPtr, Tar)) ERROR STOP 13
 
   U = ProcPtr1(Base(4,3)("abc",Tar))
-  IF ( V%C .NE. "abc") STOP 21
-  IF ( .NOT. ASSOCIATED(U%BPtr, Tar)) STOP 23
+  IF ( V%C .NE. "abc") ERROR STOP 21
+  IF ( .NOT. ASSOCIATED(U%BPtr, Tar)) ERROR STOP 23
 
   U = Fun2(Base(4,3)("123",Tar))
-  IF ( U%C .NE. "123") STOP 31
-  IF ( .NOT. ASSOCIATED(U%BPtr, Tar)) STOP 33
+  IF ( U%C .NE. "123") ERROR STOP 31
+  IF ( .NOT. ASSOCIATED(U%BPtr, Tar)) ERROR STOP 33
 
   U = ProcPtr2(Base(4,3)("321",Tar))
-  IF ( U%C .NE. "321") STOP 31
-  IF ( .NOT. ASSOCIATED(U%BPtr, Tar)) STOP 33
+  IF ( U%C .NE. "321") ERROR STOP 31
+  IF ( .NOT. ASSOCIATED(U%BPtr, Tar)) ERROR STOP 33
 
   END SUBROUTINE
 

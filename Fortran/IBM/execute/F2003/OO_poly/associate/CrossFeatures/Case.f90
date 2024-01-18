@@ -78,8 +78,8 @@
     END SELECT
   END ASSOCIATE
 
-  IF ( Any(Arr(:)%ID      .NE. (/(i, i=2,130)/)) ) STOP 60
-  IF ( ANY(Arr(:)%GetID() .NE. (/(i, i=2,130)/)) ) STOP 61
+  IF ( Any(Arr(:)%ID      .NE. (/(i, i=2,130)/)) ) ERROR STOP 60
+  IF ( ANY(Arr(:)%GetID() .NE. (/(i, i=2,130)/)) ) ERROR STOP 61
 
   ASSOCIATE ( As => Arr )
     SELECT CASE (As(3)%C)
@@ -92,8 +92,8 @@
     END SELECT
   END ASSOCIATE
 
-  IF ( Any(Arr(:)%C      .NE. (/(CHAR(4+i), i=2, 130)/)) ) STOP 70
-  IF ( ANY(Arr(:)%GetC() .NE. (/(CHAR(4+i), i=2, 130)/)) ) STOP 71
+  IF ( Any(Arr(:)%C      .NE. (/(CHAR(4+i), i=2, 130)/)) ) ERROR STOP 70
+  IF ( ANY(Arr(:)%GetC() .NE. (/(CHAR(4+i), i=2, 130)/)) ) ERROR STOP 71
 
   ASSOCIATE ( As => Arr(::2) )
     SELECT CASE (As(3)%L)
@@ -104,11 +104,11 @@
     END SELECT
   END ASSOCIATE
 
-  IF ( Any(Arr(::2)%L      .NEQV. .TRUE.) ) STOP 80
-  IF ( ANY(Arr(::2)%GetL() .NEQV. .TRUE.) ) STOP 81
+  IF ( Any(Arr(::2)%L      .NEQV. .TRUE.) ) ERROR STOP 80
+  IF ( ANY(Arr(::2)%GetL() .NEQV. .TRUE.) ) ERROR STOP 81
 
-  IF ( Any(Arr(3::2)%L      .NEQV. .FALSE.) ) STOP 83
-  IF ( ANY(Arr(3::2)%GetL() .NEQV. .FALSE.) ) STOP 84
+  IF ( Any(Arr(3::2)%L      .NEQV. .FALSE.) ) ERROR STOP 83
+  IF ( ANY(Arr(3::2)%GetL() .NEQV. .FALSE.) ) ERROR STOP 84
 
   END
 

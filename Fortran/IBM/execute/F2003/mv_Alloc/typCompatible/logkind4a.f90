@@ -22,8 +22,8 @@
 
         call move_alloc(l2, l1)
 
-        if ( .not. allocated(l1) ) stop 21
-        if ( allocated(l2) ) stop 23
+        if ( .not. allocated(l1) ) error stop 21
+        if ( allocated(l2) ) error stop 23
 
         print *, shape(l1)
 

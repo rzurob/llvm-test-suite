@@ -30,7 +30,7 @@
   ASSOCIATE ( P1 => .true., P2 => P1 .and. P1)
     PRINT*, P1
     PRINT*, P2
-    IF (P1 .NEQV. .TRUE. ) STOP 11
+    IF (P1 .NEQV. .TRUE. ) ERROR STOP 11
   END ASSOCIATE
   END
 

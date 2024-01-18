@@ -101,14 +101,14 @@
   T1 = Fun(DT(1, "1"), DT(1, "1"))
   T2 = Fun(DT(2, "2"), DT(1, "1"), DT(0, "0"))
 
-  IF ( T%ID0  .NE.   0 )   STOP 11
-  IF ( T%ID1  .NE. "0" )   STOP 12
+  IF ( T%ID0  .NE.   0 )   ERROR STOP 11
+  IF ( T%ID1  .NE. "0" )   ERROR STOP 12
 
-  IF ( T1%ID0  .NE.  1 )   STOP 21
-  IF ( T1%ID1  .NE. "1" )  STOP 22
+  IF ( T1%ID0  .NE.  1 )   ERROR STOP 21
+  IF ( T1%ID1  .NE. "1" )  ERROR STOP 22
 
-  IF ( T2%ID0  .NE.  2 )   STOP 31
-  IF ( T2%ID1  .NE. "2" )  STOP 32
+  IF ( T2%ID0  .NE.  2 )   ERROR STOP 31
+  IF ( T2%ID1  .NE. "2" )  ERROR STOP 32
 
   END SUBROUTINE
 

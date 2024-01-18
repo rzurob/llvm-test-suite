@@ -43,9 +43,9 @@
 
                   allocate(a1, source = t(4)(10))
                   call move_alloc(a1, n1)
-                  if ( .not. allocated(n1) ) stop 21
-                  if ( allocated(a1) ) stop 31
-                  if ( n1%i /= 10 ) stop 41
+                  if ( .not. allocated(n1) ) error stop 21
+                  if ( allocated(a1) ) error stop 31
+                  if ( n1%i /= 10 ) error stop 41
                end subroutine
 
      end program

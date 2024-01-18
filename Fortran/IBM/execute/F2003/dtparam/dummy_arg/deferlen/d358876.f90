@@ -34,7 +34,7 @@ type(outer(:)),allocatable :: outer1
 allocate(outer1,source=&
   outer(3)("xlf",inner(5)(["test1","test2"]) ))
 
-  if(outer1%c1 /= "xlf")                           stop 10
-  if(any(outer1%inner1%c2 /= ["test1","test2"]))   stop 11
+  if(outer1%c1 /= "xlf")                           error stop 10
+  if(any(outer1%inner1%c2 /= ["test1","test2"]))   error stop 11
 
 end program

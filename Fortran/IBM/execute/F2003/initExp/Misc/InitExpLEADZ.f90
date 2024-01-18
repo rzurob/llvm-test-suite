@@ -40,17 +40,17 @@
   INTEGER(KIND(LEADZ((/0_8,(2_8**I8, I8=0,63)/)))) :: IR8(65) = LEADZ((/0_8,(2_8**I8, I8=0,63)/))
 
 
-  IF ( KIND(IR1)   .NE.  1 )                    STOP 11
-  IF ( ANY( IR1    .NE.  (/(I,I=8,0,-1)/)) )    STOP 12
+  IF ( KIND(IR1)   .NE.  1 )                    ERROR STOP 11
+  IF ( ANY( IR1    .NE.  (/(I,I=8,0,-1)/)) )    ERROR STOP 12
 
-  IF ( KIND(IR2)   .NE.  2 )                    STOP 21
-  IF ( ANY( IR2    .NE.  (/(I,I=16,0,-1)/)) )   STOP 22
+  IF ( KIND(IR2)   .NE.  2 )                    ERROR STOP 21
+  IF ( ANY( IR2    .NE.  (/(I,I=16,0,-1)/)) )   ERROR STOP 22
 
-  IF ( KIND(IR4)   .NE.  4 )                    STOP 41
-  IF ( ANY( IR4    .NE.  (/(I,I=32,0,-1)/)) )   STOP 42
+  IF ( KIND(IR4)   .NE.  4 )                    ERROR STOP 41
+  IF ( ANY( IR4    .NE.  (/(I,I=32,0,-1)/)) )   ERROR STOP 42
 
-  IF ( KIND(IR8)   .NE.  8 )                    STOP 81
-  IF ( ANY( IR8    .NE.  (/(I,I=64,0,-1)/)) )   STOP 82
+  IF ( KIND(IR8)   .NE.  8 )                    ERROR STOP 81
+  IF ( ANY( IR8    .NE.  (/(I,I=64,0,-1)/)) )   ERROR STOP 82
 
 
 

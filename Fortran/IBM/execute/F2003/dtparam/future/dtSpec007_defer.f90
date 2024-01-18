@@ -38,7 +38,7 @@ module m
 
         type (content(b%l)) contentAtIndex
 
-        if ((i < 0) .or. (i > b%n)) stop 10
+        if ((i < 0) .or. (i > b%n)) error stop 10
 
         contentAtIndex%data = b%data(i)
         contentAtIndex%desc = b%desc(i)

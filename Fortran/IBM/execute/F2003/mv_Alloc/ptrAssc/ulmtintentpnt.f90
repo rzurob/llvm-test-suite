@@ -25,12 +25,12 @@
 
     call sub(p, to)
 
-    if ( allocated(from)) stop 11
-    if ( .not. allocated(to) ) stop 13
+    if ( allocated(from)) error stop 11
+    if ( .not. allocated(to) ) error stop 13
 
     print *, TO
 
-    if ( .not. associated(P, to )) stop 21
+    if ( .not. associated(P, to )) error stop 21
 
     contains
         subroutine sub(p, to)

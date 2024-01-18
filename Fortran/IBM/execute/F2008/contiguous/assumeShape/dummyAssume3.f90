@@ -105,7 +105,7 @@ PROGRAM dummyAssume3
         I2low = LBOUND(Arg, 2)
         I3low = LBOUND(Arg, 3)
 
-        IF ( .NOT. IS_CONTIGUOUS(Arg) ) STOP 11
+        IF ( .NOT. IS_CONTIGUOUS(Arg) ) ERROR STOP 11
 
         DO I = LBOUND(Arg, 1), UBOUND(Arg, 1), 1
            DO J = LBOUND(Arg, 2), UBOUND(Arg, 2), 1

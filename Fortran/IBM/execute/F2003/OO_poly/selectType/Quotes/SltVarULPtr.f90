@@ -81,18 +81,18 @@
         TYPE is (Child)
           SELECT TYPE (Ptr)
           CLASS IS (Child)
-            IF ( Ptr%BaseId       .NE. -1 ) STOP 31
-            IF ( Ptr%ChildId      .NE. -2 ) STOP 32
-            IF ( Ptr%Base%GetId() .NE. -1 ) STOP 33
-            IF ( Ptr%GetId()      .NE. -2 ) STOP 34
+            IF ( Ptr%BaseId       .NE. -1 ) ERROR STOP 31
+            IF ( Ptr%ChildId      .NE. -2 ) ERROR STOP 32
+            IF ( Ptr%Base%GetId() .NE. -1 ) ERROR STOP 33
+            IF ( Ptr%GetId()      .NE. -2 ) ERROR STOP 34
 
             Ptr%BaseId = 1
             Ptr%ChildId = 2
 
-            IF ( As%BaseId       .NE. 1 ) STOP 31
-            IF ( As%ChildId      .NE. 2 ) STOP 32
-            IF ( As%Base%GetId() .NE. 1 ) STOP 33
-            IF ( As%GetId()      .NE. 2 ) STOP 34
+            IF ( As%BaseId       .NE. 1 ) ERROR STOP 31
+            IF ( As%ChildId      .NE. 2 ) ERROR STOP 32
+            IF ( As%Base%GetId() .NE. 1 ) ERROR STOP 33
+            IF ( As%GetId()      .NE. 2 ) ERROR STOP 34
       END SELECT
     END SELECT
   END SELECT

@@ -60,9 +60,9 @@ program main
 
 	call associate(c8_p, c6_p, c3_p)
 
-	if ( .not. associated(c8_p)) stop 12
-	if ( .not. associated(c6_p)) stop 14
-	if ( .not. associated(c3_p)) stop 16
+	if ( .not. associated(c8_p)) error stop 12
+	if ( .not. associated(c6_p)) error stop 14
+	if ( .not. associated(c3_p)) error stop 16
 
 	print *, lbound(c8_p), ubound(c8_p)
 	print *, lbound(c6_p), ubound(c6_p)

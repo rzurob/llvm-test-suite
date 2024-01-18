@@ -41,9 +41,9 @@
 
    if (arg .eq. 1) then
 
-     if (s_coarr        .NE. -1)   stop 11
-     if (ANY(arr_coarr1 .NE. -1) ) stop 12
-     if (ANY(arr_coarr2 .NE. -2) ) stop 13
+     if (s_coarr        .NE. -1)   error stop 11
+     if (ANY(arr_coarr1 .NE. -1) ) error stop 12
+     if (ANY(arr_coarr2 .NE. -2) ) error stop 13
 
      me = this_image()
      images = num_images()
@@ -56,26 +56,26 @@
 
      sync all
 
-     if (s_coarr[next]         .NE. -1 ) stop 21
+     if (s_coarr[next]         .NE. -1 ) error stop 21
      s_coarr[next] = 1
-     if (s_coarr[next]         .NE.  1 ) stop 22
+     if (s_coarr[next]         .NE.  1 ) error stop 22
 
      do i=1, 3
-       if (arr_coarr1(i)[next] .NE. -1 ) stop 31
+       if (arr_coarr1(i)[next] .NE. -1 ) error stop 31
        arr_coarr1(i)[next] = 1
-       if (arr_coarr1(i)[next] .NE.  1 ) stop 32
+       if (arr_coarr1(i)[next] .NE.  1 ) error stop 32
 
-       if (arr_coarr2(i)[next] .NE. -2 ) stop 41
+       if (arr_coarr2(i)[next] .NE. -2 ) error stop 41
        arr_coarr2(i)[next] = 2
-       if (arr_coarr2(i)[next] .NE.  2 ) stop 42
+       if (arr_coarr2(i)[next] .NE.  2 ) error stop 42
      end do
 
      sync all
 
    else
-     if (s_coarr        .NE.  1)   stop 51
-     if (ANY(arr_coarr1 .NE.  1) ) stop 52
-     if (ANY(arr_coarr2 .NE.  2) ) stop 53
+     if (s_coarr        .NE.  1)   error stop 51
+     if (ANY(arr_coarr1 .NE.  1) ) error stop 52
+     if (ANY(arr_coarr2 .NE.  2) ) error stop 53
    end if
 
    end subroutine

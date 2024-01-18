@@ -66,16 +66,16 @@ MODULE Mod1
        READ(10, NML=NML2)
        READ(10, NML=NML3)
 
-       IF (b1%Carr(1) .NE. 'E') STOP 20
-       IF (c1%Carr(1) .NE. 'A') STOP 21
-       IF (ANY(c1%Iarr .NE. 1)) STOP 22
-       IF (ANY(c1%Rarr .NE. 2.0)) STOP 23
-       IF (n1%Carr(1) .NE. 'A') STOP 24
-       IF (ANY(n1%Iarr .NE. 1)) STOP 25
-       IF (ANY(n1%Rarr .NE. 2.0)) STOP 26
-       IF (ANY(n1%Bool)) STOP 27
-       IF (ANY(REAL(n1%Zarr) .NE. 2.0)) STOP 28
-       IF (ANY(IMAG(n1%Zarr) .NE. 2.0)) STOP 29
+       IF (b1%Carr(1) .NE. 'E') ERROR STOP 20
+       IF (c1%Carr(1) .NE. 'A') ERROR STOP 21
+       IF (ANY(c1%Iarr .NE. 1)) ERROR STOP 22
+       IF (ANY(c1%Rarr .NE. 2.0)) ERROR STOP 23
+       IF (n1%Carr(1) .NE. 'A') ERROR STOP 24
+       IF (ANY(n1%Iarr .NE. 1)) ERROR STOP 25
+       IF (ANY(n1%Rarr .NE. 2.0)) ERROR STOP 26
+       IF (ANY(n1%Bool)) ERROR STOP 27
+       IF (ANY(REAL(n1%Zarr) .NE. 2.0)) ERROR STOP 28
+       IF (ANY(IMAG(n1%Zarr) .NE. 2.0)) ERROR STOP 29
 
       END SUBROUTINE
 
@@ -92,10 +92,10 @@ PROGRAM Namelist13
        READ(10, NML=NML2)
        READ(10, NML=NML3)
 
-       IF (b1%Carr(1) .NE. 'N') STOP 10
-       IF (c1%Carr(1) .NE. 'N') STOP 11
-       IF (ANY(c1%Iarr .NE. 8)) STOP 12
-       IF (ANY(c1%Rarr .NE. 8.8)) STOP 13
+       IF (b1%Carr(1) .NE. 'N') ERROR STOP 10
+       IF (c1%Carr(1) .NE. 'N') ERROR STOP 11
+       IF (ANY(c1%Iarr .NE. 8)) ERROR STOP 12
+       IF (ANY(c1%Rarr .NE. 8.8)) ERROR STOP 13
 
 END PROGRAM Namelist13
 

@@ -66,18 +66,18 @@
   ALLOCATE(V(1)%BComp(2))
   V = DT(-1, (/Base(RetPtr(Fun)),Base(RetPtr(Fun))/))
 
-  IF ( ANY(V%Id .NE. -1) ) STOP 11
-  IF ( .NOT. ALLOCATED(V(1)%BComp) )  STOP 12
-  IF ( .NOT. ASSOCIATED(V(1)%BComp(1)%ProcPtr, RetPtr(Fun)) ) STOP 13
-  IF ( .NOT. ASSOCIATED(V(1)%BComp(2)%ProcPtr, RetPtr(Fun)) ) STOP 10
+  IF ( ANY(V%Id .NE. -1) ) ERROR STOP 11
+  IF ( .NOT. ALLOCATED(V(1)%BComp) )  ERROR STOP 12
+  IF ( .NOT. ASSOCIATED(V(1)%BComp(1)%ProcPtr, RetPtr(Fun)) ) ERROR STOP 13
+  IF ( .NOT. ASSOCIATED(V(1)%BComp(2)%ProcPtr, RetPtr(Fun)) ) ERROR STOP 10
 
-  IF (ANY(V(1)%BComp(1)%ProcPtr((/"ABC", "123"/)) .NE. (/"ABC", "123"/)) ) STOP 14
-  IF (ANY(V(1)%BComp(2)%ProcPtr((/"", ""/)) .NE. (/"", ""/)) )             STOP 15
-  IF (ANY(V(1)%BComp(1)%ProcPtr((/Str, Str/)) .NE. (/Str, Str/)) )         STOP 16
-  IF (ANY(V(1)%BComp(2)%ProcPtr((/Str, Str/)) .NE. (/Str, Str/)) )         STOP 17
+  IF (ANY(V(1)%BComp(1)%ProcPtr((/"ABC", "123"/)) .NE. (/"ABC", "123"/)) ) ERROR STOP 14
+  IF (ANY(V(1)%BComp(2)%ProcPtr((/"", ""/)) .NE. (/"", ""/)) )             ERROR STOP 15
+  IF (ANY(V(1)%BComp(1)%ProcPtr((/Str, Str/)) .NE. (/Str, Str/)) )         ERROR STOP 16
+  IF (ANY(V(1)%BComp(2)%ProcPtr((/Str, Str/)) .NE. (/Str, Str/)) )         ERROR STOP 17
 
   U= V(1)%BComp(1)%ProcPtr((/"1", "1" /)) ! iced here
-  IF (ANY(U .NE. (/"1", "1"/)) ) STOP 24
+  IF (ANY(U .NE. (/"1", "1"/)) ) ERROR STOP 24
 
   CONTAINS
 

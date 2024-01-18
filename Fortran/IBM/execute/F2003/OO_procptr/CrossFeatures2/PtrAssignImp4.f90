@@ -70,7 +70,7 @@
   TYPE IS (COMPLEX)
     SELECT TYPE ( As2 => ExtFun1((/((i,-i), i=1, 4098) /) ) )
     TYPE IS (COMPLEX)
-      IF ( ANY( As1 .NE. As2) ) STOP 11
+      IF ( ANY( As1 .NE. As2) ) ERROR STOP 11
     CLASS DEFAULT
       STOP 12
     END SELECT
@@ -79,7 +79,7 @@
   END SELECT
 
   ProcPtr2 => ExtFun2
-  IF ( ProcPtr2((/("IBM", i=1, 4098)/)) .NE. 'IBM' ) STOP 21
+  IF ( ProcPtr2((/("IBM", i=1, 4098)/)) .NE. 'IBM' ) ERROR STOP 21
 
   END
 

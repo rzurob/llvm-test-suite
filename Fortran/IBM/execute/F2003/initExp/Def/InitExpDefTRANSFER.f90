@@ -153,95 +153,95 @@
 
 
 
-  IF(  KIND(TI11)     .NE. 1 )       STOP 11
-  IF(  TI11           .NE. I11 )     STOP 12
-  IF(  KIND(TI12)     .NE. 1 )       STOP 13
-  IF(  ANY(TI12       .NE. I12 ))    STOP 14
-  IF(  KIND(TI13)     .NE. 1 )       STOP 15
-  IF(  ANY(TI13       .NE. I12 ))    STOP 16
-  IF(  KIND(TI14)     .NE. 1 )       STOP 17
-  IF(  ANY(TI14       .NE. I12 ))    STOP 18
+  IF(  KIND(TI11)     .NE. 1 )       ERROR STOP 11
+  IF(  TI11           .NE. I11 )     ERROR STOP 12
+  IF(  KIND(TI12)     .NE. 1 )       ERROR STOP 13
+  IF(  ANY(TI12       .NE. I12 ))    ERROR STOP 14
+  IF(  KIND(TI13)     .NE. 1 )       ERROR STOP 15
+  IF(  ANY(TI13       .NE. I12 ))    ERROR STOP 16
+  IF(  KIND(TI14)     .NE. 1 )       ERROR STOP 17
+  IF(  ANY(TI14       .NE. I12 ))    ERROR STOP 18
 
-  IF(  KIND(TI21)     .NE. 2 )       STOP 21
-  IF(  TI21           .NE. I21 )     STOP 22
-  IF(  KIND(TI22)     .NE. 2 )       STOP 23
-  IF(  ANY(TI22       .NE. I22 ))    STOP 24
-  IF(  KIND(TI23)     .NE. 2 )       STOP 25
-  IF(  ANY(TI23       .NE. I22 ))    STOP 26
-  IF(  KIND(TI24)     .NE. 2 )       STOP 27
-  IF(  ANY(TI24       .NE. I22 ))    STOP 28
+  IF(  KIND(TI21)     .NE. 2 )       ERROR STOP 21
+  IF(  TI21           .NE. I21 )     ERROR STOP 22
+  IF(  KIND(TI22)     .NE. 2 )       ERROR STOP 23
+  IF(  ANY(TI22       .NE. I22 ))    ERROR STOP 24
+  IF(  KIND(TI23)     .NE. 2 )       ERROR STOP 25
+  IF(  ANY(TI23       .NE. I22 ))    ERROR STOP 26
+  IF(  KIND(TI24)     .NE. 2 )       ERROR STOP 27
+  IF(  ANY(TI24       .NE. I22 ))    ERROR STOP 28
 
-  IF(  KIND(TI41)     .NE. 4 )       STOP 31
-  IF(  TI41           .NE. I41 )     STOP 32
-  IF(  KIND(TI42)     .NE. 4 )       STOP 33
-  IF(  ANY(TI42       .NE. I42 ))    STOP 34
-  IF(  KIND(TI43)     .NE. 4 )       STOP 35
-  IF(  ANY(TI43       .NE. I42 ))    STOP 36
-  IF(  KIND(TI44)     .NE. 4 )       STOP 37
-  IF(  ANY(TI44       .NE. I42 ))    STOP 38
+  IF(  KIND(TI41)     .NE. 4 )       ERROR STOP 31
+  IF(  TI41           .NE. I41 )     ERROR STOP 32
+  IF(  KIND(TI42)     .NE. 4 )       ERROR STOP 33
+  IF(  ANY(TI42       .NE. I42 ))    ERROR STOP 34
+  IF(  KIND(TI43)     .NE. 4 )       ERROR STOP 35
+  IF(  ANY(TI43       .NE. I42 ))    ERROR STOP 36
+  IF(  KIND(TI44)     .NE. 4 )       ERROR STOP 37
+  IF(  ANY(TI44       .NE. I42 ))    ERROR STOP 38
 
-  IF(  KIND(TI81)     .NE. 8 )       STOP 41
-  IF(  TI81           .NE. I81 )     STOP 42
-  IF(  KIND(TI82)     .NE. 8 )       STOP 43
-  IF(  ANY(TI82       .NE. I82 ))    STOP 44
-  IF(  KIND(TI83)     .NE. 8 )       STOP 45
-  IF(  ANY(TI83       .NE. I82 ))    STOP 46
-  IF(  KIND(TI84)     .NE. 8 )       STOP 47
-  IF(  ANY(TI84       .NE. I82 ))    STOP 48
+  IF(  KIND(TI81)     .NE. 8 )       ERROR STOP 41
+  IF(  TI81           .NE. I81 )     ERROR STOP 42
+  IF(  KIND(TI82)     .NE. 8 )       ERROR STOP 43
+  IF(  ANY(TI82       .NE. I82 ))    ERROR STOP 44
+  IF(  KIND(TI83)     .NE. 8 )       ERROR STOP 45
+  IF(  ANY(TI83       .NE. I82 ))    ERROR STOP 46
+  IF(  KIND(TI84)     .NE. 8 )       ERROR STOP 47
+  IF(  ANY(TI84       .NE. I82 ))    ERROR STOP 48
 
-  IF(  KIND(TR41)     .NE. 4 )       STOP 51
-  IF(  TR41           .NE. R41 )     STOP 52
-  IF(  KIND(TR42)     .NE. 4 )       STOP 53
-  IF(  ANY(TR42       .NE. R42 ))    STOP 54
-  IF(  KIND(TR43)     .NE. 4 )       STOP 55
-  IF(  ANY(TR43       .NE. R42 ))    STOP 56
-  IF(  KIND(TR44)     .NE. 4 )       STOP 57
-  IF(  ANY(TR44       .NE. R42 ))    STOP 58
+  IF(  KIND(TR41)     .NE. 4 )       ERROR STOP 51
+  IF(  TR41           .NE. R41 )     ERROR STOP 52
+  IF(  KIND(TR42)     .NE. 4 )       ERROR STOP 53
+  IF(  ANY(TR42       .NE. R42 ))    ERROR STOP 54
+  IF(  KIND(TR43)     .NE. 4 )       ERROR STOP 55
+  IF(  ANY(TR43       .NE. R42 ))    ERROR STOP 56
+  IF(  KIND(TR44)     .NE. 4 )       ERROR STOP 57
+  IF(  ANY(TR44       .NE. R42 ))    ERROR STOP 58
 
-  IF(  KIND(TR81)     .NE. 8 )       STOP 61
-  IF(  TR81           .NE. R81 )     STOP 62
-  IF(  KIND(TR82)     .NE. 8 )       STOP 63
-  IF(  ANY(TR82       .NE. R82 ))    STOP 64
-  IF(  KIND(TR83)     .NE. 8 )       STOP 65
-  IF(  ANY(TR83       .NE. R82 ))    STOP 66
-  IF(  KIND(TR84)     .NE. 8 )       STOP 67
-  IF(  ANY(TR84       .NE. R82 ))    STOP 68
+  IF(  KIND(TR81)     .NE. 8 )       ERROR STOP 61
+  IF(  TR81           .NE. R81 )     ERROR STOP 62
+  IF(  KIND(TR82)     .NE. 8 )       ERROR STOP 63
+  IF(  ANY(TR82       .NE. R82 ))    ERROR STOP 64
+  IF(  KIND(TR83)     .NE. 8 )       ERROR STOP 65
+  IF(  ANY(TR83       .NE. R82 ))    ERROR STOP 66
+  IF(  KIND(TR84)     .NE. 8 )       ERROR STOP 67
+  IF(  ANY(TR84       .NE. R82 ))    ERROR STOP 68
 
-  IF(  KIND(TR61)     .NE. 16 )      STOP 71
-  IF(  TR61           .NE. R61 )     STOP 72
-  IF(  KIND(TR62)     .NE. 16 )      STOP 73
-  IF(  ANY(TR62       .NE. R62 ))    STOP 74
-  IF(  KIND(TR63)     .NE. 16 )      STOP 75
-  IF(  ANY(TR63       .NE. R62 ))    STOP 76
-  IF(  KIND(TR64)     .NE. 16 )      STOP 77
-  IF(  ANY(TR64       .NE. R62 ))    STOP 78
+  IF(  KIND(TR61)     .NE. 16 )      ERROR STOP 71
+  IF(  TR61           .NE. R61 )     ERROR STOP 72
+  IF(  KIND(TR62)     .NE. 16 )      ERROR STOP 73
+  IF(  ANY(TR62       .NE. R62 ))    ERROR STOP 74
+  IF(  KIND(TR63)     .NE. 16 )      ERROR STOP 75
+  IF(  ANY(TR63       .NE. R62 ))    ERROR STOP 76
+  IF(  KIND(TR64)     .NE. 16 )      ERROR STOP 77
+  IF(  ANY(TR64       .NE. R62 ))    ERROR STOP 78
 
-  IF(  KIND(TZ41)     .NE. 4 )       STOP 151
-  IF(  TZ41           .NE. Z41 )     STOP 152
-  IF(  KIND(TZ42)     .NE. 4 )       STOP 153
-  IF(  ANY(TZ42       .NE. Z42 ))    STOP 154
-  IF(  KIND(TZ43)     .NE. 4 )       STOP 155
-  IF(  ANY(TZ43       .NE. Z42 ))    STOP 156
-  IF(  KIND(TZ44)     .NE. 4 )       STOP 157
-  IF(  ANY(TZ44       .NE. Z42 ))    STOP 158
+  IF(  KIND(TZ41)     .NE. 4 )       ERROR STOP 151
+  IF(  TZ41           .NE. Z41 )     ERROR STOP 152
+  IF(  KIND(TZ42)     .NE. 4 )       ERROR STOP 153
+  IF(  ANY(TZ42       .NE. Z42 ))    ERROR STOP 154
+  IF(  KIND(TZ43)     .NE. 4 )       ERROR STOP 155
+  IF(  ANY(TZ43       .NE. Z42 ))    ERROR STOP 156
+  IF(  KIND(TZ44)     .NE. 4 )       ERROR STOP 157
+  IF(  ANY(TZ44       .NE. Z42 ))    ERROR STOP 158
 
-  IF(  KIND(TZ81)     .NE. 8 )       STOP 161
-  IF(  TZ81           .NE. Z81 )     STOP 162
-  IF(  KIND(TZ82)     .NE. 8 )       STOP 163
-  IF(  ANY(TZ82       .NE. Z82 ))    STOP 164
-  IF(  KIND(TZ83)     .NE. 8 )       STOP 165
-  IF(  ANY(TZ83       .NE. Z82 ))    STOP 166
-  IF(  KIND(TZ84)     .NE. 8 )       STOP 167
-  IF(  ANY(TZ84       .NE. Z82 ))    STOP 168
+  IF(  KIND(TZ81)     .NE. 8 )       ERROR STOP 161
+  IF(  TZ81           .NE. Z81 )     ERROR STOP 162
+  IF(  KIND(TZ82)     .NE. 8 )       ERROR STOP 163
+  IF(  ANY(TZ82       .NE. Z82 ))    ERROR STOP 164
+  IF(  KIND(TZ83)     .NE. 8 )       ERROR STOP 165
+  IF(  ANY(TZ83       .NE. Z82 ))    ERROR STOP 166
+  IF(  KIND(TZ84)     .NE. 8 )       ERROR STOP 167
+  IF(  ANY(TZ84       .NE. Z82 ))    ERROR STOP 168
 
-  IF(  KIND(TZ61)     .NE. 16 )      STOP 171
-  IF(  TZ61           .NE. Z61 )     STOP 172
-  IF(  KIND(TZ62)     .NE. 16 )      STOP 173
-  IF(  ANY(TZ62       .NE. Z62 ))    STOP 174
-  IF(  KIND(TZ63)     .NE. 16 )      STOP 175
-  IF(  ANY(TZ63       .NE. Z62 ))    STOP 176
-  IF(  KIND(TZ64)     .NE. 16 )      STOP 177
-  IF(  ANY(TZ64       .NE. Z62 ))    STOP 178
+  IF(  KIND(TZ61)     .NE. 16 )      ERROR STOP 171
+  IF(  TZ61           .NE. Z61 )     ERROR STOP 172
+  IF(  KIND(TZ62)     .NE. 16 )      ERROR STOP 173
+  IF(  ANY(TZ62       .NE. Z62 ))    ERROR STOP 174
+  IF(  KIND(TZ63)     .NE. 16 )      ERROR STOP 175
+  IF(  ANY(TZ63       .NE. Z62 ))    ERROR STOP 176
+  IF(  KIND(TZ64)     .NE. 16 )      ERROR STOP 177
+  IF(  ANY(TZ64       .NE. Z62 ))    ERROR STOP 178
 
   END
 

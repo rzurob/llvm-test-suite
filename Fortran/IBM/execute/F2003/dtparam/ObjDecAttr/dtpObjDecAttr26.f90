@@ -95,13 +95,13 @@
 
   SELECT CASE (M)
   CASE (1)
-    IF (  ALLOCATED ( T%Tar0) ) STOP 11
-    IF (  ASSOCIATED( T%Tar1) ) STOP 12
-    IF (  ALLOCATED ( T%Tar2) ) STOP 13
+    IF (  ALLOCATED ( T%Tar0) ) ERROR STOP 11
+    IF (  ASSOCIATED( T%Tar1) ) ERROR STOP 12
+    IF (  ALLOCATED ( T%Tar2) ) ERROR STOP 13
 
-    IF (  ASSOCIATED(T%Ptr0) ) STOP 14
-    IF (  ASSOCIATED(T%Ptr1) ) STOP 15
-    IF (  ASSOCIATED(T%Ptr2) ) STOP 16
+    IF (  ASSOCIATED(T%Ptr0) ) ERROR STOP 14
+    IF (  ASSOCIATED(T%Ptr1) ) ERROR STOP 15
+    IF (  ASSOCIATED(T%Ptr2) ) ERROR STOP 16
 
     ALLOCATE(T%Tar0(N))
     ALLOCATE(T%Tar1(N), SOURCE=CT)
@@ -112,45 +112,45 @@
     T%Ptr2(N:) => T%Tar2
 
   CASE (2)
-    IF ( .NOT. ALLOCATED ( T%Tar0) ) STOP 21
-    IF ( .NOT. ASSOCIATED( T%Tar1) ) STOP 22
-    IF ( .NOT. ALLOCATED ( T%Tar2) ) STOP 23
+    IF ( .NOT. ALLOCATED ( T%Tar0) ) ERROR STOP 21
+    IF ( .NOT. ASSOCIATED( T%Tar1) ) ERROR STOP 22
+    IF ( .NOT. ALLOCATED ( T%Tar2) ) ERROR STOP 23
 
-    IF ( .NOT. ASSOCIATED(T%Ptr0) ) STOP 24
-    IF ( .NOT. ASSOCIATED(T%Ptr1) ) STOP 25
-    IF ( .NOT. ASSOCIATED(T%Ptr2) ) STOP 26
+    IF ( .NOT. ASSOCIATED(T%Ptr0) ) ERROR STOP 24
+    IF ( .NOT. ASSOCIATED(T%Ptr1) ) ERROR STOP 25
+    IF ( .NOT. ASSOCIATED(T%Ptr2) ) ERROR STOP 26
 
-    IF ( T%Ptr0%L0         .NE. 1 ) STOP 31
-    IF ( LBOUND(T%Ptr0,1)  .NE. N ) STOP 32
-    IF ( SIZE(T%Ptr0)      .NE. N ) STOP 33
+    IF ( T%Ptr0%L0         .NE. 1 ) ERROR STOP 31
+    IF ( LBOUND(T%Ptr0,1)  .NE. N ) ERROR STOP 32
+    IF ( SIZE(T%Ptr0)      .NE. N ) ERROR STOP 33
 
-    IF ( T%Ptr1%L0        .NE. 3       )  STOP 41
-    IF ( T%Ptr1%L1        .NE. 5       )  STOP 42
-    IF ( LBOUND(T%Ptr1, 1).NE. N       )  STOP 43
-    IF ( SIZE(T%Ptr1)     .NE. N       )  STOP 44
-    IF ( ANY( T%Ptr1%C1   .NE. "XYZ" ) )  STOP 45
+    IF ( T%Ptr1%L0        .NE. 3       )  ERROR STOP 41
+    IF ( T%Ptr1%L1        .NE. 5       )  ERROR STOP 42
+    IF ( LBOUND(T%Ptr1, 1).NE. N       )  ERROR STOP 43
+    IF ( SIZE(T%Ptr1)     .NE. N       )  ERROR STOP 44
+    IF ( ANY( T%Ptr1%C1   .NE. "XYZ" ) )  ERROR STOP 45
 
-    IF ( T%Ptr2%L0        .NE. 3       )  STOP 41
-    IF ( T%Ptr2%L1        .NE. 5       )  STOP 42
-    IF ( T%Ptr2%L2        .NE. 7       )  STOP 43
-    IF ( LBOUND(T%ptr2,1) .NE. N       )  STOP 44
-    IF ( SIZE(T%Ptr2)     .NE. N       )  STOP 45
+    IF ( T%Ptr2%L0        .NE. 3       )  ERROR STOP 41
+    IF ( T%Ptr2%L1        .NE. 5       )  ERROR STOP 42
+    IF ( T%Ptr2%L2        .NE. 7       )  ERROR STOP 43
+    IF ( LBOUND(T%ptr2,1) .NE. N       )  ERROR STOP 44
+    IF ( SIZE(T%Ptr2)     .NE. N       )  ERROR STOP 45
 
     DO I=N, 2*N-1
-      IF ( T%Ptr2(I)%L0                .NE.   3        )  STOP 81
-      IF ( T%Ptr2(I)%L1                .NE.   5        )  STOP 82
-      IF ( T%Ptr2(I)%L2                 .NE.   7       )  STOP 83
-      IF ( T%Ptr2(I)%C1                .NE.   "XYZ"    )  STOP 84
-      IF ( T%Ptr2(I)%C2                .NE.   "ZYX"    )  STOP 85
-      IF ( T%Ptr2(I)%I                 .NE.   1234     )  STOP 86
-      IF ( T%Ptr2(I)%R                 .NE.   4321.    )  STOP 87
-      IF ( T%Ptr2(I)%L                 .NEQV. .TRUE.   )  STOP 88
-      IF ( T%Ptr2(I)%Z                 .NE.   (1.,-1.) )  STOP 89
-      IF ( T%Ptr2(I)%T0%K0             .NE.    8       )  STOP 90
-      IF ( T%Ptr2(I)%T0%L0             .NE.    7       )  STOP 91
-      IF ( ASSOCIATED( T%Ptr2(I)%Ptr ) .EQV.   .TRUE.  )  STOP 92
-      IF ( T%Ptr2(I)%Ptr%K2            .NE.    8       )  STOP 93
-      IF ( T%Ptr2(I)%Ptr%L2            .NE.    7       )  STOP 94
+      IF ( T%Ptr2(I)%L0                .NE.   3        )  ERROR STOP 81
+      IF ( T%Ptr2(I)%L1                .NE.   5        )  ERROR STOP 82
+      IF ( T%Ptr2(I)%L2                 .NE.   7       )  ERROR STOP 83
+      IF ( T%Ptr2(I)%C1                .NE.   "XYZ"    )  ERROR STOP 84
+      IF ( T%Ptr2(I)%C2                .NE.   "ZYX"    )  ERROR STOP 85
+      IF ( T%Ptr2(I)%I                 .NE.   1234     )  ERROR STOP 86
+      IF ( T%Ptr2(I)%R                 .NE.   4321.    )  ERROR STOP 87
+      IF ( T%Ptr2(I)%L                 .NEQV. .TRUE.   )  ERROR STOP 88
+      IF ( T%Ptr2(I)%Z                 .NE.   (1.,-1.) )  ERROR STOP 89
+      IF ( T%Ptr2(I)%T0%K0             .NE.    8       )  ERROR STOP 90
+      IF ( T%Ptr2(I)%T0%L0             .NE.    7       )  ERROR STOP 91
+      IF ( ASSOCIATED( T%Ptr2(I)%Ptr ) .EQV.   .TRUE.  )  ERROR STOP 92
+      IF ( T%Ptr2(I)%Ptr%K2            .NE.    8       )  ERROR STOP 93
+      IF ( T%Ptr2(I)%Ptr%L2            .NE.    7       )  ERROR STOP 94
     END DO
 
   CASE DEFAULT

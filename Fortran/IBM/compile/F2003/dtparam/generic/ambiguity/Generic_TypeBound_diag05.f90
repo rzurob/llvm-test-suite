@@ -50,7 +50,7 @@
       CLASS(Base(4,:)), POINTER  :: pntr
 
       ALLOCATE (pntr, source = Base(4,10)() )
-      IF ( .NOT. ASSOCIATED(pntr)) STOP 30
+      IF ( .NOT. ASSOCIATED(pntr)) ERROR STOP 30
 
       END SUBROUTINE sub0
 
@@ -59,7 +59,7 @@
       CLASS(Base(4,:)), POINTER  :: pntr
 
       ALLOCATE (pntr, source = Obj)
-      IF ( .NOT. ASSOCIATED(pntr)) STOP 30
+      IF ( .NOT. ASSOCIATED(pntr)) ERROR STOP 30
 
       END SUBROUTINE sub1
 

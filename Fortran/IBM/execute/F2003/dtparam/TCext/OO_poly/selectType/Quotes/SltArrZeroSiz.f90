@@ -83,12 +83,12 @@
       SELECT TYPE (Ptr => Arr)
         TYPE IS (Child(4,*))
 
-          IF ( ANY (LBOUND(Ptr)   .NE. (/1, 1, 1/)  ) ) STOP 30
-          IF ( ANY (UBOUND(Ptr)   .NE. (/18,18,18/) ) ) STOP 31
-          IF ( ANY (SHAPE(Ptr)    .NE. (/18,18,18/) ) ) STOP 32
+          IF ( ANY (LBOUND(Ptr)   .NE. (/1, 1, 1/)  ) ) ERROR STOP 30
+          IF ( ANY (UBOUND(Ptr)   .NE. (/18,18,18/) ) ) ERROR STOP 31
+          IF ( ANY (SHAPE(Ptr)    .NE. (/18,18,18/) ) ) ERROR STOP 32
 
-          IF ( ANY(Ptr%Base%GetId() .NE. 1) ) STOP 34
-          IF ( ANY(Ptr%GetId()      .NE. 2) ) STOP 35
+          IF ( ANY(Ptr%Base%GetId() .NE. 1) ) ERROR STOP 34
+          IF ( ANY(Ptr%GetId()      .NE. 2) ) ERROR STOP 35
 
        CLASS DEFAULT
           STOP 40

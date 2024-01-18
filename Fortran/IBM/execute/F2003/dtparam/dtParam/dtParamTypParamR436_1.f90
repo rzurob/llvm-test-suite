@@ -47,34 +47,34 @@
   TYPE (DT2)    :: T2
 
 
-  IF (KIND(T1%K) .NE. F ) STOP 11
-  IF (T1%K       .NE. F ) STOP 12
+  IF (KIND(T1%K) .NE. F ) ERROR STOP 11
+  IF (T1%K       .NE. F ) ERROR STOP 12
 
-  IF (KIND(T1%L) .NE. F ) STOP 13
-  IF (T1%L       .NE. F ) STOP 14
+  IF (KIND(T1%L) .NE. F ) ERROR STOP 13
+  IF (T1%L       .NE. F ) ERROR STOP 14
 
-  IF (KIND(T1%Arr1) .NE. T1%K )           STOP 15
-  IF (ANY(T1%Arr1   .NE. T1%K) )          STOP 16
-  IF (ANY(SHAPE(T1%Arr1) .NE. (/T1%K/)) ) STOP 17
+  IF (KIND(T1%Arr1) .NE. T1%K )           ERROR STOP 15
+  IF (ANY(T1%Arr1   .NE. T1%K) )          ERROR STOP 16
+  IF (ANY(SHAPE(T1%Arr1) .NE. (/T1%K/)) ) ERROR STOP 17
 
-  IF (KIND(T1%Arr2) .NE. T1%K )           STOP 15
-  IF (ANY(T1%Arr2   .NE. -T1%K))          STOP 16
-  IF (ANY(SHAPE(T1%Arr2) .NE. (/T1%L/)) ) STOP 17
+  IF (KIND(T1%Arr2) .NE. T1%K )           ERROR STOP 15
+  IF (ANY(T1%Arr2   .NE. -T1%K))          ERROR STOP 16
+  IF (ANY(SHAPE(T1%Arr2) .NE. (/T1%L/)) ) ERROR STOP 17
 
 
-  IF (KIND(T2%K) .NE. T2%K ) STOP 21
-  IF (T2%K       .NE. T2%K ) STOP 22
+  IF (KIND(T2%K) .NE. T2%K ) ERROR STOP 21
+  IF (T2%K       .NE. T2%K ) ERROR STOP 22
 
-  IF (KIND(T2%L) .NE. T2%K ) STOP 23
-  IF (T2%L       .NE. T2%K ) STOP 24
+  IF (KIND(T2%L) .NE. T2%K ) ERROR STOP 23
+  IF (T2%L       .NE. T2%K ) ERROR STOP 24
 
-  IF (KIND(T2%Arr3) .NE. T2%K )           STOP 25
-  IF (ANY(T2%Arr3   .NE. T2%K) )          STOP 26
-  IF (ANY(SHAPE(T2%Arr3) .NE. (/T2%K/)) ) STOP 27
+  IF (KIND(T2%Arr3) .NE. T2%K )           ERROR STOP 25
+  IF (ANY(T2%Arr3   .NE. T2%K) )          ERROR STOP 26
+  IF (ANY(SHAPE(T2%Arr3) .NE. (/T2%K/)) ) ERROR STOP 27
 
-  IF (KIND(T2%Arr4) .NE. T2%K )           STOP 25
-  IF (ANY(T2%Arr4   .NE. -T2%K))          STOP 26
-  IF (ANY(SHAPE(T2%Arr4) .NE. (/T1%L/)) ) STOP 27
+  IF (KIND(T2%Arr4) .NE. T2%K )           ERROR STOP 25
+  IF (ANY(T2%Arr4   .NE. -T2%K))          ERROR STOP 26
+  IF (ANY(SHAPE(T2%Arr4) .NE. (/T1%L/)) ) ERROR STOP 27
 
 
 

@@ -23,7 +23,7 @@ base1%baseId = 10_4
 
 base2 = funn(base1)
 
-if (base2%baseid .ne. 10_4) stop 1
+if (base2%baseid .ne. 10_4) error stop 1
 
 contains
 function funn(arg)

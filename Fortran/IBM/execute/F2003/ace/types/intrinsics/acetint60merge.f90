@@ -43,15 +43,15 @@ program acetint60merge
   control9 = [integer:: 1, 0, 1, 1, 0, 0, 0, 1, 1]
 
   print *, merge([integer:: 1,2,3,4,5], [integer:: 1, 4, 9, 16, 25], [logical:: (control5(i) == 1, i=1,5)]) ! 1 4 3 4 25
-  if (any(merge([integer:: 1, 2, 3, 4, 5], [integer:: 1, 4, 9, 16, 25], [logical:: (control5(i) == 1, i=1,5)]) /= [integer:: 1, 4, 3, 4, 25])) stop 2
+  if (any(merge([integer:: 1, 2, 3, 4, 5], [integer:: 1, 4, 9, 16, 25], [logical:: (control5(i) == 1, i=1,5)]) /= [integer:: 1, 4, 3, 4, 25])) error stop 2
   array = [integer:: 1, 2, 3, 4, 5, 6, 7, 8, 9]
   array = merge([integer:: 1, 2, 3, 4, 5, 6, 7, 8, 9], [integer:: 81, 64, 49, 36, 25, 16, 9, 4, 1], [logical:: (control9(i) == 1, i=1,9)])
-  if (any(array /= [integer:: 1, 64, 3, 4, 25, 16, 9, 8, 9])) stop 3
+  if (any(array /= [integer:: 1, 64, 3, 4, 25, 16, 9, 8, 9])) error stop 3
 
   print *, merge([integer:: (i, i=1,5)], [integer:: (i ** 2, i=1,5)], [logical:: T, F, T, T, F]) ! 1 4 3 4 25
-  if (any(merge([integer:: (i, i=1,5)], [integer:: (i ** 2, i=1,5)], [logical:: T, F, T, T, F]) /= [integer:: 1, 4, 3, 4, 25])) stop 4
+  if (any(merge([integer:: (i, i=1,5)], [integer:: (i ** 2, i=1,5)], [logical:: T, F, T, T, F]) /= [integer:: 1, 4, 3, 4, 25])) error stop 4
   array = [integer:: (i, i=1,9)]
   array = merge([integer:: (array(i), i=1,9)], [integer:: (array(i) ** 2, i=9,1,-1)], [logical:: T, F, T, T, F, F, F, T, T])
-  if (any(array /= [integer:: 1, 64, 3, 4, 25, 16, 9, 8, 9])) stop 5
+  if (any(array /= [integer:: 1, 64, 3, 4, 25, 16, 9, 8, 9])) error stop 5
 
 end program acetint60merge

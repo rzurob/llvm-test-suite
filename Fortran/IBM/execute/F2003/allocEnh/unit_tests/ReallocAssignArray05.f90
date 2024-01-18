@@ -11,6 +11,6 @@
 logical(2), allocatable :: a(:)
 allocate(a(3))
 a = (/.true.,.false.,.true.,.false./)
-if (any(shape(a) /= (/4/))) stop 1
-if (any(a .neqv. (/.true., .false., .true.,.false./))) stop 2
+if (any(shape(a) /= (/4/))) error stop 1
+if (any(a .neqv. (/.true., .false., .true.,.false./))) error stop 2
 end

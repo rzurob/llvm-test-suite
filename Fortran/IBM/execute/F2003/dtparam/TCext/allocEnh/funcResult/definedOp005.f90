@@ -49,7 +49,7 @@ module m
 
         allocatable :: addB1B2Array(:,:,:)
 
-        if (any(shape(b1) /= shape(b2))) stop 10
+        if (any(shape(b1) /= shape(b2))) error stop 10
 
 !        addB1B2Array = reshape((/(((b1(i,j,k)+b2(i,j,k), i = 1, size(b1,1)), &
 !            j=1,size(b1,2)), k=1,size(b1,3))/), (/size(b1,1), size(b1,2), &

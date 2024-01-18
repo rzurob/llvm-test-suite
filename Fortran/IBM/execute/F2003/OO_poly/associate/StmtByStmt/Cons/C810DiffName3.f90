@@ -28,9 +28,9 @@
 
      As1 : ASSOCIATE ( As1  => 11 )
        As:   ASSOCIATE ( As  => as1 )
-         IF ( As .NE. 11 ) STOP 50
+         IF ( As .NE. 11 ) ERROR STOP 50
        END ASSOCIATE As
-       IF ( As1 .NE. 11 ) STOP 51
+       IF ( As1 .NE. 11 ) ERROR STOP 51
      END ASSOCIATE As1
 
   END

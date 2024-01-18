@@ -56,9 +56,9 @@ end module
 
         p1(-1:8) => tar1%b1%a1
 
-        if ( .not. associated(p1, tar1%b1%a1)) stop 11
-        if (lbound(p1,1) /= -1 ) stop 13
-        if (ubound(p1,1) /= 8 ) stop 15
+        if ( .not. associated(p1, tar1%b1%a1)) error stop 11
+        if (lbound(p1,1) /= -1 ) error stop 13
+        if (ubound(p1,1) /= 8 ) error stop 15
 
 	print *, (/ (p1(i)%id, i= -1,8)/)
 

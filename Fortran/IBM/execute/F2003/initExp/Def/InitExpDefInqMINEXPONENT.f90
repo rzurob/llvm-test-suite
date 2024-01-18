@@ -41,14 +41,14 @@
   INTEGER  :: TR6(16, 16)  = RESHAPE((/(MINEXPONENT(R6), I=1,256)/), (/16,16/))
 
 !?? IEEE
-!  IF ( ANY ( TR4  .NE. -126  )  )   STOP 21
-! IF ( ANY ( TR8  .NE. -1023 )  )   STOP 22
-! IF ( ANY ( TR6  .NE. -1023 )  )   STOP 23
+!  IF ( ANY ( TR4  .NE. -126  )  )   ERROR STOP 21
+! IF ( ANY ( TR8  .NE. -1023 )  )   ERROR STOP 22
+! IF ( ANY ( TR6  .NE. -1023 )  )   ERROR STOP 23
 
 !?? IBM Eextension
-  IF ( ANY ( TR4  .NE. -125  )  )   STOP 21
-  IF ( ANY ( TR8  .NE. -1021 )  )   STOP 22
-  IF ( ANY ( TR6  .NE. -968 )  )    STOP 23
+  IF ( ANY ( TR4  .NE. -125  )  )   ERROR STOP 21
+  IF ( ANY ( TR8  .NE. -1021 )  )   ERROR STOP 22
+  IF ( ANY ( TR6  .NE. -968 )  )    ERROR STOP 23
 
   END
 

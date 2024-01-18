@@ -25,13 +25,13 @@ real(8) :: res18(2,3,5)=product(c, dim=3)
 
 real(16) :: res11=product((/1.1_16,9.9_16,86.86_16,9.9_16,75.75_16,5.5_16/))
 
-if (res2 .ne. product( a, mask=a.gt.-5)) stop 3
-if (.not. all(res3 .eq. product(b, dim=1))) stop 4
-if (.not. all(res4 .eq. product(b, dim=2))) stop 5
-if (.not. all(res5 .eq. product(b, dim=2, mask=b .gt. 2))) stop 6
+if (res2 .ne. product( a, mask=a.gt.-5)) error stop 3
+if (.not. all(res3 .eq. product(b, dim=1))) error stop 4
+if (.not. all(res4 .eq. product(b, dim=2))) error stop 5
+if (.not. all(res5 .eq. product(b, dim=2, mask=b .gt. 2))) error stop 6
 
-if (.not. all(res18 .eq. product(c, dim=3))) stop 7
+if (.not. all(res18 .eq. product(c, dim=3))) error stop 7
 
-if (res11 .ne. product((/1.1_16,9.9_16,86.86_16,9.9_16,75.75_16,5.5_16/))) stop 8
+if (res11 .ne. product((/1.1_16,9.9_16,86.86_16,9.9_16,75.75_16,5.5_16/))) error stop 8
 
 end

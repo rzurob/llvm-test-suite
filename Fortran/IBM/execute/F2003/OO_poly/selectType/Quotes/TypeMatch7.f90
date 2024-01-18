@@ -67,11 +67,11 @@
          STOP 41
        TYPE IS (Child)
 
-         IF ( ANY(V%Id         .NE. 0))          STOP 30
-         IF ( SIZE(V)          .NE. 4 )          STOP 31
-         IF ( ANY (LBOUND(V)   .NE. (/2, 3/) ) ) STOP 32
-         IF ( ANY (UBOUND(V)   .NE. (/3, 4/) ) ) STOP 33
-         IF ( ANY(SHAPE(V)     .NE. (/2,2/)) )   STOP 34
+         IF ( ANY(V%Id         .NE. 0))          ERROR STOP 30
+         IF ( SIZE(V)          .NE. 4 )          ERROR STOP 31
+         IF ( ANY (LBOUND(V)   .NE. (/2, 3/) ) ) ERROR STOP 32
+         IF ( ANY (UBOUND(V)   .NE. (/3, 4/) ) ) ERROR STOP 33
+         IF ( ANY(SHAPE(V)     .NE. (/2,2/)) )   ERROR STOP 34
 
        TYPE IS (Base)
          STOP 45

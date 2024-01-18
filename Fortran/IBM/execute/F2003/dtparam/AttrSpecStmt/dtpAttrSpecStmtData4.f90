@@ -76,7 +76,7 @@
   CLASS(DT2(1,*,4,*,8,*)), INTENT(IN) :: Arg
   TYPE(DT2(1,Arg%L0,4,Arg%L1,8,Arg%L2)) ModFun2
     ModFun2%I = -Arg%I
-    IF ( SIZE( ModFun2%I ) .NE. Arg%L2 ) STOP 22
+    IF ( SIZE( ModFun2%I ) .NE. Arg%L2 ) ERROR STOP 22
   END FUNCTION
 
   END MODULE
@@ -112,18 +112,18 @@
 
   IF ( Arg .EQ. 1 ) THEN
 
-    IF ( ANY( T1(1)%R                      .NE. [1,2,3,4,5]   ) ) STOP 10
-    IF ( ANY( T1(1)%ModFun1().NE. [(1,3),(4,5)] ) ) STOP 11
+    IF ( ANY( T1(1)%R                      .NE. [1,2,3,4,5]   ) ) ERROR STOP 10
+    IF ( ANY( T1(1)%ModFun1().NE. [(1,3),(4,5)] ) ) ERROR STOP 11
 
     DO I=N-1, N
       T01 = T0(I)%ModFun0() ! no checking, optimization will remove it
-      IF ( ANY( T2(I)%R .NE. [1,2,3,4,5]           ) ) STOP 12
-      IF ( ANY( T2(I)%I .NE. [1,2,3,4,5,6,7]       ) ) STOP 13
-      IF ( ANY( T2(I)%C .NE. CHAR([1,2,3,4,5,6,7]) ) ) STOP 14
+      IF ( ANY( T2(I)%R .NE. [1,2,3,4,5]           ) ) ERROR STOP 12
+      IF ( ANY( T2(I)%I .NE. [1,2,3,4,5,6,7]       ) ) ERROR STOP 13
+      IF ( ANY( T2(I)%C .NE. CHAR([1,2,3,4,5,6,7]) ) ) ERROR STOP 14
 
       t2(n-i+1) = T2(I)%ModFun2()
-      IF ( ANY( t2(n-i+1)%i .NE. [-1,-2,-3,-4,-5,-6,-7] ) ) STOP 15
-      IF ( ANY( T2(n-i+1)%DT1%ModFun1() .NE. [(1,3),(4,5)] ) ) STOP 16
+      IF ( ANY( t2(n-i+1)%i .NE. [-1,-2,-3,-4,-5,-6,-7] ) ) ERROR STOP 15
+      IF ( ANY( T2(n-i+1)%DT1%ModFun1() .NE. [(1,3),(4,5)] ) ) ERROR STOP 16
 
       t2(i)%r = [-1,-2,-3,-4,-5]
       t2(i)%i = [-1,-2,-3,-4,-5,-6,-7]
@@ -134,18 +134,18 @@
 
   ELSE
 
-    IF ( ANY( T1(1)%R                      .NE. [-1,-2,-3,-4,-5]   ) ) STOP 20
-    IF ( ANY( T1(1)%ModFun1().NE. [(1,3),(4,5)]      ) ) STOP 21
+    IF ( ANY( T1(1)%R                      .NE. [-1,-2,-3,-4,-5]   ) ) ERROR STOP 20
+    IF ( ANY( T1(1)%ModFun1().NE. [(1,3),(4,5)]      ) ) ERROR STOP 21
 
     DO I=N-1, N
       T01 = T0(I)%ModFun0() ! no checking, optimization will remove it
-      IF ( ANY( T2(I)%R .NE. [-1,-2,-3,-4,-5]             ) ) STOP 22
-      IF ( ANY( T2(I)%I .NE. [-1,-2,-3,-4,-5,-6,-7]       ) ) STOP 23
-      IF ( ANY( T2(I)%C .NE. CHAR([7,6,5,4,3,2,1])        ) ) STOP 24
+      IF ( ANY( T2(I)%R .NE. [-1,-2,-3,-4,-5]             ) ) ERROR STOP 22
+      IF ( ANY( T2(I)%I .NE. [-1,-2,-3,-4,-5,-6,-7]       ) ) ERROR STOP 23
+      IF ( ANY( T2(I)%C .NE. CHAR([7,6,5,4,3,2,1])        ) ) ERROR STOP 24
 
       t2(n-i+1) = T2(I)%ModFun2()
-      IF ( ANY( t2(n-i+1)%i .NE. [1,2,3,4,5,6,7] ) ) STOP 25
-      IF ( ANY( T2(n-i+1)%DT1%ModFun1() .NE. [(1,3),(4,5)] ) ) STOP 26
+      IF ( ANY( t2(n-i+1)%i .NE. [1,2,3,4,5,6,7] ) ) ERROR STOP 25
+      IF ( ANY( T2(n-i+1)%DT1%ModFun1() .NE. [(1,3),(4,5)] ) ) ERROR STOP 26
 
     END DO
 

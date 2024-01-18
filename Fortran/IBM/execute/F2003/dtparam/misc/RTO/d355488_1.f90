@@ -19,10 +19,10 @@
       CLASS(Branch(:,:,:)), POINTER :: b0
 
       ALLOCATE( Branch(2,5,2) :: b0 )
-      IF ( .NOT. ASSOCIATED(b0) ) STOP 10
+      IF ( .NOT. ASSOCIATED(b0) ) ERROR STOP 10
 
       b0%cmp1 = Child(2,5) ('B', NULL())
 
       ALLOCATE( Base(5) :: b0%cmp1(2)%ptr )
-      IF ( .NOT. ASSOCIATED(b0%cmp1(2)%ptr) ) STOP 11
+      IF ( .NOT. ASSOCIATED(b0%cmp1(2)%ptr) ) ERROR STOP 11
 END

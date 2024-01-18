@@ -56,19 +56,19 @@
   TYPE(DT2), PARAMETER  :: Arr2(SIZE(IArr))=DT2(DT=Arr1(LEN("1"))%Arr(SIZE(IArr), SIZE(IArr)))
 
 
-  IF (ANY(LBOUND(Arr(1,10)%ID)   .NE. (/1,1/) ) )                                        STOP 11
-  IF (ANY(UBOUND(Arr(10,1)%ID)   .NE. (/10,10/) ))                                       STOP 11
-  IF (ANY(Arr(10,10)%ID          .NE. RESHAPE((/((I*J, I=1,10),J=1,10)/), (/10,10/))  ) ) STOP 12
+  IF (ANY(LBOUND(Arr(1,10)%ID)   .NE. (/1,1/) ) )                                        ERROR STOP 11
+  IF (ANY(UBOUND(Arr(10,1)%ID)   .NE. (/10,10/) ))                                       ERROR STOP 11
+  IF (ANY(Arr(10,10)%ID          .NE. RESHAPE((/((I*J, I=1,10),J=1,10)/), (/10,10/))  ) ) ERROR STOP 12
 
-  IF (ANY(LBOUND(Arr1(1)%Arr(10,1)%ID)   .NE. (/1,1/) )         )                                 STOP 21
-  IF (ANY(UBOUND(Arr1(10)%Arr(1,10)%ID)  .NE. (/10,10/) )       )                                 STOP 22
-  IF (ANY(Arr1(1)%Arr(10,10)%ID          .NE. RESHAPE((/((I*J, I=1,10),J=1,10)/), (/10,10/))  ) ) STOP 23
-  IF (ANY(Arr1(10)%Arr(1,1)%ID           .NE. RESHAPE((/((I*J, I=1,10),J=1,10)/), (/10,10/))  ) ) STOP 24
+  IF (ANY(LBOUND(Arr1(1)%Arr(10,1)%ID)   .NE. (/1,1/) )         )                                 ERROR STOP 21
+  IF (ANY(UBOUND(Arr1(10)%Arr(1,10)%ID)  .NE. (/10,10/) )       )                                 ERROR STOP 22
+  IF (ANY(Arr1(1)%Arr(10,10)%ID          .NE. RESHAPE((/((I*J, I=1,10),J=1,10)/), (/10,10/))  ) ) ERROR STOP 23
+  IF (ANY(Arr1(10)%Arr(1,1)%ID           .NE. RESHAPE((/((I*J, I=1,10),J=1,10)/), (/10,10/))  ) ) ERROR STOP 24
 
-  IF (ANY(LBOUND(Arr2(1)%ID)   .NE. (/1,1/)) )                                          STOP 31
-  IF (ANY(UBOUND(Arr2(10)%ID)  .NE. (/10,10/)) )                                        STOP 32
-  IF (ANY(Arr2(1)%ID           .NE. RESHAPE((/((I*J, I=1,10),J=1,10)/), (/10,10/))  ) ) STOP 33
-  IF (ANY(Arr2(10)%ID          .NE. RESHAPE((/((I*J, I=1,10),J=1,10)/), (/10,10/))  ) ) STOP 34
+  IF (ANY(LBOUND(Arr2(1)%ID)   .NE. (/1,1/)) )                                          ERROR STOP 31
+  IF (ANY(UBOUND(Arr2(10)%ID)  .NE. (/10,10/)) )                                        ERROR STOP 32
+  IF (ANY(Arr2(1)%ID           .NE. RESHAPE((/((I*J, I=1,10),J=1,10)/), (/10,10/))  ) ) ERROR STOP 33
+  IF (ANY(Arr2(10)%ID          .NE. RESHAPE((/((I*J, I=1,10),J=1,10)/), (/10,10/))  ) ) ERROR STOP 34
 
   END
 

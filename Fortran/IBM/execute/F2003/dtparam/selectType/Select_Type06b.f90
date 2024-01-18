@@ -129,9 +129,9 @@
       POINTER :: SInit, DInit
 
       ALLOCATE(List(knd1,len1):: SInit)
-      IF ( .NOT. ASSOCIATED(SInit)) STOP 10
+      IF ( .NOT. ASSOCIATED(SInit)) ERROR STOP 10
       ALLOCATE(List(knd2,len1):: DInit)
-      IF ( .NOT. ASSOCIATED(DInit)) STOP 11
+      IF ( .NOT. ASSOCIATED(DInit)) ERROR STOP 11
 
       CALL BuildList(SInit)
       U => SInit
@@ -154,9 +154,9 @@
           STEMP => Obj
 
           DO I = 1, 10
-           IF ( .NOT. ASSOCIATED(STEMP%NEXT) ) STOP 20
+           IF ( .NOT. ASSOCIATED(STEMP%NEXT) ) ERROR STOP 20
            STEMP => STEMP%p()
-           IF ( SIZE(STEMP%my_arr) .NE. I ) STOP 30
+           IF ( SIZE(STEMP%my_arr) .NE. I ) ERROR STOP 30
           END DO
 
         CLASSIS (List(knd2,*))
@@ -164,9 +164,9 @@
           DTEMP => Obj
 
           DO I = 1, 10
-           IF ( .NOT. ASSOCIATED(DTEMP%NEXT) ) STOP 22
+           IF ( .NOT. ASSOCIATED(DTEMP%NEXT) ) ERROR STOP 22
            DTEMP => DTEMP%p()
-           IF ( SIZE(DTEMP%my_arr) .NE. I ) STOP 31
+           IF ( SIZE(DTEMP%my_arr) .NE. I ) ERROR STOP 31
           END DO
 
         CLASSDEFAULT

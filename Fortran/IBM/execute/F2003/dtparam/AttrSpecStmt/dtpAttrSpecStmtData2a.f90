@@ -95,7 +95,7 @@ MODULE m
             TYPE(dt2(1,arg%l0,4,arg%l1,8,arg%l2)) ModFun2
 
 
-            IF (SIZE( ModFun2%i ) .NE. arg%l2)  STOP 22
+            IF (SIZE( ModFun2%i ) .NE. arg%l2)  ERROR STOP 22
             ModFun2%i = -Arg%i
 
         END FUNCTION
@@ -132,14 +132,14 @@ PROGRAM dtpAttrSpecStmtData2a
 
     t01 = t0%ModFun0( )
 
-    IF ( ANY(u1%r .NE. [ 1, 2, 3, 4, 5 ]) )                 STOP 10
-    IF ( ANY(u1%ModFun1( ) .NE. [ (1,3), (4,5) ]) )         STOP 11
+    IF ( ANY(u1%r .NE. [ 1, 2, 3, 4, 5 ]) )                 ERROR STOP 10
+    IF ( ANY(u1%ModFun1( ) .NE. [ (1,3), (4,5) ]) )         ERROR STOP 11
 
-    IF ( ANY(v2%i .NE. [ 1, 2, 3, 4, 5, 6, 7 ]) )           STOP 12
-    IF ( ANY(v2%c .NE. CHAR( [ 1, 2, 3, 4, 5, 6, 7 ] )) )   STOP 13
-    IF ( ANY(v2%dt1%ModFun1( ) .NE. [ (1,3), (4,5) ]) )     STOP 14
+    IF ( ANY(v2%i .NE. [ 1, 2, 3, 4, 5, 6, 7 ]) )           ERROR STOP 12
+    IF ( ANY(v2%c .NE. CHAR( [ 1, 2, 3, 4, 5, 6, 7 ] )) )   ERROR STOP 13
+    IF ( ANY(v2%dt1%ModFun1( ) .NE. [ (1,3), (4,5) ]) )     ERROR STOP 14
 
     v22 = v2%ModFun2( )
-    IF ( ANY(v22%i .NE. [ -1, -2, -3, -4, -5, -6, -7 ]) )   STOP 15
+    IF ( ANY(v22%i .NE. [ -1, -2, -3, -4, -5, -6, -7 ]) )   ERROR STOP 15
 
 END PROGRAM dtpAttrSpecStmtData2a

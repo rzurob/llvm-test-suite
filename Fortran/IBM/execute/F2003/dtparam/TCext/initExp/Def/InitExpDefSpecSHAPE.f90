@@ -78,14 +78,14 @@
   INTEGER(KIND(SHAPE(IArr, KIND=4))),  PARAMETER :: TI14(2)= SHAPE(IArr, KIND=4)
   INTEGER(KIND(SHAPE(IArr, KIND=8))),  PARAMETER :: TI18(2)= SHAPE(IArr, KIND=8)
 
-  IF ( KIND(TI11 )   .NE. 4 )             STOP 11
-  IF ( ANY( TI11     .NE. SHP ))          STOP 12
-  IF ( KIND(TI12 )   .NE. 2 )             STOP 13
-  IF ( ANY( TI12     .NE. SHP ))          STOP 14
-  IF ( KIND(TI14 )   .NE. 4 )             STOP 15
-  IF ( ANY( TI14     .NE. SHP ))          STOP 16
-  IF ( KIND(TI18 )   .NE. 8 )             STOP 17
-  IF ( ANY( TI18     .NE. SHP ))          STOP 18
+  IF ( KIND(TI11 )   .NE. 4 )             ERROR STOP 11
+  IF ( ANY( TI11     .NE. SHP ))          ERROR STOP 12
+  IF ( KIND(TI12 )   .NE. 2 )             ERROR STOP 13
+  IF ( ANY( TI12     .NE. SHP ))          ERROR STOP 14
+  IF ( KIND(TI14 )   .NE. 4 )             ERROR STOP 15
+  IF ( ANY( TI14     .NE. SHP ))          ERROR STOP 16
+  IF ( KIND(TI18 )   .NE. 8 )             ERROR STOP 17
+  IF ( ANY( TI18     .NE. SHP ))          ERROR STOP 18
 
   END SUBROUTINE
 
@@ -96,14 +96,14 @@
   INTEGER(KIND(SHAPE(LArr, KIND=4))),  PARAMETER :: TL24(2)= SHAPE(LArr, KIND=4)
   INTEGER(KIND(SHAPE(LArr, KIND=8))),  PARAMETER :: TL28(2)= SHAPE(LArr, KIND=8)
 
-  IF ( KIND(TL21 )   .NE. 1 )             STOP 21
-  IF ( ANY( TL21     .NE. SHP ))          STOP 22
-  IF ( KIND(TL22 )   .NE. 4 )             STOP 23
-  IF ( ANY( TL22     .NE. SHP ))          STOP 24
-  IF ( KIND(TL24 )   .NE. 4 )             STOP 25
-  IF ( ANY( TL24     .NE. SHP ))          STOP 26
-  IF ( KIND(TL28 )   .NE. 8 )             STOP 27
-  IF ( ANY( TL28     .NE. SHP ))          STOP 28
+  IF ( KIND(TL21 )   .NE. 1 )             ERROR STOP 21
+  IF ( ANY( TL21     .NE. SHP ))          ERROR STOP 22
+  IF ( KIND(TL22 )   .NE. 4 )             ERROR STOP 23
+  IF ( ANY( TL22     .NE. SHP ))          ERROR STOP 24
+  IF ( KIND(TL24 )   .NE. 4 )             ERROR STOP 25
+  IF ( ANY( TL24     .NE. SHP ))          ERROR STOP 26
+  IF ( KIND(TL28 )   .NE. 8 )             ERROR STOP 27
+  IF ( ANY( TL28     .NE. SHP ))          ERROR STOP 28
 
   END SUBROUTINE
 
@@ -113,12 +113,12 @@
   INTEGER(KIND(SHAPE(RArr, KIND=8))),  PARAMETER :: TR48(2)= SHAPE(RArr, KIND=8)
   INTEGER(KIND(SHAPE(RArr, KIND=2))), PARAMETER :: TR46(2)= SHAPE(RArr, KIND=2)
 
-  IF ( KIND(TR44 )   .NE. 4 )             STOP 31
-  IF ( ANY( TR44     .NE. SHP ))          STOP 32
-  IF ( KIND(TR48 )   .NE. 8 )             STOP 33
-  IF ( ANY( TR48     .NE. SHP ))          STOP 34
-  IF ( KIND(TR46 )   .NE. 2 )             STOP 35
-  IF ( ANY( TR46     .NE. SHP ))          STOP 36
+  IF ( KIND(TR44 )   .NE. 4 )             ERROR STOP 31
+  IF ( ANY( TR44     .NE. SHP ))          ERROR STOP 32
+  IF ( KIND(TR48 )   .NE. 8 )             ERROR STOP 33
+  IF ( ANY( TR48     .NE. SHP ))          ERROR STOP 34
+  IF ( KIND(TR46 )   .NE. 2 )             ERROR STOP 35
+  IF ( ANY( TR46     .NE. SHP ))          ERROR STOP 36
 
   END SUBROUTINE
 
@@ -128,12 +128,12 @@
   INTEGER(KIND(SHAPE(ZArr, KIND=4))),  PARAMETER :: TZ84(2)= SHAPE(ZArr, KIND=4)
   INTEGER(KIND(SHAPE(ZArr, KIND=1))),  PARAMETER :: TZ86(2)= SHAPE(ZArr, KIND=1)
 
-  IF ( KIND(TZ88 )   .NE. 4 )             STOP 41
-  IF ( ANY( TZ88     .NE. SHP ))          STOP 42
-  IF ( KIND(TZ84 )   .NE. 4 )             STOP 43
-  IF ( ANY( TZ84     .NE. SHP ))          STOP 44
-  IF ( KIND(TZ86 )   .NE. 1  )            STOP 45
-  IF ( ANY( TZ86     .NE. SHP ))          STOP 46
+  IF ( KIND(TZ88 )   .NE. 4 )             ERROR STOP 41
+  IF ( ANY( TZ88     .NE. SHP ))          ERROR STOP 42
+  IF ( KIND(TZ84 )   .NE. 4 )             ERROR STOP 43
+  IF ( ANY( TZ84     .NE. SHP ))          ERROR STOP 44
+  IF ( KIND(TZ86 )   .NE. 1  )            ERROR STOP 45
+  IF ( ANY( TZ86     .NE. SHP ))          ERROR STOP 46
 
   END SUBROUTINE
 
@@ -142,8 +142,8 @@
   INTEGER,         PARAMETER :: TDL(2) = SHAPE(D)
   INTEGER,         PARAMETER :: SHP1   = SIZE(SHAPE(D(-2147483648,2147483646)))
 
-  IF ( ANY( TDL      .NE. SHP ))         STOP 51
-  IF ( SHP1          .NE. 0 )            STOP 52
+  IF ( ANY( TDL      .NE. SHP ))         ERROR STOP 51
+  IF ( SHP1          .NE. 0 )            ERROR STOP 52
 
   END SUBROUTINE
 

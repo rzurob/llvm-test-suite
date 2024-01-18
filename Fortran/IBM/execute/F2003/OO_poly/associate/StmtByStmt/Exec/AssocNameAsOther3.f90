@@ -42,8 +42,8 @@
         L0 = Arg1
       END ASSOCIATE
 
-    IF ( L0 .NEQV. Arg0 ) STOP 45
-    IF ( L1 .NEQV. Arg1 ) STOP 45
+    IF ( L0 .NEQV. Arg0 ) ERROR STOP 45
+    IF ( L1 .NEQV. Arg1 ) ERROR STOP 45
     END SUBROUTINE
 
   END MODULE
@@ -52,17 +52,17 @@
   USE M
 
   ASSOCIATE ( L1 => Fun(L0) )
-    IF ( .NOT. L1 ) STOP 11
+    IF ( .NOT. L1 ) ERROR STOP 11
   END ASSOCIATE
 
   ASSOCIATE ( L0 =>  .FALSE._1 )
-    IF ( L0 ) STOP 12
+    IF ( L0 ) ERROR STOP 12
   END ASSOCIATE
 
-  IF ( .NOT. L0 ) STOP 13
+  IF ( .NOT. L0 ) ERROR STOP 13
 
   CALL Set ( .FALSE._8, .TRUE._8)
-  IF (       L0 ) STOP 14
+  IF (       L0 ) ERROR STOP 14
 
   END
 

@@ -55,20 +55,20 @@
   COMMON /B3/W
 
 
-  IF (ASSOCIATED(V(1)%ProcPtr))   STOP 11
-  IF (ASSOCIATED(V(2)%ProcPtr))   STOP 11
-  IF (ASSOCIATED(V(3)%ProcPtr))   STOP 11
-  IF (ANY(V%Id .NE. 1))           STOP 12
+  IF (ASSOCIATED(V(1)%ProcPtr))   ERROR STOP 11
+  IF (ASSOCIATED(V(2)%ProcPtr))   ERROR STOP 11
+  IF (ASSOCIATED(V(3)%ProcPtr))   ERROR STOP 11
+  IF (ANY(V%Id .NE. 1))           ERROR STOP 12
 
-! IF (ASSOCIATED(U(1)%ProcPtr))   STOP 21
-! IF (ASSOCIATED(U(2)%ProcPtr))   STOP 21
-! IF (ASSOCIATED(U(3)%ProcPtr))   STOP 21
-! IF (ANY(U%Id .NE. 2))           STOP 22
+! IF (ASSOCIATED(U(1)%ProcPtr))   ERROR STOP 21
+! IF (ASSOCIATED(U(2)%ProcPtr))   ERROR STOP 21
+! IF (ASSOCIATED(U(3)%ProcPtr))   ERROR STOP 21
+! IF (ANY(U%Id .NE. 2))           ERROR STOP 22
 
-  IF (ASSOCIATED(W(1)%ProcPtr))   STOP 31
-  IF (ASSOCIATED(W(2)%ProcPtr))   STOP 32
-  IF (ASSOCIATED(W(3)%ProcPtr))   STOP 33
-  IF (ANY(W%Id .NE. 3))           STOP 34
+  IF (ASSOCIATED(W(1)%ProcPtr))   ERROR STOP 31
+  IF (ASSOCIATED(W(2)%ProcPtr))   ERROR STOP 32
+  IF (ASSOCIATED(W(3)%ProcPtr))   ERROR STOP 33
+  IF (ANY(W%Id .NE. 3))           ERROR STOP 34
 
   END
 

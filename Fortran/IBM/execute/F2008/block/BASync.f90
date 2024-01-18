@@ -41,9 +41,9 @@ program BASync
     ! Start asynch read on 2nd set of data
     read(IN_UNIT, id=idvar, rec=2) i1obvious, d1obvious(ASIZE/2+1:ASIZE)
     ! process while reading 2nd set
-    if (any(d1obvious(1:ASIZE/2) /= [(i0obvious+i,i=1,ASIZE/2)])) stop 10
+    if (any(d1obvious(1:ASIZE/2) /= [(i0obvious+i,i=1,ASIZE/2)])) error stop 10
     wait(id=idvar)
-    if (any(d1obvious(ASIZE/2+1:ASIZE) /= [(i1obvious+i,i=1,ASIZE/2)])) stop 11
+    if (any(d1obvious(ASIZE/2+1:ASIZE) /= [(i1obvious+i,i=1,ASIZE/2)])) error stop 11
     print *, trim(identifyType('i.d1o',d1obvious(ASIZE)))
     print *, trim(identifyType('i.i1o',i1obvious))
   end block
@@ -52,7 +52,7 @@ program BASync
 
   print *, trim(identifyType('x.d1o',d1obvious(1)))
   print *, trim(identifyType('x.i0o',i0obvious))
-  if (any(d1obvious(1:ASIZE/2) /= [(i0obvious+i,i=1,ASIZE/2)])) stop 12
+  if (any(d1obvious(1:ASIZE/2) /= [(i0obvious+i,i=1,ASIZE/2)])) error stop 12
 
   close(unit=IN_UNIT)
 

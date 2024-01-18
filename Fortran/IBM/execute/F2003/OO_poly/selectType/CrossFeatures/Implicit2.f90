@@ -63,17 +63,17 @@
 
   SELECT TYPE (U)
   CLASS IS (DT)
-    IF (TRIM(V%C0) .NE. "0") STOP 20
-    IF (TRIM(V%C1) .NE. "1") STOP 21
-    IF (TRIM(V%C2) .NE. "2") STOP 22
+    IF (TRIM(V%C0) .NE. "0") ERROR STOP 20
+    IF (TRIM(V%C1) .NE. "1") ERROR STOP 21
+    IF (TRIM(V%C2) .NE. "2") ERROR STOP 22
 
     U%DT0%C0 ="?"
     U%DT1%C1 ="?"
     U%C2 ="?"
 
-    IF (TRIM(V%C0) .NE. "?") STOP 30
-    IF (TRIM(V%C1) .NE. "?") STOP 31
-    IF (TRIM(V%C2) .NE. "?") STOP 32
+    IF (TRIM(V%C0) .NE. "?") ERROR STOP 30
+    IF (TRIM(V%C1) .NE. "?") ERROR STOP 31
+    IF (TRIM(V%C2) .NE. "?") ERROR STOP 32
 
   CLASS DEFAULT
     STOP 40

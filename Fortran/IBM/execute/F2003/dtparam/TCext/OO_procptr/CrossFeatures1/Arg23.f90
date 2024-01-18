@@ -51,18 +51,18 @@
 
     SUBROUTINE ModSub1(ProcPtr)
     PROCEDURE(IntF), POINTER :: ProcPtr
-      IF ( ASSOCIATED(ProcPtr)) STOP 11
+      IF ( ASSOCIATED(ProcPtr)) ERROR STOP 11
     END SUBROUTINE
 
     SUBROUTINE ModSub2(ProcPtr)
     PROCEDURE(), POINTER :: ProcPtr  !Implies a subroutine
-      IF ( ASSOCIATED(ProcPtr)) STOP 12
+      IF ( ASSOCIATED(ProcPtr)) ERROR STOP 12
     END SUBROUTINE
 
     SUBROUTINE ModSub3(ProcPtr)
     IMPLICIT TYPE(Base(1,3))(P)
     PROCEDURE(), POINTER :: ProcPtr
-      IF ( ASSOCIATED(ProcPtr)) STOP 13
+      IF ( ASSOCIATED(ProcPtr)) ERROR STOP 13
     END SUBROUTINE
 
   END MODULE

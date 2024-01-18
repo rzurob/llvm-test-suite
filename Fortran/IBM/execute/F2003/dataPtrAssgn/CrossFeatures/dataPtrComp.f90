@@ -57,18 +57,18 @@
 
     Ptr(I:, J:) => Arr(I:, J:)
     Ptr(I, J)%PArr0(I:, J:) => Ptr(I, J)%PArr0(I:, J:)
-    IF (.NOT. ASSOCIATED(Ptr(I, J)%PArr0,  Arr(I, J)%PArr0(I:, J:) ))    STOP 11
-    IF (ANY( LBOUND(Ptr(I, J)%PArr0) .NE. (/I , J/)))                    STOP 12
-    IF (ANY( UBOUND(Ptr(I, J)%PArr0) .NE. (/N,  N/)))                    STOP 13
-    IF (ANY( Ptr(I, J)%PArr0 .NE. -1 ))                                  STOP 14
+    IF (.NOT. ASSOCIATED(Ptr(I, J)%PArr0,  Arr(I, J)%PArr0(I:, J:) ))    ERROR STOP 11
+    IF (ANY( LBOUND(Ptr(I, J)%PArr0) .NE. (/I , J/)))                    ERROR STOP 12
+    IF (ANY( UBOUND(Ptr(I, J)%PArr0) .NE. (/N,  N/)))                    ERROR STOP 13
+    IF (ANY( Ptr(I, J)%PArr0 .NE. -1 ))                                  ERROR STOP 14
 
     Ptr(I:J, I:J) => Arr1(1:N*N-(J-I+1)*(J-I+1))
     Ptr(I, J)%PArr0(I:J, I:J) => Ptr(I, J)%PArr1(1:N*N-(J-I+1)*(J-I+1))
-    IF (.NOT. ASSOCIATED(Ptr(I, J)%PArr0))                STOP 21
-    IF (SIZE(Ptr(I, J)%PArr0) .NE. (J-I+1)*(J-I+1))       STOP 22
-    IF (ANY( LBOUND(Ptr(I, J)%PArr0) .NE. (/I , I /)))    STOP 23
-    IF (ANY( UBOUND(Ptr(I, J)%PArr0) .NE. (/J , J /)))    STOP 24
-    IF (ANY( Ptr(I, J)%PArr0 .NE. -2 ))                   STOP 25
+    IF (.NOT. ASSOCIATED(Ptr(I, J)%PArr0))                ERROR STOP 21
+    IF (SIZE(Ptr(I, J)%PArr0) .NE. (J-I+1)*(J-I+1))       ERROR STOP 22
+    IF (ANY( LBOUND(Ptr(I, J)%PArr0) .NE. (/I , I /)))    ERROR STOP 23
+    IF (ANY( UBOUND(Ptr(I, J)%PArr0) .NE. (/J , J /)))    ERROR STOP 24
+    IF (ANY( Ptr(I, J)%PArr0 .NE. -2 ))                   ERROR STOP 25
 
   END DO
   END DO

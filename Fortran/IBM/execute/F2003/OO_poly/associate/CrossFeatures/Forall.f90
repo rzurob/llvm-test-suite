@@ -54,8 +54,8 @@
     END FORALL
   END ASSOCIATE
 
-  IF ( Any(Arr(2::2)%ID      .NE. -3) ) STOP 60
-  IF ( ANY(Arr(2::2)%GetID() .NE. -3) ) STOP 61
+  IF ( Any(Arr(2::2)%ID      .NE. -3) ) ERROR STOP 60
+  IF ( ANY(Arr(2::2)%GetID() .NE. -3) ) ERROR STOP 61
 
   ASSOCIATE ( As => Arr )
     FORALL (i=2:130:1)
@@ -63,8 +63,8 @@
     END FORALL
   END ASSOCIATE
 
-  IF ( Any(Arr%ID      .NE. -2) ) STOP 70
-  IF ( ANY(Arr%GetID() .NE. -2) ) STOP 71
+  IF ( Any(Arr%ID      .NE. -2) ) ERROR STOP 70
+  IF ( ANY(Arr%GetID() .NE. -2) ) ERROR STOP 71
 
   ASSOCIATE ( As => Arr )
     FORALL (i=2:130, As(i)%ID .EQ. -2)
@@ -72,8 +72,8 @@
     END FORALL
   END ASSOCIATE
 
-  IF ( Any(Arr%ID      .NE. -3) ) STOP 80
-  IF ( ANY(Arr%GetID() .NE. -3) ) STOP 81
+  IF ( Any(Arr%ID      .NE. -3) ) ERROR STOP 80
+  IF ( ANY(Arr%GetID() .NE. -3) ) ERROR STOP 81
 
   ASSOCIATE ( As => Arr(:) )
     FORALL ( i=1:129 )
@@ -81,8 +81,8 @@
     END FORALL
   END ASSOCIATE
 
-  IF ( Any(Arr%ID      .NE. 2) ) STOP 90
-  IF ( ANY(Arr%GetID() .NE. 2) ) STOP 91
+  IF ( Any(Arr%ID      .NE. 2) ) ERROR STOP 90
+  IF ( ANY(Arr%GetID() .NE. 2) ) ERROR STOP 91
 
   END
 

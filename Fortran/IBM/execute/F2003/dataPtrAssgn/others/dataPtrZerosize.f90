@@ -24,20 +24,20 @@
 
 	allocate(tar(0,1:0, 0:0))
 
-	if ( .not. allocated(tar)) stop 3
+	if ( .not. allocated(tar)) error stop 3
 
         ! target is zero-size for some sections, bounds-spec-list
 	ptr(3:,0:,7:) => tar
 
-	if ( associated(ptr, tar) ) stop 5
-	if (any(lbound(ptr) .ne. (/1,1,7/))) stop 7
-	if (any(ubound(ptr) .ne. (/0,0,7/))) stop 9
+	if ( associated(ptr, tar) ) error stop 5
+	if (any(lbound(ptr) .ne. (/1,1,7/))) error stop 7
+	if (any(ubound(ptr) .ne. (/0,0,7/))) error stop 9
 
 	! pointer is zero-size, bounds-remapping-list
 	i = -2
 	call sub (i)
-	if (any(lbound(ptr) .ne. (/1,1,1/))) stop 27
-	if (any(ubound(ptr) .ne. (/0,0,0/))) stop 29
+	if (any(lbound(ptr) .ne. (/1,1,1/))) error stop 27
+	if (any(ubound(ptr) .ne. (/0,0,0/))) error stop 29
 
  	contains
 	    function set_bd(i)

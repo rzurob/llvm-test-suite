@@ -70,10 +70,10 @@ program BInInt2ModProc
 
   print '("bs",z8)', ior(ishft(int(pat1,4),16),int(pat2,4))
   call sub(pat1, pat2, i4)
-  if (i4 /= pat3) stop 2
+  if (i4 /= pat3) error stop 2
 
   print '("fun:x",z8)', fun(pat1, pat2)
   i4a = fun(pat1, pat2)
-  if (i4a /= pat3 .or. fun(pat1,pat2) /= pat3) stop 3
+  if (i4a /= pat3 .or. fun(pat1,pat2) /= pat3) error stop 3
 
 end program BInInt2ModProc

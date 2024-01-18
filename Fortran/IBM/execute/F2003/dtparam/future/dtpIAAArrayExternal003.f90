@@ -60,47 +60,47 @@ contains
   subroutine f1(a)
     type(dk(1)) :: a
     print *, step, "f1:", a%ivar
-    if( a%k /= 1 .or. a%k /= kind(a%ivar)) stop 2
+    if( a%k /= 1 .or. a%k /= kind(a%ivar)) error stop 2
   end subroutine f1
 
   subroutine f4(a)
     type(dk(4)) :: a
     print *, step, "f4:", a%ivar
-    if( a%k /= 4 .or. a%k /= kind(a%ivar)) stop 3
+    if( a%k /= 4 .or. a%k /= kind(a%ivar)) error stop 3
   end subroutine f4
 
   subroutine fin(a)
     type(dl(*)) :: a
     print *, step, "fin:", a%l, ">", a%chvar, "<", a%iarr
-    if( a%l /= len(a%chvar) .or. a%l /= size(a%iarr)) stop 4
+    if( a%l /= len(a%chvar) .or. a%l /= size(a%iarr)) error stop 4
   end subroutine fin
 
   subroutine fin1(a)
     type(container(1,*)) :: a
     print *, step, "fin1:", a%l, a%dkvar, a%dlvar
-    if (a%k /= 1 .or. a%dkvar%k /= a%k .or. kind(a%dkvar%ivar) /= a%k) stop 5
-    if (a%dlvar%l /= a%l .or. len(a%dlvar%chvar) /= a%l .or. size(a%dlvar%iarr) /= a%l) stop 6
+    if (a%k /= 1 .or. a%dkvar%k /= a%k .or. kind(a%dkvar%ivar) /= a%k) error stop 5
+    if (a%dlvar%l /= a%l .or. len(a%dlvar%chvar) /= a%l .or. size(a%dlvar%iarr) /= a%l) error stop 6
   end subroutine fin1
 
   subroutine fin1arr(a)
     type(container(1,*)) :: a(:)
     print *, step, "fin1arr:", a%l, a%dkvar, a%dlvar
-    if (a%k /= 1 .or. a%dkvar%k /= a%k) stop 7
-    if (a%dlvar%l /= a%l .or. len(a%dlvar%chvar) /= a%l) stop 8
+    if (a%k /= 1 .or. a%dkvar%k /= a%k) error stop 7
+    if (a%dlvar%l /= a%l .or. len(a%dlvar%chvar) /= a%l) error stop 8
   end subroutine fin1arr
 
   subroutine fin4(a)
     type(container(4,*)) :: a
     print *, step, "fin4:", a%l, a%dkvar, a%dlvar
-    if (a%k /= 4 .or. a%dkvar%k /= a%k .or. kind(a%dkvar%ivar) /= a%k) stop 9
-    if (a%dlvar%l /= a%l .or. len(a%dlvar%chvar) /= a%l .or. size(a%dlvar%iarr) /= a%l) stop 10
+    if (a%k /= 4 .or. a%dkvar%k /= a%k .or. kind(a%dkvar%ivar) /= a%k) error stop 9
+    if (a%dlvar%l /= a%l .or. len(a%dlvar%chvar) /= a%l .or. size(a%dlvar%iarr) /= a%l) error stop 10
   end subroutine fin4
 
   subroutine fin4arr(a)
     type(container(4,*)) :: a(:)
     print *, step, "fin4arr:", a%l, a%dkvar, a%dlvar
-    if (a%k /= 4 .or. a%dkvar%k /= a%k) stop 11
-    if (a%dlvar%l /= a%l .or. len(a%dlvar%chvar) /= a%l) stop 12
+    if (a%k /= 4 .or. a%dkvar%k /= a%k) error stop 11
+    if (a%dlvar%l /= a%l .or. len(a%dlvar%chvar) /= a%l) error stop 12
   end subroutine fin4arr
 
 end module dtpIAAArrayExternal003mod

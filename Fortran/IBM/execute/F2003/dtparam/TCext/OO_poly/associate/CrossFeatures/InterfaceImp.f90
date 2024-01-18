@@ -82,14 +82,14 @@
             &          Fun(DT(4,1,3,4)(ID=-2, C="222", L=.TRUE.)), &
             &          Fun(DT(4,1,3,4)(ID=-3, C="333", L=.TRUE.))  /) )
 
-    IF ( Any(As%ID      .NE. (/-1,-2,-3/)) ) STOP 20
-    IF ( ANY(As%GetID() .NE. (/-1,-2,-3/)) ) STOP 21
+    IF ( Any(As%ID      .NE. (/-1,-2,-3/)) ) ERROR STOP 20
+    IF ( ANY(As%GetID() .NE. (/-1,-2,-3/)) ) ERROR STOP 21
 
-    IF ( Any(As%C      .NE. (/"111","222","333"/)) ) STOP 30
-    IF ( ANY(As%GetC() .NE. (/"1","2","3"/)) )       STOP 31
+    IF ( Any(As%C      .NE. (/"111","222","333"/)) ) ERROR STOP 30
+    IF ( ANY(As%GetC() .NE. (/"1","2","3"/)) )       ERROR STOP 31
 
-    IF ( Any(As%L      .NEQV. .TRUE.) ) STOP 60
-    IF ( ANY(As%GetL() .NEQV. .TRUE.) ) STOP 61
+    IF ( Any(As%L      .NEQV. .TRUE.) ) ERROR STOP 60
+    IF ( ANY(As%GetL() .NEQV. .TRUE.) ) ERROR STOP 61
 
 
   END ASSOCIATE

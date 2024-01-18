@@ -54,22 +54,22 @@
           L =DTT%L+DTT1%L)) :: T2(DTT1%L)
 
 
-  IF (  T1%K        .NE.  4  )            STOP 20
-  IF (  T1%K1       .NE. 1  )            STOP 21
-  IF (  T1%K2       .NE. 2  )            STOP 22
-  IF (  T1%K4       .NE. 4  )            STOP 23
-  IF (  T1%K8       .NE. 8  )            STOP 24
-  IF (  LEN( T1%C)  .NE.  9  )            STOP 25
-  IF (  SIZE(T1)    .NE.  9  )            STOP 26
+  IF (  T1%K        .NE.  4  )            ERROR STOP 20
+  IF (  T1%K1       .NE. 1  )            ERROR STOP 21
+  IF (  T1%K2       .NE. 2  )            ERROR STOP 22
+  IF (  T1%K4       .NE. 4  )            ERROR STOP 23
+  IF (  T1%K8       .NE. 8  )            ERROR STOP 24
+  IF (  LEN( T1%C)  .NE.  9  )            ERROR STOP 25
+  IF (  SIZE(T1)    .NE.  9  )            ERROR STOP 26
 
 
-  IF (  T2%K        .NE.  4  )            STOP 30
-  IF (  T2%K1       .NE.  1  )            STOP 31
-  IF (  T2%K2       .NE.  2  )            STOP 32
-  IF (  T2%K4       .NE.  4  )            STOP 33
-  IF (  T2%K8       .NE.  8  )            STOP 34
-  IF (  LEN( T2%C)  .NE.  18  )            STOP 35
-  IF (  SIZE(T2)    .NE.  9 )            STOP 36
+  IF (  T2%K        .NE.  4  )            ERROR STOP 30
+  IF (  T2%K1       .NE.  1  )            ERROR STOP 31
+  IF (  T2%K2       .NE.  2  )            ERROR STOP 32
+  IF (  T2%K4       .NE.  4  )            ERROR STOP 33
+  IF (  T2%K8       .NE.  8  )            ERROR STOP 34
+  IF (  LEN( T2%C)  .NE.  18  )            ERROR STOP 35
+  IF (  SIZE(T2)    .NE.  9 )            ERROR STOP 36
 
 
   END SUBROUTINE

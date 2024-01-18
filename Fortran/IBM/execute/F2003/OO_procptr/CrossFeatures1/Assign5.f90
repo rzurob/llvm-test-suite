@@ -87,12 +87,12 @@
   ALLOCATE(V%BComp)
   V%BComp = Base(RetPtr(Fun))
 
-  IF ( .NOT. ALLOCATED(V%BComp) )  STOP 12
-  IF ( .NOT. ASSOCIATED(V%BComp%ProcPtr, RetPtr(Fun)) ) STOP 13
+  IF ( .NOT. ALLOCATED(V%BComp) )  ERROR STOP 12
+  IF ( .NOT. ASSOCIATED(V%BComp%ProcPtr, RetPtr(Fun)) ) ERROR STOP 13
 
   ProcPtr => SavePtr
-  IF (ANY(ProcPtr(Fun, (/"123", "abc"/)) .NE. (/"123", "abc"/)) ) STOP 14
-  IF (ANY(ProcPtr(Fun, (/"", ""/))       .NE. (/"", ""/)) )       STOP 15
+  IF (ANY(ProcPtr(Fun, (/"123", "abc"/)) .NE. (/"123", "abc"/)) ) ERROR STOP 14
+  IF (ANY(ProcPtr(Fun, (/"", ""/))       .NE. (/"", ""/)) )       ERROR STOP 15
 
 
   CONTAINS

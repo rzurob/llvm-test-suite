@@ -49,8 +49,8 @@ program main
 
        call sub(aT)
 
-       if ( .not. allocated(aT%a2) ) stop 21
-       if ( allocated(aT%a1) ) stop 23
+       if ( .not. allocated(aT%a2) ) error stop 21
+       if ( allocated(aT%a1) ) error stop 23
 
        do i = 1, 4
            if ( size( aT%a2, i) /= 2 ) call zzrc(i)

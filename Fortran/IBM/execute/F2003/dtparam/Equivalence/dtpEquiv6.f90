@@ -89,25 +89,25 @@
   EQUIVALENCE(Z, Z1)
 
 
-  IF ( ANY( R%R         .NE.   -16        ) ) STOP 11
-  IF ( LBOUND( R%R, 1 ) .NE.   -16          ) STOP 12
-  IF ( UBOUND( R%R, 1 ) .NE.    0           ) STOP 13
+  IF ( ANY( R%R         .NE.   -16        ) ) ERROR STOP 11
+  IF ( LBOUND( R%R, 1 ) .NE.   -16          ) ERROR STOP 12
+  IF ( UBOUND( R%R, 1 ) .NE.    0           ) ERROR STOP 13
 
-  IF ( ANY( C%C         .NE.   CHAR(48-1) ) ) STOP 21
-  IF ( LBOUND( C%C, 1 ) .NE.   -5           ) STOP 22
-  IF ( UBOUND( C%C, 1 ) .NE.    0           ) STOP 23
+  IF ( ANY( C%C         .NE.   CHAR(48-1) ) ) ERROR STOP 21
+  IF ( LBOUND( C%C, 1 ) .NE.   -5           ) ERROR STOP 22
+  IF ( UBOUND( C%C, 1 ) .NE.    0           ) ERROR STOP 23
 
-  IF ( ANY( I%I         .NE.   -2         ) ) STOP 31
-  IF ( LBOUND( I%I, 1 ) .NE.   -7           ) STOP 32
-  IF ( UBOUND( I%I, 1 ) .NE.    0           ) STOP 33
+  IF ( ANY( I%I         .NE.   -2         ) ) ERROR STOP 31
+  IF ( LBOUND( I%I, 1 ) .NE.   -7           ) ERROR STOP 32
+  IF ( UBOUND( I%I, 1 ) .NE.    0           ) ERROR STOP 33
 
-  IF ( ANY( L%A         .NEQV. .TRUE.     ) ) STOP 41
-  IF ( LBOUND( L%A, 1 ) .NE.   -2           ) STOP 42
-  IF ( UBOUND( L%A, 1 ) .NE.    0           ) STOP 43
+  IF ( ANY( L%A         .NEQV. .TRUE.     ) ) ERROR STOP 41
+  IF ( LBOUND( L%A, 1 ) .NE.   -2           ) ERROR STOP 42
+  IF ( UBOUND( L%A, 1 ) .NE.    0           ) ERROR STOP 43
 
-  IF ( ANY( Z%Z         .NE.   -(-4,4)    ) ) STOP 51
-  IF ( LBOUND( Z%Z, 1 ) .NE.   -9           ) STOP 52
-  IF ( UBOUND( Z%Z, 1 ) .NE.    0           ) STOP 53
+  IF ( ANY( Z%Z         .NE.   -(-4,4)    ) ) ERROR STOP 51
+  IF ( LBOUND( Z%Z, 1 ) .NE.   -9           ) ERROR STOP 52
+  IF ( UBOUND( Z%Z, 1 ) .NE.    0           ) ERROR STOP 53
 
 
   R1 = 16
@@ -117,11 +117,11 @@
   Z1 = (-4,4)
 
 
-  IF ( ANY( R%R .NE.    16        ) ) STOP 61
-  IF ( ANY( C%C .NE.    CHAR(0)   ) ) STOP 62
-  IF ( ANY( I%I .NE.    2         ) ) STOP 63
-  IF ( ANY( L%A .NEQV.  .FALSE.   ) ) STOP 64
-  IF ( ANY( Z%Z .NE.    (-4,4)    ) ) STOP 65
+  IF ( ANY( R%R .NE.    16        ) ) ERROR STOP 61
+  IF ( ANY( C%C .NE.    CHAR(0)   ) ) ERROR STOP 62
+  IF ( ANY( I%I .NE.    2         ) ) ERROR STOP 63
+  IF ( ANY( L%A .NEQV.  .FALSE.   ) ) ERROR STOP 64
+  IF ( ANY( Z%Z .NE.    (-4,4)    ) ) ERROR STOP 65
 
 
   END

@@ -69,31 +69,31 @@
       ALLOCATE (Barr(10), Carr(10), Narr(10) )
 
       C2 = B1
-      IF (C2%value .NE. 4) STOP 10
+      IF (C2%value .NE. 4) ERROR STOP 10
       C2 = C1
-      IF (C2%value .NE. 4) STOP 11
+      IF (C2%value .NE. 4) ERROR STOP 11
       C2 = N1
-      IF (C2%value .NE. 4) STOP 12
+      IF (C2%value .NE. 4) ERROR STOP 12
 
       N2 = B1
-      IF (N2%value .NE. 4) STOP 13
+      IF (N2%value .NE. 4) ERROR STOP 13
       N2 = C1
-      IF (N2%value .NE. 4) STOP 14
+      IF (N2%value .NE. 4) ERROR STOP 14
       N2 = N1
-      IF (N2%value .NE. 4) STOP 15
+      IF (N2%value .NE. 4) ERROR STOP 15
 
       C2 = Barr
-      IF (C2%value .NE. 8) STOP 16
+      IF (C2%value .NE. 8) ERROR STOP 16
       C2 = Carr
-      IF (C2%value .NE. 8) STOP 17
+      IF (C2%value .NE. 8) ERROR STOP 17
       C2 = Narr
-      IF (C2%value .NE. 8) STOP 18
+      IF (C2%value .NE. 8) ERROR STOP 18
 
       N2 = Barr
-      IF (N2%value .NE. 8) STOP 19
+      IF (N2%value .NE. 8) ERROR STOP 19
       N2 = Carr
-      IF (N2%value .NE. 8) STOP 20
+      IF (N2%value .NE. 8) ERROR STOP 20
       N2 = Narr
-      IF (N2%value .NE. 8) STOP 21
+      IF (N2%value .NE. 8) ERROR STOP 21
 
       END PROGRAM Generic_Assign02c

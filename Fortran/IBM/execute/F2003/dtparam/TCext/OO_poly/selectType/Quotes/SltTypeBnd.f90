@@ -97,19 +97,19 @@
    CLASS IS (Child(4))
      STOP 22
    TYPE IS (Child(4))
-     IF (Var%GetIdx()           .NE. 2 )    STOP 31
-     IF (Var%GetId()            .NE. 2 )    STOP 32
-     IF (Var%ChildId            .NE. 2 )    STOP 33
-     IF (Var%Base1Id            .NE. 1 )    STOP 34
-     IF (Var%GetBase1Id()       .NE. 1 )    STOP 35
-     IF (Var%Base%GetId()       .NE. -1 )   STOP 36
-     IF (Var%Base1%Base%GetId() .NE. -1 )   STOP 37
-     IF (Var%Base1%Base%GetId() .NE. -1 )   STOP 38
-!    IF (Var%Base1%BaseId       .NE. -1 )   STOP 30 ! Private
-     IF (Var%Base1%Base1Id      .NE.  1 )   STOP 39
+     IF (Var%GetIdx()           .NE. 2 )    ERROR STOP 31
+     IF (Var%GetId()            .NE. 2 )    ERROR STOP 32
+     IF (Var%ChildId            .NE. 2 )    ERROR STOP 33
+     IF (Var%Base1Id            .NE. 1 )    ERROR STOP 34
+     IF (Var%GetBase1Id()       .NE. 1 )    ERROR STOP 35
+     IF (Var%Base%GetId()       .NE. -1 )   ERROR STOP 36
+     IF (Var%Base1%Base%GetId() .NE. -1 )   ERROR STOP 37
+     IF (Var%Base1%Base%GetId() .NE. -1 )   ERROR STOP 38
+!    IF (Var%Base1%BaseId       .NE. -1 )   ERROR STOP 30 ! Private
+     IF (Var%Base1%Base1Id      .NE.  1 )   ERROR STOP 39
 
-!    IF (Var%BaseId  .NE. -1 )      STOP 31  ! Private
-!    IF (Var%Base1%GetBase1Id() .NE. 1 ) STOP 32 ! this is wrong
+!    IF (Var%BaseId  .NE. -1 )      ERROR STOP 31  ! Private
+!    IF (Var%Base1%GetBase1Id() .NE. 1 ) ERROR STOP 32 ! this is wrong
   END SELECT
 
   END

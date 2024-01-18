@@ -65,11 +65,11 @@
 
   T = Fun(DT(8,4)(-1_8, -1.0_8, (1._8, -1._8), .FALSE._8, "B"))
 
-  IF ( T%I      .NE.   -1_8 )           STOP 23
-  IF ( T%R      .NE.   -1.0_8 )         STOP 24
-  IF ( T%Cplx   .NE.   (1._8, -1._8) )  STOP 25
-  IF ( T%LL     .NEQV. .FALSE._8 )      STOP 26
-  IF ( TRIM(T%C).NE.   TRIM("B"))       STOP 27
+  IF ( T%I      .NE.   -1_8 )           ERROR STOP 23
+  IF ( T%R      .NE.   -1.0_8 )         ERROR STOP 24
+  IF ( T%Cplx   .NE.   (1._8, -1._8) )  ERROR STOP 25
+  IF ( T%LL     .NEQV. .FALSE._8 )      ERROR STOP 26
+  IF ( TRIM(T%C).NE.   TRIM("B"))       ERROR STOP 27
 
   END
 

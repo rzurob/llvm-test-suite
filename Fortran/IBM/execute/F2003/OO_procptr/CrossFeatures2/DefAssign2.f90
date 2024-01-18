@@ -93,30 +93,30 @@
     B1 = Base(1)
   END WHERE
   DO I=1, 511
-    IF (B1(I)%Id .NE. 1) STOP 11
+    IF (B1(I)%Id .NE. 1) ERROR STOP 11
   END DO
 
   WHERE ((/(.TRUE., I=1,511)/)  )
     D1 = Base(2)
   END WHERE
   DO I=1, 511
-    IF (.NOT. ASSOCIATED(D1(I)%ProcPtr, ModFun)) STOP 22
-    IF (D1(I)%Id .NE. 2) STOP 23
+    IF (.NOT. ASSOCIATED(D1(I)%ProcPtr, ModFun)) ERROR STOP 22
+    IF (D1(I)%Id .NE. 2) ERROR STOP 23
   END DO
 
   WHERE ((/(.TRUE., I=1,511)/)  )
     B2 = DT(-1, ModFun)
   END WHERE
   DO I=1, 511
-   IF (B2(I)%Id .NE. -1) STOP 33
+   IF (B2(I)%Id .NE. -1) ERROR STOP 33
   END DO
 
   WHERE ((/(.TRUE., I=1,511)/)  )
     D2 = DT(-2, ModFun)
   END WHERE
   DO I=1, 511
-    IF (.NOT. ASSOCIATED(D2(I)%ProcPtr, ModFun)) STOP 42
-    IF (D2(I)%Id .NE. -2) STOP 43
+    IF (.NOT. ASSOCIATED(D2(I)%ProcPtr, ModFun)) ERROR STOP 42
+    IF (D2(I)%Id .NE. -2) ERROR STOP 43
   END DO
 
 

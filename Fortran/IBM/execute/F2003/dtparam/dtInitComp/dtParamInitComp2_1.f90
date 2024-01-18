@@ -83,33 +83,33 @@
               T=(/(DT0(T%K,T%L)((/(-T%K, J=1,T%K)/)), I=1,T%K)/) )
 
 
-  IF ( KIND(T%I) .NE. K )                 STOP 11
-  IF ( SIZE(T%I) .NE. K )                 STOP 12
-  IF ( ANY(T%I  .NE. (/(-T%K, I=1,4)/)))  STOP 13
+  IF ( KIND(T%I) .NE. K )                 ERROR STOP 11
+  IF ( SIZE(T%I) .NE. K )                 ERROR STOP 12
+  IF ( ANY(T%I  .NE. (/(-T%K, I=1,4)/)))  ERROR STOP 13
 
-  IF ( KIND(T%R) .NE. K )                 STOP 14
-  IF ( SIZE(T%R) .NE. K )                 STOP 16
-  IF ( ANY(T%R  .NE. (/(-T%K, I=1,4)/)))  STOP 17
+  IF ( KIND(T%R) .NE. K )                 ERROR STOP 14
+  IF ( SIZE(T%R) .NE. K )                 ERROR STOP 16
+  IF ( ANY(T%R  .NE. (/(-T%K, I=1,4)/)))  ERROR STOP 17
 
-  IF ( KIND(T%Z) .NE. K )                 STOP 18
-  IF ( SIZE(T%Z) .NE. K )                 STOP 19
-  IF ( ANY(T%Z  .NE. (/((-T%K,T%K),I=1,4)/))) STOP 20
+  IF ( KIND(T%Z) .NE. K )                 ERROR STOP 18
+  IF ( SIZE(T%Z) .NE. K )                 ERROR STOP 19
+  IF ( ANY(T%Z  .NE. (/((-T%K,T%K),I=1,4)/))) ERROR STOP 20
 
-  IF ( LEN(T%C) .NE. L )                    STOP 21
-  IF ( SIZE(T%C).NE. L )                    STOP 22
-  IF ( ANY(T%C  .NE. "?" ))                 STOP 23
+  IF ( LEN(T%C) .NE. L )                    ERROR STOP 21
+  IF ( SIZE(T%C).NE. L )                    ERROR STOP 22
+  IF ( ANY(T%C  .NE. "?" ))                 ERROR STOP 23
 
-  IF ( ASSOCIATED(T%ProcPtr) )              STOP 24
+  IF ( ASSOCIATED(T%ProcPtr) )              ERROR STOP 24
 
-  IF ( KIND(T%LL) .NE. K )                  STOP 25
-  IF ( SIZE(T%LL) .NE. l )                  STOP 26
-  IF ( ANY(T%LL  .NEQV. .FALSE._K))         STOP 27
+  IF ( KIND(T%LL) .NE. K )                  ERROR STOP 25
+  IF ( SIZE(T%LL) .NE. l )                  ERROR STOP 26
+  IF ( ANY(T%LL  .NEQV. .FALSE._K))         ERROR STOP 27
 
-  IF ( T%T%K0 .NE. K )                      STOP 29
-  IF ( T%T%L0 .NE. L )                      STOP 31
-  IF ( SIZE(T%T) .NE. K )                   STOP 32
-  IF ( SIZE(T%T(1)%I) .NE. K )                 STOP 33
-  IF ( ANY(T%T(1)%I  .NE. -K ))              STOP 34
+  IF ( T%T%K0 .NE. K )                      ERROR STOP 29
+  IF ( T%T%L0 .NE. L )                      ERROR STOP 31
+  IF ( SIZE(T%T) .NE. K )                   ERROR STOP 32
+  IF ( SIZE(T%T(1)%I) .NE. K )                 ERROR STOP 33
+  IF ( ANY(T%T(1)%I  .NE. -K ))              ERROR STOP 34
 
 
   END

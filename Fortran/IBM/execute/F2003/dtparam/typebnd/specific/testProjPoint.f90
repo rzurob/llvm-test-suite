@@ -26,7 +26,7 @@ module pointMod
     real function lengthBetween (p1, p2)
         class(point(*)), intent(in) :: p1, p2
 
-        if (p1%n /= p2%n) stop 10
+        if (p1%n /= p2%n) error stop 10
 
         lengthBetween = sqrt(sum((p1%coord - p2%coord)**2))
     end function
@@ -65,7 +65,7 @@ use pointMod
 
         r = p1%length(projPoint(p1%n)(0.0)) + dr
 
-        if (r <= 0.0) stop 20
+        if (r <= 0.0) error stop 20
 
         pointInDistance = p1%direction()
 

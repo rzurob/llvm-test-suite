@@ -54,16 +54,16 @@
   TYPE(PDT) :: PV
 
     LV%ProcPtr => LModFun
-    IF ( LV%ProcPtr(10_1) .NE. 10_1 ) STOP 11
+    IF ( LV%ProcPtr(10_1) .NE. 10_1 ) ERROR STOP 11
 
     PV%ProcPtr => LModFun
-    IF ( PV%ProcPtr(1_1) .NE. 1_1 )  STOP 12
+    IF ( PV%ProcPtr(1_1) .NE. 1_1 )  ERROR STOP 12
 
-    IF ( LV%ProcPtr(LV%ProcPtr(1_1)) .NE. 1_1 )  STOP 13
-    IF ( PV%ProcPtr(PV%ProcPtr(2_1)) .NE. 2_1 )  STOP 14
+    IF ( LV%ProcPtr(LV%ProcPtr(1_1)) .NE. 1_1 )  ERROR STOP 13
+    IF ( PV%ProcPtr(PV%ProcPtr(2_1)) .NE. 2_1 )  ERROR STOP 14
 
-    IF ( LV%ProcPtr(PV%ProcPtr(127_1))  .NE. 127_1 )   STOP 15
-    IF ( PV%ProcPtr(LV%ProcPtr(-128_1)) .NE. -128_1 )  STOP 16
+    IF ( LV%ProcPtr(PV%ProcPtr(127_1))  .NE. 127_1 )   ERROR STOP 15
+    IF ( PV%ProcPtr(LV%ProcPtr(-128_1)) .NE. -128_1 )  ERROR STOP 16
 
   END
 

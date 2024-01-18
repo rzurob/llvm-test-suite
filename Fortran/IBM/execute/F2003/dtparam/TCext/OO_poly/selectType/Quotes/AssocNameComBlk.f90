@@ -71,20 +71,20 @@
     CLASS IS (DT0(*,8))
       STOP 20
     CLASS IS (DT(*,8))
-        IF (ANY(CB(:,:,:)%IArr(1)  .NE. 1)) STOP 22
-        IF (ANY(CB(:,:,:)%IArr(2)  .NE. 2)) STOP 23
-        IF (ANY(CB(:,:,:)%GetInt(1).NE. 1)) STOP 24
-        IF (ANY(CB(:,:,:)%GetInt(2).NE. 2)) STOP 25
+        IF (ANY(CB(:,:,:)%IArr(1)  .NE. 1)) ERROR STOP 22
+        IF (ANY(CB(:,:,:)%IArr(2)  .NE. 2)) ERROR STOP 23
+        IF (ANY(CB(:,:,:)%GetInt(1).NE. 1)) ERROR STOP 24
+        IF (ANY(CB(:,:,:)%GetInt(2).NE. 2)) ERROR STOP 25
 
         Ptr%IArr(1) = -1
         Ptr%IArr(2) = -2
 
-        IF (SIZE(CB(2,2,2)%IArr)   .NE. 2)  STOP 30
-        IF (KIND(CB(2,2,2)%IArr)   .NE. 8)  STOP 31
-        IF (ANY(CB(:,:,:)%IArr(1)  .NE. -1)) STOP 32
-        IF (ANY(CB(:,:,:)%IArr(2)  .NE. -2)) STOP 33
-        IF (ANY(CB(:,:,:)%GetInt(1).NE. -1)) STOP 34
-        IF (ANY(CB(:,:,:)%GetInt(2).NE. -2)) STOP 35
+        IF (SIZE(CB(2,2,2)%IArr)   .NE. 2)  ERROR STOP 30
+        IF (KIND(CB(2,2,2)%IArr)   .NE. 8)  ERROR STOP 31
+        IF (ANY(CB(:,:,:)%IArr(1)  .NE. -1)) ERROR STOP 32
+        IF (ANY(CB(:,:,:)%IArr(2)  .NE. -2)) ERROR STOP 33
+        IF (ANY(CB(:,:,:)%GetInt(1).NE. -1)) ERROR STOP 34
+        IF (ANY(CB(:,:,:)%GetInt(2).NE. -2)) ERROR STOP 35
 
     END SELECT
     END SELECT

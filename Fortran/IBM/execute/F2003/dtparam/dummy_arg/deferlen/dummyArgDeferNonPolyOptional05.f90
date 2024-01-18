@@ -37,7 +37,7 @@ module m
             type(dtp(len(arg2%c1)))          :: fun1(size(arg2))
 
             if(present(arg1)) then
-                if (size(arg1) /= size(arg2)) stop 10
+                if (size(arg1) /= size(arg2)) error stop 10
                   fun1%c1=arg1%c1
             else
                   fun1%c1=arg2%c1

@@ -43,10 +43,10 @@ PROGRAM AllocateWithSourceExp09
 
       SELECT TYPE(b1)
         TYPE IS(Base(4,*))
-           IF(b1%k1 .NE. 4) STOP 10
-           IF(b1%l1 .NE. 9) STOP 11
-           IF(ANY(b1%Carr .NE. 'ABCDEFGHI')) STOP 12
-           IF(ANY(b1%Iarr .NE. 1)) STOP 13
+           IF(b1%k1 .NE. 4) ERROR STOP 10
+           IF(b1%l1 .NE. 9) ERROR STOP 11
+           IF(ANY(b1%Carr .NE. 'ABCDEFGHI')) ERROR STOP 12
+           IF(ANY(b1%Iarr .NE. 1)) ERROR STOP 13
            ALLOCATE(c1, SOURCE = Child(4,7,4,9)(b_cmp = b1) )
 
         CLASS DEFAULT
@@ -56,16 +56,16 @@ PROGRAM AllocateWithSourceExp09
 
       SELECT TYPE(c1)
         TYPE IS(Child(4,*,4,*))
-           IF(c1%k1 .NE. 4) STOP 14
-           IF(c1%l1 .NE. 7) STOP 15
-           IF(c1%k2 .NE. 4) STOP 16
-           IF(c1%l2 .NE. 9) STOP 17
-           IF(ANY(c1%Carr .NE. 'ABCDEFG')) STOP 18
-           IF(ANY(c1%Iarr .NE. 1)) STOP 19
-           IF(c1%b_cmp%k1 .NE. 4) STOP 20
-           IF(c1%b_cmp%l1 .NE. 9) STOP 21
-           IF(ANY(c1%b_cmp%Carr .NE. 'ABCDEFGHI')) STOP 22
-           IF(ANY(c1%b_cmp%Iarr .NE. 1)) STOP 23
+           IF(c1%k1 .NE. 4) ERROR STOP 14
+           IF(c1%l1 .NE. 7) ERROR STOP 15
+           IF(c1%k2 .NE. 4) ERROR STOP 16
+           IF(c1%l2 .NE. 9) ERROR STOP 17
+           IF(ANY(c1%Carr .NE. 'ABCDEFG')) ERROR STOP 18
+           IF(ANY(c1%Iarr .NE. 1)) ERROR STOP 19
+           IF(c1%b_cmp%k1 .NE. 4) ERROR STOP 20
+           IF(c1%b_cmp%l1 .NE. 9) ERROR STOP 21
+           IF(ANY(c1%b_cmp%Carr .NE. 'ABCDEFGHI')) ERROR STOP 22
+           IF(ANY(c1%b_cmp%Iarr .NE. 1)) ERROR STOP 23
 
         CLASS DEFAULT
             STOP 102
@@ -76,16 +76,16 @@ PROGRAM AllocateWithSourceExp09
 
       SELECT TYPE(b1)
          TYPE IS(Child(4,*,4,*))
-           IF(b1%k1 .NE. 4) STOP 24
-           IF(b1%l1 .NE. 7) STOP 25
-           IF(b1%k2 .NE. 4) STOP 26
-           IF(b1%l2 .NE. 9) STOP 27
-           IF(ANY(b1%Carr .NE. 'ABCDEFG')) STOP 28
-           IF(ANY(b1%Iarr .NE. 1)) STOP 29
-           IF(b1%b_cmp%k1 .NE. 4) STOP 30
-           IF(b1%b_cmp%l1 .NE. 9) STOP 31
-           IF(ANY(b1%b_cmp%Carr .NE. 'ABCDEFGHI')) STOP 32
-           IF(ANY(b1%b_cmp%Iarr .NE. 1)) STOP 33
+           IF(b1%k1 .NE. 4) ERROR STOP 24
+           IF(b1%l1 .NE. 7) ERROR STOP 25
+           IF(b1%k2 .NE. 4) ERROR STOP 26
+           IF(b1%l2 .NE. 9) ERROR STOP 27
+           IF(ANY(b1%Carr .NE. 'ABCDEFG')) ERROR STOP 28
+           IF(ANY(b1%Iarr .NE. 1)) ERROR STOP 29
+           IF(b1%b_cmp%k1 .NE. 4) ERROR STOP 30
+           IF(b1%b_cmp%l1 .NE. 9) ERROR STOP 31
+           IF(ANY(b1%b_cmp%Carr .NE. 'ABCDEFGHI')) ERROR STOP 32
+           IF(ANY(b1%b_cmp%Iarr .NE. 1)) ERROR STOP 33
 
         CLASS DEFAULT
             STOP 103

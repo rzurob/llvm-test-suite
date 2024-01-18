@@ -43,16 +43,16 @@
 
     Ptr(I:, J:) => Tar2
     Ptr = I*J
-    IF ( .NOT. ALL( Ptr .EQ.  I*J ))               STOP 31
-    IF (       ANY( Ptr .NE.  I*J ))               STOP 32
-    IF ( COUNT( Ptr .EQ.  I*J ) .NE. N*N)          STOP 33
-    IF ( SUM( Ptr ) .NE.  I*J*N*N )                STOP 34
+    IF ( .NOT. ALL( Ptr .EQ.  I*J ))               ERROR STOP 31
+    IF (       ANY( Ptr .NE.  I*J ))               ERROR STOP 32
+    IF ( COUNT( Ptr .EQ.  I*J ) .NE. N*N)          ERROR STOP 33
+    IF ( SUM( Ptr ) .NE.  I*J*N*N )                ERROR STOP 34
     CALL Check2()
 
     Ptr(I:J, I:J) => Tar1
     Ptr = -I*J; Ptr(J,J) = I*J; Ptr(I,I) = -J*J
-    IF ( MAXVAL( Ptr ) .NE.  I*J )                STOP 41
-    IF ( MINVAL( Ptr ) .NE. -J*J )                STOP 42
+    IF ( MAXVAL( Ptr ) .NE.  I*J )                ERROR STOP 41
+    IF ( MINVAL( Ptr ) .NE. -J*J )                ERROR STOP 42
     CALL Check1()
 
   END DO
@@ -61,17 +61,17 @@
   CONTAINS
 
   SUBROUTINE Check1()
-    IF (SIZE(Ptr)  .NE. (J-I+1)*(J-I+1))            STOP 20
-    IF (.NOT. ASSOCIATED(Ptr))                      STOP 21
-    IF (ANY( LBOUND(Ptr) .NE. (/I,  I/)))           STOP 22
-    IF (ANY( UBOUND(Ptr) .NE. (/J,  J/)))           STOP 23
+    IF (SIZE(Ptr)  .NE. (J-I+1)*(J-I+1))            ERROR STOP 20
+    IF (.NOT. ASSOCIATED(Ptr))                      ERROR STOP 21
+    IF (ANY( LBOUND(Ptr) .NE. (/I,  I/)))           ERROR STOP 22
+    IF (ANY( UBOUND(Ptr) .NE. (/J,  J/)))           ERROR STOP 23
   END SUBROUTINE
 
   SUBROUTINE Check2()
-    IF (SIZE(Ptr)  .NE. N*N )                    STOP 10
-    IF (.NOT. ASSOCIATED(Ptr, Tar2))             STOP 11
-    IF (ANY( LBOUND(Ptr) .NE. (/I, J /)))        STOP 12
-    IF (ANY( UBOUND(Ptr) .NE. (/I+N-1, J+N-1/))) STOP 13
+    IF (SIZE(Ptr)  .NE. N*N )                    ERROR STOP 10
+    IF (.NOT. ASSOCIATED(Ptr, Tar2))             ERROR STOP 11
+    IF (ANY( LBOUND(Ptr) .NE. (/I, J /)))        ERROR STOP 12
+    IF (ANY( UBOUND(Ptr) .NE. (/I+N-1, J+N-1/))) ERROR STOP 13
   END SUBROUTINE
 
   END

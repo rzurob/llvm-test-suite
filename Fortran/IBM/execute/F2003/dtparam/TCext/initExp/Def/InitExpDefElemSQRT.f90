@@ -80,16 +80,16 @@
   COMPLEX, PARAMETER :: TZ8(4,4) = SQRT(X=Z8)
 
 
-  IF (ANY( T4%R41   .NE. 2.  ))       STOP 11
-  IF (ANY( T4%R42   .NE. r4P_Zero  )) STOP 12
-  IF (ANY( T4%R43   .NE. 1  ))        STOP 13
+  IF (ANY( T4%R41   .NE. 2.  ))       ERROR STOP 11
+  IF (ANY( T4%R42   .NE. r4P_Zero  )) ERROR STOP 12
+  IF (ANY( T4%R43   .NE. 1  ))        ERROR STOP 13
 
-  IF (ANY( T8%R81   .NE. 2.  ))       STOP 21
-  IF (ANY( T8%R82   .NE. r8P_Zero  )) STOP 22
-  IF (ANY( T8%R83   .NE. 1  ))        STOP 23
+  IF (ANY( T8%R81   .NE. 2.  ))       ERROR STOP 21
+  IF (ANY( T8%R82   .NE. r8P_Zero  )) ERROR STOP 22
+  IF (ANY( T8%R83   .NE. 1  ))        ERROR STOP 23
 
-  IF (ANY( TZ4      .NE. Z4 ))        STOP 31
-  IF (ANY( TZ8      .NE. Z8 ))        STOP 32
+  IF (ANY( TZ4      .NE. Z4 ))        ERROR STOP 31
+  IF (ANY( TZ8      .NE. Z8 ))        ERROR STOP 32
 
 
 

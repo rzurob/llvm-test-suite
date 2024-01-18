@@ -48,37 +48,37 @@
   TYPE (DT2(K1=1, K2=2, K3=1, L1=2, L2=1, L3=3))   :: V4
 
 
-  IF (KIND(V1%L1) .NE. 1 )                 STOP 11
-  IF (     V1%L1  .NE. 1 )                 STOP 12
-  IF (KIND(V1%L2) .NE. 2 )                 STOP 13
-  IF (     V1%L2  .NE. 2 )                 STOP 14
-  IF (KIND(V1%L3) .NE. 1 )                 STOP 15
-  IF (     V1%L3  .NE. 1 )                 STOP 16
-  IF (ANY( SHAPE(V1%Arr1) .NE. (/1,2,1/))) STOP 17
+  IF (KIND(V1%L1) .NE. 1 )                 ERROR STOP 11
+  IF (     V1%L1  .NE. 1 )                 ERROR STOP 12
+  IF (KIND(V1%L2) .NE. 2 )                 ERROR STOP 13
+  IF (     V1%L2  .NE. 2 )                 ERROR STOP 14
+  IF (KIND(V1%L3) .NE. 1 )                 ERROR STOP 15
+  IF (     V1%L3  .NE. 1 )                 ERROR STOP 16
+  IF (ANY( SHAPE(V1%Arr1) .NE. (/1,2,1/))) ERROR STOP 17
 
-  IF (KIND(V2%L1) .NE. 1 )                 STOP 21
-  IF (     V2%L1  .NE. 2 )                 STOP 22
-  IF (KIND(V2%L2) .NE. 2 )                 STOP 23
-  IF (     V2%L2  .NE. 2 )                 STOP 24
-  IF (KIND(V2%L3) .NE. 1 )                 STOP 25
-  IF (     V2%L3  .NE. 1 )                 STOP 26
-  IF (ANY( SHAPE(V2%Arr1) .NE. (/2,2,1/))) STOP 27
+  IF (KIND(V2%L1) .NE. 1 )                 ERROR STOP 21
+  IF (     V2%L1  .NE. 2 )                 ERROR STOP 22
+  IF (KIND(V2%L2) .NE. 2 )                 ERROR STOP 23
+  IF (     V2%L2  .NE. 2 )                 ERROR STOP 24
+  IF (KIND(V2%L3) .NE. 1 )                 ERROR STOP 25
+  IF (     V2%L3  .NE. 1 )                 ERROR STOP 26
+  IF (ANY( SHAPE(V2%Arr1) .NE. (/2,2,1/))) ERROR STOP 27
 
-  IF (KIND(V3%L1) .NE. 1 )                 STOP 31
-  IF (     V3%L1  .NE. 2 )                 STOP 32
-  IF (KIND(V3%L2) .NE. 2 )                 STOP 33
-  IF (     V3%L2  .NE. 1 )                 STOP 34
-  IF (KIND(V3%L3) .NE. 1 )                 STOP 35
-  IF (     V3%L3  .NE. 1 )                 STOP 36
-  IF (ANY( SHAPE(V3%Arr1) .NE. (/2,1,1/))) STOP 37
+  IF (KIND(V3%L1) .NE. 1 )                 ERROR STOP 31
+  IF (     V3%L1  .NE. 2 )                 ERROR STOP 32
+  IF (KIND(V3%L2) .NE. 2 )                 ERROR STOP 33
+  IF (     V3%L2  .NE. 1 )                 ERROR STOP 34
+  IF (KIND(V3%L3) .NE. 1 )                 ERROR STOP 35
+  IF (     V3%L3  .NE. 1 )                 ERROR STOP 36
+  IF (ANY( SHAPE(V3%Arr1) .NE. (/2,1,1/))) ERROR STOP 37
 
-  IF (KIND(V4%L1) .NE. 1 )                 STOP 41
-  IF (     V4%L1  .NE. 2 )                 STOP 42
-  IF (KIND(V4%L2) .NE. 2 )                 STOP 43
-  IF (     V4%L2  .NE. 1 )                 STOP 44
-  IF (KIND(V4%L3) .NE. 1 )                 STOP 45
-  IF (     V4%L3  .NE. 3 )                 STOP 46
-  IF (ANY( SHAPE(V4%Arr1) .NE. (/2,1,3/))) STOP 47
+  IF (KIND(V4%L1) .NE. 1 )                 ERROR STOP 41
+  IF (     V4%L1  .NE. 2 )                 ERROR STOP 42
+  IF (KIND(V4%L2) .NE. 2 )                 ERROR STOP 43
+  IF (     V4%L2  .NE. 1 )                 ERROR STOP 44
+  IF (KIND(V4%L3) .NE. 1 )                 ERROR STOP 45
+  IF (     V4%L3  .NE. 3 )                 ERROR STOP 46
+  IF (ANY( SHAPE(V4%Arr1) .NE. (/2,1,3/))) ERROR STOP 47
 
 
 

@@ -83,10 +83,10 @@
    CLASS IS (Child(4))
      STOP 22
    TYPE IS (Child(4))
-     IF (Var%GetId() .NE. -1 )      STOP 31
-     IF (Var%Base1%Base1Id .NE. 1 ) STOP 32
-     IF (Var%Base1Id .NE. 1 )       STOP 33
-     if (childCompID(var) /= 0) stop 34
+     IF (Var%GetId() .NE. -1 )      ERROR STOP 31
+     IF (Var%Base1%Base1Id .NE. 1 ) ERROR STOP 32
+     IF (Var%Base1Id .NE. 1 )       ERROR STOP 33
+     if (childCompID(var) /= 0) error stop 34
   END SELECT
 
   END

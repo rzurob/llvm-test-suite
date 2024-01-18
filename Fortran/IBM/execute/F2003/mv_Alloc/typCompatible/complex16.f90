@@ -32,7 +32,7 @@ module m
 
            call move_alloc(c1, a)
 
-           if ( allocated(c1) ) stop 11
+           if ( allocated(c1) ) error stop 11
        end subroutine
 end module
 
@@ -49,10 +49,10 @@ program main
 
        call sub(c2)
 
-       if ( size(c2,1) /= 1) stop 21
-       if ( size(c2,2) /= 1) stop 23
+       if ( size(c2,1) /= 1) error stop 21
+       if ( size(c2,2) /= 1) error stop 23
 
-       if ( .not. allocated(c2) ) stop 31
+       if ( .not. allocated(c2) ) error stop 31
        write ( 6, 100) c2(1,1)
 100 format ( "(", 2f20.17, ")")
 

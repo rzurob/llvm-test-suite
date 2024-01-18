@@ -53,70 +53,70 @@ PROGRAM DTPMultipleNesting01
       INTEGER :: i, stat
       CHARACTER(100) :: errmsg
 
-      IF ( b0%n1                  .NE.    2 )    STOP 10
-      IF ( b0%n2                  .NE.    5 )    STOP 11
-      IF ( b0%n3                  .NE.   10 )    STOP 12
+      IF ( b0%n1                  .NE.    2 )    ERROR STOP 10
+      IF ( b0%n2                  .NE.    5 )    ERROR STOP 11
+      IF ( b0%n3                  .NE.   10 )    ERROR STOP 12
 
-      IF ( SIZE(b0%cmp1)          .NE.   10 )    STOP 13
-      IF ( LBOUND(b0%cmp1, 1)     .NE.    1 )    STOP 14
-      IF ( UBOUND(b0%cmp1, 1)     .NE.   10 )    STOP 15
+      IF ( SIZE(b0%cmp1)          .NE.   10 )    ERROR STOP 13
+      IF ( LBOUND(b0%cmp1, 1)     .NE.    1 )    ERROR STOP 14
+      IF ( UBOUND(b0%cmp1, 1)     .NE.   10 )    ERROR STOP 15
 
       DO i = 1, 10
-        IF ( LEN(b0%cmp1(i)%Carr)       .NE.     2 )    STOP 16
-        IF ( ANY((b0%cmp1(i)%Carr)      .NE. 'AA') )    STOP 17
+        IF ( LEN(b0%cmp1(i)%Carr)       .NE.     2 )    ERROR STOP 16
+        IF ( ANY((b0%cmp1(i)%Carr)      .NE. 'AA') )    ERROR STOP 17
 
-        IF ( SIZE(b0%cmp1(i)%Rarr)      .NE.     2 )    STOP 18
-        IF ( LBOUND(b0%cmp1(i)%Rarr, 1) .NE.     1 )    STOP 19
-        IF ( UBOUND(b0%cmp1(i)%Rarr, 1) .NE.     2 )    STOP 20
-        IF ( ANY((b0%cmp1(i)%Rarr)      .NE.    4) )    STOP 21
+        IF ( SIZE(b0%cmp1(i)%Rarr)      .NE.     2 )    ERROR STOP 18
+        IF ( LBOUND(b0%cmp1(i)%Rarr, 1) .NE.     1 )    ERROR STOP 19
+        IF ( UBOUND(b0%cmp1(i)%Rarr, 1) .NE.     2 )    ERROR STOP 20
+        IF ( ANY((b0%cmp1(i)%Rarr)      .NE.    4) )    ERROR STOP 21
 
-        IF ( SIZE(b0%cmp1(i)%Iarr)      .NE.     2 )    STOP 22
-        IF ( LBOUND(b0%cmp1(i)%Iarr, 1) .NE.     1 )    STOP 23
-        IF ( UBOUND(b0%cmp1(i)%Iarr, 1) .NE.     2 )    STOP 24
-        IF ( ANY((b0%cmp1(i)%Iarr)      .NE.   -3) )    STOP 25
+        IF ( SIZE(b0%cmp1(i)%Iarr)      .NE.     2 )    ERROR STOP 22
+        IF ( LBOUND(b0%cmp1(i)%Iarr, 1) .NE.     1 )    ERROR STOP 23
+        IF ( UBOUND(b0%cmp1(i)%Iarr, 1) .NE.     2 )    ERROR STOP 24
+        IF ( ANY((b0%cmp1(i)%Iarr)      .NE.   -3) )    ERROR STOP 25
 
         ALLOCATE( Base(4,5) :: b0%cmp1(i)%ptr, STAT=stat, ERRMSG=errmsg )
-        IF ( stat                           .NE.        0 )  STOP 26
-        IF ( b0%cmp1(i)%ptr%l1              .NE.        5 )  STOP 27
+        IF ( stat                           .NE.        0 )  ERROR STOP 26
+        IF ( b0%cmp1(i)%ptr%l1              .NE.        5 )  ERROR STOP 27
 
-        IF ( LEN(b0%cmp1(i)%ptr%Carr)       .NE.        5 )  STOP 28
-        IF ( ANY((b0%cmp1(i)%ptr%Carr)      .NE. 'AAAAA') )  STOP 29
+        IF ( LEN(b0%cmp1(i)%ptr%Carr)       .NE.        5 )  ERROR STOP 28
+        IF ( ANY((b0%cmp1(i)%ptr%Carr)      .NE. 'AAAAA') )  ERROR STOP 29
 
-        IF ( SIZE(b0%cmp1(i)%ptr%Rarr)      .NE.        5 )  STOP 30
-        IF ( LBOUND(b0%cmp1(i)%ptr%Rarr, 1) .NE.        1 )  STOP 31
-        IF ( UBOUND(b0%cmp1(i)%ptr%Rarr, 1) .NE.        5 )  STOP 32
-        IF ( ANY((b0%cmp1(i)%ptr%Rarr)      .NE.       4) )  STOP 33
+        IF ( SIZE(b0%cmp1(i)%ptr%Rarr)      .NE.        5 )  ERROR STOP 30
+        IF ( LBOUND(b0%cmp1(i)%ptr%Rarr, 1) .NE.        1 )  ERROR STOP 31
+        IF ( UBOUND(b0%cmp1(i)%ptr%Rarr, 1) .NE.        5 )  ERROR STOP 32
+        IF ( ANY((b0%cmp1(i)%ptr%Rarr)      .NE.       4) )  ERROR STOP 33
       END DO
 
-      IF ( SIZE(b0%cmp2)          .NE.   10 )    STOP 34
-      IF ( LBOUND(b0%cmp2, 1)     .NE.    1 )    STOP 35
-      IF ( UBOUND(b0%cmp2, 1)     .NE.   10 )    STOP 36
+      IF ( SIZE(b0%cmp2)          .NE.   10 )    ERROR STOP 34
+      IF ( LBOUND(b0%cmp2, 1)     .NE.    1 )    ERROR STOP 35
+      IF ( UBOUND(b0%cmp2, 1)     .NE.   10 )    ERROR STOP 36
 
       DO i = 1, 10
-        IF ( LEN(b0%cmp2(i)%Carr)       .NE.        5 )    STOP 37
-        IF ( ANY((b0%cmp2(i)%Carr)      .NE. 'AAAAA') )    STOP 38
+        IF ( LEN(b0%cmp2(i)%Carr)       .NE.        5 )    ERROR STOP 37
+        IF ( ANY((b0%cmp2(i)%Carr)      .NE. 'AAAAA') )    ERROR STOP 38
 
-        IF ( SIZE(b0%cmp2(i)%Rarr)      .NE.     5 )    STOP 39
-        IF ( LBOUND(b0%cmp2(i)%Rarr, 1) .NE.     1 )    STOP 40
-        IF ( UBOUND(b0%cmp2(i)%Rarr, 1) .NE.     5 )    STOP 41
-        IF ( ANY((b0%cmp2(i)%Rarr)      .NE.    4) )    STOP 42
+        IF ( SIZE(b0%cmp2(i)%Rarr)      .NE.     5 )    ERROR STOP 39
+        IF ( LBOUND(b0%cmp2(i)%Rarr, 1) .NE.     1 )    ERROR STOP 40
+        IF ( UBOUND(b0%cmp2(i)%Rarr, 1) .NE.     5 )    ERROR STOP 41
+        IF ( ANY((b0%cmp2(i)%Rarr)      .NE.    4) )    ERROR STOP 42
 
-        IF ( SIZE(b0%cmp2(i)%Iarr)      .NE.     5 )    STOP 43
-        IF ( LBOUND(b0%cmp2(i)%Iarr, 1) .NE.     1 )    STOP 44
-        IF ( UBOUND(b0%cmp2(i)%Iarr, 1) .NE.     5 )    STOP 45
-        IF ( ANY((b0%cmp2(i)%Iarr)      .NE.   -3) )    STOP 46
+        IF ( SIZE(b0%cmp2(i)%Iarr)      .NE.     5 )    ERROR STOP 43
+        IF ( LBOUND(b0%cmp2(i)%Iarr, 1) .NE.     1 )    ERROR STOP 44
+        IF ( UBOUND(b0%cmp2(i)%Iarr, 1) .NE.     5 )    ERROR STOP 45
+        IF ( ANY((b0%cmp2(i)%Iarr)      .NE.   -3) )    ERROR STOP 46
 
         ALLOCATE( b0%cmp2(i)%ptr, source = Base(4,5)('XLFtest', 8) , STAT=stat, ERRMSG=errmsg )
-        IF ( stat                           .NE.        0 )  STOP 47
-        IF ( b0%cmp2(i)%ptr%l1              .NE.        5 )  STOP 48
+        IF ( stat                           .NE.        0 )  ERROR STOP 47
+        IF ( b0%cmp2(i)%ptr%l1              .NE.        5 )  ERROR STOP 48
 
-        IF ( LEN(b0%cmp2(i)%ptr%Carr)       .NE.        5 )  STOP 49
-        IF ( ANY((b0%cmp2(i)%ptr%Carr)      .NE. 'XLFte') )  STOP 50
+        IF ( LEN(b0%cmp2(i)%ptr%Carr)       .NE.        5 )  ERROR STOP 49
+        IF ( ANY((b0%cmp2(i)%ptr%Carr)      .NE. 'XLFte') )  ERROR STOP 50
 
-        IF ( SIZE(b0%cmp2(i)%ptr%Rarr)      .NE.        5 )  STOP 51
-        IF ( LBOUND(b0%cmp2(i)%ptr%Rarr, 1) .NE.        1 )  STOP 52
-        IF ( UBOUND(b0%cmp2(i)%ptr%Rarr, 1) .NE.        5 )  STOP 53
-        IF ( ANY((b0%cmp2(i)%ptr%Rarr)      .NE.       8) )  STOP 54
+        IF ( SIZE(b0%cmp2(i)%ptr%Rarr)      .NE.        5 )  ERROR STOP 51
+        IF ( LBOUND(b0%cmp2(i)%ptr%Rarr, 1) .NE.        1 )  ERROR STOP 52
+        IF ( UBOUND(b0%cmp2(i)%ptr%Rarr, 1) .NE.        5 )  ERROR STOP 53
+        IF ( ANY((b0%cmp2(i)%ptr%Rarr)      .NE.       8) )  ERROR STOP 54
       END DO
 
 END PROGRAM DTPMultipleNesting01

@@ -65,14 +65,14 @@
   END DO
   END DO
 
-  IF ( ANY( LBOUND( Ptr0 ) .NE. [0, 0] ) ) STOP 11
-  IF ( ANY( UBOUND( Ptr0 ) .NE. [9, 9] ) ) STOP 12
+  IF ( ANY( LBOUND( Ptr0 ) .NE. [0, 0] ) ) ERROR STOP 11
+  IF ( ANY( UBOUND( Ptr0 ) .NE. [9, 9] ) ) ERROR STOP 12
 
   DO I=0, 9
   DO J=0, 9
-    IF ( ANY( Ptr0(I,J)%C1 .NE. CHAR(I*J) ) ) STOP 21
-    IF ( ANY( Ptr0(I,J)%I  .NE. I*J       ) ) STOP 22
-    IF ( ANY( Ptr0(I,J)%C2 .NE. CHAR(I*J) ) ) STOP 23
+    IF ( ANY( Ptr0(I,J)%C1 .NE. CHAR(I*J) ) ) ERROR STOP 21
+    IF ( ANY( Ptr0(I,J)%I  .NE. I*J       ) ) ERROR STOP 22
+    IF ( ANY( Ptr0(I,J)%C2 .NE. CHAR(I*J) ) ) ERROR STOP 23
   END DO
   END DO
 

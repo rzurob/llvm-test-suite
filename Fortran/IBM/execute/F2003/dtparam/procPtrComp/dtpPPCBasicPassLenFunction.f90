@@ -120,8 +120,8 @@ contains
        print *, ref(i) % p % p1()
     end do
     print *, [(ref(i) % p % p1(), i=1,size(ref))]
-    if (any([(ref(i) % p % p1(), i=1,size(ref))] /= [1,2,3,4,4,5])) stop 2
-    if (any([t1 % p1(), ta2 % p1(), ta3 % p1(), tp % p1(), t4 % p1(), t5 % p1()] /= [1,2,3,4,4,5])) stop 3
+    if (any([(ref(i) % p % p1(), i=1,size(ref))] /= [1,2,3,4,4,5])) error stop 2
+    if (any([t1 % p1(), ta2 % p1(), ta3 % p1(), tp % p1(), t4 % p1(), t5 % p1()] /= [1,2,3,4,4,5])) error stop 3
   end subroutine test
 
 end program dtpPPCBasicPassLenFunction

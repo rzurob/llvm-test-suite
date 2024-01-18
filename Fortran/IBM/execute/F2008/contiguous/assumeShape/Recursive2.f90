@@ -30,10 +30,10 @@ PROGRAM Recursive2
       LOGICAL, EXTERNAL :: precision_r8
 
       x = sum1([3._8,3._8,3._8])
-      IF (.NOT. precision_r8(x, 9._8)) STOP 10
+      IF (.NOT. precision_r8(x, 9._8)) ERROR STOP 10
 
       x = sum1([(I*0.1_8, I=1,1024)])
-      IF (.NOT. precision_r8(x, 52480._8)) STOP 11
+      IF (.NOT. precision_r8(x, 52480._8)) ERROR STOP 11
 
       ALLOCATE( REAL(8) :: a(10) )
 
@@ -43,7 +43,7 @@ PROGRAM Recursive2
           TYPEIS (real(8))
             s = -1._8
             x = sum1(s)
-            IF (.NOT. precision_r8(x, -10._8)) STOP 13
+            IF (.NOT. precision_r8(x, -10._8)) ERROR STOP 13
         CLASS DEFAULT
             STOP 14
       END SELECT

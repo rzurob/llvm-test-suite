@@ -71,16 +71,16 @@
   INTEGER :: i
   COMMON /CB/ProcPtr, CPtr
 
-  IF ( .NOT. ASSOCIATED(CPtr) )  STOP 11
-  IF ( CPtr .NE. "4321" )        STOP 12
+  IF ( .NOT. ASSOCIATED(CPtr) )  ERROR STOP 11
+  IF ( CPtr .NE. "4321" )        ERROR STOP 12
 
-  IF ( .NOT. ASSOCIATED(ProcPtr) )          STOP 21
-  IF ( .NOT. ASSOCIATED(ProcPtr, ModFun) )  STOP 22
-  IF ( .NOT. ASSOCIATED(ProcPtr, Proc) )    STOP 23
+  IF ( .NOT. ASSOCIATED(ProcPtr) )          ERROR STOP 21
+  IF ( .NOT. ASSOCIATED(ProcPtr, ModFun) )  ERROR STOP 22
+  IF ( .NOT. ASSOCIATED(ProcPtr, Proc) )    ERROR STOP 23
 
   ASSOCIATE ( As => RESHAPE(ProcPtr((/( "IBM!", i=1,256)/)), (/16,16 /) ))
-    IF ( ANY( SHAPE(As) .NE. (/16,16/) ))   STOP 31
-    IF ( ANY( As        .NE. "IBM!" ))      STOP 32
+    IF ( ANY( SHAPE(As) .NE. (/16,16/) ))   ERROR STOP 31
+    IF ( ANY( As        .NE. "IBM!" ))      ERROR STOP 32
   END ASSOCIATE
 
   END SUBROUTINE

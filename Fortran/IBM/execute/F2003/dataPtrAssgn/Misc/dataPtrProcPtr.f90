@@ -104,22 +104,22 @@
   SUBROUTINE Check2(L1, L2, U1, U2, SIZ, Value)
   INTEGER :: L1, L2, U1, U2, SIZ, Value
 
-    IF (.NOT. ASSOCIATED(Ptr))               STOP 10
-    IF (SIZE(Ptr)        .NE. Siz )          STOP 11
-    IF (ANY( LBOUND(Ptr) .NE. (/L1, L2/)))   STOP 12
-    IF (ANY( UBOUND(Ptr) .NE. (/U1, U2/)))   STOP 13
-    IF (ANY( Ptr         .NE. VALUE))        STOP 14
+    IF (.NOT. ASSOCIATED(Ptr))               ERROR STOP 10
+    IF (SIZE(Ptr)        .NE. Siz )          ERROR STOP 11
+    IF (ANY( LBOUND(Ptr) .NE. (/L1, L2/)))   ERROR STOP 12
+    IF (ANY( UBOUND(Ptr) .NE. (/U1, U2/)))   ERROR STOP 13
+    IF (ANY( Ptr         .NE. VALUE))        ERROR STOP 14
 
   END SUBROUTINE
 
   SUBROUTINE Check1(L1, U1, L2, U2, SIZ, Value)
   INTEGER :: L1, L2, U1, U2, SIZ, Value
 
-    IF (.NOT. ASSOCIATED(Ptr))               STOP 20
-    IF (SIZE(Ptr)        .NE. Siz )          STOP 21
-    IF (ANY( LBOUND(Ptr) .NE. (/L1, L2/)))   STOP 22
-    IF (ANY( UBOUND(Ptr) .NE. (/U1, U2/)))   STOP 23
-    IF (ANY( Ptr         .NE. VALUE))        STOP 24
+    IF (.NOT. ASSOCIATED(Ptr))               ERROR STOP 20
+    IF (SIZE(Ptr)        .NE. Siz )          ERROR STOP 21
+    IF (ANY( LBOUND(Ptr) .NE. (/L1, L2/)))   ERROR STOP 22
+    IF (ANY( UBOUND(Ptr) .NE. (/U1, U2/)))   ERROR STOP 23
+    IF (ANY( Ptr         .NE. VALUE))        ERROR STOP 24
 
   END SUBROUTINE
 

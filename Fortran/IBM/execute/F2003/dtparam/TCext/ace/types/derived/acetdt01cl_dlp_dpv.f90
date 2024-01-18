@@ -196,6 +196,6 @@ program acetdt01cl_dlp_dpv
   contp = (/ Container(20,4):: (contall, i=1,1) /)
   call validateFromSources(contp, contall(1), contall(2))
 
-  if (invalidDataEncountered) stop 2
+  if (invalidDataEncountered) error stop 2
 
 end program acetdt01cl_dlp_dpv

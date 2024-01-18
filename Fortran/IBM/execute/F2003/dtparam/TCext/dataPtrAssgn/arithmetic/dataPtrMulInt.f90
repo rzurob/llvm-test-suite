@@ -51,9 +51,9 @@ program main
 
     e1%bval%p(size(e2%bval%p):) =>  e2%bval%p(10:1:-1)
 
-    if ( .not. associated(e1%bval%p, e2%bval%p(10:1:-1))) stop 1
-    if ( lbound(e1%bval%p,1) /= 10 ) stop 2
-    if ( ubound(e1%bval%p,1) /= 19 ) stop 3
+    if ( .not. associated(e1%bval%p, e2%bval%p(10:1:-1))) error stop 1
+    if ( lbound(e1%bval%p,1) /= 10 ) error stop 2
+    if ( ubound(e1%bval%p,1) /= 19 ) error stop 3
 
     print *, e2%bval%p
     print *, e1%bval%p

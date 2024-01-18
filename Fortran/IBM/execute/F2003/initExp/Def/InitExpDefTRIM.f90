@@ -65,9 +65,9 @@
   CHARACTER, PARAMETER :: T3 = TRIM(S(8)%CCC(8))
 
 
-  IF ( T1 .NE. 0 )          STOP 11
-  IF ( T2 .NE. CHAR(1) )    STOP 12
-  IF ( T3 .NE. CHAR(8) )    STOP 13
+  IF ( T1 .NE. 0 )          ERROR STOP 11
+  IF ( T2 .NE. CHAR(1) )    ERROR STOP 12
+  IF ( T3 .NE. CHAR(8) )    ERROR STOP 13
 
 
   END

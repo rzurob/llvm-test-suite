@@ -85,45 +85,45 @@
 
   CALL Clear()
   PRINT *, TAR
-  IF ( Index .NE. 1 )                             STOP 10
-  IF ( Mark(1)%ID .NE. -1 )                       STOP 11
-  IF ( .NOT. ASSOCIATED(MARK(1)%ProcPtr, ModFun)) STOP 12
+  IF ( Index .NE. 1 )                             ERROR STOP 10
+  IF ( Mark(1)%ID .NE. -1 )                       ERROR STOP 11
+  IF ( .NOT. ASSOCIATED(MARK(1)%ProcPtr, ModFun)) ERROR STOP 12
 
   CALL Clear()
   ProcPtr1 => ModFun
   PRINT *, ProcPtr1(Tar)
-  IF ( Index .NE. 1 )                             STOP 20
-  IF ( Mark(1)%ID .NE. -1 )                       STOP 21
-  IF ( .NOT. ASSOCIATED(MARK(1)%ProcPtr, ModFun)) STOP 22
+  IF ( Index .NE. 1 )                             ERROR STOP 20
+  IF ( Mark(1)%ID .NE. -1 )                       ERROR STOP 21
+  IF ( .NOT. ASSOCIATED(MARK(1)%ProcPtr, ModFun)) ERROR STOP 22
 
   CALL Clear()
   ProcPtr2 => ProcPtr1
   PRINT *, ProcPtr2(Tar)
-  IF ( Index .NE. 1 )                             STOP 30
-  IF ( Mark(1)%ID .NE. -1 )                       STOP 31
-  IF ( .NOT. ASSOCIATED(MARK(1)%ProcPtr, ModFun)) STOP 32
+  IF ( Index .NE. 1 )                             ERROR STOP 30
+  IF ( Mark(1)%ID .NE. -1 )                       ERROR STOP 31
+  IF ( .NOT. ASSOCIATED(MARK(1)%ProcPtr, ModFun)) ERROR STOP 32
 
   DO I=1, 100
 
     CALL Clear()
     PRINT *, V(I)%ProcPtr()
-    IF ( Index .NE. 1 )                             STOP 40
-    IF ( Mark(1)%ID .NE. -1 )                       STOP 41
-    IF ( .NOT. ASSOCIATED(MARK(1)%ProcPtr, ModFun)) STOP 42
+    IF ( Index .NE. 1 )                             ERROR STOP 40
+    IF ( Mark(1)%ID .NE. -1 )                       ERROR STOP 41
+    IF ( .NOT. ASSOCIATED(MARK(1)%ProcPtr, ModFun)) ERROR STOP 42
 
     CALL Clear()
     PRINT *, V(I)%Proc()
-    IF ( Index .NE. 1 )                             STOP 50
-    IF ( Mark(1)%ID .NE. -1 )                       STOP 51
-    IF ( .NOT. ASSOCIATED(MARK(1)%ProcPtr, ModFun)) STOP 52
+    IF ( Index .NE. 1 )                             ERROR STOP 50
+    IF ( Mark(1)%ID .NE. -1 )                       ERROR STOP 51
+    IF ( .NOT. ASSOCIATED(MARK(1)%ProcPtr, ModFun)) ERROR STOP 52
 
   END DO
 
   CALL Clear()
   PRINT *, V
-  IF ( Index .NE. 100 )                           STOP 60
+  IF ( Index .NE. 100 )                           ERROR STOP 60
 
-  IF ( ANY(Mark%ID .NE. -1 ) )                    STOP 61
+  IF ( ANY(Mark%ID .NE. -1 ) )                    ERROR STOP 61
 
   CONTAINS
 

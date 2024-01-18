@@ -66,16 +66,16 @@
   COMMON /BLK/C, C1
   COMMON ProcPtr
 
-  IF ( SIZE(C%C)    .NE. 128 )                   STOP 11
-  IF ( C%C%LEN      .NE. 128 )                   STOP 12
-  IF ( ANY(C%C      .NE. [(CHAR(I),I=0,127)] ) ) STOP 13
+  IF ( SIZE(C%C)    .NE. 128 )                   ERROR STOP 11
+  IF ( C%C%LEN      .NE. 128 )                   ERROR STOP 12
+  IF ( ANY(C%C      .NE. [(CHAR(I),I=0,127)] ) ) ERROR STOP 13
 
   CALL ExtSub()
 
   C1 = ProcPtr()
 
-  IF ( ANY(C%C      .NE. [(CHAR(I),I=127, 0, -1)] ) ) STOP 14
-  IF ( ANY(C1%C     .NE. [(CHAR(I),I=127, 0, -1)] ) ) STOP 15
+  IF ( ANY(C%C      .NE. [(CHAR(I),I=127, 0, -1)] ) ) ERROR STOP 14
+  IF ( ANY(C1%C     .NE. [(CHAR(I),I=127, 0, -1)] ) ) ERROR STOP 15
 
   END
 

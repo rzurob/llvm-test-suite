@@ -114,16 +114,16 @@
 
   SELECT TYPE( As => V%Base%BasePtr())
   TYPE IS (Base(4))
-    IF ( As%BaseId .NE. As%GetId() )             STOP 11
-    IF ( .NOT. ASSOCIATED(As%BasePtr, ExtFun1) ) STOP 12
+    IF ( As%BaseId .NE. As%GetId() )             ERROR STOP 11
+    IF ( .NOT. ASSOCIATED(As%BasePtr, ExtFun1) ) ERROR STOP 12
   CLASS DEFAULT
     STOP 13
   END SELECT
 
   SELECT TYPE( As => V%ChildPtr())
   TYPE IS (Child(4))
-    IF ( As%ChildId .NE. As%GetId() )             STOP 21
-    IF ( .NOT. ASSOCIATED(As%ChildPtr, ExtFun2) ) STOP 22
+    IF ( As%ChildId .NE. As%GetId() )             ERROR STOP 21
+    IF ( .NOT. ASSOCIATED(As%ChildPtr, ExtFun2) ) ERROR STOP 22
   CLASS DEFAULT
     STOP 23
   END SELECT

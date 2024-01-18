@@ -64,28 +64,28 @@
 
   T0 = SeqType(8,4)(-1_8, -1.0_8, (1._8, -1._8), .FALSE._8, "B")
 
-  IF ( T0%I      .NE.   -1_8 )           STOP 23
-  IF ( T0%R      .NE.   -1.0_8 )         STOP 24
-  IF ( T0%Cplx   .NE.   (1._8, -1._8) )  STOP 25
-  IF ( T0%LL     .NEQV. .FALSE._8 )      STOP 26
-  IF ( TRIM(T0%C).NE.   TRIM("B"))       STOP 27
+  IF ( T0%I      .NE.   -1_8 )           ERROR STOP 23
+  IF ( T0%R      .NE.   -1.0_8 )         ERROR STOP 24
+  IF ( T0%Cplx   .NE.   (1._8, -1._8) )  ERROR STOP 25
+  IF ( T0%LL     .NEQV. .FALSE._8 )      ERROR STOP 26
+  IF ( TRIM(T0%C).NE.   TRIM("B"))       ERROR STOP 27
 
   ALLOCATE(DT(8,4) :: T1)
   T1 = T0
 
-  IF ( T1%I      .NE.   -1_8 )           STOP 33
-  IF ( T1%R      .NE.   -1.0_8 )         STOP 34
-  IF ( T1%Cplx   .NE.   (1._8, -1._8) )  STOP 35
-  IF ( T1%LL     .NEQV. .FALSE._8 )      STOP 36
-  IF ( TRIM(T1%C).NE.   TRIM("B"))       STOP 37
+  IF ( T1%I      .NE.   -1_8 )           ERROR STOP 33
+  IF ( T1%R      .NE.   -1.0_8 )         ERROR STOP 34
+  IF ( T1%Cplx   .NE.   (1._8, -1._8) )  ERROR STOP 35
+  IF ( T1%LL     .NEQV. .FALSE._8 )      ERROR STOP 36
+  IF ( TRIM(T1%C).NE.   TRIM("B"))       ERROR STOP 37
 
   T2 => T0
 
-  IF ( T2%I      .NE.   -1_8 )           STOP 43
-  IF ( T2%R      .NE.   -1.0_8 )         STOP 44
-  IF ( T2%Cplx   .NE.   (1._8, -1._8) )  STOP 45
-  IF ( T2%LL     .NEQV. .FALSE._8 )      STOP 46
-  IF ( TRIM(T2%C).NE.   TRIM("B"))       STOP 47
+  IF ( T2%I      .NE.   -1_8 )           ERROR STOP 43
+  IF ( T2%R      .NE.   -1.0_8 )         ERROR STOP 44
+  IF ( T2%Cplx   .NE.   (1._8, -1._8) )  ERROR STOP 45
+  IF ( T2%LL     .NEQV. .FALSE._8 )      ERROR STOP 46
+  IF ( TRIM(T2%C).NE.   TRIM("B"))       ERROR STOP 47
 
   END SUBROUTINE
 

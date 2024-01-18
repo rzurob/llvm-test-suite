@@ -28,7 +28,7 @@ PROGRAM sequentialRead06
     READ( 41 ) (tIn( i ), i = 2, 2)
     CLOSE( 41 )
 
-    if (tIn( 1 )%c /= str(1)) stop 1
-    if (tIn( 2 )%c /= str(2)) stop 2
+    if (tIn( 1 )%c /= str(1)) error stop 1
+    if (tIn( 2 )%c /= str(2)) error stop 2
 
 END PROGRAM sequentialRead06

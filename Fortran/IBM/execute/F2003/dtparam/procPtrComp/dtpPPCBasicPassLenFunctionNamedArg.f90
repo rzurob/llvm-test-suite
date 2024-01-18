@@ -127,8 +127,8 @@ contains
        print *, ref(i) % p % p1(a2)
     end do
     print *, [(ref(i) % p % p1(a2), i=1,size(ref))]
-    if (any([(ref(i) % p % p1(a2), i=1,size(ref))] /= cmpArray)) stop 2
-    if (any([t1 % p1(a2), ta2 % p1(a2), ta3 % p1(a2), tp % p1(a2), t4 % p1(a2), t5 % p1(a2)] /= cmpArray)) stop 3
+    if (any([(ref(i) % p % p1(a2), i=1,size(ref))] /= cmpArray)) error stop 2
+    if (any([t1 % p1(a2), ta2 % p1(a2), ta3 % p1(a2), tp % p1(a2), t4 % p1(a2), t5 % p1(a2)] /= cmpArray)) error stop 3
   end subroutine test
 
 end program dtpPPCBasicPassLenFunctionNamedArg

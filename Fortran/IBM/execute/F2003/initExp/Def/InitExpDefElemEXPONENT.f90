@@ -77,24 +77,24 @@
   REAL(8) :: TT8 = EXPONENT(r8_Positive_Inf)
 
 
-  IF ( ANY(T1%E1  .NE. E ) )    STOP 11
-  IF ( ANY(T1%E2  .NE. E ) )    STOP 12
-  IF ( ANY(T1%E3  .NE. E ) )    STOP 13
+  IF ( ANY(T1%E1  .NE. E ) )    ERROR STOP 11
+  IF ( ANY(T1%E2  .NE. E ) )    ERROR STOP 12
+  IF ( ANY(T1%E3  .NE. E ) )    ERROR STOP 13
 
-  IF ( ANY(T2%E1  .NE. 0 ) )    STOP 21
-  IF ( ANY(T2%E2  .NE. 0 ) )    STOP 22
-  IF ( ANY(T2%E3  .NE. 0 ) )    STOP 23
+  IF ( ANY(T2%E1  .NE. 0 ) )    ERROR STOP 21
+  IF ( ANY(T2%E2  .NE. 0 ) )    ERROR STOP 22
+  IF ( ANY(T2%E3  .NE. 0 ) )    ERROR STOP 23
 
-  IF ( T3  .NE. HUGE(0)  )      STOP 31  ! seems not documented on this
+  IF ( T3  .NE. HUGE(0)  )      ERROR STOP 31  ! seems not documented on this
 
-  IF ( TT1  .NE. HUGE(0_4) ) STOP 41
-  IF ( TT2  .NE. HUGE(0_4) ) STOP 42
-  IF ( TT3  .NE. HUGE(0_4) ) STOP 43
-  IF ( TT4  .NE. HUGE(0_4) ) STOP 44
-  IF ( TT5  .NE. HUGE(0_4) ) STOP 45
-  IF ( TT6  .NE. HUGE(0_4) ) STOP 46
-  IF ( TT7  .NE. HUGE(0_4) ) STOP 47
-  IF ( TT8  .NE. HUGE(0_4) ) STOP 48
+  IF ( TT1  .NE. HUGE(0_4) ) ERROR STOP 41
+  IF ( TT2  .NE. HUGE(0_4) ) ERROR STOP 42
+  IF ( TT3  .NE. HUGE(0_4) ) ERROR STOP 43
+  IF ( TT4  .NE. HUGE(0_4) ) ERROR STOP 44
+  IF ( TT5  .NE. HUGE(0_4) ) ERROR STOP 45
+  IF ( TT6  .NE. HUGE(0_4) ) ERROR STOP 46
+  IF ( TT7  .NE. HUGE(0_4) ) ERROR STOP 47
+  IF ( TT8  .NE. HUGE(0_4) ) ERROR STOP 48
 
 
   END

@@ -214,7 +214,7 @@ program acetdt01a
   scp = (/ sContainer:: (scall,i=1,1) /)
   call validateFromSources("scp = (/ sContainer:: (scall,i=1,1) /)",   scp, scall(1), scall(2))
 
-  if (invalidDataEncountered) stop 2
+  if (invalidDataEncountered) error stop 2
 
 contains
 

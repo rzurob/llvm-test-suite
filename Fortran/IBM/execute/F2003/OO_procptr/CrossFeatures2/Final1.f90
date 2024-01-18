@@ -81,7 +81,7 @@
   USE M
   TYPE (DT) :: V
 
-  IF ( ANY (Trace .NE. 0)) STOP 13
+  IF ( ANY (Trace .NE. 0)) ERROR STOP 13
 
   END SUBROUTINE
 
@@ -93,7 +93,7 @@
   ProcPtr => ExtSub
   CALL ProcPtr()
 
-  IF ( ANY (Trace .NE. (/2,1,0,0/))) STOP 14
+  IF ( ANY (Trace .NE. (/2,1,0,0/))) ERROR STOP 14
 
   END
 

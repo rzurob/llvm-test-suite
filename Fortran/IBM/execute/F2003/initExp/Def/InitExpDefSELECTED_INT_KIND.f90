@@ -42,14 +42,14 @@
        (/1,1,1,2,2,4,4,4,4,4,8,8,8,8,8,8,8,8,8,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1/)
   INTEGER, PARAMETER :: TK        =KIND((/(SELECTED_INT_KIND(I) , I=0,32)/))
 
-  IF (TK0             .NE.   1 )                   STOP 10
-  IF (TK2             .NE.   1 )                   STOP 11
-  IF (TK4             .NE.   2 )                   STOP 12
-  IF (TK8             .NE.   4 )                   STOP 14
-  IF (TK16            .NE.   8 )                   STOP 15
-  IF (TK32            .NE.   -1 )                  STOP 16
-  IF (ANY(TKX         .NE.   CHECK) )              STOP 17
-  IF (TK              .NE.   4 )                   STOP 18
+  IF (TK0             .NE.   1 )                   ERROR STOP 10
+  IF (TK2             .NE.   1 )                   ERROR STOP 11
+  IF (TK4             .NE.   2 )                   ERROR STOP 12
+  IF (TK8             .NE.   4 )                   ERROR STOP 14
+  IF (TK16            .NE.   8 )                   ERROR STOP 15
+  IF (TK32            .NE.   -1 )                  ERROR STOP 16
+  IF (ANY(TKX         .NE.   CHECK) )              ERROR STOP 17
+  IF (TK              .NE.   4 )                   ERROR STOP 18
 
   END
 

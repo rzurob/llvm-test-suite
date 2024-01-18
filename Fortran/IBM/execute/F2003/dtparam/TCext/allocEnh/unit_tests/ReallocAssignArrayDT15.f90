@@ -28,9 +28,9 @@ allocate(t(20,4) :: a(3))
 associate (x => a)
   a = b
 end associate
-if (.not. allocated(a)) stop 1
-if (any(shape(a) /= shape(b))) stop 2
-if (lbound(a,1) /= 1) stop 3
-if (ubound(a,1) /= 5) stop 4
-if (any(a%a /= (/1,2,3,4,5/))) stop 5
+if (.not. allocated(a)) error stop 1
+if (any(shape(a) /= shape(b))) error stop 2
+if (lbound(a,1) /= 1) error stop 3
+if (ubound(a,1) /= 5) error stop 4
+if (any(a%a /= (/1,2,3,4,5/))) error stop 5
 end

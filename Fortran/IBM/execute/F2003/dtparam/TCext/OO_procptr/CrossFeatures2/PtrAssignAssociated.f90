@@ -63,22 +63,22 @@
 
   ProcPtr => NULL()
 
-  IF ( ASSOCIATED(ProcPtr) )                STOP 11
-  IF ( ASSOCIATED(ProcPtr, ModFun) )        STOP 12
-  IF ( ASSOCIATED(ProcPtr, ProcPtr) )       STOP 13
-  IF ( ASSOCIATED(ProcPtr, NULL()) )        STOP 14
-  IF ( ASSOCIATED(ProcPtr, NULL(ProcPtr)) ) STOP 15
+  IF ( ASSOCIATED(ProcPtr) )                ERROR STOP 11
+  IF ( ASSOCIATED(ProcPtr, ModFun) )        ERROR STOP 12
+  IF ( ASSOCIATED(ProcPtr, ProcPtr) )       ERROR STOP 13
+  IF ( ASSOCIATED(ProcPtr, NULL()) )        ERROR STOP 14
+  IF ( ASSOCIATED(ProcPtr, NULL(ProcPtr)) ) ERROR STOP 15
 
   ProcPtr => ModFun
-  IF ( .NOT. ASSOCIATED(ProcPtr) )          STOP 21
-  IF ( .NOT. ASSOCIATED(ProcPtr, ModFun) )  STOP 22
+  IF ( .NOT. ASSOCIATED(ProcPtr) )          ERROR STOP 21
+  IF ( .NOT. ASSOCIATED(ProcPtr, ModFun) )  ERROR STOP 22
 
   SELECT TYPE ( As => ProcPtr(RESHAPE((/( DT(1,3)("IBM"), i=1,256)/), (/16,16 /)) ))
   TYPE IS (DT(1,*))
-    IF ( ANY( SHAPE(As)   .NE. (/16,16/) )) STOP 31
+    IF ( ANY( SHAPE(As)   .NE. (/16,16/) )) ERROR STOP 31
     DO i=1, 16
     DO j=1, 16
-      IF ( As(i, j)%C     .NE. "IBM"    )   STOP 32
+      IF ( As(i, j)%C     .NE. "IBM"    )   ERROR STOP 32
     END DO
     END DO
   CLASS DEFAULT
@@ -90,24 +90,24 @@
   ProcPtr1  => NULL()
   ProcPtr => ProcPtr1
 
-  IF ( ASSOCIATED(ProcPtr) ) STOP 41
-  IF ( ASSOCIATED(ProcPtr, ModFun) )        STOP 42
-  IF ( ASSOCIATED(ProcPtr, ProcPtr) )       STOP 43
-  IF ( ASSOCIATED(ProcPtr, NULL()) )        STOP 44
-  IF ( ASSOCIATED(ProcPtr, NULL(ProcPtr)) ) STOP 45
+  IF ( ASSOCIATED(ProcPtr) ) ERROR STOP 41
+  IF ( ASSOCIATED(ProcPtr, ModFun) )        ERROR STOP 42
+  IF ( ASSOCIATED(ProcPtr, ProcPtr) )       ERROR STOP 43
+  IF ( ASSOCIATED(ProcPtr, NULL()) )        ERROR STOP 44
+  IF ( ASSOCIATED(ProcPtr, NULL(ProcPtr)) ) ERROR STOP 45
 
   ProcPtr1  => ModFun
   ProcPtr => ProcPtr1
 
-  IF ( .NOT. ASSOCIATED(ProcPtr) )         STOP 51
-  IF ( .NOT. ASSOCIATED(ProcPtr, ModFun) ) STOP 52
+  IF ( .NOT. ASSOCIATED(ProcPtr) )         ERROR STOP 51
+  IF ( .NOT. ASSOCIATED(ProcPtr, ModFun) ) ERROR STOP 52
 
   SELECT TYPE ( As => ProcPtr(RESHAPE((/( DT(1,3)("123"), i=1,256)/), (/16,16 /)) ))
   TYPE IS (DT(1,*))
-    IF ( ANY( SHAPE(As) .NE. (/16,16/) ))  STOP 53
+    IF ( ANY( SHAPE(As) .NE. (/16,16/) ))  ERROR STOP 53
     DO i=1, 16
     DO j=1, 16
-      IF ( As(i, j)%C     .NE. "123"    )  STOP 54
+      IF ( As(i, j)%C     .NE. "123"    )  ERROR STOP 54
     END DO
     END DO
   CLASS DEFAULT

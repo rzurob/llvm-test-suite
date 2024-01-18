@@ -50,7 +50,7 @@ PROGRAM allocBasePoly01
     CLASS(base(8,5)), ALLOCATABLE, TARGET :: baseAlloc
 
 
-    IF ( ASSOCIATED( basePtr ) )                STOP 10
+    IF ( ASSOCIATED( basePtr ) )                ERROR STOP 10
 
 
     ALLOCATE(basePtr, STAT=stat, ERRMSG=errmsg)
@@ -60,25 +60,25 @@ PROGRAM allocBasePoly01
     END IF
 
 
-    IF (.NOT. ASSOCIATED( basePtr ))            STOP 21
+    IF (.NOT. ASSOCIATED( basePtr ))            ERROR STOP 21
 
-    IF (basePtr%k1 /= 8)                        STOP 22
-    IF (KIND( basePtr%stuff ) /= 8)             STOP 23
+    IF (basePtr%k1 /= 8)                        ERROR STOP 22
+    IF (KIND( basePtr%stuff ) /= 8)             ERROR STOP 23
 
-    IF (basePtr%l1 /= 5)                        STOP 24
-    IF (LEN( basePtr%typeOfStuff ) /= 5)        STOP 25
+    IF (basePtr%l1 /= 5)                        ERROR STOP 24
+    IF (LEN( basePtr%typeOfStuff ) /= 5)        ERROR STOP 25
 
 
     DEALLOCATE( basePtr )
 
-    IF ( ASSOCIATED( basePtr ) )                STOP 30
+    IF ( ASSOCIATED( basePtr ) )                ERROR STOP 30
 
 
 
     basePtr => baseAlloc
 
-    IF ( ALLOCATED( baseAlloc ) )               STOP 40
-    IF (.NOT. ASSOCIATED( basePtr ))            STOP 41
+    IF ( ALLOCATED( baseAlloc ) )               ERROR STOP 40
+    IF (.NOT. ASSOCIATED( basePtr ))            ERROR STOP 41
 
 
     ALLOCATE(baseAlloc, STAT=stat, ERRMSG=errmsg)
@@ -87,28 +87,28 @@ PROGRAM allocBasePoly01
         STOP 50
     END IF
 
-    IF (.NOT. ALLOCATED( baseAlloc ))           STOP 51
+    IF (.NOT. ALLOCATED( baseAlloc ))           ERROR STOP 51
 
-    IF (baseAlloc%k1 /= 8)                      STOP 52
-    IF (KIND( baseAlloc%stuff ) /= 8)           STOP 53
+    IF (baseAlloc%k1 /= 8)                      ERROR STOP 52
+    IF (KIND( baseAlloc%stuff ) /= 8)           ERROR STOP 53
 
-    IF (baseAlloc%l1 /= 5)                      STOP 54
-    IF (LEN( baseAlloc%typeOfStuff ) /= 5)      STOP 55
+    IF (baseAlloc%l1 /= 5)                      ERROR STOP 54
+    IF (LEN( baseAlloc%typeOfStuff ) /= 5)      ERROR STOP 55
 
 
-    IF (.NOT. ASSOCIATED( basePtr ))            STOP 61
+    IF (.NOT. ASSOCIATED( basePtr ))            ERROR STOP 61
 
-    IF (basePtr%k1 /= 8)                        STOP 62
-    IF (KIND( basePtr%stuff ) /= 8)             STOP 63
+    IF (basePtr%k1 /= 8)                        ERROR STOP 62
+    IF (KIND( basePtr%stuff ) /= 8)             ERROR STOP 63
 
-    IF (basePtr%l1 /= 5)                        STOP 64
-    IF (LEN( basePtr%typeOfStuff ) /= 5)        STOP 65
+    IF (basePtr%l1 /= 5)                        ERROR STOP 64
+    IF (LEN( basePtr%typeOfStuff ) /= 5)        ERROR STOP 65
 
 
     DEALLOCATE( baseAlloc )
 
-    IF ( ALLOCATED( baseAlloc ) )               STOP 70
-    IF (.NOT. ASSOCIATED( basePtr ))            STOP 71
+    IF ( ALLOCATED( baseAlloc ) )               ERROR STOP 70
+    IF (.NOT. ASSOCIATED( basePtr ))            ERROR STOP 71
 
 
     ALLOCATE(basePtr, STAT=stat, ERRMSG=errmsg)
@@ -117,21 +117,21 @@ PROGRAM allocBasePoly01
         STOP 80
     END IF
 
-    IF ( ALLOCATED( baseAlloc ) )               STOP 81
+    IF ( ALLOCATED( baseAlloc ) )               ERROR STOP 81
 
 
-    IF (.NOT. ASSOCIATED( basePtr ))            STOP 91
+    IF (.NOT. ASSOCIATED( basePtr ))            ERROR STOP 91
 
-    IF (basePtr%k1 /= 8)                        STOP 92
-    IF (KIND( basePtr%stuff ) /= 8)             STOP 93
+    IF (basePtr%k1 /= 8)                        ERROR STOP 92
+    IF (KIND( basePtr%stuff ) /= 8)             ERROR STOP 93
 
-    IF (basePtr%l1 /= 5)                        STOP 94
-    IF (LEN( basePtr%typeOfStuff ) /= 5)        STOP 95
+    IF (basePtr%l1 /= 5)                        ERROR STOP 94
+    IF (LEN( basePtr%typeOfStuff ) /= 5)        ERROR STOP 95
 
 
     DEALLOCATE( basePtr )
 
-    IF ( ALLOCATED( baseAlloc ) )               STOP 100
-    IF ( ASSOCIATED( basePtr ) )                STOP 101
+    IF ( ALLOCATED( baseAlloc ) )               ERROR STOP 100
+    IF ( ASSOCIATED( basePtr ) )                ERROR STOP 101
 
 END PROGRAM allocBasePoly01

@@ -65,16 +65,16 @@ end module
 
 	call sp(pd,pp,9)
 
-	if ( .not. associated(pd) ) stop 3
-	if ( lbound(pd,1) /=9 ) stop 5
-	if ( ubound(pd,1) /= 17 ) stop 7
+	if ( .not. associated(pd) ) error stop 3
+	if ( lbound(pd,1) /=9 ) error stop 5
+	if ( ubound(pd,1) /= 17 ) error stop 7
 	print *, pd%index
 
         call sp(pd,pp,11,30)
 
-	if ( .not. associated(pd) ) stop 13
-	if ( lbound(pd,1) /=11 ) stop 15
-	if ( ubound(pd,1) /= 30 ) stop 17
+	if ( .not. associated(pd) ) error stop 13
+	if ( lbound(pd,1) /=11 ) error stop 15
+	if ( ubound(pd,1) /= 30 ) error stop 17
 	print *, pd%index
 
 

@@ -63,66 +63,66 @@
   CLASS(*) :: Arr0(L1:L2,L1:L2,L1:L2,L1:L2,L1:L2,L1:L2,L1:L2,L1:L2,L1:*)
 
   DO I = 1, 9
-    IF (     LBOUND(ARRAY=Arr0, DIM=I, KIND=KIND(T%C))   .NE. L1)               STOP 11
-    IF (KIND(LBOUND(ARRAY=Arr0, DIM=I, KIND=KIND(T%C)))  .NE. 1)                STOP 12
-    IF (     LBOUND(ARRAY=Arr0, DIM=I, KIND=KIND(T%L))   .NE. L1)               STOP 13
-    IF (KIND(LBOUND(ARRAY=Arr0, DIM=I, KIND=KIND(T%L)))  .NE. 2)                STOP 14
-    IF (     LBOUND(ARRAY=Arr0, DIM=I, KIND=KIND(T%I))   .NE. L1)               STOP 15
-    IF (KIND(LBOUND(ARRAY=Arr0, DIM=I, KIND=KIND(T%I)))  .NE. 4)                STOP 16
-    IF (     LBOUND(ARRAY=Arr0, DIM=I, KIND=KIND(T%R))   .NE. L1)               STOP 17
-    IF (KIND(LBOUND(ARRAY=Arr0, DIM=I, KIND=KIND(T%R)))  .NE. 8)                STOP 18
+    IF (     LBOUND(ARRAY=Arr0, DIM=I, KIND=KIND(T%C))   .NE. L1)               ERROR STOP 11
+    IF (KIND(LBOUND(ARRAY=Arr0, DIM=I, KIND=KIND(T%C)))  .NE. 1)                ERROR STOP 12
+    IF (     LBOUND(ARRAY=Arr0, DIM=I, KIND=KIND(T%L))   .NE. L1)               ERROR STOP 13
+    IF (KIND(LBOUND(ARRAY=Arr0, DIM=I, KIND=KIND(T%L)))  .NE. 2)                ERROR STOP 14
+    IF (     LBOUND(ARRAY=Arr0, DIM=I, KIND=KIND(T%I))   .NE. L1)               ERROR STOP 15
+    IF (KIND(LBOUND(ARRAY=Arr0, DIM=I, KIND=KIND(T%I)))  .NE. 4)                ERROR STOP 16
+    IF (     LBOUND(ARRAY=Arr0, DIM=I, KIND=KIND(T%R))   .NE. L1)               ERROR STOP 17
+    IF (KIND(LBOUND(ARRAY=Arr0, DIM=I, KIND=KIND(T%R)))  .NE. 8)                ERROR STOP 18
   END DO
 
-  IF (SIZE(LBOUND(ARRAY=Arr0, KIND=KIND(T%C)))  .NE. 9)                STOP 20
-  IF (ANY( LBOUND(ARRAY=Arr0, KIND=KIND(T%C))   .NE. L1))              STOP 21
-  IF (KIND(LBOUND(ARRAY=Arr0, KIND=KIND(T%C)))  .NE. 1)                STOP 22
+  IF (SIZE(LBOUND(ARRAY=Arr0, KIND=KIND(T%C)))  .NE. 9)                ERROR STOP 20
+  IF (ANY( LBOUND(ARRAY=Arr0, KIND=KIND(T%C))   .NE. L1))              ERROR STOP 21
+  IF (KIND(LBOUND(ARRAY=Arr0, KIND=KIND(T%C)))  .NE. 1)                ERROR STOP 22
 
-  IF (SIZE(LBOUND(ARRAY=Arr0, KIND=KIND(T%L)))  .NE. 9)                STOP 30
-  IF (ANY( LBOUND(ARRAY=Arr0, KIND=KIND(T%L))   .NE. L1))              STOP 31
-  IF (KIND(LBOUND(ARRAY=Arr0, KIND=KIND(T%L)))  .NE. 2)                STOP 32
+  IF (SIZE(LBOUND(ARRAY=Arr0, KIND=KIND(T%L)))  .NE. 9)                ERROR STOP 30
+  IF (ANY( LBOUND(ARRAY=Arr0, KIND=KIND(T%L))   .NE. L1))              ERROR STOP 31
+  IF (KIND(LBOUND(ARRAY=Arr0, KIND=KIND(T%L)))  .NE. 2)                ERROR STOP 32
 
-  IF (SIZE(LBOUND(ARRAY=Arr0, KIND=KIND(T%I)))  .NE. 9)                STOP 40
-  IF (ANY( LBOUND(ARRAY=Arr0, KIND=KIND(T%I))   .NE. L1))              STOP 41
-  IF (KIND(LBOUND(ARRAY=Arr0, KIND=KIND(T%I)))  .NE. 4)                STOP 42
+  IF (SIZE(LBOUND(ARRAY=Arr0, KIND=KIND(T%I)))  .NE. 9)                ERROR STOP 40
+  IF (ANY( LBOUND(ARRAY=Arr0, KIND=KIND(T%I))   .NE. L1))              ERROR STOP 41
+  IF (KIND(LBOUND(ARRAY=Arr0, KIND=KIND(T%I)))  .NE. 4)                ERROR STOP 42
 
-  IF (SIZE(LBOUND(ARRAY=Arr0, KIND=KIND(T%R)))  .NE. 9)                STOP 50
-  IF (ANY( LBOUND(ARRAY=Arr0, KIND=KIND(T%R))   .NE. L1))              STOP 51
-  IF (KIND(LBOUND(ARRAY=Arr0, KIND=KIND(T%R)))  .NE. 8)                STOP 52
+  IF (SIZE(LBOUND(ARRAY=Arr0, KIND=KIND(T%R)))  .NE. 9)                ERROR STOP 50
+  IF (ANY( LBOUND(ARRAY=Arr0, KIND=KIND(T%R))   .NE. L1))              ERROR STOP 51
+  IF (KIND(LBOUND(ARRAY=Arr0, KIND=KIND(T%R)))  .NE. 8)                ERROR STOP 52
 
-  IF (ANY( LBOUND(ARRAY=Arr0)   .NE. L1))                      STOP 31
-  IF (KIND(LBOUND(ARRAY=Arr0))  .NE. 4)                        STOP 32
+  IF (ANY( LBOUND(ARRAY=Arr0)   .NE. L1))                      ERROR STOP 31
+  IF (KIND(LBOUND(ARRAY=Arr0))  .NE. 4)                        ERROR STOP 32
 
 
 
   DO I = 1, 9
-    IF (     LBOUND(ARRAY=Arr, DIM=I, KIND=KIND(T%C))   .NE. L1)               STOP 61
-    IF (KIND(LBOUND(ARRAY=Arr, DIM=I, KIND=KIND(T%C)))  .NE. 1)                STOP 62
-    IF (     LBOUND(ARRAY=Arr, DIM=I, KIND=KIND(T%L))   .NE. L1)               STOP 63
-    IF (KIND(LBOUND(ARRAY=Arr, DIM=I, KIND=KIND(T%L)))  .NE. 2)                STOP 64
-    IF (     LBOUND(ARRAY=Arr, DIM=I, KIND=KIND(T%I))   .NE. L1)               STOP 65
-    IF (KIND(LBOUND(ARRAY=Arr, DIM=I, KIND=KIND(T%I)))  .NE. 4)                STOP 66
-    IF (     LBOUND(ARRAY=Arr, DIM=I, KIND=KIND(T%R))   .NE. L1)               STOP 67
-    IF (KIND(LBOUND(ARRAY=Arr, DIM=I, KIND=KIND(T%R)))  .NE. 8)                STOP 68
+    IF (     LBOUND(ARRAY=Arr, DIM=I, KIND=KIND(T%C))   .NE. L1)               ERROR STOP 61
+    IF (KIND(LBOUND(ARRAY=Arr, DIM=I, KIND=KIND(T%C)))  .NE. 1)                ERROR STOP 62
+    IF (     LBOUND(ARRAY=Arr, DIM=I, KIND=KIND(T%L))   .NE. L1)               ERROR STOP 63
+    IF (KIND(LBOUND(ARRAY=Arr, DIM=I, KIND=KIND(T%L)))  .NE. 2)                ERROR STOP 64
+    IF (     LBOUND(ARRAY=Arr, DIM=I, KIND=KIND(T%I))   .NE. L1)               ERROR STOP 65
+    IF (KIND(LBOUND(ARRAY=Arr, DIM=I, KIND=KIND(T%I)))  .NE. 4)                ERROR STOP 66
+    IF (     LBOUND(ARRAY=Arr, DIM=I, KIND=KIND(T%R))   .NE. L1)               ERROR STOP 67
+    IF (KIND(LBOUND(ARRAY=Arr, DIM=I, KIND=KIND(T%R)))  .NE. 8)                ERROR STOP 68
   END DO
 
-  IF (SIZE(LBOUND(ARRAY=Arr, KIND=KIND(T%C)))  .NE. 9)                STOP 70
-  IF (ANY( LBOUND(ARRAY=Arr, KIND=KIND(T%C))   .NE. L1))              STOP 71
-  IF (KIND(LBOUND(ARRAY=Arr, KIND=KIND(T%C)))  .NE. 1)                STOP 72
+  IF (SIZE(LBOUND(ARRAY=Arr, KIND=KIND(T%C)))  .NE. 9)                ERROR STOP 70
+  IF (ANY( LBOUND(ARRAY=Arr, KIND=KIND(T%C))   .NE. L1))              ERROR STOP 71
+  IF (KIND(LBOUND(ARRAY=Arr, KIND=KIND(T%C)))  .NE. 1)                ERROR STOP 72
 
-  IF (SIZE(LBOUND(ARRAY=Arr, KIND=KIND(T%L)))  .NE. 9)                STOP 80
-  IF (ANY( LBOUND(ARRAY=Arr, KIND=KIND(T%L))   .NE. L1))              STOP 81
-  IF (KIND(LBOUND(ARRAY=Arr, KIND=KIND(T%L)))  .NE. 2)                STOP 82
+  IF (SIZE(LBOUND(ARRAY=Arr, KIND=KIND(T%L)))  .NE. 9)                ERROR STOP 80
+  IF (ANY( LBOUND(ARRAY=Arr, KIND=KIND(T%L))   .NE. L1))              ERROR STOP 81
+  IF (KIND(LBOUND(ARRAY=Arr, KIND=KIND(T%L)))  .NE. 2)                ERROR STOP 82
 
-  IF (SIZE(LBOUND(ARRAY=Arr, KIND=KIND(T%I)))  .NE. 9)                STOP 90
-  IF (ANY( LBOUND(ARRAY=Arr, KIND=KIND(T%I))   .NE. L1))              STOP 91
-  IF (KIND(LBOUND(ARRAY=Arr, KIND=KIND(T%I)))  .NE. 4)                STOP 92
+  IF (SIZE(LBOUND(ARRAY=Arr, KIND=KIND(T%I)))  .NE. 9)                ERROR STOP 90
+  IF (ANY( LBOUND(ARRAY=Arr, KIND=KIND(T%I))   .NE. L1))              ERROR STOP 91
+  IF (KIND(LBOUND(ARRAY=Arr, KIND=KIND(T%I)))  .NE. 4)                ERROR STOP 92
 
-  IF (SIZE(LBOUND(ARRAY=Arr, KIND=KIND(T%R)))  .NE. 9)                STOP 94
-  IF (ANY( LBOUND(ARRAY=Arr, KIND=KIND(T%R))   .NE. L1))              STOP 95
-  IF (KIND(LBOUND(ARRAY=Arr, KIND=KIND(T%R)))  .NE. 8)                STOP 96
+  IF (SIZE(LBOUND(ARRAY=Arr, KIND=KIND(T%R)))  .NE. 9)                ERROR STOP 94
+  IF (ANY( LBOUND(ARRAY=Arr, KIND=KIND(T%R))   .NE. L1))              ERROR STOP 95
+  IF (KIND(LBOUND(ARRAY=Arr, KIND=KIND(T%R)))  .NE. 8)                ERROR STOP 96
 
-  IF (ANY( LBOUND(ARRAY=Arr)   .NE. L1))                      STOP 31
-  IF (KIND(LBOUND(ARRAY=Arr))  .NE. 4)                        STOP 32
+  IF (ANY( LBOUND(ARRAY=Arr)   .NE. L1))                      ERROR STOP 31
+  IF (KIND(LBOUND(ARRAY=Arr))  .NE. 4)                        ERROR STOP 32
 
   END SUBROUTINE
 

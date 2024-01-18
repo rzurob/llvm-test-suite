@@ -97,7 +97,7 @@ function genID (i1, shape)
     integer, intent(in) :: i1(:), shape(2)
     integer, pointer :: genID(:,:)
 
-    if (size(i1) < product(shape)) stop 10
+    if (size(i1) < product(shape)) error stop 10
 
     allocate(genID(shape(1), shape(2)))
     genID = reshape(i1, shape)
@@ -111,7 +111,7 @@ function genReal (r1, isize, p)
 
     real, pointer :: genReal(:)
 
-    if (size(r1) < isize) stop 20
+    if (size(r1) < isize) error stop 20
 
     allocate (genReal(isize))
 

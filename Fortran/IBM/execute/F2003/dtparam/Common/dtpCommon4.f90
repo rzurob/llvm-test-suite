@@ -92,7 +92,7 @@
   COMMON /BLK/T(10)
 
   DO I=1, 10
-    IF ( ANY( T(I)%I .NE. I ) ) STOP 11
+    IF ( ANY( T(I)%I .NE. I ) ) ERROR STOP 11
   END DO
 
   END

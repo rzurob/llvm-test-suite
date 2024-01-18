@@ -45,20 +45,20 @@
     TX(1,1)=RESHAPE(REAL(A=(/REAL(z"0FFFFFFF")/), KIND=4),(/1,1/))
 
   CHARACTER(32) :: C
-  IF ( KIND(TI4)  .NE.    4 )  STOP 11
-  IF ( KIND(TI8)  .NE.    8 )  STOP 12
-  IF ( KIND(TI6)  .NE.   16 )  STOP 13
-  IF ( KIND(TX)   .NE.    4 )  STOP 14
+  IF ( KIND(TI4)  .NE.    4 )  ERROR STOP 11
+  IF ( KIND(TI8)  .NE.    8 )  ERROR STOP 12
+  IF ( KIND(TI6)  .NE.   16 )  ERROR STOP 13
+  IF ( KIND(TX)   .NE.    4 )  ERROR STOP 14
 
   WRITE(C, FMT="(Z32.32)") TI4(1,1)
-  IF ( C  .NE.   REPEAT("0", 30) // "FF" )  STOP 21
+  IF ( C  .NE.   REPEAT("0", 30) // "FF" )  ERROR STOP 21
   WRITE(C, FMT="(Z32.32)") TI8(1,1)
-  IF ( C  .NE.   REPEAT("0", 28) // "FFFF" )  STOP 22
+  IF ( C  .NE.   REPEAT("0", 28) // "FFFF" )  ERROR STOP 22
   WRITE(C, FMT="(Z32.32)") TI6(1,1)
-  IF ( C  .NE.   REPEAT("0", 24) // "FFFFFFFF" )  STOP 23
+  IF ( C  .NE.   REPEAT("0", 24) // "FFFFFFFF" )  ERROR STOP 23
 
   WRITE(C, FMT="(Z8.8)") TX
-  IF ( C  .NE.  "0FFFFFFF" )  STOP 24
+  IF ( C  .NE.  "0FFFFFFF" )  ERROR STOP 24
 
   END
 

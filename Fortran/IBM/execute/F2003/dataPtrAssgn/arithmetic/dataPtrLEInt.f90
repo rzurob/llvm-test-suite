@@ -45,12 +45,12 @@ program main
 
     b1%p(2:3,1:2) => b1%output( [ -3_1,-20_1,0_1,-23_1] )
 
-    if ( .not. associated(b1%p)) stop 1
+    if ( .not. associated(b1%p)) error stop 1
 
     select type(x => b1%p)
 	type is (byte)
-            if ( any (lbound(x) .ne. (/2,1/))) stop 2
-            if ( any (ubound(x) .ne. (/3,2/))) stop 3
+            if ( any (lbound(x) .ne. (/2,1/))) error stop 2
+            if ( any (ubound(x) .ne. (/3,2/))) error stop 3
 	    if ( all(x .le. 0)) print *, x
     	type is (character(*))
 	    print *, x

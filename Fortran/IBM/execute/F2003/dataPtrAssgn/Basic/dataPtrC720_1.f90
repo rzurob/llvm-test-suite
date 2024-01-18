@@ -50,11 +50,11 @@
   ALLOCATE(Arr2(2,3), SOURCE=DT(-1))
   Ptr1(0:1) => Arr2(:,3)
 
-  IF (ANY(LBOUND(Ptr1) .NE.   (/0/))) STOP 11
-  IF (ANY(UBOUND(Ptr1) .NE.   (/1/))) STOP 12
+  IF (ANY(LBOUND(Ptr1) .NE.   (/0/))) ERROR STOP 11
+  IF (ANY(UBOUND(Ptr1) .NE.   (/1/))) ERROR STOP 12
   SELECT TYPE ( Ptr1)
   TYPE IS (DT)
-    IF (ANY(Ptr1%GetId() .NE. -1))    STOP 13
+    IF (ANY(Ptr1%GetId() .NE. -1))    ERROR STOP 13
   CLASS DEFAULT
     STOP 14
   END SELECT
@@ -63,11 +63,11 @@
   ALLOCATE(Arr1(8), SOURCE=(/DT(1),DT(2),DT(3),DT(4),DT(5),DT(6),DT(7),DT(8)/))
   Ptr2(0:1, 0:1) => Arr1(::2)
 
-  IF (ANY(LBOUND(Ptr2) .NE.   (/0,0/))) STOP 21
-  IF (ANY(UBOUND(Ptr2) .NE.   (/1,1/))) STOP 22
+  IF (ANY(LBOUND(Ptr2) .NE.   (/0,0/))) ERROR STOP 21
+  IF (ANY(UBOUND(Ptr2) .NE.   (/1,1/))) ERROR STOP 22
   SELECT TYPE ( Ptr2)
   TYPE IS (DT)
-    IF (ANY(Ptr2%GetId() .NE. RESHAPE((/1,3,5,7/), (/2,2/)))) STOP 23
+    IF (ANY(Ptr2%GetId() .NE. RESHAPE((/1,3,5,7/), (/2,2/)))) ERROR STOP 23
   CLASS DEFAULT
     STOP 24
   END SELECT
@@ -75,11 +75,11 @@
   Arr2(:,3)%ID = 1
   Ptr1(3:) => Arr2(:,3)
 
-  IF (ANY(LBOUND(Ptr1) .NE.   (/3/))) STOP 31
-  IF (ANY(UBOUND(Ptr1) .NE.   (/4/))) STOP 32
+  IF (ANY(LBOUND(Ptr1) .NE.   (/3/))) ERROR STOP 31
+  IF (ANY(UBOUND(Ptr1) .NE.   (/4/))) ERROR STOP 32
   SELECT TYPE ( Ptr1)
   TYPE IS (DT)
-    IF (ANY(Ptr1%GetId() .NE. 1))     STOP 33
+    IF (ANY(Ptr1%GetId() .NE. 1))     ERROR STOP 33
   CLASS DEFAULT
     STOP 34
   END SELECT
@@ -88,11 +88,11 @@
   Arr3(:,1,:)%ID = RESHAPE((/1,2,3,4/),(/2,2/))
   Ptr2(0:, 0:) => Arr3(:,1,:)
 
-  IF (ANY(LBOUND(Ptr2) .NE.   (/0,0/))) STOP 41
-  IF (ANY(UBOUND(Ptr2) .NE.   (/1,1/))) STOP 42
+  IF (ANY(LBOUND(Ptr2) .NE.   (/0,0/))) ERROR STOP 41
+  IF (ANY(UBOUND(Ptr2) .NE.   (/1,1/))) ERROR STOP 42
   SELECT TYPE ( Ptr2)
   TYPE IS (DT)
-    IF (ANY(Ptr2%GetId() .NE. RESHAPE((/1,2,3,4/),(/2,2/)))) STOP 43
+    IF (ANY(Ptr2%GetId() .NE. RESHAPE((/1,2,3,4/),(/2,2/)))) ERROR STOP 43
   CLASS DEFAULT
     STOP 44
   END SELECT

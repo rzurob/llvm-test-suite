@@ -56,13 +56,13 @@ program main
     !e1 = ii
     call e1%defAssgn2(ii)
 
-    if ( .not. associated(e1%comp%p, ii(::2))) stop 1
-    if ( lbound(e1%comp%p,1) /= 10 ) stop 2
-    if ( ubound(e1%comp%p,1) /= 14 ) stop 3
+    if ( .not. associated(e1%comp%p, ii(::2))) error stop 1
+    if ( lbound(e1%comp%p,1) /= 10 ) error stop 2
+    if ( ubound(e1%comp%p,1) /= 14 ) error stop 3
 
     select type(x => e1%comp%p)
 	type is (integer)
-	    if ( any( x**2 .ne. (/(i*i,i=1,9,2)/))) stop 6
+	    if ( any( x**2 .ne. (/(i*i,i=1,9,2)/))) error stop 6
 	class default
 	    stop 5
     end select

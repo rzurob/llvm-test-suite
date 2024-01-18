@@ -41,11 +41,11 @@
   COMPLEX(KIND(CMPLX(ZArr1, KIND=ZArr2%KIND))),   PARAMETER :: ZArr(128) = CMPLX(ZArr1, KIND=ZArr2%KIND)
 
 
-  IF ( KIND(RArr) .NE. KIND(R))  STOP 11
-  IF ( ANY( RArr  .NE. 1 ))      STOP 12
+  IF ( KIND(RArr) .NE. KIND(R))  ERROR STOP 11
+  IF ( ANY( RArr  .NE. 1 ))      ERROR STOP 12
 
-  IF ( KIND(ZArr) .NE. KIND(Z))  STOP 21
-  IF ( ANY( ZArr  .NE. (1.,1.))) STOP 22
+  IF ( KIND(ZArr) .NE. KIND(Z))  ERROR STOP 21
+  IF ( ANY( ZArr  .NE. (1.,1.))) ERROR STOP 22
 
 
   END

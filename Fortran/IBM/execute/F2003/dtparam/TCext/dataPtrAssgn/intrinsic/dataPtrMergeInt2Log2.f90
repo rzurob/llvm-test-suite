@@ -45,15 +45,15 @@
 
 	lp(1:2,0:1,0:1,-1:0,-2:-1) => lt(::1)
 
-	if ( .not. associated(lp)) stop 2
-	if ( any( lbound(lp) .ne. (/1,0,0,-1,-2/))) stop 5
-	if ( any( ubound(lp) .ne. (/2,1,1,0,-1/))) stop 8
+	if ( .not. associated(lp)) error stop 2
+	if ( any( lbound(lp) .ne. (/1,0,0,-1,-2/))) error stop 5
+	if ( any( ubound(lp) .ne. (/2,1,1,0,-1/))) error stop 8
 
         a1%Tsrc(1:2,2:3,3:4,4:5,31:2**5) => tar
 
-	if ( .not. associated(a1%Tsrc)) stop 12
-	if ( any( lbound(a1%Tsrc) .ne. (/1,2,3,4,31 /))) stop 15
-	if ( any( ubound(a1%Tsrc) .ne. (/2,3,4,5,32 /))) stop 18
+	if ( .not. associated(a1%Tsrc)) error stop 12
+	if ( any( lbound(a1%Tsrc) .ne. (/1,2,3,4,31 /))) error stop 15
+	if ( any( ubound(a1%Tsrc) .ne. (/2,3,4,5,32 /))) error stop 18
 
         select type (x => a1%Tsrc)
             type is (integer*2)

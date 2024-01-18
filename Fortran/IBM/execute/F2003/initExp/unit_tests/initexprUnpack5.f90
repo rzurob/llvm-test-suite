@@ -20,7 +20,7 @@ character, parameter :: fld4(3,3)=reshape((/'Z','Y',';','?','O','D','P',' ','Q'/
 character, dimension(3,3) :: res1=unpack(v4, msk4, fld4), &
   & res2=unpack(v4, msk4, field='s')
 
-if (.not. all(res1 .eq. unpack(v4, msk4, fld4))) stop 1
-if (.not. all(res2 .eq. unpack(v4, msk4, field='s'))) stop 2
+if (.not. all(res1 .eq. unpack(v4, msk4, fld4))) error stop 1
+if (.not. all(res2 .eq. unpack(v4, msk4, field='s'))) error stop 2
 
 end

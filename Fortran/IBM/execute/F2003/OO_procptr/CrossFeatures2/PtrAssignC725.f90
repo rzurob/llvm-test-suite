@@ -66,28 +66,28 @@
   PROCEDURE(IntF) :: ExtFun
 
   MV%ProcPtr1 => ModFun
-  IF ( MV%ProcPtr1('0') .NE. '0' )            STOP 11
+  IF ( MV%ProcPtr1('0') .NE. '0' )            ERROR STOP 11
 
   PV%DT%ProcPtr0 => ModFun
-  IF ( PV%DT%ProcPtr0('a') .NE. 'a' )         STOP 12
+  IF ( PV%DT%ProcPtr0('a') .NE. 'a' )         ERROR STOP 12
 
   PV%DT%DT0%ProcPtr0 => ModFun
-  IF ( PV%DT%DT0%ProcPtr0('9') .NE. '9' )     STOP 13
+  IF ( PV%DT%DT0%ProcPtr0('9') .NE. '9' )     ERROR STOP 13
 
   PV%ProcPtr => ModFun
-  IF ( PV%ProcPtr('9') .NE. '9' )            STOP 14
+  IF ( PV%ProcPtr('9') .NE. '9' )            ERROR STOP 14
 
   PV%ProcPtr => ExtFun
-  IF ( PV%ProcPtr('0') .NE. '0' )            STOP 21
+  IF ( PV%ProcPtr('0') .NE. '0' )            ERROR STOP 21
 
   PV%DT%ProcPtr1 => ExtFun
-  IF ( PV%DT%ProcPtr1('a') .NE. 'a' )         STOP 22
+  IF ( PV%DT%ProcPtr1('a') .NE. 'a' )         ERROR STOP 22
 
   PV%DT%DT0%ProcPtr0 => ExtFun
-  IF ( PV%DT%DT0%ProcPtr0('9') .NE. '9' )     STOP 23
+  IF ( PV%DT%DT0%ProcPtr0('9') .NE. '9' )     ERROR STOP 23
 
   PV%DT0%ProcPtr0 => ExtFun
-  IF ( PV%DT0%ProcPtr0('9') .NE. '9' )        STOP 24
+  IF ( PV%DT0%ProcPtr0('9') .NE. '9' )        ERROR STOP 24
 
   END
 

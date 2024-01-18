@@ -53,11 +53,11 @@ print*, b%l
 print*, SIZE(b(1)%arr)
 print*, len(b(1)%arr%c)
 print*, b
-  IF (b%l            .NE. 2)  STOP 11
-  IF (b(1)%arr%l        .NE. 2)  STOP 12
-  IF (len(b(1)%arr%c)    .NE. 2)  STOP 13
-  IF (SIZE(b(1)%arr) .NE. 2)  STOP 14
-  IF (SIZE(b)        .NE. 2)  STOP 15
+  IF (b%l            .NE. 2)  ERROR STOP 11
+  IF (b(1)%arr%l        .NE. 2)  ERROR STOP 12
+  IF (len(b(1)%arr%c)    .NE. 2)  ERROR STOP 13
+  IF (SIZE(b(1)%arr) .NE. 2)  ERROR STOP 14
+  IF (SIZE(b)        .NE. 2)  ERROR STOP 15
 
   do i = 1, n
     do j = lbound(b(i)%arr,1), ubound(b(i)%arr,1)
@@ -65,8 +65,8 @@ print*, b
     end do
   end do
 
-  IF (ANY(b(1)%arr%c  .NE. "12")) STOP 16
-  IF (ANY(b(n)%arr%c  .NE. "12")) STOP 17
+  IF (ANY(b(1)%arr%c  .NE. "12")) ERROR STOP 16
+  IF (ANY(b(n)%arr%c  .NE. "12")) ERROR STOP 17
 
   END SUBROUTINE
 

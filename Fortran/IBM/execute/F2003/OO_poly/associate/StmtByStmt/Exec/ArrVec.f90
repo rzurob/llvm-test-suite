@@ -66,26 +66,26 @@
   ASSOCIATE ( As => Arr((/2,4,6,8,10/)))
   ASSOCIATE ( As => as((/4,1,3,2/)) )
 
-    IF ( ANY (LBOUND(As)      .NE. (/1/) ) )             STOP 30
-    IF ( ANY (SHAPE(As)       .NE. (/4/) ) )             STOP 32
-    IF ( ANY (As%GetID()      .NE. (/-8,-2,-6,-4/) ) ) STOP 33
-    IF ( ANY (As%Base%GetID() .NE. (/ 8, 2, 6, 4/) ) ) STOP 34
+    IF ( ANY (LBOUND(As)      .NE. (/1/) ) )             ERROR STOP 30
+    IF ( ANY (SHAPE(As)       .NE. (/4/) ) )             ERROR STOP 32
+    IF ( ANY (As%GetID()      .NE. (/-8,-2,-6,-4/) ) ) ERROR STOP 33
+    IF ( ANY (As%Base%GetID() .NE. (/ 8, 2, 6, 4/) ) ) ERROR STOP 34
 
     ASSOCIATE ( As0 => As%ChildId, As1 => As%BaseId )
-       IF ( ANY(As0 .NE. (/-8,-2,-6,-4/) ) ) STOP 41
-       IF ( ANY(As1 .NE. (/ 8, 2, 6, 4/) ) ) STOP 42
+       IF ( ANY(As0 .NE. (/-8,-2,-6,-4/) ) ) ERROR STOP 41
+       IF ( ANY(As1 .NE. (/ 8, 2, 6, 4/) ) ) ERROR STOP 42
     END ASSOCIATE
 
     ASSOCIATE ( As2 => As%Base )
-      IF ( ANY(As2%GetID() .NE. (/ 8, 2, 6, 4/) )) STOP 50
+      IF ( ANY(As2%GetID() .NE. (/ 8, 2, 6, 4/) )) ERROR STOP 50
     END ASSOCIATE
 
     ASSOCIATE (As1 =>  As%GetID())
-      IF ( ANY(As1 .NE. (/-8,-2,-6,-4/) )) STOP 60
+      IF ( ANY(As1 .NE. (/-8,-2,-6,-4/) )) ERROR STOP 60
     END ASSOCIATE
 
     ASSOCIATE (As1 =>  As%Base%GetID())
-      IF ( ANY(As1 .NE. (/ 8, 2, 6, 4/) )) STOP 70
+      IF ( ANY(As1 .NE. (/ 8, 2, 6, 4/) )) ERROR STOP 70
     END ASSOCIATE
 
   END ASSOCIATE

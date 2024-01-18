@@ -60,7 +60,7 @@
       SELECT TYPE (T)
         CLASS IS (ExtNode(knd1,*))
          IF ( .NOT. ALLOCATED(T%my_arr))  ALLOCATE (T%my_arr(len1))
-         IF ( .NOT. ALLOCATED(T%my_arr)) STOP 20
+         IF ( .NOT. ALLOCATED(T%my_arr)) ERROR STOP 20
 
     ! select case
          SELECT CASE (T%tag)
@@ -86,7 +86,7 @@
       CLASS(Node(k1=knd1,l1=len1)), POINTER :: Obj
 
       foo => Obj
-      IF ( .NOT. ASSOCIATED(foo)) STOP 4
+      IF ( .NOT. ASSOCIATED(foo)) ERROR STOP 4
 
       END FUNCTION foo
 
@@ -103,13 +103,13 @@
 
       Outer_SelType: SELECT TYPE (T)
         CLASS IS (ExtNode(knd1,*))
-          IF ( .NOT. ASSOCIATED(T%Next)) STOP 5
-          IF ( .NOT. ASSOCIATED(foo(T%Next))) STOP 6
+          IF ( .NOT. ASSOCIATED(T%Next)) ERROR STOP 5
+          IF ( .NOT. ASSOCIATED(foo(T%Next))) ERROR STOP 6
 
           Inner_SelType: SELECT TYPE ( A => foo(T%Next)) ! call to foo possible only within the select type
              TYPE IS (Node(knd1,*))
-                IF (A%k1 .NE. knd1) STOP 112
-                IF (A%l1 .NE. len1) STOP 113
+                IF (A%k1 .NE. knd1) ERROR STOP 112
+                IF (A%l1 .NE. len1) ERROR STOP 113
              CLASS DEFAULT
                 STOP 40
 
@@ -117,7 +117,7 @@
 
           T%tag = 'Full'
           CALL fill_my_arr(T)
-          IF (T%sum_arr .NE. 55) STOP 114
+          IF (T%sum_arr .NE. 55) ERROR STOP 114
 
         CLASS IS (Node(knd1,*))
            STOP 30
@@ -140,7 +140,7 @@
       TYPE(Node(knd1,len1)), TARGET :: FirstNode = (Node(knd1,len1) ())
 
       ActiveNode%Next  => FirstNode
-      IF ( .NOT. ASSOCIATED(ActiveNode%Next)) STOP 12
+      IF ( .NOT. ASSOCIATED(ActiveNode%Next)) ERROR STOP 12
 
       CALL Sub1(ActiveNode)
 

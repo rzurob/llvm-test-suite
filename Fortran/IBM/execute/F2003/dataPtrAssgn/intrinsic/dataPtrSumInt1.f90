@@ -35,9 +35,9 @@ program main
 	! data-pointer of 4-rank
 	a1%ptr(func(-1):1,0:ub,lbound(t_int,1):2,1:func(3)) => t_int(41:)
 
-	if ( .not. associated(a1%ptr) ) stop 5
-        if ( any (lbound(a1%ptr) .ne. (/0,0,1,1 /))) stop 7
-	if ( any (ubound(a1%ptr) .ne. (/1,3,2,4 /))) stop 9
+	if ( .not. associated(a1%ptr) ) error stop 5
+        if ( any (lbound(a1%ptr) .ne. (/0,0,1,1 /))) error stop 7
+	if ( any (ubound(a1%ptr) .ne. (/1,3,2,4 /))) error stop 9
 
 	select type (x => a1%ptr)
   	    type is (integer(2) )

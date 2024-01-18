@@ -16,9 +16,9 @@ allocate(character(5) :: b(5))
 allocate(a(3))
 b = (/(char(i),i=1,5)/)
 a = b
-if (.not. allocated(a)) stop 1
-if (any(shape(a) /= shape(b))) stop 2
-if (lbound(a,1) /= 1) stop 3
-if (ubound(a,1) /= 5) stop 4
-if (any(a /= (/char(1),char(2),char(3),char(4),char(5)/))) stop 5
+if (.not. allocated(a)) error stop 1
+if (any(shape(a) /= shape(b))) error stop 2
+if (lbound(a,1) /= 1) error stop 3
+if (ubound(a,1) /= 5) error stop 4
+if (any(a /= (/char(1),char(2),char(3),char(4),char(5)/))) error stop 5
 end

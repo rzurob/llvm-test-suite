@@ -47,11 +47,11 @@
 
       call sub(b%d2, b)
 
-      if (allocated (b%d2)) stop 25
+      if (allocated (b%d2)) error stop 25
 
-      if (.not. allocated(b%d1)) stop 26
-      if ( any ([b%d1(:,:,:)] /= [1,2,3,4,5,6])) stop 22
-      if ( any (shape(b%d1) /= [2, 3, 1])) stop 24
+      if (.not. allocated(b%d1)) error stop 26
+      if ( any ([b%d1(:,:,:)] /= [1,2,3,4,5,6])) error stop 22
+      if ( any (shape(b%d1) /= [2, 3, 1])) error stop 24
 
       end
 
@@ -67,6 +67,6 @@
 
           call move_alloc(arg,brg%d1)
 
-          if ( .not. allocated(brg%d1)) stop 21
-          if ( allocated(arg) ) stop 23
+          if ( .not. allocated(brg%d1)) error stop 21
+          if ( allocated(arg) ) error stop 23
       end subroutine

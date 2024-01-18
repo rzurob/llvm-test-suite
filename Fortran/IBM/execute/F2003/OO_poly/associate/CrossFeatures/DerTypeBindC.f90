@@ -36,19 +36,19 @@
   ASSOCIATE( As => T )
   ASSOCIATE( V => T )
 
-      IF ( As%I   .NE. 1 ) STOP 31
-      IF ( As%C   .NE. "!" ) STOP 32
+      IF ( As%I   .NE. 1 ) ERROR STOP 31
+      IF ( As%C   .NE. "!" ) ERROR STOP 32
 
       As%I=-1
       As%C=" "
 
-      IF ( V%I   .NE. -1 ) STOP 41
-      IF ( V%C   .NE. " " ) STOP 42
+      IF ( V%I   .NE. -1 ) ERROR STOP 41
+      IF ( V%C   .NE. " " ) ERROR STOP 42
 
       CALL SUB(As)
 
-      IF ( As%I   .NE.  1 ) STOP 61
-      IF ( As%C   .NE. "!" ) STOP 62
+      IF ( As%I   .NE.  1 ) ERROR STOP 61
+      IF ( As%C   .NE. "!" ) ERROR STOP 62
 
   END ASSOCIATE
   END ASSOCIATE
@@ -62,8 +62,8 @@
   P=>Arg
 
   ASSOCIATE ( As => P )
-    IF ( As%I   .NE. -1 ) STOP 51
-    IF ( As%C   .NE. " " ) STOP 52
+    IF ( As%I   .NE. -1 ) ERROR STOP 51
+    IF ( As%C   .NE. " " ) ERROR STOP 52
 
     As%I = 1
     As%C = "!"

@@ -56,103 +56,103 @@ PROGRAM DTP_PARAMETER_01b
       CLASS(Base(K,:)), ALLOCATABLE :: poly
       LOGICAL(4), EXTERNAL :: precision_r4
 
-      IF ( SIZE(n1%A0) .NE. M ) STOP 10
-      IF ( SIZE(n1%C0) .NE. M ) STOP 11
-      IF ( SIZE(n1%R0) .NE. M ) STOP 12
-      IF ( LBOUND(n1%A0,1) .NE. 1 ) STOP 13
-      IF ( LBOUND(n1%C0,1) .NE. 1 ) STOP 14
-      IF ( LBOUND(n1%R0,1) .NE. 1 ) STOP 15
-      IF ( UBOUND(n1%A0,1) .NE. M ) STOP 16
-      IF ( UBOUND(n1%C0,1) .NE. M ) STOP 17
-      IF ( UBOUND(n1%R0,1) .NE. M ) STOP 18
-      IF ( ANY(n1%A0 .NE. [(I, I = 1, M)]) ) STOP 19
+      IF ( SIZE(n1%A0) .NE. M ) ERROR STOP 10
+      IF ( SIZE(n1%C0) .NE. M ) ERROR STOP 11
+      IF ( SIZE(n1%R0) .NE. M ) ERROR STOP 12
+      IF ( LBOUND(n1%A0,1) .NE. 1 ) ERROR STOP 13
+      IF ( LBOUND(n1%C0,1) .NE. 1 ) ERROR STOP 14
+      IF ( LBOUND(n1%R0,1) .NE. 1 ) ERROR STOP 15
+      IF ( UBOUND(n1%A0,1) .NE. M ) ERROR STOP 16
+      IF ( UBOUND(n1%C0,1) .NE. M ) ERROR STOP 17
+      IF ( UBOUND(n1%R0,1) .NE. M ) ERROR STOP 18
+      IF ( ANY(n1%A0 .NE. [(I, I = 1, M)]) ) ERROR STOP 19
       DO I = 1, M
-        IF ( TRIM(n1%C0(I)) .NE. CHAR(I) ) STOP 20
-        IF ( .NOT. precision_r4(n1%R0(I), I/REAL(M)) ) STOP 21
+        IF ( TRIM(n1%C0(I)) .NE. CHAR(I) ) ERROR STOP 20
+        IF ( .NOT. precision_r4(n1%R0(I), I/REAL(M)) ) ERROR STOP 21
       END DO
 
-      IF ( ASSOCIATED(n1%cmp1) ) STOP 22
+      IF ( ASSOCIATED(n1%cmp1) ) ERROR STOP 22
       ALLOCATE ( n1%cmp1, SOURCE = c1 )
-      IF ( SIZE(n1%cmp1%A0) .NE. M ) STOP 23
-      IF ( SIZE(n1%cmp1%C0) .NE. M ) STOP 24
-      IF ( SIZE(n1%cmp1%R0) .NE. M ) STOP 25
-      IF ( LBOUND(n1%cmp1%A0,1) .NE. 1 ) STOP 26
-      IF ( LBOUND(n1%cmp1%C0,1) .NE. 1 ) STOP 27
-      IF ( LBOUND(n1%cmp1%R0,1) .NE. 1 ) STOP 28
-      IF ( UBOUND(n1%cmp1%A0,1) .NE. M ) STOP 29
-      IF ( UBOUND(n1%cmp1%C0,1) .NE. M ) STOP 30
-      IF ( UBOUND(n1%cmp1%R0,1) .NE. M ) STOP 31
-      IF ( ANY(n1%cmp1%A0 .NE. [(2*I, I = 1, M)]) ) STOP 32
+      IF ( SIZE(n1%cmp1%A0) .NE. M ) ERROR STOP 23
+      IF ( SIZE(n1%cmp1%C0) .NE. M ) ERROR STOP 24
+      IF ( SIZE(n1%cmp1%R0) .NE. M ) ERROR STOP 25
+      IF ( LBOUND(n1%cmp1%A0,1) .NE. 1 ) ERROR STOP 26
+      IF ( LBOUND(n1%cmp1%C0,1) .NE. 1 ) ERROR STOP 27
+      IF ( LBOUND(n1%cmp1%R0,1) .NE. 1 ) ERROR STOP 28
+      IF ( UBOUND(n1%cmp1%A0,1) .NE. M ) ERROR STOP 29
+      IF ( UBOUND(n1%cmp1%C0,1) .NE. M ) ERROR STOP 30
+      IF ( UBOUND(n1%cmp1%R0,1) .NE. M ) ERROR STOP 31
+      IF ( ANY(n1%cmp1%A0 .NE. [(2*I, I = 1, M)]) ) ERROR STOP 32
       DO I = 1, M
-        IF ( TRIM(n1%cmp1%C0(I)) .NE. CHAR(I) ) STOP 33
-        IF ( .NOT. precision_r4(n1%cmp1%R0(I), EXP(I/REAL(M))) ) STOP 34
+        IF ( TRIM(n1%cmp1%C0(I)) .NE. CHAR(I) ) ERROR STOP 33
+        IF ( .NOT. precision_r4(n1%cmp1%R0(I), EXP(I/REAL(M))) ) ERROR STOP 34
       END DO
 
-      IF ( ASSOCIATED(n1%cmp2) ) STOP 35
+      IF ( ASSOCIATED(n1%cmp2) ) ERROR STOP 35
       ALLOCATE ( n1%cmp2, SOURCE = b1 )
-      IF ( SIZE(n1%cmp2%A0) .NE. M ) STOP 36
-      IF ( SIZE(n1%cmp2%C0) .NE. M ) STOP 37
-      IF ( SIZE(n1%cmp2%R0) .NE. M ) STOP 38
-      IF ( LBOUND(n1%cmp2%A0,1) .NE. 1 ) STOP 39
-      IF ( LBOUND(n1%cmp2%C0,1) .NE. 1 ) STOP 40
-      IF ( LBOUND(n1%cmp2%R0,1) .NE. 1 ) STOP 41
-      IF ( UBOUND(n1%cmp2%A0,1) .NE. M ) STOP 42
-      IF ( UBOUND(n1%cmp2%C0,1) .NE. M ) STOP 43
-      IF ( UBOUND(n1%cmp2%R0,1) .NE. M ) STOP 44
-      IF ( ANY(n1%cmp2%A0 .NE. [(I, I = 1, M)]) ) STOP 45
+      IF ( SIZE(n1%cmp2%A0) .NE. M ) ERROR STOP 36
+      IF ( SIZE(n1%cmp2%C0) .NE. M ) ERROR STOP 37
+      IF ( SIZE(n1%cmp2%R0) .NE. M ) ERROR STOP 38
+      IF ( LBOUND(n1%cmp2%A0,1) .NE. 1 ) ERROR STOP 39
+      IF ( LBOUND(n1%cmp2%C0,1) .NE. 1 ) ERROR STOP 40
+      IF ( LBOUND(n1%cmp2%R0,1) .NE. 1 ) ERROR STOP 41
+      IF ( UBOUND(n1%cmp2%A0,1) .NE. M ) ERROR STOP 42
+      IF ( UBOUND(n1%cmp2%C0,1) .NE. M ) ERROR STOP 43
+      IF ( UBOUND(n1%cmp2%R0,1) .NE. M ) ERROR STOP 44
+      IF ( ANY(n1%cmp2%A0 .NE. [(I, I = 1, M)]) ) ERROR STOP 45
       DO I = 1, M
-        IF ( TRIM(n1%cmp2%C0(I)) .NE. CHAR(I) ) STOP 46
-        IF ( .NOT. precision_r4(n1%cmp2%R0(I), I/REAL(M)) ) STOP 47
+        IF ( TRIM(n1%cmp2%C0(I)) .NE. CHAR(I) ) ERROR STOP 46
+        IF ( .NOT. precision_r4(n1%cmp2%R0(I), I/REAL(M)) ) ERROR STOP 47
       END DO
 
       ALLOCATE( poly, source = n1 )
       SELECT TYPE ( s => poly )
           TYPE IS (NextGen(4,*,4,*,*))
-             IF ( SIZE(s%A0) .NE. M ) STOP 50
-             IF ( SIZE(s%C0) .NE. M ) STOP 51
-             IF ( SIZE(s%R0) .NE. M ) STOP 52
-             IF ( LBOUND(s%A0,1) .NE. 1 ) STOP 53
-             IF ( LBOUND(s%C0,1) .NE. 1 ) STOP 54
-             IF ( LBOUND(s%R0,1) .NE. 1 ) STOP 55
-             IF ( UBOUND(s%A0,1) .NE. M ) STOP 56
-             IF ( UBOUND(s%C0,1) .NE. M ) STOP 57
-             IF ( UBOUND(s%R0,1) .NE. M ) STOP 58
-             IF ( ANY(s%A0 .NE. [(I, I = 1, M)]) ) STOP 59
+             IF ( SIZE(s%A0) .NE. M ) ERROR STOP 50
+             IF ( SIZE(s%C0) .NE. M ) ERROR STOP 51
+             IF ( SIZE(s%R0) .NE. M ) ERROR STOP 52
+             IF ( LBOUND(s%A0,1) .NE. 1 ) ERROR STOP 53
+             IF ( LBOUND(s%C0,1) .NE. 1 ) ERROR STOP 54
+             IF ( LBOUND(s%R0,1) .NE. 1 ) ERROR STOP 55
+             IF ( UBOUND(s%A0,1) .NE. M ) ERROR STOP 56
+             IF ( UBOUND(s%C0,1) .NE. M ) ERROR STOP 57
+             IF ( UBOUND(s%R0,1) .NE. M ) ERROR STOP 58
+             IF ( ANY(s%A0 .NE. [(I, I = 1, M)]) ) ERROR STOP 59
              DO I = 1, M
-               IF ( TRIM(s%C0(I)) .NE. CHAR(I) ) STOP 60
-               IF ( .NOT. precision_r4(s%R0(I), I/REAL(M)) ) STOP 61
+               IF ( TRIM(s%C0(I)) .NE. CHAR(I) ) ERROR STOP 60
+               IF ( .NOT. precision_r4(s%R0(I), I/REAL(M)) ) ERROR STOP 61
              END DO
 
-             IF ( .NOT. ASSOCIATED(s%cmp1) ) STOP 62
-             IF ( SIZE(s%cmp1%A0) .NE. M ) STOP 63
-             IF ( SIZE(s%cmp1%C0) .NE. M ) STOP 64
-             IF ( SIZE(s%cmp1%R0) .NE. M ) STOP 65
-             IF ( LBOUND(s%cmp1%A0,1) .NE. 1 ) STOP 66
-             IF ( LBOUND(s%cmp1%C0,1) .NE. 1 ) STOP 67
-             IF ( LBOUND(s%cmp1%R0,1) .NE. 1 ) STOP 68
-             IF ( UBOUND(s%cmp1%A0,1) .NE. M ) STOP 69
-             IF ( UBOUND(s%cmp1%C0,1) .NE. M ) STOP 70
-             IF ( UBOUND(s%cmp1%R0,1) .NE. M ) STOP 71
-             IF ( ANY(s%cmp1%A0 .NE. [(2*I, I = 1, M)]) ) STOP 72
+             IF ( .NOT. ASSOCIATED(s%cmp1) ) ERROR STOP 62
+             IF ( SIZE(s%cmp1%A0) .NE. M ) ERROR STOP 63
+             IF ( SIZE(s%cmp1%C0) .NE. M ) ERROR STOP 64
+             IF ( SIZE(s%cmp1%R0) .NE. M ) ERROR STOP 65
+             IF ( LBOUND(s%cmp1%A0,1) .NE. 1 ) ERROR STOP 66
+             IF ( LBOUND(s%cmp1%C0,1) .NE. 1 ) ERROR STOP 67
+             IF ( LBOUND(s%cmp1%R0,1) .NE. 1 ) ERROR STOP 68
+             IF ( UBOUND(s%cmp1%A0,1) .NE. M ) ERROR STOP 69
+             IF ( UBOUND(s%cmp1%C0,1) .NE. M ) ERROR STOP 70
+             IF ( UBOUND(s%cmp1%R0,1) .NE. M ) ERROR STOP 71
+             IF ( ANY(s%cmp1%A0 .NE. [(2*I, I = 1, M)]) ) ERROR STOP 72
              DO I = 1, M
-               IF ( TRIM(s%cmp1%C0(I)) .NE. CHAR(I) ) STOP 73
-               IF ( .NOT. precision_r4(s%cmp1%R0(I), EXP(I/REAL(M))) ) STOP 74
+               IF ( TRIM(s%cmp1%C0(I)) .NE. CHAR(I) ) ERROR STOP 73
+               IF ( .NOT. precision_r4(s%cmp1%R0(I), EXP(I/REAL(M))) ) ERROR STOP 74
              END DO
 
-             IF ( .NOT. ASSOCIATED(s%cmp2) ) STOP 75
-             IF ( SIZE(s%cmp2%A0) .NE. M ) STOP 76
-             IF ( SIZE(s%cmp2%C0) .NE. M ) STOP 77
-             IF ( SIZE(s%cmp2%R0) .NE. M ) STOP 78
-             IF ( LBOUND(s%cmp2%A0,1) .NE. 1 ) STOP 79
-             IF ( LBOUND(s%cmp2%C0,1) .NE. 1 ) STOP 80
-             IF ( LBOUND(s%cmp2%R0,1) .NE. 1 ) STOP 81
-             IF ( UBOUND(s%cmp2%A0,1) .NE. M ) STOP 82
-             IF ( UBOUND(s%cmp2%C0,1) .NE. M ) STOP 83
-             IF ( UBOUND(s%cmp2%R0,1) .NE. M ) STOP 84
-             IF ( ANY(s%cmp2%A0 .NE. [(I, I = 1, M)]) ) STOP 85
+             IF ( .NOT. ASSOCIATED(s%cmp2) ) ERROR STOP 75
+             IF ( SIZE(s%cmp2%A0) .NE. M ) ERROR STOP 76
+             IF ( SIZE(s%cmp2%C0) .NE. M ) ERROR STOP 77
+             IF ( SIZE(s%cmp2%R0) .NE. M ) ERROR STOP 78
+             IF ( LBOUND(s%cmp2%A0,1) .NE. 1 ) ERROR STOP 79
+             IF ( LBOUND(s%cmp2%C0,1) .NE. 1 ) ERROR STOP 80
+             IF ( LBOUND(s%cmp2%R0,1) .NE. 1 ) ERROR STOP 81
+             IF ( UBOUND(s%cmp2%A0,1) .NE. M ) ERROR STOP 82
+             IF ( UBOUND(s%cmp2%C0,1) .NE. M ) ERROR STOP 83
+             IF ( UBOUND(s%cmp2%R0,1) .NE. M ) ERROR STOP 84
+             IF ( ANY(s%cmp2%A0 .NE. [(I, I = 1, M)]) ) ERROR STOP 85
              DO I = 1, M
-               IF ( TRIM(s%cmp2%C0(I)) .NE. CHAR(I) ) STOP 86
-               IF ( .NOT. precision_r4(s%cmp2%R0(I), I/REAL(M)) ) STOP 87
+               IF ( TRIM(s%cmp2%C0(I)) .NE. CHAR(I) ) ERROR STOP 86
+               IF ( .NOT. precision_r4(s%cmp2%R0(I), I/REAL(M)) ) ERROR STOP 87
              END DO
 
           CLASS DEFAULT

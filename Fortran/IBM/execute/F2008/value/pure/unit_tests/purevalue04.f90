@@ -47,34 +47,34 @@ program main
     res_sr = func1(c,cl3,si8,si4,si2,si1,si,sr16,sr8,sr4,sr,sx32,sx16,sb,sl,&
                    sl1,sx8,sx,sl2,sl4,sl8)
     print *,'res_sr=',res_sr
-    if (.not. precision_range_r16(res_sr,227.21_16,0.0000005Q0)) stop 1
+    if (.not. precision_range_r16(res_sr,227.21_16,0.0000005Q0)) error stop 1
 
     res_sr = func2(si8,si4,si2,si1,si,sr16,sr8,sr4,sr,sx32,sx16,sb,sl1,sx8,sx,&
                    sl2,sl4,sl8)
-    if (.not. precision_range_r16(res_sr,227.21_16,0.0000005Q0)) stop 2
+    if (.not. precision_range_r16(res_sr,227.21_16,0.0000005Q0)) error stop 2
 
     res_sr = func3(si8,si4,si2,si1,si,sr16,sr8,sr4,sr,sb,sl1,sx32,sx16,sx8,&
                    sx,si8,si4,si2,si1,si,sr16,sr8,sr4,sr,sx32,sx16,sx8,sx,&
                    sl2,sl4,sl8)
-    if (.not. precision_range_r16(res_sr,(327.42_16),0.0000005Q0)) stop 3
+    if (.not. precision_range_r16(res_sr,(327.42_16),0.0000005Q0)) error stop 3
 
     res_sr = 0
     call sub1(res_sr,sb,si8,si4,si2,si1,si,sl1,sr16,sr8,sr4,sr,sx32,sx16,sx8,&
               sx,sl2,sl4,sl8)
 
-    if (.not. precision_range_r16(res_sr,227.21_16,0.0000005Q0)) stop 4
+    if (.not. precision_range_r16(res_sr,227.21_16,0.0000005Q0)) error stop 4
 
     res_sr = 0
     call sub2(res_sr,si8,si4,si2,si1,sb,si,sr16,sr8,sl1,sr4,sr,sx32,sx16,sx8,&
               sx,sl2,sl4,sl8)
 
-    if (.not. precision_range_r16(res_sr,227.21_16,0.0000005Q0)) stop 5
+    if (.not. precision_range_r16(res_sr,227.21_16,0.0000005Q0)) error stop 5
 
     res_sr = 0
     call sub3(sl1,res_sr,si8,si4,si2,si1,si,sr16,sr8,sr4,sr,sx32,sx16,sx8,sx,&
               si8,si4,si2,si1,si,sr16,sr8,sr4,sr,sx32,sx16,sx8,sx,sb,&
               sl2,sl4,sl8)
-    if (.not. precision_range_r16(res_sr,200.42_16,0.0000005Q0)) stop 6
+    if (.not. precision_range_r16(res_sr,200.42_16,0.0000005Q0)) error stop 6
 
 contains
     real(16) pure function func1(c,cl3,si8,si4,si2,si1,si,sr16,sr8,sr4,sr,sx32,sx16,sb,sl,sl1,sx8,sx,sl2,sl4,sl8)

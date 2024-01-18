@@ -77,11 +77,11 @@ program d342736
     read( 1 ) ch3
     print *, "ch3 = (", ch3, ")"
 
-   if ( pos( 1 ) /= pos1     )    stop 37
-   if ( pos( 2 ) /= pos1 + 1 )    stop 38
-   if ( pos( 3 ) /= pos1 + 2 )    stop 39
-   if ( pos( 4 ) /= pos1 + 3 )    stop 40
-   if ( pos( 5 ) /= pos1 + 6 )    stop 41
+   if ( pos( 1 ) /= pos1     )    error stop 37
+   if ( pos( 2 ) /= pos1 + 1 )    error stop 38
+   if ( pos( 3 ) /= pos1 + 2 )    error stop 39
+   if ( pos( 4 ) /= pos1 + 3 )    error stop 40
+   if ( pos( 5 ) /= pos1 + 6 )    error stop 41
 
 end program d342736
 
@@ -117,9 +117,9 @@ use m1, only: base, child
 
    inquire ( unit, pos = pos5 )
 
-!  if ( pos2 /= pos1 + 1 )    stop 38
-!  if ( pos3 /= pos1 + 2 )    stop 39
-!  if ( pos4 /= pos1 + 3 )    stop 40
-!  if ( pos5 /= pos1 + 6 )    stop 41
+!  if ( pos2 /= pos1 + 1 )    error stop 38
+!  if ( pos3 /= pos1 + 2 )    error stop 39
+!  if ( pos4 /= pos1 + 3 )    error stop 40
+!  if ( pos5 /= pos1 + 6 )    error stop 41
 
 end subroutine

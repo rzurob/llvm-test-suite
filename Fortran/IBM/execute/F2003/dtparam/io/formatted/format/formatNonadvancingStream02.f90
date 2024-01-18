@@ -64,37 +64,37 @@ module m
 
                   ! read the first record
                   read(10,'(t5,l1)',advance='no',eor=100,size=count) this%g1(1)
-                  if(count /= 1)       stop 17
+                  if(count /= 1)       error stop 17
 
                   inquire(10,pos=pos)
-                  if(pos /= 6)          stop 18
+                  if(pos /= 6)          error stop 18
 
                   ! back to the beginning of first record
                   rewind 10
 
                   read(10,'(l2,tr4)',advance='no',size=count) this%g1(2)
-                  if(count /= 2)        stop 19
+                  if(count /= 2)        error stop 19
 
                   inquire(10,pos=pos)
-                  if(pos /= 7)          stop 20
+                  if(pos /= 7)          error stop 20
 
                   ! read  in second record
                   read(10,'(a3,tr5,a3)',advance='no', &
                           size=count,pos=7)                 this%in1%c1(3:2:-1)
-                  if(count /= 6)       stop 21
+                  if(count /= 6)       error stop 21
 
                   inquire(10,pos=pos)
-                  if(pos /= 18)        stop 22
+                  if(pos /= 18)        error stop 22
 
                   ! return to beginning of second record
 
                   backspace 10
 
                   read(10,'(tr4,a3)',advance='no',size=count) this%in1%c1(1)
-                  if(count /= 3)        stop 23
+                  if(count /= 3)        error stop 23
 
                   inquire(10,pos=pos)
-                  if(pos /= 14)         stop 24
+                  if(pos /= 14)         error stop 24
 
                 class default
                   stop 15
@@ -131,20 +131,20 @@ module m
                   read(10,'(tr12,i3,tr1,i3)',advance='no', &
                            size=count,pos=19)               this%in2%i1(2:1:-1)
 
-                  if(count /= 6)        stop 25
+                  if(count /= 6)        error stop 25
 
                   inquire(10,pos=pos)
-                  if(pos /= 38)         stop 26
+                  if(pos /= 38)         error stop 26
 
                   ! point to the beginning of the third record
                   backspace 10
                   read(10,'(i3,tr1,i3,tr1,i3)',advance='no', &
                           size=count,pos=19)   this%in2%i1(5:3:-1)
 
-                  if(count /= 9)       stop 27
+                  if(count /= 9)       error stop 27
 
                   inquire(10,pos=pos)
-                  if(pos /= 30)        stop 28
+                  if(pos /= 30)        error stop 28
 
                class default
                  stop 14

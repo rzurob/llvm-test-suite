@@ -9,5 +9,5 @@
        !pp1 => abs
        !jjj = -19.0
        !iii = pp1(jjj)
-       !if (iii .ne. 19.0) stop 10
+       !if (iii .ne. 19.0) error stop 10
        end

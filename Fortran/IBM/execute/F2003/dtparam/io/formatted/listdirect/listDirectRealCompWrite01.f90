@@ -177,11 +177,11 @@ program listDirectRealCompWrite01
   do i=lbound(upoly1,1),ubound(upoly1,1)
      select type(x=>upoly1(i))
         type is(gen3(4,*,4,*,8,*))
-           if(.not. precision_r4(x%r1,-1.23E-03))        stop 18
-           if(.not. precision_r8(x%r2(1),0.789D9))       stop 19
-           if(.not. precision_r8(x%r2(2),-78.9D-9))      stop 20
-           if(.not. precision_r16(x%r3(3),-1.23Q+208))   stop 21
-           if(.not. precision_r16(x%r3(4),1.23Q-208))    stop 22
+           if(.not. precision_r4(x%r1,-1.23E-03))        error stop 18
+           if(.not. precision_r8(x%r2(1),0.789D9))       error stop 19
+           if(.not. precision_r8(x%r2(2),-78.9D-9))      error stop 20
+           if(.not. precision_r16(x%r3(3),-1.23Q+208))   error stop 21
+           if(.not. precision_r16(x%r3(4),1.23Q-208))    error stop 22
         class default
            stop 23
      end select
@@ -189,17 +189,17 @@ program listDirectRealCompWrite01
 
   select type(poly2)
     type is(gen3(4,*,4,*,8,*))
-       if(.not. precision_r4(poly2(-2)%r1,-1.23E-03))           stop 24
-       if(.not. precision_r8(poly2(-2)%r2(1),0.789D9))          stop 25
-       if(.not. precision_r8(poly2(-2)%r2(2),-78.9D-9))         stop 26
-       if(.not. precision_r16(poly2(-2)%r3(3),-1.23Q+208))      stop 27
-       if(.not. precision_r16(poly2(-2)%r3(4),1.23Q-208))       stop 28
+       if(.not. precision_r4(poly2(-2)%r1,-1.23E-03))           error stop 24
+       if(.not. precision_r8(poly2(-2)%r2(1),0.789D9))          error stop 25
+       if(.not. precision_r8(poly2(-2)%r2(2),-78.9D-9))         error stop 26
+       if(.not. precision_r16(poly2(-2)%r3(3),-1.23Q+208))      error stop 27
+       if(.not. precision_r16(poly2(-2)%r3(4),1.23Q-208))       error stop 28
 
-       if(.not. precision_r4(poly2(-1)%r1,1.0_4))               stop 29
-       if(.not. precision_r8(poly2(-1)%r2(1),1.1_8))            stop 30
-       if(.not. precision_r8(poly2(-1)%r2(2),1.1_8))            stop 31
-       if(.not. precision_r16(poly2(-1)%r3(3),1.2_16))          stop 32
-       if(.not. precision_r16(poly2(-1)%r3(4),1.2_16))          stop 33
+       if(.not. precision_r4(poly2(-1)%r1,1.0_4))               error stop 29
+       if(.not. precision_r8(poly2(-1)%r2(1),1.1_8))            error stop 30
+       if(.not. precision_r8(poly2(-1)%r2(2),1.1_8))            error stop 31
+       if(.not. precision_r16(poly2(-1)%r3(3),1.2_16))          error stop 32
+       if(.not. precision_r16(poly2(-1)%r3(4),1.2_16))          error stop 33
 
     class default
        stop 34

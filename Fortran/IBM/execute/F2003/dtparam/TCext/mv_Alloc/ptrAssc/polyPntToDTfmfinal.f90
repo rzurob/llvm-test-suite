@@ -55,12 +55,12 @@ use m
 
     call move_alloc(from, to)
 
-    if ( allocated(from) ) stop 11
-    if ( .not. allocated(to)) stop 13
+    if ( allocated(from) ) error stop 11
+    if ( .not. allocated(to)) error stop 13
 
-    if ( lbound(to,1) /= 3 ) stop  21
-    if ( ubound(to,1) /= 5 ) stop  22
-    if ( .not. associated(p, to) ) stop 23
+    if ( lbound(to,1) /= 3 ) error stop  21
+    if ( ubound(to,1) /= 5 ) error stop  22
+    if ( .not. associated(p, to) ) error stop 23
 
     deallocate(to)
 

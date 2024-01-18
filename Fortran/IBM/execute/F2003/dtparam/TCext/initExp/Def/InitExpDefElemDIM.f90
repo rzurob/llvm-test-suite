@@ -75,21 +75,21 @@
   TYPE(DT(4,20)) :: T
 
 
-  IF ( KIND(T%TI1) .NE. 1 )   STOP 11
-  IF ( ANY(T%TI1   .NE. 0  )) STOP 12
-  IF ( KIND(T%TI2) .NE. 2 )   STOP 13
-  IF ( ANY(T%TI2   .NE. 0  )) STOP 14
-  IF ( KIND(T%TI4) .NE. 4 )   STOP 15
-  IF ( ANY(T%TI4   .NE. 0  )) STOP 16
-  IF ( KIND(T%TI8) .NE. 8 )   STOP 17
-  IF ( ANY(T%TI8   .NE. 2  )) STOP 18
+  IF ( KIND(T%TI1) .NE. 1 )   ERROR STOP 11
+  IF ( ANY(T%TI1   .NE. 0  )) ERROR STOP 12
+  IF ( KIND(T%TI2) .NE. 2 )   ERROR STOP 13
+  IF ( ANY(T%TI2   .NE. 0  )) ERROR STOP 14
+  IF ( KIND(T%TI4) .NE. 4 )   ERROR STOP 15
+  IF ( ANY(T%TI4   .NE. 0  )) ERROR STOP 16
+  IF ( KIND(T%TI8) .NE. 8 )   ERROR STOP 17
+  IF ( ANY(T%TI8   .NE. 2  )) ERROR STOP 18
 
-  IF ( KIND(T%TR4) .NE. 4 )   STOP 21
-  IF ( ANY(T%TR4   .NE. 0 ))  STOP 22
-  IF ( KIND(T%TR8) .NE. 8 )   STOP 23
-  IF ( ANY(T%TR8   .NE. 2 ))  STOP 24
-  IF ( KIND(T%TR6) .NE. 16)   STOP 25
-  IF ( ANY(T%TR6   .NE. 2 ))  STOP 26
+  IF ( KIND(T%TR4) .NE. 4 )   ERROR STOP 21
+  IF ( ANY(T%TR4   .NE. 0 ))  ERROR STOP 22
+  IF ( KIND(T%TR8) .NE. 8 )   ERROR STOP 23
+  IF ( ANY(T%TR8   .NE. 2 ))  ERROR STOP 24
+  IF ( KIND(T%TR6) .NE. 16)   ERROR STOP 25
+  IF ( ANY(T%TR6   .NE. 2 ))  ERROR STOP 26
 
   END
 

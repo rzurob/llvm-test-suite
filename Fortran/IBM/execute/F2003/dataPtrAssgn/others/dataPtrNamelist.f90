@@ -29,9 +29,9 @@ program main
 
     ptr(2:5) => b%tar
 
-    if ( .not. associated(ptr, b%tar) ) stop 2
-    if ( lbound(ptr,1) /= 2 ) stop 5
-    if ( ubound(ptr,1) /= 5 ) stop 8
+    if ( .not. associated(ptr, b%tar) ) error stop 2
+    if ( lbound(ptr,1) /= 2 ) error stop 5
+    if ( ubound(ptr,1) /= 5 ) error stop 8
 
     open (5, file = 'dataPtrNamelist.out', form ='formatted', access='stream' )
 

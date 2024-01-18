@@ -63,11 +63,11 @@
     SELECT TYPE (U => Arg(1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2))
     CLASS DEFAULT
 
-      IF ( .NOT. SAME_TYPE_AS(U, Arg))        STOP 30
-      IF ( SIZE(U)          .NE. 2**18 )      STOP 31
-      IF ( ANY (LBOUND(U)   .NE. (/1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1/) ) ) STOP 32
-      IF ( ANY (UBOUND(U)   .NE. (/2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2/) ) ) STOP 33
-      IF ( ANY(SHAPE(U)     .NE. (/2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2/)) )  STOP 34
+      IF ( .NOT. SAME_TYPE_AS(U, Arg))        ERROR STOP 30
+      IF ( SIZE(U)          .NE. 2**18 )      ERROR STOP 31
+      IF ( ANY (LBOUND(U)   .NE. (/1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1/) ) ) ERROR STOP 32
+      IF ( ANY (UBOUND(U)   .NE. (/2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2/) ) ) ERROR STOP 33
+      IF ( ANY(SHAPE(U)     .NE. (/2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2/)) )  ERROR STOP 34
 
     ASSOCIATE ( W => U )
 
@@ -75,8 +75,8 @@
 
       TYPE IS (DT)
         DTVPtr => DTV
-        IF ( ANY(U%Id      .NE. DTVPtr%Id ) )      STOP 42
-        IF ( ANY(U%GetId() .NE. DTVPtr%GetId()))   STOP 43
+        IF ( ANY(U%Id      .NE. DTVPtr%Id ) )      ERROR STOP 42
+        IF ( ANY(U%GetId() .NE. DTVPtr%GetId()))   ERROR STOP 43
 
       CLASS DEFAULT
         STOP 51

@@ -32,10 +32,10 @@ program d356490_1
    allocate (dtp :: x2)
    allocate (dtp(20) :: x3(2,2))
 
-   if (dtp1%c /= 'xlf') stop 1
-   if (any (x1%c /= 'xlfte')) stop 2
-   if (x2%c /= 'xlf') stop 3
-   if (any(x3%c /= 'xlftest')) stop 4
+   if (dtp1%c /= 'xlf') error stop 1
+   if (any (x1%c /= 'xlfte')) error stop 2
+   if (x2%c /= 'xlf') error stop 3
+   if (any(x3%c /= 'xlftest')) error stop 4
 
 end  program
 

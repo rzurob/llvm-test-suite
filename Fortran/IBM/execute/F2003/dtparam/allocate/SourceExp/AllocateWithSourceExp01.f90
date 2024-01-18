@@ -58,11 +58,11 @@ PROGRAM AllocateWithSourceExp01
        INTEGER :: I
 
        ALLOCATE (Base(4,10) :: b1(2))
-       IF (SIZE(b1) .NE. 2) STOP 10
-       IF (LEN(b1(1)%Calloc) .NE. 10) STOP 11
-       IF (LEN(b1(2)%Calloc) .NE. 10) STOP 12
-       IF (ANY(b1(1)%Calloc .NE. 'AAA')) STOP 13
-       IF (ANY(b1(2)%Calloc .NE. 'AAA')) STOP 14
+       IF (SIZE(b1) .NE. 2) ERROR STOP 10
+       IF (LEN(b1(1)%Calloc) .NE. 10) ERROR STOP 11
+       IF (LEN(b1(2)%Calloc) .NE. 10) ERROR STOP 12
+       IF (ANY(b1(1)%Calloc .NE. 'AAA')) ERROR STOP 13
+       IF (ANY(b1(2)%Calloc .NE. 'AAA')) ERROR STOP 14
 
        string = 'Niels'
 
@@ -71,54 +71,54 @@ PROGRAM AllocateWithSourceExp01
        ALLOCATE(n1(5), source = NextGen(4,10,4,10,5,5) (Calloc = 'XLFtest', Rarr = 9.5, &
                  & next = c1, Carr = string, Iarr = 1))
 
-       IF (SIZE(n1) .NE. 5) STOP 15
+       IF (SIZE(n1) .NE. 5) ERROR STOP 15
        DO I = 1, 5
-          IF (LEN(n1(I)%Calloc) .NE. 10) STOP 16
-          IF (ANY(n1(I)%Calloc .NE. 'XLFtest')) STOP 17
-          IF (SIZE(n1(I)%Rarr) .NE. 10) STOP 18
-          IF (ANY(n1(I)%Rarr .NE. 9.5)) STOP 19
-          IF (LEN(n1(I)%Carr) .NE. 10) STOP 20
-          IF (ANY(n1(I)%Carr .NE. string)) STOP 21
-          IF (SIZE(n1(I)%Iarr) .NE. 10) STOP 22
-          IF (ANY(n1(I)%Iarr .NE. 1)) STOP 23
+          IF (LEN(n1(I)%Calloc) .NE. 10) ERROR STOP 16
+          IF (ANY(n1(I)%Calloc .NE. 'XLFtest')) ERROR STOP 17
+          IF (SIZE(n1(I)%Rarr) .NE. 10) ERROR STOP 18
+          IF (ANY(n1(I)%Rarr .NE. 9.5)) ERROR STOP 19
+          IF (LEN(n1(I)%Carr) .NE. 10) ERROR STOP 20
+          IF (ANY(n1(I)%Carr .NE. string)) ERROR STOP 21
+          IF (SIZE(n1(I)%Iarr) .NE. 10) ERROR STOP 22
+          IF (ANY(n1(I)%Iarr .NE. 1)) ERROR STOP 23
        END DO
 
        call sub(n1)
 
-       IF (SIZE(n1) .NE. 2) STOP 24
-       IF (LEN(n1(1)%Calloc) .NE. 10) STOP 25
-       IF (ANY(n1(1)%Calloc .NE. 'BBB')) STOP 26
-       IF (SIZE(n1(1)%Rarr) .NE. 10) STOP 27
-       IF (ANY(n1(1)%Rarr .NE. 66.22)) STOP 28
-       IF (LEN(n1(1)%Carr) .NE. 10) STOP 29
-       IF (ANY(n1(1)%Carr .NE. 'Erwin')) STOP 30
-       IF (SIZE(n1(1)%Iarr) .NE. 10) STOP 31
-       IF (ANY(n1(1)%Iarr .NE. 5)) STOP 32
+       IF (SIZE(n1) .NE. 2) ERROR STOP 24
+       IF (LEN(n1(1)%Calloc) .NE. 10) ERROR STOP 25
+       IF (ANY(n1(1)%Calloc .NE. 'BBB')) ERROR STOP 26
+       IF (SIZE(n1(1)%Rarr) .NE. 10) ERROR STOP 27
+       IF (ANY(n1(1)%Rarr .NE. 66.22)) ERROR STOP 28
+       IF (LEN(n1(1)%Carr) .NE. 10) ERROR STOP 29
+       IF (ANY(n1(1)%Carr .NE. 'Erwin')) ERROR STOP 30
+       IF (SIZE(n1(1)%Iarr) .NE. 10) ERROR STOP 31
+       IF (ANY(n1(1)%Iarr .NE. 5)) ERROR STOP 32
 
-       IF (LEN(n1(2)%Calloc) .NE. 10) STOP 34
-       IF (ANY(n1(2)%Calloc .NE. 'CCC')) STOP 35
-       IF (SIZE(n1(2)%Rarr) .NE. 10) STOP 36
-       IF (ANY(n1(2)%Rarr .NE. 22.66)) STOP 37
-       IF (LEN(n1(2)%Carr) .NE. 10) STOP 38
-       IF (ANY(n1(2)%Carr .NE. 'Werne')) STOP 39
-       IF (SIZE(n1(2)%Iarr) .NE. 10) STOP 40
-       IF (ANY(n1(2)%Iarr .NE. 7)) STOP 41
+       IF (LEN(n1(2)%Calloc) .NE. 10) ERROR STOP 34
+       IF (ANY(n1(2)%Calloc .NE. 'CCC')) ERROR STOP 35
+       IF (SIZE(n1(2)%Rarr) .NE. 10) ERROR STOP 36
+       IF (ANY(n1(2)%Rarr .NE. 22.66)) ERROR STOP 37
+       IF (LEN(n1(2)%Carr) .NE. 10) ERROR STOP 38
+       IF (ANY(n1(2)%Carr .NE. 'Werne')) ERROR STOP 39
+       IF (SIZE(n1(2)%Iarr) .NE. 10) ERROR STOP 40
+       IF (ANY(n1(2)%Iarr .NE. 7)) ERROR STOP 41
 
        ALLOCATE (bptr, source = Child(4,4,4,4) ('XLFt', -2))
 
        SELECT TYPE(bptr)
           TYPE IS(Child(4,*,4,*))
              ALLOCATE(bptr%next,source=bptr)
-             IF (LEN(bptr%Calloc) .NE. 4) STOP 42
-             IF (ANY(bptr%Calloc .NE. 'XLFt')) STOP 43
-             IF (SIZE(bptr%Rarr) .NE. 4) STOP 44
-             IF (ANY(bptr%Rarr .NE. -2)) STOP 45
+             IF (LEN(bptr%Calloc) .NE. 4) ERROR STOP 42
+             IF (ANY(bptr%Calloc .NE. 'XLFt')) ERROR STOP 43
+             IF (SIZE(bptr%Rarr) .NE. 4) ERROR STOP 44
+             IF (ANY(bptr%Rarr .NE. -2)) ERROR STOP 45
              SELECT TYPE( A => bptr%next)
                 TYPE IS(Child(4,*,4,*))
-                   IF (LEN(A%Calloc) .NE. 4) STOP 46
-                   IF (ANY(A%Calloc .NE. 'XLFt')) STOP 47
-                   IF (SIZE(A%Rarr) .NE. 4) STOP 48
-                   IF (ANY(A%Rarr .NE. -2)) STOP 49
+                   IF (LEN(A%Calloc) .NE. 4) ERROR STOP 46
+                   IF (ANY(A%Calloc .NE. 'XLFt')) ERROR STOP 47
+                   IF (SIZE(A%Rarr) .NE. 4) ERROR STOP 48
+                   IF (ANY(A%Rarr .NE. -2)) ERROR STOP 49
 
                 CLASS DEFAULT
                    STOP 50

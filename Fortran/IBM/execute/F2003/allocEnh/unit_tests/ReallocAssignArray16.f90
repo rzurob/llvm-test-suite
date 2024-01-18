@@ -11,11 +11,11 @@
 
 integer, allocatable :: i(:)
 call sub(i)
-if (.not. allocated(i)) stop 1
-if (any(shape(i) .ne. (/5/))) stop 2
-if (lbound(i,1) /= 2) stop 3
-if (ubound(i,1) /= 6) stop 4
-if (any(i /= (/2,4,6,8,10/))) stop 5
+if (.not. allocated(i)) error stop 1
+if (any(shape(i) .ne. (/5/))) error stop 2
+if (lbound(i,1) /= 2) error stop 3
+if (ubound(i,1) /= 6) error stop 4
+if (any(i /= (/2,4,6,8,10/))) error stop 5
 contains
   subroutine sub(a)
     integer, allocatable :: a(:)

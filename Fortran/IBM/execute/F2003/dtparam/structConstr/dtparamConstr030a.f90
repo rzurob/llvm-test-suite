@@ -41,7 +41,7 @@ module m
 
         type (base(8,ub-lb+1)) sliceB8
 
-        if ((lb < 1) .or. (ub > b8%n) .or. (ub < lb)) stop 10
+        if ((lb < 1) .or. (ub > b8%n) .or. (ub < lb)) error stop 10
 
         sliceB8%data = b8%data(lb:ub)
     end function

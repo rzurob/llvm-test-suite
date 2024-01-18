@@ -63,7 +63,7 @@
         INTEGER :: I , K
 
         ALLOCATE (foo1, source = Obj)
-        IF ( .NOT. ALLOCATED(foo1)) STOP 100
+        IF ( .NOT. ALLOCATED(foo1)) ERROR STOP 100
 
         SELECT TYPE ( foo1 )
           TYPE IS (NextGen(4,*,4,4,*,*,4,*))
@@ -95,7 +95,7 @@
         INTEGER :: I , K
 
         ALLOCATE (foo2, source = Obj)
-        IF ( .NOT. ALLOCATED(foo2)) STOP 101
+        IF ( .NOT. ALLOCATED(foo2)) ERROR STOP 101
 
         SELECT TYPE ( foo2 )
           TYPE IS (NextGen(4,*,4,4,*,*,4,*))
@@ -128,8 +128,8 @@
 
       SELECT TYPE ( A => FUNC(base1) )
           TYPE IS (Base(4,*))
-            IF( size(A%base_arr)  .NE. A%l1 ) STOP 10
-            IF( ANY(A%base_arr .NE. 1000 )) STOP 11
+            IF( size(A%base_arr)  .NE. A%l1 ) ERROR STOP 10
+            IF( ANY(A%base_arr .NE. 1000 )) ERROR STOP 11
 
           CLASS DEFAULT
            STOP 12
@@ -139,8 +139,8 @@
 
       SELECT TYPE ( A => FUNC(poly1) )   ! dynamic type BASE call foo1
           TYPE IS (Base(4,*))
-            IF( size(A%base_arr)  .NE. 10) STOP 13
-            IF( ANY(A%base_arr .NE. 1000 )) STOP 14
+            IF( size(A%base_arr)  .NE. 10) ERROR STOP 13
+            IF( ANY(A%base_arr .NE. 1000 )) ERROR STOP 14
 
           CLASS DEFAULT
            STOP 15
@@ -150,10 +150,10 @@
 
       SELECT TYPE ( A => FUNC(poly1) )     ! dynamic type Child call foo1
           TYPE IS (Child(4,*,4,4,*,*))
-            IF( size(A%base_arr)  .NE. A%l2) STOP 16
-            IF( ANY(A%base_arr .NE. 100 )) STOP 17
-            IF( size(A%child_arr)  .NE. (A%l1+A%l2) ) STOP 18
-            IF( ANY(A%child_arr .NE. -100 )) STOP 19
+            IF( size(A%base_arr)  .NE. A%l2) ERROR STOP 16
+            IF( ANY(A%base_arr .NE. 100 )) ERROR STOP 17
+            IF( size(A%child_arr)  .NE. (A%l1+A%l2) ) ERROR STOP 18
+            IF( ANY(A%child_arr .NE. -100 )) ERROR STOP 19
 
           CLASS DEFAULT
            STOP 20
@@ -163,12 +163,12 @@
 
       SELECT TYPE ( A => FUNC(poly1) )    ! dynamic type NextGen call foo1
           TYPE IS (NextGen(4,*,4,4,*,*,4,*))
-            IF( size(A%base_arr)  .NE. A%l3) STOP 21
-            IF( ANY(A%base_arr .NE. 1 )) STOP 22
-            IF( size(A%child_arr)  .NE. (A%l1+A%l2)) STOP 23
-            IF( ANY(A%child_arr .NE. -10 )) STOP 24
-            IF( size(A%nextg_arr)  .NE. (A%l1+A%l4)) STOP 25
-            IF( ANY(A%nextg_arr .NE. 10 )) STOP 26
+            IF( size(A%base_arr)  .NE. A%l3) ERROR STOP 21
+            IF( ANY(A%base_arr .NE. 1 )) ERROR STOP 22
+            IF( size(A%child_arr)  .NE. (A%l1+A%l2)) ERROR STOP 23
+            IF( ANY(A%child_arr .NE. -10 )) ERROR STOP 24
+            IF( size(A%nextg_arr)  .NE. (A%l1+A%l4)) ERROR STOP 25
+            IF( ANY(A%nextg_arr .NE. 10 )) ERROR STOP 26
 
           CLASS DEFAULT
            STOP 27
@@ -178,12 +178,12 @@
           CLASSIS (NextGen(4,*,4,4,*,*,4,*))
              SELECT TYPE ( B => FUNC(A,A) )
                 TYPE IS (NextGen(4,*,4,4,*,*,4,*))
-                  IF( size(B%base_arr)  .NE. B%l4) STOP 28
-                  IF( ANY(B%base_arr .NE. 5 )) STOP 29
-                  IF( size(B%child_arr)  .NE. (B%l1+B%l2)) STOP 30
-                  IF( ANY(B%child_arr .NE. -55 )) STOP 31
-                  IF( size(B%nextg_arr)  .NE. (B%l1+B%l4)) STOP 32
-                  IF( ANY(B%nextg_arr .NE. 55 )) STOP 33
+                  IF( size(B%base_arr)  .NE. B%l4) ERROR STOP 28
+                  IF( ANY(B%base_arr .NE. 5 )) ERROR STOP 29
+                  IF( size(B%child_arr)  .NE. (B%l1+B%l2)) ERROR STOP 30
+                  IF( ANY(B%child_arr .NE. -55 )) ERROR STOP 31
+                  IF( size(B%nextg_arr)  .NE. (B%l1+B%l4)) ERROR STOP 32
+                  IF( ANY(B%nextg_arr .NE. 55 )) ERROR STOP 33
 
                 CLASS DEFAULT
                    STOP 34

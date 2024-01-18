@@ -89,25 +89,25 @@
   EQUIVALENCE(Z, Z1)
 
 
-  IF ( ANY( R%R .NE.    16         ) ) STOP 11
+  IF ( ANY( R%R .NE.    16         ) ) ERROR STOP 11
   R1 = -16
-  IF ( ANY( R%R .NE.    -16        ) ) STOP 21
+  IF ( ANY( R%R .NE.    -16        ) ) ERROR STOP 21
 
-  IF ( ANY( C%C .NE.    CHAR(48+1) ) ) STOP 12
+  IF ( ANY( C%C .NE.    CHAR(48+1) ) ) ERROR STOP 12
   C1 = CHAR(0)
-  IF ( ANY( C%C .NE.    CHAR(0)    ) ) STOP 22
+  IF ( ANY( C%C .NE.    CHAR(0)    ) ) ERROR STOP 22
 
-  IF ( ANY( I%I .NE.    2         ) ) STOP 13
+  IF ( ANY( I%I .NE.    2         ) ) ERROR STOP 13
   I1 = -2
-  IF ( ANY( I%I .NE.     -2         ) ) STOP 23
+  IF ( ANY( I%I .NE.     -2         ) ) ERROR STOP 23
 
-  IF ( ANY( L%A .NEQV. .true.     ) ) STOP 14
+  IF ( ANY( L%A .NEQV. .true.     ) ) ERROR STOP 14
   L1 = .false.
-  IF ( ANY( L%A .NEQV. .false.      ) ) STOP 24
+  IF ( ANY( L%A .NEQV. .false.      ) ) ERROR STOP 24
 
-  IF ( ANY( Z%Z .NE.    (16,-16)  ) ) STOP 15
+  IF ( ANY( Z%Z .NE.    (16,-16)  ) ) ERROR STOP 15
   Z1 = -(16,-16)
-  IF ( ANY( Z%Z .NE.    -(16,-16)  ) ) STOP 25
+  IF ( ANY( Z%Z .NE.    -(16,-16)  ) ) ERROR STOP 25
 
   END
 

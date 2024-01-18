@@ -47,14 +47,14 @@ print*, SIZE(b%arr)
 print*, ubound(b%arr)
 print*, len(b%arr%c)
 
-  IF (b%l         .NE. 4)  STOP 11
-  IF (b%arr%l     .NE. 4)  STOP 12
-  IF (SIZE(b%arr) .NE. 4)  STOP 13
-  IF (lbound(b%arr,1) .NE. 4)  STOP 14
-  IF (ubound(b%arr,1) .NE. 7)  STOP 15
-  IF (len(b%arr(1)%c) .NE. 4)  STOP 16
+  IF (b%l         .NE. 4)  ERROR STOP 11
+  IF (b%arr%l     .NE. 4)  ERROR STOP 12
+  IF (SIZE(b%arr) .NE. 4)  ERROR STOP 13
+  IF (lbound(b%arr,1) .NE. 4)  ERROR STOP 14
+  IF (ubound(b%arr,1) .NE. 7)  ERROR STOP 15
+  IF (len(b%arr(1)%c) .NE. 4)  ERROR STOP 16
 
-  IF (ANY(b%arr%c  .NE. "1234")) STOP 17
+  IF (ANY(b%arr%c  .NE. "1234")) ERROR STOP 17
 
   END SUBROUTINE
 

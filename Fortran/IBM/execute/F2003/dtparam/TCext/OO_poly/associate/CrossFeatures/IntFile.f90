@@ -78,15 +78,15 @@
     DO i=2, 129
       WRITE(As(i)%C, FMT=*) "!"
       READ(As(i)%C, FMT=*) As(i+1)%C
-      IF ( TRIM(As(i+1)%C) .NE. "!" ) STOP 20
+      IF ( TRIM(As(i+1)%C) .NE. "!" ) ERROR STOP 20
     END DO
   END ASSOCIATE
 
-  IF ( Any(Arr%L      .NEQV. .TRUE.) ) STOP 60
-  IF ( ANY(Arr%GetL() .NEQV. .TRUE.) ) STOP 61
+  IF ( Any(Arr%L      .NEQV. .TRUE.) ) ERROR STOP 60
+  IF ( ANY(Arr%GetL() .NEQV. .TRUE.) ) ERROR STOP 61
 
-  IF ( Any(Arr%ID      .NE. 1) ) STOP 60
-  IF ( ANY(Arr%GetID() .NE. 1) ) STOP 61
+  IF ( Any(Arr%ID      .NE. 1) ) ERROR STOP 60
+  IF ( ANY(Arr%GetID() .NE. 1) ) ERROR STOP 61
 
   END
 

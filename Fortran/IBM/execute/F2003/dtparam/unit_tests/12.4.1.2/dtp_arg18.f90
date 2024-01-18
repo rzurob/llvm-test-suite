@@ -37,17 +37,17 @@ type(dt_base(4, len_tp)) :: pa
 integer rest(ubound(pa%element, 1), ubound(pa%element, 2))
 
 ! - check the bounds of array pa%element
-if (any(shape(pa%element) .ne. (/2, 4/))) stop 1
+if (any(shape(pa%element) .ne. (/2, 4/))) error stop 1
 
 ! - check the bounds of array rest
-if (any(shape(rest) .ne. (/2, 4/))) stop 2	! - Bounds not set correctly
+if (any(shape(rest) .ne. (/2, 4/))) error stop 2	! - Bounds not set correctly
                                                 ! - Refer to defect 321768
 
 ! - doing array assignment
 rest = pa%element
 
 ! - check the value of array rest
-if (any(rest .ne. 4)) stop 4
+if (any(rest .ne. 4)) error stop 4
 end subroutine
 
 end

@@ -45,8 +45,8 @@ use m
 
    call move_alloc(b1, b2)
 
-   if ( .not. allocated(b2) ) stop 21
-   if ( allocated(b1) ) stop 23
+   if ( .not. allocated(b2) ) error stop 21
+   if ( allocated(b1) ) error stop 23
 
    select type (b2)
         type is (B(*))

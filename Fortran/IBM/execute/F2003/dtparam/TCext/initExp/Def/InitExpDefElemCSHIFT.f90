@@ -92,26 +92,26 @@
   TYPE(DT(20,4)) :: T52(3, 3)=CSHIFT(CSHIFT(CSHIFT(M3, 2), -2), DIM=2, SHIFT=SHIFT)
 
 
-  IF (KIND(T11)   .NE.   1 )        STOP 11
-  IF (ANY( T11    .NE.   R11%I ))   STOP 12
-  IF (KIND(T12)   .NE.   2 )        STOP 13
-  IF (ANY( T12    .NE.   R11%I ))   STOP 14
-  IF (KIND(T14)   .NE.   4 )        STOP 15
-  IF (ANY( T14    .NE.   R11%I ))   STOP 16
-  IF (KIND(T18)   .NE.   8 )        STOP 17
-  IF (ANY( T18    .NE.   R11%I ))   STOP 18
+  IF (KIND(T11)   .NE.   1 )        ERROR STOP 11
+  IF (ANY( T11    .NE.   R11%I ))   ERROR STOP 12
+  IF (KIND(T12)   .NE.   2 )        ERROR STOP 13
+  IF (ANY( T12    .NE.   R11%I ))   ERROR STOP 14
+  IF (KIND(T14)   .NE.   4 )        ERROR STOP 15
+  IF (ANY( T14    .NE.   R11%I ))   ERROR STOP 16
+  IF (KIND(T18)   .NE.   8 )        ERROR STOP 17
+  IF (ANY( T18    .NE.   R11%I ))   ERROR STOP 18
 
-  IF (SIZE(T2 )   .NE.   0 )        STOP 21
-  IF (SIZE(T21)   .NE.   0 )        STOP 22
+  IF (SIZE(T2 )   .NE.   0 )        ERROR STOP 21
+  IF (SIZE(T21)   .NE.   0 )        ERROR STOP 22
 
-  IF (ANY( T31%I  .NE. M20%I ))     STOP 31
-  IF (ANY( T32%I  .NE. M3%I  ))     STOP 32
+  IF (ANY( T31%I  .NE. M20%I ))     ERROR STOP 31
+  IF (ANY( T32%I  .NE. M3%I  ))     ERROR STOP 32
 
-  IF (ANY( T41%I  .NE. M21%I ))     STOP 41
-  IF (ANY( T42%I  .NE. M21%I ))     STOP 42
+  IF (ANY( T41%I  .NE. M21%I ))     ERROR STOP 41
+  IF (ANY( T42%I  .NE. M21%I ))     ERROR STOP 42
 
-  IF (ANY( T51%I  .NE. M22%I ))     STOP 51
-  IF (ANY( T52%I  .NE. M22%I ))     STOP 52
+  IF (ANY( T51%I  .NE. M22%I ))     ERROR STOP 51
+  IF (ANY( T52%I  .NE. M22%I ))     ERROR STOP 52
 
   END
 

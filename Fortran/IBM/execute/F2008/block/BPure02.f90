@@ -19,8 +19,8 @@ program BPure02
     integer :: ivar
     ivar = ifun(3)
     print *, ivar, ifun(4)
-    if (ivar /= 45) stop 2
-    if (ifun(4) /= 46) stop 3
+    if (ivar /= 45) error stop 2
+    if (ifun(4) /= 46) error stop 3
 
   contains
 

@@ -24,16 +24,16 @@ program main
 
     ptr(0:) => from(10:1:-1)
 
-    if ( .not. associated(ptr, from(10:1:-1))) stop 1
+    if ( .not. associated(ptr, from(10:1:-1))) error stop 1
 
     call move_alloc(from, to)
 
-    if ( allocated(from) ) stop 11
-    if ( .not. allocated(to) ) stop 13
-    if ( .not. associated(ptr, to(10:1:-1))) stop 17
-    if ( lbound(ptr,1) /= 0) stop 18
-    if ( ubound(ptr,1) /= 9) stop 19
+    if ( allocated(from) ) error stop 11
+    if ( .not. allocated(to) ) error stop 13
+    if ( .not. associated(ptr, to(10:1:-1))) error stop 17
+    if ( lbound(ptr,1) /= 0) error stop 18
+    if ( ubound(ptr,1) /= 9) error stop 19
 
-    if ( any(ptr .ne. (/(i,i=10,1,-1)/))) stop 20
+    if ( any(ptr .ne. (/(i,i=10,1,-1)/))) error stop 20
 
 end program

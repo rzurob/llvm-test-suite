@@ -11,5 +11,5 @@
 
       integer(2) :: a(3)
       a = (/ integer(2) :: 32768, 8_1, -32768_8 /)
-      if (any(a /= [int(32768,2), int(8_1,2), int(-32768_8,2)])) stop 1
+      if (any(a /= [int(32768,2), int(8_1,2), int(-32768_8,2)])) error stop 1
       end

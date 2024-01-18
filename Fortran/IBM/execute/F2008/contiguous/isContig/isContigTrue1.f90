@@ -50,12 +50,12 @@ PROGRAM isContigTrue1
         CLASS(*), POINTER :: ptr(:,:)
         CLASS(*), TARGET, CONTIGUOUS :: Arg(:,:)
 
-        IF (      ASSOCIATED(ptr)     ) STOP 40
-        IF ( .NOT. IS_CONTIGUOUS(Arg) ) STOP 41
+        IF (      ASSOCIATED(ptr)     ) ERROR STOP 40
+        IF ( .NOT. IS_CONTIGUOUS(Arg) ) ERROR STOP 41
 
         ptr=>Arg
-        IF ( .NOT. ASSOCIATED(ptr)    ) STOP 40
-        IF ( .NOT. IS_CONTIGUOUS(ptr) ) STOP 42
+        IF ( .NOT. ASSOCIATED(ptr)    ) ERROR STOP 40
+        IF ( .NOT. IS_CONTIGUOUS(ptr) ) ERROR STOP 42
 
       END SUBROUTINE Sub1
 
@@ -63,13 +63,13 @@ PROGRAM isContigTrue1
         CLASS(*), POINTER, CONTIGUOUS :: Arg(:,:)
         CLASS(*), POINTER, CONTIGUOUS :: ptr(:,:)
 
-        IF (       ASSOCIATED(ptr)    ) STOP 40
-        IF ( .NOT. ASSOCIATED(Arg)    ) STOP 40
-        IF ( .NOT. IS_CONTIGUOUS(Arg) ) STOP 41
+        IF (       ASSOCIATED(ptr)    ) ERROR STOP 40
+        IF ( .NOT. ASSOCIATED(Arg)    ) ERROR STOP 40
+        IF ( .NOT. IS_CONTIGUOUS(Arg) ) ERROR STOP 41
 
         ptr=>Arg
-        IF ( .NOT. ASSOCIATED(ptr)    ) STOP 40
-        IF ( .NOT. IS_CONTIGUOUS(ptr) ) STOP 42
+        IF ( .NOT. ASSOCIATED(ptr)    ) ERROR STOP 40
+        IF ( .NOT. IS_CONTIGUOUS(ptr) ) ERROR STOP 42
 
       END SUBROUTINE Sub2
 
@@ -77,12 +77,12 @@ PROGRAM isContigTrue1
         CLASS(*) :: Arg(:,:)
         CLASS(*), POINTER, CONTIGUOUS :: ptr(:,:)
 
-        IF (      ASSOCIATED(ptr)     ) STOP 40
-        IF ( .NOT. IS_CONTIGUOUS(Arg) ) STOP 41
+        IF (      ASSOCIATED(ptr)     ) ERROR STOP 40
+        IF ( .NOT. IS_CONTIGUOUS(Arg) ) ERROR STOP 41
 
         ALLOCATE( ptr(UBOUND(Arg,1),UBOUND(Arg,2)), SOURCE = Arg )
-        IF ( .NOT. ASSOCIATED(ptr)    ) STOP 40
-        IF ( .NOT. IS_CONTIGUOUS(ptr) ) STOP 42
+        IF ( .NOT. ASSOCIATED(ptr)    ) ERROR STOP 40
+        IF ( .NOT. IS_CONTIGUOUS(ptr) ) ERROR STOP 42
 
       END SUBROUTINE Sub3
 
@@ -90,12 +90,12 @@ PROGRAM isContigTrue1
         CLASS(*), CONTIGUOUS, TARGET :: Arg(:,:)
         CLASS(*), POINTER :: foo(:,:)
 
-        IF (      ASSOCIATED(foo)     ) STOP 40
-        IF ( .NOT. IS_CONTIGUOUS(Arg) ) STOP 41
+        IF (      ASSOCIATED(foo)     ) ERROR STOP 40
+        IF ( .NOT. IS_CONTIGUOUS(Arg) ) ERROR STOP 41
 
         foo => Arg
-        IF ( .NOT. ASSOCIATED(foo)    ) STOP 40
-        IF ( .NOT. IS_CONTIGUOUS(foo) ) STOP 42
+        IF ( .NOT. ASSOCIATED(foo)    ) ERROR STOP 40
+        IF ( .NOT. IS_CONTIGUOUS(foo) ) ERROR STOP 42
       END FUNCTION
 
 END PROGRAM isContigTrue1

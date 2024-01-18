@@ -30,25 +30,25 @@
   ASSOCIATE ( A1 => i )
 
   ASSOCIATE ( A2 => A1+A1 )
-    IF ( A1 .NE. 1 .OR. A2 .NE. 2 ) STOP 20
+    IF ( A1 .NE. 1 .OR. A2 .NE. 2 ) ERROR STOP 20
     A1 = 2
-    IF ( A1 .NE. 2 .OR. A2 .NE. 2 ) STOP 21
+    IF ( A1 .NE. 2 .OR. A2 .NE. 2 ) ERROR STOP 21
   END ASSOCIATE
 
   ASSOCIATE ( A2 => A1+A1 )
-    IF ( A1 .NE. 2 .OR. A2 .NE. 4 ) STOP 30
+    IF ( A1 .NE. 2 .OR. A2 .NE. 4 ) ERROR STOP 30
     i = 3
-    IF ( A1 .NE. 3 .OR. A2 .NE. 4 ) STOP 31
+    IF ( A1 .NE. 3 .OR. A2 .NE. 4 ) ERROR STOP 31
   END ASSOCIATE
 
   ASSOCIATE ( A2 => A1 )
-    IF ( A1 .NE. 3 .OR. A2 .NE. 3 ) STOP 40
+    IF ( A1 .NE. 3 .OR. A2 .NE. 3 ) ERROR STOP 40
     i = 4
-    IF ( A1 .NE. 4 .OR. A2 .NE. 4 ) STOP 41
+    IF ( A1 .NE. 4 .OR. A2 .NE. 4 ) ERROR STOP 41
     A2 = 5
   END ASSOCIATE
 
-  IF ( i .NE. 5 ) STOP 51
+  IF ( i .NE. 5 ) ERROR STOP 51
 
   END ASSOCIATE
 

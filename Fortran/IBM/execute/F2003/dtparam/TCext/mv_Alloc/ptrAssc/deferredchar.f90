@@ -46,8 +46,8 @@ end module
 
       call move_alloc(ch, ch2)
 
-      if ( allocated(ch) ) stop 21
-      if ( .not. allocated(ch2) ) stop 23
+      if ( allocated(ch) ) error stop 21
+      if ( .not. allocated(ch2) ) error stop 23
 
       print *, associated(aA%P, ch2)
       print *, len(aA%p), aA%P

@@ -24,11 +24,11 @@ program dcmlCharVarInquir002
 
     read (1, *, decimal='COMMA', iostat=istat) r1
 
-    if (istat == 0) stop 1
+    if (istat == 0) error stop 1
 
     read (3, '(g12.4)', decimal='POINT', iostat=istat) r2
 
-    if (istat == 0) stop 2
+    if (istat == 0) error stop 2
 
     do i = 1, 3
         inquire(i, decimal=mode(i)(i:))

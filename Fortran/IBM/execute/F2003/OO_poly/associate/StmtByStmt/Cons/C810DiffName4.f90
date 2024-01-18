@@ -30,9 +30,9 @@
   Cn : ASSOCIATE ( As  => V )
          ASSOCIATE ( As  => V )
            V = V + 10
-           IF ( As .NE. 11 ) STOP 50
+           IF ( As .NE. 11 ) ERROR STOP 50
          END ASSOCIATE Cn
-         IF ( As .NE. 11 )  STOP 52
+         IF ( As .NE. 11 )  ERROR STOP 52
        END ASSOCIATE
 
   END

@@ -40,7 +40,7 @@
   RECURSIVE SUBROUTINE ModSub(Arg)
   CLASS(DT) :: Arg
 
-    IF (Arg%ID .NE. -1) STOP 11
+    IF (Arg%ID .NE. -1) ERROR STOP 11
     IF ( .NOT. L ) THEN
       L = .TRUE.
       Arg%ProcPtr1 => ModSub
@@ -53,7 +53,7 @@
   CLASS(DT) :: Arg
   REAL      :: ModFun
 
-    IF (Arg%ID .NE. -2) STOP 12
+    IF (Arg%ID .NE. -2) ERROR STOP 12
     IF ( .NOT. L ) THEN
       L = .TRUE.
       Arg%ProcPtr2 => ModFun
@@ -73,10 +73,10 @@
 
   L = .FALSE.
   CALL ModSub(DT(-1, NULL()))
-  IF ( .NOT. L ) STOP 13
+  IF ( .NOT. L ) ERROR STOP 13
 
   L = .FALSE.
-  IF ( ModFun(DT(-2)) .NE. -1.0 ) STOP 14
+  IF ( ModFun(DT(-2)) .NE. -1.0 ) ERROR STOP 14
 
   END
 

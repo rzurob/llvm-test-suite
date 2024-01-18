@@ -62,32 +62,32 @@
 
     SELECT TYPE ( As )
       TYPE IS (Child)
-        IF( ANY(As%GetId()  .NE. -2 )) STOP 46
+        IF( ANY(As%GetId()  .NE. -2 )) ERROR STOP 46
 
         SELECT TYPE(As => As(1,1)%ChildComp)
         TYPE IS (Child)
-          IF( ANY(As%GetID() .NE. -2) ) STOP 47
+          IF( ANY(As%GetID() .NE. -2) ) ERROR STOP 47
         END SELECT
 
-        IF ( .NOT. ASSOCIATED(As(1,2)%BaseComp,  V) )  STOP 48
-        IF ( .NOT. ASSOCIATED(As(2,1)%ChildComp, V) )  STOP 49
+        IF ( .NOT. ASSOCIATED(As(1,2)%BaseComp,  V) )  ERROR STOP 48
+        IF ( .NOT. ASSOCIATED(As(2,1)%ChildComp, V) )  ERROR STOP 49
 
         SELECT TYPE ( As1 => As(2,2)%BaseComp )
         TYPE IS (Child)
-          IF ( ANY( As1%BaseId  .NE. RESHAPE((/-1, -1, -1, -1/),(/2,2/)) ) ) STOP 74
-          IF ( ANY( As1%ChildId .NE. RESHAPE((/-2, -2, -2, -2/),(/2,2/)) ) ) STOP 73
+          IF ( ANY( As1%BaseId  .NE. RESHAPE((/-1, -1, -1, -1/),(/2,2/)) ) ) ERROR STOP 74
+          IF ( ANY( As1%ChildId .NE. RESHAPE((/-2, -2, -2, -2/),(/2,2/)) ) ) ERROR STOP 73
         CLASS DEFAULT
             STOP 70
         END SELECT
 
         SELECT TYPE ( As1 => As(2,1)%ChildComp )
           TYPE IS (Child)
-            IF ( ANY( As1%ChildId .NE. RESHAPE((/-2, -2, -2, -2/),(/2,2/)) ) ) STOP 72
+            IF ( ANY( As1%ChildId .NE. RESHAPE((/-2, -2, -2, -2/),(/2,2/)) ) ) ERROR STOP 72
           CLASS DEFAULT
             STOP 71
         END SELECT
 
-        IF ( .NOT. SAME_TYPE_AS(As, Child()) )  STOP 53
+        IF ( .NOT. SAME_TYPE_AS(As, Child()) )  ERROR STOP 53
 
       CLASS DEFAULT
         STOP 80

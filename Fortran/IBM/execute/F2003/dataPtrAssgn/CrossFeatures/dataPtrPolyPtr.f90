@@ -49,22 +49,22 @@
 
   DO J=1, 10
   DO I=1, 10
-    IF (.NOT. ASSOCIATED(T(I,J)%Ptr1, T))                    STOP 11
-    IF (ANY( LBOUND(T(I,J)%Ptr1)         .NE. (/0, 0 /)))    STOP 12
-    IF (ANY( UBOUND(T(I,J)%Ptr1)         .NE. (/9, 9 /)))    STOP 13
+    IF (.NOT. ASSOCIATED(T(I,J)%Ptr1, T))                    ERROR STOP 11
+    IF (ANY( LBOUND(T(I,J)%Ptr1)         .NE. (/0, 0 /)))    ERROR STOP 12
+    IF (ANY( UBOUND(T(I,J)%Ptr1)         .NE. (/9, 9 /)))    ERROR STOP 13
     SELECT TYPE(As => T(I,J)%Ptr1)
     TYPE IS(DT)
-       IF (ANY( As%ID  .NE. T%ID))                           STOP 14
+       IF (ANY( As%ID  .NE. T%ID))                           ERROR STOP 14
     CLASS DEFAULT
       STOP 15
     END SELECT
 
-    IF (.NOT. ASSOCIATED(T(I,J)%Ptr2))                       STOP 21
-    IF (ANY( LBOUND(T(I,J)%Ptr2)         .NE. (/0, 1 /)))    STOP 22
-    IF (ANY( UBOUND(T(I,J)%Ptr2)         .NE. (/9, 1 /)))    STOP 23
+    IF (.NOT. ASSOCIATED(T(I,J)%Ptr2))                       ERROR STOP 21
+    IF (ANY( LBOUND(T(I,J)%Ptr2)         .NE. (/0, 1 /)))    ERROR STOP 22
+    IF (ANY( UBOUND(T(I,J)%Ptr2)         .NE. (/9, 1 /)))    ERROR STOP 23
     SELECT TYPE(As => T(I,J)%Ptr2)
     TYPE IS(DT)
-       IF (ANY( As%ID  .NE. RESHAPE(T(:, 10)%ID, (/10,1/)))) STOP 24
+       IF (ANY( As%ID  .NE. RESHAPE(T(:, 10)%ID, (/10,1/)))) ERROR STOP 24
     CLASS DEFAULT
       STOP 25
     END SELECT
@@ -80,12 +80,12 @@
 
   DO J=1, 1
   DO I=1, 9
-    IF (.NOT. ASSOCIATED(T(I,J)%Ptr1, T(I,J)%Ptr2))          STOP 31
-    IF (ANY( LBOUND(T(I,J)%Ptr1)         .NE. (/0, 0 /)))    STOP 32
-    IF (ANY( UBOUND(T(I,J)%Ptr1)         .NE. (/9, 0 /)))    STOP 33
+    IF (.NOT. ASSOCIATED(T(I,J)%Ptr1, T(I,J)%Ptr2))          ERROR STOP 31
+    IF (ANY( LBOUND(T(I,J)%Ptr1)         .NE. (/0, 0 /)))    ERROR STOP 32
+    IF (ANY( UBOUND(T(I,J)%Ptr1)         .NE. (/9, 0 /)))    ERROR STOP 33
     SELECT TYPE(As => T(I,J)%Ptr1)
     TYPE IS(DT)
-       IF (ANY( As%ID  .NE. RESHAPE(T(:, 10)%ID, (/10,1/)))) STOP 34
+       IF (ANY( As%ID  .NE. RESHAPE(T(:, 10)%ID, (/10,1/)))) ERROR STOP 34
     CLASS DEFAULT
       STOP 35
     END SELECT

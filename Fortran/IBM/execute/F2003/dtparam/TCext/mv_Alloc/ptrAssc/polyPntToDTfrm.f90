@@ -41,10 +41,10 @@
 
     call move_alloc(b1, a1)
 
-    if ( .not. allocated(a1) ) stop 11
-    if ( allocated(b1) ) stop 12
+    if ( .not. allocated(a1) ) error stop 11
+    if ( allocated(b1) ) error stop 12
 
-    if ( .not. associated(p1, a1) ) stop 21
+    if ( .not. associated(p1, a1) ) error stop 21
 
     select type (p1)
         type is (B(4))

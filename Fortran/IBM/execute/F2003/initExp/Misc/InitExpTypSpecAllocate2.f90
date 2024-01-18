@@ -43,17 +43,17 @@
 
 
 
-  IF ( KIND(A) .NE. 1  )                       STOP 11
-  IF (  LEN(A) .NE. 1  )                       STOP 12
-  IF (  ANY(A  .NE. (/(CHAR(I), I=0, 127)/)) ) STOP 13
+  IF ( KIND(A) .NE. 1  )                       ERROR STOP 11
+  IF (  LEN(A) .NE. 1  )                       ERROR STOP 12
+  IF (  ANY(A  .NE. (/(CHAR(I), I=0, 127)/)) ) ERROR STOP 13
 
-  IF ( KIND(B) .NE. 1  )                       STOP 21
-  IF (  LEN(B) .NE. 2  )                       STOP 22
-  IF (  ANY(B  .NE. (/(CHAR(I)//CHAR(I), I=0, 127)/)) ) STOP 23
+  IF ( KIND(B) .NE. 1  )                       ERROR STOP 21
+  IF (  LEN(B) .NE. 2  )                       ERROR STOP 22
+  IF (  ANY(B  .NE. (/(CHAR(I)//CHAR(I), I=0, 127)/)) ) ERROR STOP 23
 
-  IF ( KIND(C) .NE. 1  )                       STOP 31
-  IF (  LEN(C) .NE. 3  )                       STOP 32
-  IF (  ANY(C  .NE. (/(" "//CHAR(I)//" ", I=0, 127)/)) ) STOP 33
+  IF ( KIND(C) .NE. 1  )                       ERROR STOP 31
+  IF (  LEN(C) .NE. 3  )                       ERROR STOP 32
+  IF (  ANY(C  .NE. (/(" "//CHAR(I)//" ", I=0, 127)/)) ) ERROR STOP 33
 
   END
 

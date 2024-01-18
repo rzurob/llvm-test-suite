@@ -124,13 +124,13 @@
 
   TYPE(DT2(8,3,8,3,8,3)), PARAMETER :: T5(N)=T4, T6(N)=[T5]
 
-  IF (ANY( T1%CheckDT0(T1) ) ) STOP 11
-  IF (ANY( T1%CheckDT0(T2) ) ) STOP 12
-  IF (ANY( T2%CheckDT0(T3) ) ) STOP 13
+  IF (ANY( T1%CheckDT0(T1) ) ) ERROR STOP 11
+  IF (ANY( T1%CheckDT0(T2) ) ) ERROR STOP 12
+  IF (ANY( T2%CheckDT0(T3) ) ) ERROR STOP 13
 
-  IF (ANY( T4%CheckDT2(T4) ) ) STOP 14
-  IF (ANY( T4%CheckDT2(T5) ) ) STOP 15
-  IF (ANY( T5%CheckDT2(T6) ) ) STOP 16
+  IF (ANY( T4%CheckDT2(T4) ) ) ERROR STOP 14
+  IF (ANY( T4%CheckDT2(T5) ) ) ERROR STOP 15
+  IF (ANY( T5%CheckDT2(T6) ) ) ERROR STOP 16
 
   END
 

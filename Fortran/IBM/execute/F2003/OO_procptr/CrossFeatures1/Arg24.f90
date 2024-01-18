@@ -47,7 +47,7 @@
     TYPE(Base)      :: V(SIZE(Arr))
 
     V = Proc(Arr)
-    IF (ANY(V%C .NE. Arr%C)) STOP 15
+    IF (ANY(V%C .NE. Arr%C)) ERROR STOP 15
 
     END SUBROUTINE
 
@@ -60,7 +60,7 @@
     TYPE(Base)               :: V(SIZE(Arr))
 
     V = ProcPtr(Arr)
-    IF (ANY(V%C .NE. Arr%C)) STOP 16
+    IF (ANY(V%C .NE. Arr%C)) ERROR STOP 16
 
     END SUBROUTINE
 

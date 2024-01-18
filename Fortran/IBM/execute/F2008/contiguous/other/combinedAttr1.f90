@@ -30,7 +30,7 @@ program main
     call sub(arr)
     call sub(arr)
 
-    if ( any(arr .ne. (/23,26,29,32,35,38,41,44,47,50,53,56,59,62,65,68,71,74,77,80/))) stop 21
+    if ( any(arr .ne. (/23,26,29,32,35,38,41,44,47,50,53,56,59,62,65,68,71,74,77,80/))) error stop 21
 
     contains
 
@@ -43,7 +43,7 @@ program main
         if ( .not. associated(z)) then
             z=>x
         else
-            if ( any(z .ne. (/12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50/))) stop 11
+            if ( any(z .ne. (/12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50/))) error stop 11
         endif
 
         do i = 1+10, size(x)+10

@@ -38,10 +38,10 @@
   PRINT*, A
   PRINT*, C
   PRINT*, B
-  IF (ANY(A(1:1) .NE. 1 )) STOP 11
-  IF (ANY(A(2:3) .NE. 2 )) STOP 12
-  IF (ANY(C(1:3) .NE. 2 )) STOP 13
-  IF (B          .NE. 2 )  STOP 14
+  IF (ANY(A(1:1) .NE. 1 )) ERROR STOP 11
+  IF (ANY(A(2:3) .NE. 2 )) ERROR STOP 12
+  IF (ANY(C(1:3) .NE. 2 )) ERROR STOP 13
+  IF (B          .NE. 2 )  ERROR STOP 14
 
   END
 

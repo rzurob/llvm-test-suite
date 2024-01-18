@@ -73,23 +73,23 @@
   TYPE(DT2(4,8,4)) :: Arr2(INT(ABS(-Param%Cmpx)))=DT2(4,8,4)(DT=DT(4,8)(I=ABS(-1), Cmpx=(1_2, -1_2)))
 
 
-  IF (Param%I    .NE. 4   )                STOP 11
-  IF (Param%Cmpx .NE. 5.0 )                STOP 12
+  IF (Param%I    .NE. 4   )                ERROR STOP 11
+  IF (Param%Cmpx .NE. 5.0 )                ERROR STOP 12
 
-  IF (T1%Comp%I    .NE. 4   )              STOP 21
-  IF (T1%Comp%Cmpx .NE. 5.0 )              STOP 22
+  IF (T1%Comp%I    .NE. 4   )              ERROR STOP 21
+  IF (T1%Comp%Cmpx .NE. 5.0 )              ERROR STOP 22
 
-  IF (ANY(LBOUND(Arr1)   .NE. (/4/)) )     STOP 31
-  IF (ANY(UBOUND(Arr1)   .NE. (/5/)) )     STOP 32
+  IF (ANY(LBOUND(Arr1)   .NE. (/4/)) )     ERROR STOP 31
+  IF (ANY(UBOUND(Arr1)   .NE. (/5/)) )     ERROR STOP 32
 
-  IF (ANY(Arr1%Comp%I    .NE. (/(ABS(-I), I=ABS(-Param%I), ABS(-Param%Cmpx))/) ))    STOP 41
-  IF (ANY(Arr1%Comp%Cmpx .NE. (/((I, -I), I=ABS(-Param%I), ABS(-Param%Cmpx))/) ))    STOP 42
+  IF (ANY(Arr1%Comp%I    .NE. (/(ABS(-I), I=ABS(-Param%I), ABS(-Param%Cmpx))/) ))    ERROR STOP 41
+  IF (ANY(Arr1%Comp%Cmpx .NE. (/((I, -I), I=ABS(-Param%I), ABS(-Param%Cmpx))/) ))    ERROR STOP 42
 
-  IF (ANY(LBOUND(Arr2)   .NE. (/1/)  ))                 STOP 51
-  IF (ANY(UBOUND(Arr2)   .NE. (/ABS(-Param%Cmpx)/) ))   STOP 52
+  IF (ANY(LBOUND(Arr2)   .NE. (/1/)  ))                 ERROR STOP 51
+  IF (ANY(UBOUND(Arr2)   .NE. (/ABS(-Param%Cmpx)/) ))   ERROR STOP 52
 
-  IF (ANY(Arr2%I    .NE. ABS(-1) ))        STOP 61
-  IF (ANY(Arr2%Cmpx .NE. (1_2, -1_2) ))    STOP 62
+  IF (ANY(Arr2%I    .NE. ABS(-1) ))        ERROR STOP 61
+  IF (ANY(Arr2%Cmpx .NE. (1_2, -1_2) ))    ERROR STOP 62
 
 
   END

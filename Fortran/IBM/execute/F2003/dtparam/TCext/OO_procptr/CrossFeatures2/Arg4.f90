@@ -105,14 +105,14 @@
   TYPE(DT(4,3)) :: V, U
 
     V = Arg(DT(4,3)("123", Arg))
-    IF (V%C .NE. "123")                   STOP 11
-    IF (.NOT. ASSOCIATED(V%ProcPtr, Arg)) STOP 12
+    IF (V%C .NE. "123")                   ERROR STOP 11
+    IF (.NOT. ASSOCIATED(V%ProcPtr, Arg)) ERROR STOP 12
 
     V%C = "321"
     V%ProcPtr => IFun
     U = V%Proc()
-    IF (U%C .NE. "321")                    STOP 21
-    IF (.NOT. ASSOCIATED(U%ProcPtr, IFun)) STOP 22
+    IF (U%C .NE. "321")                    ERROR STOP 21
+    IF (.NOT. ASSOCIATED(U%ProcPtr, IFun)) ERROR STOP 22
 
   END SUBROUTINE
 
@@ -122,14 +122,14 @@
   TYPE(DT(4,3)) :: V, U
 
     V = Arg(DT(4,3)("123", Arg))
-    IF (V%C .NE. "123")                   STOP 31
-    IF (.NOT. ASSOCIATED(V%ProcPtr, Arg)) STOP 32
+    IF (V%C .NE. "123")                   ERROR STOP 31
+    IF (.NOT. ASSOCIATED(V%ProcPtr, Arg)) ERROR STOP 32
 
     V%C = "321"
     V%ProcPtr => IFun
     U = V%Proc()
-    IF (U%C .NE. "321")                    STOP 41
-    IF (.NOT. ASSOCIATED(U%ProcPtr, IFun)) STOP 42
+    IF (U%C .NE. "321")                    ERROR STOP 41
+    IF (.NOT. ASSOCIATED(U%ProcPtr, IFun)) ERROR STOP 42
 
   END SUBROUTINE
 

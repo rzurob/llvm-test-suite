@@ -51,9 +51,9 @@ end module
   print *,t%c%len,len(t%c)
   print *,ubound(t%c,1),kind(t%k1+t%k2)
 
-  if (t%c%len /= 2) stop 2
-  if (len(t%c) /= 2) stop 3
-  if (ubound(t%c,1) /= 2) stop 4
-  if (kind(t%k1+t%k2) /= 2) stop 5
+  if (t%c%len /= 2) error stop 2
+  if (len(t%c) /= 2) error stop 3
+  if (ubound(t%c,1) /= 2) error stop 4
+  if (kind(t%k1+t%k2) /= 2) error stop 5
 
   end

@@ -62,23 +62,23 @@ program formatStreamAccessBasicWrite01
       stop 11
   else
       inquire(10,pos=mypos)
-      if(mypos /= 1)  stop 12
+      if(mypos /= 1)  error stop 12
 
       write(10,'(4(a4))',pos=mypos) pouter%c2
       inquire(10,pos=mypos)
-      if(mypos /= 18) stop 13
+      if(mypos /= 18) error stop 13
 
       write(10,'(3l2)',pos=mypos) pouter%inn2%log1
       inquire(10,pos=mypos)
-      if(mypos /= 25) stop 14
+      if(mypos /= 25) error stop 14
 
       write(10,'(a5,2i1)',pos=mypos) pouter%inn2%inn1
       inquire(10,pos=mypos)
-      if(mypos /= 33) stop 15
+      if(mypos /= 33) error stop 15
 
       write(10,'(4a4,3l2,a5,2i1)',pos=mypos) pouter
       inquire(10,pos=mypos)
-      if(mypos /= 63) stop 16
+      if(mypos /= 63) error stop 16
 
   end if
 

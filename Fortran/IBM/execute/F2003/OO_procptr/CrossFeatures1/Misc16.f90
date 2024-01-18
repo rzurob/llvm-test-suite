@@ -73,19 +73,19 @@
   PROCEDURE(ModFun1), POINTER :: ProcPtr
   TYPE(DT)                   :: U(10000)
 
-  IF ( ANY(U%ID .NE. 0 )) STOP 11
+  IF ( ANY(U%ID .NE. 0 )) ERROR STOP 11
 
   U = DT( Thr, NULL() )
 
   U(1:6) = U((/Tue, Wed, Thu, Fri, Sat, Sun /) )
-  IF ( ANY(U((/Tue, Wed, Thu, Fri, Sat, Sun /))%ID .NE. 2 )) STOP 12
+  IF ( ANY(U((/Tue, Wed, Thu, Fri, Sat, Sun /))%ID .NE. 2 )) ERROR STOP 12
 
   ProcPtr => ModFun1
   U = ProcPtr( (/(DT(I, ModFun), I=1, 10000) /) )
 
   DO I  = 1, 10000
-    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, Modfun) ) STOP 22
-    IF ( U(I)%Id .NE. I )                         STOP 23
+    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, Modfun) ) ERROR STOP 22
+    IF ( U(I)%Id .NE. I )                         ERROR STOP 23
   END DO
 
   END

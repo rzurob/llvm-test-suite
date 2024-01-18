@@ -51,13 +51,13 @@ program main
 
     d1%c1%a1%ptr(2:6,0:3) => d1%c1%tar
 
-    if ( .not. associated(d1%c1%a1%ptr)) stop 2
-    if ( any(lbound(d1%c1%a1%ptr) .ne. (/ 2,0/))) stop 5
-    if ( any(ubound(d1%c1%a1%ptr) .ne. (/ 6,3/))) stop 7
+    if ( .not. associated(d1%c1%a1%ptr)) error stop 2
+    if ( any(lbound(d1%c1%a1%ptr) .ne. (/ 2,0/))) error stop 5
+    if ( any(ubound(d1%c1%a1%ptr) .ne. (/ 6,3/))) error stop 7
 
     d2 = d1
 
-    if ( any(d2%c1%a1%ptr /= reshape((/( real(max(i*i, i+i),4), i=-10,9)/), (/5,4/) ))) stop 10
+    if ( any(d2%c1%a1%ptr /= reshape((/( real(max(i*i, i+i),4), i=-10,9)/), (/5,4/) ))) error stop 10
 
 end program
 

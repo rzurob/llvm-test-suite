@@ -59,8 +59,8 @@
       CLASS(Child1(4,*,4)) :: Arg0, Arg2
       CLASS(Child2(4,*,4)) :: Arg1, Arg3
 
-      IF (Arg0%k .NE. Arg2%k) STOP 10
-      IF (Arg1%k .NE. Arg3%k) STOP 11
+      IF (Arg0%k .NE. Arg2%k) ERROR STOP 10
+      IF (Arg1%k .NE. Arg3%k) ERROR STOP 11
 
       tag ="1"
 
@@ -70,8 +70,8 @@
       CLASS(Child1(4,*,4)) :: Arg0, Arg3
       CLASS(Child2(4,*,4)) :: Arg1, Arg2
 
-      IF (Arg0%k .NE. Arg3%k) STOP 12
-      IF (Arg1%k .NE. Arg2%k) STOP 13
+      IF (Arg0%k .NE. Arg3%k) ERROR STOP 12
+      IF (Arg1%k .NE. Arg2%k) ERROR STOP 13
 
       tag ="2"
 

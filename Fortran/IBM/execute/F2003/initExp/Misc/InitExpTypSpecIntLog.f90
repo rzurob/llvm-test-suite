@@ -43,25 +43,25 @@
   LOGICAL(KIND=2*L2%KIND),       PARAMETER :: L4(128)=(/(.TRUE._2, I=127, 0, -1)/)
   LOGICAL(KIND=L4%KIND+L4%KIND), PARAMETER :: L8(128)=(/(.TRUE._1, I=127, 0, -1)/)
 
-  IF ( KIND(I1) .NE. 1      ) STOP 11
-  IF ( KIND(I2) .NE. 2      ) STOP 12
-  IF ( KIND(I4) .NE. 4      ) STOP 13
-  IF ( KIND(I8) .NE. 8      ) STOP 14
+  IF ( KIND(I1) .NE. 1      ) ERROR STOP 11
+  IF ( KIND(I2) .NE. 2      ) ERROR STOP 12
+  IF ( KIND(I4) .NE. 4      ) ERROR STOP 13
+  IF ( KIND(I8) .NE. 8      ) ERROR STOP 14
 
-  IF ( ANY(I1   .NE. R ) ) STOP 21
-  IF ( ANY(I2   .NE. R ) ) STOP 22
-  IF ( ANY(I4   .NE. R ) ) STOP 23
-  IF ( ANY(I8   .NE. R ) ) STOP 24
+  IF ( ANY(I1   .NE. R ) ) ERROR STOP 21
+  IF ( ANY(I2   .NE. R ) ) ERROR STOP 22
+  IF ( ANY(I4   .NE. R ) ) ERROR STOP 23
+  IF ( ANY(I8   .NE. R ) ) ERROR STOP 24
 
-  IF ( KIND(L1) .NE. 1      ) STOP 31
-  IF ( KIND(L2) .NE. 2      ) STOP 32
-  IF ( KIND(L4) .NE. 4      ) STOP 33
-  IF ( KIND(L8) .NE. 8      ) STOP 34
+  IF ( KIND(L1) .NE. 1      ) ERROR STOP 31
+  IF ( KIND(L2) .NE. 2      ) ERROR STOP 32
+  IF ( KIND(L4) .NE. 4      ) ERROR STOP 33
+  IF ( KIND(L8) .NE. 8      ) ERROR STOP 34
 
-  IF ( ANY(L1   .NEQV. .TRUE. ) ) STOP 41
-  IF ( ANY(L2   .NEQV. .TRUE. ) ) STOP 42
-  IF ( ANY(L4   .NEQV. .TRUE. ) ) STOP 43
-  IF ( ANY(L8   .NEQV. .TRUE. ) ) STOP 44
+  IF ( ANY(L1   .NEQV. .TRUE. ) ) ERROR STOP 41
+  IF ( ANY(L2   .NEQV. .TRUE. ) ) ERROR STOP 42
+  IF ( ANY(L4   .NEQV. .TRUE. ) ) ERROR STOP 43
+  IF ( ANY(L8   .NEQV. .TRUE. ) ) ERROR STOP 44
 
   END
 

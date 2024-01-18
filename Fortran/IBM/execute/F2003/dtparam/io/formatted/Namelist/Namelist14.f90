@@ -74,15 +74,15 @@
        OPEN (14, file = 'Namelist14.In', form='formatted')
 
        READ(14, NML=NMLb, iostat = stat, iomsg = msg)
-       IF ( stat .NE. 0 ) STOP 100
+       IF ( stat .NE. 0 ) ERROR STOP 100
        READ(14, NML=NMLc, iostat = stat, iomsg = msg)
-       IF ( stat .NE. 0 ) STOP 101
+       IF ( stat .NE. 0 ) ERROR STOP 101
 
-       IF (b1%val .NE. -1) STOP 10
-       IF (c2%val .NE. -2) STOP 11
-       IF (c3%val .NE. -3) STOP 12
-       IF (c2%name .NE. 'ABCD') STOP 13
-       IF (c3%name .NE. 'GHIJ') STOP 14
+       IF (b1%val .NE. -1) ERROR STOP 10
+       IF (c2%val .NE. -2) ERROR STOP 11
+       IF (c3%val .NE. -3) ERROR STOP 12
+       IF (c2%name .NE. 'ABCD') ERROR STOP 13
+       IF (c3%name .NE. 'GHIJ') ERROR STOP 14
 
        !WRITE(*, NML=NMLb, iostat = stat, iomsg = msg)
        !WRITE(*, NML=NMLc, iostat = stat, iomsg = msg)
@@ -91,21 +91,21 @@
 
        READ(14, NML=NMLn, iostat = stat, iomsg = msg)
 
-       IF (n1(1,1,1,1,1,1,2)%val .NE. 99) STOP 15
-       IF (n1(1,1,1,1,1,1,2)%name .NE. 'Erwin Ru') STOP 16
+       IF (n1(1,1,1,1,1,1,2)%val .NE. 99) ERROR STOP 15
+       IF (n1(1,1,1,1,1,1,2)%name .NE. 'Erwin Ru') ERROR STOP 16
 
-       IF (n1(1,1,1,1,1,1,1)%val .NE. 99) STOP 17
-       IF (n1(1,1,1,1,1,1,1)%name .NE. 'Henrik D') STOP 18
+       IF (n1(1,1,1,1,1,1,1)%val .NE. 99) ERROR STOP 17
+       IF (n1(1,1,1,1,1,1,1)%name .NE. 'Henrik D') ERROR STOP 18
 
-       IF (n1(1,1,1,1,1,1,1)%c2_cmp(1)%val .NE. c2%val) STOP 15
-       IF (n1(1,1,1,1,1,1,1)%c2_cmp(1)%name .NE. c2%name) STOP 16
-       IF (n1(1,1,1,1,1,1,2)%c2_cmp(1)%val .NE. c2%val) STOP 17
-       IF (n1(1,1,1,1,1,1,2)%c2_cmp(1)%name .NE. c2%name) STOP 18
+       IF (n1(1,1,1,1,1,1,1)%c2_cmp(1)%val .NE. c2%val) ERROR STOP 15
+       IF (n1(1,1,1,1,1,1,1)%c2_cmp(1)%name .NE. c2%name) ERROR STOP 16
+       IF (n1(1,1,1,1,1,1,2)%c2_cmp(1)%val .NE. c2%val) ERROR STOP 17
+       IF (n1(1,1,1,1,1,1,2)%c2_cmp(1)%name .NE. c2%name) ERROR STOP 18
 
-       IF (n1(1,1,1,1,1,1,1)%c3_cmp(1)%val .NE. c3%val) STOP 18
-       IF (n1(1,1,1,1,1,1,1)%c3_cmp(1)%name .NE. c3%name) STOP 19
-       IF (n1(1,1,1,1,1,1,2)%c3_cmp(1)%val .NE. c3%val) STOP 20
-       IF (n1(1,1,1,1,1,1,2)%c3_cmp(1)%name .NE. c3%name) STOP 21
+       IF (n1(1,1,1,1,1,1,1)%c3_cmp(1)%val .NE. c3%val) ERROR STOP 18
+       IF (n1(1,1,1,1,1,1,1)%c3_cmp(1)%name .NE. c3%name) ERROR STOP 19
+       IF (n1(1,1,1,1,1,1,2)%c3_cmp(1)%val .NE. c3%val) ERROR STOP 20
+       IF (n1(1,1,1,1,1,1,2)%c3_cmp(1)%name .NE. c3%name) ERROR STOP 21
 
        DEALLOCATE(n1)
 

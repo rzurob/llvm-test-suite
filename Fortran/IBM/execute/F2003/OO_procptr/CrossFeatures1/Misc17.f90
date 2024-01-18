@@ -88,13 +88,13 @@
   TYPE(DT)                     :: ProcPtr
   TYPE(DT)                     :: U(10000)
 
-  IF ( ANY(U%ID .NE. 1 )) STOP 11
+  IF ( ANY(U%ID .NE. 1 )) ERROR STOP 11
 
   U = DT( Thr, ModFun )
   DO I  = 1, 10000
-    IF ( U(I)%Id .NE. 3 )                         STOP 22
-    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, Modfun) ) STOP 23
-    IF ( ANY(U(I)%ProcPtr((/One, Two, Thr/)) .NE. (/One, Two, Thr/) )) STOP 24
+    IF ( U(I)%Id .NE. 3 )                         ERROR STOP 22
+    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, Modfun) ) ERROR STOP 23
+    IF ( ANY(U(I)%ProcPtr((/One, Two, Thr/)) .NE. (/One, Two, Thr/) )) ERROR STOP 24
   END DO
 
 
@@ -102,9 +102,9 @@
   U = ProcPtr( (/(DT(-I, ModFun), I=1, 10000) /) )
 
   DO I  = 1, 10000
-    IF ( U(I)%Id .NE. -I )                         STOP 32
-    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, Modfun) )  STOP 33
-    IF ( ANY(U(I)%ProcPtr((/One, Two, Thr/)) .NE. (/One, Two, Thr/) )) STOP 34
+    IF ( U(I)%Id .NE. -I )                         ERROR STOP 32
+    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, Modfun) )  ERROR STOP 33
+    IF ( ANY(U(I)%ProcPtr((/One, Two, Thr/)) .NE. (/One, Two, Thr/) )) ERROR STOP 34
   END DO
 
   END

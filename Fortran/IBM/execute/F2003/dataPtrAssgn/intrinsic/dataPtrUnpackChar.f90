@@ -21,9 +21,9 @@ program main
 
     call sub(tar)
 
-    if ( .not. associated(p)) stop 21
-    if ( lbound(p,1) /= 2 ) stop 23
-    if ( ubound(p,1) /= 4 ) stop 25
+    if ( .not. associated(p)) error stop 21
+    if ( lbound(p,1) /= 2 ) error stop 23
+    if ( ubound(p,1) /= 4 ) error stop 25
 
     print *, (/ (p(i), i=2,4) /)
 
@@ -36,7 +36,7 @@ program main
  	   character(*), target, allocatable :: a(:)
 	   allocate(a(10), source =(/ (repeat(char(i),3), i=65,74) /) )
 
-	   if ( .not. allocated(a)) stop 1
+	   if ( .not. allocated(a)) error stop 1
 
 	   p(2:4) => a(::3)
 

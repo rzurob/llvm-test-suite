@@ -63,7 +63,7 @@
         POINTER :: FUNC_kind10
 
         ALLOCATE(FUNC_kind10, source=obj)
-        IF ( .NOT. ASSOCIATED(FUNC_kind10)) STOP 100
+        IF ( .NOT. ASSOCIATED(FUNC_kind10)) ERROR STOP 100
 
         FUNC_kind10%data = obj%k1
 
@@ -76,7 +76,7 @@
         POINTER :: FUNC_kind18
 
         ALLOCATE(FUNC_kind18, source=obj)
-        IF ( .NOT. ASSOCIATED(FUNC_kind18)) STOP 101
+        IF ( .NOT. ASSOCIATED(FUNC_kind18)) ERROR STOP 101
 
         FUNC_kind18%data = obj%k1
 
@@ -97,21 +97,21 @@
 
       SELECT TYPE( A=> FUNC(b_double) )
         TYPE IS (Base(18,*))
-          IF (A%data .NE. 18) STOP 10
+          IF (A%data .NE. 18) ERROR STOP 10
 
         CLASS DEFAULT
           STOP 11
       END SELECT
 
       ASSOCIATE ( A=> FUNC(b_simple) )
-          IF (A%data .NE. 10) STOP 12
+          IF (A%data .NE. 10) ERROR STOP 12
       END ASSOCIATE
 
       upoly => FUNC(b_simple)
 
       SELECT TYPE( upoly )
         CLASS IS (Base(10,*))
-          IF (upoly%data .NE. 10) STOP 13
+          IF (upoly%data .NE. 10) ERROR STOP 13
 
         CLASS DEFAULT
           STOP 14
@@ -121,7 +121,7 @@
 
       SELECT TYPE( A => FUNC(bpoly_simple) )
         CLASS IS (Base(10,*))
-          IF (A%data .NE. 10) STOP 15
+          IF (A%data .NE. 10) ERROR STOP 15
 
         CLASS DEFAULT
           STOP 16
@@ -130,7 +130,7 @@
       SELECT TYPE( a => bpoly_simple )
         CLASS IS (Child2(10,*,20,*))
            ASSOCIATE ( b => FUNC(a%dtv) )
-               IF (b%data .NE. 10) STOP 17
+               IF (b%data .NE. 10) ERROR STOP 17
            END ASSOCIATE
 
         CLASS DEFAULT
@@ -140,7 +140,7 @@
       ALLOCATE(bpoly_double, source=c_double)
 
       ASSOCIATE ( A=> FUNC(bpoly_double) )
-          IF (A%data .NE. 18) STOP 19
+          IF (A%data .NE. 18) ERROR STOP 19
       END ASSOCIATE
 
       END PROGRAM Generic_Interface04a

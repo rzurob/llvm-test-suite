@@ -48,27 +48,27 @@
   N = 10000000 ! not affect Arr
 
   Ptr(L:, L:) => Arr
-  IF (.NOT. ASSOCIATED(Ptr, Arr))                  STOP 11
-  IF (ANY( LBOUND(Ptr)         .NE. (/L, L /)))    STOP 12
-  IF (ANY( UBOUND(Ptr)         .NE. (/U, U /)))    STOP 13
+  IF (.NOT. ASSOCIATED(Ptr, Arr))                  ERROR STOP 11
+  IF (ANY( LBOUND(Ptr)         .NE. (/L, L /)))    ERROR STOP 12
+  IF (ANY( UBOUND(Ptr)         .NE. (/U, U /)))    ERROR STOP 13
   SELECT TYPE (Ptr)
   TYPE IS (INTEGER)
-    IF (ANY( Ptr               .NE.   -1))         STOP 14
+    IF (ANY( Ptr               .NE.   -1))         ERROR STOP 14
   TYPE IS (CHARACTER(*))
-    IF (ANY( Ptr               .NE.  "123"))       STOP 15
+    IF (ANY( Ptr               .NE.  "123"))       ERROR STOP 15
   CLASS DEFAULT
     STOP 16
   END SELECT
 
   Ptr(L:U, L:L) => Arr(:,2)
-  IF (.NOT. ASSOCIATED(Ptr, Arr(:,2:2)))           STOP 21
-  IF (ANY( LBOUND(Ptr)         .NE. (/L, L /)))    STOP 22
-  IF (ANY( UBOUND(Ptr)         .NE. (/U, L /)))    STOP 23
+  IF (.NOT. ASSOCIATED(Ptr, Arr(:,2:2)))           ERROR STOP 21
+  IF (ANY( LBOUND(Ptr)         .NE. (/L, L /)))    ERROR STOP 22
+  IF (ANY( UBOUND(Ptr)         .NE. (/U, L /)))    ERROR STOP 23
   SELECT TYPE (Ptr)
   TYPE IS (INTEGER)
-    IF (ANY( Ptr               .NE.   -1))         STOP 24
+    IF (ANY( Ptr               .NE.   -1))         ERROR STOP 24
   TYPE IS (CHARACTER(*))
-    IF (ANY( Ptr               .NE.  "123"))       STOP 25
+    IF (ANY( Ptr               .NE.  "123"))       ERROR STOP 25
   CLASS DEFAULT
     STOP 16
   END SELECT

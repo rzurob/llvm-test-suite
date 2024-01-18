@@ -51,10 +51,10 @@ program main
 
     a%ptr(a%get_lb():a%get_lb()+a%size/2-1) => a%ptr(::2)
 
-    if ( .not. associated(a%ptr)) stop 1
-    if ( lbound(a%ptr,1) /= 2) stop 2
-    if ( ubound(a%ptr,1) /= 6) stop 3
+    if ( .not. associated(a%ptr)) error stop 1
+    if ( lbound(a%ptr,1) /= 2) error stop 2
+    if ( ubound(a%ptr,1) /= 6) error stop 3
 
     write (*, '("(",f20.15,", ", f20.15, ")")') a%ptr
-    if ( anY ( a%ptr /= cmplx(-2,3, 16) .neqv. .true.)) stop 5
+    if ( anY ( a%ptr /= cmplx(-2,3, 16) .neqv. .true.)) error stop 5
 end program

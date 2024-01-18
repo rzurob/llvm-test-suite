@@ -61,25 +61,25 @@
 
   DO I =1, N
     T(I)%Ptr(I:) => T(I)%Ptr
-    IF (.NOT. ASSOCIATED(T(I)%Ptr))                 STOP 11
-    IF (ANY( LBOUND(T(I)%Ptr) .NE. (/I /)))         STOP 12
-    IF (ANY( UBOUND(T(I)%Ptr) .NE. (/2*I-1/)))      STOP 13
-    IF (ANY( T(I)%Ptr%ID      .NE.  I ))            STOP 14
+    IF (.NOT. ASSOCIATED(T(I)%Ptr))                 ERROR STOP 11
+    IF (ANY( LBOUND(T(I)%Ptr) .NE. (/I /)))         ERROR STOP 12
+    IF (ANY( UBOUND(T(I)%Ptr) .NE. (/2*I-1/)))      ERROR STOP 13
+    IF (ANY( T(I)%Ptr%ID      .NE.  I ))            ERROR STOP 14
   END DO
 
   DO I =1, N
   DO J =I, 1, -1
     T(I)%Ptr(I:I+J-1) => T(I)%Ptr
-    IF (.NOT. ASSOCIATED(T(I)%Ptr))                 STOP 21
-    IF (ANY( LBOUND(T(I)%Ptr) .NE. (/I /)))         STOP 22
-    IF (ANY( UBOUND(T(I)%Ptr) .NE. (/I+J-1/)))      STOP 23
-    IF (ANY( T(I)%Ptr%ID      .NE.  I ))            STOP 24
+    IF (.NOT. ASSOCIATED(T(I)%Ptr))                 ERROR STOP 21
+    IF (ANY( LBOUND(T(I)%Ptr) .NE. (/I /)))         ERROR STOP 22
+    IF (ANY( UBOUND(T(I)%Ptr) .NE. (/I+J-1/)))      ERROR STOP 23
+    IF (ANY( T(I)%Ptr%ID      .NE.  I ))            ERROR STOP 24
   END DO
   END DO
 
   DO I=2, N  ! Exclude the deallocation of T(1)%Ptr
     DEALLOCATE(T(I)%Ptr, STAT=K)
-    IF ( K .EQ. 0) STOP 55
+    IF ( K .EQ. 0) ERROR STOP 55
   END DO
 
   END

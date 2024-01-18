@@ -87,24 +87,24 @@
   CLASS(*) :: Arr(:)
 
   ASSOCIATE ( As => (/Arr, Arr(:)/) )
-    IF (ANY(SHAPE(As) .NE. (/6/)))            STOP 32
+    IF (ANY(SHAPE(As) .NE. (/6/)))            ERROR STOP 32
   ASSOCIATE ( As => As(1::2) )
     SELECT TYPE ( As )
     CLASS IS (Child)
 
-          IF (ANY(SHAPE(As) .NE. (/3/)))      STOP 33
-          IF ( ANY(As%Base%GetId() .NE. -1) ) STOP 34
-          IF ( ANY(As%GetId()      .NE. -2) ) STOP 35
-          IF ( ANY(As%BaseId       .NE. -1) ) STOP 36
-          IF ( ANY(As%ChildId      .NE. -2) ) STOP 37
+          IF (ANY(SHAPE(As) .NE. (/3/)))      ERROR STOP 33
+          IF ( ANY(As%Base%GetId() .NE. -1) ) ERROR STOP 34
+          IF ( ANY(As%GetId()      .NE. -2) ) ERROR STOP 35
+          IF ( ANY(As%BaseId       .NE. -1) ) ERROR STOP 36
+          IF ( ANY(As%ChildId      .NE. -2) ) ERROR STOP 37
 
           CALL As(1)%SetId(As)
           CALL As(1)%Base%SetId(As%Base)
 
-          IF ( ANY(As%Base%GetId() .NE. 1 ) ) STOP 44
-          IF ( ANY(As%GetId()      .NE. 2 ) ) STOP 45
-          IF ( ANY(As%BaseId       .NE. 1 ) ) STOP 46
-          IF ( ANY(As%ChildId      .NE. 2 ) ) STOP 47
+          IF ( ANY(As%Base%GetId() .NE. 1 ) ) ERROR STOP 44
+          IF ( ANY(As%GetId()      .NE. 2 ) ) ERROR STOP 45
+          IF ( ANY(As%BaseId       .NE. 1 ) ) ERROR STOP 46
+          IF ( ANY(As%ChildId      .NE. 2 ) ) ERROR STOP 47
 
     CLASS DEFAULT
       STOP 38

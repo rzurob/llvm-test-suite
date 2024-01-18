@@ -96,21 +96,21 @@
 
   SELECT TYPE ( As => ModFun(DT(-1)) )
   TYPE IS (DT)
-    IF (As%ID   .NE. -1 ) STOP 11
+    IF (As%ID   .NE. -1 ) ERROR STOP 11
   CLASS DEFAULT
     STOP 12
   END SELECT
 
   SELECT TYPE ( As => ModFun(DT1(-2)) )
   TYPE IS (DT1)
-    IF (As%ID   .NE. -2 ) STOP 11
+    IF (As%ID   .NE. -2 ) ERROR STOP 11
   CLASS DEFAULT
     STOP 12
   END SELECT
 
   SELECT TYPE ( As => ModFun(DT3(-3)) )
   TYPE IS (DT3)
-    IF (As%ID   .NE. -3 ) STOP 11
+    IF (As%ID   .NE. -3 ) ERROR STOP 11
   CLASS DEFAULT
     STOP 12
   END SELECT

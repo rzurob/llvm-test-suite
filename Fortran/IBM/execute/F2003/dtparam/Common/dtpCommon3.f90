@@ -90,20 +90,20 @@
 
   DO I=1, N
 
-    IF ( SIZE(T(I)%R%R) .NE. 7   ) STOP 21
-    IF ( ANY (T(I)%R%R  .NE. 8 ) ) STOP 22
+    IF ( SIZE(T(I)%R%R) .NE. 7   ) ERROR STOP 21
+    IF ( ANY (T(I)%R%R  .NE. 8 ) ) ERROR STOP 22
 
-    IF ( SIZE(T(I)%C%C) .NE. 7         ) STOP 31
-    IF ( ANY (T(I)%C%C  .NE. CHAR(8) ) ) STOP 32
+    IF ( SIZE(T(I)%C%C) .NE. 7         ) ERROR STOP 31
+    IF ( ANY (T(I)%C%C  .NE. CHAR(8) ) ) ERROR STOP 32
 
-    IF ( SIZE(T(I)%I%I) .NE. 7   ) STOP 41
-    IF ( ANY (T(I)%I%I  .NE. 8 ) ) STOP 42
+    IF ( SIZE(T(I)%I%I) .NE. 7   ) ERROR STOP 41
+    IF ( ANY (T(I)%I%I  .NE. 8 ) ) ERROR STOP 42
 
-    IF ( SIZE(T(I)%A%A) .NE.   7        ) STOP 51
-    IF ( ANY (T(I)%A%A  .NEQV. .TRUE. ) ) STOP 52
+    IF ( SIZE(T(I)%A%A) .NE.   7        ) ERROR STOP 51
+    IF ( ANY (T(I)%A%A  .NEQV. .TRUE. ) ) ERROR STOP 52
 
-    IF ( SIZE(T(I)%Z%Z) .NE. 7        ) STOP 61
-    IF ( ANY (T(I)%Z%Z  .NE. (8,-8) ) ) STOP 62
+    IF ( SIZE(T(I)%Z%Z) .NE. 7        ) ERROR STOP 61
+    IF ( ANY (T(I)%Z%Z  .NE. (8,-8) ) ) ERROR STOP 62
 
   END DO
 

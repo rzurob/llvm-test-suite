@@ -38,8 +38,8 @@
     ASSOCIATE ( T0 => Int1 .PLUS. (/( i, i = 1, 15) /) )
     ASSOCIATE ( As0 => T0)
     ASSOCIATE ( As1 => As0(1:10:2))
-      IF ( Any( As0 .NE. (/( i+1, i = 1, 10) /)) )    STOP 40
-      IF ( Any( As1 .NE. (/( i+1, i = 1, 10, 2) /)) ) STOP 41
+      IF ( Any( As0 .NE. (/( i+1, i = 1, 10) /)) )    ERROR STOP 40
+      IF ( Any( As1 .NE. (/( i+1, i = 1, 10, 2) /)) ) ERROR STOP 41
     END ASSOCIATE
     END ASSOCIATE
     END ASSOCIATE

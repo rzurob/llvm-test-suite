@@ -143,7 +143,7 @@ program dtpPtrAssignAssociate
     call check("tb44 % dl2 % cdat", tb44 % dl2 % cdat, "var % dl2 % cdat", var % dl2 % cdat)
     call check("tb44 % dlp % cdat", tb44 % dlp % cdat, "var % dlp % cdat", var % dlp % cdat)
     call check("tb44 % dlqp % cdat", tb44 % dlqp % cdat, "var % dlqp % cdat", var % dlqp % cdat)
-    if (eCount > 0) stop 2
+    if (eCount > 0) error stop 2
     print *, "passed: ", var ! print out data
   end associate
 

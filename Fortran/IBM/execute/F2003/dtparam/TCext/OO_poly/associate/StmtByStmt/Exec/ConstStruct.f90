@@ -67,44 +67,44 @@
   TYPE(Child(4)), PARAMETER :: W = Child(4)()
 
     ASSOCIATE ( As => Child(4)() )
-      IF ( As%GetID() .NE. 2) STOP 50
+      IF ( As%GetID() .NE. 2) ERROR STOP 50
       ASSOCIATE ( As0 => As%ChildId, As1 => As%BaseId )
-         IF ( As0 .NE. 2) STOP 51
-         IF ( As1 .NE. 1) STOP 52
+         IF ( As0 .NE. 2) ERROR STOP 51
+         IF ( As1 .NE. 1) ERROR STOP 52
       END ASSOCIATE
 
       ASSOCIATE ( As2 => As%Base )
-        IF ( As2%BaseID .NE. 1 ) STOP 53
+        IF ( As2%BaseID .NE. 1 ) ERROR STOP 53
       END ASSOCIATE
     END ASSOCIATE
 
     ASSOCIATE ( As => V )
-      IF ( As%GetID() .NE. 2) STOP 54
+      IF ( As%GetID() .NE. 2) ERROR STOP 54
       ASSOCIATE ( As0 => As%ChildId, As1 => As%BaseId )
-         IF ( As0 .NE. 2) STOP 55
-         IF ( As1 .NE. 1) STOP 56
+         IF ( As0 .NE. 2) ERROR STOP 55
+         IF ( As1 .NE. 1) ERROR STOP 56
       END ASSOCIATE
 
       ASSOCIATE ( As => As%Base )
-        IF ( As%GetID() .NE. 1 ) STOP 57
+        IF ( As%GetID() .NE. 1 ) ERROR STOP 57
       END ASSOCIATE
 
-      IF( As%GetID() .NE. 2 ) STOP 57
+      IF( As%GetID() .NE. 2 ) ERROR STOP 57
     END ASSOCIATE
 
     ASSOCIATE ( As => W )
-      IF ( As%GetID() .NE. 2) STOP 58
+      IF ( As%GetID() .NE. 2) ERROR STOP 58
       ASSOCIATE ( As0 => As%ChildId, As1 => As%BaseId )
-         IF ( As0 .NE. 2) STOP 59
-         IF ( As1 .NE. 1) STOP 60
+         IF ( As0 .NE. 2) ERROR STOP 59
+         IF ( As1 .NE. 1) ERROR STOP 60
       END ASSOCIATE
 
       ASSOCIATE ( As => As%Base )
-        IF ( As%GetId() .NE. 1 ) STOP 61
+        IF ( As%GetId() .NE. 1 ) ERROR STOP 61
       END ASSOCIATE
 
       ASSOCIATE ( As => W%Base%GetID() )
-        IF ( As .NE. 1 ) STOP 62
+        IF ( As .NE. 1 ) ERROR STOP 62
       END ASSOCIATE
     END ASSOCIATE
 

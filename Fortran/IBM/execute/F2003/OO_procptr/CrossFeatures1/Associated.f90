@@ -92,30 +92,30 @@
   PROCEDURE(INTEGER(8)),  POINTER :: PtrInt8 => NULL()
 
 
-  IF ( ASSOCIATED( PtrInt ))            STOP 11
+  IF ( ASSOCIATED( PtrInt ))            ERROR STOP 11
   PtrInt => Int
-  IF ( .NOT. ASSOCIATED( PtrInt, Int )) STOP 12
-  IF ( PtrInt(100) .NE. 100 )           STOP 13
+  IF ( .NOT. ASSOCIATED( PtrInt, Int )) ERROR STOP 12
+  IF ( PtrInt(100) .NE. 100 )           ERROR STOP 13
 
-  IF ( ASSOCIATED( PtrInt1 ))           STOP 21
+  IF ( ASSOCIATED( PtrInt1 ))           ERROR STOP 21
   PtrInt1 => Proc
-  IF ( .NOT. ASSOCIATED( PtrInt1, Int1)) STOP 22
-  IF ( PtrInt1(1_1) .NE. 1_1)           STOP 23
+  IF ( .NOT. ASSOCIATED( PtrInt1, Int1)) ERROR STOP 22
+  IF ( PtrInt1(1_1) .NE. 1_1)           ERROR STOP 23
 
-  IF ( ASSOCIATED( PtrInt2 ))           STOP 31
+  IF ( ASSOCIATED( PtrInt2 ))           ERROR STOP 31
   PtrInt2 => ProcPtr
-  IF ( .NOT. ASSOCIATED(PtrInt2, Int2)) STOP 32
-  IF ( PtrInt2(3_2) .NE. 2_2)           STOP 33
+  IF ( .NOT. ASSOCIATED(PtrInt2, Int2)) ERROR STOP 32
+  IF ( PtrInt2(3_2) .NE. 2_2)           ERROR STOP 33
 
-  IF ( ASSOCIATED( PtrInt4 ))           STOP 41
+  IF ( ASSOCIATED( PtrInt4 ))           ERROR STOP 41
   PtrInt4 => PtrInt
-  IF ( .NOT. ASSOCIATED(PtrInt4, Int) ) STOP 42
-  IF ( PtrInt4(3) .NE. 3)               STOP 43
+  IF ( .NOT. ASSOCIATED(PtrInt4, Int) ) ERROR STOP 42
+  IF ( PtrInt4(3) .NE. 3)               ERROR STOP 43
 
-  IF ( ASSOCIATED( PtrInt8 ))           STOP 51
+  IF ( ASSOCIATED( PtrInt8 ))           ERROR STOP 51
   PtrInt8 => Int8
-  IF ( .NOT. ASSOCIATED(PtrInt8, Int8)) STOP 52
-  IF ( PtrInt8(3_8) .NE. 8_8)           STOP 53
+  IF ( .NOT. ASSOCIATED(PtrInt8, Int8)) ERROR STOP 52
+  IF ( PtrInt8(3_8) .NE. 8_8)           ERROR STOP 53
 
   END SUBROUTINE
 

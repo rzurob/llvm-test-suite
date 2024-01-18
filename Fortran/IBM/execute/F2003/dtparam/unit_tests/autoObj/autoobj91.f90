@@ -39,11 +39,11 @@
   INTEGER N
   TYPE(dt(N)) b(N)
 
-    IF (b%l                 .NE. 4)       STOP 11
-    IF (UBOUND(b(1)%arr, 1) .NE. 4)       STOP 12
-    IF (SIZE(b(1)%arr)      .NE. 4)       STOP 13
-    IF (ANY(b(1)%arr        .NE. "1234")) STOP 14
-    IF (ANY(b%arr(1)        .NE. "1234")) STOP 15
+    IF (b%l                 .NE. 4)       ERROR STOP 11
+    IF (UBOUND(b(1)%arr, 1) .NE. 4)       ERROR STOP 12
+    IF (SIZE(b(1)%arr)      .NE. 4)       ERROR STOP 13
+    IF (ANY(b(1)%arr        .NE. "1234")) ERROR STOP 14
+    IF (ANY(b%arr(1)        .NE. "1234")) ERROR STOP 15
 
   END SUBROUTINE
   END

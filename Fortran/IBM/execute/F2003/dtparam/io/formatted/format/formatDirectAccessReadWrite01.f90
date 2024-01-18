@@ -68,33 +68,33 @@ program formatDirectAccessReadWrite01
      ! read record into tar2
      read(10,'(3(3i3,2l3,:,/))',rec=5) tar2
 
-     if(any(outer1(4)%i2 /= [31,32]))                     stop 11
-     if(any(outer1(4)%comp%i1/= [33]))                    stop 12
-     if(any(outer1(4)%comp%log1 .neqv. [.true.,.true.]))  stop 13
+     if(any(outer1(4)%i2 /= [31,32]))                     error stop 11
+     if(any(outer1(4)%comp%i1/= [33]))                    error stop 12
+     if(any(outer1(4)%comp%log1 .neqv. [.true.,.true.]))  error stop 13
 
-     if(any(outer1(5)%i2 /= [21,22]))                     stop 14
-     if(any(outer1(5)%comp%i1/= [23]))                    stop 15
-     if(any(outer1(5)%comp%log1 .neqv. [.false.,.true.])) stop 16
+     if(any(outer1(5)%i2 /= [21,22]))                     error stop 14
+     if(any(outer1(5)%comp%i1/= [23]))                    error stop 15
+     if(any(outer1(5)%comp%log1 .neqv. [.false.,.true.])) error stop 16
 
-     if(any(outer1(6)%i2 /= [11,12]))                     stop 17
-     if(any(outer1(6)%comp%i1/= [13]))                    stop 18
-     if(any(outer1(6)%comp%log1 .neqv. [.true.,.false.])) stop 19
+     if(any(outer1(6)%i2 /= [11,12]))                     error stop 17
+     if(any(outer1(6)%comp%i1/= [13]))                    error stop 18
+     if(any(outer1(6)%comp%log1 .neqv. [.true.,.false.])) error stop 19
 
      ! rewrite the record 5,6,7
      write(10,'(3(3i3,2l3,:,/))',rec=5) tar2(2*len:len+1:-1)
      read(10,'(3(3i3,2l3,:,/))',rec=5) tar1(len:1:-1)
 
-     if(any(tar1(1)%i2 /= [31,32]))                       stop 20
-     if(any(tar1(1)%comp%i1/= [33]))                      stop 21
-     if(any(tar1(1)%comp%log1 .neqv. [.true.,.true.]))    stop 22
+     if(any(tar1(1)%i2 /= [31,32]))                       error stop 20
+     if(any(tar1(1)%comp%i1/= [33]))                      error stop 21
+     if(any(tar1(1)%comp%log1 .neqv. [.true.,.true.]))    error stop 22
 
-     if(any(tar1(2)%i2 /= [21,22]))                       stop 23
-     if(any(tar1(2)%comp%i1/= [23]))                      stop 24
-     if(any(tar1(2)%comp%log1 .neqv. [.false.,.true.]))   stop 25
+     if(any(tar1(2)%i2 /= [21,22]))                       error stop 23
+     if(any(tar1(2)%comp%i1/= [23]))                      error stop 24
+     if(any(tar1(2)%comp%log1 .neqv. [.false.,.true.]))   error stop 25
 
-     if(any(tar1(3)%i2 /= [11,12]))                       stop 26
-     if(any(tar1(3)%comp%i1/= [13]))                      stop 27
-     if(any(tar1(3)%comp%log1 .neqv. [.true.,.false.]))   stop 28
+     if(any(tar1(3)%i2 /= [11,12]))                       error stop 26
+     if(any(tar1(3)%comp%i1/= [13]))                      error stop 27
+     if(any(tar1(3)%comp%log1 .neqv. [.true.,.false.]))   error stop 28
 
      do i=lbound(tar2,1),ubound(tar2,1)
         tar2(i)%i2=-1*tar2(i)%i2
@@ -108,14 +108,14 @@ program formatDirectAccessReadWrite01
 
      read(10,'(3(3i3,2l3,:,/))',rec=5) outer1
 
-     if(any(tar1(1)%i2 /= [-31,-32]))                     stop 29
-     if(any(tar1(1)%comp%i1/= [-33]))                     stop 30
+     if(any(tar1(1)%i2 /= [-31,-32]))                     error stop 29
+     if(any(tar1(1)%comp%i1/= [-33]))                     error stop 30
 
-     if(any(tar1(2)%i2 /= [-21,-22]))                     stop 31
-     if(any(tar1(2)%comp%i1/= [-23]))                     stop 32
+     if(any(tar1(2)%i2 /= [-21,-22]))                     error stop 31
+     if(any(tar1(2)%comp%i1/= [-23]))                     error stop 32
 
-     if(any(tar1(3)%i2 /= [-11,-12]))                     stop 33
-     if(any(tar1(3)%comp%i1/= [-13]))                     stop 34
+     if(any(tar1(3)%i2 /= [-11,-12]))                     error stop 33
+     if(any(tar1(3)%comp%i1/= [-13]))                     error stop 34
 
   end if
 

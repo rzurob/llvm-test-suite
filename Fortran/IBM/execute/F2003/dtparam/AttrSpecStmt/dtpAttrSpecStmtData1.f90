@@ -101,14 +101,14 @@
 
   T01 = T0(I)%ModFun0()
 
-  IF ( ANY( T1(I)%ModFun1() .NE. [(1,3),(4,5)] ) ) STOP 11
+  IF ( ANY( T1(I)%ModFun1() .NE. [(1,3),(4,5)] ) ) ERROR STOP 11
 
-  IF ( ANY( T2(I)%I .NE. [1,2,3,4,5,6,7]       ) ) STOP 12
-  IF ( ANY( T2(I)%C .NE. CHAR([1,2,3,4,5,6,7]) ) ) STOP 13
+  IF ( ANY( T2(I)%I .NE. [1,2,3,4,5,6,7]       ) ) ERROR STOP 12
+  IF ( ANY( T2(I)%C .NE. CHAR([1,2,3,4,5,6,7]) ) ) ERROR STOP 13
 
   IArr(:7) = T2(I)%ModFun2()
-  IF ( ANY( IArr(:7) .NE. [-1,-2,-3,-4,-5,-6,-7] ) ) STOP 14
-  IF ( ANY( T2(I)%DT1%ModFun1() .NE. [(1,3),(4,5)] ) ) STOP 15
+  IF ( ANY( IArr(:7) .NE. [-1,-2,-3,-4,-5,-6,-7] ) ) ERROR STOP 14
+  IF ( ANY( T2(I)%DT1%ModFun1() .NE. [(1,3),(4,5)] ) ) ERROR STOP 15
 
   END DO
 

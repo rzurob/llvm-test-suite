@@ -62,16 +62,16 @@
     SELECT TYPE(As)
     CLASS IS (DT(4))
 
-      IF ( As%ID      .NE. -1 ) STOP 30
-      IF ( As%GetID() .NE. -1 ) STOP 31
+      IF ( As%ID      .NE. -1 ) ERROR STOP 30
+      IF ( As%GetID() .NE. -1 ) ERROR STOP 31
 
       CALL Set(DT(4)(ID=2))
 
       SELECT TYPE(T)
       CLASS IS (DT(4))
 
-        IF ( T%ID      .NE. 2 ) STOP 40
-        IF ( T%GetID() .NE. 2 ) STOP 41
+        IF ( T%ID      .NE. 2 ) ERROR STOP 40
+        IF ( T%GetID() .NE. 2 ) ERROR STOP 41
 
       CLASS DEFAULT
         STOP 98

@@ -16,6 +16,6 @@
 
   print*, T0%L
   print*, T1%I
-  IF ( T1%I    .NE.   T0%L  ) STOP 51
+  IF ( T1%I    .NE.   T0%L  ) ERROR STOP 51
 
   END

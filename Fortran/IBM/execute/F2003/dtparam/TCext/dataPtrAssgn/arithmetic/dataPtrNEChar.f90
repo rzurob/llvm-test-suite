@@ -34,9 +34,9 @@
 
     t1%ptr(1:) => t1%char
 
-    if ( .not. associated(t1%ptr, t1%char)) stop 12
-    if ( lbound(t1%ptr,1) /= 1 ) stop 15
-    if ( ubound(t1%ptr,1) /= 7 ) stop 18
+    if ( .not. associated(t1%ptr, t1%char)) error stop 12
+    if ( lbound(t1%ptr,1) /= 1 ) error stop 15
+    if ( ubound(t1%ptr,1) /= 7 ) error stop 18
     print *,  t1%ptr == t1%char
     print *, t1%ptr
 

@@ -75,9 +75,9 @@
     CLASS DEFAULT
       STOP 30
     TYPE IS (Child(4,*))
-      IF ( ANY(As%GetId() .NE. -2) )      STOP 41
-      IF ( ANY(As%Base%GetId() .NE. -1) ) STOP 42
-      IF ( ANY(SHAPE(As) .NE. (/3/) ) )   STOP 43
+      IF ( ANY(As%GetId() .NE. -2) )      ERROR STOP 41
+      IF ( ANY(As%Base%GetId() .NE. -1) ) ERROR STOP 42
+      IF ( ANY(SHAPE(As) .NE. (/3/) ) )   ERROR STOP 43
   END SELECT
 
 

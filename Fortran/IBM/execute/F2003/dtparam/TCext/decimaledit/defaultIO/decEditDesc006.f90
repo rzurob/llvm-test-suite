@@ -92,7 +92,7 @@ subroutine writeAIO (unit)
 use m
     integer, intent(in) :: unit
 
-    if (.not. allocated(b1)) stop 10
+    if (.not. allocated(b1)) error stop 10
 
     do i = lbound(b1,1), ubound(b1,1)
         write (unit, fmt='(sp, e15.7, dp, ss, e15.7, dc, sp, i10, d30.15)') b1(i)

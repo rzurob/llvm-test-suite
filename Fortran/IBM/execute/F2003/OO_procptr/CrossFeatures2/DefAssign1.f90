@@ -95,25 +95,25 @@
 
   B1 = Base(1)
   DO I=1, 511
-    IF (B1(I)%Id .NE. 1) STOP 11
+    IF (B1(I)%Id .NE. 1) ERROR STOP 11
   END DO
 
   D1 = Base(2)
   DO I=1, 511
-    IF (.NOT. ASSOCIATED(D1(I)%ProcPtr, ModFun)) STOP 22
-    IF (D1(I)%Id .NE. 2) STOP 23
+    IF (.NOT. ASSOCIATED(D1(I)%ProcPtr, ModFun)) ERROR STOP 22
+    IF (D1(I)%Id .NE. 2) ERROR STOP 23
   END DO
 
   B2 = DT(-1, ModFun)
   DO I=1, 511
-    IF (B2(I)%Id .NE. -1) STOP 31
+    IF (B2(I)%Id .NE. -1) ERROR STOP 31
   END DO
 
   D2 = DT(0, NULL())
   D2 = DT(-2, ModFun)
   DO I=1, 511
-    IF (.NOT. ASSOCIATED(D2(I)%ProcPtr, ModFun)) STOP 62
-    IF (D2(I)%Id .NE. -2) STOP 63
+    IF (.NOT. ASSOCIATED(D2(I)%ProcPtr, ModFun)) ERROR STOP 62
+    IF (D2(I)%Id .NE. -2) ERROR STOP 63
   END DO
 
 

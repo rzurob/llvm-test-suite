@@ -27,19 +27,19 @@
 
   ASSOCIATE ( As => (4.0_4, -4.0_4) )
     ASSOCIATE ( As => Fun(As) )
-      IF ( As       .NE. (4.0_4, -4.0_4) ) STOP 20
+      IF ( As       .NE. (4.0_4, -4.0_4) ) ERROR STOP 20
     END ASSOCIATE
   END ASSOCIATE
 
   ASSOCIATE ( As => (8.0_8, -8.0_8) )
     ASSOCIATE ( As => Fun(As) )
-      IF ( As       .NE. (8.0_8, -8.0_8) ) STOP 22
+      IF ( As       .NE. (8.0_8, -8.0_8) ) ERROR STOP 22
     END ASSOCIATE
   END ASSOCIATE
 
   ASSOCIATE ( As => (16.0_16, -16.0_16) )
     ASSOCIATE ( As => Fun(As) )
-      IF ( As       .NE. (16.0_16, -16.0_16) ) STOP 24
+      IF ( As       .NE. (16.0_16, -16.0_16) ) ERROR STOP 24
     END ASSOCIATE
   END ASSOCIATE
 

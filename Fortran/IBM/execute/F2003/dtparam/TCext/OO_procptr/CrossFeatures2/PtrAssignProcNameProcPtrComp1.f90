@@ -76,15 +76,15 @@
   V%BasePtr  => GetBaseId
   V%ChildPtr => GetChildId
 
-  IF ( V%BasePtr()      .NE. V%Base%GetID() ) STOP 11
-  IF ( V%Base%BasePtr() .NE. V%Base%GetID() ) STOP 12
-  IF ( V%ChildPtr()     .NE. V%GetID() )      STOP 13
+  IF ( V%BasePtr()      .NE. V%Base%GetID() ) ERROR STOP 11
+  IF ( V%Base%BasePtr() .NE. V%Base%GetID() ) ERROR STOP 12
+  IF ( V%ChildPtr()     .NE. V%GetID() )      ERROR STOP 13
 
   ASSOCIATE (As => V)
 
-    IF ( As%BasePtr()      .NE. V%Base%GetID() ) STOP 21
-    IF ( As%Base%BasePtr() .NE. V%Base%GetID() ) STOP 22
-    IF ( As%ChildPtr()     .NE. V%GetID() )      STOP 23
+    IF ( As%BasePtr()      .NE. V%Base%GetID() ) ERROR STOP 21
+    IF ( As%Base%BasePtr() .NE. V%Base%GetID() ) ERROR STOP 22
+    IF ( As%ChildPtr()     .NE. V%GetID() )      ERROR STOP 23
 
   END ASSOCIATE
 

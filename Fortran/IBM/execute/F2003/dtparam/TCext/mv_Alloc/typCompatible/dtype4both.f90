@@ -64,8 +64,8 @@ end module
 
       d =  b%get_alloc( b )
 
-      if ( allocated(b)) stop 11
+      if ( allocated(b)) error stop 11
 
-      if ( d%a1%ch /= 'XYZ' ) stop 21
+      if ( d%a1%ch /= 'XYZ' ) error stop 21
 
       end

@@ -36,9 +36,9 @@
   CLASS DEFAULT
     STOP 30
   TYPE IS ( LOGICAL(1) )
-    IF ( ANY(SHAPE(As) .NE. (/4/))  )   STOP 31
-    IF ( LBOUND(As,1)  .NE. 1       )   STOP 32
-    IF ( ANY(As        .NEQV. (/.TRUE.,.TRUE.,.TRUE.,.TRUE./)) )  STOP 32
+    IF ( ANY(SHAPE(As) .NE. (/4/))  )   ERROR STOP 31
+    IF ( LBOUND(As,1)  .NE. 1       )   ERROR STOP 32
+    IF ( ANY(As        .NEQV. (/.TRUE.,.TRUE.,.TRUE.,.TRUE./)) )  ERROR STOP 32
   TYPE IS (LOGICAL )
     STOP 34
   END SELECT
@@ -52,9 +52,9 @@
   TYPE IS (LOGICAL(1)  )
     STOP 41
   TYPE IS ( LOGICAL(2) )
-    IF ( ANY(SHAPE(Log) .NE. (/4/))  )   STOP 42
-    IF ( LBOUND(Log, 1) .NE. 1       )   STOP 43
-    IF ( ANY(Log        .NEQV. (/.TRUE.,.TRUE.,.TRUE.,.TRUE./)) )  STOP 44
+    IF ( ANY(SHAPE(Log) .NE. (/4/))  )   ERROR STOP 42
+    IF ( LBOUND(Log, 1) .NE. 1       )   ERROR STOP 43
+    IF ( ANY(Log        .NEQV. (/.TRUE.,.TRUE.,.TRUE.,.TRUE./)) )  ERROR STOP 44
   TYPE IS (LOGICAL )
     STOP 45
   END SELECT
@@ -67,9 +67,9 @@
     STOP 50
   TYPE IS ( LOGICAL(  8) )
     As = .TRUE.
-    IF ( ANY(SHAPE(As) .NE. (/2/))  )   STOP 51
-    IF ( LBOUND(As, 1) .NE. 1       )   STOP 52
-    IF ( ANY(As        .NEQV. (/.TRUE.,.TRUE./)) )  STOP 52
+    IF ( ANY(SHAPE(As) .NE. (/2/))  )   ERROR STOP 51
+    IF ( LBOUND(As, 1) .NE. 1       )   ERROR STOP 52
+    IF ( ANY(As        .NEQV. (/.TRUE.,.TRUE./)) )  ERROR STOP 52
   TYPE IS (CHARACTER(*))
     STOP 54
   END SELECT
@@ -81,7 +81,7 @@
   CLASS DEFAULT
     STOP 60
   TYPE IS (     BYTE)
-    IF ( As   .NE. 1_1 )  STOP 62
+    IF ( As   .NE. 1_1 )  ERROR STOP 62
   TYPE IS (LOGICAL(4)     )
     STOP 64
   END SELECT

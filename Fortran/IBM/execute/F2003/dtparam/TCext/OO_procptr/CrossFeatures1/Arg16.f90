@@ -75,13 +75,13 @@
   TYPE(Base(1,3))   :: V
 
   V = Proc0(Base(1,3)("321"))
-  IF (V%C .NE. "321") STOP 15
+  IF (V%C .NE. "321") ERROR STOP 15
 
   V = Proc1(Base(1,3)("123"))
-  IF (V%C .NE. "123") STOP 13
+  IF (V%C .NE. "123") ERROR STOP 13
 
   V = Proc2(Base(1,3)("abc"))
-  IF (V%C .NE. "abc") STOP 14
+  IF (V%C .NE. "abc") ERROR STOP 14
 
   END SUBROUTINE
 

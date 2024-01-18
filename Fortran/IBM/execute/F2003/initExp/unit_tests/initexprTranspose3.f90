@@ -28,8 +28,8 @@ real(4), dimension(2,2) :: res3=transpose(C)
 real(8), dimension(1,7) :: res4=transpose(D)
 real(16), dimension(2,11) :: res5=transpose(E)
 
-if (.not. all(res3 .eq. transpose(C))) stop 3
-if (.not. all(res4 .eq. transpose(D))) stop 4
-if (.not. all(res5 .eq. transpose(E))) stop 4
+if (.not. all(res3 .eq. transpose(C))) error stop 3
+if (.not. all(res4 .eq. transpose(D))) error stop 4
+if (.not. all(res5 .eq. transpose(E))) error stop 4
 
 end

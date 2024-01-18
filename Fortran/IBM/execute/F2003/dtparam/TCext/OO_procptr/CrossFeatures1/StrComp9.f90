@@ -81,13 +81,13 @@
   LOGICAL     :: L=.FALSE.
 
   U = Base(4,3)("123", ModFun )
-  IF ( U%C .NE. "123" )                       STOP 21
-  IF ( .NOT. ASSOCIATED(U%ProcPtr, ModFun ))  STOP 22
-  IF ( .NOT. U%ProcPtr())                     STOP 23
+  IF ( U%C .NE. "123" )                       ERROR STOP 21
+  IF ( .NOT. ASSOCIATED(U%ProcPtr, ModFun ))  ERROR STOP 22
+  IF ( .NOT. U%ProcPtr())                     ERROR STOP 23
 
   U =  Base(4,3)("", NULL() )
-  IF ( U%C .NE. "" )        STOP 31
-  IF ( ASSOCIATED(U%ProcPtr )) STOP 32
+  IF ( U%C .NE. "" )        ERROR STOP 31
+  IF ( ASSOCIATED(U%ProcPtr )) ERROR STOP 32
 
 
   END

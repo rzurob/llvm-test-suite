@@ -68,19 +68,19 @@
   !ProcPtr => NULL()
   ProcPtr => NULL(ProcPtr)
 
-  IF ( ASSOCIATED(ProcPtr) )                STOP 11
-  IF ( ASSOCIATED(ProcPtr, ModFun) )        STOP 12
-  IF ( ASSOCIATED(ProcPtr, ProcPtr) )       STOP 13
-! IF ( ASSOCIATED(ProcPtr, NULL()) )        STOP 14
-  IF ( ASSOCIATED(ProcPtr, NULL(ProcPtr)) ) STOP 15
+  IF ( ASSOCIATED(ProcPtr) )                ERROR STOP 11
+  IF ( ASSOCIATED(ProcPtr, ModFun) )        ERROR STOP 12
+  IF ( ASSOCIATED(ProcPtr, ProcPtr) )       ERROR STOP 13
+! IF ( ASSOCIATED(ProcPtr, NULL()) )        ERROR STOP 14
+  IF ( ASSOCIATED(ProcPtr, NULL(ProcPtr)) ) ERROR STOP 15
 
   ProcPtr => ModFun
-  IF ( .NOT. ASSOCIATED(ProcPtr) )          STOP 21
-  IF ( .NOT. ASSOCIATED(ProcPtr, ModFun) )  STOP 22
+  IF ( .NOT. ASSOCIATED(ProcPtr) )          ERROR STOP 21
+  IF ( .NOT. ASSOCIATED(ProcPtr, ModFun) )  ERROR STOP 22
 
   ASSOCIATE ( As => ProcPtr( (/DT(4,3)((/(i, i=1,256)/), "IBM")/)) )
-    IF ( ANY( As(1)%IARR .NE. (/(i, i=1,256)/)))    STOP 31
-    IF ( As(1)%Str       .NE. "IBM" )               STOP 32
+    IF ( ANY( As(1)%IARR .NE. (/(i, i=1,256)/)))    ERROR STOP 31
+    IF ( As(1)%Str       .NE. "IBM" )               ERROR STOP 32
   END ASSOCIATE
 
   NULLIFY(ProcPtr)
@@ -88,21 +88,21 @@
   ProcPtr1 => NULL()
   ProcPtr => ProcPtr1
 
-  IF ( ASSOCIATED(ProcPtr) ) STOP 41
-  IF ( ASSOCIATED(ProcPtr, ModFun) )        STOP 42
-  IF ( ASSOCIATED(ProcPtr, ProcPtr) )       STOP 43
-! IF ( ASSOCIATED(ProcPtr, NULL()) )        STOP 44
-  IF ( ASSOCIATED(ProcPtr, NULL(ProcPtr)) ) STOP 45
+  IF ( ASSOCIATED(ProcPtr) ) ERROR STOP 41
+  IF ( ASSOCIATED(ProcPtr, ModFun) )        ERROR STOP 42
+  IF ( ASSOCIATED(ProcPtr, ProcPtr) )       ERROR STOP 43
+! IF ( ASSOCIATED(ProcPtr, NULL()) )        ERROR STOP 44
+  IF ( ASSOCIATED(ProcPtr, NULL(ProcPtr)) ) ERROR STOP 45
 
   ProcPtr1  => ModFun
   ProcPtr => ProcPtr1
 
-  IF ( .NOT. ASSOCIATED(ProcPtr) )         STOP 51
-  IF ( .NOT. ASSOCIATED(ProcPtr, ModFun) ) STOP 52
+  IF ( .NOT. ASSOCIATED(ProcPtr) )         ERROR STOP 51
+  IF ( .NOT. ASSOCIATED(ProcPtr, ModFun) ) ERROR STOP 52
 
   ASSOCIATE ( As => ProcPtr((/ DT(4,3)((/(i, i=1,25600)/), "IBM")/)) )
-    IF ( ANY( As(1)%IARR .NE. (/(i, i=1,25600)/) ))   STOP 61
-    IF ( As(1)%Str       .NE. "IBM" )                 STOP 62
+    IF ( ANY( As(1)%IARR .NE. (/(i, i=1,25600)/) ))   ERROR STOP 61
+    IF ( As(1)%Str       .NE. "IBM" )                 ERROR STOP 62
   END ASSOCIATE
 
 

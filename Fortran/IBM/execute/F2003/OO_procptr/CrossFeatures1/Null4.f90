@@ -64,16 +64,16 @@
        & W4 /DT(-1, NULL()) /
 
 
-  IF ( ASSOCIATED(ProcPtr1) )      STOP 11
-  IF ( ASSOCIATED(ProcPtr2) )      STOP 12
-  IF ( ASSOCIATED(ProcPtr3) )      STOP 13
-  IF ( ASSOCIATED(ProcPtr4) )      STOP 14
+  IF ( ASSOCIATED(ProcPtr1) )      ERROR STOP 11
+  IF ( ASSOCIATED(ProcPtr2) )      ERROR STOP 12
+  IF ( ASSOCIATED(ProcPtr3) )      ERROR STOP 13
+  IF ( ASSOCIATED(ProcPtr4) )      ERROR STOP 14
 
 
-  IF ( ASSOCIATED(W1%ProcPtr) )     STOP 41
-  IF ( ASSOCIATED(W2%ProcPtr) )     STOP 42
-  IF ( ASSOCIATED(W3(3)%ProcPtr) )  STOP 43
-  IF ( ASSOCIATED(W4(1)%ProcPtr) )  STOP 44
+  IF ( ASSOCIATED(W1%ProcPtr) )     ERROR STOP 41
+  IF ( ASSOCIATED(W2%ProcPtr) )     ERROR STOP 42
+  IF ( ASSOCIATED(W3(3)%ProcPtr) )  ERROR STOP 43
+  IF ( ASSOCIATED(W4(1)%ProcPtr) )  ERROR STOP 44
 
 
   CALL IntSub(NULL(), DT(-1, NULL()), DT(-1, NULL(V%ProcPtr)), NULL(ProcPtr1))
@@ -89,20 +89,20 @@
   PROCEDURE(Fun), POINTER :: Arg1, Arg4
   TYPE (DT) ::Arg2, Arg3
 
-  IF ( ASSOCIATED(Arg1) )         STOP 21
-  IF ( ASSOCIATED(Arg2%ProcPtr) ) STOP 22
-  IF ( ASSOCIATED(Arg3%ProcPtr) ) STOP 22
-  IF ( ASSOCIATED(Arg4) )         STOP 24
+  IF ( ASSOCIATED(Arg1) )         ERROR STOP 21
+  IF ( ASSOCIATED(Arg2%ProcPtr) ) ERROR STOP 22
+  IF ( ASSOCIATED(Arg3%ProcPtr) ) ERROR STOP 22
+  IF ( ASSOCIATED(Arg4) )         ERROR STOP 24
 
   END SUBROUTINE
 
   SUBROUTINE IntSub1(Arg1, Arg2, Arg3, Arg4)
   TYPE (DT) ::Arg1, Arg2, Arg3(:), Arg4(1)
 
-  IF ( ASSOCIATED(Arg1%ProcPtr) )    STOP 31
-  IF ( ASSOCIATED(Arg2%ProcPtr) )    STOP 32
-  IF ( ASSOCIATED(Arg3(1)%ProcPtr) ) STOP 33
-  IF ( ASSOCIATED(Arg4(1)%ProcPtr) ) STOP 34
+  IF ( ASSOCIATED(Arg1%ProcPtr) )    ERROR STOP 31
+  IF ( ASSOCIATED(Arg2%ProcPtr) )    ERROR STOP 32
+  IF ( ASSOCIATED(Arg3(1)%ProcPtr) ) ERROR STOP 33
+  IF ( ASSOCIATED(Arg4(1)%ProcPtr) ) ERROR STOP 34
 
   END SUBROUTINE
 

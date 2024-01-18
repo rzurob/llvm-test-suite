@@ -43,7 +43,7 @@ module m
 
         class(base(1)), allocatable :: getValof
 
-        if (index > b1%n) stop 10
+        if (index > b1%n) error stop 10
 
         allocate (getValof)
 
@@ -89,7 +89,7 @@ use m
     allocate (b1, source=base(200)(sqrt([(i*1.0, i = 1, 200)])))
     b2 => b1%find (base(1)(11.0), equalWithin10Percent)
 
-    if (size(b2) /= 48) stop 1
+    if (size(b2) /= 48) error stop 1
 
     do i = 1, size(b2)
         call printBase (b2(i))

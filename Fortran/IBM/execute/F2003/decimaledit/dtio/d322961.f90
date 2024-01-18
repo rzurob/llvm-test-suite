@@ -65,7 +65,7 @@ use m
 
     read (1, *) n1
 
-    if (isum /= 210) stop 1
+    if (isum /= 210) error stop 1
 
     iterator => n1
 
@@ -75,5 +75,5 @@ use m
         count = count + 1
     end do
 
-    if (count /= 20) stop 2
+    if (count /= 20) error stop 2
 end

@@ -94,7 +94,7 @@ module m2
           type is(child(*,*))
              inquire(unit,pos=mypos)
 
-             if(mypos /= 1)                    stop 12
+             if(mypos /= 1)                    error stop 12
 
              call dt%read(unit,idvar,mypos)
 
@@ -102,8 +102,8 @@ module m2
 
              inquire(unit,id=idvar,pending=pending,pos=mypos)
 
-             if(pending .neqv. .false.)        stop 13
-             if(mypos /= 135)                  stop 14
+             if(pending .neqv. .false.)        error stop 13
+             if(mypos /= 135)                  error stop 14
 
              call dt%base%read(unit,idvar,mypos)
 
@@ -111,7 +111,7 @@ module m2
 
              inquire(unit,id=idvar,pending=pending,pos=mypos)
 
-             if(pending .neqv. .false.)        stop 15
+             if(pending .neqv. .false.)        error stop 15
 
            class default
 
@@ -172,51 +172,51 @@ program listDirectAsynchronous03
 
   select type(x=>pobj1(-1,1) )
      type is(child(*,*))
-         if(any(x%a1comp(1)%i1 /= [-50,6]))                      stop 19
-         if(any(x%a1comp(1)%c1 /= ["XLF","xlf"] ))               stop 20
-         if(any(x%a1comp(1)%g1 .neqv. [.true.,.false.]))         stop 21
+         if(any(x%a1comp(1)%i1 /= [-50,6]))                      error stop 19
+         if(any(x%a1comp(1)%c1 /= ["XLF","xlf"] ))               error stop 20
+         if(any(x%a1comp(1)%g1 .neqv. [.true.,.false.]))         error stop 21
 
-         if(.not. precision_r4(x%a1comp(1)%r1,-12.3_4))          stop 22
-         if(.not. precision_r4(x%a1comp(1)%x1,(-0.35E-3,2.E0) )) stop 23
+         if(.not. precision_r4(x%a1comp(1)%r1,-12.3_4))          error stop 22
+         if(.not. precision_r4(x%a1comp(1)%x1,(-0.35E-3,2.E0) )) error stop 23
 
-         if(any(x%a1comp(2)%i1 /= [3,-99]))                      stop 24
-         if(any(x%a1comp(2)%c1 /= ["IBM","ibm"] ))               stop 25
-         if(any(x%a1comp(2)%g1 .neqv. [.false.,.true.]))         stop 26
+         if(any(x%a1comp(2)%i1 /= [3,-99]))                      error stop 24
+         if(any(x%a1comp(2)%c1 /= ["IBM","ibm"] ))               error stop 25
+         if(any(x%a1comp(2)%g1 .neqv. [.false.,.true.]))         error stop 26
 
-         if(.not. precision_r4(x%a1comp(2)%r1,-5.))              stop 27
-         if(.not. precision_r4(x%a1comp(2)%x1,(-99.9,99.9) ))    stop 28
+         if(.not. precision_r4(x%a1comp(2)%r1,-5.))              error stop 27
+         if(.not. precision_r4(x%a1comp(2)%x1,(-99.9,99.9) ))    error stop 28
 
          associate(y=>x%a2comp(1))
 
-         if(any(y%i1 /= [-99,10]))                               stop 29
-         if(any(y%c1 /= ["ALC","alc"] ))                         stop 30
-         if(any(y%g1 .neqv. [.true.,.true.]))                    stop 31
+         if(any(y%i1 /= [-99,10]))                               error stop 29
+         if(any(y%c1 /= ["ALC","alc"] ))                         error stop 30
+         if(any(y%g1 .neqv. [.true.,.true.]))                    error stop 31
 
-         if(.not. precision_r4(y%r1,-30.))                       stop 32
-         if(.not. precision_r4(y%x1,(-3.2,-1.) ))                stop 33
+         if(.not. precision_r4(y%r1,-30.))                       error stop 32
+         if(.not. precision_r4(y%x1,(-3.2,-1.) ))                error stop 33
 
          end associate
 
-         if(any(x%a3comp(1)%i1 /= [-1,-2]))                      stop 34
-         if(any(x%a3comp(1)%c1 /= ["123","4.5"] ))               stop 35
-         if(any(x%a3comp(1)%g1 .neqv. [.true.,.false.]))         stop 36
+         if(any(x%a3comp(1)%i1 /= [-1,-2]))                      error stop 34
+         if(any(x%a3comp(1)%c1 /= ["123","4.5"] ))               error stop 35
+         if(any(x%a3comp(1)%g1 .neqv. [.true.,.false.]))         error stop 36
 
-         if(.not. precision_r4(x%a3comp(1)%r1,0.1_4))            stop 37
-         if(.not. precision_r4(x%a3comp(1)%x1,(-3.1,0.5) ))      stop 38
+         if(.not. precision_r4(x%a3comp(1)%r1,0.1_4))            error stop 37
+         if(.not. precision_r4(x%a3comp(1)%x1,(-3.1,0.5) ))      error stop 38
 
-         if(any(x%a3comp(2)%i1 /= [2,-99]))                      stop 39
-         if(any(x%a3comp(2)%c1 /= ["RED","RED"] ))               stop 40
-         if(any(x%a3comp(2)%g1 .neqv. [.true.,.true.]))          stop 41
+         if(any(x%a3comp(2)%i1 /= [2,-99]))                      error stop 39
+         if(any(x%a3comp(2)%c1 /= ["RED","RED"] ))               error stop 40
+         if(any(x%a3comp(2)%g1 .neqv. [.true.,.true.]))          error stop 41
 
-         if(.not. precision_r4(x%a3comp(2)%r1,-99.9))            stop 42
-         if(.not. precision_r4(x%a3comp(2)%x1,(-99.9,99.9) ))    stop 43
+         if(.not. precision_r4(x%a3comp(2)%r1,-99.9))            error stop 42
+         if(.not. precision_r4(x%a3comp(2)%x1,(-99.9,99.9) ))    error stop 43
 
-         if(any(x%a4comp(1)%i1 /= [-8,-10]))                     stop 44
-         if(any(x%a4comp(1)%c1 /= ["GOO","WHO"] ))               stop 45
-         if(any(x%a4comp(1)%g1 .neqv. [.true.,.false.]))         stop 46
+         if(any(x%a4comp(1)%i1 /= [-8,-10]))                     error stop 44
+         if(any(x%a4comp(1)%c1 /= ["GOO","WHO"] ))               error stop 45
+         if(any(x%a4comp(1)%g1 .neqv. [.true.,.false.]))         error stop 46
 
-         if(.not. precision_r4(x%a4comp(1)%r1,5.5556))           stop 47
-         if(.not. precision_r4(x%a4comp(1)%x1,(1.3,-4.1) ))      stop 48
+         if(.not. precision_r4(x%a4comp(1)%r1,5.5556))           error stop 47
+         if(.not. precision_r4(x%a4comp(1)%x1,(1.3,-4.1) ))      error stop 48
 
      class default
 

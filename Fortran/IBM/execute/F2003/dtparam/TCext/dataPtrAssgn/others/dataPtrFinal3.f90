@@ -69,13 +69,13 @@ end module
 
 	b1%p(1:) => b1%fun(b2)
 
-	if ( .not. associated(b1%p) ) stop 12
-	if ( lbound(b1%p,1) /= 1 ) stop 15
-	if ( ubound(b1%p,1) /= 10 ) stop 17
+	if ( .not. associated(b1%p) ) error stop 12
+	if ( lbound(b1%p,1) /= 1 ) error stop 15
+	if ( ubound(b1%p,1) /= 10 ) error stop 17
 
         deallocate(b1%p)
 
-	if ( count /= 1 ) stop 1
+	if ( count /= 1 ) error stop 1
 
     end program
 

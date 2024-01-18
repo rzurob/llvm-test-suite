@@ -39,9 +39,9 @@ logical(2), dimension(2,11) :: res2=transpose(B)
 logical(4), dimension(2,7) :: res3=transpose(C)
 logical(8), dimension(1,13) :: res4=transpose(D)
 
-if (.not. all(res1 .eqv. transpose(a))) stop 1
-if (.not. all(res2 .eqv. transpose(B))) stop 2
-if (.not. all(res3 .eqv. transpose(C))) stop 3
-if (.not. all(res4 .eqv. transpose(D))) stop 4
+if (.not. all(res1 .eqv. transpose(a))) error stop 1
+if (.not. all(res2 .eqv. transpose(B))) error stop 2
+if (.not. all(res3 .eqv. transpose(C))) error stop 3
+if (.not. all(res4 .eqv. transpose(D))) error stop 4
 
 end

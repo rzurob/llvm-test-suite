@@ -24,7 +24,7 @@ type(Base(4, 2)), target :: obj1
 obj1 = func1(2)
 
 ! verify the result
-if (obj1%avar /= 100) stop 1
+if (obj1%avar /= 100) error stop 1
 
 contains
 function func1(nn)

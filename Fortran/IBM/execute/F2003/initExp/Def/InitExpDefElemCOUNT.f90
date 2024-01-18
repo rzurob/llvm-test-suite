@@ -76,48 +76,48 @@
   INTEGER(KIND(COUNT(T48 /= 0, KIND=8))) :: T58(2)=COUNT((B4 .NE. C8(1:, :)), DIM=2, KIND=8)
 
 
-  IF (KIND(T11)   .NE.   4 )        STOP 11
-  IF (     T11    .NE.   2 )        STOP 12
-  IF (KIND(T12)   .NE.   4 )        STOP 13
-  IF (     T12    .NE.   0 )        STOP 14
-  IF (KIND(T14)   .NE.   4 )        STOP 15
-  IF (     T14    .NE.   2)         STOP 16
-  IF (KIND(T18)   .NE.   4 )        STOP 17
-  IF (     T18    .NE.   0)         STOP 18
+  IF (KIND(T11)   .NE.   4 )        ERROR STOP 11
+  IF (     T11    .NE.   2 )        ERROR STOP 12
+  IF (KIND(T12)   .NE.   4 )        ERROR STOP 13
+  IF (     T12    .NE.   0 )        ERROR STOP 14
+  IF (KIND(T14)   .NE.   4 )        ERROR STOP 15
+  IF (     T14    .NE.   2)         ERROR STOP 16
+  IF (KIND(T18)   .NE.   4 )        ERROR STOP 17
+  IF (     T18    .NE.   0)         ERROR STOP 18
 
 
-  IF (KIND(T21)   .NE.   4 )        STOP 21
-  IF (KIND(T22)   .NE.   4 )        STOP 23
-  IF (KIND(T24)   .NE.   4 )        STOP 25
-  IF (KIND(T28)   .NE.   4 )        STOP 27
+  IF (KIND(T21)   .NE.   4 )        ERROR STOP 21
+  IF (KIND(T22)   .NE.   4 )        ERROR STOP 23
+  IF (KIND(T24)   .NE.   4 )        ERROR STOP 25
+  IF (KIND(T28)   .NE.   4 )        ERROR STOP 27
 
 
-  IF ( KIND( T31) .NE.   4 )        STOP 31
-  IF ( ANY(  T31  .NE.  R1))        STOP 32
-  IF ( KIND( T32) .NE.   4 )        STOP 33
-  IF ( ANY(  T32  .NE. R1) )        STOP 34
-  IF ( KIND( T34) .NE.   4 )        STOP 35
-  IF ( ANY(  T34  .NE. R1) )        STOP 36
-  IF ( KIND( T38) .NE.   4 )        STOP 37
-  IF ( ANY(  T38  .NE. R1) )        STOP 38
+  IF ( KIND( T31) .NE.   4 )        ERROR STOP 31
+  IF ( ANY(  T31  .NE.  R1))        ERROR STOP 32
+  IF ( KIND( T32) .NE.   4 )        ERROR STOP 33
+  IF ( ANY(  T32  .NE. R1) )        ERROR STOP 34
+  IF ( KIND( T34) .NE.   4 )        ERROR STOP 35
+  IF ( ANY(  T34  .NE. R1) )        ERROR STOP 36
+  IF ( KIND( T38) .NE.   4 )        ERROR STOP 37
+  IF ( ANY(  T38  .NE. R1) )        ERROR STOP 38
 
-  IF ( KIND( T41) .NE.   1 )        STOP 41
-  IF ( ANY(  T41  .NE. R3) )        STOP 42
-  IF ( KIND( T42) .NE.   2 )        STOP 43
-  IF ( ANY(  T42  .NE. R3) )        STOP 44
-  IF ( KIND( T44) .NE.   4 )        STOP 45
-  IF ( ANY(  T44  .NE. R3) )        STOP 46
-  IF ( KIND( T48) .NE.   8 )        STOP 47
-  IF ( ANY(  T48  .NE. R3) )        STOP 48
+  IF ( KIND( T41) .NE.   1 )        ERROR STOP 41
+  IF ( ANY(  T41  .NE. R3) )        ERROR STOP 42
+  IF ( KIND( T42) .NE.   2 )        ERROR STOP 43
+  IF ( ANY(  T42  .NE. R3) )        ERROR STOP 44
+  IF ( KIND( T44) .NE.   4 )        ERROR STOP 45
+  IF ( ANY(  T44  .NE. R3) )        ERROR STOP 46
+  IF ( KIND( T48) .NE.   8 )        ERROR STOP 47
+  IF ( ANY(  T48  .NE. R3) )        ERROR STOP 48
 
-  IF ( KIND( T51) .NE.   1 )        STOP 51
-  IF ( ANY(  T51  .NE. R3) )        STOP 52
-  IF ( KIND( T52) .NE.   2 )        STOP 53
-  IF ( ANY(  T52  .NE. R3) )        STOP 54
-  IF ( KIND( T54) .NE.   4 )        STOP 55
-  IF ( ANY(  T54  .NE. R3) )        STOP 56
-  IF ( KIND( T58) .NE.   8 )        STOP 57
-  IF ( ANY(  T58  .NE. R3) )        STOP 58
+  IF ( KIND( T51) .NE.   1 )        ERROR STOP 51
+  IF ( ANY(  T51  .NE. R3) )        ERROR STOP 52
+  IF ( KIND( T52) .NE.   2 )        ERROR STOP 53
+  IF ( ANY(  T52  .NE. R3) )        ERROR STOP 54
+  IF ( KIND( T54) .NE.   4 )        ERROR STOP 55
+  IF ( ANY(  T54  .NE. R3) )        ERROR STOP 56
+  IF ( KIND( T58) .NE.   8 )        ERROR STOP 57
+  IF ( ANY(  T58  .NE. R3) )        ERROR STOP 58
 
 
 

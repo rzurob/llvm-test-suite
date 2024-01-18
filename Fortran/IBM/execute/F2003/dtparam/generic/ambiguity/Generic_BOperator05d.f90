@@ -80,24 +80,24 @@
       ALLOCATE ( NextGen(4,1,4,1,8,1) :: N0, N2(1,1) )
 
       B_var => C0 * B1
-      IF ( B_var%value .NE. 14 ) STOP 3
+      IF ( B_var%value .NE. 14 ) ERROR STOP 3
       B_var => C0 * C1
-      IF ( B_var%value .NE. 14 ) STOP 4
+      IF ( B_var%value .NE. 14 ) ERROR STOP 4
 
       B_var => C0 * B2              ! generic call to mut2
       B2_var => mut1(C0,B2)         ! call to mut1 is possible only when calling with the specific
-      IF ( B_var%value .NE. 24 ) STOP 5
+      IF ( B_var%value .NE. 24 ) ERROR STOP 5
       B_var => C0 * N2
-      IF ( B_var%value .NE. 24 ) STOP 6
+      IF ( B_var%value .NE. 24 ) ERROR STOP 6
 
       B_var => N0 * B1
-      IF ( B_var%value .NE. 14 ) STOP 9
+      IF ( B_var%value .NE. 14 ) ERROR STOP 9
       B_var => N0 * C1
-      IF ( B_var%value .NE. 14 ) STOP 10
+      IF ( B_var%value .NE. 14 ) ERROR STOP 10
 
       B_var => N0 * B2
-      IF ( B_var%value .NE. 24 ) STOP 11
+      IF ( B_var%value .NE. 24 ) ERROR STOP 11
       B_var => N0 * N2
-      IF ( B_var%value .NE. 24 ) STOP 12
+      IF ( B_var%value .NE. 24 ) ERROR STOP 12
 
       END PROGRAM Generic_BOperator03c

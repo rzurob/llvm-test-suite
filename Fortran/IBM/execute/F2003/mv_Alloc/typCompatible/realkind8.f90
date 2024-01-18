@@ -34,10 +34,10 @@
 
       call move_alloc(t%r2,r2)
 
-      if ( allocated( t%r2) ) stop 11
-      if ( .not. allocated(r2) ) stop 13
+      if ( allocated( t%r2) ) error stop 11
+      if ( .not. allocated(r2) ) error stop 13
 
-      if ( size(r2) /= 8 ) stop 21
+      if ( size(r2) /= 8 ) error stop 21
 
       write (*, '(4f12.8)') r2
 

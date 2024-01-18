@@ -48,19 +48,19 @@ use m
 
     call move_alloc(from, to)
 
-    if ( allocated(from) ) stop 11
-    if ( .not. allocated(to)) stop 13
+    if ( allocated(from) ) error stop 11
+    if ( .not. allocated(to)) error stop 13
 
     select type (to)
         type is (A)
-            if ( .not. associated(p, to) ) stop 23
+            if ( .not. associated(p, to) ) error stop 23
 
  	    do i = 1, 3
                 if ( .not. allocated(to(i)%x) )  call zzrc(i)
             end do
-            if ( to(1)%x%id /= 11 ) stop 31
-            if ( to(2)%x%id /= 12 ) stop 33
-            if ( to(3)%x%id /= 13 ) stop 35
+            if ( to(1)%x%id /= 11 ) error stop 31
+            if ( to(2)%x%id /= 12 ) error stop 33
+            if ( to(3)%x%id /= 13 ) error stop 35
         class default
             stop 41
     end select

@@ -57,8 +57,8 @@
 
   T = Proc(-1, "12")
 
-  IF ( T%I             .NE.  -1            ) STOP 12
-  IF ( T%C             .NE.  "12"          ) STOP 13
+  IF ( T%I             .NE.  -1            ) ERROR STOP 12
+  IF ( T%C             .NE.  "12"          ) ERROR STOP 13
 
 
   END SUBROUTINE
@@ -74,8 +74,8 @@
 !  StmtFun(L,C) = DT(8,LEN(C))(L, C)
 
   T = DT(8,LEN(C))(8,"ABCD")
-  IF ( T%I             .NE.  8            ) STOP 12
-  IF ( T%C             .NE.  "ABCD"       ) STOP 13
+  IF ( T%I             .NE.  8            ) ERROR STOP 12
+  IF ( T%C             .NE.  "ABCD"       ) ERROR STOP 13
 
   CALL ModSub(ModFun)
 

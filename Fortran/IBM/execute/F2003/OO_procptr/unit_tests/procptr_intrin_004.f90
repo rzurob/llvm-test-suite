@@ -13,7 +13,7 @@
 
       pp1 => func1()
       kkk = pp1(char1)
-      if (kkk .ne. 10) stop 11
+      if (kkk .ne. 10) error stop 11
       end
 
       function func1()

@@ -40,9 +40,9 @@
 
 	    p_int(-1:,0:,I2-I1:) => t_int
 
-	    if ( .not. associated(p_int, t_int) ) stop 5
-	    if ( any (lbound(p_int) .ne. (/-1,0,1 /))) stop 7
-	    if ( any (ubound(p_int) .ne. (/1,3,3 /))) stop 9
+	    if ( .not. associated(p_int, t_int) ) error stop 5
+	    if ( any (lbound(p_int) .ne. (/-1,0,1 /))) error stop 7
+	    if ( any (ubound(p_int) .ne. (/1,3,3 /))) error stop 9
 
 	    print *, sum(p_int, 1)
 	    print *, sum(p_int, 2, lp)
@@ -51,8 +51,8 @@
  	    allocate(p1_int(3,3), source = sum(t_int,2, lp) )
 	    p1_int(I1-I2:, I1+I2:) => p1_int(:,:)
 
-	    if ( any (lbound(p1_int) .ne. (/-1,7 /))) stop 11
-	    if ( any (ubound(p1_int) .ne. (/1,9 /))) stop 13
+	    if ( any (lbound(p1_int) .ne. (/-1,7 /))) error stop 11
+	    if ( any (ubound(p1_int) .ne. (/1,9 /))) error stop 13
 
 	    print *, sum(p1_int, 2)
 

@@ -45,9 +45,9 @@ end module
 
 	call intsub(itar)
 
-	if ( .not. associated(ip)) stop 3
-	if ( any(lbound(ip) .ne. (/3,4/))) stop 5
-	if ( any(ubound(ip) .ne. (/5,6/))) stop 7
+	if ( .not. associated(ip)) error stop 3
+	if ( any(lbound(ip) .ne. (/3,4/))) error stop 5
+	if ( any(ubound(ip) .ne. (/5,6/))) error stop 7
 
 	print *, ip
 	ip =  reshape((/ip(3,:),ip(4,:),ip(5,:) /), (/3,3/) )
@@ -55,9 +55,9 @@ end module
 
 	call logsub(ltar)
 
-	if ( .not. associated(lp)) stop 13
-	if ( any(lbound(lp) .ne. (/-1,3/))) stop 15
-	if ( any(ubound(lp) .ne. (/3,3/))) stop 17
+	if ( .not. associated(lp)) error stop 13
+	if ( any(lbound(lp) .ne. (/-1,3/))) error stop 15
+	if ( any(ubound(lp) .ne. (/3,3/))) error stop 17
 
 	print *, lp
 	print *, reshape(ltar(:,1), (/5/))

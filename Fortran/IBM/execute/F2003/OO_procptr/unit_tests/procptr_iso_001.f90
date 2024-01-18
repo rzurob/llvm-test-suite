@@ -24,7 +24,7 @@
        mmm = ddobj%pp1()
        nnn = ddobj%pp2()
 
-       if (mmm .ne. nnn) stop 11
+       if (mmm .ne. nnn) error stop 11
        end
 
        real function foo()

@@ -19,7 +19,7 @@ contains
   subroutine foo(x, y)
     class(dt) :: x
     integer :: y
-    if (x%i /= y) stop 10
+    if (x%i /= y) error stop 10
   end subroutine
 end module
 
@@ -36,9 +36,9 @@ allocate(b)
 b%i = 10
 call b%foo(10)
 call move_alloc(a,b)
-if (allocated(a)) stop 1
-if (.not.allocated(b)) stop 2
-if (.not.associated(p,b)) stop 3
+if (allocated(a)) error stop 1
+if (.not.allocated(b)) error stop 2
+if (.not.associated(p,b)) error stop 3
 call b%foo(5)
 call p%foo(5)
 end

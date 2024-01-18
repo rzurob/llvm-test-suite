@@ -41,11 +41,11 @@ program main
                allocate ( complex(8) :: p%a2(256,1,1) )
                call move_alloc(p%a1, p%a2 )
 
-               if (  allocated(p%a1) ) stop 21
-               if (  .not. allocated(p%a2) ) stop 23
-               if ( size(p%a2,1) /= 4 ) STOP 41
-               if ( size(p%a2,2) /= 0 ) STOP 43
-               if ( size(p%a2,3) /= 2 ) STOP 45
+               if (  allocated(p%a1) ) error stop 21
+               if (  .not. allocated(p%a2) ) error stop 23
+               if ( size(p%a2,1) /= 4 ) ERROR STOP 41
+               if ( size(p%a2,2) /= 0 ) ERROR STOP 43
+               if ( size(p%a2,3) /= 2 ) ERROR STOP 45
 
        end select
 

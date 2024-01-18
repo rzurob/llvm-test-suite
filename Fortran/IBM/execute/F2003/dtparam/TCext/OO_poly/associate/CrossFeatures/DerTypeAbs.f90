@@ -76,11 +76,11 @@
     SELECT TYPE (V)
     TYPE IS (T(*,4))
 
-      IF ( V%BaseId       .NE. -1 ) STOP 31
-      IF ( V%Base%BaseId  .NE. -1 ) STOP 32
-      IF ( V%ChildId      .NE. -2 ) STOP 33
-!     IF ( V%Base%GetId() .NE. -1 ) STOP 34  !C611
-      IF ( V%DT%GetId() .NE. -2 ) STOP 35
+      IF ( V%BaseId       .NE. -1 ) ERROR STOP 31
+      IF ( V%Base%BaseId  .NE. -1 ) ERROR STOP 32
+      IF ( V%ChildId      .NE. -2 ) ERROR STOP 33
+!     IF ( V%Base%GetId() .NE. -1 ) ERROR STOP 34  !C611
+      IF ( V%DT%GetId() .NE. -2 ) ERROR STOP 35
 
     CLASS DEFAULT
       STOP 45

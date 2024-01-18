@@ -71,9 +71,9 @@
    read(6, iostat=ios, err=400) complex81, complex161, complex321
    if ((.not.precision_x8(complex81, (3.4E30, 0.1E-1))) .or. &
        (.not.precision_x6(complex161, (3.4D28, 0.1D-1))) .or. &
-       (.not.precision_x3(complex321, (3.4Q30, 0.1Q-1)))) stop 3
+       (.not.precision_x3(complex321, (3.4Q30, 0.1Q-1)))) error stop 3
 !  if ((complex8 .ne. complex81) .or. (complex16 .ne. complex161) .or. &
-!      (complex32 .ne. complex321))  stop 3
+!      (complex32 .ne. complex321))  error stop 3
    close(6, status='delete')
 
 !* TEST3 : logical
@@ -85,7 +85,7 @@
    rewind(6, iostat=ios, err=500)
    read(6, iostat=ios, err=400 ) log11, log21, log41, log81
    if ((log11 .neqv. .true.) .or. (log21 .neqv. .false.) .or. &
-      (log41 .neqv. .true.) .or. (log81 .neqv. .false.)) stop 5
+      (log41 .neqv. .true.) .or. (log81 .neqv. .false.)) error stop 5
    close(6, status='delete')
 
 !* TEST6 : byte
@@ -95,7 +95,7 @@
    write(6, iostat=ios, err=200) byte1
    rewind(6, iostat=ios, err=500)
    read(6, iostat=ios, err=400) byte11
-   if (byte1 .ne. byte11) stop 6
+   if (byte1 .ne. byte11) error stop 6
    close(6, status='delete')
 
 stop

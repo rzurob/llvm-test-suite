@@ -58,39 +58,39 @@ PROGRAM DTPMultipleNesting03a
       INTEGER :: i
 
       ALLOCATE( Branch(4,2,5,10) :: b0 )
-      IF ( .NOT. ALLOCATED(b0) ) STOP 10
+      IF ( .NOT. ALLOCATED(b0) ) ERROR STOP 10
 
-      IF ( b0%n1                  .NE.    2 )    STOP 11
-      IF ( b0%n2                  .NE.    5 )    STOP 12
-      IF ( b0%n3                  .NE.   10 )    STOP 13
+      IF ( b0%n1                  .NE.    2 )    ERROR STOP 11
+      IF ( b0%n2                  .NE.    5 )    ERROR STOP 12
+      IF ( b0%n3                  .NE.   10 )    ERROR STOP 13
 
       b0%cmp1 = Child(4,2,4,5) ('BB', 4.8, 11, NULL())
       b0%cmp2 = Child(4,5,4,5) ('AAAAA', 3.1, -7, NULL())
 
       DO i = 1, 10
         ALLOCATE( b0%cmp1(i)%ptr, SOURCE = Base(b0%cmp1%k2,b0%cmp1%l2) ('Aleckes', 6.5) )
-        IF ( .NOT. ASSOCIATED(b0%cmp1(i)%ptr) ) STOP 20
+        IF ( .NOT. ASSOCIATED(b0%cmp1(i)%ptr) ) ERROR STOP 20
 
         ALLOCATE( b0%cmp2(i)%ptr, SOURCE = Base(b0%cmp1%k2,b0%cmp1%l2) ('Alceeme', 0.1) )
-        IF ( .NOT. ASSOCIATED(b0%cmp2(i)%ptr) ) STOP 21
+        IF ( .NOT. ASSOCIATED(b0%cmp2(i)%ptr) ) ERROR STOP 21
 
-        IF ( LEN(b0%cmp1(i)%ptr%Carr)       .NE.        5 )  STOP 30
-        IF ( SIZE(b0%cmp1(i)%ptr%Carr)      .NE.        5 )  STOP 31
-        IF ( ANY((b0%cmp1(i)%ptr%Carr)      .NE. 'Aleck') )  STOP 32
+        IF ( LEN(b0%cmp1(i)%ptr%Carr)       .NE.        5 )  ERROR STOP 30
+        IF ( SIZE(b0%cmp1(i)%ptr%Carr)      .NE.        5 )  ERROR STOP 31
+        IF ( ANY((b0%cmp1(i)%ptr%Carr)      .NE. 'Aleck') )  ERROR STOP 32
 
-        IF ( SIZE(b0%cmp1(i)%ptr%Rarr)      .NE.        5 )  STOP 33
-        IF ( LBOUND(b0%cmp1(i)%ptr%Rarr, 1) .NE.        1 )  STOP 34
-        IF ( UBOUND(b0%cmp1(i)%ptr%Rarr, 1) .NE.        5 )  STOP 35
-        IF ( ANY((b0%cmp1(i)%ptr%Rarr)      .NE.     6.5) )  STOP 36
+        IF ( SIZE(b0%cmp1(i)%ptr%Rarr)      .NE.        5 )  ERROR STOP 33
+        IF ( LBOUND(b0%cmp1(i)%ptr%Rarr, 1) .NE.        1 )  ERROR STOP 34
+        IF ( UBOUND(b0%cmp1(i)%ptr%Rarr, 1) .NE.        5 )  ERROR STOP 35
+        IF ( ANY((b0%cmp1(i)%ptr%Rarr)      .NE.     6.5) )  ERROR STOP 36
 
-        IF ( LEN(b0%cmp2(i)%ptr%Carr)       .NE.        5 )  STOP 37
-        IF ( SIZE(b0%cmp2(i)%ptr%Carr)      .NE.        5 )  STOP 38
-        IF ( ANY((b0%cmp2(i)%ptr%Carr)      .NE. 'Alcee') )  STOP 40
+        IF ( LEN(b0%cmp2(i)%ptr%Carr)       .NE.        5 )  ERROR STOP 37
+        IF ( SIZE(b0%cmp2(i)%ptr%Carr)      .NE.        5 )  ERROR STOP 38
+        IF ( ANY((b0%cmp2(i)%ptr%Carr)      .NE. 'Alcee') )  ERROR STOP 40
 
-        IF ( SIZE(b0%cmp2(i)%ptr%Rarr)      .NE.        5 )  STOP 41
-        IF ( LBOUND(b0%cmp2(i)%ptr%Rarr, 1) .NE.        1 )  STOP 42
-        IF ( UBOUND(b0%cmp2(i)%ptr%Rarr, 1) .NE.        5 )  STOP 43
-        IF ( ANY((b0%cmp2(i)%ptr%Rarr)      .NE.     0.1) )  STOP 44
+        IF ( SIZE(b0%cmp2(i)%ptr%Rarr)      .NE.        5 )  ERROR STOP 41
+        IF ( LBOUND(b0%cmp2(i)%ptr%Rarr, 1) .NE.        1 )  ERROR STOP 42
+        IF ( UBOUND(b0%cmp2(i)%ptr%Rarr, 1) .NE.        5 )  ERROR STOP 43
+        IF ( ANY((b0%cmp2(i)%ptr%Rarr)      .NE.     0.1) )  ERROR STOP 44
       END DO
 
      DEALLOCATE ( b0 )

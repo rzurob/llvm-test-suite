@@ -77,15 +77,15 @@
                                    )
 
 
-  IF (ANY( ABS(T4%R41+1.175201178)    .GE. 1.E-6  ))    STOP 11
-  IF (ANY( T4%R42                     .NE. r4N_Zero  )) STOP 12
-  IF (ANY( T4%R43                     .NE. r4P_Zero  )) STOP 13
-  IF (ANY( ABS(T4%R44-1.175201178)    .GE. 1.E-6  ))    STOP 14
+  IF (ANY( ABS(T4%R41+1.175201178)    .GE. 1.E-6  ))    ERROR STOP 11
+  IF (ANY( T4%R42                     .NE. r4N_Zero  )) ERROR STOP 12
+  IF (ANY( T4%R43                     .NE. r4P_Zero  )) ERROR STOP 13
+  IF (ANY( ABS(T4%R44-1.175201178)    .GE. 1.E-6  ))    ERROR STOP 14
 
-  IF (ANY( ABS(T8%R81+1.175201178)    .GE. 1.E-6  ))    STOP 21
-  IF (ANY( T8%R82                     .NE. r8N_Zero  )) STOP 22
-  IF (ANY( T8%R83                     .NE. r8P_Zero  )) STOP 23
-  IF (ANY( ABS(T8%R84-1.175201178)    .GE. 1.E-6  ))    STOP 24
+  IF (ANY( ABS(T8%R81+1.175201178)    .GE. 1.E-6  ))    ERROR STOP 21
+  IF (ANY( T8%R82                     .NE. r8N_Zero  )) ERROR STOP 22
+  IF (ANY( T8%R83                     .NE. r8P_Zero  )) ERROR STOP 23
+  IF (ANY( ABS(T8%R84-1.175201178)    .GE. 1.E-6  ))    ERROR STOP 24
 
 
   END

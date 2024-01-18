@@ -43,11 +43,11 @@ use m
 
    call sub(from, to)
 
-   if ( .not. allocated(to) ) stop 21
+   if ( .not. allocated(to) ) error stop 21
 
    select type(to)
        type is (character(*))
-            if ( to /= "helloworld" ) stop 23
+            if ( to /= "helloworld" ) error stop 23
        class default
             stop 22
    end select
@@ -59,11 +59,11 @@ subroutine sub(from,to)
     class(*), optional, intent(inout), allocatable :: to
 
     allocate(from, source="helloworld")
-    if ( .not. allocated(from) ) stop 11
+    if ( .not. allocated(from) ) error stop 11
 
     if (present(to)) then
         call move_alloc(from, to)
-        if ( allocated(from)) stop 12
+        if ( allocated(from)) error stop 12
     else
         stop 13
     endif

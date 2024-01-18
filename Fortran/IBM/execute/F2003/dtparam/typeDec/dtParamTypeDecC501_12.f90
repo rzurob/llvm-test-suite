@@ -70,29 +70,29 @@
   TYPE(DT(K=4, L=L)) :: T
   integer :: k = 4
 
-  IF ( T%K        .NE.   4  )  STOP 11
-  IF ( T%L        .NE.   2  )  STOP 12
+  IF ( T%K        .NE.   4  )  ERROR STOP 11
+  IF ( T%L        .NE.   2  )  ERROR STOP 12
 
-  IF (  T%X1%K1       .NE.  1  )            STOP 11
-  IF (  T%X1%K2       .NE.  2  )            STOP 12
-  IF (  T%X1%K4       .NE.  4  )            STOP 13
-  IF (  T%X1%K8       .NE.  8  )            STOP 14
-  IF (  LEN( T%X1%C)  .NE.  T0(L)+T0(K))    STOP 15
-  IF (  SIZE(T%X1%C)  .NE.  T0(K)-T0(L)+1)  STOP 16
+  IF (  T%X1%K1       .NE.  1  )            ERROR STOP 11
+  IF (  T%X1%K2       .NE.  2  )            ERROR STOP 12
+  IF (  T%X1%K4       .NE.  4  )            ERROR STOP 13
+  IF (  T%X1%K8       .NE.  8  )            ERROR STOP 14
+  IF (  LEN( T%X1%C)  .NE.  T0(L)+T0(K))    ERROR STOP 15
+  IF (  SIZE(T%X1%C)  .NE.  T0(K)-T0(L)+1)  ERROR STOP 16
 
-  IF (  T%X2%K1       .NE.  1  )            STOP 21
-  IF (  T%X2%K2       .NE.  2  )            STOP 22
-  IF (  T%X2%K4       .NE.  4  )            STOP 23
-  IF (  T%X2%K8       .NE.  8  )            STOP 24
-  IF (  LEN( T%X2%C)  .NE.  SIZE(T1(:T0(L),:T0(K)))  )  STOP 25
-  IF (  SIZE(T%X2%C)  .NE.  SIZE(T1(:T0(L),:T0(K)))  )  STOP 26
+  IF (  T%X2%K1       .NE.  1  )            ERROR STOP 21
+  IF (  T%X2%K2       .NE.  2  )            ERROR STOP 22
+  IF (  T%X2%K4       .NE.  4  )            ERROR STOP 23
+  IF (  T%X2%K8       .NE.  8  )            ERROR STOP 24
+  IF (  LEN( T%X2%C)  .NE.  SIZE(T1(:T0(L),:T0(K)))  )  ERROR STOP 25
+  IF (  SIZE(T%X2%C)  .NE.  SIZE(T1(:T0(L),:T0(K)))  )  ERROR STOP 26
 
-  IF (  T%X3%K1       .NE.  1  )            STOP 31
-  IF (  T%X3%K2       .NE.  2  )            STOP 32
-  IF (  T%X3%K4       .NE.  4  )            STOP 33
-  IF (  T%X3%K8       .NE.  8  )            STOP 34
-  IF (  LEN( T%X3%C)  .NE.  LEN(C(T0(L):T0(K)))  )  STOP 35
-  IF (  SIZE(T%X3%C)  .NE.  LEN(C(T0(L):T0(K)))  )  STOP 36
+  IF (  T%X3%K1       .NE.  1  )            ERROR STOP 31
+  IF (  T%X3%K2       .NE.  2  )            ERROR STOP 32
+  IF (  T%X3%K4       .NE.  4  )            ERROR STOP 33
+  IF (  T%X3%K8       .NE.  8  )            ERROR STOP 34
+  IF (  LEN( T%X3%C)  .NE.  LEN(C(T0(L):T0(K)))  )  ERROR STOP 35
+  IF (  SIZE(T%X3%C)  .NE.  LEN(C(T0(L):T0(K)))  )  ERROR STOP 36
 
 
   END SUBROUTINE

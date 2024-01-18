@@ -45,8 +45,8 @@ use m
 
    call move_alloc(c1, b1)
 
-   if ( .not. allocated(b1) ) stop 21
-   if ( allocated(c1) ) stop 23
+   if ( .not. allocated(b1) ) error stop 21
+   if ( allocated(c1) ) error stop 23
 
    select type (b1)
        type is (child(l=*,k=3))

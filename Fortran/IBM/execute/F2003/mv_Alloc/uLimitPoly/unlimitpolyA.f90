@@ -47,20 +47,20 @@ use m
    type(B) b1
 
    allocate( base :: b1%c1(1,0,0,0,0,0,1) )
-   if ( .not. allocated(b1%c1) ) stop 21
+   if ( .not. allocated(b1%c1) ) error stop 21
 
    allocate( b1%tp )
-   if ( .not. allocated(b1%tp) ) stop 22
+   if ( .not. allocated(b1%tp) ) error stop 22
 
    allocate( complex :: b1%tp%c2(1,2,3,4,5,6,7))
 
-   if ( .not. allocated(b1%tp%c2) ) stop 23
+   if ( .not. allocated(b1%tp%c2) ) error stop 23
 
    call move_alloc( b1%c1, b1%tp%c2 )
 
-   if ( .not. allocated(b1%tp%c2) ) stop 31
+   if ( .not. allocated(b1%tp%c2) ) error stop 31
 
-   if ( allocated(b1%c1) ) stop 33
+   if ( allocated(b1%c1) ) error stop 33
 
    print *, same_type_as(b1%c1, base), shape(b1%c1)
 

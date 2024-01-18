@@ -36,14 +36,14 @@ program dtParamAlloc06
 
     allocate(base(4, len(astr)) :: typtr)
 
-    if (sizeof(typtr) /= 80) stop 1
+    if (sizeof(typtr) /= 80) error stop 1
 
     call sub1(astr)
     contains
       subroutine sub1(pstr)
         character(*) pstr
         type(base(4, len(pstr))) :: local_var
-        if (local_var%n /= 20) stop 2
+        if (local_var%n /= 20) error stop 2
       end subroutine
 
 end

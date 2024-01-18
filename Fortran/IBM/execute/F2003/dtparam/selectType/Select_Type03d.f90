@@ -61,7 +61,7 @@
               STOP 31
 
           CLASS IS (Base(knd1,*))
-              IF( SIZE(A) /= len1) STOP 111
+              IF( SIZE(A) /= len1) ERROR STOP 111
 
           CLASS DEFAULT
              STOP 32
@@ -80,11 +80,11 @@
       INTEGER :: Base  ! In this scoping unit Base is not a TYPE
 
       ALLOCATE(Base(knd1,len1):: cbl%Cmp(len1))
-      IF ( .NOT. ALLOCATED(cbl%Cmp)) STOP 101
+      IF ( .NOT. ALLOCATED(cbl%Cmp)) ERROR STOP 101
 
       !dynamic TYPE of dtv is Child
       dtv => cbl
-      IF ( .NOT. ASSOCIATED(dtv)) STOP 104
+      IF ( .NOT. ASSOCIATED(dtv)) ERROR STOP 104
 
       Base=0
 
@@ -98,7 +98,7 @@
             STOP 10
         END SELECT
 
-      IF (Base /= len1) STOP 105
+      IF (Base /= len1) ERROR STOP 105
       DEALLOCATE(cbl%Cmp)
 
       END PROGRAM Select_Type03c

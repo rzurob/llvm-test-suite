@@ -41,9 +41,9 @@
   TYPE IS (REAL(8) )
     STOP 34
   TYPE IS (REAL(4))
-    IF ( ANY(SHAPE(As) .NE. (/4/))  )   STOP 31
-    IF ( LBOUND(As, 1) .NE. 1       )   STOP 32
-    IF ( ANY(As        .NE. (/1._4,2._4,3._4,4._4/)) )  STOP 32
+    IF ( ANY(SHAPE(As) .NE. (/4/))  )   ERROR STOP 31
+    IF ( LBOUND(As, 1) .NE. 1       )   ERROR STOP 32
+    IF ( ANY(As        .NE. (/1._4,2._4,3._4,4._4/)) )  ERROR STOP 32
   END SELECT
 
   Ptr => R8
@@ -54,9 +54,9 @@
   TYPE IS (REAL  )
     STOP 41
   TYPE IS (REAL(8) )
-    IF ( ANY(SHAPE(Ptr) .NE. (/4/))  )   STOP 42
-    IF ( LBOUND(Ptr, 1) .NE. 1       )   STOP 43
-    IF ( ANY(Ptr        .NE. (/1._8,2._8,3._8,4._8/)) )  STOP 44
+    IF ( ANY(SHAPE(Ptr) .NE. (/4/))  )   ERROR STOP 42
+    IF ( LBOUND(Ptr, 1) .NE. 1       )   ERROR STOP 43
+    IF ( ANY(Ptr        .NE. (/1._8,2._8,3._8,4._8/)) )  ERROR STOP 44
   TYPE IS (REAL(16) )
     STOP 45
   END SELECT
@@ -69,9 +69,9 @@
   CLASS DEFAULT
     STOP 50
   TYPE IS (REAL( 16) )
-    IF ( ANY(SHAPE(As) .NE. (/2/))  )   STOP 51
-    IF ( LBOUND(As, 1) .NE. 1       )   STOP 52
-    IF ( ANY(As        .NE. (/1.,4./)) )  STOP 53
+    IF ( ANY(SHAPE(As) .NE. (/2/))  )   ERROR STOP 51
+    IF ( LBOUND(As, 1) .NE. 1       )   ERROR STOP 52
+    IF ( ANY(As        .NE. (/1.,4./)) )  ERROR STOP 53
   END SELECT
 
   Ptr => R
@@ -80,7 +80,7 @@
   CLASS DEFAULT
     STOP 60
   TYPE IS (REAL(4))
-    IF ( As .NE. 3. )  STOP 62
+    IF ( As .NE. 3. )  ERROR STOP 62
   TYPE IS (REAL(8) )
     STOP 64
   END SELECT

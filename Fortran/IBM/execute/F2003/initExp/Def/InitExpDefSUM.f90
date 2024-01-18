@@ -64,40 +64,40 @@
   COMPLEX(KIND(SUM(Z81,1,MZ81))), PARAMETER :: TZ85(SIZE( SUM(Z81,DIM=1,MASK=MZ81))) = SUM(Z81,DIM=1,MASK=MZ81)
 
 
-  IF(  KIND(TI11)     .NE. 1 )     STOP 10
-  IF(  TI11           .NE. 9 )     STOP 11
-  IF(  KIND(TI12)     .NE. 1 )     STOP 12
-  IF(  TI12           .NE. 0 )     STOP 13
-  IF(  KIND(TI13)     .NE. 1 )     STOP 14
-  IF(  TI13           .NE. 3 )     STOP 15
-  IF(  KIND(TI14)     .NE. 1 )     STOP 16
-  IF(  TI14           .NE. 0 )     STOP 17
-  IF(  KIND(TI15)     .NE. 1 )     STOP 18
-  IF(  ANY(TI15       .NE. (/3,0,0/))) STOP 19
+  IF(  KIND(TI11)     .NE. 1 )     ERROR STOP 10
+  IF(  TI11           .NE. 9 )     ERROR STOP 11
+  IF(  KIND(TI12)     .NE. 1 )     ERROR STOP 12
+  IF(  TI12           .NE. 0 )     ERROR STOP 13
+  IF(  KIND(TI13)     .NE. 1 )     ERROR STOP 14
+  IF(  TI13           .NE. 3 )     ERROR STOP 15
+  IF(  KIND(TI14)     .NE. 1 )     ERROR STOP 16
+  IF(  TI14           .NE. 0 )     ERROR STOP 17
+  IF(  KIND(TI15)     .NE. 1 )     ERROR STOP 18
+  IF(  ANY(TI15       .NE. (/3,0,0/))) ERROR STOP 19
 
 
-  IF(  KIND(TR81)     .NE. 8 )     STOP 20
-  IF(  TR81           .NE. 9 )     STOP 21
-  IF(  KIND(TR82)     .NE. 8 )     STOP 22
-  IF(  TR82           .NE. 0 )     STOP 23
-  IF(  KIND(TR83)     .NE. 8 )     STOP 24
-  IF(  TR83           .NE. 3 )     STOP 25
-  IF(  KIND(TR84)     .NE. 8 )     STOP 26
-  IF(  TR84           .NE. 0 )     STOP 27
-  IF(  KIND(TR85)     .NE. 8 )     STOP 28
-  IF(  ANY(TR85       .NE. (/3,0,0/))) STOP 29
+  IF(  KIND(TR81)     .NE. 8 )     ERROR STOP 20
+  IF(  TR81           .NE. 9 )     ERROR STOP 21
+  IF(  KIND(TR82)     .NE. 8 )     ERROR STOP 22
+  IF(  TR82           .NE. 0 )     ERROR STOP 23
+  IF(  KIND(TR83)     .NE. 8 )     ERROR STOP 24
+  IF(  TR83           .NE. 3 )     ERROR STOP 25
+  IF(  KIND(TR84)     .NE. 8 )     ERROR STOP 26
+  IF(  TR84           .NE. 0 )     ERROR STOP 27
+  IF(  KIND(TR85)     .NE. 8 )     ERROR STOP 28
+  IF(  ANY(TR85       .NE. (/3,0,0/))) ERROR STOP 29
 
 
-  IF(  KIND(TZ81)     .NE. 8 )     STOP 30
-  IF(  TZ81           .NE. (9,9) ) STOP 31
-  IF(  KIND(TZ82)     .NE. 8 )     STOP 32
-  IF(  TZ82           .NE. 0 )     STOP 33
-  IF(  KIND(TZ83)     .NE. 8 )     STOP 34
-  IF(  TZ83           .NE. (3,3) ) STOP 35
-  IF(  KIND(TZ84)     .NE. 8 )     STOP 36
-  IF(  TZ84           .NE. 0 )     STOP 37
-  IF(  KIND(TZ85)     .NE. 8 )     STOP 38
-  IF(  ANY(TZ85       .NE. (/(3,3),(0,0),(0,0)/))) STOP 39
+  IF(  KIND(TZ81)     .NE. 8 )     ERROR STOP 30
+  IF(  TZ81           .NE. (9,9) ) ERROR STOP 31
+  IF(  KIND(TZ82)     .NE. 8 )     ERROR STOP 32
+  IF(  TZ82           .NE. 0 )     ERROR STOP 33
+  IF(  KIND(TZ83)     .NE. 8 )     ERROR STOP 34
+  IF(  TZ83           .NE. (3,3) ) ERROR STOP 35
+  IF(  KIND(TZ84)     .NE. 8 )     ERROR STOP 36
+  IF(  TZ84           .NE. 0 )     ERROR STOP 37
+  IF(  KIND(TZ85)     .NE. 8 )     ERROR STOP 38
+  IF(  ANY(TZ85       .NE. (/(3,3),(0,0),(0,0)/))) ERROR STOP 39
 
 
   END

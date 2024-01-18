@@ -39,20 +39,20 @@ program main
 
     p(b:) => tar(::2)
 
-    if ( .not. associated (p, tar(::2)) ) stop 10
-    if ( lbound(p,1) /= 18 ) stop 11
-    if ( ubound(p,1) /= 27 ) stop 13
+    if ( .not. associated (p, tar(::2)) ) error stop 10
+    if ( lbound(p,1) /= 18 ) error stop 11
+    if ( ubound(p,1) /= 27 ) error stop 13
 
     call sub(b)
 
 
-    if ( .not. associated (p, tar(::2)) ) stop 20
-    if ( lbound(p,1) /= 12 ) stop 21
-    if ( ubound(p,1) /= 21 ) stop 23
+    if ( .not. associated (p, tar(::2)) ) error stop 20
+    if ( lbound(p,1) /= 12 ) error stop 21
+    if ( ubound(p,1) /= 21 ) error stop 23
 
     select type(p)
 	type is (byte)
-	    if ( any(p/p(b) .ne. (/0,1,2,3,4,0,1,2,3,4/))) stop 24
+	    if ( any(p/p(b) .ne. (/0,1,2,3,4,0,1,2,3,4/))) error stop 24
  	class default
 	    stop 25
     end select

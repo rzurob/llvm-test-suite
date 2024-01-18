@@ -58,9 +58,9 @@ PROGRAM AllocateWithTypeSpec11
 
       subroutine verifyB1
         integer i
-        if (.not. associated(b1)) stop 30
+        if (.not. associated(b1)) error stop 30
         do i = 1, len1
-            if (b1%my_arr(i) /= i) stop 31
+            if (b1%my_arr(i) /= i) error stop 31
         end do
       end subroutine
 
@@ -69,10 +69,10 @@ PROGRAM AllocateWithTypeSpec11
         integer i,j
         class(base(knd1,:)), pointer :: iterator1, iterator2, tmp
 
-        if (.not. associated(b2)) stop 33
+        if (.not. associated(b2)) error stop 33
 
         do j = 1, len2
-            if (b2%my_arr(j) /= j) stop 50
+            if (b2%my_arr(j) /= j) error stop 50
         end do
 
         select type (b2)
@@ -84,12 +84,12 @@ PROGRAM AllocateWithTypeSpec11
         end select
 
         do i = depth, 2, -1
-            if (.not. associated(iterator1)) stop 35
-            if (.not. associated(iterator2)) stop 36
+            if (.not. associated(iterator1)) error stop 35
+            if (.not. associated(iterator2)) error stop 36
 
             do j = 1, len2
-                if (iterator1%my_arr(j) /= j) stop 37
-                if (iterator2%my_arr(j) /= j) stop 38
+                if (iterator1%my_arr(j) /= j) error stop 37
+                if (iterator2%my_arr(j) /= j) error stop 38
             end do
 
             tmp => iterator2
@@ -109,7 +109,7 @@ PROGRAM AllocateWithTypeSpec11
       integer, intent(in) :: l
 
       ALLOCATE(Base(knd1,*) :: Arg)
-      IF ( Arg%l1 .NE. l) STOP 20
+      IF ( Arg%l1 .NE. l) ERROR STOP 20
 
       Arg%my_arr = (/(i, i = 1, Arg%l1)/)
 
@@ -120,14 +120,14 @@ PROGRAM AllocateWithTypeSpec11
 
       integer, intent(in) :: depth
 
-      if (depth <= 0) stop 25
+      if (depth <= 0) error stop 25
 
       ALLOCATE(Child(knd1,len2,knd1,len2) :: Arg)
 
       SELECT TYPE ( Arg )
         CLASS IS (Child(knd1,*,knd1,*))
-            IF ( Arg%l1 .NE. len2) STOP 21
-            IF ( Arg%l2 .NE. len2) STOP 22
+            IF ( Arg%l1 .NE. len2) ERROR STOP 21
+            IF ( Arg%l2 .NE. len2) ERROR STOP 22
             Arg%my_arr = (/(i, i = 1, Arg%l1)/)
 
             if (depth > 1) then

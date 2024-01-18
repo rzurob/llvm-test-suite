@@ -61,14 +61,14 @@
   REAL(8)   :: RT8(128) = R41 / R42
   REAL(16)  :: RT6(128) = I21 / R82
 
-  IF ( ANY(IT1  .NE. 1 ) ) STOP 11
-  IF ( ANY(IT2  .NE. 1 ) ) STOP 12
-  IF ( ANY(IT4  .NE. 1 ) ) STOP 13
-  IF ( ANY(IT8  .NE. 1 ) ) STOP 14
+  IF ( ANY(IT1  .NE. 1 ) ) ERROR STOP 11
+  IF ( ANY(IT2  .NE. 1 ) ) ERROR STOP 12
+  IF ( ANY(IT4  .NE. 1 ) ) ERROR STOP 13
+  IF ( ANY(IT8  .NE. 1 ) ) ERROR STOP 14
 
-  IF ( ANY(RT4  .NE. 1 ) ) STOP 21
-  IF ( ANY(RT8  .NE. 1 ) ) STOP 22
-  IF ( ANY(RT6  .NE. 1 ) ) STOP 23
+  IF ( ANY(RT4  .NE. 1 ) ) ERROR STOP 21
+  IF ( ANY(RT8  .NE. 1 ) ) ERROR STOP 22
+  IF ( ANY(RT6  .NE. 1 ) ) ERROR STOP 23
 
 
   END

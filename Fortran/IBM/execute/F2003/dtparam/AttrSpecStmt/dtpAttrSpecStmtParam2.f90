@@ -72,7 +72,7 @@
   CLASS(DT2(1,*,4,*,8,*)), INTENT(IN) :: Arg
   TYPE(DT2(1,Arg%L0,4,Arg%L1,8,Arg%L2)) ModFun2
     ModFun2%I = -Arg%I
-    IF ( SIZE( ModFun2%I ) .NE. Arg%L2 ) STOP 22
+    IF ( SIZE( ModFun2%I ) .NE. Arg%L2 ) ERROR STOP 22
   END FUNCTION
 
   END MODULE
@@ -106,13 +106,13 @@
 
     T01 = o0%ModFun0()
 
-    IF ( ANY( p(I)%R .NE. [1,2,3,4,5]                     ) ) STOP 10
-    IF ( ANY( p(I)%ModFun1() .NE. [(1,3),(4,5)] ) ) STOP 11
+    IF ( ANY( p(I)%R .NE. [1,2,3,4,5]                     ) ) ERROR STOP 10
+    IF ( ANY( p(I)%ModFun1() .NE. [(1,3),(4,5)] ) ) ERROR STOP 11
 
-    IF ( ANY( q(I)%I .NE. [1,2,3,4,5,6,7]       ) ) STOP 12
-    IF ( ANY( q(I)%C .NE. CHAR([1,2,3,4,5,6,7]) ) ) STOP 13
+    IF ( ANY( q(I)%I .NE. [1,2,3,4,5,6,7]       ) ) ERROR STOP 12
+    IF ( ANY( q(I)%C .NE. CHAR([1,2,3,4,5,6,7]) ) ) ERROR STOP 13
 
-    IF ( ANY( ModFun1(DT1(1,3,4,5)()) .NE. [(1,3),(4,5)] ) ) STOP 15
+    IF ( ANY( ModFun1(DT1(1,3,4,5)()) .NE. [(1,3),(4,5)] ) ) ERROR STOP 15
 
   END DO
 

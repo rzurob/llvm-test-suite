@@ -23,8 +23,8 @@ allocate(aT(10), source=(/ (cmplx(i-1,i+1,8), i= 1,10 )/) )
 
 bp(11:20,2:1) => aT(:10)
 
-if ( any( lbound(bp) .ne. (/11, 1/) ) ) stop 11
-if ( any( ubound(bp) .ne. (/20, 0/) ) ) stop 15
-if ( any( shape(transpose(bP)) .ne. (/0, 10/))) stop 22
+if ( any( lbound(bp) .ne. (/11, 1/) ) ) error stop 11
+if ( any( ubound(bp) .ne. (/20, 0/) ) ) error stop 15
+if ( any( shape(transpose(bP)) .ne. (/0, 10/))) error stop 22
 
 end program

@@ -43,11 +43,11 @@
   REAL(16),      PARAMETER :: R6Arr(128) =SIGN(A=R4A, B=R4B)
 
 
-  IF ( ANY( R4Arr  .NE. -1 ))      STOP 11
+  IF ( ANY( R4Arr  .NE. -1 ))      ERROR STOP 11
 
-  IF ( ANY( R8Arr  .NE. -1 ))      STOP 12
+  IF ( ANY( R8Arr  .NE. -1 ))      ERROR STOP 12
 
-  IF ( ANY( R6Arr  .NE. -1 ))      STOP 13
+  IF ( ANY( R6Arr  .NE. -1 ))      ERROR STOP 13
 
 
 

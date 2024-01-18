@@ -11,7 +11,7 @@ program main
   integer :: jj=ceiling(9.51139_8)
   integer :: kk=ceiling(a=9.51139_16)
 
-  if (ii /= ceiling(9.51139_4)) stop 1
-  if (jj /= ceiling(9.51139_8)) stop 2
-  if (kk /= ceiling(a=9.51139_16)) stop 3
+  if (ii /= ceiling(9.51139_4)) error stop 1
+  if (jj /= ceiling(9.51139_8)) error stop 2
+  if (kk /= ceiling(a=9.51139_16)) error stop 3
 end program

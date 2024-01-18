@@ -53,17 +53,17 @@ program main
 
     bb%i_ptr(bb%aa%i_tar(1):) => bb%aa%i_tar(::2)
 
-    if ( .not. associated(bb%i_ptr, bb%aa%i_tar(::2))) stop 2
-    if (lbound(bb%i_ptr,1) /= 65 ) stop 3
-    if (ubound(bb%i_ptr,1) /= 69 ) stop 4
-    if ( any ( bb%i_ptr .ne. (/65,67,69,71,73/) ) ) stop 5
+    if ( .not. associated(bb%i_ptr, bb%aa%i_tar(::2))) error stop 2
+    if (lbound(bb%i_ptr,1) /= 65 ) error stop 3
+    if (ubound(bb%i_ptr,1) /= 69 ) error stop 4
+    if ( any ( bb%i_ptr .ne. (/65,67,69,71,73/) ) ) error stop 5
 
     bb%c_ptr(C_CHAR:C_INT) => bb%aa%c_tar(10:1:-2)
 
-    if ( .not. associated(bb%C_ptr)) stop 6
-    if (lbound(bb%c_ptr,1) /= 1 ) stop 7
-    if (ubound(bb%c_ptr,1) /= 4 ) stop 8
-    if ( .not. all ( bb%c_ptr .eq. (/ 'J', 'H', 'F', 'D' /)))  stop 9
+    if ( .not. associated(bb%C_ptr)) error stop 6
+    if (lbound(bb%c_ptr,1) /= 1 ) error stop 7
+    if (ubound(bb%c_ptr,1) /= 4 ) error stop 8
+    if ( .not. all ( bb%c_ptr .eq. (/ 'J', 'H', 'F', 'D' /)))  error stop 9
 
  End program
 

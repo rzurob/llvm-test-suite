@@ -56,8 +56,8 @@ use m
 
     call move_alloc( x , b1%value )
 
-    if ( allocated(x) ) stop 41
-    if ( .not. allocated(b1%value) ) stop  51
+    if ( allocated(x) ) error stop 41
+    if ( .not. allocated(b1%value) ) error stop  51
 
     select type( p => b1%value)
         type is (complex(8))

@@ -60,25 +60,25 @@
 
   ProcPtr => Fun
   ProcPtr => NULL(V%ProcPtr)
-  IF ( ASSOCIATED(ProcPtr) ) STOP 11
+  IF ( ASSOCIATED(ProcPtr) ) ERROR STOP 11
 
   ProcPtr => Fun
   ProcPtr => NULL(ProcPtr)
-  IF ( ASSOCIATED(ProcPtr) ) STOP 12
+  IF ( ASSOCIATED(ProcPtr) ) ERROR STOP 12
 
   V%ProcPtr => Fun
   V%ProcPtr => NULL(V%ProcPtr)
-  IF ( ASSOCIATED(V%ProcPtr) ) STOP 13
+  IF ( ASSOCIATED(V%ProcPtr) ) ERROR STOP 13
 
   ProcPtr => NULL()
   V%ProcPtr => Fun
   V%ProcPtr => NULL(ProcPtr)
-  IF ( ASSOCIATED(V%ProcPtr) ) STOP 14
+  IF ( ASSOCIATED(V%ProcPtr) ) ERROR STOP 14
 
   ProcPtr => Fun
   V%ProcPtr => Fun
   V%ProcPtr => NULL(ProcPtr)
-  IF ( ASSOCIATED(V%ProcPtr) ) STOP 15
+  IF ( ASSOCIATED(V%ProcPtr) ) ERROR STOP 15
 
   END
 

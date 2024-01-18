@@ -57,17 +57,17 @@
 
 
 
-   IF ( KIND(TI1)  .NE. 1 )         STOP 11
-   IF (      TI1   .NE. 7 )         STOP 12
+   IF ( KIND(TI1)  .NE. 1 )         ERROR STOP 11
+   IF (      TI1   .NE. 7 )         ERROR STOP 12
 
-   IF ( KIND(TI2)  .NE. 2 )         STOP 21
-   IF ( ANY (TI2   .NE. 7 ))        STOP 22
+   IF ( KIND(TI2)  .NE. 2 )         ERROR STOP 21
+   IF ( ANY (TI2   .NE. 7 ))        ERROR STOP 22
 
-   IF ( KIND(TI4)  .NE. 4 )         STOP 31
-   IF ( ANY (TI4   .NE. 7 ))        STOP 32
+   IF ( KIND(TI4)  .NE. 4 )         ERROR STOP 31
+   IF ( ANY (TI4   .NE. 7 ))        ERROR STOP 32
 
-   IF ( KIND(TI8)  .NE. 8 )         STOP 41
-   IF ( ANY (TI8   .NE. 7 ))        STOP 42
+   IF ( KIND(TI8)  .NE. 8 )         ERROR STOP 41
+   IF ( ANY (TI8   .NE. 7 ))        ERROR STOP 42
 
    DO I=3, 5
      SELECT CASE (I)

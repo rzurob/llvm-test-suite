@@ -65,7 +65,7 @@
   TYPE(DT)  :: V
 
     V = Arg(DT("1"))
-    IF (V%C .NE. "1")                     STOP 11
+    IF (V%C .NE. "1")                     ERROR STOP 11
 
   END SUBROUTINE
 
@@ -74,7 +74,7 @@
   TYPE(DT) :: V
 
     V = Arg(DT("2"))
-    IF (V%C .NE. "2")                     STOP 31
+    IF (V%C .NE. "2")                     ERROR STOP 31
 
   END SUBROUTINE
 

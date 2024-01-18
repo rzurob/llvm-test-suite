@@ -38,9 +38,9 @@ program main
 
     call sub(3)
 
-    if ( .not. associated(ptr)) stop 1
-    if ( lbound(ptr,1) /=2 ) stop 2
-    if ( ubound(ptr,1) /=3 ) stop 3
-    if ( any (ptr /= (/'abcdefg', '1234567'/)) ) stop 5
+    if ( .not. associated(ptr)) error stop 1
+    if ( lbound(ptr,1) /=2 ) error stop 2
+    if ( ubound(ptr,1) /=3 ) error stop 3
+    if ( any (ptr /= (/'abcdefg', '1234567'/)) ) error stop 5
 
 end program

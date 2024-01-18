@@ -42,23 +42,23 @@ program acetint60unpack
   array = [integer:: (i, i=1,9)]
   print *, unpack(array, mask, 999) ! 1 2 999 999 3 4 999 999 5
   array = [integer:: unpack(array, mask, 999)]
-  if (any(array /= [integer:: 1, 2, 999, 999, 3, 4, 999, 999, 5])) stop 2
+  if (any(array /= [integer:: 1, 2, 999, 999, 3, 4, 999, 999, 5])) error stop 2
 
   print *, unpack([integer:: 1,2,3,4,5,6,7,8,9], [logical:: T, T, F, F, T, T, F, F, T], 999)
   array = unpack([integer:: 1,2,3,4,5,6,7,8,9], [logical:: T, T, F, F, T, T, F, F, T], 999)
-  if (any(array /= [integer:: 1, 2, 999, 999, 3, 4, 999, 999, 5])) stop 3
+  if (any(array /= [integer:: 1, 2, 999, 999, 3, 4, 999, 999, 5])) error stop 3
 
   array = [integer:: unpack([integer:: 1,2,3,4,5,6,7,8,9], [logical:: T, T, F, F, T, T, F, F, T], 999)]
-  if (any(array /= [integer:: 1, 2, 999, 999, 3, 4, 999, 999, 5])) stop 4
+  if (any(array /= [integer:: 1, 2, 999, 999, 3, 4, 999, 999, 5])) error stop 4
 
   print *, unpack([integer:: 1,2,3,4,5,6,7,8,9], reshape([logical:: T, T, F, F, T, T, F, F, T], [integer:: 3,3]), 999)
   array = [integer:: unpack([integer:: 1,2,3,4,5,6,7,8,9], reshape([logical:: T, T, F, F, T, T, F, F, T], [integer:: 3,3]), 999)]
-  if (any(array /= [integer:: 1, 2, 999, 999, 3, 4, 999, 999, 5])) stop 5
+  if (any(array /= [integer:: 1, 2, 999, 999, 3, 4, 999, 999, 5])) error stop 5
 
   array = unpack([integer:: 1,2,3,4,5,6,7,8,9], [logical:: T, T, F, F, T, T, F, F, T], [integer:: 81, 64, 49, 36, 25, 16, 9, 4, 1])
-  if (any(array /= [integer:: 1, 2, 49, 36, 3, 4, 9, 4, 5])) stop 6
+  if (any(array /= [integer:: 1, 2, 49, 36, 3, 4, 9, 4, 5])) error stop 6
 
   outcome = unpack([integer:: 1,2,3,4,5], reshape([logical:: T, T, F, F, T, T, F, F, T], [3,3]), reshape([integer:: 81, 64, 49, 36, 25, 16, 9, 4, 1],[3,3]))
-  if (any([integer:: outcome] /= [integer:: 1, 2, 49, 36, 3, 4, 9, 4, 5])) stop 7
+  if (any([integer:: outcome] /= [integer:: 1, 2, 49, 36, 3, 4, 9, 4, 5])) error stop 7
 
 end program acetint60unpack

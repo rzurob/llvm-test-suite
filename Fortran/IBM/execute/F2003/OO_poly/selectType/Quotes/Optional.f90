@@ -81,11 +81,11 @@
     SELECT TYPE (U => Arg)
     CLASS DEFAULT
 
-      IF ( .NOT. SAME_TYPE_AS(U, Arg))       STOP 30
-      IF ( SIZE(U)          .NE. 4 )          STOP 31
-      IF ( ANY (LBOUND(U)   .NE. (/2, 3/) ) ) STOP 32
-      IF ( ANY (UBOUND(U)   .NE. (/3, 4/) ) ) STOP 33
-      IF ( ANY(SHAPE(U)     .NE. (/2,2/)) )   STOP 34
+      IF ( .NOT. SAME_TYPE_AS(U, Arg))       ERROR STOP 30
+      IF ( SIZE(U)          .NE. 4 )          ERROR STOP 31
+      IF ( ANY (LBOUND(U)   .NE. (/2, 3/) ) ) ERROR STOP 32
+      IF ( ANY (UBOUND(U)   .NE. (/3, 4/) ) ) ERROR STOP 33
+      IF ( ANY(SHAPE(U)     .NE. (/2,2/)) )   ERROR STOP 34
 
     ASSOCIATE ( W => U )
 
@@ -93,33 +93,33 @@
 
       TYPE IS (INTEGER(KIND(Int)))
         IntPtr => U
-        IF ( ANY(U   .NE. IntPtr) )      STOP 35
-        IF ( KIND(U) .NE. KIND(IntPtr) ) STOP 36
+        IF ( ANY(U   .NE. IntPtr) )      ERROR STOP 35
+        IF ( KIND(U) .NE. KIND(IntPtr) ) ERROR STOP 36
 
       TYPE IS (COMPLEX(KIND(Cplx)))
         CplxPtr => U
-        IF ( ANY(U   .NE. CplxPtr ))     STOP 37
-        IF ( KIND(U) .NE. KIND(CplxPtr) )STOP 38
+        IF ( ANY(U   .NE. CplxPtr ))     ERROR STOP 37
+        IF ( KIND(U) .NE. KIND(CplxPtr) )ERROR STOP 38
 
       TYPE IS (REAL(KIND(R)))
         RPtr => U
-        IF ( ANY(U   .NE. RPtr ))       STOP 37
-        IF ( KIND(U) .NE. KIND(RPtr) )  STOP 38
+        IF ( ANY(U   .NE. RPtr ))       ERROR STOP 37
+        IF ( KIND(U) .NE. KIND(RPtr) )  ERROR STOP 38
 
       TYPE IS (LOGICAL(KIND(L)))
         LPtr => U
-        IF ( ANY(U   .NEQV. LPtr) )      STOP 40
-        IF ( KIND(U) .NE. KIND(LPtr) )   STOP 41
+        IF ( ANY(U   .NEQV. LPtr) )      ERROR STOP 40
+        IF ( KIND(U) .NE. KIND(LPtr) )   ERROR STOP 41
 
       TYPE IS (CHARACTER(*))
         CPtr => U
-        IF ( ANY(U  .NE. CPtr) )       STOP 42
-        IF ( LEN(U) .NE. LEN(CPtr) )   STOP 43
+        IF ( ANY(U  .NE. CPtr) )       ERROR STOP 42
+        IF ( LEN(U) .NE. LEN(CPtr) )   ERROR STOP 43
 
       TYPE IS (DT)
         DTVPtr => DTV
-        IF ( ANY(U%Id      .NE. DTVPtr%Id ) )      STOP 42
-        IF ( ANY(U%GetId() .NE. DTVPtr%GetId()))   STOP 43
+        IF ( ANY(U%Id      .NE. DTVPtr%Id ) )      ERROR STOP 42
+        IF ( ANY(U%GetId() .NE. DTVPtr%GetId()))   ERROR STOP 43
 
       CLASS DEFAULT
         STOP 51

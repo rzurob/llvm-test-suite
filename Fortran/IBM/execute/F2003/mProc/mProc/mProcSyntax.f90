@@ -82,10 +82,10 @@
 
   ProcPtr => ExtFun3
 
-  IF (Fun(1)       .NE. "OK0") STOP 11
-  IF (Fun(1.)      .NE. "OK1") STOP 12
-  IF (Fun(1_1)     .NE. "OK2") STOP 13
-  IF (Fun(.TRUE.)  .NE. "OK3") STOP 14
+  IF (Fun(1)       .NE. "OK0") ERROR STOP 11
+  IF (Fun(1.)      .NE. "OK1") ERROR STOP 12
+  IF (Fun(1_1)     .NE. "OK2") ERROR STOP 13
+  IF (Fun(.TRUE.)  .NE. "OK3") ERROR STOP 14
 
 
   END SUBROUTINE

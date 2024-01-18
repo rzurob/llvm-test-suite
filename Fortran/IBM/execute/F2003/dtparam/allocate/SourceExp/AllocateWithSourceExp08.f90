@@ -40,8 +40,8 @@ PROGRAM AllocateWithSourceExp08
 
       SELECT TYPE ( u_poly1 )
         CLASS IS (Base(4,*))
-           IF (u_poly1%l1 .NE. 10) STOP 10
-           IF (SIZE(u_poly1%my_arr) .NE. 10) STOP 11
+           IF (u_poly1%l1 .NE. 10) ERROR STOP 10
+           IF (SIZE(u_poly1%my_arr) .NE. 10) ERROR STOP 11
 
         CLASS DEFAULT
            STOP 12
@@ -49,13 +49,13 @@ PROGRAM AllocateWithSourceExp08
 
 
       ALLOCATE(u_poly2(SIZE(foo_array(c))), SOURCE = foo_array(c) )
-      IF(SIZE(u_poly2) .NE. 2) STOP 13
+      IF(SIZE(u_poly2) .NE. 2) ERROR STOP 13
 
       SELECT TYPE ( u_poly2 )
         CLASS IS (Child(4,*,4,*))
-           IF (u_poly2%l1 .NE. 10) STOP 14
-           IF (u_poly2%l2 .NE. 5) STOP 15
-           IF (SIZE(u_poly2(1)%my_arr) .NE. 10) STOP 16
+           IF (u_poly2%l1 .NE. 10) ERROR STOP 14
+           IF (u_poly2%l2 .NE. 5) ERROR STOP 15
+           IF (SIZE(u_poly2(1)%my_arr) .NE. 10) ERROR STOP 16
 
         CLASS DEFAULT
            STOP 17

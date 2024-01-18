@@ -109,10 +109,10 @@
       SELECT TYPE (V => V(2:1:1,:))
         TYPE IS (Child)
 
-          IF ( ANY(SHAPE(V)  .NE. (/0,2/)) ) STOP 20
-          IF ( SIZE(V)       .NE. 0 )        STOP 21
+          IF ( ANY(SHAPE(V)  .NE. (/0,2/)) ) ERROR STOP 20
+          IF ( SIZE(V)       .NE. 0 )        ERROR STOP 21
 
-          IF ( .NOT. V%Called() ) STOP 34
+          IF ( .NOT. V%Called() ) ERROR STOP 34
 
        CLASS DEFAULT
           STOP 40

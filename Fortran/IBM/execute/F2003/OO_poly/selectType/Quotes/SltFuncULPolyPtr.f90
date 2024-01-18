@@ -101,10 +101,10 @@
     TYPE is (REAL)
       STOP 33
     CLASS IS (Child)
-      IF ( As%Base%GetId() .NE.  5 ) STOP 34
-      IF ( As%GetId()      .NE. -5 ) STOP 35
-      IF ( As%BaseId       .NE.  5 ) STOP 36
-      IF ( As%ChildId      .NE. -5 ) STOP 37
+      IF ( As%Base%GetId() .NE.  5 ) ERROR STOP 34
+      IF ( As%GetId()      .NE. -5 ) ERROR STOP 35
+      IF ( As%BaseId       .NE.  5 ) ERROR STOP 36
+      IF ( As%ChildId      .NE. -5 ) ERROR STOP 37
     CLASS IS (Zero)
       STOP 38
   END SELECT

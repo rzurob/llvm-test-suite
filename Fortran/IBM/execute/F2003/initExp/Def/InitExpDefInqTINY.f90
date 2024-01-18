@@ -45,12 +45,12 @@
   REAL(KIND(TINY(TR6)))  :: TT6= 2.0_16**(MINEXPONENT(R6)-1)
 
 
-  IF (  KIND(TR4)  .NE. 4   )   STOP 11
-  IF (  TR4        .NE. TT4 )   STOP 12
-  IF (  KIND(TR8)  .NE. 8   )   STOP 13
-  IF (  TR8        .NE. TT8 )   STOP 14
-  IF (  KIND(TR6)  .NE. 16  )   STOP 15
-  IF (  TR6        .NE. TT6 )   STOP 16
+  IF (  KIND(TR4)  .NE. 4   )   ERROR STOP 11
+  IF (  TR4        .NE. TT4 )   ERROR STOP 12
+  IF (  KIND(TR8)  .NE. 8   )   ERROR STOP 13
+  IF (  TR8        .NE. TT8 )   ERROR STOP 14
+  IF (  KIND(TR6)  .NE. 16  )   ERROR STOP 15
+  IF (  TR6        .NE. TT6 )   ERROR STOP 16
 
 
   END

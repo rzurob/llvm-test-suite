@@ -31,15 +31,15 @@ logical(8) :: a4(3)=pack(a0, mask=a0)
 logical(8) :: a4a(7)=pack(a0, mask=.not. a0, &
   &            vector=(/T8,F8,F8,T8,T8,T8,F8/))
 
-if (.not. all(z .eqv. pack(zarray, mask=zarray, vector=(/(.false._1,i=1,100)/)))) stop 1
+if (.not. all(z .eqv. pack(zarray, mask=zarray, vector=(/(.false._1,i=1,100)/)))) error stop 1
 
-if (.not. all(y .eqv. pack(yarr, mask=.true.))) stop 2
+if (.not. all(y .eqv. pack(yarr, mask=.true.))) error stop 2
 
-if (.not. all(i4 .eqv. pack(i0, mask=i0 .eqv. F))) stop 3
-if (.not. all(i4a .eqv. pack(i0, mask=i0 .eqv. T, vector=(/T,F,T,F,T,F/)))) stop 4
+if (.not. all(i4 .eqv. pack(i0, mask=i0 .eqv. F))) error stop 3
+if (.not. all(i4a .eqv. pack(i0, mask=i0 .eqv. T, vector=(/T,F,T,F,T,F/)))) error stop 4
 
-if (.not. all(a4 .eqv. pack(a0, mask=a0))) stop 5
+if (.not. all(a4 .eqv. pack(a0, mask=a0))) error stop 5
 if (.not. all(a4a .eqv. pack(a0, mask=.not. a0, &
-  & vector=(/T8,F8,F8,T8,T8,T8,F8/)))) stop 6
+  & vector=(/T8,F8,F8,T8,T8,T8,F8/)))) error stop 6
 
 end

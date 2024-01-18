@@ -26,7 +26,7 @@
 
    ASSOCIATE ( As => "try!" )
      PRINT*, As
-     IF ( As .NE. "try!" ) STOP 10
+     IF ( As .NE. "try!" ) ERROR STOP 10
    END ASSOCIATE
    PRINT*, 'OK!'
 

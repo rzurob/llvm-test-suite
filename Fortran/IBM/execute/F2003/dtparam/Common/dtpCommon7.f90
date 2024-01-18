@@ -71,15 +71,15 @@
   END DO
 
   DO I=1, N
-    IF ( ANY( T(I)%C1 .NE. CHAR(I) ) ) STOP 11
-    IF ( ANY( T(I)%I  .NE. I       ) ) STOP 12
-    IF ( ANY( T(I)%C2 .NE. CHAR(I) ) ) STOP 13
+    IF ( ANY( T(I)%C1 .NE. CHAR(I) ) ) ERROR STOP 11
+    IF ( ANY( T(I)%I  .NE. I       ) ) ERROR STOP 12
+    IF ( ANY( T(I)%C2 .NE. CHAR(I) ) ) ERROR STOP 13
   END DO
 
   DO I=1, N
-    IF ( ANY( T1(I)%C1 .NE. CHAR(I) ) ) STOP 21
-    IF ( ANY( T1(I)%I  .NE. I       ) ) STOP 22
-    IF ( ANY( T1(I)%C2 .NE. CHAR(I) ) ) STOP 23
+    IF ( ANY( T1(I)%C1 .NE. CHAR(I) ) ) ERROR STOP 21
+    IF ( ANY( T1(I)%I  .NE. I       ) ) ERROR STOP 22
+    IF ( ANY( T1(I)%C2 .NE. CHAR(I) ) ) ERROR STOP 23
   END DO
 
 
@@ -91,15 +91,15 @@
 
 
   DO I=1, N
-    IF ( ANY( T0(I)%C1 .NE. CHAR(I-1) ) ) STOP 31
-    IF ( ANY( T0(I)%I  .NE. I-1       ) ) STOP 32
-    IF ( ANY( T0(I)%C2 .NE. CHAR(I-1) ) ) STOP 33
+    IF ( ANY( T0(I)%C1 .NE. CHAR(I-1) ) ) ERROR STOP 31
+    IF ( ANY( T0(I)%I  .NE. I-1       ) ) ERROR STOP 32
+    IF ( ANY( T0(I)%C2 .NE. CHAR(I-1) ) ) ERROR STOP 33
   END DO
 
   DO I=1, N
-    IF ( ANY( T1(I)%C1 .NE. CHAR(I-1) ) ) STOP 41
-    IF ( ANY( T1(I)%I  .NE. I-1       ) ) STOP 42
-    IF ( ANY( T1(I)%C2 .NE. CHAR(I-1) ) ) STOP 43
+    IF ( ANY( T1(I)%C1 .NE. CHAR(I-1) ) ) ERROR STOP 41
+    IF ( ANY( T1(I)%I  .NE. I-1       ) ) ERROR STOP 42
+    IF ( ANY( T1(I)%C2 .NE. CHAR(I-1) ) ) ERROR STOP 43
   END DO
 
 

@@ -43,12 +43,12 @@
   CC = (/(ACHAR(I=I, KIND=1), I=0, 127)/)
 
   DO I = 0, 127
-    IF (     IACHAR(C=CC(I), KIND=T%K%KIND)    .NE. I )        STOP 11
-    IF (KIND(IACHAR(C=CC(I), KIND=T%K%KIND))   .NE. T%K%KIND ) STOP 12
+    IF (     IACHAR(C=CC(I), KIND=T%K%KIND)    .NE. I )        ERROR STOP 11
+    IF (KIND(IACHAR(C=CC(I), KIND=T%K%KIND))   .NE. T%K%KIND ) ERROR STOP 12
   END DO
 
-  IF (ANY (IACHAR(C=CC, KIND=T%K%KIND)      .NE. II ) )       STOP 21
-  IF (KIND(IACHAR(C=CC, KIND=T%K%KIND))     .NE. T%K%KIND )   STOP 22
+  IF (ANY (IACHAR(C=CC, KIND=T%K%KIND)      .NE. II ) )       ERROR STOP 21
+  IF (KIND(IACHAR(C=CC, KIND=T%K%KIND))     .NE. T%K%KIND )   ERROR STOP 22
 
 
   END

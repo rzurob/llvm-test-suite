@@ -47,13 +47,13 @@ use m
 
     call sub(a, b)
 
-    if ( allocated(b) ) stop 11
+    if ( allocated(b) ) error stop 11
 
     select type (a)
         type is (child)
-            if ( allocated(a%i1) ) stop 21
-            if ( .not. allocated(a%i2) ) stop 21
-            if ( a%i2 /= 10 ) stop 23
+            if ( allocated(a%i1) ) error stop 21
+            if ( .not. allocated(a%i2) ) error stop 21
+            if ( a%i2 /= 10 ) error stop 23
         class default
             stop 31
     end select

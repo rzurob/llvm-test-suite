@@ -151,19 +151,19 @@
       IF( base2%FUNC () .NE. 8) STOP 09
 
       ALLOCATE(Base(4,10):: poly1)
-      IF ( .NOT. ASSOCIATED(poly1)) STOP 10
+      IF ( .NOT. ASSOCIATED(poly1)) ERROR STOP 10
 
-      IF(poly1%FUNC () .NE. 4) STOP 20
+      IF(poly1%FUNC () .NE. 4) ERROR STOP 20
 
       poly1 => tgt1
-      IF ( .NOT. ASSOCIATED(poly1)) STOP 12
+      IF ( .NOT. ASSOCIATED(poly1)) ERROR STOP 12
 
-      IF( poly1%FUNC () .NE. 8 ) STOP 22
+      IF( poly1%FUNC () .NE. 8 ) ERROR STOP 22
 
       ALLOCATE(NextGen(4,10,8,8):: poly1)
-      IF ( .NOT. ASSOCIATED(poly1)) STOP 13
+      IF ( .NOT. ASSOCIATED(poly1)) ERROR STOP 13
 
-      IF(poly1%FUNC () .NE. 20) STOP 23
+      IF(poly1%FUNC () .NE. 20) ERROR STOP 23
 
       CALL SUB(poly1)
 
@@ -179,19 +179,19 @@
       TYPE(Child(4,5,4)), TARGET :: tgt1
 
       ALLOCATE(Base(4,10):: Arg)
-      IF ( .NOT. ASSOCIATED(Arg)) STOP 14
+      IF ( .NOT. ASSOCIATED(Arg)) ERROR STOP 14
 
-      IF(Arg%FUNC () .NE. 4) STOP 24
+      IF(Arg%FUNC () .NE. 4) ERROR STOP 24
 
       Arg => tgt1
-      IF ( .NOT. ASSOCIATED(Arg)) STOP 15
+      IF ( .NOT. ASSOCIATED(Arg)) ERROR STOP 15
 
-      IF(Arg%FUNC () .NE. 8) STOP 25
+      IF(Arg%FUNC () .NE. 8) ERROR STOP 25
 
       ALLOCATE(NextGen(4,10,8,8):: Arg)
-      IF ( .NOT. ASSOCIATED(Arg)) STOP 16
+      IF ( .NOT. ASSOCIATED(Arg)) ERROR STOP 16
 
-      IF(Arg%FUNC () .NE. 20) STOP 26
+      IF(Arg%FUNC () .NE. 20) ERROR STOP 26
 
       END SUBROUTINE SUB1
 
@@ -203,8 +203,8 @@
       TYPE(Child(8,20,4)), TARGET :: tgt2
 
       Arg => tgt2
-      IF ( .NOT. ASSOCIATED(Arg)) STOP 17
+      IF ( .NOT. ASSOCIATED(Arg)) ERROR STOP 17
 
-      IF(Arg%FUNC () .NE. 12) STOP 27
+      IF(Arg%FUNC () .NE. 12) ERROR STOP 27
 
       END SUBROUTINE SUB2

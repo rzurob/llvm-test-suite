@@ -26,11 +26,11 @@ if (e1T .ne. count((/.true._1/))) then
   print *, e1T, count((/.true._1/))
   stop 1
 endif
-if (e2T .ne. count((/.true._2/))) stop 2
-if (e4T .ne. count((/.true._4/))) stop 3
-if (e8T .ne. count((/.true._8/))) stop 4
-if (e1F .ne. count((/.false._1/))) stop 5
-if (e2F .ne. count((/.false._2/))) stop 6
-if (e4F .ne. count((/.false._4/))) stop 7
-if (e8F .ne. count((/.false._8/))) stop 8
+if (e2T .ne. count((/.true._2/))) error stop 2
+if (e4T .ne. count((/.true._4/))) error stop 3
+if (e8T .ne. count((/.true._8/))) error stop 4
+if (e1F .ne. count((/.false._1/))) error stop 5
+if (e2F .ne. count((/.false._2/))) error stop 6
+if (e4F .ne. count((/.false._4/))) error stop 7
+if (e8F .ne. count((/.false._8/))) error stop 8
 end

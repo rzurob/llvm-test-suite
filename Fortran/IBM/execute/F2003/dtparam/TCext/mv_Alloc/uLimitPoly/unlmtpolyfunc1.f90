@@ -41,7 +41,7 @@ module m
             allocate(brg, source= arg )
             call move_alloc(brg,func)
 
-            if ( .not. allocated(func)) stop 9
+            if ( .not. allocated(func)) error stop 9
          end function
 
 end module
@@ -55,10 +55,10 @@ end module
 
       select type ( x => b%get_alloc( c ))
           type is (base(*,8))
-             if ( x%i1 /= 103_8) STOP 21
+             if ( x%i1 /= 103_8) ERROR STOP 21
           class default
              STOP 23
       end select
 
-      if ( allocated(c) ) stop 31
+      if ( allocated(c) ) error stop 31
       end

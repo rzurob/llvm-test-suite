@@ -40,27 +40,27 @@
 
 	int8_p(size(int8_p):,max(3,4):,min(1,2):,2:,2:,2:,2:) => int8_p
 
-        if ( .not. associated(int8_p)) stop 1
-        if ( all(lbound(int8_p) .eq. (/128,4,1,2,2,2,2 /)) .neqv. .true.) stop 7
-        if ( all(ubound(int8_p) .eq. (/129,5,2,3,3,3,3 /)) .neqv. .true.) stop 9
+        if ( .not. associated(int8_p)) error stop 1
+        if ( all(lbound(int8_p) .eq. (/128,4,1,2,2,2,2 /)) .neqv. .true.) error stop 7
+        if ( all(ubound(int8_p) .eq. (/129,5,2,3,3,3,3 /)) .neqv. .true.) error stop 9
 
 	int4_p(3:,2:,1:,0:) => int4_p
 
-        if ( .not. associated(int4_p)) stop 11
-        if ( all(lbound(int4_p) .eq. (/3,2,1,0 /)) .neqv. .true.) stop 17
-        if ( all(ubound(int4_p) .eq. (/5,4,3,2 /)) .neqv. .true.) stop 19
+        if ( .not. associated(int4_p)) error stop 11
+        if ( all(lbound(int4_p) .eq. (/3,2,1,0 /)) .neqv. .true.) error stop 17
+        if ( all(ubound(int4_p) .eq. (/5,4,3,2 /)) .neqv. .true.) error stop 19
 
 	int2_p(size(array=int4_p,dim=1):,kind(0.0):) => int2_p
 
-        if ( .not. associated(int2_p)) stop 21
-        if ( all(lbound(int2_p) .eq. (/3,4 /)) .neqv. .true.) stop 27
-        if ( all(ubound(int2_p) .eq. (/12, 13 /)) .neqv. .true.) stop 29
+        if ( .not. associated(int2_p)) error stop 21
+        if ( all(lbound(int2_p) .eq. (/3,4 /)) .neqv. .true.) error stop 27
+        if ( all(ubound(int2_p) .eq. (/12, 13 /)) .neqv. .true.) error stop 29
 
 	int1_p(iachar('A'):iachar('a')) => int1_p(126:1:-2)
 
-        if ( .not. associated(int1_p)) stop 31
-        if ( lbound(int1_p,1) /= 65 ) stop 37
-        if ( ubound(int1_p,1) /= 97 ) stop 39
+        if ( .not. associated(int1_p)) error stop 31
+        if ( lbound(int1_p,1) /= 65 ) error stop 37
+        if ( ubound(int1_p,1) /= 97 ) error stop 39
 
 	call int_sub
 
@@ -108,20 +108,20 @@
 
 	r4_p(1:5) => r4_p(::2)
 
-        if ( .not. associated(r4_p)) stop 41
-        if ( lbound(r4_p,1) /= 1 ) stop 47
-        if ( ubound(r4_p,1) /= 5 ) stop 49
+        if ( .not. associated(r4_p)) error stop 41
+        if ( lbound(r4_p,1) /= 1 ) error stop 47
+        if ( ubound(r4_p,1) /= 5 ) error stop 49
 
 	r8_p(2:,2:,2:) => r8_p
 
-        if ( .not. associated(r8_p)) stop 51
-        if ( all(lbound(r8_p) .eq. (/2,2,2/)) .neqv. .true.) stop 57
-        if ( all(ubound(r8_p) .eq. (/3,3,3 /)) .neqv. .true.) stop 59
+        if ( .not. associated(r8_p)) error stop 51
+        if ( all(lbound(r8_p) .eq. (/2,2,2/)) .neqv. .true.) error stop 57
+        if ( all(ubound(r8_p) .eq. (/3,3,3 /)) .neqv. .true.) error stop 59
 
 	r6_p(1:,1:,1:,-1:,-1:) => r6_p(:,:,1::2,:,:)
 
-        if ( .not. associated(r6_p)) stop 71
-        if ( all(lbound(r6_p) .eq. (/1,1,1,-1,-1/)) .neqv. .true.) stop 77
-        if ( all(ubound(r6_p) .eq. lbound(r6_p)) .neqv. .true.) stop 79
+        if ( .not. associated(r6_p)) error stop 71
+        if ( all(lbound(r6_p) .eq. (/1,1,1,-1,-1/)) .neqv. .true.) error stop 77
+        if ( all(ubound(r6_p) .eq. lbound(r6_p)) .neqv. .true.) error stop 79
 
    end subroutine

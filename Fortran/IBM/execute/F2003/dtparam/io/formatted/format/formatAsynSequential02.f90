@@ -72,22 +72,22 @@ program formatAsynSequential02
         read(unit,'(tr1,a2,tr2,a2,/tr2,a5,tl3,a5)',id=idvar, &
                asynchronous='yes',iostat=ios,iomsg=msg) x
 
-        if(ios /= 0)         stop 12
+        if(ios /= 0)         error stop 12
 
         ! execute other statement before wait
         allocate(base2(0:1),source=allocatePtr(x))
 
         wait(unit,id=idvar,iostat=ios)
 
-        if(ios /= 0)         stop 13
+        if(ios /= 0)         error stop 13
 
         write(*,'(a)')  "Value of base1:"
         write(*,'(a)')       x
 
         select type(y=>base2)
             type is(child(*,*))
-                if(y%l1 /= 4)         stop 15
-                if(y%l2 /= 6)         stop 16
+                if(y%l1 /= 4)         error stop 15
+                if(y%l2 /= 6)         error stop 16
 
                 ! back 2 records
 

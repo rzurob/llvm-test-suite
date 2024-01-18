@@ -35,9 +35,9 @@
 
  	b1%p(1:2,1:4) => t1
 
-	if ( .not. associated(b1%p)) stop 12
-	if ( any ( lbound(b1%p) .ne. (/1,1/) )) stop 22
-	if ( any ( ubound(b1%p) .ne. (/2,4/) )) stop 32
+	if ( .not. associated(b1%p)) error stop 12
+	if ( any ( lbound(b1%p) .ne. (/1,1/) )) error stop 22
+	if ( any ( ubound(b1%p) .ne. (/2,4/) )) error stop 32
 
 	select type (x =>b1%p )
 	    type is (integer*2)

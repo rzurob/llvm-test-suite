@@ -65,13 +65,13 @@
   PROCEDURE(),           POINTER :: ProcPtr2
 
   ProcPtr0 => ExtFun
-  IF ( .NOT. ASSOCIATED(ProcPtr0, ExtFun) ) STOP 10
+  IF ( .NOT. ASSOCIATED(ProcPtr0, ExtFun) ) ERROR STOP 10
 
   ProcPtr1 => ExtFun
-  IF ( .NOT. ASSOCIATED(ProcPtr1, ExtFun) ) STOP 11
+  IF ( .NOT. ASSOCIATED(ProcPtr1, ExtFun) ) ERROR STOP 11
 
   ProcPtr2 => ExtFun
-  IF ( .NOT. ASSOCIATED(ProcPtr2, ExtFun) ) STOP 12
+  IF ( .NOT. ASSOCIATED(ProcPtr2, ExtFun) ) ERROR STOP 12
 
   END
 

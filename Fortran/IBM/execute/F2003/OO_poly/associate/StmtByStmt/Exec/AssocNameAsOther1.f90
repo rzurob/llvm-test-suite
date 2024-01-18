@@ -30,27 +30,27 @@
   LOGICAL :: L
 
   ASSOCIATE ( Integer => 1  )
-    IF ( Integer .NE. 1 ) Stop 11
+    IF ( Integer .NE. 1 ) error Stop 11
   END ASSOCIATE
 
   ASSOCIATE ( Real => -1.0  )
-    IF ( Real .NE. -1.0 ) Stop 12
+    IF ( Real .NE. -1.0 ) error Stop 12
   END ASSOCIATE
 
   ASSOCIATE ( Double => 2.0D0  )
-    IF ( Double .NE. 2.0D0 ) Stop 13
+    IF ( Double .NE. 2.0D0 ) error Stop 13
   END ASSOCIATE
 
   ASSOCIATE ( Character => "!!!"  )
-    IF ( Character(:) .NE. "!!!" ) Stop 14
+    IF ( Character(:) .NE. "!!!" ) error Stop 14
   END ASSOCIATE
 
   ASSOCIATE ( Byte => 1  )
-    IF ( Byte .NE. 1 ) Stop 15
+    IF ( Byte .NE. 1 ) error Stop 15
   END ASSOCIATE
 
   ASSOCIATE ( Logical => .FALSE.  )
-    IF ( Logical .NEQV. .FALSE. ) Stop 16
+    IF ( Logical .NEQV. .FALSE. ) error Stop 16
   END ASSOCIATE
 
   END

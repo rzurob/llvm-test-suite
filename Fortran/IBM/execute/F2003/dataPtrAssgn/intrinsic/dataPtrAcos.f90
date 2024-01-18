@@ -31,9 +31,9 @@ program main
 
     call sub(tar)
 
-    if ( .not. associated(ptr, tar(5:1:-1))) stop 5
-    if ( lbound(ptr,1) /= 2) stop 6
-    if ( ubound(ptr,1) /= 6) stop 7
+    if ( .not. associated(ptr, tar(5:1:-1))) error stop 5
+    if ( lbound(ptr,1) /= 2) error stop 6
+    if ( ubound(ptr,1) /= 6) error stop 7
     write(*, '(5f12.9)') acos(ptr)
 
 end program

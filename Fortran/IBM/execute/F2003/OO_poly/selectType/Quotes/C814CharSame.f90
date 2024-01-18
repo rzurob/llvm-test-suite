@@ -35,7 +35,7 @@
   SELECT TYPE ( Arg )
     TYPE IS (CHARACTER(*))
       PRINT*, SIZEOF(Arg)
-      IF (SIZEOF(Arg) .NE. 4 ) STOP 20
+      IF (SIZEOF(Arg) .NE. 4 ) ERROR STOP 20
     CLASS DEFAULT
       STOP 30
   END SELECT

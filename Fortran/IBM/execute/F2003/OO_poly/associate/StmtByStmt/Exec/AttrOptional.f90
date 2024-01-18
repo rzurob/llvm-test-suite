@@ -85,26 +85,26 @@
 
   ! ID changed
 
-  IF ( W%BaseID        .NE. 1 ) STOP 40
-  IF ( W%Base%GetId()  .NE. 1 ) STOP 41
-  IF ( W%ChildID       .NE. 2 ) STOP 42
-  IF ( W%GetId()       .NE. 2 ) STOP 43
+  IF ( W%BaseID        .NE. 1 ) ERROR STOP 40
+  IF ( W%Base%GetId()  .NE. 1 ) ERROR STOP 41
+  IF ( W%ChildID       .NE. 2 ) ERROR STOP 42
+  IF ( W%GetId()       .NE. 2 ) ERROR STOP 43
 
   CONTAINS
 
   SUBROUTINE Sub(Arg)
   CLASS(*), OPTIONAL :: Arg
 
-  IF ( .NOT. PRESENT (Arg) ) STOP 11
+  IF ( .NOT. PRESENT (Arg) ) ERROR STOP 11
 
   ASSOCIATE ( Arg => Arg )
   SELECT TYPE ( Arg )
   CLASS IS (Child)
 
-    IF ( Arg%BaseID        .NE. -1 ) STOP 30
-    IF ( Arg%Base%GetId()  .NE. -1 ) STOP 31
-    IF ( Arg%ChildID       .NE. -2 ) STOP 32
-    IF ( Arg%GetId()       .NE. -2 ) STOP 33
+    IF ( Arg%BaseID        .NE. -1 ) ERROR STOP 30
+    IF ( Arg%Base%GetId()  .NE. -1 ) ERROR STOP 31
+    IF ( Arg%ChildID       .NE. -2 ) ERROR STOP 32
+    IF ( Arg%GetId()       .NE. -2 ) ERROR STOP 33
 
     CALL Arg%Base%SetID(Arg)
     CALL Arg%SetID(Arg)

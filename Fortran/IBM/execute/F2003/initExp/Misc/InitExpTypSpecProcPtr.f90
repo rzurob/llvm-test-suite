@@ -98,15 +98,15 @@
   L8ProcPtr => L8
 
 
-  IF ( I1ProcPtr() .NE. 1      ) STOP 11
-  IF ( I2ProcPtr() .NE. 2      ) STOP 12
-  IF ( I4ProcPtr() .NE. 4      ) STOP 13
-  IF ( I8ProcPtr() .NE. 8      ) STOP 14
+  IF ( I1ProcPtr() .NE. 1      ) ERROR STOP 11
+  IF ( I2ProcPtr() .NE. 2      ) ERROR STOP 12
+  IF ( I4ProcPtr() .NE. 4      ) ERROR STOP 13
+  IF ( I8ProcPtr() .NE. 8      ) ERROR STOP 14
 
-  IF ( L1ProcPtr() .NEQV. .TRUE. ) STOP 21
-  IF ( L2ProcPtr() .NEQV. .TRUE. ) STOP 22
-  IF ( L4ProcPtr() .NEQV. .TRUE. ) STOP 23
-  IF ( L8ProcPtr() .NEQV. .TRUE. ) STOP 24
+  IF ( L1ProcPtr() .NEQV. .TRUE. ) ERROR STOP 21
+  IF ( L2ProcPtr() .NEQV. .TRUE. ) ERROR STOP 22
+  IF ( L4ProcPtr() .NEQV. .TRUE. ) ERROR STOP 23
+  IF ( L8ProcPtr() .NEQV. .TRUE. ) ERROR STOP 24
 
   END
 

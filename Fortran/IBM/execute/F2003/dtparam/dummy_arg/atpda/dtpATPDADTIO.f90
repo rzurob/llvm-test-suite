@@ -214,10 +214,10 @@ program dtpATPDADTIO
   call s2_2a % print
 
   ! and verify it
-  if (s4_1%name /= s4_1a%name .or. s4_1%studentNumber /= s4_1a%studentNumber) stop 10
-  if (s4_2%name /= s4_2a%name .or. s4_2%studentNumber /= s4_2a%studentNumber) stop 11
-  if (s2_1%name /= s2_1a%name .or. s2_1%studentNumber /= s2_1a%studentNumber) stop 12
-  if (s2_2%name /= s2_2a%name .or. s2_2%studentNumber /= s2_2a%studentNumber) stop 13
+  if (s4_1%name /= s4_1a%name .or. s4_1%studentNumber /= s4_1a%studentNumber) error stop 10
+  if (s4_2%name /= s4_2a%name .or. s4_2%studentNumber /= s4_2a%studentNumber) error stop 11
+  if (s2_1%name /= s2_1a%name .or. s2_1%studentNumber /= s2_1a%studentNumber) error stop 12
+  if (s2_2%name /= s2_2a%name .or. s2_2%studentNumber /= s2_2a%studentNumber) error stop 13
 
   call readOne(4,"(DT(13,6))", s2_1b, s4_1b, 2)
   call readOne(4,"(DT(17,9))", s2_1b, s4_1b, 4)
@@ -230,10 +230,10 @@ program dtpATPDADTIO
   call s2_1b % print
   call s2_2b % print
 
-  if (s4_1%name /= s4_1b%name .or. s4_1%studentNumber /= s4_1b%studentNumber) stop 20
-  if (s4_2%name /= s4_2b%name .or. s4_2%studentNumber /= s4_2b%studentNumber) stop 21
-  if (s2_1%name /= s2_1b%name .or. s2_1%studentNumber /= s2_1b%studentNumber) stop 22
-  if (s2_2%name /= s2_2b%name .or. s2_2%studentNumber /= s2_2b%studentNumber) stop 23
+  if (s4_1%name /= s4_1b%name .or. s4_1%studentNumber /= s4_1b%studentNumber) error stop 20
+  if (s4_2%name /= s4_2b%name .or. s4_2%studentNumber /= s4_2b%studentNumber) error stop 21
+  if (s2_1%name /= s2_1b%name .or. s2_1%studentNumber /= s2_1b%studentNumber) error stop 22
+  if (s2_2%name /= s2_2b%name .or. s2_2%studentNumber /= s2_2b%studentNumber) error stop 23
 
   close(unit=4)
 

@@ -73,7 +73,7 @@
       CLASS(Base(4,:)), POINTER  :: pntr
 
       ALLOCATE (pntr, source = Obj)
-      IF ( .NOT. ASSOCIATED(pntr)) STOP 1
+      IF ( .NOT. ASSOCIATED(pntr)) ERROR STOP 1
 
       tag = '1'
 
@@ -85,7 +85,7 @@
       CLASS(Base(4,:)), POINTER :: pntr
 
       ALLOCATE (pntr, source = Arg1)
-      IF ( .NOT. ASSOCIATED(pntr)) STOP 2
+      IF ( .NOT. ASSOCIATED(pntr)) ERROR STOP 2
 
       tag = '2'
 
@@ -97,7 +97,7 @@
       CLASS(Base(4,:)), POINTER :: pntr
 
       ALLOCATE (pntr, source = Arg2)
-      IF ( .NOT. ASSOCIATED(pntr)) STOP 3
+      IF ( .NOT. ASSOCIATED(pntr)) ERROR STOP 3
 
       tag = '3'
 
@@ -123,54 +123,54 @@
 
 !*  Only one passed object dummy argument : call to sub1
       CALL poly_b1%SUB()
-      IF ( tag .NE. '1' ) STOP 10
+      IF ( tag .NE. '1' ) ERROR STOP 10
       CALL poly_c1%SUB()
-      IF ( tag .NE. '1' ) STOP 11
+      IF ( tag .NE. '1' ) ERROR STOP 11
       CALL poly_n2%SUB()
-      IF ( tag .NE. '1' ) STOP 12
+      IF ( tag .NE. '1' ) ERROR STOP 12
 
 !*  The first non-passed argument poly_c1 is of dynamic type Child1 : call to sub2
       CALL poly_b1%SUB(poly_c1,poly_b1)
-      IF ( tag .NE. '2' ) STOP 13
+      IF ( tag .NE. '2' ) ERROR STOP 13
       CALL poly_b1%SUB(poly_c1,poly_c1)
-      IF ( tag .NE. '2' ) STOP 14
+      IF ( tag .NE. '2' ) ERROR STOP 14
       CALL poly_b1%SUB(poly_c1,poly_n2)
-      IF ( tag .NE. '2' ) STOP 15
+      IF ( tag .NE. '2' ) ERROR STOP 15
 
       CALL poly_c1%SUB(poly_c1,poly_b1)
-      IF ( tag .NE. '2' ) STOP 16
+      IF ( tag .NE. '2' ) ERROR STOP 16
       CALL poly_c1%SUB(poly_c1,poly_c1)
-      IF ( tag .NE. '2' ) STOP 17
+      IF ( tag .NE. '2' ) ERROR STOP 17
       CALL poly_c1%SUB(poly_c1,poly_n2)
-      IF ( tag .NE. '2' ) STOP 18
+      IF ( tag .NE. '2' ) ERROR STOP 18
 
       CALL poly_n2%SUB(poly_c1,poly_b1)
-      IF ( tag .NE. '2' ) STOP 19
+      IF ( tag .NE. '2' ) ERROR STOP 19
       CALL poly_n2%SUB(poly_c1,poly_c1)
-      IF ( tag .NE. '2' ) STOP 20
+      IF ( tag .NE. '2' ) ERROR STOP 20
       CALL poly_n2%SUB(poly_c1,poly_n2)
-      IF ( tag .NE. '2' ) STOP 21
+      IF ( tag .NE. '2' ) ERROR STOP 21
 
 !*  The first non-passed argument poly_n2 is of dynamic type NextGen2 : call to sub3
       CALL poly_b1%SUB(poly_n2,poly_b1)
-      IF ( tag .NE. '3' ) STOP 22
+      IF ( tag .NE. '3' ) ERROR STOP 22
       CALL poly_b1%SUB(poly_n2,poly_c1)
-      IF ( tag .NE. '3' ) STOP 23
+      IF ( tag .NE. '3' ) ERROR STOP 23
       CALL poly_b1%SUB(poly_n2,poly_n2)
-      IF ( tag .NE. '3' ) STOP 24
+      IF ( tag .NE. '3' ) ERROR STOP 24
 
       CALL poly_c1%SUB(poly_n2,poly_b1)
-      IF ( tag .NE. '3' ) STOP 25
+      IF ( tag .NE. '3' ) ERROR STOP 25
       CALL poly_c1%SUB(poly_n2,poly_c1)
-      IF ( tag .NE. '3' ) STOP 26
+      IF ( tag .NE. '3' ) ERROR STOP 26
       CALL poly_c1%SUB(poly_n2,poly_n2)
-      IF ( tag .NE. '3' ) STOP 27
+      IF ( tag .NE. '3' ) ERROR STOP 27
 
       CALL poly_n2%SUB(poly_n2,poly_b1)
-      IF ( tag .NE. '3' ) STOP 28
+      IF ( tag .NE. '3' ) ERROR STOP 28
       CALL poly_n2%SUB(poly_n2,poly_c1)
-      IF ( tag .NE. '3' ) STOP 29
+      IF ( tag .NE. '3' ) ERROR STOP 29
       CALL poly_n2%SUB(poly_n2,poly_n2)
-      IF ( tag .NE. '3' ) STOP 30
+      IF ( tag .NE. '3' ) ERROR STOP 30
 
       END PROGRAM Generic_TypeBound04b

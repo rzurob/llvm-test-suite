@@ -29,7 +29,7 @@ program saBasicMessage
 
    sync all (errmsg=emsg)
 
-   if (emsg /= fill) stop 2
+   if (emsg /= fill) error stop 2
 
    sync all
 

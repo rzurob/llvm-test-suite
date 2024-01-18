@@ -64,20 +64,20 @@
     CLASS IS (DT)
       ASSOCIATE (GetInt => REAL)
 
-        IF (ANY(GetInt(:,:,:)%IArr(1)  .NE. 1)) STOP 22
-        IF (ANY(GetInt(:,:,:)%IArr(2)  .NE. 2)) STOP 23
-        IF (ANY(GetInt(:,:,:)%GetInt(1).NE. 1)) STOP 24
-        IF (ANY(GetInt(:,:,:)%GetInt(2).NE. 2)) STOP 25
+        IF (ANY(GetInt(:,:,:)%IArr(1)  .NE. 1)) ERROR STOP 22
+        IF (ANY(GetInt(:,:,:)%IArr(2)  .NE. 2)) ERROR STOP 23
+        IF (ANY(GetInt(:,:,:)%GetInt(1).NE. 1)) ERROR STOP 24
+        IF (ANY(GetInt(:,:,:)%GetInt(2).NE. 2)) ERROR STOP 25
 
         Ptr%IArr(1) = -1
         Ptr%IArr(2) = -2
 
-        IF (SIZE(GetInt(2,2,2)%IArr)   .NE. 2)  STOP 30
-        IF (KIND(GetInt(2,2,2)%IArr)   .NE. 8)  STOP 31
-        IF (ANY(GetInt(:,:,:)%IArr(1)  .NE. -1)) STOP 32
-        IF (ANY(GetInt(:,:,:)%IArr(2)  .NE. -2)) STOP 33
-        IF (ANY(GetInt(:,:,:)%GetInt(1).NE. -1)) STOP 34
-        IF (ANY(GetInt(:,:,:)%GetInt(2).NE. -2)) STOP 35
+        IF (SIZE(GetInt(2,2,2)%IArr)   .NE. 2)  ERROR STOP 30
+        IF (KIND(GetInt(2,2,2)%IArr)   .NE. 8)  ERROR STOP 31
+        IF (ANY(GetInt(:,:,:)%IArr(1)  .NE. -1)) ERROR STOP 32
+        IF (ANY(GetInt(:,:,:)%IArr(2)  .NE. -2)) ERROR STOP 33
+        IF (ANY(GetInt(:,:,:)%GetInt(1).NE. -1)) ERROR STOP 34
+        IF (ANY(GetInt(:,:,:)%GetInt(2).NE. -2)) ERROR STOP 35
 
         DTV = GetInt(2,2,2)
         PRINT*, DTV

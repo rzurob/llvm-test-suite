@@ -91,13 +91,13 @@
 
   ProcPtr1 => ModFun
   ProcPtr  => ExtFun1()
-  IF ( .NOT. ASSOCIATED( ProcPtr, ModFun ) ) STOP 11
-  IF ( ProcPtr() .NE. -1 )                   STOP 12
+  IF ( .NOT. ASSOCIATED( ProcPtr, ModFun ) ) ERROR STOP 11
+  IF ( ProcPtr() .NE. -1 )                   ERROR STOP 12
 
   ProcPtr2 => ExtFun
   ProcPtr  => ExtFun2()
-  IF ( .NOT. ASSOCIATED( ProcPtr, ExtFun ) ) STOP 21
-  IF ( ProcPtr() .NE. -2 )                   STOP 22
+  IF ( .NOT. ASSOCIATED( ProcPtr, ExtFun ) ) ERROR STOP 21
+  IF ( ProcPtr() .NE. -2 )                   ERROR STOP 22
 
   END
 

@@ -75,8 +75,8 @@
 
   ALLOCATE(V, SOURCE=ExtFun())
 
-  IF ( V%Base%GetID() .NE. V%Base%ProcPtr1() ) STOP 11
-  IF ( V%GetID()     .NE. V%ProcPtr2()      ) STOP 12
+  IF ( V%Base%GetID() .NE. V%Base%ProcPtr1() ) ERROR STOP 11
+  IF ( V%GetID()     .NE. V%ProcPtr2()      ) ERROR STOP 12
 
   SELECT TYPE (V)
   TYPE IS (Child)
@@ -85,8 +85,8 @@
     STOP  44
   END SELECT
 
-  IF ( V%Base%GetID() .NE. V%Base%ProcPtr1() ) STOP 21
-  IF ( V%GetID()     .NE. V%ProcPtr2()      ) STOP 22
+  IF ( V%Base%GetID() .NE. V%Base%ProcPtr1() ) ERROR STOP 21
+  IF ( V%GetID()     .NE. V%ProcPtr2()      ) ERROR STOP 22
 
   END
 

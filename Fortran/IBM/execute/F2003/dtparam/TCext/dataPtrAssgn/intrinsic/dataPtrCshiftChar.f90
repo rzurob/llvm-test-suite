@@ -49,9 +49,9 @@ end module
 
 	b1%p(2:size(b2%p)) => b1%get_char(b2)
 
-	if ( .not. associated(b1%p)) stop 5
-	if ( lbound(b1%p,1) /= 2) stop 7
-	if ( ubound(b1%p,1) /= 26) stop 9
+	if ( .not. associated(b1%p)) error stop 5
+	if ( lbound(b1%p,1) /= 2) error stop 7
+	if ( ubound(b1%p,1) /= 26) error stop 9
 
 	print *, b1%p
 	print *, cshift(b1%p, 24)

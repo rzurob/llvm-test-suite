@@ -80,12 +80,12 @@
 
   END INTERFACE
 
-  IF (MFun(4)   .NE. 4 )   STOP 10
-  IF (MFun(1_1) .NE. 2_1 ) STOP 11
-  IF (MFun(2_2) .NE. 4_1 ) STOP 12
+  IF (MFun(4)   .NE. 4 )   ERROR STOP 10
+  IF (MFun(1_1) .NE. 2_1 ) ERROR STOP 11
+  IF (MFun(2_2) .NE. 4_1 ) ERROR STOP 12
 
-  IF (Fun(4.0)  .NE. 4.0 ) STOP 20
-  IF (Fun(8._8) .NE. 9._8) STOP 21
+  IF (Fun(4.0)  .NE. 4.0 ) ERROR STOP 20
+  IF (Fun(8._8) .NE. 9._8) ERROR STOP 21
 
   END
 

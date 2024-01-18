@@ -19,19 +19,19 @@ program mxminMisc08
    data (c(i), i=1, 9) /9*'zzz'/
 
    associate( As1 => max(a, b) )
-        if( any(As1 .ne. 'zza')) stop 1
+        if( any(As1 .ne. 'zza')) error stop 1
    end associate
 
    associate( As2 => max(a, b, c) )
-        if( any(As2 .ne. 'zzz')) stop 2
+        if( any(As2 .ne. 'zzz')) error stop 2
    end associate
 
    associate( As3 => maxval(a) )
-        if(As3 .ne. 'zyy') stop 3
+        if(As3 .ne. 'zyy') error stop 3
    end associate
 
    associate( As4 => maxloc(a) )
-        if ( any(As4  .ne. 6)) stop 4
+        if ( any(As4  .ne. 6)) error stop 4
    end associate
 
 end program mxminMisc08

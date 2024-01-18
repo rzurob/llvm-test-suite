@@ -32,7 +32,7 @@
   CLASS(*) :: Arr(*)
     SELECT TYPE ( As => Arr(1:N) )
     TYPE IS (INTEGER)
-      IF (ANY(SHAPE(As) .NE. (/3/))) STOP 30
+      IF (ANY(SHAPE(As) .NE. (/3/))) ERROR STOP 30
     END SELECT
   END SUBROUTINE
   END

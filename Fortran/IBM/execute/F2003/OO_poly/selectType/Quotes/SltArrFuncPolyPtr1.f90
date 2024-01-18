@@ -100,12 +100,12 @@
     CLASS DEFAULT
       SELECT TYPE (V)
         TYPE IS (Child)
-          IF ( ANY(SHAPE(V)  .NE. (/2,2/)) ) STOP 20
+          IF ( ANY(SHAPE(V)  .NE. (/2,2/)) ) ERROR STOP 20
 
-          IF ( ANY(V%Base%GetId() .NE. RESHAPE((/ 1, -1, -1,  1/), (/2,2/))) ) STOP 34
-          IF ( ANY(V%GetId()      .NE. RESHAPE((/ 2, -2, -2,  2/), (/2,2/))) ) STOP 35
-          IF ( ANY(V%BaseId       .NE. RESHAPE((/ 1, -1, -1,  1/), (/2,2/))) ) STOP 36
-          IF ( ANY(V%ChildId      .NE. RESHAPE((/ 2, -2, -2,  2/), (/2,2/))) ) STOP 37
+          IF ( ANY(V%Base%GetId() .NE. RESHAPE((/ 1, -1, -1,  1/), (/2,2/))) ) ERROR STOP 34
+          IF ( ANY(V%GetId()      .NE. RESHAPE((/ 2, -2, -2,  2/), (/2,2/))) ) ERROR STOP 35
+          IF ( ANY(V%BaseId       .NE. RESHAPE((/ 1, -1, -1,  1/), (/2,2/))) ) ERROR STOP 36
+          IF ( ANY(V%ChildId      .NE. RESHAPE((/ 2, -2, -2,  2/), (/2,2/))) ) ERROR STOP 37
 
        CLASS DEFAULT
           STOP 40

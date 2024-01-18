@@ -29,13 +29,13 @@
                 stop 2
         end select
 
-	if ( .not. associated(ptr,tar)) stop 3
-	if ( lbound(ptr,1) /= -10 ) stop 4
-	if ( ubound(ptr,1) /= -1 ) stop 5
+	if ( .not. associated(ptr,tar)) error stop 3
+	if ( lbound(ptr,1) /= -10 ) error stop 4
+	if ( ubound(ptr,1) /= -1 ) error stop 5
 
         select type(x=>ptr)
 	    type is (integer)
-		if ( any( x .ne. (/(i,i=1,10)/))) stop 6
+		if ( any( x .ne. (/(i,i=1,10)/))) error stop 6
 	    class default
 	        stop 21
 	end select

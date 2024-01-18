@@ -102,7 +102,7 @@ use n
     iterator => list
 
     do while (associated(iterator))
-        if (.not. allocated(iterator%data)) stop 2
+        if (.not. allocated(iterator%data)) error stop 2
 
         call iterator%data%print4
         iterator => iterator%next

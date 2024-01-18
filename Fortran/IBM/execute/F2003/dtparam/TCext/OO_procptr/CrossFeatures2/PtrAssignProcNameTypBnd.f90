@@ -72,7 +72,7 @@
 
   V%ProcPtr => F2
   V%ID = -1
-  IF ( V%Procptr() .NE. -1 ) STOP 11
+  IF ( V%Procptr() .NE. -1 ) ERROR STOP 11
 
   END
 

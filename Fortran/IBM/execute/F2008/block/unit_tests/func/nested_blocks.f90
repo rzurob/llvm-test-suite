@@ -5,9 +5,9 @@ a : block
  b : block
    integer :: i
    i = 4
-   if (i .ne. 4) stop 1
-   if (j .ne. 3) stop 2
+   if (i .ne. 4) error stop 1
+   if (j .ne. 3) error stop 2
  end block b
- if (i .ne. 2) stop 3
+ if (i .ne. 2) error stop 3
 end block a
 end

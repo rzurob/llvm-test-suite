@@ -43,9 +43,9 @@ end module
 
 	call foo (dt%p1, dt%p2)
 
-	if ( .not. associated(dt%p1, dt%p2(::2))) stop 5
-	if ( lbound(dt%p1,1) /= 20) stop 7
-	if ( ubound(dt%p1,1) /= 29) stop 9
+	if ( .not. associated(dt%p1, dt%p2(::2))) error stop 5
+	if ( lbound(dt%p1,1) /= 20) error stop 7
+	if ( ubound(dt%p1,1) /= 29) error stop 9
 
 	print *, dt%p1
 
@@ -59,7 +59,7 @@ end module
 		character(*), pointer :: a1(:)
 		character(:), pointer :: a2(:)
 
-		if ( .not. associated(a2)) stop 11
+		if ( .not. associated(a2)) error stop 11
 
 		a1(ubound(a2,1):) => a2(::2)
 

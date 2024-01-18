@@ -44,9 +44,9 @@
 	        allocate(b1%t(36), source = (/ ( int(i,8), i=1,36) /) )
  		b1%p(2:6,0:5) => b1%t(36:1:-1)
 
-	        if ( .not. associated(b1%p)) stop 12
-	        if ( any ( lbound(b1%p) .ne. (/2,0/) )) stop 22
-	        if ( any ( ubound(b1%p) .ne. (/6,5/) )) stop 32
+	        if ( .not. associated(b1%p)) error stop 12
+	        if ( any ( lbound(b1%p) .ne. (/2,0/) )) error stop 22
+	        if ( any ( ubound(b1%p) .ne. (/6,5/) )) error stop 32
 	    class default
 	        stop 22
 	end select

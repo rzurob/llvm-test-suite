@@ -54,22 +54,22 @@
   TYPE (DT) :: V
 
     V%PtrSIGN => SIGN
-    IF (V%PtrSIGN(-3.0, 2.0) .NE. SIGN(-3.0, 2.0) ) STOP 11
+    IF (V%PtrSIGN(-3.0, 2.0) .NE. SIGN(-3.0, 2.0) ) ERROR STOP 11
 
     V%PtrSIN => SIN
-    IF (ABS(V%PtrSIN(1.0) - SIN(1.0)) .GT. .00001 ) STOP 12
+    IF (ABS(V%PtrSIN(1.0) - SIN(1.0)) .GT. .00001 ) ERROR STOP 12
 
     V%PtrSINH => SINH
-    IF (ABS(V%PtrSINH(1.0) - SINH(1.0) ) .GT. .00001 ) STOP 13
+    IF (ABS(V%PtrSINH(1.0) - SINH(1.0) ) .GT. .00001 ) ERROR STOP 13
 
     V%PtrSQRT => SQRT
-    IF (ABS(V%PtrSQRT(4.0) - SQRT(4.0) ) .GT. .00001 ) STOP 14
+    IF (ABS(V%PtrSQRT(4.0) - SQRT(4.0) ) .GT. .00001 ) ERROR STOP 14
 
     V%PtrTAN => TAN
-    IF (ABS(V%PtrTAN(1.0) - TAN(1.0) ) .GT. .00001 ) STOP 15
+    IF (ABS(V%PtrTAN(1.0) - TAN(1.0) ) .GT. .00001 ) ERROR STOP 15
 
     V%PtrTANH => TANH
-    IF (ABS(V%PtrTANH(1.0) - TANH(1.0) ) .GT. .00001 ) STOP 16
+    IF (ABS(V%PtrTANH(1.0) - TANH(1.0) ) .GT. .00001 ) ERROR STOP 16
 
   END
 

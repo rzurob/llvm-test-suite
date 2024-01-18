@@ -49,13 +49,13 @@
   INTEGER  :: TZ6(16, 16)  = RESHAPE((/(PRECISION(Z6), I=1,256)/), (/16,16/))
 
 
-  IF ( ANY ( TR4  .NE. 6  )  )   STOP 11
-  IF ( ANY ( TR8  .NE. 15 )  )   STOP 12
-  IF ( ANY ( TR6  .NE. 31 )  )   STOP 13
+  IF ( ANY ( TR4  .NE. 6  )  )   ERROR STOP 11
+  IF ( ANY ( TR8  .NE. 15 )  )   ERROR STOP 12
+  IF ( ANY ( TR6  .NE. 31 )  )   ERROR STOP 13
 
-  IF ( ANY ( TZ4  .NE. 6  )  )   STOP 21
-  IF ( ANY ( Tz8  .NE. 15 )  )   STOP 22
-  IF ( ANY ( TZ6  .NE. 31 )  )   STOP 23
+  IF ( ANY ( TZ4  .NE. 6  )  )   ERROR STOP 21
+  IF ( ANY ( Tz8  .NE. 15 )  )   ERROR STOP 22
+  IF ( ANY ( TZ6  .NE. 31 )  )   ERROR STOP 23
 
   END
 

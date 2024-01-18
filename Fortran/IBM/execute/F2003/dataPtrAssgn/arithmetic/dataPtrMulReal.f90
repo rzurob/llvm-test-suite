@@ -35,9 +35,9 @@ program main
 
     ptr = func(ptr)
 
-    if ( .not. associated(ptr)) stop 11
-    if ( any(lbound(ptr) .ne. (/1,2,3,4,5,6,7,8,9,0/))) stop 12
-    if ( any(ubound(ptr) .ne. (/1,3,3,4,5,7,7,8,9,1/))) stop 13
+    if ( .not. associated(ptr)) error stop 11
+    if ( any(lbound(ptr) .ne. (/1,2,3,4,5,6,7,8,9,0/))) error stop 12
+    if ( any(ubound(ptr) .ne. (/1,3,3,4,5,7,7,8,9,1/))) error stop 13
 
     write(*, '(4f15.10)') ptr * ptr(1,2,3,4,5,7,7,8,9,1)
 end program

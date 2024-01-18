@@ -42,15 +42,15 @@
 
       call sub(l1)
 
-      if ( allocated(l1 ) ) stop 11
-      if ( .not. allocated(l2) ) stop 13
+      if ( allocated(l1 ) ) error stop 11
+      if ( .not. allocated(l2) ) error stop 13
 
       select type (l2)
             type is (character(*) )
-                if ( l2(1,1) /= 'ibm ' ) stop 21
-                if ( l2(2,1) /= 'a bc ' ) stop 23
-                if ( l2(1,2) /= ' c++' ) stop 25
-                if ( l2(2,2) /= 'plix' ) stop 27
+                if ( l2(1,1) /= 'ibm ' ) error stop 21
+                if ( l2(2,1) /= 'a bc ' ) error stop 23
+                if ( l2(1,2) /= ' c++' ) error stop 25
+                if ( l2(2,2) /= 'plix' ) error stop 27
       end select
 
       end

@@ -32,7 +32,7 @@
 
   PRINT *, A
 
-  IF ( A(1)%X .NE. 1.0 ) STOP 11
+  IF ( A(1)%X .NE. 1.0 ) ERROR STOP 11
 
   END
 

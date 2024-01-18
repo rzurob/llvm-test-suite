@@ -34,9 +34,9 @@ use m
 
     select type (x => b1(3)%data%x)
         type is (base(4))
-            if (size(x) /= 1) stop 1
+            if (size(x) /= 1) error stop 1
 
-            if (allocated(x(1)%data%x)) stop 2
+            if (allocated(x(1)%data%x)) error stop 2
         class default
             stop 10
     end select

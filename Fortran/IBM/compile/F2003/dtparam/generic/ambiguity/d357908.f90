@@ -19,7 +19,7 @@
       CLASS(Base(:)), ALLOCATABLE :: poly
 
       ALLOCATE (poly, source = Obj)
-      IF ( .NOT. ALLOCATED(poly)) STOP 101
+      IF ( .NOT. ALLOCATED(poly)) ERROR STOP 101
 
       END SUBROUTINE sub2
 

@@ -42,12 +42,12 @@
   PRINT*, size(b%arr)
   PRINT*, b%arr
 
-  IF (b%l         .NE. 4)  STOP 11
-  IF (LEN(b%arr)  .NE. 4)  STOP 12
-  IF (SIZE(b%arr) .NE. 4)  STOP 13
+  IF (b%l         .NE. 4)  ERROR STOP 11
+  IF (LEN(b%arr)  .NE. 4)  ERROR STOP 12
+  IF (SIZE(b%arr) .NE. 4)  ERROR STOP 13
 
   ! The .NE. seems wrong! -> 338494
-  IF (ANY(b%arr   .NE. "1234")) STOP 14
+  IF (ANY(b%arr   .NE. "1234")) ERROR STOP 14
 
   END SUBROUTINE
 

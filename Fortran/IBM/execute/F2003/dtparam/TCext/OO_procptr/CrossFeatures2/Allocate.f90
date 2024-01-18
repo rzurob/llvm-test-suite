@@ -65,19 +65,19 @@
 
   ProcPtr =>  ModFun
 !  ALLOCATE(V, SOURCE=ProcPtr(U))
-!  IF ( .NOT. ASSOCIATED(V%ProcPtr, ModFun ) ) STOP 11
+!  IF ( .NOT. ASSOCIATED(V%ProcPtr, ModFun ) ) ERROR STOP 11
   allocate (v, source=u)
   v%procptr => procptr
 
-  IF ( V%Id .NE. -1 )                         STOP 12
+  IF ( V%Id .NE. -1 )                         ERROR STOP 12
 
 
   ALLOCATE(W, SOURCE=V%ProcPtr())
-  IF ( .NOT. ALLOCATED(W) ) STOP 21
+  IF ( .NOT. ALLOCATED(W) ) ERROR STOP 21
   SELECT TYPE ( W)
   TYPE IS (DT(*,4))
-    IF ( .NOT. ASSOCIATED(W%ProcPtr, ModFun ) ) STOP 21
-    IF ( V%Id .NE. -1 )                         STOP 22
+    IF ( .NOT. ASSOCIATED(W%ProcPtr, ModFun ) ) ERROR STOP 21
+    IF ( V%Id .NE. -1 )                         ERROR STOP 22
   CLASS DEFAULT
     STOP 23
   END SELECT

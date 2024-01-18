@@ -23,7 +23,7 @@ type (dtp(1)), parameter :: dtp2(3,3) = reshape(dtp1, (/3, 3/))
 type (dtp(1)):: res(3,3) = transpose(dtp2)
 do i = 1,3
 	do j =1,3
-		if( res(i,j)%c /= dtp2a(i,j)%c) STOP 1
+		if( res(i,j)%c /= dtp2a(i,j)%c) ERROR STOP 1
 	end do
 end do
 end

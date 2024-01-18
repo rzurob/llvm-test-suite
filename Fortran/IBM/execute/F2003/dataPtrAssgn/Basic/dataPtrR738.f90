@@ -40,18 +40,18 @@
   I1=0; I8=7
   DO  I=1, 8
     Arr(I)%Ptr(I1:I8) => Arr
-    IF (ANY(LBOUND(Arr(I)%Ptr) .NE.   (/I1/))) STOP 11
-    IF (ANY(UBOUND(Arr(I)%Ptr) .NE.   (/I8/))) STOP 12
-    IF ( .NOT. ASSOCIATED(Arr(I)%Ptr, Arr))    STOP 13
+    IF (ANY(LBOUND(Arr(I)%Ptr) .NE.   (/I1/))) ERROR STOP 11
+    IF (ANY(UBOUND(Arr(I)%Ptr) .NE.   (/I8/))) ERROR STOP 12
+    IF ( .NOT. ASSOCIATED(Arr(I)%Ptr, Arr))    ERROR STOP 13
   END DO
 
   I1=1; I8=8
   Ptr(I1:I8) => Arr
   DO  I=1, 8
     Ptr(I)%Ptr(I1:I8) => Ptr
-    IF (ANY(LBOUND(Ptr(I)%Ptr) .NE.   (/I1/))) STOP 21
-    IF (ANY(UBOUND(Ptr(I)%Ptr) .NE.   (/I8/))) STOP 22
-    IF ( .NOT. ASSOCIATED(Ptr(I)%Ptr, Ptr))    STOP 23
+    IF (ANY(LBOUND(Ptr(I)%Ptr) .NE.   (/I1/))) ERROR STOP 21
+    IF (ANY(UBOUND(Ptr(I)%Ptr) .NE.   (/I8/))) ERROR STOP 22
+    IF ( .NOT. ASSOCIATED(Ptr(I)%Ptr, Ptr))    ERROR STOP 23
   END DO
 
 

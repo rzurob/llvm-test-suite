@@ -62,31 +62,31 @@
   TYPE (DT4(-1_1+1, 2_8-1_2, -2147483648))                      :: T4
   TYPE (DT5(-1_1+1, 2_8-1_2, -2147483649_8+1, 1_8, 1_4, 1_2)):: T5
 
-  IF (T1%TP1 .NE. 0 )           STOP 11
-  IF (T1%TP2 .NE. 1 )           STOP 12
-  IF (T1%TP3 .NE. 2147483647 )  STOP 13
+  IF (T1%TP1 .NE. 0 )           ERROR STOP 11
+  IF (T1%TP2 .NE. 1 )           ERROR STOP 12
+  IF (T1%TP3 .NE. 2147483647 )  ERROR STOP 13
 
-  IF (T2%TP1 .NE. 0 )           STOP 21
-  IF (T2%TP2 .NE. -1 )          STOP 22
-  IF (T2%TP3 .NE. -2147483648 ) STOP 23
+  IF (T2%TP1 .NE. 0 )           ERROR STOP 21
+  IF (T2%TP2 .NE. -1 )          ERROR STOP 22
+  IF (T2%TP3 .NE. -2147483648 ) ERROR STOP 23
 
-  IF (T3%TP1 .NE. 0 )           STOP 31
-  IF (T3%TP2 .NE. 1 )           STOP 32
-  IF (T3%TP3 .NE. 2147483647 )  STOP 33
-  IF (T3%KP1 .NE. 0 )           STOP 34
-  IF (T3%KP2 .NE. -1 )          STOP 35
-  IF (T3%KP3 .NE. -2147483648 ) STOP 36
+  IF (T3%TP1 .NE. 0 )           ERROR STOP 31
+  IF (T3%TP2 .NE. 1 )           ERROR STOP 32
+  IF (T3%TP3 .NE. 2147483647 )  ERROR STOP 33
+  IF (T3%KP1 .NE. 0 )           ERROR STOP 34
+  IF (T3%KP2 .NE. -1 )          ERROR STOP 35
+  IF (T3%KP3 .NE. -2147483648 ) ERROR STOP 36
 
-  IF (T4%TP1 .NE. 0 )           STOP 41
-  IF (T4%TP2 .NE. 1 )           STOP 42
-  IF (T4%TP3 .NE. -2147483648 ) STOP 43
+  IF (T4%TP1 .NE. 0 )           ERROR STOP 41
+  IF (T4%TP2 .NE. 1 )           ERROR STOP 42
+  IF (T4%TP3 .NE. -2147483648 ) ERROR STOP 43
 
-  IF (T5%TP1 .NE. 0 )           STOP 51
-  IF (T5%TP2 .NE. 1 )           STOP 52
-  IF (T5%TP3 .NE. -2147483648 ) STOP 53
-  IF (T5%KP1 .NE. 1 )          STOP 54
-  IF (T5%KP2 .NE. 1 )          STOP 55
-  IF (T5%KP3 .NE. 1 )          STOP 56
+  IF (T5%TP1 .NE. 0 )           ERROR STOP 51
+  IF (T5%TP2 .NE. 1 )           ERROR STOP 52
+  IF (T5%TP3 .NE. -2147483648 ) ERROR STOP 53
+  IF (T5%KP1 .NE. 1 )          ERROR STOP 54
+  IF (T5%KP2 .NE. 1 )          ERROR STOP 55
+  IF (T5%KP3 .NE. 1 )          ERROR STOP 56
 
   END
 

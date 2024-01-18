@@ -66,35 +66,35 @@
   EXTERNAL                :: ExtSub
 
   V%ProcPtr =>  Fun
-  IF ( .NOT. ASSOCIATED( V%ProcPtr )) STOP 11
-  IF (  V%ProcPtr(-1) .NE. -1)        STOP 12
+  IF ( .NOT. ASSOCIATED( V%ProcPtr )) ERROR STOP 11
+  IF (  V%ProcPtr(-1) .NE. -1)        ERROR STOP 12
   NULLIFY(V%ProcPtr)
-  IF ( ASSOCIATED( V%ProcPtr ))       STOP 13
+  IF ( ASSOCIATED( V%ProcPtr ))       ERROR STOP 13
 
   ProcPtr1 =>  Fun
-  IF ( .NOT. ASSOCIATED( ProcPtr1 ))  STOP 21
-  IF (  ProcPtr1(-2) .NE. -2)         STOP 22
+  IF ( .NOT. ASSOCIATED( ProcPtr1 ))  ERROR STOP 21
+  IF (  ProcPtr1(-2) .NE. -2)         ERROR STOP 22
   NULLIFY(ProcPtr1)
-  IF ( ASSOCIATED( ProcPtr1 ))        STOP 23
+  IF ( ASSOCIATED( ProcPtr1 ))        ERROR STOP 23
 
   ProcPtr2 => ExtSub
-  IF ( .NOT. ASSOCIATED( ProcPtr2 ))  STOP 31
+  IF ( .NOT. ASSOCIATED( ProcPtr2 ))  ERROR STOP 31
   CALL ProcPtr2("12345")
-  IF ( Mark .NE. "12345")             STOP 32
+  IF ( Mark .NE. "12345")             ERROR STOP 32
   NULLIFY(ProcPtr2)
-  IF ( ASSOCIATED( ProcPtr2 ))        STOP 33
+  IF ( ASSOCIATED( ProcPtr2 ))        ERROR STOP 33
 
   ProcPtr1 => V%BindProc(Fun)
-  IF ( .NOT. ASSOCIATED( ProcPtr1 ))  STOP 42
-  IF (  ProcPtr1(-2)   .NE. -2)       STOP 44
+  IF ( .NOT. ASSOCIATED( ProcPtr1 ))  ERROR STOP 42
+  IF (  ProcPtr1(-2)   .NE. -2)       ERROR STOP 44
 
   V%ProcPtr => V%BindProc(Fun)
-  IF ( .NOT. ASSOCIATED( V%ProcPtr))  STOP 52
-  IF (  V%ProcPtr(-2)   .NE. -2)      STOP 54
+  IF ( .NOT. ASSOCIATED( V%ProcPtr))  ERROR STOP 52
+  IF (  V%ProcPtr(-2)   .NE. -2)      ERROR STOP 54
 
   NULLIFY(V%ProcPtr, ProcPtr1)
-  IF ( ASSOCIATED( V%ProcPtr ))       STOP 65
-  IF ( ASSOCIATED( ProcPtr1 ))        STOP 66
+  IF ( ASSOCIATED( V%ProcPtr ))       ERROR STOP 65
+  IF ( ASSOCIATED( ProcPtr1 ))        ERROR STOP 66
 
 
   END

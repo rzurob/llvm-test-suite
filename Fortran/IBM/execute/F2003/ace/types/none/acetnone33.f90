@@ -51,7 +51,7 @@ program acetnone33
      end associate
   end associate
 
-  if (errorFound) stop 2
+  if (errorFound) error stop 2
 
 contains
 

@@ -62,27 +62,27 @@
   TYPE(DT), ALLOCATABLE :: VA
 
   ALLOCATE(VP)
-  IF ( .NOT. ASSOCIATED( VP ) )        STOP 11
-  IF (       ASSOCIATED( VP%ProcPtr2)) STOP 12
+  IF ( .NOT. ASSOCIATED( VP ) )        ERROR STOP 11
+  IF (       ASSOCIATED( VP%ProcPtr2)) ERROR STOP 12
 
   VP%ProcPtr2 => Fun
-  IF ( .NOT. ASSOCIATED( VP%ProcPtr2 ))    STOP 13
+  IF ( .NOT. ASSOCIATED( VP%ProcPtr2 ))    ERROR STOP 13
   V = DT(VP%ProcPtr2(-1), NULL(), VP%ProcPtr2 )
-  IF ( V%Id .NE. -1 )                      STOP 14
-  IF ( .NOT. ASSOCIATED(V%ProcPtr2, Fun) ) STOP 15
+  IF ( V%Id .NE. -1 )                      ERROR STOP 14
+  IF ( .NOT. ASSOCIATED(V%ProcPtr2, Fun) ) ERROR STOP 15
 
   NULLIFY(VP%ProcPtr2)
   DEALLOCATE(VP)
 
   ALLOCATE(VA)
-  IF ( .NOT. ALLOCATED( VA ))           STOP 21
-  IF (       ASSOCIATED( VA%ProcPtr1 )) STOP 22
+  IF ( .NOT. ALLOCATED( VA ))           ERROR STOP 21
+  IF (       ASSOCIATED( VA%ProcPtr1 )) ERROR STOP 22
 
   VA%ProcPtr1 => ProcFun
-  IF ( .NOT. ASSOCIATED( VA%ProcPtr1, ProcFun ))  STOP 23
+  IF ( .NOT. ASSOCIATED( VA%ProcPtr1, ProcFun ))  ERROR STOP 23
   VA = DT(-2, VA%ProcPtr1, NULL())
-  IF ( VA%Id .NE. -2 ) STOP 24
-  IF ( .NOT. ASSOCIATED( VA%ProcPtr1, ProcFun ))  STOP 25
+  IF ( VA%Id .NE. -2 ) ERROR STOP 24
+  IF ( .NOT. ASSOCIATED( VA%ProcPtr1, ProcFun ))  ERROR STOP 25
 
   NULLIFY(VA%ProcPtr2)
   DEALLOCATE(VA)

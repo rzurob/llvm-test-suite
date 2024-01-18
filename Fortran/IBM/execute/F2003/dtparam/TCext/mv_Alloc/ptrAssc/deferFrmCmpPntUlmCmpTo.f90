@@ -49,7 +49,7 @@ use m
 
     select type (x => a%to)
         type is (character(*))
-            if ( .not. associated(a%p2, x)  ) stop 21
+            if ( .not. associated(a%p2, x)  ) error stop 21
             print *, x
     end select
 end

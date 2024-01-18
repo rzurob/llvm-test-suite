@@ -91,10 +91,10 @@
 
   CALL Sub(V(::2,1:2))
   ASSOCIATE (W=>V(::2,1:2))
-    IF ( ANY(W%Base%GetId() .NE. 1) ) STOP 34
-    IF ( ANY(W%GetId()      .NE. 2) ) STOP 35
-    IF ( ANY(W%BaseId       .NE. 1) ) STOP 36
-    IF ( ANY(W%ChildId      .NE. 2) ) STOP 37
+    IF ( ANY(W%Base%GetId() .NE. 1) ) ERROR STOP 34
+    IF ( ANY(W%GetId()      .NE. 2) ) ERROR STOP 35
+    IF ( ANY(W%BaseId       .NE. 1) ) ERROR STOP 36
+    IF ( ANY(W%ChildId      .NE. 2) ) ERROR STOP 37
   END ASSOCIATE
 
   CONTAINS
@@ -102,7 +102,7 @@
   SUBROUTINE Sub(Arg)
   CLASS(Base), TARGET, OPTIONAL :: Arg(:, :)
 
-    IF ( .NOT. PRESENT(Arg) ) STOP 11
+    IF ( .NOT. PRESENT(Arg) ) ERROR STOP 11
 
     SELECT TYPE (U => Arg)
     CLASS IS (Child)
@@ -110,25 +110,25 @@
     CLASS IS (Child)
       SELECT TYPE (V => W)
         TYPE IS (Child)
-          IF ( SIZE(V)          .NE. 4 )          STOP 21
-          IF ( ANY (LBOUND(V)   .NE. (/1, 1/) ) ) STOP 30
-          IF ( ANY (UBOUND(V)   .NE. (/2, 2/) ) ) STOP 31
-          IF ( ANY(SHAPE(V)     .NE. (/2,2/)) )   STOP 20
+          IF ( SIZE(V)          .NE. 4 )          ERROR STOP 21
+          IF ( ANY (LBOUND(V)   .NE. (/1, 1/) ) ) ERROR STOP 30
+          IF ( ANY (UBOUND(V)   .NE. (/2, 2/) ) ) ERROR STOP 31
+          IF ( ANY(SHAPE(V)     .NE. (/2,2/)) )   ERROR STOP 20
 
-          IF ( ANY(W%Base%GetId() .NE. -1) ) STOP 34
-          IF ( ANY(W%GetId()      .NE. -2) ) STOP 35
-          IF ( ANY(W%BaseId       .NE. -1) ) STOP 36
-          IF ( ANY(W%ChildId      .NE. -2) ) STOP 37
+          IF ( ANY(W%Base%GetId() .NE. -1) ) ERROR STOP 34
+          IF ( ANY(W%GetId()      .NE. -2) ) ERROR STOP 35
+          IF ( ANY(W%BaseId       .NE. -1) ) ERROR STOP 36
+          IF ( ANY(W%ChildId      .NE. -2) ) ERROR STOP 37
 
-          IF ( .NOT. V%Called() ) STOP 45
+          IF ( .NOT. V%Called() ) ERROR STOP 45
 
           CALL V%SetId(U)
           CALL W%Base%SetId(V%Base)
 
-          IF ( ANY (U%Base%GetId() .NE. 1 )) STOP 44
-          IF ( ANY (U%GetId()      .NE. 2 )) STOP 45
-          IF ( ANY (U%BaseId       .NE. 1 )) STOP 46
-          IF ( ANY (U%ChildId      .NE. 2 )) STOP 47
+          IF ( ANY (U%Base%GetId() .NE. 1 )) ERROR STOP 44
+          IF ( ANY (U%GetId()      .NE. 2 )) ERROR STOP 45
+          IF ( ANY (U%BaseId       .NE. 1 )) ERROR STOP 46
+          IF ( ANY (U%ChildId      .NE. 2 )) ERROR STOP 47
 
        CLASS DEFAULT
           STOP 40

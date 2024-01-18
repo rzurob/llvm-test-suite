@@ -54,8 +54,8 @@
   DATA (T2(I), I=0,127) /128*DT(4)(Subscript=[(J,J=0,127)])/
 
   DO I=0, 127
-    IF (ANY(T1(I)%Subscript  .NE. [(J,J=0,127)] )) STOP 11
-    IF (ANY(T2(I)%Subscript  .NE. [(J,J=0,127)] )) STOP 12
+    IF (ANY(T1(I)%Subscript  .NE. [(J,J=0,127)] )) ERROR STOP 11
+    IF (ANY(T2(I)%Subscript  .NE. [(J,J=0,127)] )) ERROR STOP 12
   END DO
 
   END

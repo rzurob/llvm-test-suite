@@ -84,14 +84,14 @@
   TYPE(DT) :: V, U
 
     V = Arg(DT("123", Arg))
-    IF (V%C .NE. "123")                   STOP 11
-    IF (.NOT. ASSOCIATED(V%ProcPtr, Arg)) STOP 12
+    IF (V%C .NE. "123")                   ERROR STOP 11
+    IF (.NOT. ASSOCIATED(V%ProcPtr, Arg)) ERROR STOP 12
 
     V%C = "321"
     V%ProcPtr => IFun
     U = V%Proc()
-    IF (U%C .NE. "321")                    STOP 21
-    IF (.NOT. ASSOCIATED(U%ProcPtr, IFun)) STOP 22
+    IF (U%C .NE. "321")                    ERROR STOP 21
+    IF (.NOT. ASSOCIATED(U%ProcPtr, IFun)) ERROR STOP 22
 
   END SUBROUTINE
 

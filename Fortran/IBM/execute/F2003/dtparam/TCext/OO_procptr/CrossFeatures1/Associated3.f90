@@ -60,20 +60,20 @@
 
   V = DT(4)(Base(4)(NULL()), NULL())
 
-  IF ( ASSOCIATED( ProcPtr) )          STOP 11
-  IF ( ASSOCIATED( V%BaseComp%ProcPtr))STOP 12
-  IF ( ASSOCIATED( V%ProcPtr))         STOP 13
+  IF ( ASSOCIATED( ProcPtr) )          ERROR STOP 11
+  IF ( ASSOCIATED( V%BaseComp%ProcPtr))ERROR STOP 12
+  IF ( ASSOCIATED( V%ProcPtr))         ERROR STOP 13
 
   ProcPtr => ModFun
   V = DT(4)(Base(4)(ModFun), ProcPtr)
 
-  IF ( .NOT. ASSOCIATED( ProcPtr, ModFun) )            STOP 21
-  IF ( .NOT. ASSOCIATED( V%BaseComp%ProcPtr, ModFun) ) STOP 22
-  IF ( .NOT. ASSOCIATED( V%ProcPtr, ModFun))           STOP 23
+  IF ( .NOT. ASSOCIATED( ProcPtr, ModFun) )            ERROR STOP 21
+  IF ( .NOT. ASSOCIATED( V%BaseComp%ProcPtr, ModFun) ) ERROR STOP 22
+  IF ( .NOT. ASSOCIATED( V%ProcPtr, ModFun))           ERROR STOP 23
 
-  IF (  ProcPtr() .NE. -1 )            STOP 31
-  IF (  V%BaseComp%ProcPtr() .NE. -1 ) STOP 32
-  IF (  V%ProcPtr() .NE. -1 )          STOP 33
+  IF (  ProcPtr() .NE. -1 )            ERROR STOP 31
+  IF (  V%BaseComp%ProcPtr() .NE. -1 ) ERROR STOP 32
+  IF (  V%ProcPtr() .NE. -1 )          ERROR STOP 33
 
 
  END

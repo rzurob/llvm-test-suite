@@ -49,7 +49,7 @@ module matrix_op_mod
         np = num_images()
         me = this_image()
 
-        if (mod(n, np) /= 0) stop 10
+        if (mod(n, np) /= 0) error stop 10
         cols_per_image = n/np
 
 
@@ -81,7 +81,7 @@ use matrix_op_mod, only: matrix_op, m,n
         stop 1
     end if
 
-    if (np > n) stop 2
+    if (np > n) error stop 2
 
     allocate (op)
 

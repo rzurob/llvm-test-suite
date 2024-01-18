@@ -51,14 +51,14 @@ logical :: mask1(8) = (/.TRUE., .FALSE., .TRUE., .FALSE., .TRUE., .FALSE., .TRUE
 logical :: mask2(2,4)
 real :: num
 allocate( admatrix(4) :: vec(2,4))
-! if (associated(vec) ) stop 1
+! if (associated(vec) ) error stop 1
 num = 1.0
 do k = 1,2
 	do j = 1,4
 		do i = 1,3
 			!vec(k,j)%row(i)%element = num
 			allocate(vec(k,j)%row(i)%element, SOURCE = num)
-			!if (associated(vec(k,j)%row(i)%element) ) stop 1
+			!if (associated(vec(k,j)%row(i)%element) ) error stop 1
 			num = num + 1.0
 		end do
 	end do

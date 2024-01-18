@@ -78,11 +78,11 @@
 1   SELECT TYPE (U => Arg(:,S,:))
 2   CLASS DEFAULT
 
-      IF ( .NOT. SAME_TYPE_AS(U, Arg))        STOP 30
-      IF ( SIZE(U)          .NE. 27 )         STOP 31
-      IF ( ANY (LBOUND(U)   .NE. (/1,1,1/) ) ) STOP 32
-      IF ( ANY (UBOUND(U)   .NE. (/3,3,3/) ) ) STOP 33
-      IF ( ANY(SHAPE(U)     .NE. (/3,3,3/)) )  STOP 34
+      IF ( .NOT. SAME_TYPE_AS(U, Arg))        ERROR STOP 30
+      IF ( SIZE(U)          .NE. 27 )         ERROR STOP 31
+      IF ( ANY (LBOUND(U)   .NE. (/1,1,1/) ) ) ERROR STOP 32
+      IF ( ANY (UBOUND(U)   .NE. (/3,3,3/) ) ) ERROR STOP 33
+      IF ( ANY(SHAPE(U)     .NE. (/3,3,3/)) )  ERROR STOP 34
 !     GOTO 6
 
     ASSOCIATE ( W => U )
@@ -93,8 +93,8 @@
 4     TYPE IS (DT(*,4))
         GOTO 7
 
-        IF ( ANY(U%Id      .NE. DTV%Id ) )      STOP 42
-        IF ( ANY(U%GetId() .NE. DTV%GetId()))   STOP 43
+        IF ( ANY(U%Id      .NE. DTV%Id ) )      ERROR STOP 42
+        IF ( ANY(U%GetId() .NE. DTV%GetId()))   ERROR STOP 43
 
 5     CLASS DEFAULT
         STOP 51

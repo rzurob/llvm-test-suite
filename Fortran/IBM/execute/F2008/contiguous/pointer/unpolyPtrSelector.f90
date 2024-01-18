@@ -45,9 +45,9 @@ program main
 
         select type(ptr)
             type is (integer)
-                if ( any(ptr .ne. (/11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30/))) stop 11
+                if ( any(ptr .ne. (/11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30/))) error stop 11
             type is (base)
-                if ( any(ptr%x .ne. [12,14,16,18,20,22,24,26,28,30])) stop 21
+                if ( any(ptr%x .ne. [12,14,16,18,20,22,24,26,28,30])) error stop 21
         end select
 
     end do

@@ -25,8 +25,8 @@
 
       allocate(l1(2), source = func())
 
-      if ( l1(1) .neqv. .false. ) stop 21
-      if ( l1(2) .neqv. .true. ) stop 23
+      if ( l1(1) .neqv. .false. ) error stop 21
+      if ( l1(2) .neqv. .true. ) error stop 23
 
       contains
             function func()
@@ -52,8 +52,8 @@
 
                 call move_alloc(l2, l1)
 
-		if ( allocated(l2) ) stop 21
- 		if ( .not. allocated(l1) ) stop 23
+		if ( allocated(l2) ) error stop 21
+ 		if ( .not. allocated(l1) ) error stop 23
 
                 select type (l1)
                      type is (logical*8)

@@ -70,12 +70,12 @@
   TYPE(Base(1,3))  :: U
 
   U = Base(1,3)("123", NULL())
-  IF ( U%C .NE. "123"  )  STOP 21
-  IF ( ASSOCIATED(U%ProcPtr))  STOP 22
+  IF ( U%C .NE. "123"  )  ERROR STOP 21
+  IF ( ASSOCIATED(U%ProcPtr))  ERROR STOP 22
 
   U = Base(1,3)("321", CFun)   ! reference to the interface Base(1,3)
-  IF ( U%C .NE. "321"  )  STOP 31
-  IF ( U%ProcPtr("321") .NE. "OK!" )  STOP 32
+  IF ( U%C .NE. "321"  )  ERROR STOP 31
+  IF ( U%ProcPtr("321") .NE. "OK!" )  ERROR STOP 32
 
   END
 

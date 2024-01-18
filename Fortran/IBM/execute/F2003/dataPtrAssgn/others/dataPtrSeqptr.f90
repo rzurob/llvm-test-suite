@@ -30,12 +30,12 @@
 
         ulmtP(3:) => tar
 
-	if ( .not. associated(ulmtP, tar) ) stop 21
+	if ( .not. associated(ulmtP, tar) ) error stop 21
 	print *, lbound(ulmtP,1), ubound(ulmtP,1)
 
         sp(2:6) => ulmtP(6:ubound(tar,1))
 
-	if ( .not. associated(sp) ) stop 21
+	if ( .not. associated(sp) ) error stop 21
 	print *, lbound(sp,1), ubound(sP,1)
 
 	tar = (/ ( seqDT(mod(i,2) /= 0), i=11,20) /)

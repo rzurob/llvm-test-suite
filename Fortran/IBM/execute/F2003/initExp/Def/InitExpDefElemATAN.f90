@@ -43,17 +43,17 @@
   LOGICAL(KIND(Arg)) :: L(KIND(Arg)) = ATAN(r) .EQ. ATAN(r)
   LOGICAL(KIND(Arg)) :: L1(KIND(Arg)) = ATAN(r) .NE. ATAN(r)
 
-  IF (KIND(T) .NE. 8 )          STOP 11
-  IF (SIZE(T) .NE. 8 )          STOP 12
-  IF (ANY(T   .GT. 1.0  ) )     STOP 13
+  IF (KIND(T) .NE. 8 )          ERROR STOP 11
+  IF (SIZE(T) .NE. 8 )          ERROR STOP 12
+  IF (ANY(T   .GT. 1.0  ) )     ERROR STOP 13
 
-  IF (KIND(L) .NE. 8 )          STOP 21
-  IF (SIZE(L) .NE. 8 )          STOP 22
-  IF (ANY(L   .NEQV. .TRUE. ))  STOP 23
+  IF (KIND(L) .NE. 8 )          ERROR STOP 21
+  IF (SIZE(L) .NE. 8 )          ERROR STOP 22
+  IF (ANY(L   .NEQV. .TRUE. ))  ERROR STOP 23
 
-  IF (KIND(L1) .NE. 8 )         STOP 31
-  IF (SIZE(L1) .NE. 8 )         STOP 32
-  IF (ANY(L1   .NEQV. .FALSE.)) STOP 33
+  IF (KIND(L1) .NE. 8 )         ERROR STOP 31
+  IF (SIZE(L1) .NE. 8 )         ERROR STOP 32
+  IF (ANY(L1   .NEQV. .FALSE.)) ERROR STOP 33
 
 
   END SUBROUTINE

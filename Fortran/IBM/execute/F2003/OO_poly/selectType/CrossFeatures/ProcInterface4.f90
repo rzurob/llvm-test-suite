@@ -81,13 +81,13 @@
   SELECT TYPE ( V =>Fun(DT()) )
   CLASS IS (DT)
 
-    IF (V%I0 .NE. 0) STOP 30
-    IF (V%I1 .NE. 1) STOP 31
-    IF (V%I2 .NE. 2) STOP 32
+    IF (V%I0 .NE. 0) ERROR STOP 30
+    IF (V%I1 .NE. 1) ERROR STOP 31
+    IF (V%I2 .NE. 2) ERROR STOP 32
 
-    IF (V%DT0%GetInt() .NE. 0) STOP 40
-    IF (V%DT1%GetInt() .NE. 1) STOP 41
-    IF (V%GetInt()     .NE. 2) STOP 42
+    IF (V%DT0%GetInt() .NE. 0) ERROR STOP 40
+    IF (V%DT1%GetInt() .NE. 1) ERROR STOP 41
+    IF (V%GetInt()     .NE. 2) ERROR STOP 42
 
   CLASS DEFAULT
     STOP 50

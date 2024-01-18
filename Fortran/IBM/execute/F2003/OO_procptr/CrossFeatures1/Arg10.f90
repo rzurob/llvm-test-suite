@@ -76,11 +76,11 @@
     TYPE(Base) :: V(3)
     TYPE(Base), TARGET :: Tar=Base("abc", NULL())
       V = Arg(Base("123", Tar))
-      IF (ANY(V%C .NE. "123"))              STOP 11
-      IF (.NOT. ASSOCIATED(V(2)%BPtr, Tar)) STOP 12
-      IF (V(1)%BPtr%C .NE. "abc"  )         STOP 13
-      IF (V(2)%BPtr%C .NE. "abc"  )         STOP 14
-      IF (V(3)%BPtr%C .NE. "abc"  )         STOP 15
+      IF (ANY(V%C .NE. "123"))              ERROR STOP 11
+      IF (.NOT. ASSOCIATED(V(2)%BPtr, Tar)) ERROR STOP 12
+      IF (V(1)%BPtr%C .NE. "abc"  )         ERROR STOP 13
+      IF (V(2)%BPtr%C .NE. "abc"  )         ERROR STOP 14
+      IF (V(3)%BPtr%C .NE. "abc"  )         ERROR STOP 15
     END SUBROUTINE
 
     SUBROUTINE IntSub1(Arg)
@@ -89,11 +89,11 @@
     TYPE(Base) :: V(3)
     TYPE(Base), TARGET :: Tar=Base("abc", NULL())
       V = Arg(Base("123", Tar))
-      IF (ANY(V%C .NE. "123"))              STOP 21
-      IF (.NOT. ASSOCIATED(V(2)%BPtr, Tar)) STOP 22
-      IF (V(1)%BPtr%C .NE. "abc"  )         STOP 23
-      IF (V(2)%BPtr%C .NE. "abc"  )         STOP 24
-      IF (V(3)%BPtr%C .NE. "abc"  )         STOP 25
+      IF (ANY(V%C .NE. "123"))              ERROR STOP 21
+      IF (.NOT. ASSOCIATED(V(2)%BPtr, Tar)) ERROR STOP 22
+      IF (V(1)%BPtr%C .NE. "abc"  )         ERROR STOP 23
+      IF (V(2)%BPtr%C .NE. "abc"  )         ERROR STOP 24
+      IF (V(3)%BPtr%C .NE. "abc"  )         ERROR STOP 25
     END SUBROUTINE
 
 

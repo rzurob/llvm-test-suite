@@ -112,33 +112,33 @@
 
 
 
-  IF ( KIND(TR4)  .NE.    4 )  STOP 11
-  IF ( KIND(TR8)  .NE.    8 )  STOP 12
-  IF ( KIND(TR6)  .NE.   16 )  STOP 13
+  IF ( KIND(TR4)  .NE.    4 )  ERROR STOP 11
+  IF ( KIND(TR8)  .NE.    8 )  ERROR STOP 12
+  IF ( KIND(TR6)  .NE.   16 )  ERROR STOP 13
 
-  IF (ANY( TR4  .NE. RR4  )) STOP 21
-  IF (ANY( TR8  .NE. RR8  )) STOP 22
-  IF (ANY( TR6  .NE. RR6  )) STOP 23
-
-
-  IF ( ANY( TRANSFER(T41, i4Quiet_N_NaN, 8)      .NE. i4Quiet_N_NaN      ) ) STOP 11
-  IF ( ANY( TRANSFER(T42, i4Signaling_N_NaN, 8)  .NE. i4Signaling_N_NaN  ) ) STOP 12
-  IF ( ANY( TRANSFER(T43, i4N_Infinity, 8)       .NE. i4P_Infinity       ) ) STOP 13
-  IF ( ANY( T44                                  .NE. TINY(r4N_Zero)     ) ) STOP 14
-  IF ( ANY( T45                                  .NE. TINY(r4N_Zero)     ) ) STOP 15
-  IF ( ANY( TRANSFER(T46, i4P_Infinity, 8)       .NE. i4P_Infinity       ) ) STOP 16
-  IF ( ANY( TRANSFER(T47, i4Signaling_P_NaN, 8)  .NE. i4Signaling_P_NaN  ) ) STOP 17
-  IF ( ANY( TRANSFER(T48, i4Quiet_P_NaN, 8)      .NE. i4Quiet_P_NaN      ) ) STOP 18
+  IF (ANY( TR4  .NE. RR4  )) ERROR STOP 21
+  IF (ANY( TR8  .NE. RR8  )) ERROR STOP 22
+  IF (ANY( TR6  .NE. RR6  )) ERROR STOP 23
 
 
-  IF ( ANY( TRANSFER(T81, i8Quiet_N_NaN, 8)      .NE. i8Quiet_N_NaN      ) ) STOP 21
-  IF ( ANY( TRANSFER(T82, i8Signaling_N_NaN, 8)  .NE. i8Signaling_N_NaN  ) ) STOP 22
-  IF ( ANY( TRANSFER(T83, i8N_Infinity, 8)       .NE. i8P_Infinity       ) ) STOP 23
-  IF ( ANY( T84                                  .NE. TINY(r8N_Zero)     ) ) STOP 24
-  IF ( ANY( T85                                  .NE. TINY(r8N_Zero)     ) ) STOP 25
-  IF ( ANY( TRANSFER(T86, i8P_Infinity, 8)       .NE. i8P_Infinity       ) ) STOP 26
-  IF ( ANY( TRANSFER(T87, i8Signaling_P_NaN, 8)  .NE. i8Signaling_P_NaN  ) ) STOP 27
-  IF ( ANY( TRANSFER(T88, i8Quiet_P_NaN, 8)      .NE. i8Quiet_P_NaN      ) ) STOP 28
+  IF ( ANY( TRANSFER(T41, i4Quiet_N_NaN, 8)      .NE. i4Quiet_N_NaN      ) ) ERROR STOP 11
+  IF ( ANY( TRANSFER(T42, i4Signaling_N_NaN, 8)  .NE. i4Signaling_N_NaN  ) ) ERROR STOP 12
+  IF ( ANY( TRANSFER(T43, i4N_Infinity, 8)       .NE. i4P_Infinity       ) ) ERROR STOP 13
+  IF ( ANY( T44                                  .NE. TINY(r4N_Zero)     ) ) ERROR STOP 14
+  IF ( ANY( T45                                  .NE. TINY(r4N_Zero)     ) ) ERROR STOP 15
+  IF ( ANY( TRANSFER(T46, i4P_Infinity, 8)       .NE. i4P_Infinity       ) ) ERROR STOP 16
+  IF ( ANY( TRANSFER(T47, i4Signaling_P_NaN, 8)  .NE. i4Signaling_P_NaN  ) ) ERROR STOP 17
+  IF ( ANY( TRANSFER(T48, i4Quiet_P_NaN, 8)      .NE. i4Quiet_P_NaN      ) ) ERROR STOP 18
+
+
+  IF ( ANY( TRANSFER(T81, i8Quiet_N_NaN, 8)      .NE. i8Quiet_N_NaN      ) ) ERROR STOP 21
+  IF ( ANY( TRANSFER(T82, i8Signaling_N_NaN, 8)  .NE. i8Signaling_N_NaN  ) ) ERROR STOP 22
+  IF ( ANY( TRANSFER(T83, i8N_Infinity, 8)       .NE. i8P_Infinity       ) ) ERROR STOP 23
+  IF ( ANY( T84                                  .NE. TINY(r8N_Zero)     ) ) ERROR STOP 24
+  IF ( ANY( T85                                  .NE. TINY(r8N_Zero)     ) ) ERROR STOP 25
+  IF ( ANY( TRANSFER(T86, i8P_Infinity, 8)       .NE. i8P_Infinity       ) ) ERROR STOP 26
+  IF ( ANY( TRANSFER(T87, i8Signaling_P_NaN, 8)  .NE. i8Signaling_P_NaN  ) ) ERROR STOP 27
+  IF ( ANY( TRANSFER(T88, i8Quiet_P_NaN, 8)      .NE. i8Quiet_P_NaN      ) ) ERROR STOP 28
 
 
 

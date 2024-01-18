@@ -64,7 +64,7 @@
       ALLOCATABLE :: foo1
 
       ALLOCATE (foo1, source = Obj)
-      IF ( .NOT. ALLOCATED(foo1)) STOP 100
+      IF ( .NOT. ALLOCATED(foo1)) ERROR STOP 100
 
       END FUNCTION foo1
 
@@ -74,7 +74,7 @@
       ALLOCATABLE :: foo2
 
       ALLOCATE (foo2, source = Obj)
-      IF ( .NOT. ALLOCATED(foo2)) STOP 101
+      IF ( .NOT. ALLOCATED(foo2)) ERROR STOP 101
 
       END FUNCTION foo2
 
@@ -90,45 +90,45 @@
       TYPE(child(4,10,4)) :: child1
       TYPE(NextGen(4,10,4,4)) :: dtv
 
-      IF (.NOT. ALLOCATED(base1%FUNC()) ) STOP 10
+      IF (.NOT. ALLOCATED(base1%FUNC()) ) ERROR STOP 10
 
       ALLOCATE(Base(4,10):: poly1)          ! dynamic type BASE call foo1
-      IF ( .NOT. ALLOCATED(poly1%FUNC()) ) STOP 11
+      IF ( .NOT. ALLOCATED(poly1%FUNC()) ) ERROR STOP 11
 
       poly1 => tgt1                         ! dynamic type Child call foo1
-      IF ( .NOT. ALLOCATED(poly1%FUNC()) ) STOP 12
+      IF ( .NOT. ALLOCATED(poly1%FUNC()) ) ERROR STOP 12
 
       ALLOCATE(NextGen(4,10,4,4):: poly1)   ! dynamic type NextGen call foo1
-      IF ( .NOT. ALLOCATED(poly1%FUNC()) ) STOP 13
+      IF ( .NOT. ALLOCATED(poly1%FUNC()) ) ERROR STOP 13
 
       SELECT TYPE ( poly1) ! call possible only within select type
           CLASS IS (NextGen(4,*,4,4))
-           IF ( .NOT. ALLOCATED(poly1%FUNC(base1)) ) STOP 14
-           IF ( .NOT. ALLOCATED(poly1%FUNC(tgt1)) ) STOP 15
-           IF ( .NOT. ALLOCATED(poly1%FUNC(poly1)) ) STOP 16
+           IF ( .NOT. ALLOCATED(poly1%FUNC(base1)) ) ERROR STOP 14
+           IF ( .NOT. ALLOCATED(poly1%FUNC(tgt1)) ) ERROR STOP 15
+           IF ( .NOT. ALLOCATED(poly1%FUNC(poly1)) ) ERROR STOP 16
 
           CLASS DEFAULT
            STOP 102
       END SELECT
 
       ALLOCATE(NextGen(4,10,8,8):: poly1)   ! dynamic type NextGen with k2=k3=8, call foo1
-      IF ( .NOT. ALLOCATED(poly1%FUNC())) STOP 17
+      IF ( .NOT. ALLOCATED(poly1%FUNC())) ERROR STOP 17
 
-      IF ( .NOT. ALLOCATED(child1%FUNC(base1)) ) STOP 18
-      IF ( .NOT. ALLOCATED(child1%FUNC(tgt1)) ) STOP 19
-      IF ( .NOT. ALLOCATED(child1%FUNC(poly1)) ) STOP 20
-      IF ( .NOT. ALLOCATED(child1%FUNC(dtv)) ) STOP 21
+      IF ( .NOT. ALLOCATED(child1%FUNC(base1)) ) ERROR STOP 18
+      IF ( .NOT. ALLOCATED(child1%FUNC(tgt1)) ) ERROR STOP 19
+      IF ( .NOT. ALLOCATED(child1%FUNC(poly1)) ) ERROR STOP 20
+      IF ( .NOT. ALLOCATED(child1%FUNC(dtv)) ) ERROR STOP 21
 
-      IF ( .NOT. ALLOCATED(dtv%FUNC(base1)) ) STOP 22
-      IF ( .NOT. ALLOCATED(dtv%FUNC(tgt1)) ) STOP 23
-      IF ( .NOT. ALLOCATED(dtv%FUNC(poly1)) ) STOP 24
-      IF ( .NOT. ALLOCATED(dtv%FUNC(dtv)) ) STOP 25
+      IF ( .NOT. ALLOCATED(dtv%FUNC(base1)) ) ERROR STOP 22
+      IF ( .NOT. ALLOCATED(dtv%FUNC(tgt1)) ) ERROR STOP 23
+      IF ( .NOT. ALLOCATED(dtv%FUNC(poly1)) ) ERROR STOP 24
+      IF ( .NOT. ALLOCATED(dtv%FUNC(dtv)) ) ERROR STOP 25
 
       ALLOCATE(NextGen(4,10,4,4):: poly1)   ! dynamic type NextGen call foo1
 
       SELECT TYPE ( poly1) ! call possible only within select type
           CLASS IS (NextGen(4,*,4,4))
-             IF ( .NOT. ALLOCATED(poly1%REPT()) ) STOP 26
+             IF ( .NOT. ALLOCATED(poly1%REPT()) ) ERROR STOP 26
 
           CLASS DEFAULT
            STOP 103
@@ -138,16 +138,16 @@
 
       SELECT TYPE ( poly1) ! call possible only within select type
           CLASS IS (NextGen(4,*,8,8))
-             IF ( .NOT. ALLOCATED(poly1%REPT())) STOP 27
+             IF ( .NOT. ALLOCATED(poly1%REPT())) ERROR STOP 27
 
           CLASS DEFAULT
            STOP 104
       END SELECT
 
 
-      IF ( .NOT. ALLOCATED(dtv%REPT(base1)) ) STOP 28
-      IF ( .NOT. ALLOCATED(dtv%REPT(tgt1)) ) STOP 29
-      IF ( .NOT. ALLOCATED(dtv%REPT(poly1)) ) STOP 30
-      IF ( .NOT. ALLOCATED(dtv%REPT(dtv)) ) STOP 31
+      IF ( .NOT. ALLOCATED(dtv%REPT(base1)) ) ERROR STOP 28
+      IF ( .NOT. ALLOCATED(dtv%REPT(tgt1)) ) ERROR STOP 29
+      IF ( .NOT. ALLOCATED(dtv%REPT(poly1)) ) ERROR STOP 30
+      IF ( .NOT. ALLOCATED(dtv%REPT(dtv)) ) ERROR STOP 31
 
       END PROGRAM Generic_TypeBound01d

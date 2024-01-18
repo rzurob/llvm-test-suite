@@ -42,7 +42,7 @@ use m
         real(8) localArray(aT1%n)
         external sortReal8Down
 
-        if (aT1%n < n) stop 100
+        if (aT1%n < n) error stop 100
 
         localArray = aT1%data%data
 
@@ -84,7 +84,7 @@ use m1
 
         type(flagedData(8)) local(ft1%n)
 
-        if (ft1%n < n) stop 150
+        if (ft1%n < n) error stop 150
 
         local = ft1%data
 

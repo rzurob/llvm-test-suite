@@ -23,7 +23,7 @@ if (.not. all(i1 .eq. cshift(reshape((/1,2,3,4/),(/2,2/)), shift=1, dim=1))) &
 if (.not. all(i2 .eq. cshift(reshape((/1,2,3,4/),(/2,2/)), shift=-3, dim=2))) &
  & stop 2
 
-if (.not. all(res1 .eq. cshift(A, shift=(/-1,1,0/), dim=1))) stop 3
-if (.not. all(res2 .eq. cshift(A, shift=(/-1,1,0/), dim=2))) stop 4
+if (.not. all(res1 .eq. cshift(A, shift=(/-1,1,0/), dim=1))) error stop 3
+if (.not. all(res2 .eq. cshift(A, shift=(/-1,1,0/), dim=2))) error stop 4
 
 end

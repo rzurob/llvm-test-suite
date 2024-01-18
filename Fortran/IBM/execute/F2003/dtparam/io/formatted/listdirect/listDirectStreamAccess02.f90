@@ -56,15 +56,15 @@ module m2
        integer :: mypos
 
        inquire(unit,pos=mypos)
-       if(mypos /= 1)                      stop 20
+       if(mypos /= 1)                      error stop 20
 
        read(unit,*,pos=mypos) dummy%x2
        inquire(unit,pos=mypos)
-       if(mypos /= 33)                     stop 21
+       if(mypos /= 33)                     error stop 21
 
        read(unit,*,decimal='comma') dummy%b1comp
        inquire(unit,pos=mypos)
-       if(mypos /= 85)                     stop 22
+       if(mypos /= 85)                     error stop 22
 
        read(unit,*,pos=mypos) dummy%c1comp
 
@@ -108,15 +108,15 @@ use m2
    call read(ptr,10)
 
    !verify the results
-   if(.not. precision_x6(ptr%x2(1),(-3.5_8,4.2_8) ))          stop 11
-   if(.not. precision_x6(ptr%x2(2),(12.4D02,-2.6D-3) ))       stop 12
-   if(.not. precision_r4(ptr%b1comp%r2(1),0.))                stop 13
-   if(.not. precision_r4(ptr%b1comp%r2(2),-999.9E-3))         stop 14
-   if(.not. precision_r4(ptr%b1comp%r2(3),-4._4))             stop 15
-   if(.not. precision_r4(ptr%b1comp%a1comp%r1,-0.5))          stop 16
-   if(any(ptr%b1comp%a1comp%c1 /= ["xlf","XLF","***","IBM"])) stop 17
-   if(.not. precision_x8(ptr%c1comp%x1,(1.2E-10,1.2) ))       stop 18
-   if(ptr%c1comp%i1 /= -1234)                                 stop 19
+   if(.not. precision_x6(ptr%x2(1),(-3.5_8,4.2_8) ))          error stop 11
+   if(.not. precision_x6(ptr%x2(2),(12.4D02,-2.6D-3) ))       error stop 12
+   if(.not. precision_r4(ptr%b1comp%r2(1),0.))                error stop 13
+   if(.not. precision_r4(ptr%b1comp%r2(2),-999.9E-3))         error stop 14
+   if(.not. precision_r4(ptr%b1comp%r2(3),-4._4))             error stop 15
+   if(.not. precision_r4(ptr%b1comp%a1comp%r1,-0.5))          error stop 16
+   if(any(ptr%b1comp%a1comp%c1 /= ["xlf","XLF","***","IBM"])) error stop 17
+   if(.not. precision_x8(ptr%c1comp%x1,(1.2E-10,1.2) ))       error stop 18
+   if(ptr%c1comp%i1 /= -1234)                                 error stop 19
 
    close(10)
 

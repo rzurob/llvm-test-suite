@@ -18,6 +18,6 @@
 
       ALLOCATE( Container(4,3) :: poly )
       poly%ptr => btgt
-      IF ( LEN(poly%ptr%C0)  .NE. 3 ) STOP 10
+      IF ( LEN(poly%ptr%C0)  .NE. 3 ) ERROR STOP 10
 
 END

@@ -49,14 +49,14 @@
 
   TYPE(dt(n*2)) b
 
-  IF (b%l         .NE. 4)  STOP 11
-  IF (b%arr%l     .NE. 4)  STOP 12
-  IF (SIZE(b%arr) .NE. 4)  STOP 13
+  IF (b%l         .NE. 4)  ERROR STOP 11
+  IF (b%arr%l     .NE. 4)  ERROR STOP 12
+  IF (SIZE(b%arr) .NE. 4)  ERROR STOP 13
 
   do i = lbound(b%arr,1), ubound(b%arr, 1)
     b%arr%c = '12345'
   end do
-  IF (ANY(b%arr%c  .NE. "1234")) STOP 14
+  IF (ANY(b%arr%c  .NE. "1234")) ERROR STOP 14
 
   END SUBROUTINE
 

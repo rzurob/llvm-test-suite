@@ -30,7 +30,7 @@ program d362516
 
      a2=[A(2)(),A(2)(),A(2)(),A(2)()]
 
-     if(a2%l1 /= 2)                stop 1
-     if(size(a2) /= 4)             stop 2
+     if(a2%l1 /= 2)                error stop 1
+     if(size(a2) /= 4)             error stop 2
 
 end program

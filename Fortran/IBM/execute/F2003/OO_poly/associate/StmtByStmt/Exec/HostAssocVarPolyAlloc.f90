@@ -65,18 +65,18 @@
 
     SELECT TYPE ( As )
       TYPE IS ( Child )
-        IF ( As%GetId()      .NE. -2 ) STOP 30
-        IF ( As%ChildId      .NE. -2 ) STOP 31
-        IF ( As%Base%GetId() .NE. -1 ) STOP 32
-        IF ( As%BaseComp%GetId() .NE. 0 ) STOP 33
+        IF ( As%GetId()      .NE. -2 ) ERROR STOP 30
+        IF ( As%ChildId      .NE. -2 ) ERROR STOP 31
+        IF ( As%Base%GetId() .NE. -1 ) ERROR STOP 32
+        IF ( As%BaseComp%GetId() .NE. 0 ) ERROR STOP 33
 
         As%BaseId  = 1
         As%ChildId = 2
 
-        IF ( As%GetId()      .NE. 2 ) STOP 40
-        IF ( As%ChildId      .NE. 2 ) STOP 41
-        IF ( As%Base%GetId() .NE. 1 ) STOP 42
-        IF ( U%GetId()       .NE. 2 ) STOP 43
+        IF ( As%GetId()      .NE. 2 ) ERROR STOP 40
+        IF ( As%ChildId      .NE. 2 ) ERROR STOP 41
+        IF ( As%Base%GetId() .NE. 1 ) ERROR STOP 42
+        IF ( U%GetId()       .NE. 2 ) ERROR STOP 43
       CLASS DEFAULT
         STOP 50
     END SELECT

@@ -42,8 +42,8 @@ module m
             p => brg
             call move_alloc(brg, func)
 
-            if ( .not. allocated(func) ) stop 11
-            if ( .not. associated(p,func) ) stop 13
+            if ( .not. allocated(func) ) error stop 11
+            if ( .not. associated(p,func) ) error stop 13
          end function
 
 end module
@@ -58,12 +58,12 @@ end module
 
       select type ( x => b%get_alloc(d) )
           type is ( child )
-              if ( x%id /= 8 ) stop 21
-              if ( x%ch /= 'XYZ' ) stop 23
+              if ( x%id /= 8 ) error stop 21
+              if ( x%ch /= 'XYZ' ) error stop 23
           class default
               stop 25
       end select
 
-      if ( allocated(d) ) stop 31
+      if ( allocated(d) ) error stop 31
 
       end

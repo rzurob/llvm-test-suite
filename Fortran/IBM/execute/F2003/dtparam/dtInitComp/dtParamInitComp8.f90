@@ -82,28 +82,28 @@
             LL=.TRUE._4   ))
 
 
-  IF ( T%T%K      .NE. 4 )                 STOP 41
-  IF ( T%T%L      .NE. 4 )                 STOP 42
-  IF ( T%K2        .NE. 4 )                 STOP 43
-  IF ( T%L2        .NE. 4 )                 STOP 44
+  IF ( T%T%K      .NE. 4 )                 ERROR STOP 41
+  IF ( T%T%L      .NE. 4 )                 ERROR STOP 42
+  IF ( T%K2        .NE. 4 )                 ERROR STOP 43
+  IF ( T%L2        .NE. 4 )                 ERROR STOP 44
 
-  IF ( KIND(T%t%I)   .NE. 4 )                 STOP 45
-  IF ( SIZE(T%t%I)   .NE. 4 )                 STOP 46
-  IF ( ANY(T%t%I     .NE. 3))                 STOP 47
+  IF ( KIND(T%t%I)   .NE. 4 )                 ERROR STOP 45
+  IF ( SIZE(T%t%I)   .NE. 4 )                 ERROR STOP 46
+  IF ( ANY(T%t%I     .NE. 3))                 ERROR STOP 47
 
-  IF ( KIND(T%t%R)   .NE. 4 )                 STOP 48
-  IF ( SIZE(T%t%R)   .NE. 4 )                 STOP 49
-  IF ( ANY(T%t%R     .NE. 3))                 STOP 40
+  IF ( KIND(T%t%R)   .NE. 4 )                 ERROR STOP 48
+  IF ( SIZE(T%t%R)   .NE. 4 )                 ERROR STOP 49
+  IF ( ANY(T%t%R     .NE. 3))                 ERROR STOP 40
 
-  IF ( KIND(T%t%Z)   .NE. 4 )                 STOP 51
-  IF ( SIZE(T%t%Z)   .NE. 4 )                 STOP 52
-  IF ( ANY(T%t%Z     .NE. (-3,-3)))           STOP 53
+  IF ( KIND(T%t%Z)   .NE. 4 )                 ERROR STOP 51
+  IF ( SIZE(T%t%Z)   .NE. 4 )                 ERROR STOP 52
+  IF ( ANY(T%t%Z     .NE. (-3,-3)))           ERROR STOP 53
 
-  IF ( LEN(T%t%C)    .NE. 4 )                 STOP 54
-  IF ( SIZE(T%t%C)   .NE. 4 )                 STOP 55
-  IF ( ANY(T%t%C     .NE. "$$$$" ))           STOP 56
+  IF ( LEN(T%t%C)    .NE. 4 )                 ERROR STOP 54
+  IF ( SIZE(T%t%C)   .NE. 4 )                 ERROR STOP 55
+  IF ( ANY(T%t%C     .NE. "$$$$" ))           ERROR STOP 56
 
-  IF ( ASSOCIATED(T%t%ProcPtr) )              STOP 57
+  IF ( ASSOCIATED(T%t%ProcPtr) )              ERROR STOP 57
 
 
 

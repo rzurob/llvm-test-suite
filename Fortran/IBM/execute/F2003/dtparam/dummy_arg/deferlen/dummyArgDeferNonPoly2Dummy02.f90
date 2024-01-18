@@ -62,9 +62,9 @@ program dummyArgDeferNonPoly2Dummy02
 
   call sub1(dtp1,dtp2)
 
-  if(dtp1%l1 /= 3)                           stop 1
-  if(dtp1%l2 /= 6)                           stop 2
-  if(dtp1%c /= "123456789")                  stop 3
+  if(dtp1%l1 /= 3)                           error stop 1
+  if(dtp1%l2 /= 6)                           error stop 2
+  if(dtp1%c /= "123456789")                  error stop 3
 
 end program
 

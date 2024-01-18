@@ -45,7 +45,7 @@ PROGRAM AllocateWithSourceExp04
       CLASS(Base(knd1,len2)), POINTER :: c2
 
       ALLOCATE(Base(knd1,len1) :: b1)
-      IF ( b1%l1 .NE. len1) STOP 20
+      IF ( b1%l1 .NE. len1) ERROR STOP 20
 
       b1%my_arr = (/(2, i = 1, len1)/)
       b1%my_type= 'Base'
@@ -56,14 +56,14 @@ PROGRAM AllocateWithSourceExp04
 
       SELECT TYPE ( c2 )
         CLASS IS (Child(knd1,*,knd1,*))
-            IF ( c2%l1 .NE. len2) STOP 21
-            IF ( c2%l2 .NE. len2) STOP 22
+            IF ( c2%l1 .NE. len2) ERROR STOP 21
+            IF ( c2%l2 .NE. len2) ERROR STOP 22
             c2%my_arr = (/(5, i = 1, len2)/)
             c2%my_type= 'Child'
 
             IF ( .NOT. ASSOCIATED(c2%c_cmp)) ALLOCATE(Base(knd1,c2%l2) :: c2%c_cmp)
-            IF ( c2%c_cmp%l1 .NE. c2%l2) STOP 23
-            IF ( c2%c_cmp%l1 .NE. len2) STOP 24
+            IF ( c2%c_cmp%l1 .NE. c2%l2) ERROR STOP 23
+            IF ( c2%c_cmp%l1 .NE. len2) ERROR STOP 24
             c2%c_cmp%my_arr = (/(2, i = 1, len2)/)
             c2%c_cmp%my_type= 'Base'
             call allocate_auto(c2%c_cmp)
@@ -71,9 +71,9 @@ PROGRAM AllocateWithSourceExp04
             IF ( .NOT. ASSOCIATED(c2%b_cmp)) ALLOCATE(Child(knd1,c2%l2,knd1,len1) :: c2%b_cmp)
             SELECT TYPE ( A => c2%b_cmp )
               CLASS IS (Child(knd1,*,knd1,*))
-                 IF ( A%l1 .NE. c2%l2) STOP 25
-                 IF ( A%l1 .NE. len2) STOP 26
-                 IF ( A%l2 .NE. len1) STOP 27
+                 IF ( A%l1 .NE. c2%l2) ERROR STOP 25
+                 IF ( A%l1 .NE. len2) ERROR STOP 26
+                 IF ( A%l2 .NE. len1) ERROR STOP 27
                  A%my_arr = (/(5, i = 1, len2)/)
                  A%my_type= 'Child'
                  call allocate_auto(A)
@@ -97,19 +97,19 @@ PROGRAM AllocateWithSourceExp04
       CLASS(Base(knd1,:)), POINTER ::  Obj
 
       ALLOCATE(Obj, SOURCE = Arg)
-      IF ( .NOT. ASSOCIATED(Obj)) STOP 30
+      IF ( .NOT. ASSOCIATED(Obj)) ERROR STOP 30
 
       SELECT TYPE ( Obj )
         CLASS IS (Base(knd1,*))
 
-           IF ( SIZE(Obj%my_arr) .NE. Obj%l1) STOP 31
-           IF ( ANY(Obj%my_arr .NE. 2) ) STOP 32
-           IF ( Obj%my_type .NE. 'Base' ) STOP 33
+           IF ( SIZE(Obj%my_arr) .NE. Obj%l1) ERROR STOP 31
+           IF ( ANY(Obj%my_arr .NE. 2) ) ERROR STOP 32
+           IF ( Obj%my_type .NE. 'Base' ) ERROR STOP 33
 
         CLASS IS (Child(knd1,*,knd1,*))
-           IF ( SIZE(Obj%my_arr) .NE. Obj%l1) STOP 34
-           IF ( ANY(Obj%my_arr .NE. 5) ) STOP 35
-           IF ( Obj%my_type .NE. 'Child' ) STOP 36
+           IF ( SIZE(Obj%my_arr) .NE. Obj%l1) ERROR STOP 34
+           IF ( ANY(Obj%my_arr .NE. 5) ) ERROR STOP 35
+           IF ( Obj%my_type .NE. 'Child' ) ERROR STOP 36
 
         CLASS DEFAULT
            STOP 37

@@ -42,11 +42,11 @@
   SUBROUTINE Sub(N)
   TYPE(dt(n)) b(n)
 
-  IF (ubound(b(1)%arr,1)   .NE. 4)   STOP 11
-  IF (SIZE(b(4)%arr)       .NE. 4)   STOP 12
-  IF (ubound(b(1)%arr1,1)  .NE. 4)   STOP 13
-  IF (SIZE(b(4)%arr1)      .NE. 4)   STOP 14
-  IF (ANY(b(1)%arr1        .NE. -1)) STOP 15
+  IF (ubound(b(1)%arr,1)   .NE. 4)   ERROR STOP 11
+  IF (SIZE(b(4)%arr)       .NE. 4)   ERROR STOP 12
+  IF (ubound(b(1)%arr1,1)  .NE. 4)   ERROR STOP 13
+  IF (SIZE(b(4)%arr1)      .NE. 4)   ERROR STOP 14
+  IF (ANY(b(1)%arr1        .NE. -1)) ERROR STOP 15
 
   END SUBROUTINE
 

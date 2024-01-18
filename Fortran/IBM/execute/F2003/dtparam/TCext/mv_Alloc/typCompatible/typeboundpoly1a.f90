@@ -68,13 +68,13 @@
       ! TO of unlimit poly, FROM of type child
       call b%move(b1, b2)
 
-      if ( .not. same_type_as(b1,c)) stop 30
+      if ( .not. same_type_as(b1,c)) error stop 30
 
-      if ( .not. allocated(b1) ) stop 31
-      if ( allocated(b2) ) stop 33
+      if ( .not. allocated(b1) ) error stop 31
+      if ( allocated(b2) ) error stop 33
       print *, shape(b1)
 
-      if ( numC /= 1 ) stop 43
-      if ( numB /= 0 ) stop 45
+      if ( numC /= 1 ) error stop 43
+      if ( numB /= 0 ) error stop 45
       end
 

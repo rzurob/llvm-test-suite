@@ -54,47 +54,47 @@
 
 
   DO I1 = 1,126
-    IF (     COUNT(M1(:I1), KIND=K1%KIND )            .NE. (I1+1)/2)       STOP 11
-    IF (KIND(COUNT(M1(:I1), KIND=K1%KIND ))           .NE. K1%KIND)        STOP 12
-    IF (     COUNT(M1(:I1) )                          .NE. (I1+1)/2)       STOP 13
-    IF (KIND(COUNT(M1(:I1)))                          .NE. 4)              STOP 14
-    IF (     COUNT(M1(:I1), KIND=K1%KIND, DIM=1_1 )   .NE. (I1+1)/2)       STOP 15
-    IF (KIND(COUNT(M1(:I1), KIND=K1%KIND, DIM=1_2 ))  .NE. K1%KIND)        STOP 16
-    IF (     COUNT(M1(:I1), DIM=1_8 )                 .NE. (I1+1)/2)       STOP 17
-    IF (KIND(COUNT(M1(:I1), DIM=1_8))                 .NE. 4)              STOP 18
+    IF (     COUNT(M1(:I1), KIND=K1%KIND )            .NE. (I1+1)/2)       ERROR STOP 11
+    IF (KIND(COUNT(M1(:I1), KIND=K1%KIND ))           .NE. K1%KIND)        ERROR STOP 12
+    IF (     COUNT(M1(:I1) )                          .NE. (I1+1)/2)       ERROR STOP 13
+    IF (KIND(COUNT(M1(:I1)))                          .NE. 4)              ERROR STOP 14
+    IF (     COUNT(M1(:I1), KIND=K1%KIND, DIM=1_1 )   .NE. (I1+1)/2)       ERROR STOP 15
+    IF (KIND(COUNT(M1(:I1), KIND=K1%KIND, DIM=1_2 ))  .NE. K1%KIND)        ERROR STOP 16
+    IF (     COUNT(M1(:I1), DIM=1_8 )                 .NE. (I1+1)/2)       ERROR STOP 17
+    IF (KIND(COUNT(M1(:I1), DIM=1_8))                 .NE. 4)              ERROR STOP 18
   END DO
 
   DO I2 = 1,126
-    IF (     COUNT(M2(:I2), KIND=K2%KIND )            .NE. (I2+1)/2)       STOP 21
-    IF (KIND(COUNT(M2(:I2), KIND=K2%KIND ))           .NE. K2%KIND)        STOP 22
-    IF (     COUNT(M2(:I2) )                          .NE. (I2+1)/2)       STOP 23
-    IF (KIND(COUNT(M2(:I2)))                          .NE. 4)              STOP 24
-    IF (     COUNT(M2(:I2), KIND=K2%KIND, DIM=1_4 )   .NE. (I2+1)/2)       STOP 25
-    IF (KIND(COUNT(M2(:I2), KIND=K2%KIND, DIM=1_1 ))  .NE. K2%KIND)        STOP 26
-    IF (     COUNT(M2(:I2), DIM=1_4 )                 .NE. (I2+1)/2)       STOP 27
-    IF (KIND(COUNT(M2(:I2), DIM=1_4))                 .NE. 4)              STOP 28
+    IF (     COUNT(M2(:I2), KIND=K2%KIND )            .NE. (I2+1)/2)       ERROR STOP 21
+    IF (KIND(COUNT(M2(:I2), KIND=K2%KIND ))           .NE. K2%KIND)        ERROR STOP 22
+    IF (     COUNT(M2(:I2) )                          .NE. (I2+1)/2)       ERROR STOP 23
+    IF (KIND(COUNT(M2(:I2)))                          .NE. 4)              ERROR STOP 24
+    IF (     COUNT(M2(:I2), KIND=K2%KIND, DIM=1_4 )   .NE. (I2+1)/2)       ERROR STOP 25
+    IF (KIND(COUNT(M2(:I2), KIND=K2%KIND, DIM=1_1 ))  .NE. K2%KIND)        ERROR STOP 26
+    IF (     COUNT(M2(:I2), DIM=1_4 )                 .NE. (I2+1)/2)       ERROR STOP 27
+    IF (KIND(COUNT(M2(:I2), DIM=1_4))                 .NE. 4)              ERROR STOP 28
   END DO
 
   DO I4 = 1,126
-    IF (     COUNT(M4(:I4), KIND=K4%KIND )            .NE. (I4+1)/2)       STOP 41
-    IF (KIND(COUNT(M4(:I4), KIND=K4%KIND ))           .NE. K4%KIND)        STOP 42
-    IF (     COUNT(M4(:I4) )                          .NE. (I4+1)/2)       STOP 43
-    IF (KIND(COUNT(M4(:I4)))                          .NE. 4)              STOP 44
-    IF (     COUNT(M4(:I4), KIND=K4%KIND, DIM=1_8 )   .NE. (I4+1)/2)       STOP 45
-    IF (KIND(COUNT(M4(:I4), KIND=K4%KIND, DIM=1_8 ))  .NE. K4%KIND)        STOP 46
-    IF (     COUNT(M4(:I4), DIM=1_2 )                 .NE. (I4+1)/2)       STOP 47
-    IF (KIND(COUNT(M4(:I4), DIM=1_2))                 .NE. 4)              STOP 48
+    IF (     COUNT(M4(:I4), KIND=K4%KIND )            .NE. (I4+1)/2)       ERROR STOP 41
+    IF (KIND(COUNT(M4(:I4), KIND=K4%KIND ))           .NE. K4%KIND)        ERROR STOP 42
+    IF (     COUNT(M4(:I4) )                          .NE. (I4+1)/2)       ERROR STOP 43
+    IF (KIND(COUNT(M4(:I4)))                          .NE. 4)              ERROR STOP 44
+    IF (     COUNT(M4(:I4), KIND=K4%KIND, DIM=1_8 )   .NE. (I4+1)/2)       ERROR STOP 45
+    IF (KIND(COUNT(M4(:I4), KIND=K4%KIND, DIM=1_8 ))  .NE. K4%KIND)        ERROR STOP 46
+    IF (     COUNT(M4(:I4), DIM=1_2 )                 .NE. (I4+1)/2)       ERROR STOP 47
+    IF (KIND(COUNT(M4(:I4), DIM=1_2))                 .NE. 4)              ERROR STOP 48
   END DO
 
   DO I8 = 1,126
-    IF (     COUNT(M8(:I8), KIND=K8%KIND )            .NE. (I8+1)/2)       STOP 81
-    IF (KIND(COUNT(M8(:I8), KIND=K8%KIND ))           .NE. K8%KIND)        STOP 82
-    IF (     COUNT(M8(:I8) )                          .NE. (I8+1)/2)       STOP 83
-    IF (KIND(COUNT(M8(:I8)))                          .NE. 4)              STOP 84
-    IF (     COUNT(M8(:I8), KIND=K8%KIND, DIM=1_4 )   .NE. (I8+1)/2)       STOP 85
-    IF (KIND(COUNT(M8(:I8), KIND=K8%KIND, DIM=1_1 ))  .NE. K8%KIND)        STOP 86
-    IF (     COUNT(M8(:I8), DIM=1_8 )                 .NE. (I8+1)/2)       STOP 87
-    IF (KIND(COUNT(M8(:I8), DIM=1_8))                 .NE. 4)              STOP 88
+    IF (     COUNT(M8(:I8), KIND=K8%KIND )            .NE. (I8+1)/2)       ERROR STOP 81
+    IF (KIND(COUNT(M8(:I8), KIND=K8%KIND ))           .NE. K8%KIND)        ERROR STOP 82
+    IF (     COUNT(M8(:I8) )                          .NE. (I8+1)/2)       ERROR STOP 83
+    IF (KIND(COUNT(M8(:I8)))                          .NE. 4)              ERROR STOP 84
+    IF (     COUNT(M8(:I8), KIND=K8%KIND, DIM=1_4 )   .NE. (I8+1)/2)       ERROR STOP 85
+    IF (KIND(COUNT(M8(:I8), KIND=K8%KIND, DIM=1_1 ))  .NE. K8%KIND)        ERROR STOP 86
+    IF (     COUNT(M8(:I8), DIM=1_8 )                 .NE. (I8+1)/2)       ERROR STOP 87
+    IF (KIND(COUNT(M8(:I8), DIM=1_8))                 .NE. 4)              ERROR STOP 88
   END DO
 
 

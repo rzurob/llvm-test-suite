@@ -47,25 +47,25 @@
 
     x=>t
 
-    IF (t%n              .NE. 4)   STOP 11
-    IF (UBOUND(t%arr, 1) .NE. 4)   STOP 12
-    IF (SIZE(t%arr)      .NE. 4)   STOP 13
+    IF (t%n              .NE. 4)   ERROR STOP 11
+    IF (UBOUND(t%arr, 1) .NE. 4)   ERROR STOP 12
+    IF (SIZE(t%arr)      .NE. 4)   ERROR STOP 13
 
-    IF (t%arr%m               .NE. 3)   STOP 14
-    IF (UBOUND(t%arr(1)%i, 1) .NE. 4)   STOP 15
-    IF (SIZE(t%arr(1)%i)      .NE. 4)   STOP 16
+    IF (t%arr%m               .NE. 3)   ERROR STOP 14
+    IF (UBOUND(t%arr(1)%i, 1) .NE. 4)   ERROR STOP 15
+    IF (SIZE(t%arr(1)%i)      .NE. 4)   ERROR STOP 16
 
-    IF (ANY(t%arr(1)%i .NE. -1)) STOP 17
+    IF (ANY(t%arr(1)%i .NE. -1)) ERROR STOP 17
 
-    iF (x%n              .NE. 4)   STOP 21
-    IF (UBOUND(x%arr, 1) .NE. 4)   STOP 22
-    IF (SIZE(x%arr)      .NE. 4)   STOP 23
+    iF (x%n              .NE. 4)   ERROR STOP 21
+    IF (UBOUND(x%arr, 1) .NE. 4)   ERROR STOP 22
+    IF (SIZE(x%arr)      .NE. 4)   ERROR STOP 23
 
-    IF (x%arr%m               .NE. 3)   STOP 24
-    IF (UBOUND(x%arr(1)%i, 1) .NE. 4)   STOP 25
-    IF (SIZE(x%arr(1)%i)      .NE. 4)   STOP 26
+    IF (x%arr%m               .NE. 3)   ERROR STOP 24
+    IF (UBOUND(x%arr(1)%i, 1) .NE. 4)   ERROR STOP 25
+    IF (SIZE(x%arr(1)%i)      .NE. 4)   ERROR STOP 26
 
-    IF (ANY(x%arr(1)%i .NE. -1)) STOP 27
+    IF (ANY(x%arr(1)%i .NE. -1)) ERROR STOP 27
 
     END SUBROUTINE
 

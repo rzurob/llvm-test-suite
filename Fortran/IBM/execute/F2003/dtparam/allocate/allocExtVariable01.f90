@@ -63,7 +63,7 @@ PROGRAM allocExtVariable01
     TYPE(ext(5,8,0)), ALLOCATABLE   :: e3
 
 
-    IF ( ALLOCATED( e1 ) )                  STOP 10
+    IF ( ALLOCATED( e1 ) )                  ERROR STOP 10
 
     ALLOCATE(e1, STAT=stat, ERRMSG=errmsg)
     IF (stat /= 0) THEN
@@ -71,24 +71,24 @@ PROGRAM allocExtVariable01
         STOP 11
     END IF
 
-    IF (.NOT. ALLOCATED( e1 ))              STOP 12
+    IF (.NOT. ALLOCATED( e1 ))              ERROR STOP 12
 
-    IF (e1%k /= 16)                         STOP 13
-    IF (e1%b%k /= 16)                       STOP 14
-    IF (e1%base%k /= 16)                    STOP 15
-    IF (KIND( e1%b%a ) /= 16)               STOP 16
-    IF (KIND( e1%base%a ) /= 16)            STOP 17
+    IF (e1%k /= 16)                         ERROR STOP 13
+    IF (e1%b%k /= 16)                       ERROR STOP 14
+    IF (e1%base%k /= 16)                    ERROR STOP 15
+    IF (KIND( e1%b%a ) /= 16)               ERROR STOP 16
+    IF (KIND( e1%base%a ) /= 16)            ERROR STOP 17
 
-    IF (e1%l2 /= 1)                         STOP 18
-    IF (e1%l1 /= 5)                         STOP 19
-    IF (e1%b%l1 /= 5)                       STOP 20
-    IF (e1%base%l1 /= 5)                    STOP 21
+    IF (e1%l2 /= 1)                         ERROR STOP 18
+    IF (e1%l1 /= 5)                         ERROR STOP 19
+    IF (e1%b%l1 /= 5)                       ERROR STOP 20
+    IF (e1%base%l1 /= 5)                    ERROR STOP 21
 
-    IF (SIZE( e1%b%a ) /= 5)                STOP 22
-    IF (SIZE( e1%base%a ) /= 5)             STOP 23
+    IF (SIZE( e1%b%a ) /= 5)                ERROR STOP 22
+    IF (SIZE( e1%base%a ) /= 5)             ERROR STOP 23
 
 
-    IF ( ALLOCATED( e2 ) )                  STOP 30
+    IF ( ALLOCATED( e2 ) )                  ERROR STOP 30
 
     ALLOCATE(e2, STAT=stat, ERRMSG=errmsg)
     IF (stat /= 0) THEN
@@ -96,24 +96,24 @@ PROGRAM allocExtVariable01
         STOP 31
     END IF
 
-    IF (.NOT. ALLOCATED( e2 ))              STOP 32
+    IF (.NOT. ALLOCATED( e2 ))              ERROR STOP 32
 
-    IF (e2%k /= 4)                          STOP 33
-    IF (e2%b%k /= 4)                        STOP 34
-    IF (e2%base%k /= 4)                     STOP 35
-    IF (KIND( e2%b%a ) /= 4)                STOP 36
-    IF (KIND( e2%base%a ) /= 4)             STOP 37
+    IF (e2%k /= 4)                          ERROR STOP 33
+    IF (e2%b%k /= 4)                        ERROR STOP 34
+    IF (e2%base%k /= 4)                     ERROR STOP 35
+    IF (KIND( e2%b%a ) /= 4)                ERROR STOP 36
+    IF (KIND( e2%base%a ) /= 4)             ERROR STOP 37
 
-    IF (e2%l2 /= 1)                         STOP 38
-    IF (e2%l1 /= 0)                         STOP 39
-    IF (e2%b%l1 /= 0)                       STOP 40
-    IF (e2%base%l1 /= 0)                    STOP 41
+    IF (e2%l2 /= 1)                         ERROR STOP 38
+    IF (e2%l1 /= 0)                         ERROR STOP 39
+    IF (e2%b%l1 /= 0)                       ERROR STOP 40
+    IF (e2%base%l1 /= 0)                    ERROR STOP 41
 
-    IF (SIZE( e2%b%a ) /= 0)                STOP 42
-    IF (SIZE( e2%base%a ) /= 0)             STOP 43
+    IF (SIZE( e2%b%a ) /= 0)                ERROR STOP 42
+    IF (SIZE( e2%base%a ) /= 0)             ERROR STOP 43
 
 
-    IF ( ALLOCATED( e3 ) )                  STOP 50
+    IF ( ALLOCATED( e3 ) )                  ERROR STOP 50
 
     ALLOCATE(e3, STAT=stat, ERRMSG=errmsg)
     IF (stat /= 0) THEN
@@ -121,20 +121,20 @@ PROGRAM allocExtVariable01
         STOP 51
     END IF
 
-    IF (.NOT. ALLOCATED( e3 ))              STOP 52
+    IF (.NOT. ALLOCATED( e3 ))              ERROR STOP 52
 
-    IF (e3%k /= 8)                          STOP 53
-    IF (e3%b%k /= 8)                        STOP 54
-    IF (e3%base%k /= 8)                     STOP 55
-    IF (KIND( e3%b%a ) /= 8)                STOP 56
-    IF (KIND( e3%base%a ) /= 8)             STOP 57
+    IF (e3%k /= 8)                          ERROR STOP 53
+    IF (e3%b%k /= 8)                        ERROR STOP 54
+    IF (e3%base%k /= 8)                     ERROR STOP 55
+    IF (KIND( e3%b%a ) /= 8)                ERROR STOP 56
+    IF (KIND( e3%base%a ) /= 8)             ERROR STOP 57
 
-    IF (e3%l2 /= 0)                         STOP 58
-    IF (e3%l1 /= 5)                         STOP 59
-    IF (e3%b%l1 /= 0)                       STOP 60
-    IF (e3%base%l1 /= 5)                    STOP 61
+    IF (e3%l2 /= 0)                         ERROR STOP 58
+    IF (e3%l1 /= 5)                         ERROR STOP 59
+    IF (e3%b%l1 /= 0)                       ERROR STOP 60
+    IF (e3%base%l1 /= 5)                    ERROR STOP 61
 
-    IF (SIZE( e3%b%a ) /= 0)                STOP 62
-    IF (SIZE( e3%base%a ) /= 5)             STOP 63
+    IF (SIZE( e3%b%a ) /= 0)                ERROR STOP 62
+    IF (SIZE( e3%base%a ) /= 5)             ERROR STOP 63
 
 END PROGRAM allocExtVariable01

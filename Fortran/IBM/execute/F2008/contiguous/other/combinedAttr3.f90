@@ -46,33 +46,33 @@ MODULE Mod
         CLASS(DT0(5,*)), OPTIONAL, CONTIGUOUS, INTENT(INOUT) :: Arg2(:)
 
         IF ( PRESENT(Arg0) ) THEN
-           IF ( .NOT. IS_CONTIGUOUS(Arg0) ) STOP 10
-           IF ( Arg0%K0        .NE.     4 ) STOP 11
-           IF ( Arg0%L0        .NE.    10 ) STOP 12
-           IF ( SIZE(Arg0)     .NE.     1 ) STOP 13
+           IF ( .NOT. IS_CONTIGUOUS(Arg0) ) ERROR STOP 10
+           IF ( Arg0%K0        .NE.     4 ) ERROR STOP 11
+           IF ( Arg0%L0        .NE.    10 ) ERROR STOP 12
+           IF ( SIZE(Arg0)     .NE.     1 ) ERROR STOP 13
            DO I = 1, SIZE(Arg0)
-               IF ( ANY(Arg0(I)%I0 .NE. -99) ) STOP 14
+               IF ( ANY(Arg0(I)%I0 .NE. -99) ) ERROR STOP 14
            END DO
         END IF
 
         IF ( PRESENT(Arg1) ) THEN
-           IF ( .NOT. IS_CONTIGUOUS(Arg1) ) STOP 20
-           IF ( Arg1%K0        .NE.     4 ) STOP 21
-           IF ( Arg1%L0        .NE.    10 ) STOP 22
-           IF ( SIZE(Arg1)     .NE.     1 ) STOP 23
+           IF ( .NOT. IS_CONTIGUOUS(Arg1) ) ERROR STOP 20
+           IF ( Arg1%K0        .NE.     4 ) ERROR STOP 21
+           IF ( Arg1%L0        .NE.    10 ) ERROR STOP 22
+           IF ( SIZE(Arg1)     .NE.     1 ) ERROR STOP 23
            DO I = 1, SIZE(Arg1)
-               IF ( ANY(Arg1(I)%I0 .NE. -99) ) STOP 24
+               IF ( ANY(Arg1(I)%I0 .NE. -99) ) ERROR STOP 24
            END DO
         END IF
 
         IF ( PRESENT(Arg2) ) THEN
-           IF ( .NOT. IS_CONTIGUOUS(Arg2) ) STOP 30
-           IF ( Arg2%K0        .NE.     5 ) STOP 31
-           IF ( Arg2%L0        .NE.    12 ) STOP 32
-           IF ( SIZE(Arg2)     .NE.    12 ) STOP 33
+           IF ( .NOT. IS_CONTIGUOUS(Arg2) ) ERROR STOP 30
+           IF ( Arg2%K0        .NE.     5 ) ERROR STOP 31
+           IF ( Arg2%L0        .NE.    12 ) ERROR STOP 32
+           IF ( SIZE(Arg2)     .NE.    12 ) ERROR STOP 33
 
            DO I = 1, SIZE(Arg2)
-               IF ( ANY(Arg2(I)%I0 .NE. -99) ) STOP 34
+               IF ( ANY(Arg2(I)%I0 .NE. -99) ) ERROR STOP 34
                Arg2(I)%I0 = I
            END DO
         END IF
@@ -87,34 +87,34 @@ PROGRAM combinedAttr3
       CLASS(DT0), ALLOCATABLE :: T1(:)
       CLASS(DT0(5,:)), ALLOCATABLE :: T2(:)
 
-      IF ( .NOT. IS_CONTIGUOUS(T0) )     STOP 101
+      IF ( .NOT. IS_CONTIGUOUS(T0) )     ERROR STOP 101
 
       ALLOCATE( T1(1), SOURCE = DT1() )
-      IF ( .NOT. IS_CONTIGUOUS(T1) )     STOP 102
+      IF ( .NOT. IS_CONTIGUOUS(T1) )     ERROR STOP 102
 
       ALLOCATE( DT0(5,12) :: T2(12) )
-      IF ( .NOT. IS_CONTIGUOUS(T2) )     STOP 103
+      IF ( .NOT. IS_CONTIGUOUS(T2) )     ERROR STOP 103
 
       CALL Sub( Arg0=T0 )
       CALL Sub( Arg1=T1 )
       CALL Sub( Arg2=T2 )
 
       DO I = 1, SIZE(T2)
-         IF (ANY(T2(I)%I0 .NE. I)) STOP 104
+         IF (ANY(T2(I)%I0 .NE. I)) ERROR STOP 104
          T2(I)%I0 = -99
       END DO
 
       CALL Sub( Arg0=T0, Arg1=T1, Arg2=T2)
 
       DO I = 1, SIZE(T2)
-         IF (ANY(T2(I)%I0 .NE. I)) STOP 105
+         IF (ANY(T2(I)%I0 .NE. I)) ERROR STOP 105
          T2(I)%I0 = -99
       END DO
 
       CALL Sub( T0, T1, T2)
 
       DO I = 1, SIZE(T2)
-         IF (ANY(T2(I)%I0 .NE. I)) STOP 106
+         IF (ANY(T2(I)%I0 .NE. I)) ERROR STOP 106
          T2(I)%I0 = -99
       END DO
 END PROGRAM combinedAttr3

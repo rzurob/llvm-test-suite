@@ -66,15 +66,15 @@ program acetint43c
   carr  = [character(1,1):: character(1,1), character(-1,1), character(-1,-1), character(1,-1)]
   car2  = [character(len=1,kind=1):: character(len=1,kind=1), character(len=-1,kind=1), character(len=-1,kind=-1), character(len=1,kind=-1)]
 
-  if (iarr(1) /= 16) stop 2
-  if (iar2(1) /= 10) stop 3
-  if (.not. precision_r4(rarr(1),sin(PI/4) ** 2)) stop 4
-  if (.not. precision_x8(zarr(1),(sin(PI/4) ** 2, cos(PI/4) ** 2))) stop 5
-  if (.not. precision_x8(zar2(1),(sin(6.) ** 2, cos(7.) ** 2))) stop 6
-  if (.not. larr(1)) stop 7
-  if (c3arr(1) /= 'ABD') stop 8
-  if (any(carr /= ['a', 'b', 'd', 'c'])) stop 9
-  if (any(car2 /= carr)) stop 10
+  if (iarr(1) /= 16) error stop 2
+  if (iar2(1) /= 10) error stop 3
+  if (.not. precision_r4(rarr(1),sin(PI/4) ** 2)) error stop 4
+  if (.not. precision_x8(zarr(1),(sin(PI/4) ** 2, cos(PI/4) ** 2))) error stop 5
+  if (.not. precision_x8(zar2(1),(sin(6.) ** 2, cos(7.) ** 2))) error stop 6
+  if (.not. larr(1)) error stop 7
+  if (c3arr(1) /= 'ABD') error stop 8
+  if (any(carr /= ['a', 'b', 'd', 'c'])) error stop 9
+  if (any(car2 /= carr)) error stop 10
 
   iarr  = [integer(4)::   (integer(4), i=1,1)]
   iar2  = [integer(4)::   (int(1), i=1,1)]
@@ -86,15 +86,15 @@ program acetint43c
   carr  = [character(1,1):: (character(1,1), character(-1,1), character(-1,-1), character(1,-1), i=1,1)]
   car2  = [character(len=1,kind=1):: (character(len=1,kind=1), character(len=-1,kind=1), character(len=-1,kind=-1), character(len=1,kind=-1), i=1,1)]
 
-  if (iarr(1) /= 16) stop 11
-  if (iar2(1) /= 10) stop 12
-  if (.not. precision_r4(rarr(1),sin(PI/4) ** 2)) stop 13
-  if (.not. precision_x8(zarr(1),(sin(PI/4) ** 2, cos(PI/4) ** 2))) stop 14
-  if (.not. precision_x8(zar2(1),(sin(6.) ** 2, cos(7.) ** 2))) stop 15
-  if (.not. larr(1)) stop 16
-  if (c3arr(1) /= 'ABD') stop 17
-  if (any(carr /= ['a', 'b', 'd', 'c'])) stop 18
-  if (any(car2 /= carr)) stop 19
+  if (iarr(1) /= 16) error stop 11
+  if (iar2(1) /= 10) error stop 12
+  if (.not. precision_r4(rarr(1),sin(PI/4) ** 2)) error stop 13
+  if (.not. precision_x8(zarr(1),(sin(PI/4) ** 2, cos(PI/4) ** 2))) error stop 14
+  if (.not. precision_x8(zar2(1),(sin(6.) ** 2, cos(7.) ** 2))) error stop 15
+  if (.not. larr(1)) error stop 16
+  if (c3arr(1) /= 'ABD') error stop 17
+  if (any(carr /= ['a', 'b', 'd', 'c'])) error stop 18
+  if (any(car2 /= carr)) error stop 19
 
   iarr  = [integer(4)::   (integer(i), i=4,4)]
   iar2  = [integer(4)::   (int(i), i=1,1)]
@@ -106,15 +106,15 @@ program acetint43c
   carr  = [character(1,1):: (character(i,i), character(-i,i), character(-i,-i), character(i,-i), i=1,1)]
   car2  = [character(len=1,kind=1):: (character(len=i,kind=i), character(len=-i,kind=i), character(len=-i,kind=-i), character(len=i,kind=-i), i=1,1)]
 
-  if (iarr(1) /= 16) stop 20
-  if (iar2(1) /= 10) stop 21
-  if (.not. precision_r4(rarr(1),sin(PI/4) ** 2)) stop 22
-  if (.not. precision_x8(zarr(1),(sin(PI/4) ** 2, cos(PI/4) ** 2))) stop 23
-  if (.not. precision_x8(zar2(1),(sin(sin(PI)**2)**2, cos(sin(PI)**2)**2))) stop 24
-  if (.not. larr(1)) stop 25
-  if (c3arr(1) /= 'ABD') stop 26
-  if (any(carr /= ['a', 'b', 'd', 'c'])) stop 27
-  if (any(car2 /= carr)) stop 28
+  if (iarr(1) /= 16) error stop 20
+  if (iar2(1) /= 10) error stop 21
+  if (.not. precision_r4(rarr(1),sin(PI/4) ** 2)) error stop 22
+  if (.not. precision_x8(zarr(1),(sin(PI/4) ** 2, cos(PI/4) ** 2))) error stop 23
+  if (.not. precision_x8(zar2(1),(sin(sin(PI)**2)**2, cos(sin(PI)**2)**2))) error stop 24
+  if (.not. larr(1)) error stop 25
+  if (c3arr(1) /= 'ABD') error stop 26
+  if (any(carr /= ['a', 'b', 'd', 'c'])) error stop 27
+  if (any(car2 /= carr)) error stop 28
 
 contains
 

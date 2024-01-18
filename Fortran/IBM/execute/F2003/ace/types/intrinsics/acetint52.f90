@@ -45,15 +45,15 @@ program acetint52
         iOld = i
         jOld = j
         print *, [integer:: i, j, ((j, i, j=1,2), (j,i,j=3,3), i=1,2)], [character:: (char(i), i=65,90)]
-        if (i /= iOld .or. j /= jOld) stop 2
+        if (i /= iOld .or. j /= jOld) error stop 2
         arr = [integer:: i, j, ((j, i, j=1,2), (j,i,j=3,3), i=1,2)]
-        if (i /= iOld .or. j /= jOld) stop 3
+        if (i /= iOld .or. j /= jOld) error stop 3
         print *, arr
         call sub(i,j, [integer:: i, j, ((j, i, j=1,2), (j,i,j=3,3), i=1,2)])
-        if (i /= iOld .or. j /= jOld) stop 4
+        if (i /= iOld .or. j /= jOld) error stop 4
         k = func(i,j, [integer:: i, j, ((j, i, j=1,2), (j,i,j=3,3), i=1,2)])
         print *, k
-        if (i /= iOld .or. j /= jOld) stop 5
+        if (i /= iOld .or. j /= jOld) error stop 5
      end do
   end do
 

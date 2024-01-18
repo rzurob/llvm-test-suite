@@ -70,8 +70,8 @@
     PROCEDURE F2B
   END INTERFACE
 
-  IF (GFace1(1.0)  .NE. 1.0   )               STOP 21
-  IF (GFace1(0.0, Y=1.0)  .NE. (0.0, 1.0)   ) STOP 22
+  IF (GFace1(1.0)  .NE. 1.0   )               ERROR STOP 21
+  IF (GFace1(0.0, Y=1.0)  .NE. (0.0, 1.0)   ) ERROR STOP 22
 
 
   CALL IntSub(S3A)
@@ -89,8 +89,8 @@
 
   ProcPtr => S3B
 
-  IF (GFace(1.0, 2, 3.0, 4)  .NE. 1   )        STOP 11
-  IF (GFace(X=2, W=1.0, Z=4., y=3)  .NE. 2   ) STOP 12
+  IF (GFace(1.0, 2, 3.0, 4)  .NE. 1   )        ERROR STOP 11
+  IF (GFace(X=2, W=1.0, Z=4., y=3)  .NE. 2   ) ERROR STOP 12
 
   END SUBROUTINE
 

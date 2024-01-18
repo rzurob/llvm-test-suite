@@ -65,25 +65,25 @@
   CHARACTER(LEN=1, KIND=1) :: C(128)=ACHAR(1)
 
 
-  IF ( ANY(I1   .NE. Arg1 ) ) STOP 11
-  IF ( ANY(I2   .NE. Arg1 ) ) STOP 12
-  IF ( ANY(I4   .NE. Arg1 ) ) STOP 13
-  IF ( ANY(I8   .NE. Arg1 ) ) STOP 14
+  IF ( ANY(I1   .NE. Arg1 ) ) ERROR STOP 11
+  IF ( ANY(I2   .NE. Arg1 ) ) ERROR STOP 12
+  IF ( ANY(I4   .NE. Arg1 ) ) ERROR STOP 13
+  IF ( ANY(I8   .NE. Arg1 ) ) ERROR STOP 14
 
-  IF ( ANY(L1   .NEQV. Arg2 ) ) STOP 21
-  IF ( ANY(L2   .NEQV. Arg2 ) ) STOP 22
-  IF ( ANY(L4   .NEQV. Arg2 ) ) STOP 23
-  IF ( ANY(L8   .NEQV. Arg2 ) ) STOP 24
+  IF ( ANY(L1   .NEQV. Arg2 ) ) ERROR STOP 21
+  IF ( ANY(L2   .NEQV. Arg2 ) ) ERROR STOP 22
+  IF ( ANY(L4   .NEQV. Arg2 ) ) ERROR STOP 23
+  IF ( ANY(L8   .NEQV. Arg2 ) ) ERROR STOP 24
 
-  IF ( ANY(R4   .NE. Arg1 ) ) STOP 31
-  IF ( ANY(R8   .NE. Arg1 ) ) STOP 32
-  IF ( ANY(R6   .NE. Arg1 ) ) STOP 33
+  IF ( ANY(R4   .NE. Arg1 ) ) ERROR STOP 31
+  IF ( ANY(R8   .NE. Arg1 ) ) ERROR STOP 32
+  IF ( ANY(R6   .NE. Arg1 ) ) ERROR STOP 33
 
-  IF ( ANY(Z4   .NE. (Arg1, -Arg1) ) ) STOP 41
-  IF ( ANY(Z8   .NE. (Arg1, -Arg1) ) ) STOP 42
-  IF ( ANY(Z6   .NE. (Arg1, -Arg1) ) ) STOP 43
+  IF ( ANY(Z4   .NE. (Arg1, -Arg1) ) ) ERROR STOP 41
+  IF ( ANY(Z8   .NE. (Arg1, -Arg1) ) ) ERROR STOP 42
+  IF ( ANY(Z6   .NE. (Arg1, -Arg1) ) ) ERROR STOP 43
 
-  IF ( ANY(C   .NE. ACHAR(Arg1) ) ) STOP 51
+  IF ( ANY(C   .NE. ACHAR(Arg1) ) ) ERROR STOP 51
 
   I1 = I1 + 1
   I2 = I2 + 1

@@ -71,9 +71,9 @@
     PROCEDURE   ModFun1
   END INTERFACE
 
-  IF (Fun(1.0) .NE. "OK!") STOP 11
-  IF (Fun(1)   .NE. "OK0") STOP 12
-  IF (Fun(1_1) .NE. "OK1") STOP 13
+  IF (Fun(1.0) .NE. "OK!") ERROR STOP 11
+  IF (Fun(1)   .NE. "OK0") ERROR STOP 12
+  IF (Fun(1_1) .NE. "OK1") ERROR STOP 13
 
 
   END

@@ -132,53 +132,53 @@ program defAssignAllocComp03a
    ! call assignBase
    obj3=obj1(2)%a1comp
 
-   if(any(obj1(2)%a1comp(1)%i1 /= [1,2] ))                             stop 10
-   if(any(obj1(2)%a1comp(2)%i1 /= [3,4] ))                             stop 11
-   if(any(obj1(2)%a1comp(1)%c1 /= ["abc","def","ghi"]))                stop 12
-   if(any(obj1(2)%a1comp(2)%c1 /= ["ABC","DEF"]))                      stop 13
-   if(any(obj1(2)%a1comp(1)%g1 .neqv. [.true.,.false.]))               stop 14
-   if(any(obj1(2)%a1comp(2)%g1 .neqv. [.false.,.true.,.false.]))       stop 15
+   if(any(obj1(2)%a1comp(1)%i1 /= [1,2] ))                             error stop 10
+   if(any(obj1(2)%a1comp(2)%i1 /= [3,4] ))                             error stop 11
+   if(any(obj1(2)%a1comp(1)%c1 /= ["abc","def","ghi"]))                error stop 12
+   if(any(obj1(2)%a1comp(2)%c1 /= ["ABC","DEF"]))                      error stop 13
+   if(any(obj1(2)%a1comp(1)%g1 .neqv. [.true.,.false.]))               error stop 14
+   if(any(obj1(2)%a1comp(2)%g1 .neqv. [.false.,.true.,.false.]))       error stop 15
 
    select type(x=>obj1(2))
       type is(child(*,*))
 
-        if(any(x%a2comp(3)%i1 /= [11,12] ))                            stop 16
-        if(any(x%a2comp(3)%c1 /= ["IBM","XLF","ibm","xlf"]))           stop 17
-        if(any(x%a2comp(3)%g1 .neqv. [.true.]))                        stop 18
+        if(any(x%a2comp(3)%i1 /= [11,12] ))                            error stop 16
+        if(any(x%a2comp(3)%c1 /= ["IBM","XLF","ibm","xlf"]))           error stop 17
+        if(any(x%a2comp(3)%g1 .neqv. [.true.]))                        error stop 18
 
-        if(any(x%a3comp(2)%i1 /= [13,14] ))                            stop 19
-        if(any(x%a3comp(2)%c1 /= ["CUT"]))                             stop 20
-        if(any(x%a3comp(2)%g1 .neqv. [.true.,.false.,.false.,.true.])) stop 21
+        if(any(x%a3comp(2)%i1 /= [13,14] ))                            error stop 19
+        if(any(x%a3comp(2)%c1 /= ["CUT"]))                             error stop 20
+        if(any(x%a3comp(2)%g1 .neqv. [.true.,.false.,.false.,.true.])) error stop 21
 
    end select
 
    associate(x=>obj2(1))
 
-      if(any(x%a1comp(1)%i1 /= [1,2] ))                               stop 22
-      if(any(x%a1comp(2)%i1 /= [3,4] ))                               stop 23
-      if(any(x%a1comp(1)%c1 /= ["abc","def","ghi"]))                  stop 24
-      if(any(x%a1comp(2)%c1 /= ["ABC","DEF"]))                        stop 25
-      if(any(x%a1comp(1)%g1 .neqv. [.true.,.false.]))                 stop 26
-      if(any(x%a1comp(2)%g1 .neqv. [.false.,.true.,.false.]))         stop 27
+      if(any(x%a1comp(1)%i1 /= [1,2] ))                               error stop 22
+      if(any(x%a1comp(2)%i1 /= [3,4] ))                               error stop 23
+      if(any(x%a1comp(1)%c1 /= ["abc","def","ghi"]))                  error stop 24
+      if(any(x%a1comp(2)%c1 /= ["ABC","DEF"]))                        error stop 25
+      if(any(x%a1comp(1)%g1 .neqv. [.true.,.false.]))                 error stop 26
+      if(any(x%a1comp(2)%g1 .neqv. [.false.,.true.,.false.]))         error stop 27
 
-      if(any(x%a2comp(3)%i1 /= [11,12] ))                             stop 28
-      if(any(x%a2comp(3)%c1 /= ["IBM","XLF","ibm","xlf"]))            stop 29
-      if(any(x%a2comp(3)%g1 .neqv. [.true.]))                         stop 30
+      if(any(x%a2comp(3)%i1 /= [11,12] ))                             error stop 28
+      if(any(x%a2comp(3)%c1 /= ["IBM","XLF","ibm","xlf"]))            error stop 29
+      if(any(x%a2comp(3)%g1 .neqv. [.true.]))                         error stop 30
 
-      if(any(x%a3comp(2)%i1 /= [13,14] ))                             stop 31
-      if(any(x%a3comp(2)%c1 /= ["CUT"]))                              stop 32
-      if(any(x%a3comp(2)%g1 .neqv. [.true.,.false.,.false.,.true.]))  stop 33
+      if(any(x%a3comp(2)%i1 /= [13,14] ))                             error stop 31
+      if(any(x%a3comp(2)%c1 /= ["CUT"]))                              error stop 32
+      if(any(x%a3comp(2)%g1 .neqv. [.true.,.false.,.false.,.true.]))  error stop 33
 
    end associate
 
    associate(x=>obj3(-1))
 
-      if(any(x%a1comp(1)%i1 /= [1,2] ))                               stop 34
-      if(any(x%a1comp(2)%i1 /= [3,4] ))                               stop 35
-      if(any(x%a1comp(1)%c1 /= ["abc","def","ghi"]))                  stop 36
-      if(any(x%a1comp(2)%c1 /= ["ABC","DEF"]))                        stop 37
-      if(any(x%a1comp(1)%g1 .neqv. [.true.,.false.]))                 stop 38
-      if(any(x%a1comp(2)%g1 .neqv. [.false.,.true.,.false.]))         stop 39
+      if(any(x%a1comp(1)%i1 /= [1,2] ))                               error stop 34
+      if(any(x%a1comp(2)%i1 /= [3,4] ))                               error stop 35
+      if(any(x%a1comp(1)%c1 /= ["abc","def","ghi"]))                  error stop 36
+      if(any(x%a1comp(2)%c1 /= ["ABC","DEF"]))                        error stop 37
+      if(any(x%a1comp(1)%g1 .neqv. [.true.,.false.]))                 error stop 38
+      if(any(x%a1comp(2)%g1 .neqv. [.false.,.true.,.false.]))         error stop 39
 
    end associate
 

@@ -45,9 +45,9 @@ program main
 
     call sub(t1)
 
-    if  ( .not. associated(t1%ptr, t1%char)) stop 1
-    if ( lbound(t1%ptr, 1) /= 3 ) stop 3
-    if ( ubound(t1%ptr, 1) /= 9 ) stop 5
+    if  ( .not. associated(t1%ptr, t1%char)) error stop 1
+    if ( lbound(t1%ptr, 1) /= 3 ) error stop 3
+    if ( ubound(t1%ptr, 1) /= 9 ) error stop 5
 
     print *, t1%ptr
     print *, t1%ptr // "---"

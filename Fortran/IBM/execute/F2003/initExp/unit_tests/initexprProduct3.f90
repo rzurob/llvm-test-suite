@@ -31,16 +31,16 @@ complex(8) :: res18(2,3,5)=product(c, dim=3)
 complex(16) :: res11=product((/(7.565146Q08,1.7192802Q23),(3.720466Q59,1.5160763q69), &
   & (2.108214q90,1.1142725Q52),(1.1385402q83,0.0q0)/))
 
-if (.not. complex4Equal(res1, product( (/(2.0,3.0),(3.0,4.0),(4.0,-5.0)/)))) stop 1
-if (.not. complex4Equal(res2, product( a, mask=a.eq.(-2.,2.)))) stop 2
-if (.not. all(complex4Equal(res3, product(b, dim=1)))) stop 4
-if (.not. all(complex4Equal(res4, product(b, dim=2)))) stop 5
-if (.not. all(complex4Equal(res5, product(b, dim=2, mask=b .ne. (2.0,2.0))))) stop 6
+if (.not. complex4Equal(res1, product( (/(2.0,3.0),(3.0,4.0),(4.0,-5.0)/)))) error stop 1
+if (.not. complex4Equal(res2, product( a, mask=a.eq.(-2.,2.)))) error stop 2
+if (.not. all(complex4Equal(res3, product(b, dim=1)))) error stop 4
+if (.not. all(complex4Equal(res4, product(b, dim=2)))) error stop 5
+if (.not. all(complex4Equal(res5, product(b, dim=2, mask=b .ne. (2.0,2.0))))) error stop 6
 
-if (.not. all(complex8Equal(res18, product(c, dim=3)))) stop 7
+if (.not. all(complex8Equal(res18, product(c, dim=3)))) error stop 7
 
 if (.not. complex16Equal(res11, product((/(7.565146Q08,1.7192802Q23),(3.720466Q59,1.5160763q69), &
-  & (2.108214q90,1.1142725Q52),(1.1385402q83,0.0q0)/)))) stop 8
+  & (2.108214q90,1.1142725Q52),(1.1385402q83,0.0q0)/)))) error stop 8
 
     contains
 

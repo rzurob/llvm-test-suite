@@ -34,10 +34,10 @@
 
     READ(C, NML=NList)
     WRITE(*, NML=NList)
-    IF (As .NE. 0 ) STOP 11
+    IF (As .NE. 0 ) ERROR STOP 11
 
   END ASSOCIATE
-  IF (As .NE. 2 )   STOP 12
+  IF (As .NE. 2 )   ERROR STOP 12
 
 
   END

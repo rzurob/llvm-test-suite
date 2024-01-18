@@ -37,10 +37,10 @@ use m
 
     select type (x => b1(2)%data%x)
         type is (complex)
-            if (size(x) /= 2) stop 1
+            if (size(x) /= 2) error stop 1
 
-            if (.not. precision_x8 (x(1), cmplx(1, 2))) stop 2
-            if (.not. precision_x8 (x(2), cmplx(2, 4))) stop 3
+            if (.not. precision_x8 (x(1), cmplx(1, 2))) error stop 2
+            if (.not. precision_x8 (x(2), cmplx(2, 4))) error stop 3
         class default
             stop 10
     end select

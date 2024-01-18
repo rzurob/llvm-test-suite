@@ -67,9 +67,9 @@
      STOP 22
    TYPE IS (Child(4))
 
-     IF (As%BaseId             .NE. -1  )  STOP 31
+     IF (As%BaseId             .NE. -1  )  ERROR STOP 31
      ALLOCATE(As%BasePtr(3))
-     IF (ANY(As%BasePtr%BaseId .NE. -1) )  STOP 31
+     IF (ANY(As%BasePtr%BaseId .NE. -1) )  ERROR STOP 31
 
      ALLOCATE(As%Base1Ptr, SOURCE=Child(4)(BaseArr=NULL(), UVar=NULL(), Base2Ptr=NULL()))
      SELECT TYPE(As1 => As%Base1Ptr)

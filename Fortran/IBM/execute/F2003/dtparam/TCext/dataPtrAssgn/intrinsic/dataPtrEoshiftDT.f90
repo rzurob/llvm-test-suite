@@ -52,9 +52,9 @@
             print *, b1(i)%ip
         end do
 
-        if ( .not. associated(b1)) stop 11
-        if ( lbound(b1, 1) /= 1) stop 13
-        if ( ubound(b1, 1) /= 5) stop 15
+        if ( .not. associated(b1)) error stop 11
+        if ( lbound(b1, 1) /= 1) error stop 13
+        if ( ubound(b1, 1) /= 5) error stop 15
 
         call sub(b1, b2(2:10:2))
 

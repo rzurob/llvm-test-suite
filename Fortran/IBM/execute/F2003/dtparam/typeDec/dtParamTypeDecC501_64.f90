@@ -59,23 +59,23 @@
 
   TYPE (DT(L=8)) :: T1
 
-  IF ( T1%K               .NE.   4          ) STOP 11
-  IF ( T1%L               .NE.   8          ) STOP 12
-  IF ( T1%KIND            .NE.   4          ) STOP 13
-  IF ( T1%LEN             .NE.   4          ) STOP 14
-  IF ( ANY( T1%I          .NE.   4        ) ) STOP 15
+  IF ( T1%K               .NE.   4          ) ERROR STOP 11
+  IF ( T1%L               .NE.   8          ) ERROR STOP 12
+  IF ( T1%KIND            .NE.   4          ) ERROR STOP 13
+  IF ( T1%LEN             .NE.   4          ) ERROR STOP 14
+  IF ( ANY( T1%I          .NE.   4        ) ) ERROR STOP 15
 
-  IF ( T1%T1%K            .NE.   4          ) STOP 20
-  IF ( T1%T1%L            .NE.   1          ) STOP 21
+  IF ( T1%T1%K            .NE.   4          ) ERROR STOP 20
+  IF ( T1%T1%L            .NE.   1          ) ERROR STOP 21
 
-  IF ( T1%T2%K            .NE.   4          ) STOP 30
-  IF ( T1%T2%L            .NE.   1          ) STOP 31
+  IF ( T1%T2%K            .NE.   4          ) ERROR STOP 30
+  IF ( T1%T2%L            .NE.   1          ) ERROR STOP 31
 
-  IF ( T1%T3%K            .NE.   4          ) STOP 40
-  IF ( T1%T3%L            .NE.   1          ) STOP 21
+  IF ( T1%T3%K            .NE.   4          ) ERROR STOP 40
+  IF ( T1%T3%L            .NE.   1          ) ERROR STOP 21
 
-  IF ( T1%T4%K            .NE.   4          ) STOP 50
-  IF ( T1%T4%L            .NE.   1          ) STOP 51
+  IF ( T1%T4%K            .NE.   4          ) ERROR STOP 50
+  IF ( T1%T4%L            .NE.   1          ) ERROR STOP 51
 
   END SUBROUTINE
 

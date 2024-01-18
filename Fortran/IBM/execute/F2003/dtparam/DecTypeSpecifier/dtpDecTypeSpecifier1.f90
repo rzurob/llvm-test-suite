@@ -58,28 +58,28 @@
   CLASS(*) :: E
 
 
-  IF ( B%K               .NE.   1          ) STOP 11
-  IF ( B%L               .NE.   2          ) STOP 12
-  IF ( B%I%KIND          .NE.   1          ) STOP 13
-  IF ( B%I               .NE.  -1          ) STOP 14
-  IF ( B%C%LEN           .NE.   2          ) STOP 15
-  IF ( SIZE(B%C)         .NE.   2          ) STOP 16
-  IF ( ANY(B%C           .NE.   "X "     ) ) STOP 17
+  IF ( B%K               .NE.   1          ) ERROR STOP 11
+  IF ( B%L               .NE.   2          ) ERROR STOP 12
+  IF ( B%I%KIND          .NE.   1          ) ERROR STOP 13
+  IF ( B%I               .NE.  -1          ) ERROR STOP 14
+  IF ( B%C%LEN           .NE.   2          ) ERROR STOP 15
+  IF ( SIZE(B%C)         .NE.   2          ) ERROR STOP 16
+  IF ( ANY(B%C           .NE.   "X "     ) ) ERROR STOP 17
 
   C => D
 
   SELECT TYPE (C)
   TYPE IS (DT1(8,*, K1=2, L1=*))
 
-    IF ( C%K             .NE.   8          ) STOP 21
-    IF ( C%L             .NE.   3          ) STOP 22
-    IF ( C%K1            .NE.   2          ) STOP 23
-    IF ( C%L1            .NE.   2          ) STOP 24
-    IF ( C%I%KIND        .NE.   8          ) STOP 25
-    IF ( C%I             .NE.  -1          ) STOP 26
-    IF ( C%C%LEN         .NE.   3          ) STOP 27
-    IF ( SIZE(C%C)       .NE.   3          ) STOP 28
-    IF ( ANY(C%C         .NE.   "XY "    ) ) STOP 29
+    IF ( C%K             .NE.   8          ) ERROR STOP 21
+    IF ( C%L             .NE.   3          ) ERROR STOP 22
+    IF ( C%K1            .NE.   2          ) ERROR STOP 23
+    IF ( C%L1            .NE.   2          ) ERROR STOP 24
+    IF ( C%I%KIND        .NE.   8          ) ERROR STOP 25
+    IF ( C%I             .NE.  -1          ) ERROR STOP 26
+    IF ( C%C%LEN         .NE.   3          ) ERROR STOP 27
+    IF ( SIZE(C%C)       .NE.   3          ) ERROR STOP 28
+    IF ( ANY(C%C         .NE.   "XY "    ) ) ERROR STOP 29
 
   CLASS DEFAULT
     STOP 20
@@ -90,15 +90,15 @@
   SELECT TYPE (E)
   TYPE IS (DT1(4,*, 2, *))
 
-    IF ( E%K             .NE.   4          ) STOP 31
-    IF ( E%L             .NE.   1          ) STOP 32
-    IF ( E%K1            .NE.   2          ) STOP 33
-    IF ( E%L1            .NE.   1          ) STOP 34
-    IF ( E%I%KIND        .NE.   4          ) STOP 35
-    IF ( E%I             .NE.  -1          ) STOP 36
-    IF ( E%C%LEN         .NE.   1          ) STOP 37
-    IF ( SIZE(E%C)       .NE.   1          ) STOP 38
-    IF ( ANY(E%C         .NE.   "X"      ) ) STOP 39
+    IF ( E%K             .NE.   4          ) ERROR STOP 31
+    IF ( E%L             .NE.   1          ) ERROR STOP 32
+    IF ( E%K1            .NE.   2          ) ERROR STOP 33
+    IF ( E%L1            .NE.   1          ) ERROR STOP 34
+    IF ( E%I%KIND        .NE.   4          ) ERROR STOP 35
+    IF ( E%I             .NE.  -1          ) ERROR STOP 36
+    IF ( E%C%LEN         .NE.   1          ) ERROR STOP 37
+    IF ( SIZE(E%C)       .NE.   1          ) ERROR STOP 38
+    IF ( ANY(E%C         .NE.   "X"      ) ) ERROR STOP 39
 
   CLASS DEFAULT
     STOP 30

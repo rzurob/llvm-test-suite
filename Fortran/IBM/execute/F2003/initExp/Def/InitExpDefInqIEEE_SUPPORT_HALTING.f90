@@ -54,17 +54,17 @@
 
 
 
-  IF ( .NOT.  T11  )   STOP 11
-  IF ( .NOT.  T12  )   STOP 12
-  IF ( .NOT.  T13  )   STOP 13
-  IF ( .NOT.  T14  )   STOP 14
-  IF ( .NOT.  T15  )   STOP 15
+  IF ( .NOT.  T11  )   ERROR STOP 11
+  IF ( .NOT.  T12  )   ERROR STOP 12
+  IF ( .NOT.  T13  )   ERROR STOP 13
+  IF ( .NOT.  T14  )   ERROR STOP 14
+  IF ( .NOT.  T15  )   ERROR STOP 15
 
-  IF ( .NOT.  T21  )   STOP 21
-  IF ( .NOT.  T22  )   STOP 22
-  IF ( .NOT.  T23  )   STOP 23
-  IF ( .NOT.  T24  )   STOP 24
-  IF ( .NOT.  T25  )   STOP 25
+  IF ( .NOT.  T21  )   ERROR STOP 21
+  IF ( .NOT.  T22  )   ERROR STOP 22
+  IF ( .NOT.  T23  )   ERROR STOP 23
+  IF ( .NOT.  T24  )   ERROR STOP 24
+  IF ( .NOT.  T25  )   ERROR STOP 25
 
 
   END

@@ -86,7 +86,7 @@ program dummyArg006
 
     call testInt
 
-    if (testLog8 (mask, d1, 1.005d2) /= 100) stop 10
+    if (testLog8 (mask, d1, 1.005d2) /= 100) error stop 10
 
     if (any(shape(mask) /= [10, 20])) error stop 11_4
 

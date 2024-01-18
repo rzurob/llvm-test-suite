@@ -53,24 +53,24 @@
 
   CPtr(LBOUND(Arr,1):) => Arr
   T%CPtr(LBOUND(Arr,1):) => CPtr
-  IF (ANY(LBOUND(T%CPtr) .NE. (/0/)))   STOP 11
-  IF (ANY(UBOUND(T%CPtr) .NE. (/2/)))   STOP 12
+  IF (ANY(LBOUND(T%CPtr) .NE. (/0/)))   ERROR STOP 11
+  IF (ANY(UBOUND(T%CPtr) .NE. (/2/)))   ERROR STOP 12
   CPtr1 => T%CPtr
-  IF (ANY(CPtr1%I .NE. (/1,2,3/) ))     STOP 13
+  IF (ANY(CPtr1%I .NE. (/1,2,3/) ))     ERROR STOP 13
 
 
   ALLOCATE(CPtr(0:2), SOURCE=(/DT0(3),DT0(2),DT0(1)/))
   I=LBOUND(CPtr,1); J=UBOUND(CPtr,1)-1
   T%CPtr(I:J) => CPtr(I:J+1)
-  IF (ANY(LBOUND(T%CPtr) .NE. (/I/)))   STOP 21
-  IF (ANY(UBOUND(T%CPtr) .NE. (/J/)))   STOP 22
+  IF (ANY(LBOUND(T%CPtr) .NE. (/I/)))   ERROR STOP 21
+  IF (ANY(UBOUND(T%CPtr) .NE. (/J/)))   ERROR STOP 22
 
   CPtr1(I:) => T%CPTr
-  IF (ANY(CPtr1%I        .NE. (/3,2/))) STOP 23
+  IF (ANY(CPtr1%I        .NE. (/3,2/))) ERROR STOP 23
 
   T%CPtr(1:-1) => T%CPtr
-  IF (ANY(LBOUND(T%CPtr) .NE. (/1/)))   STOP 31
-  IF (ANY(UBOUND(T%CPtr) .NE. (/0/)))   STOP 32
+  IF (ANY(LBOUND(T%CPtr) .NE. (/1/)))   ERROR STOP 31
+  IF (ANY(UBOUND(T%CPtr) .NE. (/0/)))   ERROR STOP 32
 
   END
 

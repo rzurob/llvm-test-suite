@@ -47,30 +47,30 @@
   TYPE(DT) :: T
   LOGICAL precision_R6, precision_R8
 
-  IF (KIND(T%R4)     .NE. 4   )                       STOP 11
-  IF (SIZE(T%R4)     .NE. 45  )                       STOP 12
-  IF ( ANY(T%R4      .NE. -45.0))                     STOP 13
+  IF (KIND(T%R4)     .NE. 4   )                       ERROR STOP 11
+  IF (SIZE(T%R4)     .NE. 45  )                       ERROR STOP 12
+  IF ( ANY(T%R4      .NE. -45.0))                     ERROR STOP 13
 
-  IF (KIND(T%R8)     .NE. 8   )                       STOP 21
-  IF (SIZE(T%R8)     .NE. 45  )                       STOP 22
-  IF ( ANY(T%R8      .NE. -45.0))                     STOP 23
+  IF (KIND(T%R8)     .NE. 8   )                       ERROR STOP 21
+  IF (SIZE(T%R8)     .NE. 45  )                       ERROR STOP 22
+  IF ( ANY(T%R8      .NE. -45.0))                     ERROR STOP 23
 
-  IF (KIND(T%R6)     .NE. 16  )                       STOP 31
-  IF (SIZE(T%R6)     .NE. 45  )                       STOP 32
- !IF ( ANY(T%R6      .NE. -45.0))                     STOP 33
+  IF (KIND(T%R6)     .NE. 16  )                       ERROR STOP 31
+  IF (SIZE(T%R6)     .NE. 45  )                       ERROR STOP 32
+ !IF ( ANY(T%R6      .NE. -45.0))                     ERROR STOP 33
 
-  IF (KIND(T%DR)     .NE. 8   )                       STOP 41
-  IF (SIZE(T%DR)     .NE. 45  )                       STOP 42
- !IF ( ANY(T%DR      .NE. -45.0))                     STOP 43
+  IF (KIND(T%DR)     .NE. 8   )                       ERROR STOP 41
+  IF (SIZE(T%DR)     .NE. 45  )                       ERROR STOP 42
+ !IF ( ANY(T%DR      .NE. -45.0))                     ERROR STOP 43
 
-  IF (KIND(T%QR)     .NE. 16  )                       STOP 51
-  IF (SIZE(T%QR)     .NE. 45  )                       STOP 52
- !IF ( ANY(T%QR      .NE. -45.0))                     STOP 53
+  IF (KIND(T%QR)     .NE. 16  )                       ERROR STOP 51
+  IF (SIZE(T%QR)     .NE. 45  )                       ERROR STOP 52
+ !IF ( ANY(T%QR      .NE. -45.0))                     ERROR STOP 53
 
   DO I = 1, 45
-    IF (.NOT. precision_R6(T%R6(I), -45.0Q0))                    STOP 33
-    IF (.NOT. precision_R8(T%DR(I), -45.0Q0))                    STOP 43
-    IF (.NOT. precision_R6(T%QR(I), -45.0Q0))                    STOP 53
+    IF (.NOT. precision_R6(T%R6(I), -45.0Q0))                    ERROR STOP 33
+    IF (.NOT. precision_R8(T%DR(I), -45.0Q0))                    ERROR STOP 43
+    IF (.NOT. precision_R6(T%QR(I), -45.0Q0))                    ERROR STOP 53
   END DO
 
   END

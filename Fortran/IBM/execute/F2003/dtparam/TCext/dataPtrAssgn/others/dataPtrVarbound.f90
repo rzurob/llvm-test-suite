@@ -45,12 +45,12 @@
 
 	enddo
 
-        if ( .not. associated(a(1)%ptr,a(2)%tar)) stop 1
-        if ( .not. associated(a(2)%ptr, a(1)%tar(1:3))) stop  2
-	if (any(lbound(a(1)%ptr) .ne. (/1/))) stop 3
-	if (any(ubound(a(1)%ptr) .ne. (/4/))) stop 5
-	if (any(lbound(a(2)%ptr) .ne. (/2/))) stop 7
-	if (any(ubound(a(2)%ptr) .ne. (/4/))) stop 9
+        if ( .not. associated(a(1)%ptr,a(2)%tar)) error stop 1
+        if ( .not. associated(a(2)%ptr, a(1)%tar(1:3))) error stop  2
+	if (any(lbound(a(1)%ptr) .ne. (/1/))) error stop 3
+	if (any(ubound(a(1)%ptr) .ne. (/4/))) error stop 5
+	if (any(lbound(a(2)%ptr) .ne. (/2/))) error stop 7
+	if (any(ubound(a(2)%ptr) .ne. (/4/))) error stop 9
 
 	print *, (/ (a(i)%ptr, i=1,2) /)
 

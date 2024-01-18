@@ -57,7 +57,7 @@
   DO J = I, 127
     L = LGE(ACHAR(I=J, KIND=KIND(T%K1)),       ACHAR(I=I, KIND=KIND(T%K1))) .AND. &
             (IACHAR(CC(J), KIND=KIND(T%K1)) .GE. IACHAR(CC(I), KIND=KIND(T%K1)))
-    IF (.NOT. L) STOP 11
+    IF (.NOT. L) ERROR STOP 11
   END DO
   END DO
 
@@ -65,7 +65,7 @@
   DO J = I+1, 127
     L = LGT(ACHAR(I=J, KIND=KIND(T%K1)),       ACHAR(I=I, KIND=KIND(T%K1))) .AND. &
             (IACHAR(CC(J), KIND=KIND(T%K2)) .GE. IACHAR(CC(I), KIND=KIND(T%K2)))
-    IF (.NOT. L) STOP 12
+    IF (.NOT. L) ERROR STOP 12
   END DO
   END DO
 
@@ -73,7 +73,7 @@
   DO J = I, 127
     L = LLE(ACHAR(I=I, KIND=KIND(T%K1)),       ACHAR(I=J, KIND=KIND(T%K1))) .AND. &
             (IACHAR(CC(J), KIND=KIND(T%K4)) .GE. IACHAR(CC(I), KIND=KIND(T%K4)))
-    IF (.NOT. L) STOP 11
+    IF (.NOT. L) ERROR STOP 11
   END DO
   END DO
 
@@ -81,7 +81,7 @@
   DO J = I+1, 127
     L = LLT(ACHAR(I=I, KIND=KIND(T%K1)),       ACHAR(I=J, KIND=KIND(T%K1))) .AND. &
             (IACHAR(CC(J), KIND=KIND(T%K8)) .GE. IACHAR(CC(I), KIND=KIND(T%K8)))
-    IF (.NOT. L) STOP 11
+    IF (.NOT. L) ERROR STOP 11
   END DO
   END DO
 

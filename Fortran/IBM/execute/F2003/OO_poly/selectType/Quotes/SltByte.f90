@@ -36,9 +36,9 @@
   CLASS DEFAULT
     STOP 30
   TYPE IS ( BYTE)
-    IF ( ANY(SHAPE(As) .NE. (/4/))  )   STOP 31
-    IF ( LBOUND(As ,1) .NE. 1       )   STOP 32
-    IF ( ANY(As        .NE. (/1,2,3,4/)) )  STOP 32
+    IF ( ANY(SHAPE(As) .NE. (/4/))  )   ERROR STOP 31
+    IF ( LBOUND(As ,1) .NE. 1       )   ERROR STOP 32
+    IF ( ANY(As        .NE. (/1,2,3,4/)) )  ERROR STOP 32
   TYPE IS (CHARACTER(*) )
     STOP 34
   END SELECT
@@ -47,9 +47,9 @@
   CLASS DEFAULT
     STOP 30
   TYPE IS (  BYTE )
-    IF ( ANY(SHAPE(As) .NE. (/2/))  )   STOP 31
-    IF ( LBOUND(As, 1) .NE. 1       )   STOP 32
-    IF ( ANY(As        .NE. (/1,4/)) )  STOP 32
+    IF ( ANY(SHAPE(As) .NE. (/2/))  )   ERROR STOP 31
+    IF ( LBOUND(As, 1) .NE. 1       )   ERROR STOP 32
+    IF ( ANY(As        .NE. (/1,4/)) )  ERROR STOP 32
   TYPE IS (CHARACTER(*))
     STOP 34
   END SELECT
@@ -58,7 +58,7 @@
   CLASS DEFAULT
     STOP 40
   TYPE IS (     BYTE)
-    IF ( As   .NE. 3 )  STOP 42
+    IF ( As   .NE. 3 )  ERROR STOP 42
   TYPE IS (CHARACTER(*)            )
     STOP 34
   END SELECT

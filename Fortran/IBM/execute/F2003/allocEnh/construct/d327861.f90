@@ -46,15 +46,15 @@ use m
 
     b1 = b2
 
-    if (.not. associated(b1)) stop 10
+    if (.not. associated(b1)) error stop 10
 
     do i = 1, 10
-        if ((.not. allocated(b1(i)%ids) .or. (size(b1(i)%ids) /= i))) stop 1
+        if ((.not. allocated(b1(i)%ids) .or. (size(b1(i)%ids) /= i))) error stop 1
 
         do j = 1, i
-            if (b1(i)%ids(j) /= j) stop 3
+            if (b1(i)%ids(j) /= j) error stop 3
         end do
 
-        if (any(b2(i)%ids /= [(j, j=1,i)])) stop 2
+        if (any(b2(i)%ids /= [(j, j=1,i)])) error stop 2
     end do
 end

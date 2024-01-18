@@ -28,7 +28,7 @@ type(aa(2)), pointer :: pptr
 call sub1(aptr, pptr)
 
 ! Check if the value of 'pptr' gets updated
-if (any(pptr%avar .ne. (/100, 100/))) stop 4
+if (any(pptr%avar .ne. (/100, 100/))) error stop 4
 
 contains
 subroutine sub1(pa, pb)
@@ -36,8 +36,8 @@ type(aa(*)), target, allocatable :: pa
 type(aa(*)), pointer :: pb
 
 ! - Check if dummy args' type parameters inherit from the acutal args.
-if (pa%ln .ne. 2) stop 1
-!if (ubound(pb%avar, 1) .ne. 2) stop 2
+if (pa%ln .ne. 2) error stop 1
+!if (ubound(pb%avar, 1) .ne. 2) error stop 2
 
 allocate(pa)
 pa%avar = 100

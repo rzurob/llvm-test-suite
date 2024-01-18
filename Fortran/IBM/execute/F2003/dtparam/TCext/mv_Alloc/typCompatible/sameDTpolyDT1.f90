@@ -56,7 +56,7 @@ end module
 
       select type ( x => b%get_alloc( c ))
           type is (base(4,*))
-             if ( x%ch /= 'IBMXLFortran') STOP 21
+             if ( x%ch /= 'IBMXLFortran') ERROR STOP 21
           class default
              STOP 23
       end select

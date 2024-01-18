@@ -236,29 +236,29 @@ PROGRAM streamWrite05
 
     CALL b4%SetA( REAL(array, 4) )
     iostat = b4%DumpB( 42 )
-    IF (iostat /= 0) STOP 20
+    IF (iostat /= 0) ERROR STOP 20
 
     CALL e4%SetA( REAL(array, 4) )
     iostat = e4%DumpE( 42 )
-    IF (iostat /= 0) STOP 21
+    IF (iostat /= 0) ERROR STOP 21
 
 
     CALL b8%SetA( REAL(array, 8) )
     iostat = b8%DumpB( 42 )
-    IF (iostat /= 0) STOP 30
+    IF (iostat /= 0) ERROR STOP 30
 
     CALL e8%SetA( REAL(array, 8) )
     iostat = e8%DumpE( 42 )
-    IF (iostat /= 0) STOP 31
+    IF (iostat /= 0) ERROR STOP 31
 
 
     CALL b16%SetA( array )
     iostat = b16%DumpB( 42 )
-    IF (iostat /= 0) STOP 40
+    IF (iostat /= 0) ERROR STOP 40
 
     CALL e16%SetA( array )
     iostat = e16%DumpE( 42 )
-    IF (iostat /= 0) STOP 41
+    IF (iostat /= 0) ERROR STOP 41
 
 
     CLOSE(42, IOSTAT=iostat, IOMSG=iomsg)
@@ -290,14 +290,14 @@ PROGRAM streamWrite05
 
 
     do i = 1, 5
-        IF ( .not. precision_r4(r4b(i), real(array(i),4)))   STOP 100
-        IF ( .not. precision_r4(r4b(i), r4e(i)))             STOP 101
+        IF ( .not. precision_r4(r4b(i), real(array(i),4)))   ERROR STOP 100
+        IF ( .not. precision_r4(r4b(i), r4e(i)))             ERROR STOP 101
 
-        IF ( .not. precision_r8(r8b(i), real(array(i),8)))   STOP 110
-        IF ( .not. precision_r8(r8b(i), r8e(i)))             STOP 111
+        IF ( .not. precision_r8(r8b(i), real(array(i),8)))   ERROR STOP 110
+        IF ( .not. precision_r8(r8b(i), r8e(i)))             ERROR STOP 111
 
-        IF ( .not. precision_r6(r16b(i), array(i)))          STOP 120
-        IF ( .not. precision_r6(r16b(i), r16e(i)))           STOP 121
+        IF ( .not. precision_r6(r16b(i), array(i)))          ERROR STOP 120
+        IF ( .not. precision_r6(r16b(i), r16e(i)))           ERROR STOP 121
     end do
 
 END PROGRAM streamWrite05

@@ -57,9 +57,9 @@ end module
 	    type is (child)
         	p_b(dtParam%k1:kind(b1%index)*4) =>  &
                        b1%typBnd1((/ ( child(i), i = 1, 20 ) /))
-	        if ( .not. associated(p_b) ) stop 11
-	        if ( lbound(p_b,1) /= 1 ) stop 15
-	        if ( ubound(p_b,1) /= 16 ) stop 19
+	        if ( .not. associated(p_b) ) error stop 11
+	        if ( lbound(p_b,1) /= 1 ) error stop 15
+	        if ( ubound(p_b,1) /= 16 ) error stop 19
 	    class default
 		stop 21
 	end select

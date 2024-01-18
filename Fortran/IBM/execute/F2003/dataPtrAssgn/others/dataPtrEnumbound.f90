@@ -29,11 +29,11 @@ program main
 
 	ptr(zero:nine, two:last) => tar
 
-        if ( .not. associated(ptr)) stop 11
-        if ( any(lbound(ptr) .ne. (/0, 2/))) stop 13
-        if ( any(ubound(ptr) .ne. (/9, 11/))) stop 15
+        if ( .not. associated(ptr)) error stop 11
+        if ( any(lbound(ptr) .ne. (/0, 2/))) error stop 13
+        if ( any(ubound(ptr) .ne. (/9, 11/))) error stop 15
 
-	if ( any(ptr .ne. reshape((/(i,i=0,99)/),(/10,10/)))) stop 17
+	if ( any(ptr .ne. reshape((/(i,i=0,99)/),(/10,10/)))) error stop 17
 
     end program
 

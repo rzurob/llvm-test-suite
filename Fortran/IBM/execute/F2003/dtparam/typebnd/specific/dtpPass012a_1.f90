@@ -30,11 +30,11 @@ use m1
         if (fd1(i)%isSet()) then
             call fd1(i)%print
 
-            if (fd1(i) .lt. fd1(i+1)) stop 10
+            if (fd1(i) .lt. fd1(i+1)) error stop 10
         else
             call fd1(i)%dataType%print
 
-            if (.not. (fd1(i) < dataType(8)(1.0_8))) stop 20
+            if (.not. (fd1(i) < dataType(8)(1.0_8))) error stop 20
         end if
     end do
 end

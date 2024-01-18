@@ -40,9 +40,9 @@
       read(in, *) rl1, rl2
 
       if ( (.not. ieee_is_nan(rl1)) .or.                               &
-     &     ( ieee_class(rl1) .ne. ieee_quiet_nan ) ) stop 1
+     &     ( ieee_class(rl1) .ne. ieee_quiet_nan ) ) error stop 1
 
-      if ( .not. precision_r4(rl2, 0.0_4) ) stop 2
+      if ( .not. precision_r4(rl2, 0.0_4) ) error stop 2
 
       rl1 = -1.0
       rl2 = -1.0
@@ -50,10 +50,10 @@
 
       read(in, *) cx1, rl1
 
-      if ( .not. precision_r4(real(cx1), -3.14) ) stop 3
+      if ( .not. precision_r4(real(cx1), -3.14) ) error stop 3
 
-      if ( ieee_is_finite(imag(cx1)) ) stop 4
+      if ( ieee_is_finite(imag(cx1)) ) error stop 4
 
-      if ( .not. precision_r4(rl1, 0.0_4) ) stop 5
+      if ( .not. precision_r4(rl1, 0.0_4) ) error stop 5
 
       end

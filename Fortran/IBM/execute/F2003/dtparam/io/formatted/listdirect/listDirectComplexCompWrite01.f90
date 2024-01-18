@@ -181,11 +181,11 @@ program listDirectComplexCompWrite01
   do i=lbound(upoly1,1),ubound(upoly1,1)
      select type(x=>upoly1(i))
         type is(gen3(4,*,4,*,8,*))
-           if(.not. precision_x8(x%x1,(-1.23E-03,1.23E3)))        stop 18
-           if(.not. precision_x6(x%x2(1),(0.789D9,-78.9D-9)))     stop 19
-           if(.not. precision_x6(x%x2(2),(15.2D-100,-15.2D100)))  stop 20
-           if(.not. precision_x3(x%x3(3),(-1.23Q+208,1.23Q-208))) stop 21
-           if(.not. precision_x3(x%x3(4),(1.15Q2,-1.15Q-2)))      stop 22
+           if(.not. precision_x8(x%x1,(-1.23E-03,1.23E3)))        error stop 18
+           if(.not. precision_x6(x%x2(1),(0.789D9,-78.9D-9)))     error stop 19
+           if(.not. precision_x6(x%x2(2),(15.2D-100,-15.2D100)))  error stop 20
+           if(.not. precision_x3(x%x3(3),(-1.23Q+208,1.23Q-208))) error stop 21
+           if(.not. precision_x3(x%x3(4),(1.15Q2,-1.15Q-2)))      error stop 22
         class default
            stop 23
      end select
@@ -193,17 +193,17 @@ program listDirectComplexCompWrite01
 
   select type(poly2)
     type is(gen3(4,*,4,*,8,*))
-       if(.not. precision_x8(poly2(-2)%x1,(-1.23E-03,1.23E3)))        stop 24
-       if(.not. precision_x6(poly2(-2)%x2(1),(0.789D9,-78.9D-9)))     stop 25
-       if(.not. precision_x6(poly2(-2)%x2(2),(15.2D-100,-15.2D100)))  stop 26
-       if(.not. precision_x3(poly2(-2)%x3(3),(-1.23Q+208,1.23Q-208))) stop 27
-       if(.not. precision_x3(poly2(-2)%x3(4),(1.15Q2,-1.15Q-2)))      stop 28
+       if(.not. precision_x8(poly2(-2)%x1,(-1.23E-03,1.23E3)))        error stop 24
+       if(.not. precision_x6(poly2(-2)%x2(1),(0.789D9,-78.9D-9)))     error stop 25
+       if(.not. precision_x6(poly2(-2)%x2(2),(15.2D-100,-15.2D100)))  error stop 26
+       if(.not. precision_x3(poly2(-2)%x3(3),(-1.23Q+208,1.23Q-208))) error stop 27
+       if(.not. precision_x3(poly2(-2)%x3(4),(1.15Q2,-1.15Q-2)))      error stop 28
 
-       if(.not. precision_x8(poly2(-1)%x1,(1.0_4,-1.0_4)))            stop 29
-       if(.not. precision_x6(poly2(-1)%x2(1),(1.1_8,-1.1_8)))         stop 30
-       if(.not. precision_x6(poly2(-1)%x2(2),(1.1_8,-1.1_8)))         stop 31
-       if(.not. precision_x3(poly2(-1)%x3(3),(1.2_16,-1.2_16)))       stop 32
-       if(.not. precision_x3(poly2(-1)%x3(4),(1.2_16,-1.2_16)))       stop 33
+       if(.not. precision_x8(poly2(-1)%x1,(1.0_4,-1.0_4)))            error stop 29
+       if(.not. precision_x6(poly2(-1)%x2(1),(1.1_8,-1.1_8)))         error stop 30
+       if(.not. precision_x6(poly2(-1)%x2(2),(1.1_8,-1.1_8)))         error stop 31
+       if(.not. precision_x3(poly2(-1)%x3(3),(1.2_16,-1.2_16)))       error stop 32
+       if(.not. precision_x3(poly2(-1)%x3(4),(1.2_16,-1.2_16)))       error stop 33
     class default
        stop 34
   end select

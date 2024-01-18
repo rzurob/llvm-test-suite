@@ -68,9 +68,9 @@
   SELECT TYPE( U )
   CLASS IS (DT)
 
-    IF (ANY(U%IArr(1) .NE. i)) STOP 21
-    IF (TRIM(U(1,1)%CArr(1)) .NE. CHAR(ICHAR("0")+i)) STOP 22
-    IF (TRIM(U(2,2)%CArr(2)) .NE. CHAR(ICHAR("0")+i)) STOP 23
+    IF (ANY(U%IArr(1) .NE. i)) ERROR STOP 21
+    IF (TRIM(U(1,1)%CArr(1)) .NE. CHAR(ICHAR("0")+i)) ERROR STOP 22
+    IF (TRIM(U(2,2)%CArr(2)) .NE. CHAR(ICHAR("0")+i)) ERROR STOP 23
 
     U%IArr(1) = i-1
     U%IArr(2) = i-1

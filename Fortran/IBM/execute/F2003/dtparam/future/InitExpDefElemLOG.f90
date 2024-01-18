@@ -62,24 +62,24 @@
 
   TYPE(DT(4)) :: T
 
-  IF ( T%L1 )  STOP 8
-  IF ( T%L2 )  STOP 9
+  IF ( T%L1 )  ERROR STOP 8
+  IF ( T%L2 )  ERROR STOP 9
 
-  IF (KIND(C%R4)  .NE. 4)    STOP 11
-  IF (KIND(C%R8)  .NE. 8)    STOP 12
-  IF (KIND(C%R6)  .NE. 16)   STOP 13
-  IF (KIND(C%Z4)  .NE. 4)    STOP 14
-  IF (KIND(C%Z8)  .NE. 8)    STOP 15
-  IF (KIND(C%Z6)  .NE. 16)   STOP 16
+  IF (KIND(C%R4)  .NE. 4)    ERROR STOP 11
+  IF (KIND(C%R8)  .NE. 8)    ERROR STOP 12
+  IF (KIND(C%R6)  .NE. 16)   ERROR STOP 13
+  IF (KIND(C%Z4)  .NE. 4)    ERROR STOP 14
+  IF (KIND(C%Z8)  .NE. 8)    ERROR STOP 15
+  IF (KIND(C%Z6)  .NE. 16)   ERROR STOP 16
 
-  IF( ANY( ABS(C%R4-R)  .GE. 1.E-6 ))       STOP 21
-  IF( ANY( ABS(C%R8-R)  .GE. 1.E-6 ))       STOP 22
-  IF( ANY( ABS(C%R6-R)  .GE. 1.E-6 ))       STOP 23
-  IF( ANY( ABS(C%Z4-Z1) .GE. 1.E-6 ))       STOP 24
-  IF( ANY( ABS(C%Z8-Z1) .GE. 1.E-6 ))       STOP 25
-! IF( ANY( ABS(C%Z6-Z2) .GE. 1.E-6 ))       STOP 26 ! COMPLEX(16) is an IBM extension
+  IF( ANY( ABS(C%R4-R)  .GE. 1.E-6 ))       ERROR STOP 21
+  IF( ANY( ABS(C%R8-R)  .GE. 1.E-6 ))       ERROR STOP 22
+  IF( ANY( ABS(C%R6-R)  .GE. 1.E-6 ))       ERROR STOP 23
+  IF( ANY( ABS(C%Z4-Z1) .GE. 1.E-6 ))       ERROR STOP 24
+  IF( ANY( ABS(C%Z8-Z1) .GE. 1.E-6 ))       ERROR STOP 25
+! IF( ANY( ABS(C%Z6-Z2) .GE. 1.E-6 ))       ERROR STOP 26 ! COMPLEX(16) is an IBM extension
                                                     ! we do not have the same behavior as COMPLEX(8)
-  IF( ANY( ABS(C%Z6+Z2) .GE. 1.E-6 ))       STOP 26
+  IF( ANY( ABS(C%Z6+Z2) .GE. 1.E-6 ))       ERROR STOP 26
 
 
   END

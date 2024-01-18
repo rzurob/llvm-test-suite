@@ -25,15 +25,15 @@ use tEMod2
 
     read (unit, iostat=stat) cmpxInt2
 
-    if (stat /= 0) stop 10
+    if (stat /= 0) error stop 10
 
     read (unit, iostat=stat) cmpxInt4
 
-    if (stat /= 0) stop 11
+    if (stat /= 0) error stop 11
 
     read (unit, iostat=stat) cmpxInt8
 
-    if (stat /= 0) stop 12
+    if (stat /= 0) error stop 12
 
     close (unit)
 

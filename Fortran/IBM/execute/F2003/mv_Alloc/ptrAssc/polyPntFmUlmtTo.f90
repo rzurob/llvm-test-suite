@@ -46,7 +46,7 @@ use m
 
     select type ( x=> C%l1)
         type is ( base)
-            if ( .not. associated(p, x) ) stop 23
+            if ( .not. associated(p, x) ) error stop 23
             select type ( y  => x%l1 )
                 type is (character(*))
                     print *, y

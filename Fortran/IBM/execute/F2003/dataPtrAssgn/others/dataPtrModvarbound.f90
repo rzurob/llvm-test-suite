@@ -28,9 +28,9 @@
 
                 func(lb:ub) => tar(41:)
 
-	        if ( .not. associated(func) ) stop 5
-                if ( lbound(func, 1) /= 31 ) stop 7
-                if ( ubound(func, 1) /= 60 ) stop 9
+	        if ( .not. associated(func) ) error stop 5
+                if ( lbound(func, 1) /= 31 ) error stop 7
+                if ( ubound(func, 1) /= 60 ) error stop 9
 
             end function
 
@@ -48,14 +48,14 @@
 
         ! ub is public module variable = 60
         allocate(ub, source = uBnd)
-        if ( .not. allocated(ub) ) stop 1
+        if ( .not. allocated(ub) ) error stop 1
 
         ! lb is private module variable = 31
         call set_lbound(lBnd)
 
         allocate(aaa(uBnd-lBnd+1), source=func(numTar))
-        if ( .not. allocated(aaa) ) stop 21
-        if ( size(aaa) /= 30 ) stop 23
+        if ( .not. allocated(aaa) ) error stop 21
+        if ( size(aaa) /= 30 ) error stop 23
 
         write(*, '(5f14.8)') aaa
 

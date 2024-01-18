@@ -28,11 +28,11 @@ num = 2
 call sub1(obj1, num)
 
 ! - verify the changes from the subroutine
-if (obj1%avar /= 100) stop 10
-if (any(obj1%element(:, 1) .ne. 11)) stop 11
-if (any(obj1%element(:, 2) .ne. 12)) stop 12
-if (any(obj1%element(:, 3) .ne. 13)) stop 13
-if (any(obj1%element(:, 4) .ne. 14)) stop 14
+if (obj1%avar /= 100) error stop 10
+if (any(obj1%element(:, 1) .ne. 11)) error stop 11
+if (any(obj1%element(:, 2) .ne. 12)) error stop 12
+if (any(obj1%element(:, 3) .ne. 13)) error stop 13
+if (any(obj1%element(:, 4) .ne. 14)) error stop 14
 
 contains
 subroutine sub1(pa, len_tp)
@@ -43,7 +43,7 @@ integer, pointer :: int_ptr(:, :)
 integer rest(4, 4)
 
 ! - verify the length type parameter
-if (pa%d /= 4) stop 21
+if (pa%d /= 4) error stop 21
 
 ! - point to the dummy argument
 str_aptr => pa
@@ -53,14 +53,14 @@ str_aptr%avar = 100
 int_ptr => str_aptr%element
 
 ! - verify the result from pointer assignments
-if (any(str_aptr%element .ne. 22)) stop 22
-!if (any(int_ptr .ne. 22)) stop 23
+if (any(str_aptr%element .ne. 22)) error stop 22
+!if (any(int_ptr .ne. 22)) error stop 23
 
 ! - do another array assignment
 rest = pa%element
 
 ! - verify the result
-if (any(rest .ne. 22)) stop 24
+if (any(rest .ne. 22)) error stop 24
 
 ! - modify the value of array component
 str_aptr%element(:, 1) = 11

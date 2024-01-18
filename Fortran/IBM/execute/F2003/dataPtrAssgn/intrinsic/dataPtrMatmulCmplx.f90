@@ -38,9 +38,9 @@ end module
 
 	res = foo(4,5,aT%p)
 
-	if ( .not. associated(aT%p)) stop 11
-	if ( any( lbound(aT%p) .ne. (/0,1 /) )) stop 13
-	if ( any( ubound(aT%p) .ne. (/0,4 /) )) stop 13
+	if ( .not. associated(aT%p)) error stop 11
+	if ( any( lbound(aT%p) .ne. (/0,1 /) )) error stop 13
+	if ( any( ubound(aT%p) .ne. (/0,4 /) )) error stop 13
 
 	select type ( x => aT%p)
 	     type is (complex)

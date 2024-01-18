@@ -26,7 +26,7 @@
 
   SELECT TYPE ( As => Pt )
   TYPE IS (CHARACTER(*))
-    IF ( As .NE. "1" )  STOP 3
+    IF ( As .NE. "1" )  ERROR STOP 3
   END SELECT
 
   END

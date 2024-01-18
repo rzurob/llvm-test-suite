@@ -109,9 +109,9 @@
   T1 = Fun(DT(4,20)("00"), DT(4,20)("1"))
   T2 = Fun(DT(4,20)("000"), DT(4,20)("1"), DT(4,20)("2"))
 
-  IF (T%ID     .NE. "ModFun-0" )   STOP 11
-  IF (T1%ID    .NE. "ModFun1-00" ) STOP 12
-  IF (T2%ID    .NE. "ExtFun-000" ) STOP 13
+  IF (T%ID     .NE. "ModFun-0" )   ERROR STOP 11
+  IF (T1%ID    .NE. "ModFun1-00" ) ERROR STOP 12
+  IF (T2%ID    .NE. "ExtFun-000" ) ERROR STOP 13
 
   END
 

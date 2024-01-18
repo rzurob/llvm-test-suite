@@ -76,33 +76,33 @@
   TYPE(DT0(1)) :: T1
   TYPE(DT1) :: T2
 
-  IF ( KIND(T1%IK1) .NE. 1 )      STOP 11
-  IF ( T1%IK1       .NE. 1 )      STOP 12
+  IF ( KIND(T1%IK1) .NE. 1 )      ERROR STOP 11
+  IF ( T1%IK1       .NE. 1 )      ERROR STOP 12
 
-  IF ( KIND(T1%IK2) .NE. 2 )      STOP 21
-  IF ( T1%IK2       .NE. 2 )      STOP 22
+  IF ( KIND(T1%IK2) .NE. 2 )      ERROR STOP 21
+  IF ( T1%IK2       .NE. 2 )      ERROR STOP 22
 
-  IF ( KIND(T1%IK)  .NE. 4 )      STOP 31
-  IF ( T1%IK        .NE. 4 )      STOP 32
+  IF ( KIND(T1%IK)  .NE. 4 )      ERROR STOP 31
+  IF ( T1%IK        .NE. 4 )      ERROR STOP 32
 
-  IF ( KIND(T1%IK4) .NE. 4 )      STOP 41
-  IF ( T1%IK4       .NE. 4 )      STOP 42
+  IF ( KIND(T1%IK4) .NE. 4 )      ERROR STOP 41
+  IF ( T1%IK4       .NE. 4 )      ERROR STOP 42
 
-  IF ( KIND(T1%IK8) .NE. 8 )      STOP 51
-  IF ( T1%IK8       .NE. 8 )      STOP 52
+  IF ( KIND(T1%IK8) .NE. 8 )      ERROR STOP 51
+  IF ( T1%IK8       .NE. 8 )      ERROR STOP 52
 
 
-  IF ( T2%L1        .NE. I1Max )  STOP 61
-  IF ( LEN(T2%CL1)  .NE. I1Max )  STOP 62
-  IF ( TRIM(T2%CL1) .NE. "1" )    STOP 63
+  IF ( T2%L1        .NE. I1Max )  ERROR STOP 61
+  IF ( LEN(T2%CL1)  .NE. I1Max )  ERROR STOP 62
+  IF ( TRIM(T2%CL1) .NE. "1" )    ERROR STOP 63
 
-  IF ( T2%L2        .NE. I2Max )  STOP 71
-  IF ( LEN(T2%CL2)  .NE. I2Max )  STOP 72
-  IF ( TRIM(T2%CL2) .NE. "2" )    STOP 73
+  IF ( T2%L2        .NE. I2Max )  ERROR STOP 71
+  IF ( LEN(T2%CL2)  .NE. I2Max )  ERROR STOP 72
+  IF ( TRIM(T2%CL2) .NE. "2" )    ERROR STOP 73
 
-  IF ( T2%L         .NE. I4Max )  STOP 81
-  IF ( T2%L4        .NE. I4Max )  STOP 91
-  IF ( T2%L8        .NE. I8Max )  STOP 101
+  IF ( T2%L         .NE. I4Max )  ERROR STOP 81
+  IF ( T2%L4        .NE. I4Max )  ERROR STOP 91
+  IF ( T2%L8        .NE. I8Max )  ERROR STOP 101
 
 
   END

@@ -85,19 +85,19 @@
 
       ALLOCATE(Base(k1,len1):: tgt%Cmp(2))
       ALLOCATE(Base(k1,len1):: cbl%Cmp(len1))
-      IF ( .NOT. ALLOCATED(tgt%Cmp)) STOP 100
-      IF ( .NOT. ALLOCATED(cbl%Cmp)) STOP 101
+      IF ( .NOT. ALLOCATED(tgt%Cmp)) ERROR STOP 100
+      IF ( .NOT. ALLOCATED(cbl%Cmp)) ERROR STOP 101
 
       child1 => tgt
-      IF ( .NOT. ASSOCIATED(child1)) STOP 102
-      IF ( .NOT. ALLOCATED(child1%Cmp)) STOP 103
+      IF ( .NOT. ASSOCIATED(child1)) ERROR STOP 102
+      IF ( .NOT. ALLOCATED(child1%Cmp)) ERROR STOP 103
 
       CALL sub1(child1)
 
       !dynamic TYPE of child is now NextGen
       child1 => cbl
-      IF ( .NOT. ASSOCIATED(child1)) STOP 104
-      IF ( .NOT. ALLOCATED(child1%Cmp)) STOP 105
+      IF ( .NOT. ASSOCIATED(child1)) ERROR STOP 104
+      IF ( .NOT. ALLOCATED(child1%Cmp)) ERROR STOP 105
 
       SELECT TYPE (child1)
          CLASS IS (NextGen(k1,*))
@@ -120,8 +120,8 @@
             STOP 20
 
           TYPE IS (Base(k1,*))
-            IF( SIZE(A%my_arr) /= len1) STOP 111
-            IF( FACT(SIZE(A%my_arr)) /= FACT(len1) ) STOP 112
+            IF( SIZE(A%my_arr) /= len1) ERROR STOP 111
+            IF( FACT(SIZE(A%my_arr)) /= FACT(len1) ) ERROR STOP 112
 
           CLASS DEFAULT
             STOP 21
@@ -144,7 +144,7 @@
               STOP 31
 
           CLASS IS (Base(k1,*))
-              IF( SIZE(A) /= len1) STOP 111
+              IF( SIZE(A) /= len1) ERROR STOP 111
 
           CLASS DEFAULT
              STOP 32

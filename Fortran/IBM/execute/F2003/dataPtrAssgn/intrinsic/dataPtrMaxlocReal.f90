@@ -55,9 +55,9 @@ module m
         end select
 
         c%up(1:, 1:) => c%up(::2,:)
-        if ( .not. associated(c%up)) stop 15
-        if ( any ( lbound(c%up) .ne. (/1,1/) )) stop 17
-        if ( any ( ubound(c%up) .ne. (/2,4/) )) stop 19
+        if ( .not. associated(c%up)) error stop 15
+        if ( any ( lbound(c%up) .ne. (/1,1/) )) error stop 17
+        if ( any ( ubound(c%up) .ne. (/2,4/) )) error stop 19
 
         select type(x => c%up)
             type is (real*4)
@@ -68,17 +68,17 @@ module m
         end select
 
         c%rp8(lbound(c%up,1,8):,size(c%up,2):,2:) => c%rp8(::2,::2,::2)
-        if ( .not. associated(c%up)) stop 25
-        if ( any ( lbound(c%rp8) .ne. (/1,4,2/) )) stop 27
-        if ( any ( lbound(c%rp8) .ne. ubound(c%rp8) )) stop 29
+        if ( .not. associated(c%up)) error stop 25
+        if ( any ( lbound(c%rp8) .ne. (/1,4,2/) )) error stop 27
+        if ( any ( lbound(c%rp8) .ne. ubound(c%rp8) )) error stop 29
 
 	write (*, '(f10.5)') c%rp8
 	print *,  maxloc(c%rp8, dim=2, kind=2)
 
         c%rp16(i:, j:, i+j:, i-j:) => c%rp16
-        if ( .not. associated(c%rp16)) stop 35
-        if ( any ( lbound(c%rp16) .ne. (/5,5,10,0/) )) stop 37
-        if ( any ( ubound(c%rp16) .ne. (/6,5,11,0/) )) stop 39
+        if ( .not. associated(c%rp16)) error stop 35
+        if ( any ( lbound(c%rp16) .ne. (/5,5,10,0/) )) error stop 37
+        if ( any ( ubound(c%rp16) .ne. (/6,5,11,0/) )) error stop 39
 
 	write (*, '(4f20.15)') 	c%rp16
 	print *,  maxloc(c%rp16, kind=8)

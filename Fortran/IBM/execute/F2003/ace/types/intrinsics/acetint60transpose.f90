@@ -33,24 +33,24 @@ program acetint60transpose
 
   array19 = reshape([integer:: (i, i=1,9)], [1,9])
   array91 = transpose (array19)
-  if (any([integer:: array19] /= [integer:: array91])) stop 2
+  if (any([integer:: array19] /= [integer:: array91])) error stop 2
 
   array33 = reshape([integer:: (i, i=1,9)], [3,3])
   array33 = transpose(array33)
-  if (any([integer:: array33] /= [integer:: 1,4,7,2,5,8,3,6,9])) stop 3
+  if (any([integer:: array33] /= [integer:: 1,4,7,2,5,8,3,6,9])) error stop 3
   print *, array33
   array33 = transpose(reshape([integer:: (i, i=1,9)], [3,3]))
-  if (any([integer:: array33] /= [integer:: 1,4,7,2,5,8,3,6,9])) stop 4
-  if (any([integer:: transpose(reshape([integer:: (i, i=1,9)], [3,3]))] /= [integer:: 1,4,7,2,5,8,3,6,9])) stop 5
+  if (any([integer:: array33] /= [integer:: 1,4,7,2,5,8,3,6,9])) error stop 4
+  if (any([integer:: transpose(reshape([integer:: (i, i=1,9)], [3,3]))] /= [integer:: 1,4,7,2,5,8,3,6,9])) error stop 5
 
   array91 = transpose(reshape([integer:: (i, i=1,9)], [1,9]))
   print *, array91
   print *, transpose(reshape([integer:: (i, i=1,9)], [1,9]))
 
-  if (any([integer:: transpose(reshape([integer:: 1,4,7,2,5,8,3,6,9], [3,3]))] /= [integer:: (i, i=1,9)])) stop 6
+  if (any([integer:: transpose(reshape([integer:: 1,4,7,2,5,8,3,6,9], [3,3]))] /= [integer:: (i, i=1,9)])) error stop 6
 
-  if (any([integer:: transpose(transpose(reshape([integer:: (i, i=1,9)], [3,3])))] /= [integer:: (i, i=1,9)])) stop 7
+  if (any([integer:: transpose(transpose(reshape([integer:: (i, i=1,9)], [3,3])))] /= [integer:: (i, i=1,9)])) error stop 7
 
-  if (any([integer:: transpose(transpose(reshape([integer:: (i, i=1,1024)], [8,128])))] /= [integer:: (i, i=1,1024)])) stop 8
+  if (any([integer:: transpose(transpose(reshape([integer:: (i, i=1,1024)], [8,128])))] /= [integer:: (i, i=1,1024)])) error stop 8
 
 end program acetint60transpose

@@ -70,8 +70,8 @@ use m
     ! final subroutine for A is called
     allocate(to, source = A(10,39) )
 
-    if ( .not. allocated(from) ) stop 21
-    if ( .not. allocated(to) ) stop 22
+    if ( .not. allocated(from) ) error stop 21
+    if ( .not. allocated(to) ) error stop 22
 
     countB = 0
     countA = 0
@@ -79,11 +79,11 @@ use m
     ! final subroutine for A is called
     call move_alloc(from, to)
 
-    if ( countA /= 1 ) stop 23
-    if ( countB /= 0 ) stop 24
+    if ( countA /= 1 ) error stop 23
+    if ( countB /= 0 ) error stop 24
 
-    if ( allocated(from) ) stop 25
-    if ( .not. allocated(to) ) stop 27
+    if ( allocated(from) ) error stop 25
+    if ( .not. allocated(to) ) error stop 27
 
     select type(to)
         type is (B)

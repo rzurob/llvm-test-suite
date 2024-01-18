@@ -58,12 +58,12 @@
     SELECT TYPE (As)
     TYPE IS (Child(4))
 
-      IF ( As%ChildID    .NE. -2  )         STOP 33
-      IF ( As%BS%BaseID  .NE.  0  )         STOP 34
-      IF ( As%BaseID     .NE. -1  )         STOP 35
+      IF ( As%ChildID    .NE. -2  )         ERROR STOP 33
+      IF ( As%BS%BaseID  .NE.  0  )         ERROR STOP 34
+      IF ( As%BaseID     .NE. -1  )         ERROR STOP 35
 
       ASSOCIATE (As => As)
-        IF ( ASSOCIATED(As%BSPtr) )         STOP 36
+        IF ( ASSOCIATED(As%BSPtr) )         ERROR STOP 36
       END ASSOCIATE
 
     CLASS DEFAULT

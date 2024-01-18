@@ -58,9 +58,9 @@ end module
 
 	p(size(p):) => b2%fun(ch)
 
-	if ( .not. associated(p)) stop 5
-	if ( lbound(p,1) /= 0) stop 7
-	if ( ubound(p,1) /= 25) stop 9
+	if ( .not. associated(p)) error stop 5
+	if ( lbound(p,1) /= 0) error stop 7
+	if ( ubound(p,1) /= 25) error stop 9
 
 	select type (p)
 	    type is (character(*))

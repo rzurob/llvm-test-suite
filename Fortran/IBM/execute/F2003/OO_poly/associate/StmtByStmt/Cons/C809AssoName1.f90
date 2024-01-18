@@ -53,18 +53,18 @@
   TYPE(Child) :: As = Child(1)
 
     ASSOCIATE ( As => As  )
-      IF (As%Id .NE. 1) STOP 50
-      IF (As%GetId() .NE. 1) STOP 51
+      IF (As%Id .NE. 1) ERROR STOP 50
+      IF (As%GetId() .NE. 1) ERROR STOP 51
       As%Id = 2
 
       ASSOCIATE ( As => As  )
-        IF (As%Id .NE. 2) STOP 52
-        IF (As%GetId() .NE. 2) STOP 53
+        IF (As%Id .NE. 2) ERROR STOP 52
+        IF (As%GetId() .NE. 2) ERROR STOP 53
       END ASSOCIATE
     END ASSOCIATE
 
-    IF (As%Id .NE. 2) STOP 52
-    IF (As%GetId() .NE. 2) STOP 53
+    IF (As%Id .NE. 2) ERROR STOP 52
+    IF (As%GetId() .NE. 2) ERROR STOP 53
 
   END
 

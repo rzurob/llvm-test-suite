@@ -103,29 +103,29 @@
 
   CALL ModSub()
 
-  IF ( .NOT. ASSOCIATED(Ptr0) ) STOP 24
-  IF ( .NOT. ASSOCIATED(Ptr2) ) STOP 26
+  IF ( .NOT. ASSOCIATED(Ptr0) ) ERROR STOP 24
+  IF ( .NOT. ASSOCIATED(Ptr2) ) ERROR STOP 26
 
-  IF ( Ptr0%L0         .NE. 1 )            STOP 31
-  IF ( SIZE(Ptr0)      .NE. T%L0 ) STOP 32
+  IF ( Ptr0%L0         .NE. 1 )            ERROR STOP 31
+  IF ( SIZE(Ptr0)      .NE. T%L0 ) ERROR STOP 32
 
-  IF ( Ptr2%L0        .NE. 3            )  STOP 51
-  IF ( Ptr2%L1        .NE. 5            )  STOP 52
-  IF ( Ptr2%L2        .NE. 7            )  STOP 53
-  IF ( SIZE(Ptr2)     .NE. T%Tar2(1)%L2 )  STOP 54
+  IF ( Ptr2%L0        .NE. 3            )  ERROR STOP 51
+  IF ( Ptr2%L1        .NE. 5            )  ERROR STOP 52
+  IF ( Ptr2%L2        .NE. 7            )  ERROR STOP 53
+  IF ( SIZE(Ptr2)     .NE. T%Tar2(1)%L2 )  ERROR STOP 54
 
   DO I=1, T(1)%Tar2%L2
-    IF ( Ptr2(I)%C1                .NE.   "XYZ"    )  STOP 84
-    IF ( Ptr2(I)%C2                .NE.   "ZYX"    )  STOP 85
-    IF ( Ptr2(I)%I                 .NE.   1234     )  STOP 86
-    IF ( Ptr2(I)%R                 .NE.   4321.    )  STOP 87
-    IF ( Ptr2(I)%L                 .NEQV. .TRUE.   )  STOP 88
-    IF ( Ptr2(I)%Z                 .NE.   (1.,-1.) )  STOP 89
-    IF ( Ptr2(I)%T0%K0             .NE.    8       )  STOP 90
-    IF ( Ptr2(I)%T0%L0             .NE.    7       )  STOP 91
-    IF ( ASSOCIATED(Ptr2(I)%Ptr )  .EQV.   .TRUE.  )  STOP 92
-    IF ( Ptr2(I)%Ptr%K2            .NE.    8       )  STOP 93
-    IF ( Ptr2(I)%Ptr%L2            .NE.    7       )  STOP 94
+    IF ( Ptr2(I)%C1                .NE.   "XYZ"    )  ERROR STOP 84
+    IF ( Ptr2(I)%C2                .NE.   "ZYX"    )  ERROR STOP 85
+    IF ( Ptr2(I)%I                 .NE.   1234     )  ERROR STOP 86
+    IF ( Ptr2(I)%R                 .NE.   4321.    )  ERROR STOP 87
+    IF ( Ptr2(I)%L                 .NEQV. .TRUE.   )  ERROR STOP 88
+    IF ( Ptr2(I)%Z                 .NE.   (1.,-1.) )  ERROR STOP 89
+    IF ( Ptr2(I)%T0%K0             .NE.    8       )  ERROR STOP 90
+    IF ( Ptr2(I)%T0%L0             .NE.    7       )  ERROR STOP 91
+    IF ( ASSOCIATED(Ptr2(I)%Ptr )  .EQV.   .TRUE.  )  ERROR STOP 92
+    IF ( Ptr2(I)%Ptr%K2            .NE.    8       )  ERROR STOP 93
+    IF ( Ptr2(I)%Ptr%L2            .NE.    7       )  ERROR STOP 94
   END DO
 
   END

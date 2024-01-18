@@ -49,13 +49,13 @@
                 & Base(-1, NULL()))
 
 
-  IF ( V%ChildId .NE. -2 ) STOP 12
-  IF ( V%BComp%BaseId .NE. -1 ) STOP 11
-  IF ( ASSOCIATED(V%BComp%ProcPtr) ) STOP 13
+  IF ( V%ChildId .NE. -2 ) ERROR STOP 12
+  IF ( V%BComp%BaseId .NE. -1 ) ERROR STOP 11
+  IF ( ASSOCIATED(V%BComp%ProcPtr) ) ERROR STOP 13
 
-  IF ( U%ChildId .NE. 2 ) STOP 22
-  IF ( U%BComp%BaseId .NE. -1 ) STOP 21
-  IF ( ASSOCIATED(U%BComp%ProcPtr) ) STOP 23
+  IF ( U%ChildId .NE. 2 ) ERROR STOP 22
+  IF ( U%BComp%BaseId .NE. -1 ) ERROR STOP 21
+  IF ( ASSOCIATED(U%BComp%ProcPtr) ) ERROR STOP 23
 
 
   END

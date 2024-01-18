@@ -58,16 +58,16 @@
 
   ASSOCIATE( As => (/DT(4)(Base=V(1)),DT(4)(Base=V(2)) /) )
 
-    IF ( ANY(SHAPE(As)  .NE. (/2/) ) ) STOP 20
-    IF ( ANY(As%BaseID  .NE. 1 ) )     STOP 21
-    IF ( ANY(As%ChildID .NE. 2 ) )     STOP 22
+    IF ( ANY(SHAPE(As)  .NE. (/2/) ) ) ERROR STOP 20
+    IF ( ANY(As%BaseID  .NE. 1 ) )     ERROR STOP 21
+    IF ( ANY(As%ChildID .NE. 2 ) )     ERROR STOP 22
 
-    IF ( As%Bnd(2)  .NE. 2  )          STOP 23
+    IF ( As%Bnd(2)  .NE. 2  )          ERROR STOP 23
 
     SELECT TYPE ( As => As(2)%Unknown  )
     TYPE IS (CHARACTER(*))
-      IF ( ANY(SHAPE(As) .NE. (/2/) ) )  STOP 30
-      IF ( ANY(As        .NE. "123" ) )  STOP 31
+      IF ( ANY(SHAPE(As) .NE. (/2/) ) )  ERROR STOP 30
+      IF ( ANY(As        .NE. "123" ) )  ERROR STOP 31
     CLASS DEFAULT
       STOP 33
     END SELECT

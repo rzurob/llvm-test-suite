@@ -85,16 +85,16 @@
   CALL Fun1(T, DT(-1))
   CALL Fun1(T1, DT1(1))
 
-  IF (T%ID  .NE. -1 ) STOP 11
-  IF (T1%ID  .NE. 1 ) STOP 12
+  IF (T%ID  .NE. -1 ) ERROR STOP 11
+  IF (T1%ID  .NE. 1 ) ERROR STOP 12
 
   ProcPtr => ModSub1
 
   CALL Fun2(T, DT(-2))
   CALL Fun2(T1, DT1(2))
 
-  IF (T%ID  .NE. -2 ) STOP 21
-  IF (T1%ID  .NE. 2 ) STOP 22
+  IF (T%ID  .NE. -2 ) ERROR STOP 21
+  IF (T1%ID  .NE. 2 ) ERROR STOP 22
 
   END
 

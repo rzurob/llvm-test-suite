@@ -51,22 +51,22 @@
 
 
   DO I1 =1, 127
-    IF (LEN_TRIM(STRING=T%CC(I1,I1), KIND=1)   .NE. 0 )   STOP 11
+    IF (LEN_TRIM(STRING=T%CC(I1,I1), KIND=1)   .NE. 0 )   ERROR STOP 11
   END DO
 
   DO I2 =1, 128
-    IF (ANY( LEN_TRIM(STRING=T%CC(I2,:)(1:), KIND=2)   .NE. 0 ))    STOP 12
+    IF (ANY( LEN_TRIM(STRING=T%CC(I2,:)(1:), KIND=2)   .NE. 0 ))    ERROR STOP 12
   END DO
 
   DO I4 =1, 128
-    IF ( ANY (LEN_TRIM(STRING=T%CC(:,I4)(I4:), KIND=4) .NE. 0 )) STOP 14
+    IF ( ANY (LEN_TRIM(STRING=T%CC(:,I4)(I4:), KIND=4) .NE. 0 )) ERROR STOP 14
   END DO
 
   DO I8 =1, 128
-    IF (ANY( LEN_TRIM(STRING=T%CC(I8,:), kind=8) .NE. 0))     STOP 18
+    IF (ANY( LEN_TRIM(STRING=T%CC(I8,:), kind=8) .NE. 0))     ERROR STOP 18
   END DO
 
 
-  IF (ANY(LEN_TRIM(STRING=T%CC(:,:)(:), KIND=4)         .NE. III)) STOP 92
+  IF (ANY(LEN_TRIM(STRING=T%CC(:,:)(:), KIND=4)         .NE. III)) ERROR STOP 92
 
   END

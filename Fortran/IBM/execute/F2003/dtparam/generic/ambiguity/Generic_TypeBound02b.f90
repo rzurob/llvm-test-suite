@@ -131,28 +131,28 @@
       CLASS(Child(8,:,4)), POINTER :: poly2
 
       CALL base1%SUB ()
-      IF( base1%sum .NE. 4) STOP 10
+      IF( base1%sum .NE. 4) ERROR STOP 10
 
       CALL base2%SUB ()
-      IF( base2%sum .NE. 8) STOP 11
+      IF( base2%sum .NE. 8) ERROR STOP 11
 
       ALLOCATE(Base(4,10):: poly1)
-      IF ( .NOT. ASSOCIATED(poly1)) STOP 12
+      IF ( .NOT. ASSOCIATED(poly1)) ERROR STOP 12
 
       CALL poly1%SUB()
-      IF( poly1%sum .NE. 4) STOP 13
+      IF( poly1%sum .NE. 4) ERROR STOP 13
 
       poly1 => tgt1
-      IF ( .NOT. ASSOCIATED(poly1)) STOP 14
+      IF ( .NOT. ASSOCIATED(poly1)) ERROR STOP 14
 
       CALL poly1%SUB()
-      IF( poly1%sum .NE. 8) STOP 15
+      IF( poly1%sum .NE. 8) ERROR STOP 15
 
       ALLOCATE(NextGen(4,10,8,8):: poly1)
-      IF ( .NOT. ASSOCIATED(poly1)) STOP 16
+      IF ( .NOT. ASSOCIATED(poly1)) ERROR STOP 16
 
       CALL poly1%SUB()
-      IF( poly1%sum .NE. 20) STOP 17
+      IF( poly1%sum .NE. 20) ERROR STOP 17
 
       CALL SUB1(poly1)
 
@@ -164,22 +164,22 @@
       CLASS(Base(4,:)), POINTER ::  Arg
 
       ALLOCATE(Base(4,10):: Arg)
-      IF ( .NOT. ASSOCIATED(Arg)) STOP 20
+      IF ( .NOT. ASSOCIATED(Arg)) ERROR STOP 20
 
       CALL Arg%SUB()
-      IF( Arg%sum .NE. 4) STOP 21
+      IF( Arg%sum .NE. 4) ERROR STOP 21
 
       Arg => tgt1
-      IF ( .NOT. ASSOCIATED(Arg)) STOP 22
+      IF ( .NOT. ASSOCIATED(Arg)) ERROR STOP 22
 
       CALL Arg%SUB()
-      IF( Arg%sum .NE. 8) STOP 23
+      IF( Arg%sum .NE. 8) ERROR STOP 23
 
       ALLOCATE(NextGen(4,10,8,8):: Arg)
-      IF ( .NOT. ASSOCIATED(Arg)) STOP 24
+      IF ( .NOT. ASSOCIATED(Arg)) ERROR STOP 24
 
       CALL Arg%SUB()
-      IF( Arg%sum .NE. 20) STOP 25
+      IF( Arg%sum .NE. 20) ERROR STOP 25
 
       END SUBROUTINE SUB1
 
@@ -188,10 +188,10 @@
       TYPE(Child(8,20,4)), TARGET :: tgt2
 
       Arg => tgt2
-      IF ( .NOT. ASSOCIATED(Arg)) STOP 17
+      IF ( .NOT. ASSOCIATED(Arg)) ERROR STOP 17
 
       CALL Arg%SUB()
-      IF( Arg%sum .NE. 12) STOP 18
+      IF( Arg%sum .NE. 12) ERROR STOP 18
 
       END SUBROUTINE SUB2
 

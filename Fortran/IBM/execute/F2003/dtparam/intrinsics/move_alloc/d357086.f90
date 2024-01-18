@@ -33,12 +33,12 @@ program d357086
   allocate(from1%ch1,source="xlf")
   from1%ch2="123"
 
-  if(.not. allocated(from1))     stop 1
+  if(.not. allocated(from1))     error stop 1
   select type(from1)
      type is(child(*))
         from1%baseComp=>from1
-        if(from1%ch2 /= "123")      stop 2
-        if(.not. associated(from1%baseComp,from1))   stop 3
+        if(from1%ch2 /= "123")      error stop 2
+        if(.not. associated(from1%baseComp,from1))   error stop 3
      class default
          stop 4
   end select

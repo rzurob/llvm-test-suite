@@ -44,14 +44,14 @@
   LOGICAL, PARAMETER :: L0(1:0)=IS_IOSTAT_END(IEndOfFile8(1:0))
 
 
-  IF( KIND(L1) .NE. 4 )               STOP 11
-  IF(ANY(  L1 .NEQV. LEndOfFile  ))   STOP 12
-  IF( KIND(L2) .NE. 4 )               STOP 13
-  IF(ANY(  L2 .NEQV. LEndOfFile  ))   STOP 14
-  IF( KIND(L4) .NE. 4 )               STOP 15
-  IF(ANY(  L4 .NEQV. LEndOfFile  ))   STOP 16
-  IF( KIND(L8) .NE. 4 )               STOP 17
-  IF(ANY(  L8 .NEQV. LEndOfFile  ))   STOP 18
+  IF( KIND(L1) .NE. 4 )               ERROR STOP 11
+  IF(ANY(  L1 .NEQV. LEndOfFile  ))   ERROR STOP 12
+  IF( KIND(L2) .NE. 4 )               ERROR STOP 13
+  IF(ANY(  L2 .NEQV. LEndOfFile  ))   ERROR STOP 14
+  IF( KIND(L4) .NE. 4 )               ERROR STOP 15
+  IF(ANY(  L4 .NEQV. LEndOfFile  ))   ERROR STOP 16
+  IF( KIND(L8) .NE. 4 )               ERROR STOP 17
+  IF(ANY(  L8 .NEQV. LEndOfFile  ))   ERROR STOP 18
 
 
   END

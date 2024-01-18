@@ -11,5 +11,5 @@
        pp1 => qabs
        jjj = -19
        iii = pp1(jjj)
-       if (iii .ne. 19) stop 10
+       if (iii .ne. 19) error stop 10
        end

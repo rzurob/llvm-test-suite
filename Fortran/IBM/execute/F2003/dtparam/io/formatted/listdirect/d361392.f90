@@ -27,7 +27,7 @@ program d361392
   allocate(base(3) :: ptr)
   select type(ptr)
      type is(base(*))
-      if(ptr%c1(3,4) /= "A" ) stop 1
+      if(ptr%c1(3,4) /= "A" ) error stop 1
      class default
         stop 2
   end select

@@ -80,32 +80,32 @@
   SELECT TYPE ( As )
   TYPE IS (Child)
 
-    IF ( ANY (LBOUND(As)      .NE. (/3,2/) ) )             STOP 30
-    IF ( ANY (SHAPE(As(:,2:3)).NE. (/2,2/) ) )             STOP 32
-    IF ( ANY (As(:,2:3)%GetID()      .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) STOP 33
-    IF ( ANY (As(:,2:3)%Base%GetID() .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) STOP 34
+    IF ( ANY (LBOUND(As)      .NE. (/3,2/) ) )             ERROR STOP 30
+    IF ( ANY (SHAPE(As(:,2:3)).NE. (/2,2/) ) )             ERROR STOP 32
+    IF ( ANY (As(:,2:3)%GetID()      .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) ERROR STOP 33
+    IF ( ANY (As(:,2:3)%Base%GetID() .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) ERROR STOP 34
 
     ASSOCIATE ( As0 => As(:,2:3)%ChildId, As1 => As(:,2:3)%BaseId )
-       IF ( ANY(As0 .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) STOP 41
-       IF ( ANY(As1 .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) STOP 42
+       IF ( ANY(As0 .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) ERROR STOP 41
+       IF ( ANY(As1 .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) ERROR STOP 42
     END ASSOCIATE
 
     ASSOCIATE ( As2 => As(:,2:3)%Base )
-      IF ( ANY(As2%GetID() .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) )) STOP 50
+      IF ( ANY(As2%GetID() .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) )) ERROR STOP 50
     END ASSOCIATE
 
     ASSOCIATE (As =>  As(3:,:3)%GetID())
-      IF ( ANY(As .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) )) STOP 60
+      IF ( ANY(As .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) )) ERROR STOP 60
     END ASSOCIATE
 
     ASSOCIATE (As =>  As(:4,2:3)%Base%GetID())
-      IF ( ANY(As .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) )) STOP 70
+      IF ( ANY(As .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) )) ERROR STOP 70
     END ASSOCIATE
 
     CALL As%SetId(As(:,:3)%Base, 1)
     CALL As%SetId(As(:,:3), 2)
-    IF ( ANY (As(:,2:3)%GetID()      .NE. RESHAPE((/2,2,2,2/), (/2,2/)) ) ) STOP 83
-    IF ( ANY (As(:,2:3)%Base%GetID() .NE. RESHAPE((/1,1,1,1/), (/2,2/)) ) ) STOP 84
+    IF ( ANY (As(:,2:3)%GetID()      .NE. RESHAPE((/2,2,2,2/), (/2,2/)) ) ) ERROR STOP 83
+    IF ( ANY (As(:,2:3)%Base%GetID() .NE. RESHAPE((/1,1,1,1/), (/2,2/)) ) ) ERROR STOP 84
 
   CLASS DEFAULT
     STOP 90

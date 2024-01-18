@@ -156,32 +156,32 @@ program listDirectStreamAccess03
    select type(x=>ptr)
       type is(child(8,*,4,*))
 
-        if(.not. precision_x6(x(2)%x1(1),(-9.9_8,-9.9_8)))     stop 15
-        if(.not. precision_x6(x(2)%x1(2),(1.2_8,-1.2_8)))      stop 16
-        if(.not. precision_x6(x(2)%x1(3),(1.2_8,-1.2_8)))      stop 17
-        if(.not. precision_x6(x(2)%x1(4),(-0.5_8,0.5_8)))      stop 18
+        if(.not. precision_x6(x(2)%x1(1),(-9.9_8,-9.9_8)))     error stop 15
+        if(.not. precision_x6(x(2)%x1(2),(1.2_8,-1.2_8)))      error stop 16
+        if(.not. precision_x6(x(2)%x1(3),(1.2_8,-1.2_8)))      error stop 17
+        if(.not. precision_x6(x(2)%x1(4),(-0.5_8,0.5_8)))      error stop 18
 
-        if(any(x(2)%a1comp%c1 /= (/"ABC","ABC","HOT","CAP" /) ))   stop 19
-        if(.not. precision_r4(x(2)%a1comp%r1(1),-4.5 ))        stop 20
-        if(.not. precision_r4(x(2)%a1comp%r1(2),-0.007 ))      stop 21
-        if(.not. precision_r4(x(2)%a1comp%r1(3),-34.E4 ))      stop 22
+        if(any(x(2)%a1comp%c1 /= (/"ABC","ABC","HOT","CAP" /) ))   error stop 19
+        if(.not. precision_r4(x(2)%a1comp%r1(1),-4.5 ))        error stop 20
+        if(.not. precision_r4(x(2)%a1comp%r1(2),-0.007 ))      error stop 21
+        if(.not. precision_r4(x(2)%a1comp%r1(3),-34.E4 ))      error stop 22
 
-        if(any(x(2)%i1 /= [-4,8] ))                            stop 23
-        if(any(x(2)%a2comp%c1 /= ["abc","def","ghi","j_k"] ))  stop 24
+        if(any(x(2)%i1 /= [-4,8] ))                            error stop 23
+        if(any(x(2)%a2comp%c1 /= ["abc","def","ghi","j_k"] ))  error stop 24
 
-        if(.not. precision_x6(x(3)%x1(1),(-3.5D-2,3.5_8)))     stop 25
-        if(.not. precision_x6(x(3)%x1(2),(-2.1D-10,-0.01D-5))) stop 26
-        if(.not. precision_x6(x(3)%x1(3),(-98121.3_8,-2.D05))) stop 27
-        if(.not. precision_x6(x(3)%x1(4),(0.4_8,-4.5_8)))      stop 28
+        if(.not. precision_x6(x(3)%x1(1),(-3.5D-2,3.5_8)))     error stop 25
+        if(.not. precision_x6(x(3)%x1(2),(-2.1D-10,-0.01D-5))) error stop 26
+        if(.not. precision_x6(x(3)%x1(3),(-98121.3_8,-2.D05))) error stop 27
+        if(.not. precision_x6(x(3)%x1(4),(0.4_8,-4.5_8)))      error stop 28
 
         if(any(x(3)%a1comp%c1 /= &
-                 (/"***","   ","BCD","FGH" /) ))               stop 29
-        if(.not. precision_r4(x(3)%a1comp%r1(1),-7.2 ))        stop 30
-        if(.not. precision_r4(x(3)%a1comp%r1(2),5._4 ))        stop 31
-        if(.not. precision_r4(x(3)%a1comp%r1(3),-3. ))         stop 32
+                 (/"***","   ","BCD","FGH" /) ))               error stop 29
+        if(.not. precision_r4(x(3)%a1comp%r1(1),-7.2 ))        error stop 30
+        if(.not. precision_r4(x(3)%a1comp%r1(2),5._4 ))        error stop 31
+        if(.not. precision_r4(x(3)%a1comp%r1(3),-3. ))         error stop 32
 
-        if(any(x(3)%i1 /= [12,-99] ))                          stop 33
-        if(any(x(3)%a2comp%c1 /= ["XLF","\'A\'","IBM","\"B\""] ))  stop 34
+        if(any(x(3)%i1 /= [12,-99] ))                          error stop 33
+        if(any(x(3)%a2comp%c1 /= ["XLF","\'A\'","IBM","\"B\""] ))  error stop 34
 
       class default
         stop 14

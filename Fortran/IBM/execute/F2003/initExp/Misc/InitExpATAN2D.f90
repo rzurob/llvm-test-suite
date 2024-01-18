@@ -50,25 +50,25 @@
 
 
 
-  IF (KIND(V4)     .NE. 4   )                       STOP 11
-  IF ( ANY(V4      .NE. Result))                    STOP 12
+  IF (KIND(V4)     .NE. 4   )                       ERROR STOP 11
+  IF ( ANY(V4      .NE. Result))                    ERROR STOP 12
 
-  IF (KIND(V8)     .NE. 8   )                       STOP 21
-  IF ( ANY(V8      .NE. Result))                    STOP 22
+  IF (KIND(V8)     .NE. 8   )                       ERROR STOP 21
+  IF ( ANY(V8      .NE. Result))                    ERROR STOP 22
 
-  IF (KIND(V6)     .NE. 16  )                       STOP 31
-! IF ( ANY(V6      .NE. Result))                    STOP 32
+  IF (KIND(V6)     .NE. 16  )                       ERROR STOP 31
+! IF ( ANY(V6      .NE. Result))                    ERROR STOP 32
 
-  IF (KIND(DV)     .NE. 8   )                       STOP 41
-  IF ( ANY(DV      .NE. Result))                    STOP 42
+  IF (KIND(DV)     .NE. 8   )                       ERROR STOP 41
+  IF ( ANY(DV      .NE. Result))                    ERROR STOP 42
 
-  IF (KIND(QV)     .NE. 16  )                       STOP 51
-! IF ( ANY(QV      .NE. Result))                    STOP 52
+  IF (KIND(QV)     .NE. 16  )                       ERROR STOP 51
+! IF ( ANY(QV      .NE. Result))                    ERROR STOP 52
 
   DO I = 1, 2
   DO J = 1, 2
-    IF (.NOT. precision_R6(V6(I,J), Result(I,J)) )                   STOP 32
-    IF (.NOT. precision_R6(QV(I,J), Result(I,J)) )                   STOP 52
+    IF (.NOT. precision_R6(V6(I,J), Result(I,J)) )                   ERROR STOP 32
+    IF (.NOT. precision_R6(QV(I,J), Result(I,J)) )                   ERROR STOP 52
   END DO
   END DO
 

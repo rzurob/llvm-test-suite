@@ -36,18 +36,18 @@ module m
 
 	    get_val(0:) => a%p(ubound(a%p,1):lbound(a%p,1):-1)
 
-	    if ( .not. associated(get_val)) stop 13
-	    if ( any (lbound(get_val) .ne. (/ 0/))) stop 24
-	    if ( any (ubound(get_val) .ne. (/ 4/))) stop 35
+	    if ( .not. associated(get_val)) error stop 13
+	    if ( any (lbound(get_val) .ne. (/ 0/))) error stop 24
+	    if ( any (ubound(get_val) .ne. (/ 4/))) error stop 35
 
 	    return
 
 	entry ent(a) result (res)
-	    if ( .not. associated(a%p)) stop 20
+	    if ( .not. associated(a%p)) error stop 20
 	    res(1:) => a%p(1:20:2)
-	    if ( .not. associated(res)) stop 14
-	    if ( any (lbound(res) .ne. (/1/))) stop 24
-	    if ( any (ubound(res) .ne. (/10/))) stop 34
+	    if ( .not. associated(res)) error stop 14
+	    if ( any (lbound(res) .ne. (/1/))) error stop 24
+	    if ( any (ubound(res) .ne. (/10/))) error stop 34
 	end function
 end module
 
@@ -60,9 +60,9 @@ end module
 
         b1%p(2:6) => b1%ent(b1)
 
-	if ( .not. associated(b1%p)) stop 12
-	if ( any (lbound(b1%p) .ne. (/ 2/))) stop 22
-	if ( any (ubound(b1%p) .ne. (/ 6/))) stop 32
+	if ( .not. associated(b1%p)) error stop 12
+	if ( any (lbound(b1%p) .ne. (/ 2/))) error stop 22
+	if ( any (ubound(b1%p) .ne. (/ 6/))) error stop 32
 
 	print *, b1%p
 	print *, dot_product(b1%p, b1%get_val(b1))

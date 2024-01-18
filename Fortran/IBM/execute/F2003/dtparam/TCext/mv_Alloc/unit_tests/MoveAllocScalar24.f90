@@ -22,7 +22,7 @@ integer, pointer :: p
 allocate(a%x)
 p => a%x
 call move_alloc(a%x,b%x)
-if (allocated(a%x)) stop 1
-if (.not.allocated(b%x)) stop 2
-if (.not.associated(p,b%x)) stop 3
+if (allocated(a%x)) error stop 1
+if (.not.allocated(b%x)) error stop 2
+if (.not.associated(p,b%x)) error stop 3
 end

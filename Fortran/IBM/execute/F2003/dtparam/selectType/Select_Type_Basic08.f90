@@ -83,7 +83,7 @@
 
       ALLOCATE(My_shape, source=A_square)
 
-      IF ( .NOT. ALLOCATED(My_shape)) STOP 10
+      IF ( .NOT. ALLOCATED(My_shape)) ERROR STOP 10
 
       SELECT TYPE (My_shape)
         TYPE IS (Sq(k1,*))
@@ -104,7 +104,7 @@
       DEALLOCATE(My_shape)
 
       ALLOCATE (My_shape , SOURCE = Rec(k1,len1)(area=0.0,name='name',width=12.5,height=8.0))
-      IF ( .NOT. ALLOCATED(My_shape)) STOP 101
+      IF ( .NOT. ALLOCATED(My_shape)) ERROR STOP 101
 
       SELECT TYPE (My_shape)
         TYPE IS (Sq(k1,*))
@@ -146,7 +146,7 @@
       A_triangle%area = -0.0
 
       My_shape => A_triangle
-      IF ( .NOT. ASSOCIATED(My_shape)) STOP 20
+      IF ( .NOT. ASSOCIATED(My_shape)) ERROR STOP 20
 
       SELECT TYPE (My_shape)
 

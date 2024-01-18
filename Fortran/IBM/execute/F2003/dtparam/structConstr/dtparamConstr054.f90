@@ -33,7 +33,7 @@ module m
 
         pointer remapArray8(:,:)
 
-        if (size(p1) < dim1*dim2) stop 20
+        if (size(p1) < dim1*dim2) error stop 20
 
         remapArray8(1:dim1,1:dim2) => p1
     end function

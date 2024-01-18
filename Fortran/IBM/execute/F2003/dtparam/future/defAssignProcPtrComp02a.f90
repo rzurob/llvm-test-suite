@@ -105,14 +105,14 @@ program defAssignProcPtrComp02a
    select type(cobj1)
       type is(C(*))
          associate(x=>cobj1%bcomp%acomp)
-            if(any(x%c1  /= "(**)"))                    stop 14
-            if(any(x%i1 /= -99))                        stop 15
+            if(any(x%c1  /= "(**)"))                    error stop 14
+            if(any(x%i1 /= -99))                        error stop 15
          end associate
-         if(associated(cobj1%cptr))                     stop 16
-         if(associated(cobj1%bcomp%bptr))               stop 17
+         if(associated(cobj1%cptr))                     error stop 16
+         if(associated(cobj1%bcomp%bptr))               error stop 17
 
-         if(associated(cobj1%bcomp%acomp%aptr1))        stop 18
-         if(associated(cobj1%bcomp%acomp%aptr2))        stop 19
+         if(associated(cobj1%bcomp%acomp%aptr1))        error stop 18
+         if(associated(cobj1%bcomp%acomp%aptr2))        error stop 19
       class default
          stop 13
    end select
@@ -120,30 +120,30 @@ program defAssignProcPtrComp02a
    ! invoke assignA
    aobj1=A(4)(["xlf","XLF","ibm","IBM"],[1,2,3],assignChar,assignInt)
 
-   if(any(aobj1%c1 /= ["flx","FLX","mbi","MBI"]))       stop 20
-   if(any(aobj1%i1 /= [-1,-2,-3]))                      stop 21
-   if(.not. associated(aobj1%aptr1,assignChar))         stop 22
-   if(.not. associated(aobj1%aptr2,assignInt))          stop 23
+   if(any(aobj1%c1 /= ["flx","FLX","mbi","MBI"]))       error stop 20
+   if(any(aobj1%i1 /= [-1,-2,-3]))                      error stop 21
+   if(.not. associated(aobj1%aptr1,assignChar))         error stop 22
+   if(.not. associated(aobj1%aptr2,assignInt))          error stop 23
 
    ! invoke assignB
    bobj1=B(3)(aobj1,assignA)
 
-   if(any(bobj1%acomp%c1 /= ["xlf","XLF","ibm","IBM"])) stop 24
-   if(any(bobj1%acomp%i1 /= [1,2,3]))                   stop 25
-   if(.not. associated(bobj1%bptr,assignA))             stop 26
-   if(.not. associated(bobj1%acomp%aptr1,assignChar))   stop 27
-   if(.not. associated(bobj1%acomp%aptr2,assignInt))    stop 28
+   if(any(bobj1%acomp%c1 /= ["xlf","XLF","ibm","IBM"])) error stop 24
+   if(any(bobj1%acomp%i1 /= [1,2,3]))                   error stop 25
+   if(.not. associated(bobj1%bptr,assignA))             error stop 26
+   if(.not. associated(bobj1%acomp%aptr1,assignChar))   error stop 27
+   if(.not. associated(bobj1%acomp%aptr2,assignInt))    error stop 28
 
    select type(upoly)
       type is(C(*))
          upoly=C(4)(bobj1,assignB)  ! invoke assignC
 
-         if(any(upoly%bcomp%acomp%c1 /= ["flx","FLX","mbi","MBI"]))   stop 29
-         if(any(upoly%bcomp%acomp%i1 /= [-1,-2,-3]))                  stop 30
-         if(.not. associated(upoly%cptr,assignB))                     stop 31
-         if(.not. associated(upoly%bcomp%bptr,assignA))               stop 32
-         if(.not. associated(upoly%bcomp%acomp%aptr1,assignChar))     stop 33
-         if(.not. associated(upoly%bcomp%acomp%aptr2,assignInt))      stop 34
+         if(any(upoly%bcomp%acomp%c1 /= ["flx","FLX","mbi","MBI"]))   error stop 29
+         if(any(upoly%bcomp%acomp%i1 /= [-1,-2,-3]))                  error stop 30
+         if(.not. associated(upoly%cptr,assignB))                     error stop 31
+         if(.not. associated(upoly%bcomp%bptr,assignA))               error stop 32
+         if(.not. associated(upoly%bcomp%acomp%aptr1,assignChar))     error stop 33
+         if(.not. associated(upoly%bcomp%acomp%aptr2,assignInt))      error stop 34
       class default
          stop 35
    end select

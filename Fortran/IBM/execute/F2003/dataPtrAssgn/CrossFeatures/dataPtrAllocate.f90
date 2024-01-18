@@ -52,12 +52,12 @@
 
     Ptr(I:, J:) => Arr(N:I:-K, N:I:-K)
     ALLOCATE(Ptr(I, J), SOURCE=-I)
-    IF (.NOT. ASSOCIATED(Ptr))                 STOP 11
-    IF (ANY( LBOUND(Ptr) .NE. (/1 , 1/)))      STOP 12
-    IF (ANY( UBOUND(Ptr) .NE. (/I,  J/)))      STOP 13
+    IF (.NOT. ASSOCIATED(Ptr))                 ERROR STOP 11
+    IF (ANY( LBOUND(Ptr) .NE. (/1 , 1/)))      ERROR STOP 12
+    IF (ANY( UBOUND(Ptr) .NE. (/I,  J/)))      ERROR STOP 13
     SELECT TYPE (Ptr)
     TYPE IS(INTEGER)
-        IF (ANY( Ptr     .NE. -I ))            STOP 14
+        IF (ANY( Ptr     .NE. -I ))            ERROR STOP 14
     CLASS DEFAULT
       STOP 15
     END SELECT
@@ -71,12 +71,12 @@
 
     Ptr1(I:J, I:J) => Arr1(N*N::-K)
     ALLOCATE(Ptr(I:J, I:J), SOURCE=Ptr1)
-    IF (.NOT. ASSOCIATED(Ptr))                 STOP 21
-    IF (ANY( LBOUND(Ptr) .NE. (/I , I/)))      STOP 22
-    IF (ANY( UBOUND(Ptr) .NE. (/J,  J/)))      STOP 23
+    IF (.NOT. ASSOCIATED(Ptr))                 ERROR STOP 21
+    IF (ANY( LBOUND(Ptr) .NE. (/I , I/)))      ERROR STOP 22
+    IF (ANY( UBOUND(Ptr) .NE. (/J,  J/)))      ERROR STOP 23
     SELECT TYPE (Ptr)
     TYPE IS(DT)
-        IF (ANY( Ptr%ID  .NE. Ptr1(I:J, I:J)%ID ))   STOP 24
+        IF (ANY( Ptr%ID  .NE. Ptr1(I:J, I:J)%ID ))   ERROR STOP 24
     CLASS DEFAULT
       STOP 15
     END SELECT

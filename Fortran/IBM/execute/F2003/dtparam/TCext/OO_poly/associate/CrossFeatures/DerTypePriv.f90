@@ -79,19 +79,19 @@
   ASSOCIATE( As => T )
   ASSOCIATE( V => T )
 
-    IF ( As%Base%GetID() .NE. 1 ) STOP 20
-    IF ( As%GetID()      .NE. 2 ) STOP 21
+    IF ( As%Base%GetID() .NE. 1 ) ERROR STOP 20
+    IF ( As%GetID()      .NE. 2 ) ERROR STOP 21
 
     CALL As%Base%SetID(-1)
     CALL As%SetID(-2)
 
-    IF ( V%Base%GetID() .NE. -1 ) STOP 30
-    IF ( V%GetID()      .NE. -2 ) STOP 31
+    IF ( V%Base%GetID() .NE. -1 ) ERROR STOP 30
+    IF ( V%GetID()      .NE. -2 ) ERROR STOP 31
   END ASSOCIATE
   END ASSOCIATE
 
-  IF ( T%Base%GetID() .NE. -1 ) STOP 40
-  IF ( T%GetID()      .NE. -2 ) STOP 41
+  IF ( T%Base%GetID() .NE. -1 ) ERROR STOP 40
+  IF ( T%GetID()      .NE. -2 ) ERROR STOP 41
 
   END
 

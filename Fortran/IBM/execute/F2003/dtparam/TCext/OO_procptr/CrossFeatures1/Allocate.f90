@@ -68,9 +68,9 @@
   !ALLOCATE(V, SOURCE=ProcPtr(DT(-1, ModFun))) ! not 10.1
   ALLOCATE(V)
   V = ProcPtr(DT(20,4)(-1, ModFun))
-  IF ( .NOT. ASSOCIATED(V) )                 STOP 11
-  IF ( V%Id .NE. -1 )                        STOP 12
-  IF ( .NOT. ASSOCIATED(V%ProcPtr, ModFun) ) STOP 13
+  IF ( .NOT. ASSOCIATED(V) )                 ERROR STOP 11
+  IF ( V%Id .NE. -1 )                        ERROR STOP 12
+  IF ( .NOT. ASSOCIATED(V%ProcPtr, ModFun) ) ERROR STOP 13
 
   DEALLOCATE(V)
 
@@ -81,7 +81,7 @@
   TYPE (DT(20,4)) :: Fun
   TYPE(DT(*,4))  :: Arg
 
-    if (arg%n1 /= 20) stop 100
+    if (arg%n1 /= 20) error stop 100
     Fun = Arg
   END FUNCTION
 

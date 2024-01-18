@@ -60,19 +60,19 @@
   PROCEDURE(TYPE(DT(20,4))), POINTER :: ProcPtr1=>NULL()
 
 
-  IF ( ASSOCIATED( ProcPtr, NULL(ProcPtr)))   STOP 11
+  IF ( ASSOCIATED( ProcPtr, NULL(ProcPtr)))   ERROR STOP 11
 
   ProcPtr => FDT
-  IF ( .NOT. ASSOCIATED( ProcPtr, ProcPtr))   STOP 12
+  IF ( .NOT. ASSOCIATED( ProcPtr, ProcPtr))   ERROR STOP 12
 
-  IF ( .NOT. ASSOCIATED( ProcPtr, FProcPtr(ProcPtr)))  STOP 13
-  IF ( .NOT. ASSOCIATED( ProcPtr, FProcPtr(FDT)))      STOP 14
+  IF ( .NOT. ASSOCIATED( ProcPtr, FProcPtr(ProcPtr)))  ERROR STOP 13
+  IF ( .NOT. ASSOCIATED( ProcPtr, FProcPtr(FDT)))      ERROR STOP 14
 
   ProcPtr => ProcPtr
   PRINT*, ProcPtr()
 
-  IF ( ASSOCIATED( ProcPtr, ProcPtr1))  STOP 15
-  IF ( ASSOCIATED( ProcPtr1, ProcPtr))  STOP 16
+  IF ( ASSOCIATED( ProcPtr, ProcPtr1))  ERROR STOP 15
+  IF ( ASSOCIATED( ProcPtr1, ProcPtr))  ERROR STOP 16
 
  END
 

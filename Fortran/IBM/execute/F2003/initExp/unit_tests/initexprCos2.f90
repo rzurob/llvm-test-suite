@@ -19,11 +19,11 @@ real(8), dimension(2) :: b=cos(r8)
 real(16), dimension(2) :: c=cos(r16)
 
 do i=1, 2
-  if (.not. precision_r4(a(i), cos(r4(i)))) stop 1
+  if (.not. precision_r4(a(i), cos(r4(i)))) error stop 1
 
-  if (.not. precision_r8(b(i), cos(r8(i)))) stop 2
+  if (.not. precision_r8(b(i), cos(r8(i)))) error stop 2
 
-  if (.not. precision_r16(c(i), cos(r16(i)))) stop 3
+  if (.not. precision_r16(c(i), cos(r16(i)))) error stop 3
 enddo
 
 end

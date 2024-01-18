@@ -113,35 +113,35 @@
   L0 = 3; L1 = 5; L2 = 7; N = 64
   CALL ModSub(L0, L1, L2, N)
 
-  IF ( .NOT. ASSOCIATED(T0) ) STOP 24
-  IF ( .NOT. ASSOCIATED(T1) ) STOP 25
-  IF ( .NOT. ASSOCIATED(T2) ) STOP 26
+  IF ( .NOT. ASSOCIATED(T0) ) ERROR STOP 24
+  IF ( .NOT. ASSOCIATED(T1) ) ERROR STOP 25
+  IF ( .NOT. ASSOCIATED(T2) ) ERROR STOP 26
 
-  IF ( T0%L0       .NE. 3     ) STOP 31
-  IF ( SIZE(T0)    .NE. n ) STOP 32
+  IF ( T0%L0       .NE. 3     ) ERROR STOP 31
+  IF ( SIZE(T0)    .NE. n ) ERROR STOP 32
 
 
 
   SELECT TYPE ( T1 )
   TYPE IS (DT2(1,*,4,*,8,*))
   DO I=1, N
-    IF ( T1%L0        .NE. 3         )  STOP 60
-    IF ( T1%L1        .NE. 5         )  STOP 61
-    IF ( SIZE(T1)     .NE. N         )  STOP 62
-    IF ( ANY( T1%C1   .NE. "XYZ"   ) )  STOP 63
+    IF ( T1%L0        .NE. 3         )  ERROR STOP 60
+    IF ( T1%L1        .NE. 5         )  ERROR STOP 61
+    IF ( SIZE(T1)     .NE. N         )  ERROR STOP 62
+    IF ( ANY( T1%C1   .NE. "XYZ"   ) )  ERROR STOP 63
 
-    IF ( T1(I)%C1             .NE.   "XYZ"    )  STOP 64
-    IF ( T1(I)%C2             .NE.   "ZYX"    )  STOP 65
-    IF ( T1(I)%I              .NE.   1234     )  STOP 66
-    IF ( T1(I)%R              .NE.   4321.    )  STOP 67
-    IF ( T1(I)%L              .NEQV. .TRUE.   )  STOP 68
-    IF ( T1(I)%Z              .NE.   (1.,-1.) )  STOP 69
-    IF ( T1(I)%T0%K0          .NE.    8       )  STOP 60
-    IF ( T1(I)%T0%L0          .NE.    7       )  STOP 71
-    IF ( ASSOCIATED(T1(I)%Ptr).EQV.   .TRUE.  )  STOP 72
-    IF ( SIZE(T1(I)%T0)       .ne.    L2      )  STOP 73
-    IF ( T1(I)%T0%K0          .NE.    8       )  STOP 74
-    IF ( T1(I)%T0%L0          .NE.    7       )  STOP 75
+    IF ( T1(I)%C1             .NE.   "XYZ"    )  ERROR STOP 64
+    IF ( T1(I)%C2             .NE.   "ZYX"    )  ERROR STOP 65
+    IF ( T1(I)%I              .NE.   1234     )  ERROR STOP 66
+    IF ( T1(I)%R              .NE.   4321.    )  ERROR STOP 67
+    IF ( T1(I)%L              .NEQV. .TRUE.   )  ERROR STOP 68
+    IF ( T1(I)%Z              .NE.   (1.,-1.) )  ERROR STOP 69
+    IF ( T1(I)%T0%K0          .NE.    8       )  ERROR STOP 60
+    IF ( T1(I)%T0%L0          .NE.    7       )  ERROR STOP 71
+    IF ( ASSOCIATED(T1(I)%Ptr).EQV.   .TRUE.  )  ERROR STOP 72
+    IF ( SIZE(T1(I)%T0)       .ne.    L2      )  ERROR STOP 73
+    IF ( T1(I)%T0%K0          .NE.    8       )  ERROR STOP 74
+    IF ( T1(I)%T0%L0          .NE.    7       )  ERROR STOP 75
   END DO
 
 
@@ -150,24 +150,24 @@
   END SELECT
 
 
-  IF ( T2%L0        .NE. 3         )  STOP 80
-  IF ( T2%L1        .NE. 5         )  STOP 81
-  IF ( T2%L2        .NE. 7         )  STOP 82
-  IF ( SIZE(T2)     .NE. N         )  STOP 83
+  IF ( T2%L0        .NE. 3         )  ERROR STOP 80
+  IF ( T2%L1        .NE. 5         )  ERROR STOP 81
+  IF ( T2%L2        .NE. 7         )  ERROR STOP 82
+  IF ( SIZE(T2)     .NE. N         )  ERROR STOP 83
 
   DO I=1, N
-    IF ( T2(I)%C1             .NE.   "XYZ"    )  STOP 84
-    IF ( T2(I)%C2             .NE.   "ZYX"    )  STOP 85
-    IF ( T2(I)%I              .NE.   1234     )  STOP 86
-    IF ( T2(I)%R              .NE.   4321.    )  STOP 87
-    IF ( T2(I)%L              .NEQV. .TRUE.   )  STOP 88
-    IF ( T2(I)%Z              .NE.   (1.,-1.) )  STOP 89
-    IF ( T2(I)%T0%K0          .NE.    8       )  STOP 90
-    IF ( T2(I)%T0%L0          .NE.    7       )  STOP 91
-    IF ( ASSOCIATED(T2(I)%Ptr).EQV.   .TRUE.  )  STOP 92
-    IF ( SIZE(T2(I)%T0)       .ne.    L2      )  STOP 93
-    IF ( T2(I)%T0%K0          .NE.    8       )  STOP 94
-    IF ( T2(I)%T0%L0          .NE.    7       )  STOP 95
+    IF ( T2(I)%C1             .NE.   "XYZ"    )  ERROR STOP 84
+    IF ( T2(I)%C2             .NE.   "ZYX"    )  ERROR STOP 85
+    IF ( T2(I)%I              .NE.   1234     )  ERROR STOP 86
+    IF ( T2(I)%R              .NE.   4321.    )  ERROR STOP 87
+    IF ( T2(I)%L              .NEQV. .TRUE.   )  ERROR STOP 88
+    IF ( T2(I)%Z              .NE.   (1.,-1.) )  ERROR STOP 89
+    IF ( T2(I)%T0%K0          .NE.    8       )  ERROR STOP 90
+    IF ( T2(I)%T0%L0          .NE.    7       )  ERROR STOP 91
+    IF ( ASSOCIATED(T2(I)%Ptr).EQV.   .TRUE.  )  ERROR STOP 92
+    IF ( SIZE(T2(I)%T0)       .ne.    L2      )  ERROR STOP 93
+    IF ( T2(I)%T0%K0          .NE.    8       )  ERROR STOP 94
+    IF ( T2(I)%T0%L0          .NE.    7       )  ERROR STOP 95
   END DO
 
   END

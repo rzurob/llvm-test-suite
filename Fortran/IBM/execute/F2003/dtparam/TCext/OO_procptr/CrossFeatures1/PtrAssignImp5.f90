@@ -67,7 +67,7 @@
   ProcPtr => ExtFun
   V = ProcPtr((/Base(4)(-1), Base(4)(-1), Base(4)(-1)/) )
 
-  IF ( ANY(V%ID   .NE. -1 )) STOP 21
+  IF ( ANY(V%ID   .NE. -1 )) ERROR STOP 21
 
   END
 

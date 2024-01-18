@@ -23,12 +23,12 @@ program main
     associate( x => c4)
     	ptr(2:) => x(10:1:-1)
 
-        if ( .not. associated(ptr, x(10:1:-1))) stop 1
+        if ( .not. associated(ptr, x(10:1:-1))) error stop 1
 
         select type(y => ptr)
 	    type is (complex(4))
-        	if ( lbound(y,1) /= 2 ) stop 2
-        	if ( ubound(y,1) /= 11 ) stop 3
+        	if ( lbound(y,1) /= 2 ) error stop 2
+        	if ( ubound(y,1) /= 11 ) error stop 3
     	        write (*, '("(",f10.6,", ", f10.6, ")")')  y
     	        write (*, '("(",f10.6,", ", f10.6, ")")')  y/cmplx(2,2,4)
 	    class default

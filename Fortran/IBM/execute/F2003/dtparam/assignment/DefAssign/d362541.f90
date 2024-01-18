@@ -85,13 +85,13 @@ program d362541
 
      bobj1=B(1)(aobj1,aobj4)
 
-     if(bobj1%acomp1(1)%l1 /= 2)                              stop 1
-     if(any(bobj1%acomp1(1)%i1 /= [1,2,3]))                   stop 2
-     if(any(bobj1%acomp1(1)%c1 /= ["ab","aB","Ab","AB"]))     stop 3
+     if(bobj1%acomp1(1)%l1 /= 2)                              error stop 1
+     if(any(bobj1%acomp1(1)%i1 /= [1,2,3]))                   error stop 2
+     if(any(bobj1%acomp1(1)%c1 /= ["ab","aB","Ab","AB"]))     error stop 3
 
-     if(bobj1%acomp2(1)%l1 /= 2)                              stop 4
-     if(any(bobj1%acomp2(1)%i1 /= [11,22,33]))                stop 5
-     if(any(bobj1%acomp2(1)%c1 /= ["xy","xY","Xy","XY"]))     stop 6
+     if(bobj1%acomp2(1)%l1 /= 2)                              error stop 4
+     if(any(bobj1%acomp2(1)%i1 /= [11,22,33]))                error stop 5
+     if(any(bobj1%acomp2(1)%c1 /= ["xy","xY","Xy","XY"]))     error stop 6
 
 end program
 

@@ -42,7 +42,7 @@
   PROCEDURE(ModSub1), POINTER :: ProcPtr1
 
     ProcPtr => Arg
-    IF ( .NOT. ASSOCIATED(ProcPtr, ModSub)) STOP 10
+    IF ( .NOT. ASSOCIATED(ProcPtr, ModSub)) ERROR STOP 10
 
     ProcPtr1 => ModSub1
     CAll ModSub2(ProcPtr1)
@@ -52,7 +52,7 @@
 
   SUBROUTINE ModSub2(ProcPtr)
   PROCEDURE(ModSub1), POINTER :: ProcPtr
-    IF ( .NOT. ASSOCIATED(ProcPtr, ModSub1)) STOP 11
+    IF ( .NOT. ASSOCIATED(ProcPtr, ModSub1)) ERROR STOP 11
     L(1) = .TRUE.
   END SUBROUTINE
 
@@ -64,7 +64,7 @@
   IMPLICIT NONE
 
   CALL ModSub()
-  IF ( .NOT. ANY(L) ) STOP 12
+  IF ( .NOT. ANY(L) ) ERROR STOP 12
 
   END
 

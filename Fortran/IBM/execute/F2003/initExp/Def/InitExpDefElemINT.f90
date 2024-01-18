@@ -82,50 +82,50 @@
   INTEGER(KIND(INT((/(z"01", I=1,128)/), KIND=8))),     PARAMETER :: IC8(128) = INT((/(z"01", I=1,128)/), KIND=8)
 
 
-  IF ( KIND(I11)   .NE.  1 )        STOP 11
-  IF ( ANY( I11    .NE. -1 ))       STOP 12
-  IF ( KIND(I12)   .NE.  1 )        STOP 13
-  IF ( ANY( I12    .NE. -1 ))       STOP 14
-  IF ( KIND(I14)   .NE.  1 )        STOP 15
-  IF ( ANY( I14    .NE. -1 ))       STOP 16
-  IF ( KIND(I18)   .NE.  1 )        STOP 17
-  IF ( ANY( I18    .NE. -1 ))       STOP 18
+  IF ( KIND(I11)   .NE.  1 )        ERROR STOP 11
+  IF ( ANY( I11    .NE. -1 ))       ERROR STOP 12
+  IF ( KIND(I12)   .NE.  1 )        ERROR STOP 13
+  IF ( ANY( I12    .NE. -1 ))       ERROR STOP 14
+  IF ( KIND(I14)   .NE.  1 )        ERROR STOP 15
+  IF ( ANY( I14    .NE. -1 ))       ERROR STOP 16
+  IF ( KIND(I18)   .NE.  1 )        ERROR STOP 17
+  IF ( ANY( I18    .NE. -1 ))       ERROR STOP 18
 
-  IF ( KIND(I41)   .NE.  4 )        STOP 21
-  IF ( ANY( I41    .NE.  0 ))       STOP 22
-  IF ( KIND(I42)   .NE.  4 )        STOP 23
-  IF ( ANY( I42    .NE.  0 ))       STOP 24
-  IF ( KIND(I43)   .NE.  4 )        STOP 25
-  IF ( ANY( I43    .NE.  0 ))       STOP 26
-  IF ( KIND(I44)   .NE.  4 )        STOP 27
-  IF ( ANY( I44    .NE.  0 ))       STOP 28
+  IF ( KIND(I41)   .NE.  4 )        ERROR STOP 21
+  IF ( ANY( I41    .NE.  0 ))       ERROR STOP 22
+  IF ( KIND(I42)   .NE.  4 )        ERROR STOP 23
+  IF ( ANY( I42    .NE.  0 ))       ERROR STOP 24
+  IF ( KIND(I43)   .NE.  4 )        ERROR STOP 25
+  IF ( ANY( I43    .NE.  0 ))       ERROR STOP 26
+  IF ( KIND(I44)   .NE.  4 )        ERROR STOP 27
+  IF ( ANY( I44    .NE.  0 ))       ERROR STOP 28
 
-  IF ( KIND(I81)   .NE.  8 )        STOP 31
-  IF ( ANY( I81    .NE.  0 ))       STOP 32
-  IF ( KIND(I82)   .NE.  8 )        STOP 33
-  IF ( ANY( I82    .NE.  0 ))       STOP 34
-  IF ( KIND(I83)   .NE.  8 )        STOP 35
-  IF ( ANY( I83    .NE.  0 ))       STOP 36
-  IF ( KIND(I84)   .NE.  8 )        STOP 37
-  IF ( ANY( I84    .NE.  0 ))       STOP 38
+  IF ( KIND(I81)   .NE.  8 )        ERROR STOP 31
+  IF ( ANY( I81    .NE.  0 ))       ERROR STOP 32
+  IF ( KIND(I82)   .NE.  8 )        ERROR STOP 33
+  IF ( ANY( I82    .NE.  0 ))       ERROR STOP 34
+  IF ( KIND(I83)   .NE.  8 )        ERROR STOP 35
+  IF ( ANY( I83    .NE.  0 ))       ERROR STOP 36
+  IF ( KIND(I84)   .NE.  8 )        ERROR STOP 37
+  IF ( ANY( I84    .NE.  0 ))       ERROR STOP 38
 
-  IF ( KIND(IB1)   .NE.  1 )        STOP 41
-  IF (      IB1    .NE.  1 )        STOP 42
-  IF ( KIND(IB2)   .NE.  2 )        STOP 43
-  IF (      IB2    .NE.  3 )        STOP 44
-  IF ( KIND(IB4)   .NE.  4 )        STOP 45
-  IF (      IB4    .NE.  1 )        STOP 46
-  IF ( KIND(IB8)   .NE.  8 )        STOP 47
-  IF (      IB8    .NE.  1 )        STOP 48
+  IF ( KIND(IB1)   .NE.  1 )        ERROR STOP 41
+  IF (      IB1    .NE.  1 )        ERROR STOP 42
+  IF ( KIND(IB2)   .NE.  2 )        ERROR STOP 43
+  IF (      IB2    .NE.  3 )        ERROR STOP 44
+  IF ( KIND(IB4)   .NE.  4 )        ERROR STOP 45
+  IF (      IB4    .NE.  1 )        ERROR STOP 46
+  IF ( KIND(IB8)   .NE.  8 )        ERROR STOP 47
+  IF (      IB8    .NE.  1 )        ERROR STOP 48
 
-  IF ( KIND(IC1)   .NE.  1 )        STOP 51
-  IF ( ANY( IC1    .NE.  1 ))       STOP 52
-  IF ( KIND(IC2)   .NE.  2 )        STOP 53
-  IF ( ANY( IC2    .NE.  3 ))       STOP 54
-  IF ( KIND(IC4)   .NE.  4 )        STOP 55
-  IF ( ANY( IC4    .NE.  1 ))       STOP 56
-  IF ( KIND(IC8)   .NE.  8 )        STOP 57
-  IF ( ANY( IC8    .NE.  1 ))       STOP 58
+  IF ( KIND(IC1)   .NE.  1 )        ERROR STOP 51
+  IF ( ANY( IC1    .NE.  1 ))       ERROR STOP 52
+  IF ( KIND(IC2)   .NE.  2 )        ERROR STOP 53
+  IF ( ANY( IC2    .NE.  3 ))       ERROR STOP 54
+  IF ( KIND(IC4)   .NE.  4 )        ERROR STOP 55
+  IF ( ANY( IC4    .NE.  1 ))       ERROR STOP 56
+  IF ( KIND(IC8)   .NE.  8 )        ERROR STOP 57
+  IF ( ANY( IC8    .NE.  1 ))       ERROR STOP 58
 
 
 

@@ -91,7 +91,7 @@
     V%PRocPtr => ModFun
     U%PRocPtr => ModFun
     U%PRocPtr => ModFun1
-    IF (V%ProcPtr(-1) .NE. -1 ) STOP 21  ! causing ice
+    IF (V%ProcPtr(-1) .NE. -1 ) ERROR STOP 21  ! causing ice
 
     ProcPtr => ModFun  ! this might be ok
 

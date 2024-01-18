@@ -63,15 +63,15 @@
 
   ASSOCIATE( V => V(1:3, 2:4) )
   ASSOCIATE( V => V(1:2,2:3) )
-    IF (ANY(V%IArr(1) .NE. -1)) STOP 21
-    IF (ANY(V%IArr(1) .NE. -1)) STOP 21
+    IF (ANY(V%IArr(1) .NE. -1)) ERROR STOP 21
+    IF (ANY(V%IArr(1) .NE. -1)) ERROR STOP 21
   END ASSOCIATE
   END ASSOCIATE
 
   ASSOCIATE( V => V%CArr(1) )
   ASSOCIATE( V => V(1:2,2:3) )
-    IF (TRIM(V(1,1)) .NE. "1") STOP 62
-    IF (TRIM(V(2,2)) .NE. "1") STOP 63
+    IF (TRIM(V(1,1)) .NE. "1") ERROR STOP 62
+    IF (TRIM(V(2,2)) .NE. "1") ERROR STOP 63
   END ASSOCIATE
   END ASSOCIATE
 
@@ -84,25 +84,25 @@
   CHARACTER(1025), POINTER :: PW(:,:)
   INTEGER :: i
 
-  IF (ANY(SHAPE(U) .NE. (/3,3/))) STOP 30
+  IF (ANY(SHAPE(U) .NE. (/3,3/))) ERROR STOP 30
   PU => U(1:2,2:3)
   SELECT TYPE( U => PU  )
   CLASS IS (DT(4,1,*))
 
-    IF (ANY(U%IArr(1) .NE. 1)) STOP 31
-    IF (TRIM(U(1,1)%CArr(1)) .NE. "!") STOP 32
-    IF (TRIM(U(2,2)%CArr(2)) .NE. "!") STOP 33
+    IF (ANY(U%IArr(1) .NE. 1)) ERROR STOP 31
+    IF (TRIM(U(1,1)%CArr(1)) .NE. "!") ERROR STOP 32
+    IF (TRIM(U(2,2)%CArr(2)) .NE. "!") ERROR STOP 33
     U%IArr(1) = -1
     U%IArr(2) = -2
   CLASS DEFAULT
     STOP 40
   END SELECT
 
-  IF (ANY(SHAPE(W) .NE. (/4,4/))) STOP 40
+  IF (ANY(SHAPE(W) .NE. (/4,4/))) ERROR STOP 40
   SELECT TYPE( W => W  )
   TYPE IS (CHARACTER(*))
-    IF (TRIM(W(1,1)) .NE. "!") STOP 42
-    IF (TRIM(W(4,4)) .NE. "!") STOP 43
+    IF (TRIM(W(1,1)) .NE. "!") ERROR STOP 42
+    IF (TRIM(W(4,4)) .NE. "!") ERROR STOP 43
 
     PW => W(1:2,2:3)
     PW = "1"

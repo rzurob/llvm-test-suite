@@ -38,15 +38,15 @@
   PROCEDURE (LModFun), POINTER :: LProcPtr1
 
     LProcPtr => LModFun
-    IF ( LProcPtr(10_1) .NE. 10_1 ) STOP 11
+    IF ( LProcPtr(10_1) .NE. 10_1 ) ERROR STOP 11
 
     LProcPtr1 => LModFun
-    IF ( LProcPtr1(1_1) .NE. 1_1 )  STOP 12
+    IF ( LProcPtr1(1_1) .NE. 1_1 )  ERROR STOP 12
 
-    IF ( LProcPtr(LProcPtr(1_1)) .NE. 1_1 )    STOP 13
-    IF ( LProcPtr1(LProcPtr1(2_1)) .NE. 2_1 )  STOP 14
+    IF ( LProcPtr(LProcPtr(1_1)) .NE. 1_1 )    ERROR STOP 13
+    IF ( LProcPtr1(LProcPtr1(2_1)) .NE. 2_1 )  ERROR STOP 14
 
-    IF ( LProcPtr(LProcPtr1(127_1)) .NE. 127_1 )    STOP 15
-    IF ( LProcPtr1(LProcPtr(-128_1)) .NE. -128_1 )  STOP 16
+    IF ( LProcPtr(LProcPtr1(127_1)) .NE. 127_1 )    ERROR STOP 15
+    IF ( LProcPtr1(LProcPtr(-128_1)) .NE. -128_1 )  ERROR STOP 16
 
   END

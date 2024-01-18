@@ -42,15 +42,15 @@
 
 	p(1:t(100)%id) => t(200:1:-1)
 
-	if ( .not. associated(p)) stop 1
-	if ( lbound(p,1) /= 1) stop 3
-	if ( ubound(p,1) /= 100) stop 5
+	if ( .not. associated(p)) error stop 1
+	if ( lbound(p,1) /= 1) error stop 3
+	if ( ubound(p,1) /= 100) error stop 5
 
 	q(20:) => p
 
-	if ( .not. associated(q,p)) stop 11
-	if ( lbound(q,1) /= 20) stop 13
-	if ( ubound(q,1) /= 119) stop 15
+	if ( .not. associated(q,p)) error stop 11
+	if ( lbound(q,1) /= 20) error stop 13
+	if ( ubound(q,1) /= 119) error stop 15
 
 	select type (q)
 	    type is (child(4,1,*))

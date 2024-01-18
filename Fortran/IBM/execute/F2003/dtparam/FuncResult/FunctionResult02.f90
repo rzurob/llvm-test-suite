@@ -52,51 +52,51 @@ MODULE Mod
 
         SELECT TYPE ( s => Arg )
           CLASS IS (Base(4,*))
-            IF (s%k1 .NE.   4) STOP 10
-            IF (s%l1 .NE.  10) STOP 11
-            IF (LEN(s%C0)  .NE. 10) STOP 12
-            IF (SIZE(s%F0) .NE. 10) STOP 13
+            IF (s%k1 .NE.   4) ERROR STOP 10
+            IF (s%l1 .NE.  10) ERROR STOP 11
+            IF (LEN(s%C0)  .NE. 10) ERROR STOP 12
+            IF (SIZE(s%F0) .NE. 10) ERROR STOP 13
 
           CLASS IS (Child(4,*,4,*))
-            IF (s%k1 .NE.  4) STOP 20
-            IF (s%l1 .NE.  8) STOP 21
-            IF (LEN(s%C0)  .NE. 8) STOP 22
-            IF (SIZE(s%F0) .NE. 8) STOP 23
-            IF (s%k2 .NE.   4) STOP 24
-            IF (s%l2 .NE.  16) STOP 25
-            IF (SIZE(s%A0) .NE. 16) STOP 26
-            IF (SIZE(s%A1) .NE.  8) STOP 27
-            IF (SIZE(s%A2) .NE. 24) STOP 28
+            IF (s%k1 .NE.  4) ERROR STOP 20
+            IF (s%l1 .NE.  8) ERROR STOP 21
+            IF (LEN(s%C0)  .NE. 8) ERROR STOP 22
+            IF (SIZE(s%F0) .NE. 8) ERROR STOP 23
+            IF (s%k2 .NE.   4) ERROR STOP 24
+            IF (s%l2 .NE.  16) ERROR STOP 25
+            IF (SIZE(s%A0) .NE. 16) ERROR STOP 26
+            IF (SIZE(s%A1) .NE.  8) ERROR STOP 27
+            IF (SIZE(s%A2) .NE. 24) ERROR STOP 28
 
           CLASS IS (NextGen(4,*,4,*,*,*))
-            IF (s%k1 .NE.   4) STOP 30
-            IF (s%l1 .NE.  1) STOP 31
-            IF (LEN(s%C0)  .NE. 1) STOP 32
-            IF (SIZE(s%F0) .NE. 1) STOP 33
-            IF (s%k2 .NE.  4) STOP 34
-            IF (s%l2 .NE.  2) STOP 35
-            IF (SIZE(s%A0) .NE. 2) STOP 36
-            IF (SIZE(s%A1) .NE. 1) STOP 37
-            IF (SIZE(s%A2) .NE. 3) STOP 38
-            IF (s%l3 .NE.  3) STOP 39
-            IF (s%l4 .NE.  6) STOP 40
+            IF (s%k1 .NE.   4) ERROR STOP 30
+            IF (s%l1 .NE.  1) ERROR STOP 31
+            IF (LEN(s%C0)  .NE. 1) ERROR STOP 32
+            IF (SIZE(s%F0) .NE. 1) ERROR STOP 33
+            IF (s%k2 .NE.  4) ERROR STOP 34
+            IF (s%l2 .NE.  2) ERROR STOP 35
+            IF (SIZE(s%A0) .NE. 2) ERROR STOP 36
+            IF (SIZE(s%A1) .NE. 1) ERROR STOP 37
+            IF (SIZE(s%A2) .NE. 3) ERROR STOP 38
+            IF (s%l3 .NE.  3) ERROR STOP 39
+            IF (s%l4 .NE.  6) ERROR STOP 40
 
           CLASS IS (Child(8,*,8,*))
-            IF (s%k1 .NE.  8) STOP 50
-            IF (s%l1 .NE.  2) STOP 51
-            IF (LEN(s%C0)  .NE. 2) STOP 52
-            IF (SIZE(s%F0) .NE. 2) STOP 53
-            IF (s%k2 .NE.  8) STOP 54
-            IF (s%l2 .NE.  4) STOP 55
-            IF (SIZE(s%A0) .NE. 4) STOP 56
-            IF (SIZE(s%A1) .NE. 2) STOP 57
-            IF (SIZE(s%A2) .NE. 6) STOP 58
+            IF (s%k1 .NE.  8) ERROR STOP 50
+            IF (s%l1 .NE.  2) ERROR STOP 51
+            IF (LEN(s%C0)  .NE. 2) ERROR STOP 52
+            IF (SIZE(s%F0) .NE. 2) ERROR STOP 53
+            IF (s%k2 .NE.  8) ERROR STOP 54
+            IF (s%l2 .NE.  4) ERROR STOP 55
+            IF (SIZE(s%A0) .NE. 4) ERROR STOP 56
+            IF (SIZE(s%A1) .NE. 2) ERROR STOP 57
+            IF (SIZE(s%A2) .NE. 6) ERROR STOP 58
 
-            IF ( s%C0 .NE. 'AB' ) STOP 59
-            IF ( ANY(s%F0 .NEQV. .True.) ) STOP 60
-            IF ( ANY(s%A0 .NE. -1) ) STOP 61
-            IF ( ANY(s%A1 .NE. -2) ) STOP 62
-            IF ( ANY(s%A2 .NE. -3) ) STOP 63
+            IF ( s%C0 .NE. 'AB' ) ERROR STOP 59
+            IF ( ANY(s%F0 .NEQV. .True.) ) ERROR STOP 60
+            IF ( ANY(s%A0 .NE. -1) ) ERROR STOP 61
+            IF ( ANY(s%A1 .NE. -2) ) ERROR STOP 62
+            IF ( ANY(s%A2 .NE. -3) ) ERROR STOP 63
 
           CLASS DEFAULT
             STOP 100

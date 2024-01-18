@@ -159,10 +159,10 @@
 
   READ(7) C, C1, C2, C3
 
-  IF (C   .NE. "0" ) STOP 11
-  IF (C1  .NE. "1" ) STOP 12
-  IF (C2  .NE. "2" ) STOP 13
-  IF (C3  .NE. "3" ) STOP 14
+  IF (C   .NE. "0" ) ERROR STOP 11
+  IF (C1  .NE. "1" ) ERROR STOP 12
+  IF (C2  .NE. "2" ) ERROR STOP 13
+  IF (C3  .NE. "3" ) ERROR STOP 14
 
   END  SUBROUTINE
 

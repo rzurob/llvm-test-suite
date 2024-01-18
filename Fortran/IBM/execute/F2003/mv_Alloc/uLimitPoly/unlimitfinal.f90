@@ -68,10 +68,10 @@ use m
 
     call move_alloc(FROM, aA%aTO )
 
-    if ( iF /= 1 ) stop 21
-    if ( iA /= 0 ) stop 23
-    if ( allocated(FROM)) stop 25
-    if ( .not. allocated(aA%aTO) ) stop 27
+    if ( iF /= 1 ) error stop 21
+    if ( iA /= 0 ) error stop 23
+    if ( allocated(FROM)) error stop 25
+    if ( .not. allocated(aA%aTO) ) error stop 27
 
     select type ( x => aA%aTo)
  	 type is (A)

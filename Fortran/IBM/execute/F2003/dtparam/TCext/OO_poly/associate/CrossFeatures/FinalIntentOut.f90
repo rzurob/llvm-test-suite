@@ -112,23 +112,23 @@
   ASSOCIATE ( As => Fun(V) )
 
     !FINALIZATION Finishes after evaluation of the selector
-    IF ( ANY(Fin .NE. (/2,1,2,1,-1,-1/) ) ) STOP 79
+    IF ( ANY(Fin .NE. (/2,1,2,1,-1,-1/) ) ) ERROR STOP 79
 
     Fin = -1
     ASSOCIATE ( As => As )
 
-      IF ( As%ID       .NE. -2 ) STOP 20
-      IF ( As%GetID()  .NE. -2 ) STOP 21
+      IF ( As%ID       .NE. -2 ) ERROR STOP 20
+      IF ( As%GetID()  .NE. -2 ) ERROR STOP 21
 
-      IF ( As%C       .NE. "2" ) STOP 30
-      IF ( As%GetC()  .NE. "2" ) STOP 31
+      IF ( As%C       .NE. "2" ) ERROR STOP 30
+      IF ( As%GetC()  .NE. "2" ) ERROR STOP 31
 
-      IF ( As%L       .NEQV. .TRUE. ) STOP 40
-      IF ( As%GetL()  .NEQV. .TRUE. ) STOP 41
+      IF ( As%L       .NEQV. .TRUE. ) ERROR STOP 40
+      IF ( As%GetL()  .NEQV. .TRUE. ) ERROR STOP 41
 
     END ASSOCIATE
 
-    IF ( ANY(Fin .NE. -1 ) ) STOP 89 !  no finalization happen
+    IF ( ANY(Fin .NE. -1 ) ) ERROR STOP 89 !  no finalization happen
 
     INDEX = 1
     Fin ( Index ) = 0  ! Finalization is about to start
@@ -138,7 +138,7 @@
   !FINALIZATION Finishes
 ! PRINT *, "Finalization finished"
 ! PRINT *, Fin
-  IF ( ANY(Fin .NE. (/0,-1,-1,-1,-1,-1/) ) ) STOP 99
+  IF ( ANY(Fin .NE. (/0,-1,-1,-1,-1,-1/) ) ) ERROR STOP 99
   ! no finalization happen for a return of a pointer
 
   Fin = -1
@@ -148,22 +148,22 @@
     ASSOCIATE ( As => Fun(As) )
 
       !FINALIZATION Finishes after evaluation of the selector
-      IF ( ANY(Fin .NE. (/2,1,2,1,-1,-1/) ) ) STOP 119
+      IF ( ANY(Fin .NE. (/2,1,2,1,-1,-1/) ) ) ERROR STOP 119
 
-      IF ( As%ID       .NE. -2 ) STOP 50
-      IF ( As%GetID()  .NE. -2 ) STOP 51
+      IF ( As%ID       .NE. -2 ) ERROR STOP 50
+      IF ( As%GetID()  .NE. -2 ) ERROR STOP 51
 
-      IF ( As%C       .NE. "2" ) STOP 60
-      IF ( As%GetC()  .NE. "2" ) STOP 61
+      IF ( As%C       .NE. "2" ) ERROR STOP 60
+      IF ( As%GetC()  .NE. "2" ) ERROR STOP 61
 
-      IF ( As%L       .NEQV. .TRUE. ) STOP 70
-      IF ( As%GetL()  .NEQV. .TRUE. ) STOP 71
+      IF ( As%L       .NEQV. .TRUE. ) ERROR STOP 70
+      IF ( As%GetL()  .NEQV. .TRUE. ) ERROR STOP 71
 
     END ASSOCIATE
 
     !FINALIZATION Finishes
 !   PRINT *, "Finalization finished"
-    IF ( ANY(Fin .NE. (/2,1,2,1,-1,-1/) ) ) STOP 89
+    IF ( ANY(Fin .NE. (/2,1,2,1,-1,-1/) ) ) ERROR STOP 89
     ! no finalization happen for a return of a pointer
 
     Fin = -1
@@ -172,7 +172,7 @@
 
   END ASSOCIATE
 
-  IF ( ANY(Fin .NE. (/0,-1,-1,-1,-1,-1/) ) ) STOP 109
+  IF ( ANY(Fin .NE. (/0,-1,-1,-1,-1,-1/) ) ) ERROR STOP 109
   ! no finalization happen for a return of a pointer
 
   CONTAINS

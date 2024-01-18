@@ -43,8 +43,8 @@ program main
     !e1 = r1
     call defAssgn(e1, r1)
 
-    if ( .not. associated(e1%p, r1)) stop 11
-    if ( lbound(e1%p,1) /= 3 ) stop 12
-    if ( ubound(e1%p,1) /= 12 ) stop 13
+    if ( .not. associated(e1%p, r1)) error stop 11
+    if ( lbound(e1%p,1) /= 3 ) error stop 12
+    if ( ubound(e1%p,1) /= 12 ) error stop 13
     if ( .not. precision_r4(e1%p/(-1.0), (/(real(i),i=10,1,-1)/))) error stop 15_4
 end program

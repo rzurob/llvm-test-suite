@@ -19,5 +19,5 @@ end module
 use m
     type(base(16)) :: b1    !<-- invalid value of 16
 
-    if (b1%k /= 4) stop 1
+    if (b1%k /= 4) error stop 1
 end

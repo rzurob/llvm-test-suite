@@ -64,11 +64,11 @@ use m
 
     call move_alloc(aA, aB)
 
-    if ( .not. allocated(aB) ) stop 11
-    if ( allocated(aA)) stop 13
-    if ( numA /= 64 ) stop 21
-    if ( numB /= 0 ) stop 23
-    if ( numC /= 0 ) stop 25
+    if ( .not. allocated(aB) ) error stop 11
+    if ( allocated(aA)) error stop 13
+    if ( numA /= 64 ) error stop 21
+    if ( numB /= 0 ) error stop 23
+    if ( numC /= 0 ) error stop 25
 
     select type (aB)
         type is (A(4))

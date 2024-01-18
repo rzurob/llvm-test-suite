@@ -9,5 +9,5 @@ a : block
  end do
  stop 1
 end block a
-if (i .ne. 2) stop 2
+if (i .ne. 2) error stop 2
 end

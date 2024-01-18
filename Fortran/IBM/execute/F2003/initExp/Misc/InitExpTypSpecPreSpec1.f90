@@ -79,13 +79,13 @@
   Z6PreSpec => Z6
 
 
-  IF ( R4PreSpec() .NE. 4.  ) STOP 11
-  IF ( R8PreSpec() .NE. 8.  ) STOP 12
-  IF ( R6PreSpec() .NE. 16. ) STOP 13
+  IF ( R4PreSpec() .NE. 4.  ) ERROR STOP 11
+  IF ( R8PreSpec() .NE. 8.  ) ERROR STOP 12
+  IF ( R6PreSpec() .NE. 16. ) ERROR STOP 13
 
-  IF ( Z4PreSpec() .NE. (4., -4.))  STOP 21
-  IF ( Z8PreSpec() .NE. (8., -8.))  STOP 22
-  IF ( Z6PreSpec() .NE. (16.,-16.)) STOP 23
+  IF ( Z4PreSpec() .NE. (4., -4.))  ERROR STOP 21
+  IF ( Z8PreSpec() .NE. (8., -8.))  ERROR STOP 22
+  IF ( Z6PreSpec() .NE. (16.,-16.)) ERROR STOP 23
 
   END
 

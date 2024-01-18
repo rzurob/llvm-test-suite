@@ -58,21 +58,21 @@
 
   nullify (t%ptr1)
 
-  IF ( T%K        .NE.   4  )  STOP 11
-  IF ( T%L        .NE.   2  )  STOP 12
-  IF ( T%C%LEN    .NE.   2  )  STOP 13
+  IF ( T%K        .NE.   4  )  ERROR STOP 11
+  IF ( T%L        .NE.   2  )  ERROR STOP 12
+  IF ( T%C%LEN    .NE.   2  )  ERROR STOP 13
 
-  IF (  T%Ptr1%K   .NE.  4  )  STOP 21
-  IF (  T%Ptr1%L   .NE.  2  )  STOP 22
+  IF (  T%Ptr1%K   .NE.  4  )  ERROR STOP 21
+  IF (  T%Ptr1%L   .NE.  2  )  ERROR STOP 22
 
-  IF (  T%Ptr2%K   .NE.  4  )  STOP 31
-  IF (  T%Ptr2%L   .NE.  3  )  STOP 32
+  IF (  T%Ptr2%K   .NE.  4  )  ERROR STOP 31
+  IF (  T%Ptr2%L   .NE.  3  )  ERROR STOP 32
 
-  IF (  T%Ptr3%K   .NE.  4  )  STOP 41
-  IF (  T%Ptr3%L   .NE.  4  )  STOP 42
+  IF (  T%Ptr3%K   .NE.  4  )  ERROR STOP 41
+  IF (  T%Ptr3%L   .NE.  4  )  ERROR STOP 42
 
-  IF (    Ptr4%K   .NE.  4  )  STOP 51
-  IF (    Ptr4%L   .NE.  5  )  STOP 52
+  IF (    Ptr4%K   .NE.  4  )  ERROR STOP 51
+  IF (    Ptr4%L   .NE.  5  )  ERROR STOP 52
 
 
   END SUBROUTINE

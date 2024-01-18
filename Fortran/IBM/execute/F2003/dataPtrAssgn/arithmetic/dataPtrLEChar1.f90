@@ -21,9 +21,9 @@
 
     call sub(arr)
 
-    if ( .not. associated(ptr, arr(4:2:-1))) stop 2
-    if ( lbound(ptr, 1) /= 1 ) stop 5
-    if ( ubound(ptr, 1) /= 3 ) stop 8
+    if ( .not. associated(ptr, arr(4:2:-1))) error stop 2
+    if ( lbound(ptr, 1) /= 1 ) error stop 5
+    if ( ubound(ptr, 1) /= 3 ) error stop 8
 
     select type (ptr)
 	type is (character(*))

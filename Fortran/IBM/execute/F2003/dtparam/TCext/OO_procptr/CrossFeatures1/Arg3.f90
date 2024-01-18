@@ -67,26 +67,26 @@
 
 
     ProcPtr1 => Fun1
-    IF ( .NOT. ASSOCIATED(ProcPtr1, Fun2)) STOP 71
+    IF ( .NOT. ASSOCIATED(ProcPtr1, Fun2)) ERROR STOP 71
 
     ProcPtr2 => ProcPtr1
-    IF ( .NOT. ASSOCIATED(ProcPtr2, Fun1)) STOP 72
+    IF ( .NOT. ASSOCIATED(ProcPtr2, Fun1)) ERROR STOP 72
 
     V = Fun1(Base(1,3)("abc", Tar))
-    IF ( V%C .NE. "abc") STOP 11
-    IF ( .NOT. ASSOCIATED(V%BPtr, Tar)) STOP 13
+    IF ( V%C .NE. "abc") ERROR STOP 11
+    IF ( .NOT. ASSOCIATED(V%BPtr, Tar)) ERROR STOP 13
 
     U = ProcPtr1(Base(1,3)("abc",Tar))
-    IF ( V%C .NE. "abc") STOP 21
-    IF ( .NOT. ASSOCIATED(U%BPtr, Tar)) STOP 23
+    IF ( V%C .NE. "abc") ERROR STOP 21
+    IF ( .NOT. ASSOCIATED(U%BPtr, Tar)) ERROR STOP 23
 
     U = Fun2(Base(1,3)("123",Tar))
-    IF ( U%C .NE. "123") STOP 31
-    IF ( .NOT. ASSOCIATED(U%BPtr, Tar)) STOP 33
+    IF ( U%C .NE. "123") ERROR STOP 31
+    IF ( .NOT. ASSOCIATED(U%BPtr, Tar)) ERROR STOP 33
 
     U = ProcPtr2(Base(1,3)("321",Tar))
-    IF ( U%C .NE. "321") STOP 31
-    IF ( .NOT. ASSOCIATED(U%BPtr, Tar)) STOP 33
+    IF ( U%C .NE. "321") ERROR STOP 31
+    IF ( .NOT. ASSOCIATED(U%BPtr, Tar)) ERROR STOP 33
 
     END SUBROUTINE
 
@@ -107,10 +107,10 @@
 
   CALL IntSub(ModFun, ModFun)
 
-  IF ( ABS(IntFun(SIN,1.0)-0.84147098) .GT. 1.0E-6) STOP 55
-  IF ( ABS(IntFun(SQRT,4.0)-2.0) .GT. 1.0E-6)       STOP 56
-  IF ( ABS(IntFun(ALOG10,10.0)-1.0) .GT. 1.0E-6)    STOP 57
-  IF ( ABS(IntFun(ACOS, 0.54030231)-1.0) .GT. 1.0E-6)    STOP 58
+  IF ( ABS(IntFun(SIN,1.0)-0.84147098) .GT. 1.0E-6) ERROR STOP 55
+  IF ( ABS(IntFun(SQRT,4.0)-2.0) .GT. 1.0E-6)       ERROR STOP 56
+  IF ( ABS(IntFun(ALOG10,10.0)-1.0) .GT. 1.0E-6)    ERROR STOP 57
+  IF ( ABS(IntFun(ACOS, 0.54030231)-1.0) .GT. 1.0E-6)    ERROR STOP 58
 
   CONTAINS
 

@@ -67,7 +67,7 @@ MODULE Mod1
       END INTERFACE
 
       ALLOCATE(NextGen(knd1,len1):: Ptr)
-      IF ( .NOT. ASSOCIATED(Ptr)) STOP 10
+      IF ( .NOT. ASSOCIATED(Ptr)) ERROR STOP 10
 
       CALL sub2(Ptr)
 
@@ -77,7 +77,7 @@ MODULE Mod1
            CALL sub1(A)
 
            ALLOCATE(Child(knd1,len1):: A%Cmp)
-           IF ( .NOT. ASSOCIATED(A%Cmp)) STOP 11
+           IF ( .NOT. ASSOCIATED(A%Cmp)) ERROR STOP 11
 
            ! call possible because dynamic type of A%Cmp extends type of Obj in sub2
            CALL sub2(A%Cmp)
@@ -99,8 +99,8 @@ SUBROUTINE sub1(Obj)
                    STOP 20
 
                 TYPE is (NextGen(knd1,*))
-                   IF ( A%k1 .NE. knd1) STOP 21
-                   IF ( A%l1 .NE. len1) STOP 22
+                   IF ( A%k1 .NE. knd1) ERROR STOP 21
+                   IF ( A%l1 .NE. len1) ERROR STOP 22
 
              END SELECT
 
@@ -116,14 +116,14 @@ SUBROUTINE sub2(Obj)
 
         SELECT TYPE (A => Obj)
            CLASS IS (Child(knd1,*))
-              IF ( A%k1 .NE. knd1) STOP 30
-              IF ( A%l1 .NE. len1) STOP 31
-              IF ( ASSOCIATED(A%Cmp)) STOP 32
+              IF ( A%k1 .NE. knd1) ERROR STOP 30
+              IF ( A%l1 .NE. len1) ERROR STOP 31
+              IF ( ASSOCIATED(A%Cmp)) ERROR STOP 32
 
           CLASS IS (NextGen(knd1,*))
-              IF ( A%k1 .NE. knd1) STOP 33
-              IF ( A%l1 .NE. len1) STOP 34
-              IF ( ASSOCIATED(A%Cmp)) STOP 35
+              IF ( A%k1 .NE. knd1) ERROR STOP 33
+              IF ( A%l1 .NE. len1) ERROR STOP 34
+              IF ( ASSOCIATED(A%Cmp)) ERROR STOP 35
 
           CLASS DEFAULT
              STOP 36

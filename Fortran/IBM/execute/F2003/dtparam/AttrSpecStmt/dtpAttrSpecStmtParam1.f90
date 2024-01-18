@@ -72,7 +72,7 @@
   TYPE(DT2(1,Arg%L0,4,Arg%L1,8,Arg%L2)) ModFun2(SIZE(Arg))
   INTEGER :: I
     DO I =1, SIZE(Arg)
-      IF ( SIZE( ModFun2(I)%I ) .NE. Arg%L2 ) STOP 22
+      IF ( SIZE( ModFun2(I)%I ) .NE. Arg%L2 ) ERROR STOP 22
       ModFun2(I)%I = -Arg(I)%I
     END DO
   END FUNCTION
@@ -105,18 +105,18 @@
   T01 = T0%ModFun0(t0)
 
   T11 =  T1(1)%ModFun1(T1)
-  IF ( ANY( T11(:,1) .NE. (1,3) ) ) STOP 11
-  IF ( ANY( T11(:,2) .NE. (4,5) ) ) STOP 12
+  IF ( ANY( T11(:,1) .NE. (1,3) ) ) ERROR STOP 11
+  IF ( ANY( T11(:,2) .NE. (4,5) ) ) ERROR STOP 12
 
   T22 = T2%ModFun2( T2 )
   DO I = 1, 15
-    IF (   ANY( T22(I)%I .NE. -i ) ) STOP 13
+    IF (   ANY( T22(I)%I .NE. -i ) ) ERROR STOP 13
   END DO
 
   T11 = 0
   T11 = T2(1)%ModFun1 ( T2%DT1 )
-  IF ( ANY( T11(:,1) .NE. (1,3) ) ) STOP 14
-  IF ( ANY( T11(:,2) .NE. (4,5) ) ) STOP 15
+  IF ( ANY( T11(:,1) .NE. (1,3) ) ) ERROR STOP 14
+  IF ( ANY( T11(:,2) .NE. (4,5) ) ) ERROR STOP 15
 
   END
 

@@ -31,7 +31,7 @@ module m
            class(extend(4)), intent(inout) :: out
            real, target, allocatable, intent(in) :: in(:)
 
-           if ( .not. allocated(in)) stop 11
+           if ( .not. allocated(in)) error stop 11
 
 	   out%p(ubound(in,1):) => in(ubound(in,1):lbound(in,1):-2)
        end subroutine
@@ -48,9 +48,9 @@ program main
 !    e1 = r1
     call defAssgn2(e1,r1)
 
-    if ( .not. associated(e1%p, r1(10:1:-2))) stop 2
-    if ( lbound(e1%p,1) /= 10 ) stop 3
-    if ( ubound(e1%p,1) /= 14 ) stop 5
+    if ( .not. associated(e1%p, r1(10:1:-2))) error stop 2
+    if ( lbound(e1%p,1) /= 10 ) error stop 3
+    if ( ubound(e1%p,1) /= 14 ) error stop 5
 
     select type(x => e1%p)
 	type is (real)

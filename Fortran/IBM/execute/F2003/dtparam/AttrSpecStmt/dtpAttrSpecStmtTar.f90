@@ -135,37 +135,37 @@
 
   CALL ExtSub(P0,P1,P2,T0,T1,T2)
 
-  IF ( .NOT. ASSOCIATED( P0     ) ) STOP 11
-  IF ( .NOT. ASSOCIATED( P1, T1 ) ) STOP 12
-  IF ( .NOT. ASSOCIATED( P2, T2 ) ) STOP 13
+  IF ( .NOT. ASSOCIATED( P0     ) ) ERROR STOP 11
+  IF ( .NOT. ASSOCIATED( P1, T1 ) ) ERROR STOP 12
+  IF ( .NOT. ASSOCIATED( P2, T2 ) ) ERROR STOP 13
 
-  IF ( SIZE( P0 ) .NE. N ) STOP 14
-  IF ( SIZE( P1 ) .NE. N ) STOP 15
-  IF ( SIZE( P2 ) .NE. N ) STOP 16
+  IF ( SIZE( P0 ) .NE. N ) ERROR STOP 14
+  IF ( SIZE( P1 ) .NE. N ) ERROR STOP 15
+  IF ( SIZE( P2 ) .NE. N ) ERROR STOP 16
 
-  IF ( LBOUND( P0,1 ) .NE. -N ) STOP 17
-  IF ( LBOUND( P1,1 ) .NE. -N ) STOP 18
-  IF ( LBOUND( P2,1 ) .NE. -N ) STOP 19
+  IF ( LBOUND( P0,1 ) .NE. -N ) ERROR STOP 17
+  IF ( LBOUND( P1,1 ) .NE. -N ) ERROR STOP 18
+  IF ( LBOUND( P2,1 ) .NE. -N ) ERROR STOP 19
 
   DO I=-N, -1
 
-    IF ( P0(I)%L0     .NE. 3         )  STOP 30
-    IF ( P1(I)%L1     .NE. 5         )  STOP 32
-    IF ( P2(I)%L2     .NE. 7         )  STOP 35
+    IF ( P0(I)%L0     .NE. 3         )  ERROR STOP 30
+    IF ( P1(I)%L1     .NE. 5         )  ERROR STOP 32
+    IF ( P2(I)%L2     .NE. 7         )  ERROR STOP 35
 
-    IF ( P1(I)%C1     .NE. "XYZ"     )  STOP 40
+    IF ( P1(I)%C1     .NE. "XYZ"     )  ERROR STOP 40
 
-    IF ( P2(I)%C2             .NE.   "ZYX"    )  STOP 52
-    IF ( P2(I)%I              .NE.   1234     )  STOP 53
-    IF ( P2(I)%R              .NE.   4321.    )  STOP 54
-    IF ( P2(I)%L              .NEQV. .TRUE.   )  STOP 55
-    IF ( P2(I)%Z              .NE.   (1.,-1.) )  STOP 56
-    IF ( P2(I)%T0%K0          .NE.    8       )  STOP 57
-    IF ( P2(I)%T0%L0          .NE.    7       )  STOP 61
-    IF ( ASSOCIATED(P2(I)%Ptr).EQV.   .TRUE.  )  STOP 62
-    IF ( SIZE(P2(I)%T0)       .NE.    7       )  STOP 63
-    IF ( P2(I)%T0%K0          .NE.    8       )  STOP 64
-    IF ( P2(I)%T0%L0          .NE.    7       )  STOP 65
+    IF ( P2(I)%C2             .NE.   "ZYX"    )  ERROR STOP 52
+    IF ( P2(I)%I              .NE.   1234     )  ERROR STOP 53
+    IF ( P2(I)%R              .NE.   4321.    )  ERROR STOP 54
+    IF ( P2(I)%L              .NEQV. .TRUE.   )  ERROR STOP 55
+    IF ( P2(I)%Z              .NE.   (1.,-1.) )  ERROR STOP 56
+    IF ( P2(I)%T0%K0          .NE.    8       )  ERROR STOP 57
+    IF ( P2(I)%T0%L0          .NE.    7       )  ERROR STOP 61
+    IF ( ASSOCIATED(P2(I)%Ptr).EQV.   .TRUE.  )  ERROR STOP 62
+    IF ( SIZE(P2(I)%T0)       .NE.    7       )  ERROR STOP 63
+    IF ( P2(I)%T0%K0          .NE.    8       )  ERROR STOP 64
+    IF ( P2(I)%T0%L0          .NE.    7       )  ERROR STOP 65
   END DO
 
   END

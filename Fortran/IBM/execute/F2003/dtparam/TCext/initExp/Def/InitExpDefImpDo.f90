@@ -73,21 +73,21 @@
   INTEGER(KIND(SIZE((/(I,I=KIND(L1), SIZE(D ))/), KIND=8))) :: TI4(SIZE((/(I,I=KIND(L1), SIZE(D))/))) =  &
                                                                         (/(I,I=KIND(L1), SIZE(D))/)
 
-  IF ( KIND(TI1 )  .NE. 4 )         STOP 11
-  IF ( SIZE(TI1)   .NE. SIZ )       STOP 12
-  IF ( ANY(TI1     .NE. Con ))      STOP 13
+  IF ( KIND(TI1 )  .NE. 4 )         ERROR STOP 11
+  IF ( SIZE(TI1)   .NE. SIZ )       ERROR STOP 12
+  IF ( ANY(TI1     .NE. Con ))      ERROR STOP 13
 
-  IF ( KIND(TI2 )  .NE. 2 )         STOP 21
-  IF ( SIZE(TI2)   .NE. SIZ )       STOP 22
-  IF ( ANY(TI2     .NE. Con ))      STOP 23
+  IF ( KIND(TI2 )  .NE. 2 )         ERROR STOP 21
+  IF ( SIZE(TI2)   .NE. SIZ )       ERROR STOP 22
+  IF ( ANY(TI2     .NE. Con ))      ERROR STOP 23
 
-  IF ( KIND(TI3 )  .NE. 4 )         STOP 31
-  IF ( SIZE(TI3)   .NE. SIZ )       STOP 32
-  IF ( ANY(TI3     .NE. Con ))      STOP 33
+  IF ( KIND(TI3 )  .NE. 4 )         ERROR STOP 31
+  IF ( SIZE(TI3)   .NE. SIZ )       ERROR STOP 32
+  IF ( ANY(TI3     .NE. Con ))      ERROR STOP 33
 
-  IF ( KIND(TI4 )  .NE. 8 )         STOP 41
-  IF ( SIZE(TI4)   .NE. SIZ )       STOP 42
-  IF ( ANY(TI4     .NE. Con ))      STOP 43
+  IF ( KIND(TI4 )  .NE. 8 )         ERROR STOP 41
+  IF ( SIZE(TI4)   .NE. SIZ )       ERROR STOP 42
+  IF ( ANY(TI4     .NE. Con ))      ERROR STOP 43
 
 
   END

@@ -67,22 +67,22 @@ S2: SELECT TYPE (U => S2 )
       STOP 20
     CLASS IS (DT1(4,*,1,*))
 
-        IF (ANY(U(:,:,:)%Seq%IArr(1)  .NE. -1)) STOP 21
-        IF (ANY(U(:,:,:)%Seq%IArr(2)  .NE. -1)) STOP 22
-        IF (TRIM(U(1,1,1)%Seq%CArr(1))  .NE. "!") STOP 23
-        IF (TRIM(U(1,1,1)%Seq%CArr(2))  .NE. "!") STOP 24
+        IF (ANY(U(:,:,:)%Seq%IArr(1)  .NE. -1)) ERROR STOP 21
+        IF (ANY(U(:,:,:)%Seq%IArr(2)  .NE. -1)) ERROR STOP 22
+        IF (TRIM(U(1,1,1)%Seq%CArr(1))  .NE. "!") ERROR STOP 23
+        IF (TRIM(U(1,1,1)%Seq%CArr(2))  .NE. "!") ERROR STOP 24
 
         U%Seq%IArr(1) = 1
         U%Seq%IArr(2) = 2
         U%Seq%CArr(1) = "K"
         U%Seq%CArr(2) = "Q"
 
-        IF (SIZE(U(2,2,2)%Seq%IArr)   .NE. 2)  STOP 30
-        IF (KIND(U(2,2,2)%Seq%IArr)   .NE. 4)  STOP 31
-        IF (ANY(U(:,:,:)%Seq%IArr(1)  .NE. 1)) STOP 32
-        IF (ANY(U(:,:,:)%Seq%IArr(2)  .NE. 2)) STOP 33
-        IF (ANY(U(:,:,:)%Seq%CArr(1)  .NE. "K")) STOP 22
-        IF (ANY(U(:,:,:)%Seq%CArr(2)  .NE. "Q")) STOP 23
+        IF (SIZE(U(2,2,2)%Seq%IArr)   .NE. 2)  ERROR STOP 30
+        IF (KIND(U(2,2,2)%Seq%IArr)   .NE. 4)  ERROR STOP 31
+        IF (ANY(U(:,:,:)%Seq%IArr(1)  .NE. 1)) ERROR STOP 32
+        IF (ANY(U(:,:,:)%Seq%IArr(2)  .NE. 2)) ERROR STOP 33
+        IF (ANY(U(:,:,:)%Seq%CArr(1)  .NE. "K")) ERROR STOP 22
+        IF (ANY(U(:,:,:)%Seq%CArr(2)  .NE. "Q")) ERROR STOP 23
 
     END SELECT S2
     END SELECT S1

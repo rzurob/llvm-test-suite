@@ -45,21 +45,21 @@
 
       ASSOCIATE ( Ptr => Ptr(1:)(I:J))
 
-        IF (SIZE(Ptr) .NE. 2)  STOP 30
-        IF (LEN(Ptr)  .NE. 4)  STOP 31
+        IF (SIZE(Ptr) .NE. 2)  ERROR STOP 30
+        IF (LEN(Ptr)  .NE. 4)  ERROR STOP 31
 
         I = 4; J = 1
         Ptr = "4321"
 
-        IF (ANY(Ptr .NE. "4321")) STOP 42
+        IF (ANY(Ptr .NE. "4321")) ERROR STOP 42
 
       END ASSOCIATE
     END SELECT
 
     SELECT TYPE (Ptr => Ptr)
     TYPE IS (CHARACTER(*))
-      IF (ANY(Ptr(1,:)  .NE. "4321"))   STOP 52
-      IF (ANY(Ptr(2:2,:)  .NE. "1234")) STOP 62
+      IF (ANY(Ptr(1,:)  .NE. "4321"))   ERROR STOP 52
+      IF (ANY(Ptr(2:2,:)  .NE. "1234")) ERROR STOP 62
     END SELECT
 
   END

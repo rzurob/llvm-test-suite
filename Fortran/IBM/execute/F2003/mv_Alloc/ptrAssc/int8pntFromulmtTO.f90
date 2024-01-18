@@ -47,7 +47,7 @@ end module
 
     select type (ai)
         type is (integer*8)
-            if ( .not. associated(aP%p, ai) ) stop 21
+            if ( .not. associated(aP%p, ai) ) error stop 21
             print *, aP%p(::2)
         class default
             stop 31

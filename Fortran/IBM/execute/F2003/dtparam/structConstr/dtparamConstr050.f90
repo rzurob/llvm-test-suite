@@ -38,9 +38,9 @@ module m
     subroutine printBase4 (b)
         type (base(4,*)), intent(in) :: b
 
-        if ((.not. allocated(b%data)) .or. (.not. allocated(b%name))) stop 10
+        if ((.not. allocated(b%data)) .or. (.not. allocated(b%name))) error stop 10
 
-        if (.not. allocated(b%data%data)) stop 11
+        if (.not. allocated(b%data%data)) error stop 11
 
         do i = lbound(b%data%data,1), ubound(b%data%data,1)
             write (*, '(dc, i4, 1x, e12.3)', advance='no') i, b%data%data(i)

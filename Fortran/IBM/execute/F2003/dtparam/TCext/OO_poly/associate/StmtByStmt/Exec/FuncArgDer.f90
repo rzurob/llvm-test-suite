@@ -62,10 +62,10 @@
   ASSOCIATE ( As1 => V )
   ASSOCIATE ( As => As1 )
     CALL Sub(As, As1)
-    IF ( V%GetID()      .NE. -2) STOP 50
-    IF ( V%ChildId      .NE. -2) STOP 51
-    IF ( V%Base%GetID() .NE. -1) STOP 52
-    IF ( V%BaseId       .NE. -1) STOP 53
+    IF ( V%GetID()      .NE. -2) ERROR STOP 50
+    IF ( V%ChildId      .NE. -2) ERROR STOP 51
+    IF ( V%Base%GetID() .NE. -1) ERROR STOP 52
+    IF ( V%BaseId       .NE. -1) ERROR STOP 53
   END ASSOCIATE
   END ASSOCIATE
 
@@ -75,8 +75,8 @@
     TYPE(Child(4)) :: Arg, Arg1
     TYPE(Child(4))  :: Func
 
-    IF (Arg%GetId()      .NE. 2 ) STOP 20
-    IF (Arg%Base%GetId() .NE. 1 ) STOP 21
+    IF (Arg%GetId()      .NE. 2 ) ERROR STOP 20
+    IF (Arg%Base%GetId() .NE. 1 ) ERROR STOP 21
 
     Arg1%BaseId = -1
     Arg1%ChildId = -2

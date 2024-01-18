@@ -83,12 +83,12 @@
   USE M2, ONLY: Fun2 => Fun, Ptr => ProcPtr, ExtFun => IFun
   USE M3, ONLY: Fun3 => Fun
 
-  IF (Fun0(0) .NE. 0 ) STOP 10
-  IF (Fun1(1) .NE. 1 ) STOP 11
+  IF (Fun0(0) .NE. 0 ) ERROR STOP 10
+  IF (Fun1(1) .NE. 1 ) ERROR STOP 11
 
   Ptr => ExtFun
-  IF (Fun2(2) .NE. 2 ) STOP 12
-  IF (Fun3(3) .NE. 3 ) STOP 13
+  IF (Fun2(2) .NE. 2 ) ERROR STOP 12
+  IF (Fun3(3) .NE. 3 ) ERROR STOP 13
 
 
   END

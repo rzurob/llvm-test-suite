@@ -59,17 +59,17 @@
   USE M
 
   ASSOCIATE ( As => Func(Child(4)(BaseId= -1, ChildId=-2 )) )
-    IF ( As%GetID() .NE. -2) STOP 50
-    IF ( As%BaseId  .NE. -1) STOP 51
-    IF ( As%ChildId .NE. -2) STOP 61
+    IF ( As%GetID() .NE. -2) ERROR STOP 50
+    IF ( As%BaseId  .NE. -1) ERROR STOP 51
+    IF ( As%ChildId .NE. -2) ERROR STOP 61
 
     ASSOCIATE ( As1 => As%GetId() )
-       IF ( As1 .NE. -2) STOP 52
+       IF ( As1 .NE. -2) ERROR STOP 52
     END ASSOCIATE
 
-    IF ( .NOT. SAME_TYPE_AS(As, Child(4)()) ) STOP 53
-    IF ( As%ChildComp%BaseId  .NE. 1)      STOP 54
-    IF ( As%ChildComp%GetId() .NE. 2)      STOP 55
+    IF ( .NOT. SAME_TYPE_AS(As, Child(4)()) ) ERROR STOP 53
+    IF ( As%ChildComp%BaseId  .NE. 1)      ERROR STOP 54
+    IF ( As%ChildComp%GetId() .NE. 2)      ERROR STOP 55
   END ASSOCIATE
 
   CONTAINS

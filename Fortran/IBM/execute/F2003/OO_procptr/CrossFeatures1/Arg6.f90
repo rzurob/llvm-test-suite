@@ -71,9 +71,9 @@
   TYPE(Base) :: V
   TYPE(Base), TARGET :: Tar=Base("abc", NULL())
     V = Arg(Base("123", Tar))
-    IF (V%C .NE. "123")                STOP 11
-    IF (.NOT. ASSOCIATED(V%BPtr, Tar)) STOP 12
-    IF (V%BPtr%C .NE. "abc" )          STOP 13
+    IF (V%C .NE. "123")                ERROR STOP 11
+    IF (.NOT. ASSOCIATED(V%BPtr, Tar)) ERROR STOP 12
+    IF (V%BPtr%C .NE. "abc" )          ERROR STOP 13
   END SUBROUTINE
 
   END

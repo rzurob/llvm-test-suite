@@ -31,37 +31,37 @@
 
 
     ASSOCIATE ( As => S )
-      IF ( As(1:10) .NE. "1234567890") STOP 50
+      IF ( As(1:10) .NE. "1234567890") ERROR STOP 50
       ASSOCIATE ( As0 => As(1:3), As => "123" )
-         IF ( As0 .NE. "123") STOP 51
-         IF ( As  .NE. "123") STOP 52
+         IF ( As0 .NE. "123") ERROR STOP 51
+         IF ( As  .NE. "123") ERROR STOP 52
       END ASSOCIATE
-      IF ( As  .NE. "1234567890") STOP 53
+      IF ( As  .NE. "1234567890") ERROR STOP 53
     END ASSOCIATE
 
     ASSOCIATE ( As => "1234567890" )
-      IF ( As(1:10) .NE. "1234567890") STOP 55
+      IF ( As(1:10) .NE. "1234567890") ERROR STOP 55
       ASSOCIATE ( As0 => As(1:3), As => "123" )
-         IF ( As0 .NE. "123") STOP 56
-         IF ( As  .NE. "123") STOP 57
+         IF ( As0 .NE. "123") ERROR STOP 56
+         IF ( As  .NE. "123") ERROR STOP 57
       END ASSOCIATE
-      IF ( As  .NE. "1234567890") STOP 58
+      IF ( As  .NE. "1234567890") ERROR STOP 58
     END ASSOCIATE
 
     ASSOCIATE ( As => S(:) )
-      IF ( As(1:10) .NE. "1234567890") STOP 60
+      IF ( As(1:10) .NE. "1234567890") ERROR STOP 60
       ASSOCIATE ( As0 => As(1:3), As => "123" )
-         IF ( As0 .NE. "123") STOP 61
-         IF ( As  .NE. "123") STOP 62
+         IF ( As0 .NE. "123") ERROR STOP 61
+         IF ( As  .NE. "123") ERROR STOP 62
       END ASSOCIATE
-      IF ( As  .NE. "1234567890") STOP 63
+      IF ( As  .NE. "1234567890") ERROR STOP 63
     END ASSOCIATE
 
     ASSOCIATE ( As => S3(1:6:2) )  ! Error here
-      IF ( ANY(As .NE. (/"1", "3", "5"/))) STOP 70
+      IF ( ANY(As .NE. (/"1", "3", "5"/))) ERROR STOP 70
       ASSOCIATE ( As0 => As(1:3) )
-        IF ( ANY(As0 .NE. (/"1", "3", "5"/))) STOP 71
+        IF ( ANY(As0 .NE. (/"1", "3", "5"/))) ERROR STOP 71
       END ASSOCIATE
-      IF ( ANY (S3(2:6:2) .NE. (/"2", "4", "6"/))) STOP 72
+      IF ( ANY (S3(2:6:2) .NE. (/"2", "4", "6"/))) ERROR STOP 72
     END ASSOCIATE
   END

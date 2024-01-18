@@ -77,10 +77,10 @@
   TYPE(DT)   :: U, W
 
   V = Ptr(Base("123"))
-  IF ( V%C .NE. "123" ) STOP 12
+  IF ( V%C .NE. "123" ) ERROR STOP 12
 
   U = DT(RetPtr(Ptr))
-  IF ( .NOT. ASSOCIATED(U%ProcPtr, Ptr) ) STOP 32
+  IF ( .NOT. ASSOCIATED(U%ProcPtr, Ptr) ) ERROR STOP 32
 
   END SUBROUTINE
 

@@ -32,7 +32,7 @@ contains
 			common err_check
 			integer err_check
 			err_check = err_check + 1
-			if (ubound(matrixA,1) /= ubound(matrixB,1) .or. ubound(matrixA,2) /= ubound(matrixB,2)) STOP 1
+			if (ubound(matrixA,1) /= ubound(matrixB,1) .or. ubound(matrixA,2) /= ubound(matrixB,2)) ERROR STOP 1
 			do i=1, ubound(matrixA,2)
 				do j=1, ubound(matrixA,1)
 					if (matrixA(j,i)%element /= matrixB(j,i)%element) then

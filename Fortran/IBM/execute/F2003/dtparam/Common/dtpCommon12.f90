@@ -74,21 +74,21 @@
   K=[1,2,3,4,5,6,7,8,9]
   C2 = "7654321"
 
-  IF ( .NOT. ASSOCIATED(ProcPtr, F) ) STOP 10
+  IF ( .NOT. ASSOCIATED(ProcPtr, F) ) ERROR STOP 10
 
   SELECT TYPE ( A=>ProcPtr(1024, C1, K, C2) )
   TYPE IS (DT(2,*,*))
-     IF ( A%L1 .NE. 7 ) STOP 11
-     IF ( A%L2 .NE. 9 ) STOP 12
+     IF ( A%L1 .NE. 7 ) ERROR STOP 11
+     IF ( A%L2 .NE. 9 ) ERROR STOP 12
      T = a
   CLASS DEFAULT
     STOP 33
   END SELECT
 
   DO I=1, 1024
-    IF (  ANY ( T(I)%C1 .NE. C1    ) ) STOP 21
-    IF (  ANY ( T(I)%I  .NE. K     ) ) STOP 22
-    IF (  ANY ( T(I)%C2 .NE. C2    ) ) STOP 23
+    IF (  ANY ( T(I)%C1 .NE. C1    ) ) ERROR STOP 21
+    IF (  ANY ( T(I)%I  .NE. K     ) ) ERROR STOP 22
+    IF (  ANY ( T(I)%C2 .NE. C2    ) ) ERROR STOP 23
   END DO
 
   END PROGRAM

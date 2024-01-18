@@ -95,50 +95,50 @@
   Tar2 = T
 
   Ptr01 => Tar0
-  IF ( Ptr01%L0  .NE. 1 ) STOP 11
+  IF ( Ptr01%L0  .NE. 1 ) ERROR STOP 11
 
   Ptr02 => Tar0
-  IF ( Ptr02%L0 .NE. 1 ) STOP 12
+  IF ( Ptr02%L0 .NE. 1 ) ERROR STOP 12
 
   Ptr02 => Tar2
-  IF ( Ptr02%L0 .NE. 3 ) STOP 13
+  IF ( Ptr02%L0 .NE. 3 ) ERROR STOP 13
 
   Ptr11 => Tar1
-  IF ( Ptr11%L0 .NE. 3 )      STOP 21
-  IF ( Ptr11%L1 .NE. 5 )      STOP 22
-  IF ( Ptr11%C1 .NE. "XYZ"  ) STOP 23
+  IF ( Ptr11%L0 .NE. 3 )      ERROR STOP 21
+  IF ( Ptr11%L1 .NE. 5 )      ERROR STOP 22
+  IF ( Ptr11%C1 .NE. "XYZ"  ) ERROR STOP 23
 
   Ptr21 => Tar2
-  IF ( Ptr21%L0                .NE.   3        )  STOP 31
-  IF ( Ptr21%L1                .NE.   5        )  STOP 32
-  IF ( Ptr21%L2                 .NE.   7       )  STOP 33
-  IF ( Ptr21%C1                .NE.   "XYZ"    )  STOP 34
-  IF ( Ptr21%C2                .NE.   "ZYX"    )  STOP 35
-  IF ( Ptr21%I                 .NE.   1234     )  STOP 36
-  IF ( Ptr21%R                 .NE.   4321.    )  STOP 37
-  IF ( Ptr21%L                 .NEQV. .TRUE.   )  STOP 38
-  IF ( Ptr21%Z                 .NE.   (1.,-1.) )  STOP 39
-  IF ( Ptr21%T0%K0             .NE.    8       )  STOP 40
-  IF ( Ptr21%T0%L0             .NE.    7       )  STOP 41
-  IF ( ASSOCIATED( Ptr21%Ptr2) .EQV.   .TRUE.  )  STOP 42
-  IF ( Ptr21%Ptr2%K2           .NE.    8       )  STOP 43
-  IF ( Ptr21%Ptr2%L2           .NE.    7       )  STOP 44
+  IF ( Ptr21%L0                .NE.   3        )  ERROR STOP 31
+  IF ( Ptr21%L1                .NE.   5        )  ERROR STOP 32
+  IF ( Ptr21%L2                 .NE.   7       )  ERROR STOP 33
+  IF ( Ptr21%C1                .NE.   "XYZ"    )  ERROR STOP 34
+  IF ( Ptr21%C2                .NE.   "ZYX"    )  ERROR STOP 35
+  IF ( Ptr21%I                 .NE.   1234     )  ERROR STOP 36
+  IF ( Ptr21%R                 .NE.   4321.    )  ERROR STOP 37
+  IF ( Ptr21%L                 .NEQV. .TRUE.   )  ERROR STOP 38
+  IF ( Ptr21%Z                 .NE.   (1.,-1.) )  ERROR STOP 39
+  IF ( Ptr21%T0%K0             .NE.    8       )  ERROR STOP 40
+  IF ( Ptr21%T0%L0             .NE.    7       )  ERROR STOP 41
+  IF ( ASSOCIATED( Ptr21%Ptr2) .EQV.   .TRUE.  )  ERROR STOP 42
+  IF ( Ptr21%Ptr2%K2           .NE.    8       )  ERROR STOP 43
+  IF ( Ptr21%Ptr2%L2           .NE.    7       )  ERROR STOP 44
 
   Ptr22 => Tar2
-  IF ( Ptr22%L0                .NE.   3        )  STOP 51
-  IF ( Ptr22%L1                .NE.   5        )  STOP 52
-  IF ( Ptr22%L2                 .NE.   7       )  STOP 53
-  IF ( Ptr22%C1                .NE.   "XYZ"    )  STOP 54
-  IF ( Ptr22%C2                .NE.   "ZYX"    )  STOP 55
-  IF ( Ptr22%I                 .NE.   1234     )  STOP 56
-  IF ( Ptr22%R                 .NE.   4321.    )  STOP 57
-  IF ( Ptr22%L                 .NEQV. .TRUE.   )  STOP 58
-  IF ( Ptr22%Z                 .NE.   (1.,-1.) )  STOP 59
-  IF ( Ptr22%T0%K0             .NE.    8       )  STOP 60
-  IF ( Ptr22%T0%L0             .NE.    7       )  STOP 61
-  IF ( ASSOCIATED( Ptr22%Ptr2) .EQV.   .TRUE.  )  STOP 62
-  IF ( Ptr22%Ptr2%K2           .NE.    8       )  STOP 63
-  IF ( Ptr22%Ptr2%L2           .NE.    7       )  STOP 64
+  IF ( Ptr22%L0                .NE.   3        )  ERROR STOP 51
+  IF ( Ptr22%L1                .NE.   5        )  ERROR STOP 52
+  IF ( Ptr22%L2                 .NE.   7       )  ERROR STOP 53
+  IF ( Ptr22%C1                .NE.   "XYZ"    )  ERROR STOP 54
+  IF ( Ptr22%C2                .NE.   "ZYX"    )  ERROR STOP 55
+  IF ( Ptr22%I                 .NE.   1234     )  ERROR STOP 56
+  IF ( Ptr22%R                 .NE.   4321.    )  ERROR STOP 57
+  IF ( Ptr22%L                 .NEQV. .TRUE.   )  ERROR STOP 58
+  IF ( Ptr22%Z                 .NE.   (1.,-1.) )  ERROR STOP 59
+  IF ( Ptr22%T0%K0             .NE.    8       )  ERROR STOP 60
+  IF ( Ptr22%T0%L0             .NE.    7       )  ERROR STOP 61
+  IF ( ASSOCIATED( Ptr22%Ptr2) .EQV.   .TRUE.  )  ERROR STOP 62
+  IF ( Ptr22%Ptr2%K2           .NE.    8       )  ERROR STOP 63
+  IF ( Ptr22%Ptr2%L2           .NE.    7       )  ERROR STOP 64
 
   END
 

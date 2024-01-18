@@ -225,8 +225,8 @@ program defAssignMis02
      !invoke assign1
      aobj1=A(2)([1,2,3],c1)
 
-     if(any(aobj1%i1 /= [1,2,3]))                            stop 16
-     if(any(aobj1%c1 /= ["ab","aB","Ab","AB"]))              stop 17
+     if(any(aobj1%i1 /= [1,2,3]))                            error stop 16
+     if(any(aobj1%c1 /= ["ab","aB","Ab","AB"]))              error stop 17
 
      allocate(A(2) :: aobj2)
      allocate(A(2) :: aobj4(3))
@@ -236,52 +236,52 @@ program defAssignMis02
      print *,"**** TEST  2****"
      call subA1(aobj2,aobj1)
 
-     if(any(aobj2%i1 /= [1,2,3]))                            stop 18
-     if(any(aobj2%c1 /= ["ab","aB","Ab","AB"]))              stop 19
+     if(any(aobj2%i1 /= [1,2,3]))                            error stop 18
+     if(any(aobj2%c1 /= ["ab","aB","Ab","AB"]))              error stop 19
 
      print *,"**** TEST  3****"
      ! invoke assign2
      aobj3=[aobj1,A(2)([4,5,6],c1(1:2)),A(2)([-1,-2,-3],c1(3:4))]
 
-     if(any(aobj3(1)%i1 /= [1,2,3]))                         stop 20
-     if(any(aobj3(1)%c1 /= ["ab","aB","Ab","AB"]))           stop 21
-     if(any(aobj3(2)%i1 /= [4,5,6]))                         stop 22
-     if(any(aobj3(2)%c1 /= ["ab","aB"]))                     stop 23
-     if(any(aobj3(3)%i1 /= [-1,-2,-3]))                      stop 24
-     if(any(aobj3(3)%c1 /= ["Ab","AB"]))                     stop 25
+     if(any(aobj3(1)%i1 /= [1,2,3]))                         error stop 20
+     if(any(aobj3(1)%c1 /= ["ab","aB","Ab","AB"]))           error stop 21
+     if(any(aobj3(2)%i1 /= [4,5,6]))                         error stop 22
+     if(any(aobj3(2)%c1 /= ["ab","aB"]))                     error stop 23
+     if(any(aobj3(3)%i1 /= [-1,-2,-3]))                      error stop 24
+     if(any(aobj3(3)%c1 /= ["Ab","AB"]))                     error stop 25
 
      print *,"**** TEST  4****"
      call subA4(aobj4,aobj3)
 
-     if(any(aobj4(1)%i1 /= [1,2,3]))                         stop 26
-     if(any(aobj4(1)%c1 /= ["ab","aB","Ab","AB"]))           stop 27
-     if(any(aobj4(2)%i1 /= [4,5,6]))                         stop 28
-     if(any(aobj4(2)%c1 /= ["ab","aB"]))                     stop 29
-     if(any(aobj4(3)%i1 /= [-1,-2,-3]))                      stop 30
-     if(any(aobj4(3)%c1 /= ["Ab","AB"]))                     stop 31
+     if(any(aobj4(1)%i1 /= [1,2,3]))                         error stop 26
+     if(any(aobj4(1)%c1 /= ["ab","aB","Ab","AB"]))           error stop 27
+     if(any(aobj4(2)%i1 /= [4,5,6]))                         error stop 28
+     if(any(aobj4(2)%c1 /= ["ab","aB"]))                     error stop 29
+     if(any(aobj4(3)%i1 /= [-1,-2,-3]))                      error stop 30
+     if(any(aobj4(3)%c1 /= ["Ab","AB"]))                     error stop 31
 
      print *,"**** TEST  5****"
      ! invoke assign2
      bobj1=B(1)(aobj1,aobj4(2:3))
 
-     if(any(bobj1%acomp1(1)%i1 /= [1,2,3]))                  stop 32
-     if(any(bobj1%acomp1(1)%c1 /= ["ab","aB","Ab","AB"]))    stop 33
+     if(any(bobj1%acomp1(1)%i1 /= [1,2,3]))                  error stop 32
+     if(any(bobj1%acomp1(1)%c1 /= ["ab","aB","Ab","AB"]))    error stop 33
 
-     if(any(bobj1%acomp2(1)%i1 /= [4,5,6]))                  stop 34
-     if(any(bobj1%acomp2(1)%c1 /= ["ab","aB"]))              stop 35
-     if(any(bobj1%acomp2(2)%i1 /= [-1,-2,-3]))               stop 36
-     if(any(bobj1%acomp2(2)%c1 /= ["Ab","AB"]))              stop 37
+     if(any(bobj1%acomp2(1)%i1 /= [4,5,6]))                  error stop 34
+     if(any(bobj1%acomp2(1)%c1 /= ["ab","aB"]))              error stop 35
+     if(any(bobj1%acomp2(2)%i1 /= [-1,-2,-3]))               error stop 36
+     if(any(bobj1%acomp2(2)%c1 /= ["Ab","AB"]))              error stop 37
 
      print *,"**** TEST  6****"
      call subB1(bobj2,bobj1)
 
-     if(any(bobj2%acomp1(1)%i1 /= [1,2,3]))                  stop 38
-     if(any(bobj2%acomp1(1)%c1 /= ["ab","aB","Ab","AB"]))    stop 39
+     if(any(bobj2%acomp1(1)%i1 /= [1,2,3]))                  error stop 38
+     if(any(bobj2%acomp1(1)%c1 /= ["ab","aB","Ab","AB"]))    error stop 39
 
-     if(any(bobj2%acomp2(1)%i1 /= [4,5,6]))                  stop 40
-     if(any(bobj2%acomp2(1)%c1 /= ["ab","aB"]))              stop 41
-     if(any(bobj2%acomp2(2)%i1 /= [-1,-2,-3]))               stop 42
-     if(any(bobj2%acomp2(2)%c1 /= ["Ab","AB"]))              stop 43
+     if(any(bobj2%acomp2(1)%i1 /= [4,5,6]))                  error stop 40
+     if(any(bobj2%acomp2(1)%c1 /= ["ab","aB"]))              error stop 41
+     if(any(bobj2%acomp2(2)%i1 /= [-1,-2,-3]))               error stop 42
+     if(any(bobj2%acomp2(2)%c1 /= ["Ab","AB"]))              error stop 43
 
      print *,"**** TEST  7****"
      !invoke assign2
@@ -289,33 +289,33 @@ program defAssignMis02
             B(1)(A(2)( [7,8,9],c1(1:1) ), &
                  aobj4(3:3) ) ]
 
-     if(any(bobj3(1)%acomp1(1)%i1 /= [1,2,3]))                  stop 44
-     if(any(bobj3(1)%acomp1(1)%c1 /= ["ab","aB","Ab","AB"]))    stop 45
-     if(any(bobj3(1)%acomp2(1)%i1 /= [4,5,6]))                  stop 46
-     if(any(bobj3(1)%acomp2(1)%c1 /= ["ab","aB"]))              stop 47
-     if(any(bobj3(1)%acomp2(2)%i1 /= [-1,-2,-3]))               stop 48
-     if(any(bobj3(1)%acomp2(2)%c1 /= ["Ab","AB"]))              stop 49
+     if(any(bobj3(1)%acomp1(1)%i1 /= [1,2,3]))                  error stop 44
+     if(any(bobj3(1)%acomp1(1)%c1 /= ["ab","aB","Ab","AB"]))    error stop 45
+     if(any(bobj3(1)%acomp2(1)%i1 /= [4,5,6]))                  error stop 46
+     if(any(bobj3(1)%acomp2(1)%c1 /= ["ab","aB"]))              error stop 47
+     if(any(bobj3(1)%acomp2(2)%i1 /= [-1,-2,-3]))               error stop 48
+     if(any(bobj3(1)%acomp2(2)%c1 /= ["Ab","AB"]))              error stop 49
 
-     if(any(bobj3(2)%acomp1(1)%i1 /= [7,8,9]))                  stop 50
-     if(any(bobj3(2)%acomp1(1)%c1 /= ["ab"]))                   stop 51
+     if(any(bobj3(2)%acomp1(1)%i1 /= [7,8,9]))                  error stop 50
+     if(any(bobj3(2)%acomp1(1)%c1 /= ["ab"]))                   error stop 51
 
-     if(any(bobj3(2)%acomp2(1)%i1 /= [-1,-2,-3]))               stop 52
-     if(any(bobj3(2)%acomp2(1)%c1 /= ["Ab","AB"]))              stop 53
+     if(any(bobj3(2)%acomp2(1)%i1 /= [-1,-2,-3]))               error stop 52
+     if(any(bobj3(2)%acomp2(1)%c1 /= ["Ab","AB"]))              error stop 53
 
      print *,"**** TEST  8****"
      call subB4(bobj4,bobj3)
 
-     if(any(bobj4(1)%acomp1(1)%i1 /= [1,2,3]))                  stop 54
-     if(any(bobj4(1)%acomp1(1)%c1 /= ["ab","aB","Ab","AB"]))    stop 55
-     if(any(bobj4(1)%acomp2(1)%i1 /= [4,5,6]))                  stop 56
-     if(any(bobj4(1)%acomp2(1)%c1 /= ["ab","aB"]))              stop 57
-     if(any(bobj4(1)%acomp2(2)%i1 /= [-1,-2,-3]))               stop 58
-     if(any(bobj4(1)%acomp2(2)%c1 /= ["Ab","AB"]))              stop 59
+     if(any(bobj4(1)%acomp1(1)%i1 /= [1,2,3]))                  error stop 54
+     if(any(bobj4(1)%acomp1(1)%c1 /= ["ab","aB","Ab","AB"]))    error stop 55
+     if(any(bobj4(1)%acomp2(1)%i1 /= [4,5,6]))                  error stop 56
+     if(any(bobj4(1)%acomp2(1)%c1 /= ["ab","aB"]))              error stop 57
+     if(any(bobj4(1)%acomp2(2)%i1 /= [-1,-2,-3]))               error stop 58
+     if(any(bobj4(1)%acomp2(2)%c1 /= ["Ab","AB"]))              error stop 59
 
-     if(any(bobj4(2)%acomp1(1)%i1 /= [7,8,9]))                  stop 60
-     if(any(bobj4(2)%acomp1(1)%c1 /= ["ab"]))                   stop 61
+     if(any(bobj4(2)%acomp1(1)%i1 /= [7,8,9]))                  error stop 60
+     if(any(bobj4(2)%acomp1(1)%c1 /= ["ab"]))                   error stop 61
 
-     if(any(bobj4(2)%acomp2(1)%i1 /= [-1,-2,-3]))               stop 62
-     if(any(bobj4(2)%acomp2(1)%c1 /= ["Ab","AB"]))              stop 63
+     if(any(bobj4(2)%acomp2(1)%i1 /= [-1,-2,-3]))               error stop 62
+     if(any(bobj4(2)%acomp2(1)%c1 /= ["Ab","AB"]))              error stop 63
 
 end program

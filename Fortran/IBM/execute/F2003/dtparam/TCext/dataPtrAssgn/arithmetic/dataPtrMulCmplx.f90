@@ -42,9 +42,9 @@ program main
     end forall
 
     do i = 1, 10
-	if ( .not. associated(b1(i)%ptr, b1(i)%tar)) stop 3
-	if ( any (lbound(b1(i)%ptr) .ne. (/ i,i/) )) stop 5
-	if ( any (ubound(b1(i)%ptr) .ne. (/ i+3,i+4/) )) stop 7
+	if ( .not. associated(b1(i)%ptr, b1(i)%tar)) error stop 3
+	if ( any (lbound(b1(i)%ptr) .ne. (/ i,i/) )) error stop 5
+	if ( any (ubound(b1(i)%ptr) .ne. (/ i+3,i+4/) )) error stop 7
     	write (*, '("(",f20.10,", ", f20.10, ")")') b1(i)%ptr
     	write (*, '("(",f20.10,", ", f20.10, ")")') b1(i)%ptr * cmplx(i,-i,4)
     enddo

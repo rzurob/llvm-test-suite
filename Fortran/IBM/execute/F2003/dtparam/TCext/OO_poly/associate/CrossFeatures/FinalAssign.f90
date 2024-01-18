@@ -113,34 +113,34 @@
   ASSOCIATE ( As => V )
 
   ! no finalization happen for a return of a pointer
-    IF ( ANY(Fin .NE. -1 ) ) STOP 19
+    IF ( ANY(Fin .NE. -1 ) ) ERROR STOP 19
 
     ASSOCIATE ( As => As )
 
       As = DT(4,20,1,3)(ID=-2, C="2", L=.TRUE.)
       !FINALIZATION Finished  for the left side
-      IF ( ANY(Fin .NE. (/2,1,2,1,-1,-1/) ) ) STOP 18
+      IF ( ANY(Fin .NE. (/2,1,2,1,-1,-1/) ) ) ERROR STOP 18
       Fin = -1
       Index = 1
 
-      IF ( As%ID       .NE. -2 ) STOP 20
-      IF ( As%GetID()  .NE. -2 ) STOP 21
+      IF ( As%ID       .NE. -2 ) ERROR STOP 20
+      IF ( As%GetID()  .NE. -2 ) ERROR STOP 21
 
-      IF ( As%C       .NE. "2" ) STOP 30
-      IF ( As%GetC()  .NE. "2" ) STOP 31
+      IF ( As%C       .NE. "2" ) ERROR STOP 30
+      IF ( As%GetC()  .NE. "2" ) ERROR STOP 31
 
-      IF ( As%L       .NEQV. .TRUE. ) STOP 40
-      IF ( As%GetL()  .NEQV. .TRUE. ) STOP 41
+      IF ( As%L       .NEQV. .TRUE. ) ERROR STOP 40
+      IF ( As%GetL()  .NEQV. .TRUE. ) ERROR STOP 41
 
     END ASSOCIATE
 
     ! No FINALIZATION
-    IF ( ANY(Fin .NE. -1 ) ) STOP 17
+    IF ( ANY(Fin .NE. -1 ) ) ERROR STOP 17
 
   END ASSOCIATE
 
   ! No FINALIZATION
-  IF ( ANY(Fin .NE. -1 ) ) STOP 16
+  IF ( ANY(Fin .NE. -1 ) ) ERROR STOP 16
 
   END
 

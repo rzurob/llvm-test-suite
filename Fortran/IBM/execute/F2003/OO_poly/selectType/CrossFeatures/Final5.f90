@@ -59,15 +59,15 @@
   Index = 0
   V = U
 
-  IF (ANY(Final(1:1) .NEQV. .TRUE.))  STOP 21
-  IF (ANY(Final(3: ) .NEQV. .FALSE.)) STOP 23
+  IF (ANY(Final(1:1) .NEQV. .TRUE.))  ERROR STOP 21
+  IF (ANY(Final(3: ) .NEQV. .FALSE.)) ERROR STOP 23
 
   Final = .FALSE.
   Index = 0
   CALL Sub(V)
 
-  IF (ANY(Final(1:2) .NEQV. .TRUE. )) STOP 33
-  IF (ANY(Final(3: ) .NEQV. .FALSE.)) STOP 34
+  IF (ANY(Final(1:2) .NEQV. .TRUE. )) ERROR STOP 33
+  IF (ANY(Final(3: ) .NEQV. .FALSE.)) ERROR STOP 34
 
   CONTAINS
 
@@ -75,17 +75,17 @@
 
   SELECT TYPE ( UArg )
   TYPE IS (DT)
-    IF (ANY(Final(:) .NEQV. .FALSE.)) STOP 41
+    IF (ANY(Final(:) .NEQV. .FALSE.)) ERROR STOP 41
     UArg = DT()
-    IF (ANY(Final(1:2) .NEQV. .TRUE. )) STOP 42
-    IF (ANY(Final(3: ) .NEQV. .FALSE.)) STOP 43
+    IF (ANY(Final(1:2) .NEQV. .TRUE. )) ERROR STOP 42
+    IF (ANY(Final(3: ) .NEQV. .FALSE.)) ERROR STOP 43
   CLASS DEFAULT
     STOP 61
   END SELECT
 
   !No new finalization
-  IF (ANY(Final(1:2) .NEQV. .TRUE.))  STOP 53
-  IF (ANY(Final(3: ) .NEQV. .FALSE.)) STOP 55
+  IF (ANY(Final(1:2) .NEQV. .TRUE.))  ERROR STOP 53
+  IF (ANY(Final(3: ) .NEQV. .FALSE.)) ERROR STOP 55
 
   END SUBROUTINE
 

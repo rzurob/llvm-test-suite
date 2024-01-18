@@ -86,13 +86,13 @@
   PROCEDURE(Int),    POINTER :: PtrInt
 
   PtrInt => Int
-  IF ( PtrInt(100) .NE. 100 ) STOP 11
+  IF ( PtrInt(100) .NE. 100 ) ERROR STOP 11
 
-! IF ( Int(1_1)    .NE. 1_1)  STOP 12
+! IF ( Int(1_1)    .NE. 1_1)  ERROR STOP 12
 
-! IF ( Int(2_2)    .NE. 2_2)  STOP 13
+! IF ( Int(2_2)    .NE. 2_2)  ERROR STOP 13
 
-  IF ( Int(8_8)    .NE. 8_8)  STOP 14
+  IF ( Int(8_8)    .NE. 8_8)  ERROR STOP 14
 
 
   END SUBROUTINE

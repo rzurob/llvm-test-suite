@@ -34,7 +34,7 @@ module m
         integer, intent(in) :: i
         character(int(log10(i*1.0)+1)) atoi
 
-        if (len (atoi) < 1) stop 100
+        if (len (atoi) < 1) error stop 100
 
         do j = 1, atoi%len
             write (atoi(j:j), '(DC,I1)') (mod(i, 10**(int(atoi%len-j+1))) - &

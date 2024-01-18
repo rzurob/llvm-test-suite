@@ -46,23 +46,23 @@
 
 
 
-  IF ( ANY(I1   .NE. 4 ) ) STOP 11
-  IF ( ANY(I2   .NE. 2 ) ) STOP 12
-  IF ( ANY(I4   .NE. 4 ) ) STOP 13
-  IF ( ANY(I8   .NE. 8 ) ) STOP 14
+  IF ( ANY(I1   .NE. 4 ) ) ERROR STOP 11
+  IF ( ANY(I2   .NE. 2 ) ) ERROR STOP 12
+  IF ( ANY(I4   .NE. 4 ) ) ERROR STOP 13
+  IF ( ANY(I8   .NE. 8 ) ) ERROR STOP 14
 
-  IF ( ANY(L1   .NE. 2 ) ) STOP 21
-  IF ( ANY(L2   .NE. 2 ) ) STOP 22
-  IF ( ANY(L4   .NE. 4 ) ) STOP 23
-  IF ( ANY(L8   .NE. 8 ) ) STOP 24
+  IF ( ANY(L1   .NE. 2 ) ) ERROR STOP 21
+  IF ( ANY(L2   .NE. 2 ) ) ERROR STOP 22
+  IF ( ANY(L4   .NE. 4 ) ) ERROR STOP 23
+  IF ( ANY(L8   .NE. 8 ) ) ERROR STOP 24
 
-  IF ( ANY(R4   .NE. 4 ) ) STOP 31
-  IF ( ANY(R8   .NE. 8 ) ) STOP 32
-  IF ( ANY(R6   .NE. 16) ) STOP 33
+  IF ( ANY(R4   .NE. 4 ) ) ERROR STOP 31
+  IF ( ANY(R8   .NE. 8 ) ) ERROR STOP 32
+  IF ( ANY(R6   .NE. 16) ) ERROR STOP 33
 
-  IF ( ANY(Z4   .NE. 8 ) ) STOP 41
-  IF ( ANY(Z8   .NE. 8 ) ) STOP 42
-  IF ( ANY(Z6   .NE. 16) ) STOP 43
+  IF ( ANY(Z4   .NE. 8 ) ) ERROR STOP 41
+  IF ( ANY(Z8   .NE. 8 ) ) ERROR STOP 42
+  IF ( ANY(Z6   .NE. 16) ) ERROR STOP 43
 
 
   END

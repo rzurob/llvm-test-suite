@@ -67,18 +67,18 @@
      STOP 22
    TYPE IS (Child)
 
-     IF ( ANY(As%BaseId  .NE. -1  ))  STOP 31
-     IF ( ANY(As%Base1Id .NE.  1  ))  STOP 32
-     IF ( ANY(As%ChildId .NE.  2  ))  STOP 33
+     IF ( ANY(As%BaseId  .NE. -1  ))  ERROR STOP 31
+     IF ( ANY(As%Base1Id .NE.  1  ))  ERROR STOP 32
+     IF ( ANY(As%ChildId .NE.  2  ))  ERROR STOP 33
 
-     IF (ANY(As(1)%Base1%BaseArr1%BaseId .NE. -1) )  STOP 41
-     IF (ANY(As(1)%Base%BaseArr%BaseId   .NE. -1) )  STOP 42
+     IF (ANY(As(1)%Base1%BaseArr1%BaseId .NE. -1) )  ERROR STOP 41
+     IF (ANY(As(1)%Base%BaseArr%BaseId   .NE. -1) )  ERROR STOP 42
 
      SELECT TYPE(As1 => As(1)%UArr)
        TYPE IS (Child)
-         IF ( ANY(As1%BaseId .NE. -1) ) STOP 51
-         IF ( ANY(As1%Base1Id .NE. 1) ) STOP 52
-         IF ( ANY(As1%ChildId .NE. 2) ) STOP 53
+         IF ( ANY(As1%BaseId .NE. -1) ) ERROR STOP 51
+         IF ( ANY(As1%Base1Id .NE. 1) ) ERROR STOP 52
+         IF ( ANY(As1%ChildId .NE. 2) ) ERROR STOP 53
        CLASS DEFAULT
          STOP 54
      END SELECT

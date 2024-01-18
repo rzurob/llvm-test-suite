@@ -32,11 +32,11 @@ program main
 
     call sub(b1%tar(7:20))
 
-    if ( .not. associated(ptr)) stop 1
-    if ( .not. all(lbound(ptr) .eq. (/2,4/))) stop 2
-    if ( .not. all(ubound(ptr) .eq. (/3,10/))) stop 3
+    if ( .not. associated(ptr)) error stop 1
+    if ( .not. all(lbound(ptr) .eq. (/2,4/))) error stop 2
+    if ( .not. all(ubound(ptr) .eq. (/3,10/))) error stop 3
 
-    if ( .not. all(ptr >= reshape((/(1.0*i, i=-14,-1)/), (/2,7/) ))) stop 5
+    if ( .not. all(ptr >= reshape((/(1.0*i, i=-14,-1)/), (/2,7/) ))) error stop 5
 
     contains
         subroutine sub(arg)

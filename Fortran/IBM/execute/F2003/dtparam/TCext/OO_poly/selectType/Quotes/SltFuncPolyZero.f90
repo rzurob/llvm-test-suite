@@ -88,7 +88,7 @@
     TYPE is (Child(4))
       STOP 24
     TYPE is (Zero(4))
-      IF ( SIZEOF(As) .NE. 0 ) STOP 25
+      IF ( SIZEOF(As) .NE. 0 ) ERROR STOP 25
   END SELECT
 
   SELECT TYPE ( As => Func(Base(4)()))
@@ -101,8 +101,8 @@
     CLASS is (Child(4))
       STOP 33
     TYPE is (Base(4))
-      IF ( SIZEOF(As) .NE. 0 ) STOP 34
-      IF ( As%GetId() .NE. 1 ) STOP 35
+      IF ( SIZEOF(As) .NE. 0 ) ERROR STOP 34
+      IF ( As%GetId() .NE. 1 ) ERROR STOP 35
     TYPE is (Zero(4))
       STOP 36
   END SELECT
@@ -115,9 +115,9 @@
     TYPE is (INTEGER(8))
       STOP 42
     CLASS is (Child(4))
-      IF ( SIZEOF(As)      .NE. 0 ) STOP 43
-      IF ( As%Base%GetId() .NE. 1 ) STOP 44
-      IF ( As%GetId()      .NE. 2 ) STOP 45
+      IF ( SIZEOF(As)      .NE. 0 ) ERROR STOP 43
+      IF ( As%Base%GetId() .NE. 1 ) ERROR STOP 44
+      IF ( As%GetId()      .NE. 2 ) ERROR STOP 45
     TYPE is (Base(4))
       STOP 46
     TYPE is (Zero(4))

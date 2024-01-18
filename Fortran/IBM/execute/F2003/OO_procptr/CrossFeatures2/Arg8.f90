@@ -63,9 +63,9 @@
     PROCEDURE(IFun), POINTER, INTENT(IN) :: ProcPtr
     PROCEDURE(IFun)                      :: Proc
     TYPE(DT)                             :: V
-      IF (.NOT. ASSOCIATED(ProcPtr, ModFun)) STOP 11
+      IF (.NOT. ASSOCIATED(ProcPtr, ModFun)) ERROR STOP 11
       V = ProcPtr(DT("1"))
-      IF ( V%C .NE. "1" ) STOP 12
+      IF ( V%C .NE. "1" ) ERROR STOP 12
     END SUBROUTINE
 
     SUBROUTINE ModSub2(ProcPtr, Proc)
@@ -75,9 +75,9 @@
     TYPE(DT)                                    :: V
       V=Proc(DT("2"))
       ProcPtr => Proc
-      IF (.NOT. ASSOCIATED(ProcPtr, ModFun)) STOP 21
+      IF (.NOT. ASSOCIATED(ProcPtr, ModFun)) ERROR STOP 21
       V = ProcPtr(DT("1"))
-      IF ( V%C .NE. "1" ) STOP 22
+      IF ( V%C .NE. "1" ) ERROR STOP 22
     END SUBROUTINE
 
     SUBROUTINE ModSub3(ProcPtr, Proc)
@@ -86,9 +86,9 @@
     PROCEDURE(TYPE(DT))               :: Proc
     TYPE(DT)                          :: V
       ProcPtr => Proc
-      IF (.NOT. ASSOCIATED(ProcPtr, ModFun)) STOP 31
+      IF (.NOT. ASSOCIATED(ProcPtr, ModFun)) ERROR STOP 31
       V = ProcPtr(DT("1"))
-      IF ( V%C .NE. "1" ) STOP 32
+      IF ( V%C .NE. "1" ) ERROR STOP 32
     END SUBROUTINE
 
   END

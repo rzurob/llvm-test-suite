@@ -70,21 +70,21 @@
   INTEGER   :: I
 
   DO I =1, 3
-    IF ( ASSOCIATED( V(I)%PtrInt ))  STOP 11
-    IF ( ASSOCIATED( V(I)%PtrReal )) STOP 12
-    IF ( ASSOCIATED( V(I)%PtrCmp ))  STOP 13
-    IF ( ASSOcIATED( V(I)%PtrChar )) STOP 14
-    IF ( ASSOCIATED( V(I)%PtrLog ))  STOP 15
+    IF ( ASSOCIATED( V(I)%PtrInt ))  ERROR STOP 11
+    IF ( ASSOCIATED( V(I)%PtrReal )) ERROR STOP 12
+    IF ( ASSOCIATED( V(I)%PtrCmp ))  ERROR STOP 13
+    IF ( ASSOcIATED( V(I)%PtrChar )) ERROR STOP 14
+    IF ( ASSOCIATED( V(I)%PtrLog ))  ERROR STOP 15
   END DO
 
   V = DT(FInt, FReal, FCmp, FChar, FLog)
 
   DO I =1, 3
-    iF ( .NOT. ASSOCIATED( V(I)%PtrInt ))  STOP 21
-    IF ( .NOT. ASSOCIATED( V(I)%PtrReal )) STOP 22
-    IF ( .NOT. ASSOCIATED( V(I)%PtrCmp ))  STOP 23
-    IF ( .NOT. ASSOCIATED( V(I)%PtrChar )) STOP 24
-    IF ( .NOT. ASSOCIATED( V(I)%PtrLog ))  STOP 25
+    iF ( .NOT. ASSOCIATED( V(I)%PtrInt ))  ERROR STOP 21
+    IF ( .NOT. ASSOCIATED( V(I)%PtrReal )) ERROR STOP 22
+    IF ( .NOT. ASSOCIATED( V(I)%PtrCmp ))  ERROR STOP 23
+    IF ( .NOT. ASSOCIATED( V(I)%PtrChar )) ERROR STOP 24
+    IF ( .NOT. ASSOCIATED( V(I)%PtrLog ))  ERROR STOP 25
   END DO
 
   END

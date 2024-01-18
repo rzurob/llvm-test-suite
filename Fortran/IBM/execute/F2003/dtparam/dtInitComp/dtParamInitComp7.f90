@@ -77,54 +77,54 @@
   TYPE(DT2(K2=4, L2=0)) :: T1
   TYPE(DT2(K2=8, L2=8)) :: T2
 
-  IF ( T1%T%K      .NE. 4 )                 STOP 21
-  IF ( T1%T%L      .NE. 4 )                 STOP 22
-  IF ( T1%K2        .NE. 4 )                 STOP 23
-  IF ( T1%L2        .NE. 0 )                 STOP 24
+  IF ( T1%T%K      .NE. 4 )                 ERROR STOP 21
+  IF ( T1%T%L      .NE. 4 )                 ERROR STOP 22
+  IF ( T1%K2        .NE. 4 )                 ERROR STOP 23
+  IF ( T1%L2        .NE. 0 )                 ERROR STOP 24
 
-  IF ( KIND(T1%t%I)   .NE. 4 )                 STOP 25
-  IF ( SIZE(T1%t%I)   .NE. 4 )                 STOP 26
+  IF ( KIND(T1%t%I)   .NE. 4 )                 ERROR STOP 25
+  IF ( SIZE(T1%t%I)   .NE. 4 )                 ERROR STOP 26
 
-  IF ( KIND(T1%t%R)   .NE. 4 )                 STOP 28
-  IF ( SIZE(T1%t%R)   .NE. 4 )                 STOP 29
+  IF ( KIND(T1%t%R)   .NE. 4 )                 ERROR STOP 28
+  IF ( SIZE(T1%t%R)   .NE. 4 )                 ERROR STOP 29
 
-  IF ( KIND(T1%t%Z)   .NE. 4 )                 STOP 31
-  IF ( SIZE(T1%t%Z)   .NE. 4 )                 STOP 32
+  IF ( KIND(T1%t%Z)   .NE. 4 )                 ERROR STOP 31
+  IF ( SIZE(T1%t%Z)   .NE. 4 )                 ERROR STOP 32
 
-  IF ( LEN(T1%t%C)    .NE. 4 )                 STOP 34
-  IF ( SIZE(T1%t%C)   .NE. 4 )                 STOP 35
+  IF ( LEN(T1%t%C)    .NE. 4 )                 ERROR STOP 34
+  IF ( SIZE(T1%t%C)   .NE. 4 )                 ERROR STOP 35
 
-  IF ( ASSOCIATED(T1%t%ProcPtr) )              STOP 37
-  if (any(T1%t%I /= -4))    stop 27
-  if (any(T1%t%r /= -4))    stop 30
-  if (any(T1%t%z /= (-4,4)))    stop 33
-  if (t1%t%c(1) /= '????') stop 36
-  if (any (t1%t%ll)) stop 38
+  IF ( ASSOCIATED(T1%t%ProcPtr) )              ERROR STOP 37
+  if (any(T1%t%I /= -4))    error stop 27
+  if (any(T1%t%r /= -4))    error stop 30
+  if (any(T1%t%z /= (-4,4)))    error stop 33
+  if (t1%t%c(1) /= '????') error stop 36
+  if (any (t1%t%ll)) error stop 38
 
 
 
-  IF ( T2%T%K      .NE. 8 )                 STOP 41
-  IF ( T2%T%L      .NE. 8 )                 STOP 42
-  IF ( T2%K2        .NE. 8 )                 STOP 43
-  IF ( T2%L2        .NE. 8 )                 STOP 44
+  IF ( T2%T%K      .NE. 8 )                 ERROR STOP 41
+  IF ( T2%T%L      .NE. 8 )                 ERROR STOP 42
+  IF ( T2%K2        .NE. 8 )                 ERROR STOP 43
+  IF ( T2%L2        .NE. 8 )                 ERROR STOP 44
 
-  IF ( KIND(T2%t%I)   .NE. 8 )                 STOP 45
-  IF ( SIZE(T2%t%I)   .NE. 8 )                 STOP 46
-  IF ( ANY(T2%t%I     .NE. -8))                STOP 47
+  IF ( KIND(T2%t%I)   .NE. 8 )                 ERROR STOP 45
+  IF ( SIZE(T2%t%I)   .NE. 8 )                 ERROR STOP 46
+  IF ( ANY(T2%t%I     .NE. -8))                ERROR STOP 47
 
-  IF ( KIND(T2%t%R)   .NE. 8 )                 STOP 48
-  IF ( SIZE(T2%t%R)   .NE. 8 )                 STOP 49
-  IF ( ANY(T2%t%R     .NE. -8))                STOP 40
+  IF ( KIND(T2%t%R)   .NE. 8 )                 ERROR STOP 48
+  IF ( SIZE(T2%t%R)   .NE. 8 )                 ERROR STOP 49
+  IF ( ANY(T2%t%R     .NE. -8))                ERROR STOP 40
 
-  IF ( KIND(T2%t%Z)   .NE. 8 )                 STOP 51
-  IF ( SIZE(T2%t%Z)   .NE. 8 )                 STOP 52
-  IF ( ANY(T2%t%Z     .NE. (-8,8)))            STOP 53
+  IF ( KIND(T2%t%Z)   .NE. 8 )                 ERROR STOP 51
+  IF ( SIZE(T2%t%Z)   .NE. 8 )                 ERROR STOP 52
+  IF ( ANY(T2%t%Z     .NE. (-8,8)))            ERROR STOP 53
 
-  IF ( LEN(T2%t%C)    .NE. 8 )                 STOP 54
-  IF ( SIZE(T2%t%C)   .NE. 8 )                 STOP 55
-  IF ( ANY(T2%t%C     .NE. "????????" ))       STOP 56
+  IF ( LEN(T2%t%C)    .NE. 8 )                 ERROR STOP 54
+  IF ( SIZE(T2%t%C)   .NE. 8 )                 ERROR STOP 55
+  IF ( ANY(T2%t%C     .NE. "????????" ))       ERROR STOP 56
 
-  IF ( ASSOCIATED(T2%t%ProcPtr) )              STOP 57
+  IF ( ASSOCIATED(T2%t%ProcPtr) )              ERROR STOP 57
 
 
 

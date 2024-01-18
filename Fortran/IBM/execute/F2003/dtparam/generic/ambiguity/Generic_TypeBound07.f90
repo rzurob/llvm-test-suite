@@ -95,40 +95,40 @@
 !*
 !  The following will call foo1
 !*
-      IF( base1%FUNC(base1) .NE. "ele" ) STOP 10
-      IF( base1%FUNC(tgt1) .NE. "ele" ) STOP 11
-      IF( base1%FUNC(nxtg) .NE. "ele" ) STOP 12
+      IF( base1%FUNC(base1) .NE. "ele" ) ERROR STOP 10
+      IF( base1%FUNC(tgt1) .NE. "ele" ) ERROR STOP 11
+      IF( base1%FUNC(nxtg) .NE. "ele" ) ERROR STOP 12
 
       ALLOCATE(Base(4,10):: poly1)
-      IF( poly1%FUNC(base1) .NE. "ele" ) STOP 13
-      IF( poly1%FUNC(tgt1) .NE. "ele" ) STOP 14
-      IF( poly1%FUNC(nxtg) .NE. "ele" ) STOP 15
-      IF( poly1%FUNC(poly1) .NE. "ele" ) STOP 16
+      IF( poly1%FUNC(base1) .NE. "ele" ) ERROR STOP 13
+      IF( poly1%FUNC(tgt1) .NE. "ele" ) ERROR STOP 14
+      IF( poly1%FUNC(nxtg) .NE. "ele" ) ERROR STOP 15
+      IF( poly1%FUNC(poly1) .NE. "ele" ) ERROR STOP 16
 
       poly1 => tgt1
-      IF( poly1%FUNC(base1) .NE. "ele" ) STOP 17
-      IF( poly1%FUNC(tgt1) .NE. "ele" ) STOP 18
-      IF( poly1%FUNC(nxtg) .NE. "ele" ) STOP 19
-      IF( poly1%FUNC(poly1) .NE. "ele" ) STOP 20
+      IF( poly1%FUNC(base1) .NE. "ele" ) ERROR STOP 17
+      IF( poly1%FUNC(tgt1) .NE. "ele" ) ERROR STOP 18
+      IF( poly1%FUNC(nxtg) .NE. "ele" ) ERROR STOP 19
+      IF( poly1%FUNC(poly1) .NE. "ele" ) ERROR STOP 20
 
 !*
 !  The following will call foo2
 !*
-      IF( nxtg%FUNC(arr_child) .NE. "non-ele" ) STOP 21
-      IF( poly1%FUNC(arr_child) .NE. "non-ele" ) STOP 22
-      IF( poly1%FUNC(arr_nxtg) .NE. "non-ele" ) STOP 23
+      IF( nxtg%FUNC(arr_child) .NE. "non-ele" ) ERROR STOP 21
+      IF( poly1%FUNC(arr_child) .NE. "non-ele" ) ERROR STOP 22
+      IF( poly1%FUNC(arr_nxtg) .NE. "non-ele" ) ERROR STOP 23
 
       ALLOCATE(child(4,10,4) :: ptr_base(10), ptr_chd(5,5))
-      IF( base1%FUNC(ptr_base) .NE. "non-ele" ) STOP 24
-      IF( ANY(poly1%FUNC(ptr_chd) .NE. "ele" )) STOP 25
-      IF( ANY(nxtg%FUNC(ptr_chd) .NE. "ele" )) STOP 26
+      IF( base1%FUNC(ptr_base) .NE. "non-ele" ) ERROR STOP 24
+      IF( ANY(poly1%FUNC(ptr_chd) .NE. "ele" )) ERROR STOP 25
+      IF( ANY(nxtg%FUNC(ptr_chd) .NE. "ele" )) ERROR STOP 26
 
       ptr_base => tgt_base; ptr_chd => tgt_chd; ptr_nxtg => tgt_nxtg
-      IF( base1%FUNC(ptr_base) .NE. "non-ele" ) STOP 24
-      IF( nxtg%FUNC(ptr_base) .NE. "non-ele" ) STOP 24
-      IF( poly1%FUNC(ptr_base) .NE. "non-ele" ) STOP 24
-      IF( ANY(base1%FUNC(ptr_chd) .NE. "ele" )) STOP 25
-      IF( ANY(nxtg%FUNC(ptr_chd) .NE. "ele" )) STOP 26
-      IF( ANY(poly1%FUNC(ptr_chd) .NE. "ele" )) STOP 25
+      IF( base1%FUNC(ptr_base) .NE. "non-ele" ) ERROR STOP 24
+      IF( nxtg%FUNC(ptr_base) .NE. "non-ele" ) ERROR STOP 24
+      IF( poly1%FUNC(ptr_base) .NE. "non-ele" ) ERROR STOP 24
+      IF( ANY(base1%FUNC(ptr_chd) .NE. "ele" )) ERROR STOP 25
+      IF( ANY(nxtg%FUNC(ptr_chd) .NE. "ele" )) ERROR STOP 26
+      IF( ANY(poly1%FUNC(ptr_chd) .NE. "ele" )) ERROR STOP 25
 
      END PROGRAM  Generic_TypeBound07

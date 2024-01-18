@@ -47,9 +47,9 @@
 		stop 21
  	end select
 
-	if ( .not. associated(p)) stop 23
-	if ( any(lbound(p) .ne. (/50, 4/))) stop 31
-	if ( any(ubound(p) .ne. (/64, 15/))) stop 33
+	if ( .not. associated(p)) error stop 23
+	if ( any(lbound(p) .ne. (/50, 4/))) error stop 31
+	if ( any(ubound(p) .ne. (/64, 15/))) error stop 33
 
 	select type (p)
 	    type is (child)

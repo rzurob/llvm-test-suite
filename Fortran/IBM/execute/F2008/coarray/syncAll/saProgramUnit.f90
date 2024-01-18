@@ -77,7 +77,7 @@ program saProgramUnit
             arrived[rightBuddy] = self
             associate (astat=>istat)
               sync all(stat=astat,errmsg=emsg)
-              if (astat /= 0) stop 2
+              if (astat /= 0) error stop 2
             end associate
 
          case (N_CONTEXTS)

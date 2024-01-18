@@ -61,46 +61,46 @@ MODULE Mod
 
         SELECT TYPE ( Arg )
           CLASS IS (NextGen1(4,*))
-            IF ( Arg%l1 .NE. 513 ) STOP 10
-            IF ( LEN(Arg%C0) .NE.  513 ) STOP 11
-            IF ( SIZE(Arg%F0) .NE.  513 ) STOP 12
-            IF ( LBOUND(Arg%F0,1) .NE.  1 ) STOP 13
-            IF ( UBOUND(Arg%F0,1) .NE.  513 ) STOP 14
+            IF ( Arg%l1 .NE. 513 ) ERROR STOP 10
+            IF ( LEN(Arg%C0) .NE.  513 ) ERROR STOP 11
+            IF ( SIZE(Arg%F0) .NE.  513 ) ERROR STOP 12
+            IF ( LBOUND(Arg%F0,1) .NE.  1 ) ERROR STOP 13
+            IF ( UBOUND(Arg%F0,1) .NE.  513 ) ERROR STOP 14
 
             Arg%Child%C0 = "A"
             Arg%Child%F0 = .True.
 
           CLASS IS (NextGen2(4,*))
-            IF ( Arg%l1 .NE. 513 ) STOP 20
-            IF ( LEN(Arg%C0) .NE.  513 ) STOP 21
-            IF ( SIZE(Arg%F0) .NE.  513 ) STOP 22
-            IF ( LBOUND(Arg%F0,1) .NE.  1 ) STOP 23
-            IF ( UBOUND(Arg%F0,1) .NE.  513 ) STOP 24
+            IF ( Arg%l1 .NE. 513 ) ERROR STOP 20
+            IF ( LEN(Arg%C0) .NE.  513 ) ERROR STOP 21
+            IF ( SIZE(Arg%F0) .NE.  513 ) ERROR STOP 22
+            IF ( LBOUND(Arg%F0,1) .NE.  1 ) ERROR STOP 23
+            IF ( UBOUND(Arg%F0,1) .NE.  513 ) ERROR STOP 24
 
             Arg%Base%C0  = "E"
             Arg%Base%F0  = .False.
 
           CLASS IS (Branch)
 
-            IF ( .NOT. ASSOCIATED(Arg%cmp1, tgt1) ) STOP 30
+            IF ( .NOT. ASSOCIATED(Arg%cmp1, tgt1) ) ERROR STOP 30
             ASSOCIATE ( p => Arg%cmp1 )
-              IF ( p%l1 .NE. 513 ) STOP 31
-              IF ( LEN(p%C0) .NE.  513 ) STOP 32
-              IF ( SIZE(p%F0) .NE.  513 ) STOP 33
-              IF ( LBOUND(p%F0,1) .NE.  1 ) STOP 34
-              IF ( UBOUND(p%F0,1) .NE.  513 ) STOP 35
+              IF ( p%l1 .NE. 513 ) ERROR STOP 31
+              IF ( LEN(p%C0) .NE.  513 ) ERROR STOP 32
+              IF ( SIZE(p%F0) .NE.  513 ) ERROR STOP 33
+              IF ( LBOUND(p%F0,1) .NE.  1 ) ERROR STOP 34
+              IF ( UBOUND(p%F0,1) .NE.  513 ) ERROR STOP 35
 
               p%C0 = "H"
               p%F0 = .False.
             END ASSOCIATE
 
-            IF ( .NOT. ASSOCIATED(Arg%cmp2, tgt2) ) STOP 36
+            IF ( .NOT. ASSOCIATED(Arg%cmp2, tgt2) ) ERROR STOP 36
             ASSOCIATE ( p => Arg%cmp2 )
-              IF ( p%l1 .NE. 513 ) STOP 37
-              IF ( LEN(p%C0) .NE.  513 ) STOP 38
-              IF ( SIZE(p%F0) .NE.  513 ) STOP 39
-              IF ( LBOUND(p%F0,1) .NE.  1 ) STOP 40
-              IF ( UBOUND(p%F0,1) .NE.  513 ) STOP 41
+              IF ( p%l1 .NE. 513 ) ERROR STOP 37
+              IF ( LEN(p%C0) .NE.  513 ) ERROR STOP 38
+              IF ( SIZE(p%F0) .NE.  513 ) ERROR STOP 39
+              IF ( LBOUND(p%F0,1) .NE.  1 ) ERROR STOP 40
+              IF ( UBOUND(p%F0,1) .NE.  513 ) ERROR STOP 41
 
               p%C0 = "K"
               p%F0 = .True.
@@ -118,26 +118,26 @@ PROGRAM DTPMultipleNesting06a
     POINTER :: U
 
     U => tgt1
-    IF ( .NOT. ASSOCIATED(U) ) STOP 110
+    IF ( .NOT. ASSOCIATED(U) ) ERROR STOP 110
 
     CALL Select_type ( U )
-    IF ( TRIM(tgt1%C0) .NE. "A" ) STOP 50
-    IF ( ANY(tgt1%F0 .NEQV. .True.) ) STOP 51
+    IF ( TRIM(tgt1%C0) .NE. "A" ) ERROR STOP 50
+    IF ( ANY(tgt1%F0 .NEQV. .True.) ) ERROR STOP 51
 
     U => tgt2
-    IF ( .NOT. ASSOCIATED(U) ) STOP 111
+    IF ( .NOT. ASSOCIATED(U) ) ERROR STOP 111
 
     CALL Select_type ( U )
-    IF ( TRIM(tgt2%C0) .NE. "E" ) STOP 52
-    IF ( ANY(tgt2%F0 .NEQV. .False.) ) STOP 53
+    IF ( TRIM(tgt2%C0) .NE. "E" ) ERROR STOP 52
+    IF ( ANY(tgt2%F0 .NEQV. .False.) ) ERROR STOP 53
 
     ALLOCATE ( U, SOURCE = Branch(tgt1,tgt2) )
-    IF ( .NOT. ASSOCIATED(U) ) STOP 112
+    IF ( .NOT. ASSOCIATED(U) ) ERROR STOP 112
 
     CALL Select_type ( U )
-    IF ( TRIM(tgt1%C0) .NE. "H" ) STOP 54
-    IF ( ANY(tgt1%F0 .NEQV. .False.) ) STOP 55
-    IF ( TRIM(tgt2%C0) .NE. "K" ) STOP 56
-    IF ( ANY(tgt2%F0 .NEQV. .True.) ) STOP 99
+    IF ( TRIM(tgt1%C0) .NE. "H" ) ERROR STOP 54
+    IF ( ANY(tgt1%F0 .NEQV. .False.) ) ERROR STOP 55
+    IF ( TRIM(tgt2%C0) .NE. "K" ) ERROR STOP 56
+    IF ( ANY(tgt2%F0 .NEQV. .True.) ) ERROR STOP 99
 
 END PROGRAM DTPMultipleNesting06a

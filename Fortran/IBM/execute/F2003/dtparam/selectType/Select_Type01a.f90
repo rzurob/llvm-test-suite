@@ -51,7 +51,7 @@
       TYPE(Child(k1,len1)) :: child1
 
       ALLOCATE(Base(k1,len1):: child1%Cmp)
-      IF ( .NOT. ASSOCIATED(child1%Cmp)) STOP 10
+      IF ( .NOT. ASSOCIATED(child1%Cmp)) ERROR STOP 10
 
       CALL sub1
 

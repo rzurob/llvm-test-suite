@@ -50,27 +50,27 @@ module m2
           read(unit,*,pos=mypos) buffer(lbound(buffer,1) )
 
           inquire(unit,pos=mypos)
-          if(mypos /= 21)                  stop 11
+          if(mypos /= 21)                  error stop 11
 
           read(unit,*,pos=mypos) buffer(lbound(buffer,1) + 1)
           inquire(unit,pos=mypos)
-          if(mypos /=93)                   stop 12
+          if(mypos /=93)                   error stop 12
 
           read(unit,*,pos=mypos) buffer(lbound(buffer,1) + 2)
           inquire(unit,pos=mypos)
-          if(mypos /= 118)                 stop 13
+          if(mypos /= 118)                 error stop 13
 
           read(unit,*,pos=mypos) buffer(lbound(buffer,1) + 3)
           inquire(unit,pos=mypos)
-          if(mypos /= 155)                 stop 14
+          if(mypos /= 155)                 error stop 14
 
           read(unit,*,pos=mypos) buffer(lbound(buffer,1) + 4)
           inquire(unit,pos=mypos)
-          if(mypos /= 186)                 stop 15
+          if(mypos /= 186)                 error stop 15
 
           read(unit,*,pos=mypos) buffer(lbound(buffer,1) + 5)
           inquire(unit,pos=mypos)
-          if(mypos /= 221)                 stop 16
+          if(mypos /= 221)                 error stop 16
 
       end subroutine
 
@@ -133,43 +133,43 @@ program listDirectInternalFile02
 
   ! verify results
 
-  if(b1%g1(2,2) .neqv. .true.)                          stop 17
-  if(b1%g1(3,2) .neqv. .false.)                         stop 18
-  if(b1%g1(2,3) .neqv. .true.)                          stop 19
-  if(b1%g1(3,3) .neqv. .false.)                         stop 20
+  if(b1%g1(2,2) .neqv. .true.)                          error stop 17
+  if(b1%g1(3,2) .neqv. .false.)                         error stop 18
+  if(b1%g1(2,3) .neqv. .true.)                          error stop 19
+  if(b1%g1(3,3) .neqv. .false.)                         error stop 20
 
-  if(.not. precision_x8(b1%x1(3,3),(-2.1_4,3.4_4)))     stop 21
-  if(.not. precision_x8(b1%x1(4,3),(-5.6E-10,8.99E2)))  stop 22
-  if(.not. precision_x8(b1%x1(3,4),(-3.1E-02,0.5E-3)))  stop 23
-  if(.not. precision_x8(b1%x1(4,4),(0.1,-1.2)))         stop 24
+  if(.not. precision_x8(b1%x1(3,3),(-2.1_4,3.4_4)))     error stop 21
+  if(.not. precision_x8(b1%x1(4,3),(-5.6E-10,8.99E2)))  error stop 22
+  if(.not. precision_x8(b1%x1(3,4),(-3.1E-02,0.5E-3)))  error stop 23
+  if(.not. precision_x8(b1%x1(4,4),(0.1,-1.2)))         error stop 24
 
-  if(b1%a1comp%c1(1,1) /= "**")                         stop 25
-  if(b1%a1comp%c1(2,1) /= "AB")                         stop 26
-  if(b1%a1comp%c1(1,2) /= "ab")                         stop 27
-  if(b1%a1comp%c1(2,2) /= "XL")                         stop 28
+  if(b1%a1comp%c1(1,1) /= "**")                         error stop 25
+  if(b1%a1comp%c1(2,1) /= "AB")                         error stop 26
+  if(b1%a1comp%c1(1,2) /= "ab")                         error stop 27
+  if(b1%a1comp%c1(2,2) /= "XL")                         error stop 28
 
-  if(b1%a1comp%i1(1,1,1) /= -3)                         stop 29
-  if(b1%a1comp%i1(2,1,1) /= -56)                        stop 30
-  if(b1%a1comp%i1(1,2,1) /= -99)                        stop 31
-  if(b1%a1comp%i1(2,2,1) /= -4)                         stop 32
-  if(b1%a1comp%i1(1,1,2) /= -4)                         stop 33
-  if(b1%a1comp%i1(2,1,2) /= -99)                        stop 34
-  if(b1%a1comp%i1(1,2,2) /= +23)                        stop 35
-  if(b1%a1comp%i1(2,2,2) /= -112)                       stop 36
+  if(b1%a1comp%i1(1,1,1) /= -3)                         error stop 29
+  if(b1%a1comp%i1(2,1,1) /= -56)                        error stop 30
+  if(b1%a1comp%i1(1,2,1) /= -99)                        error stop 31
+  if(b1%a1comp%i1(2,2,1) /= -4)                         error stop 32
+  if(b1%a1comp%i1(1,1,2) /= -4)                         error stop 33
+  if(b1%a1comp%i1(2,1,2) /= -99)                        error stop 34
+  if(b1%a1comp%i1(1,2,2) /= +23)                        error stop 35
+  if(b1%a1comp%i1(2,2,2) /= -112)                       error stop 36
 
-  if(b1%a2comp%c1(1,1) /= "bl")                         stop 37
-  if(b1%a2comp%c1(2,1) /= "re")                         stop 38
-  if(b1%a2comp%c1(1,2) /= "te")                         stop 39
-  if(b1%a2comp%c1(2,2) /= "IB")                         stop 40
+  if(b1%a2comp%c1(1,1) /= "bl")                         error stop 37
+  if(b1%a2comp%c1(2,1) /= "re")                         error stop 38
+  if(b1%a2comp%c1(1,2) /= "te")                         error stop 39
+  if(b1%a2comp%c1(2,2) /= "IB")                         error stop 40
 
-  if(b1%a2comp%i1(1,1,1) /= -99)                        stop 41
-  if(b1%a2comp%i1(2,1,1) /= -10)                        stop 42
-  if(b1%a2comp%i1(1,2,1) /= -5)                         stop 43
-  if(b1%a2comp%i1(2,2,1) /= +22)                        stop 44
-  if(b1%a2comp%i1(1,1,2) /= -99)                        stop 45
-  if(b1%a2comp%i1(2,1,2) /= -78)                        stop 46
-  if(b1%a2comp%i1(1,2,2) /= 56)                         stop 47
-  if(b1%a2comp%i1(2,2,2) /= -99)                        stop 48
+  if(b1%a2comp%i1(1,1,1) /= -99)                        error stop 41
+  if(b1%a2comp%i1(2,1,1) /= -10)                        error stop 42
+  if(b1%a2comp%i1(1,2,1) /= -5)                         error stop 43
+  if(b1%a2comp%i1(2,2,1) /= +22)                        error stop 44
+  if(b1%a2comp%i1(1,1,2) /= -99)                        error stop 45
+  if(b1%a2comp%i1(2,1,2) /= -78)                        error stop 46
+  if(b1%a2comp%i1(1,2,2) /= 56)                         error stop 47
+  if(b1%a2comp%i1(2,2,2) /= -99)                        error stop 48
 
   close(10)
 

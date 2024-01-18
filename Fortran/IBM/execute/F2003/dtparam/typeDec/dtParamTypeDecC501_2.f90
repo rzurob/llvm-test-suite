@@ -54,17 +54,17 @@
   TYPE(DT(4,     L=T1%L))     :: T3(1)  !=  DT(4, L=1)()
 
 
-  IF ( T1%K               .NE.   4          ) STOP 11
-  IF ( T1%L               .NE.   1          ) STOP 12
-  IF ( ANY( T1%I          .NE.   4        ) ) STOP 15
+  IF ( T1%K               .NE.   4          ) ERROR STOP 11
+  IF ( T1%L               .NE.   1          ) ERROR STOP 12
+  IF ( ANY( T1%I          .NE.   4        ) ) ERROR STOP 15
 
-  IF ( T2%K               .NE.   4          ) STOP 21
-  IF ( T2%L               .NE.   4          ) STOP 22
-  IF ( ANY( T2%I          .NE.   4        ) ) STOP 25
+  IF ( T2%K               .NE.   4          ) ERROR STOP 21
+  IF ( T2%L               .NE.   4          ) ERROR STOP 22
+  IF ( ANY( T2%I          .NE.   4        ) ) ERROR STOP 25
 
-  IF ( T3%K               .NE.   4          ) STOP 31
-  IF ( T3%L               .NE.   1          ) STOP 32
-  IF ( ANY( T3%I          .NE.   4        ) ) STOP 35
+  IF ( T3%K               .NE.   4          ) ERROR STOP 31
+  IF ( T3%L               .NE.   1          ) ERROR STOP 32
+  IF ( ANY( T3%I          .NE.   4        ) ) ERROR STOP 35
 
   END SUBROUTINE
 

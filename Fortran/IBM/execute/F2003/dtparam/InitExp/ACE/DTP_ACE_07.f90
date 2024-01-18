@@ -39,27 +39,27 @@ MODULE Mod
         TYPE(Child(4,N)) :: Obj(N)
 
         Obj = [Child(4,N) :: (Child(4,N) (99, Base(4,N)(88, 77)), I=1,N)]
-        IF ( Obj%k2    .NE. 4 ) STOP 10
-        IF ( Obj%l2    .NE. N ) STOP 11
-        IF ( SIZE(Obj) .NE. N ) STOP 12
+        IF ( Obj%k2    .NE. 4 ) ERROR STOP 10
+        IF ( Obj%l2    .NE. N ) ERROR STOP 11
+        IF ( SIZE(Obj) .NE. N ) ERROR STOP 12
 
         DO I = 1, N
-             IF ( SIZE(Obj(I)%A2)      .NE. N-1 ) STOP 20
-             IF ( SIZE(Obj(I)%cmp)     .NE. N-1 ) STOP 21
-             IF ( LBOUND(Obj(I)%A2,1)  .NE.   2 ) STOP 22
-             IF ( LBOUND(Obj(I)%cmp,1) .NE.   2 ) STOP 23
-             IF ( UBOUND(Obj(I)%A2,1)  .NE.   N ) STOP 24
-             IF ( UBOUND(Obj(I)%cmp,1) .NE.   N ) STOP 25
-             IF ( ANY(Obj(I)%A2        .NE. 99) ) STOP 26
+             IF ( SIZE(Obj(I)%A2)      .NE. N-1 ) ERROR STOP 20
+             IF ( SIZE(Obj(I)%cmp)     .NE. N-1 ) ERROR STOP 21
+             IF ( LBOUND(Obj(I)%A2,1)  .NE.   2 ) ERROR STOP 22
+             IF ( LBOUND(Obj(I)%cmp,1) .NE.   2 ) ERROR STOP 23
+             IF ( UBOUND(Obj(I)%A2,1)  .NE.   N ) ERROR STOP 24
+             IF ( UBOUND(Obj(I)%cmp,1) .NE.   N ) ERROR STOP 25
+             IF ( ANY(Obj(I)%A2        .NE. 99) ) ERROR STOP 26
              DO J = LBOUND(Obj(I)%cmp,1), UBOUND(Obj(I)%cmp,1)
-                  IF ( SIZE(Obj(I)%cmp(J)%A01)     .NE.   N ) STOP 30
-                  IF ( SIZE(Obj(I)%cmp(J)%A02)     .NE. N+1 ) STOP 31
-                  IF ( LBOUND(Obj(I)%cmp(J)%A01,1) .NE.   1 ) STOP 32
-                  IF ( LBOUND(Obj(I)%cmp(J)%A02,1) .NE.   1 ) STOP 33
-                  IF ( UBOUND(Obj(I)%cmp(J)%A01,1) .NE.   N ) STOP 34
-                  IF ( UBOUND(Obj(I)%cmp(J)%A02,1) .NE. N+1 ) STOP 35
-                  IF ( ANY(Obj(I)%cmp(J)%A01       .NE. 88) ) STOP 36
-                  IF ( ANY(Obj(I)%cmp(J)%A02       .NE. 77) ) STOP 37
+                  IF ( SIZE(Obj(I)%cmp(J)%A01)     .NE.   N ) ERROR STOP 30
+                  IF ( SIZE(Obj(I)%cmp(J)%A02)     .NE. N+1 ) ERROR STOP 31
+                  IF ( LBOUND(Obj(I)%cmp(J)%A01,1) .NE.   1 ) ERROR STOP 32
+                  IF ( LBOUND(Obj(I)%cmp(J)%A02,1) .NE.   1 ) ERROR STOP 33
+                  IF ( UBOUND(Obj(I)%cmp(J)%A01,1) .NE.   N ) ERROR STOP 34
+                  IF ( UBOUND(Obj(I)%cmp(J)%A02,1) .NE. N+1 ) ERROR STOP 35
+                  IF ( ANY(Obj(I)%cmp(J)%A01       .NE. 88) ) ERROR STOP 36
+                  IF ( ANY(Obj(I)%cmp(J)%A02       .NE. 77) ) ERROR STOP 37
              END DO
         END DO
 

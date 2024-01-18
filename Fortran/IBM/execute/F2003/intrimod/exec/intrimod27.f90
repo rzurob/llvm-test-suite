@@ -48,10 +48,10 @@
 !SMP$  END PARALLEL DO
 
                  print *, yr
-               if (yr /= 360.0) stop 14
+               if (yr /= 360.0) error stop 14
                call ieee_set_status(status_value)
                call set_fpscr_flags(flags(1))
-               if ( get_fpscr_flags(flags(1)) .eq. 0 ) stop 15
+               if ( get_fpscr_flags(flags(1)) .eq. 0 ) error stop 15
             end subroutine sub2
 
        end module
@@ -64,7 +64,7 @@
 
          call sub1()
          call sub2()
-         if ( .not. fun1() ) stop 20
+         if ( .not. fun1() ) error stop 20
 
          contains
 
@@ -96,10 +96,10 @@
                end do
 !SMP$  END PARALLEL DO
 
-               if (yr /= 360.0) stop 12
+               if (yr /= 360.0) error stop 12
                call ieee_set_status(status_value)
                call set_fpscr_flags(flags(1))
-               if ( get_fpscr_flags(flags(1)) .eq. 0 ) stop 13
+               if ( get_fpscr_flags(flags(1)) .eq. 0 ) error stop 13
             end subroutine sub1
 
       end program
@@ -134,10 +134,10 @@
                end do
 !SMP$  END PARALLEL DO
 
-               if (yr /= 360.0) stop 16
+               if (yr /= 360.0) error stop 16
                call ieee_set_status(status_value)
                call set_fpscr_flags(flags(1))
-               if ( get_fpscr_flags(flags(1)) .eq. 0 ) stop 17
+               if ( get_fpscr_flags(flags(1)) .eq. 0 ) error stop 17
                fun1=.true.
             end function fun1
 

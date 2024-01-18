@@ -54,8 +54,8 @@
       ALLOCATE(Base(k1,len1):: tgt%Cmp(2))
 
       child1 => tgt
-      IF ( .NOT. ASSOCIATED(child1)) STOP 10
-      IF ( .NOT. ALLOCATED(child1%Cmp)) STOP 11
+      IF ( .NOT. ASSOCIATED(child1)) ERROR STOP 10
+      IF ( .NOT. ALLOCATED(child1%Cmp)) ERROR STOP 11
 
       CALL sub1
 

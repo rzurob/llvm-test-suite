@@ -88,8 +88,8 @@
   T  = T1
   T1 = T2
 
-  IF (TRIM(T%ID)   .NE. "M-0" )  STOP 11
-  IF (TRIM(T1%ID)  .NE. "M1-2" ) STOP 12
+  IF (TRIM(T%ID)   .NE. "M-0" )  ERROR STOP 11
+  IF (TRIM(T1%ID)  .NE. "M1-2" ) ERROR STOP 12
 
   END
 

@@ -21,8 +21,8 @@ d4 = aimag(c4)
 d8 = aimag(c8)
 d16 = aimag(c16)
 
-if (.not. precision_r4(a4, d4)) stop 1
-if (.not. precision_r8(a8, d8)) stop 2
-if (.not. precision_r16(a16, d16)) stop 3
+if (.not. precision_r4(a4, d4)) error stop 1
+if (.not. precision_r8(a8, d8)) error stop 2
+if (.not. precision_r16(a16, d16)) error stop 3
 
 end

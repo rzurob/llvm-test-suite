@@ -29,6 +29,6 @@
 
   TYPE(Base) :: V(3)= (/ (base(i), i=1,3)/)
 
-  IF ( ANY (V%BaseId .NE. (/1,2,3/)) ) STOP 11
+  IF ( ANY (V%BaseId .NE. (/1,2,3/)) ) ERROR STOP 11
 
   END

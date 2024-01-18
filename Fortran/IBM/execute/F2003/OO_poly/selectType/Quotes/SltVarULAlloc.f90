@@ -76,10 +76,10 @@
         TYPE is (INTEGER(1))
           STOP 24
         CLASS is (Child)
-          IF ( Var%BaseId       .NE. -1 ) STOP 31
-          IF ( Var%ChildId      .NE. -2 ) STOP 32
-          IF ( Var%Base%GetId() .NE. -1 ) STOP 33
-          IF ( Var%GetId()      .NE. -2 ) STOP 34
+          IF ( Var%BaseId       .NE. -1 ) ERROR STOP 31
+          IF ( Var%ChildId      .NE. -2 ) ERROR STOP 32
+          IF ( Var%Base%GetId() .NE. -1 ) ERROR STOP 33
+          IF ( Var%GetId()      .NE. -2 ) ERROR STOP 34
     END SELECT
   END SELECT
 

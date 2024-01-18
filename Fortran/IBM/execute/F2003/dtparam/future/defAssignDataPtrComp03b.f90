@@ -127,15 +127,15 @@ program defAssignDataPtrComp03b
    a3comp1=XA(1)(null(),null(),"A")
 
    !--- verify a3comp1---!
-   if(any(a3comp1%c3 /= "A"))                            stop 12
+   if(any(a3comp1%c3 /= "A"))                            error stop 12
 
    ! call assignA
    a3comp1=XA(1)(c1(1),c1(2:6),c1(7:7))
 
    !--- verify a3comp1---!
-   if(a3comp1%c1 /= "X")                                 stop 13
-   if(any(a3comp1%c2 /= ["L","F","T","E","S"]))          stop 14
-   if(any(a3comp1%c3 /= "T"))                            stop 15
+   if(a3comp1%c1 /= "X")                                 error stop 13
+   if(any(a3comp1%c2 /= ["L","F","T","E","S"]))          error stop 14
+   if(any(a3comp1%c3 /= "T"))                            error stop 15
 
    allocate(XA(1) :: a3comp2(2),a3comp3(1))
 
@@ -143,21 +143,21 @@ program defAssignDataPtrComp03b
    a3comp2=[a3comp1,XA(1)(c1(7),c1(6:2:-1),c1(1:1))]
 
    !--- verify a3comp2---!
-   if(a3comp2(1)%c1 /= "X")                               stop 16
-   if(any(a3comp2(1)%c2 /= ["L","F","T","E","S"]))        stop 17
-   if(any(a3comp2(1)%c3 /= "T"))                          stop 18
+   if(a3comp2(1)%c1 /= "X")                               error stop 16
+   if(any(a3comp2(1)%c2 /= ["L","F","T","E","S"]))        error stop 17
+   if(any(a3comp2(1)%c3 /= "T"))                          error stop 18
 
-   if(a3comp2(2)%c1 /= "T")                               stop 19
-   if(any(a3comp2(2)%c2 /= ["S","E","T","F","L"]))        stop 20
-   if(any(a3comp2(2)%c3 /= "X"))                          stop 21
+   if(a3comp2(2)%c1 /= "T")                               error stop 19
+   if(any(a3comp2(2)%c2 /= ["S","E","T","F","L"]))        error stop 20
+   if(any(a3comp2(2)%c3 /= "X"))                          error stop 21
 
    ! call assignA
    a3comp3=a3comp2(2)
 
    !--- verify a3comp3---!
-   if(a3comp3(1)%c1 /= "T")                                stop 22
-   if(any(a3comp3(1)%c2 /= ["S","E","T","F","L"]))         stop 23
-   if(any(a3comp3(1)%c3 /= "X"))                           stop 24
+   if(a3comp3(1)%c1 /= "T")                                error stop 22
+   if(any(a3comp3(1)%c2 /= ["S","E","T","F","L"]))         error stop 23
+   if(any(a3comp3(1)%c3 /= "X"))                           error stop 24
 
    allocate(XB(2) :: b1comp1(2))
 
@@ -165,78 +165,78 @@ program defAssignDataPtrComp03b
    b1comp1(1)=XB(2)([1,2,3],a3comp1,a3comp2(2))
 
    !--- verify b1comp1--!
-   if(b1comp1(1)%a1comp%c1 /= "X")                         stop 25
-   if(any(b1comp1(1)%a1comp%c2 /= ["L","F","T","E","S"]))  stop 26
-   if(any(b1comp1(1)%a1comp%c3 /= "T"))                    stop 27
+   if(b1comp1(1)%a1comp%c1 /= "X")                         error stop 25
+   if(any(b1comp1(1)%a1comp%c2 /= ["L","F","T","E","S"]))  error stop 26
+   if(any(b1comp1(1)%a1comp%c3 /= "T"))                    error stop 27
 
-   if(b1comp1(1)%a2comp%c1 /= "T")                         stop 28
-   if(any(b1comp1(1)%a2comp%c2 /= ["S","E","T","F","L"]))  stop 29
-   if(any(b1comp1(1)%a2comp%c3 /= "X"))                    stop 30
+   if(b1comp1(1)%a2comp%c1 /= "T")                         error stop 28
+   if(any(b1comp1(1)%a2comp%c2 /= ["S","E","T","F","L"]))  error stop 29
+   if(any(b1comp1(1)%a2comp%c3 /= "X"))                    error stop 30
 
-   if(any(b1comp1(1)%i1 /= [1,2,3]))                       stop 31
+   if(any(b1comp1(1)%i1 /= [1,2,3]))                       error stop 31
 
    ! call assignB
    b1comp1(2)=XB(2)([-1,-2,-3],a3comp2(1),a3comp2(2))
 
    !--- verify b1comp1--!
-   if(b1comp1(2)%a1comp%c1 /= "X")                         stop 32
-   if(any(b1comp1(2)%a1comp%c2 /= ["L","F","T","E","S"]))  stop 33
-   if(any(b1comp1(2)%a1comp%c3 /= "T"))                    stop 34
+   if(b1comp1(2)%a1comp%c1 /= "X")                         error stop 32
+   if(any(b1comp1(2)%a1comp%c2 /= ["L","F","T","E","S"]))  error stop 33
+   if(any(b1comp1(2)%a1comp%c3 /= "T"))                    error stop 34
 
-   if(b1comp1(2)%a2comp%c1 /= "T")                         stop 35
-   if(any(b1comp1(2)%a2comp%c2 /= ["S","E","T","F","L"]))  stop 36
-   if(any(b1comp1(2)%a2comp%c3 /= "X"))                    stop 37
+   if(b1comp1(2)%a2comp%c1 /= "T")                         error stop 35
+   if(any(b1comp1(2)%a2comp%c2 /= ["S","E","T","F","L"]))  error stop 36
+   if(any(b1comp1(2)%a2comp%c3 /= "X"))                    error stop 37
 
-   if(any(b1comp1(2)%i1 /= [-1,-2,-3]))                    stop 38
+   if(any(b1comp1(2)%i1 /= [-1,-2,-3]))                    error stop 38
 
    ! call assignB
    ! reverse component
    b1comp1=b1comp1(2:1:-1)
 
    !--- verify b1comp1--!
-  if(b1comp1(2)%a1comp%c1 /= "X")                            stop 39
-  if(any(b1comp1(2)%a1comp%c2 /= ["L","F","T","E","S"]))     stop 40
-  if(any(b1comp1(2)%a1comp%c3 /= "T"))                       stop 41
+  if(b1comp1(2)%a1comp%c1 /= "X")                            error stop 39
+  if(any(b1comp1(2)%a1comp%c2 /= ["L","F","T","E","S"]))     error stop 40
+  if(any(b1comp1(2)%a1comp%c3 /= "T"))                       error stop 41
 
-  if(b1comp1(2)%a2comp%c1 /= "T")                            stop 42
-  if(any(b1comp1(2)%a2comp%c2 /= ["S","E","T","F","L"]))     stop 43
-  if(any(b1comp1(2)%a2comp%c3 /= "X"))                       stop 44
+  if(b1comp1(2)%a2comp%c1 /= "T")                            error stop 42
+  if(any(b1comp1(2)%a2comp%c2 /= ["S","E","T","F","L"]))     error stop 43
+  if(any(b1comp1(2)%a2comp%c3 /= "X"))                       error stop 44
 
-  if(any(b1comp1(2)%i1 /= [1,2,3]))                          stop 45
+  if(any(b1comp1(2)%i1 /= [1,2,3]))                          error stop 45
 
-  if(b1comp1(1)%a1comp%c1 /= "X")                            stop 46
-  if(any(b1comp1(1)%a1comp%c2 /= ["L","F","T","E","S"]))     stop 47
-  if(any(b1comp1(1)%a1comp%c3 /= "T"))                       stop 48
+  if(b1comp1(1)%a1comp%c1 /= "X")                            error stop 46
+  if(any(b1comp1(1)%a1comp%c2 /= ["L","F","T","E","S"]))     error stop 47
+  if(any(b1comp1(1)%a1comp%c3 /= "T"))                       error stop 48
 
-  if(b1comp1(1)%a2comp%c1 /= "T")                            stop 49
-  if(any(b1comp1(1)%a2comp%c2 /= ["S","E","T","F","L"]))     stop 50
-  if(any(b1comp1(1)%a2comp%c3 /= "X"))                       stop 51
+  if(b1comp1(1)%a2comp%c1 /= "T")                            error stop 49
+  if(any(b1comp1(1)%a2comp%c2 /= ["S","E","T","F","L"]))     error stop 50
+  if(any(b1comp1(1)%a2comp%c3 /= "X"))                       error stop 51
 
-  if(any(b1comp1(1)%i1 /= [-1,-2,-3]))                       stop 52
+  if(any(b1comp1(1)%i1 /= [-1,-2,-3]))                       error stop 52
 
    ! call assignB
    b1comp2=b1comp1(1)
 
   !--- verify b1comp2---!
-  if(b1comp2(1)%a1comp%c1 /= "X")                             stop 53
-  if(any(b1comp2(1)%a1comp%c2 /= ["L","F","T","E","S"]))      stop 54
-  if(any(b1comp2(1)%a1comp%c3 /= "T"))                        stop 55
+  if(b1comp2(1)%a1comp%c1 /= "X")                             error stop 53
+  if(any(b1comp2(1)%a1comp%c2 /= ["L","F","T","E","S"]))      error stop 54
+  if(any(b1comp2(1)%a1comp%c3 /= "T"))                        error stop 55
 
-  if(b1comp2(1)%a2comp%c1 /= "T")                             stop 56
-  if(any(b1comp2(1)%a2comp%c2 /= ["S","E","T","F","L"]))      stop 57
-  if(any(b1comp2(1)%a2comp%c3 /= "X"))                        stop 58
+  if(b1comp2(1)%a2comp%c1 /= "T")                             error stop 56
+  if(any(b1comp2(1)%a2comp%c2 /= ["S","E","T","F","L"]))      error stop 57
+  if(any(b1comp2(1)%a2comp%c3 /= "X"))                        error stop 58
 
-  if(any(b1comp2(1)%i1 /= [-1,-2,-3]))                        stop 59
+  if(any(b1comp2(1)%i1 /= [-1,-2,-3]))                        error stop 59
 
-  if(b1comp2(2)%a1comp%c1 /= "X")                             stop 60
-  if(any(b1comp2(2)%a1comp%c2 /= ["L","F","T","E","S"]))      stop 61
-  if(any(b1comp2(2)%a1comp%c3 /= "T"))                        stop 62
+  if(b1comp2(2)%a1comp%c1 /= "X")                             error stop 60
+  if(any(b1comp2(2)%a1comp%c2 /= ["L","F","T","E","S"]))      error stop 61
+  if(any(b1comp2(2)%a1comp%c3 /= "T"))                        error stop 62
 
-  if(b1comp2(2)%a2comp%c1 /= "T")                             stop 63
-  if(any(b1comp2(2)%a2comp%c2 /= ["S","E","T","F","L"]))      stop 64
-  if(any(b1comp2(2)%a2comp%c3 /= "X"))                        stop 65
+  if(b1comp2(2)%a2comp%c1 /= "T")                             error stop 63
+  if(any(b1comp2(2)%a2comp%c2 /= ["S","E","T","F","L"]))      error stop 64
+  if(any(b1comp2(2)%a2comp%c3 /= "X"))                        error stop 65
 
-  if(any(b1comp2(2)%i1 /= [-1,-2,-3]))                        stop 66
+  if(any(b1comp2(2)%i1 /= [-1,-2,-3]))                        error stop 66
 
    allocate(XC(2) :: cobj2)
 
@@ -247,29 +247,29 @@ program defAssignDataPtrComp03b
 
    associate(x=>cobj1)
 
-   if(x(1)%a3comp%c1 /= "X")                                   stop 67
-   if(any(x(1)%a3comp%c2 /= ["L","F","T","E","S"]))            stop 68
-   if(any(x(1)%a3comp%c3 /= "T"))                              stop 69
+   if(x(1)%a3comp%c1 /= "X")                                   error stop 67
+   if(any(x(1)%a3comp%c2 /= ["L","F","T","E","S"]))            error stop 68
+   if(any(x(1)%a3comp%c3 /= "T"))                              error stop 69
 
-   if(x(1)%b1comp(1)%a1comp%c1 /= "X")                         stop 70
-   if(any(x(1)%b1comp(1)%a1comp%c2 /= ["L","F","T","E","S"]))  stop 71
-   if(any(x(1)%b1comp(1)%a1comp%c3 /= "T"))                    stop 72
+   if(x(1)%b1comp(1)%a1comp%c1 /= "X")                         error stop 70
+   if(any(x(1)%b1comp(1)%a1comp%c2 /= ["L","F","T","E","S"]))  error stop 71
+   if(any(x(1)%b1comp(1)%a1comp%c3 /= "T"))                    error stop 72
 
-   if(x(1)%b1comp(1)%a2comp%c1 /= "T")                         stop 73
-   if(any(x(1)%b1comp(1)%a2comp%c2 /= ["S","E","T","F","L"]))  stop 74
-   if(any(x(1)%b1comp(1)%a2comp%c3 /= "X"))                    stop 75
+   if(x(1)%b1comp(1)%a2comp%c1 /= "T")                         error stop 73
+   if(any(x(1)%b1comp(1)%a2comp%c2 /= ["S","E","T","F","L"]))  error stop 74
+   if(any(x(1)%b1comp(1)%a2comp%c3 /= "X"))                    error stop 75
 
-   if(any(x(1)%b1comp(1)%i1 /= [-1,-2,-3]))                    stop 76
+   if(any(x(1)%b1comp(1)%i1 /= [-1,-2,-3]))                    error stop 76
 
-   if(x(1)%b1comp(2)%a1comp%c1 /= "X")                         stop 77
-   if(any(x(1)%b1comp(2)%a1comp%c2 /= ["L","F","T","E","S"]))  stop 78
-   if(any(x(1)%b1comp(2)%a1comp%c3 /= "T"))                    stop 79
+   if(x(1)%b1comp(2)%a1comp%c1 /= "X")                         error stop 77
+   if(any(x(1)%b1comp(2)%a1comp%c2 /= ["L","F","T","E","S"]))  error stop 78
+   if(any(x(1)%b1comp(2)%a1comp%c3 /= "T"))                    error stop 79
 
-   if(x(1)%b1comp(2)%a2comp%c1 /= "T")                         stop 80
-   if(any(x(1)%b1comp(2)%a2comp%c2 /= ["S","E","T","F","L"]))  stop 81
-   if(any(x(1)%b1comp(2)%a2comp%c3 /= "X"))                    stop 82
+   if(x(1)%b1comp(2)%a2comp%c1 /= "T")                         error stop 80
+   if(any(x(1)%b1comp(2)%a2comp%c2 /= ["S","E","T","F","L"]))  error stop 81
+   if(any(x(1)%b1comp(2)%a2comp%c3 /= "X"))                    error stop 82
 
-   if(any(x(1)%b1comp(2)%i1 /= [1,2,3]))                       stop 83
+   if(any(x(1)%b1comp(2)%i1 /= [1,2,3]))                       error stop 83
 
    end associate
 
@@ -279,29 +279,29 @@ program defAssignDataPtrComp03b
    !--- verify cobj2---!
    associate(x=>cobj2)
 
-   if(x%a3comp%c1 /= "X")                                   stop 84
-   if(any(x%a3comp%c2 /= ["L","F","T","E","S"]))            stop 85
-   if(any(x%a3comp%c3 /= "T"))                              stop 86
+   if(x%a3comp%c1 /= "X")                                   error stop 84
+   if(any(x%a3comp%c2 /= ["L","F","T","E","S"]))            error stop 85
+   if(any(x%a3comp%c3 /= "T"))                              error stop 86
 
-   if(x%b1comp(1)%a1comp%c1 /= "X")                         stop 87
-   if(any(x%b1comp(1)%a1comp%c2 /= ["L","F","T","E","S"]))  stop 88
-   if(any(x%b1comp(1)%a1comp%c3 /= "T"))                    stop 89
+   if(x%b1comp(1)%a1comp%c1 /= "X")                         error stop 87
+   if(any(x%b1comp(1)%a1comp%c2 /= ["L","F","T","E","S"]))  error stop 88
+   if(any(x%b1comp(1)%a1comp%c3 /= "T"))                    error stop 89
 
-   if(x%b1comp(1)%a2comp%c1 /= "T")                         stop 90
-   if(any(x%b1comp(1)%a2comp%c2 /= ["S","E","T","F","L"]))   stop 91
-   if(any(x%b1comp(1)%a2comp%c3 /= "X"))                    stop 92
+   if(x%b1comp(1)%a2comp%c1 /= "T")                         error stop 90
+   if(any(x%b1comp(1)%a2comp%c2 /= ["S","E","T","F","L"]))   error stop 91
+   if(any(x%b1comp(1)%a2comp%c3 /= "X"))                    error stop 92
 
-   if(any(x%b1comp(1)%i1 /= [-1,-2,-3]))                    stop 93
+   if(any(x%b1comp(1)%i1 /= [-1,-2,-3]))                    error stop 93
 
-   if(x%b1comp(2)%a1comp%c1 /= "X")                         stop 94
-   if(any(x%b1comp(2)%a1comp%c2 /= ["L","F","T","E","S"]))  stop 95
-   if(any(x%b1comp(2)%a1comp%c3 /= "T"))                    stop 96
+   if(x%b1comp(2)%a1comp%c1 /= "X")                         error stop 94
+   if(any(x%b1comp(2)%a1comp%c2 /= ["L","F","T","E","S"]))  error stop 95
+   if(any(x%b1comp(2)%a1comp%c3 /= "T"))                    error stop 96
 
-   if(x%b1comp(2)%a2comp%c1 /= "T")                         stop 97
-   if(any(x%b1comp(2)%a2comp%c2 /= ["S","E","T","F","L"]))  stop 98
-   if(any(x%b1comp(2)%a2comp%c3 /= "X"))                    stop 99
+   if(x%b1comp(2)%a2comp%c1 /= "T")                         error stop 97
+   if(any(x%b1comp(2)%a2comp%c2 /= ["S","E","T","F","L"]))  error stop 98
+   if(any(x%b1comp(2)%a2comp%c3 /= "X"))                    error stop 99
 
-   if(any(x%b1comp(2)%i1 /= [1,2,3]))                       stop 100
+   if(any(x%b1comp(2)%i1 /= [1,2,3]))                       error stop 100
 
    end associate
 
@@ -312,29 +312,29 @@ program defAssignDataPtrComp03b
 
    associate(x=>cobj1)
 
-   if(x(1)%a3comp%c1 /= "X")                                   stop 101
-   if(any(x(1)%a3comp%c2 /= ["L","F","T","E","S"]))            stop 102
-   if(any(x(1)%a3comp%c3 /= "T"))                              stop 103
+   if(x(1)%a3comp%c1 /= "X")                                   error stop 101
+   if(any(x(1)%a3comp%c2 /= ["L","F","T","E","S"]))            error stop 102
+   if(any(x(1)%a3comp%c3 /= "T"))                              error stop 103
 
-   if(x(1)%b1comp(1)%a1comp%c1 /= "X")                         stop 104
-   if(any(x(1)%b1comp(1)%a1comp%c2 /= ["L","F","T","E","S"]))  stop 105
-   if(any(x(1)%b1comp(1)%a1comp%c3 /= "T"))                    stop 106
+   if(x(1)%b1comp(1)%a1comp%c1 /= "X")                         error stop 104
+   if(any(x(1)%b1comp(1)%a1comp%c2 /= ["L","F","T","E","S"]))  error stop 105
+   if(any(x(1)%b1comp(1)%a1comp%c3 /= "T"))                    error stop 106
 
-   if(x(1)%b1comp(1)%a2comp%c1 /= "T")                         stop 107
-   if(any(x(1)%b1comp(1)%a2comp%c2 /= ["S","E","T","F","L"]))  stop 108
-   if(any(x(1)%b1comp(1)%a2comp%c3 /= "X"))                    stop 109
+   if(x(1)%b1comp(1)%a2comp%c1 /= "T")                         error stop 107
+   if(any(x(1)%b1comp(1)%a2comp%c2 /= ["S","E","T","F","L"]))  error stop 108
+   if(any(x(1)%b1comp(1)%a2comp%c3 /= "X"))                    error stop 109
 
-   if(any(x(1)%b1comp(1)%i1 /= [-1,-2,-3]))                    stop 110
+   if(any(x(1)%b1comp(1)%i1 /= [-1,-2,-3]))                    error stop 110
 
-   if(x(1)%b1comp(2)%a1comp%c1 /= "X")                         stop 111
-   if(any(x(1)%b1comp(2)%a1comp%c2 /= ["L","F","T","E","S"]))  stop 112
-   if(any(x(1)%b1comp(2)%a1comp%c3 /= "T"))                    stop 113
+   if(x(1)%b1comp(2)%a1comp%c1 /= "X")                         error stop 111
+   if(any(x(1)%b1comp(2)%a1comp%c2 /= ["L","F","T","E","S"]))  error stop 112
+   if(any(x(1)%b1comp(2)%a1comp%c3 /= "T"))                    error stop 113
 
-   if(x(1)%b1comp(2)%a2comp%c1 /= "T")                         stop 114
-   if(any(x(1)%b1comp(2)%a2comp%c2 /= ["S","E","T","F","L"]))  stop 115
-   if(any(x(1)%b1comp(2)%a2comp%c3 /= "X"))                    stop 116
+   if(x(1)%b1comp(2)%a2comp%c1 /= "T")                         error stop 114
+   if(any(x(1)%b1comp(2)%a2comp%c2 /= ["S","E","T","F","L"]))  error stop 115
+   if(any(x(1)%b1comp(2)%a2comp%c3 /= "X"))                    error stop 116
 
-   if(any(x(1)%b1comp(2)%i1 /= [1,2,3]))                       stop 117
+   if(any(x(1)%b1comp(2)%i1 /= [1,2,3]))                       error stop 117
 
    end associate
 

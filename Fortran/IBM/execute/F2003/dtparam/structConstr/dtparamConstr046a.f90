@@ -23,9 +23,9 @@
 
     a1 = A(11)(c)
 
-    if (.not. associated(a1%name, c)) stop 1
+    if (.not. associated(a1%name, c)) error stop 1
 
-    if (a1%name /= 'xlftest abc') stop 2
+    if (a1%name /= 'xlftest abc') error stop 2
 
     print *, a1%name
     end

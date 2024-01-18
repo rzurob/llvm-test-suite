@@ -103,17 +103,17 @@ program formatAsynDirect01
                write(10,'(a18/a18)',rec=5+record, asynchronous='yes',&
                    id=idvar(j+1),iostat=ios)   gen1%c3
 
-               if(ios /= 0)    stop 16
+               if(ios /= 0)    error stop 16
 
                write(10,'(a10/a10)',rec=3+record,asynchronous='yes',&
                    id=idvar(j+2),iostat=ios)   gen1%c2
 
-               if(ios /= 0)    stop 17
+               if(ios /= 0)    error stop 17
 
                write(10,'(a4/a4)',rec=1+record,asynchronous='yes',&
                    id=idvar(j+3),iostat=ios)   gen1%c1
 
-               if(ios /= 0)    stop 18
+               if(ios /= 0)    error stop 18
 
                record=record + 10
                j=j+3
@@ -143,17 +143,17 @@ program formatAsynDirect01
     read(10,'(a18/a18)',rec=5+record, asynchronous='yes',&
          id=idvar(j+1),iostat=ios) gen2(i)%c3
 
-    if(ios /= 0)    stop 19
+    if(ios /= 0)    error stop 19
 
     read(10,'(a10/a10)',rec=3+record,asynchronous='yes',&
          id=idvar(j+2),iostat=ios) gen2(i)%c2
 
-    if(ios /= 0)    stop 20
+    if(ios /= 0)    error stop 20
 
     read(10,'(a4/a4)',rec=1+record,asynchronous='yes',&
            id=idvar(j+3),iostat=ios)  gen2(i)%c1
 
-    if(ios /= 0)    stop 21
+    if(ios /= 0)    error stop 21
 
     record=record + 10
     j=j+3

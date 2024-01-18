@@ -92,27 +92,27 @@
 
   ASSOCIATE ( As => ReturnArr(Arr) )
 
-    IF ( ANY (LBOUND(As)  .NE. (/1,1/) ) )             STOP 30
-    IF ( ANY (UBOUND(As)  .NE. (/2,2/) ) )             STOP 31
-    IF ( ANY (SHAPE(As)   .NE. (/2,2/) ) )             STOP 32
-    IF ( ANY (As%GetID()  .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) STOP 33
-    IF ( ANY (As%ChildID  .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) STOP 34
-    IF ( ANY (As%BaseID        .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) STOP 35
-    IF ( ANY (As%Base%BaseID   .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) STOP 36
-    IF ( LEN(As%C)        .NE. 1023)                   STOP 37
-    IF ( TRIM(As(1,1)%C)  .NE. "!" )                   STOP 38
+    IF ( ANY (LBOUND(As)  .NE. (/1,1/) ) )             ERROR STOP 30
+    IF ( ANY (UBOUND(As)  .NE. (/2,2/) ) )             ERROR STOP 31
+    IF ( ANY (SHAPE(As)   .NE. (/2,2/) ) )             ERROR STOP 32
+    IF ( ANY (As%GetID()  .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) ERROR STOP 33
+    IF ( ANY (As%ChildID  .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) ERROR STOP 34
+    IF ( ANY (As%BaseID        .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) ERROR STOP 35
+    IF ( ANY (As%Base%BaseID   .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) ERROR STOP 36
+    IF ( LEN(As%C)        .NE. 1023)                   ERROR STOP 37
+    IF ( TRIM(As(1,1)%C)  .NE. "!" )                   ERROR STOP 38
 
     ASSOCIATE( As => SPREAD(As(1,:), 1, 2) )
 
-      IF ( ANY (LBOUND(As)  .NE. (/1,1/) ) )             STOP 40
-      IF ( ANY (UBOUND(As)  .NE. (/2,2/) ) )             STOP 41
-      IF ( ANY (SHAPE(As)   .NE. (/2,2/) ) )             STOP 42
-      IF ( ANY (As%GetID()  .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) STOP 43
-      IF ( ANY (As%ChildID  .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) STOP 44
-      IF ( ANY (As%BaseID        .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) STOP 45
-      IF ( ANY (As%Base%BaseID   .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) STOP 46
-      IF ( LEN(As%C)        .NE. 1023)                   STOP 47
-      IF ( TRIM(As(1,1)%C)  .NE. "!" )                   STOP 48
+      IF ( ANY (LBOUND(As)  .NE. (/1,1/) ) )             ERROR STOP 40
+      IF ( ANY (UBOUND(As)  .NE. (/2,2/) ) )             ERROR STOP 41
+      IF ( ANY (SHAPE(As)   .NE. (/2,2/) ) )             ERROR STOP 42
+      IF ( ANY (As%GetID()  .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) ERROR STOP 43
+      IF ( ANY (As%ChildID  .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) ERROR STOP 44
+      IF ( ANY (As%BaseID        .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) ERROR STOP 45
+      IF ( ANY (As%Base%BaseID   .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) ERROR STOP 46
+      IF ( LEN(As%C)        .NE. 1023)                   ERROR STOP 47
+      IF ( TRIM(As(1,1)%C)  .NE. "!" )                   ERROR STOP 48
 
     END ASSOCIATE
 

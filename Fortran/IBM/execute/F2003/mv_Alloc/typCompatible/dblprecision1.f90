@@ -40,7 +40,7 @@
 
       select type( x => foo(d1,d2)  )
           type is (double precision)
-             if ( .not. precision_R8(x(1), dble(3))) stop 21
+             if ( .not. precision_R8(x(1), dble(3))) error stop 21
           class default
                stop 99
       end select
@@ -55,8 +55,8 @@
 
           call move_alloc(arg, brg)
 
-          if ( allocated(arg) ) stop 32
-	  if ( .not. allocated(brg) ) stop 34
+          if ( allocated(arg) ) error stop 32
+	  if ( .not. allocated(brg) ) error stop 34
 
           allocate(func(1), source = brg )
       end function

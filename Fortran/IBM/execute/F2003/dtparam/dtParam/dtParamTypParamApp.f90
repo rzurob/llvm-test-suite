@@ -79,43 +79,43 @@
   TYPE(DT1(1, 2, 4, 8)) :: T2
   TYPE(DT2(1,3))        :: T3
 
-  IF ( LEN(T1%C1)       .NE. 1   )    STOP 11
-  IF ( SIZE(T1%C1)      .NE. 1   )    STOP 12
-  IF ( TRIM(T1%C1(1))   .NE. "1" )    STOP 13
+  IF ( LEN(T1%C1)       .NE. 1   )    ERROR STOP 11
+  IF ( SIZE(T1%C1)      .NE. 1   )    ERROR STOP 12
+  IF ( TRIM(T1%C1(1))   .NE. "1" )    ERROR STOP 13
 
-  IF ( LEN(T1%C2)       .NE. 2   )    STOP 21
-  IF ( SIZE(T1%C2)      .NE. 2   )    STOP 22
-  IF ( TRIM(T1%C2(2))   .NE. "2" )    STOP 23
+  IF ( LEN(T1%C2)       .NE. 2   )    ERROR STOP 21
+  IF ( SIZE(T1%C2)      .NE. 2   )    ERROR STOP 22
+  IF ( TRIM(T1%C2(2))   .NE. "2" )    ERROR STOP 23
 
-  IF ( LEN(T1%C )       .NE. 4   )    STOP 41
-  IF ( SIZE(T1%C )      .NE. 4   )    STOP 42
-  IF ( TRIM(T1%C(4))    .NE. "4" )    STOP 43
+  IF ( LEN(T1%C )       .NE. 4   )    ERROR STOP 41
+  IF ( SIZE(T1%C )      .NE. 4   )    ERROR STOP 42
+  IF ( TRIM(T1%C(4))    .NE. "4" )    ERROR STOP 43
 
-  IF ( LEN(T1%C8)       .NE. 8   )    STOP 81
-  IF ( SIZE(T1%C8)      .NE. 8   )    STOP 82
-  IF ( TRIM(T1%C8(8))   .NE. "8" )    STOP 83
+  IF ( LEN(T1%C8)       .NE. 8   )    ERROR STOP 81
+  IF ( SIZE(T1%C8)      .NE. 8   )    ERROR STOP 82
+  IF ( TRIM(T1%C8(8))   .NE. "8" )    ERROR STOP 83
 
 
-  IF ( LEN(T2%C1)       .NE. 1   )    STOP 11
-  IF ( SIZE(T2%C1)      .NE. 1   )    STOP 12
-  IF ( TRIM(T2%C1(1))   .NE. "1" )    STOP 13
+  IF ( LEN(T2%C1)       .NE. 1   )    ERROR STOP 11
+  IF ( SIZE(T2%C1)      .NE. 1   )    ERROR STOP 12
+  IF ( TRIM(T2%C1(1))   .NE. "1" )    ERROR STOP 13
 
-  IF ( LEN(T2%C2)       .NE. 2   )    STOP 21
-  IF ( SIZE(T2%C2)      .NE. 2   )    STOP 22
-  IF ( TRIM(T2%C2(2))   .NE. "2" )    STOP 23
+  IF ( LEN(T2%C2)       .NE. 2   )    ERROR STOP 21
+  IF ( SIZE(T2%C2)      .NE. 2   )    ERROR STOP 22
+  IF ( TRIM(T2%C2(2))   .NE. "2" )    ERROR STOP 23
 
-  IF ( LEN(T2%C )       .NE. 4   )    STOP 41
-  IF ( SIZE(T2%C )      .NE. 4   )    STOP 42
-  IF ( TRIM(T2%C(4))    .NE. "4" )    STOP 43
+  IF ( LEN(T2%C )       .NE. 4   )    ERROR STOP 41
+  IF ( SIZE(T2%C )      .NE. 4   )    ERROR STOP 42
+  IF ( TRIM(T2%C(4))    .NE. "4" )    ERROR STOP 43
 
-  IF ( LEN(T2%C8)       .NE. 8   )    STOP 81
-  IF ( SIZE(T2%C8)      .NE. 8   )    STOP 82
-  IF ( TRIM(T2%C8(8))   .NE. "8" )    STOP 83
+  IF ( LEN(T2%C8)       .NE. 8   )    ERROR STOP 81
+  IF ( SIZE(T2%C8)      .NE. 8   )    ERROR STOP 82
+  IF ( TRIM(T2%C8(8))   .NE. "8" )    ERROR STOP 83
 
   T3%ProcPtr1 => CF
   T3%ProcPtr2 => IntF
-  IF ( T3%ProcPtr1()   .NE. "123"   )    STOP 92
-  IF ( T3%ProcPtr2()   .NE. 1 )          STOP 93
+  IF ( T3%ProcPtr1()   .NE. "123"   )    ERROR STOP 92
+  IF ( T3%ProcPtr2()   .NE. 1 )          ERROR STOP 93
 
   END
 

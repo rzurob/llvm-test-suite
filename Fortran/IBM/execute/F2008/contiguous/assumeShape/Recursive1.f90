@@ -33,7 +33,7 @@ PROGRAM Recursive1
 
       call SUB1( matrix )
       DO i = 1, 5
-          IF ( ANY(matrix(:,i) .NE. [3,4,10,5,6]) ) STOP 10
+          IF ( ANY(matrix(:,i) .NE. [3,4,10,5,6]) ) ERROR STOP 10
       ENDDO
 
 

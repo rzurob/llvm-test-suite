@@ -53,7 +53,7 @@ module m
         class (base), intent(in) :: b
         integer, intent(in) :: i
 
-        if ((i < 1) .or. (i > 35)) stop 10
+        if ((i < 1) .or. (i > 35)) error stop 10
 
         getData = b%data(i)
     end function

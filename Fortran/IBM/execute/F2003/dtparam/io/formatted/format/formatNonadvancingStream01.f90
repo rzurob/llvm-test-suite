@@ -63,11 +63,11 @@ module m
               ! read r1, optinally choose data by using tab edit descriptor
               read(10,'(t3,f4.2,tr4,f3.2/)',advance='no',iostat=ios,&
                        size=count)                 dt(4)%r1
-              if(count /= 7)                stop 14
+              if(count /= 7)                error stop 14
 
               ! inquire current position
               inquire(10,pos=pos)
-              if(pos /= 15 )                stop 15
+              if(pos /= 15 )                error stop 15
 
               ! we reached end of first record
               ! backspace will bring in beginning of first record
@@ -76,21 +76,21 @@ module m
 
               ! skip first record, read second record
               read(10,'(2l4)',advance='no',pos=16,size=count) dt(4)%g1(1:2)
-              if(count /= 8)                stop 16
+              if(count /= 8)                error stop 16
 
               ! inquire current position
               inquire(10,pos=pos)
-              if(pos /=24)                   stop 17
+              if(pos /=24)                   error stop 17
 
               ! back to beginning of second record
               backspace 10
 
               ! read data into g1(3:4)
               read(10,'(2l4)',advance='no',pos=16,size=count) dt(4)%g1(3:4)
-              if(count /= 8)                stop 18
+              if(count /= 8)                error stop 18
 
               inquire(10,pos=pos)
-              if(pos /= 24)                 stop 19
+              if(pos /= 24)                 error stop 19
 
               !let's read third record
               !skip some character,optionally choose data to read
@@ -99,50 +99,50 @@ module m
                   eor=100,pos=32,size=count)                    dt(4)%c1
 
               inquire(10,pos=pos)
-              if(pos /= 46)                stop 20
+              if(pos /= 46)                error stop 20
 
 
               ! start to read dt(4)%i1 in fourth record
               read(10,'(t3,i2,tr1,i2,tr1)',advance='no', &
                         pos=47,size=count)                      dt(4)%i1
-              if(count /= 4)               stop 21
+              if(count /= 4)               error stop 21
 
               inquire(10,pos=pos)
-              if(pos /= 55)                stop 22
+              if(pos /= 55)                error stop 22
 
 
               ! start to read dt(5),in fourth record
               ! optional choose data to use and skip record marker
               read(10,'(tr1,f4.1,tr2,f5.1,tr2)',advance='no',&
                        pos=55,size=count,eor=101)                      dt(5)%r1
-              if(count /= 9)               stop 23
+              if(count /= 9)               error stop 23
 
               inquire(10,pos=pos)
-              if(pos /= 69)                stop 24
+              if(pos /= 69)                error stop 24
 
               ! read whole fifth record,and skip the end of record marker
               read(10,'(4l4,tr1)',advance='no',pos=69,size=count) dt(5)%g1
 
-              if(count /= 16)              stop 25
+              if(count /= 16)              error stop 25
 
               inquire(10,pos=pos)
-              if(pos /= 86)                stop 26
+              if(pos /= 86)                error stop 26
 
 
               ! read the sixth record
               read(10,'(t2,a3,tr5,a4,tr2)',advance='no', &
                    pos=86,size=count) dt(5)%c1
 
-              if(count /= 7)               stop 27
+              if(count /= 7)               error stop 27
 
               inquire(10,pos=pos)
-              if(pos /= 101)               stop 28
+              if(pos /= 101)               error stop 28
 
               ! read the seventh record
               read(10,'(tr2,i2,tr2,i2)',advance='no',pos=101, &
                    size=count) dt(5)%i1
 
-              if(count /= 4)              stop 29
+              if(count /= 4)              error stop 29
 
 
               return

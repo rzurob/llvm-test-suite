@@ -90,19 +90,19 @@
 
   ASSOCIATE ( As => Fun((/Base(BaseId=-1), Base(BaseId=-2),Base(BaseId=-3), Base(BaseId=-4) /)) )
 
-    IF ( ANY (LBOUND(As)  .NE. (/1,1/) ) )             STOP 30
-    IF ( ANY (UBOUND(As)  .NE. (/2,2/) ) )             STOP 31
-    IF ( ANY (SHAPE(As)   .NE. (/2,2/) ) )             STOP 32
+    IF ( ANY (LBOUND(As)  .NE. (/1,1/) ) )             ERROR STOP 30
+    IF ( ANY (UBOUND(As)  .NE. (/2,2/) ) )             ERROR STOP 31
+    IF ( ANY (SHAPE(As)   .NE. (/2,2/) ) )             ERROR STOP 32
 
-    IF ( ANY (As%GetID()  .NE. RESHAPE((/-1,-2,-3,-4/), (/2,2/)) ) ) STOP 33
-    IF ( ANY (As%BaseID   .NE. RESHAPE((/-1,-2,-3,-4/), (/2,2/)) ) ) STOP 34
+    IF ( ANY (As%GetID()  .NE. RESHAPE((/-1,-2,-3,-4/), (/2,2/)) ) ) ERROR STOP 33
+    IF ( ANY (As%BaseID   .NE. RESHAPE((/-1,-2,-3,-4/), (/2,2/)) ) ) ERROR STOP 34
 
     ASSOCIATE ( As1 => As%BaseId )
-       IF ( ANY(As1 .NE. RESHAPE((/-1,-2,-3,-4/), (/2,2/)) ) ) STOP 42
+       IF ( ANY(As1 .NE. RESHAPE((/-1,-2,-3,-4/), (/2,2/)) ) ) ERROR STOP 42
     END ASSOCIATE
 
     ASSOCIATE (As =>  As%GetID())
-      IF ( ANY(As .NE. RESHAPE((/-1,-2,-3,-4/), (/2,2/)) )) STOP 60
+      IF ( ANY(As .NE. RESHAPE((/-1,-2,-3,-4/), (/2,2/)) )) ERROR STOP 60
     END ASSOCIATE
 
     SELECT TYPE (As => As)

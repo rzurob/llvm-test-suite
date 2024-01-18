@@ -60,27 +60,27 @@ PROGRAM FunctionResult07
       b1 => c1
       SELECT TYPE ( b1 )
         CLASS IS (Child(4,*,4,*))
-          IF ( b1%name   .NE. 'IBM' ) STOP 10
-          IF ( ANY(b1%A0 .NE.    1) ) STOP 11
-          IF ( ANY(b1%A1 .NE.    2) ) STOP 12
-          IF ( b1%b_cmp%name   .NE. 'XLF' ) STOP 13
-          IF ( ANY(b1%b_cmp%A0 .NE.    3) ) STOP 14
-          IF ( ANY(b1%b_cmp%A1 .NE.    4) ) STOP 15
+          IF ( b1%name   .NE. 'IBM' ) ERROR STOP 10
+          IF ( ANY(b1%A0 .NE.    1) ) ERROR STOP 11
+          IF ( ANY(b1%A1 .NE.    2) ) ERROR STOP 12
+          IF ( b1%b_cmp%name   .NE. 'XLF' ) ERROR STOP 13
+          IF ( ANY(b1%b_cmp%A0 .NE.    3) ) ERROR STOP 14
+          IF ( ANY(b1%b_cmp%A1 .NE.    4) ) ERROR STOP 15
 
         CLASS DEFAULT
            STOP 16
       END SELECT
 
       b2 => foo (b1)
-      if ( .NOT. ASSOCIATED(b2, b1) ) STOP 17
+      if ( .NOT. ASSOCIATED(b2, b1) ) ERROR STOP 17
       SELECT TYPE ( b2 )
         CLASS IS (Child(4,*,4,*))
-          IF ( b2%name   .NE. 'IBM' ) STOP 18
-          IF ( ANY(b2%A0 .NE.    1) ) STOP 19
-          IF ( ANY(b2%A1 .NE.    2) ) STOP 20
-          IF ( b2%b_cmp%name   .NE. 'XLF' ) STOP 21
-          IF ( ANY(b2%b_cmp%A0 .NE.    3) ) STOP 22
-          IF ( ANY(b2%b_cmp%A1 .NE.    4) ) STOP 23
+          IF ( b2%name   .NE. 'IBM' ) ERROR STOP 18
+          IF ( ANY(b2%A0 .NE.    1) ) ERROR STOP 19
+          IF ( ANY(b2%A1 .NE.    2) ) ERROR STOP 20
+          IF ( b2%b_cmp%name   .NE. 'XLF' ) ERROR STOP 21
+          IF ( ANY(b2%b_cmp%A0 .NE.    3) ) ERROR STOP 22
+          IF ( ANY(b2%b_cmp%A1 .NE.    4) ) ERROR STOP 23
 
         CLASS DEFAULT
            STOP 24
@@ -89,12 +89,12 @@ PROGRAM FunctionResult07
       ASSOCIATE ( a => foo (b2) )
         SELECT TYPE ( a )
           CLASS IS (Child(4,*,4,*))
-            IF ( a%name   .NE. 'IBM' ) STOP 25
-            IF ( ANY(a%A0 .NE.    1) ) STOP 26
-            IF ( ANY(a%A1 .NE.    2) ) STOP 27
-            IF ( a%b_cmp%name   .NE. 'XLF' ) STOP 28
-            IF ( ANY(a%b_cmp%A0 .NE.    3) ) STOP 29
-            IF ( ANY(a%b_cmp%A1 .NE.    4) ) STOP 30
+            IF ( a%name   .NE. 'IBM' ) ERROR STOP 25
+            IF ( ANY(a%A0 .NE.    1) ) ERROR STOP 26
+            IF ( ANY(a%A1 .NE.    2) ) ERROR STOP 27
+            IF ( a%b_cmp%name   .NE. 'XLF' ) ERROR STOP 28
+            IF ( ANY(a%b_cmp%A0 .NE.    3) ) ERROR STOP 29
+            IF ( ANY(a%b_cmp%A1 .NE.    4) ) ERROR STOP 30
 
           CLASS DEFAULT
              STOP 31

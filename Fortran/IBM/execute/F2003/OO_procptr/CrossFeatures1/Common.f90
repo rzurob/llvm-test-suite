@@ -49,7 +49,7 @@
 
   ProcPtr => ExtFun
   CALL IntSub()
-  IF ( ASSOCIATED(ProcPtr) ) STOP 12
+  IF ( ASSOCIATED(ProcPtr) ) ERROR STOP 12
 
 
   CONTAINS
@@ -61,7 +61,7 @@
   INTEGER :: I
 
   V = ProcPtr((/(I, I=1,1024)/))
-  IF ( ANY(V .NE. (/(I, I=1,1024)/)) ) STOP 11
+  IF ( ANY(V .NE. (/(I, I=1,1024)/)) ) ERROR STOP 11
 
   NULLIFY(ProcPtr)
 

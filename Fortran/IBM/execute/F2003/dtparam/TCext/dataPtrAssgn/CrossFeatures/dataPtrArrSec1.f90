@@ -67,15 +67,15 @@
 
     Ptr => Arr
     Ptr(I:, J:) => Ptr(N:I:-K, N:J:-K)
-    IF (.NOT. ASSOCIATED(Ptr,  Arr(N:I:-K, N:J:-K) ))      STOP 11
-    IF (ANY( LBOUND(Ptr) .NE. (/I , J/)))                  STOP 12
-    IF (ANY( UBOUND(Ptr) .NE. (/(N-I)/K+I, (N-J)/K+J/)))      STOP 13
+    IF (.NOT. ASSOCIATED(Ptr,  Arr(N:I:-K, N:J:-K) ))      ERROR STOP 11
+    IF (ANY( LBOUND(Ptr) .NE. (/I , J/)))                  ERROR STOP 12
+    IF (ANY( UBOUND(Ptr) .NE. (/(N-I)/K+I, (N-J)/K+J/)))      ERROR STOP 13
 
     SELECT TYPE (Ptr)
     TYPE IS(DT(4,4))
       SELECT TYPE( Arr)
       TYPE IS (DT(4,4))
-        IF (ANY( Ptr%ID      .NE. Arr(N:I:-K, N:J:-K)%ID ))    STOP 14
+        IF (ANY( Ptr%ID      .NE. Arr(N:I:-K, N:J:-K)%ID ))    ERROR STOP 14
       END SELECT
     CLASS DEFAULT
       STOP 15
@@ -83,16 +83,16 @@
 
     Ptr1 => Arr1
     Ptr(I:J, I:J) => Ptr1(N*N::-K)
-    IF (.NOT. ASSOCIATED(Ptr))                   STOP 20
-    IF (SIZE(Ptr)         .NE. (J-I+1)*(J-I+1))  STOP 21
-    IF (ANY( LBOUND(Ptr)  .NE. (/I , I /)))      STOP 22
-    IF (ANY( UBOUND(Ptr)  .NE. (/J , J /)))      STOP 23
+    IF (.NOT. ASSOCIATED(Ptr))                   ERROR STOP 20
+    IF (SIZE(Ptr)         .NE. (J-I+1)*(J-I+1))  ERROR STOP 21
+    IF (ANY( LBOUND(Ptr)  .NE. (/I , I /)))      ERROR STOP 22
+    IF (ANY( UBOUND(Ptr)  .NE. (/J , J /)))      ERROR STOP 23
 
     SELECT TYPE (Ptr)
     TYPE IS(DT(4,4))
       SELECT TYPE (Arr1)
       TYPE IS(DT(4,4))
-        IF (ANY( Ptr%ID  .NE. RESHAPE(Arr1(N*N::-K)%ID, (/J-I+1, J-I+1/)) ) ) STOP 24
+        IF (ANY( Ptr%ID  .NE. RESHAPE(Arr1(N*N::-K)%ID, (/J-I+1, J-I+1/)) ) ) ERROR STOP 24
       END SELECT
     CLASS DEFAULT
       STOP 25

@@ -50,8 +50,8 @@
   TYPE(DT) :: TArr(128)=(/(DT(I), I=0,127)/)
 
 
-  IF (T%Id        .NE. 1  )               STOP 11
-  IF (ANY(TArr%Id .NE. (/(I, I=0,127)/))) STOP 12
+  IF (T%Id        .NE. 1  )               ERROR STOP 11
+  IF (ANY(TArr%Id .NE. (/(I, I=0,127)/))) ERROR STOP 12
 
 
   END

@@ -85,7 +85,7 @@ module m1
 
         real(8), allocatable :: realPart, imagPart
 
-        if (size(d1) < size(cx1)) stop 10
+        if (size(d1) < size(cx1)) error stop 10
 
         cx = cx1
 

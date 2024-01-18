@@ -92,14 +92,14 @@
 
   ASSOCIATE ( As => Arg(V) )
 
-    IF ( As%ID       .NE. -1 ) STOP 20
-    IF ( As%GetID()  .NE. -1 ) STOP 21
+    IF ( As%ID       .NE. -1 ) ERROR STOP 20
+    IF ( As%GetID()  .NE. -1 ) ERROR STOP 21
 
-    IF ( As%C       .NE. "!" ) STOP 30
-    IF ( As%GetC()  .NE. "!" ) STOP 31
+    IF ( As%C       .NE. "!" ) ERROR STOP 30
+    IF ( As%GetC()  .NE. "!" ) ERROR STOP 31
 
-    IF ( As%L       .NEQV. .TRUE. ) STOP 60
-    IF ( As%GetL()  .NEQV. .TRUE. ) STOP 61
+    IF ( As%L       .NEQV. .TRUE. ) ERROR STOP 60
+    IF ( As%GetL()  .NEQV. .TRUE. ) ERROR STOP 61
 
 
   END ASSOCIATE

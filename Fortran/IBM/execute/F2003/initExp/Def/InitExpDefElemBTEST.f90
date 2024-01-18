@@ -85,50 +85,50 @@
 
 
 
-  IF ( .NOT. L1 )      STOP 11
-  IF ( .NOT. L2 )      STOP 12
-  IF ( .NOT. L4 )      STOP 13
-  IF ( .NOT. L8 )      STOP 14
+  IF ( .NOT. L1 )      ERROR STOP 11
+  IF ( .NOT. L2 )      ERROR STOP 12
+  IF ( .NOT. L4 )      ERROR STOP 13
+  IF ( .NOT. L8 )      ERROR STOP 14
 
-  IF (ANY( T11 .NEQV. R1  ) )    STOP 21
-  IF (ANY( T12 .NEQV. R1  ) )    STOP 22
-  IF (ANY( T14 .NEQV. R1  ) )    STOP 23
-  IF (ANY( T18 .NEQV. R1  ) )    STOP 24
+  IF (ANY( T11 .NEQV. R1  ) )    ERROR STOP 21
+  IF (ANY( T12 .NEQV. R1  ) )    ERROR STOP 22
+  IF (ANY( T14 .NEQV. R1  ) )    ERROR STOP 23
+  IF (ANY( T18 .NEQV. R1  ) )    ERROR STOP 24
 
-  IF (ANY( T21 .NEQV. R1  ) )    STOP 31
-  IF (ANY( T22 .NEQV. R1  ) )    STOP 32
-  IF (ANY( T24 .NEQV. R1  ) )    STOP 33
-  IF (ANY( T28 .NEQV. R1  ) )    STOP 34
+  IF (ANY( T21 .NEQV. R1  ) )    ERROR STOP 31
+  IF (ANY( T22 .NEQV. R1  ) )    ERROR STOP 32
+  IF (ANY( T24 .NEQV. R1  ) )    ERROR STOP 33
+  IF (ANY( T28 .NEQV. R1  ) )    ERROR STOP 34
 
-  IF (ANY( T41 .NEQV. R1  ) )    STOP 41
-  IF (ANY( T42 .NEQV. R1  ) )    STOP 42
-  IF (ANY( T44 .NEQV. R1  ) )    STOP 43
-  IF (ANY( T48 .NEQV. R1  ) )    STOP 44
+  IF (ANY( T41 .NEQV. R1  ) )    ERROR STOP 41
+  IF (ANY( T42 .NEQV. R1  ) )    ERROR STOP 42
+  IF (ANY( T44 .NEQV. R1  ) )    ERROR STOP 43
+  IF (ANY( T48 .NEQV. R1  ) )    ERROR STOP 44
 
-  IF (ANY( T81 .NEQV. R1  ) )    STOP 51
-  IF (ANY( T82 .NEQV. R1  ) )    STOP 52
-  IF (ANY( T84 .NEQV. R1  ) )    STOP 53
-  IF (ANY( T88 .NEQV. R1  ) )    STOP 54
+  IF (ANY( T81 .NEQV. R1  ) )    ERROR STOP 51
+  IF (ANY( T82 .NEQV. R1  ) )    ERROR STOP 52
+  IF (ANY( T84 .NEQV. R1  ) )    ERROR STOP 53
+  IF (ANY( T88 .NEQV. R1  ) )    ERROR STOP 54
 
-  IF (ANY( S11 .NEQV. R2  ) )    STOP 61
-  IF (ANY( S12 .NEQV. R2  ) )    STOP 62
-  IF (ANY( S14 .NEQV. R2  ) )    STOP 63
-  IF (ANY( S18 .NEQV. R2  ) )    STOP 64
+  IF (ANY( S11 .NEQV. R2  ) )    ERROR STOP 61
+  IF (ANY( S12 .NEQV. R2  ) )    ERROR STOP 62
+  IF (ANY( S14 .NEQV. R2  ) )    ERROR STOP 63
+  IF (ANY( S18 .NEQV. R2  ) )    ERROR STOP 64
 
-  IF (ANY( S21 .NEQV. R2  ) )    STOP 71
-  IF (ANY( S22 .NEQV. R2  ) )    STOP 72
-  IF (ANY( S24 .NEQV. R2  ) )    STOP 73
-  IF (ANY( s28 .NEQV. R2  ) )    STOP 74
+  IF (ANY( S21 .NEQV. R2  ) )    ERROR STOP 71
+  IF (ANY( S22 .NEQV. R2  ) )    ERROR STOP 72
+  IF (ANY( S24 .NEQV. R2  ) )    ERROR STOP 73
+  IF (ANY( s28 .NEQV. R2  ) )    ERROR STOP 74
 
-  IF (ANY( S41 .NEQV. R2  ) )    STOP 81
-  IF (ANY( S42 .NEQV. R2  ) )    STOP 82
-  IF (ANY( S44 .NEQV. R2  ) )    STOP 83
-  IF (ANY( S48 .NEQV. R2  ) )    STOP 84
+  IF (ANY( S41 .NEQV. R2  ) )    ERROR STOP 81
+  IF (ANY( S42 .NEQV. R2  ) )    ERROR STOP 82
+  IF (ANY( S44 .NEQV. R2  ) )    ERROR STOP 83
+  IF (ANY( S48 .NEQV. R2  ) )    ERROR STOP 84
 
-  IF (ANY( S81 .NEQV. R2  ) )    STOP 91
-  IF (ANY( S82 .NEQV. R2  ) )    STOP 92
-  IF (ANY( S84 .NEQV. R2  ) )    STOP 93
-  IF (ANY( S88 .NEQV. R2  ) )    STOP 94
+  IF (ANY( S81 .NEQV. R2  ) )    ERROR STOP 91
+  IF (ANY( S82 .NEQV. R2  ) )    ERROR STOP 92
+  IF (ANY( S84 .NEQV. R2  ) )    ERROR STOP 93
+  IF (ANY( S88 .NEQV. R2  ) )    ERROR STOP 94
 
   END
 

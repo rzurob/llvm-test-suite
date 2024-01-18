@@ -15,9 +15,9 @@ character(:), allocatable :: b(:)
 allocate(character(5) :: b(5:9))
 b = (/(repeat(char(i),5),i=1,5)/)
 a = b
-if (.not. allocated(a)) stop 1
-if (any(shape(a) /= shape(b))) stop 2
-if (lbound(a,1) /= 5) stop 3
-if (ubound(a,1) /= 9) stop 4
-if (any(a /= (/(repeat(char(i),5),i=1,5)/))) stop 5
+if (.not. allocated(a)) error stop 1
+if (any(shape(a) /= shape(b))) error stop 2
+if (lbound(a,1) /= 5) error stop 3
+if (ubound(a,1) /= 9) error stop 4
+if (any(a /= (/(repeat(char(i),5),i=1,5)/))) error stop 5
 end

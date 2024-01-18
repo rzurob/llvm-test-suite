@@ -58,14 +58,14 @@
 
   CALL Sub(V)
 
-  IF (.NOT. ASSOCIATED(V))         STOP 50
-  IF ( ANY(V%BaseID  .NE.  -1 ) )  STOP 51
-  IF ( ANY(V%ChildID .NE.  -2 ) )  STOP 52
+  IF (.NOT. ASSOCIATED(V))         ERROR STOP 50
+  IF ( ANY(V%BaseID  .NE.  -1 ) )  ERROR STOP 51
+  IF ( ANY(V%ChildID .NE.  -2 ) )  ERROR STOP 52
 
   SELECT TYPE ( As => V(1)%Unknown  )
     TYPE IS (CHARACTER(*))
-      IF ( ANY(SHAPE(As) .NE. (/2/) ) )  STOP 60
-      IF ( ANY(As        .NE. "321" ) )  STOP 61
+      IF ( ANY(SHAPE(As) .NE. (/2/) ) )  ERROR STOP 60
+      IF ( ANY(As        .NE. "321" ) )  ERROR STOP 61
     CLASS DEFAULT
       STOP 63
     END SELECT
@@ -77,14 +77,14 @@
 
     ASSOCIATE( As => Arg )
 
-      IF ( ANY(V%BaseID  .NE.  1 ) )  STOP 71
-      IF ( ANY(V%ChildID .NE.  2 ) )  STOP 72
+      IF ( ANY(V%BaseID  .NE.  1 ) )  ERROR STOP 71
+      IF ( ANY(V%ChildID .NE.  2 ) )  ERROR STOP 72
 
       As%BaseID = -1
       As%ChildID = -2
 
-      IF ( ANY(V%BaseID  .NE.  -1 ) )  STOP 81
-      IF ( ANY(V%ChildID .NE.  -2 ) )  STOP 82
+      IF ( ANY(V%BaseID  .NE.  -1 ) )  ERROR STOP 81
+      IF ( ANY(V%ChildID .NE.  -2 ) )  ERROR STOP 82
 
   END ASSOCIATE
 

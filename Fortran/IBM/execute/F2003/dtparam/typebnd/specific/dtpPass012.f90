@@ -38,7 +38,7 @@ module m
 
         real(8) localArray(ra%n)
 
-        if (ra%n < 10) stop 100
+        if (ra%n < 10) error stop 100
 
         localArray = ra%data
 
@@ -84,7 +84,7 @@ use m
 
         type (pair) temp, localArray(ra%n)
 
-        if (ra%n < 10) stop 101
+        if (ra%n < 10) error stop 101
 
         localArray = [(pair(ra%data(i), ra%flag(i)), i = 1, ra%n)]
 

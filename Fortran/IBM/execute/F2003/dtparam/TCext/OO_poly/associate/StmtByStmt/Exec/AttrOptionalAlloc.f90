@@ -95,12 +95,12 @@
 
   CALL Sub(W, W)
 
-  IF ( .NOT. ALLOCATED(W) )           STOP 50
+  IF ( .NOT. ALLOCATED(W) )           ERROR STOP 50
 
-  IF ( W%BaseID        .NE. 1 ) STOP 45
-  IF ( W%Base%GetId()  .NE. 1 ) STOP 46
-  IF ( W%ChildID       .NE. 2 ) STOP 47
-  IF ( W%GetId()       .NE. 2 ) STOP 48
+  IF ( W%BaseID        .NE. 1 ) ERROR STOP 45
+  IF ( W%Base%GetId()  .NE. 1 ) ERROR STOP 46
+  IF ( W%ChildID       .NE. 2 ) ERROR STOP 47
+  IF ( W%GetId()       .NE. 2 ) ERROR STOP 48
 
   END
 
@@ -109,17 +109,17 @@
   TYPE(Child(4,:)), OPTIONAL, ALLOCATABLE :: Arg
   TYPE(Child(4,:)), OPTIONAL, ALLOCATABLE :: ArgT
 
-  IF ( .NOT. PRESENT(Arg) ) STOP  5
+  IF ( .NOT. PRESENT(Arg) ) ERROR STOP  5
 
   ALLOCATE(Arg, SOURCE=Child(4,20)(BaseID=-1, ChildID=-2))
 
-  IF ( .NOT. ALLOCATED(ArgT)) STOP 6
+  IF ( .NOT. ALLOCATED(ArgT)) ERROR STOP 6
   ASSOCIATE ( Arg => Arg )
 
-    IF ( Arg%BaseID        .NE. -1 ) STOP 30
-    IF ( Arg%Base%GetId()  .NE. -1 ) STOP 31
-    IF ( Arg%ChildID       .NE. -2 ) STOP 32
-    IF ( Arg%GetId()       .NE. -2 ) STOP 33
+    IF ( Arg%BaseID        .NE. -1 ) ERROR STOP 30
+    IF ( Arg%Base%GetId()  .NE. -1 ) ERROR STOP 31
+    IF ( Arg%ChildID       .NE. -2 ) ERROR STOP 32
+    IF ( Arg%GetId()       .NE. -2 ) ERROR STOP 33
 
     CALL Arg%Base%SetID(Arg)
     CALL Arg%SetID(Arg)

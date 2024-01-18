@@ -29,9 +29,9 @@
         ! bounds-remapping
         p_cmplx(3:8) => t_cmplx(::3)
 
-        if ( .not. associated(p_cmplx) ) stop 5
-        if ( lbound(p_cmplx,1) /= 3 ) stop 7
-        if ( ubound(p_cmplx,1) /= 8 ) stop 9
+        if ( .not. associated(p_cmplx) ) error stop 5
+        if ( lbound(p_cmplx,1) /= 3 ) error stop 7
+        if ( ubound(p_cmplx,1) /= 8 ) error stop 9
 
         ! sum(array, mask)
         if(.not. precision_x8(sum(p_cmplx, lp),(144.0000000,140.0000000))) &
@@ -45,8 +45,8 @@
         p_cmplx(0:) => t_cmplx
         p_cmplx(0:) => p_cmplx(10:)
 
-        if ( lbound(p_cmplx, 1) /= 0 ) stop 13
-        if ( ubound(p_cmplx, 1) /= 9 ) stop 15
+        if ( lbound(p_cmplx, 1) /= 0 ) error stop 13
+        if ( ubound(p_cmplx, 1) /= 9 ) error stop 15
         if ( .not. precision_x8(sum(p_cmplx, lp),(176.0000000,172.0000000))) &
         stop 17
     End program

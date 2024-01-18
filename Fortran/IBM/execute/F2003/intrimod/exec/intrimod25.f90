@@ -49,17 +49,17 @@
 
          call ieee_get_flag(ieee_all, flag_values)
          do k = 1, 5
-            if (flag_values(k) .neqv. .false. ) stop 10
+            if (flag_values(k) .neqv. .false. ) error stop 10
          enddo
 
-         if( c_fun1() /= 0 ) stop 12
+         if( c_fun1() /= 0 ) error stop 12
 
          call ieee_get_status(status_value)
          call ieee_set_rounding_mode(rt_nearest)
          yr = ieee_rint(1.1)
-         if (yr /= 1.0) stop 16
+         if (yr /= 1.0) error stop 16
 
-         if (c_fun2() /= 0) stop 17
+         if (c_fun2() /= 0) error stop 17
 
          call ieee_set_status(status_value)
 

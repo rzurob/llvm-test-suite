@@ -254,29 +254,29 @@ subroutine extern_fsub()
 
 
         do i = 1, 8
-          if ( res_s1(i)                .ne.    cmp_s1(i)   )           STOP 5
-          if ( res_s2(i)                .ne.    cmp_s2(i)    )          STOP 6
-          if ( res_s4(i)                .ne.    cmp_s4(i)    )          STOP 7
-          if ( res_s8(i)                .ne.    cmp_s8(i)    )          STOP 8
-          if ( res_C_SIGNED_CHAR(i)     .ne.    cmp_C_SIGNED_CHAR(i) )  STOP 9
-          if ( res_C_SHORT(i)           .ne.    cmp_C_SHORT(i)    )     STOP 10
-          if ( res_C_INT(i)             .ne.    cmp_C_INT(i)    )       STOP 11
-          if ( res_C_LONG(i)            .ne.    cmp_C_LONG(i)    )      STOP 12
-          if ( res_C_LONG_LONG(i)       .ne.    cmp_C_LONG_LONG(i)    ) STOP 13
-          if ( res_C_SIZE_T(i)          .ne.    cmp_C_SIZE_T(i)    )    STOP 14
-          if ( res_C_INTPTR_T(i)        .ne.    cmp_C_INTPTR_T(i)    )  STOP 15
-          if ( res_C_INTMAX_T(i)        .ne.    cmp_C_INTMAX_T(i)    )  STOP 16
-          if ( res_C_INT8_T(i)          .ne.    cmp_C_INT8_T(i)    )    STOP 17
-!         if ( res_C_INT16_T(i)         .ne.    cmp_C_INT16_T(i)    )   STOP 18
-          if ( res_C_INT32_T(i)         .ne.    cmp_C_INT32_T(i)    )   STOP 19
-          if ( res_C_INT64_T(i)         .ne.    cmp_C_INT64_T(i)    )   STOP 10
-          if ( res_C_INT_LEAST8_T(i)    .ne.    cmp_C_INT_LEAST8_T(i) ) STOP 21
-          if ( res_C_INT_LEAST16_T(i)   .ne.    cmp_C_INT_LEAST16_T(i)) STOP 22
-          if ( res_C_INT_LEAST32_T(i)   .ne.    cmp_C_INT_LEAST32_T(i)) STOP 23
-          if ( res_C_INT_LEAST64_T(i)   .ne.    cmp_C_INT_LEAST64_T(i)) STOP 24
-          if ( res_C_INT_FAST8_T(i)     .ne.    cmp_C_INT_FAST8_T(i)  ) STOP 25
-          if ( res_C_INT_FAST32_T(i)    .ne.    cmp_C_INT_FAST32_T(i) ) STOP 26
-          if ( res_C_INT_FAST64_T(i)    .ne.    cmp_C_INT_FAST64_T(i) ) STOP 27
+          if ( res_s1(i)                .ne.    cmp_s1(i)   )           ERROR STOP 5
+          if ( res_s2(i)                .ne.    cmp_s2(i)    )          ERROR STOP 6
+          if ( res_s4(i)                .ne.    cmp_s4(i)    )          ERROR STOP 7
+          if ( res_s8(i)                .ne.    cmp_s8(i)    )          ERROR STOP 8
+          if ( res_C_SIGNED_CHAR(i)     .ne.    cmp_C_SIGNED_CHAR(i) )  ERROR STOP 9
+          if ( res_C_SHORT(i)           .ne.    cmp_C_SHORT(i)    )     ERROR STOP 10
+          if ( res_C_INT(i)             .ne.    cmp_C_INT(i)    )       ERROR STOP 11
+          if ( res_C_LONG(i)            .ne.    cmp_C_LONG(i)    )      ERROR STOP 12
+          if ( res_C_LONG_LONG(i)       .ne.    cmp_C_LONG_LONG(i)    ) ERROR STOP 13
+          if ( res_C_SIZE_T(i)          .ne.    cmp_C_SIZE_T(i)    )    ERROR STOP 14
+          if ( res_C_INTPTR_T(i)        .ne.    cmp_C_INTPTR_T(i)    )  ERROR STOP 15
+          if ( res_C_INTMAX_T(i)        .ne.    cmp_C_INTMAX_T(i)    )  ERROR STOP 16
+          if ( res_C_INT8_T(i)          .ne.    cmp_C_INT8_T(i)    )    ERROR STOP 17
+!         if ( res_C_INT16_T(i)         .ne.    cmp_C_INT16_T(i)    )   ERROR STOP 18
+          if ( res_C_INT32_T(i)         .ne.    cmp_C_INT32_T(i)    )   ERROR STOP 19
+          if ( res_C_INT64_T(i)         .ne.    cmp_C_INT64_T(i)    )   ERROR STOP 10
+          if ( res_C_INT_LEAST8_T(i)    .ne.    cmp_C_INT_LEAST8_T(i) ) ERROR STOP 21
+          if ( res_C_INT_LEAST16_T(i)   .ne.    cmp_C_INT_LEAST16_T(i)) ERROR STOP 22
+          if ( res_C_INT_LEAST32_T(i)   .ne.    cmp_C_INT_LEAST32_T(i)) ERROR STOP 23
+          if ( res_C_INT_LEAST64_T(i)   .ne.    cmp_C_INT_LEAST64_T(i)) ERROR STOP 24
+          if ( res_C_INT_FAST8_T(i)     .ne.    cmp_C_INT_FAST8_T(i)  ) ERROR STOP 25
+          if ( res_C_INT_FAST32_T(i)    .ne.    cmp_C_INT_FAST32_T(i) ) ERROR STOP 26
+          if ( res_C_INT_FAST64_T(i)    .ne.    cmp_C_INT_FAST64_T(i) ) ERROR STOP 27
 
         end do
 
@@ -316,29 +316,29 @@ subroutine extern_fsub()
 
 
 	do i = 1, 8
-	  if ( res_s1(i)    		.ne.    cmp_s1(i)   ) 		STOP 35
-	  if ( res_s2(i)  	  	.ne.    cmp_s2(i)    ) 		STOP 36
-	  if ( res_s4(i)    		.ne.    cmp_s4(i)    ) 		STOP 37
-	  if ( res_s8(i)    		.ne.    cmp_s8(i)    ) 		STOP 38
-	  if ( res_C_SIGNED_CHAR(i)    	.ne.    cmp_C_SIGNED_CHAR(i) )  STOP 39
-	  if ( res_C_SHORT(i)    	.ne.    cmp_C_SHORT(i)    ) 	STOP 40
-	  if ( res_C_INT(i)    		.ne.    cmp_C_INT(i)    ) 	STOP 41
-	  if ( res_C_LONG(i)    	.ne.    cmp_C_LONG(i)    ) 	STOP 42
-	  if ( res_C_LONG_LONG(i)    	.ne.    cmp_C_LONG_LONG(i)    ) STOP 43
-	  if ( res_C_SIZE_T(i)    	.ne.    cmp_C_SIZE_T(i)    ) 	STOP 44
-	  if ( res_C_INTPTR_T(i)    	.ne.    cmp_C_INTPTR_T(i)    ) 	STOP 45
-	  if ( res_C_INTMAX_T(i)    	.ne.    cmp_C_INTMAX_T(i)    ) 	STOP 46
-	  if ( res_C_INT8_T(i)    	.ne.    cmp_C_INT8_T(i)    ) 	STOP 47
-!	  if ( res_C_INT16_T(i)    	.ne.    cmp_C_INT16_T(i)    ) 	STOP 48
-	  if ( res_C_INT32_T(i)    	.ne.    cmp_C_INT32_T(i)    ) 	STOP 49
-	  if ( res_C_INT64_T(i)    	.ne.    cmp_C_INT64_T(i)    ) 	STOP 50
-	  if ( res_C_INT_LEAST8_T(i)    .ne.    cmp_C_INT_LEAST8_T(i) ) STOP 51
-	  if ( res_C_INT_LEAST16_T(i)   .ne.    cmp_C_INT_LEAST16_T(i)) STOP 52
-	  if ( res_C_INT_LEAST32_T(i)   .ne.    cmp_C_INT_LEAST32_T(i)) STOP 53
-	  if ( res_C_INT_LEAST64_T(i)   .ne.    cmp_C_INT_LEAST64_T(i)) STOP 54
-	  if ( res_C_INT_FAST8_T(i)     .ne.    cmp_C_INT_FAST8_T(i)  ) STOP 55
-	  if ( res_C_INT_FAST32_T(i)    .ne.    cmp_C_INT_FAST32_T(i) ) STOP 56
-	  if ( res_C_INT_FAST64_T(i)    .ne.    cmp_C_INT_FAST64_T(i) ) STOP 57
+	  if ( res_s1(i)    		.ne.    cmp_s1(i)   ) 		ERROR STOP 35
+	  if ( res_s2(i)  	  	.ne.    cmp_s2(i)    ) 		ERROR STOP 36
+	  if ( res_s4(i)    		.ne.    cmp_s4(i)    ) 		ERROR STOP 37
+	  if ( res_s8(i)    		.ne.    cmp_s8(i)    ) 		ERROR STOP 38
+	  if ( res_C_SIGNED_CHAR(i)    	.ne.    cmp_C_SIGNED_CHAR(i) )  ERROR STOP 39
+	  if ( res_C_SHORT(i)    	.ne.    cmp_C_SHORT(i)    ) 	ERROR STOP 40
+	  if ( res_C_INT(i)    		.ne.    cmp_C_INT(i)    ) 	ERROR STOP 41
+	  if ( res_C_LONG(i)    	.ne.    cmp_C_LONG(i)    ) 	ERROR STOP 42
+	  if ( res_C_LONG_LONG(i)    	.ne.    cmp_C_LONG_LONG(i)    ) ERROR STOP 43
+	  if ( res_C_SIZE_T(i)    	.ne.    cmp_C_SIZE_T(i)    ) 	ERROR STOP 44
+	  if ( res_C_INTPTR_T(i)    	.ne.    cmp_C_INTPTR_T(i)    ) 	ERROR STOP 45
+	  if ( res_C_INTMAX_T(i)    	.ne.    cmp_C_INTMAX_T(i)    ) 	ERROR STOP 46
+	  if ( res_C_INT8_T(i)    	.ne.    cmp_C_INT8_T(i)    ) 	ERROR STOP 47
+!	  if ( res_C_INT16_T(i)    	.ne.    cmp_C_INT16_T(i)    ) 	ERROR STOP 48
+	  if ( res_C_INT32_T(i)    	.ne.    cmp_C_INT32_T(i)    ) 	ERROR STOP 49
+	  if ( res_C_INT64_T(i)    	.ne.    cmp_C_INT64_T(i)    ) 	ERROR STOP 50
+	  if ( res_C_INT_LEAST8_T(i)    .ne.    cmp_C_INT_LEAST8_T(i) ) ERROR STOP 51
+	  if ( res_C_INT_LEAST16_T(i)   .ne.    cmp_C_INT_LEAST16_T(i)) ERROR STOP 52
+	  if ( res_C_INT_LEAST32_T(i)   .ne.    cmp_C_INT_LEAST32_T(i)) ERROR STOP 53
+	  if ( res_C_INT_LEAST64_T(i)   .ne.    cmp_C_INT_LEAST64_T(i)) ERROR STOP 54
+	  if ( res_C_INT_FAST8_T(i)     .ne.    cmp_C_INT_FAST8_T(i)  ) ERROR STOP 55
+	  if ( res_C_INT_FAST32_T(i)    .ne.    cmp_C_INT_FAST32_T(i) ) ERROR STOP 56
+	  if ( res_C_INT_FAST64_T(i)    .ne.    cmp_C_INT_FAST64_T(i) ) ERROR STOP 57
 
 	end do
 

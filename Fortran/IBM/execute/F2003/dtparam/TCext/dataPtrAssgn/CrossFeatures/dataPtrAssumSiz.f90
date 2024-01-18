@@ -68,26 +68,26 @@
 
   Ptr(L:, L:) => Arr(:,L:U)
 
-  IF (.NOT. ASSOCIATED(Ptr, Arr(:, L:U)))          STOP 11
-  IF (ANY( LBOUND(Ptr)         .NE. (/L, L /)))    STOP 12
-  IF (ANY( UBOUND(Ptr)         .NE. (/U, U /)))    STOP 13
+  IF (.NOT. ASSOCIATED(Ptr, Arr(:, L:U)))          ERROR STOP 11
+  IF (ANY( LBOUND(Ptr)         .NE. (/L, L /)))    ERROR STOP 12
+  IF (ANY( UBOUND(Ptr)         .NE. (/U, U /)))    ERROR STOP 13
   SELECT TYPE (Ptr)
   TYPE IS (DT(4))
-    IF (ANY( Ptr%ID            .NE.   -1))         STOP 14
-    IF (ANY( Ptr%ModFun()      .NE.   -1))         STOP 15
+    IF (ANY( Ptr%ID            .NE.   -1))         ERROR STOP 14
+    IF (ANY( Ptr%ModFun()      .NE.   -1))         ERROR STOP 15
   CLASS DEFAULT
     STOP 16
   END SELECT
 
   Ptr(L:U, U:U) => Arr(:,L)
 
-  IF (.NOT. ASSOCIATED(Ptr))                       STOP 21
-  IF (ANY( LBOUND(Ptr)         .NE. (/L, U /)))    STOP 22
-  IF (ANY( UBOUND(Ptr)         .NE. (/U, U /)))    STOP 23
+  IF (.NOT. ASSOCIATED(Ptr))                       ERROR STOP 21
+  IF (ANY( LBOUND(Ptr)         .NE. (/L, U /)))    ERROR STOP 22
+  IF (ANY( UBOUND(Ptr)         .NE. (/U, U /)))    ERROR STOP 23
   SELECT TYPE (Ptr)
   TYPE IS (DT(4))
-    IF (ANY( Ptr%ID            .NE.   -1))         STOP 24
-    IF (ANY( Ptr%ModFun()      .NE.   -1))         STOP 25
+    IF (ANY( Ptr%ID            .NE.   -1))         ERROR STOP 24
+    IF (ANY( Ptr%ModFun()      .NE.   -1))         ERROR STOP 25
   CLASS DEFAULT
     STOP 26
   END SELECT

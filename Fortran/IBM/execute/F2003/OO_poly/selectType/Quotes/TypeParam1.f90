@@ -56,10 +56,10 @@
 2     CLASS DEFAULT
         SELECT TYPE (U => U)
           CLASS IS (DT)
-            IF (SIZE(U(2,2,2)%CArr) .NE. 2)      STOP 30
-            IF (U(2,1,2)%CArr(1   ) .NE. "1234") STOP 31
-            IF (U(1,1,2)%CArr(2)    .NE. "4321") STOP 32
-            IF (LEN(U(2,2,2)%CArr)  .NE. 4)      STOP 33
+            IF (SIZE(U(2,2,2)%CArr) .NE. 2)      ERROR STOP 30
+            IF (U(2,1,2)%CArr(1   ) .NE. "1234") ERROR STOP 31
+            IF (U(1,1,2)%CArr(2)    .NE. "4321") ERROR STOP 32
+            IF (LEN(U(2,2,2)%CArr)  .NE. 4)      ERROR STOP 33
           CLASS DEFAULT
             STOP 34
         END SELECT

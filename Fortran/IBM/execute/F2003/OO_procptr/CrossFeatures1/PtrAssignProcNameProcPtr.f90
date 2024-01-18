@@ -49,7 +49,7 @@
     Ptr => ArgPtr
 
     Str = Ptr("12345")
-    IF ( Str .NE. "12345" ) STOP 12
+    IF ( Str .NE. "12345" ) ERROR STOP 12
 
   END SUBROUTINE
 
@@ -92,7 +92,7 @@
 
     Ptr => ArgPtr
     Str = Ptr((/("54321", i=1, 10000) /) )
-    IF ( ANY(Str .NE. "54321" )) STOP 22
+    IF ( ANY(Str .NE. "54321" )) ERROR STOP 22
 
   END SUBROUTINE
 

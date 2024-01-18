@@ -52,13 +52,13 @@ PROGRAM AllocateWithTypeSpec13
       CLASS(*), ALLOCATABLE :: upoly
       CHARACTER(20) :: tag
 
-      IF ( ALLOCATED(upoly)) STOP 10
+      IF ( ALLOCATED(upoly)) ERROR STOP 10
 
 !*   Base
 
       ALLOCATE(Base(4,8) :: upoly)
       CALL verify_type(upoly)
-      IF (tag .NE. 'Base') STOP 11
+      IF (tag .NE. 'Base') ERROR STOP 11
 
       CALL alloc_comp(upoly)
 
@@ -68,7 +68,7 @@ PROGRAM AllocateWithTypeSpec13
 
       ALLOCATE(Child(4,8,4,16) :: upoly)
       CALL verify_type(upoly)
-      IF (tag .NE. 'Child') STOP 12
+      IF (tag .NE. 'Child') ERROR STOP 12
 
       CALL alloc_comp(upoly)
 
@@ -78,7 +78,7 @@ PROGRAM AllocateWithTypeSpec13
 
       ALLOCATE(Branch(4,10,4,5,8,8) :: upoly)
       CALL verify_type(upoly)
-      IF (tag .NE. 'Branch') STOP 13
+      IF (tag .NE. 'Branch') ERROR STOP 13
 
       CALL alloc_comp(upoly)
 
@@ -92,22 +92,22 @@ PROGRAM AllocateWithTypeSpec13
          SELECT TYPE ( Arg )
               CLASS IS (Base(4,*))
                  tag = 'Base'
-                 IF (Arg%l1 .NE. 8) STOP 20
-                 IF (Size(Arg%data) .NE. Arg%l1) STOP 21
+                 IF (Arg%l1 .NE. 8) ERROR STOP 20
+                 IF (Size(Arg%data) .NE. Arg%l1) ERROR STOP 21
 
               CLASS IS (Child(4,*,4,*))
                  tag = 'Child'
-                 IF (Arg%l1 .NE. 8) STOP 22
-                 IF (Arg%l2 .NE. 16) STOP 23
-                 IF (Size(Arg%data) .NE. Arg%l1) STOP 24
-                 IF (Size(Arg%mat)  .NE. Arg%l1*Arg%l2) STOP 25
+                 IF (Arg%l1 .NE. 8) ERROR STOP 22
+                 IF (Arg%l2 .NE. 16) ERROR STOP 23
+                 IF (Size(Arg%data) .NE. Arg%l1) ERROR STOP 24
+                 IF (Size(Arg%mat)  .NE. Arg%l1*Arg%l2) ERROR STOP 25
 
               CLASS IS (Branch(4,*,4,*,*,*))
                  tag = 'Branch'
-                 IF (Arg%l3 .NE. 5) STOP 26
-                 IF (Arg%l4 .NE. 8) STOP 27
-                 IF (Arg%l5 .NE. 8) STOP 28
-                 IF (Size(Arg%data) .NE. Arg%l1) STOP 29
+                 IF (Arg%l3 .NE. 5) ERROR STOP 26
+                 IF (Arg%l4 .NE. 8) ERROR STOP 27
+                 IF (Arg%l5 .NE. 8) ERROR STOP 28
+                 IF (Size(Arg%data) .NE. Arg%l1) ERROR STOP 29
 
               CLASS DEFAULT
                  STOP 30
@@ -122,23 +122,23 @@ PROGRAM AllocateWithTypeSpec13
               CLASS IS (Base(4,*))
 
               CLASS IS (Child(4,*,4,*))
-                 IF ( ALLOCATED(Arg%b_cmp)) STOP 40
+                 IF ( ALLOCATED(Arg%b_cmp)) ERROR STOP 40
                  ALLOCATE(Child(4,Arg%l2-Arg%l1,4,Arg%l2) :: Arg%b_cmp)
 
                  CALL verify_type(Arg%b_cmp)
-                 IF (tag .NE. 'Child') STOP 41
+                 IF (tag .NE. 'Child') ERROR STOP 41
 
               CLASS IS (Branch(4,*,4,*,*,*))
-                 IF ( ALLOCATED(Arg%left)) STOP 42
-                 IF ( ALLOCATED(Arg%right)) STOP 43
+                 IF ( ALLOCATED(Arg%left)) ERROR STOP 42
+                 IF ( ALLOCATED(Arg%right)) ERROR STOP 43
                  ALLOCATE(Branch(4,Arg%l4,4,Arg%l1-Arg%l3,Arg%l4,Arg%l4) :: Arg%left)
                  ALLOCATE(Branch(4,Arg%l5,4,Arg%l1-Arg%l3,Arg%l5,Arg%l5) :: Arg%right)
 
                  CALL verify_type(Arg%left)
-                 IF (tag .NE. 'Branch') STOP 44
+                 IF (tag .NE. 'Branch') ERROR STOP 44
 
                  CALL verify_type(Arg%right)
-                 IF (tag .NE. 'Branch') STOP 45
+                 IF (tag .NE. 'Branch') ERROR STOP 45
 
               CLASS DEFAULT
                  STOP 46

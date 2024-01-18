@@ -63,14 +63,14 @@
       CLASS(Basic(k1,len1)), POINTER :: Pnt
 
       ALLOCATE(Indv%my_arr(2*len1))
-      IF ( .NOT. ALLOCATED(Indv%my_arr)) STOP 10
+      IF ( .NOT. ALLOCATED(Indv%my_arr)) ERROR STOP 10
 
       Indv%my_arr = (/ (1.3, 2.7, I = 1, len1)/)
 
       CALL Sub1(Indv)
 
       Pnt => Indv
-      IF ( .NOT. ASSOCIATED(Pnt)) STOP 11
+      IF ( .NOT. ASSOCIATED(Pnt)) ERROR STOP 11
 
       SELECT TYPE(A=>Pnt)
 

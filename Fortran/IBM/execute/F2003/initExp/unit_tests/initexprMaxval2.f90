@@ -33,17 +33,17 @@ real(8) :: res8=maxval(A8), res8a(2,2,2,2,2,2)=maxval(A8, mask=A8<0.0)
 real(16) :: res16=maxval(A16), &
          &  res16a=maxval(A16, mask=A16>1.0Q40)
 
-if (res4 .ne. maxval(A4)) stop 1
-if (.not. all(res4a .eq. maxval(A4, dim=1))) stop 2
-if (.not. all(res4b .eq. maxval(A4, dim=2))) stop 3
-if (.not. all(res4c .eq. maxval(A4, dim=2, mask=A4 .lt. 30))) stop 4
+if (res4 .ne. maxval(A4)) error stop 1
+if (.not. all(res4a .eq. maxval(A4, dim=1))) error stop 2
+if (.not. all(res4b .eq. maxval(A4, dim=2))) error stop 3
+if (.not. all(res4c .eq. maxval(A4, dim=2, mask=A4 .lt. 30))) error stop 4
 
-if (res8 .ne. maxval(A8)) stop 5
+if (res8 .ne. maxval(A8)) error stop 5
 if (.not. all(res8a .eq. maxval(A8, mask=A8<0.0))) then
   stop 6
 endif
 
-if (res16 .ne. maxval(A16)) stop 7
-if (res16a .ne. maxval(A16, mask=A16>1.0Q40)) stop 8
+if (res16 .ne. maxval(A16)) error stop 7
+if (res16a .ne. maxval(A16, mask=A16>1.0Q40)) error stop 8
 
 end

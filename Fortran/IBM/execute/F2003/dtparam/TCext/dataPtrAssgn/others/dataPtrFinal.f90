@@ -71,15 +71,15 @@
     allocate(B(4,20,4,20) :: P1(20))
     p(3:6, 5:9) => p1
 
-    if ( .not. associated(p)) stop 3
+    if ( .not. associated(p)) error stop 3
     deallocate(p)
 
-    if ( associated(p) ) stop 11
+    if ( associated(p) ) error stop 11
 
-    if ( countB /= 0 ) stop 21
-    if ( counta2 /= 1 ) stop 31
-    if ( counta1 /= 0 ) stop 41
-    if ( counta /= 0 ) stop 51
+    if ( countB /= 0 ) error stop 21
+    if ( counta2 /= 1 ) error stop 31
+    if ( counta1 /= 0 ) error stop 41
+    if ( counta /= 0 ) error stop 51
 
 
  End program

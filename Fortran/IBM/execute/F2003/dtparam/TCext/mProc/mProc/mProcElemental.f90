@@ -82,8 +82,8 @@
   T  = Fun((/(DT(20,4)(I), I=1, 1000)/))
   T1 = Fun((/(DT(20,4)(I), I=11, 1010)/), T)
 
-  IF ( ANY(T%ID  .NE. (/(I, I=1, 1000)/)) )  STOP 11
-  IF ( ANY(T1%ID  .NE. (/(I, I=11, 1010)/)) )  STOP 12
+  IF ( ANY(T%ID  .NE. (/(I, I=1, 1000)/)) )  ERROR STOP 11
+  IF ( ANY(T1%ID  .NE. (/(I, I=11, 1010)/)) )  ERROR STOP 12
 
 
   END

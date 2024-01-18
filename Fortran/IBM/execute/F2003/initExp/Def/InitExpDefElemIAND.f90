@@ -47,19 +47,19 @@
   INTEGER(KIND(IAND(IC81, IC82))), PARAMETER :: IC83(128)=IAND(IC81, IC82)
 
 
-  IF ( KIND(A)    .NE. 4 )         STOP 10
+  IF ( KIND(A)    .NE. 4 )         ERROR STOP 10
 
-  IF ( KIND(IC13) .NE. 1 )         STOP 11
-  IF ( ANY( IC13  .NE. 0 ))        STOP 12
+  IF ( KIND(IC13) .NE. 1 )         ERROR STOP 11
+  IF ( ANY( IC13  .NE. 0 ))        ERROR STOP 12
 
-  IF ( KIND(IC23) .NE. 2 )         STOP 21
-  IF ( ANY( IC23  .NE. 0 ))        STOP 22
+  IF ( KIND(IC23) .NE. 2 )         ERROR STOP 21
+  IF ( ANY( IC23  .NE. 0 ))        ERROR STOP 22
 
-  IF ( KIND(IC43) .NE. 4 )         STOP 41
-  IF ( ANY( IC43  .NE. 0 ))        STOP 42
+  IF ( KIND(IC43) .NE. 4 )         ERROR STOP 41
+  IF ( ANY( IC43  .NE. 0 ))        ERROR STOP 42
 
-  IF ( KIND(IC83) .NE. 8 )         STOP 81
-  IF ( ANY( IC83  .NE. 0 ))        STOP 82
+  IF ( KIND(IC83) .NE. 8 )         ERROR STOP 81
+  IF ( ANY( IC83  .NE. 0 ))        ERROR STOP 82
 
 
 

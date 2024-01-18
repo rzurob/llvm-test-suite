@@ -57,6 +57,6 @@ program saBasicStatusNMsg
 
    sync all
 
-   if (status /= 0 .or. emsg /= fill) stop 2
+   if (status /= 0 .or. emsg /= fill) error stop 2
 
 end program saBasicStatusNMsg

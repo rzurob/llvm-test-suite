@@ -100,9 +100,9 @@
   T1  = ExtFun(DT1(-2), DT1(-2))
   T3  = ExtFun(DT3(-3), DT3(-3))
 
-  IF (T%ID   .NE. -2 ) STOP 11
-  IF (T1%ID  .NE. -4 ) STOP 12
-  IF (T3%ID  .NE. -6 ) STOP 14
+  IF (T%ID   .NE. -2 ) ERROR STOP 11
+  IF (T1%ID  .NE. -4 ) ERROR STOP 12
+  IF (T3%ID  .NE. -6 ) ERROR STOP 14
 
 
   END

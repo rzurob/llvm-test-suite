@@ -30,8 +30,8 @@
 
           call move_alloc(c1, c2)
 
-          if ( .not. allocated(c2) ) stop 21
-          if ( allocated(c1) ) stop 31
+          if ( .not. allocated(c2) ) error stop 21
+          if ( allocated(c1) ) error stop 31
           if ( .not. precision_x8 (c2, (20.0000,2.0000) )) error stop 51_4
 
      end

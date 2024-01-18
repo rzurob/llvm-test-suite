@@ -116,24 +116,24 @@
 
   SUBROUTINE IntSub(Arg1, Arg2)
   TYPE(DT(1,2,4,8,16,*)) :: Arg1, Arg2
-    IF (ANY(Arg1%I1Arr .NE. Arg2%I1Arr)) STOP 11
-    IF (ANY(Arg1%I2Arr .NE. Arg2%I2Arr)) STOP 12
-    IF (ANY(Arg1%I4Arr .NE. Arg2%I4Arr)) STOP 14
-    IF (ANY(Arg1%I8Arr .NE. Arg2%I8Arr)) STOP 18
+    IF (ANY(Arg1%I1Arr .NE. Arg2%I1Arr)) ERROR STOP 11
+    IF (ANY(Arg1%I2Arr .NE. Arg2%I2Arr)) ERROR STOP 12
+    IF (ANY(Arg1%I4Arr .NE. Arg2%I4Arr)) ERROR STOP 14
+    IF (ANY(Arg1%I8Arr .NE. Arg2%I8Arr)) ERROR STOP 18
 
-    IF (ANY(Arg1%R4Arr  .NE. Arg2%R4Arr))  STOP 24
-    IF (ANY(Arg1%R8Arr  .NE. Arg2%R8Arr))  STOP 28
-    IF (ANY(Arg1%R16Arr .NE. Arg2%R16Arr)) STOP 216
+    IF (ANY(Arg1%R4Arr  .NE. Arg2%R4Arr))  ERROR STOP 24
+    IF (ANY(Arg1%R8Arr  .NE. Arg2%R8Arr))  ERROR STOP 28
+    IF (ANY(Arg1%R16Arr .NE. Arg2%R16Arr)) ERROR STOP 216
 
-    IF (ANY(Arg1%C8Arr  .NE. Arg2%C8Arr))  STOP 38
-    IF (ANY(Arg1%C16Arr .NE. Arg2%C16Arr)) STOP 316
+    IF (ANY(Arg1%C8Arr  .NE. Arg2%C8Arr))  ERROR STOP 38
+    IF (ANY(Arg1%C16Arr .NE. Arg2%C16Arr)) ERROR STOP 316
 
-    IF (ANY(Arg1%L1Arr .NEQV. Arg2%L1Arr)) STOP 41
-    IF (ANY(Arg1%L2Arr .NEQV. Arg2%L2Arr)) STOP 42
-    IF (ANY(Arg1%L4Arr .NEQV. Arg2%L4Arr)) STOP 44
-    IF (ANY(Arg1%L8Arr .NEQV. Arg2%L8Arr)) STOP 48
+    IF (ANY(Arg1%L1Arr .NEQV. Arg2%L1Arr)) ERROR STOP 41
+    IF (ANY(Arg1%L2Arr .NEQV. Arg2%L2Arr)) ERROR STOP 42
+    IF (ANY(Arg1%L4Arr .NEQV. Arg2%L4Arr)) ERROR STOP 44
+    IF (ANY(Arg1%L8Arr .NEQV. Arg2%L8Arr)) ERROR STOP 48
 
-    IF (ANY(Arg1%CharArr .NE. Arg2%CharArr)) STOP 68
+    IF (ANY(Arg1%CharArr .NE. Arg2%CharArr)) ERROR STOP 68
 
   END SUBROUTINE
 

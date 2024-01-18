@@ -39,7 +39,7 @@ module m
            func => arg
            call move_alloc(arg, brg)
 
-           if ( .not. associated( func, brg) ) stop 21
+           if ( .not. associated( func, brg) ) error stop 21
       end function
 end module
 

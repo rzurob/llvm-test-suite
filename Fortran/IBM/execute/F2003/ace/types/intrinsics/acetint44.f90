@@ -33,70 +33,70 @@ program acetint44
 
   ! Division by scalar
   print *, ([integer:: 10, 20, 30] / 10)
-  if (any(([integer:: 10, 20, 30] / 10) /= [integer:: 1,2,3])) stop 2
-  if (sum(([integer:: 10, 20, 30] / 10)) /= 6) stop 3
-  if (.not. sameInt(([integer:: 10, 20, 30] / 10), [integer:: 1,2,3])) stop 4
-  if (.not. all(sameIntEl([integer:: 10, 20, 30] / 10, [integer:: 1,2,3]))) stop 5
+  if (any(([integer:: 10, 20, 30] / 10) /= [integer:: 1,2,3])) error stop 2
+  if (sum(([integer:: 10, 20, 30] / 10)) /= 6) error stop 3
+  if (.not. sameInt(([integer:: 10, 20, 30] / 10), [integer:: 1,2,3])) error stop 4
+  if (.not. all(sameIntEl([integer:: 10, 20, 30] / 10, [integer:: 1,2,3]))) error stop 5
 
   ! Division by vector
   print *, ([integer:: 10, 20, 30] / [integer:: 2, 5, 10])
-  if (any(([integer:: 10, 20, 30] / [integer:: 2, 5, 10]) /= [integer:: 5,4,3])) stop 6
-  if (sum(([integer:: 10, 20, 30] / [integer:: 2, 5, 10])) /= 12) stop 7
-  if (.not. sameInt(([integer:: 10, 20, 30] / [integer:: 2, 5, 10]), [integer:: 5,4,3])) stop 8
-  if (.not. all(sameIntEl([integer:: 10, 20, 30] / [integer:: 2, 5, 10], [integer:: 5,4,3]))) stop 9
+  if (any(([integer:: 10, 20, 30] / [integer:: 2, 5, 10]) /= [integer:: 5,4,3])) error stop 6
+  if (sum(([integer:: 10, 20, 30] / [integer:: 2, 5, 10])) /= 12) error stop 7
+  if (.not. sameInt(([integer:: 10, 20, 30] / [integer:: 2, 5, 10]), [integer:: 5,4,3])) error stop 8
+  if (.not. all(sameIntEl([integer:: 10, 20, 30] / [integer:: 2, 5, 10], [integer:: 5,4,3]))) error stop 9
 
   ! Addition by vector
   print *, ([real:: 4.2e-2, 6.7e2, 1e16] + [real:: 3.3e-1, 3.2e1, 5e15])
-  if (.not. precision_r4(product(([real:: 4.2e-2, 6.7e2, 1e16] + [real:: 3.3e-1, 3.2e1, 5e15])), (0.372*702*15e15))) stop 10
-  if (.not. sameReal(([real:: 4.2e-2, 6.7e2, 1e16] + [real:: 3.3e-1, 3.2e1, 5e15]), [real:: 0.372, 702.0, 15e15], 0.00001)) stop 11
-  if (.not. all(sameRealEl([real:: 4.2e-2, 6.7e2, 1e16] + [real:: 3.3e-1, 3.2e1, 5e15], [real:: 0.372, 702.0, 15e15], 0.00001))) stop 12
+  if (.not. precision_r4(product(([real:: 4.2e-2, 6.7e2, 1e16] + [real:: 3.3e-1, 3.2e1, 5e15])), (0.372*702*15e15))) error stop 10
+  if (.not. sameReal(([real:: 4.2e-2, 6.7e2, 1e16] + [real:: 3.3e-1, 3.2e1, 5e15]), [real:: 0.372, 702.0, 15e15], 0.00001)) error stop 11
+  if (.not. all(sameRealEl([real:: 4.2e-2, 6.7e2, 1e16] + [real:: 3.3e-1, 3.2e1, 5e15], [real:: 0.372, 702.0, 15e15], 0.00001))) error stop 12
 
   ! Repeat with subtraction:
   print *, ([real:: 4.2e-2, 6.7e2, 1e16] - [real:: 3.3e-1, 3.2e1, 5e15])
-  if (.not. precision_r4(product(([real:: 4.2e-2, 6.7e2, 1e16] - [real:: 3.3e-1, 3.2e1, 5e15])), (-.288*638*5e15))) stop 13
-  if (.not. sameReal(([real:: 4.2e-2, 6.7e2, 1e16] - [real:: 3.3e-1, 3.2e1, 5e15]), [real:: -0.288, 638.0, 5e15], 0.00001)) stop 14
-  if (.not. all(sameRealEl([real:: 4.2e-2, 6.7e2, 1e16] - [real:: 3.3e-1, 3.2e1, 5e15], [real:: -0.288, 638.0, 5e15], 0.00001))) stop 15
+  if (.not. precision_r4(product(([real:: 4.2e-2, 6.7e2, 1e16] - [real:: 3.3e-1, 3.2e1, 5e15])), (-.288*638*5e15))) error stop 13
+  if (.not. sameReal(([real:: 4.2e-2, 6.7e2, 1e16] - [real:: 3.3e-1, 3.2e1, 5e15]), [real:: -0.288, 638.0, 5e15], 0.00001)) error stop 14
+  if (.not. all(sameRealEl([real:: 4.2e-2, 6.7e2, 1e16] - [real:: 3.3e-1, 3.2e1, 5e15], [real:: -0.288, 638.0, 5e15], 0.00001))) error stop 15
 
   ! Compare sizes:
   print *, ([integer:: 1, 5, 11] > [real:: 2.0, 5.00001, 10.0])
-  if (any(([integer:: 1, 5, 11] > [real:: 2.0, 5.00001, 10.0]) .neqv. [logical:: F, F, T])) stop 16
+  if (any(([integer:: 1, 5, 11] > [real:: 2.0, 5.00001, 10.0]) .neqv. [logical:: F, F, T])) error stop 16
   if (any(merge([character:: 'a', 'b', 'c'], [character:: 'd', 'e', 'f'], [integer:: 1, 5, 11] > [real:: 2.0, 5.00001, 10.0]) &
-           /= [character:: 'd', 'e', 'c'])) stop 17
-  if (.not. sameLog(([integer:: 1, 5, 11] > [real:: 2.0, 5.00001, 10.0]), [logical:: F, F, T])) stop 18
-  if (.not. all(sameLogEl([integer:: 1, 5, 11] > [real:: 2.0, 5.00001, 10.0], [logical:: F, F, T]))) stop 19
+           /= [character:: 'd', 'e', 'c'])) error stop 17
+  if (.not. sameLog(([integer:: 1, 5, 11] > [real:: 2.0, 5.00001, 10.0]), [logical:: F, F, T])) error stop 18
+  if (.not. all(sameLogEl([integer:: 1, 5, 11] > [real:: 2.0, 5.00001, 10.0], [logical:: F, F, T]))) error stop 19
 
   ! Try logical OR:
 
   print *, ([logical:: F, F, T, T] .or. [logical:: F, T, F, T])
-  if (any(([logical:: F, F, T, T] .or. [logical:: F, T, F, T]) .neqv. [logical:: F, T, T, T])) stop 20
-  if (all([logical:: F, F, T, T] .or. [logical:: F, T, F, T])) stop 21
-  if (.not. sameLog(([logical:: F, F, T, T] .or. [logical:: F, T, F, T]), [logical:: F, T, T, T])) stop 22
-  if (.not. all(sameLogEl([logical:: F, F, T, T] .or. [logical:: F, T, F, T], [logical:: F, T, T, T]))) stop 23
+  if (any(([logical:: F, F, T, T] .or. [logical:: F, T, F, T]) .neqv. [logical:: F, T, T, T])) error stop 20
+  if (all([logical:: F, F, T, T] .or. [logical:: F, T, F, T])) error stop 21
+  if (.not. sameLog(([logical:: F, F, T, T] .or. [logical:: F, T, F, T]), [logical:: F, T, T, T])) error stop 22
+  if (.not. all(sameLogEl([logical:: F, F, T, T] .or. [logical:: F, T, F, T], [logical:: F, T, T, T]))) error stop 23
 
   ! Try logical equivalence:
 
   print *, ([logical:: F, F, T, T] .eqv. [logical:: F, T, F, T])
-  if (.not. all(([logical:: F, F, T, T] .eqv. [logical:: F, T, F, T]) .eqv. [logical:: T, F, F, T])) stop 24
-  if (all([logical:: F, F, T, T] .eqv. [logical:: F, T, F, T])) stop 25
-  if (.not. sameLog(([logical:: F, F, T, T] .eqv. [logical:: F, T, F, T]), [logical:: T, F, F, T])) stop 26
-  if (.not. all(sameLogEl([logical:: F, F, T, T] .eqv. [logical:: F, T, F, T], [logical:: T, F, F, T]))) stop 27
+  if (.not. all(([logical:: F, F, T, T] .eqv. [logical:: F, T, F, T]) .eqv. [logical:: T, F, F, T])) error stop 24
+  if (all([logical:: F, F, T, T] .eqv. [logical:: F, T, F, T])) error stop 25
+  if (.not. sameLog(([logical:: F, F, T, T] .eqv. [logical:: F, T, F, T]), [logical:: T, F, F, T])) error stop 26
+  if (.not. all(sameLogEl([logical:: F, F, T, T] .eqv. [logical:: F, T, F, T], [logical:: T, F, F, T]))) error stop 27
 
   ! Round out the logicals with and and not:
 
   print *, ((.not. [logical:: T, T, F, F]) .and. [logical:: F, T, F, T])
-  if (.not. all(((.not. [logical:: T, T, F, F]) .and. [logical:: F, T, F, T]) .eqv. [logical:: F, F, F, T])) stop 28
-  if (all((.not. [logical:: T, T, F, F]) .and. [logical:: F, T, F, T])) stop 29
-  if (.not. sameLog(((.not. [logical:: T, T, F, F]) .and. [logical:: F, T, F, T]), [logical:: F, F, F, T])) stop 30
-  if (.not. all(sameLogEl((.not. [logical:: T, T, F, F]) .and. [logical:: F, T, F, T], [logical:: F, F, F, T]))) stop 31
+  if (.not. all(((.not. [logical:: T, T, F, F]) .and. [logical:: F, T, F, T]) .eqv. [logical:: F, F, F, T])) error stop 28
+  if (all((.not. [logical:: T, T, F, F]) .and. [logical:: F, T, F, T])) error stop 29
+  if (.not. sameLog(((.not. [logical:: T, T, F, F]) .and. [logical:: F, T, F, T]), [logical:: F, F, F, T])) error stop 30
+  if (.not. all(sameLogEl((.not. [logical:: T, T, F, F]) .and. [logical:: F, T, F, T], [logical:: F, F, F, T]))) error stop 31
 
   ! Finish with characters:
 
   print *, [character(1):: 'a', 'bc', 'def'] // [character(2):: 'g', '''.,', 'hij']
-  if (all([character(1):: 'a', 'bc', 'def'] > [character(2):: 'g', '''.,', 'hij'])) stop 32
-  if (any([character(1):: 'a', 'b', 'd'] /= [character(2):: 'a ', 'b ', 'd '])) stop 33
-  if (any(([character(1):: 'a', 'bc', 'def'] // [character(2):: 'g', '''.,', 'hij']) /= [character(3):: 'ag ', 'b''.', 'dhi'])) stop 34
-  if (.not. sameChar(([character(1):: 'a', 'bc', 'def'] // [character(2):: 'g', '''.,', 'hij']), [character(3):: 'ag ', 'b''.', 'dhi'])) stop 35
-  if (.not. all(sameCharEl(([character(1):: 'a', 'bc', 'def'] // [character(2):: 'g', '''.,', 'hij']), [character(3):: 'ag ', 'b''.', 'dhi']))) stop 36
+  if (all([character(1):: 'a', 'bc', 'def'] > [character(2):: 'g', '''.,', 'hij'])) error stop 32
+  if (any([character(1):: 'a', 'b', 'd'] /= [character(2):: 'a ', 'b ', 'd '])) error stop 33
+  if (any(([character(1):: 'a', 'bc', 'def'] // [character(2):: 'g', '''.,', 'hij']) /= [character(3):: 'ag ', 'b''.', 'dhi'])) error stop 34
+  if (.not. sameChar(([character(1):: 'a', 'bc', 'def'] // [character(2):: 'g', '''.,', 'hij']), [character(3):: 'ag ', 'b''.', 'dhi'])) error stop 35
+  if (.not. all(sameCharEl(([character(1):: 'a', 'bc', 'def'] // [character(2):: 'g', '''.,', 'hij']), [character(3):: 'ag ', 'b''.', 'dhi']))) error stop 36
 
 contains
 

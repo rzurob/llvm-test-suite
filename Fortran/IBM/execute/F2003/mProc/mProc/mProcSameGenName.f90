@@ -52,9 +52,9 @@
     PROCEDURE ModFun1
   END INTERFACE
 
-  IF ( Mod(1.1)  .NE. 1.1   )               STOP 21
+  IF ( Mod(1.1)  .NE. 1.1   )               ERROR STOP 21
 
-  IF ( ABS(-1.0)  .NE. -1.0   )             STOP 22
+  IF ( ABS(-1.0)  .NE. -1.0   )             ERROR STOP 22
 
   END
 

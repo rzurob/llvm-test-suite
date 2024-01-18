@@ -108,7 +108,7 @@
 
       SELECT TYPE ( a => (C1 * B1) )
         CLASS IS (BASE(4,*))
-          IF (a%value .NE. 14) STOP 10
+          IF (a%value .NE. 14) ERROR STOP 10
 
         CLASS DEFAULT
           STOP 11
@@ -116,7 +116,7 @@
 
       SELECT TYPE ( a => (C1 * C1) )
         CLASS IS (BASE(4,*))
-          IF (a%value .NE. 14) STOP 12
+          IF (a%value .NE. 14) ERROR STOP 12
 
         CLASS DEFAULT
           STOP 13
@@ -124,7 +124,7 @@
 
       SELECT TYPE ( a => (C1 * K1) )
         CLASS IS (BASE(4,*))
-          IF (a%value .NE. 14) STOP 14
+          IF (a%value .NE. 14) ERROR STOP 14
 
         CLASS DEFAULT
           STOP 15
@@ -132,7 +132,7 @@
 
       SELECT TYPE ( a => (C1 * N1) )
         CLASS IS (BASE(4,*))
-          IF (a%value .NE. 14) STOP 16
+          IF (a%value .NE. 14) ERROR STOP 16
 
         CLASS DEFAULT
           STOP 17
@@ -140,7 +140,7 @@
 
       SELECT TYPE ( a => (C1 * M1) )
         CLASS IS (BASE(4,*))
-          IF (a%value .NE. 14) STOP 18
+          IF (a%value .NE. 14) ERROR STOP 18
 
         CLASS DEFAULT
           STOP 19
@@ -150,7 +150,7 @@
 
       SELECT TYPE ( a => (N1 * B1) )
         CLASS IS (BASE(4,*))
-          IF (a%value .NE. 14) STOP 20
+          IF (a%value .NE. 14) ERROR STOP 20
 
         CLASS DEFAULT
           STOP 21
@@ -158,7 +158,7 @@
 
       SELECT TYPE ( a => (N1 * C1) )
         CLASS IS (BASE(4,*))
-          IF (a%value .NE. 14) STOP 22
+          IF (a%value .NE. 14) ERROR STOP 22
 
         CLASS DEFAULT
           STOP 23
@@ -166,7 +166,7 @@
 
       SELECT TYPE ( a => (N1 * K1) )
         CLASS IS (BASE(4,*))
-          IF (a%value .NE. 14) STOP 24
+          IF (a%value .NE. 14) ERROR STOP 24
 
         CLASS DEFAULT
           STOP 25
@@ -174,7 +174,7 @@
 
       SELECT TYPE ( a => (N1 * N1) )
         CLASS IS (BASE(4,*))
-          IF (a%value .NE. 14) STOP 26
+          IF (a%value .NE. 14) ERROR STOP 26
 
         CLASS DEFAULT
           STOP 27
@@ -182,7 +182,7 @@
 
       SELECT TYPE ( a => (N1 * M1) )
         CLASS IS (BASE(4,*))
-          IF (a%value .NE. 14) STOP 28
+          IF (a%value .NE. 14) ERROR STOP 28
 
         CLASS DEFAULT
           STOP 29
@@ -192,7 +192,7 @@
 
       SELECT TYPE ( a => (M1 * B1) )
         CLASS IS (BASE(4,*))
-          IF (a%value .NE. 24) STOP 30
+          IF (a%value .NE. 24) ERROR STOP 30
 
         CLASS DEFAULT
           STOP 31
@@ -200,7 +200,7 @@
 
       SELECT TYPE ( a => (M1 * C1) )
         CLASS IS (BASE(4,*))
-          IF (a%value .NE. 24) STOP 32
+          IF (a%value .NE. 24) ERROR STOP 32
 
         CLASS DEFAULT
           STOP 33
@@ -208,7 +208,7 @@
 
       SELECT TYPE ( a => (M1 * K1) )
         CLASS IS (BASE(4,*))
-          IF (a%value .NE. 24) STOP 34
+          IF (a%value .NE. 24) ERROR STOP 34
 
         CLASS DEFAULT
           STOP 35
@@ -216,7 +216,7 @@
 
       SELECT TYPE ( a => (M1 * N1) )
         CLASS IS (BASE(4,*))
-          IF (a%value .NE. 24) STOP 36
+          IF (a%value .NE. 24) ERROR STOP 36
 
         CLASS DEFAULT
           STOP 37
@@ -224,7 +224,7 @@
 
       SELECT TYPE ( a => (M1 * M1) )
         CLASS IS (BASE(4,*))
-          IF (a%value .NE. 24) STOP 38
+          IF (a%value .NE. 24) ERROR STOP 38
 
         CLASS DEFAULT
           STOP 39
@@ -234,7 +234,7 @@
 
       SELECT TYPE ( a => (K1 * B1) )
         CLASS IS (BASE(4,*))
-          IF (a%value .NE. 24) STOP 40
+          IF (a%value .NE. 24) ERROR STOP 40
 
         CLASS DEFAULT
           STOP 41
@@ -242,7 +242,7 @@
 
       SELECT TYPE ( a => (K1 * C1) )
         CLASS IS (BASE(4,*))
-          IF (a%value .NE. 24) STOP 42
+          IF (a%value .NE. 24) ERROR STOP 42
 
         CLASS DEFAULT
           STOP 43
@@ -250,7 +250,7 @@
 
       SELECT TYPE ( a => (K1 * K1) )
         CLASS IS (BASE(4,*))
-          IF (a%value .NE. 24) STOP 44
+          IF (a%value .NE. 24) ERROR STOP 44
 
         CLASS DEFAULT
           STOP 45
@@ -258,7 +258,7 @@
 
       SELECT TYPE ( a => (K1 * N1) )
         CLASS IS (BASE(4,*))
-          IF (a%value .NE. 24) STOP 46
+          IF (a%value .NE. 24) ERROR STOP 46
 
         CLASS DEFAULT
           STOP 47
@@ -266,7 +266,7 @@
 
       SELECT TYPE ( a => (K1 * M1) )
         CLASS IS (BASE(4,*))
-          IF (a%value .NE. 24) STOP 48
+          IF (a%value .NE. 24) ERROR STOP 48
 
         CLASS DEFAULT
           STOP 49

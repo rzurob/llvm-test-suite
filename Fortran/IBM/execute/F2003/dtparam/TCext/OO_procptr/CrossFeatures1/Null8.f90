@@ -48,8 +48,8 @@
     SUBROUTINE IntSub(Arg)
     CHARACTER(*), POINTER :: Arg
 
-    IF ( ASSOCIATED(Arg)) STOP 11
-    IF (LEN(Arg) .NE. 3 ) STOP 12
+    IF ( ASSOCIATED(Arg)) ERROR STOP 11
+    IF (LEN(Arg) .NE. 3 ) ERROR STOP 12
 
     END SUBROUTINE
 

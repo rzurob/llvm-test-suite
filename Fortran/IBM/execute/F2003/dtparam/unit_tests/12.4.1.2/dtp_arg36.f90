@@ -24,7 +24,7 @@ type(Base(4, 2)), pointer :: rest
 rest => func1(2)
 
 ! verify the function result
-if (rest%avar /= 100) stop 1
+if (rest%avar /= 100) error stop 1
 contains
 
 function func1(nn)

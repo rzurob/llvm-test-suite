@@ -78,6 +78,6 @@ do i=1,3
   enddo
 enddo
 
-if (.not. all(e1 .eq. eoshift(e0, shift=-1))) stop 7
+if (.not. all(e1 .eq. eoshift(e0, shift=-1))) error stop 7
 
 end

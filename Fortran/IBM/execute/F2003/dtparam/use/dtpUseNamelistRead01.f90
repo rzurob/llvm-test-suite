@@ -232,32 +232,32 @@ program dtpUseNamelistRead01
   print *, "Namelist data read"
 
   print *, bb, bc, bd
-  if (bb /= bd .or. bc /= bd) stop 11
+  if (bb /= bd .or. bc /= bd) error stop 11
 
   print *, d4a, d4b, d4c, d4d
-  if (d4a /= d4d .or. d4b /= d4d .or. d4c /= d4d) stop 12
+  if (d4a /= d4d .or. d4b /= d4d .or. d4c /= d4d) error stop 12
 
   print *, d24a, d24b, d24c, d24d
-  if (d24a /= d24d .or. d24b /= d24d .or. d24c /= d24d) stop 13
+  if (d24a /= d24d .or. d24b /= d24d .or. d24c /= d24d) error stop 13
 
   print *, d343a, d343b, d343c, d343d
-  if (d343a /= d343d .or. d343b /= d343d .or. d343c /= d343d) stop 14
+  if (d343a /= d343d .or. d343b /= d343d .or. d343c /= d343d) error stop 14
 
   print *, d8a, d8b, d8c, d8d
-  if (d8a /= d8d .or. d8b /= d8d .or. d8c /= d8d) stop 15
+  if (d8a /= d8d .or. d8b /= d8d .or. d8c /= d8d) error stop 15
 
   print *, d28a, d28b, d28c, d28d
-  if (d28a /= d28d .or. d28b /= d28d .or. d28c /= d28d) stop 16
+  if (d28a /= d28d .or. d28b /= d28d .or. d28c /= d28d) error stop 16
 
   print *, d383a, d383b, d383c, d383d
-  if (d383a /= d383d .or. d383b /= d383d .or. d383c /= d383d) stop 17
+  if (d383a /= d383d .or. d383b /= d383d .or. d383c /= d383d) error stop 17
 
 
   print *, dmod38a, dmod38b, dmod38c, dmod38d
-  if (dmod38a /= dmod38d .or. dmod38b /= dmod38d .or. dmod38c /= dmod38d) stop 18
+  if (dmod38a /= dmod38d .or. dmod38b /= dmod38d .or. dmod38c /= dmod38d) error stop 18
 
   print *, dmod34a, dmod34b, dmod34c, dmod34d
-  if (dmod34a /= dmod34d .or. dmod34b /= dmod34d .or. dmod34c /= dmod34d) stop 19
+  if (dmod34a /= dmod34d .or. dmod34b /= dmod34d .or. dmod34c /= dmod34d) error stop 19
 
   print *, 'done'
 

@@ -47,8 +47,8 @@
   ALLOCATE(T1, SOURCE=DT0())
   SELECT  TYPE( T1)
   TYPE IS( DT0(0,*))
-    IF ( T1%K0          .NE.   0          ) STOP 11
-    IF ( T1%L0          .NE.   0          ) STOP 12
+    IF ( T1%K0          .NE.   0          ) ERROR STOP 11
+    IF ( T1%L0          .NE.   0          ) ERROR STOP 12
   CLASS DEFAULT
     STOP 13
   END SELECT
@@ -56,17 +56,17 @@
   ALLOCATE(T2, SOURCE=DT1(2,2)())
   SELECT  TYPE( T2)
   TYPE IS( DT1(2, L0=*,K1=4,L1=*))
-    IF ( T2%K0               .NE.   2          ) STOP 21
-    IF ( T2%L0               .NE.   2          ) STOP 22
-    IF ( T2%K1%KIND          .NE.   2          ) STOP 23
-    IF ( T2%L1%KIND          .NE.   2          ) STOP 24
-    IF ( T2%K1               .NE.   4          ) STOP 25
-    IF ( T2%L1               .NE.   4          ) STOP 26
-    IF ( T2%I%KIND           .NE.   4          ) STOP 27
-    IF ( T2%I                .NE.   4          ) STOP 28
-    IF ( T2%C%LEN            .NE.   2          ) STOP 29
-    IF ( SIZE(T2%C)          .NE.   4          ) STOP 30
-    IF ( ANY(T2%C            .NE.   "X"      ) ) STOP 31
+    IF ( T2%K0               .NE.   2          ) ERROR STOP 21
+    IF ( T2%L0               .NE.   2          ) ERROR STOP 22
+    IF ( T2%K1%KIND          .NE.   2          ) ERROR STOP 23
+    IF ( T2%L1%KIND          .NE.   2          ) ERROR STOP 24
+    IF ( T2%K1               .NE.   4          ) ERROR STOP 25
+    IF ( T2%L1               .NE.   4          ) ERROR STOP 26
+    IF ( T2%I%KIND           .NE.   4          ) ERROR STOP 27
+    IF ( T2%I                .NE.   4          ) ERROR STOP 28
+    IF ( T2%C%LEN            .NE.   2          ) ERROR STOP 29
+    IF ( SIZE(T2%C)          .NE.   4          ) ERROR STOP 30
+    IF ( ANY(T2%C            .NE.   "X"      ) ) ERROR STOP 31
   CLASS DEFAULT
     STOP 32
   END SELECT
@@ -74,17 +74,17 @@
   ALLOCATE(T3, SOURCE=DT1(1,1,2,2)(I=-1))
   SELECT  TYPE( T3)
   TYPE IS( DT1(1,L0=*,K1=2,L1=*))
-    IF ( T3%K0               .NE.   1          ) STOP 41
-    IF ( T3%L0               .NE.   1          ) STOP 42
-    IF ( T3%K1%KIND          .NE.   1          ) STOP 43
-    IF ( T3%L1%KIND          .NE.   1          ) STOP 44
-    IF ( T3%K1               .NE.   2          ) STOP 45
-    IF ( T3%L1               .NE.   2          ) STOP 46
-    IF ( T3%I%KIND           .NE.   2          ) STOP 47
-    IF ( T3%I                .NE.  -1          ) STOP 48
-    IF ( T3%C%LEN            .NE.   1          ) STOP 49
-    IF ( SIZE(T3%C)          .NE.   2          ) STOP 50
-    IF ( ANY(T3%C            .NE.   "X "     ) ) STOP 51
+    IF ( T3%K0               .NE.   1          ) ERROR STOP 41
+    IF ( T3%L0               .NE.   1          ) ERROR STOP 42
+    IF ( T3%K1%KIND          .NE.   1          ) ERROR STOP 43
+    IF ( T3%L1%KIND          .NE.   1          ) ERROR STOP 44
+    IF ( T3%K1               .NE.   2          ) ERROR STOP 45
+    IF ( T3%L1               .NE.   2          ) ERROR STOP 46
+    IF ( T3%I%KIND           .NE.   2          ) ERROR STOP 47
+    IF ( T3%I                .NE.  -1          ) ERROR STOP 48
+    IF ( T3%C%LEN            .NE.   1          ) ERROR STOP 49
+    IF ( SIZE(T3%C)          .NE.   2          ) ERROR STOP 50
+    IF ( ANY(T3%C            .NE.   "X "     ) ) ERROR STOP 51
   CLASS DEFAULT
     STOP 52
   END SELECT

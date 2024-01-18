@@ -97,23 +97,23 @@
   ProcPtr => NULL()
 !  ProcPtr = RetPtr(Fun)
   call assgn (ProcPtr, RetPtr(Fun))
-  IF (ProcPtr("ABC") .NE. "ABC" ) STOP 14
+  IF (ProcPtr("ABC") .NE. "ABC" ) ERROR STOP 14
 
   ProcPtr => Fun
 !  ProcPtr = NULL(ProcPtr)
   call assgn (ProcPtr, NULL(ProcPtr))
-  IF (ASSOCIATED(ProcPtr) ) STOP 15
+  IF (ASSOCIATED(ProcPtr) ) ERROR STOP 15
 
   ProcPtr1 => Fun
 !  ProcPtr = ProcPtr1
   call assgn (ProcPtr, ProcPtr1)
-  IF (ProcPtr("0123456789") .NE. "0123456789" ) STOP 16
+  IF (ProcPtr("0123456789") .NE. "0123456789" ) ERROR STOP 16
 
   ProcPtr => NULL()
   BTar =  Base(4,20)( Fun)
 !  ProcPtr = DT(20,4)(-1, BTar)
   call assgn (ProcPtr, DT(20,4)(-1, BTar))
-  IF (ProcPtr("xyz") .NE. "xyz" ) STOP 17
+  IF (ProcPtr("xyz") .NE. "xyz" ) ERROR STOP 17
 
   CONTAINS
 

@@ -66,7 +66,7 @@
     SELECT TYPE (U => U(S,S,:))
       TYPE IS (INTEGER(KIND(DTV(1,1,1)%IArr)))
         PRINT*, "OK"
-        IF (ANY(U .NE. 1_8)) STOP 22
+        IF (ANY(U .NE. 1_8)) ERROR STOP 22
       CLASS IS (DT0(*,8))
         STOP 23
       CLASS IS (DT(*,8))

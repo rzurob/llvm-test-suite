@@ -74,29 +74,29 @@
   CLASS(DT),                      OPTIONAL, INTENT(IN) :: TD (LBOUND(T ,1)     :UBOUND(T,1))
 
 
-  IF ( KIND(TI8 )       .NE. 8 )                     STOP 11
-  IF ( LBOUND(TI8,1 )   .NE. LBOUND(T(LB2)%I8,1) )   STOP 12
-  IF ( UBOUND(TI8,1 )   .NE. UBOUND(T(LB3)%I8,1) )   STOP 13
-  IF ( ANY( TI8         .NE. -1 ))                   STOP 14
+  IF ( KIND(TI8 )       .NE. 8 )                     ERROR STOP 11
+  IF ( LBOUND(TI8,1 )   .NE. LBOUND(T(LB2)%I8,1) )   ERROR STOP 12
+  IF ( UBOUND(TI8,1 )   .NE. UBOUND(T(LB3)%I8,1) )   ERROR STOP 13
+  IF ( ANY( TI8         .NE. -1 ))                   ERROR STOP 14
 
-  IF ( KIND(TL1 )       .NE. 1 )                     STOP 21
-  IF ( LBOUND(TL1,1 )   .NE. LBOUND(T(LB2)%L1,1) )   STOP 22
-  IF ( UBOUND(TL1,1 )   .NE. UBOUND(T(LB3)%L1,1) )   STOP 23
-  IF ( ANY( TL1         .NEQV. T(LB2)%L1))           STOP 24
+  IF ( KIND(TL1 )       .NE. 1 )                     ERROR STOP 21
+  IF ( LBOUND(TL1,1 )   .NE. LBOUND(T(LB2)%L1,1) )   ERROR STOP 22
+  IF ( UBOUND(TL1,1 )   .NE. UBOUND(T(LB3)%L1,1) )   ERROR STOP 23
+  IF ( ANY( TL1         .NEQV. T(LB2)%L1))           ERROR STOP 24
 
-  IF ( KIND(TR6 )       .NE. 16)                     STOP 21
-  IF ( LBOUND(TR6,1 )   .NE. LBOUND(T(LB2)%R6,1) )   STOP 22
-  IF ( UBOUND(TR6,1 )   .NE. UBOUND(T(LB3)%R6,1) )   STOP 23
-  IF ( ANY( TR6         .NE. T(LB3)%R6))             STOP 24
+  IF ( KIND(TR6 )       .NE. 16)                     ERROR STOP 21
+  IF ( LBOUND(TR6,1 )   .NE. LBOUND(T(LB2)%R6,1) )   ERROR STOP 22
+  IF ( UBOUND(TR6,1 )   .NE. UBOUND(T(LB3)%R6,1) )   ERROR STOP 23
+  IF ( ANY( TR6         .NE. T(LB3)%R6))             ERROR STOP 24
 
-  IF ( KIND(TZ4 )       .NE. 4 )                     STOP 31
-  IF ( LBOUND(TZ4,1 )   .NE. LBOUND(T(LB2)%Z4,1) )   STOP 32
-  IF ( UBOUND(TZ4,1 )   .NE. UBOUND(T(LB3)%Z4,1) )   STOP 33
-  IF ( ANY( TZ4         .NE. T(LB3)%Z4))             STOP 34
+  IF ( KIND(TZ4 )       .NE. 4 )                     ERROR STOP 31
+  IF ( LBOUND(TZ4,1 )   .NE. LBOUND(T(LB2)%Z4,1) )   ERROR STOP 32
+  IF ( UBOUND(TZ4,1 )   .NE. UBOUND(T(LB3)%Z4,1) )   ERROR STOP 33
+  IF ( ANY( TZ4         .NE. T(LB3)%Z4))             ERROR STOP 34
 
-  IF ( LBOUND(TD,1 )    .NE. LBOUND(T,1) )           STOP 42
-  IF ( UBOUND(TD,1 )    .NE. UBOUND(T,1) )           STOP 43
-  IF ( ANY( TD(LB1)%Z4  .NE. T(LB1)%Z4))             STOP 44
+  IF ( LBOUND(TD,1 )    .NE. LBOUND(T,1) )           ERROR STOP 42
+  IF ( UBOUND(TD,1 )    .NE. UBOUND(T,1) )           ERROR STOP 43
+  IF ( ANY( TD(LB1)%Z4  .NE. T(LB1)%Z4))             ERROR STOP 44
 
 
   END SUBROUTINE

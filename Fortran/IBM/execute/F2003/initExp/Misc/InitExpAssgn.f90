@@ -51,22 +51,22 @@
 
 
 
-  IF ( ANY( Z4  .NE. [((I,-I),I=0,127)]   ) ) STOP 11
-  IF ( ANY( Z8  .NE. Z4   ) ) STOP 12
-  IF ( ANY( Z6  .NE. Z4   ) ) STOP 13
+  IF ( ANY( Z4  .NE. [((I,-I),I=0,127)]   ) ) ERROR STOP 11
+  IF ( ANY( Z8  .NE. Z4   ) ) ERROR STOP 12
+  IF ( ANY( Z6  .NE. Z4   ) ) ERROR STOP 13
 
-  IF ( ANY( I1  .NE. REAL(Z4)   ) ) STOP 21
-  IF ( ANY( I2  .NE. REAL(Z4)   ) ) STOP 22
-  IF ( ANY( I4  .NE. REAL(Z4)   ) ) STOP 23
-  IF ( ANY( I8  .NE. REAL(Z4)   ) ) STOP 24
+  IF ( ANY( I1  .NE. REAL(Z4)   ) ) ERROR STOP 21
+  IF ( ANY( I2  .NE. REAL(Z4)   ) ) ERROR STOP 22
+  IF ( ANY( I4  .NE. REAL(Z4)   ) ) ERROR STOP 23
+  IF ( ANY( I8  .NE. REAL(Z4)   ) ) ERROR STOP 24
 
-  IF ( ANY( R4  .NE. REAL(Z4)   ) ) STOP 31
-  IF ( ANY( R8  .NE. REAL(Z4)   ) ) STOP 32
-  IF ( ANY( R6  .NE. REAL(Z4)   ) ) STOP 33
+  IF ( ANY( R4  .NE. REAL(Z4)   ) ) ERROR STOP 31
+  IF ( ANY( R8  .NE. REAL(Z4)   ) ) ERROR STOP 32
+  IF ( ANY( R6  .NE. REAL(Z4)   ) ) ERROR STOP 33
 
-  IF ( ANY( TZ4 .NE. [((I,0),I=0,127)] ) ) STOP 41
-  IF ( ANY( TZ8 .NE. [((I,0),I=0,127)] ) ) STOP 42
-  IF ( ANY( TZ6 .NE. [((I,0),I=0,127)] ) ) STOP 43
+  IF ( ANY( TZ4 .NE. [((I,0),I=0,127)] ) ) ERROR STOP 41
+  IF ( ANY( TZ8 .NE. [((I,0),I=0,127)] ) ) ERROR STOP 42
+  IF ( ANY( TZ6 .NE. [((I,0),I=0,127)] ) ) ERROR STOP 43
 
 
   END

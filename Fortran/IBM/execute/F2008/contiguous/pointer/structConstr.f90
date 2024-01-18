@@ -46,6 +46,6 @@ program main
 
     oT = B(dT%x)
 
-    if ( .not. all(oT%y .eq. [3,6,9,12,15,18] )) stop 21
+    if ( .not. all(oT%y .eq. [3,6,9,12,15,18] )) error stop 21
 
 end

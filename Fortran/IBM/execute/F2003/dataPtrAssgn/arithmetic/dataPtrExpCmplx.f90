@@ -29,9 +29,9 @@ program main
 
     a = b
 
-    if ( .not. associated(a)) stop 1
-    if ( any (lbound(a) .ne. (/2,3/))) stop 2
-    if ( any (ubound(a) .ne. (/11,12/))) stop 3
+    if ( .not. associated(a)) error stop 1
+    if ( any (lbound(a) .ne. (/2,3/))) error stop 2
+    if ( any (ubound(a) .ne. (/11,12/))) error stop 3
     write (*, '("(",f10.6,", ", f10.6, ")")') a
     write (*, '("(",e12.6,", ", e12.6, ")")') a**2
 

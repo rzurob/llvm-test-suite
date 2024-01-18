@@ -49,9 +49,9 @@
   ASSOCIATE ( As => Arr )
     DO i=2, 129
       WRITE(As(i)%C, FMT=*, IOSTAT=As(i)%IOSTAT, IOMSG=As(i)%IOMSG) "!"
-      IF ( As(i)%C           .NE. " " ) STOP 20
-      IF ( As(i)%IOSTAT      .EQ. 0   ) STOP 21
-      IF ( TRIM(As(i)%IOMSG) .EQ. ""  ) STOP 22
+      IF ( As(i)%C           .NE. " " ) ERROR STOP 20
+      IF ( As(i)%IOSTAT      .EQ. 0   ) ERROR STOP 21
+      IF ( TRIM(As(i)%IOMSG) .EQ. ""  ) ERROR STOP 22
     END DO
   END ASSOCIATE
 

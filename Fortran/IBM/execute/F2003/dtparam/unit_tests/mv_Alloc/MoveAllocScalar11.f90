@@ -22,8 +22,8 @@ contains
     allocate(a)
     p => a
     call move_alloc(a,b)
-    if (allocated(a)) stop 1
-    if (.not.allocated(b)) stop 2
-    if (.not.associated(p,b)) stop 3
+    if (allocated(a)) error stop 1
+    if (.not.allocated(b)) error stop 2
+    if (.not.associated(p,b)) error stop 3
   end subroutine
 end

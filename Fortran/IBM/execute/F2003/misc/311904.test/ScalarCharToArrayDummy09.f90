@@ -23,9 +23,9 @@ end
 subroutine sub(x)
   character :: x(*)
   character(100) :: y
-  if (len(x) /= 1) stop 1
+  if (len(x) /= 1) error stop 1
   do i = 1, 100
     y(i:i) = x(i)
   end do
-  if (y /= repeat('0123456789', 10)) stop 2
+  if (y /= repeat('0123456789', 10)) error stop 2
 end subroutine

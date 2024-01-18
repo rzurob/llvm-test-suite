@@ -31,13 +31,13 @@ end module
 
       call move_alloc(z, y)
 
-      if ( .not. allocated(y) ) stop 11
-      if ( allocated(z)) stop 13
+      if ( .not. allocated(y) ) error stop 11
+      if ( allocated(z)) error stop 13
 
       select type(y)
             type is (real*4)
-                if ( size(y,1) /= 2) stop 21
-                if ( size(y,2) /= 5) stop 23
+                if ( size(y,1) /= 2) error stop 21
+                if ( size(y,2) /= 5) error stop 23
                  write (*, '(2f12.8)') y
              end select
       contains

@@ -90,14 +90,14 @@ contains
     type(container(1,:)), allocatable :: o1(:), o2(:,:)
     type(container(4,:)), allocatable :: v1(:), v3(:,:,:)
     print *, allocated(o1), allocated(o2), allocated(v1), allocated(v3)
-    if (allocated(o1) .or. allocated(o2) .or. allocated(v1) .or. allocated(v3)) stop 2
+    if (allocated(o1) .or. allocated(o2) .or. allocated(v1) .or. allocated(v3)) error stop 2
   end subroutine stest
 
   subroutine etest(o1,o2,v1,v3)
     type(container(1,:)), allocatable :: o1(:), o2(:,:)
     type(container(4,:)), allocatable :: v1(:), v3(:,:,:)
     print *, allocated(o1), allocated(o2), allocated(v1), allocated(v3)
-    if (.not.(allocated(o1) .and. allocated(o2) .and. allocated(v1) .and. allocated(v3))) stop 10
+    if (.not.(allocated(o1) .and. allocated(o2) .and. allocated(v1) .and. allocated(v3))) error stop 10
   end subroutine etest
 
   subroutine osetup(o0, o1a, o1b, o2a, o2b)
@@ -124,7 +124,7 @@ contains
     print *, lbound(o1), ":", ubound(o1), "::", lbound(o1a), ":", ubound(o1a)
     print *, lbound(o2), ":", ubound(o2), "::", lbound(o2a), ":", ubound(o2a)
     if (any(lbound(o1)/=lbound(o1a)) .or. any(ubound(o1)/=ubound(o1a)) &
-        .or. any(lbound(o2)/=lbound(o2a)) .or. any(ubound(o2)/=ubound(o2a))) stop 3
+        .or. any(lbound(o2)/=lbound(o2a)) .or. any(ubound(o2)/=ubound(o2a))) error stop 3
   end subroutine otest1
 
   subroutine otest2(o1,o2,o1b,o2b)
@@ -137,7 +137,7 @@ contains
     print *, lbound(o1), ":", ubound(o1), "::", lbound(o1b), ":", ubound(o1b)
     print *, lbound(o2), ":", ubound(o2), "::", lbound(o2b), ":", ubound(o2b)
     if (any(lbound(o1)/=lbound(o1b)) .or. any(ubound(o1)/=ubound(o1b)) &
-        .or. any(lbound(o2)/=lbound(o2b)) .or. any(ubound(o2)/=ubound(o2b))) stop 4
+        .or. any(lbound(o2)/=lbound(o2b)) .or. any(ubound(o2)/=ubound(o2b))) error stop 4
   end subroutine otest2
 
   subroutine otest3(o1,o2,o0,o1b,o2b)
@@ -151,7 +151,7 @@ contains
     print *, lbound(o1), ":", ubound(o1), "::", lbound(o1b), ":", ubound(o1b)
     print *, lbound(o2), ":", ubound(o2), "::", lbound(o2b), ":", ubound(o2b)
     if (any(lbound(o1)/=lbound(o1b)) .or. any(ubound(o1)/=ubound(o1b)) &
-        .or. any(lbound(o2)/=lbound(o2b)) .or. any(ubound(o2)/=ubound(o2b))) stop 5
+        .or. any(lbound(o2)/=lbound(o2b)) .or. any(ubound(o2)/=ubound(o2b))) error stop 5
   end subroutine otest3
 
   subroutine otest4(o1,o2,a3,a4)
@@ -165,7 +165,7 @@ contains
     print *, lbound(o2), ":", ubound(o2), "::", lbound(a4), ":", ubound(a4)
 
     if (any(lbound(o1)/=lbound(a3)) .or. any(ubound(o1)/=ubound(a3)) &
-        .or. any(lbound(o2)/=lbound(a4)) .or. any(ubound(o2)/=ubound(a4))) stop 6
+        .or. any(lbound(o2)/=lbound(a4)) .or. any(ubound(o2)/=ubound(a4))) error stop 6
 
   end subroutine otest4
 
@@ -193,7 +193,7 @@ contains
     print *, lbound(v1), ":", ubound(v1), "::", lbound(v1a), ":", ubound(v1a)
     print *, lbound(v3), ":", ubound(v3), "::", lbound(v3a), ":", ubound(v3a)
     if (any(lbound(v1)/=lbound(v1a)) .or. any(ubound(v1)/=ubound(v1a)) &
-        .or. any(lbound(v3)/=lbound(v3a)) .or. any(ubound(v3)/=ubound(v3a))) stop 7
+        .or. any(lbound(v3)/=lbound(v3a)) .or. any(ubound(v3)/=ubound(v3a))) error stop 7
   end subroutine vtest1
 
   subroutine vtest2(v1,v3,v1b,v3b)
@@ -206,7 +206,7 @@ contains
     print *, lbound(v1), ":", ubound(v1), "::", lbound(v1b), ":", ubound(v1b)
     print *, lbound(v3), ":", ubound(v3), "::", lbound(v3b), ":", ubound(v3b)
     if (any(lbound(v1)/=lbound(v1b)) .or. any(ubound(v1)/=ubound(v1b)) &
-        .or. any(lbound(v3)/=lbound(v3b)) .or. any(ubound(v3)/=ubound(v3b))) stop 8
+        .or. any(lbound(v3)/=lbound(v3b)) .or. any(ubound(v3)/=ubound(v3b))) error stop 8
   end subroutine vtest2
 
   subroutine vtest3(v1,v3,v0,v1b,v3b)
@@ -220,7 +220,7 @@ contains
     print *, lbound(v1), ":", ubound(v1), "::", lbound(v1b), ":", ubound(v1b)
     print *, lbound(v3), ":", ubound(v3), "::", lbound(v3b), ":", ubound(v3b)
     if (any(lbound(v1)/=lbound(v1b)) .or. any(ubound(v1)/=ubound(v1b)) &
-        .or. any(lbound(v3)/=lbound(v3b)) .or. any(ubound(v3)/=ubound(v3b))) stop 9
+        .or. any(lbound(v3)/=lbound(v3b)) .or. any(ubound(v3)/=ubound(v3b))) error stop 9
   end subroutine vtest3
 
   subroutine vtest4(v1,v3,a3,a4)
@@ -233,7 +233,7 @@ contains
     print *, lbound(v1), ":", ubound(v1), "::", lbound(a3), ":", ubound(a3)
     print *, lbound(v3), ":", ubound(v3), "::", lbound(a4), ":", ubound(a4)
     if (any(lbound(v1)/=lbound(a3)) .or. any(ubound(v1)/=ubound(a3)) &
-        .or. any(lbound(v3)/=lbound(a4)) .or. any(ubound(v3)/=ubound(a4))) stop 10
+        .or. any(lbound(v3)/=lbound(a4)) .or. any(ubound(v3)/=ubound(a4))) error stop 10
   end subroutine vtest4
 
 end program dtpIAABoundsInternal003

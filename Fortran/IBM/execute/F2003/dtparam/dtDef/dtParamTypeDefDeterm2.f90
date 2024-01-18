@@ -71,11 +71,11 @@
     LOGICAL(Arg%K)  :: L
     CHARACTER(Arg%L):: C
 
-    IF ( Arg%I      .NE.   I )      STOP 23
-    IF ( Arg%R      .NE.   R )      STOP 24
-    IF ( Arg%Cplx   .NE.   Cplx )   STOP 25
-    IF ( Arg%LL     .NEQV. L )      STOP 26
-    IF ( TRIM(Arg%C).NE.   TRIM(C)) STOP 27
+    IF ( Arg%I      .NE.   I )      ERROR STOP 23
+    IF ( Arg%R      .NE.   R )      ERROR STOP 24
+    IF ( Arg%Cplx   .NE.   Cplx )   ERROR STOP 25
+    IF ( Arg%LL     .NEQV. L )      ERROR STOP 26
+    IF ( TRIM(Arg%C).NE.   TRIM(C)) ERROR STOP 27
 
     END SUBROUTINE
 
@@ -98,11 +98,11 @@
     LOGICAL(Arg%K)  :: L
     CHARACTER(Arg%L):: C
 
-    IF ( Arg%I      .NE.   I )      STOP 23
-    IF ( Arg%R      .NE.   R )      STOP 24
-    IF ( Arg%Cplx   .NE.   Cplx )   STOP 25
-    IF ( Arg%LL     .NEQV. L )      STOP 26
-    IF ( TRIM(Arg%C).NE.   TRIM(C)) STOP 27
+    IF ( Arg%I      .NE.   I )      ERROR STOP 23
+    IF ( Arg%R      .NE.   R )      ERROR STOP 24
+    IF ( Arg%Cplx   .NE.   Cplx )   ERROR STOP 25
+    IF ( Arg%LL     .NEQV. L )      ERROR STOP 26
+    IF ( TRIM(Arg%C).NE.   TRIM(C)) ERROR STOP 27
 
     END SUBROUTINE
 
@@ -125,11 +125,11 @@
     LOGICAL(Arg%K)  :: L
     CHARACTER(Arg%L):: C
 
-    IF ( Arg%I      .NE.   I )      STOP 23
-    IF ( Arg%R      .NE.   R )      STOP 24
-    IF ( Arg%Cplx   .NE.   Cplx )   STOP 25
-    IF ( Arg%LL     .NEQV. L )      STOP 26
-    IF ( TRIM(Arg%C).NE.   TRIM(C)) STOP 27
+    IF ( Arg%I      .NE.   I )      ERROR STOP 23
+    IF ( Arg%R      .NE.   R )      ERROR STOP 24
+    IF ( Arg%Cplx   .NE.   Cplx )   ERROR STOP 25
+    IF ( Arg%LL     .NEQV. L )      ERROR STOP 26
+    IF ( TRIM(Arg%C).NE.   TRIM(C)) ERROR STOP 27
 
     END SUBROUTINE
 

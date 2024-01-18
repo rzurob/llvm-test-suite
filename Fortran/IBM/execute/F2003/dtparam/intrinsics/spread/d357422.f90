@@ -34,9 +34,9 @@ program d357422
 
   dtp2=spread(source=dtp1,dim=1,ncopies=3)
   do i=1,3
-    if(any(dtp2(i)%i1 /= [1,2,3]))              stop 1
-    if(any(dtp2(i)%i2 /= [-1,-2,-3,-4,-5]))     stop 2
-    if(any(dtp2(i)%i3 /= [-4,-5,-6,-7]))        stop 3
+    if(any(dtp2(i)%i1 /= [1,2,3]))              error stop 1
+    if(any(dtp2(i)%i2 /= [-1,-2,-3,-4,-5]))     error stop 2
+    if(any(dtp2(i)%i3 /= [-4,-5,-6,-7]))        error stop 3
   end do
 
 end program

@@ -37,7 +37,7 @@ module m
 
         class(base(1)), allocatable :: getValof
 
-        if (index > b1%n) stop 10
+        if (index > b1%n) error stop 10
 
         allocate (getValof)
 

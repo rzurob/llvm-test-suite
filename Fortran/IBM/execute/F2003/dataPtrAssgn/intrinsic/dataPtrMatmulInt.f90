@@ -35,9 +35,9 @@
 
 	b1(11:20) => b2
 
-	if ( .not. associated(b1) ) stop 21
-	if ( lbound(b1,1) /= 11 ) stop 31
-	if ( ubound(b1,1) /= 20 ) stop 41
+	if ( .not. associated(b1) ) error stop 21
+	if ( lbound(b1,1) /= 11 ) error stop 31
+	if ( ubound(b1,1) /= 20 ) error stop 41
 
 	call sub(b1, (/ (b2(i), i=10,1,-1 ) /))
 

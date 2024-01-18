@@ -44,13 +44,13 @@
   INTEGER, PARAMETER :: TK6 = SELECTED_CHAR_KIND(C1)
   INTEGER, PARAMETER :: TK7 = SELECTED_CHAR_KIND(C2)
 
-  IF (TK1                .NE.   1 )                   STOP 11
-  IF (TK2                .NE.  -1 )                   STOP 12
-  IF (TK3                .NE.   1 )                   STOP 13
-  IF (TK4                .NE.  -1 )                   STOP 14
-  IF (TK5                .NE.  -1 )                   STOP 15
-  IF (TK6                .NE.  -1 )                   STOP 16
-  IF (TK7                .NE.  -1 )                   STOP 17
+  IF (TK1                .NE.   1 )                   ERROR STOP 11
+  IF (TK2                .NE.  -1 )                   ERROR STOP 12
+  IF (TK3                .NE.   1 )                   ERROR STOP 13
+  IF (TK4                .NE.  -1 )                   ERROR STOP 14
+  IF (TK5                .NE.  -1 )                   ERROR STOP 15
+  IF (TK6                .NE.  -1 )                   ERROR STOP 16
+  IF (TK7                .NE.  -1 )                   ERROR STOP 17
 
   END
 

@@ -15,9 +15,9 @@ contains
   subroutine sub()
     character(:), allocatable :: a
     a = f()
-    if (.not.allocated(a)) stop 1
-    if (len(a) /= 5) stop 2
-    if (a /= 'abcde') stop 3
+    if (.not.allocated(a)) error stop 1
+    if (len(a) /= 5) error stop 2
+    if (a /= 'abcde') error stop 3
   end subroutine
 
   function f()

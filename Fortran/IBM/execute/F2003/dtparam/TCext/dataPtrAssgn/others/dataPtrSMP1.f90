@@ -47,10 +47,10 @@ program main
         enddo
     enddo
 
-    if ( .not. associated(p)) stop 49
-    if ( any(lbound(p) .ne. (/1, 1/))) stop 50
-    if ( any(ubound(p) .ne. (/1, 10/))) stop 51
-    if ( sum .ne. 55)  stop 52
+    if ( .not. associated(p)) error stop 49
+    if ( any(lbound(p) .ne. (/1, 1/))) error stop 50
+    if ( any(ubound(p) .ne. (/1, 10/))) error stop 51
+    if ( sum .ne. 55)  error stop 52
 
     !pointer assignment used in parallel do region
     allocate(base(20,4) :: b1(10))

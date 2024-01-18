@@ -138,7 +138,7 @@ program acetnone10b
   call test6(zmulti)
   call test6(reshape(zflat, (/ 2,3,4,5,6,7 /)))
 
-  if( any(zflat /= (/ zmulti /)) ) stop 2
+  if( any(zflat /= (/ zmulti /)) ) error stop 2
 
   zflat = (/ zmulti(ubound(zmulti,1):lbound(zmulti,1):-1, &
                     ubound(zmulti,2):lbound(zmulti,2):-1, &
@@ -152,9 +152,9 @@ program acetnone10b
   call test6(zmulti2)
   call test6(reshape(zflat, (/ 7,6,5,4,3,2 /)))
 
-  if( any(zflat /= (/ zmulti /)) ) stop 3
-  if( any(zflat /= (/ zmulti2 /)) ) stop 4
-  if( any((/ zmulti /) /= (/ zmulti2 /)) ) stop 5
+  if( any(zflat /= (/ zmulti /)) ) error stop 3
+  if( any(zflat /= (/ zmulti2 /)) ) error stop 4
+  if( any((/ zmulti /) /= (/ zmulti2 /)) ) error stop 5
 
   print *, 'done'
 

@@ -30,7 +30,7 @@ contains
   subroutine foo(x, y)
     class(dt(*,4)) :: x
     integer :: y
-    if (x%i /= y) stop 10
+    if (x%i /= y) error stop 10
   end subroutine
 
   subroutine finalproc(a)
@@ -47,11 +47,11 @@ class(*), pointer :: p(:,:)
 allocate(dt(20,4) :: a(10,10))
 p => a
 allocate(dt(20,4) :: b(20,20))
-if (finalcount /= 0) stop 1
+if (finalcount /= 0) error stop 1
 call move_alloc(a,b)
-if (finalcount /= 1) stop 2
-if (allocated(a)) stop 3
-if (.not.allocated(b)) stop 4
-if (.not.associated(p,b)) stop 5
-if (finalcount /= 1) stop 6
+if (finalcount /= 1) error stop 2
+if (allocated(a)) error stop 3
+if (.not.allocated(b)) error stop 4
+if (.not.associated(p,b)) error stop 5
+if (finalcount /= 1) error stop 6
 end

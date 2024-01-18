@@ -55,21 +55,21 @@
   REAL(KIND(HUGE(R8)))  :: TR8  = HUGE(R8)
   REAL(KIND(HUGE(R6)))  :: TR6  = HUGE(R6)
 
-  IF ( KIND(TI1)    .NE. 1     )     STOP 11
-  IF ( TI1          .NE. MI1     )   STOP 12
-  IF ( KIND(TI2)    .NE. 2     )     STOP 13
-  IF ( TI2          .NE. MI2     )   STOP 14
-  IF ( KIND(TI4)    .NE. 4     )     STOP 15
-  IF ( TI4          .NE. MI4     )   STOP 16
-  IF ( KIND(TI8)    .NE. 8     )     STOP 17
-  IF ( TI8          .NE. MI8     )   STOP 18
+  IF ( KIND(TI1)    .NE. 1     )     ERROR STOP 11
+  IF ( TI1          .NE. MI1     )   ERROR STOP 12
+  IF ( KIND(TI2)    .NE. 2     )     ERROR STOP 13
+  IF ( TI2          .NE. MI2     )   ERROR STOP 14
+  IF ( KIND(TI4)    .NE. 4     )     ERROR STOP 15
+  IF ( TI4          .NE. MI4     )   ERROR STOP 16
+  IF ( KIND(TI8)    .NE. 8     )     ERROR STOP 17
+  IF ( TI8          .NE. MI8     )   ERROR STOP 18
 
-  IF ( KIND(TR4)    .NE. 4     )     STOP 21
-  IF ( TR4          .NE. HUGE(R4))   STOP 22
-  IF ( KIND(TR8)    .NE. 8     )     STOP 23
-  IF ( TR8          .NE. HUGE(R8))   STOP 24
-  IF ( KIND(TR6)    .NE. 16     )    STOP 25
-  IF ( TR6          .NE. HUGE(R6))   STOP 26
+  IF ( KIND(TR4)    .NE. 4     )     ERROR STOP 21
+  IF ( TR4          .NE. HUGE(R4))   ERROR STOP 22
+  IF ( KIND(TR8)    .NE. 8     )     ERROR STOP 23
+  IF ( TR8          .NE. HUGE(R8))   ERROR STOP 24
+  IF ( KIND(TR6)    .NE. 16     )    ERROR STOP 25
+  IF ( TR6          .NE. HUGE(R6))   ERROR STOP 26
 
   END
 

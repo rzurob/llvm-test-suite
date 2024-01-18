@@ -41,9 +41,9 @@
   TYPE IS (COMPLEX(8) )
     STOP 34
   TYPE IS (COMPLEX(4))
-    IF ( ANY(SHAPE(As) .NE. (/4/))  )   STOP 31
-    IF ( LBOUND(As, 1) .NE. 1       )   STOP 32
-    IF ( ANY(As        .NE. (1.,-1.)))  STOP 32
+    IF ( ANY(SHAPE(As) .NE. (/4/))  )   ERROR STOP 31
+    IF ( LBOUND(As, 1) .NE. 1       )   ERROR STOP 32
+    IF ( ANY(As        .NE. (1.,-1.)))  ERROR STOP 32
   END SELECT
 
   Ptr => C8
@@ -54,9 +54,9 @@
   TYPE IS (COMPLEX  )
     STOP 41
   TYPE IS (COMPLEX(8) )
-    IF ( ANY(SHAPE(Ptr) .NE. (/4/))  )   STOP 42
-    IF ( LBOUND(Ptr, 1) .NE. 1       )   STOP 43
-    IF ( ANY(Ptr        .NE. (1._8,-1._8)) )  STOP 44
+    IF ( ANY(SHAPE(Ptr) .NE. (/4/))  )   ERROR STOP 42
+    IF ( LBOUND(Ptr, 1) .NE. 1       )   ERROR STOP 43
+    IF ( ANY(Ptr        .NE. (1._8,-1._8)) )  ERROR STOP 44
   TYPE IS (COMPLEX(16) )
     STOP 45
   END SELECT
@@ -69,9 +69,9 @@
   CLASS DEFAULT
     STOP 50
   TYPE IS (COMPLEX( 16) )
-    IF ( ANY(SHAPE(As) .NE. (/2/))  )   STOP 51
-    IF ( LBOUND(As, 1) .NE. 1       )   STOP 52
-    IF ( ANY(As        .NE. (1._16,-1._16)) )  STOP 53
+    IF ( ANY(SHAPE(As) .NE. (/2/))  )   ERROR STOP 51
+    IF ( LBOUND(As, 1) .NE. 1       )   ERROR STOP 52
+    IF ( ANY(As        .NE. (1._16,-1._16)) )  ERROR STOP 53
   END SELECT
 
   Ptr => C
@@ -80,7 +80,7 @@
   CLASS DEFAULT
     STOP 60
   TYPE IS (COMPLEX)
-    IF ( As .NE. (1.,-1.) )  STOP 62
+    IF ( As .NE. (1.,-1.) )  ERROR STOP 62
   TYPE IS (COMPLEX(8) )
     STOP 64
   END SELECT

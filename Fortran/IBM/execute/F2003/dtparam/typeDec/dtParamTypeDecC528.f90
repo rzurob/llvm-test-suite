@@ -64,15 +64,15 @@
   TYPE(DT(K=1)), VALUE  :: T1
   TYPE(DT(2, L=3)), VALUE  :: T2
 
-  IF ( T1%L       .NE. 4  ) STOP 11
-  IF ( ANY( T1%I  .NE. 1 )) STOP 12
-  IF ( T1%I%KIND  .NE. 1  ) STOP 13
-  IF ( SIZE(T1%I) .NE. 4  ) STOP 14
+  IF ( T1%L       .NE. 4  ) ERROR STOP 11
+  IF ( ANY( T1%I  .NE. 1 )) ERROR STOP 12
+  IF ( T1%I%KIND  .NE. 1  ) ERROR STOP 13
+  IF ( SIZE(T1%I) .NE. 4  ) ERROR STOP 14
 
-  IF ( T2%L       .NE. 3  ) STOP 21
-  IF ( ANY( T2%I  .NE. 3 )) STOP 22
-  IF ( T2%I%KIND  .NE. 2  ) STOP 23
-  IF ( SIZE(T2%I) .NE. 3  ) STOP 24
+  IF ( T2%L       .NE. 3  ) ERROR STOP 21
+  IF ( ANY( T2%I  .NE. 3 )) ERROR STOP 22
+  IF ( T2%I%KIND  .NE. 2  ) ERROR STOP 23
+  IF ( SIZE(T2%I) .NE. 3  ) ERROR STOP 24
 
   END SUBROUTINE
 

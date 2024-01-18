@@ -99,44 +99,44 @@
 
 
 
-  IF (KIND(TI11)   .NE.   1 )                STOP 11
-  IF (ANY( TI11    .NE.  (/(I, I=1,6)/)))    STOP 12
-  IF (KIND(TI12)   .NE.   1 )                STOP 13
-  IF (ANY( TI12    .NE.  (/(I, I=1,6,2)/)))  STOP 14
-  IF (KIND(TI13)   .NE.   1 )                STOP 15
-  IF (ANY( TI13    .NE.  PI11))              STOP 16
+  IF (KIND(TI11)   .NE.   1 )                ERROR STOP 11
+  IF (ANY( TI11    .NE.  (/(I, I=1,6)/)))    ERROR STOP 12
+  IF (KIND(TI12)   .NE.   1 )                ERROR STOP 13
+  IF (ANY( TI12    .NE.  (/(I, I=1,6,2)/)))  ERROR STOP 14
+  IF (KIND(TI13)   .NE.   1 )                ERROR STOP 15
+  IF (ANY( TI13    .NE.  PI11))              ERROR STOP 16
 
-  IF (KIND(TI41)   .NE.   4 )                STOP 21
-  IF (ANY( TI41    .NE.  (/(I, I=1,6)/)))    STOP 22
-  IF (KIND(TI42)   .NE.   4 )                STOP 23
-  IF (ANY( TI42    .NE.  (/(I, I=1,6,2)/)))  STOP 24
-  IF (KIND(TI43)   .NE.   4 )                STOP 25
-  IF (ANY( TI43    .NE.  PI41))              STOP 26
+  IF (KIND(TI41)   .NE.   4 )                ERROR STOP 21
+  IF (ANY( TI41    .NE.  (/(I, I=1,6)/)))    ERROR STOP 22
+  IF (KIND(TI42)   .NE.   4 )                ERROR STOP 23
+  IF (ANY( TI42    .NE.  (/(I, I=1,6,2)/)))  ERROR STOP 24
+  IF (KIND(TI43)   .NE.   4 )                ERROR STOP 25
+  IF (ANY( TI43    .NE.  PI41))              ERROR STOP 26
 
-  IF (KIND(TI81)   .NE.   8 )                STOP 31
-  IF (ANY( TI81    .NE.  (/(I, I=1,6)/)))    STOP 32
-  IF (KIND(TI82)   .NE.   8 )                STOP 33
-  IF (ANY( TI82    .NE.  (/(I, I=1,6,2)/)))  STOP 34
-  IF (KIND(TI83)   .NE.   8 )                STOP 35
-  IF (ANY( TI83    .NE.  PI81))              STOP 36
+  IF (KIND(TI81)   .NE.   8 )                ERROR STOP 31
+  IF (ANY( TI81    .NE.  (/(I, I=1,6)/)))    ERROR STOP 32
+  IF (KIND(TI82)   .NE.   8 )                ERROR STOP 33
+  IF (ANY( TI82    .NE.  (/(I, I=1,6,2)/)))  ERROR STOP 34
+  IF (KIND(TI83)   .NE.   8 )                ERROR STOP 35
+  IF (ANY( TI83    .NE.  PI81))              ERROR STOP 36
 
-  IF (KIND(TR81)   .NE.   8 )                STOP 41
-  IF (ANY( TR81    .NE.  (/(I, I=1,6)/)))    STOP 42
-  IF (KIND(TR82)   .NE.   8 )                STOP 43
-  IF (ANY( TR82    .NE.  (/(I, I=1,6,2)/)))  STOP 44
-  IF (KIND(TR83)   .NE.   8 )                STOP 45
-  IF (ANY( TR83    .NE.  PI81))              STOP 46
+  IF (KIND(TR81)   .NE.   8 )                ERROR STOP 41
+  IF (ANY( TR81    .NE.  (/(I, I=1,6)/)))    ERROR STOP 42
+  IF (KIND(TR82)   .NE.   8 )                ERROR STOP 43
+  IF (ANY( TR82    .NE.  (/(I, I=1,6,2)/)))  ERROR STOP 44
+  IF (KIND(TR83)   .NE.   8 )                ERROR STOP 45
+  IF (ANY( TR83    .NE.  PI81))              ERROR STOP 46
 
-  IF (KIND(TZ41)   .NE.   4 )                     STOP 51
-  IF (ANY( TZ41    .NE.  (/((I,-I), I=1,6)/)))    STOP 52
-  IF (KIND(TZ42)   .NE.   4 )                     STOP 53
-  IF (ANY( TZ42    .NE.  (/((I,-I), I=1,6,2)/)))  STOP 54
-  IF (KIND(TZ43)   .NE.   4 )                     STOP 55
-  IF (ANY( TZ43    .NE.  PZ41))                   STOP 56
+  IF (KIND(TZ41)   .NE.   4 )                     ERROR STOP 51
+  IF (ANY( TZ41    .NE.  (/((I,-I), I=1,6)/)))    ERROR STOP 52
+  IF (KIND(TZ42)   .NE.   4 )                     ERROR STOP 53
+  IF (ANY( TZ42    .NE.  (/((I,-I), I=1,6,2)/)))  ERROR STOP 54
+  IF (KIND(TZ43)   .NE.   4 )                     ERROR STOP 55
+  IF (ANY( TZ43    .NE.  PZ41))                   ERROR STOP 56
 
-  IF (ANY( T1%C    .NE.  (/(CHAR(I), I=1,6)/)))    STOP 62
-  IF (ANY( T2%C    .NE.  (/(CHAR(I), I=1,6,2)/)))  STOP 64
-  IF (ANY( T3%C    .NE.  P%C))                     STOP 66
+  IF (ANY( T1%C    .NE.  (/(CHAR(I), I=1,6)/)))    ERROR STOP 62
+  IF (ANY( T2%C    .NE.  (/(CHAR(I), I=1,6,2)/)))  ERROR STOP 64
+  IF (ANY( T3%C    .NE.  P%C))                     ERROR STOP 66
 
 
   END

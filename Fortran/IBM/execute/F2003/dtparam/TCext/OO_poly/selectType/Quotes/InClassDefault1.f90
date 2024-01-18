@@ -76,27 +76,27 @@
       CLASS IS (Base(*,1,8,8,*))
         T%L = .FALSE.
         T = U(2,3)
-        IF ( .NOT. T%L )            STOP 20
-        IF ( LEN(U%C) .NE. 1025 )   STOP 21
-        IF ( ANY(U%C  .NE. Str) )   STOP 22
+        IF ( .NOT. T%L )            ERROR STOP 20
+        IF ( LEN(U%C) .NE. 1025 )   ERROR STOP 21
+        IF ( ANY(U%C  .NE. Str) )   ERROR STOP 22
 
-        IF ( .NOT. SAME_TYPE_AS(U, Arg))       STOP 30
-        IF ( SIZE(U)          .NE. 4 )          STOP 31
-        IF ( ANY (LBOUND(U)   .NE. (/2, 3/) ) ) STOP 32
-        IF ( ANY (UBOUND(U)   .NE. (/3, 4/) ) ) STOP 33
-        IF ( ANY(SHAPE(U)     .NE. (/2,2/)) )   STOP 34
+        IF ( .NOT. SAME_TYPE_AS(U, Arg))       ERROR STOP 30
+        IF ( SIZE(U)          .NE. 4 )          ERROR STOP 31
+        IF ( ANY (LBOUND(U)   .NE. (/2, 3/) ) ) ERROR STOP 32
+        IF ( ANY (UBOUND(U)   .NE. (/3, 4/) ) ) ERROR STOP 33
+        IF ( ANY(SHAPE(U)     .NE. (/2,2/)) )   ERROR STOP 34
 
-        IF ( ANY(U%Int        .NE. 8_1) )      STOP 35
-        IF ( KIND(U%Int) .NE. 1 )              STOP 36
+        IF ( ANY(U%Int        .NE. 8_1) )      ERROR STOP 35
+        IF ( KIND(U%Int) .NE. 1 )              ERROR STOP 36
 
-        IF ( ANY(U%Cplx       .NE. (-8.0_8, 8.0_8) ))   STOP 37
-        IF ( KIND(U%Cplx) .NE. 8 )                      STOP 38
+        IF ( ANY(U%Cplx       .NE. (-8.0_8, 8.0_8) ))   ERROR STOP 37
+        IF ( KIND(U%Cplx) .NE. 8 )                      ERROR STOP 38
 
-        IF ( ANY(U%L        .NEQV. .TRUE._8) )   STOP 40
-        IF ( KIND(U%L) .NE. 8 )                  STOP 41
+        IF ( ANY(U%L        .NEQV. .TRUE._8) )   ERROR STOP 40
+        IF ( KIND(U%L) .NE. 8 )                  ERROR STOP 41
 
-        IF ( ANY(U%C    .NE. Str) )   STOP 42
-        IF ( LEN(U%C) .NE. 1025 )     STOP 43
+        IF ( ANY(U%C    .NE. Str) )   ERROR STOP 42
+        IF ( LEN(U%C) .NE. 1025 )     ERROR STOP 43
 
       CLASS DEFAULT
         STOP 51

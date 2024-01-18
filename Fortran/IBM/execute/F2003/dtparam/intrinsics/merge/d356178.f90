@@ -32,8 +32,8 @@ program d356178
 
    b1%type1=a1
 
-   if (b1%type1%ca /= '123') stop 20
-   if (len(b1%type1%ca) /= 4) stop 21
+   if (b1%type1%ca /= '123') error stop 20
+   if (len(b1%type1%ca) /= 4) error stop 21
 
    call associate_replacer (b1%type1%ca)
 

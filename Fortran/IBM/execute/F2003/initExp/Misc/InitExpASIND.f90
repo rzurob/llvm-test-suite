@@ -43,30 +43,30 @@
 
 
 
-  IF (KIND(R4)  .NE. 4   )                                 STOP 11
-  IF (SIZE(R4)  .NE. 30   )                                STOP 12
-  IF (ANY(R4    .NE. 30.0) )                               STOP 13
+  IF (KIND(R4)  .NE. 4   )                                 ERROR STOP 11
+  IF (SIZE(R4)  .NE. 30   )                                ERROR STOP 12
+  IF (ANY(R4    .NE. 30.0) )                               ERROR STOP 13
 
-  IF (KIND(R8)  .NE. 8   )                                 STOP 21
-  IF (SIZE(R8)  .NE. 30   )                                STOP 22
-  IF (ANY(ABS(R8-30.0)  .GT. 1.E-6) )                      STOP 23
+  IF (KIND(R8)  .NE. 8   )                                 ERROR STOP 21
+  IF (SIZE(R8)  .NE. 30   )                                ERROR STOP 22
+  IF (ANY(ABS(R8-30.0)  .GT. 1.E-6) )                      ERROR STOP 23
 
-  IF (KIND(R6)  .NE. 16  )                                 STOP 31
-  IF (SIZE(R6)  .NE. 30   )                                STOP 32
-  IF (ANY(R6    .NE. 30.0) )                               STOP 33
+  IF (KIND(R6)  .NE. 16  )                                 ERROR STOP 31
+  IF (SIZE(R6)  .NE. 30   )                                ERROR STOP 32
+  IF (ANY(R6    .NE. 30.0) )                               ERROR STOP 33
 
 
-  IF (KIND(Z4)  .NE. 4   )                                 STOP 41
-  IF (SIZE(Z4)  .NE. 30   )                                STOP 42
-  IF (ANY(ABS(Z4-(30.0,30.0))  .GT. 1.E-6) )               STOP 43
+  IF (KIND(Z4)  .NE. 4   )                                 ERROR STOP 41
+  IF (SIZE(Z4)  .NE. 30   )                                ERROR STOP 42
+  IF (ANY(ABS(Z4-(30.0,30.0))  .GT. 1.E-6) )               ERROR STOP 43
 
-  IF (KIND(Z8)  .NE. 8   )                                 STOP 51
-  IF (SIZE(Z8)  .NE. 30   )                                STOP 52
-  IF (ANY(ABS(Z8-(30.0,30.0))  .GT. 1.E-6) )               STOP 53
+  IF (KIND(Z8)  .NE. 8   )                                 ERROR STOP 51
+  IF (SIZE(Z8)  .NE. 30   )                                ERROR STOP 52
+  IF (ANY(ABS(Z8-(30.0,30.0))  .GT. 1.E-6) )               ERROR STOP 53
 
-  IF (KIND(Z6)  .NE. 16  )                                 STOP 61
-  IF (SIZE(Z6)  .NE. 30   )                                STOP 62
-  IF (ANY(ABS(Z6-(30.0,30.0))  .GT. 1.E-6) )               STOP 63
+  IF (KIND(Z6)  .NE. 16  )                                 ERROR STOP 61
+  IF (SIZE(Z6)  .NE. 30   )                                ERROR STOP 62
+  IF (ANY(ABS(Z6-(30.0,30.0))  .GT. 1.E-6) )               ERROR STOP 63
 
 
   END

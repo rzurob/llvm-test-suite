@@ -32,12 +32,12 @@ program d325968
 
   fnan = 0.0
   fnan = ieee_value(real(fnan), IEEE_QUIET_NAN)
-  if( .not. ieee_is_nan(real(fnan))) stop 2
+  if( .not. ieee_is_nan(real(fnan))) error stop 2
 
   fnan = ieee_value(real(fnan), IEEE_POSITIVE_INF)
-  if( ieee_class(real(fnan)) /= IEEE_POSITIVE_INF) stop 3
+  if( ieee_class(real(fnan)) /= IEEE_POSITIVE_INF) error stop 3
 
   fnan = ieee_value(real(fnan), IEEE_NEGATIVE_INF)
-  if( ieee_class(real(fnan)) /= IEEE_NEGATIVE_INF) stop 4
+  if( ieee_class(real(fnan)) /= IEEE_NEGATIVE_INF) error stop 4
 
 end program d325968

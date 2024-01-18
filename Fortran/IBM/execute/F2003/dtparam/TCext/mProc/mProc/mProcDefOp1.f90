@@ -134,10 +134,10 @@
   T2 = .OP. DT2(20,4)(2)
   T3 = .OP. DT3(20,4)(3)
 
-  IF (T%ID   .NE. 1 ) STOP 11
-  IF (T1%ID  .NE. 2 ) STOP 12
-  IF (T2%ID  .NE. 6 ) STOP 13
-  IF (T3%ID  .NE. 12) STOP 14
+  IF (T%ID   .NE. 1 ) ERROR STOP 11
+  IF (T1%ID  .NE. 2 ) ERROR STOP 12
+  IF (T2%ID  .NE. 6 ) ERROR STOP 13
+  IF (T3%ID  .NE. 12) ERROR STOP 14
 
   END  SUBROUTINE
 

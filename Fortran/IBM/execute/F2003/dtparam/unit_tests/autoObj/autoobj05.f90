@@ -42,16 +42,16 @@
 
   ENTRY Sub1(n)
 
-  IF (b%l            .NE. 2)  STOP 11
-  IF (b(1)%arr%l        .NE. 2)  STOP 12
-  IF (len(b(1)%arr%c)    .NE. 2)  STOP 13
-  IF (SIZE(b(1)%arr) .NE. 2)  STOP 14
-  IF (SIZE(b)        .NE. 2)  STOP 15
+  IF (b%l            .NE. 2)  ERROR STOP 11
+  IF (b(1)%arr%l        .NE. 2)  ERROR STOP 12
+  IF (len(b(1)%arr%c)    .NE. 2)  ERROR STOP 13
+  IF (SIZE(b(1)%arr) .NE. 2)  ERROR STOP 14
+  IF (SIZE(b)        .NE. 2)  ERROR STOP 15
 
   b(1)%arr%c = '123'
   b(n)%arr%c = '321'
-  IF (ANY(b(1)%arr%c  .NE. "12")) STOP 16
-  IF (ANY(b(n)%arr%c  .NE. "32")) STOP 17
+  IF (ANY(b(1)%arr%c  .NE. "12")) ERROR STOP 16
+  IF (ANY(b(n)%arr%c  .NE. "32")) ERROR STOP 17
 
   END SUBROUTINE
 

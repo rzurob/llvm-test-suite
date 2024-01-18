@@ -43,17 +43,17 @@ program main
 
     e1%bval%p(size(e2%bval%p):) =>  e2%bval%p(10:1:-1)
 
-    if ( .not. associated(e1%bval%p, e2%bval%p(10:1:-1))) stop 1
-    if ( lbound(e1%bval%p,1) /= 10 ) stop 2
-    if ( ubound(e1%bval%p,1) /= 19 ) stop 3
+    if ( .not. associated(e1%bval%p, e2%bval%p(10:1:-1))) error stop 1
+    if ( lbound(e1%bval%p,1) /= 10 ) error stop 2
+    if ( ubound(e1%bval%p,1) /= 19 ) error stop 3
 
     e1 = e2
 
-    if ( .not. associated(e1%bval%p, e2%bval%p(::2))) stop 11
-    if ( lbound(e1%bval%p,1) /= 2 ) stop 12
-    if ( ubound(e1%bval%p,1) /= 6 ) stop 13
+    if ( .not. associated(e1%bval%p, e2%bval%p(::2))) error stop 11
+    if ( lbound(e1%bval%p,1) /= 2 ) error stop 12
+    if ( ubound(e1%bval%p,1) /= 6 ) error stop 13
 
-    if ( any ( e1%bval%p / (/(i, i=1,9,2 ) /) .ne. (/(i, i=1,9,2 ) /))) stop 20
+    if ( any ( e1%bval%p / (/(i, i=1,9,2 ) /) .ne. (/(i, i=1,9,2 ) /))) error stop 20
 
 end program
 

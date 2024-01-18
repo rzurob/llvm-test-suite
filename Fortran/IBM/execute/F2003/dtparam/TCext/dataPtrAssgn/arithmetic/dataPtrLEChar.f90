@@ -53,9 +53,9 @@ program main
     b%ptr(len(ch(1)):, size(ch):) => b%pp(ch)
     b%ptr(len(ch(1)):, size(ch):) => b%ptr(len(ch(1))+1::2,:)
 
-    if ( .not. associated(b%ptr)) stop 2
-    if ( any( lbound(b%ptr) .ne. (/3, 8/) )) stop 5
-    if ( any( ubound(b%ptr) .ne. (/3, 11/) )) stop 8
+    if ( .not. associated(b%ptr)) error stop 2
+    if ( any( lbound(b%ptr) .ne. (/3, 8/) )) error stop 5
+    if ( any( ubound(b%ptr) .ne. (/3, 11/) )) error stop 8
     print *, b%ptr
     print *, b%ptr <= reshape ( &
         (/'ibm','---','xlf','---','xlc','---','aix','---' /), (/2,4/))

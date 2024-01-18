@@ -94,9 +94,9 @@
     TYPE(Base(1,3))         :: V
     TYPE(Base(1,3)), TARGET :: Tar=Base(1,3)("abc", NULL())
       V = Arg(Base(1,3)("123", Tar))
-      IF (V%C .NE. "123")                STOP 11
-      IF (.NOT. ASSOCIATED(V%BPtr, Tar)) STOP 12
-      IF (V%BPtr%C .NE. "abc" )          STOP 13
+      IF (V%C .NE. "123")                ERROR STOP 11
+      IF (.NOT. ASSOCIATED(V%BPtr, Tar)) ERROR STOP 12
+      IF (V%BPtr%C .NE. "abc" )          ERROR STOP 13
     END SUBROUTINE
 
     SUBROUTINE IntSub1(Arg)

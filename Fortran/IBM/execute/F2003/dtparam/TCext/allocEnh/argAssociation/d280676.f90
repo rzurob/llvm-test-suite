@@ -55,34 +55,34 @@ use m
 
     deallocate (b1, stat=stat)
 
-    if (stat /= 2) stop 1
+    if (stat /= 2) error stop 1
 
     call assgnPoly1 (b1, b4)
 
     deallocate (b1, stat=stat)
 
-    if (stat /= 2) stop 2
+    if (stat /= 2) error stop 2
 
     call assgnPoly1 (b1, b2)
 
     deallocate (b1, stat=stat)
 
-    if (stat /= 2) stop 3
+    if (stat /= 2) error stop 3
 
     call assgnPoly2 (b3, b4)
 
     deallocate (b3, stat=stat)
 
-    if (stat /= 2) stop 4
+    if (stat /= 2) error stop 4
 
     call assgnPoly2 (b3, b2)
 
     deallocate (b3, stat=stat)
 
-    if (stat /= 2) stop 5
+    if (stat /= 2) error stop 5
 
     deallocate (b2, b4, stat=stat)
 
-    if (stat /= 0) stop 6
+    if (stat /= 0) error stop 6
 end
 

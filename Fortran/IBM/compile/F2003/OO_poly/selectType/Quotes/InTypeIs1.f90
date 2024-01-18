@@ -54,7 +54,7 @@
 
     SELECT TYPE (Arg=>Arg(2, 3))
     TYPE IS (Child)
-      IF (.NOT. SAME_TYPE_AS(Arg, V)) STOP 20
+      IF (.NOT. SAME_TYPE_AS(Arg, V)) ERROR STOP 20
       SELECT TYPE (Arg)
       END SELECT
     CLASS DEFAULT
@@ -65,7 +65,7 @@
     TYPE IS (Child)
       SELECT TYPE (Arg)
       END SELECT
-      IF (.NOT. SAME_TYPE_AS(Arg, V)) STOP 30
+      IF (.NOT. SAME_TYPE_AS(Arg, V)) ERROR STOP 30
     CLASS DEFAULT
       STOP 41
     END SELECT

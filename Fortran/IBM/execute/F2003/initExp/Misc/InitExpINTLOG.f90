@@ -49,22 +49,22 @@
   INTEGER(8),                      PARAMETER :: IArr8(128)=(/(L8F / L8T, I=0, 127)/)
 
 
-  IF ( L1T .NEQV. .TRUE. )         STOP 10
-  IF ( L1F .NEQV. .FALSE.)         STOP 11
+  IF ( L1T .NEQV. .TRUE. )         ERROR STOP 10
+  IF ( L1F .NEQV. .FALSE.)         ERROR STOP 11
 
-  IF ( L2T .NEQV. .TRUE. )         STOP 20
-  IF ( L2F .NEQV. .FALSE.)         STOP 21
+  IF ( L2T .NEQV. .TRUE. )         ERROR STOP 20
+  IF ( L2F .NEQV. .FALSE.)         ERROR STOP 21
 
-  IF ( L4T .NEQV. .TRUE. )         STOP 30
-  IF ( L4F .NEQV. .FALSE.)         STOP 31
+  IF ( L4T .NEQV. .TRUE. )         ERROR STOP 30
+  IF ( L4F .NEQV. .FALSE.)         ERROR STOP 31
 
-  IF ( L8T .NEQV. .TRUE. )         STOP 40
-  IF ( L8F .NEQV. .FALSE.)         STOP 41
+  IF ( L8T .NEQV. .TRUE. )         ERROR STOP 40
+  IF ( L8F .NEQV. .FALSE.)         ERROR STOP 41
 
-  IF ( ANY( IArr1 .NE. 1))         STOP 41
-  IF ( ANY( IArr2 .NE. 0))         STOP 41
-  IF ( ANY( IArr4 .NE. 1))         STOP 41
-  IF ( ANY( IArr8 .NE. 0))         STOP 41
+  IF ( ANY( IArr1 .NE. 1))         ERROR STOP 41
+  IF ( ANY( IArr2 .NE. 0))         ERROR STOP 41
+  IF ( ANY( IArr4 .NE. 1))         ERROR STOP 41
+  IF ( ANY( IArr8 .NE. 0))         ERROR STOP 41
 
   END
 

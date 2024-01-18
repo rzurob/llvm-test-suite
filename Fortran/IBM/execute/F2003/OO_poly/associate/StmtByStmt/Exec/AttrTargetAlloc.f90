@@ -92,28 +92,28 @@
     PtrB => As%Base
     PtrC => As
 
-    IF ( .NOT. ASSOCIATED(PtrZ) ) STOP 20
-    IF ( .NOT. ASSOCIATED(PtrB) ) STOP 21
-    IF ( .NOT. ASSOCIATED(PtrC) ) STOP 22
+    IF ( .NOT. ASSOCIATED(PtrZ) ) ERROR STOP 20
+    IF ( .NOT. ASSOCIATED(PtrB) ) ERROR STOP 21
+    IF ( .NOT. ASSOCIATED(PtrC) ) ERROR STOP 22
 
-    IF ( PtrB%BaseID      .NE. -1 ) STOP 30
-    IF ( PtrB%GetId()     .NE. -1 ) STOP 31
+    IF ( PtrB%BaseID      .NE. -1 ) ERROR STOP 30
+    IF ( PtrB%GetId()     .NE. -1 ) ERROR STOP 31
 
-    IF ( PtrC%BaseID        .NE. -1 ) STOP 30
-    IF ( PtrC%Base%GetId()  .NE. -1 ) STOP 31
-    IF ( PtrC%ChildID       .NE. -2 ) STOP 32
-    IF ( PtrC%GetId()       .NE. -2 ) STOP 33
+    IF ( PtrC%BaseID        .NE. -1 ) ERROR STOP 30
+    IF ( PtrC%Base%GetId()  .NE. -1 ) ERROR STOP 31
+    IF ( PtrC%ChildID       .NE. -2 ) ERROR STOP 32
+    IF ( PtrC%GetId()       .NE. -2 ) ERROR STOP 33
 
     ASSOCIATE ( As => W%Base )
 
       PtrZ => As%Zero
       PtrB => As
 
-      IF ( .NOT. ASSOCIATED(PtrZ) ) STOP 20
-      IF ( .NOT. ASSOCIATED(PtrB) ) STOP 21
+      IF ( .NOT. ASSOCIATED(PtrZ) ) ERROR STOP 20
+      IF ( .NOT. ASSOCIATED(PtrB) ) ERROR STOP 21
 
-      IF ( PtrB%BaseID      .NE. -1 ) STOP 30
-      IF ( PtrB%GetId()     .NE. -1 ) STOP 31
+      IF ( PtrB%BaseID      .NE. -1 ) ERROR STOP 30
+      IF ( PtrB%GetId()     .NE. -1 ) ERROR STOP 31
 
     END ASSOCIATE
 

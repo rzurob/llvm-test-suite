@@ -47,10 +47,10 @@ use m
     !! the following format specification should cause run-time error
     write(*, '(DC, f10.2)', iostat=istat) A(1.2)
 
-    if (istat == 0) stop 1
+    if (istat == 0) error stop 1
 
     !! the following format specification should cause run-time error
     write(*, '(DC, f10.2)', iostat=istat) a1
 
-    if (istat == 0) stop 2
+    if (istat == 0) error stop 2
 end

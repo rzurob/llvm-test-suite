@@ -98,8 +98,8 @@ contains
     else
        print *, step, "fin1:", a%l, a%dlvar%label, "no allocations"
     end if
-    if (a%k /= 1 .or. a%dkvar%k /= a%k .or. kind(a%dkvar%ivar) /= a%k) stop 5
-    if (a%dlvar%l /= a%l .or. len(a%dlvar%label) /= a%l) stop 6
+    if (a%k /= 1 .or. a%dkvar%k /= a%k .or. kind(a%dkvar%ivar) /= a%k) error stop 5
+    if (a%dlvar%l /= a%l .or. len(a%dlvar%label) /= a%l) error stop 6
   end subroutine fin1
 
   subroutine fin4(a)
@@ -113,8 +113,8 @@ contains
     else
        print *, step, "fin4:", a%l, a%dlvar%label, "no allocations"
     end if
-    if (a%k /= 4 .or. a%dkvar%k /= a%k .or. kind(a%dkvar%ivar) /= a%k) stop 7
-    if (a%dlvar%l /= a%l .or. len(a%dlvar%label) /= a%l) stop 8
+    if (a%k /= 4 .or. a%dkvar%k /= a%k .or. kind(a%dkvar%ivar) /= a%k) error stop 7
+    if (a%dlvar%l /= a%l .or. len(a%dlvar%label) /= a%l) error stop 8
   end subroutine fin4
 
 

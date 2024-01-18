@@ -137,7 +137,7 @@ program acetdt00kl
 
   bas4 = [base(4,4,4):: bas3] ! tcx: (4,4,4)
 
-  if (.not.(all(bas1 == bas2) .and. all(bas2 == bas3) .and. all(bas3 == bas4) .and. all(bas4 == bas1))) stop 2
+  if (.not.(all(bas1 == bas2) .and. all(bas2 == bas3) .and. all(bas3 == bas4) .and. all(bas4 == bas1))) error stop 2
 
   bas5 = [base(4,4,4):: (base(4,4,4)(i*100,1.0/i/3,(0.0-i,i+10)), i=1,3)] ! tcx: (4,4,4) ! tcx: (4,4,4)
   print *, bas5
@@ -158,7 +158,7 @@ program acetdt00kl
 
   der4 = [derived(4,4,4,1):: der3] ! tcx: (4,4,4,1)
 
-  if (.not.(all(der1 == der2) .and. all(der2 == der3) .and. all(der3 == der4) .and. all(der4 == der1))) stop 3
+  if (.not.(all(der1 == der2) .and. all(der2 == der3) .and. all(der3 == der4) .and. all(der4 == der1))) error stop 3
 
   der5 = [derived(4,4,4,1):: (derived(4,4,4,1)(i*100,1.0/i/3,(0.0-i,i+10), achar(64+i)), i=1,3)] ! tcx: (4,4,4,1) ! tcx: (4,4,4,1)
   print *, der5
@@ -179,7 +179,7 @@ program acetdt00kl
 
   comp4 = [composed(1,4):: comp3] ! tcx: (1,4)
 
-  if (.not.(all(comp1 == comp2) .and. all(comp2 == comp3) .and. all(comp3 == comp4) .and. all(comp4 == comp1))) stop 4
+  if (.not.(all(comp1 == comp2) .and. all(comp2 == comp3) .and. all(comp3 == comp4) .and. all(comp4 == comp1))) error stop 4
 
   comp5 = [composed(1,4):: (composed(1,4)(base(4,4,4)(i*100,1.0/i/3,(0.0-i,i+10)), mod(i,2) == 1), i=1,3)] ! tcx: (4,4,4) ! tcx: (1,4) ! tcx: (1,4)
   print *, comp5

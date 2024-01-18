@@ -41,7 +41,7 @@ module m
         class(dataType(k=8, n=*)), intent(in) :: d1
         integer, intent(in) :: i
 
-        if ((i < 1) .or. (i > d1%n)) stop 20
+        if ((i < 1) .or. (i > d1%n)) error stop 20
 
         getData8 = d1%data(i)
     end function
@@ -105,7 +105,7 @@ use nodeDef
         call begin(l)
 
         do while (hasMore())
-            if (.not. associated(iterator%data)) stop 10
+            if (.not. associated(iterator%data)) error stop 10
 
             call iterator%data%normalize8
 
@@ -116,7 +116,7 @@ use nodeDef
     real(8) function getVal (i)
         integer, intent(in) :: i
 
-        if (.not. associated(iterator%data)) stop 30
+        if (.not. associated(iterator%data)) error stop 30
 
         getVal = iterator%data%getVal8(i)
     end function

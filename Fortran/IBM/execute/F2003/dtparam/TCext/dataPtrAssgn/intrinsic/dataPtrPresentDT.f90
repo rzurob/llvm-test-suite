@@ -46,9 +46,9 @@ end module
 
         p(1:) => tar(::2)
 
-        if ( .not. associated(p, tar(::2))) stop 11
-        if ( lbound(p,1) /= 1 ) stop 13
-        if ( ubound(p,1) /= 5 ) stop 15
+        if ( .not. associated(p, tar(::2))) error stop 11
+        if ( lbound(p,1) /= 1 ) error stop 13
+        if ( ubound(p,1) /= 5 ) error stop 15
 
 	call sub(p)
 

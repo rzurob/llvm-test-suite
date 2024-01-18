@@ -67,27 +67,27 @@
   TYPE(Child) :: Arg1, Arg2
 
   ASSOCIATE ( T1 => Arg1, T2 => Arg2 )
-    IF ( T1%GetId() .NE. T2%GetId() ) STOP 30
+    IF ( T1%GetId() .NE. T2%GetId() ) ERROR STOP 30
     Arg1%ChildId = -2
-    IF ( T1%GetId() .NE. T2%GetId() ) STOP 31
-    IF ( T1%Base%GetId() .NE. T2%Base%GetId() ) STOP 32
+    IF ( T1%GetId() .NE. T2%GetId() ) ERROR STOP 31
+    IF ( T1%Base%GetId() .NE. T2%Base%GetId() ) ERROR STOP 32
 
     ASSOCIATE ( As1 => T1, As2 => T2 )
       Arg1%BaseId  = -1
       Arg2%ChildID = -2
-      IF ( As1%BaseId  .NE. -1 ) STOP 40
-      IF ( As2%ChildId .NE. -2 ) STOP 41
-      IF ( As1%GetId() .NE. As2%GetId() ) STOP 42
-      IF ( As1%Base%GetId() .NE. As2%Base%GetId() ) STOP 43
+      IF ( As1%BaseId  .NE. -1 ) ERROR STOP 40
+      IF ( As2%ChildId .NE. -2 ) ERROR STOP 41
+      IF ( As1%GetId() .NE. As2%GetId() ) ERROR STOP 42
+      IF ( As1%Base%GetId() .NE. As2%Base%GetId() ) ERROR STOP 43
     END ASSOCIATE
 
     ASSOCIATE ( As1 => T1, As2 => T2 )
       As1%BaseId  = 1
       As2%ChildID = 2
-      IF ( Arg1%BaseId  .NE. 1 ) STOP 50
-      IF ( Arg2%ChildId .NE. 2 ) STOP 51
-      IF ( Arg1%GetId() .NE. Arg2%GetId() ) STOP 52
-      IF ( Arg1%Base%GetId() .NE. Arg2%Base%GetId() ) STOP 53
+      IF ( Arg1%BaseId  .NE. 1 ) ERROR STOP 50
+      IF ( Arg2%ChildId .NE. 2 ) ERROR STOP 51
+      IF ( Arg1%GetId() .NE. Arg2%GetId() ) ERROR STOP 52
+      IF ( Arg1%Base%GetId() .NE. Arg2%Base%GetId() ) ERROR STOP 53
     END ASSOCIATE
 
 

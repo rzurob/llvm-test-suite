@@ -58,24 +58,24 @@
   TYPE(Child(4,20)) :: V = Child(4,20)(-1)
 
     ASSOCIATE ( Child => Child(4,20)(Id=1)  )
-      IF (Child%Id      .NE. 1) STOP 50
-      IF (Child%GetId() .NE. 1) STOP 51
+      IF (Child%Id      .NE. 1) ERROR STOP 50
+      IF (Child%GetId() .NE. 1) ERROR STOP 51
 
       ASSOCIATE ( Child => Child  )
-        IF (Child%Id      .NE. 1) STOP 52
-        IF (Child%GetId() .NE. 1) STOP 53
+        IF (Child%Id      .NE. 1) ERROR STOP 52
+        IF (Child%GetId() .NE. 1) ERROR STOP 53
       END ASSOCIATE
     END ASSOCIATE
 
     ASSOCIATE ( V => V  )
-      IF (V%Id      .NE. -1) STOP 60
-      IF (V%GetId() .NE. -1) STOP 61
+      IF (V%Id      .NE. -1) ERROR STOP 60
+      IF (V%GetId() .NE. -1) ERROR STOP 61
 
       V%Id = -2
 
       ASSOCIATE ( V => V  )
-        IF (V%Id      .NE. -2) STOP 62
-        IF (V%GetId() .NE. -2) STOP 63
+        IF (V%Id      .NE. -2) ERROR STOP 62
+        IF (V%GetId() .NE. -2) ERROR STOP 63
       END ASSOCIATE
     END ASSOCIATE
 

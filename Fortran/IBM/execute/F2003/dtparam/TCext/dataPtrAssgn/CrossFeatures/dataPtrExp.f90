@@ -70,23 +70,23 @@
   DO I =1, N
   DO J =I, N
     T(I, J)%Ptr(I:, J:) => F1(T)
-    IF (.NOT. ASSOCIATED(T(I, J)%Ptr))                   STOP 11
-    IF (ANY( LBOUND(T(I, J)%Ptr) .NE. (/I, J /)))        STOP 12
-    IF (ANY( UBOUND(T(I, J)%Ptr) .NE. (/I+N-1, J+N-1/))) STOP 13
+    IF (.NOT. ASSOCIATED(T(I, J)%Ptr))                   ERROR STOP 11
+    IF (ANY( LBOUND(T(I, J)%Ptr) .NE. (/I, J /)))        ERROR STOP 12
+    IF (ANY( UBOUND(T(I, J)%Ptr) .NE. (/I+N-1, J+N-1/))) ERROR STOP 13
     SELECT TYPE( As => T(I, J)%Ptr)
     TYPE IS (DT(4))
-      IF (ANY( As%ID      .NE.  -1 ))                    STOP 14
+      IF (ANY( As%ID      .NE.  -1 ))                    ERROR STOP 14
     CLASS DEFAULT
       STOP 15
     END SELECT
 
     T1(I)%Ptr(I:J, I:J) => F2(T1)
-    IF (.NOT. ASSOCIATED(T1(I)%Ptr))                 STOP 21
-    IF (ANY( LBOUND(T1(I)%Ptr) .NE. (/I,  I/)))      STOP 22
-    IF (ANY( UBOUND(T1(I)%Ptr) .NE. (/J,  J/)))      STOP 23
+    IF (.NOT. ASSOCIATED(T1(I)%Ptr))                 ERROR STOP 21
+    IF (ANY( LBOUND(T1(I)%Ptr) .NE. (/I,  I/)))      ERROR STOP 22
+    IF (ANY( UBOUND(T1(I)%Ptr) .NE. (/J,  J/)))      ERROR STOP 23
     SELECT TYPE( As => T1(I)%Ptr)
     TYPE IS (DT1(4))
-      IF (ANY( As%ID      .NE.  -2 ))                STOP 24
+      IF (ANY( As%ID      .NE.  -2 ))                ERROR STOP 24
     CLASS DEFAULT
       STOP 25
     END SELECT

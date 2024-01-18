@@ -21,20 +21,20 @@ logical :: eT(4)=all(x .le. y, dim=1)
 
 logical :: fT=all(a(2:3) .eq. b(2:3))
 
-if (cT .neqv. all(a .le. b)) stop 1
-if (cF .neqv. all(b .le. a)) stop 2
+if (cT .neqv. all(a .le. b)) error stop 1
+if (cF .neqv. all(b .le. a)) error stop 2
 
-if (dF .neqv. all(x .lt. y)) stop 3
-if (dT .neqv. all(x .le. y)) stop 4
+if (dF .neqv. all(x .lt. y)) error stop 3
+if (dT .neqv. all(x .le. y)) error stop 4
 
-if (fT .neqv. all(a(2:3) .eq. b(2:3))) stop 5
+if (fT .neqv. all(a(2:3) .eq. b(2:3))) error stop 5
 
 if (.not. all(eF .eqv. all(x .lt. y, dim=2))) then
   print *, eF
   print *, all(x .lt. y, dim=2)
   stop 6
 endif
-if (.not. all(eT .eqv. all(x .le. y, dim=1))) stop 7
+if (.not. all(eT .eqv. all(x .le. y, dim=1))) error stop 7
 
 end
 

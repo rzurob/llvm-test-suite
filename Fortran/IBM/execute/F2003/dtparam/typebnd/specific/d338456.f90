@@ -42,7 +42,7 @@ module m
 
         class(base), allocatable :: getValof
 
-        if (index > b1%n) stop 10
+        if (index > b1%n) error stop 10
 
         allocate (getValof)
 
@@ -106,7 +106,7 @@ use m
 
         allocatable getChildValof
 
-        if (index > b1%n) stop 15
+        if (index > b1%n) error stop 15
 
 print *, 1,[b1%data(index)], b1%len,[b1%name(index)]; stop
 

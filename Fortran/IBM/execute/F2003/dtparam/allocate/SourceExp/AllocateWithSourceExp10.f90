@@ -56,35 +56,35 @@ PROGRAM AllocateWithSourceExp10
        ALLOCATE (b1, SOURCE = Base(4,20)('XLFtest', 100))
 
        b1 = shuffle (b1, b2)
-       IF (b1%Calloc .NE. 'XLFtest') STOP 10
-       IF ( ANY(b1%Iarr .NE. 100) )  STOP 11
-       IF (b2%Calloc .NE. 'Shuffle') STOP 12
-       IF ( ANY(b2%Iarr .NE. -99) )  STOP 13
+       IF (b1%Calloc .NE. 'XLFtest') ERROR STOP 10
+       IF ( ANY(b1%Iarr .NE. 100) )  ERROR STOP 11
+       IF (b2%Calloc .NE. 'Shuffle') ERROR STOP 12
+       IF ( ANY(b2%Iarr .NE. -99) )  ERROR STOP 13
 
        b1 => shuffle (b1, b2)
-       IF (b1%Calloc .NE. 'XLFtest') STOP 14
-       IF ( ANY(b1%Iarr .NE. 100) )  STOP 15
-       IF (b2%Calloc .NE. 'Shuffle') STOP 16
-       IF ( ANY(b2%Iarr .NE. -99) )  STOP 17
+       IF (b1%Calloc .NE. 'XLFtest') ERROR STOP 14
+       IF ( ANY(b1%Iarr .NE. 100) )  ERROR STOP 15
+       IF (b2%Calloc .NE. 'Shuffle') ERROR STOP 16
+       IF ( ANY(b2%Iarr .NE. -99) )  ERROR STOP 17
 
        ALLOCATE (b3, SOURCE = shuffle (b1, b2) )
-       IF (b3%Calloc .NE. 'XLFtest') STOP 18
-       IF ( ANY(b3%Iarr .NE. 100) )  STOP 19
-       IF (b1%Calloc .NE. 'XLFtest') STOP 20
-       IF ( ANY(b1%Iarr .NE. 100) )  STOP 21
-       IF (b2%Calloc .NE. 'Shuffle') STOP 22
-       IF ( ANY(b2%Iarr .NE. -99) )  STOP 23
+       IF (b3%Calloc .NE. 'XLFtest') ERROR STOP 18
+       IF ( ANY(b3%Iarr .NE. 100) )  ERROR STOP 19
+       IF (b1%Calloc .NE. 'XLFtest') ERROR STOP 20
+       IF ( ANY(b1%Iarr .NE. 100) )  ERROR STOP 21
+       IF (b2%Calloc .NE. 'Shuffle') ERROR STOP 22
+       IF ( ANY(b2%Iarr .NE. -99) )  ERROR STOP 23
 
        ALLOCATE (upoly, SOURCE = shuffle (b1, b2) )
-       IF (b1%Calloc .NE. 'XLFtest') STOP 24
-       IF ( ANY(b1%Iarr .NE. 100) )  STOP 25
-       IF (b2%Calloc .NE. 'Shuffle') STOP 26
-       IF ( ANY(b2%Iarr .NE. -99) )  STOP 27
+       IF (b1%Calloc .NE. 'XLFtest') ERROR STOP 24
+       IF ( ANY(b1%Iarr .NE. 100) )  ERROR STOP 25
+       IF (b2%Calloc .NE. 'Shuffle') ERROR STOP 26
+       IF ( ANY(b2%Iarr .NE. -99) )  ERROR STOP 27
 
        SELECT TYPE ( upoly )
           TYPEIS (Base(4,*))
-            IF (upoly%Calloc .NE. 'XLFtest') STOP 28
-            IF ( ANY(upoly%Iarr .NE. 100) )  STOP 29
+            IF (upoly%Calloc .NE. 'XLFtest') ERROR STOP 28
+            IF ( ANY(upoly%Iarr .NE. 100) )  ERROR STOP 29
 
           CLASSDEFAULT
             STOP 30

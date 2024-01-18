@@ -48,22 +48,22 @@
 
   ASSOCIATE ( As => ReturnArr(Arr(:)) )
 
-    IF ( ANY (LBOUND(As)  .NE. (/1/) ) )     STOP 30
-    IF ( ANY (UBOUND(As)  .NE. (/555/) ) )   STOP 31
-    IF ( ANY (SHAPE(As)   .NE. (/555/) ) )   STOP 32
-    IF ( ANY (As%BaseID   .NE. -1 ))         STOP 33
+    IF ( ANY (LBOUND(As)  .NE. (/1/) ) )     ERROR STOP 30
+    IF ( ANY (UBOUND(As)  .NE. (/555/) ) )   ERROR STOP 31
+    IF ( ANY (SHAPE(As)   .NE. (/555/) ) )   ERROR STOP 32
+    IF ( ANY (As%BaseID   .NE. -1 ))         ERROR STOP 33
 
     SELECT TYPE ( AS => ReturnArr(As))
     TYPE IS (Child)
-      IF ( ANY (LBOUND(As)  .NE. (/1/) ) )     STOP 40
-      IF ( ANY (UBOUND(As)  .NE. (/555/) ) )   STOP 41
-      IF ( ANY (SHAPE(As)   .NE. (/555/) ) )   STOP 42
-      IF ( ANY (As%BaseID  .NE. -1 ))          STOP 44
+      IF ( ANY (LBOUND(As)  .NE. (/1/) ) )     ERROR STOP 40
+      IF ( ANY (UBOUND(As)  .NE. (/555/) ) )   ERROR STOP 41
+      IF ( ANY (SHAPE(As)   .NE. (/555/) ) )   ERROR STOP 42
+      IF ( ANY (As%BaseID  .NE. -1 ))          ERROR STOP 44
     CLASS DEFAULT
       STOP 35
     END SELECT
 
-    IF ( ANY (Arr%ChildID  .NE. -2 ))       STOP 54
+    IF ( ANY (Arr%ChildID  .NE. -2 ))       ERROR STOP 54
 
   END ASSOCIATE
 

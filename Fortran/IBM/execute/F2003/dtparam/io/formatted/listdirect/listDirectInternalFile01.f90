@@ -89,16 +89,16 @@ program listDirectInternalFile01
   select type(ptr)
      type is(gen4(2,*,2,*,4,*,4,*))
 
-      if(lbound(ptr%c1,1) /= 3 .or. lbound(ptr%c1,2) /= 3)  stop 11
-      if(ubound(ptr%c1,1) /= 4 .or. ubound(ptr%c1,2) /= 4)  stop 12
-      if(lbound(ptr%i1,1) /= 2 .or. lbound(ptr%i1,2) /= 3)  stop 13
-      if(ubound(ptr%i1,1) /= 4 .or. ubound(ptr%i1,2) /= 3)  stop 14
-      if(lbound(ptr%r1,1) /= 6 .or. lbound(ptr%r1,2) /= 6)  stop 15
-      if(ubound(ptr%r1,1) /= 6 .or. ubound(ptr%r1,2) /= 8)  stop 16
-      if(lbound(ptr%x1,1) /= 6 .or. lbound(ptr%x1,2) /= 6)  stop 17
-      if(ubound(ptr%x1,1) /= 6 .or. ubound(ptr%x1,2) /= 8)  stop 18
-      if(lbound(ptr%g1,1) /= 10 .or. lbound(ptr%g1,2) /= 10) stop 19
-      if(ubound(ptr%g1,1) /= 11 .or. ubound(ptr%g1,2) /= 11) stop 20
+      if(lbound(ptr%c1,1) /= 3 .or. lbound(ptr%c1,2) /= 3)  error stop 11
+      if(ubound(ptr%c1,1) /= 4 .or. ubound(ptr%c1,2) /= 4)  error stop 12
+      if(lbound(ptr%i1,1) /= 2 .or. lbound(ptr%i1,2) /= 3)  error stop 13
+      if(ubound(ptr%i1,1) /= 4 .or. ubound(ptr%i1,2) /= 3)  error stop 14
+      if(lbound(ptr%r1,1) /= 6 .or. lbound(ptr%r1,2) /= 6)  error stop 15
+      if(ubound(ptr%r1,1) /= 6 .or. ubound(ptr%r1,2) /= 8)  error stop 16
+      if(lbound(ptr%x1,1) /= 6 .or. lbound(ptr%x1,2) /= 6)  error stop 17
+      if(ubound(ptr%x1,1) /= 6 .or. ubound(ptr%x1,2) /= 8)  error stop 18
+      if(lbound(ptr%g1,1) /= 10 .or. lbound(ptr%g1,2) /= 10) error stop 19
+      if(ubound(ptr%g1,1) /= 11 .or. ubound(ptr%g1,2) /= 11) error stop 20
 
       read(buffer(3),fmt=*) ptr%c1(3,3)
       read(buffer(4),fmt=*) ptr%c1(4,3)
@@ -131,27 +131,27 @@ program listDirectInternalFile01
 
   select type(tar)
       type is(gen4(2,*,2,*,4,*,4,*))
-         if(tar%c1(3,3) /= "ABC")                   stop 22
-         if(tar%c1(4,3) /= "abc")                   stop 23
-         if(tar%c1(3,4) /= "DEF")                   stop 24
-         if(tar%c1(4,4) /= "def")                   stop 25
+         if(tar%c1(3,3) /= "ABC")                   error stop 22
+         if(tar%c1(4,3) /= "abc")                   error stop 23
+         if(tar%c1(3,4) /= "DEF")                   error stop 24
+         if(tar%c1(4,4) /= "def")                   error stop 25
 
-         if(tar%i1(2,3) /= -12 )                    stop 26
-         if(tar%i1(3,3) /= 57 )                     stop 27
-         if(tar%i1(4,3) /= 22 )                     stop 28
+         if(tar%i1(2,3) /= -12 )                    error stop 26
+         if(tar%i1(3,3) /= 57 )                     error stop 27
+         if(tar%i1(4,3) /= 22 )                     error stop 28
 
-         if(.not. precision_r8(tar%r1(6,6),-3.4D-2 ))  stop 29
-         if(.not. precision_r8(tar%r1(6,7),2.4_8))     stop 30
-         if(.not. precision_r8(tar%r1(6,8),-3._8))     stop 31
+         if(.not. precision_r8(tar%r1(6,6),-3.4D-2 ))  error stop 29
+         if(.not. precision_r8(tar%r1(6,7),2.4_8))     error stop 30
+         if(.not. precision_r8(tar%r1(6,8),-3._8))     error stop 31
 
-         if(.not. precision_x6(tar%x1(6,6),(5.6_8,7.8_8) ))       stop 32
-         if(.not. precision_x6(tar%x1(6,7),(4.5D-2,2.3D3) ))      stop 33
-         if(.not. precision_x6(tar%x1(6,8),(0.006_8,-0.345_8) ))  stop 34
+         if(.not. precision_x6(tar%x1(6,6),(5.6_8,7.8_8) ))       error stop 32
+         if(.not. precision_x6(tar%x1(6,7),(4.5D-2,2.3D3) ))      error stop 33
+         if(.not. precision_x6(tar%x1(6,8),(0.006_8,-0.345_8) ))  error stop 34
 
-         if(tar%g1(10,10) .neqv. .true.)                stop 35
-         if(tar%g1(11,10) .neqv. .false.)               stop 36
-         if(tar%g1(10,11) .neqv. .true.)                stop 37
-         if(tar%g1(11,11) .neqv. .false.)               stop 38
+         if(tar%g1(10,10) .neqv. .true.)                error stop 35
+         if(tar%g1(11,10) .neqv. .false.)               error stop 36
+         if(tar%g1(10,11) .neqv. .true.)                error stop 37
+         if(tar%g1(11,11) .neqv. .false.)               error stop 38
 
       class default
 

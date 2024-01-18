@@ -26,9 +26,9 @@ program BDT01
     z2 = zort(2)(9)
     z2a = zort(2)(10)
     print *, z2%troz, z2a
-    if (z2%troz /= 9 .or. z2a(1)%troz /= 10) stop 2
+    if (z2%troz /= 9 .or. z2a(1)%troz /= 10) error stop 2
     z2a = z2
     print *, z2%troz, z2a
-    if (z2%troz /= 9 .or. z2a(1)%troz /= 9) stop 2
+    if (z2%troz /= 9 .or. z2a(1)%troz /= 9) error stop 2
   end block
 end program BDT01

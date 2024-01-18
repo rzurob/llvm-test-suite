@@ -64,9 +64,9 @@
                        I=1,8)]
 
   DO I=1, 8
-      IF (ANY( T(8*(I-1)+1:9*(I-1))%T%ID .NE. [(J,J=1,I-1)]))  STOP 11
-      IF (T(9*I-8)%T%ID                  .NE. -I )             STOP 12
-      IF (ANY( T(9*(i-1)+2:8*I)%T%ID     .NE. [(J,J=I+1,8)]))  STOP 13
+      IF (ANY( T(8*(I-1)+1:9*(I-1))%T%ID .NE. [(J,J=1,I-1)]))  ERROR STOP 11
+      IF (T(9*I-8)%T%ID                  .NE. -I )             ERROR STOP 12
+      IF (ANY( T(9*(i-1)+2:8*I)%T%ID     .NE. [(J,J=I+1,8)]))  ERROR STOP 13
   END DO
 
   END

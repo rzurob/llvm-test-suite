@@ -63,19 +63,19 @@
       STOP 20
     CLASS IS (DT)
       ASSOCIATE (U => U)
-        IF (SIZE(U(2,2,2)%IArr)   .NE. 2)  STOP 30
-        IF (KIND(U(2,2,2)%IArr)   .NE. 8)  STOP 31
-        IF (ANY(U(:,:,:)%IArr(1 ) .NE. 1)) STOP 32
-        IF (ANY(U(:,:,:)%IArr(2 ) .NE. 2)) STOP 33
-        IF (ANY(U(:,:,:)%GetInt(1).NE. 1)) STOP 34
-        IF (ANY(U(:,:,:)%GetInt(2).NE. 2)) STOP 35
+        IF (SIZE(U(2,2,2)%IArr)   .NE. 2)  ERROR STOP 30
+        IF (KIND(U(2,2,2)%IArr)   .NE. 8)  ERROR STOP 31
+        IF (ANY(U(:,:,:)%IArr(1 ) .NE. 1)) ERROR STOP 32
+        IF (ANY(U(:,:,:)%IArr(2 ) .NE. 2)) ERROR STOP 33
+        IF (ANY(U(:,:,:)%GetInt(1).NE. 1)) ERROR STOP 34
+        IF (ANY(U(:,:,:)%GetInt(2).NE. 2)) ERROR STOP 35
         U%IArr(1) = 0
         U%IArr(2) = 0
       END ASSOCIATE
     END SELECT
 
-    IF (ANY(U%IArr(1) .NE. -1)) STOP 40
-    IF (ANY(U%IArr(2) .NE. -1)) STOP 41
+    IF (ANY(U%IArr(1) .NE. -1)) ERROR STOP 40
+    IF (ANY(U%IArr(2) .NE. -1)) ERROR STOP 41
 
     END ASSOCIATE
 

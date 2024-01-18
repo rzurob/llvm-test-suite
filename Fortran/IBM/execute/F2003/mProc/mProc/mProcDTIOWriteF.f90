@@ -150,7 +150,7 @@
   ProcPtr => WriteF2
 
   WRITE(Str, *) T, T1, T2, T3
-  IF (Str  .NE.  " 0 1 2 3" ) STOP 11
+  IF (Str  .NE.  " 0 1 2 3" ) ERROR STOP 11
 
   END  SUBROUTINE
 

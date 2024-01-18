@@ -56,7 +56,7 @@ program BCycle
      hits = 'a' // hits
   end do A2
   print *, 1, 2, hits
-  if (hits /= 'abcdcdab        ') stop 20
+  if (hits /= 'abcdcdab        ') error stop 20
 
   hits = ''
   A4: do i = 1, m
@@ -73,7 +73,7 @@ program BCycle
      hits = 'a' // hits
   end do A4
   print *, 4, hits
-  if (hits /= 'abcdcd          ') stop 40
+  if (hits /= 'abcdcd          ') error stop 40
 
 
   hits = ''
@@ -91,7 +91,7 @@ program BCycle
      hits = 'a' // hits
   end do A5
   print *, 5, hits
-  if (hits /= 'abcdcdab        ') stop 50
+  if (hits /= 'abcdcdab        ') error stop 50
 
 
   hits = ''
@@ -109,7 +109,7 @@ program BCycle
      hits = 'a' // hits
   end do A6
   print *, 6, hits
-  if (hits /= 'abcdcdabdd      ') stop 60
+  if (hits /= 'abcdcdabdd      ') error stop 60
 
   hits = ''
   A8: do i = 1, m
@@ -126,7 +126,7 @@ program BCycle
      hits = 'a' // hits
   end do A8
   print *, 8, hits
-  if (hits /= 'abcdcdd         ') stop 80
+  if (hits /= 'abcdcdd         ') error stop 80
 
   hits = ''
   A9: do i = 1, m
@@ -143,7 +143,7 @@ program BCycle
      hits = 'a' // hits
   end do A9
   print *, 9, hits
-  if (hits /= 'abcdcdabdd      ') stop 90
+  if (hits /= 'abcdcdabdd      ') error stop 90
 
 
   hits = ''
@@ -161,7 +161,7 @@ program BCycle
      hits = 'a' // hits
   end do A11
   print *, 11, hits
-  if (hits /= 'abcdcdcdcd      ') stop 110
+  if (hits /= 'abcdcdcdcd      ') error stop 110
 
 
   hits = ''
@@ -179,7 +179,7 @@ program BCycle
      hits = 'a' // hits
   end do A12
   print *, 12, hits
-  if (hits /= 'abcdcdcdcd      ') stop 120
+  if (hits /= 'abcdcdcdcd      ') error stop 120
 
   hits = ''
   A13: do i = 1, m
@@ -196,7 +196,7 @@ program BCycle
      hits = 'a' // hits
   end do A13
   print *, 13, hits
-  if (hits /= 'abcdcdbcdcd     ') stop 130
+  if (hits /= 'abcdcdbcdcd     ') error stop 130
 
 
   hits = ''
@@ -214,6 +214,6 @@ program BCycle
      hits = 'a' // hits
   end do A14
   print *, 14, hits
-  if (hits /= 'abcdcdbcdcd     ') stop 140
+  if (hits /= 'abcdcdbcdcd     ') error stop 140
 
 end program BCycle

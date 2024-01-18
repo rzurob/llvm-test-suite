@@ -60,20 +60,20 @@
   TYPE(DT(4,20,1,3)) :: U(SIZE(V)), W(SIZE(V))
 
   DO I=1, 512
-    IF ( ASSOCIATED(V(I)%BComp%ProcPtr)) STOP 11
+    IF ( ASSOCIATED(V(I)%BComp%ProcPtr)) ERROR STOP 11
   END DO
 
   ProcPtr => ModFun
   V = (/(DT(4,20,1,3)(Base(1,3)("123", ModFun)), I=1, 512)/)
 
   DO I=1, 512
-    IF ( .NOT. ASSOCIATED(V(I)%BComp%ProcPtr, ModFun)) STOP 21
+    IF ( .NOT. ASSOCIATED(V(I)%BComp%ProcPtr, ModFun)) ERROR STOP 21
   END DO
 
   U = V
 
   DO I=1, 512
-    IF ( .NOT. ASSOCIATED(U(I)%BComp%ProcPtr, ModFun)) STOP 21
+    IF ( .NOT. ASSOCIATED(U(I)%BComp%ProcPtr, ModFun)) ERROR STOP 21
   END DO
 
   WHERE ((/(.TRUE._2, i=1, 512)/))
@@ -81,7 +81,7 @@
   END WHERE
 
   DO I=1, 512
-    IF ( .NOT. ASSOCIATED(W(I)%BComp%ProcPtr, ModFun)) STOP 21
+    IF ( .NOT. ASSOCIATED(W(I)%BComp%ProcPtr, ModFun)) ERROR STOP 21
   END DO
 
   END

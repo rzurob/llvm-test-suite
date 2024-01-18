@@ -43,20 +43,20 @@
     allocate(P(1024))
     p(3:) => p
 
-    if ( .not. associated(p)) stop 12
+    if ( .not. associated(p)) error stop 12
     deallocate(p)
 
-    if ( associated(p) ) stop 41
-    if ( countA /= 1 ) stop 43
+    if ( associated(p) ) error stop 41
+    if ( countA /= 1 ) error stop 43
 
     countA = 0
 
     allocate(P(512))
     p(7:518) => p(512:1:-1)
-    if ( .not. associated(p)) stop  45
+    if ( .not. associated(p)) error stop  45
     deallocate(p)
 
-    if ( associated(p) ) stop 41
-    if ( countA /= 1 ) stop 43
+    if ( associated(p) ) error stop 41
+    if ( countA /= 1 ) error stop 43
 
  End program

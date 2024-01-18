@@ -50,9 +50,9 @@ program main
     allocate(b1%tar(100), source=(/ ( real(i,4), i=1, 100)/))
 
     call foo
-    if ( .not. associated (ptr, b1%tar(21:100:8)) ) stop 20
-    if ( lbound(ptr,1) /= 7 ) stop 21
-    if ( ubound(ptr,1) /= 16 ) stop 23
+    if ( .not. associated (ptr, b1%tar(21:100:8)) ) error stop 20
+    if ( lbound(ptr,1) /= 7 ) error stop 21
+    if ( ubound(ptr,1) /= 16 ) error stop 23
     write(*, '(5f15.8)') ptr**2
 
 end program

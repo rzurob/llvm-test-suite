@@ -75,19 +75,19 @@
   IMPLICIT TYPE(DT1(1,3,4,5))(S)
   IMPLICIT TYPE(DT2(1,3,4,5,8,7))(T)
 
-  IF ( SIZE( ST%R )      .NE. S%L1         ) STOP 12
-  IF ( ST%R%KIND         .NE. S%K1         ) STOP 13
-  IF ( ANY ( ST%R        .NE. S%K1       ) ) STOP 14
+  IF ( SIZE( ST%R )      .NE. S%L1         ) ERROR STOP 12
+  IF ( ST%R%KIND         .NE. S%K1         ) ERROR STOP 13
+  IF ( ANY ( ST%R        .NE. S%K1       ) ) ERROR STOP 14
 
-  IF ( SIZE( TT%R )      .NE. T%L1         ) STOP 21
-  IF ( TT%R%KIND         .NE. T%K1         ) STOP 22
-  IF ( ANY ( TT%R        .NE. T%K1       ) ) STOP 23
-  IF ( SIZE( TT%I )      .NE. T%L2         ) STOP 24
-  IF ( TT%I%KIND         .NE. T%K2         ) STOP 25
-  IF ( ANY ( TT%I        .NE. T%K2       ) ) STOP 26
-  IF ( SIZE( TT%C )      .NE. T%L2         ) STOP 27
-  IF ( TT%C%LEN          .NE. T%L2         ) STOP 28
-  IF ( ANY (TT%C         .NE. CHAR(T%K2) ) ) STOP 29
+  IF ( SIZE( TT%R )      .NE. T%L1         ) ERROR STOP 21
+  IF ( TT%R%KIND         .NE. T%K1         ) ERROR STOP 22
+  IF ( ANY ( TT%R        .NE. T%K1       ) ) ERROR STOP 23
+  IF ( SIZE( TT%I )      .NE. T%L2         ) ERROR STOP 24
+  IF ( TT%I%KIND         .NE. T%K2         ) ERROR STOP 25
+  IF ( ANY ( TT%I        .NE. T%K2       ) ) ERROR STOP 26
+  IF ( SIZE( TT%C )      .NE. T%L2         ) ERROR STOP 27
+  IF ( TT%C%LEN          .NE. T%L2         ) ERROR STOP 28
+  IF ( ANY (TT%C         .NE. CHAR(T%K2) ) ) ERROR STOP 29
 
   CALL ExtSub(RT, ST, TT)
 
@@ -100,21 +100,21 @@
   IMPLICIT TYPE(DT1(1,3,4,5))(S)
   IMPLICIT TYPE(DT2(1,3,4,5,8,7))(T)
 
-  IF ( RP%ModFun()       .NE. RP%L0        ) STOP 31
+  IF ( RP%ModFun()       .NE. RP%L0        ) ERROR STOP 31
 
-  IF ( SIZE( SP%R )      .NE. S%L1         ) STOP 32
-  IF ( SP%R%KIND         .NE. S%K1         ) STOP 33
-  IF ( ANY ( SP%R        .NE. S%K1       ) ) STOP 34
+  IF ( SIZE( SP%R )      .NE. S%L1         ) ERROR STOP 32
+  IF ( SP%R%KIND         .NE. S%K1         ) ERROR STOP 33
+  IF ( ANY ( SP%R        .NE. S%K1       ) ) ERROR STOP 34
 
-  IF ( SIZE( TP%R )      .NE. T%L1         ) STOP 41
-  IF ( TP%R%KIND         .NE. T%K1         ) STOP 42
-  IF ( ANY ( TP%R        .NE. T%K1       ) ) STOP 43
-  IF ( SIZE( TP%I )      .NE. T%L2         ) STOP 44
-  IF ( TP%I%KIND         .NE. T%K2         ) STOP 45
-  IF ( ANY ( TP%I        .NE. T%K2       ) ) STOP 46
-  IF ( SIZE( TP%C )      .NE. T%L2         ) STOP 47
-  IF ( TP%C%LEN          .NE. T%L2         ) STOP 48
-  IF ( ANY (TP%C         .NE. CHAR(T%K2) ) ) STOP 49
+  IF ( SIZE( TP%R )      .NE. T%L1         ) ERROR STOP 41
+  IF ( TP%R%KIND         .NE. T%K1         ) ERROR STOP 42
+  IF ( ANY ( TP%R        .NE. T%K1       ) ) ERROR STOP 43
+  IF ( SIZE( TP%I )      .NE. T%L2         ) ERROR STOP 44
+  IF ( TP%I%KIND         .NE. T%K2         ) ERROR STOP 45
+  IF ( ANY ( TP%I        .NE. T%K2       ) ) ERROR STOP 46
+  IF ( SIZE( TP%C )      .NE. T%L2         ) ERROR STOP 47
+  IF ( TP%C%LEN          .NE. T%L2         ) ERROR STOP 48
+  IF ( ANY (TP%C         .NE. CHAR(T%K2) ) ) ERROR STOP 49
 
 
   END SUBROUTINE

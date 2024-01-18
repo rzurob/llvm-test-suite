@@ -70,17 +70,17 @@
     LOGICAL(Arg2%K)  :: L
     CHARACTER(Arg1%L):: C
 
-    IF ( Arg1%I      .NE.   I )      STOP 23
-    IF ( Arg1%R      .NE.   R )      STOP 24
-    IF ( Arg1%Cplx   .NE.   Cplx )   STOP 25
-    IF ( Arg1%LL     .NEQV. L )      STOP 26
-    IF ( TRIM(Arg1%C).NE.   TRIM(C)) STOP 27
+    IF ( Arg1%I      .NE.   I )      ERROR STOP 23
+    IF ( Arg1%R      .NE.   R )      ERROR STOP 24
+    IF ( Arg1%Cplx   .NE.   Cplx )   ERROR STOP 25
+    IF ( Arg1%LL     .NEQV. L )      ERROR STOP 26
+    IF ( TRIM(Arg1%C).NE.   TRIM(C)) ERROR STOP 27
 
-    IF ( Arg2%I      .NE.   I )      STOP 33
-    IF ( Arg2%R      .NE.   R )      STOP 34
-    IF ( Arg2%Cplx   .NE.   Cplx )   STOP 35
-    IF ( Arg2%LL     .NEQV. L )      STOP 36
-    IF ( TRIM(Arg2%C).NE.   TRIM(C)) STOP 37
+    IF ( Arg2%I      .NE.   I )      ERROR STOP 33
+    IF ( Arg2%R      .NE.   R )      ERROR STOP 34
+    IF ( Arg2%Cplx   .NE.   Cplx )   ERROR STOP 35
+    IF ( Arg2%LL     .NEQV. L )      ERROR STOP 36
+    IF ( TRIM(Arg2%C).NE.   TRIM(C)) ERROR STOP 37
 
     END SUBROUTINE
 

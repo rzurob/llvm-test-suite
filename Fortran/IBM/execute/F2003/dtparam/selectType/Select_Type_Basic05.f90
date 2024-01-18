@@ -61,7 +61,7 @@
       A_square%width = My_seed
 
       ALLOCATE(My_shape, source = A_square)
-      IF ( .NOT. ALLOCATED(My_shape)) STOP 10
+      IF ( .NOT. ALLOCATED(My_shape)) ERROR STOP 10
 
       SELECT TYPE (A=>My_shape)
         TYPE IS (Square(k1,*))

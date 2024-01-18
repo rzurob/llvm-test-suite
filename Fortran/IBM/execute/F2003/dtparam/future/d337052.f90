@@ -35,14 +35,14 @@
 
   TYPE(DT1(4, 8, K1=4, L1=8)) :: T
 
-  IF ( T%K             .NE. 4 )             STOP 21
-  IF ( KIND(T%K1)      .NE. T%K)            STOP 22
-  IF ( T%K1            .NE. 4 )             STOP 23
-  IF ( KIND(T%L1)      .NE. T%K )           STOP 24
-  IF ( ANY(SHAPE(T%Ll) .NE. (/T%L, T%L/)))  STOP 25
-  IF ( T%L1            .NE. T%K)            STOP 26
-  IF ( T%TDT0%K        .NE. 4)              STOP 27
-  IF ( T%TDT0%L        .NE. 8)              STOP 28
+  IF ( T%K             .NE. 4 )             ERROR STOP 21
+  IF ( KIND(T%K1)      .NE. T%K)            ERROR STOP 22
+  IF ( T%K1            .NE. 4 )             ERROR STOP 23
+  IF ( KIND(T%L1)      .NE. T%K )           ERROR STOP 24
+  IF ( ANY(SHAPE(T%Ll) .NE. (/T%L, T%L/)))  ERROR STOP 25
+  IF ( T%L1            .NE. T%K)            ERROR STOP 26
+  IF ( T%TDT0%K        .NE. 4)              ERROR STOP 27
+  IF ( T%TDT0%L        .NE. 8)              ERROR STOP 28
 
   END
 

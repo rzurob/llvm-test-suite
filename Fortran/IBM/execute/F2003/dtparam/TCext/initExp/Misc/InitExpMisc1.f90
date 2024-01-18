@@ -72,7 +72,7 @@
                          PACK(A(6:9), .TRUE.)   ]
 
   DO I=1, 9
-      IF ( T(I)%T%ID .NE.  A(I)%T%ID )  STOP 11
+      IF ( T(I)%T%ID .NE.  A(I)%T%ID )  ERROR STOP 11
   END DO
 
   END

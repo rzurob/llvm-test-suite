@@ -20,9 +20,9 @@
       allocate(ch1, source = 'get the length of char')
       call move_alloc(ch1, ch2)
 
-      if ( allocated(ch1)) stop 11
-      if ( .not. allocated(ch2) ) stop 13
+      if ( allocated(ch1)) error stop 11
+      if ( .not. allocated(ch2) ) error stop 13
 
-      if ( len(ch2) /= len('get the length of char')  ) stop 21
-      if ( ch2 /= 'get the length of char' ) stop 23
+      if ( len(ch2) /= len('get the length of char')  ) error stop 21
+      if ( ch2 /= 'get the length of char' ) error stop 23
       end

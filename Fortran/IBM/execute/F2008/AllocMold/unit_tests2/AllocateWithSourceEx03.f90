@@ -41,28 +41,28 @@ PROGRAM AllocateWithSourceExp03
       TYPE(Child(4,2,4,2)), POINTER :: c2
 
       ALLOCATE(c2, SOURCE = func(b1))
-      IF (ANY(c2%Carr .NE. 'TE')) STOP 10
-      IF (ANY(c2%Iarr .NE. 99)) STOP 11
-      IF (ANY(c2%Cmp%Carr .NE. 'We')) STOP 12
-      IF (ANY(c2%Cmp%Iarr .NE. 1)) STOP 13
+      IF (ANY(c2%Carr .NE. 'TE')) ERROR STOP 10
+      IF (ANY(c2%Iarr .NE. 99)) ERROR STOP 11
+      IF (ANY(c2%Cmp%Carr .NE. 'We')) ERROR STOP 12
+      IF (ANY(c2%Cmp%Iarr .NE. 1)) ERROR STOP 13
 
       c2 => func(b1)
-      IF (ANY(c2%Carr .NE. 'TE')) STOP 14
-      IF (ANY(c2%Iarr .NE. 99)) STOP 15
-      IF (ANY(c2%Cmp%Carr .NE. 'We')) STOP 16
-      IF (ANY(c2%Cmp%Iarr .NE. 1)) STOP 17
+      IF (ANY(c2%Carr .NE. 'TE')) ERROR STOP 14
+      IF (ANY(c2%Iarr .NE. 99)) ERROR STOP 15
+      IF (ANY(c2%Cmp%Carr .NE. 'We')) ERROR STOP 16
+      IF (ANY(c2%Cmp%Iarr .NE. 1)) ERROR STOP 17
 
       ALLOCATE(c2, SOURCE = foo(b1))
-      IF (ANY(c2%Carr .NE. 'TE')) STOP 18
-      IF (ANY(c2%Iarr .NE. 99)) STOP 19
-      IF (ANY(c2%Cmp%Carr .NE. 'We')) STOP 20
-      IF (ANY(c2%Cmp%Iarr .NE. 1)) STOP 21
+      IF (ANY(c2%Carr .NE. 'TE')) ERROR STOP 18
+      IF (ANY(c2%Iarr .NE. 99)) ERROR STOP 19
+      IF (ANY(c2%Cmp%Carr .NE. 'We')) ERROR STOP 20
+      IF (ANY(c2%Cmp%Iarr .NE. 1)) ERROR STOP 21
 
       c2 => foo(b1)
-      IF (ANY(c2%Carr .NE. 'TE')) STOP 22
-      IF (ANY(c2%Iarr .NE. 99)) STOP 23
-      IF (ANY(c2%Cmp%Carr .NE. 'We')) STOP 24
-      IF (ANY(c2%Cmp%Iarr .NE. 1)) STOP 25
+      IF (ANY(c2%Carr .NE. 'TE')) ERROR STOP 22
+      IF (ANY(c2%Iarr .NE. 99)) ERROR STOP 23
+      IF (ANY(c2%Cmp%Carr .NE. 'We')) ERROR STOP 24
+      IF (ANY(c2%Cmp%Iarr .NE. 1)) ERROR STOP 25
 
       CONTAINS
 !*

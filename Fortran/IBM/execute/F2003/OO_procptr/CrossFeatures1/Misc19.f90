@@ -79,13 +79,13 @@
   INTEGER  :: I
 
   U = DT(DT(-1, ModSub) )
-  IF ( U%Id .NE. -1 )                          STOP 22
-  IF ( .NOT. ASSOCIATED(U%ProcPtr, ModSub) )   STOP 23
+  IF ( U%Id .NE. -1 )                          ERROR STOP 22
+  IF ( .NOT. ASSOCIATED(U%ProcPtr, ModSub) )   ERROR STOP 23
 
   V = DT((/(DT(-1, ModSub), i=1,3000)/) )
   DO I  = 1, 3000
-    IF ( V(I)%Id .NE. -1 )                          STOP 32
-    IF ( .NOT. ASSOCIATED(V(I)%ProcPtr, ModSub) )   STOP 33
+    IF ( V(I)%Id .NE. -1 )                          ERROR STOP 32
+    IF ( .NOT. ASSOCIATED(V(I)%ProcPtr, ModSub) )   ERROR STOP 33
   END DO
 
 

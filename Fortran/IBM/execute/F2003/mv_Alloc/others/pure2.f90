@@ -50,8 +50,8 @@ use m
     end select
     call sub (o1, o2)
 
-    if ( allocated(o1) ) stop 21
-    if ( .not. allocated(o2) ) stop 31
+    if ( allocated(o1) ) error stop 21
+    if ( .not. allocated(o2) ) error stop 31
 
     select type(O2)
          type is (character(*))

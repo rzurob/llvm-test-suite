@@ -86,13 +86,13 @@
   Z6ProcPtr => Z6
 
 
-  IF ( R4ProcPtr() .NE. 4.  ) STOP 11
-  IF ( R8ProcPtr() .NE. 8.  ) STOP 12
-  IF ( R6ProcPtr() .NE. 16. ) STOP 13
+  IF ( R4ProcPtr() .NE. 4.  ) ERROR STOP 11
+  IF ( R8ProcPtr() .NE. 8.  ) ERROR STOP 12
+  IF ( R6ProcPtr() .NE. 16. ) ERROR STOP 13
 
-  IF ( Z4ProcPtr() .NE. (4., -4.))  STOP 21
-  IF ( Z8ProcPtr() .NE. (8., -8.))  STOP 22
-  IF ( Z6ProcPtr() .NE. (16.,-16.)) STOP 23
+  IF ( Z4ProcPtr() .NE. (4., -4.))  ERROR STOP 21
+  IF ( Z8ProcPtr() .NE. (8., -8.))  ERROR STOP 22
+  IF ( Z6ProcPtr() .NE. (16.,-16.)) ERROR STOP 23
 
   END
 

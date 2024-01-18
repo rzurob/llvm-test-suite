@@ -49,10 +49,10 @@
   INTEGER  :: TI4 = KIND(I4)
   INTEGER  :: TI8 = KIND(I8)
 
-  IF ( TI1    .NE. 1     )            STOP 11
-  IF ( TI2    .NE. 2     )            STOP 12
-  IF ( TI4    .NE. 4     )            STOP 14
-  IF ( TI8    .NE. 8     )            STOP 18
+  IF ( TI1    .NE. 1     )            ERROR STOP 11
+  IF ( TI2    .NE. 2     )            ERROR STOP 12
+  IF ( TI4    .NE. 4     )            ERROR STOP 14
+  IF ( TI8    .NE. 8     )            ERROR STOP 18
 
   END SUBROUTINE
 
@@ -67,10 +67,10 @@
   INTEGER  :: TL4 = KIND(L4)
   INTEGER  :: TL8 = KIND(L8)
 
-  IF ( TL1    .NE. 1     )            STOP 21
-  IF ( TL2    .NE. 2     )            STOP 22
-  IF ( TL4    .NE. 4     )            STOP 24
-  IF ( TL8    .NE. 8     )            STOP 28
+  IF ( TL1    .NE. 1     )            ERROR STOP 21
+  IF ( TL2    .NE. 2     )            ERROR STOP 22
+  IF ( TL4    .NE. 4     )            ERROR STOP 24
+  IF ( TL8    .NE. 8     )            ERROR STOP 28
 
   END SUBROUTINE
 
@@ -83,9 +83,9 @@
   INTEGER  :: TR8 = KIND(R8)
   INTEGER  :: TR6 = KIND(R6)
 
-  IF ( TR4    .NE. 4     )            STOP 34
-  IF ( TR8    .NE. 8     )            STOP 38
-  IF ( TR6    .NE. 16    )            STOP 36
+  IF ( TR4    .NE. 4     )            ERROR STOP 34
+  IF ( TR8    .NE. 8     )            ERROR STOP 38
+  IF ( TR6    .NE. 16    )            ERROR STOP 36
 
   END SUBROUTINE
 
@@ -98,9 +98,9 @@
   INTEGER  :: TZ8 = KIND(Z8)
   INTEGER  :: TZ6 = KIND(Z6)
 
-  IF ( TZ4    .NE. 4     )            STOP 44
-  IF ( TZ8    .NE. 8     )            STOP 48
-  IF ( TZ6    .NE. 16    )            STOP 46
+  IF ( TZ4    .NE. 4     )            ERROR STOP 44
+  IF ( TZ8    .NE. 8     )            ERROR STOP 48
+  IF ( TZ6    .NE. 16    )            ERROR STOP 46
 
   END SUBROUTINE
 

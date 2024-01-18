@@ -45,8 +45,8 @@
   IMPLICIT TYPE(DT)(A-B)
 
   CALL Sub(A)
-  IF ( A%ID      .NE. 2 ) STOP 60
-  IF ( A%GetID() .NE. 2 ) STOP 61
+  IF ( A%ID      .NE. 2 ) ERROR STOP 60
+  IF ( A%GetID() .NE. 2 ) ERROR STOP 61
 
   CONTAINS
 
@@ -54,18 +54,18 @@
 
   ASSOCIATE( As => B )
 
-    IF ( As%ID      .NE. 1 ) STOP 30
-    IF ( As%GetID() .NE. 1 ) STOP 31
+    IF ( As%ID      .NE. 1 ) ERROR STOP 30
+    IF ( As%GetID() .NE. 1 ) ERROR STOP 31
 
     As%ID = 2
 
-    IF ( As%ID      .NE. 2 ) STOP 40
-    IF ( As%GetID() .NE. 2 ) STOP 41
+    IF ( As%ID      .NE. 2 ) ERROR STOP 40
+    IF ( As%GetID() .NE. 2 ) ERROR STOP 41
 
   END ASSOCIATE
 
-  IF ( B%ID      .NE. 2 ) STOP 50
-  IF ( B%GetID() .NE. 2 ) STOP 51
+  IF ( B%ID      .NE. 2 ) ERROR STOP 50
+  IF ( B%GetID() .NE. 2 ) ERROR STOP 51
 
   END SUBROUTINE
 

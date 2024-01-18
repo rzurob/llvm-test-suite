@@ -30,7 +30,7 @@
   SUBROUTINE Sub(Arr, N)
   INTEGER :: Arr(*), N
     ASSOCIATE ( As => Arr(1:N) )
-      IF (ANY(SHAPE(As) .NE. (/3/)) ) STOP 30
+      IF (ANY(SHAPE(As) .NE. (/3/)) ) ERROR STOP 30
     END ASSOCIATE
   END SUBROUTINE
   END

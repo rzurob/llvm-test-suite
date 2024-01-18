@@ -64,9 +64,9 @@
     U%DT1%C1 ="?"
     U%C2 ="?"
 
-    IF (TRIM(V%C0) .NE. "?") STOP 20
-    IF (TRIM(V%C1) .NE. "?") STOP 21
-    IF (TRIM(V%C2) .NE. "?") STOP 22
+    IF (TRIM(V%C0) .NE. "?") ERROR STOP 20
+    IF (TRIM(V%C1) .NE. "?") ERROR STOP 21
+    IF (TRIM(V%C2) .NE. "?") ERROR STOP 22
 
   CLASS DEFAULT
     STOP 40

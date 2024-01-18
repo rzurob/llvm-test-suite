@@ -53,7 +53,7 @@ program dtpIAABoundsInternal004
   integer :: i
 
   print *, allocated(o1), allocated(o2), allocated(v1), allocated(v3)
-  if (allocated(o1) .or. allocated(o2) .or. allocated(v1) .or. allocated(v3)) stop 2
+  if (allocated(o1) .or. allocated(o2) .or. allocated(v1) .or. allocated(v3)) error stop 2
 
   call osetup(o1a,o1b,o2a,o2b,o0)
 
@@ -104,7 +104,7 @@ program dtpIAABoundsInternal004
   call vCheck2(v3,reshape([(dka(4)(i), i=1,24)], [4,2,3]))
 
   print *, allocated(o1), allocated(o2), allocated(v1), allocated(v3)
-  if (.not.(allocated(o1) .and. allocated(o2) .and. allocated(v1) .and. allocated(v3))) stop 7
+  if (.not.(allocated(o1) .and. allocated(o2) .and. allocated(v1) .and. allocated(v3))) error stop 7
 
 contains
 
@@ -132,7 +132,7 @@ contains
     type(dka(1)) :: o1a(:)
 
     print *, lbound(o1), ":", ubound(o1), "::", lbound(o1a), ":", ubound(o1a)
-    if (any(lbound(o1)/=lbound(o1a)) .or. any(ubound(o1)/=ubound(o1a))) stop 3
+    if (any(lbound(o1)/=lbound(o1a)) .or. any(ubound(o1)/=ubound(o1a))) error stop 3
   end subroutine oCheck1
 
   subroutine oAssign2(o2,o2a)
@@ -146,7 +146,7 @@ contains
     type(dka(1)) :: o2a(:,:)
 
     print *, lbound(o2), ":", ubound(o2), "::", lbound(o2a), ":", ubound(o2a)
-    if (any(lbound(o2)/=lbound(o2a)) .or. any(ubound(o2)/=ubound(o2a))) stop 4
+    if (any(lbound(o2)/=lbound(o2a)) .or. any(ubound(o2)/=ubound(o2a))) error stop 4
   end subroutine oCheck2
 
   subroutine oAssign0(o1,o2,o0)
@@ -180,7 +180,7 @@ contains
     type(dka(4)) :: v1a(:)
 
     print *, lbound(v1), ":", ubound(v1), "::", lbound(v1a), ":", ubound(v1a)
-    if (any(lbound(v1)/=lbound(v1a)) .or. any(ubound(v1)/=ubound(v1a))) stop 5
+    if (any(lbound(v1)/=lbound(v1a)) .or. any(ubound(v1)/=ubound(v1a))) error stop 5
   end subroutine vCheck1
 
   subroutine vAssign2(v3,v3a)
@@ -194,7 +194,7 @@ contains
     type(dka(4)) :: v3a(:,:,:)
 
     print *, lbound(v3), ":", ubound(v3), "::", lbound(v3a), ":", ubound(v3a)
-    if (any(lbound(v3)/=lbound(v3a)) .or. any(ubound(v3)/=ubound(v3a))) stop 6
+    if (any(lbound(v3)/=lbound(v3a)) .or. any(ubound(v3)/=ubound(v3a))) error stop 6
   end subroutine vCheck2
 
   subroutine vAssign0(v1,v3,v0)

@@ -64,7 +64,7 @@
       CLASS(Base(4,:)), POINTER  :: pntr
 
       ALLOCATE (pntr, source = Obj)
-      IF ( .NOT. ASSOCIATED(pntr)) STOP 30
+      IF ( .NOT. ASSOCIATED(pntr)) ERROR STOP 30
 
       tag = '1'
 
@@ -75,7 +75,7 @@
       CLASS(Base(4,:)), POINTER  :: pntr
 
       ALLOCATE (pntr, source = Obj)
-      IF ( .NOT. ASSOCIATED(pntr)) STOP 31
+      IF ( .NOT. ASSOCIATED(pntr)) ERROR STOP 31
 
       tag = '2'
 
@@ -87,7 +87,7 @@
       CLASS(NextGen(4,:,4,4)), POINTER :: pntr
 
       ALLOCATE (pntr, source = Obj)
-      IF ( .NOT. ASSOCIATED(pntr)) STOP 31
+      IF ( .NOT. ASSOCIATED(pntr)) ERROR STOP 31
 
       tag = '3'
 
@@ -105,35 +105,35 @@
       TYPE(NextGen(4,10,4,4)) :: dtv
 
       CALL base1%SUB()
-      IF ( tag .NE. '1' ) STOP 10
+      IF ( tag .NE. '1' ) ERROR STOP 10
 
       ALLOCATE(Base(4,10):: poly1)
       CALL poly1%SUB()
-      IF ( tag .NE. '1' ) STOP 11
+      IF ( tag .NE. '1' ) ERROR STOP 11
 
       poly1 => tgt1
       CALL poly1%SUB()
-      IF ( tag .NE. '1' ) STOP 12
+      IF ( tag .NE. '1' ) ERROR STOP 12
 
       ALLOCATE(NextGen(4,10,4,4):: poly1)
       CALL poly1%SUB()
-      IF ( tag .NE. '1' ) STOP 13
+      IF ( tag .NE. '1' ) ERROR STOP 13
 
       CALL poly1%SUB(base1)
-      IF ( tag .NE. '2' ) STOP 14
+      IF ( tag .NE. '2' ) ERROR STOP 14
       CALL poly1%SUB(tgt1)
-      IF ( tag .NE. '2' ) STOP 15
+      IF ( tag .NE. '2' ) ERROR STOP 15
       CALL poly1%SUB(poly1)
-      IF ( tag .NE. '2' ) STOP 16
+      IF ( tag .NE. '2' ) ERROR STOP 16
 
       SELECT TYPE (poly1) ! call possible only within select type
           CLASS IS (NextGen(4,*,4,4))
             CALL poly1%SUB(base1,poly1)
-            IF ( tag .NE. '3' ) STOP 17
+            IF ( tag .NE. '3' ) ERROR STOP 17
             CALL poly1%SUB(tgt1,base1)
-            IF ( tag .NE. '3' ) STOP 18
+            IF ( tag .NE. '3' ) ERROR STOP 18
             CALL poly1%SUB(poly1,poly1)
-            IF ( tag .NE. '3' ) STOP 19
+            IF ( tag .NE. '3' ) ERROR STOP 19
 
           CLASS DEFAULT
            STOP 32
@@ -141,24 +141,24 @@
 
       ALLOCATE(NextGen(4,10,8,8):: poly1)
       CALL poly1%SUB()
-      IF ( tag .NE. '1' ) STOP 20
+      IF ( tag .NE. '1' ) ERROR STOP 20
 
       CALL dtv%SUB(base1)
-      IF ( tag .NE. '2' ) STOP 21
+      IF ( tag .NE. '2' ) ERROR STOP 21
       CALL dtv%SUB(tgt1)
-      IF ( tag .NE. '2' ) STOP 22
+      IF ( tag .NE. '2' ) ERROR STOP 22
       CALL dtv%SUB(poly1)
-      IF ( tag .NE. '2' ) STOP 23
+      IF ( tag .NE. '2' ) ERROR STOP 23
       CALL dtv%SUB(dtv)
-      IF ( tag .NE. '2' ) STOP 24
+      IF ( tag .NE. '2' ) ERROR STOP 24
 
       CALL dtv%SUB(base1,dtv)
-      IF ( tag .NE. '3' ) STOP 25
+      IF ( tag .NE. '3' ) ERROR STOP 25
       CALL dtv%SUB(tgt1,tgt1)
-      IF ( tag .NE. '3' ) STOP 26
+      IF ( tag .NE. '3' ) ERROR STOP 26
       CALL dtv%SUB(poly1,poly1)
-      IF ( tag .NE. '3' ) STOP 27
+      IF ( tag .NE. '3' ) ERROR STOP 27
       CALL dtv%SUB(dtv,dtv)
-      IF ( tag .NE. '3' ) STOP 28
+      IF ( tag .NE. '3' ) ERROR STOP 28
 
       END PROGRAM Generic_TypeBound03a

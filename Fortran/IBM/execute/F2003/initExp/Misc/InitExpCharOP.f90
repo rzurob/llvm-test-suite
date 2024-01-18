@@ -56,15 +56,15 @@
   CHARACTER(LEN=128, KIND=1)  :: C4(128)= [(REPEAT(A(I)(1:128),1) // REPEAT(" ", 128 ) , I=1,128)]
 
 
-  IF ( ANY( C1 .NE. A ) ) STOP 11
+  IF ( ANY( C1 .NE. A ) ) ERROR STOP 11
 
   DO I = 1, 128
-    IF ( C2(I) .NE. REPEAT(A(I)(I:I),I) // REPEAT(A(I)(I:I), 128-I) ) STOP 12
-    IF ( C3(I) .NE. REPEAT(A(I)(I:I),128) ) STOP 13
+    IF ( C2(I) .NE. REPEAT(A(I)(I:I),I) // REPEAT(A(I)(I:I), 128-I) ) ERROR STOP 12
+    IF ( C3(I) .NE. REPEAT(A(I)(I:I),128) ) ERROR STOP 13
   END DO
 
 
-  IF ( ANY( C4 .NE. A ) ) STOP 14
+  IF ( ANY( C4 .NE. A ) ) ERROR STOP 14
 
   END
 

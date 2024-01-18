@@ -59,40 +59,40 @@ PROGRAM FunctionResult05
       CLASS(Base(4,:)), POINTER :: b2
 
       b1 => BuildBase(10)
-      IF (b1%l1 .NE. 10) STOP 10
-      IF (SIZE(b1%A0) .NE.  10) STOP 11
-      IF (SIZE(b1%A1) .NE.  21) STOP 12
-      IF (SIZE(b1%A2) .NE.  81) STOP 13
+      IF (b1%l1 .NE. 10) ERROR STOP 10
+      IF (SIZE(b1%A0) .NE.  10) ERROR STOP 11
+      IF (SIZE(b1%A1) .NE.  21) ERROR STOP 12
+      IF (SIZE(b1%A2) .NE.  81) ERROR STOP 13
 
       c1 => BuildChild(2,4)
-      IF (c1%l1 .NE. 2) STOP 14
-      IF (c1%l2 .NE. 4) STOP 15
-      IF (SIZE(c1%A0) .NE.  2) STOP 16
-      IF (SIZE(c1%A1) .NE.  5) STOP 17
-      IF (SIZE(c1%A2) .NE.  1) STOP 18
-      IF (c1%b_cmp%l1 .NE. 9) STOP 19
-      IF (SIZE(c1%b_cmp%A0) .NE. 9) STOP 20
-      IF (SIZE(c1%b_cmp%A1) .NE. 19) STOP 21
-      IF (SIZE(c1%b_cmp%A2) .NE. 64) STOP 22
+      IF (c1%l1 .NE. 2) ERROR STOP 14
+      IF (c1%l2 .NE. 4) ERROR STOP 15
+      IF (SIZE(c1%A0) .NE.  2) ERROR STOP 16
+      IF (SIZE(c1%A1) .NE.  5) ERROR STOP 17
+      IF (SIZE(c1%A2) .NE.  1) ERROR STOP 18
+      IF (c1%b_cmp%l1 .NE. 9) ERROR STOP 19
+      IF (SIZE(c1%b_cmp%A0) .NE. 9) ERROR STOP 20
+      IF (SIZE(c1%b_cmp%A1) .NE. 19) ERROR STOP 21
+      IF (SIZE(c1%b_cmp%A2) .NE. 64) ERROR STOP 22
 
       b2 => BuildBase(20)
-      IF (b2%l1 .NE. 20) STOP 23
-      IF (SIZE(b2%A0) .NE.  20) STOP 24
-      IF (SIZE(b2%A1) .NE.  41) STOP 25
-      IF (SIZE(b2%A2) .NE. 361) STOP 26
+      IF (b2%l1 .NE. 20) ERROR STOP 23
+      IF (SIZE(b2%A0) .NE.  20) ERROR STOP 24
+      IF (SIZE(b2%A1) .NE.  41) ERROR STOP 25
+      IF (SIZE(b2%A2) .NE. 361) ERROR STOP 26
 
       b2 => BuildChild(3,6)
       SELECT TYPE ( b2 )
         CLASS IS (Child(4,*,4,*))
-          IF (b2%l1 .NE. 3) STOP 27
-          IF (b2%l2 .NE. 6) STOP 28
-          IF (SIZE(b2%A0) .NE.  3) STOP 29
-          IF (SIZE(b2%A1) .NE.  7) STOP 30
-          IF (SIZE(b2%A2) .NE.  4) STOP 31
-          IF (b2%b_cmp%l1 .NE. 13) STOP 32
-          IF (SIZE(b2%b_cmp%A0) .NE.  13) STOP 33
-          IF (SIZE(b2%b_cmp%A1) .NE.  27) STOP 34
-          IF (SIZE(b2%b_cmp%A2) .NE. 144) STOP 35
+          IF (b2%l1 .NE. 3) ERROR STOP 27
+          IF (b2%l2 .NE. 6) ERROR STOP 28
+          IF (SIZE(b2%A0) .NE.  3) ERROR STOP 29
+          IF (SIZE(b2%A1) .NE.  7) ERROR STOP 30
+          IF (SIZE(b2%A2) .NE.  4) ERROR STOP 31
+          IF (b2%b_cmp%l1 .NE. 13) ERROR STOP 32
+          IF (SIZE(b2%b_cmp%A0) .NE.  13) ERROR STOP 33
+          IF (SIZE(b2%b_cmp%A1) .NE.  27) ERROR STOP 34
+          IF (SIZE(b2%b_cmp%A2) .NE. 144) ERROR STOP 35
 
         CLASS DEFAULT
            STOP 36

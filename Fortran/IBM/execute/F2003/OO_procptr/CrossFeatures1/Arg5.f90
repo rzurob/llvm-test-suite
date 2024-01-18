@@ -71,9 +71,9 @@
 
   ProcPtr => RetPtr(ExtFun)
   V = ProcPtr(Base(ModSub))
-  IF (.NOT. ASSOCIATED(V%ProcPtr, ModSub) ) STOP 11
+  IF (.NOT. ASSOCIATED(V%ProcPtr, ModSub) ) ERROR STOP 11
   CALL V%ProcPtr()
-  IF ( .NOT. OK )  STOP 12
+  IF ( .NOT. OK )  ERROR STOP 12
 
   END
 

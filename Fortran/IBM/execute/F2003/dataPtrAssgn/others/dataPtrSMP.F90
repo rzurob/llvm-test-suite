@@ -34,14 +34,14 @@ program main
         p(i:) => tar
     enddo
 
-    if ( .not. associated(p, tar)) stop 1
-    if ( lbound(p, 1) /= NTHR) stop 2
-    if ( ubound(p, 1) /= (NTHR*2)-1) stop 3
+    if ( .not. associated(p, tar)) error stop 1
+    if ( lbound(p, 1) /= NTHR) error stop 2
+    if ( ubound(p, 1) /= (NTHR*2)-1) error stop 3
 #ifdef bg4thd
-    if ( any (tar .ne. (/(i,i=3,1,-1)/)))  stop 4
-    if ( any (p .ne. (/(i,i=3,1,-1)/)))  stop 5
+    if ( any (tar .ne. (/(i,i=3,1,-1)/)))  error stop 4
+    if ( any (p .ne. (/(i,i=3,1,-1)/)))  error stop 5
 #else
-    if ( any (tar .ne. (/(i,i=10,1,-1)/)))  stop 4
-    if ( any (p .ne. (/(i,i=10,1,-1)/)))  stop 5
+    if ( any (tar .ne. (/(i,i=10,1,-1)/)))  error stop 4
+    if ( any (p .ne. (/(i,i=10,1,-1)/)))  error stop 5
 #endif
 end program

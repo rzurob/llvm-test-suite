@@ -5,7 +5,7 @@
         integer*8, save :: csc[2,*]
         integer*8 :: cosubs(2), res, me
 
-        if (num_images .lt. 2) stop 1
+        if (num_images .lt. 2) error stop 1
 
         res = 0
         me = this_image()

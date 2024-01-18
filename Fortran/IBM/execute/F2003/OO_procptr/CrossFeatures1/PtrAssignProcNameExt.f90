@@ -58,9 +58,9 @@
 
     Ptr => ExtFun
     As = Ptr((/3_8,2_8,1_8/))
-    IF ( ANY(LBOUND(As) .NE. 1)) STOP 11
-    IF ( ANY(UBOUND(As) .NE. 3)) STOP 12
-    IF ( ANY(As .NE. (/3_8,2_8,1_8/)) ) STOP 13
+    IF ( ANY(LBOUND(As) .NE. 1)) ERROR STOP 11
+    IF ( ANY(UBOUND(As) .NE. 3)) ERROR STOP 12
+    IF ( ANY(As .NE. (/3_8,2_8,1_8/)) ) ERROR STOP 13
 
     Ptr1 => ExtSub
     CALL Ptr1(Ptr, (/-3_8,-2_8,-1_8/))
@@ -82,9 +82,9 @@
   INTEGER(8)           :: As(SIZE(Arg2))
 
     As = Arg1(Arg2)
-    IF ( ANY(LBOUND(As) .NE. 1)) STOP 21
-    IF ( ANY(UBOUND(As) .NE. (/SIZE(Arg2)/)) ) STOP 22
-    IF ( ANY(As .NE. (/-3_8,-2_8,-1_8/) ) )    STOP 23
+    IF ( ANY(LBOUND(As) .NE. 1)) ERROR STOP 21
+    IF ( ANY(UBOUND(As) .NE. (/SIZE(Arg2)/)) ) ERROR STOP 22
+    IF ( ANY(As .NE. (/-3_8,-2_8,-1_8/) ) )    ERROR STOP 23
 
   END SUBROUTINE
 

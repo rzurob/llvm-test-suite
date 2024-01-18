@@ -89,22 +89,22 @@
 
   CALL ExtSub()
 
-  IF ( .NOT. ASSOCIATED(Ptr, Tar) ) STOP 11
+  IF ( .NOT. ASSOCIATED(Ptr, Tar) ) ERROR STOP 11
 
-  IF ( SIZE(Tar%R%R) .NE. 7   ) STOP 21
-  IF ( ANY (Tar%R%R  .NE. 8 ) ) STOP 22
+  IF ( SIZE(Tar%R%R) .NE. 7   ) ERROR STOP 21
+  IF ( ANY (Tar%R%R  .NE. 8 ) ) ERROR STOP 22
 
-  IF ( SIZE(Tar%C%C) .NE. 7         ) STOP 31
-  IF ( ANY (Tar%C%C  .NE. CHAR(8) ) ) STOP 32
+  IF ( SIZE(Tar%C%C) .NE. 7         ) ERROR STOP 31
+  IF ( ANY (Tar%C%C  .NE. CHAR(8) ) ) ERROR STOP 32
 
-  IF ( SIZE(Tar%I%I) .NE. 7   ) STOP 41
-  IF ( ANY (Tar%I%I  .NE. 8 ) ) STOP 42
+  IF ( SIZE(Tar%I%I) .NE. 7   ) ERROR STOP 41
+  IF ( ANY (Tar%I%I  .NE. 8 ) ) ERROR STOP 42
 
-  IF ( SIZE(Tar%A%A) .NE.   7        ) STOP 51
-  IF ( ANY (Tar%A%A  .NEQV. .TRUE. ) ) STOP 52
+  IF ( SIZE(Tar%A%A) .NE.   7        ) ERROR STOP 51
+  IF ( ANY (Tar%A%A  .NEQV. .TRUE. ) ) ERROR STOP 52
 
-  IF ( SIZE(Tar%Z%Z) .NE. 7        ) STOP 61
-  IF ( ANY (Tar%Z%Z  .NE. (8,-8) ) ) STOP 62
+  IF ( SIZE(Tar%Z%Z) .NE. 7        ) ERROR STOP 61
+  IF ( ANY (Tar%Z%Z  .NE. (8,-8) ) ) ERROR STOP 62
 
   END
 

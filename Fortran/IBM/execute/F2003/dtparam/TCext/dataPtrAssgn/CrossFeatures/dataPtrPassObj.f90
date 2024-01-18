@@ -61,15 +61,15 @@
   V%I1Tar = 1
   T = V%Fun()
 
-  IF (.NOT. ASSOCIATED(T%PtrI1, V%I1Tar))              STOP 11
-  IF (ANY( LBOUND(T%PtrI1)         .NE. (/0, 0 /)))    STOP 12
-  IF (ANY( UBOUND(T%PtrI1)         .NE. (/9, 9 /)))    STOP 13
-  IF (ANY( T%PtrI1                 .NE. 1_1))          STOP 14
+  IF (.NOT. ASSOCIATED(T%PtrI1, V%I1Tar))              ERROR STOP 11
+  IF (ANY( LBOUND(T%PtrI1)         .NE. (/0, 0 /)))    ERROR STOP 12
+  IF (ANY( UBOUND(T%PtrI1)         .NE. (/9, 9 /)))    ERROR STOP 13
+  IF (ANY( T%PtrI1                 .NE. 1_1))          ERROR STOP 14
 
-  IF (.NOT. ASSOCIATED(T%PtrI2))                       STOP 15
-  IF (ANY( LBOUND(T%PtrI2)         .NE. (/0, 0 /)))    STOP 16
-  IF (ANY( UBOUND(T%PtrI2)         .NE. (/9, 0 /)))    STOP 17
-  IF (ANY( T%PtrI2                 .NE. 1_1))          STOP 18
+  IF (.NOT. ASSOCIATED(T%PtrI2))                       ERROR STOP 15
+  IF (ANY( LBOUND(T%PtrI2)         .NE. (/0, 0 /)))    ERROR STOP 16
+  IF (ANY( UBOUND(T%PtrI2)         .NE. (/9, 0 /)))    ERROR STOP 17
+  IF (ANY( T%PtrI2                 .NE. 1_1))          ERROR STOP 18
 
   END
 

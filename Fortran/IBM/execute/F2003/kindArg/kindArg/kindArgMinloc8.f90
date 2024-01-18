@@ -56,88 +56,88 @@
 
   II1 = 1
   II1(-1,:,:,:,:,:,:,:,:,:) = 0
-  IF (ANY( MINLOC(ARRAY=II1, MASK=MM, DIM=1, KIND=II1%KIND )  .NE. 2)) STOP 10
-  IF (KIND(MINLOC(ARRAY=II1, MASK=MM, DIM=1, KIND=II1%KIND )) .NE. 1)  STOP 11
+  IF (ANY( MINLOC(ARRAY=II1, MASK=MM, DIM=1, KIND=II1%KIND )  .NE. 2)) ERROR STOP 10
+  IF (KIND(MINLOC(ARRAY=II1, MASK=MM, DIM=1, KIND=II1%KIND )) .NE. 1)  ERROR STOP 11
 
   II2 = 1
   II2(:,-1,:,:,:,:,:,:,:,:) = 0
-  IF (ANY( MINLOC(ARRAY=II2, MASK=MM, DIM=2, KIND=II2%KIND )  .NE. 2)) STOP 12
-  IF (KIND(MINLOC(ARRAY=II2, MASK=MM, DIM=2, KIND=II2%KIND )) .NE. 2)  STOP 13
+  IF (ANY( MINLOC(ARRAY=II2, MASK=MM, DIM=2, KIND=II2%KIND )  .NE. 2)) ERROR STOP 12
+  IF (KIND(MINLOC(ARRAY=II2, MASK=MM, DIM=2, KIND=II2%KIND )) .NE. 2)  ERROR STOP 13
 
   II4 = 1
   II4(:,:,-1,:,:,:,:,:,:,:) = 0
-  IF (ANY( MINLOC(ARRAY=II4, MASK=MM, DIM=3, KIND=II4%KIND )  .NE. 2)) STOP 14
-  IF (KIND(MINLOC(ARRAY=II4, MASK=MM, DIM=3, KIND=II4%KIND )) .NE. 4)  STOP 15
+  IF (ANY( MINLOC(ARRAY=II4, MASK=MM, DIM=3, KIND=II4%KIND )  .NE. 2)) ERROR STOP 14
+  IF (KIND(MINLOC(ARRAY=II4, MASK=MM, DIM=3, KIND=II4%KIND )) .NE. 4)  ERROR STOP 15
 
   II8 = 1
   II8(:,:,:,-1,:,:,:,:,:,:) = 0
-  IF (ANY( MINLOC(ARRAY=II8, MASK=MM, DIM=4, KIND=II1%KIND )  .NE. 2)) STOP 16
-  IF (KIND(MINLOC(ARRAY=II8, MASK=MM, DIM=4, KIND=II1%KIND )) .NE. 1)  STOP 17
+  IF (ANY( MINLOC(ARRAY=II8, MASK=MM, DIM=4, KIND=II1%KIND )  .NE. 2)) ERROR STOP 16
+  IF (KIND(MINLOC(ARRAY=II8, MASK=MM, DIM=4, KIND=II1%KIND )) .NE. 1)  ERROR STOP 17
 
 
   RR4 = 1
   RR4(:,:,:,:,-1,:,:,:,:,:) = 0
-  IF (ANY( MINLOC(ARRAY=RR4(:,:,:,:,:,:,:,:,:,:), MASK=MM, DIM=5, KIND=RR4(:,:,:,:,-2,:,:,:,:,:)%KIND ) .NE. 2)) STOP 21
-  IF (KIND(MINLOC(ARRAY=RR4(:,:,:,:,:,:,:,:,:,:), MASK=MM, DIM=5, KIND=RR4(:,:,:,:,:,:,:,:,:,:)%KIND )) .NE. 4)  STOP 22
+  IF (ANY( MINLOC(ARRAY=RR4(:,:,:,:,:,:,:,:,:,:), MASK=MM, DIM=5, KIND=RR4(:,:,:,:,-2,:,:,:,:,:)%KIND ) .NE. 2)) ERROR STOP 21
+  IF (KIND(MINLOC(ARRAY=RR4(:,:,:,:,:,:,:,:,:,:), MASK=MM, DIM=5, KIND=RR4(:,:,:,:,:,:,:,:,:,:)%KIND )) .NE. 4)  ERROR STOP 22
 
   RR8 = 1
   RR8(:,:,:,:,:,-1,:,:,:,:) = 0
-  IF (ANY( MINLOC(ARRAY=RR8(:,:,:,:,:,:,:,:,:,:), MASK=MM, DIM=6, KIND=RR8(:,:,:,:,:,-2,:,:,:,:)%KIND ) .NE. 2)) STOP 23
-  IF (KIND(MINLOC(ARRAY=RR8(:,:,:,:,:,:,:,:,:,:), MASK=MM, DIM=6, KIND=RR8(:,:,:,:,:,:,:,:,:,:)%KIND )) .NE. 8)  STOP 24
+  IF (ANY( MINLOC(ARRAY=RR8(:,:,:,:,:,:,:,:,:,:), MASK=MM, DIM=6, KIND=RR8(:,:,:,:,:,-2,:,:,:,:)%KIND ) .NE. 2)) ERROR STOP 23
+  IF (KIND(MINLOC(ARRAY=RR8(:,:,:,:,:,:,:,:,:,:), MASK=MM, DIM=6, KIND=RR8(:,:,:,:,:,:,:,:,:,:)%KIND )) .NE. 8)  ERROR STOP 24
 
   RR6 = 1
   RR6(:,:,:,:,:,:,-1,:,:,:) = 0
-  IF (ANY( MINLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,:,:), MASK=MM, DIM=7, KIND=RR6(:,:,:,:,:,:,-2,:,:,:)%KIND-15 ) .NE. 2)) STOP 25
-  IF (KIND(MINLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,:,:), MASK=MM, DIM=7, KIND=RR6(:,:,:,:,:,:,:,:,:,:)%KIND-15 )) .NE.  1) STOP 26
+  IF (ANY( MINLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,:,:), MASK=MM, DIM=7, KIND=RR6(:,:,:,:,:,:,-2,:,:,:)%KIND-15 ) .NE. 2)) ERROR STOP 25
+  IF (KIND(MINLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,:,:), MASK=MM, DIM=7, KIND=RR6(:,:,:,:,:,:,:,:,:,:)%KIND-15 )) .NE.  1) ERROR STOP 26
 
 
   CC = ACHAR(1)
   CC(:,:,:,:,:,:,:,-1,:,:) = ACHAR(0)
-  IF (ANY( MINLOC(ARRAY=CC, MASK=MM1, DIM=8, KIND=CC%KIND )  .NE. 0))   STOP 30
-  IF (KIND(MINLOC(ARRAY=CC, MASK=MM1, DIM=8, KIND=CC%KIND )) .NE. 1)    STOP 31
+  IF (ANY( MINLOC(ARRAY=CC, MASK=MM1, DIM=8, KIND=CC%KIND )  .NE. 0))   ERROR STOP 30
+  IF (KIND(MINLOC(ARRAY=CC, MASK=MM1, DIM=8, KIND=CC%KIND )) .NE. 1)    ERROR STOP 31
 
 
   II1 = 1
   II1(:,:,:,:,:,:,:,:,-1,:) = 0
-  IF (ANY( MINLOC(ARRAY=II1, MASK=MM1, DIM=9, KIND=II1%KIND )  .NE. 0)) STOP 40
-  IF (KIND(MINLOC(ARRAY=II1, MASK=MM1, DIM=9, KIND=II1%KIND )) .NE. 1)  STOP 41
+  IF (ANY( MINLOC(ARRAY=II1, MASK=MM1, DIM=9, KIND=II1%KIND )  .NE. 0)) ERROR STOP 40
+  IF (KIND(MINLOC(ARRAY=II1, MASK=MM1, DIM=9, KIND=II1%KIND )) .NE. 1)  ERROR STOP 41
 
   II2 = 1
   II2(:,:,:,:,:,:,:,:,:,-1) = 0
-  IF (ANY( MINLOC(ARRAY=II2, MASK=MM1, DIM=10, KIND=II2%KIND )  .NE. 0)) STOP 42
-  IF (KIND(MINLOC(ARRAY=II2, MASK=MM1, DIM=10, KIND=II2%KIND )) .NE. 2)  STOP 43
+  IF (ANY( MINLOC(ARRAY=II2, MASK=MM1, DIM=10, KIND=II2%KIND )  .NE. 0)) ERROR STOP 42
+  IF (KIND(MINLOC(ARRAY=II2, MASK=MM1, DIM=10, KIND=II2%KIND )) .NE. 2)  ERROR STOP 43
 
   II4 = 1
   II4(:,:,-1,:,:,:,:,:,:,:) = 0
-  IF (ANY( MINLOC(ARRAY=II4, MASK=MM1, DIM=3, KIND=II4%KIND )  .NE. 0)) STOP 44
-  IF (KIND(MINLOC(ARRAY=II4, MASK=MM1, DIM=3, KIND=II4%KIND )) .NE. 4)  STOP 45
+  IF (ANY( MINLOC(ARRAY=II4, MASK=MM1, DIM=3, KIND=II4%KIND )  .NE. 0)) ERROR STOP 44
+  IF (KIND(MINLOC(ARRAY=II4, MASK=MM1, DIM=3, KIND=II4%KIND )) .NE. 4)  ERROR STOP 45
 
   II8 = 1
   II8(:,:,:,-1,:,:,:,:,:,:) = 0
-  IF (ANY( MINLOC(ARRAY=II8, MASK=MM1, DIM=4, KIND=II8%KIND )  .NE. 0)) STOP 46
-  IF (KIND(MINLOC(ARRAY=II8, MASK=MM1, DIM=4, KIND=II8%KIND )) .NE. 8)  STOP 47
+  IF (ANY( MINLOC(ARRAY=II8, MASK=MM1, DIM=4, KIND=II8%KIND )  .NE. 0)) ERROR STOP 46
+  IF (KIND(MINLOC(ARRAY=II8, MASK=MM1, DIM=4, KIND=II8%KIND )) .NE. 8)  ERROR STOP 47
 
 
   RR4 = 1
   RR4(:,:,:,:,-1,:,:,:,:,:) = 0
-  IF (ANY( MINLOC(ARRAY=RR4(:,:,:,:,:,:,:,:,:,:), MASK=MM1, DIM=5, KIND=RR4(:,:,:,:,-1,:,:,:,:,:)%KIND ) .NE. 0)) STOP 61
-  IF (KIND(MINLOC(ARRAY=RR4(:,:,:,:,:,:,:,:,:,:), MASK=MM1, DIM=5, KIND=RR4(:,:,:,:,:,:,:,:,:,:)%KIND )) .NE. 4)  STOP 62
+  IF (ANY( MINLOC(ARRAY=RR4(:,:,:,:,:,:,:,:,:,:), MASK=MM1, DIM=5, KIND=RR4(:,:,:,:,-1,:,:,:,:,:)%KIND ) .NE. 0)) ERROR STOP 61
+  IF (KIND(MINLOC(ARRAY=RR4(:,:,:,:,:,:,:,:,:,:), MASK=MM1, DIM=5, KIND=RR4(:,:,:,:,:,:,:,:,:,:)%KIND )) .NE. 4)  ERROR STOP 62
 
   RR8 = 1
   RR8(:,:,:,:,:,-1,:,:,:,:) = 0
-  IF (ANY( MINLOC(ARRAY=RR8(:,:,:,:,:,:,:,:,:,:), MASK=MM1, DIM=6, KIND=RR8(:,:,:,:,:,-1,:,:,:,:)%KIND ) .NE. 0)) STOP 63
-  IF (KIND(MINLOC(ARRAY=RR8(:,:,:,:,:,:,:,:,:,:), MASK=MM1, DIM=6, KIND=RR8(:,:,:,:,:,:,:,:,:,:)%KIND )) .NE. 8)  STOP 64
+  IF (ANY( MINLOC(ARRAY=RR8(:,:,:,:,:,:,:,:,:,:), MASK=MM1, DIM=6, KIND=RR8(:,:,:,:,:,-1,:,:,:,:)%KIND ) .NE. 0)) ERROR STOP 63
+  IF (KIND(MINLOC(ARRAY=RR8(:,:,:,:,:,:,:,:,:,:), MASK=MM1, DIM=6, KIND=RR8(:,:,:,:,:,:,:,:,:,:)%KIND )) .NE. 8)  ERROR STOP 64
 
   RR6 = 1
   RR6(:,:,:,:,:,:,-1,:,:,:) = 0
-  IF (ANY( MINLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,:,:), MASK=MM1, DIM=7, KIND=RR6(:,:,:,:,:,:,-1,:,:,:)%KIND-8 ) .NE. 0)) STOP 65
-  IF (KIND(MINLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,:,:), MASK=MM1, DIM=7, KIND=RR6(:,:,:,:,:,:,:,:,:,:)%KIND-8 )) .NE. 8)  STOP 66
+  IF (ANY( MINLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,:,:), MASK=MM1, DIM=7, KIND=RR6(:,:,:,:,:,:,-1,:,:,:)%KIND-8 ) .NE. 0)) ERROR STOP 65
+  IF (KIND(MINLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,:,:), MASK=MM1, DIM=7, KIND=RR6(:,:,:,:,:,:,:,:,:,:)%KIND-8 )) .NE. 8)  ERROR STOP 66
 
 
   CC = ACHAR(1)
   CC(:,:,:,:,:,:,:,-1,:,:) = ACHAR(0)
-  IF (ANY( MINLOC(ARRAY=CC, MASK=MM1, DIM=8, KIND=CC%KIND )  .NE. 0))   STOP 70
-  IF (KIND(MINLOC(ARRAY=CC, MASK=MM1, DIM=8, KIND=CC%KIND )) .NE. 1)    STOP 71
+  IF (ANY( MINLOC(ARRAY=CC, MASK=MM1, DIM=8, KIND=CC%KIND )  .NE. 0))   ERROR STOP 70
+  IF (KIND(MINLOC(ARRAY=CC, MASK=MM1, DIM=8, KIND=CC%KIND )) .NE. 1)    ERROR STOP 71
 
 
 

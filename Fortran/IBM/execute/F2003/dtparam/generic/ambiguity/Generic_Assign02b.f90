@@ -80,31 +80,31 @@
       IMPLICIT TYPE(NextGen2(4,1,4,1,8,1))(M)
 
       C2 = B1
-      IF (C2%value .NE. 1) STOP 10
+      IF (C2%value .NE. 1) ERROR STOP 10
       C2 = C1
-      IF (C2%value .NE. 1) STOP 11
+      IF (C2%value .NE. 1) ERROR STOP 11
       C2 = N1
-      IF (C2%value .NE. 1) STOP 12
+      IF (C2%value .NE. 1) ERROR STOP 12
 
       N2 = B1
-      IF (N2%value .NE. 1) STOP 13
+      IF (N2%value .NE. 1) ERROR STOP 13
       N2 = C1
-      IF (N2%value .NE. 1) STOP 14
+      IF (N2%value .NE. 1) ERROR STOP 14
       N2 = N1
-      IF (N2%value .NE. 1) STOP 15
+      IF (N2%value .NE. 1) ERROR STOP 15
 
       K2 = B1
-      IF (K2%value .NE. 2) STOP 16
+      IF (K2%value .NE. 2) ERROR STOP 16
       K2 = K1
-      IF (K2%value .NE. 2) STOP 17
+      IF (K2%value .NE. 2) ERROR STOP 17
       K2 = M1
-      IF (K2%value .NE. 2) STOP 18
+      IF (K2%value .NE. 2) ERROR STOP 18
 
       M2 = B1
-      IF (M2%value .NE. 1) STOP 19
+      IF (M2%value .NE. 1) ERROR STOP 19
       M2 = K1
-      IF (M2%value .NE. 1) STOP 20
+      IF (M2%value .NE. 1) ERROR STOP 20
       M2 = M1
-      IF (M2%value .NE. 1) STOP 21
+      IF (M2%value .NE. 1) ERROR STOP 21
 
       END PROGRAM Generic_Assign02b

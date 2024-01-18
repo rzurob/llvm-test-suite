@@ -31,7 +31,7 @@
         allocate(it(10), source=(/ (i, i=1,10) /) )
 
         ip(kind(it):) => it(::kind(ip))
-        if ( .not. associated(ip)) stop 11
+        if ( .not. associated(ip)) error stop 11
 
 	print *, lbound(ip,1), ubound(ip,1)
 	print *, ip
@@ -40,7 +40,7 @@
 	lt = mod(it(2:9),2) == 1
 
 	lp(sum(ip):) => lt
-        if ( .not. associated(lp,lt)) stop 21
+        if ( .not. associated(lp,lt)) error stop 21
 
 	print *, lbound(lp,1), ubound(lp,1)
 	print *, lp
@@ -48,7 +48,7 @@
 
 
 	rp(kind(2):kind(1*2.0)/2) => rt(::len('ok'))
-        if ( .not. associated(rp)) stop 21
+        if ( .not. associated(rp)) error stop 21
 	print *, lbound(rp,1), ubound(rp,1)
 
 	write (*, '(3f20.15)') rp

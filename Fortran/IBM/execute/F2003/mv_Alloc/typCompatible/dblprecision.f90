@@ -25,15 +25,15 @@
 
       call move_alloc(d2, d1)
 
-      if ( .not. allocated(d1) ) stop 11
-      if ( allocated(d2) ) stop 13
+      if ( .not. allocated(d1) ) error stop 11
+      if ( allocated(d2) ) error stop 13
 
-      if ( size(d1, 1) /= 2) stop 21
-      if ( size(d1, 2) /= 3) stop 23
+      if ( size(d1, 1) /= 2) error stop 21
+      if ( size(d1, 2) /= 3) error stop 23
 
       do j = 1, 3
           do i = 1, 2
-              if ( .not. precision_R8(d1(i,j),dble(i+2*j-6)) ) stop 25
+              if ( .not. precision_R8(d1(i,j),dble(i+2*j-6)) ) error stop 25
           end do
       end do
 

@@ -151,22 +151,22 @@ program defAssignDataPtrComp04a
     aobj1=XA(4,4)()
 
     !--- verify aobj1---!
-    if(aobj1%k1 /= 4)                                        stop 10
-    if(aobj1%l1 /= 4)                                        stop 11
-    if(any(aobj1%i1 /= 99))                                  stop 12
-    if(any(aobj1%c1 /= "****"))                              stop 13
-    if(any(aobj1%g1 .neqv. .true.))                          stop 14
+    if(aobj1%k1 /= 4)                                        error stop 10
+    if(aobj1%l1 /= 4)                                        error stop 11
+    if(any(aobj1%i1 /= 99))                                  error stop 12
+    if(any(aobj1%c1 /= "****"))                              error stop 13
+    if(any(aobj1%g1 .neqv. .true.))                          error stop 14
 
     print *,"*****TEST   2*****"
     !invoke assignA2
     aobj2=XA(2,4)()
 
     !--- verify aobj2---!
-    if(aobj2%k1 /= 2)                                        stop 15
-    if(aobj2%l1 /= 4)                                        stop 16
-    if(any(aobj2%i1 /= 198))                                 stop 17
-    if(any(aobj2%c1 /= "****"))                              stop 18
-    if(any(aobj2%g1 .neqv. .false.))                         stop 19
+    if(aobj2%k1 /= 2)                                        error stop 15
+    if(aobj2%l1 /= 4)                                        error stop 16
+    if(any(aobj2%i1 /= 198))                                 error stop 17
+    if(any(aobj2%c1 /= "****"))                              error stop 18
+    if(any(aobj2%g1 .neqv. .false.))                         error stop 19
 
     print *,"*****TEST   3*****"
     ! invoke assignA1
@@ -175,11 +175,11 @@ program defAssignDataPtrComp04a
                   [.true.,.false.,.true.,.false.])
 
     !--- verify aobj1---!
-    if(aobj1%k1 /= 4)                                        stop 20
-    if(aobj1%l1 /= 4)                                        stop 21
-    if(any(aobj1%i1 /= [-1,-2,-3,-4,-5]))                    stop 22
-    if(any(aobj1%c1 /= ["EFGH","efgh","ABCD","abcd"]))       stop 23
-    if(any(aobj1%g1 .neqv. [.false.,.true.,.false.,.true.])) stop 24
+    if(aobj1%k1 /= 4)                                        error stop 20
+    if(aobj1%l1 /= 4)                                        error stop 21
+    if(any(aobj1%i1 /= [-1,-2,-3,-4,-5]))                    error stop 22
+    if(any(aobj1%c1 /= ["EFGH","efgh","ABCD","abcd"]))       error stop 23
+    if(any(aobj1%g1 .neqv. [.false.,.true.,.false.,.true.])) error stop 24
 
     print *,"*****TEST   4*****"
     ! invoke assignA2
@@ -188,11 +188,11 @@ program defAssignDataPtrComp04a
                   [.true.,.false.,.false.,.true.])
 
     !--- verify aobj2---!
-    if(aobj2%k1 /= 2)                                        stop 25
-    if(aobj2%l1 /= 4)                                        stop 26
-    if(any(aobj2%i1 /= [-22,-24,-26,-28,-30]))               stop 27
-    if(any(aobj2%c1 /= ["stte","STTE","amte","AMTE"]))       stop 28
-    if(any(aobj2%g1 .neqv. [.true.,.false.,.false.,.true.])) stop 29
+    if(aobj2%k1 /= 2)                                        error stop 25
+    if(aobj2%l1 /= 4)                                        error stop 26
+    if(any(aobj2%i1 /= [-22,-24,-26,-28,-30]))               error stop 27
+    if(any(aobj2%c1 /= ["stte","STTE","amte","AMTE"]))       error stop 28
+    if(any(aobj2%g1 .neqv. [.true.,.false.,.false.,.true.])) error stop 29
 
     print *,"*****TEST   5*****"
     allocate(bobj1)
@@ -201,21 +201,21 @@ program defAssignDataPtrComp04a
     bobj1=XB(2,3)(10,aobj1,null())
 
     !--- verify bobj1---!
-    if(bobj1%id /= 10)                                       stop 30
-    if(bobj1%k2 /= 2)                                        stop 31
-    if(bobj1%l2 /= 3)                                        stop 32
+    if(bobj1%id /= 10)                                       error stop 30
+    if(bobj1%k2 /= 2)                                        error stop 31
+    if(bobj1%l2 /= 3)                                        error stop 32
 
     associate(x=>bobj1%a1comp)
 
-    if(x%k1 /= 4)                                            stop 33
-    if(x%l1 /= 4)                                            stop 34
-    if(any(x(1)%i1 /= [1,2,3,4,5]))                          stop 35
-    if(any(x(1)%c1 /= ["abcd","ABCD","efgh","EFGH"]))        stop 36
-    if(any(x(1)%g1 .neqv. [.true.,.false.,.true.,.false.]))  stop 37
+    if(x%k1 /= 4)                                            error stop 33
+    if(x%l1 /= 4)                                            error stop 34
+    if(any(x(1)%i1 /= [1,2,3,4,5]))                          error stop 35
+    if(any(x(1)%c1 /= ["abcd","ABCD","efgh","EFGH"]))        error stop 36
+    if(any(x(1)%g1 .neqv. [.true.,.false.,.true.,.false.]))  error stop 37
 
-    if(any(x(2)%i1 /= [1,2,3,4,5]))                          stop 38
-    if(any(x(2)%c1 /= ["abcd","ABCD","efgh","EFGH"]))        stop 39
-    if(any(x(2)%g1 .neqv. [.true.,.false.,.true.,.false.]))  stop 40
+    if(any(x(2)%i1 /= [1,2,3,4,5]))                          error stop 38
+    if(any(x(2)%c1 /= ["abcd","ABCD","efgh","EFGH"]))        error stop 39
+    if(any(x(2)%g1 .neqv. [.true.,.false.,.true.,.false.]))  error stop 40
 
     end associate
 
@@ -227,20 +227,20 @@ program defAssignDataPtrComp04a
 
     !--- verify bobj2---!
 
-    if(bobj2%id /= 50)                                       stop 41
-    if(bobj2%k2 /= 1)                                        stop 42
-    if(bobj2%l2 /= 3)                                        stop 43
+    if(bobj2%id /= 50)                                       error stop 41
+    if(bobj2%k2 /= 1)                                        error stop 42
+    if(bobj2%l2 /= 3)                                        error stop 43
 
     associate(x=>bobj2%a1comp)
-    if(x%k1 /= 2)                                            stop 44
-    if(x%l1 /= 4)                                            stop 45
-    if(any(x(1)%i1 /= [44,48,52,56,60]))                     stop 46
-    if(any(x(1)%c1 /= ["test","TEST","team","TEAM"]))        stop 47
-    if(any(x(1)%g1 .neqv. [.true.,.false.,.false.,.true.]))  stop 48
+    if(x%k1 /= 2)                                            error stop 44
+    if(x%l1 /= 4)                                            error stop 45
+    if(any(x(1)%i1 /= [44,48,52,56,60]))                     error stop 46
+    if(any(x(1)%c1 /= ["test","TEST","team","TEAM"]))        error stop 47
+    if(any(x(1)%g1 .neqv. [.true.,.false.,.false.,.true.]))  error stop 48
 
-    if(any(x(1)%i1 /= [44,48,52,56,60]))                     stop 49
-    if(any(x(1)%c1 /= ["test","TEST","team","TEAM"]))        stop 50
-    if(any(x(1)%g1 .neqv. [.true.,.false.,.false.,.true.]))  stop 51
+    if(any(x(1)%i1 /= [44,48,52,56,60]))                     error stop 49
+    if(any(x(1)%c1 /= ["test","TEST","team","TEAM"]))        error stop 50
+    if(any(x(1)%g1 .neqv. [.true.,.false.,.false.,.true.]))  error stop 51
 
     end associate
 
@@ -252,21 +252,21 @@ program defAssignDataPtrComp04a
 
     !--- verify bobj3--!
 
-    if(bobj3%id /= 10)                                       stop 52
-    if(bobj3%k2 /= 2)                                        stop 53
-    if(bobj3%l2 /= 3)                                        stop 54
+    if(bobj3%id /= 10)                                       error stop 52
+    if(bobj3%k2 /= 2)                                        error stop 53
+    if(bobj3%l2 /= 3)                                        error stop 54
 
     associate(x=>bobj3%a1comp)
 
-    if(x%k1 /= 4)                                            stop 55
-    if(x%l1 /= 4)                                            stop 56
-    if(any(x(1)%i1 /= [-1,-2,-3,-4,-5]))                     stop 57
-    if(any(x(1)%c1 /= ["EFGH","efgh","ABCD","abcd"]))        stop 58
-    if(any(x(1)%g1 .neqv. [.false.,.true.,.false.,.true.]))  stop 59
+    if(x%k1 /= 4)                                            error stop 55
+    if(x%l1 /= 4)                                            error stop 56
+    if(any(x(1)%i1 /= [-1,-2,-3,-4,-5]))                     error stop 57
+    if(any(x(1)%c1 /= ["EFGH","efgh","ABCD","abcd"]))        error stop 58
+    if(any(x(1)%g1 .neqv. [.false.,.true.,.false.,.true.]))  error stop 59
 
-    if(any(x(2)%i1 /= [-1,-2,-3,-4,-5]))                     stop 60
-    if(any(x(2)%c1 /= ["EFGH","efgh","ABCD","abcd"]))        stop 61
-    if(any(x(2)%g1 .neqv. [.false.,.true.,.false.,.true.]))  stop 62
+    if(any(x(2)%i1 /= [-1,-2,-3,-4,-5]))                     error stop 60
+    if(any(x(2)%c1 /= ["EFGH","efgh","ABCD","abcd"]))        error stop 61
+    if(any(x(2)%g1 .neqv. [.false.,.true.,.false.,.true.]))  error stop 62
 
     end associate
 
@@ -278,21 +278,21 @@ program defAssignDataPtrComp04a
 
     !--- verify bobj4---!
 
-    if(bobj4%id /= 50)                                       stop 63
-    if(bobj4%k2 /= 1)                                        stop 64
-    if(bobj4%l2 /= 3)                                        stop 65
+    if(bobj4%id /= 50)                                       error stop 63
+    if(bobj4%k2 /= 1)                                        error stop 64
+    if(bobj4%l2 /= 3)                                        error stop 65
 
     associate(x=>bobj4%a1comp)
 
-    if(x%k1 /= 2)                                            stop 66
-    if(x%l1 /= 4)                                            stop 67
-    if(any(x(1)%i1 /= [-88,-96,-104,-112,-120]))             stop 68
-    if(any(x(1)%c1 /= ["stte","STTE","amte","AMTE"]))        stop 69
-    if(any(x(1)%g1 .neqv. [.true.,.false.,.false.,.true.]))  stop 70
+    if(x%k1 /= 2)                                            error stop 66
+    if(x%l1 /= 4)                                            error stop 67
+    if(any(x(1)%i1 /= [-88,-96,-104,-112,-120]))             error stop 68
+    if(any(x(1)%c1 /= ["stte","STTE","amte","AMTE"]))        error stop 69
+    if(any(x(1)%g1 .neqv. [.true.,.false.,.false.,.true.]))  error stop 70
 
-    if(any(x(1)%i1 /= [-88,-96,-104,-112,-120]))             stop 71
-    if(any(x(1)%c1 /= ["stte","STTE","amte","AMTE"]))        stop 72
-    if(any(x(1)%g1 .neqv. [.true.,.false.,.false.,.true.]))  stop 73
+    if(any(x(1)%i1 /= [-88,-96,-104,-112,-120]))             error stop 71
+    if(any(x(1)%c1 /= ["stte","STTE","amte","AMTE"]))        error stop 72
+    if(any(x(1)%g1 .neqv. [.true.,.false.,.false.,.true.]))  error stop 73
 
     end associate
 
@@ -308,22 +308,22 @@ program defAssignDataPtrComp04a
     !invoke assignB1
     bobj3=bobj1
     !--- verify bobj3--!
-    if(.not. associated(bobj3))                             stop 74
-    if(.not. associated(bobj3%next))                        stop 75
-    if(.not. associated(bobj3%next%next))                   stop 76
-    if(.not. associated(bobj3%next%next%next))              stop 77
+    if(.not. associated(bobj3))                             error stop 74
+    if(.not. associated(bobj3%next))                        error stop 75
+    if(.not. associated(bobj3%next%next))                   error stop 76
+    if(.not. associated(bobj3%next%next%next))              error stop 77
 
     associate(x=>bobj3%next%next%next%a1comp)
 
-    if(x%k1 /= 4)                                            stop 78
-    if(x%l1 /= 4)                                            stop 79
-    if(any(x(1)%i1 /= [-1,-2,-3,-4,-5]))                     stop 80
-    if(any(x(1)%c1 /= ["EFGH","efgh","ABCD","abcd"]))        stop 81
-    if(any(x(1)%g1 .neqv. [.false.,.true.,.false.,.true.]))  stop 82
+    if(x%k1 /= 4)                                            error stop 78
+    if(x%l1 /= 4)                                            error stop 79
+    if(any(x(1)%i1 /= [-1,-2,-3,-4,-5]))                     error stop 80
+    if(any(x(1)%c1 /= ["EFGH","efgh","ABCD","abcd"]))        error stop 81
+    if(any(x(1)%g1 .neqv. [.false.,.true.,.false.,.true.]))  error stop 82
 
-    if(any(x(2)%i1 /= [-1,-2,-3,-4,-5]))                     stop 83
-    if(any(x(2)%c1 /= ["EFGH","efgh","ABCD","abcd"]))        stop 84
-    if(any(x(2)%g1 .neqv. [.false.,.true.,.false.,.true.]))  stop 85
+    if(any(x(2)%i1 /= [-1,-2,-3,-4,-5]))                     error stop 83
+    if(any(x(2)%c1 /= ["EFGH","efgh","ABCD","abcd"]))        error stop 84
+    if(any(x(2)%g1 .neqv. [.false.,.true.,.false.,.true.]))  error stop 85
 
     end associate
 
@@ -341,22 +341,22 @@ program defAssignDataPtrComp04a
 
     !--- verify bobj4---!
 
-    if(.not. associated(bobj4))                             stop 86
-    if(.not. associated(bobj4%next))                        stop 87
-    if(.not. associated(bobj4%next%next))                   stop 88
-    if(.not. associated(bobj4%next%next%next))              stop 89
+    if(.not. associated(bobj4))                             error stop 86
+    if(.not. associated(bobj4%next))                        error stop 87
+    if(.not. associated(bobj4%next%next))                   error stop 88
+    if(.not. associated(bobj4%next%next%next))              error stop 89
 
     associate(x=>bobj4%next%next%next%a1comp)
 
-    if(x%k1 /= 2)                                            stop 90
-    if(x%l1 /= 4)                                            stop 91
-    if(any(x(1)%i1 /= [-88,-96,-104,-112,-120]))             stop 92
-    if(any(x(1)%c1 /= ["stte","STTE","amte","AMTE"]))        stop 93
-    if(any(x(1)%g1 .neqv. [.true.,.false.,.false.,.true.]))  stop 94
+    if(x%k1 /= 2)                                            error stop 90
+    if(x%l1 /= 4)                                            error stop 91
+    if(any(x(1)%i1 /= [-88,-96,-104,-112,-120]))             error stop 92
+    if(any(x(1)%c1 /= ["stte","STTE","amte","AMTE"]))        error stop 93
+    if(any(x(1)%g1 .neqv. [.true.,.false.,.false.,.true.]))  error stop 94
 
-    if(any(x(2)%i1 /= [-88,-96,-104,-112,-120]))             stop 95
-    if(any(x(2)%c1 /= ["stte","STTE","amte","AMTE"]))        stop 96
-    if(any(x(2)%g1 .neqv. [.true.,.false.,.false.,.true.]))  stop 97
+    if(any(x(2)%i1 /= [-88,-96,-104,-112,-120]))             error stop 95
+    if(any(x(2)%c1 /= ["stte","STTE","amte","AMTE"]))        error stop 96
+    if(any(x(2)%g1 .neqv. [.true.,.false.,.false.,.true.]))  error stop 97
 
     end associate
 

@@ -38,19 +38,19 @@ end module
 
         allocate(a)
         a%p(1:4,1:5) => tar
-	if ( .not. associated(a%p) ) stop 2
-        if ( any (lbound(a%p) .ne. (/1,1/) ) ) stop 3
-        if ( any (ubound(a%p) .ne. (/4,5/) ) ) stop 5
+	if ( .not. associated(a%p) ) error stop 2
+        if ( any (lbound(a%p) .ne. (/1,1/) ) ) error stop 3
+        if ( any (ubound(a%p) .ne. (/4,5/) ) ) error stop 5
 
         call sub(a)
-	if ( .not. associated(a%p) ) stop 12
-        if ( any (lbound(a%p) .ne. (/-1,0/) ) ) stop 13
-        if ( any (ubound(a%p) .ne. (/1,3/) ) ) stop 15
+	if ( .not. associated(a%p) ) error stop 12
+        if ( any (lbound(a%p) .ne. (/-1,0/) ) ) error stop 13
+        if ( any (ubound(a%p) .ne. (/1,3/) ) ) error stop 15
 
 	call foo(a)
-	if ( .not. associated(a%p) ) stop 25
-        if ( any (lbound(a%p) .ne. (/2,3/) ) ) stop 35
-        if ( any (ubound(a%p) .ne. (/4,6/) ) ) stop 45
+	if ( .not. associated(a%p) ) error stop 25
+        if ( any (lbound(a%p) .ne. (/2,3/) ) ) error stop 35
+        if ( any (ubound(a%p) .ne. (/4,6/) ) ) error stop 45
 
 	write(*, '(4f14.8)') a%p
 	write(*, '(4f14.8)') merge(a%p, a%p, .true.)

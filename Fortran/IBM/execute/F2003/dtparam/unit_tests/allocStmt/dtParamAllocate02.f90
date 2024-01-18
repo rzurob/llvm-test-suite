@@ -33,15 +33,15 @@ program dtParamAlloc02
 
     allocate (base(4, 2):: x1(2:4), x2)
 
-    if ((.not. associated (x1)) .or. (.not. allocated (x2))) stop 1
+    if ((.not. associated (x1)) .or. (.not. allocated (x2))) error stop 1
 
-    if ((lbound (x1, 1) /= 2) .or. (ubound (x1, 1) /= 4)) stop 2
+    if ((lbound (x1, 1) /= 2) .or. (ubound (x1, 1) /= 4)) error stop 2
 
     select type (x1)
       type is (base(4, *))
         select type (x2)
           type is (base(4, *))
-            if ( (x1%n /=2) .or. (x2%n /=2) ) stop 4
+            if ( (x1%n /=2) .or. (x2%n /=2) ) error stop 4
           class default
             stop 5
         end select

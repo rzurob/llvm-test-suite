@@ -28,23 +28,23 @@
   COMMON /cbk/i, Arr
 
   ASSOCIATE ( Cbk => Arr)
-    IF ( ANY(LBOUND(cbk) .NE. (/2/) )) STOP 11
-    IF ( ANY(SHAPE(cbk)  .NE. (/8/) )) STOP 12
-    IF ( ANY(cbk    .NE. -1) )         STOP 13
+    IF ( ANY(LBOUND(cbk) .NE. (/2/) )) ERROR STOP 11
+    IF ( ANY(SHAPE(cbk)  .NE. (/8/) )) ERROR STOP 12
+    IF ( ANY(cbk    .NE. -1) )         ERROR STOP 13
 
     ASSOCIATE ( Init => Cbk)
-      IF ( ANY(LBOUND(Init) .NE. (/2/) )) STOP 11
-      IF ( ANY(SHAPE(Init)  .NE. (/8/) )) STOP 12
-      IF ( ANY(Init    .NE. -1) )         STOP 13
+      IF ( ANY(LBOUND(Init) .NE. (/2/) )) ERROR STOP 11
+      IF ( ANY(SHAPE(Init)  .NE. (/8/) )) ERROR STOP 12
+      IF ( ANY(Init    .NE. -1) )         ERROR STOP 13
 
       Init = 1
-      IF ( ANY(Arr    .NE. 1) )         STOP 31
-      IF ( ANY(Init   .NE. 1) )         STOP 32
-      IF ( ANY(Cbk    .NE. 1) )         STOP 33
+      IF ( ANY(Arr    .NE. 1) )         ERROR STOP 31
+      IF ( ANY(Init   .NE. 1) )         ERROR STOP 32
+      IF ( ANY(Cbk    .NE. 1) )         ERROR STOP 33
 
     END ASSOCIATE
   END ASSOCIATE
-  IF ( ANY(Arr    .NE. 1) )         STOP 14
+  IF ( ANY(Arr    .NE. 1) )         ERROR STOP 14
 
   END
 

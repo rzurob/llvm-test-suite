@@ -45,9 +45,9 @@
   TYPE(dt(n)) b!(n)
 
 
-  IF (b%l         .NE. 4)   STOP 11
-  IF (SIZE(b%arr) .NE. 4)   STOP 12
-  IF (ANY(b%arr%i .NE. -1)) STOP 13
+  IF (b%l         .NE. 4)   ERROR STOP 11
+  IF (SIZE(b%arr) .NE. 4)   ERROR STOP 12
+  IF (ANY(b%arr%i .NE. -1)) ERROR STOP 13
 
 
   END SUBROUTINE

@@ -41,12 +41,12 @@
   CHARACTER            :: ProcPtr
 
   ProcPtr => FChar
-  IF ( ProcPtr("1")                    .NE. "1" ) STOP 11
-  IF ( ProcPtr(IntFun1 (FChar, "2"))   .NE. "2" ) STOP 12
-  IF ( ProcPtr(IntFun1 (ProcPtr, "3")) .NE. "3" ) STOP 13
-  IF ( ProcPtr(IntFun2 (ProcPtr, "4")) .NE. "4" ) STOP 14
-  IF ( IntFun1 (ProcPtr, "5")          .NE. "5" ) STOP 15
-  IF ( IntFun2 (ProcPtr, "6")          .NE. "6" ) STOP 16
+  IF ( ProcPtr("1")                    .NE. "1" ) ERROR STOP 11
+  IF ( ProcPtr(IntFun1 (FChar, "2"))   .NE. "2" ) ERROR STOP 12
+  IF ( ProcPtr(IntFun1 (ProcPtr, "3")) .NE. "3" ) ERROR STOP 13
+  IF ( ProcPtr(IntFun2 (ProcPtr, "4")) .NE. "4" ) ERROR STOP 14
+  IF ( IntFun1 (ProcPtr, "5")          .NE. "5" ) ERROR STOP 15
+  IF ( IntFun2 (ProcPtr, "6")          .NE. "6" ) ERROR STOP 16
 
   CONTAINS
 

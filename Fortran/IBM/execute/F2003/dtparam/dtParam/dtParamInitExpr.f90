@@ -43,26 +43,26 @@
 
 
 
-  IF (KIND(T1%K1) .NE. 4 ) STOP 11
-  IF (     T1%K1  .NE. 1 ) STOP 12
-  IF (KIND(T1%K2) .NE. 1 ) STOP 13
-  IF (     T1%K2  .NE. 2 ) STOP 14
-  IF (KIND(T1%K3) .NE. 2 ) STOP 15
-  IF (     T1%K3  .NE. 4 ) STOP 16
+  IF (KIND(T1%K1) .NE. 4 ) ERROR STOP 11
+  IF (     T1%K1  .NE. 1 ) ERROR STOP 12
+  IF (KIND(T1%K2) .NE. 1 ) ERROR STOP 13
+  IF (     T1%K2  .NE. 2 ) ERROR STOP 14
+  IF (KIND(T1%K3) .NE. 2 ) ERROR STOP 15
+  IF (     T1%K3  .NE. 4 ) ERROR STOP 16
 
-  IF (KIND(T2%K1) .NE. 4 ) STOP 21
-  IF (     T2%K1  .NE. 1 ) STOP 22
-  IF (KIND(T2%K2) .NE. 1 ) STOP 23
-  IF (     T2%K2  .NE. 1 ) STOP 24
-  IF (KIND(T2%K3) .NE. 1 ) STOP 25
-  IF (     T2%K3  .NE. 4 ) STOP 26
+  IF (KIND(T2%K1) .NE. 4 ) ERROR STOP 21
+  IF (     T2%K1  .NE. 1 ) ERROR STOP 22
+  IF (KIND(T2%K2) .NE. 1 ) ERROR STOP 23
+  IF (     T2%K2  .NE. 1 ) ERROR STOP 24
+  IF (KIND(T2%K3) .NE. 1 ) ERROR STOP 25
+  IF (     T2%K3  .NE. 4 ) ERROR STOP 26
 
-  IF (KIND(T3%K1) .NE. 4 ) STOP 31
-  IF (     T3%K1  .NE. 1 ) STOP 32
-  IF (KIND(T3%K2) .NE. 1 ) STOP 33
-  IF (     T3%K2  .NE. 2 ) STOP 34
-  IF (KIND(T3%K3) .NE. 2 ) STOP 35
-  IF (     T3%K3  .NE. 1 ) STOP 36
+  IF (KIND(T3%K1) .NE. 4 ) ERROR STOP 31
+  IF (     T3%K1  .NE. 1 ) ERROR STOP 32
+  IF (KIND(T3%K2) .NE. 1 ) ERROR STOP 33
+  IF (     T3%K2  .NE. 2 ) ERROR STOP 34
+  IF (KIND(T3%K3) .NE. 2 ) ERROR STOP 35
+  IF (     T3%K3  .NE. 1 ) ERROR STOP 36
 
 
 

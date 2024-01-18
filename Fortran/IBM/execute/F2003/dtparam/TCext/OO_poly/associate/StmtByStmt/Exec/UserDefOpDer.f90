@@ -67,10 +67,10 @@
   END INTERFACE OPERATOR ( .OP. )
 
   ASSOCIATE ( As => Base(4)() .OP. Child(4)() )
-    IF( As%BaseId       .NE. 2 ) STOP 46
-    IF( As%Base%GetId() .NE. 2 ) STOP 47
-    IF( As%GetId()      .NE. 3 ) STOP 48
-    IF( As%ChildId      .NE. 3 ) STOP 49
+    IF( As%BaseId       .NE. 2 ) ERROR STOP 46
+    IF( As%Base%GetId() .NE. 2 ) ERROR STOP 47
+    IF( As%GetId()      .NE. 3 ) ERROR STOP 48
+    IF( As%ChildId      .NE. 3 ) ERROR STOP 49
   END ASSOCIATE
 
   END

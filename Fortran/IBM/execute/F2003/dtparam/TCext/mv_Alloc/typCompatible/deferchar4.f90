@@ -47,8 +47,8 @@ end module
 
   call sub(b1%ch2)
 
-  if ( allocated(ch1) ) stop 21
-  if ( .not. allocated(b1%ch2)) stop 23
+  if ( allocated(ch1) ) error stop 21
+  if ( .not. allocated(b1%ch2)) error stop 23
 
   do i = 1, 4
      print *, b1%ch2(i)

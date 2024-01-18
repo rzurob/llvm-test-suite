@@ -68,30 +68,30 @@
   LOGICAL(KIND(MATMUL(LA4,LB4))) :: T44(2,2) =MATMUL(LA4, LB4 )
 
 
-  IF (KIND(T11)   .NE.  1  )         STOP 11
-  IF (ANY( T11    .NE.  AB ))        STOP 12
-  IF (KIND(T12)   .NE.  1  )         STOP 13
-  IF (ANY( T12    .NE.  XA ))        STOP 14
-  IF (KIND(T13)   .NE.  1  )         STOP 15
-  IF (ANY( T13    .NE.  AY ))        STOP 16
-  IF (KIND(T14)   .NE.  1  )         STOP 17
-  IF (ANY( T14    .NEQV. LC ))       STOP 18
+  IF (KIND(T11)   .NE.  1  )         ERROR STOP 11
+  IF (ANY( T11    .NE.  AB ))        ERROR STOP 12
+  IF (KIND(T12)   .NE.  1  )         ERROR STOP 13
+  IF (ANY( T12    .NE.  XA ))        ERROR STOP 14
+  IF (KIND(T13)   .NE.  1  )         ERROR STOP 15
+  IF (ANY( T13    .NE.  AY ))        ERROR STOP 16
+  IF (KIND(T14)   .NE.  1  )         ERROR STOP 17
+  IF (ANY( T14    .NEQV. LC ))       ERROR STOP 18
 
-  IF (KIND(T81)   .NE.  8  )         STOP 81
-  IF (ANY( T81    .NE.  AB ))        STOP 82
-  IF (KIND(T82)   .NE.  8  )         STOP 83
-  IF (ANY( T82    .NE.  XA ))        STOP 84
-  IF (KIND(T83)   .NE.  8  )         STOP 85
-  IF (ANY( T83    .NE.  AY ))        STOP 86
-  IF (KIND(T84)   .NE.  8  )         STOP 87
-  IF (ANY( T84    .NEQV. LC ))       STOP 88
+  IF (KIND(T81)   .NE.  8  )         ERROR STOP 81
+  IF (ANY( T81    .NE.  AB ))        ERROR STOP 82
+  IF (KIND(T82)   .NE.  8  )         ERROR STOP 83
+  IF (ANY( T82    .NE.  XA ))        ERROR STOP 84
+  IF (KIND(T83)   .NE.  8  )         ERROR STOP 85
+  IF (ANY( T83    .NE.  AY ))        ERROR STOP 86
+  IF (KIND(T84)   .NE.  8  )         ERROR STOP 87
+  IF (ANY( T84    .NEQV. LC ))       ERROR STOP 88
 
-  IF (KIND(TZ4)   .NE.  4  )         STOP 51
-  IF (ANY(TZ4     .NE.  (0,4)))      STOP 52
-  IF (KIND(TZ8)   .NE.  8  )         STOP 53
-  IF (ANY(TZ8     .NE.  (0,4)))      STOP 54
-  IF (KIND(T44)   .NE.  4  )         STOP 55
-  IF (ANY( T44    .NEQV. LC ))       STOP 56
+  IF (KIND(TZ4)   .NE.  4  )         ERROR STOP 51
+  IF (ANY(TZ4     .NE.  (0,4)))      ERROR STOP 52
+  IF (KIND(TZ8)   .NE.  8  )         ERROR STOP 53
+  IF (ANY(TZ8     .NE.  (0,4)))      ERROR STOP 54
+  IF (KIND(T44)   .NE.  4  )         ERROR STOP 55
+  IF (ANY( T44    .NEQV. LC ))       ERROR STOP 56
 
   END
 

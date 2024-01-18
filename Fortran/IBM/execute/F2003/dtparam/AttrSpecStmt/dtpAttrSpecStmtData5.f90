@@ -100,18 +100,18 @@
 
   INTEGER :: IArr(N)=0
 
-  IF ( ANY( T1(1)%R                      .NE. [1,2,3,4,5]   ) ) STOP 10
-  IF ( ANY( T1(1)%ModFun1().NE. [(1,3),(4,5)] ) ) STOP 11
+  IF ( ANY( T1(1)%R                      .NE. [1,2,3,4,5]   ) ) ERROR STOP 10
+  IF ( ANY( T1(1)%ModFun1().NE. [(1,3),(4,5)] ) ) ERROR STOP 11
 
   DO I=1, N, 2
     T01 = T0(I)%ModFun0() ! no checking, optimization will remove it
-    IF ( ANY( T2(I)%R .NE. [1,2,3,4,5]           ) ) STOP 12
-    IF ( ANY( T2(I)%I .NE. [1,2,3,4,5,6,7]       ) ) STOP 13
-    IF ( ANY( T2(I)%C .NE. CHAR([1,2,3,4,5,6,7]) ) ) STOP 14
+    IF ( ANY( T2(I)%R .NE. [1,2,3,4,5]           ) ) ERROR STOP 12
+    IF ( ANY( T2(I)%I .NE. [1,2,3,4,5,6,7]       ) ) ERROR STOP 13
+    IF ( ANY( T2(I)%C .NE. CHAR([1,2,3,4,5,6,7]) ) ) ERROR STOP 14
 
     IArr(:7) = T2(I)%ModFun2()
-    IF ( ANY( IArr(:7) .NE. [-1,-2,-3,-4,-5,-6,-7] ) ) STOP 15
-    IF ( ANY( T2(I)%DT1%ModFun1() .NE. [(1,3),(4,5)] ) ) STOP 16
+    IF ( ANY( IArr(:7) .NE. [-1,-2,-3,-4,-5,-6,-7] ) ) ERROR STOP 15
+    IF ( ANY( T2(I)%DT1%ModFun1() .NE. [(1,3),(4,5)] ) ) ERROR STOP 16
   END DO
 
   END

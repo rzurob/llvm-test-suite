@@ -51,10 +51,10 @@
 	end forall
 
 	do i = 1, 6
-	    if ( .not. associated(b2(i)%iP)) stop 22
-            if ( any ( lbound(b2(i)%iP) .ne. (/1,7/) ) ) stop 24
-            if ( any ( ubound(b2(i)%iP) .ne. (/3,9/) ) ) stop 26
-            if ( any ( shape(b2(i)%iP) .ne. (/3,3/) ) ) stop 22
+	    if ( .not. associated(b2(i)%iP)) error stop 22
+            if ( any ( lbound(b2(i)%iP) .ne. (/1,7/) ) ) error stop 24
+            if ( any ( ubound(b2(i)%iP) .ne. (/3,9/) ) ) error stop 26
+            if ( any ( shape(b2(i)%iP) .ne. (/3,3/) ) ) error stop 22
 	enddo
 
         print *, (/ ( spread(source=b2(i)%ip, dim=1, NCOPIES=2), i=1,6 ) /)

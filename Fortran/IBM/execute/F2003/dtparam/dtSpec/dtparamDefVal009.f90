@@ -48,7 +48,7 @@ use m
     type(base), intent(in) :: b
     integer, intent(in) :: i
 
-    if (i > b%n) stop 10
+    if (i > b%n) error stop 10
 
     returnVal = b%data(i)
 end function

@@ -44,12 +44,12 @@
   SELECT TYPE (U)
   CLASS IS (DT)
 
-    IF (ANY(U%Int   .NE. 6))       STOP 20
-    IF (ANY(U%C     .NE. "123"))   STOP 21
-    IF (ANY(SHAPE(U).NE. (/16/)))  STOP 22
+    IF (ANY(U%Int   .NE. 6))       ERROR STOP 20
+    IF (ANY(U%C     .NE. "123"))   ERROR STOP 21
+    IF (ANY(SHAPE(U).NE. (/16/)))  ERROR STOP 22
 
     WRITE(U(1)%C, FMT=*) U(SIZE(U))%C(1:LEN(U(1)%C)-1)
-    IF (INDEX(U(1)%C, "123") .EQ. 0 ) STOP 20
+    IF (INDEX(U(1)%C, "123") .EQ. 0 ) ERROR STOP 20
 
   CLASS DEFAULT
     STOP 40
@@ -60,7 +60,7 @@
     STOP 40
   TYPE IS (CHARACTER(*))
     WRITE(V(4:), FMT=*) V(1:3)
-    IF (INDEX(V, "321") .EQ. 0 ) STOP 30
+    IF (INDEX(V, "321") .EQ. 0 ) ERROR STOP 30
   END SELECT
 
   END SUBROUTINE

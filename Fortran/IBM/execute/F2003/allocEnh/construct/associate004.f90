@@ -143,8 +143,8 @@ use m
     type(A) tempA(num)
     integer blockSize
 
-    if (.not. associated(b%data)) stop 1
-    if (num <= 0) stop 2
+    if (.not. associated(b%data)) error stop 1
+    if (num <= 0) error stop 2
 
     blockSize = size(b%data)/num
 

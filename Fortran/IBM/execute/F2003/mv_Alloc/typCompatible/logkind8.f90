@@ -28,8 +28,8 @@
 
       call move_alloc(k1, l1)
 
-      if ( allocated(k1) ) stop 21
-      if ( .not. allocated(l1) ) stop 22
-      if ( l1 .neqv. .true. ) stop 31
+      if ( allocated(k1) ) error stop 21
+      if ( .not. allocated(l1) ) error stop 22
+      if ( l1 .neqv. .true. ) error stop 31
 
       end

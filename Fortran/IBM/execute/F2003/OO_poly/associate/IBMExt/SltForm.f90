@@ -40,23 +40,23 @@
   TYPE (L2) :: L
 
   ASSOCIATE ( As => L  )
-    IF ( As.I2 .NE. 2  )      STOP 20
+    IF ( As.I2 .NE. 2  )      ERROR STOP 20
     As.I2 = -2
 
     ASSOCIATE ( As => As.L1  )
-      IF ( As.I1 .NE. 1  )    STOP 21
+      IF ( As.I1 .NE. 1  )    ERROR STOP 21
       As.I1 = -1
 
       ASSOCIATE ( As => As.L0  )
-        IF ( As.I0 .NE. 0  )  STOP 22
+        IF ( As.I0 .NE. 0  )  ERROR STOP 22
       END ASSOCIATE
 
-      IF ( As.L0.I0 .NE. 0  ) STOP 23
-      IF ( As.I1 .NE. -1  )   STOP 24
+      IF ( As.L0.I0 .NE. 0  ) ERROR STOP 23
+      IF ( As.I1 .NE. -1  )   ERROR STOP 24
 
     END ASSOCIATE
 
-    IF ( As.I2 .NE. -2  )     STOP 25
+    IF ( As.I2 .NE. -2  )     ERROR STOP 25
 
   END ASSOCIATE
 

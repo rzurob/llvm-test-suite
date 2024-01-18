@@ -25,7 +25,7 @@
 
 	p(1:3,1:2) => t(11:16)
 
-	if ( .not. associated(p) ) stop 5
+	if ( .not. associated(p) ) error stop 5
 
 	do i = 1, 3
 	    do j = 1, 2
@@ -33,14 +33,14 @@
 	    enddo
  	enddo
 
-	if ( .not. associated(p) ) stop 6
-	if ( any (lbound(p) .ne. (/3,2/))  ) stop 7
-	if ( any (ubound(p) .ne. (/5,3/))  ) stop 9
+	if ( .not. associated(p) ) error stop 6
+	if ( any (lbound(p) .ne. (/3,2/))  ) error stop 7
+	if ( any (ubound(p) .ne. (/5,3/))  ) error stop 9
 
         if ( any( matmul((/p(3,3), p(4,3), p(5,2)/), p) .neqv. &
-                  (/ .true.,.true./) )) stop 11
+                  (/ .true.,.true./) )) error stop 11
 
         if (any (matmul(p, (/.false., .true./)) .neqv. &
-                  (/ .false., .true., .false./) )) stop 21
+                  (/ .false., .true., .false./) )) error stop 21
 
 	End program

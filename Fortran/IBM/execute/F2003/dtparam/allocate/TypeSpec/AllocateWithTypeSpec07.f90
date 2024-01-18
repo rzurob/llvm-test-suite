@@ -43,20 +43,20 @@ PROGRAM AllocateWithTypeSpec07
 
       CLASS(Base(4,:)), ALLOCATABLE :: b1
 
-      IF ( ALLOCATED(b1)) STOP 10
+      IF ( ALLOCATED(b1)) ERROR STOP 10
 
       ALLOCATE(Child(4,10,4,20) :: b1)
       CALL verify_type_param(b1)
-      IF (b1%tag .NE. 'Child') STOP 11
+      IF (b1%tag .NE. 'Child') ERROR STOP 11
 
       CALL alloc_comp(b1)
-      IF (b1%status .NE. '1 allocation done') STOP 12
+      IF (b1%status .NE. '1 allocation done') ERROR STOP 12
 
       SELECT TYPE ( b1 )
         CLASS IS (Child(4,*,4,*))
-            IF (.NOT. ALLOCATED(b1%b_cmp)) STOP 13
+            IF (.NOT. ALLOCATED(b1%b_cmp)) ERROR STOP 13
             CALL verify_type_param(b1%b_cmp)
-            IF (b1%b_cmp%tag .NE. 'Base') STOP 14
+            IF (b1%b_cmp%tag .NE. 'Base') ERROR STOP 14
 
         CLASS DEFAULT
             STOP 15
@@ -82,12 +82,12 @@ PROGRAM AllocateWithTypeSpec07
          SELECT TYPE ( Arg )
               CLASS IS (Base(4,*))
                  Arg%tag = 'Base'
-                 IF (Arg%l1 .NE. 10) STOP 20
+                 IF (Arg%l1 .NE. 10) ERROR STOP 20
 
               CLASS IS (Child(4,*,4,*))
                  Arg%tag = 'Child'
-                 IF (Arg%l1 .NE. 10) STOP 21
-                 IF (Arg%l2 .NE. 20) STOP 22
+                 IF (Arg%l1 .NE. 10) ERROR STOP 21
+                 IF (Arg%l2 .NE. 20) ERROR STOP 22
 
               CLASS DEFAULT
                  STOP 23
@@ -100,7 +100,7 @@ PROGRAM AllocateWithTypeSpec07
 
          SELECT TYPE ( Arg )
               CLASS IS (Child(4,*,4,*))
-                 IF ( ALLOCATED(Arg%b_cmp)) STOP 30
+                 IF ( ALLOCATED(Arg%b_cmp)) ERROR STOP 30
                  ALLOCATE(Base(4,Arg%l2-Arg%l1) :: Arg%b_cmp)
                  Arg%status = '1 allocation done'
 
@@ -115,11 +115,11 @@ PROGRAM AllocateWithTypeSpec07
          CLASS(Base(4,:)), ALLOCATABLE :: AutoObj
 
          ALLOCATE(AutoObj, source = Arg)
-         IF (AutoObj%status .NE. '1 allocation done') STOP 40
+         IF (AutoObj%status .NE. '1 allocation done') ERROR STOP 40
 
          SELECT TYPE ( Arg )
            CLASS IS (Child(4,*,4,*))
-              IF (.NOT. ALLOCATED(Arg%b_cmp)) STOP 41
+              IF (.NOT. ALLOCATED(Arg%b_cmp)) ERROR STOP 41
 
            CLASS DEFAULT
               STOP 42
@@ -127,7 +127,7 @@ PROGRAM AllocateWithTypeSpec07
 
          AutoObj%tag = 'NULL'
          CALL verify_type_param(AutoObj)
-         IF (AutoObj%tag .NE. 'Child') STOP 43
+         IF (AutoObj%tag .NE. 'Child') ERROR STOP 43
 
          DEALLOCATE(AutoObj)
 

@@ -12,6 +12,6 @@ implicit none
 character(5) :: resA(4,4)=spread((/'IBM  ','SUN  ','HP   ','INTEL'/), dim=1, ncopies=4)
 
 if (.not. all(resA .eq. &
-  & spread((/'IBM  ','SUN  ','HP   ','INTEL'/), dim=1, ncopies=4))) stop 1
+  & spread((/'IBM  ','SUN  ','HP   ','INTEL'/), dim=1, ncopies=4))) error stop 1
 
 end

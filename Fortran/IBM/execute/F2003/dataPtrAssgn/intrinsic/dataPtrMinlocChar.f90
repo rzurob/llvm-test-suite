@@ -30,9 +30,9 @@ program main
 	allocate(b%up(2,2), source=reshape( (/'ab','12','ef','56'/),(/2,2/)) )
 
 	b%up(len('IBM', len('abcd')):, ior(2,3):) => b%up
-        if ( .not. associated(b%up)) stop 45
-        if ( any ( lbound(b%up) .ne. (/3,3/) )) stop 47
-        if ( any ( ubound(b%up) .ne. (/4,4/) )) stop 49
+        if ( .not. associated(b%up)) error stop 45
+        if ( any ( lbound(b%up) .ne. (/3,3/) )) error stop 47
+        if ( any ( ubound(b%up) .ne. (/4,4/) )) error stop 49
 
         select type(x => b%up)
             type is (character(*))

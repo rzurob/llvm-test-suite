@@ -42,11 +42,11 @@
                         allocate ( y%i1, source = 99 )
                         call move_alloc(b%i2, y%i1)
 
-			if ( .not. allocated(y%i1) ) stop 22
+			if ( .not. allocated(y%i1) ) error stop 22
 
                         select type (z => y%i1)
                            type is (integer)
-                              if ( z /= 101 ) stop 23
+                              if ( z /= 101 ) error stop 23
                            class default
                               stop 25
                         end select
@@ -57,7 +57,7 @@
                   stop 41
             end select
 
-            if ( allocated (b%i2) ) stop 31
+            if ( allocated (b%i2) ) error stop 31
          class default
             stop 51
       end select

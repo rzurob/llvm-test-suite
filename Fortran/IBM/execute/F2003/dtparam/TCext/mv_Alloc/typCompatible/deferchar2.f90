@@ -36,8 +36,8 @@
 
       call move_alloc(aT%ch4 , ch1 )
 
-      if ( .not. allocated(ch1) ) stop 21
-      if ( allocated(aT%ch4) ) stop 23
-      if ( len(ch1(1)) /= 0 ) stop 25
+      if ( .not. allocated(ch1) ) error stop 21
+      if ( allocated(aT%ch4) ) error stop 23
+      if ( len(ch1(1)) /= 0 ) error stop 25
 
       end

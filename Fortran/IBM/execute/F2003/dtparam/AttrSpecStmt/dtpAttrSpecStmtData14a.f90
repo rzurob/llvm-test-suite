@@ -64,9 +64,9 @@ PROGRAM dtpAttrSpecStmtData14a
         PRINT *, i
         PRINT '(5(Z8.8," "))', s1( i,1 )%r, s1( i,2 )%r, s1( i,3 )%r
 
-        IF ( ANY(s1( i,1 )%r /= C11%r) ) STOP 21
-        IF ( ANY(s1( i,2 )%r == C12%r) ) STOP 22
-        IF ( ANY(s1( i,3 )%r /= C13%r) ) STOP 23
+        IF ( ANY(s1( i,1 )%r /= C11%r) ) ERROR STOP 21
+        IF ( ANY(s1( i,2 )%r == C12%r) ) ERROR STOP 22
+        IF ( ANY(s1( i,3 )%r /= C13%r) ) ERROR STOP 23
     END DO
 
 END PROGRAM dtpAttrSpecStmtData14a

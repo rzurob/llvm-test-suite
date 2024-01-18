@@ -27,9 +27,9 @@ module m
 
 	    p(1:5,1:1) => tar(:,5)
 
-            if ( .not. associated(p)) stop 5
-            if ( any (lbound(p) .ne. (/1,1/) )) stop 7
-            if ( any (ubound(p) .ne. (/5,1/) )) stop 9
+            if ( .not. associated(p)) error stop 5
+            if ( any (lbound(p) .ne. (/1,1/) )) error stop 7
+            if ( any (ubound(p) .ne. (/5,1/) )) error stop 9
 
 	    select type (p)
 	        type is (integer)
@@ -52,9 +52,9 @@ module m
 
 	    p(1:,1:) => tar
 
-            if ( .not. associated(p)) stop 15
-            if ( any (lbound(p) .ne. (/1,1/) )) stop 17
-            if ( any (ubound(p) .ne. (/5,5/) )) stop 19
+            if ( .not. associated(p)) error stop 15
+            if ( any (lbound(p) .ne. (/1,1/) )) error stop 17
+            if ( any (ubound(p) .ne. (/5,5/) )) error stop 19
 
 	    select type (p)
 	        type is (real)
@@ -71,9 +71,9 @@ module m
 
 	    p(x:,x*3:) => tar
 
-            if ( .not. associated(p)) stop 25
-            if ( any (lbound(p) .ne. (/x, x*3/) )) stop 27
-            if ( any (ubound(p) .ne. (/3*x-1,x*6-1/) )) stop 29
+            if ( .not. associated(p)) error stop 25
+            if ( any (lbound(p) .ne. (/x, x*3/) )) error stop 27
+            if ( any (ubound(p) .ne. (/3*x-1,x*6-1/) )) error stop 29
 
 	    select type (p)
 	        type is (complex(8))

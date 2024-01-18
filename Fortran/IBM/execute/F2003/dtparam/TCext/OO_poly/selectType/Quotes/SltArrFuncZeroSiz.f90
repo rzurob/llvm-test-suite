@@ -75,9 +75,9 @@
       SELECT TYPE (As )
         TYPE IS (Child(4,*))
 
-          IF ( ANY (SHAPE(As) .NE. (/3,3/) )) STOP 20
-          IF ( ANY (As%Base%GetId() .NE. 1 )) STOP 34
-          IF ( ANY (As%GetId()      .NE. 2 )) STOP 35
+          IF ( ANY (SHAPE(As) .NE. (/3,3/) )) ERROR STOP 20
+          IF ( ANY (As%Base%GetId() .NE. 1 )) ERROR STOP 34
+          IF ( ANY (As%GetId()      .NE. 2 )) ERROR STOP 35
 
        CLASS DEFAULT
           STOP 40

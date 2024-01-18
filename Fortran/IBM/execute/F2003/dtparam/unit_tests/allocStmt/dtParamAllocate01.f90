@@ -42,11 +42,11 @@ use m
 
     allocate(b2, source=aptr)
 
-    if (b2%k /= 4) stop 1
-    if (b2%n /= 2) stop 2
+    if (b2%k /= 4) error stop 1
+    if (b2%n /= 2) error stop 2
 
-    if( any(b2%data .ne. (/0, 20/)) ) stop 4
+    if( any(b2%data .ne. (/0, 20/)) ) error stop 4
 
     ! b2 should have only contain 'base' component
-    if (sizeof(b2) /=8 ) stop 5
+    if (sizeof(b2) /=8 ) error stop 5
 end

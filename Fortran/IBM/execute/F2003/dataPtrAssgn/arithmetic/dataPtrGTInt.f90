@@ -40,10 +40,10 @@ program main
 
     a = b
 
-    if ( .not. associated(a)) stop 1
-    if ( lbound(a,1) /= 100 ) stop 2
-    if ( ubound(a,1) /= 149 ) stop 3
-    if ( any ( a .gt. (/(i,i=200,1,-3) /))) stop 4
+    if ( .not. associated(a)) error stop 1
+    if ( lbound(a,1) /= 100 ) error stop 2
+    if ( ubound(a,1) /= 149 ) error stop 3
+    if ( any ( a .gt. (/(i,i=200,1,-3) /))) error stop 4
 
 end program
 

@@ -65,23 +65,23 @@
   TYPE(DT(K=4, L=SIZE([DT(L=L)("?")]))) :: T1
   TYPE(DT(K=4, L=SIZE([(DT(K=2)(''),i=1,10)]))) :: T2
 
-  IF ( .NOT. LFinal1   )  STOP 11
-  IF ( .NOT. LFinal2   )  STOP 12
+  IF ( .NOT. LFinal1   )  ERROR STOP 11
+  IF ( .NOT. LFinal2   )  ERROR STOP 12
 
-  IF (  T1%K        .NE.  4  )            STOP 20
-  IF (  T1%K1       .NE.  1  )            STOP 21
-  IF (  T1%K2       .NE.  2  )            STOP 22
-  IF (  T1%K4       .NE.  4  )            STOP 23
-  IF (  T1%K8       .NE.  8  )            STOP 24
-  IF (  LEN( T1%C)  .NE.  1  )            STOP 25
+  IF (  T1%K        .NE.  4  )            ERROR STOP 20
+  IF (  T1%K1       .NE.  1  )            ERROR STOP 21
+  IF (  T1%K2       .NE.  2  )            ERROR STOP 22
+  IF (  T1%K4       .NE.  4  )            ERROR STOP 23
+  IF (  T1%K8       .NE.  8  )            ERROR STOP 24
+  IF (  LEN( T1%C)  .NE.  1  )            ERROR STOP 25
 
 
-  IF (  T2%K        .NE.  4  )            STOP 30
-  IF (  T2%K1       .NE.  1  )            STOP 31
-  IF (  T2%K2       .NE.  2  )            STOP 32
-  IF (  T2%K4       .NE.  4  )            STOP 33
-  IF (  T2%K8       .NE.  8  )            STOP 34
-  IF (  LEN( T2%C)  .NE.  10 )            STOP 35
+  IF (  T2%K        .NE.  4  )            ERROR STOP 30
+  IF (  T2%K1       .NE.  1  )            ERROR STOP 31
+  IF (  T2%K2       .NE.  2  )            ERROR STOP 32
+  IF (  T2%K4       .NE.  4  )            ERROR STOP 33
+  IF (  T2%K8       .NE.  8  )            ERROR STOP 34
+  IF (  LEN( T2%C)  .NE.  10 )            ERROR STOP 35
 
 
   END SUBROUTINE

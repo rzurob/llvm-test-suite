@@ -49,9 +49,9 @@ end module
 
 	p(lbd:ubd) => b1%pp(100,20,50)
 
-	if ( .not. associated(p) ) stop 13
-	if ( lbound(p,1) /= 20 ) stop 15
-	if ( ubound(p,1) /= 50 ) stop 17
+	if ( .not. associated(p) ) error stop 13
+	if ( lbound(p,1) /= 20 ) error stop 15
+	if ( ubound(p,1) /= 50 ) error stop 17
 	print *, p%x
 
     end program

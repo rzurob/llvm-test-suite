@@ -102,12 +102,12 @@
       K1 = Child1(8,1,4,1)(value=50, type=4)
 
       B = +C1
-      IF (B%type .NE. 4) STOP 10
-      IF (B%value .NE. 6) STOP 11
+      IF (B%type .NE. 4) ERROR STOP 10
+      IF (B%value .NE. 6) ERROR STOP 11
 
       D = +K1
-      IF (D%type .NE. 8) STOP 12
-      IF (D%value .NE. 51) STOP 13
+      IF (D%type .NE. 8) ERROR STOP 12
+      IF (D%value .NE. 51) ERROR STOP 13
 
       END SUBROUTINE test_1
 
@@ -128,12 +128,12 @@
       K2 = Child2(8,1,4,1)(value=100, type=-10)
 
       B = +C2
-      IF (B%type .NE. 4) STOP 10
-      IF (B%value .NE. 12) STOP 11
+      IF (B%type .NE. 4) ERROR STOP 10
+      IF (B%value .NE. 12) ERROR STOP 11
 
       D = +K2
-      IF (D%type .NE. 8) STOP 12
-      IF (D%value .NE. 102) STOP 13
+      IF (D%type .NE. 8) ERROR STOP 12
+      IF (D%value .NE. 102) ERROR STOP 13
 
       END SUBROUTINE test_2
 

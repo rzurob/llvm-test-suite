@@ -43,25 +43,25 @@
   !         K1  L1  K2  L2  K3  L3
 
 
-  IF (KIND(T1%K1) .NE. 4 )                 STOP 11
-  IF (     T1%K1  .NE. 2 )                 STOP 12
-  IF (KIND(T1%K2) .NE. 2 )                 STOP 13
-  IF (     T1%K2  .NE. 4 )                 STOP 14
-  IF (KIND(T1%K3) .NE. 4 )                 STOP 15
-  IF (     T1%K3  .NE. 8 )                 STOP 16
+  IF (KIND(T1%K1) .NE. 4 )                 ERROR STOP 11
+  IF (     T1%K1  .NE. 2 )                 ERROR STOP 12
+  IF (KIND(T1%K2) .NE. 2 )                 ERROR STOP 13
+  IF (     T1%K2  .NE. 4 )                 ERROR STOP 14
+  IF (KIND(T1%K3) .NE. 4 )                 ERROR STOP 15
+  IF (     T1%K3  .NE. 8 )                 ERROR STOP 16
 
 
-  IF (KIND(T1%L1) .NE. 2 )                 STOP 21
-  IF (     T1%L1  .NE. 1 )                 STOP 22
-  IF (KIND(T1%L2) .NE. 4 )                 STOP 23
-  IF (     T1%L2  .NE. 8 )                 STOP 24
-  IF (KIND(T1%L3) .NE. 8 )                 STOP 25
-  IF (     T1%L3  .NE. 3 )                 STOP 26
+  IF (KIND(T1%L1) .NE. 2 )                 ERROR STOP 21
+  IF (     T1%L1  .NE. 1 )                 ERROR STOP 22
+  IF (KIND(T1%L2) .NE. 4 )                 ERROR STOP 23
+  IF (     T1%L2  .NE. 8 )                 ERROR STOP 24
+  IF (KIND(T1%L3) .NE. 8 )                 ERROR STOP 25
+  IF (     T1%L3  .NE. 3 )                 ERROR STOP 26
 
-  IF (ANY(LBOUND(T1%Arr) .NE. (/1,1/) ))   STOP 27
-  IF (ANY(UBOUND(T1%Arr) .NE. (/8,0/) ))   STOP 28
-! IF (ANY(LBOUND(T1%Arr) .NE. (/1,8/) ))   STOP 27
-! IF (ANY(UBOUND(T1%Arr) .NE. (/8,4/) ))   STOP 28
+  IF (ANY(LBOUND(T1%Arr) .NE. (/1,1/) ))   ERROR STOP 27
+  IF (ANY(UBOUND(T1%Arr) .NE. (/8,0/) ))   ERROR STOP 28
+! IF (ANY(LBOUND(T1%Arr) .NE. (/1,8/) ))   ERROR STOP 27
+! IF (ANY(UBOUND(T1%Arr) .NE. (/8,4/) ))   ERROR STOP 28
 
   END
 

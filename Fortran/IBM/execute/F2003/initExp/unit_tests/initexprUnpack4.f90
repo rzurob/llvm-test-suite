@@ -41,12 +41,12 @@ complex(16), parameter :: v16(7)=(/ &
   &  (20.820013, 2.730921)/)
 complex(16), dimension(3,7) :: res16=unpack(v16, msk16, fld16), res16a
 
-if (.not. all(res4 .eq. unpack(v4, msk4, fld4))) stop 1
+if (.not. all(res4 .eq. unpack(v4, msk4, fld4))) error stop 1
 
 res8a = unpack(v8, mask=msk8, field=fld8)
-if (.not. all(res8 .eq. res8a)) stop 2
+if (.not. all(res8 .eq. res8a)) error stop 2
 
 res16a = unpack(v16, msk16, fld16)
-if (.not. all(res16 .eq. res16a)) stop 3
+if (.not. all(res16 .eq. res16a)) error stop 3
 
 end

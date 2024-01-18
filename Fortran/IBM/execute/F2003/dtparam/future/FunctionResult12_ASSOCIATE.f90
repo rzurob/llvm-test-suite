@@ -63,9 +63,9 @@ PROGRAM FunctionResult12
 
       c1%Base = b2 ; c1%A0 = (/ (I, I = 1, 10) /); c1%A1 = (/ (I, I = 1, 5) /); c1%A2 = (/ (I, I = 1, 15) /)
       print *, foo(c1)
-      IF ( ANY(c1%A0 .NE. (/ (I, I = 1, 10) /)) ) STOP 10
-      IF ( ANY(c1%A1 .NE. (/ (I, I = 1,  5) /)) ) STOP 11
-      IF ( ANY(c1%A2 .NE. (/ (I, I = 1, 15) /)) ) STOP 12
+      IF ( ANY(c1%A0 .NE. (/ (I, I = 1, 10) /)) ) ERROR STOP 10
+      IF ( ANY(c1%A1 .NE. (/ (I, I = 1,  5) /)) ) ERROR STOP 11
+      IF ( ANY(c1%A2 .NE. (/ (I, I = 1, 15) /)) ) ERROR STOP 12
       print *, c1
 
 END PROGRAM FunctionResult12

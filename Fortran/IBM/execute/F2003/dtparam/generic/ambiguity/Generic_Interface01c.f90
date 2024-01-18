@@ -54,7 +54,7 @@
          POINTER  :: foo1
 
          ALLOCATE (foo1, source = Obj)
-         IF ( .NOT. ASSOCIATED(foo1)) STOP 30
+         IF ( .NOT. ASSOCIATED(foo1)) ERROR STOP 30
       END FUNCTION foo1
 
       CLASS(NextGen(4,:,4,4)) FUNCTION foo2(Obj,Arg)
@@ -64,7 +64,7 @@
          POINTER  :: foo2
 
          ALLOCATE (foo2, source = Obj)
-         IF ( .NOT. ASSOCIATED(foo2)) STOP 31
+         IF ( .NOT. ASSOCIATED(foo2)) ERROR STOP 31
       END FUNCTION foo2
 !*
       PROGRAM Generic_Interface01c
@@ -76,33 +76,33 @@
       TYPE(Base(4,5))  :: base1
       TYPE(NextGen(4,10,4,4)) :: dtv
 
-      IF (.NOT. ASSOCIATED(FUNC(base1)) ) STOP 10
+      IF (.NOT. ASSOCIATED(FUNC(base1)) ) ERROR STOP 10
 
       ALLOCATE(Base(4,10):: poly1)          ! dynamic type BASE call foo1
-      IF ( .NOT. ASSOCIATED(FUNC(poly1)) ) STOP 11
+      IF ( .NOT. ASSOCIATED(FUNC(poly1)) ) ERROR STOP 11
 
       poly1 => tgt1                         ! dynamic type Child call foo1
-      IF ( .NOT. ASSOCIATED(FUNC(poly1)) ) STOP 12
+      IF ( .NOT. ASSOCIATED(FUNC(poly1)) ) ERROR STOP 12
 
       ALLOCATE(NextGen(4,10,4,4):: poly1)   ! dynamic type NextGen call foo1
-      IF ( .NOT. ASSOCIATED(FUNC(poly1)) ) STOP 13
+      IF ( .NOT. ASSOCIATED(FUNC(poly1)) ) ERROR STOP 13
 
       SELECT TYPE ( poly1) ! call possible only within select type
           CLASS IS (NextGen(4,*,4,4))
-           IF ( .NOT. ASSOCIATED(FUNC(poly1,base1)) ) STOP 14
-           IF ( .NOT. ASSOCIATED(FUNC(poly1,tgt1)) ) STOP 15
-           IF ( .NOT. ASSOCIATED(FUNC(poly1,poly1)) ) STOP 16
+           IF ( .NOT. ASSOCIATED(FUNC(poly1,base1)) ) ERROR STOP 14
+           IF ( .NOT. ASSOCIATED(FUNC(poly1,tgt1)) ) ERROR STOP 15
+           IF ( .NOT. ASSOCIATED(FUNC(poly1,poly1)) ) ERROR STOP 16
 
           CLASS DEFAULT
            STOP 32
       END SELECT
 
       ALLOCATE(NextGen(4,10,8,8):: poly1)   ! dynamic type NextGen with k2=k3=8, call foo1
-      IF ( .NOT. ASSOCIATED(FUNC(poly1))) STOP 17
+      IF ( .NOT. ASSOCIATED(FUNC(poly1))) ERROR STOP 17
 
-      IF ( .NOT. ASSOCIATED(FUNC(dtv,base1) )) STOP 18
-      IF ( .NOT. ASSOCIATED(FUNC(dtv,tgt1) )) STOP 19
-      IF ( .NOT. ASSOCIATED(FUNC(dtv,poly1) )) STOP 20
-      IF ( .NOT. ASSOCIATED(FUNC(dtv,dtv) )) STOP 21
+      IF ( .NOT. ASSOCIATED(FUNC(dtv,base1) )) ERROR STOP 18
+      IF ( .NOT. ASSOCIATED(FUNC(dtv,tgt1) )) ERROR STOP 19
+      IF ( .NOT. ASSOCIATED(FUNC(dtv,poly1) )) ERROR STOP 20
+      IF ( .NOT. ASSOCIATED(FUNC(dtv,dtv) )) ERROR STOP 21
 
       END PROGRAM Generic_Interface01c

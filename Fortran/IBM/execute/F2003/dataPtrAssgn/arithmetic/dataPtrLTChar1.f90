@@ -31,9 +31,9 @@ program main
 
     call foo(10)
 
-    if ( .not. associated(ptr)) stop 11
-    if ( lbound(ptr, 1) /= 1 ) stop 12
-    if ( ubound(ptr, 1) /= 10 ) stop 13
+    if ( .not. associated(ptr)) error stop 11
+    if ( lbound(ptr, 1) /= 1 ) error stop 12
+    if ( ubound(ptr, 1) /= 10 ) error stop 13
 
     select type (ptr)
  	type is (character(*))
@@ -44,9 +44,9 @@ program main
 
     call foo()
 
-    if ( .not. associated(ptr)) stop 21
-    if ( lbound(ptr, 1) /= 2 ) stop 22
-    if ( ubound(ptr, 1) /= 6 ) stop 23
+    if ( .not. associated(ptr)) error stop 21
+    if ( lbound(ptr, 1) /= 2 ) error stop 22
+    if ( ubound(ptr, 1) /= 6 ) error stop 23
 
     select type (ptr)
  	type is (character(*))

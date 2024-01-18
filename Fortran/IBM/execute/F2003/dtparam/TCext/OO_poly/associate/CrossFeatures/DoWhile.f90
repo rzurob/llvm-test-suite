@@ -85,8 +85,8 @@
   END ASSOCIATE
   END ASSOCIATE
 
-  IF ( Any(Arr%L      .NEQV. .TRUE.) ) STOP 60
-  IF ( ANY(Arr%GetL() .NEQV. .TRUE.) ) STOP 61
+  IF ( Any(Arr%L      .NEQV. .TRUE.) ) ERROR STOP 60
+  IF ( ANY(Arr%GetL() .NEQV. .TRUE.) ) ERROR STOP 61
 
   ASSOCIATE ( As => (/(DT(4,1)(C=CHAR(i)), i=2, 130)/) )
   ASSOCIATE ( As => As%ID )
@@ -100,8 +100,8 @@
   END ASSOCIATE
   END ASSOCIATE
 
-  IF ( Any(Arr%L      .NEQV. .TRUE.) ) STOP 70
-  IF ( ANY(Arr%GetL() .NEQV. .TRUE.) ) STOP 71
+  IF ( Any(Arr%L      .NEQV. .TRUE.) ) ERROR STOP 70
+  IF ( ANY(Arr%GetL() .NEQV. .TRUE.) ) ERROR STOP 71
 
 
   ASSOCIATE ( As => Arr )
@@ -116,8 +116,8 @@
   END ASSOCIATE
   END ASSOCIATE
 
-  IF ( Any(Arr%C      .NE. (/(CHAR(i), i=2, 130)/)) ) STOP 80
-  IF ( ANY(Arr%GetC() .NE. (/(CHAR(i), i=2, 130)/)) ) STOP 81
+  IF ( Any(Arr%C      .NE. (/(CHAR(i), i=2, 130)/)) ) ERROR STOP 80
+  IF ( ANY(Arr%GetC() .NE. (/(CHAR(i), i=2, 130)/)) ) ERROR STOP 81
 
   END
 

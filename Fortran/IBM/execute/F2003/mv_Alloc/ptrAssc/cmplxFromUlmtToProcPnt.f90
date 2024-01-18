@@ -42,11 +42,11 @@ program main
 
         call pp1(c1, a1)
 
-        if ( .not. associated(p, a1)) stop 2
+        if ( .not. associated(p, a1)) error stop 2
 
         select type ( p )
             type is (complex*8)
-                 if ( size(p) /= 2) stop 11
+                 if ( size(p) /= 2) error stop 11
                  if ( .not. precision_x8 (p(1), (10.0000,1.0000))) &
                             error stop 21_4
                  if ( .not. precision_x8 (p(2),(20.0000,1.0000))) &

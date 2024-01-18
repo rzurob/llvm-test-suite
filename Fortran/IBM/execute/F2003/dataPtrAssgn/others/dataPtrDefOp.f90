@@ -41,13 +41,13 @@ program main
 
     p2(1:3,1:3) => p1
 
-    if ( .not. associated(p2)) stop 11
-    if ( any (lbound(p2) .ne. (/1,1/) )) stop 12
-    if ( any (ubound(p2) .ne. (/3,3/) )) stop 13
+    if ( .not. associated(p2)) error stop 11
+    if ( any (lbound(p2) .ne. (/1,1/) )) error stop 12
+    if ( any (ubound(p2) .ne. (/3,3/) )) error stop 13
 
     p2 = p1*p2
 
-    if ( any(p2%i .ne. reshape((/(i,i=10,2,-1)/), (/3,3/)))) stop 14
+    if ( any(p2%i .ne. reshape((/(i,i=10,2,-1)/), (/3,3/)))) error stop 14
 end
 
 function multip(in1, in2)
@@ -57,8 +57,8 @@ function multip(in1, in2)
 
    multip(1:3,1:3) => in1(ubound(in1,1):lbound(in1,1):-1)
 
-   if ( .not. associated(multip)) stop 21
-   if ( any (lbound(multip) .ne. (/1,1/) )) stop 22
-   if ( any (ubound(multip) .ne. (/3,3/) )) stop 23
+   if ( .not. associated(multip)) error stop 21
+   if ( any (lbound(multip) .ne. (/1,1/) )) error stop 22
+   if ( any (ubound(multip) .ne. (/3,3/) )) error stop 23
 
 end function

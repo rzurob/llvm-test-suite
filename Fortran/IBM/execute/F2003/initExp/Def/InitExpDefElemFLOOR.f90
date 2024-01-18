@@ -109,54 +109,54 @@
 
 
 
-  IF ( KIND(I41)  .NE. 4      )      STOP 11
-  IF ( ANY( I41   .NE. I4NMAX  ) )   STOP 12
+  IF ( KIND(I41)  .NE. 4      )      ERROR STOP 11
+  IF ( ANY( I41   .NE. I4NMAX  ) )   ERROR STOP 12
 
-  IF ( KIND(I42)  .NE. 4      )      STOP 13
-  IF ( ANY( I42   .NE. I4NMAX  ) )   STOP 14
+  IF ( KIND(I42)  .NE. 4      )      ERROR STOP 13
+  IF ( ANY( I42   .NE. I4NMAX  ) )   ERROR STOP 14
 
-  IF ( KIND(I43)  .NE. 4      )      STOP 15
-  IF ( ANY( I43   .NE. I4NMAX  ) )   STOP 16
+  IF ( KIND(I43)  .NE. 4      )      ERROR STOP 15
+  IF ( ANY( I43   .NE. I4NMAX  ) )   ERROR STOP 16
 
-  IF ( KIND(I44)  .NE. 4   )         STOP 17
-  IF ( ANY( I44   .NE. -1  ) )       STOP 18
+  IF ( KIND(I44)  .NE. 4   )         ERROR STOP 17
+  IF ( ANY( I44   .NE. -1  ) )       ERROR STOP 18
 
-  IF ( KIND(I45)  .NE. 4  )          STOP 19
-  IF ( ANY( I45   .NE. 0  ) )        STOP 20
+  IF ( KIND(I45)  .NE. 4  )          ERROR STOP 19
+  IF ( ANY( I45   .NE. 0  ) )        ERROR STOP 20
 
-  IF ( KIND(I46)  .NE. 4      )      STOP 21
-  IF ( ANY( I46   .NE. I4PMAX  ) )   STOP 22
+  IF ( KIND(I46)  .NE. 4      )      ERROR STOP 21
+  IF ( ANY( I46   .NE. I4PMAX  ) )   ERROR STOP 22
 
-  IF ( KIND(I47)  .NE. 4      )      STOP 23
-! IF ( ANY( I47   .NE. I4PMAX  ) )   STOP 24
+  IF ( KIND(I47)  .NE. 4      )      ERROR STOP 23
+! IF ( ANY( I47   .NE. I4PMAX  ) )   ERROR STOP 24
 
-  IF ( KIND(I48)  .NE. 4      )      STOP 25
-! IF ( ANY( I48   .NE. I4PMAX  ) )   STOP 26
+  IF ( KIND(I48)  .NE. 4      )      ERROR STOP 25
+! IF ( ANY( I48   .NE. I4PMAX  ) )   ERROR STOP 26
 
 
-  IF ( KIND(I81)  .NE. 8      )      STOP 31
-  IF ( ANY( I81   .NE. I8NMAX  ) )   STOP 32
+  IF ( KIND(I81)  .NE. 8      )      ERROR STOP 31
+  IF ( ANY( I81   .NE. I8NMAX  ) )   ERROR STOP 32
 
-  IF ( KIND(I82)  .NE. 8      )      STOP 33
-  IF ( ANY( I82   .NE. I8NMAX  ) )   STOP 34
+  IF ( KIND(I82)  .NE. 8      )      ERROR STOP 33
+  IF ( ANY( I82   .NE. I8NMAX  ) )   ERROR STOP 34
 
-  IF ( KIND(I83)  .NE. 8      )      STOP 35
-  IF ( ANY( I83   .NE. I8NMAX  ) )   STOP 36
+  IF ( KIND(I83)  .NE. 8      )      ERROR STOP 35
+  IF ( ANY( I83   .NE. I8NMAX  ) )   ERROR STOP 36
 
-  IF ( KIND(I84)  .NE. 8   )         STOP 37
-  IF ( ANY( I84   .NE. -1  ) )       STOP 38
+  IF ( KIND(I84)  .NE. 8   )         ERROR STOP 37
+  IF ( ANY( I84   .NE. -1  ) )       ERROR STOP 38
 
-  IF ( KIND(I85)  .NE. 8  )          STOP 39
-  IF ( ANY( I85   .NE. 0  ) )        STOP 40
+  IF ( KIND(I85)  .NE. 8  )          ERROR STOP 39
+  IF ( ANY( I85   .NE. 0  ) )        ERROR STOP 40
 
-  IF ( KIND(I86)  .NE. 8      )      STOP 41
-  IF ( ANY( I86   .NE. I8PMAX  ) )   STOP 42
+  IF ( KIND(I86)  .NE. 8      )      ERROR STOP 41
+  IF ( ANY( I86   .NE. I8PMAX  ) )   ERROR STOP 42
 
-  IF ( KIND(I87)  .NE. 8      )      STOP 43
-! IF ( ANY( I87   .NE. I8PMAX  ) )   STOP 44
+  IF ( KIND(I87)  .NE. 8      )      ERROR STOP 43
+! IF ( ANY( I87   .NE. I8PMAX  ) )   ERROR STOP 44
 
-  IF ( KIND(I88)  .NE. 8      )      STOP 45
-! IF ( ANY( I88   .NE. I8PMAX  ) )   STOP 46
+  IF ( KIND(I88)  .NE. 8      )      ERROR STOP 45
+! IF ( ANY( I88   .NE. I8PMAX  ) )   ERROR STOP 46
 
   END
 

@@ -84,50 +84,50 @@
   TYPE(DT(2_8,    LEN=:)), ALLOCATABLE   :: T8(:)
 
 
-  IF ( T1%KIND            .NE.   2          ) STOP 13
-  IF ( T1%LEN             .NE.   1          ) STOP 14
-  IF ( ANY( T1%C          .NE.   CHAR(2)  ) ) STOP 16
+  IF ( T1%KIND            .NE.   2          ) ERROR STOP 13
+  IF ( T1%LEN             .NE.   1          ) ERROR STOP 14
+  IF ( ANY( T1%C          .NE.   CHAR(2)  ) ) ERROR STOP 16
 
-  IF ( T2%KIND            .NE.   8          ) STOP 23
-  IF ( T2%LEN             .NE.   1          ) STOP 24
-  IF ( ANY( T2%C          .NE.   CHAR(8)  ) ) STOP 26
+  IF ( T2%KIND            .NE.   8          ) ERROR STOP 23
+  IF ( T2%LEN             .NE.   1          ) ERROR STOP 24
+  IF ( ANY( T2%C          .NE.   CHAR(8)  ) ) ERROR STOP 26
 
   ALLOCATE( T3(10), SOURCE=DT(KIND=8_1, LEN=1_8)(I=-1, C=CHAR(1)))
   ALLOCATE( T4(10), SOURCE=DT(KIND=4_1, LEN=1)(I=11, C=CHAR(11)))
 
-  IF ( T3%KIND            .NE.   8          ) STOP 33
-  IF ( T3%LEN             .NE.   1          ) STOP 34
-  IF ( ANY( T3%I          .NE.   -1       ) ) STOP 35
-  IF ( ANY( T3%C          .NE.   CHAR(1)  ) ) STOP 36
+  IF ( T3%KIND            .NE.   8          ) ERROR STOP 33
+  IF ( T3%LEN             .NE.   1          ) ERROR STOP 34
+  IF ( ANY( T3%I          .NE.   -1       ) ) ERROR STOP 35
+  IF ( ANY( T3%C          .NE.   CHAR(1)  ) ) ERROR STOP 36
 
-  IF ( T4%KIND            .NE.   4          ) STOP 43
-  IF ( T4%LEN             .NE.   1          ) STOP 44
-  IF ( ANY( T4%I          .NE.   11       ) ) STOP 45
-  IF ( ANY( T4%C          .NE.   CHAR(11) ) ) STOP 46
+  IF ( T4%KIND            .NE.   4          ) ERROR STOP 43
+  IF ( T4%LEN             .NE.   1          ) ERROR STOP 44
+  IF ( ANY( T4%I          .NE.   11       ) ) ERROR STOP 45
+  IF ( ANY( T4%C          .NE.   CHAR(11) ) ) ERROR STOP 46
 
 
-  IF ( T5%KIND            .NE.   2          ) STOP 13
-  IF ( T5%LEN             .NE.   1          ) STOP 14
-  IF ( ANY( T5%I          .NE.   2        ) ) STOP 15
-  IF ( ANY( T5%C          .NE.   CHAR(2)  ) ) STOP 16
+  IF ( T5%KIND            .NE.   2          ) ERROR STOP 13
+  IF ( T5%LEN             .NE.   1          ) ERROR STOP 14
+  IF ( ANY( T5%I          .NE.   2        ) ) ERROR STOP 15
+  IF ( ANY( T5%C          .NE.   CHAR(2)  ) ) ERROR STOP 16
 
-  IF ( T6%KIND            .NE.   2          ) STOP 23
-  IF ( T6%LEN             .NE.   1          ) STOP 24
-  IF ( ANY( T6%I          .NE.   2        ) ) STOP 25
-  IF ( ANY( T6%C          .NE.   CHAR(2)  ) ) STOP 26
+  IF ( T6%KIND            .NE.   2          ) ERROR STOP 23
+  IF ( T6%LEN             .NE.   1          ) ERROR STOP 24
+  IF ( ANY( T6%I          .NE.   2        ) ) ERROR STOP 25
+  IF ( ANY( T6%C          .NE.   CHAR(2)  ) ) ERROR STOP 26
 
   ALLOCATE( T7(10), SOURCE=DT(KIND=2_1)(I=-1, C=CHAR(1)))
   ALLOCATE( T8(10), SOURCE=DT(KIND=2_1, LEN=1)(I=11, C=CHAR(11)))
 
-  IF ( T7%KIND            .NE.   2          ) STOP 33
-  IF ( T7%LEN             .NE.   1          ) STOP 34
-  IF ( ANY( T7%I          .NE.   -1       ) ) STOP 35
-  IF ( ANY( T7%C          .NE.   CHAR(1)  ) ) STOP 36
+  IF ( T7%KIND            .NE.   2          ) ERROR STOP 33
+  IF ( T7%LEN             .NE.   1          ) ERROR STOP 34
+  IF ( ANY( T7%I          .NE.   -1       ) ) ERROR STOP 35
+  IF ( ANY( T7%C          .NE.   CHAR(1)  ) ) ERROR STOP 36
 
-  IF ( T8%KIND            .NE.   2          ) STOP 43
-  IF ( T8%LEN             .NE.   1          ) STOP 44
-  IF ( ANY( T8%I          .NE.   11       ) ) STOP 45
-  IF ( ANY( T8%C          .NE.   CHAR(11) ) ) STOP 46
+  IF ( T8%KIND            .NE.   2          ) ERROR STOP 43
+  IF ( T8%LEN             .NE.   1          ) ERROR STOP 44
+  IF ( ANY( T8%I          .NE.   11       ) ) ERROR STOP 45
+  IF ( ANY( T8%C          .NE.   CHAR(11) ) ) ERROR STOP 46
 
 
   END

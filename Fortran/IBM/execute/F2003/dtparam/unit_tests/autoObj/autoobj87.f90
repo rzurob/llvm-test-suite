@@ -56,20 +56,20 @@
 
     print *, x%ss(1)%rr%ii
     print *, x%ss(1)%rr(1)%jj
-    IF (x%l              .NE. 4)   STOP 11
-    IF (UBOUND(x%ss, 1)  .NE. 4)   STOP 12
-    IF (SIZE(x%ss)       .NE. 4)   STOP 13
+    IF (x%l              .NE. 4)   ERROR STOP 11
+    IF (UBOUND(x%ss, 1)  .NE. 4)   ERROR STOP 12
+    IF (SIZE(x%ss)       .NE. 4)   ERROR STOP 13
 
-    IF (x%ss%l                 .NE. 4)   STOP 21
-    IF (UBOUND(x%ss(1)%rr, 1)  .NE. 4)   STOP 22
-    IF (SIZE(x%ss(1)%rr)       .NE. 4)   STOP 23
+    IF (x%ss%l                 .NE. 4)   ERROR STOP 21
+    IF (UBOUND(x%ss(1)%rr, 1)  .NE. 4)   ERROR STOP 22
+    IF (SIZE(x%ss(1)%rr)       .NE. 4)   ERROR STOP 23
 
-    IF (x%ss(1)%rr%l                 .NE. 4)   STOP 31
-    IF (UBOUND(x%ss(1)%rr(1)%jj, 1)  .NE. 4)   STOP 32
-    IF (SIZE(x%ss(1)%rr(1)%jj)       .NE. 4)   STOP 33
+    IF (x%ss(1)%rr%l                 .NE. 4)   ERROR STOP 31
+    IF (UBOUND(x%ss(1)%rr(1)%jj, 1)  .NE. 4)   ERROR STOP 32
+    IF (SIZE(x%ss(1)%rr(1)%jj)       .NE. 4)   ERROR STOP 33
 
-    IF ( ANY(x%ss(1)%rr%ii       .NE. 1))   STOP 41
-    IF ( ANY(x%ss(1)%rr(1)%jj    .NE. -1))  STOP 42
+    IF ( ANY(x%ss(1)%rr%ii       .NE. 1))   ERROR STOP 41
+    IF ( ANY(x%ss(1)%rr(1)%jj    .NE. -1))  ERROR STOP 42
 
   END SUBROUTINE
 

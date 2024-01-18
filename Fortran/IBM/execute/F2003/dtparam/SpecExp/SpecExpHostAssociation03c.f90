@@ -91,104 +91,104 @@ PROGRAM SpeExpHostAssociation03b
         INTEGER :: N, M
         TYPE(Base(n1%b1%k1,n1%b1%l1)) :: Obj
 
-        IF ( Obj%k1 .NE. N ) STOP 10
-        IF ( Obj%l1 .NE. M ) STOP 11
-        IF ( SIZE(Obj%A1)  .NE. M ) STOP 12
-        IF ( LEN(Obj%name) .NE. M ) STOP 13
+        IF ( Obj%k1 .NE. N ) ERROR STOP 10
+        IF ( Obj%l1 .NE. M ) ERROR STOP 11
+        IF ( SIZE(Obj%A1)  .NE. M ) ERROR STOP 12
+        IF ( LEN(Obj%name) .NE. M ) ERROR STOP 13
       END SUBROUTINE Sub11
 
       SUBROUTINE Sub21(N, M)
         INTEGER :: N, M
         TYPE(Base(n1%c1%k1,n1%c1%l1)) :: Obj
 
-        IF ( Obj%k1 .NE. N ) STOP 14
-        IF ( Obj%l1 .NE. M ) STOP 15
-        IF ( SIZE(Obj%A1)  .NE. M ) STOP 16
-        IF ( LEN(Obj%name) .NE. M ) STOP 17
+        IF ( Obj%k1 .NE. N ) ERROR STOP 14
+        IF ( Obj%l1 .NE. M ) ERROR STOP 15
+        IF ( SIZE(Obj%A1)  .NE. M ) ERROR STOP 16
+        IF ( LEN(Obj%name) .NE. M ) ERROR STOP 17
       END SUBROUTINE Sub21
 
       SUBROUTINE Sub12(N, M, P)
         INTEGER :: N, M, P
         TYPE(Child(KIND(n1%b1%I1),n1%b1%I1,2*KIND(n1%b1%I1),2*SIZE(n1%b1%A1))) :: Obj
 
-        IF ( Obj%k1 .NE.   N ) STOP 18
-        IF ( Obj%l1 .NE.   M ) STOP 19
-        IF ( Obj%k2 .NE. 2*N ) STOP 20
-        IF ( Obj%l2 .NE.   P ) STOP 21
-        IF ( SIZE(Obj%A1)  .NE. M ) STOP 22
-        IF ( LEN(Obj%name) .NE. M ) STOP 23
+        IF ( Obj%k1 .NE.   N ) ERROR STOP 18
+        IF ( Obj%l1 .NE.   M ) ERROR STOP 19
+        IF ( Obj%k2 .NE. 2*N ) ERROR STOP 20
+        IF ( Obj%l2 .NE.   P ) ERROR STOP 21
+        IF ( SIZE(Obj%A1)  .NE. M ) ERROR STOP 22
+        IF ( LEN(Obj%name) .NE. M ) ERROR STOP 23
 
         ALLOCATE( Base(Obj%k2,Obj%l2) :: Obj%b1 )
-        IF ( Obj%b1%k1 .NE. 2*N ) STOP 24
-        IF ( Obj%b1%l1 .NE.   P ) STOP 25
-        IF ( SIZE(Obj%b1%A1)  .NE. P ) STOP 26
-        IF ( LEN(Obj%b1%name) .NE. P ) STOP 27
+        IF ( Obj%b1%k1 .NE. 2*N ) ERROR STOP 24
+        IF ( Obj%b1%l1 .NE.   P ) ERROR STOP 25
+        IF ( SIZE(Obj%b1%A1)  .NE. P ) ERROR STOP 26
+        IF ( LEN(Obj%b1%name) .NE. P ) ERROR STOP 27
       END SUBROUTINE Sub12
 
       SUBROUTINE Sub22(N, M, P)
         INTEGER :: N, M, P
         TYPE(Child(KIND(n1%c1%I1),n1%c1%I1,KIND(n1%c1%I1),2*LEN(n1%c1%name))) :: Obj
 
-        IF ( Obj%k1 .NE. N ) STOP 28
-        IF ( Obj%l1 .NE. M ) STOP 29
-        IF ( Obj%k2 .NE. N ) STOP 30
-        IF ( Obj%l2 .NE. P ) STOP 31
-        IF ( SIZE(Obj%A1)  .NE. M ) STOP 32
-        IF ( LEN(Obj%name) .NE. M ) STOP 33
+        IF ( Obj%k1 .NE. N ) ERROR STOP 28
+        IF ( Obj%l1 .NE. M ) ERROR STOP 29
+        IF ( Obj%k2 .NE. N ) ERROR STOP 30
+        IF ( Obj%l2 .NE. P ) ERROR STOP 31
+        IF ( SIZE(Obj%A1)  .NE. M ) ERROR STOP 32
+        IF ( LEN(Obj%name) .NE. M ) ERROR STOP 33
 
         ALLOCATE( Base(Obj%k2,Obj%l2) :: Obj%b1 )
-        IF ( Obj%b1%k1 .NE. N ) STOP 34
-        IF ( Obj%b1%l1 .NE. P ) STOP 35
-        IF ( SIZE(Obj%b1%A1)  .NE. P ) STOP 36
-        IF ( LEN(Obj%b1%name) .NE. P ) STOP 37
+        IF ( Obj%b1%k1 .NE. N ) ERROR STOP 34
+        IF ( Obj%b1%l1 .NE. P ) ERROR STOP 35
+        IF ( SIZE(Obj%b1%A1)  .NE. P ) ERROR STOP 36
+        IF ( LEN(Obj%b1%name) .NE. P ) ERROR STOP 37
       END SUBROUTINE Sub22
 
       SUBROUTINE Sub13(N, M, P)
         INTEGER :: N, M, P
         TYPE(Child(KIND(n1%b1%A1(1)),n1%b1%A1(1),KIND(n1%b1%A1(n1%b1%l1)),n1%b1%A1(n1%b1%l1))) :: Obj
 
-        IF ( Obj%k1 .NE. N ) STOP 38
-        IF ( Obj%l1 .NE. M ) STOP 39
-        IF ( Obj%k2 .NE. N ) STOP 40
-        IF ( Obj%l2 .NE. P ) STOP 41
-        IF ( SIZE(Obj%A1)  .NE. M ) STOP 42
-        IF ( LEN(Obj%name) .NE. M ) STOP 43
+        IF ( Obj%k1 .NE. N ) ERROR STOP 38
+        IF ( Obj%l1 .NE. M ) ERROR STOP 39
+        IF ( Obj%k2 .NE. N ) ERROR STOP 40
+        IF ( Obj%l2 .NE. P ) ERROR STOP 41
+        IF ( SIZE(Obj%A1)  .NE. M ) ERROR STOP 42
+        IF ( LEN(Obj%name) .NE. M ) ERROR STOP 43
 
         ALLOCATE( Base(Obj%k2,Obj%l2) :: Obj%b1 )
-        IF ( Obj%b1%k1 .NE. N ) STOP 44
-        IF ( Obj%b1%l1 .NE. P ) STOP 45
-        IF ( SIZE(Obj%b1%A1)  .NE. P ) STOP 46
-        IF ( LEN(Obj%b1%name) .NE. P ) STOP 47
+        IF ( Obj%b1%k1 .NE. N ) ERROR STOP 44
+        IF ( Obj%b1%l1 .NE. P ) ERROR STOP 45
+        IF ( SIZE(Obj%b1%A1)  .NE. P ) ERROR STOP 46
+        IF ( LEN(Obj%b1%name) .NE. P ) ERROR STOP 47
       END SUBROUTINE Sub13
 
       SUBROUTINE Sub23(N, M, P)
         INTEGER :: N, M, P
         TYPE(Child(KIND(n1%c1%A1(1)),n1%c1%A1(1),KIND(n1%c1%A1(n1%c1%l1)),n1%c1%A1(n1%c1%l1))) :: Obj
 
-        IF ( Obj%k1 .NE. N ) STOP 48
-        IF ( Obj%l1 .NE. M ) STOP 49
-        IF ( Obj%k2 .NE. N ) STOP 50
-        IF ( Obj%l2 .NE. P ) STOP 51
-        IF ( SIZE(Obj%A1)  .NE. M ) STOP 52
-        IF ( LEN(Obj%name) .NE. M ) STOP 53
+        IF ( Obj%k1 .NE. N ) ERROR STOP 48
+        IF ( Obj%l1 .NE. M ) ERROR STOP 49
+        IF ( Obj%k2 .NE. N ) ERROR STOP 50
+        IF ( Obj%l2 .NE. P ) ERROR STOP 51
+        IF ( SIZE(Obj%A1)  .NE. M ) ERROR STOP 52
+        IF ( LEN(Obj%name) .NE. M ) ERROR STOP 53
 
         ALLOCATE( Base(Obj%k2,Obj%l2) :: Obj%b1 )
-        IF ( Obj%b1%k1 .NE. N ) STOP 54
-        IF ( Obj%b1%l1 .NE. P ) STOP 55
-        IF ( SIZE(Obj%b1%A1)  .NE. P ) STOP 56
-        IF ( LEN(Obj%b1%name) .NE. P ) STOP 57
+        IF ( Obj%b1%k1 .NE. N ) ERROR STOP 54
+        IF ( Obj%b1%l1 .NE. P ) ERROR STOP 55
+        IF ( SIZE(Obj%b1%A1)  .NE. P ) ERROR STOP 56
+        IF ( LEN(Obj%b1%name) .NE. P ) ERROR STOP 57
       END SUBROUTINE Sub23
 
       SUBROUTINE Sub14(N, M, P)
         INTEGER :: N, M, P, I
         TYPE(Base(KIND(n1%b1%I1),LEN(n1%b1%name))) :: Obj(n1%b1%I1)
 
-        IF ( SIZE(Obj) .NE. P ) STOP 58
+        IF ( SIZE(Obj) .NE. P ) ERROR STOP 58
         DO I = 1, n1%b1%I1
-           IF ( Obj(I)%k1 .NE. N ) STOP 59
-           IF ( Obj(I)%l1 .NE. M ) STOP 60
-           IF ( SIZE(Obj(I)%A1)  .NE. M ) STOP 61
-           IF ( LEN(Obj(I)%name) .NE. M ) STOP 62
+           IF ( Obj(I)%k1 .NE. N ) ERROR STOP 59
+           IF ( Obj(I)%l1 .NE. M ) ERROR STOP 60
+           IF ( SIZE(Obj(I)%A1)  .NE. M ) ERROR STOP 61
+           IF ( LEN(Obj(I)%name) .NE. M ) ERROR STOP 62
         END DO
       END SUBROUTINE Sub14
 
@@ -196,12 +196,12 @@ PROGRAM SpeExpHostAssociation03b
         INTEGER :: N, M, P, I
         TYPE(Base(KIND(n1%c1%I1),LEN(n1%c1%name))) :: Obj(n1%c1%I1)
 
-        IF ( SIZE(Obj) .NE. P ) STOP 63
+        IF ( SIZE(Obj) .NE. P ) ERROR STOP 63
         DO I = 1, n1%c1%I1
-           IF ( Obj(I)%k1 .NE. N ) STOP 64
-           IF ( Obj(I)%l1 .NE. M ) STOP 65
-           IF ( SIZE(Obj(I)%A1)  .NE. M ) STOP 66
-           IF ( LEN(Obj(I)%name) .NE. M ) STOP 67
+           IF ( Obj(I)%k1 .NE. N ) ERROR STOP 64
+           IF ( Obj(I)%l1 .NE. M ) ERROR STOP 65
+           IF ( SIZE(Obj(I)%A1)  .NE. M ) ERROR STOP 66
+           IF ( LEN(Obj(I)%name) .NE. M ) ERROR STOP 67
         END DO
       END SUBROUTINE Sub24
 

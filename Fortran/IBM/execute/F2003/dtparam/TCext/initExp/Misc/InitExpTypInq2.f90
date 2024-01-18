@@ -85,26 +85,26 @@
   TYPE(DTT(20,1,2,4,8,16)), PARAMETER ::  T=DTT(20,1,2,4,8,16)()
 
 
-  IF (SIZE(T%I1)    .NE. 1  ) STOP 11
-  IF (SIZE(T%I2)    .NE. 2  ) STOP 12
-  IF (SIZE(T%I4)    .NE. 4  ) STOP 14
-  IF (SIZE(T%I8)    .NE. 8  ) STOP 18
+  IF (SIZE(T%I1)    .NE. 1  ) ERROR STOP 11
+  IF (SIZE(T%I2)    .NE. 2  ) ERROR STOP 12
+  IF (SIZE(T%I4)    .NE. 4  ) ERROR STOP 14
+  IF (SIZE(T%I8)    .NE. 8  ) ERROR STOP 18
 
-  IF (SIZE(T%L1)    .NE. 1  ) STOP 21
-  IF (SIZE(T%L2)    .NE. 2  ) STOP 22
-  IF (SIZE(T%L4)    .NE. 4  ) STOP 24
-  IF (SIZE(T%L8)    .NE. 8  ) STOP 28
+  IF (SIZE(T%L1)    .NE. 1  ) ERROR STOP 21
+  IF (SIZE(T%L2)    .NE. 2  ) ERROR STOP 22
+  IF (SIZE(T%L4)    .NE. 4  ) ERROR STOP 24
+  IF (SIZE(T%L8)    .NE. 8  ) ERROR STOP 28
 
-  IF (SIZE(T%R4)    .NE. 4  ) STOP 31
-  IF (SIZE(T%R8)    .NE. 8  ) STOP 32
-  IF (SIZE(T%R6)    .NE. 16 ) STOP 33
+  IF (SIZE(T%R4)    .NE. 4  ) ERROR STOP 31
+  IF (SIZE(T%R8)    .NE. 8  ) ERROR STOP 32
+  IF (SIZE(T%R6)    .NE. 16 ) ERROR STOP 33
 
-  IF (SIZE(T%Z4)    .NE. 4  ) STOP 41
-  IF (SIZE(T%Z8)    .NE. 8  ) STOP 42
-  IF (SIZE(T%Z6)    .NE. 16 ) STOP 43
+  IF (SIZE(T%Z4)    .NE. 4  ) ERROR STOP 41
+  IF (SIZE(T%Z8)    .NE. 8  ) ERROR STOP 42
+  IF (SIZE(T%Z6)    .NE. 16 ) ERROR STOP 43
 
-  IF (SIZE(T%CC)    .NE. 1  ) STOP 51
-  IF (LEN(T%CC)     .NE. 128) STOP 52
+  IF (SIZE(T%CC)    .NE. 1  ) ERROR STOP 51
+  IF (LEN(T%CC)     .NE. 128) ERROR STOP 52
 
 
   END

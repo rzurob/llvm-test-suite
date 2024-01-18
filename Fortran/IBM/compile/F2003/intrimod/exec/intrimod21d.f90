@@ -47,7 +47,7 @@
          call xlf_fp_util(ieee_arithmetic)
          call ieee_arithmetic(IEEE_NEAREST, flags)
 
-         if ( .not. ieee_exceptions(IEEE_NEAREST, flags) ) stop 30
+         if ( .not. ieee_exceptions(IEEE_NEAREST, flags) ) error stop 30
          contains
 !... ERROR: An internal function with the same name as ieee intrinsic module
 !... ieee_exceptions is use ieee_arithmetic therefore it can not be used

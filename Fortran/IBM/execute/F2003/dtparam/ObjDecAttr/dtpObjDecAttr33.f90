@@ -104,22 +104,22 @@
 
   res = f_pthread_attr_init(Attr)
 
-  if ((res == einval) .or. (res == enomem)) stop 100
+  if ((res == einval) .or. (res == enomem)) error stop 100
 
-  IF ( ALLOCATED(T) ) STOP 10
+  IF ( ALLOCATED(T) ) ERROR STOP 10
 
   i = 0
   res = f_pthread_create(Thread1, Attr, FLAG_DEFAULT, MyThread1, I)
 
-  if ((res == einval) .or. (res == enomem) .or. (res == eagain)) stop 101
+  if ((res == einval) .or. (res == enomem) .or. (res == eagain)) error stop 101
 
   DO WHILE ( Mutex .EQ. 0 ) !<-- NOTE from JX: this is a busy spin loop
     j = j+1
   END DO
 
   ! Verification
-  IF ( .NOT. ALLOCATED(T) ) STOP 11
-  IF ( SIZE( T )  .NE. N  ) STOP 12
+  IF ( .NOT. ALLOCATED(T) ) ERROR STOP 11
+  IF ( SIZE( T )  .NE. N  ) ERROR STOP 12
 
   SELECT TYPE (T)
   TYPE IS (DT0(1,*))
@@ -133,34 +133,34 @@
 
   res = f_pthread_create(Thread2, Attr, FLAG_DEFAULT, MyThread2, I)
 
-  if ((res == einval) .or. (res == enomem) .or. (res == eagain)) stop 102
+  if ((res == einval) .or. (res == enomem) .or. (res == eagain)) error stop 102
 
   DO WHILE ( Mutex .EQ. 0 )
     j = j+1
   END DO
 
-  IF ( .NOT. ALLOCATED(T)   ) STOP 15
-  IF ( LBOUND( T, 1 )  .NE. N  ) STOP 16
-  IF ( SIZE  ( T )  .NE. N  ) STOP 17
+  IF ( .NOT. ALLOCATED(T)   ) ERROR STOP 15
+  IF ( LBOUND( T, 1 )  .NE. N  ) ERROR STOP 16
+  IF ( SIZE  ( T )  .NE. N  ) ERROR STOP 17
 
   SELECT TYPE (T)
   CLASS IS (DT2(1,*,4,*,8,*))
     DO I=N, 2*N-1
-      IF ( T(I)%L0                .NE.   3        )  STOP 51
-      IF ( T(I)%L1                .NE.   5        )  STOP 52
-      IF ( T(I)%L2                .NE.   7        )  STOP 53
-      IF ( T(I)%C1                .NE.   "XYZ"    )  STOP 54
-      IF ( T(I)%C2                .NE.   "ZYX"    )  STOP 55
-      IF ( T(I)%I                 .NE.   1234     )  STOP 56
-      IF ( T(I)%R                 .NE.   4321.    )  STOP 57
-      IF ( T(I)%L                 .NEQV. .TRUE.   )  STOP 58
-      IF ( T(I)%Z                 .NE.   (1.,-1.) )  STOP 59
-      IF ( T(I)%T0%K0             .NE.   8        )  STOP 60
-      IF ( T(I)%T0%L0             .NE.   7        )  STOP 61
-      IF ( SIZE(T(I)%T0)          .NE.   7        )  STOP 61
-      IF ( ASSOCIATED(T(I)%Ptr )  .EQV.  .TRUE.   )  STOP 62
-      IF ( T(I)%Ptr%K2            .NE.   8        )  STOP 63
-      IF ( T(I)%Ptr%L2            .NE.   7        )  STOP 64
+      IF ( T(I)%L0                .NE.   3        )  ERROR STOP 51
+      IF ( T(I)%L1                .NE.   5        )  ERROR STOP 52
+      IF ( T(I)%L2                .NE.   7        )  ERROR STOP 53
+      IF ( T(I)%C1                .NE.   "XYZ"    )  ERROR STOP 54
+      IF ( T(I)%C2                .NE.   "ZYX"    )  ERROR STOP 55
+      IF ( T(I)%I                 .NE.   1234     )  ERROR STOP 56
+      IF ( T(I)%R                 .NE.   4321.    )  ERROR STOP 57
+      IF ( T(I)%L                 .NEQV. .TRUE.   )  ERROR STOP 58
+      IF ( T(I)%Z                 .NE.   (1.,-1.) )  ERROR STOP 59
+      IF ( T(I)%T0%K0             .NE.   8        )  ERROR STOP 60
+      IF ( T(I)%T0%L0             .NE.   7        )  ERROR STOP 61
+      IF ( SIZE(T(I)%T0)          .NE.   7        )  ERROR STOP 61
+      IF ( ASSOCIATED(T(I)%Ptr )  .EQV.  .TRUE.   )  ERROR STOP 62
+      IF ( T(I)%Ptr%K2            .NE.   8        )  ERROR STOP 63
+      IF ( T(I)%Ptr%L2            .NE.   7        )  ERROR STOP 64
     END DO
   CLASS DEFAULT
     STOP 99

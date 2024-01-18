@@ -172,45 +172,45 @@
   & A127   => FUN(LArr,127)    )
 
     IF (( A1 .OR. A2 .OR. A3 .OR. A4 .OR. A5 .OR. &
-    &     A6 .OR. A7 .OR. A8 .OR. A9 .OR. A0 ) .EQV. .TRUE. ) STOP 10
+    &     A6 .OR. A7 .OR. A8 .OR. A9 .OR. A0 ) .EQV. .TRUE. ) ERROR STOP 10
 
     IF (( A10 .OR. A11 .OR. A12 .OR. A13 .OR. A14 .OR. &
-    &     A15 .OR. A16 .OR. A17 .OR. A18 .OR. A19 ) .EQV. .TRUE. ) STOP 11
+    &     A15 .OR. A16 .OR. A17 .OR. A18 .OR. A19 ) .EQV. .TRUE. ) ERROR STOP 11
 
     IF (( A20 .OR. A21 .OR. A22 .OR. A23 .OR. A24 .OR. &
-    &     A25 .OR. A26 .OR. A27 .OR. A28 .OR. A29 ) .EQV. .TRUE. ) STOP 12
+    &     A25 .OR. A26 .OR. A27 .OR. A28 .OR. A29 ) .EQV. .TRUE. ) ERROR STOP 12
 
     IF (( A30 .OR. A31 .OR. A32 .OR. A33 .OR. A34 .OR. &
-    &     A35 .OR. A36 .OR. A37 .OR. A38 .OR. A39 ) .EQV. .TRUE. ) STOP 13
+    &     A35 .OR. A36 .OR. A37 .OR. A38 .OR. A39 ) .EQV. .TRUE. ) ERROR STOP 13
 
     IF (( A40 .OR. A41 .OR. A42 .OR. A43 .OR. A44 .OR. &
-    &     A45 .OR. A46 .OR. A47 .OR. A48 .OR. A49 ) .EQV. .TRUE. ) STOP 14
+    &     A45 .OR. A46 .OR. A47 .OR. A48 .OR. A49 ) .EQV. .TRUE. ) ERROR STOP 14
 
     IF (( A50 .OR. A51 .OR. A52 .OR. A53 .OR. A54 .OR. &
-    &     A55 .OR. A56 .OR. A57 .OR. A58 .OR. A59 ) .EQV. .TRUE. ) STOP 15
+    &     A55 .OR. A56 .OR. A57 .OR. A58 .OR. A59 ) .EQV. .TRUE. ) ERROR STOP 15
 
     IF (( A60 .OR. A61 .OR. A62 .OR. A63 .OR. A64 .OR. &
-    &     A65 .OR. A66 .OR. A67 .OR. A68 .OR. A69 ) .EQV. .TRUE. ) STOP 16
+    &     A65 .OR. A66 .OR. A67 .OR. A68 .OR. A69 ) .EQV. .TRUE. ) ERROR STOP 16
 
     IF (( A70 .OR. A71 .OR. A72 .OR. A73 .OR. A74 .OR. &
-    &     A75 .OR. A76 .OR. A77 .OR. A78 .OR. A79 ) .EQV. .TRUE. ) STOP 17
+    &     A75 .OR. A76 .OR. A77 .OR. A78 .OR. A79 ) .EQV. .TRUE. ) ERROR STOP 17
 
     IF (( A80 .OR. A81 .OR. A82 .OR. A83 .OR. A84 .OR. &
-    &     A85 .OR. A81 .OR. A87 .OR. A88 .OR. A89 ) .EQV. .TRUE. ) STOP 18
+    &     A85 .OR. A81 .OR. A87 .OR. A88 .OR. A89 ) .EQV. .TRUE. ) ERROR STOP 18
 
     IF (( A90 .OR. A91 .OR. A92 .OR. A93 .OR. A94 .OR. &
-    &     A95 .OR. A96 .OR. A97 .OR. A98 .OR. A99 ) .EQV. .TRUE. ) STOP 19
+    &     A95 .OR. A96 .OR. A97 .OR. A98 .OR. A99 ) .EQV. .TRUE. ) ERROR STOP 19
 
     IF (( A100 .OR. A101 .OR. A102 .OR. A103 .OR. A104 .OR. &
-    &     A105 .OR. A106 .OR. A107 .OR. A108 .OR. A109 ) .EQV. .TRUE. ) STOP 20
+    &     A105 .OR. A106 .OR. A107 .OR. A108 .OR. A109 ) .EQV. .TRUE. ) ERROR STOP 20
 
     IF (( A110 .OR. A111 .OR. A112 .OR. A113 .OR. A114 .OR. &
-    &     A115 .OR. A116 .OR. A117 .OR. A118 .OR. A119 ) .EQV. .TRUE. ) STOP 21
+    &     A115 .OR. A116 .OR. A117 .OR. A118 .OR. A119 ) .EQV. .TRUE. ) ERROR STOP 21
 
     IF (( A120 .OR. A121 .OR. A122 .OR. A123 .OR. A124 .OR. &
-    &     A125 .OR. A126 .OR. A127  )                    .EQV. .TRUE. ) STOP 22
+    &     A125 .OR. A126 .OR. A127  )                    .EQV. .TRUE. ) ERROR STOP 22
 
-    IF (ANY( LArr .NEQV. .TRUE. )) STOP  33
+    IF (ANY( LArr .NEQV. .TRUE. )) ERROR STOP  33
 
   END ASSOCIATE
 

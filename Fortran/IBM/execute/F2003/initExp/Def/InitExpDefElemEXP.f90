@@ -57,21 +57,21 @@
 
   TYPE(DT) :: T
 
-  IF ( KIND(T%TR4) .NE. 4 )    STOP 11
-  IF ( KIND(T%TR8) .NE. 8 )    STOP 12
-  IF ( KIND(T%TR6) .NE. 16 )   STOP 13
+  IF ( KIND(T%TR4) .NE. 4 )    ERROR STOP 11
+  IF ( KIND(T%TR8) .NE. 8 )    ERROR STOP 12
+  IF ( KIND(T%TR6) .NE. 16 )   ERROR STOP 13
 
-  IF ( KIND(T%TZ4) .NE. 4 )    STOP 21
-  IF ( KIND(T%TZ8) .NE. 8 )    STOP 22
-  IF ( KIND(T%TZ6) .NE. 16 )   STOP 23
+  IF ( KIND(T%TZ4) .NE. 4 )    ERROR STOP 21
+  IF ( KIND(T%TZ8) .NE. 8 )    ERROR STOP 22
+  IF ( KIND(T%TZ6) .NE. 16 )   ERROR STOP 23
 
-  IF ( ANY( ABS(T%TR4-R) .GE. 1.E-5 ) )  STOP 31
-  IF ( ANY( ABS(T%TR8-R) .GE. 1.E-5 ) )  STOP 32
-  IF ( ANY( ABS(T%TR6-R) .GE. 1.E-5 ) )  STOP 33
+  IF ( ANY( ABS(T%TR4-R) .GE. 1.E-5 ) )  ERROR STOP 31
+  IF ( ANY( ABS(T%TR8-R) .GE. 1.E-5 ) )  ERROR STOP 32
+  IF ( ANY( ABS(T%TR6-R) .GE. 1.E-5 ) )  ERROR STOP 33
 
-  IF ( ANY( ABS(T%TZ4-Z) .GE. 1.E-5 ) )  STOP 41
-  IF ( ANY( ABS(T%TZ8-Z) .GE. 1.E-5 ) )  STOP 42
-  IF ( ANY( ABS(T%TZ6-Z) .GE. 1.E-5 ) )  STOP 43
+  IF ( ANY( ABS(T%TZ4-Z) .GE. 1.E-5 ) )  ERROR STOP 41
+  IF ( ANY( ABS(T%TZ8-Z) .GE. 1.E-5 ) )  ERROR STOP 42
+  IF ( ANY( ABS(T%TZ6-Z) .GE. 1.E-5 ) )  ERROR STOP 43
 
 
   END

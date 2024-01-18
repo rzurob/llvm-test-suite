@@ -44,14 +44,14 @@ program main
 
        call sub( 5 )
 
-       if ( allocated(b1%ll) ) stop 11
-       if ( .not. allocated(c1%ul) ) stop 13
+       if ( allocated(b1%ll) ) error stop 11
+       if ( .not. allocated(c1%ul) ) error stop 13
 
        select type ( x => c1%ul)
            type is (logical(2))
-                if ( size(x) /= 2) stop 21
-                if ( x(1) .neqv. .true. ) stop 23
-                if ( x(2) .neqv. .false. ) stop 25
+                if ( size(x) /= 2) error stop 21
+                if ( x(1) .neqv. .true. ) error stop 23
+                if ( x(2) .neqv. .false. ) error stop 25
            class default
                 stop 32
         end select

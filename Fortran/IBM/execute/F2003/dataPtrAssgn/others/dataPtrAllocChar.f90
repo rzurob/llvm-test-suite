@@ -24,9 +24,9 @@ program main
 
         ch => ch(5:1:-1)
 
-	if ( .not. associated(ch)) stop 9
-	if ( lbound(ch,1) /= 1 ) stop 19
-	if ( ubound(ch,1) /= 5 ) stop 29
+	if ( .not. associated(ch)) error stop 9
+	if ( lbound(ch,1) /= 1 ) error stop 19
+	if ( ubound(ch,1) /= 5 ) error stop 29
 
         ch(3:5) = ch(1:3)
 

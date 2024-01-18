@@ -46,18 +46,18 @@
 
   ASSOCIATE( As => As )
 
-    IF ( As%ID      .NE. 1 ) STOP 30
-    IF ( As%GetID() .NE. 1 ) STOP 31
+    IF ( As%ID      .NE. 1 ) ERROR STOP 30
+    IF ( As%GetID() .NE. 1 ) ERROR STOP 31
 
     As%ID = 2
 
-    IF ( As%ID      .NE. 2 ) STOP 40
-    IF ( As%GetID() .NE. 2 ) STOP 41
+    IF ( As%ID      .NE. 2 ) ERROR STOP 40
+    IF ( As%GetID() .NE. 2 ) ERROR STOP 41
 
   END ASSOCIATE
 
-  IF ( As%ID      .NE. 2 ) STOP 50
-  IF ( As%GetID() .NE. 2 ) STOP 51
+  IF ( As%ID      .NE. 2 ) ERROR STOP 50
+  IF ( As%GetID() .NE. 2 ) ERROR STOP 51
 
   END
 

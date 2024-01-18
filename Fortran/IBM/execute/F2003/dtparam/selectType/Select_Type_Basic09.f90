@@ -51,7 +51,7 @@
       CLASS(ExtBasic(k1,len1)), POINTER :: Indv(:)
 
       ALLOCATE(ExtBasic(k1,len1)::Indv(4))
-      IF ( .NOT. ASSOCIATED(Indv)) STOP 10
+      IF ( .NOT. ASSOCIATED(Indv)) ERROR STOP 10
 
       CALL Sub1(Indv)
 

@@ -34,7 +34,7 @@
   INTEGER, PARAMETER :: YY(3)   = (/6,7,8/)
   INTEGER, PARAMETER :: AA(4)   = (/ (ZZ(1:i,1:i),i=1,1) , YY /)
 
-  IF ( ANY( AA .NE. [1,6,7,8] ) ) STOP 11
+  IF ( ANY( AA .NE. [1,6,7,8] ) ) ERROR STOP 11
 
   END
 

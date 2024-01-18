@@ -190,7 +190,7 @@ program acetint30a
   call check4(57, i4Arr)
   call check4(58, (/integer(4):: (2139062143_4, b'01111111011111110111111101111111', o'17737677577', z'7f7f7f7f', 2139062143_4, i=1,1)/))
 
-  if (error) stop 3
+  if (error) error stop 3
 
 contains
 

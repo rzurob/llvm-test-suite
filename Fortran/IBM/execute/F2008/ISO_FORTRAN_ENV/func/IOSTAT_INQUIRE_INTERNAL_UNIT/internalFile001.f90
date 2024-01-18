@@ -86,13 +86,13 @@ program internalFile001
    ! I/O operations
 
    write (internalFile(1),*, iostat=stat1, iomsg = msg1)    b1            !<- inside DTIO, it will flush internalfile
-   if (  stat1 /= iostat_inquire_internal_unit   )  stop 1
+   if (  stat1 /= iostat_inquire_internal_unit   )  error stop 1
 
    rewind 1
 
    read (internalFile(1), *, iostat=stat1, iomsg = msg1)    b2            !<- inside DTIO, it will flush internalfile
 
-   if (  stat1 /= iostat_inquire_internal_unit   )  stop 2
+   if (  stat1 /= iostat_inquire_internal_unit   )  error stop 2
 
    ! close the file appropriately
 
@@ -113,7 +113,7 @@ use m1
     read (unit, *, iostat=iostat, iomsg=iomsg ) dtv%c
      inquire(unit,iostat=iostat)
 
-    if ( iostat == 0 ) stop 4
+    if ( iostat == 0 ) error stop 4
 
     iomsg = 'dtio read'
 
@@ -132,7 +132,7 @@ use m1
     write (unit, *, iostat=iostat, iomsg=iomsg ) dtv%getC()
      inquire(unit,iostat=iostat)
 
-    if ( iostat == 0 ) stop 5
+    if ( iostat == 0 ) error stop 5
 
     iomsg = 'dtio write'
 

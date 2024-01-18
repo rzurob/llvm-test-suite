@@ -55,29 +55,29 @@
   DO I =1, N
   DO J =I, N
     Ptr => ExtFun21(Tar2(1,1), I, J, N)
-    IF (.NOT. ASSOCIATED(Ptr, Tar2))               STOP 10
+    IF (.NOT. ASSOCIATED(Ptr, Tar2))               ERROR STOP 10
 
     SELECT TYPE( Ptr )
     TYPE IS (INTEGER)
       Ptr = I*J
-      IF (SIZE(Ptr)  .NE. N*N )                    STOP 11
-      IF (ANY( LBOUND(Ptr) .NE. (/I, J /)))        STOP 12
-      IF (ANY( UBOUND(Ptr) .NE. (/I+N-1, J+N-1/))) STOP 13
-      IF (ANY( Tar2     .NE.  I*J ))               STOP 14
+      IF (SIZE(Ptr)  .NE. N*N )                    ERROR STOP 11
+      IF (ANY( LBOUND(Ptr) .NE. (/I, J /)))        ERROR STOP 12
+      IF (ANY( UBOUND(Ptr) .NE. (/I+N-1, J+N-1/))) ERROR STOP 13
+      IF (ANY( Tar2     .NE.  I*J ))               ERROR STOP 14
     CLASS DEFAULT
       STOP 15
     END SELECT
 
     Ptr => ExtFun11(Tar1(1), I, J, N)
-    IF (.NOT. ASSOCIATED(Ptr))                        STOP 20
+    IF (.NOT. ASSOCIATED(Ptr))                        ERROR STOP 20
 
     SELECT TYPE( Ptr )
     TYPE IS (INTEGER)
       Ptr = -I*J
-      IF (SIZE(Ptr)  .NE. (J-I+1)*(J-I+1))            STOP 21
-      IF (ANY( LBOUND(Ptr) .NE. (/I,  I/)))           STOP 22
-      IF (ANY( UBOUND(Ptr) .NE. (/J,  J/)))           STOP 23
-      IF (ANY( Tar1(1:(J-I+1)*(J-I+1)) .NE.  -I*J ))  STOP 24
+      IF (SIZE(Ptr)  .NE. (J-I+1)*(J-I+1))            ERROR STOP 21
+      IF (ANY( LBOUND(Ptr) .NE. (/I,  I/)))           ERROR STOP 22
+      IF (ANY( UBOUND(Ptr) .NE. (/J,  J/)))           ERROR STOP 23
+      IF (ANY( Tar1(1:(J-I+1)*(J-I+1)) .NE.  -I*J ))  ERROR STOP 24
     CLASS DEFAULT
       STOP 15
     END SELECT

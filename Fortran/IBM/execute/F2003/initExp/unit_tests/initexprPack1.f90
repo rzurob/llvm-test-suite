@@ -28,15 +28,15 @@ integer(8) :: a4(3)=pack(a0, mask=a0>50)
 integer(8) :: a4a(7)=pack(a0, mask=a0 .ne. 0, &
   & vector=(/-1_8,-2_8,-3_8,-4_8,-5_8,-6_8,-7_8/))
 
-if (.not. all(z .eq. pack(zarray, mask=zarray>100, vector=(/(-1_1,i=1,100)/)))) stop 1
+if (.not. all(z .eq. pack(zarray, mask=zarray>100, vector=(/(-1_1,i=1,100)/)))) error stop 1
 
-if (.not. all(y .eq. pack(yarr, mask=.true.))) stop 2
+if (.not. all(y .eq. pack(yarr, mask=.true.))) error stop 2
 
-if (.not. all(i4 .eq. pack(i0, mask=i0/=0))) stop 3
-if (.not. all(i4a .eq. pack(i0, mask=i0 .ne. 0, vector=(/-1,-2,-3,-4,-5,-6/)))) stop 4
+if (.not. all(i4 .eq. pack(i0, mask=i0/=0))) error stop 3
+if (.not. all(i4a .eq. pack(i0, mask=i0 .ne. 0, vector=(/-1,-2,-3,-4,-5,-6/)))) error stop 4
 
-if (.not. all(a4 .eq. pack(a0, mask=a0>50))) stop 5
+if (.not. all(a4 .eq. pack(a0, mask=a0>50))) error stop 5
 if (.not. all(a4a .eq. pack(a0, mask=a0 .ne. 0, &
-  & vector=(/-1_8,-2_8,-3_8,-4_8,-5_8,-6_8,-7_8/)))) stop 6
+  & vector=(/-1_8,-2_8,-3_8,-4_8,-5_8,-6_8,-7_8/)))) error stop 6
 
 end

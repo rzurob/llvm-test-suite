@@ -62,23 +62,23 @@
 
   ASSOCIATE ( As => Func( V ) )
 
-    IF ( As%GetID() .NE. -2) STOP 50
-    IF ( As%BaseId  .NE. -1) STOP 51
+    IF ( As%GetID() .NE. -2) ERROR STOP 50
+    IF ( As%BaseId  .NE. -1) ERROR STOP 51
 
     ASSOCIATE ( As1 => As%GetId() )
-       IF ( As1 .NE. -2) STOP 52
+       IF ( As1 .NE. -2) ERROR STOP 52
     END ASSOCIATE
 
-    IF ( .NOT. SAME_TYPE_AS(As, Child(4)()) )     STOP 53
-    IF ( .NOT. SAME_TYPE_AS(As%BaseComp, As) ) STOP 54
+    IF ( .NOT. SAME_TYPE_AS(As, Child(4)()) )     ERROR STOP 53
+    IF ( .NOT. SAME_TYPE_AS(As%BaseComp, As) ) ERROR STOP 54
 
-    IF ( As%BaseComp%BaseId  .NE. -1)  STOP 56
-    IF ( As%BaseComp%GetId() .NE. -2)  STOP 57
+    IF ( As%BaseComp%BaseId  .NE. -1)  ERROR STOP 56
+    IF ( As%BaseComp%GetId() .NE. -2)  ERROR STOP 57
 
     SELECT TYPE (As => As%BaseComp)
       TYPE IS (Child(4))
-        IF ( As%GetId() .NE. -2 ) STOP 58
-        IF ( As%ChildId .NE. -2 ) STOP 59
+        IF ( As%GetId() .NE. -2 ) ERROR STOP 58
+        IF ( As%ChildId .NE. -2 ) ERROR STOP 59
       CLASS DEFAULT
         STOP 77
     END SELECT

@@ -32,23 +32,23 @@
   ASSOCIATE ( As => "\"" )
   ASSOCIATE ( As => "\\" )
   ASSOCIATE ( As => "\x" )
-    IF ( As .NE. "\x" ) STOP 26
+    IF ( As .NE. "\x" ) ERROR STOP 26
   END ASSOCIATE
-    IF ( As .NE. "\\" ) STOP 25
+    IF ( As .NE. "\\" ) ERROR STOP 25
   END ASSOCIATE
-    IF ( As .NE. "\"" ) STOP 24
+    IF ( As .NE. "\"" ) ERROR STOP 24
   END ASSOCIATE
-    IF ( As .NE. "\'" ) STOP 23
+    IF ( As .NE. "\'" ) ERROR STOP 23
   END ASSOCIATE
-    IF ( As .NE. "\t" ) STOP 22
+    IF ( As .NE. "\t" ) ERROR STOP 22
   END ASSOCIATE
-    IF ( As .NE. "\n" ) STOP 21
+    IF ( As .NE. "\n" ) ERROR STOP 21
   END ASSOCIATE
-    IF ( As .NE. "\b" ) STOP 20
+    IF ( As .NE. "\b" ) ERROR STOP 20
   END ASSOCIATE
 
   ASSOCIATE ( As0 => "\x", As1 => "\n", As2 => "\"" )
-    IF ( As0 // As1 // As2 .NE. "\x" // "\n" // "\"" ) STOP 27
+    IF ( As0 // As1 // As2 .NE. "\x" // "\n" // "\"" ) ERROR STOP 27
   END ASSOCIATE
 
   END

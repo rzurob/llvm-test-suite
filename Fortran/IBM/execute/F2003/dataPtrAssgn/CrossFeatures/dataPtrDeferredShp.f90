@@ -48,32 +48,32 @@
 
   Ptr(L:, L:) => Arr(L:,L:,L)%DT
 
-  IF ( .NOT. ASSOCIATED(Ptr, Arr(L:,L:,L)))         STOP 11
-  IF (ANY( LBOUND(Ptr)         .NE. (/L, L /)))     STOP 12
-  IF (ANY( UBOUND(Ptr)         .NE. (/U, U /)))     STOP 13
-  IF (ANY( Ptr%ID              .NE. -1))            STOP 14
+  IF ( .NOT. ASSOCIATED(Ptr, Arr(L:,L:,L)))         ERROR STOP 11
+  IF (ANY( LBOUND(Ptr)         .NE. (/L, L /)))     ERROR STOP 12
+  IF (ANY( UBOUND(Ptr)         .NE. (/U, U /)))     ERROR STOP 13
+  IF (ANY( Ptr%ID              .NE. -1))            ERROR STOP 14
 
   Ptr(L:U, U:U) => Arr(L,L,:)%DT
-  IF ( .NOT. ASSOCIATED(Ptr))                       STOP 21
-  IF (ANY( LBOUND(Ptr)         .NE. (/L, U /)))     STOP 22
-  IF (ANY( UBOUND(Ptr)         .NE. (/U, U /)))     STOP 23
-  IF (ANY( Ptr%ID              .NE. -1))            STOP 24
+  IF ( .NOT. ASSOCIATED(Ptr))                       ERROR STOP 21
+  IF (ANY( LBOUND(Ptr)         .NE. (/L, U /)))     ERROR STOP 22
+  IF (ANY( UBOUND(Ptr)         .NE. (/U, U /)))     ERROR STOP 23
+  IF (ANY( Ptr%ID              .NE. -1))            ERROR STOP 24
 
   DEALLOCATE(Arr)
   ALLOCATE (Arr1(L:U,L:U,L:U), SOURCE=DT1(-1))
 
   Ptr(L:, L:) => Arr1(L:,L:,L)
 
-  IF ( .NOT. ASSOCIATED(Ptr, Arr1(L:,L:,L)))        STOP 31
-  IF (ANY( LBOUND(Ptr)         .NE. (/L, L /)))     STOP 32
-  IF (ANY( UBOUND(Ptr)         .NE. (/U, U /)))     STOP 33
-  IF (ANY( Ptr%ID              .NE. -1))            STOP 34
+  IF ( .NOT. ASSOCIATED(Ptr, Arr1(L:,L:,L)))        ERROR STOP 31
+  IF (ANY( LBOUND(Ptr)         .NE. (/L, L /)))     ERROR STOP 32
+  IF (ANY( UBOUND(Ptr)         .NE. (/U, U /)))     ERROR STOP 33
+  IF (ANY( Ptr%ID              .NE. -1))            ERROR STOP 34
 
   Ptr(L:U, U:U) => Arr1(L,L,:)
-  IF ( .NOT. ASSOCIATED(Ptr))                       STOP 41
-  IF (ANY( LBOUND(Ptr)         .NE. (/L, U /)))     STOP 42
-  IF (ANY( UBOUND(Ptr)         .NE. (/U, U /)))     STOP 43
-  IF (ANY( Ptr%ID              .NE. -1))            STOP 44
+  IF ( .NOT. ASSOCIATED(Ptr))                       ERROR STOP 41
+  IF (ANY( LBOUND(Ptr)         .NE. (/L, U /)))     ERROR STOP 42
+  IF (ANY( UBOUND(Ptr)         .NE. (/U, U /)))     ERROR STOP 43
+  IF (ANY( Ptr%ID              .NE. -1))            ERROR STOP 44
 
   DEALLOCATE(Arr1)
 

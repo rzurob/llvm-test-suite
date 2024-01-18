@@ -62,8 +62,8 @@ end module
 
       select type (d)
           type is (child(4))
-              if ( d%id /= 8 ) stop 21
-              if ( d%ch /= 'XYZ' ) stop 23
+              if ( d%id /= 8 ) error stop 21
+              if ( d%ch /= 'XYZ' ) error stop 23
           class default
               stop 25
       end select

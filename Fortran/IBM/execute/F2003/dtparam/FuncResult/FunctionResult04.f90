@@ -66,17 +66,17 @@ PROGRAM FunctionResult04
 
       b1 = func(Base(4,10) ( 'IBM', 2 ))
       print*, b1
-      IF ( b1%C0     .NE. 'IBM' ) STOP 10
-      IF ( ANY(b1%A0 .NE.    2) ) STOP 11
+      IF ( b1%C0     .NE. 'IBM' ) ERROR STOP 10
+      IF ( ANY(b1%A0 .NE.    2) ) ERROR STOP 11
 
       SELECT TYPE ( s => func(Child(4,5,4,5) ( 'XLF', 3 )) )
          TYPE IS (Child(4,*,4,*))
-            IF ( s%C0     .NE. 'XLF' ) STOP 12
-            IF ( ANY(s%A0 .NE.    3) ) STOP 13
+            IF ( s%C0     .NE. 'XLF' ) ERROR STOP 12
+            IF ( ANY(s%A0 .NE.    3) ) ERROR STOP 13
             c1 = s
             print*, c1
-            IF ( c1%C0     .NE. 'XLF' ) STOP 14
-            IF ( ANY(c1%A0 .NE.    3) ) STOP 15
+            IF ( c1%C0     .NE. 'XLF' ) ERROR STOP 14
+            IF ( ANY(c1%A0 .NE.    3) ) ERROR STOP 15
 
          CLASSDEFAULT
             STOP 11

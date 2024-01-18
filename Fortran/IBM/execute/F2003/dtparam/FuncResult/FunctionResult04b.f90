@@ -64,13 +64,13 @@ PROGRAM FunctionResult04b
       INTEGER :: I
 
       b1 = func(Base(4,10) ( 'IBM', (/ (I, I = 1, 10) /) ))
-      IF ( b1%C0     .NE.             'IBM' ) STOP 10
-      IF ( ANY(b1%A0 .NE. [(I, I = 1, 10)]) ) STOP 11
+      IF ( b1%C0     .NE.             'IBM' ) ERROR STOP 10
+      IF ( ANY(b1%A0 .NE. [(I, I = 1, 10)]) ) ERROR STOP 11
 
       SELECT TYPE ( s => func(Child(4,5,4,5) ( 'XLFtest', (/ (I, I = 1, 5) /) )) )
          TYPE IS (Child(4,*,4,*))
-            IF ( s%C0     .NE.        'XLFte' ) STOP 12
-            IF ( ANY(s%A0 .NE. [(I, I = 1, 5)]) ) STOP 13
+            IF ( s%C0     .NE.        'XLFte' ) ERROR STOP 12
+            IF ( ANY(s%A0 .NE. [(I, I = 1, 5)]) ) ERROR STOP 13
 
          CLASSDEFAULT
             STOP 11

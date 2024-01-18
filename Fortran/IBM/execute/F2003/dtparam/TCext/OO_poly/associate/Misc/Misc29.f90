@@ -52,7 +52,7 @@
   SUBROUTINE Sub(Arg)
   PROCEDURE(Fun) :: Arg
     V = Arg(1) ! Iced here
-    IF (V%ID .NE. 1 ) STOP 99
+    IF (V%ID .NE. 1 ) ERROR STOP 99
   END SUBROUTINE
 
   END

@@ -45,7 +45,7 @@
       CLASS DEFAULT
         STOP 10
       TYPE IS ( INTEGER(1) )
-        IF ( V .NE. 2_1 ) STOP 11
+        IF ( V .NE. 2_1 ) ERROR STOP 11
         V = 3_1
       END SELECT
 
@@ -55,7 +55,7 @@
     CLASS DEFAULT
       STOP 10
     TYPE IS ( INTEGER(1) )
-      IF ( A .NE. 3_1 ) STOP 12
+      IF ( A .NE. 3_1 ) ERROR STOP 12
       A = 4_1
     END SELECT
 
@@ -65,7 +65,7 @@
   CLASS DEFAULT
     STOP 10
   TYPE IS ( INTEGER(1) )
-    IF ( V .NE. 4_1 ) STOP 13
+    IF ( V .NE. 4_1 ) ERROR STOP 13
   END SELECT
 
 

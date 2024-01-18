@@ -35,17 +35,17 @@ module m
 
             if ( allocated(new) ) then
                 call move_alloc(new, arg)
-                if ( allocated(new) ) stop 9
+                if ( allocated(new) ) error stop 9
             else
-                if ( allocated(arg) ) stop 10
+                if ( allocated(arg) ) error stop 10
 
                 allocate(new, source=.true.)
                 allocate(arg, source= .false.)
 
                 call move_alloc(TO=new, FROM=arg)
 
-                if ( allocated(arg) ) stop 11
-                if ( .not. allocated(new) ) stop 12
+                if ( allocated(arg) ) error stop 11
+                if ( .not. allocated(new) ) error stop 12
             endif
 
         end subroutine
@@ -58,11 +58,11 @@ use m
 
     call sub (old2)
 
-    if ( .not. allocated(old2) ) stop 21
+    if ( .not. allocated(old2) ) error stop 21
 
     select type(old2)
         type is (logical)
-            if ( old2 .neqv. .false.) stop 22
+            if ( old2 .neqv. .false.) error stop 22
         class default
             stop 23
     end select

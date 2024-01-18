@@ -21,9 +21,9 @@ program main
 
     ptr(1:2, 2:6) => c8
 
-    if ( .not. associated(ptr)) stop 1
-    if ( any (lbound(ptr) .ne. (/1,2/))) stop 2
-    if ( any (ubound(ptr) .ne. (/2,6/))) stop 3
+    if ( .not. associated(ptr)) error stop 1
+    if ( any (lbound(ptr) .ne. (/1,2/))) error stop 2
+    if ( any (ubound(ptr) .ne. (/2,6/))) error stop 3
 
     select type(ptr)
 	type is (complex(8))
@@ -35,6 +35,6 @@ program main
 
     nullify(ptr)
 
-    if ( associated(ptr)) stop 7
+    if ( associated(ptr)) error stop 7
 
 end program

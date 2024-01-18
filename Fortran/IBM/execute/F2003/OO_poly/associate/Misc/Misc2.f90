@@ -27,10 +27,10 @@
   SF( ) = "123"
 
   ASSOCIATE ( As => CF(2.0) )
-    IF (As .NE. (2.0, 2.0) ) STOP 50
+    IF (As .NE. (2.0, 2.0) ) ERROR STOP 50
   END ASSOCIATE
 
   ASSOCIATE ( As => SF() )
-    IF (As .NE. "123" ) STOP 51
+    IF (As .NE. "123" ) ERROR STOP 51
   END ASSOCIATE
   END

@@ -73,33 +73,33 @@
   TYPE (DT5)                         :: T5
   TYPE (DT6(KP1=5, TP1=7))           :: T6
 
-  IF (T1%TP1 .NE. 1 )    STOP 11
-  IF (T1%TP2 .NE.  1 )    STOP 12
-  IF (T1%TP3 .NE.  127 )  STOP 13
+  IF (T1%TP1 .NE. 1 )    ERROR STOP 11
+  IF (T1%TP2 .NE.  1 )    ERROR STOP 12
+  IF (T1%TP3 .NE.  127 )  ERROR STOP 13
 
-  IF (T2%TP1 .NE.  8)     STOP 21
-  IF (T2%TP2 .NE.  8)     STOP 22
-  IF (T2%TP3 .NE.  8)     STOP 23
+  IF (T2%TP1 .NE.  8)     ERROR STOP 21
+  IF (T2%TP2 .NE.  8)     ERROR STOP 22
+  IF (T2%TP3 .NE.  8)     ERROR STOP 23
 
-  IF (T3%KP1 .NE.  1)     STOP 31
-  IF (T3%KP2 .NE.  1)     STOP 32
-  IF (T3%KP3 .NE.  1)     STOP 33
+  IF (T3%KP1 .NE.  1)     ERROR STOP 31
+  IF (T3%KP2 .NE.  1)     ERROR STOP 32
+  IF (T3%KP3 .NE.  1)     ERROR STOP 33
 
-  IF (T4%TP1 .NE.  8)     STOP 41
-  IF (T4%TP2 .NE.  8)     STOP 42
-  IF (T4%TP3 .NE.  8)     STOP 43
+  IF (T4%TP1 .NE.  8)     ERROR STOP 41
+  IF (T4%TP2 .NE.  8)     ERROR STOP 42
+  IF (T4%TP3 .NE.  8)     ERROR STOP 43
 
-  IF (T5%TP1 .NE.  8)     STOP 51
-  IF (T5%KP1 .NE.  2)     STOP 52
-  IF (SIZE(T5%Arr1) .NE.  10)     STOP 53
-  IF (SIZE(T5%Arr2) .NE.  16)     STOP 54
+  IF (T5%TP1 .NE.  8)     ERROR STOP 51
+  IF (T5%KP1 .NE.  2)     ERROR STOP 52
+  IF (SIZE(T5%Arr1) .NE.  10)     ERROR STOP 53
+  IF (SIZE(T5%Arr2) .NE.  16)     ERROR STOP 54
 
-  IF (T6%X1%TP1 .NE.  5)     STOP 61
-  IF (T6%X1%TP2 .NE.  5)     STOP 62
-  IF (T6%X1%TP3 .NE.  5)     STOP 63
-  IF (T6%X2%TP1 .NE.  7)     STOP 64
-  IF (T6%X2%TP2 .NE.  7)     STOP 65
-  IF (T6%X2%TP2 .NE.  7)     STOP 66
+  IF (T6%X1%TP1 .NE.  5)     ERROR STOP 61
+  IF (T6%X1%TP2 .NE.  5)     ERROR STOP 62
+  IF (T6%X1%TP3 .NE.  5)     ERROR STOP 63
+  IF (T6%X2%TP1 .NE.  7)     ERROR STOP 64
+  IF (T6%X2%TP2 .NE.  7)     ERROR STOP 65
+  IF (T6%X2%TP2 .NE.  7)     ERROR STOP 66
 
 
   END

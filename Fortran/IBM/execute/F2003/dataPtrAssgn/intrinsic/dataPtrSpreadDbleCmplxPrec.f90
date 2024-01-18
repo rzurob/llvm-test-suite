@@ -58,9 +58,9 @@
 	! double complex
 	c%dcp(11:) => c%dcp(::2)
 
-	if ( .not. associated(c%dcp)) stop 11
-	if ( lbound(c%dcp,1) /= 11 ) stop 13
-	if ( ubound(c%dcp,1) /= 15 ) stop 15
+	if ( .not. associated(c%dcp)) error stop 11
+	if ( lbound(c%dcp,1) /= 11 ) error stop 13
+	if ( ubound(c%dcp,1) /= 15 ) error stop 15
 
 	call sub_dc(c%dcp, c%dcp)
 
@@ -70,9 +70,9 @@
 	! double precision
 	c%dpp(1:8) => c%dpp
 
-	if ( .not. associated(c%dpp)) stop 21
-	if ( lbound(c%dpp,1) /= 1 ) stop 23
-	if ( ubound(c%dpp,1) /= 8 ) stop 25
+	if ( .not. associated(c%dpp)) error stop 21
+	if ( lbound(c%dpp,1) /= 1 ) error stop 23
+	if ( ubound(c%dpp,1) /= 8 ) error stop 25
 
 	call sub_dp(c%dpp, c%dpp)
 	write(*, '(4f10.3)') c%dpp

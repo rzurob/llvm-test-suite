@@ -78,11 +78,11 @@
   PROCEDURE() :: ExtFun1
 
   V = ExtFun()
-  IF ( V%C .NE. "123" ) STOP 11
+  IF ( V%C .NE. "123" ) ERROR STOP 11
 
   U = ExtFun1()
-  IF ( U%C .NE. "123" ) STOP 12
-  IF ( .NOT. ASSOCIATED(U%ProcPtr, ExtSub) ) STOP 13
+  IF ( U%C .NE. "123" ) ERROR STOP 12
+  IF ( .NOT. ASSOCIATED(U%ProcPtr, ExtSub) ) ERROR STOP 13
 
   END
 

@@ -90,15 +90,15 @@
   L8PreSpecr => L8
 
 
-  IF ( I1PreSpecr() .NE. 1      ) STOP 11
-  IF ( I2PreSpecr() .NE. 2      ) STOP 12
-  IF ( I4PreSpecr() .NE. 4      ) STOP 13
-  IF ( I8PreSpecr() .NE. 8      ) STOP 14
+  IF ( I1PreSpecr() .NE. 1      ) ERROR STOP 11
+  IF ( I2PreSpecr() .NE. 2      ) ERROR STOP 12
+  IF ( I4PreSpecr() .NE. 4      ) ERROR STOP 13
+  IF ( I8PreSpecr() .NE. 8      ) ERROR STOP 14
 
-  IF ( L1PreSpecr() .NEQV. .TRUE. ) STOP 21
-  IF ( L2PreSpecr() .NEQV. .TRUE. ) STOP 22
-  IF ( L4PreSpecr() .NEQV. .TRUE. ) STOP 23
-  IF ( L8PreSpecr() .NEQV. .TRUE. ) STOP 24
+  IF ( L1PreSpecr() .NEQV. .TRUE. ) ERROR STOP 21
+  IF ( L2PreSpecr() .NEQV. .TRUE. ) ERROR STOP 22
+  IF ( L4PreSpecr() .NEQV. .TRUE. ) ERROR STOP 23
+  IF ( L8PreSpecr() .NEQV. .TRUE. ) ERROR STOP 24
 
   END
 

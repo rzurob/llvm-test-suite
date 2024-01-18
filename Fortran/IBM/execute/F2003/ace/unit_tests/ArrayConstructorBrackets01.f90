@@ -11,5 +11,5 @@
 
       integer a(3)
       a = [ 128, 8, -127 ]
-      if (any(a /= (/128,8,-127/))) stop 1
+      if (any(a /= (/128,8,-127/))) error stop 1
       end

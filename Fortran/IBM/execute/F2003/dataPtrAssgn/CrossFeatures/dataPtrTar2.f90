@@ -77,32 +77,32 @@
   Arr(:, 2)%C = (/(CHAR(I), I=1, 100)/)
 
   Ptr(0:, 0:) => ExtF1(Arr(::2, ::2))
-  IF (.NOT. ASSOCIATED(Ptr, Arr(::2, ::2)))            STOP 11
-  IF (ANY( LBOUND(Ptr) .NE. (/ 0, 0 /)))               STOP 12
-  IF (ANY( UBOUND(Ptr) .NE. (/49, 0 /)))               STOP 13
-  IF (ANY( Ptr(:,0)%I  .NE. (/(I,I=1,100,2 )/)))       STOP 14
-  IF (ANY( Ptr(:,0)%C  .NE. (/(CHAR(I),I=1,100,2 )/))) STOP 15
+  IF (.NOT. ASSOCIATED(Ptr, Arr(::2, ::2)))            ERROR STOP 11
+  IF (ANY( LBOUND(Ptr) .NE. (/ 0, 0 /)))               ERROR STOP 12
+  IF (ANY( UBOUND(Ptr) .NE. (/49, 0 /)))               ERROR STOP 13
+  IF (ANY( Ptr(:,0)%I  .NE. (/(I,I=1,100,2 )/)))       ERROR STOP 14
+  IF (ANY( Ptr(:,0)%C  .NE. (/(CHAR(I),I=1,100,2 )/))) ERROR STOP 15
 
   Ptr(0:9, 0:9) => ExtF2(Arr(::1, 2))
   Arr1 = RESHAPE(Arr(::1, 2) , (/10,10/))
-  !IF (.NOT. ASSOCIATED(Ptr, Arr(::2, 2:2)))           STOP 21
-  IF (.NOT. ASSOCIATED(Ptr))                           STOP 21
-  IF (ANY( LBOUND(Ptr) .NE. (/ 0, 0 /)))               STOP 22
-  IF (ANY( UBOUND(Ptr) .NE. (/ 9, 9 /)))               STOP 23
-  IF (ANY( Ptr%I       .NE. Arr1%I))                   STOP 24
-  IF (ANY( Ptr%C       .NE. Arr1%C))                   STOP 25
+  !IF (.NOT. ASSOCIATED(Ptr, Arr(::2, 2:2)))           ERROR STOP 21
+  IF (.NOT. ASSOCIATED(Ptr))                           ERROR STOP 21
+  IF (ANY( LBOUND(Ptr) .NE. (/ 0, 0 /)))               ERROR STOP 22
+  IF (ANY( UBOUND(Ptr) .NE. (/ 9, 9 /)))               ERROR STOP 23
+  IF (ANY( Ptr%I       .NE. Arr1%I))                   ERROR STOP 24
+  IF (ANY( Ptr%C       .NE. Arr1%C))                   ERROR STOP 25
 
   I = -1
   Ptr(0:, 0:) => ExtF1(Arr(:, 0:I))
-  IF ( ASSOCIATED(Ptr, Arr(:, 0:I)))                   STOP 31
-  IF (ANY( LBOUND(Ptr) .NE. (/ 0, 1 /)))               STOP 32
-  IF (ANY( UBOUND(Ptr) .NE. (/99, 0 /)))               STOP 33
+  IF ( ASSOCIATED(Ptr, Arr(:, 0:I)))                   ERROR STOP 31
+  IF (ANY( LBOUND(Ptr) .NE. (/ 0, 1 /)))               ERROR STOP 32
+  IF (ANY( UBOUND(Ptr) .NE. (/99, 0 /)))               ERROR STOP 33
 
   I = -1
   Ptr(0:I, 0:0) => ExtF2(Arr(0:I, 1))
-  IF ( ASSOCIATED(Ptr, Arr(0:I, 1:1)))                 STOP 41
-  IF (ANY( LBOUND(Ptr) .NE. (/ 1, 0 /)))               STOP 42
-  IF (ANY( SHAPE(Ptr)  .NE. (/ 0, 1 /)))               STOP 43
+  IF ( ASSOCIATED(Ptr, Arr(0:I, 1:1)))                 ERROR STOP 41
+  IF (ANY( LBOUND(Ptr) .NE. (/ 1, 0 /)))               ERROR STOP 42
+  IF (ANY( SHAPE(Ptr)  .NE. (/ 0, 1 /)))               ERROR STOP 43
 
 
   END

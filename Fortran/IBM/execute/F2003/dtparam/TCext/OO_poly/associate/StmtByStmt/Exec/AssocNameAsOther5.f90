@@ -51,11 +51,11 @@
   USE M
 
   ASSOCIATE ( Fun => Fun(DT(1,8)("87654321")) )
-    IF ( Fun%C .NE. "87654321" ) STOP 11
+    IF ( Fun%C .NE. "87654321" ) ERROR STOP 11
      ASSOCIATE ( F => Fun%C )
-       IF ( F .NE. "87654321" ) STOP 12
+       IF ( F .NE. "87654321" ) ERROR STOP 12
      END ASSOCIATE
-     IF ( F(1) .NE. 1 ) STOP 13
+     IF ( F(1) .NE. 1 ) ERROR STOP 13
   END ASSOCIATE
 
 

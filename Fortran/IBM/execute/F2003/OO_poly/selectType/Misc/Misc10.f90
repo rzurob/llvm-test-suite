@@ -32,7 +32,7 @@
 
   SELECT TYPE ( As => (/Ptr/) )
     TYPE IS (INTEGER(1))
-      IF ( ANY(AS .NE. 1_1 )) STOP 20
+      IF ( ANY(AS .NE. 1_1 )) ERROR STOP 20
     CLASS DEFAULT
       STOP 30
   END SELECT

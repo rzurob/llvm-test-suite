@@ -23,7 +23,7 @@
          use, non_intrinsic :: xlf_fp_util
 
          call sub1()
-         if ( .not. fun1() ) stop 20
+         if ( .not. fun1() ) error stop 20
 
          contains
 
@@ -47,32 +47,32 @@
 
                call ieee_get_flag(ieee_all, flag_values)
                do k = 1, 5
-                  if (flag_values(k) .neqv. .false. ) stop 10
+                  if (flag_values(k) .neqv. .false. ) error stop 10
                enddo
 
                if (ieee_support_datatype(PINF_4) .AND. &
  	           ieee_support_datatype(NINF_4)) then
-                  if (ieee_is_finite(PINF_4) .OR. ieee_is_finite(NINF_4)) stop 12
+                  if (ieee_is_finite(PINF_4) .OR. ieee_is_finite(NINF_4)) error stop 12
                endif
 
                if (ieee_support_datatype(PHD_4) .AND. ieee_support_datatype(PTD_4)) then
-                   if (ieee_is_finite(PHD_4) .neqv. .true.) stop 13
-                   if (ieee_is_finite(PTD_4) .neqv. .true.) stop 14
+                   if (ieee_is_finite(PHD_4) .neqv. .true.) error stop 13
+                   if (ieee_is_finite(PTD_4) .neqv. .true.) error stop 14
                endif
 
                call ieee_get_status(status_value)
                call ieee_set_rounding_mode(rt_nearest)
                call ieee_get_rounding_mode(rtype)
-               if (rtype.rt /= rt_nearest.rt) stop 15
+               if (rtype.rt /= rt_nearest.rt) error stop 15
                yr = ieee_rint(1.1)
-               if (yr /= 1.0) stop 16
+               if (yr /= 1.0) error stop 16
                call ieee_set_status(status_value)
 
 !... Testing xlf_fp_util module
                call set_fpscr_flags(flags(1))
                call clr_fpscr_flags(flags(5))
-               if ( get_fpscr_flags(flags(1)) .eq. 0 ) stop 17
-               if ( get_fpscr_flags(flags(5)) .eq. 0 ) stop 18
+               if ( get_fpscr_flags(flags(1)) .eq. 0 ) error stop 17
+               if ( get_fpscr_flags(flags(5)) .eq. 0 ) error stop 18
 
             end subroutine sub1
 
@@ -95,31 +95,31 @@
 
                call ieee_get_flag(ieee_all, flag_values)
                do k = 1, 5
-                  if (flag_values(k) .neqv. .false. ) stop 30
+                  if (flag_values(k) .neqv. .false. ) error stop 30
                enddo
 
                if (ieee_support_datatype(PINF_4) .AND. &
  	           ieee_support_datatype(NINF_4)) then
-                  if (ieee_is_finite(PINF_4) .OR. ieee_is_finite(NINF_4)) stop 32
+                  if (ieee_is_finite(PINF_4) .OR. ieee_is_finite(NINF_4)) error stop 32
                endif
 
                if (ieee_support_datatype(PHD_4) .AND. ieee_support_datatype(PTD_4)) then
-                   if (ieee_is_finite(PHD_4) .neqv. .true.) stop 33
-                   if (ieee_is_finite(PTD_4) .neqv. .true.) stop 34
+                   if (ieee_is_finite(PHD_4) .neqv. .true.) error stop 33
+                   if (ieee_is_finite(PTD_4) .neqv. .true.) error stop 34
                endif
 
                call ieee_get_status(status_value)
                call ieee_set_rounding_mode(rt_nearest)
                call ieee_get_rounding_mode(rtype)
-               if (rtype.rt /= rt_nearest.rt) stop 35
+               if (rtype.rt /= rt_nearest.rt) error stop 35
                yr = ieee_rint(1.1)
-               if (yr /= 1.0) stop 36
+               if (yr /= 1.0) error stop 36
                call ieee_set_status(status_value)
 
                call set_fpscr_flags(flags(1))
                call clr_fpscr_flags(flags(5))
-               if ( get_fpscr_flags(flags(1)) .eq. 0 ) stop 37
-               if ( get_fpscr_flags(flags(5)) .eq. 0 ) stop 38
+               if ( get_fpscr_flags(flags(1)) .eq. 0 ) error stop 37
+               if ( get_fpscr_flags(flags(5)) .eq. 0 ) error stop 38
 
                fun1=.true.
             end function fun1

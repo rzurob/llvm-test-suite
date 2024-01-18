@@ -65,8 +65,8 @@
 
   IF( PRESENT(Arg11) ) then
   if ( ALLOCATED(Arg11) ) THEN
-    IF ( Arg11%K0   .NE.   Arg12%K0     ) STOP 11
-    IF ( Arg11%L0   .NE.   Arg12%L0     ) STOP 12
+    IF ( Arg11%K0   .NE.   Arg12%K0     ) ERROR STOP 11
+    IF ( Arg11%L0   .NE.   Arg12%L0     ) ERROR STOP 12
   END IF
   END IF
 
@@ -76,25 +76,25 @@
     SELECT TYPE ( Arg21 )
     TYPE IS (DT2(8,*,8,*,8,*))
 
-      IF ( Arg21%K0   .NE.   Arg22%K0     ) STOP 21
-      IF ( Arg21%L0   .NE.   Arg22%L0     ) STOP 22
-      IF ( Arg21%K1   .NE.   Arg22%K1     ) STOP 23
-      IF ( Arg21%L1   .NE.   Arg22%L1     ) STOP 24
-      IF ( Arg21%K2   .NE.   Arg22%K2     ) STOP 25
-      IF ( Arg21%L2   .NE.   Arg22%L2     ) STOP 26
+      IF ( Arg21%K0   .NE.   Arg22%K0     ) ERROR STOP 21
+      IF ( Arg21%L0   .NE.   Arg22%L0     ) ERROR STOP 22
+      IF ( Arg21%K1   .NE.   Arg22%K1     ) ERROR STOP 23
+      IF ( Arg21%L1   .NE.   Arg22%L1     ) ERROR STOP 24
+      IF ( Arg21%K2   .NE.   Arg22%K2     ) ERROR STOP 25
+      IF ( Arg21%L2   .NE.   Arg22%L2     ) ERROR STOP 26
 
-      IF ( Arg21%C1   .NE.   Arg22%C1     ) STOP 27
-      IF ( Arg21%C2   .NE.   Arg22%C2     ) STOP 28
-      IF ( Arg21%I    .NE.   Arg22%I      ) STOP 29
-      IF ( Arg21%R    .NE.   Arg22%R      ) STOP 30
-      IF ( Arg21%L    .nEQV.  Arg22%L      ) STOP 31
-      IF ( Arg21%Z    .NE.   Arg22%Z      ) STOP 32
-      IF ( Arg21%T0%K0.NE.   Arg22%T0%K0  ) STOP 33
-      IF ( Arg21%T0%L0.NE.   Arg22%T0%L0  ) STOP 34
+      IF ( Arg21%C1   .NE.   Arg22%C1     ) ERROR STOP 27
+      IF ( Arg21%C2   .NE.   Arg22%C2     ) ERROR STOP 28
+      IF ( Arg21%I    .NE.   Arg22%I      ) ERROR STOP 29
+      IF ( Arg21%R    .NE.   Arg22%R      ) ERROR STOP 30
+      IF ( Arg21%L    .nEQV.  Arg22%L      ) ERROR STOP 31
+      IF ( Arg21%Z    .NE.   Arg22%Z      ) ERROR STOP 32
+      IF ( Arg21%T0%K0.NE.   Arg22%T0%K0  ) ERROR STOP 33
+      IF ( Arg21%T0%L0.NE.   Arg22%T0%L0  ) ERROR STOP 34
 
-      IF ( ASSOCIATED( Arg21%Ptr2) .nEQV. ASSOCIATED( Arg22%Ptr2)  ) STOP 35
-      IF ( Arg21%Ptr2%K2           .NE.   Arg22%Ptr2%K2           ) STOP 36
-      IF ( Arg21%Ptr2%L2           .NE.   Arg22%Ptr2%L2           ) STOP 37
+      IF ( ASSOCIATED( Arg21%Ptr2) .nEQV. ASSOCIATED( Arg22%Ptr2)  ) ERROR STOP 35
+      IF ( Arg21%Ptr2%K2           .NE.   Arg22%Ptr2%K2           ) ERROR STOP 36
+      IF ( Arg21%Ptr2%L2           .NE.   Arg22%Ptr2%L2           ) ERROR STOP 37
 
     CLASS DEFAULT
       STOP 39
@@ -106,25 +106,25 @@
   IF( PRESENT(Arg31) ) THEN
   IF( ALLOCATED(Arg31) ) THEN
 
-    IF ( Arg31%K0   .NE.   Arg32%K0     ) STOP 41
-    IF ( Arg31%L0   .NE.   Arg32%L0     ) STOP 42
-    IF ( Arg31%K1   .NE.   Arg32%K1     ) STOP 43
-    IF ( Arg31%L1   .NE.   Arg32%L1     ) STOP 44
-    IF ( Arg31%K2   .NE.   Arg32%K2     ) STOP 45
-    IF ( Arg31%L2   .NE.   Arg32%L2     ) STOP 46
+    IF ( Arg31%K0   .NE.   Arg32%K0     ) ERROR STOP 41
+    IF ( Arg31%L0   .NE.   Arg32%L0     ) ERROR STOP 42
+    IF ( Arg31%K1   .NE.   Arg32%K1     ) ERROR STOP 43
+    IF ( Arg31%L1   .NE.   Arg32%L1     ) ERROR STOP 44
+    IF ( Arg31%K2   .NE.   Arg32%K2     ) ERROR STOP 45
+    IF ( Arg31%L2   .NE.   Arg32%L2     ) ERROR STOP 46
 
-    IF ( Arg31%C1   .NE.   Arg32%C1     ) STOP 47
-    IF ( Arg31%C2   .NE.   Arg32%C2     ) STOP 48
-    IF ( Arg31%I    .NE.   Arg32%I      ) STOP 49
-    IF ( Arg31%R    .NE.   Arg32%R      ) STOP 50
-    IF ( Arg31%L    .nEQV.  Arg32%L      ) STOP 51
-    IF ( Arg31%Z    .NE.   Arg32%Z      ) STOP 52
-    IF ( Arg31%T0%K0.NE.   Arg32%T0%K0  ) STOP 53
-    IF ( Arg31%T0%L0.NE.   Arg32%T0%L0  ) STOP 54
+    IF ( Arg31%C1   .NE.   Arg32%C1     ) ERROR STOP 47
+    IF ( Arg31%C2   .NE.   Arg32%C2     ) ERROR STOP 48
+    IF ( Arg31%I    .NE.   Arg32%I      ) ERROR STOP 49
+    IF ( Arg31%R    .NE.   Arg32%R      ) ERROR STOP 50
+    IF ( Arg31%L    .nEQV.  Arg32%L      ) ERROR STOP 51
+    IF ( Arg31%Z    .NE.   Arg32%Z      ) ERROR STOP 52
+    IF ( Arg31%T0%K0.NE.   Arg32%T0%K0  ) ERROR STOP 53
+    IF ( Arg31%T0%L0.NE.   Arg32%T0%L0  ) ERROR STOP 54
 
-    IF ( ASSOCIATED( Arg31%Ptr2) .nEQV. ASSOCIATED( Arg32%Ptr2)  ) STOP 55
-    IF ( Arg31%Ptr2%K2           .NE.   Arg32%Ptr2%K2           ) STOP 56
-    IF ( Arg31%Ptr2%L2           .NE.   Arg32%Ptr2%L2           ) STOP 37
+    IF ( ASSOCIATED( Arg31%Ptr2) .nEQV. ASSOCIATED( Arg32%Ptr2)  ) ERROR STOP 55
+    IF ( Arg31%Ptr2%K2           .NE.   Arg32%Ptr2%K2           ) ERROR STOP 56
+    IF ( Arg31%Ptr2%L2           .NE.   Arg32%Ptr2%L2           ) ERROR STOP 37
 
   END IF
   END IF

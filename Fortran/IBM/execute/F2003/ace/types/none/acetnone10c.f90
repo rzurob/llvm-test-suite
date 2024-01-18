@@ -190,7 +190,7 @@ program acetnone10c
   call test6(multi)
   call test6(reshape(flat, (/ 2,3,4,5,6,7 /)))
 
-  if( any(flat /= (/ multi /)) ) stop 2
+  if( any(flat /= (/ multi /)) ) error stop 2
 
   flat = (/ multi(ubound(multi,1):lbound(multi,1):-1, &
                   ubound(multi,2):lbound(multi,2):-1, &
@@ -204,9 +204,9 @@ program acetnone10c
   call test6(multi2)
   call test6(reshape(flat, (/ 7,6,5,4,3,2 /)))
 
-  if( any(flat /= (/ multi /)) ) stop 3
-  if( any(flat /= (/ multi2 /)) ) stop 4
-  if( any((/ multi /) /= (/ multi2 /)) ) stop 5
+  if( any(flat /= (/ multi /)) ) error stop 3
+  if( any(flat /= (/ multi2 /)) ) error stop 4
+  if( any((/ multi /) /= (/ multi2 /)) ) error stop 5
 
   print *, 'done'
 

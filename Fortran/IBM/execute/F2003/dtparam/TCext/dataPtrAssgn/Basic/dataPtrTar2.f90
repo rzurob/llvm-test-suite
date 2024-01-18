@@ -56,55 +56,55 @@
 
   Arr1(1)%Ptr0 => Arr1
   Arr1(1)%Ptr0(1:) => NULL()
-  IF ( ASSOCIATED(Arr1(1)%Ptr0) )         STOP 11
+  IF ( ASSOCIATED(Arr1(1)%Ptr0) )         ERROR STOP 11
 
   Arr1(100)%Ptr0 => Arr1
   Arr1(100)%Ptr0(1:1) => NULL()
-  IF ( ASSOCIATED(Arr1(100)%Ptr0) )       STOP 12
+  IF ( ASSOCIATED(Arr1(100)%Ptr0) )       ERROR STOP 12
 
   Arr1(100)%ptr0(1:1) => NULL()
   Arr1(100)%Ptr1(1:)  => Arr1(100)%Ptr0
-  IF ( ASSOCIATED(Arr1(100)%Ptr1) )       STOP 13
+  IF ( ASSOCIATED(Arr1(100)%Ptr1) )       ERROR STOP 13
 
   Arr2(2,2)%Ptr0(1:1) => Arr1
   Arr2(2,2)%Ptr1(1:1)  => Arr2(2,2)%Ptr0
-  IF ( .NOT. ASSOCIATED(Arr2(2,2)%Ptr1) ) STOP 14
+  IF ( .NOT. ASSOCIATED(Arr2(2,2)%Ptr1) ) ERROR STOP 14
 
   Arr1(2)%Ptr2(1:, 1:) => Arr2
   Arr1(2)%Ptr2(3:, 0:)  => Arr1(2)%Ptr2
-  IF ( .NOT. ASSOCIATED(Arr1(2)%Ptr2) )   STOP 15
+  IF ( .NOT. ASSOCIATED(Arr1(2)%Ptr2) )   ERROR STOP 15
 
   Arr1(99)%Ptr4(1: , 1: ) => NULL()
   Arr1(99)%Ptr2(1:1, 2:10)  => Arr1(99)%Ptr4(1,::2)
-  IF ( ASSOCIATED(Arr1(99)%Ptr2) )         STOP 16
+  IF ( ASSOCIATED(Arr1(99)%Ptr2) )         ERROR STOP 16
 
   Arr2(1,1)%Ptr1(1:) => Arr1
   Arr2(1,1)%Ptr3(3:)  => Arr2(1,1)%Ptr1
-  IF ( .NOT. ASSOCIATED(Arr2(1,1)%Ptr3) )                   STOP 17
-  IF ( .NOT. SAME_TYPE_AS(Arr2(1,1)%Ptr3, Arr2(1,1)%Ptr1) ) STOP 117
+  IF ( .NOT. ASSOCIATED(Arr2(1,1)%Ptr3) )                   ERROR STOP 17
+  IF ( .NOT. SAME_TYPE_AS(Arr2(1,1)%Ptr3, Arr2(1,1)%Ptr1) ) ERROR STOP 117
 
   Arr2(1,1)%Ptr1(1:) => NULL()
   Arr2(1,1)%Ptr3(5:105)  => Arr2(1,1)%Ptr1
-  IF ( ASSOCIATED(Arr2(1,1)%Ptr3) )                         STOP 18
-  IF ( .NOT. SAME_TYPE_AS(Arr2(1,1)%Ptr3, Arr2(1,1)%Ptr1) ) STOP 118
+  IF ( ASSOCIATED(Arr2(1,1)%Ptr3) )                         ERROR STOP 18
+  IF ( .NOT. SAME_TYPE_AS(Arr2(1,1)%Ptr3, Arr2(1,1)%Ptr1) ) ERROR STOP 118
 
   Arr2(1,1)%Ptr2 => Arr2
   Arr2(1,1)%Ptr4(3:, 100:)  => Arr2(1,1)%Ptr2
-  IF ( .NOT. ASSOCIATED(Arr2(1,1)%Ptr4) ) STOP 19
+  IF ( .NOT. ASSOCIATED(Arr2(1,1)%Ptr4) ) ERROR STOP 19
 
   Arr2(1,1)%Ptr2(5:   , -105: ) => NULL()
   Arr2(1,1)%Ptr4(-5:104, 5:105)  => Arr2(1,1)%Ptr2(::2,105)
-  IF ( ASSOCIATED(Arr2(1,1)%Ptr4) ) STOP 20
+  IF ( ASSOCIATED(Arr2(1,1)%Ptr4) ) ERROR STOP 20
 
   Arr2(1,1)%Ptr1(1:) => NULL()
   Arr2(1,1)%Ptr5(3:)  => Arr2(1,1)%Ptr1
-  IF ( ASSOCIATED(Arr2(1,1)%Ptr5) )                         STOP 21
-  IF ( .NOT. SAME_TYPE_AS(Arr2(1,1)%Ptr5, Arr2(1,1)%Ptr1) ) STOP 121
+  IF ( ASSOCIATED(Arr2(1,1)%Ptr5) )                         ERROR STOP 21
+  IF ( .NOT. SAME_TYPE_AS(Arr2(1,1)%Ptr5, Arr2(1,1)%Ptr1) ) ERROR STOP 121
 
   Arr2(1,1)%Ptr1(106:) => Arr1
   Arr2(1,1)%Ptr5(5:105)  => Arr2(1,1)%Ptr1
-  IF ( .NOT. ASSOCIATED(Arr2(1,1)%Ptr5) )                   STOP 22
-  IF ( .NOT. SAME_TYPE_AS(Arr2(1,1)%Ptr5, Arr2(1,1)%Ptr1) ) STOP 122
+  IF ( .NOT. ASSOCIATED(Arr2(1,1)%Ptr5) )                   ERROR STOP 22
+  IF ( .NOT. SAME_TYPE_AS(Arr2(1,1)%Ptr5, Arr2(1,1)%Ptr1) ) ERROR STOP 122
 
   END
 

@@ -39,12 +39,12 @@ program main
 
     c1%p(1:,2:) => c1%a1%p
 
-    if ( any (lbound(c1%p) .ne. (/1,2/))) stop 2
-    if ( any (ubound(c1%p) .ne. (/2,3/))) stop 3
+    if ( any (lbound(c1%p) .ne. (/1,2/))) error stop 2
+    if ( any (ubound(c1%p) .ne. (/2,3/))) error stop 3
 
     select type(x=>c1%a1%p)
 	type is (logical*2)
-	    if ( any( x .or. eoshift(x, shift=1)  .neqv. reshape((/.true., .false., .true., .true. /), (/2,2/)))) stop 5
+	    if ( any( x .or. eoshift(x, shift=1)  .neqv. reshape((/.true., .false., .true., .true. /), (/2,2/)))) error stop 5
   	class default
             stop 9
     end select

@@ -106,19 +106,19 @@
     SELECT TYPE ( As )
     CLASS IS (Child)
 
-          IF (ANY(SHAPE(As) .NE. (/3/)))      STOP 33
-          IF ( ANY(As%Base%GetId() .NE. -1) ) STOP 34
-          IF ( ANY(As%GetId()      .NE. -2) ) STOP 35
-          IF ( ANY(As%BaseId       .NE. -1) ) STOP 36
-          IF ( ANY(As%ChildId      .NE. -2) ) STOP 37
+          IF (ANY(SHAPE(As) .NE. (/3/)))      ERROR STOP 33
+          IF ( ANY(As%Base%GetId() .NE. -1) ) ERROR STOP 34
+          IF ( ANY(As%GetId()      .NE. -2) ) ERROR STOP 35
+          IF ( ANY(As%BaseId       .NE. -1) ) ERROR STOP 36
+          IF ( ANY(As%ChildId      .NE. -2) ) ERROR STOP 37
 
           CALL As(1)%SetId(As)
           CALL As(1)%Base%SetId(As%Base)
 
-          IF ( ANY(As%Base%GetId() .NE. 1 ) ) STOP 44
-          IF ( ANY(As%GetId()      .NE. 2 ) ) STOP 45
-          IF ( ANY(As%BaseId       .NE. 1 ) ) STOP 46
-          IF ( ANY(As%ChildId      .NE. 2 ) ) STOP 47
+          IF ( ANY(As%Base%GetId() .NE. 1 ) ) ERROR STOP 44
+          IF ( ANY(As%GetId()      .NE. 2 ) ) ERROR STOP 45
+          IF ( ANY(As%BaseId       .NE. 1 ) ) ERROR STOP 46
+          IF ( ANY(As%ChildId      .NE. 2 ) ) ERROR STOP 47
 
 
     CLASS DEFAULT
@@ -128,11 +128,11 @@
 
   END ASSOCIATE
 
-  IF (ANY(SHAPE(As) .NE. (/3/)))      STOP 53
-  IF ( ANY(As%Base%GetId() .NE. -1) ) STOP 54
-  IF ( ANY(As%GetId()      .NE. -2) ) STOP 55
-  IF ( ANY(As%BaseId       .NE. -1) ) STOP 56
-  IF ( ANY(As%ChildId      .NE. -2) ) STOP 57
+  IF (ANY(SHAPE(As) .NE. (/3/)))      ERROR STOP 53
+  IF ( ANY(As%Base%GetId() .NE. -1) ) ERROR STOP 54
+  IF ( ANY(As%GetId()      .NE. -2) ) ERROR STOP 55
+  IF ( ANY(As%BaseId       .NE. -1) ) ERROR STOP 56
+  IF ( ANY(As%ChildId      .NE. -2) ) ERROR STOP 57
 
   END ASSOCIATE
 

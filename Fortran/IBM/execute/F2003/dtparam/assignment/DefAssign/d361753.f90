@@ -20,8 +20,8 @@ program d361753
    end type
 
    associate(x=>getResult(base(2)()))
-     if(x%l /= 2)         stop 10
-     if(any(x%i /= -99))  stop 11
+     if(x%l /= 2)         error stop 10
+     if(any(x%i /= -99))  error stop 11
    end associate
 
    contains

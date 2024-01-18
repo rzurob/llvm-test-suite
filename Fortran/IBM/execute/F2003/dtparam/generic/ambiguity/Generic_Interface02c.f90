@@ -64,7 +64,7 @@
          CLASS(Base(k,:)), POINTER  :: pntr
 
          ALLOCATE (pntr, source = Base(k1=k, l1=l)(data=(/(I*1.0, I=1, l)/)))
-         IF ( .NOT. ASSOCIATED(pntr)) STOP 1
+         IF ( .NOT. ASSOCIATED(pntr)) ERROR STOP 1
 
          tag = '0'
 
@@ -76,7 +76,7 @@
          CLASS(Base(k,:)), POINTER  :: pntr
 
          IF ( .NOT. ASSOCIATED(pntr)) ALLOCATE (pntr, source = Obj)
-         IF ( .NOT. ASSOCIATED(pntr)) STOP 2
+         IF ( .NOT. ASSOCIATED(pntr)) ERROR STOP 2
 
          tag = '1'
 
@@ -105,7 +105,7 @@
          END SELECT
          END IF
 
-         IF ( .NOT. ASSOCIATED(pntr)) STOP 4
+         IF ( .NOT. ASSOCIATED(pntr)) ERROR STOP 4
 
          tag = '2'
 
@@ -123,38 +123,38 @@
 
       base1%data = (/(10.0, I=1, len1)/)
       CALL sub(base1)
-      IF ( tag .NE. '1' ) STOP 10
+      IF ( tag .NE. '1' ) ERROR STOP 10
 
       ALLOCATE(poly1, source = Base(knd1, (len1-2) )(data=(/(5.0, I=1, (len1-2))/)))
       CALL sub(poly1)
-      IF ( tag .NE. '1' ) STOP 11
+      IF ( tag .NE. '1' ) ERROR STOP 11
 
       CALL sub()
-      IF ( tag .NE. '0' ) STOP 12
+      IF ( tag .NE. '0' ) ERROR STOP 12
 
       ALLOCATE(NextGen(knd1,len1,knd1,knd1):: poly1)
       poly1%data = (/(20.0, I=1, len1)/)
 
       CALL sub(poly1)
-      IF ( tag .NE. '1' ) STOP 13
+      IF ( tag .NE. '1' ) ERROR STOP 13
       CALL sub(poly1,base1)
-      IF ( tag .NE. '2' ) STOP 14
+      IF ( tag .NE. '2' ) ERROR STOP 14
       CALL sub(poly1,poly1)
-      IF ( tag .NE. '2' ) STOP 15
+      IF ( tag .NE. '2' ) ERROR STOP 15
 
       ALLOCATE(NextGen(knd1,2*len1,knd1+knd1,2*knd1):: poly1)
       poly1%data = (/(30.0, I=1, len1)/)
       CALL sub(poly1)
-      IF ( tag .NE. '1' ) STOP 16
+      IF ( tag .NE. '1' ) ERROR STOP 16
 
       CALL sub()
-      IF ( tag .NE. '0' ) STOP 17
+      IF ( tag .NE. '0' ) ERROR STOP 17
 
       CALL sub(dtv,base1)
-      IF ( tag .NE. '2' ) STOP 18
+      IF ( tag .NE. '2' ) ERROR STOP 18
       CALL sub(dtv,poly1)
-      IF ( tag .NE. '2' ) STOP 19
+      IF ( tag .NE. '2' ) ERROR STOP 19
       CALL sub(dtv,dtv)
-      IF ( tag .NE. '2' ) STOP 20
+      IF ( tag .NE. '2' ) ERROR STOP 20
 
       END PROGRAM Generic_Interface02c

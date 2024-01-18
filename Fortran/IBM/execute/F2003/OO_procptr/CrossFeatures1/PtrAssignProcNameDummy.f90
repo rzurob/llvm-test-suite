@@ -81,9 +81,9 @@
 
     Ptr => Proc
     V = Ptr(DT(DT0((/(INT(i, 1), i=1,10000)/))))
-    IF (ANY( V(1)%Base%IArr .NE. (/(INT(i, 1), i=1,10000)/) ) ) STOP 11
-    IF (ANY( V(2)%Base%IArr .NE. (/(INT(i, 1), i=1,10000)/) ) ) STOP 12
-    IF (ANY( V(3)%Base%IArr .NE. (/(INT(i, 1), i=1,10000)/) ) ) STOP 13
+    IF (ANY( V(1)%Base%IArr .NE. (/(INT(i, 1), i=1,10000)/) ) ) ERROR STOP 11
+    IF (ANY( V(2)%Base%IArr .NE. (/(INT(i, 1), i=1,10000)/) ) ) ERROR STOP 12
+    IF (ANY( V(3)%Base%IArr .NE. (/(INT(i, 1), i=1,10000)/) ) ) ERROR STOP 13
 
   END SUBROUTINE
 

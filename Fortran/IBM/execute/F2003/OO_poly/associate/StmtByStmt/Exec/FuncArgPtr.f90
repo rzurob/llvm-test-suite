@@ -40,7 +40,7 @@
   Ptr => V
 
   ASSOCIATE ( As => Ptr  )
-     IF ( Func(As) .NE. 2 ) STOP 11
+     IF ( Func(As) .NE. 2 ) ERROR STOP 11
   END ASSOCIATE
 
   CONTAINS

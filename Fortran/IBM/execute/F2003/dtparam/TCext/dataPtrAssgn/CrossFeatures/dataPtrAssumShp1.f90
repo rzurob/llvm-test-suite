@@ -60,14 +60,14 @@
   CLASS(*), POINTER :: Ptr(:, :)
 
   Ptr(L:, L:) => Arr1
-  IF ( .NOT. ASSOCIATED(Ptr))                       STOP 11
-  IF (ANY( LBOUND(Ptr)         .NE. (/L, 1 /)))     STOP 12
-  IF (ANY( SHAPE (Ptr)         .NE. (/U-L+1, 0 /))) STOP 13
+  IF ( .NOT. ASSOCIATED(Ptr))                       ERROR STOP 11
+  IF (ANY( LBOUND(Ptr)         .NE. (/L, 1 /)))     ERROR STOP 12
+  IF (ANY( SHAPE (Ptr)         .NE. (/U-L+1, 0 /))) ERROR STOP 13
 
   Ptr(L:U, L:L-1) => Arr2
-  IF ( .NOT. ASSOCIATED(Ptr))                       STOP 21
-  IF (ANY( LBOUND(Ptr)         .NE. (/L, 1 /)))     STOP 22
-  IF (ANY( SHAPE (Ptr)         .NE. (/U-L+1, 0 /))) STOP 23
+  IF ( .NOT. ASSOCIATED(Ptr))                       ERROR STOP 21
+  IF (ANY( LBOUND(Ptr)         .NE. (/L, 1 /)))     ERROR STOP 22
+  IF (ANY( SHAPE (Ptr)         .NE. (/U-L+1, 0 /))) ERROR STOP 23
 
   END SUBROUTINE
 

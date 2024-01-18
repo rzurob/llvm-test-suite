@@ -83,8 +83,8 @@ PROGRAM AllocateWithSourceExp05
       print*, Obj%my_arr
       print*,  ASSOCIATED(Obj%b_cmp, tgt1)
       print*,  ASSOCIATED(Obj%c_cmp, tgt2)
-      IF ( Obj%b_cmp%l1 .NE. 2*n ) STOP 20
-      IF ( Obj%c_cmp%l1 .NE. 2*n ) STOP 21
+      IF ( Obj%b_cmp%l1 .NE. 2*n ) ERROR STOP 20
+      IF ( Obj%c_cmp%l1 .NE. 2*n ) ERROR STOP 21
 
       END SUBROUTINE Alloc_auto2child
 

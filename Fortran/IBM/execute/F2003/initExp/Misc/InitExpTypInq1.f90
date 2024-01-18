@@ -74,26 +74,26 @@
   TYPE(DT), PARAMETER ::  T=DT()
 
 
-  IF (T%I1    .NE. 1  ) STOP 11
-  IF (T%I2    .NE. 2  ) STOP 12
-  IF (T%I4    .NE. 4  ) STOP 14
-  IF (T%I8    .NE. 8  ) STOP 18
+  IF (T%I1    .NE. 1  ) ERROR STOP 11
+  IF (T%I2    .NE. 2  ) ERROR STOP 12
+  IF (T%I4    .NE. 4  ) ERROR STOP 14
+  IF (T%I8    .NE. 8  ) ERROR STOP 18
 
-  IF (T%L1    .NE. 1  ) STOP 21
-  IF (T%L2    .NE. 2  ) STOP 22
-  IF (T%L4    .NE. 4  ) STOP 24
-  IF (T%L8    .NE. 8  ) STOP 28
+  IF (T%L1    .NE. 1  ) ERROR STOP 21
+  IF (T%L2    .NE. 2  ) ERROR STOP 22
+  IF (T%L4    .NE. 4  ) ERROR STOP 24
+  IF (T%L8    .NE. 8  ) ERROR STOP 28
 
-  IF (T%R4    .NE. 4  ) STOP 31
-  IF (T%R8    .NE. 8  ) STOP 32
-  IF (T%R6    .NE. 16 ) STOP 33
+  IF (T%R4    .NE. 4  ) ERROR STOP 31
+  IF (T%R8    .NE. 8  ) ERROR STOP 32
+  IF (T%R6    .NE. 16 ) ERROR STOP 33
 
-  IF (T%Z4    .NE. 4  ) STOP 41
-  IF (T%Z8    .NE. 8  ) STOP 42
-  IF (T%Z6    .NE. 16 ) STOP 43
+  IF (T%Z4    .NE. 4  ) ERROR STOP 41
+  IF (T%Z8    .NE. 8  ) ERROR STOP 42
+  IF (T%Z6    .NE. 16 ) ERROR STOP 43
 
-  IF (T%CC    .NE. ACHAR(1) ) STOP 51
-  IF (LEN(T%CC).NE. 128)      STOP 52
+  IF (T%CC    .NE. ACHAR(1) ) ERROR STOP 51
+  IF (LEN(T%CC).NE. 128)      ERROR STOP 52
 
 
   END

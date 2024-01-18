@@ -132,7 +132,7 @@ program acetdt00
 
   bas4 = [base:: bas3]
 
-  if (.not.(all(bas1 == bas2) .and. all(bas2 == bas3) .and. all(bas3 == bas4) .and. all(bas4 == bas1))) stop 2
+  if (.not.(all(bas1 == bas2) .and. all(bas2 == bas3) .and. all(bas3 == bas4) .and. all(bas4 == bas1))) error stop 2
 
   bas5 = [base:: (base(i*100,1.0/i/3,(0.0-i,i+10)), i=1,3)]
   print *, bas5
@@ -153,7 +153,7 @@ program acetdt00
 
   der4 = [derived:: der3]
 
-  if (.not.(all(der1 == der2) .and. all(der2 == der3) .and. all(der3 == der4) .and. all(der4 == der1))) stop 3
+  if (.not.(all(der1 == der2) .and. all(der2 == der3) .and. all(der3 == der4) .and. all(der4 == der1))) error stop 3
 
   der5 = [derived:: (derived(i*100,1.0/i/3,(0.0-i,i+10), achar(64+i)), i=1,3)]
   print *, der5
@@ -174,7 +174,7 @@ program acetdt00
 
   comp4 = [composed:: comp3]
 
-  if (.not.(all(comp1 == comp2) .and. all(comp2 == comp3) .and. all(comp3 == comp4) .and. all(comp4 == comp1))) stop 4
+  if (.not.(all(comp1 == comp2) .and. all(comp2 == comp3) .and. all(comp3 == comp4) .and. all(comp4 == comp1))) error stop 4
 
   comp5 = [composed:: (composed(base(i*100,1.0/i/3,(0.0-i,i+10)), mod(i,2) == 1), i=1,3)]
   print *, comp5

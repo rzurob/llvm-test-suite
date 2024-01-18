@@ -38,9 +38,9 @@
   CLASS DEFAULT
     STOP 30
   TYPE IS (CHARACTER(*))
-    IF ( ANY(SHAPE(As) .NE. (/4/))  )   STOP 31
-    IF ( LBOUND(As, 1)    .NE. 1       )   STOP 32
-    IF ( ANY(As        .NE. "1") )  STOP 32
+    IF ( ANY(SHAPE(As) .NE. (/4/))  )   ERROR STOP 31
+    IF ( LBOUND(As, 1)    .NE. 1       )   ERROR STOP 32
+    IF ( ANY(As        .NE. "1") )  ERROR STOP 32
   TYPE IS (REAL )
     STOP 34
   END SELECT
@@ -51,9 +51,9 @@
   CLASS DEFAULT
     STOP 40
   TYPE IS ( CHARACTER(*) )
-    IF ( ANY(SHAPE(Ptr) .NE. (/4/))  )  STOP 42
-    IF ( LBOUND(Ptr, 1) .NE. 1       )  STOP 43
-    IF ( ANY( Ptr       .NE. "2")    )  STOP 44
+    IF ( ANY(SHAPE(Ptr) .NE. (/4/))  )  ERROR STOP 42
+    IF ( LBOUND(Ptr, 1) .NE. 1       )  ERROR STOP 43
+    IF ( ANY( Ptr       .NE. "2")    )  ERROR STOP 44
   TYPE IS (DOUBLE PRECISION )
     STOP 45
   END SELECT
@@ -64,9 +64,9 @@
   CLASS DEFAULT
     STOP 50
   TYPE IS ( CHARACTER(  *) )
-    IF ( ANY(SHAPE(As) .NE. (/2/))  )   STOP 51
-    IF ( LBOUND(As, 1) .NE. 1       )   STOP 52
-    IF ( ANY(As        .NE. "12") )     STOP 52
+    IF ( ANY(SHAPE(As) .NE. (/2/))  )   ERROR STOP 51
+    IF ( LBOUND(As, 1) .NE. 1       )   ERROR STOP 52
+    IF ( ANY(As        .NE. "12") )     ERROR STOP 52
   TYPE IS (INTEGER)
     STOP 54
   END SELECT
@@ -79,7 +79,7 @@
     CLASS DEFAULT
       STOP 60
     TYPE IS ( CHARACTER(*))
-      IF ( As   .NE. "2" )  STOP 62
+      IF ( As   .NE. "2" )  ERROR STOP 62
     TYPE IS (BYTE     )
       STOP 64
     END SELECT

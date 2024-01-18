@@ -44,17 +44,17 @@ program main
 
     p(func(100):) => t(1:func(100))
 
-    if ( .not. allocated(t) ) stop 99
+    if ( .not. allocated(t) ) error stop 99
 
-    if ( .not. associated(p) ) stop 1
-    if ( lbound(p,1) /= 50) stop 3
-    if ( ubound(p,1) /= 99) stop 5
+    if ( .not. associated(p) ) error stop 1
+    if ( lbound(p,1) /= 50) error stop 3
+    if ( ubound(p,1) /= 99) error stop 5
 
     q(func(10):func(20),1:lbound(p,1)/10) => p
 
-    if ( .not. associated(q) ) stop 11
-    if ( any (lbound(q) .ne. (/50, 1/)) ) stop 13
-    if ( any (ubound(q) .ne. (/50, 5/)) ) stop 15
+    if ( .not. associated(q) ) error stop 11
+    if ( any (lbound(q) .ne. (/50, 1/)) ) error stop 13
+    if ( any (ubound(q) .ne. (/50, 5/)) ) error stop 15
 
     select type (q)
         type is (child(4))

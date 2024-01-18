@@ -42,21 +42,21 @@ program main
 
     ptr(2:) => ptr(::2)
 
-    if ( .not. associated(ptr)) stop 11
-    if ( lbound(ptr,1) /= 2 ) stop 12
-    if ( ubound(ptr,1) /= 11 ) stop 13
+    if ( .not. associated(ptr)) error stop 11
+    if ( lbound(ptr,1) /= 2 ) error stop 12
+    if ( ubound(ptr,1) /= 11 ) error stop 13
 
     allocate(b1(10))
 
     do i = 1, 10
          b1(i)%ptr => ptr(11-i+1)
-         if ( .not. associated(b1(i)%ptr, ptr(11-i+1))) stop 11
+         if ( .not. associated(b1(i)%ptr, ptr(11-i+1))) error stop 11
     end do
 
     ptr = ptr + b1
 
-    if ( key /= 0 ) stop 12
-    if ( .not. precision_r6(ptr, real(20,16))) stop 13
+    if ( key /= 0 ) error stop 12
+    if ( .not. precision_r6(ptr, real(20,16))) error stop 13
 
 end program
 

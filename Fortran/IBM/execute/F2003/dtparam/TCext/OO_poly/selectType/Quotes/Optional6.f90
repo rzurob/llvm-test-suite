@@ -62,13 +62,13 @@
     SELECT TYPE (U => DTV)
     CLASS DEFAULT
 
-      IF ( .NOT. SAME_TYPE_AS(U, DT(4)()))        STOP 50
+      IF ( .NOT. SAME_TYPE_AS(U, DT(4)()))        ERROR STOP 50
 
       SELECT TYPE ( U )
 
       TYPE IS (DT(4))
-        IF ( U%Id      .NE. DTV%Id  )      STOP 55
-        IF ( U%GetId() .NE. DTV%GetId())   STOP 56
+        IF ( U%Id      .NE. DTV%Id  )      ERROR STOP 55
+        IF ( U%GetId() .NE. DTV%GetId())   ERROR STOP 56
 
       CLASS DEFAULT
         STOP 57
@@ -88,7 +88,7 @@
     SELECT TYPE (U => Arg)
     CLASS DEFAULT
 
-      IF ( .NOT. SAME_TYPE_AS(U, Arg))        STOP 30
+      IF ( .NOT. SAME_TYPE_AS(U, Arg))        ERROR STOP 30
 
     ASSOCIATE ( W => U )
 
@@ -96,8 +96,8 @@
 
       TYPE IS (DT(4))
 
-        IF ( U%Id      .NE. DTV%Id  )      STOP 42
-        IF ( U%GetId() .NE. DTV%GetId())   STOP 43
+        IF ( U%Id      .NE. DTV%Id  )      ERROR STOP 42
+        IF ( U%GetId() .NE. DTV%GetId())   ERROR STOP 43
 
       CLASS DEFAULT
         STOP 51

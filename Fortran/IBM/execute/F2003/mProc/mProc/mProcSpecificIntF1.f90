@@ -114,20 +114,20 @@
   T2 = DT2(2) .SUB. DT2(2)
   T3 = DT3(3) .SUB. DT3(3)
 
-  IF (T%ID   .NE. -2 ) STOP 11
-  IF (T1%ID  .NE.  2 ) STOP 12
-  IF (T2%ID  .NE.  4 ) STOP 13
-  IF (T3%ID  .NE.  6 ) STOP 14
+  IF (T%ID   .NE. -2 ) ERROR STOP 11
+  IF (T1%ID  .NE.  2 ) ERROR STOP 12
+  IF (T2%ID  .NE.  4 ) ERROR STOP 13
+  IF (T3%ID  .NE.  6 ) ERROR STOP 14
 
   T  = Fun(DT(1), DT(1))
   T1 = Fun1(DT1(-1), DT1(-1))
   T2 = Proc(DT2(-2), DT2(-2))
   T3 = ExtFun(DT3(-3), DT3(-3))
 
-  IF (T%ID   .NE.  2 ) STOP 21
-  IF (T1%ID  .NE. -2 ) STOP 22
-  IF (T2%ID  .NE. -4 ) STOP 23
-  IF (T3%ID  .NE. -6 ) STOP 24
+  IF (T%ID   .NE.  2 ) ERROR STOP 21
+  IF (T1%ID  .NE. -2 ) ERROR STOP 22
+  IF (T2%ID  .NE. -4 ) ERROR STOP 23
+  IF (T3%ID  .NE. -6 ) ERROR STOP 24
 
 
   END

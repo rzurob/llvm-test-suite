@@ -61,30 +61,30 @@ PROGRAM Recursive3
       TYPE(Child(4,10)) :: Arr(5, 5)
 
       Arr(1::1, 1::1) = Child(4,10)(ChildID=-2, BaseID=-1)
-      IF ( .NOT. IS_CONTIGUOUS(Arr) ) STOP 10
+      IF ( .NOT. IS_CONTIGUOUS(Arr) ) ERROR STOP 10
 
       ASSOCIATE ( As => ReturnArr(Arr(1::1, 1::1)), As1 => ReturnArr(Arr(:, :3)) )
-        IF ( .NOT. IS_CONTIGUOUS(As) )  STOP 20
-        IF ( .NOT. IS_CONTIGUOUS(As1) ) STOP 21
+        IF ( .NOT. IS_CONTIGUOUS(As) )  ERROR STOP 20
+        IF ( .NOT. IS_CONTIGUOUS(As1) ) ERROR STOP 21
 
-        IF ( ANY (LBOUND(As)   .NE. [1,1]) )    STOP 22
-        IF ( ANY (UBOUND(As)   .NE. [5,5]) )    STOP 23
-        IF ( ANY (SHAPE(As)    .NE. [5,5]) )    STOP 24
-        IF ( ANY (As%ChildID   .NE.    -2) )    STOP 25
-        IF ( ANY (As%BaseID    .NE.    -1) )    STOP 26
-        IF ( LEN(As%C)         .NE.     10 )    STOP 27
-        IF ( TRIM(As(1,1)%C)   .NE.  "ABC" )    STOP 28
+        IF ( ANY (LBOUND(As)   .NE. [1,1]) )    ERROR STOP 22
+        IF ( ANY (UBOUND(As)   .NE. [5,5]) )    ERROR STOP 23
+        IF ( ANY (SHAPE(As)    .NE. [5,5]) )    ERROR STOP 24
+        IF ( ANY (As%ChildID   .NE.    -2) )    ERROR STOP 25
+        IF ( ANY (As%BaseID    .NE.    -1) )    ERROR STOP 26
+        IF ( LEN(As%C)         .NE.     10 )    ERROR STOP 27
+        IF ( TRIM(As(1,1)%C)   .NE.  "ABC" )    ERROR STOP 28
 
         ASSOCIATE( As => ReturnArr(As1(:,:)) )
-          IF ( .NOT. IS_CONTIGUOUS(As) )  STOP 30
+          IF ( .NOT. IS_CONTIGUOUS(As) )  ERROR STOP 30
 
-          IF ( ANY (LBOUND(As)  .NE. [1,1]) )    STOP 31
-          IF ( ANY (UBOUND(As)  .NE. [5,3]) )    STOP 32
-          IF ( ANY (SHAPE(As)   .NE. [5,3]) )    STOP 33
-          IF ( ANY (As%ChildID  .NE.    -2) )    STOP 34
-          IF ( ANY (As%BaseID   .NE.    -1) )    STOP 35
-          IF ( LEN(As%C)        .NE.     10 )    STOP 36
-          IF ( TRIM(As(1,1)%C)  .NE.  "ABC" )    STOP 37
+          IF ( ANY (LBOUND(As)  .NE. [1,1]) )    ERROR STOP 31
+          IF ( ANY (UBOUND(As)  .NE. [5,3]) )    ERROR STOP 32
+          IF ( ANY (SHAPE(As)   .NE. [5,3]) )    ERROR STOP 33
+          IF ( ANY (As%ChildID  .NE.    -2) )    ERROR STOP 34
+          IF ( ANY (As%BaseID   .NE.    -1) )    ERROR STOP 35
+          IF ( LEN(As%C)        .NE.     10 )    ERROR STOP 36
+          IF ( TRIM(As(1,1)%C)  .NE.  "ABC" )    ERROR STOP 37
         END ASSOCIATE
       END ASSOCIATE
 END PROGRAM Recursive3

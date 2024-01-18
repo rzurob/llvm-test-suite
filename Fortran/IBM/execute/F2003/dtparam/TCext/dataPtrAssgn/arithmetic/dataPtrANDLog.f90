@@ -62,9 +62,9 @@ program main
     allocate(f1%tar(4), source = logical((/ .true.,.false., .true., .false. /), 1))
     f1%e1%d1%c1%b1%a1%p(1:4) => f1%tar(4:1:-1)
 
-    if ( .not. associated(f1%e1%d1%c1%b1%a1%p,f1%tar(4:1:-1))) stop 1
-    if ( any (lbound(f1%e1%d1%c1%b1%a1%p) .ne. (/1/))) stop 2
-    if ( any (ubound(f1%e1%d1%c1%b1%a1%p) .ne. (/4/))) stop 3
+    if ( .not. associated(f1%e1%d1%c1%b1%a1%p,f1%tar(4:1:-1))) error stop 1
+    if ( any (lbound(f1%e1%d1%c1%b1%a1%p) .ne. (/1/))) error stop 2
+    if ( any (ubound(f1%e1%d1%c1%b1%a1%p) .ne. (/4/))) error stop 3
 
     print *, f1%e1%d1%c1%b1%a1%p
     print *, f1%e1%d1%c1%b1%a1%p .and. .true.

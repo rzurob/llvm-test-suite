@@ -32,17 +32,17 @@ program acetint60spread
   integer :: array(9), i
 
   array = spread(1, 1, 9)
-  if (any(array /= 1)) stop 2
+  if (any(array /= 1)) error stop 2
 
   array = [integer:: spread(1, 1, 9)]
-  if (any(array /= 1)) stop 3
+  if (any(array /= 1)) error stop 3
 
   print *, spread([integer:: 1,2,3], 1, 3)
   array = [integer:: spread([integer:: 1,2,3], 1, 3)]
-  if (any(array /= [integer:: (i,i,i,i=1,3)])) stop 4
+  if (any(array /= [integer:: (i,i,i,i=1,3)])) error stop 4
 
   print *, spread([integer:: (i, i=1,3)], 1, 3)
   array = [integer:: spread([integer:: (i, i=1,3)], 1, 3)]
-  if (any(array /= [integer:: (i,i,i,i=1,3)])) stop 5
+  if (any(array /= [integer:: (i,i,i,i=1,3)])) error stop 5
 
 end program acetint60spread

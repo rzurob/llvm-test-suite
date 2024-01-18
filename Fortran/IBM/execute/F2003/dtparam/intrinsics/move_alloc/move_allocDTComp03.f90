@@ -44,17 +44,17 @@ program move_allocDTComp03
 
   call move_alloc(b1,b2)
 
-  if(allocated(b1))                                            stop 10
-  if(.not. allocated(b2))                                      stop 11
-  if(b2%l2 /= 3)                                               stop 12
-  if(lbound(b2,1) /= 4)                                        stop 13
-  if(ubound(b2,1) /= 6)                                        stop 14
-  if(b2(5)%a1%l1 /= 6)                                         stop 15
-  if(b2(5)%a1%c1%len /= len(b2(5)%a1%c1)) stop 106
-  if(b2(5)%a1%c1%len /= 6)                              stop 16
-  if(b2(4)%a1%c1 /= "xlf")                                     stop 17
-  if(b2(5)%a1%c1 /= "test")                                    stop 18
-  if(b2(6)%a1%c1 /= "team")                                    stop 19
+  if(allocated(b1))                                            error stop 10
+  if(.not. allocated(b2))                                      error stop 11
+  if(b2%l2 /= 3)                                               error stop 12
+  if(lbound(b2,1) /= 4)                                        error stop 13
+  if(ubound(b2,1) /= 6)                                        error stop 14
+  if(b2(5)%a1%l1 /= 6)                                         error stop 15
+  if(b2(5)%a1%c1%len /= len(b2(5)%a1%c1)) error stop 106
+  if(b2(5)%a1%c1%len /= 6)                              error stop 16
+  if(b2(4)%a1%c1 /= "xlf")                                     error stop 17
+  if(b2(5)%a1%c1 /= "test")                                    error stop 18
+  if(b2(6)%a1%c1 /= "team")                                    error stop 19
 
   if(allocated(b1))  deallocate(b1)
   allocate(b1(4:6))
@@ -64,19 +64,19 @@ program move_allocDTComp03
 
   call move_alloc(b1,b3)
 
-  if(allocated(b1))                                            stop 20
-  if(.not. allocated(b3))                                      stop 21
+  if(allocated(b1))                                            error stop 20
+  if(.not. allocated(b3))                                      error stop 21
   select type(b3)
      type is(B(*))
-       if(b3%l2 /= 3)                                          stop 22
-       if(lbound(b3,1) /= 4)                                   stop 23
-       if(ubound(b3,1) /= 6)                                   stop 24
-       if(b3(5)%a1%l1 /= 6)                                    stop 25
-       if(b3(5)%a1%c1%len /= len(b3(5)%a1%c1)) stop 126
-       if(b3(5)%a1%c1%len /= 6)                            stop 26
-       if(b3(4)%a1%c1 /= "xlf")                                stop 27
-       if(b3(5)%a1%c1 /= "test")                               stop 28
-       if(b3(6)%a1%c1 /= "team")                               stop 29
+       if(b3%l2 /= 3)                                          error stop 22
+       if(lbound(b3,1) /= 4)                                   error stop 23
+       if(ubound(b3,1) /= 6)                                   error stop 24
+       if(b3(5)%a1%l1 /= 6)                                    error stop 25
+       if(b3(5)%a1%c1%len /= len(b3(5)%a1%c1)) error stop 126
+       if(b3(5)%a1%c1%len /= 6)                            error stop 26
+       if(b3(4)%a1%c1 /= "xlf")                                error stop 27
+       if(b3(5)%a1%c1 /= "test")                               error stop 28
+       if(b3(6)%a1%c1 /= "team")                               error stop 29
   end select
 
   contains

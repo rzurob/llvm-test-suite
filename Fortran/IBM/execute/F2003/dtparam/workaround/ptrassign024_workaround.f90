@@ -48,8 +48,8 @@
     do j=3,5
       ptr2=>ptr1(j,i)
 !      if(.not.associated(ptr2,tar1(num)%base)) error stop 6
-        if (ptr1(j,i)%num1 /= num) stop 7
-        if (ptr2%num1 /= num) stop 8
+        if (ptr1(j,i)%num1 /= num) error stop 7
+        if (ptr2%num1 /= num) error stop 8
       num=num+1
     end do
   end do

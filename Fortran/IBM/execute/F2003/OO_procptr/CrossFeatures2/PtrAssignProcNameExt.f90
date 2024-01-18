@@ -58,9 +58,9 @@
   Ptr => ExtFun
   SELECT TYPE ( As => Ptr((/3_8,2_8,1_8/)) )
   TYPE IS (INTEGER(8))
-    IF ( ANY(LBOUND(As) .NE. (/1/)) ) STOP 11
-    IF ( ANY(UBOUND(As) .NE. (/3/)) ) STOP 12
-    IF ( ANY(As .NE. (/3_8,2_8,1_8/)) ) STOP 13
+    IF ( ANY(LBOUND(As) .NE. (/1/)) ) ERROR STOP 11
+    IF ( ANY(UBOUND(As) .NE. (/3/)) ) ERROR STOP 12
+    IF ( ANY(As .NE. (/3_8,2_8,1_8/)) ) ERROR STOP 13
   CLASS DEFAULT
     STOP 14
   END SELECT
@@ -82,9 +82,9 @@
   CLASS(*)           :: Arg2(:)
     SELECT TYPE ( As => Arg1(Arg2) )
     TYPE IS (LOGICAL(2))
-      IF ( ANY(LBOUND(As) .NE. (/1/))) STOP 21
-      IF ( ANY(UBOUND(As) .NE. (/2/))) STOP 22
-      IF ( ANY(As .NEQV. (/.FALSE._2, .TRUE._2/)) ) STOP 23
+      IF ( ANY(LBOUND(As) .NE. (/1/))) ERROR STOP 21
+      IF ( ANY(UBOUND(As) .NE. (/2/))) ERROR STOP 22
+      IF ( ANY(As .NEQV. (/.FALSE._2, .TRUE._2/)) ) ERROR STOP 23
     CLASS DEFAULT
       STOP 24
     END SELECT

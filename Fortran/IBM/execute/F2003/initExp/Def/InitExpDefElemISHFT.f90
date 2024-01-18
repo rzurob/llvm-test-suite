@@ -55,19 +55,19 @@
                                 DT0(ISHFT(I=(/(1_1, I=0, 127)/), SHIFT=(/(1,-1, I=1,128,2)/)) &
                               )/))
 
-  IF ( KIND(I11) .NE. 1 )         STOP 11
-  IF ( ANY( I11  .NE. 4 ))        STOP 12
-  IF ( KIND(I12) .NE. 1 )         STOP 13
-  IF ( ANY( I12  .NE. 32 ))       STOP 14
-  IF ( KIND(I13) .NE. 1 )         STOP 15
-  IF ( ANY( I13  .NE. -128 ))     STOP 16
-  IF ( ANY( I14  .NE. I1 ))       STOP 17
+  IF ( KIND(I11) .NE. 1 )         ERROR STOP 11
+  IF ( ANY( I11  .NE. 4 ))        ERROR STOP 12
+  IF ( KIND(I12) .NE. 1 )         ERROR STOP 13
+  IF ( ANY( I12  .NE. 32 ))       ERROR STOP 14
+  IF ( KIND(I13) .NE. 1 )         ERROR STOP 15
+  IF ( ANY( I13  .NE. -128 ))     ERROR STOP 16
+  IF ( ANY( I14  .NE. I1 ))       ERROR STOP 17
 
 
-  IF ( ANY( T%Arr(1)%I  .NE. 4 ))        STOP 22
-  IF ( ANY( T%Arr(2)%I  .NE. 32 ))       STOP 24
-  IF ( ANY( T%Arr(3)%I  .NE. -128 ))     STOP 26
-  IF ( ANY( T%Arr(4)%I  .NE. I1 ))       STOP 27
+  IF ( ANY( T%Arr(1)%I  .NE. 4 ))        ERROR STOP 22
+  IF ( ANY( T%Arr(2)%I  .NE. 32 ))       ERROR STOP 24
+  IF ( ANY( T%Arr(3)%I  .NE. -128 ))     ERROR STOP 26
+  IF ( ANY( T%Arr(4)%I  .NE. I1 ))       ERROR STOP 27
 
   END
 

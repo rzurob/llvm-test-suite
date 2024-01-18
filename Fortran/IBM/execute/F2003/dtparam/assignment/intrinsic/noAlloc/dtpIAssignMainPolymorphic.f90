@@ -143,53 +143,53 @@ contains
 
     print *, 'Phase 1: same type'
 
-    if (b_xp%l /= 3 .or. len(b_xp%ch) /= 3 .or. b_xp%ch /= 'abc') stop 2
+    if (b_xp%l /= 3 .or. len(b_xp%ch) /= 3 .or. b_xp%ch /= 'abc') error stop 2
 
     if (d_y4p%l /= 3 .or. d_y4p%k /= 4 .or. len(d_y4p%ch) /= 3 .or. d_y4p%ch /= 'def' .or. .not.d_y4p%lfld &
          .or. size(d_y4p%ifld) /= 3 .or. kind(d_y4p%lfld) /= 4 .or. kind(d_y4p%ifld) /= 4 .or. kind(d_y4p%rfld) /= 4 &
-         .or. any(d_y4p%ifld /= [1111111111,2122222222,1333333333]) .or. .not.precision_r4(d_y4p%rfld,4.1_4)) stop 3
+         .or. any(d_y4p%ifld /= [1111111111,2122222222,1333333333]) .or. .not.precision_r4(d_y4p%rfld,4.1_4)) error stop 3
 
     if (d_x4p%l /= 1 .or. d_x4p%k /= 4 .or. len(d_x4p%ch) /= 1 .or. d_x4p%ch /= 'y' .or. .not.d_x4p%lfld  &
          .or. size(d_x4p%ifld) /= 1 .or. kind(d_x4p%lfld) /= 4 .or. kind(d_x4p%ifld) /= 4 .or. kind(d_x4p%rfld) /= 4 &
-         .or. any(d_x4p%ifld /= [-12345678_4]) .or. .not.precision_r4(d_x4p%rfld,9.87654E-12)) stop 4
+         .or. any(d_x4p%ifld /= [-12345678_4]) .or. .not.precision_r4(d_x4p%rfld,9.87654E-12)) error stop 4
 
     if (d2_x48yp%l /= 3 .or. d2_x48yp%k /= 4 .or. d2_x48yp%k2 /= 8 .or. d2_x48yp%l2 /= 2 &
          .or. len(d2_x48yp%ch) /= 3 .or. d2_x48yp%ch /= 'ghi' .or. d2_x48yp%lfld &
          .or. size(d2_x48yp%ifld) /= 3 .or. kind(d2_x48yp%lfld) /= 4 .or. kind(d2_x48yp%ifld) /= 4 .or. kind(d2_x48yp%rfld) /= 4 &
          .or. any(d2_x48yp%ifld /= -d_y4p%ifld) .or. .not.precision_r4(d2_x48yp%rfld,5.9_4) &
          .or. kind(d2_x48yp%iarr) /= 8 .or. any(ubound(d2_x48yp%iarr) /= [3,2]) &
-         .or. any([d2_x48yp%iarr] /= [1111,2222,3333,4444,5555,6666])) stop 5
+         .or. any([d2_x48yp%iarr] /= [1111,2222,3333,4444,5555,6666])) error stop 5
 
     if (d2_x48yp%der%l /= 2 .or. d2_x48yp%der%k /= 8 .or. len(d2_x48yp%der%ch) /= 2 &
          .or. d2_x48yp%der%ch /= 'xz' .or. .not.d2_x48yp%der%lfld .or. size(d2_x48yp%der%ifld) /= 2 &
          .or. kind(d2_x48yp%der%lfld) /= 8 .or. kind(d2_x48yp%der%ifld) /= 8 .or. kind(d2_x48yp%der%rfld) /= 8 &
          .or. any(d2_x48yp%der%ifld /= [76543211234567_8,-123456787654321_8]) &
-         .or. .not.precision_r8(d2_x48yp%der%rfld,11235.81321D34)) stop 6
+         .or. .not.precision_r8(d2_x48yp%der%rfld,11235.81321D34)) error stop 6
 
 
-    if (b_yp%l /= 5 .or. len(b_yp%ch) /= 5 .or. b_yp%ch /= 'abcde') stop 7
+    if (b_yp%l /= 5 .or. len(b_yp%ch) /= 5 .or. b_yp%ch /= 'abcde') error stop 7
 
     if (d_y8p%l /= 5 .or. d_y8p%k /= 8 .or. len(d_y8p%ch) /= 5 .or. d_y8p%ch /= 'defgh' .or. .not.d_y8p%lfld &
          .or. size(d_y8p%ifld) /= 5 .or. kind(d_y8p%lfld) /= 8 .or. kind(d_y8p%ifld) /= 8 .or. kind(d_y8p%rfld) /= 8 &
          .or. any(d_y8p%ifld /= [1111111111111_8,2222222222222_8,3333333333333_8,4444444444444_8,5555555555555_8]) &
-         .or. .not.precision_r8(d_y8p%rfld,1.23456789D11)) stop 8
+         .or. .not.precision_r8(d_y8p%rfld,1.23456789D11)) error stop 8
 
     if (d_x8p%l /= 2 .or. d_x8p%k /= 8 .or. len(d_x8p%ch) /= 2 .or. d_x8p%ch /= 'xz' .or. .not.d_x8p%lfld &
          .or. size(d_x8p%ifld) /= 2 .or. kind(d_x8p%lfld) /= 8 .or. kind(d_x8p%ifld) /= 8 .or. kind(d_x8p%rfld) /= 8 &
-         .or. any(d_x8p%ifld /= [76543211234567_8,-123456787654321_8]) .or. .not.precision_r8(d_x8p%rfld,11235.81321D34)) stop 9
+         .or. any(d_x8p%ifld /= [76543211234567_8,-123456787654321_8]) .or. .not.precision_r8(d_x8p%rfld,11235.81321D34)) error stop 9
 
     if (d2_x84yp%l /= 5 .or. d2_x84yp%k /= 8 .or. d2_x84yp%k2 /= 4 .or. d2_x84yp%l2 /= 1 &
          .or. len(d2_x84yp%ch) /= 5 .or. d2_x84yp%ch /= 'defij' .or. .not.d2_x84yp%lfld &
          .or. size(d2_x84yp%ifld) /= 5 .or. kind(d2_x84yp%lfld) /= 8 .or. kind(d2_x84yp%ifld) /= 8 .or. kind(d2_x84yp%rfld) /= 8 &
          .or. any(d2_x84yp%ifld /= -d_y8p%ifld) .or. .not.precision_r8(d2_x84yp%rfld,9.87654321D-12) &
          .or. kind(d2_x84yp%iarr) /= 4 .or. any(ubound(d2_x84yp%iarr) /= [5,1]) &
-         .or. any([d2_x84yp%iarr] /= [1111,2222,3333,4444,5555])) stop 10
+         .or. any([d2_x84yp%iarr] /= [1111,2222,3333,4444,5555])) error stop 10
 
     if (d2_x84yp%der%l /= 1 .or. d2_x84yp%der%k /= 4 .or. len(d2_x84yp%der%ch) /= 1 &
          .or. d2_x84yp%der%ch /= 'y' .or. .not.d2_x84yp%der%lfld .or. size(d2_x84yp%der%ifld) /= 1 &
          .or. kind(d2_x84yp%der%lfld) /= 4 .or. kind(d2_x84yp%der%ifld) /= 4 .or. kind(d2_x84yp%der%rfld) /= 4 &
          .or. any(d2_x84yp%der%ifld /= [-12345678_4]) &
-         .or. .not.precision_r4(d2_x84yp%der%rfld,9.87654E-12)) stop 11
+         .or. .not.precision_r4(d2_x84yp%der%rfld,9.87654E-12)) error stop 11
 
     print *, 'Phase 1 done'
 
@@ -203,57 +203,57 @@ contains
 
     print *, 'Phase 2: pointer on RHS'
 
-    if (b_3a%l /= 3 .or. len(b_3a%ch) /= 3 .or. b_3a%ch /= 'abc') stop 12
+    if (b_3a%l /= 3 .or. len(b_3a%ch) /= 3 .or. b_3a%ch /= 'abc') error stop 12
 
     if (d_34a%l /= 3 .or. d_34a%k /= 4 .or. len(d_34a%ch) /= 3 .or. d_34a%ch /= 'def' .or. .not.d_34a%lfld &
          .or. size(d_34a%ifld) /= 3 .or. kind(d_34a%lfld) /= 4 .or. kind(d_34a%ifld) /= 4 .or. kind(d_34a%rfld) /= 4 &
-         .or. any(d_34a%ifld /= [1111111111,2122222222,1333333333]) .or. .not.precision_r4(d_34a%rfld,4.1_4)) stop 13
+         .or. any(d_34a%ifld /= [1111111111,2122222222,1333333333]) .or. .not.precision_r4(d_34a%rfld,4.1_4)) error stop 13
 
     if (d_14a%l /= 1 .or. d_14a%k /= 4 .or. len(d_14a%ch) /= 1 &
          .or. d_14a%ch /= 'y' .or. .not.d_14a%lfld .or. size(d_14a%ifld) /= 1 &
          .or. kind(d_14a%lfld) /= 4 .or. kind(d_14a%ifld) /= 4 .or. kind(d_14a%rfld) /= 4 &
          .or. any(d_14a%ifld /= [-12345678_4]) &
-         .or. .not.precision_r4(d_14a%rfld,9.87654E-12)) stop 14
+         .or. .not.precision_r4(d_14a%rfld,9.87654E-12)) error stop 14
 
     if (d2_3482a%l /= 3 .or. d2_3482a%k /= 4 .or. d2_3482a%k2 /= 8 .or. d2_3482a%l2 /= 2 &
          .or. len(d2_3482a%ch) /= 3 .or. d2_3482a%ch /= 'ghi' .or. d2_3482a%lfld &
          .or. size(d2_3482a%ifld) /= 3 .or. kind(d2_3482a%lfld) /= 4 .or. kind(d2_3482a%ifld) /= 4 .or. kind(d2_3482a%rfld) /= 4 &
          .or. any(d2_3482a%ifld /= -d_34a%ifld) .or. .not.precision_r4(d2_3482a%rfld,5.9_4) &
          .or. kind(d2_3482a%iarr) /= 8 .or. any(ubound(d2_3482a%iarr) /= [3,2]) &
-         .or. any([d2_3482a%iarr] /= [1111,2222,3333,4444,5555,6666])) stop 15
+         .or. any([d2_3482a%iarr] /= [1111,2222,3333,4444,5555,6666])) error stop 15
 
     if (d2_3482a%der%l /= 2 .or. d2_3482a%der%k /= 8 .or. len(d2_3482a%der%ch) /= 2 &
          .or. d2_3482a%der%ch /= 'xz' .or. .not.d2_3482a%der%lfld .or. size(d2_3482a%der%ifld) /= 2 &
          .or. kind(d2_3482a%der%lfld) /= 8 .or. kind(d2_3482a%der%ifld) /= 8 .or. kind(d2_3482a%der%rfld) /= 8 &
          .or. any(d2_3482a%der%ifld /= [76543211234567_8,-123456787654321_8]) &
-         .or. .not.precision_r8(d2_3482a%der%rfld,11235.81321D34)) stop 16
+         .or. .not.precision_r8(d2_3482a%der%rfld,11235.81321D34)) error stop 16
 
 
-    if (b_5a%l /= 5 .or. len(b_5a%ch) /= 5 .or. b_5a%ch /= 'abcde') stop 17
+    if (b_5a%l /= 5 .or. len(b_5a%ch) /= 5 .or. b_5a%ch /= 'abcde') error stop 17
 
     if (d_58a%l /= 5 .or. d_58a%k /= 8 .or. len(d_58a%ch) /= 5 .or. d_58a%ch /= 'defgh' .or. .not.d_58a%lfld &
          .or. size(d_58a%ifld) /= 5 .or. kind(d_58a%lfld) /= 8 .or. kind(d_58a%ifld) /= 8 .or. kind(d_58a%rfld) /= 8 &
          .or. any(d_58a%ifld /= [1111111111111_8,2222222222222_8,3333333333333_8,4444444444444_8,5555555555555_8]) &
-         .or. .not.precision_r8(d_58a%rfld,1.23456789D11)) stop 18
+         .or. .not.precision_r8(d_58a%rfld,1.23456789D11)) error stop 18
 
     if (d_28a%l /= 2 .or. d_28a%k /= 8 .or. len(d_28a%ch) /= 2 &
          .or. d_28a%ch /= 'xz' .or. .not.d_28a%lfld .or. size(d_28a%ifld) /= 2 &
          .or. kind(d_28a%lfld) /= 8 .or. kind(d_28a%ifld) /= 8 .or. kind(d_28a%rfld) /= 8 &
          .or. any(d_28a%ifld /= [76543211234567_8,-123456787654321_8]) &
-         .or. .not.precision_r8(d_28a%rfld,11235.81321D34)) stop 19
+         .or. .not.precision_r8(d_28a%rfld,11235.81321D34)) error stop 19
 
     if (d2_5841a%l /= 5 .or. d2_5841a%k /= 8 .or. d2_5841a%k2 /= 4 .or. d2_5841a%l2 /= 1 &
          .or. len(d2_5841a%ch) /= 5 .or. d2_5841a%ch /= 'defij' .or. .not.d2_5841a%lfld &
          .or. size(d2_5841a%ifld) /= 5 .or. kind(d2_5841a%lfld) /= 8 .or. kind(d2_5841a%ifld) /= 8 .or. kind(d2_5841a%rfld) /= 8 &
          .or. any(d2_5841a%ifld /= -d_58a%ifld) .or. .not.precision_r8(d2_5841a%rfld,9.87654321D-12) &
          .or. kind(d2_5841a%iarr) /= 4 .or. any(ubound(d2_5841a%iarr) /= [5,1]) &
-         .or. any([d2_5841a%iarr] /= [1111,2222,3333,4444,5555])) stop 20
+         .or. any([d2_5841a%iarr] /= [1111,2222,3333,4444,5555])) error stop 20
 
     if (d2_5841a%der%l /= 1 .or. d2_5841a%der%k /= 4 .or. len(d2_5841a%der%ch) /= 1 &
          .or. d2_5841a%der%ch /= 'y' .or. .not.d2_5841a%der%lfld .or. size(d2_5841a%der%ifld) /= 1 &
          .or. kind(d2_5841a%der%lfld) /= 4 .or. kind(d2_5841a%der%ifld) /= 4 .or. kind(d2_5841a%der%rfld) /= 4 &
          .or. any(d2_5841a%der%ifld /= [-12345678_4]) &
-         .or. .not.precision_r4(d2_5841a%der%rfld,9.87654E-12)) stop 21
+         .or. .not.precision_r4(d2_5841a%der%rfld,9.87654E-12)) error stop 21
 
     print *, 'Phase 2 done'
 
@@ -268,22 +268,22 @@ contains
 
     print *, 'Phase 3: pointer referencing child type'
 
-    if (b_xp%l /= 3 .or. len(b_xp%ch) /= 3 .or. b_xp%ch /= 'def') stop 22
-    if (b_xap%l /= 3 .or. len(b_xap%ch) /= 3 .or. b_xap%ch /= 'ghi') stop 23
-    if (b_xbp%l /= 2 .or. len(b_xbp%ch) /= 2 .or. b_xbp%ch /= 'xz') stop 24
+    if (b_xp%l /= 3 .or. len(b_xp%ch) /= 3 .or. b_xp%ch /= 'def') error stop 22
+    if (b_xap%l /= 3 .or. len(b_xap%ch) /= 3 .or. b_xap%ch /= 'ghi') error stop 23
+    if (b_xbp%l /= 2 .or. len(b_xbp%ch) /= 2 .or. b_xbp%ch /= 'xz') error stop 24
 
     if (d_y4p%l /= 3 .or. d_y4p%k /= 4 .or. len(d_y4p%ch) /= 3 .or. d_y4p%ch /= 'ghi' .or. d_y4p%lfld &
          .or. size(d_y4p%ifld) /= 3 .or. kind(d_y4p%lfld) /= 4 .or. kind(d_y4p%ifld) /= 4 .or. kind(d_y4p%rfld) /= 4 &
-         .or. any(d_y4p%ifld /= [-1111111111,-2122222222,-1333333333]) .or. .not.precision_r4(d_y4p%rfld,5.9_4)) stop 25
+         .or. any(d_y4p%ifld /= [-1111111111,-2122222222,-1333333333]) .or. .not.precision_r4(d_y4p%rfld,5.9_4)) error stop 25
 
-    if (b_yp%l /= 5 .or. len(b_yp%ch) /= 5 .or. b_yp%ch /= 'defgh') stop 26
-    if (b_yap%l /= 5 .or. len(b_yap%ch) /= 5 .or. b_yap%ch /= 'defij') stop 27
-    if (b_ybp%l /= 1 .or. len(b_ybp%ch) /= 1 .or. b_ybp%ch /= 'y') stop 28
+    if (b_yp%l /= 5 .or. len(b_yp%ch) /= 5 .or. b_yp%ch /= 'defgh') error stop 26
+    if (b_yap%l /= 5 .or. len(b_yap%ch) /= 5 .or. b_yap%ch /= 'defij') error stop 27
+    if (b_ybp%l /= 1 .or. len(b_ybp%ch) /= 1 .or. b_ybp%ch /= 'y') error stop 28
 
     if (d_x8p%l /= 5 .or. d_x8p%k /= 8 .or. len(d_x8p%ch) /= 5 .or. d_x8p%ch /= 'defij' .or. .not.d_x8p%lfld &
          .or. size(d_x8p%ifld) /= 5 .or. kind(d_x8p%lfld) /= 8 .or. kind(d_x8p%ifld) /= 8 .or. kind(d_x8p%rfld) /= 8 &
          .or. any(d_x8p%ifld /= -[1111111111111_8,2222222222222_8,3333333333333_8,4444444444444_8,5555555555555_8]) &
-         .or. .not.precision_r8(d_x8p%rfld,9.87654321D-12)) stop 29
+         .or. .not.precision_r8(d_x8p%rfld,9.87654321D-12)) error stop 29
 
     print *, 'Phase 3 done'
 

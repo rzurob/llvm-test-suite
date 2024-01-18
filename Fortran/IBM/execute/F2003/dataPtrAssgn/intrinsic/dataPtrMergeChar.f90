@@ -24,7 +24,7 @@ module m
         subroutine sub(ch)
             character(*), allocatable :: ch(:)
 
-	    if ( .not. allocated(ch)) stop 30
+	    if ( .not. allocated(ch)) error stop 30
 	    ch = ch(ubound(ch,1):lbound(ch,1):-1)
         end subroutine
 end module
@@ -37,9 +37,9 @@ end module
 
 	chP(size(chT):) => chT(::2)
 
-	if ( .not. associated(chP)) stop 5
-	if ( lbound(chP,1) /= 26) stop 7
-	if ( ubound(chP,1) /= 38) stop 9
+	if ( .not. associated(chP)) error stop 5
+	if ( lbound(chP,1) /= 26) error stop 7
+	if ( ubound(chP,1) /= 38) error stop 9
 
 	print *, chP
 

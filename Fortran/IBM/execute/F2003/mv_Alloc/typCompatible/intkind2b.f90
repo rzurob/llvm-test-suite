@@ -26,8 +26,8 @@
       allocate(j1(3), source = (/ 30_2, 20_2, 10_2 /) )
 
       call move_alloc(j1, b1%i1)
-      if ( .not. allocated( b1%i1) ) stop 21
-      if ( allocated( j1 ) ) stop 23
+      if ( .not. allocated( b1%i1) ) error stop 21
+      if ( allocated( j1 ) ) error stop 23
 
       print *, b1%i1
 

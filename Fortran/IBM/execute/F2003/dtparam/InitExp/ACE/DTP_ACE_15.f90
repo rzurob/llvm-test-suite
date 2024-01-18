@@ -52,12 +52,12 @@ PROGRAM DTP_ACE_15
 
       SELECT TYPE ( s => CreateNew( dum))
          TYPEIS (Base(4,*))
-           IF ( s%k1       .NE.  4 ) STOP 11
-           IF ( s%l1       .NE.  5 ) STOP 12
-           IF ( SIZE(s)    .NE.  1 ) STOP 13
+           IF ( s%k1       .NE.  4 ) ERROR STOP 11
+           IF ( s%l1       .NE.  5 ) ERROR STOP 12
+           IF ( SIZE(s)    .NE.  1 ) ERROR STOP 13
            DO I = 1, SIZE(s)
-              IF ( SIZE(s(I)%A1) .NE.  5 ) STOP 14
-              IF ( ANY(s(I)%A1   .NE. 5) ) STOP 15
+              IF ( SIZE(s(I)%A1) .NE.  5 ) ERROR STOP 14
+              IF ( ANY(s(I)%A1   .NE. 5) ) ERROR STOP 15
            END DO
 
          TYPE IS (Child(4,*,4,*))
@@ -75,12 +75,12 @@ PROGRAM DTP_ACE_15
 
       SELECT TYPE ( s => CreateNew(dum))
          TYPEIS (Base(4,*))
-           IF ( s%k1       .NE.  4 ) STOP 18
-           IF ( s%l1       .NE. 10 ) STOP 19
-           IF ( SIZE(s)    .NE.  2 ) STOP 20
+           IF ( s%k1       .NE.  4 ) ERROR STOP 18
+           IF ( s%l1       .NE. 10 ) ERROR STOP 19
+           IF ( SIZE(s)    .NE.  2 ) ERROR STOP 20
            DO I = 1, SIZE(s)
-              IF ( SIZE(s(I)%A1) .NE. 10) STOP 21
-              IF ( ANY(s(I)%A1   .NE. [(I*J, J=1, 10)]) ) STOP 22
+              IF ( SIZE(s(I)%A1) .NE. 10) ERROR STOP 21
+              IF ( ANY(s(I)%A1   .NE. [(I*J, J=1, 10)]) ) ERROR STOP 22
            END DO
 
          TYPE IS (Child(4,*,4,*))
@@ -96,12 +96,12 @@ PROGRAM DTP_ACE_15
 
       SELECT TYPE ( s =>  CreateNew( dum))
          TYPEIS (Base(4,*))
-           IF ( s%k1       .NE.  4 ) STOP 25
-           IF ( s%l1       .NE.  3 ) STOP 26
-           IF ( SIZE(s)    .NE.  1 ) STOP 27
+           IF ( s%k1       .NE.  4 ) ERROR STOP 25
+           IF ( s%l1       .NE.  3 ) ERROR STOP 26
+           IF ( SIZE(s)    .NE.  1 ) ERROR STOP 27
            DO I = 1, SIZE(s)
-              IF ( SIZE(s(I)%A1) .NE.  3 ) STOP 28
-              IF ( ANY(s(I)%A1   .NE. [1,2,3]) ) STOP 29
+              IF ( SIZE(s(I)%A1) .NE.  3 ) ERROR STOP 28
+              IF ( ANY(s(I)%A1   .NE. [1,2,3]) ) ERROR STOP 29
            END DO
 
          TYPE IS (Child(4,*,4,*))
@@ -116,21 +116,21 @@ PROGRAM DTP_ACE_15
 
       SELECT TYPE ( s =>  CreateNew( dum))
          TYPE IS (Child(4,*,4,*))
-           IF ( s%k1    .NE.  4 ) STOP 32
-           IF ( s%l1    .NE.  1 ) STOP 33
-           IF ( s%k2    .NE.  4 ) STOP 34
-           IF ( s%l2    .NE.  1 ) STOP 35
-           IF ( SIZE(s) .NE.  1 ) STOP 36
+           IF ( s%k1    .NE.  4 ) ERROR STOP 32
+           IF ( s%l1    .NE.  1 ) ERROR STOP 33
+           IF ( s%k2    .NE.  4 ) ERROR STOP 34
+           IF ( s%l2    .NE.  1 ) ERROR STOP 35
+           IF ( SIZE(s) .NE.  1 ) ERROR STOP 36
            DO I = 1, SIZE(s)
-              IF ( SIZE(s(I)%A1)  .NE.   1 ) STOP 37
-              IF ( ANY(s(I)%A1    .NE. 99) ) STOP 38
-              IF ( .NOT. ALLOCATED(s(I)%poly) ) STOP 39
-              IF ( s(I)%poly%k1       .NE.  4 ) STOP 40
-              IF ( s(I)%poly%l1       .NE.  1 ) STOP 41
-              IF ( SIZE(s(I)%poly)    .NE.  1 ) STOP 42
+              IF ( SIZE(s(I)%A1)  .NE.   1 ) ERROR STOP 37
+              IF ( ANY(s(I)%A1    .NE. 99) ) ERROR STOP 38
+              IF ( .NOT. ALLOCATED(s(I)%poly) ) ERROR STOP 39
+              IF ( s(I)%poly%k1       .NE.  4 ) ERROR STOP 40
+              IF ( s(I)%poly%l1       .NE.  1 ) ERROR STOP 41
+              IF ( SIZE(s(I)%poly)    .NE.  1 ) ERROR STOP 42
                  DO J = 1, SIZE(s(I)%poly)
-                    IF ( SIZE(s(I)%poly(J)%A1) .NE.     1 ) STOP 43
-                    IF ( ANY(s(I)%poly(J)%A1   .NE. [98]) ) STOP 44
+                    IF ( SIZE(s(I)%poly(J)%A1) .NE.     1 ) ERROR STOP 43
+                    IF ( ANY(s(I)%poly(J)%A1   .NE. [98]) ) ERROR STOP 44
                  END DO
             END DO
 

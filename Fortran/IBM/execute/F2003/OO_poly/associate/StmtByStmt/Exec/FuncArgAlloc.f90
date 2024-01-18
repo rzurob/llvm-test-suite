@@ -55,7 +55,7 @@
   ASSOCIATE ( As => V  )
     ALLOCATE(As%FdComp, SOURCE=Foundation())
     PRINT*, Func(As)
-    IF ( As.ChildId .NE. -2 ) STOP 22
+    IF ( As.ChildId .NE. -2 ) ERROR STOP 22
   END ASSOCIATE
 
   CONTAINS

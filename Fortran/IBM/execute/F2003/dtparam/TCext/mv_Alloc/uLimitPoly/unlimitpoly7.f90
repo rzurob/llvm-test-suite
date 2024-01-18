@@ -47,7 +47,7 @@ use m
 
    allocate(integer::b1%from(3,4))
 
-   if ( .not. allocated(b1%from) ) stop 21
+   if ( .not. allocated(b1%from) ) error stop 21
 
    select type( arg =>b1%from)
        type is (integer)
@@ -58,9 +58,9 @@ use m
 
    call move_alloc( b1%from, to )
 
-   if ( .not. allocated(to) ) stop 23
+   if ( .not. allocated(to) ) error stop 23
 
-   if ( allocated(b1%from) ) stop 25
+   if ( allocated(b1%from) ) error stop 25
 
    select type(to)
        type is (integer)

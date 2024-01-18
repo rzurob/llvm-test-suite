@@ -30,25 +30,25 @@ aptr => ttt
 
 call sub1(aptr)
 
-if (aptr%m .ne. 2) stop 6
-if (any(ubound(aptr%element) .ne. (/4, 2/))) stop 7
-if (aptr%avar .ne. 16) stop 8
+if (aptr%m .ne. 2) error stop 6
+if (any(ubound(aptr%element) .ne. (/4, 2/))) error stop 7
+if (aptr%avar .ne. 16) error stop 8
 
 contains
 subroutine sub1(pa)
 type(humongous_matrix(4, 4, :)), pointer :: pa
 type(humongous_matrix(4, 4, 2)), pointer :: tgt
 
-if(any(ubound(pa%element) .ne. (/4, 4/))) stop 1
-if(any(pa%element .ne. 12)) stop 2
+if(any(ubound(pa%element) .ne. (/4, 4/))) error stop 1
+if(any(pa%element .ne. 12)) error stop 2
 
 allocate(tgt)
 
 tgt%element = 8
 pa => tgt
 pa%avar = pa%element(1, 2) * 2
-if (any(ubound(pa%element) .ne. (/4, 2/))) stop 4
-if (any(pa%element .ne. 8)) stop 5
+if (any(ubound(pa%element) .ne. (/4, 2/))) error stop 4
+if (any(pa%element .ne. 8)) error stop 5
 
 end subroutine
 

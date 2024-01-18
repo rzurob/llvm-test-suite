@@ -47,9 +47,9 @@ program main
 
       call sub(a1)
 
-     if ( .not. associated(a1%p)) stop 8
-     if ( any(lbound(a1%p) .ne. (/0,1,2,3 /) )) stop 11
-     if ( any(ubound(a1%p) .ne. (/0,2,2,3 /) )) stop 12
+     if ( .not. associated(a1%p)) error stop 8
+     if ( any(lbound(a1%p) .ne. (/0,1,2,3 /) )) error stop 11
+     if ( any(ubound(a1%p) .ne. (/0,2,2,3 /) )) error stop 12
 
      write (*, '(2f15.10)') a1%p
 

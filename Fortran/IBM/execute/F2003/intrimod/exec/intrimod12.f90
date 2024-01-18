@@ -73,30 +73,30 @@
 
          call igf(ieee_all, flag_values)
          do k = 1, 5
-            if (flag_values(k) .neqv. .false. ) stop 10
+            if (flag_values(k) .neqv. .false. ) error stop 10
          enddo
 
          if (isdt(P4) .AND. isdt(N4)) then
-            if (iisf(P4) .OR. iisf(N4)) stop 12
+            if (iisf(P4) .OR. iisf(N4)) error stop 12
          endif
 
          if (isdt(PHD_4) .AND. isdt(PTD_4)) then
-             if (iisf(PHD_4) .neqv. .true.) stop 13
-             if (iisf(PTD_4) .neqv. .true.) stop 14
+             if (iisf(PHD_4) .neqv. .true.) error stop 13
+             if (iisf(PTD_4) .neqv. .true.) error stop 14
          endif
 
          call igs(status_value)
          call isrm(rt_nearest)
          call igrm(rtype)
          yr = iri(1.1)
-         if (yr /= 1.0) stop 16
+         if (yr /= 1.0) error stop 16
          call iss(status_value)
 
 !... Testing xlf_fp_util module
          call sff(flags(1))
          call cff(flags(5))
-         if ( gff(flags(1)) .eq. 0 ) stop 17
-         if ( gff(flags(5)) .ne. 0 ) stop 18
+         if ( gff(flags(1)) .eq. 0 ) error stop 17
+         if ( gff(flags(5)) .ne. 0 ) error stop 18
 
       end subroutine sub1
 

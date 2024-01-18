@@ -55,7 +55,7 @@
       CLASS(ExtNode(k1=knd1,l1=len1)) :: Obj
 
       ALLOCATE (foo, source= Obj)
-      IF ( .NOT. ASSOCIATED(foo)) STOP 11
+      IF ( .NOT. ASSOCIATED(foo)) ERROR STOP 11
 
       END FUNCTION foo
 
@@ -75,12 +75,12 @@
            STOP 20
 
         CLASS IS (ExtNode(knd1,*))
-                IF (A%k1 .NE. knd1) STOP 11
-                IF (A%l1 .NE. len1) STOP 12
-                IF (A%tag .NE. 'Empty') STOP 13
-                IF (A%tag%len .NE. len1) STOP 14
-                IF (LEN(A%tag) .NE. len1) STOP 15
-                IF (A%Next%tag .NE. 'Full') STOP 16
+                IF (A%k1 .NE. knd1) ERROR STOP 11
+                IF (A%l1 .NE. len1) ERROR STOP 12
+                IF (A%tag .NE. 'Empty') ERROR STOP 13
+                IF (A%tag%len .NE. len1) ERROR STOP 14
+                IF (LEN(A%tag) .NE. len1) ERROR STOP 15
+                IF (A%Next%tag .NE. 'Full') ERROR STOP 16
 
         CLASS DEFAULT
            STOP 21

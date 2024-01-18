@@ -79,31 +79,31 @@
   PROCEDURE(ModSub),  POINTER :: ProcPtr3 => NULL()
 
 
-  IF ( ASSOCIATED( ProcPtr1 ))              STOP 11
+  IF ( ASSOCIATED( ProcPtr1 ))              ERROR STOP 11
   ProcPtr1 => ProcPtr
-  IF ( .NOT. ASSOCIATED(ProcPtr1, ModFun )) STOP 12
+  IF ( .NOT. ASSOCIATED(ProcPtr1, ModFun )) ERROR STOP 12
   SELECT TYPE (As => ProcPtr1(100_1) )
   TYPE IS (INTEGER(1))
-    IF ( As .NE. 100_1 )                    STOP 13
+    IF ( As .NE. 100_1 )                    ERROR STOP 13
   CLASS DEFAULT
     STOP 14
   END SELECT
 
-  IF ( ASSOCIATED( ProcPtr2 ))              STOP 21
+  IF ( ASSOCIATED( ProcPtr2 ))              ERROR STOP 21
   ProcPtr2 => ExtFun
-  IF ( .NOT. ASSOCIATED(ProcPtr2, ExtFun )) STOP 22
+  IF ( .NOT. ASSOCIATED(ProcPtr2, ExtFun )) ERROR STOP 22
   SELECT TYPE (As => ProcPtr2((1.,-1.)) )
   TYPE IS (COMPLEX)
-    IF ( As .NE. (1.0,-1.0) )               STOP 23
+    IF ( As .NE. (1.0,-1.0) )               ERROR STOP 23
   CLASS DEFAULT
     STOP 24
   END SELECT
 
-  IF ( ASSOCIATED( ProcPtr3 ))              STOP 31
+  IF ( ASSOCIATED( ProcPtr3 ))              ERROR STOP 31
   ProcPtr3 => Proc
-  IF ( .NOT. ASSOCIATED(ProcPtr3, ModSub )) STOP 32
+  IF ( .NOT. ASSOCIATED(ProcPtr3, ModSub )) ERROR STOP 32
   CALL ProcPtr3("12345")
-  IF (  .NOT. LSub )                        STOP 33
+  IF (  .NOT. LSub )                        ERROR STOP 33
 
 
   END SUBROUTINE

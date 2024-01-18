@@ -43,8 +43,8 @@
 
       call sub(b)
 
-      if ( allocated(g) ) stop 11
-      if ( .not. allocated(b) ) stop 21
-      if ( b /= 127 ) stop 31
+      if ( allocated(g) ) error stop 11
+      if ( .not. allocated(b) ) error stop 21
+      if ( b /= 127 ) error stop 31
 
       end

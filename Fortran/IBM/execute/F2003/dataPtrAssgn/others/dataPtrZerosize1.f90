@@ -28,8 +28,8 @@ program main
 
     ptr(size(ptr):) => ptr
 
-    if ( .not. associated(ptr) ) stop 5
-    if (lbound(ptr,1) /= 1) stop 7
-    if (ubound(ptr,1) /= 0) stop 9
+    if ( .not. associated(ptr) ) error stop 5
+    if (lbound(ptr,1) /= 1) error stop 7
+    if (ubound(ptr,1) /= 0) error stop 9
 
 End program

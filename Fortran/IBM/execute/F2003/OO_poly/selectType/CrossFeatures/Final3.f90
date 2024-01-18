@@ -58,7 +58,7 @@
 
   !No Finalization shall heppen before the first executable stmta
   !since no function return in the specification expr.
-  IF (ANY(Final .NEQV. .FALSE.)) STOP 20
+  IF (ANY(Final .NEQV. .FALSE.)) ERROR STOP 20
 
   Final = .FALSE.
   CALL Sub(Test(V=V))
@@ -69,13 +69,13 @@
 
   SELECT TYPE ( UArg )
   CLASS IS (Test)
-    IF ( ANY(UArg%V) ) STOP 30
+    IF ( ANY(UArg%V) ) ERROR STOP 30
   CLASS DEFAULT
     STOP 61
   END SELECT
   SELECT TYPE ( UArg )
   CLASS IS (Test)
-    IF ( ANY(UArg%V) ) STOP 31
+    IF ( ANY(UArg%V) ) ERROR STOP 31
   CLASS DEFAULT
     STOP 62
   END SELECT

@@ -88,25 +88,25 @@
 
   baseModFun1%ProcPtr1 => Modfun1
 
-  IF ( ANY (Trace .NE. 0)) STOP 11
+  IF ( ANY (Trace .NE. 0)) ERROR STOP 11
   V = DT(Base=BaseModfun1, BComp=BaseModfun1, ProcPtr2=ModFun2)
-  IF ( ANY (Trace .NE. (/2,1,1,2,1,1,0,0/))) STOP 12
+  IF ( ANY (Trace .NE. (/2,1,1,2,1,1,0,0/))) ERROR STOP 12
 
   Trace=0
   Index = 0
   V%Base = V%ProcPtr1()
-  IF ( ANY (Trace .NE. (/1,0,0,0,0,0,0,0/))) STOP 13
+  IF ( ANY (Trace .NE. (/1,0,0,0,0,0,0,0/))) ERROR STOP 13
 
   Trace=0
   Index = 0
   V = V%ProcPtr2()
-  IF ( ANY (Trace .NE. (/2,1,1,2,1,1,0,0/))) STOP 14
+  IF ( ANY (Trace .NE. (/2,1,1,2,1,1,0,0/))) ERROR STOP 14
 
   ProcPtr => ModFun2
   Trace=0
   Index = 0
   V = procPtr(V)
-  IF ( ANY (Trace .NE. (/2,1,1,2,1,1,0,0/))) STOP 15
+  IF ( ANY (Trace .NE. (/2,1,1,2,1,1,0,0/))) ERROR STOP 15
 
   END
 

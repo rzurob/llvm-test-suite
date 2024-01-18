@@ -78,63 +78,63 @@
   CLASS(DT(1,*,4,*,8)), intent(in) :: S
 
   IF ( Status .EQ. 1 ) THEN
-    IF ( ASSOCIATED(S%V0) ) STOP 14
-    IF ( ALLOCATED (S%V1) ) STOP 15
-    IF ( ASSOCIATED(S%V2) ) STOP 16
+    IF ( ASSOCIATED(S%V0) ) ERROR STOP 14
+    IF ( ALLOCATED (S%V1) ) ERROR STOP 15
+    IF ( ASSOCIATED(S%V2) ) ERROR STOP 16
   ELSE
 
     SELECT TYPE ( S )
     CLASS IS (DT(1,*,4,*,8,*))
 
-    IF ( .NOT. ASSOCIATED(S%V0) ) STOP 24
-    IF ( .NOT. ALLOCATED (S%V1) ) STOP 25
-    IF ( .NOT. ASSOCIATED(S%V2) ) STOP 26
+    IF ( .NOT. ASSOCIATED(S%V0) ) ERROR STOP 24
+    IF ( .NOT. ALLOCATED (S%V1) ) ERROR STOP 25
+    IF ( .NOT. ASSOCIATED(S%V2) ) ERROR STOP 26
 
-    IF ( S%V0%L0         .NE. L0     )  STOP 31
-    IF ( SIZE(S%V0)      .NE. L0     )  STOP 32
+    IF ( S%V0%L0         .NE. L0     )  ERROR STOP 31
+    IF ( SIZE(S%V0)      .NE. L0     )  ERROR STOP 32
 
     SELECT TYPE ( As =>S%V1)
     TYPE IS (DT2(1,*,4,*,8,*))
 
-      IF ( AS%L0        .NE. L0      )  STOP 41
-      IF ( As%L1        .NE. L1      )  STOP 42
-      IF ( As%L2        .NE. L2      )  STOP 42
-      IF ( SIZE(As)     .NE. L2      )  STOP 43
+      IF ( AS%L0        .NE. L0      )  ERROR STOP 41
+      IF ( As%L1        .NE. L1      )  ERROR STOP 42
+      IF ( As%L2        .NE. L2      )  ERROR STOP 42
+      IF ( SIZE(As)     .NE. L2      )  ERROR STOP 43
 
       DO I=1, As(1)%L1
-        IF ( As(I)%C1                .NE.   "XYZ"    )  STOP 44
-        IF ( As(I)%C2                .NE.   "ZYX"    )  STOP 45
-        IF ( As(I)%I                 .NE.   1234     )  STOP 46
-        IF ( As(I)%R                 .NE.   4321.    )  STOP 47
-        IF ( As(I)%L                 .NEQV. .TRUE.   )  STOP 48
-        IF ( As(I)%Z                 .NE.   (1.,-1.) )  STOP 49
-        IF ( As(I)%T0%K0             .NE.    8       )  STOP 50
-        IF ( As(I)%T0%L0             .NE.    7       )  STOP 51
-        IF ( ASSOCIATED(As(I)%Ptr )  .EQV.   .TRUE.  )  STOP 52
-        IF ( As(I)%Ptr%K2            .NE.    8       )  STOP 53
-        IF ( As(I)%Ptr%L2            .NE.    7       )  STOP 54
+        IF ( As(I)%C1                .NE.   "XYZ"    )  ERROR STOP 44
+        IF ( As(I)%C2                .NE.   "ZYX"    )  ERROR STOP 45
+        IF ( As(I)%I                 .NE.   1234     )  ERROR STOP 46
+        IF ( As(I)%R                 .NE.   4321.    )  ERROR STOP 47
+        IF ( As(I)%L                 .NEQV. .TRUE.   )  ERROR STOP 48
+        IF ( As(I)%Z                 .NE.   (1.,-1.) )  ERROR STOP 49
+        IF ( As(I)%T0%K0             .NE.    8       )  ERROR STOP 50
+        IF ( As(I)%T0%L0             .NE.    7       )  ERROR STOP 51
+        IF ( ASSOCIATED(As(I)%Ptr )  .EQV.   .TRUE.  )  ERROR STOP 52
+        IF ( As(I)%Ptr%K2            .NE.    8       )  ERROR STOP 53
+        IF ( As(I)%Ptr%L2            .NE.    7       )  ERROR STOP 54
       END DO
     CLASS DEFAULT
        STOP 99
     END SELECT
 
-    IF ( S%V2%L0        .NE. L0      )  STOP 61
-    IF ( S%V2%L1        .NE. L1      )  STOP 62
-    IF ( S%V2%L2        .NE. L2      )  STOP 62
-    IF ( SIZE(S%V2)     .NE. L2      )  STOP 63
+    IF ( S%V2%L0        .NE. L0      )  ERROR STOP 61
+    IF ( S%V2%L1        .NE. L1      )  ERROR STOP 62
+    IF ( S%V2%L2        .NE. L2      )  ERROR STOP 62
+    IF ( SIZE(S%V2)     .NE. L2      )  ERROR STOP 63
 
     DO I=1, L2
-      IF ( S%V2(I)%C1                .NE.   "XYZ"    )  STOP 64
-      IF ( S%V2(I)%C2                .NE.   "ZYX"    )  STOP 65
-      IF ( S%V2(I)%I                 .NE.   1234     )  STOP 66
-      IF ( S%V2(I)%R                 .NE.   4321.    )  STOP 67
-      IF ( S%V2(I)%L                 .NEQV. .TRUE.   )  STOP 68
-      IF ( S%V2(I)%Z                 .NE.   (1.,-1.) )  STOP 69
-      IF ( S%V2(I)%T0%K0             .NE.    8       )  STOP 70
-      IF ( S%V2(I)%T0%L0             .NE.    7       )  STOP 71
-      IF ( ASSOCIATED(S%V2(I)%Ptr )  .EQV.   .TRUE.  )  STOP 72
-      IF ( S%V2(I)%Ptr%K2            .NE.    8       )  STOP 73
-      IF ( S%V2(I)%Ptr%L2            .NE.    7       )  STOP 74
+      IF ( S%V2(I)%C1                .NE.   "XYZ"    )  ERROR STOP 64
+      IF ( S%V2(I)%C2                .NE.   "ZYX"    )  ERROR STOP 65
+      IF ( S%V2(I)%I                 .NE.   1234     )  ERROR STOP 66
+      IF ( S%V2(I)%R                 .NE.   4321.    )  ERROR STOP 67
+      IF ( S%V2(I)%L                 .NEQV. .TRUE.   )  ERROR STOP 68
+      IF ( S%V2(I)%Z                 .NE.   (1.,-1.) )  ERROR STOP 69
+      IF ( S%V2(I)%T0%K0             .NE.    8       )  ERROR STOP 70
+      IF ( S%V2(I)%T0%L0             .NE.    7       )  ERROR STOP 71
+      IF ( ASSOCIATED(S%V2(I)%Ptr )  .EQV.   .TRUE.  )  ERROR STOP 72
+      IF ( S%V2(I)%Ptr%K2            .NE.    8       )  ERROR STOP 73
+      IF ( S%V2(I)%Ptr%L2            .NE.    7       )  ERROR STOP 74
     END DO
 
   CLASS DEFAULT

@@ -31,7 +31,7 @@ program d361081
 
   f1= fun(A(3)())
 
-  if(f1%l /= 3)  stop 10
+  if(f1%l /= 3)  error stop 10
 
 end program
 

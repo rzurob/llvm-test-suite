@@ -42,13 +42,13 @@
   COMPLEX    :: Z = (10**2, -10**2)
 
 
-  IF ( ANY(R4   .NE. R ) ) STOP 31
-  IF ( ANY(R8   .NE. R ) ) STOP 32
-  IF ( ANY(R6   .NE. R ) ) STOP 33
+  IF ( ANY(R4   .NE. R ) ) ERROR STOP 31
+  IF ( ANY(R8   .NE. R ) ) ERROR STOP 32
+  IF ( ANY(R6   .NE. R ) ) ERROR STOP 33
 
-  IF ( ANY(Z4   .NE. Z ) ) STOP 41
-  IF ( ANY(Z8   .NE. Z ) ) STOP 42
-  IF ( ANY(Z6   .NE. Z ) ) STOP 43
+  IF ( ANY(Z4   .NE. Z ) ) ERROR STOP 41
+  IF ( ANY(Z8   .NE. Z ) ) ERROR STOP 42
+  IF ( ANY(Z6   .NE. Z ) ) ERROR STOP 43
 
 
   END

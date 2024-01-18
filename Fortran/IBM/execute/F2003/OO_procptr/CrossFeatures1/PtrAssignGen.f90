@@ -79,10 +79,10 @@
   PROCEDURE(Int8),   POINTER :: PtrInt8
 
   PtrInt => Int
-  IF ( PtrInt(100) .NE. 100 ) STOP 11
+  IF ( PtrInt(100) .NE. 100 ) ERROR STOP 11
 
   PtrInt8 => Int8
-  IF ( PtrInt8(100_8) .NE. 8_8 ) STOP 12
+  IF ( PtrInt8(100_8) .NE. 8_8 ) ERROR STOP 12
 
   END
 

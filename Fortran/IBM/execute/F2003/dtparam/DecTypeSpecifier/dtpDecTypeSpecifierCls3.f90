@@ -51,18 +51,18 @@
   CLASS(DT1(1,1,K1=2,L1=2)), POINTER :: P3 => NULL()
 
 
-  IF ( .NOT. SAME_TYPE_AS(T1, DT0()) )              STOP 11
+  IF ( .NOT. SAME_TYPE_AS(T1, DT0()) )              ERROR STOP 11
 
-  IF ( .NOT. SAME_TYPE_AS(T2, DT0(2,2)() ) )        STOP 12
+  IF ( .NOT. SAME_TYPE_AS(T2, DT0(2,2)() ) )        ERROR STOP 12
 
-  IF ( .NOT. SAME_TYPE_AS(T3, DT1(1,1,2,2)(I=-1)) ) STOP 13
+  IF ( .NOT. SAME_TYPE_AS(T3, DT1(1,1,2,2)(I=-1)) ) ERROR STOP 13
 
 
-  IF ( .NOT. SAME_TYPE_AS(P1, DT0()) )              STOP 21
+  IF ( .NOT. SAME_TYPE_AS(P1, DT0()) )              ERROR STOP 21
 
-  IF ( .NOT. SAME_TYPE_AS(P2, DT0(2,2)()) )         STOP 22
+  IF ( .NOT. SAME_TYPE_AS(P2, DT0(2,2)()) )         ERROR STOP 22
 
-  IF ( .NOT. SAME_TYPE_AS(P3, DT1(1,1,2,2)(I=-1)) ) STOP 23
+  IF ( .NOT. SAME_TYPE_AS(P3, DT1(1,1,2,2)(I=-1)) ) ERROR STOP 23
 
 
   END

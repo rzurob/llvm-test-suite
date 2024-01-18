@@ -27,10 +27,10 @@
   IMPLICIT NONE
 
     ASSOCIATE ( Sin => Sin(0.0)  )
-      IF ( Sin .NE. 0.0) STOP 50
+      IF ( Sin .NE. 0.0) ERROR STOP 50
 
       ASSOCIATE ( Sin => Sin  )
-        IF ( Sin .NE. 0.0) STOP 50
+        IF ( Sin .NE. 0.0) ERROR STOP 50
       END ASSOCIATE
     END ASSOCIATE
 

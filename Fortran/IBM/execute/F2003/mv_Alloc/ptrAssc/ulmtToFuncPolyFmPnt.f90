@@ -48,12 +48,12 @@ end module
 
       select type ( x => func(d, p) )
           type is ( child )
-              if ( x%ch /= 'XYZabcde' ) stop 23
+              if ( x%ch /= 'XYZabcde' ) error stop 23
           class default
               stop 25
       end select
 
-      if ( allocated(d) ) stop 27
+      if ( allocated(d) ) error stop 27
 
       end
 
@@ -69,11 +69,11 @@ end module
 
             call move_alloc(arg, func)
 
-            if (  .not. allocated(func) ) stop 11
+            if (  .not. allocated(func) ) error stop 11
 
             select type ( func)
                 type is (child)
-                    if (.not. associated(brg, func) ) stop 21
+                    if (.not. associated(brg, func) ) error stop 21
                 class default
                     stop 27
             end select

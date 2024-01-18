@@ -27,9 +27,9 @@
 
 
   ASSOCIATE ( Ext => Ext(1)  )
-    IF ( Ext .NE. 1_8 ) Stop 11
+    IF ( Ext .NE. 1_8 ) error Stop 11
   END ASSOCIATE
-  IF ( Ext(1) .NE. 1_8 ) Stop 12
+  IF ( Ext(1) .NE. 1_8 ) error Stop 12
 
   CALL Sub(Ext)
 
@@ -39,7 +39,7 @@
   PROCEDURE(INTEGER(8)) :: Arg
 
     ASSOCIATE ( Arg => Arg(1) )
-      IF ( Arg .NE. 1_8 ) Stop 13
+      IF ( Arg .NE. 1_8 ) error Stop 13
     END ASSOCIATE
 
   END SUBROUTINE

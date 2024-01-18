@@ -36,16 +36,16 @@ integer(2), parameter :: v2(4)=(/1_2,3_2,5_2,7_2/)
 logical, parameter :: msk2(2,2)=reshape((/T,F,T,F/), (/2,2/))
 integer(2) :: res21(2,2)=unpack(v2, mask=msk2, field=0_2), res21a(2,2)
 
-if (.not. all(res1 .eq. unpack(v4, msk4, fld4))) stop 1
-if (.not. all(res2 .eq. unpack(v4, msk4, field=0))) stop 2
+if (.not. all(res1 .eq. unpack(v4, msk4, fld4))) error stop 1
+if (.not. all(res2 .eq. unpack(v4, msk4, field=0))) error stop 2
 
 res3a = unpack(v3, mask=msk3, field=fld3)
-if (.not. all(res3 .eq. res3a)) stop 3
+if (.not. all(res3 .eq. res3a)) error stop 3
 
 res11a = unpack(v1, mask=msk1, field=fld1)
-if (.not. all(res11 .eq. res11a)) stop 4
+if (.not. all(res11 .eq. res11a)) error stop 4
 
 res21a = unpack(v2, mask=msk2, field=0_2)
-if (.not. all(res21 .eq. res21a)) stop 5
+if (.not. all(res21 .eq. res21a)) error stop 5
 
 end
