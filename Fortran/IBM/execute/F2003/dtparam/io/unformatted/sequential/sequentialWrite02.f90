@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : sequentialWrite02
-!*
 !*  DATE                       : October  2, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Extended Derived Type (with Type Parameters)
 !*                               Output to a SEQUENTIAL File

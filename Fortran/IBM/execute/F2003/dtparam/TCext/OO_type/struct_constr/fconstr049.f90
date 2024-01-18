@@ -2,19 +2,6 @@
 ! ftcx_dtp -qck -qk -ql /tstdev/OO_type/struct_constr/fconstr049.f
 ! with manual adjustment (line 97: base(1,2) is a function call to makeBase,
 ! so it's not parameterized)
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: fconstr049.f
-! %VERIFY: fconstr049.out:fconstr049.vf
-! %STDIN:
-! %STDOUT: fconstr049.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

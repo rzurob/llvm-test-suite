@@ -1,7 +1,5 @@
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : coindexObjectProcedureDT08.f
-!*
 !*  DATE                       : 2011-05-27
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF coindex object Procedure Call

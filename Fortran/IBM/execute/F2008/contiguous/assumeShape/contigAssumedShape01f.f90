@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : 2011-08-20
-!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : copy-in/out for assumed shape arrays
 !*  SECONDARY FUNCTIONS TESTED :

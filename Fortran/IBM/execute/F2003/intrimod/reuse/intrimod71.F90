@@ -1,18 +1,5 @@
 ! ************************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90 -qlist
-! %GROUP: ../fake_omp_lib_module.f intrimod71.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/intrimod71.sh intrimod71
-! %END
 !************************************************************************
-!*
-!*  Test Case Name   : intrimod71.f
 !*
 !*  Release Version  : 1.0
 !*

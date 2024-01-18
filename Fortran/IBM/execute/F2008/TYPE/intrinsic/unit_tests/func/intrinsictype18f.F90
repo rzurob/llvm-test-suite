@@ -1,7 +1,6 @@
 !* =================================================================== &
 !*
 !* DATE                       : March 10, 2011
-!* ORIGIN                     : AIX Compiler Development,
 !*
 !* PRIMARY FUNCTIONS TESTED   : Intrinsic types in TYPE spec
 !*

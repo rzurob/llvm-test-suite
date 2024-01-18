@@ -3,7 +3,6 @@
 !*                               in I/O Statements
 !*
 !*  DATE                       : January 23, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS= Specifier in OPEN() Statement
 !*  SECONDARY FUNCTIONS TESTED : scalar-default-char-expr is 'YES' (with

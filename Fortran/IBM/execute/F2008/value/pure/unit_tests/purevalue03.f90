@@ -1,9 +1,7 @@
 !******************************************************************************
 !*  ===========================================================================
 !*
-!*  TEST CASE NAME  : F2008/value/pure/unit_tests/purevalue03.f
 !*  DATE            : 2010-12-01
-!*  DRIVER STANZA   : xlf2003
 !*
 !*  DESCRIPTION
 !*  - several pure procedures with mixed # of dummy arguments with value

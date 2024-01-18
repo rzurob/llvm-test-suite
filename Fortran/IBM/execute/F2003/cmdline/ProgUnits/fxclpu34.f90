@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export CmdLine="fxclpu34 1 a 2"
-! %COMPOPTS:  -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxclpu34
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxclpu34.f
 !*
 !*  DATE                       : Oct. 1, 2003
 !*
@@ -34,7 +20,6 @@
 !*
 !*  DESCRIPTION                : Invoke command line procedures within module recursive
 !*                             : routines (entry -> entry/ Func -> entry -> entry)
-!*                             :
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

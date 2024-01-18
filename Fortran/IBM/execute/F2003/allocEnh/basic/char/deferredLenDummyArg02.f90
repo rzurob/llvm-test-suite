@@ -3,7 +3,6 @@
 !*                               CHARACTER Intrinsic Type
 !*
 !*  DATE                       : September 19, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is a
 !*                               Deferred Length ALLOCATABLE Array Dummy

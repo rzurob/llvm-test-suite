@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : March 23, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pending Data Transfer
 !*  SECONDARY FUNCTIONS TESTED : INQUIRE() with the FILE= Specifier, PENDING=

@@ -1,11 +1,9 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : aceCompPtrAllocSourceSpec01
 !*                               with DTP
 !*
 !*  DATE                       : November 25, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor contains a Derived Type
 !*                               with a Polymorphic POINTER Component

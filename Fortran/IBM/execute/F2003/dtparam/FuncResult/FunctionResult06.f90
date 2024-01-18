@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : March 25, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Function result - unlimited poly
 !*  SECONDARY FUNCTIONS TESTED :

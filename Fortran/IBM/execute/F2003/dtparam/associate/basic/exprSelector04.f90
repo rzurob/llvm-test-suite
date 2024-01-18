@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : exprSelector04
-!*
 !*  DATE                       : July 14, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : selector is an Expression
 !*  SECONDARY FUNCTIONS TESTED : The Expression is a User Defined Function

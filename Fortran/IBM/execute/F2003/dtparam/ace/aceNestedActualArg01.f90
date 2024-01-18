@@ -1,11 +1,9 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : aceNestedActualArg01
 !*                               with DTP
 !*
 !*  DATE                       : November 21, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor contains Nested Array
 !*                               Constructors for a Derived Type (with

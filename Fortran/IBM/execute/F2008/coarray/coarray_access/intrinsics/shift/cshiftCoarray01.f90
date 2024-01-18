@@ -1,7 +1,5 @@
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : cshiftCoarray01.f
-!*
 !*  DATE                       : 2010-12-16
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF Array Intrinsics

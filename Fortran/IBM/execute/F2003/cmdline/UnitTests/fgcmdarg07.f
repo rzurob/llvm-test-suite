@@ -1,21 +1,6 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qintsize=8 -qfixed
-! %GROUP: fgcmdarg07.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS: aa bbb cccc
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*
 !*  ===================================================================
-!*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  FUNCTIONALITY TESTED       : VALUE takes the value of a specified
 !*                             : command line argument. LENGTH is the

@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : November 13, 2012
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C-interop: Assumed Rank objects
 !*  SECONDARY FUNCTIONS TESTED : Assumed Type

@@ -7,7 +7,6 @@
 !*                               Scalar and variable is an Array
 !*
 !*  DATE                       : November  2, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is an
 !*                               Array Section (with a Vector Subscript)

@@ -1,9 +1,7 @@
 !******************************************************************************
 !*  ===========================================================================
 !*
-!*  TEST CASE NAME  : F2008/value/pure/unit_tests/purevalue08.f
 !*  DATE            : 2010-12-01
-!*  DRIVER STANZA   : xlf2003
 !*
 !*  DESCRIPTION
 !*  - array and pointer to array actual argument passed to elemental function

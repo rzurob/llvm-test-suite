@@ -7,7 +7,6 @@
 !*                               Subobject
 !*
 !*  DATE                       : November  8, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is a
 !*                               Structure Component that is ALLOCATABLE

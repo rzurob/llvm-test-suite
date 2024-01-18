@@ -1,7 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : F2003/dtparam/ArgAssociation/arg_assoc_1k1.f
 !*  DATE                       : Mar. 23, 2009
 !*  PRIMARY FUNCTIONS TESTED   : See Description below.
 !*  REFERENCE                  : Feature Number 361232

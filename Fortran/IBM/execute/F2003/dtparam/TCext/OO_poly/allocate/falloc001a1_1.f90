@@ -1,18 +1,5 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql /tstdev/OO_poly/allocate/falloc001a1_1.f
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90 -qcheck
-! %GROUP: falloc001a1_1.f
-! %VERIFY: falloc001a1_1.out:falloc001a1_1.vf
-! %STDIN:
-! %STDOUT: falloc001a1_1.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

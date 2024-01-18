@@ -1,20 +1,7 @@
 !**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qxlf77=noleadzero
-! %GROUP:  fxstio214.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: diff fxstio214.dat $TR_SRC/fxstio214.vf && rm -f fxstio214.dat
-! %END
-!**********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : March 2003
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN, WRITE
 !*

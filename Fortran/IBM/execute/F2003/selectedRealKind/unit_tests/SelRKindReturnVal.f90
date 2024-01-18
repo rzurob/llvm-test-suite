@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : SelRKindReturnVal.f
-!*
 !*  DATE                       : June 05, 2007
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic function

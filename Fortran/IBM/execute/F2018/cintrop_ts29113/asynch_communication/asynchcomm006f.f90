@@ -2,7 +2,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             :/cintrop_ts29113/asynch_communication/asynchcomm006f.f
 !* FEATURE NAME                : C_Interop_Asynch_Communication
 !*  DATE                       : 2013-10-07
 !*

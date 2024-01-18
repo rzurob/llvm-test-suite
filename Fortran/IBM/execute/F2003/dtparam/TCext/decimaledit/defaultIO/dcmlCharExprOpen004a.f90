@@ -2,7 +2,6 @@
 ! ftcx_dtp -qdeferredlp /tstdev/F2003/decimaledit/defaultIO/dcmlCharExprOpen004a.f
 ! opt variations: -qck -qnodeferredlp
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

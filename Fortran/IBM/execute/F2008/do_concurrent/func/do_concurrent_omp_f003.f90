@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : F2008/do_concurrent/func/do_concurrent_omp_f003.f
-!*
 !*  DATE                       : August 12, 2015
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OMP 3.0 loop collapse clause

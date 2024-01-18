@@ -2,7 +2,6 @@
 ! ftcx_dtp -qk -ql -qreuse=base /tstdev/F2003/misc/d327740.f
 ! opt variations: -qnok -qnol -qreuse=none
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

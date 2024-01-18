@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : October  5, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2003: Syntax Error in Type Guard Statement
 !*                               causes ICE in xlfcode

@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : August 13, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : Argument Association / Use Asociation

@@ -1,11 +1,9 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : aceArrayFunctionReturn01
 !*                               with DTP
 !*
 !*  DATE                       : November  7, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor contains Array Variable(s)
 !*                               of Derived Type (with Type Parameters)

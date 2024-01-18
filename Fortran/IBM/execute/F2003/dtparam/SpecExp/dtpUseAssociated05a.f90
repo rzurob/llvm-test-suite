@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : dtpUseAssociated05a
-!*
 !*  DATE                       : July 13, 2009
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Two MODULEs USE Associated with a Subprogram
 !*                               with a common USE Associated MOUDLE wtih

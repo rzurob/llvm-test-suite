@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : June 2, 2009
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray in data stmt
 !*  SECONDARY FUNCTIONS TESTED : None

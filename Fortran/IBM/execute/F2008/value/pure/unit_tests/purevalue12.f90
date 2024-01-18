@@ -1,9 +1,7 @@
 !******************************************************************************
 !*  ===========================================================================
 !*
-!*  TEST CASE NAME  : F2008/value/pure/unit_tests/purevalue12.f
 !*  DATE            : 2010-12-01
-!*  DRIVER STANZA   : xlf2003
 !*
 !*  DESCRIPTION
 !*  - C main calls Fortran pure procedures, passing pointer to a C function

@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : move_allocToHasTargetAttribute02.f
-!*
 !*  DATE                       : Oct. 2 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO)

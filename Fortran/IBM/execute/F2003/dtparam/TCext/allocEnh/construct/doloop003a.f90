@@ -2,7 +2,6 @@
 ! ftcx_dtp -qck -qk -ql -qnodefaultpv -qdeferredlp /tstdev/F2003/allocEnh/construct/doloop003a.f
 ! opt variations: -qnock -qnok -qnol -qdefaultpv -qnodeferredlp -qreuse=self
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

@@ -2,7 +2,6 @@
 ! ftcx_dtp -qck -qk -qnol -qnodefaultpv /tstdev/F2003/allocEnh/funcResult/intrinsic005a.f
 ! opt variations: -qnock -qnok -ql -qdefaultpv -qreuse=self
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

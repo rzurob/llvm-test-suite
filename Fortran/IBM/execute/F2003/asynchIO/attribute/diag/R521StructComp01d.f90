@@ -3,7 +3,6 @@
 !*                               Attribute in Derived Types
 !*
 !*  DATE                       : January 17, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : R521
 !*  SECONDARY FUNCTIONS TESTED : Derived Type -- Structure Component

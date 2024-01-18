@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : June 24, 2010
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS substrings 6.4.1.1
 !*

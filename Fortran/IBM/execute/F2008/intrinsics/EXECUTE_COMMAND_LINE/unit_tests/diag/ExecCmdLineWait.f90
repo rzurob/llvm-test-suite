@@ -1,16 +1,4 @@
 !************************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS:
-! %GROUP: ExecCmdLineWait.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!************************************************************************
       program ExecCmdLineWait
         integer :: c
 
@@ -22,7 +10,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : Dec 05, 2010
-!*  ORIGIN                     : AIX Compiler Development,
 !*                             : IBM China Development Shanghai Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :

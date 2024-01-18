@@ -1,8 +1,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : dtpPPCExplicitInterfaceRequired
-!*
 !*  DATE                       : 2009-04-16
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Procedure Pointers as Components

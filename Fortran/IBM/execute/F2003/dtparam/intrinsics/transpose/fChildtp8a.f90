@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : July 27, 2008
-!*  ORIGIN                     : XLF Compiler Test,
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !       Transpose Intrinsic function with derived type parameters.

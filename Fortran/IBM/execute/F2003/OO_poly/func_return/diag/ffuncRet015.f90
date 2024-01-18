@@ -1,4 +1,3 @@
-!#######################################################################
 ! OO_poly/func_return/ffuncRet015.f, xlftest.OO_poly, tst141, 1.1
 ! Extract Date/Time: 15/08/20 15:09:40
 ! Checkin Date/Time: 05/05/11 14:27:51

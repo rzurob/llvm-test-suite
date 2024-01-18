@@ -1,20 +1,7 @@
 !**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90 -qsmp -F:xlf95_r
-! %GROUP: intrimod72.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: rm -f *.mod
-! %END
-!**********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : January 13, 2004
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Various OMP Lock routines mixed with
 !*                               user threads.

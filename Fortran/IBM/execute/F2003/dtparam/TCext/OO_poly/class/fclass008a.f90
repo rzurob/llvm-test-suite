@@ -2,19 +2,6 @@
 ! ftcx_dtp -qnol /tstdev/OO_poly/class/fclass008a.f
 ! opt variations: -qck -ql
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: fclass008a.f
-! %VERIFY: fclass008a.out:fclass008a.vf
-! %STDIN:
-! %STDOUT: fclass008a.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

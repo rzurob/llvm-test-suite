@@ -3,7 +3,6 @@
 !*                               Specifier in I/O Statements
 !*
 !*  DATE                       : March 17, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS= Specifier in INQUIRE()
 !*                               Statement on a file OPEN()ed for

@@ -2,7 +2,6 @@
 ! ftcx_dtp -qdeferredlp /tstdev/F2003/allocEnh/zeroSize/zeroSizeArray011.f
 ! opt variations: -qck -qnodeferredlp
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

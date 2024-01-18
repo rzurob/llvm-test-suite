@@ -2,19 +2,6 @@
 ! ftcx_dtp -ql /tstdev/OO_tpbnd/specific/ftpbnd520a.f
 ! opt variations: -qnol
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: ftpbnd520a.f
-! %VERIFY: ftpbnd520a.out:ftpbnd520a.vf
-! %STDIN:
-! %STDOUT: ftpbnd520a.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

@@ -1,7 +1,6 @@
 !* =================================================================== &
 !*
 !* DATE                       : March 8, 2011
-!* ORIGIN                     : AIX Compiler Development,
 !*
 !* PRIMARY FUNCTIONS TESTED   : EXIT Statement
 !*

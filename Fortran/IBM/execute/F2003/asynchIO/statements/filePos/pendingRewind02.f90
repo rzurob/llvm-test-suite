@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : March 28, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Unformatted READ() Pending Data Transfers
 !*                               with an end-of-file Condition

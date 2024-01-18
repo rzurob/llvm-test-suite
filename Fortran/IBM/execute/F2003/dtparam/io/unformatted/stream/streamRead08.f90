@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : streamRead08
-!*
 !*  DATE                       : November  4, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : STREAM File Input for a Derived/Extended
 !*                               Derived Type (with Type Parameters)

@@ -3,7 +3,6 @@
 !*                               Type
 !*
 !*  DATE                       : September 21, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor with Implied-DO
 !*  SECONDARY FUNCTIONS TESTED : The ac-value is a FUNCTION with an ALLOCATABLE

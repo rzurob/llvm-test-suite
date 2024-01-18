@@ -1,7 +1,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : dtpCompatReturnValueGrandChild
 !*  TEST CASE FILE             : dtpCompatReturnValueGrandChildPostDTP
 !*
 !*  DATE                       : 2009-06-13

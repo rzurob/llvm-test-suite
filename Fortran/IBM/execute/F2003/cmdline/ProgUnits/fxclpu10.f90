@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export CmdLine="fxclpu10 --- - - ="
-! %COMPOPTS:  -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxclpu10
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxclpu10.f
 !*
 !*  DATE                       : Sept 18, 2003
 !*
@@ -35,7 +21,6 @@
 !*  DESCRIPTION                : Call command line procedures through external subroutine
 !*                             : which is used for the defined assignment(=)
 !*                             : Invoke the defined assignment inside an internal subroutine
-!*                             :
 !234567890123456789012345678901234567890123456789012345678901234567890
 
       MODULE MOD

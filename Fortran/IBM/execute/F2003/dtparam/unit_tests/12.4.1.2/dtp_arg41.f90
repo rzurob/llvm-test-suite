@@ -1,8 +1,5 @@
 !*  ===================================================================
 !*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
-!*
 !*  DIAGNOSTIC TESTED          : using sizeof() on automatic object
 !*
 !*  REQUIRED COMPILER OPTIONS  :

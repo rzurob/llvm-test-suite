@@ -3,7 +3,6 @@
 !*                               an Array
 !*
 !*  DATE                       : October 26, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2003: ALLOC: Incorrect Length Type Parameter
 !*                               Result for a Scalar Assigned to a Deferred

@@ -1,24 +1,10 @@
 @process free(f90)
       program fxpurs10
 !*********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: PROCS=4
-! %COMPOPTS:
-! %GROUP: fxpurs10.f
-! %VERIFY: fxpurs10.out:fxpurs10.vf
-! %STDIN:
-! %STDOUT: fxpurs10.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 !**********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : fxpurs10
-!*
 !*  DATE                       : Oct 08, 1995
-!*  ORIGIN                     : PPS Languages, Kingston, NY
 !*
 !*  PRIMARY FUNCTIONS TESTED   : PURE
 !*  SECONDARY FUNCTIONS TESTED :

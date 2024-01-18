@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : June 24, 2010
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS simply contiguous
 !*                               6.5.4 & 12.5.2.7

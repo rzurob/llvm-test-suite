@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : diaDataDTParmInitExpr.f
-!*
 !*  DATE                       : May 11,2007
 !*
 !*  PRIMARY FUNCTIONS TESTED   : support for structure constructors containing type parameters to the DATA statement.

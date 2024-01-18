@@ -1,19 +1,6 @@
 !! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export  CmdLine="fxclpl14 ----fthrthr-reth-rth-ertherth-reth-reth-retherth-rth"
-! %COMPOPTS:  -qfree=f90  -qnosave
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxclpl14
-! %END
 ! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxclpl14.f
 !*
 !*  DATE                       : Oct 1, 2003
 !*

@@ -3,7 +3,6 @@
 !*                               Non-CHARACTER Scalar Derived Type
 !*
 !*  DATE                       : August 28, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is an
 !*                               Unallocated ALLOCATABLE Scalar of Derived Type

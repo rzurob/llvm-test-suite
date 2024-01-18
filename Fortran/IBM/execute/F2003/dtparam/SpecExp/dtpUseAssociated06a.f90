@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : dtpUseAssociated06a
-!*
 !*  DATE                       : July 13, 2009
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Common MOUDLE USE Associated
 !*  SECONDARY FUNCTIONS TESTED : With a Named Constant

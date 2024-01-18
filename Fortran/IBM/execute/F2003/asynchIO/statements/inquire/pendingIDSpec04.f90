@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : March 21, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Perform Formatted Asynchronous I/O
 !*                               Operations on several Units

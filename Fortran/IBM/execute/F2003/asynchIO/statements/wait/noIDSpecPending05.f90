@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : March 14, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : WAIT() with no ID= Specifier on Pending
 !*                               Data Transfer Operations for specific

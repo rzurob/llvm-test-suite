@@ -3,7 +3,6 @@
 !*                               Intrinsic Type
 !*
 !*  DATE                       : June 27, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is an
 !*                               Allocated ALLOCATABLE Array of Type CHARACTER

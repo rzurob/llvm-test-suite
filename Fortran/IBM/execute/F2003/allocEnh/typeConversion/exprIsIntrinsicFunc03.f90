@@ -3,7 +3,6 @@
 !*                               Conversion
 !*
 !*  DATE                       : November  3, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is
 !*                               an Unallocated/Allocated ALLOCATABLE Array,

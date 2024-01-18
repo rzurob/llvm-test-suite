@@ -1,8 +1,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : cdaasBasicCopy
-!*
 !*  DATE                       : 2010-09-24
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF coarray dummy arguments - assumed size

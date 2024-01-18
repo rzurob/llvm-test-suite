@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : streamReadWrite08
-!*
 !*  DATE                       : October 28, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Unformatted STREAM File I/O with a Family
 !*                               of Derived Types (Grand Parent, Parents,

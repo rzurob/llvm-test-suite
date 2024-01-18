@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : 2013-02-10
-!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SHIFTL and SHIFTR intrinsics
 !*  SECONDARY FUNCTIONS TESTED :

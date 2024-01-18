@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : March 24, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pending Asynchronous Data Transfers
 !*  SECONDARY FUNCTIONS TESTED : CLOSE() Performs a Wait Operation

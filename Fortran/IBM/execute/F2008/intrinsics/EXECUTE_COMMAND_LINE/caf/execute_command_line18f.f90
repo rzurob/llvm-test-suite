@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : 2011-01-05
-!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : EXECUTE_COMMAND_LINE intrinsic
 !*  SECONDARY FUNCTIONS TESTED : co-array

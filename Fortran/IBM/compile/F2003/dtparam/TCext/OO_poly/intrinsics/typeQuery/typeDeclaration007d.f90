@@ -5,7 +5,6 @@
 !***********************************************************************
 !* =====================================================================
 !* DATE                       : 10/26/2004
-!* ORIGIN                     :
 !* PRIMARY FUNCTIONS TESTED   : extends_type_of(A, MOLD)
 !* SECONDARY FUNCTIONS TESTED : same_type_as(A, B)
 !* DESCRIPTION                :

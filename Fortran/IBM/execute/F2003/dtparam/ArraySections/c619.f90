@@ -1,7 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : F2003/dtparam/ArraySections/c619.f
 !*  DATE                       : Jul. 09, 2008
 !*  PRIMARY FUNCTIONS TESTED   : Constraint C619 (R617)
 !*  REFERENCE                  : Feature Number 353925

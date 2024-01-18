@@ -3,7 +3,6 @@
 !*                               Attribute with Pointer Array Actual Arguments
 !*
 !*  DATE                       : April  7, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Actual Argument is a Pointer Array
 !*  SECONDARY FUNCTIONS TESTED : Dummy Argument implicitly has the ASYNCHRONOUS

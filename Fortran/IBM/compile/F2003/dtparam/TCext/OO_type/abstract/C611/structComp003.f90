@@ -2,19 +2,6 @@
 ! ftcx_dtp -qk -qnol -qnodefaultpv -qreuse=self -qreuse=base /tstdev/OO_type/abstract/C611/structComp003.f
 ! opt variations: -qnok -ql -qdefaultpv -qreuse=none
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: dcomp structComp003.f
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

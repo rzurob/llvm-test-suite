@@ -3,7 +3,6 @@
 !*                               Specifier in I/O Statements
 !*
 !*  DATE                       : April  7, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pending Data Transfers on a Unit OPEN()ed
 !*                               for Asynchronous I/O to a specific File

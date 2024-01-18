@@ -1,18 +1,6 @@
 ! ************************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f ieee_*.mod xlf_fp_util.mod
-! %COMPOPTS: -qhalt=w
-! %GROUP: intrimod22.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: rm -f xlf_fp_util.mod
-! %END
 !************************************************************************
 !*
-!*  Test Case Name   : intrimod22.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
 !*  Description      : Use INTRINSIC module in a NON_INTRINSIC module with

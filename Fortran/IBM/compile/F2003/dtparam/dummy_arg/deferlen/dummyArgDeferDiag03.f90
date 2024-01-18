@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferDiag03.f
-!*
 !*  DATE                       : Nov. 4 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Dummy Argument with deferred length

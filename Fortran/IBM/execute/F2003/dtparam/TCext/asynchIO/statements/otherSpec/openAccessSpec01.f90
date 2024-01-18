@@ -7,7 +7,6 @@
 !*                               Specifier in I/O Statements
 !*
 !*  DATE                       : February 17, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS= Specifier in OPEN() Statement
 !*  SECONDARY FUNCTIONS TESTED : ACCESS=Sequential Specifier in OPEN()

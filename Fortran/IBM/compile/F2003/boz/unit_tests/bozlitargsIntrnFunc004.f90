@@ -8,7 +8,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : Aug. 26, 2005
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : boz-literal args to REAL, INT, CMPLX and DBLE intrinsics
 !*  SECONDARY FUNCTIONS TESTED : None

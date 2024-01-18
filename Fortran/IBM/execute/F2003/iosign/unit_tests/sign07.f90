@@ -1,20 +1,6 @@
 !***********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -rf sign07.out
-! %COMPOPTS: -qfree=f90
-! %GROUP: sign07.f
-! %VERIFY:sign07.vf:sign07.out
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!***********************************************************************
 !*
 !*  ===================================================================
-!*
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SIGN=specifier in list-directed output
 !*

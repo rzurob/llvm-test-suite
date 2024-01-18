@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export CmdLine="fxclms10 01234567890-01234567890=0123456789"
-! %COMPOPTS:  -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxclms10
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxclms10.f
 !*
 !*  DATE                       : Nov 1, 2003
 !*
@@ -35,7 +21,6 @@
 !*  DESCRIPTION                : Through USE statement to rename module procedures' name
 !*                             : the same as these command line intrinsics, and call them
 !*                             : inside module routines
-!*                             :
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 

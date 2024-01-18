@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : 2010-11-25
-!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS Attribute
 !*  SECONDARY FUNCTIONS TESTED : -

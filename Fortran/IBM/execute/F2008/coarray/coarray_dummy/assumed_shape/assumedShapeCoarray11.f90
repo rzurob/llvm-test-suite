@@ -1,7 +1,5 @@
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : assumedShapeCoarray11.f
-!*
 !*  DATE                       : 2011-02-18
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF coarray dummy arguments assumed shape

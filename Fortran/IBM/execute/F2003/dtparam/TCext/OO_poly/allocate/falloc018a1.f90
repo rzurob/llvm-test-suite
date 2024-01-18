@@ -2,19 +2,6 @@
 ! ftcx_dtp -qck -ql -qdeferredlp /tstdev/OO_poly/allocate/falloc018a1.f
 ! opt variations: -qnock -qnol -qnodeferredlp
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: $TR_SRC/falloc018a1.sh
-! %COMPOPTS: -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : d354468
-!*
 !*  DATE                       : July 29, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  ABSTRACT                   : DTPARAM: ICE: DIAG: POLY: SELTYPE: Invalid Type
 !*                               (with Length Parameter) in Type Guard Statement

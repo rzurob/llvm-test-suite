@@ -2,7 +2,6 @@
 ! ftcx_dtp -qk -qnol -qnodefaultpv -qreuse=self /tstdev/F2003/allocEnh/construct/doloop001.f
 ! opt variations: -qnok -ql -qdefaultpv -qreuse=none
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

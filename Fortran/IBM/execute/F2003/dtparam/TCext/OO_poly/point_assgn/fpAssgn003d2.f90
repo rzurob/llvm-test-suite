@@ -2,7 +2,6 @@
 ! ftcx_dtp -ql -qnodefaultpv -qdeferredlp /tstdev/OO_poly/point_assgn/fpAssgn003d2.f
 ! opt variations: -qnol -qdefaultpv -qnodeferredlp
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

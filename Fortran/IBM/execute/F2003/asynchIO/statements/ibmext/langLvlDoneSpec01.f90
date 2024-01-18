@@ -3,7 +3,6 @@
 !*                               Language Level Options
 !*
 !*  DATE                       : April 11, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : -qlanglvl=[extended|2003pure|2003std] Option
 !*  SECONDARY FUNCTIONS TESTED : DONE= Specifier in the WAIT() Statement

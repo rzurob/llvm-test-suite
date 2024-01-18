@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : dtpUseAssociated03
-!*
 !*  DATE                       : July  6, 2009
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Multiple levels of USE Association
 !*  SECONDARY FUNCTIONS TESTED : Where MODULE Symbols are Renamed

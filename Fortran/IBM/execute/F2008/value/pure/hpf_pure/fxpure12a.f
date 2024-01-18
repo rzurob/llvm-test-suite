@@ -1,24 +1,10 @@
 @process free(f90)
       program fxpure12a
 !*********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: PROCS=4
-! %COMPOPTS:
-! %GROUP: fxpure12a.f
-! %VERIFY: fxpure12a.out:fxpure12a.vf
-! %STDIN:
-! %STDOUT: fxpure12a.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 !**********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : fxpure12a
-!*
 !*  DATE                       : Mar 16, 1995
-!*  ORIGIN                     : PPS Languages, Kingston, NY
 !*
 !*  PRIMARY FUNCTIONS TESTED   : PURE
 !*  SECONDARY FUNCTIONS TESTED :

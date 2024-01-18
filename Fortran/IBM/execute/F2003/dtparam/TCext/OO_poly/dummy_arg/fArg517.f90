@@ -1,18 +1,5 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql -qreuse=all -qdeferredlp /tstdev/OO_poly/dummy_arg/fArg517.f
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: fArg517.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT: fArg517.out
-! %EXECARGS:
-! %POSTCMD: spiff -r.000001 fArg517.out $TR_SRC/fArg517.vf  && rm -f fArg517.out
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

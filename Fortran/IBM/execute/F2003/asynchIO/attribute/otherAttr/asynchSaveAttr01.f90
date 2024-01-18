@@ -3,7 +3,6 @@
 !*                               Interactions with Other Attributes
 !*
 !*  DATE                       : February 16, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS Attribute
 !*  SECONDARY FUNCTIONS TESTED : Interactions with the SAVE Attribute

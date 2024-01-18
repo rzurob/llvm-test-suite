@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export CmdLine="fxclpu39 1 a 2 b 3"
-! %COMPOPTS:  -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxclpu39
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxclpu39.f
 !*
 !*  DATE                       : Oct. 1, 2003
 !*
@@ -35,7 +21,6 @@
 !*  DESCRIPTION                : Invoke command line procedures within module routines
 !*                             : Pass COMMAND_ARGUMENT_COUNT as optional argument through the call chain
 !*                             : (module routine -> module routine)
-!*                             :
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

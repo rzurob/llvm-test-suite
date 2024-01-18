@@ -2,7 +2,6 @@
 ! ftcx_dtp -ql -qdeferredlp -qreuse=base /tstdev/F2003/allocEnh/unit_tests/ReallocAssignArrayDT11.f
 ! opt variations: -qnol -qnodeferredlp -qreuse=none
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

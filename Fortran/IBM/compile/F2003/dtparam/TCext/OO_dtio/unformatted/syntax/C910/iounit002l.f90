@@ -1,7 +1,5 @@
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : iounit002l
-!*
 !*  DATE                       : 2007-09-09 (original: 11/08/2004)
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters

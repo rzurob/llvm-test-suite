@@ -1,20 +1,7 @@
 !**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfixed -qdebug=intmsg -qlanglvl=95std
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: dcomp mxmn_langlvl_95.f
-! %END
-!**********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : Oct. 20, 2005
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Support character argument for MAX/
 !*                               MIN/MAXVAL/MINVAL/MAXLOC/MINLOC

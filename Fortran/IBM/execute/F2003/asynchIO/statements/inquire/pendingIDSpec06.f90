@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : April 11, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Unformatted Asynchronous I/O in a Sub-Program
 !*                               (another Scoping Unit)

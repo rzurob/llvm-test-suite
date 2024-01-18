@@ -1,8 +1,6 @@
 
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : move_allocProcPtrComp03.f
-!*
 !*  DATE                       : Oct. 8 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO)

@@ -2,19 +2,6 @@
 ! ftcx_dtp -ql -qdeferredlp /tstdev/OO_tpbnd/specific/ftpbnd503a2.f
 ! opt variations: -qnol -qnodeferredlp
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: ftpbnd503a2.f
-! %VERIFY: ftpbnd503a2.out:ftpbnd503a2.vf
-! %STDIN:
-! %STDOUT: ftpbnd503a2.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

@@ -3,22 +3,9 @@
 ! opt variations: -qck -qnok
 
 !**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfixed
-! %GROUP: fxmxc032.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!**********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : Oct. 20, 2005
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Support character argument for MAX/
 !*                               MIN/MAXVAL/MINVAL/MAXLOC/MINLOC

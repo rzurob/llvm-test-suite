@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : March 15, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : WAIT() Statement
 !*  SECONDARY FUNCTIONS TESTED : WAIT() on ID= Value from the same and

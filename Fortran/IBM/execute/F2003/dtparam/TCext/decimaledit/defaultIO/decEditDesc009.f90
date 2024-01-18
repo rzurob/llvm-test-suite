@@ -2,7 +2,6 @@
 ! ftcx_dtp -qck /tstdev/F2003/decimaledit/defaultIO/decEditDesc009.f
 ! opt variations: -qnock
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

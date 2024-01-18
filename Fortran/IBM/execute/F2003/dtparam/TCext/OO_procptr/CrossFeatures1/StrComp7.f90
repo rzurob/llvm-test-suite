@@ -3,21 +3,7 @@
 ! opt variations: -qnock -qnok -ql -qdefaultpv
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: StrComp7.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : StrComp7.f
 !*
 !*  DATE                       : May. 18, 2005
 !*

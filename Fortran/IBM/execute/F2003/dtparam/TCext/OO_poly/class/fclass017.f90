@@ -1,6 +1,5 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql -qreuse=all -qdeferredlp /tstdev/OO_poly/class/fclass017.f
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

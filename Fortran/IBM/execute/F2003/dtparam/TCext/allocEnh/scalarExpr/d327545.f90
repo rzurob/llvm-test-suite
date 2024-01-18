@@ -7,7 +7,6 @@
 !*                               an Array
 !*
 !*  DATE                       : November  1, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2003: ALLOC: Element from an Array Section
 !*                               Assigned to that Section

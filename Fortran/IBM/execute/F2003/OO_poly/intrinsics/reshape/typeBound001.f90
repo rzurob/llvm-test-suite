@@ -1,7 +1,6 @@
 !***********************************************************************
 !* =====================================================================
 !* DATE                       : 11/07/2004
-!* ORIGIN                     :
 !* PRIMARY FUNCTIONS TESTED   : reshape
 !* DESCRIPTION                : Call the intrinsic inquiry functions
 !*   inside the type bound procedures. Cross testing OPTIONAL.

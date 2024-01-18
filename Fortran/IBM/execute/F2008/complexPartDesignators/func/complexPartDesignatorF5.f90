@@ -1,7 +1,5 @@
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : complexPartDesignatorF5.f
-!*
 !*  DATE                       : 2011-01-12
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Complex Part Designator

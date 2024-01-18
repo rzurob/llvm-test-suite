@@ -3,21 +3,7 @@
 ! opt variations: -qnok -qnol -qdefaultpv -qreuse=self
 
 !**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS:
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: dcomp dtybn022.f
-! %END
-!**********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : dtybn022.f
 !*
 !*  DATE                       :
 !*

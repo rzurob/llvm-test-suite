@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : 2011-01-24
-!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Block with OMP
 !*  SECONDARY FUNCTIONS TESTED :

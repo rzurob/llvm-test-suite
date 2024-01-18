@@ -1,10 +1,7 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : IEEESelRKindSpec.f
-!*
 !*  DATE                       : November 05, 2010
-!*  ORIGIN                     : Compiler Development, IBM CDL
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic function
 !*                               ieee_selected_real_kind(p,r,radix)

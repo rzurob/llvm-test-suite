@@ -3,7 +3,6 @@
 !*                               Specifier in I/O Statements
 !*
 !*  DATE                       : January 25, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ID= Specifier in INQUIRE() Statement
 !*  SECONDARY FUNCTIONS TESTED : PENDING= Specifier is also present

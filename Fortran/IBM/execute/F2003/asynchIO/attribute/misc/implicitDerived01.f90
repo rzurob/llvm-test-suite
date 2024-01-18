@@ -3,7 +3,6 @@
 !*                               Attribute in Scoping Unit
 !*
 !*  DATE                       : January 17, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS Attribute Conferred Implicitly
 !*  SECONDARY FUNCTIONS TESTED : Derived Type

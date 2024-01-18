@@ -3,7 +3,6 @@
 !*                               Attribute in Intrinsic Types
 !*
 !*  DATE                       : January 16, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS Statement
 !*  SECONDARY FUNCTIONS TESTED : Intrinsic Type REAL Declaration

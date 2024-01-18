@@ -1,7 +1,6 @@
 !***********************************************************************
 !* =====================================================================
 !* DATE                       : 12/30/2004
-!* ORIGIN                     :
 !* PRIMARY FUNCTIONS TESTED   : transpose
 !* DESCRIPTION                :
 !*   Actual arguments are specified using argument keywords.

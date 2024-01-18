@@ -3,7 +3,6 @@
 !*                               in I/O Statements
 !*
 !*  DATE                       : January 23, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2003 Standard:  ASYNCHRONOUS= Specifier in
 !*                               OPEN() Statement

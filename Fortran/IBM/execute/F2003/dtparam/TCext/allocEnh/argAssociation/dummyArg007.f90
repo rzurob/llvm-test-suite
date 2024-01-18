@@ -2,7 +2,6 @@
 ! ftcx_dtp -qk -qnol /tstdev/F2003/allocEnh/argAssociation/dummyArg007.f
 ! opt variations: -qnok -ql
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

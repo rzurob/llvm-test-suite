@@ -3,7 +3,6 @@
 !*                               Attribute in Assumed-Shape Array Arguments
 !*
 !*  DATE                       : April  7, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Actual Argument is an Assumed-Shape Array
 !*  SECONDARY FUNCTIONS TESTED : Dummy Argument implicitly has the ASYNCHRONOUS

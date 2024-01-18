@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : March 24, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pending Data Transfers
 !*  SECONDARY FUNCTIONS TESTED : INQUIRE() with the NEXTREC= Specifier

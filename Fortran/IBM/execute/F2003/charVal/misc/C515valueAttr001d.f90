@@ -3,7 +3,6 @@
 !*                               (CHARACTER Length > 1)
 !*
 !*  DATE                       : April 25, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : VALUE Attribute
 !*  SECONDARY FUNCTIONS TESTED : Specified for non-Dummy Arguments

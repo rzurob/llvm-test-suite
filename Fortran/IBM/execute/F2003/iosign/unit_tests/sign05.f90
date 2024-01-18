@@ -1,20 +1,6 @@
 !***********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -rf sign05.out
-! %COMPOPTS: -qfree=f90
-! %GROUP: sign05.f
-! %VERIFY: sign05.vf:sign05.out
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!***********************************************************************
 !*
 !*  ===================================================================
-!*
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SIGN= specifier
 !*

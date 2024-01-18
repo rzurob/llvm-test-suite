@@ -3,10 +3,8 @@
 
 !************************************************************************
 !* ======================================================================
-!*  TEST CASE NAME             : abstracti014ckl
 !*                               by Alberto Alvarez-Mesquida)
 !*  DATE                       : 2007-10-24 (original: 02/20/2006)
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : reshape
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)

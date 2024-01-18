@@ -1,15 +1,4 @@
 !*********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: $TR_SRC/fxi3e.presh fi3ehltmod17
-! %COMPOPTS: -qfloat=nofold -qflttrap=overflow -qsigtrap -qfree=f90 -qstrict
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

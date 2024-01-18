@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : dtpUseAssociated04
-!*
 !*  DATE                       : July  7, 2009 (edited on August 21, 2009)
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : A MOUDLE is USEd by two other MODULEs
 !*  SECONDARY FUNCTIONS TESTED : The other MODULEs are USEd by a Subprogram -- workaround for defect 367200

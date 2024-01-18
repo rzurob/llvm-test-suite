@@ -4,11 +4,8 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : acetdt476akl_rb_noacid
-!*
 !*                               extended by Glen Mateer)
 !*  DATE                       : 2008-01-18 (original: 2008-01-17)
-!*  ORIGIN                     : Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*

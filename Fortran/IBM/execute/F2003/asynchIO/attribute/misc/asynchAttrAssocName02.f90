@@ -3,7 +3,6 @@
 !*                               Attribute in the ASSOCIATE Construct
 !*
 !*  DATE                       : February 28, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS Attribute
 !*  SECONDARY FUNCTIONS TESTED : associate-name => selector (where selector

@@ -2,7 +2,6 @@
 !* ===================================================================
 !*
 !* DATE                         : July 28, 2013
-!* ORIGIN                       : AIX Complier Development
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: ALLOCATABLE and POINTER dummy argument
 !* SECONDARY FUNTIONS TESTED    :

@@ -1,11 +1,8 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : acetdt55klk_noacid
-!*
 !*                               by David Forster)
 !*  DATE                       : 2008-01-22 (original: 2006-11-23)
-!*  ORIGIN                     : Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters (+ Array
 !*                               Constructor Enhancements

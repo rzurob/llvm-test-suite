@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : February 05, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Run Time Offset (RTO)
 !*  SECONDARY FUNCTIONS TESTED :

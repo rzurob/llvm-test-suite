@@ -1,8 +1,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : dtpIAABoundsInternal002
-!*
 !*  DATE                       : 2009-05-22
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment with Allocation

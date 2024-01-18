@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export CmdLine="fxcllf15 /-/-/-/-/-/ -/-/-/-/ _+_+_+_"
-! %COMPOPTS:  -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxcllf15
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxcllf15.f
 !*
 !*  DATE                       : Sept 18, 2003
 !*
@@ -34,7 +20,6 @@
 !*
 !*  DESCRIPTION                : Call command line intrinsic routines by passing  expressions
 !*                             : as actual intent(in) arguments
-!*                             :
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

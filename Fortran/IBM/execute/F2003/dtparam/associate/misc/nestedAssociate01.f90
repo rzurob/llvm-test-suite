@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : nestedAssociate01
-!*
 !*  DATE                       : August 22, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : The ASSOCIATE Construct
 !*  SECONDARY FUNCTIONS TESTED : Multiple Nesting of ASSOCIATE Constructs

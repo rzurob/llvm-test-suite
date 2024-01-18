@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : exprSelector02a
-!*
 !*  DATE                       : July  9, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : selector is an Expression
 !*  SECONDARY FUNCTIONS TESTED : The Expression is an Array Constructor

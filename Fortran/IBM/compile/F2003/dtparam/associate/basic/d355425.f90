@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : d355425
-!*
 !*  DATE                       : August 26, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  ABSTRACT                   : ASSOCIATE: PROCPTR: RES: Unknown Data Type
 !*                               for FUNCTION Return

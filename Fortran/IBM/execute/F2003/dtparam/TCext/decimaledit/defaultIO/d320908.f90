@@ -2,7 +2,6 @@
 ! ftcx_dtp -ql -qnodefaultpv /tstdev/F2003/decimaledit/defaultIO/d320908.f
 ! opt variations: -qnol -qdefaultpv -qreuse=self
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

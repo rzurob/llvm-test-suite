@@ -1,7 +1,5 @@
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : intrinsic01D.f
-!*
 !*  DATE                       : 2010-11-10
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Math Intrinsics

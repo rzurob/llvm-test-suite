@@ -1,10 +1,7 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : F2008/do_concurrent/func/do_concurrent_f020.scenario
-!*
 !*  DATE                       : 2015-08-31
-!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DO CONCURRENT (F2008 extension)
 !*  SECONDARY FUNCTIONS TESTED :

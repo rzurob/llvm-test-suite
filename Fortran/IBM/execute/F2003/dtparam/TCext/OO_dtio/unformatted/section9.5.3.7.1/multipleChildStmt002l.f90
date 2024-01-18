@@ -1,8 +1,6 @@
 ! *********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : multipleChildStmt002l
-!*
 !*  DATE                       : 2007-09-18 (original: 11/04/2004)
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters

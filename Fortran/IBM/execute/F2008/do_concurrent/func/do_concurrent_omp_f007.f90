@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : August 24, 2015
-!*  ORIGIN                     : Compiler Development, Toronto Software Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DO CONCURRENT
 !*  SECONDARY FUNCTIONS TESTED : OMP SINGLE

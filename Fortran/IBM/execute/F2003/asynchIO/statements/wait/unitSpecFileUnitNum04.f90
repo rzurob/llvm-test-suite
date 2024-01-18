@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : March  3, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : WAIT() Statement
 !*  SECONDARY FUNCTIONS TESTED : UNIT= Specifier Value is:

@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : April 13, 2009
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Function result
 !*  SECONDARY FUNCTIONS TESTED : Array constructor

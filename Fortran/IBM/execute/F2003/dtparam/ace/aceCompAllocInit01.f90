@@ -1,11 +1,9 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : aceCompAllocInit01
 !*                               with DTP
 !*
 !*  DATE                       : November 17, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor contains a Derived Type
 !*                               with an ALLOCATABLE Polymorphic Component

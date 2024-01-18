@@ -1,20 +1,7 @@
 !**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: dcomp bindfuncmsg.f
-! %END
-!**********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : August 20, 2004
-!*  ORIGIN                     : FORTRAN Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Variables with BINDC attribute only appears
 !*                               in the specification part of a module

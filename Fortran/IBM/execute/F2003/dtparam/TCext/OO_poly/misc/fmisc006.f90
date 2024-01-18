@@ -2,19 +2,6 @@
 ! ftcx_dtp -ql -qnodeferredlp /tstdev/OO_poly/misc/fmisc006.f
 ! opt variations: -qnol -qdeferredlp
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: fmisc006.f
-! %VERIFY: fmisc006.out:fmisc006.vf
-! %STDIN:
-! %STDOUT: fmisc006.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

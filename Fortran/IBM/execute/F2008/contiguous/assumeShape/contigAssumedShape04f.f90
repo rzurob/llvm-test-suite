@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : 2011-08-25
-!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Copy-in/out for assumed shape ptrays
 !*  SECONDARY FUNCTIONS TESTED :

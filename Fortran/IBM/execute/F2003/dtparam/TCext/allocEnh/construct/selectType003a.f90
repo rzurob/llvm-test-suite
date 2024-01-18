@@ -2,7 +2,6 @@
 ! ftcx_dtp -qk -ql -qnodefaultpv -qdeferredlp -qreuse=none /tstdev/F2003/allocEnh/construct/selectType003a.f
 ! opt variations: -qnok -qnol -qdefaultpv -qnodeferredlp -qreuse=base
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

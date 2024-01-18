@@ -1,20 +1,7 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: EXEC_REP=10 ; $TR_SRC/fxassint.presh fxass096
-! %COMPOPTS: -qsmp -F:xlf90_r -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !* ===================================================================
 !*
 !* DATE                         : Feb. 13, 2004
-!* ORIGIN                       : AIX Complier Development
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED

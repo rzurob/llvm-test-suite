@@ -2,7 +2,6 @@
 ! ftcx_dtp -ql -qdeferredlp -qreuse=none /tstdev/OO_tpbnd/specific/ftpbnd523.f
 ! opt variations: -qnol -qnodeferredlp -qreuse=base
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

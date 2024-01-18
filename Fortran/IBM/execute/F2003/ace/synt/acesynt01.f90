@@ -1,8 +1,6 @@
 !**********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : acesynt01
-!*
 !*  DATE                       : 2006-06-12 (YYYY-MM-DD)
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor Enhancements

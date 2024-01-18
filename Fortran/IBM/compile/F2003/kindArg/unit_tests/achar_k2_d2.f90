@@ -1,9 +1,6 @@
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : achar_k2_d2.f
-!*
 !*  DATE                       : Apr 10, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Support KIND Argument for new intrinsics
 !*

@@ -2,7 +2,6 @@
 ! ftcx_dtp -qck -ql -qdeferredlp -qreuse=self /tstdev/F2003/decimaledit/dtio/dcmlChildRead001.f
 ! opt variations: -qnock -qnol -qnodeferredlp -qreuse=none
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

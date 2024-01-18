@@ -2,19 +2,6 @@
 ! ftcx_dtp -qk -ql -qreuse=none /tstdev/OO_poly/class/fclass011a2.f
 ! opt variations: -qck -qnok -qnol -qreuse=base
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: fclass011a2.f
-! %VERIFY: fclass011a2.out:fclass011a2.vf
-! %STDIN:
-! %STDOUT: fclass011a2.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

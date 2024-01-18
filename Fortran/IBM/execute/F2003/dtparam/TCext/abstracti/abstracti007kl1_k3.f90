@@ -1,7 +1,5 @@
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : abstracti007kl1_k3
-!*
 !*  DATE                       : 2007-10-11 (original: 02/20/2006)
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters

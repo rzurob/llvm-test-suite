@@ -1,9 +1,6 @@
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : impure02d.f
-!*
 !*  DATE                       : 2012-03-08
-!*  ORIGIN                     : Compiler Development, IBM China Development Shanghai Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : impure procedures
 !*

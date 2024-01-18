@@ -1,7 +1,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : dtpCompatDummyOutKindDefInit
 !*  TEST CASE FILE             : dtpCompatDummyOutKindDefInitPostDTP
 !*
 !*  DATE                       : 2009-06-13

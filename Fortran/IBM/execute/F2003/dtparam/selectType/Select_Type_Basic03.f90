@@ -3,7 +3,6 @@
 !*                               DTP-SELECT TYPE Construct
 !*
 !*  DATE                       : July  18, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : Argument Association

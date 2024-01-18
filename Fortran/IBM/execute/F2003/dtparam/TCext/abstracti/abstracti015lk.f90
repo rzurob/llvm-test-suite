@@ -1,9 +1,7 @@
 !**********************************************************************
 !* ====================================================================
-!*  TEST CASE NAME             : abstracti015lk
 !*                               by Alberto Alvarez-Mesquida)
 !*  DATE                       : 2007-10-25 (original: 02/20/2006)
-!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters transfer
 !*  SECONDARY FUNCTIONS TESTED : DTIO

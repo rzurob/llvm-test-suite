@@ -1,10 +1,7 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : do_concurrent_f012.f
-!*
 !*  DATE                       : 2015-02-26
-!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DO CONCURRENT (F2008 extension)
 !*  SECONDARY FUNCTIONS TESTED :

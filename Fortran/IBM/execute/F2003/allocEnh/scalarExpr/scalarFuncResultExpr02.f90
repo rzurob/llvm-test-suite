@@ -3,7 +3,6 @@
 !*                               Scalar and variable is an Array
 !*
 !*  DATE                       : October 31, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is an
 !*                               Allocated ALLOCATABLE Array of CHARACTER,

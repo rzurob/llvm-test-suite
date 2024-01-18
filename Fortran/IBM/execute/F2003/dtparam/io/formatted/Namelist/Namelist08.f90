@@ -3,7 +3,6 @@
 !*                               DTP - Namelist
 !*
 !*  DATE                       : November 19, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Namelist with Intrinsic IO
 !*  SECONDARY FUNCTIONS TESTED : Namelist-group-name appear more than once in the NAMELIST statements in a scoping unit

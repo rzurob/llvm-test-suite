@@ -1,6 +1,5 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql /tstdev/OO_type/struct_constr/fconstr014d2.f
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

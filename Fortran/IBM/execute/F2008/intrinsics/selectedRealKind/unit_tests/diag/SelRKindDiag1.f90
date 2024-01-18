@@ -1,16 +1,4 @@
 !************************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qlanglvl=2003pure
-! %GROUP: SelRKindDiag1.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!************************************************************************
       program SelRKindDiag1
         print *, selected_real_kind(3, 3, 3)
       end
@@ -18,7 +6,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : Nov 06, 2010
-!*  ORIGIN                     : AIX Compiler Development,
 !*                             : IBM China Development Shanghai Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :

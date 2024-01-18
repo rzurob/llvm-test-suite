@@ -1,20 +1,6 @@
 !***********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -rf sign06.out
-! %COMPOPTS:-qfree=f90
-! %GROUP: sign06.f
-! %VERIFY: sign06.vf:sign06.out
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!***********************************************************************
 !*
 !*  ===================================================================
-!*
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SIGN=specifier in namelist output
 !*

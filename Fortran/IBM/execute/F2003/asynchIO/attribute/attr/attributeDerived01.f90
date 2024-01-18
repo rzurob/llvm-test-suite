@@ -3,7 +3,6 @@
 !*                               Attribute in Derived Types
 !*
 !*  DATE                       : January 16, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS Attribute in a Type
 !*                               Declaration Statement

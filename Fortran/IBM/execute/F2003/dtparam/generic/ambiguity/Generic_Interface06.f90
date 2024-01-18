@@ -3,7 +3,6 @@
 !*                               DTP - Generic Interface
 !*
 !*  DATE                       : November 02, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Generic Resolution - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : Resolution for intrinsic function

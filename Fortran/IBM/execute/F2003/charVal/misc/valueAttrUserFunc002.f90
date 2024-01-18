@@ -3,7 +3,6 @@
 !*                               (CHARACTER Length > 1)
 !*
 !*  DATE                       : April 26, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : User Defined Functions with Dummy Argument(s)
 !*                               some of which specifiy the VALUE Attribute

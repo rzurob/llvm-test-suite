@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : March 28, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pending Unformatted Data Transfers
 !*  SECONDARY FUNCTIONS TESTED : Synchronous Data Transfer Initiated; Wait

@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : March 29, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pending Data Transfers with an Error Condition
 !*  SECONDARY FUNCTIONS TESTED : INQUIRE() with the ID=, and PENDING=

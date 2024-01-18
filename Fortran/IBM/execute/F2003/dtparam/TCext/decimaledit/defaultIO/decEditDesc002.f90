@@ -2,7 +2,6 @@
 ! ftcx_dtp -qnock -qdeferredlp -qreuse=self /tstdev/F2003/decimaledit/defaultIO/decEditDesc002.f
 ! opt variations: -qnodeferredlp -qreuse=none
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

@@ -2,7 +2,6 @@
 ! ftcx_dtp -qnol /tstdev/OO_poly/func_return/ffuncRet013d.f
 ! opt variations: -ql
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

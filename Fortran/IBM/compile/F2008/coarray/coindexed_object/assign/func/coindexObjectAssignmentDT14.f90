@@ -1,7 +1,5 @@
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : coindexObjectAssignmentDT14.f
-!*
 !*  DATE                       : 2011-03-21
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF coindex object assignment statement

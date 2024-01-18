@@ -1,29 +1,14 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: $TR_SRC/nonseekstrm.sh nonseekstrm
-! %COMPOPTS: -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*
 !*  ===================================================================
 !*
 !*                             : that cannot be positioned.
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  DIAGNOSES TESTED           : Stream I/O statements can access the
 !*                             : files that cannot be positioned.
 !*                             : The POS specifier must not be used
 !*                             : on data transfer statements with files
 !*                             : that cannot be positioned.
-!*                             :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :

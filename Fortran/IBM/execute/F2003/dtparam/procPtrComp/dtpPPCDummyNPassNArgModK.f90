@@ -1,8 +1,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : dtpPPCDummyNPassNArgModK
-!*
 !*  DATE                       : 2009-03-23
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Procedure Pointers as Components

@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : March  7, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : WAIT() Statement (Unformatted I/O)
 !*  SECONDARY FUNCTIONS TESTED : No ID= Specifier performs Wait Operations

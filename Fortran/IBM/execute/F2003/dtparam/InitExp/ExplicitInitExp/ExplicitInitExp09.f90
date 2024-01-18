@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : April 24, 2009
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Explicit Init. Expression
 !*  SECONDARY FUNCTIONS TESTED :

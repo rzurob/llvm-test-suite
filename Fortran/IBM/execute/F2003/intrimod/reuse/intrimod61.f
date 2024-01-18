@@ -1,26 +1,13 @@
 !***********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qextchk -qfixed
-! %GROUP: ../fake_xlfutility_module.f intrimod61.f
-! %VERIFY: intrimod61.out:../emptyout.vf
-! %STDIN:
-! %STDOUT: intrimod61.out
-! %EXECARGS:
-! %POSTCMD: rm -f xlfutility.mod
-! %END
 !**********************************************************************
 @process intsize(8)
       PROGRAM intrimod61
 C**********************************************************************
 C*  ===================================================================
 C*
-C*  TEST CASE NAME             : intrimod61
 C*                             : Utility Procedure Interfaces
 C*
 C*  DATE                       : January 13, 2004
-C*  ORIGIN                     : AIX Compiler Development,
 C*
 C*  PRIMARY FUNCTIONS TESTED   : IRTC
 C*  SECONDARY FUNCTIONS TESTED : None

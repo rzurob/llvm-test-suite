@@ -1,11 +1,9 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : dtpPtrAssignBoundsRemap05
 !*                               and Remapping)
 !*
 !*  DATE                       : March 13, 2009
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Bounds Remapping for a non-Polymorphic
 !*                               instance of an Array of a Derived Type

@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : March 31, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INQUIRE() with the both the PENDING= and ID=
 !*                               Specifiers

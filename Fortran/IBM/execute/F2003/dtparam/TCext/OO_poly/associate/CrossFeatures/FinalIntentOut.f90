@@ -3,21 +3,7 @@
 ! opt variations: -qck -qnok -qnol -qnodeferredlp -qreuse=self -qreuse=base
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP:  FinalIntentOut.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : FinalIntentOut
 !*
 !*  DATE                       : Mar. 14, 2005
 !*

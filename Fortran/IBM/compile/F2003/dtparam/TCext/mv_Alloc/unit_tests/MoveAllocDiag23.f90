@@ -2,7 +2,6 @@
 ! ftcx_dtp -qck /tstdev/F2003/mv_Alloc/unit_tests/MoveAllocDiag23.f
 ! opt variations: -qnock
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

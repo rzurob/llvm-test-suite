@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcC1255.f
-!*
 !*  DATE                       : Feb. 28, 2006
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Generalization of PROCEDURE statement

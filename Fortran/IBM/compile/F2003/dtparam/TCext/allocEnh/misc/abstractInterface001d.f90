@@ -2,7 +2,6 @@
 ! ftcx_dtp -ql /tstdev/F2003/allocEnh/misc/abstractInterface001d.f
 ! opt variations: -qnol
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

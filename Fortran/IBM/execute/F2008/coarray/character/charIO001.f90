@@ -1,10 +1,7 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : charIO001.f
-!*
 !*  DATE                       : April 11, 2011
-!*  ORIGIN                     : Compiler Development, IBM CDL
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Test that reading character coarray from STDINPUT and writing character coarray to STDOUTPUT
 !*

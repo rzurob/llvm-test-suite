@@ -7,7 +7,6 @@
 !*                               Subobject
 !*
 !*  DATE                       : November 10, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is the
 !*                               Array Section of an Allocated ALLOCATABLE

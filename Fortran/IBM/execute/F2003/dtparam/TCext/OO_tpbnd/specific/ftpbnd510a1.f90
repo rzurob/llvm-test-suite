@@ -2,19 +2,6 @@
 ! ftcx_dtp -ql -qnodefaultpv -qdeferredlp -qreuse=base /tstdev/OO_tpbnd/specific/ftpbnd510a1.f
 ! opt variations: -qnol -qdefaultpv -qnodeferredlp -qreuse=none
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: ftpbnd510a1.f
-! %VERIFY: ftpbnd510a1.out:ftpbnd510a1.vf
-! %STDIN:
-! %STDOUT: ftpbnd510a1.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

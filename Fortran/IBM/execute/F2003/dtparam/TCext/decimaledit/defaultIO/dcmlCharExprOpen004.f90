@@ -2,7 +2,6 @@
 ! ftcx_dtp /tstdev/F2003/decimaledit/defaultIO/dcmlCharExprOpen004.f
 ! opt variations: -qck
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

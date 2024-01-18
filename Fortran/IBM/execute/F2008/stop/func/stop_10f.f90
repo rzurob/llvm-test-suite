@@ -1,7 +1,5 @@
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : stop_10f.f
-!*
 !*  DATE                       : 2010-10-20
 !*
 !*  PRIMARY FUNCTIONS TESTED   : STOP statement

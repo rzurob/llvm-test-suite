@@ -1,16 +1,4 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:  $TR_SRC/fxieee.presh rint003
-! %COMPOPTS: -qstrict -qfloat=rrm:nofold -qfree=f90 -qxlf90=signedzero
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: rm -f *.mod
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : March 13, 2002

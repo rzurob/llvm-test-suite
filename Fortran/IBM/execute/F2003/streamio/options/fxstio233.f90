@@ -1,20 +1,7 @@
 !**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export XLFRTEOPTS=namelist=old; cp $TR_SRC/fxstio233.in .
-! %COMPOPTS:
-! %GROUP:  fxstio233.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: spiff fxstio233.dat $TR_SRC/fxstio233.vf && rm -f fxstio233.dat fxstio233.in
-! %END
-!**********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : March 2003
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN, WRITE, READ
 !*

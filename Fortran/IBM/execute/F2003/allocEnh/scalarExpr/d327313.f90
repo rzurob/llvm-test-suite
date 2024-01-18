@@ -3,7 +3,6 @@
 !*                               an Array
 !*
 !*  DATE                       : October 27, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2003: ALLOC: Run-Time SIGSEGV with Derived
 !*                               Type with ALLOCATABLE Component in IF/ELSE IF

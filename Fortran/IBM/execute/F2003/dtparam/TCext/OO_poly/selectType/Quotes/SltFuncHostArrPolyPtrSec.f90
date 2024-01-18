@@ -3,21 +3,7 @@
 ! opt variations: -qnok -qnol -qdeferredlp -qreuse=none
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: SltFuncHostArrPolyPtrSec.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : SltFuncHostArrPolyPtrSec
 !*
 !*  DATE                       : Jan. 21, 2005
 !*

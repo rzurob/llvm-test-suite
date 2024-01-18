@@ -3,21 +3,7 @@
 ! opt variations: -qnok -qnol -qdefaultpv -qdeferredlp -qreuse=none
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: DefAssign2.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : DefAssign2.f
 !*
 !*  DATE                       : May. 17, 2005
 !*

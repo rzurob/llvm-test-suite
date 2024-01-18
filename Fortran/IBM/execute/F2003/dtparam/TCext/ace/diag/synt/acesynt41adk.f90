@@ -1,11 +1,8 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : acesynt41adk
-!*
 !*                               by David Forster)
 !*  DATE                       : 2007-11-16 (original: 2006-10-18)
-!*  ORIGIN                     : Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters Array Constructor
 !*                               Enhancements

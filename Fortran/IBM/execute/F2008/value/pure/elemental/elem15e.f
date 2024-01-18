@@ -1,20 +1,7 @@
 !**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS:
-! %GROUP:  elem15e.f
-! %VERIFY: elem15e.out:elem15e.vf
-! %STDIN:
-! %STDOUT: elem15e.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!**********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : September 13, 1998
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : User-defined ELEMENTAL procedures.
 !*  SECONDARY FUNCTIONS TESTED :

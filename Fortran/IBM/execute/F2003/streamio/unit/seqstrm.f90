@@ -1,21 +1,6 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export XLFRTEOPTS=multconn=yes
-! %COMPOPTS: -qfree=f90
-! %GROUP: seqstrm.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: rm -f ./seqfor.data
-! %END
-! *********************************************************************
 !*
 !*  ===================================================================
-!*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  DIAGNOSES TESTED           : A formatted file "seqfor.data" is
 !*                             : created and connected to two units for
@@ -23,7 +8,6 @@
 !*                             : INQUIRE statement.
 !*                             : POSITION specifier in the OPEN statement.
 !*                             : FLUSH statement.
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :

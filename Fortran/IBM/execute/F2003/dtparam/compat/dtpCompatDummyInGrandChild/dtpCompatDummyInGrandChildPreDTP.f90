@@ -1,7 +1,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : dtpCompatDummyInGrandChild
 !*  TEST CASE FILE             : dtpCompatDummyInGrandChildPreDTP
 !*
 !*  DATE                       : 2009-06-13

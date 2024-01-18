@@ -3,7 +3,6 @@
 !*                               expr Contain References to variable
 !*
 !*  DATE                       : October 24, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is an
 !*                               Allocated ALLOCATABLE Scalar of CHARACTER

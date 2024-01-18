@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : March 17, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : WAIT() on 1st, 2nd, 3rd of 3 Pending
 !*                               (Unformatted) Data Transfers

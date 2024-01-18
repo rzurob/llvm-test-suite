@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : sequentialReadWrite03
-!*
 !*  DATE                       : October  8, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SEQUENTIAL File I/O for an array of Derived
 !*                               Type using an io-implied-do

@@ -3,21 +3,7 @@
 ! opt variations: -qck -qnok
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: TypeDecl1.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             :  TypeDecl1.f
 !*
 !*  DATE                       : Jun. 07, 2005
 !*

@@ -2,7 +2,6 @@
 !* ===================================================================
 !*
 !* DATE                         : Oct. 2010
-!* ORIGIN                       : AIX Complier Development
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008: NEWUNIT= specifier, Feature#:377344
 !* SECONDARY FUNTIONS TESTED    : READ,WRITE,REWIND

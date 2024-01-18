@@ -2,19 +2,6 @@
 ! ftcx_dtp -qck -ql -qnodefaultpv -qnodeferredlp -qreuse=base /tstdev/OO_poly/point_assgn/fpAssgn016a.f
 ! opt variations: -qnock -qnol -qdefaultpv -qdeferredlp -qreuse=none
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: fpAssgn016a.f
-! %VERIFY: fpAssgn016a.out:fpAssgn016a.vf
-! %STDIN:
-! %STDOUT: fpAssgn016a.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

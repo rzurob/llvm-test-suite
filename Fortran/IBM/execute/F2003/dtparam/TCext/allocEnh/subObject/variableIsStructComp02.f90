@@ -7,7 +7,6 @@
 !*                               Subobject
 !*
 !*  DATE                       : November  9, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is a
 !*                               Derived Type (with a Structure Component

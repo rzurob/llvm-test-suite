@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : July 30, 2010
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : error stop statement
 !*  SECONDARY FUNCTIONS TESTED : None

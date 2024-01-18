@@ -3,21 +3,7 @@
 ! opt variations: -qnok -qnol -qnodeferredlp -qreuse=base
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: TypeMatch1.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : TypeMatch1
 !*
 !*  DATE                       : Jan. 21, 2005
 !*

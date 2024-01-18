@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : 2013-05-28
-!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : findloc trinsic
 !*  SECONDARY FUNCTIONS TESTED :

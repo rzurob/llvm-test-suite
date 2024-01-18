@@ -2,7 +2,6 @@
 !* ===================================================================
 !*
 !* DATE                         : June 25, 2012
-!* ORIGIN                       : AIX Complier Development
 !*
 !* PRIMARY FUNCTIONS TESTED     : 399982 - C Interop: Optional Argument
 !* SECONDARY FUNTIONS TESTED    :

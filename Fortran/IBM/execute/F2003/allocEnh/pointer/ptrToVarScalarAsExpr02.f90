@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : October 25, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is a an
 !*                               Allocated ALLOCATABLE Scalar of CHARACTER

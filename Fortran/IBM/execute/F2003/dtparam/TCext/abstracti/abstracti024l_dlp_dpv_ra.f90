@@ -3,8 +3,6 @@
 
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : abstracti024l_dlp_dpv_ra
-!*
 !*                               by Alberto Alvarez-Mesquida)
 !*  DATE                       : 2007-10-30 (original: 02/20/2006)
 !*

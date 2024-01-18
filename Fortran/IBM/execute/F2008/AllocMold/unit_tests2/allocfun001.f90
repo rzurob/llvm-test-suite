@@ -1,19 +1,6 @@
 !*********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qxlf90=autodealloc -qnosave -qfixed
-! %GROUP: allocfun001.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
 !**********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME            : allocfun001.f
 !*
 !*  PRIMARY FUNCTIONS TESTED  : Automatic deallocation of allocatable
 !*                              array. External recursive function.

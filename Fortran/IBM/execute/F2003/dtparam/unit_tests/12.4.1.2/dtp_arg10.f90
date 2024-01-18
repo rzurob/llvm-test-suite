@@ -1,8 +1,5 @@
 !*  ===================================================================
 !*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
-!*
 !*  FUNCTIONAL TESTED          : Pass object with deferred DTP to assumed
 !*                               shape array. The array element is derived
 !*                               type object which has deferred DTP.

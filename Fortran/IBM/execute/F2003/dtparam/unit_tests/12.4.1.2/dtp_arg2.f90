@@ -1,8 +1,5 @@
 !*  ===================================================================
 !*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
-!*
 !*  FUNCTIONAL TESTED          : dummy arg is a pointer or an allocatable
 !*                               with assumed type parameters
 !*                                -- check type parameter values

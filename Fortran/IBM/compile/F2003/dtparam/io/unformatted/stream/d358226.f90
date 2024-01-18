@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : d358226
-!*
 !*  DATE                       : October 30, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  ABSTRACT                   : OOPS: ICE: DIAG: IO: IMPDO: POLY: In xlfentry
 !*                               with non-DTIO Polymorphic I/O

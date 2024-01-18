@@ -1,16 +1,4 @@
 !************************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qlanglvl=2008pure -qlanglvl=2008std
-! %GROUP: entry.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!************************************************************************
       subroutine sub ()
         ENTRY area
       end
@@ -18,7 +6,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : Oct 26, 2010
-!*  ORIGIN                     : AIX Compiler Development,
 !*                             : IBM China Development Shanghai Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :

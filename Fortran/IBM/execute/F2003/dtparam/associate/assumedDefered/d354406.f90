@@ -1,11 +1,8 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : d354406
-!*
 !*                               for Defect d354406 by Glen Mateer)
 !*  DATE                       : September  9, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  ABSTRACT                   : DTPARAM: DATAPTR: tpt values for pointer not
 !*                               set (tgt is componen

@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : directRead01
-!*
 !*  DATE                       : September 30, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Data Transfer from a DIRECT File
 !*  SECONDARY FUNCTIONS TESTED : input-item-list is a Derived Type (with

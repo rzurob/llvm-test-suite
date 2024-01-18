@@ -1,18 +1,6 @@
 ! ************************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qhalt=w
-! %GROUP: intrimod23a.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS: rm -f mod1.mod
-! %POSTCMD:
-! %END
 !************************************************************************
 !*
-!*  Test Case Name   : intrimod23a.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
 !*  Description      : Use INTRINSIC module with the same name a COMMON BLOCK

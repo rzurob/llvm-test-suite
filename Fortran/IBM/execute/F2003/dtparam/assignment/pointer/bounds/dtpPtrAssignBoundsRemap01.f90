@@ -1,11 +1,9 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : dtpPtrAssignBoundsRemap01
 !*                               and Remapping)
 !*
 !*  DATE                       : March  9, 2009
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Bounds Remapping for an Array instance of
 !*                               an Object Hierarchy to a 2-Dimension Array

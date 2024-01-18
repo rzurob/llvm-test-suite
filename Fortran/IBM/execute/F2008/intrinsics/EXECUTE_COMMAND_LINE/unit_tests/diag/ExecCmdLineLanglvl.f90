@@ -1,16 +1,4 @@
 !************************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qlanglvl=2003std
-! %GROUP: ExecCmdLineLanglvl.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!************************************************************************
       program ExecCmdLineLanglvl
         call execute_command_line("ls")
       end
@@ -18,7 +6,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : Dec 06, 2010
-!*  ORIGIN                     : AIX Compiler Development,
 !*                             : IBM China Development Shanghai Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :

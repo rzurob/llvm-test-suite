@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : September 27, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2003: ACE: ICE in ASTI with Implied-DO
 !*                               using CHARACTER Substring

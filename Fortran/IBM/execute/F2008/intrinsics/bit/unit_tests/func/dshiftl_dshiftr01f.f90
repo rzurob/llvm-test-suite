@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : 2013-02-10
-!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DSHIFTL, DSHIFTR intrinsics
 !*  SECONDARY FUNCTIONS TESTED :

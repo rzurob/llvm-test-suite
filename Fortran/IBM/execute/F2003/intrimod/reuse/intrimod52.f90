@@ -1,16 +1,4 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfloat=nans -qfree=f90
-! %GROUP: ../fake_ieee_modules.f ../ieeeconsts.f intrimod52.f
-! %VERIFY: intrimod52.out:../emptyout.vf
-! %STDIN:
-! %STDOUT: intrimod52.out
-! %EXECARGS:
-! %POSTCMD: rm -f ieee_*.mod xlf_fp_util.mod constants_for_ieee.mod
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : January, 2004

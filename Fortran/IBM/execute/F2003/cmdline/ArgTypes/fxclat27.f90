@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export CmdLine="fxclat27 00000 ========= aaaaaaaaaaa"
-! %COMPOPTS:  -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxclat27
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxclat27.f
 !*
 !*  DATE                       : Sept 18, 2003
 !*
@@ -35,7 +21,6 @@
 !*  DESCRIPTION                : Tests command line intrinsic routines by passing  return values from
 !*                             : intrinsic functions (RSHIFT /LSHIFT/TRIM)
 !*                             : on  typeless constants as intent(in) arguments
-!*                             :
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

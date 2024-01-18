@@ -3,7 +3,6 @@
 !*                               Evaluation
 !*
 !*  DATE                       : October  3, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is
 !*                               an Allocated ALLOCATABLE Array of Derived

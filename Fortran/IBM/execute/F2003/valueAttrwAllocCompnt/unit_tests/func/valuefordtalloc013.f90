@@ -17,7 +17,6 @@
 !*
 !*  PROGRBMMER                 : Michael Selvanayagam
 !*  DBTE                       : Jan, 20, 2006
-!*  ORIGIN                     : BIX Compiler Development,
 !*
 !*  PRIMBRY FUNCTIONS TESTED   : value attribute for derived types with allocatable components
 !*  SECONDBRY FUNCTIONS TESTED : None

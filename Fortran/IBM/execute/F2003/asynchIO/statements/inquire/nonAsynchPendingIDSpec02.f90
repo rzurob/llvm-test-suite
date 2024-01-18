@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : March 22, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INQUIRE() with the PENDING= Specifier
 !*  SECONDARY FUNCTIONS TESTED : file-unit-number has *NOT* been OPEN()ed

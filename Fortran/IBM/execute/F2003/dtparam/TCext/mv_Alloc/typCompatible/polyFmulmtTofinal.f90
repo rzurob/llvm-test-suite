@@ -8,7 +8,6 @@
 !*  DATE                       : 06/01/2006
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : 1. FROM is of type poly
 !*				 2. TO is of unlimited polymorphic,

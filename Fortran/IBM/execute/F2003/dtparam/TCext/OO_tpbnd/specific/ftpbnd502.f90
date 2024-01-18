@@ -2,19 +2,6 @@
 ! ftcx_dtp -qk -qnol -qreuse=base /tstdev/OO_tpbnd/specific/ftpbnd502.f
 ! opt variations: -qnok -ql -qreuse=none
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: ftpbnd502.f
-! %VERIFY: ftpbnd502.out:ftpbnd502.vf
-! %STDIN:
-! %STDOUT: ftpbnd502.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

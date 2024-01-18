@@ -1,11 +1,9 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : aceCompPtrFunctionReturn01
 !*                               with DTP
 !*
 !*  DATE                       : November 21, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor contains a Derived Type
 !*                               with a Non-Polymorphic POINTER Component

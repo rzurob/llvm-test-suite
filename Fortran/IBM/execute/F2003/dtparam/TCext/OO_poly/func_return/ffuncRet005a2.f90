@@ -2,7 +2,6 @@
 ! ftcx_dtp -qk -ql -qdeferredlp -qreuse=base /tstdev/OO_poly/func_return/ffuncRet005a2.f
 ! opt variations: -qck -qnok -qnol -qnodeferredlp -qreuse=none
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

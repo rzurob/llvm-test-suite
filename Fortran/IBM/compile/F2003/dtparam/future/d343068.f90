@@ -1,7 +1,6 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql OO_type/struct_constr/fconstr024d.f
 ! (moved to F2003/dtparam/future/d343068.f, per defect 343068)
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

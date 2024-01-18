@@ -1,7 +1,5 @@
 !*  ===================================================================
 !*
-!*  ORIGIN                     : AIX Compiler Development,
-!*
 !*  PRIMARY FUNCTIONS TESTED   : Diagnostic test
 !*
 !*  REQUIRED COMPILER OPTIONS  : -qlanglvl=95std

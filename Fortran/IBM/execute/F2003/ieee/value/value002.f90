@@ -1,20 +1,7 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: $TR_SRC/fxieee.presh value002
-! %COMPOPTS: -qfloat=nans -qfree=f90 -qstrict
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : February 12, 2002
-!*  ORIGIN                     : aL Fortran Development
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_VALUE with variables.
 !*  SECONDARY FUNCTIONS TESTED :

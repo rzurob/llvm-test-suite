@@ -1,6 +1,5 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql /tstdev/OO_poly/allocate/falloc025a2.f
-! SCCS ID Information
 !*  ===================================================================
 !*
 !*  DATE                       : 09/24/2004

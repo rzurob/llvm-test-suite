@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : June 2, 2015
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with source expression
 !*  SECONDARY FUNCTIONS TESTED :

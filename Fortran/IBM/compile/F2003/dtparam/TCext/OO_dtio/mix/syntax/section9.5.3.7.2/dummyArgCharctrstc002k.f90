@@ -1,8 +1,6 @@
 ! *********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgCharctrstc002k
-!*
 !*  DATE                       : 2007-09-05 (original: 11/08/2004)
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters

@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : directWrite07
-!*
 !*  DATE                       : November  4, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DIRECT File Input for a Derived/Extended
 !*                               Derived Types (with Type Parameters)

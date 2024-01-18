@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : Aug 20, 2010
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Diagnostic
 !*

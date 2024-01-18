@@ -3,7 +3,6 @@
 !*                               Non-CHARACTER Intrinsic Types
 !*
 !*  DATE                       : August  1, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is
 !*                               an Allocated ALLOCATABLE of Intrinsic

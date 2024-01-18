@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : sequentialWrite03
-!*
 !*  DATE                       : October  6, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Data Transfer to a SEQUENTIAL File
 !*  SECONDARY FUNCTIONS TESTED : output-item-list consists of Derived Types

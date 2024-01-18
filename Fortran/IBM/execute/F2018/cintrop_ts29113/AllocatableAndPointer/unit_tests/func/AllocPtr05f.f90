@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : Feb, 2013
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C-interop Allocatable/Pointer
 !*

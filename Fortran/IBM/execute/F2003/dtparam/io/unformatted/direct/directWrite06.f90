@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : directWrite06
-!*
 !*  DATE                       : November  3, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DIRECT File Output for a Derived/Extended
 !*                               Derived Type (with Type Parameters)

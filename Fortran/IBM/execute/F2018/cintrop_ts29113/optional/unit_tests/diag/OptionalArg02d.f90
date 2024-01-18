@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : May 23, 2012
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Diagnostics for C-interop OPTIONAL argument
 !*

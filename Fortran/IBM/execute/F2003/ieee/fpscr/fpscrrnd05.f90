@@ -1,15 +1,4 @@
 !*********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: fpscrrnd05.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT: fpscrrnd05.out
-! %EXECARGS:
-! %POSTCMD: rm -f fpscrrnd05.out withieee.mod withoutieee.mod
-! %END
 !**********************************************************************
 !*  ===================================================================
 !*

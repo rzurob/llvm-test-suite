@@ -3,21 +3,7 @@
 ! opt variations: -qnock -qnok -qnol -qdefaultpv
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: tcomp PtrAssignC7251.f
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : PtrAssignC7251.f
 !*
 !*  DATE                       : Mar. 12, 2005
 !*

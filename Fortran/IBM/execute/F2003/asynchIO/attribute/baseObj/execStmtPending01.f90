@@ -3,7 +3,6 @@
 !*                               Attribute in Scoping Unit
 !*
 !*  DATE                       : January 19, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Base Object appears in an
 !*                               Executable Statement in a Scoping Unit

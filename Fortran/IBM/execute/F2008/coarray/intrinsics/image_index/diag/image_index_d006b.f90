@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : August 2010
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
 !*  SECONDARY FUNCTIONS TESTED :

@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : Apr 14, 2012
-!*  ORIGIN                     : Linux/AIX Compiler Development,
 !*                             : IBM Software Solutions China Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C-interop Assumed-type object

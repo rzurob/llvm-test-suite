@@ -1,8 +1,5 @@
 !*  ===================================================================
 !*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
-!*
 !*  FUNCTIONAL TESTED          : Finalize the object with type parameter
 !*                               - Length type parameter of dummy argument
 !*                                 must be assumed.

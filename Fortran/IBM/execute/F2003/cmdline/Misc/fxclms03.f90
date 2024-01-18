@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export CmdLine="fxclms03 -= -- -0 -1 -a"
-! %COMPOPTS:  -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxclms03
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxclms03.f
 !*
 !*  DATE                       : Oct 1, 2003
 !*
@@ -36,7 +22,6 @@
 !*                             : actual arguments.
 !*                             : (to check if these intrinsic routine can handle those smallest size args)
 !*                             : (It is short of storage for any options)
-!*                             :
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 

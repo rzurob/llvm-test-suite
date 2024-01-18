@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : April 13, 2009
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Explicit Init. Exp.
 !*  SECONDARY FUNCTIONS TESTED : Array constructor

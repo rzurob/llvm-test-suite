@@ -3,21 +3,7 @@
 ! opt variations: -qck -qnok -qnol -qreuse=self
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: InClassDefault1.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : InClassDefault
 !*
 !*  DATE                       : Jan. 25, 2005
 !*
