@@ -1,0 +1,7 @@
+"genericC462Operator002d.f", line 44.37: 1514-711 (S) Dummy argument b of procedure or binding mypower must be specified with the INTENT(IN) attribute. mypower will not be included in the OPERATOR(**) generic interface.
+"genericC462Operator002d.f", line 44.37: 1514-711 (S) Dummy argument a of procedure or binding mypower must be specified with the INTENT(IN) attribute. mypower will not be included in the OPERATOR(**) generic interface.
+"genericC462Operator002d.f", line 53.37: 1514-711 (S) Dummy argument a of procedure or binding concat must be specified with the INTENT(IN) attribute. concat will not be included in the OPERATOR(//) generic interface.
+"genericC462Operator002d.f", line 56.40: 1514-711 (S) Dummy argument a of procedure or binding not must be specified with the INTENT(IN) attribute. not will not be included in the OPERATOR(.not.) generic interface.
+** m   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericC462Operator002d.f.

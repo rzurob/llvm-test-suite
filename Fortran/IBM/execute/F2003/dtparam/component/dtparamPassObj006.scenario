@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/component/dtparamPassObj006.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamPassObj006.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamPassObj006$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dtparamPassObj006$(OBJ)
+#OUTPUT    = dtparamPassObj006$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamPassObj006$(EXE)
+#STDOUT    = dtparamPassObj006.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dtparamPassObj006.out $($(tcasedir)dtparamPassObj006$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

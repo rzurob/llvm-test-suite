@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/syntax/C459/genericC459GenericName004.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericC459GenericName004.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericC459GenericName004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericC459GenericName004$(OBJ)
+#OUTPUT    = genericC459GenericName004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericC459GenericName004$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

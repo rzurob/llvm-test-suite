@@ -1,0 +1,9 @@
+ dcSub: want 5 7 10 2
+ dcSub:   is 5 7 10 2
+ diaSub: want 9 7 81 0
+ diaSub:   is 9 7 81 0
+ dcFun(dc5): 2100705
+        want 2100705
+ diaFun(dia9): 810709
+        want 810709
+ end

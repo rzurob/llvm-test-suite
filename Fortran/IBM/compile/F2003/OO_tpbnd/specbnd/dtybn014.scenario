@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_tpbnd/specbnd/dtybn014.scenario
+#FEATURE = OO_tpbnd tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(F_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+! This chunk was DCOMP
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtybn014.f
+#OPTS      =  -qdebug=intmsg:shutup
+#OUTPUT    = dtybn014$(OBJ)
+#STDERR    = dtybn014.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)dtybn014$(product)vf) dtybn014.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

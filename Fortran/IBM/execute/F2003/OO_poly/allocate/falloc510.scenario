@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/allocate/falloc510.f
+#FEATURE = OO_poly
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)falloc510.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = falloc510$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = falloc510$(OBJ)
+#OUTPUT    = falloc510$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = falloc510$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

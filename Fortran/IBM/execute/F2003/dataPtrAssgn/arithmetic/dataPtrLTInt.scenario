@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrLTInt.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrLTInt.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrLTInt$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrLTInt$(OBJ)
+#OUTPUT    = dataPtrLTInt$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrLTInt$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

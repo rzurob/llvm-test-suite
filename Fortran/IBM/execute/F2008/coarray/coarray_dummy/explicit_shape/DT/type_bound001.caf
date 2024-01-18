@@ -1,0 +1,192 @@
+! *********************************************************************
+!*  =================================================================== 
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
+!*  =================================================================== 
+!*  =================================================================== 
+!*
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Jim Xia
+!*  DATE                       : 2011-07-26
+!*  ORIGIN                     :
+!*                             :
+!*
+!*  PRIMARY FUNCTIONS TESTED   :
+!*                             :
+!*  SECONDARY FUNCTIONS TESTED : 
+!*
+!*  DRIVER STANZA              :
+!*
+!*  DESCRIPTION                : This is a simple test that verifies the type
+!                               bound procedure can be invoked on a DT explicit
+!                               shape coarray dummy.
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!* ===================================================================
+!*
+!*  REVISION HISTORY
+!*
+!*  MM/DD/YY:  Init:  Comments:
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+module m
+    implicit none
+
+    type grid_pt
+        private
+        character scale
+        real(4) temperature(3)
+
+        contains
+
+        procedure :: average => returnAvg
+    end type
+
+    interface grid_pt
+        procedure construct_grid_pt
+    end interface
+
+    contains
+
+    type(grid_pt) function construct_grid_pt (c, temps) result(res)
+        character, intent(in), optional :: c
+        real(4), intent(in) :: temps(3)
+
+        if (present(c)) then
+            res%scale = c
+        else
+            res%scale = 'C' ! default, take Celsius
+        end if
+
+        res%temperature = temps
+
+        if ((res%scale == 'F') .or. (res%scale == 'f')) then ! convert to Celsiuius
+            res%temperature = (res%temperature - 32.0)*5.0/9.0
+            res%scale = 'C'
+        end if
+    end function
+
+    real(8) function returnAvg(g1) result(res)
+        class(grid_pt), intent(in) :: g1
+
+        res = sum(g1%temperature) / 3.0d0
+    end function
+end module
+
+module m1
+    implicit none
+
+    contains
+
+    function compute_avg(x, n) result(res)
+        use m, only : grid_pt
+        integer, intent(in) :: n
+        type(grid_pt), intent(in), dimension(n), codimension[*] :: x
+
+        real(8) res(n)
+
+        integer i
+
+        do i = 1, n
+            res(i) = x(i)%average()
+        end do
+    end function
+end module
+
+module m2
+    implicit none
+
+    contains
+
+    ! make a special distribution of temperature grid
+    subroutine initialize_array(x, n)
+        use m, only: grid_pt, construct_grid_pt
+        integer, intent(in) :: n
+        type(grid_pt), intent(out), dimension(n), codimension[*] :: x
+
+        real(4), parameter :: low = 20.0, high = 30.0
+        integer me,np, i
+        real(4) local_temperature(3), rand1(n), delta, di
+
+        me = this_image()
+        np = num_images()
+
+        delta = me*5.0/np
+        di = (high-low)/n
+
+        call random_number(rand1)
+
+        do i = 1, n
+            local_temperature(1) = delta + low+di*i
+            local_temperature(2) = delta + low+di*i - rand1(i)
+            local_temperature(3) = delta + low+di*i + rand1(i)
+
+            if (mod(me, 2) == 0) then !use Fahrenheit
+                local_temperature = local_temperature*9.0/5.0 + 32
+                x(i) = construct_grid_pt('F', local_temperature)
+            else
+                x(i) = construct_grid_pt(temps=local_temperature)
+            end if
+        end do
+
+        sync all
+    end subroutine
+end module
+
+program type_bound001
+    use m, only: grid_pt
+    use m1, only: compute_avg
+    use m2, only: initialize_array
+    implicit none
+
+    integer, parameter :: arr_size = 10
+    type(grid_pt), save, dimension(arr_size), codimension[*] :: arr1
+    type(grid_pt), save, dimension(arr_size, 2), codimension[*] :: arr2
+    real(8) sum_val1(arr_size), sum_val2(arr_size*2)
+
+    integer np
+    np = num_images()
+
+    if (np < 2) then
+        print *, 'Program needs at least 2 images'
+        stop 100
+    end if
+
+    call initialize_array (arr1, arr_size)
+    call initialize_array (arr2, arr_size*2)
+
+    sum_val1 = compute_avg(arr1, arr_size)
+    sum_val2 = compute_avg(arr2, arr_size*2)
+
+    call verify_array (sum_val1, arr_size)
+    call verify_array (sum_val2, arr_size*2)
+
+    print *, 'all done'
+    contains
+
+    subroutine verify_array(x, n)
+        integer, intent(in) :: n
+        real(8), intent(in), dimension(n) :: x
+
+        logical, external :: precision_r4
+
+        integer i, me
+        real(4), parameter :: low = 20.0, high = 30.0
+        real(4) delta, di, x_prime
+
+        me = this_image()
+        delta = me*5.0/np
+        di = (high-low)/n
+
+        do i = 1, n
+            x_prime = x(i)
+            if (.not. precision_r4(x_prime, delta + low+di*i)) then
+                print *, 'Error: verification of x(i) failed on image', me, &
+                    ', i=', i, x_prime, ' vs ', delta + low+di*i
+
+                error stop 2
+            end if
+        end do
+    end subroutine
+end

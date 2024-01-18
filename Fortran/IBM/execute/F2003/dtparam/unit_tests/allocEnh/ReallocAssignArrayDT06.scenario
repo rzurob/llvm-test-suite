@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2003/allocEnh/unit_tests/ReallocAssignArrayDT06.scenario
+#FEATURE = Reallocation on assignment to an allocatable object
+#CREATOR = Rob James
+#DATE    = 20060605
+#TEST_TYPE=Functional unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ReallocAssignArrayDT06.f
+#OUTPUT    = ReallocAssignArrayDT06$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = ReallocAssignArrayDT06$(OBJ)
+#OUTPUT    = ReallocAssignArrayDT06$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ReallocAssignArrayDT06$(EXE)
+#VALIDSIGNALS = TRAP
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

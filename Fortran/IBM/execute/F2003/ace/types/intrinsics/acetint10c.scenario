@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint10c.scenario
+#FEATURE	= Array constructor enhancement Intrinsic type specifier in assignment (CHARACTER)
+#CREATOR	= DF Manual Update
+#DATE		= 20060824
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint10c.f
+#OUTPUT		= acetint10c$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint10c$(OBJ)
+#OUTPUT		= acetint10c$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint10c$(EXE)
+#STDOUT		= acetint10c.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $(tcasedir)acetint10c.vf acetint10c.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

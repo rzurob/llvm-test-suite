@@ -1,0 +1,9 @@
+! automatically generated
+selectType001.scenario
+selectType002.scenario
+selectType003.scenario
+selectType004.scenario
+selectType101.scenario
+selectType102.scenario
+selectType103.scenario
+selectType104.scenario

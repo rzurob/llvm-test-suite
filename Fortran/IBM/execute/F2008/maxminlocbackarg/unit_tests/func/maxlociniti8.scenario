@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= maxlociniti8.scenario
+#FEATURE = back argument for maxloc/minloc
+#CREATOR = Pooja Dayanand
+#DATE    = 20120629
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)maxlociniti8.f
+#OUTPUT    = maxlociniti8$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2008_LINK
+#INPUT     = maxlociniti8$(OBJ)
+#OUTPUT    = maxlociniti8$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = maxlociniti8$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

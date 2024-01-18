@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       elementalfinal.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)elementalfinal.f
+#OUTPUT= elementalfinal$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  elementalfinal$(OBJ)
+#OUTPUT= elementalfinal$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  elementalfinal$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

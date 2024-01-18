@@ -1,0 +1,3 @@
+"ptrassign042.f", line 48.26: 1516-352 (S) In a pointer assignment with bounds remapping, the size of the pointer must not exceed the size of the target.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file ptrassign042.f.

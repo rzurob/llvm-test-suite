@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/assignment/intrinsic/alloc/dtpIAABasicModule006.scenario
+#FEATURE   = Intrinsic Assignment with Allocation - allocate basic DTP variable (container) with indirectly allocatable components via intrinsic assignment (in module subroutine)
+#CREATOR   = DF Manual Update
+#DATE      = 20090522
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAABasicModule006.f
+#OUTPUT    = dtpIAABasicModule006$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAABasicModule006$(OBJ)
+#OUTPUT    = dtpIAABasicModule006$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAABasicModule006$(EXE)
+#STDOUT    = dtpIAABasicModule006.out
+#ENDCMD
+
+#CMD       = SORT
+#INPUT     = dtpIAABasicModule006.out
+#STDOUT    = dtpIAABasicModule006.out1
+#ENDCMD
+
+#CMD       = SORT
+#INPUT     = $($(tcasedir)dtpIAABasicModule006$(product)vf)
+#STDOUT    = dtpIAABasicModule006.vf1
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dtpIAABasicModule006.vf1 dtpIAABasicModule006.out1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

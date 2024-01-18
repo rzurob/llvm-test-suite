@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/genericName/functional/genericGenericNameDummyProc006.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericGenericNameDummyProc006.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericGenericNameDummyProc006$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericGenericNameDummyProc006$(OBJ)
+#OUTPUT    = genericGenericNameDummyProc006$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericGenericNameDummyProc006$(EXE)
+#STDOUT    = genericGenericNameDummyProc006.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericGenericNameDummyProc006.out $(tcasedir)genericGenericNameDummyProc006.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

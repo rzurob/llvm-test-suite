@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"Data.f", line 82.8: 1514-030 (W) Variable procptr3 is initialized more than once.
+"Data.f", line 87.8: 1514-030 (W) Variable v1 is initialized more than once.
+"Data.f", line 96.8: 1514-030 (W) Variable w2 is initialized more than once.
+"Data.f", line 102.5: 1515-019 (S) Syntax is incorrect.
+** data   === End of Compilation 2 ===
+1501-511  Compilation failed for file Data.f.

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/derived/acetdt43cext.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
+				Lookalike Function Invocations as ac_values)
+#CREATOR	= Glen Mateer (derived from work by David Forster)
+#DATE		= 20080117
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt43cext.f
+#OUTPUT		= acetdt43cext$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt43cext$(OBJ)
+#OUTPUT		= acetdt43cext$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt43cext$(EXE)
+#STDOUT		= acetdt43cext.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -a1-e6
+#INPUT		= $($(tcasedir)acetdt43cext$(product)vf) acetdt43cext.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

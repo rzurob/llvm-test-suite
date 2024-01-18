@@ -1,0 +1,3 @@
+"roundspecifier003.f", line 41.2: 1512-089 (E) The ROUND specifier is not allowed when opening an unformatted file.  Keyword is ignored.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file roundspecifier003.f.

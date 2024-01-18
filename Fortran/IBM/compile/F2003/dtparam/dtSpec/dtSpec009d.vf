@@ -1,0 +1,4 @@
+"dtSpec009d.f", line 43.19: 1516-305 (S) Assumed type parameter values are not permitted in this context.
+"dtSpec009d.f", line 44.21: 1516-306 (S) Deferred type parameter values are not permitted in this context.
+** dtspec009d   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtSpec009d.f.

@@ -1,0 +1,12 @@
+ &NML
+ DTV=i=    1 c= abc
+ /
+ &NML
+ DTV=i=    2 c= def
+ /
+ &NML
+ DTV=i=    3 c= ghi
+ /
+ &NML
+ DTV=i=    4 c= jkl
+ /

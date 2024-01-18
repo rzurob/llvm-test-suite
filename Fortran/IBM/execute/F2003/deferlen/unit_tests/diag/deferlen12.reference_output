@@ -1,0 +1,4 @@
+"deferlen12.f", line 33.10: 1511-140 (S) Variable a1%char1 must not be allocated by an ALLOCATE statement that does not have a type specification, SOURCE= specifier, or MOLD= specifier.
+"deferlen12.f", line 34.10: 1511-140 (S) Variable b1%char2 must not be allocated by an ALLOCATE statement that does not have a type specification, SOURCE= specifier, or MOLD= specifier.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file deferlen12.f.

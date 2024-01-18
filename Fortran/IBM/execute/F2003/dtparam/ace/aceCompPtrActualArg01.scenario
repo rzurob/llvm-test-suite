@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/ace/aceCompPtrActualArg01.scenario
+#FEATURE	= Basic (non-Polymorphic) Array Constructors with DTP
+#CREATOR	= Glen Mateer
+#DATE		= 20081125
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)aceCompPtrActualArg01.f
+#OUTPUT		= aceCompPtrActualArg01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= aceCompPtrActualArg01$(OBJ)
+#OUTPUT		= aceCompPtrActualArg01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= aceCompPtrActualArg01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

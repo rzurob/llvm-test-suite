@@ -1,0 +1,41 @@
+** acesyntc497dmod   === End of Compilation 1 ===
+"acesyntc497dl.f", line 61.40: 1516-036 (S) Entity i has undefined type.
+"acesyntc497dl.f", line 61.40: 1516-068 (S) Implied DO variable i has already been used as another implied DO variable in a containing implied DO.
+"acesyntc497dl.f", line 92.43: 1516-036 (S) Entity i has undefined type.
+"acesyntc497dl.f", line 92.43: 1516-068 (S) Implied DO variable i has already been used as another implied DO variable in a containing implied DO.
+"acesyntc497dl.f", line 93.43: 1516-036 (S) Entity i has undefined type.
+"acesyntc497dl.f", line 93.43: 1516-068 (S) Implied DO variable i has already been used as another implied DO variable in a containing implied DO.
+"acesyntc497dl.f", line 94.43: 1516-068 (S) Implied DO variable i has already been used as another implied DO variable in a containing implied DO.
+"acesyntc497dl.f", line 94.43: 1516-036 (S) Entity i has undefined type.
+"acesyntc497dl.f", line 95.51: 1516-036 (S) Entity i has undefined type.
+"acesyntc497dl.f", line 95.51: 1516-068 (S) Implied DO variable i has already been used as another implied DO variable in a containing implied DO.
+"acesyntc497dl.f", line 97.33: 1516-036 (S) Entity i has undefined type.
+"acesyntc497dl.f", line 97.45: 1516-068 (S) Implied DO variable i has already been used as another implied DO variable in a containing implied DO.
+"acesyntc497dl.f", line 98.39: 1516-036 (S) Entity i has undefined type.
+"acesyntc497dl.f", line 98.39: 1516-068 (S) Implied DO variable i has already been used as another implied DO variable in a containing implied DO.
+"acesyntc497dl.f", line 99.48: 1516-036 (S) Entity i has undefined type.
+"acesyntc497dl.f", line 99.48: 1516-068 (S) Implied DO variable i has already been used as another implied DO variable in a containing implied DO.
+"acesyntc497dl.f", line 100.33: 1516-036 (S) Entity i has undefined type.
+"acesyntc497dl.f", line 100.45: 1516-068 (S) Implied DO variable i has already been used as another implied DO variable in a containing implied DO.
+"acesyntc497dl.f", line 101.36: 1516-036 (S) Entity i has undefined type.
+"acesyntc497dl.f", line 101.51: 1516-068 (S) Implied DO variable i has already been used as another implied DO variable in a containing implied DO.
+"acesyntc497dl.f", line 103.43: 1516-068 (S) Implied DO variable i has already been used as another implied DO variable in a containing implied DO.
+"acesyntc497dl.f", line 103.43: 1516-036 (S) Entity i has undefined type.
+"acesyntc497dl.f", line 104.26: 1516-036 (S) Entity i has undefined type.
+"acesyntc497dl.f", line 104.32: 1516-068 (S) Implied DO variable i has already been used as another implied DO variable in a containing implied DO.
+"acesyntc497dl.f", line 105.31: 1516-036 (S) Entity i has undefined type.
+"acesyntc497dl.f", line 105.35: 1516-068 (S) Implied DO variable i has already been used as another implied DO variable in a containing implied DO.
+"acesyntc497dl.f", line 106.32: 1516-036 (S) Entity i has undefined type.
+"acesyntc497dl.f", line 106.38: 1516-068 (S) Implied DO variable i has already been used as another implied DO variable in a containing implied DO.
+"acesyntc497dl.f", line 107.26: 1516-036 (S) Entity i has undefined type.
+"acesyntc497dl.f", line 107.29: 1516-068 (S) Implied DO variable i has already been used as another implied DO variable in a containing implied DO.
+"acesyntc497dl.f", line 108.31: 1516-036 (S) Entity i has undefined type.
+"acesyntc497dl.f", line 108.35: 1516-068 (S) Implied DO variable i has already been used as another implied DO variable in a containing implied DO.
+"acesyntc497dl.f", line 110.29: 1516-036 (S) Entity i has undefined type.
+"acesyntc497dl.f", line 110.33: 1516-068 (S) Implied DO variable i has already been used as another implied DO variable in a containing implied DO.
+"acesyntc497dl.f", line 111.27: 1516-036 (S) Entity i has undefined type.
+"acesyntc497dl.f", line 111.29: 1516-068 (S) Implied DO variable i has already been used as another implied DO variable in a containing implied DO.
+"acesyntc497dl.f", line 112.40: 1516-036 (S) Entity i has undefined type.
+"acesyntc497dl.f", line 112.42: 1516-068 (S) Implied DO variable i has already been used as another implied DO variable in a containing implied DO.
+** acesyntc497dl   === End of Compilation 2 ===
+1501-511  Compilation failed for file acesyntc497dl.f.

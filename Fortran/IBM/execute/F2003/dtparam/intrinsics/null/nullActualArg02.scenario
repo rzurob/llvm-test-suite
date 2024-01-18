@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/intrinsics/null/nullActualArg02.scenario
+#FEATURE= 355754
+#CREATOR= Nancy Wang
+#DATE   = Sept. 24 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)nullActualArg02.f
+#OUTPUT= nullActualArg02$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = nullActualArg02$(OBJ)
+#OUTPUT= nullActualArg02$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = nullActualArg02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

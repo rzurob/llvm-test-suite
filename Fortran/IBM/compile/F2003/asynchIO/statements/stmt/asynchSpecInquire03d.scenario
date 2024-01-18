@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/stmt/asynchSpecInquire03d.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS= Specifier in I/O Statements
+#CREATOR	= GM Manual Creation
+#DATE		= 20060125
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)asynchSpecInquire03d.f
+#OUTPUT		= asynchSpecInquire03d$(OBJ)
+#STDERR		= asynchSpecInquire03d.stderr
+#VALIDRCS	= $(RC_COMP_S)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)asynchSpecInquire03d$(product)vf)	\
+							asynchSpecInquire03d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

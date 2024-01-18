@@ -1,0 +1,4 @@
+"C808Misc.f", line 49.30: 1515-019 (S) Syntax is incorrect.
+"C808Misc.f", line 50.4: 1511-141 (S) The END ASSOCIATE statement appears outside of an ASSOCIATE construct.
+** c808misc   === End of Compilation 1 ===
+1501-511  Compilation failed for file C808Misc.f.

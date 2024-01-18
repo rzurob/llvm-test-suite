@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/streamio/formatted/fxstio114.scenario
+#FEATURE = streamio tests - regression run bucket
+#CREATOR = CPR&LZ Manual conversion
+#DATE    = 20041208
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT=bgl cbe_ssc_io
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = XLF95_R_COMPLINK
+#OPTS      = $(OPT_OPTIMIZE_FOR_SMP_OMP) -I$(tcasedir)
+#INPUT     = $(tcasedir)fxstio114.f
+#OUTPUT    = fxstio114$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxstio114$(EXE)
+#STDOUT    = stdout.txt
+#STDERR    = stderr.txt
+#ENDCMD
+
+#CMD = DIFF
+#INPUT = fxstio114.dat $($(tcasedir)fxstio114$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

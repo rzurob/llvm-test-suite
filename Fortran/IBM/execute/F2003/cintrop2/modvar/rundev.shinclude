@@ -1,0 +1,71 @@
+! Replacing run.sh
+
+#CMD    = XLC_COMPILE
+#OPTS   = $(C_COMPILER_OPTS) -qalign
+#INPUT  = $(tcasedir)$CTCARG1.c
+#OUTPUT = $CTCARG1$(OBJ)
+#ENDCMD
+
+#CMD    = XLC_COMPILE
+#OPTS   = $(C_COMPILER_OPTS) -qalign
+#INPUT  = $(tcasedir)$CTCARG2.c
+#OUTPUT = $CTCARG2$(OBJ)
+#ENDCMD
+
+#CMD    = XLC_COMPILE
+#OPTS   = $(C_COMPILER_OPTS) -qalign
+#INPUT  = $(tcasedir)$CTCARG3.c
+#OUTPUT = $CTCARG3$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#OPTS   = -qalign
+#INPUT  = $(tcasedir)$FTCARG.f
+#OUTPUT = $FTCARG$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#OPTS   = -qalign
+#INPUT  = $CTCARG1$(OBJ) $CTCARG2$(OBJ) $CTCARG3$(OBJ) $FTCARG$(OBJ)
+#OUTPUT = $FTCARG$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = $FTCARG$(EXE)
+#ENDCMD
+
+#IF !on(aix)
+  #CMD    = GCC_COMPILE
+  #OPTS   = $(GCC_COMPILER_OPTS)
+  #INPUT  = $(tcasedir)$CTCARG1.c
+  #OUTPUT = $CTCARG1$(OBJ)
+  #ENDCMD
+
+  #CMD    = GCC_COMPILE
+  #OPTS   = $(GCC_COMPILER_OPTS) 
+  #INPUT  = $(tcasedir)$CTCARG2.c
+  #OUTPUT = $CTCARG2$(OBJ)
+  #ENDCMD
+
+  #CMD    = GCC_COMPILE
+  #OPTS   = $(GCC_COMPILER_OPTS)
+  #INPUT  = $(tcasedir)$CTCARG3.c
+  #OUTPUT = $CTCARG3$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_COMPILE
+  #OPTS   = -qalign
+  #INPUT  = $(tcasedir)$FTCARG.f
+  #OUTPUT = $FTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_LINK
+  #OPTS   = -qalign
+  #INPUT  = $CTCARG1$(OBJ) $CTCARG2$(OBJ) $CTCARG3$(OBJ) $FTCARG$(OBJ)
+  #OUTPUT = $FTCARG$(EXE)
+  #ENDCMD
+
+  #CMD    = RUN
+  #INPUT  = $FTCARG$(EXE)
+  #ENDCMD
+#ENDIF

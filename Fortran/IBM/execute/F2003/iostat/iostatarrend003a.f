@@ -1,0 +1,72 @@
+!**********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD:
+! %COMPOPTS: 
+! %GROUP: iostatarrend001.f
+! %VERIFY:
+! %STDIN:
+! %STDOUT:
+! %EXECARGS:
+! %POSTCMD:
+! %END
+!**********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE TITLE            : iostatarrend001.f
+!*
+!*  PROGRAMMER                 : Rob Wheeler
+!*  DATE                       : Jan 9, 2006
+!*  ORIGIN                     : AIX Compiler Development,
+!*                             : IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : is_iostat_eor
+!*  SECONDARY FUNCTIONS TESTED : None 
+!*
+!*  DRIVER STANZA              : xlf
+!*  REQUIRED COMPILER OPTIONS  : 
+!*
+!*  DESCRIPTION                : Ensure that basic funcationailty works for eor with no advance and external file
+	implicit none
+	integer :: ios3,ios4,ios5,iosall(3)
+	character(4) :: fourword
+	character(5) :: fiveword
+	character(3) :: threeword
+	
+        ios3 = 0
+        ios4 = 0
+        ios5 = 0
+	open( 1, file='file1.txt', action='read' ) 
+	do while( .not. is_iostat_end(ios4) )
+         read( 1,'(A4)',iostat=ios4 ) fourword
+         if (is_iostat_end(ios4)) then
+         fourword="end "
+         endif
+         write(6,*) "ios4 = ", ios4
+         write(6,*) "four letter word = ", fourword
+	enddo
+	
+	open( 1, file='file2.txt', action='read' ) 
+	do while( .not. is_iostat_end(ios5) )
+         read( 1,'(A5)',iostat=ios5 ) fiveword
+         if (is_iostat_end(ios5)) then
+         fiveword="end "
+         endif
+         write(6,*) "ios5 = ", ios5
+         write(6,*) "five letter word = ", fiveword
+	enddo
+	
+	open( 1, file='file3.txt', action='read' ) 
+	do while( .not. is_iostat_eor(ios3) )
+         read( 1,'(A3)',iostat=ios3 ,advance="no") threeword
+         if (is_iostat_eor(ios3)) then
+         threeword="eor "
+         endif
+         write(6,*) "ios3 = ", ios3
+         write(6,*) "three letter word = ", threeword
+	enddo
+	iosall=(/ios3,ios4,ios5/)
+	write (6,*) "all my files are eof", all(is_iostat_end(iosall))
+	end

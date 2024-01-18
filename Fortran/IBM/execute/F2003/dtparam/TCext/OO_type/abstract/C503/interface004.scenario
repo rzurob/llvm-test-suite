@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/C503/interface004.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/abstract/C503/interface004.scenario
+#DATE      = 20070610
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)interface004.f
+#OUTPUT    = interface004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = interface004$(OBJ)
+#OUTPUT    = interface004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = interface004$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/derived/acetdt43c.scenario
+#FEATURE	= Array constructor enhancement lookalike function invocations as ac_values
+#CREATOR	= DF Manual Update
+#DATE		= 20061108
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt43c.f
+#OUTPUT		= acetdt43c$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt43c$(OBJ)
+#OUTPUT		= acetdt43c$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt43c$(EXE)
+#STDOUT		= acetdt43c.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -a1-e6
+#INPUT		= $($(tcasedir)acetdt43c$(product)vf) acetdt43c.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

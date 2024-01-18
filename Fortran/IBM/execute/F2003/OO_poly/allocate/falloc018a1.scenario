@@ -1,0 +1,57 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = OO_poly/allocate/falloc018a1.scenario
+#FEATURE = OO_poly tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)falloc018a1_1.f90
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qsuffix=f=f90
+#OUTPUT    = falloc018a1_1$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)falloc018a1_2.f90
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qsuffix=f=f90
+#OUTPUT    = falloc018a1_2$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)falloc018a1_3.f90
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qsuffix=f=f90
+#OUTPUT    = falloc018a1_3$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)falloc018a1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = falloc018a1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = falloc018a1$(OBJ) falloc018a1_1$(OBJ) falloc018a1_2$(OBJ) falloc018a1_3$(OBJ)
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = falloc018a1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = falloc018a1$(EXE)
+#STDOUT    = falloc018a1.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = falloc018a1.out $($(tcasedir)falloc018a1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

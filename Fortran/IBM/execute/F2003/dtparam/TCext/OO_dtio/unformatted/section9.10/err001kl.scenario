@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/unformatted/section9.10/err001kl.scenario
+#FEATURE = OO_dtio/unformatted tests - regression run bucket + derived type parameters
+#CREATOR = automated conversion script
+#DATE    = 20070910
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)err001kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = err001kl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  err001kl$(OBJ)
+#OUTPUT    = err001kl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = err001kl$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

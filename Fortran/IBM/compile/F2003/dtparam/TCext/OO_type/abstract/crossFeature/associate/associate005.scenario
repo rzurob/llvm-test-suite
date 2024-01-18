@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/crossFeature/associate/associate005.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/abstract/crossFeature/associate/associate005.scenario
+#DATE      = 20070612
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)associate005.f
+#OPTS      = -qdebug=intmsg:shutup -qdebug=allowrpdt
+#OUTPUT    = associate005$(OBJ)
+#STDERR    = associate005.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)associate005$(product)vf) associate005.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

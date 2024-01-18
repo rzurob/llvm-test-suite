@@ -1,0 +1,6 @@
+"kindArgLen_trim1.f", line 43.34: 1513-143 (S) Invalid KIND value.
+"kindArgLen_trim1.f", line 44.31: 1513-143 (S) Invalid KIND value.
+"kindArgLen_trim1.f", line 45.31: 1513-143 (S) Invalid KIND value.
+"kindArgLen_trim1.f", line 47.31: 1513-143 (S) Invalid KIND value.
+** kindarglen_trim1   === End of Compilation 1 ===
+1501-511  Compilation failed for file kindArgLen_trim1.f.

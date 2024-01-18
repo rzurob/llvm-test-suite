@@ -1,0 +1,3 @@
+  iotype:DT_con1 v_list: 4 ABC
+  iotype:DT_con2 v_list: 6 7   DEF    GHI  iotype:DT_con2base v_list: 8     DEF
+  iotype:DT_con1 v_list: 7 8    JKL     MNO  iotype:DT_con1base v_list: 9      JKL

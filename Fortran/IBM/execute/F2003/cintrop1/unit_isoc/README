@@ -1,0 +1,24 @@
+This test bucket holds the unit tests for the ISO_C_BINDING module.
+
+icattr*:  Testing C_PTR and C_FUNPTR objects with various attributes, such as
+          POINTER and ALLOCATABLE.
+
+icc2f*:   Passing arguments of various types from a C function to a Fortran
+          procedure, both by value and by reference.
+
+iccomp*:  Testing C_PTR and C_FUNPTR objects as derived type components.
+
+iccons.F: Testing that the values of constants provided by the ISO_C_BINDING
+          module are correct.
+
+icdiag*:  Various diagnostic errors.
+
+icdp*:    Testing the procedures provided by the ISO_C_BINDING module.
+
+icf2c*:   Passing arguments of various types from a Fortran procedure to a C
+          function, both by value and by reference.
+
+icfres*:  Testing C_PTR and C_FUNPTR function results.
+
+iconly*:  Testing the use of the ONLY clause when using the ISO_C_BINDING
+          module.

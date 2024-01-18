@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/ace/aceCompAllocIntrinsic01.scenario
+#FEATURE	= Basic (non-Polymorphic) Array Constructors with DTP
+#CREATOR	= Glen Mateer
+#DATE		= 20081117
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)aceCompAllocIntrinsic01.f
+#OUTPUT		= aceCompAllocIntrinsic01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= aceCompAllocIntrinsic01$(OBJ)
+#OUTPUT		= aceCompAllocIntrinsic01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= aceCompAllocIntrinsic01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

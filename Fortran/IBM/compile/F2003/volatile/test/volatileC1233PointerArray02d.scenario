@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=release/F2003/volatile/volatileC1233PointerArray02d.f
+#FEATURE = VOLATILE 255728
+#CREATOR = William Zhang
+#DATE    = 05/30/2006
+#TEST_TYPE= diagnostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)volatileC1233PointerArray02d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = volatileC1233PointerArray02d$(OBJ)
+#STDERR    = volatileC1233PointerArray02d.err
+#VALIDRCS  = $(RC_COMP_S)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)volatileC1233PointerArray02d$(product)vf) volatileC1233PointerArray02d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

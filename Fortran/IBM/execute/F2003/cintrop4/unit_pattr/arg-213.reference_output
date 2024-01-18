@@ -1,0 +1,14 @@
+"arg.F", line 50.21: 1513-230 (S) Procedure s1 was declared with the BIND(C) attribute.  Dummy argument j of s1 must have interoperable type and type parameters.
+"arg.F", line 50.24: 1513-230 (S) Procedure s1 was declared with the BIND(C) attribute.  Dummy argument k of s1 must have interoperable type and type parameters.
+"arg.F", line 50.27: 1513-230 (S) Procedure s1e was declared with the BIND(C) attribute.  Dummy argument je of s1e must have interoperable type and type parameters.
+"arg.F", line 50.31: 1513-230 (S) Procedure s1e was declared with the BIND(C) attribute.  Dummy argument ke of s1e must have interoperable type and type parameters.
+"arg.F", line 51.13: 1513-265 (S) The ENTRY statement is obsolescent in the Fortran 2008 standard.  The ENTRY statement must not be used in conjunction with language features introduced in the Fortran 2008 or newer standards.
+** s1   === End of Compilation 1 ===
+"arg.F", line 59.21: 1513-230 (S) Procedure s2 was declared with the BIND(C) attribute.  Dummy argument j of s2 must have interoperable type and type parameters.
+"arg.F", line 59.24: 1513-230 (S) Procedure s2 was declared with the BIND(C) attribute.  Dummy argument k of s2 must have interoperable type and type parameters.
+** s2   === End of Compilation 2 ===
+"arg.F", line 68.27: 1513-230 (S) Procedure s3e was declared with the BIND(C) attribute.  Dummy argument je of s3e must have interoperable type and type parameters.
+"arg.F", line 68.31: 1513-230 (S) Procedure s3e was declared with the BIND(C) attribute.  Dummy argument ke of s3e must have interoperable type and type parameters.
+"arg.F", line 69.13: 1513-265 (S) The ENTRY statement is obsolescent in the Fortran 2008 standard.  The ENTRY statement must not be used in conjunction with language features introduced in the Fortran 2008 or newer standards.
+** s3   === End of Compilation 3 ===
+1501-511  Compilation failed for file arg.F.

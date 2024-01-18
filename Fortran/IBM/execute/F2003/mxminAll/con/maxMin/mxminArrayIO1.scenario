@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/mxminAll/con/maxMin/mxminArrayIO1.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mxminArrayIO1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = mxminArrayIO1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = mxminArrayIO1$(OBJ)
+#OUTPUT    = mxminArrayIO1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminArrayIO1$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fort.4 $($(tcasedir)mxminArrayIO1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,10 @@
+"caflock04d.f", line 50.33: 1516-266 (S) The STAT= specifier must not be specified more than once in the LOCK statement.
+"caflock04d.f", line 50.53: 1516-266 (S) The ERRMSG= specifier must not be specified more than once in the LOCK statement.
+"caflock04d.f", line 52.32: 1511-074 (S) The stat-variable in the UNLOCK statement must be a scalar integer variable.
+"caflock04d.f", line 52.43: 1516-218 (S) Entity s1, specified for the UNLOCK statement, must be a scalar character variable.
+"caflock04d.f", line 61.62: 1516-266 (S) The ACQUIRED_LOCK specifier must not be specified more than once in the LOCK statement.
+"caflock04d.f", line 63.27: 1516-219 (E) The acquired_lock specifier must not be specified for a UNLOCK statement.  The acquired_lock specifier is ignored.
+"caflock04d.f", line 65.58: 1512-140 (S) The ACQUIRED_LOCK specifier must be a logical variable or array element.
+"caflock04d.f", line 67.47: 1516-219 (E) The acquired_lock specifier must not be specified for a UNLOCK statement.  The acquired_lock specifier is ignored.
+** caflock04d   === End of Compilation 1 ===
+1501-511  Compilation failed for file caflock04d.f.

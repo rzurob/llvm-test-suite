@@ -1,0 +1,48 @@
+ setbasewint1
+ returnint1
+ 10
+ setbasewint2
+ returnint2
+ 100
+ setbasewint4
+ returnint4
+ 1000
+ setbasewint8
+ returnint8
+ 10000
+ setbasewint1
+ returnint1
+ 20
+ setbasewint2
+ returnint2
+ 200
+ setbasewint4
+ returnint4
+ 2000
+ setbasewint8
+ returnint8
+ 20000
+ setbasewint1
+ returnint1
+ 30
+ setbasewint2
+ returnint2
+ 300
+ setbasewint4
+ returnint4
+ 3000
+ setbasewint8
+ returnint8
+ 30000
+ setbasewint1
+ returnint1
+ 40 40
+ setbasewint2
+ returnint2
+ 400 400
+ setbasewint4
+ returnint4
+ 4000 4000
+ setbasewint8
+ returnint8
+ 40000 40000

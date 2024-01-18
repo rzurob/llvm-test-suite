@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/misc/fmisc036.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071002
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fmisc036.f
+#OUTPUT    = fmisc036$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fmisc036$(OBJ)
+#OUTPUT    = fmisc036$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fmisc036$(EXE)
+#STDOUT    = fmisc036.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fmisc036.out $($(tcasedir)fmisc036$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

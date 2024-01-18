@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/cintrop3/unit_dtypes/bddiag01d.scenario
+#FEATURE = cintrop3 tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF95_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+! This chunk was DCOMP
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)bddiag01d.F
+#OPTS      =  -qdebug=intmsg:shutup
+#OUTPUT    = bddiag01d$(OBJ)
+#STDERR    = bddiag01d.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)bddiag01d$(product).Fvf) bddiag01d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

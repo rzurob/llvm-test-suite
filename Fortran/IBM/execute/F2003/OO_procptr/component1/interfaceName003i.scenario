@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_procptr/component/interfaceName003i.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050418
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)interfaceName003i.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = interfaceName003i$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = interfaceName003i$(OBJ)
+#OUTPUT    = interfaceName003i$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = interfaceName003i$(EXE)
+#STDOUT    = interfaceName003i.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)interfaceName003i$(product)vf) interfaceName003i.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

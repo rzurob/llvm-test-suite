@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2008/coarray/coindexed_object/procedure/func/coindexObjectProcedureDT13.scenario
+#FEATURE   =
+#CREATOR   = Shahid Alam
+#DATE      = 20110520
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)coindexObjectProcedureDT13.f
+#OUTPUT    = coindexObjectProcedureDT13$(OBJ)
+#STDOUT    = coindexObjectProcedureDT13.out
+#STDERR    = coindexObjectProcedureDT13.out
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = coindexObjectProcedureDT13.out $(tcasedir)coindexObjectProcedureDT13.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

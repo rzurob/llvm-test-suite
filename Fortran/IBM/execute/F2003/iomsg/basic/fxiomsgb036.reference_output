@@ -1,0 +1,6 @@
+ 1525-104 The character position for the T edit descriptor is missing in a format specification.  The program will recover by ignoring the T edit descriptor.
+                                                                                                                                               
+ 1525-104 The character position for the TL edit descriptor is missing in a format specification.  The program will recover by ignoring the TL edit descriptor.
+                                                                                                                                             
+ 1525-104 The character position for the TR edit descriptor is missing in a format specification.  The program will recover by ignoring the TR edit descriptor.
+                                                                                                                                             

@@ -1,0 +1,15 @@
+"Intent2.f", line 56.32: 1514-184 (E) The INTENT attribute must not be specified for a dummy argument that is a dummy procedure. INTENT attribute is ignored.
+"Intent2.f", line 56.32: 1515-115 (S) Procedure entity proc was declared with the INTENT attribute. proc must also be declared with the POINTER attribute.
+"Intent2.f", line 60.33: 1514-184 (E) The INTENT attribute must not be specified for a dummy argument that is a dummy procedure. INTENT attribute is ignored.
+"Intent2.f", line 60.33: 1515-115 (S) Procedure entity proc was declared with the INTENT attribute. proc must also be declared with the POINTER attribute.
+"Intent2.f", line 64.35: 1514-184 (E) The INTENT attribute must not be specified for a dummy argument that is a dummy procedure. INTENT attribute is ignored.
+"Intent2.f", line 64.35: 1515-115 (S) Procedure entity proc was declared with the INTENT attribute. proc must also be declared with the POINTER attribute.
+"Intent2.f", line 68.42: 1514-184 (E) The INTENT attribute must not be specified for a dummy argument that is a dummy procedure. INTENT attribute is ignored.
+"Intent2.f", line 68.42: 1515-115 (S) Procedure entity proc was declared with the INTENT attribute. proc must also be declared with the POINTER attribute.
+"Intent2.f", line 72.43: 1514-184 (E) The INTENT attribute must not be specified for a dummy argument that is a dummy procedure. INTENT attribute is ignored.
+"Intent2.f", line 72.43: 1515-115 (S) Procedure entity proc was declared with the INTENT attribute. proc must also be declared with the POINTER attribute.
+"Intent2.f", line 76.45: 1514-184 (E) The INTENT attribute must not be specified for a dummy argument that is a dummy procedure. INTENT attribute is ignored.
+"Intent2.f", line 76.45: 1515-115 (S) Procedure entity proc was declared with the INTENT attribute. proc must also be declared with the POINTER attribute.
+"Intent2.f", line 81.19: 1514-184 (E) The INTENT attribute must not be specified for a dummy argument that is a dummy procedure. INTENT attribute is ignored.
+** intent2   === End of Compilation 1 ===
+1501-511  Compilation failed for file Intent2.f.

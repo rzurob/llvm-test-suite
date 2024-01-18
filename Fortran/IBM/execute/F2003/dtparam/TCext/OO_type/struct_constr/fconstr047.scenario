@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/struct_constr/fconstr047.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/*
+#DATE      = 20070709
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fconstr047.f
+#OUTPUT    = fconstr047$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fconstr047$(OBJ)
+#OUTPUT    = fconstr047$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fconstr047$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

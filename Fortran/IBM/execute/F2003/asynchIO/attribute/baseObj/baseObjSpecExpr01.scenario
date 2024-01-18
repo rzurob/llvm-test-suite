@@ -1,0 +1,44 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/attribute/baseObj/baseObjSpecExpr01.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Attribute
+#CREATOR	= GM Manual Creation
+#DATE		= 20060119
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)baseObjSpecExpr01.f
+#OUTPUT		= baseObjSpecExpr01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= baseObjSpecExpr01$(OBJ)
+#OUTPUT		= baseObjSpecExpr01$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= baseObjSpecExpr01$(EXE)
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i '^shortInt'
+#INPUT		= baseObjSpecExpr01$(LST)
+#STDOUT		= baseObjSpecExpr01.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= baseObjSpecExpr01.stdout
+#VALIDRCS	= $(GREP_FAIL)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

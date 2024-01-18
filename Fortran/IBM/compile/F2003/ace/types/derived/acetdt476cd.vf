@@ -1,0 +1,26 @@
+"acetdt476cd.f", line 49.16: 1511-142 (S) Identifier unk specified in the array constructor has not been defined in a derived type definition.
+"acetdt476cd.f", line 50.16: 1511-142 (S) Identifier unk specified in the array constructor has not been defined in a derived type definition.
+"acetdt476cd.f", line 52.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476cd.f", line 52.29: 1511-142 (S) Identifier unk specified in the array constructor has not been defined in a derived type definition.
+"acetdt476cd.f", line 54.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476cd.f", line 54.29: 1511-142 (S) Identifier unk specified in the array constructor has not been defined in a derived type definition.
+"acetdt476cd.f", line 56.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476cd.f", line 56.29: 1511-142 (S) Identifier unk specified in the array constructor has not been defined in a derived type definition.
+"acetdt476cd.f", line 60.16: 1511-142 (S) Identifier unk specified in the array constructor has not been defined in a derived type definition.
+"acetdt476cd.f", line 61.16: 1511-142 (S) Identifier unk specified in the array constructor has not been defined in a derived type definition.
+"acetdt476cd.f", line 63.27: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476cd.f", line 63.29: 1511-142 (S) Identifier unk specified in the array constructor has not been defined in a derived type definition.
+"acetdt476cd.f", line 65.27: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476cd.f", line 65.29: 1511-142 (S) Identifier unk specified in the array constructor has not been defined in a derived type definition.
+"acetdt476cd.f", line 67.27: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476cd.f", line 67.29: 1511-142 (S) Identifier unk specified in the array constructor has not been defined in a derived type definition.
+"acetdt476cd.f", line 79.19: 1514-084 (S) Identifier arr0 is being declared with type name unk which has not been defined in a derived type definition.
+"acetdt476cd.f", line 80.15: 1511-142 (S) Identifier unk specified in the array constructor has not been defined in a derived type definition.
+"acetdt476cd.f", line 81.15: 1511-142 (S) Identifier unk specified in the array constructor has not been defined in a derived type definition.
+"acetdt476cd.f", line 82.15: 1511-142 (S) Identifier unk specified in the array constructor has not been defined in a derived type definition.
+"acetdt476cd.f", line 83.15: 1511-142 (S) Identifier unk specified in the array constructor has not been defined in a derived type definition.
+"acetdt476cd.f", line 84.15: 1511-142 (S) Identifier unk specified in the array constructor has not been defined in a derived type definition.
+"acetdt476cd.f", line 85.15: 1511-142 (S) Identifier unk specified in the array constructor has not been defined in a derived type definition.
+"acetdt476cd.f", 1516-036 (S) Entity unk has undefined type.
+** acetdt476cd   === End of Compilation 1 ===
+1501-511  Compilation failed for file acetdt476cd.f.

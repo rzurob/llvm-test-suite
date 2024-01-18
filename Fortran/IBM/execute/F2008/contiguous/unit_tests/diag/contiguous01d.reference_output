@@ -1,0 +1,9 @@
+"contiguous01d.f", line 32.46: 1514-788 (S) invalid1 was declared with the CONTIGUOUS attribute. invalid1 must be an array pointer, an array pointer component, an assumed-shape array, or an assumed-rank object.
+"contiguous01d.f", line 33.46: 1514-788 (S) invalid2 was declared with the CONTIGUOUS attribute. invalid2 must be an array pointer, an array pointer component, an assumed-shape array, or an assumed-rank object.
+"contiguous01d.f", line 34.46: 1514-788 (S) invalid3 was declared with the CONTIGUOUS attribute. invalid3 must be an array pointer, an array pointer component, an assumed-shape array, or an assumed-rank object.
+"contiguous01d.f", line 35.46: 1514-788 (S) invalid4 was declared with the CONTIGUOUS attribute. invalid4 must be an array pointer, an array pointer component, an assumed-shape array, or an assumed-rank object.
+"contiguous01d.f", line 36.46: 1514-788 (S) invalid5 was declared with the CONTIGUOUS attribute. invalid5 must be an array pointer, an array pointer component, an assumed-shape array, or an assumed-rank object.
+"contiguous01d.f", line 49.62: 1514-788 (S) invalid6 was declared with the CONTIGUOUS attribute. invalid6 must be an array pointer, an array pointer component, an assumed-shape array, or an assumed-rank object.
+"contiguous01d.f", line 51.62: 1514-788 (S) invalid7 was declared with the CONTIGUOUS attribute. invalid7 must be an array pointer, an array pointer component, an assumed-shape array, or an assumed-rank object.
+** contiguous01d   === End of Compilation 1 ===
+1501-511  Compilation failed for file contiguous01d.f.

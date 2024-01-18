@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/mxminAll/misc/mxminMisc31.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $($(tcasedir)mxminMisc31$(product).f)
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = mxminMisc31$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = mxminMisc31$(OBJ)
+#OUTPUT    = mxminMisc31$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminMisc31$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,4 @@
+"falloc003d2.f", line 62.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"falloc003d2.f", line 64.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+** falloc003d2   === End of Compilation 1 ===
+1501-511  Compilation failed for file falloc003d2.f.

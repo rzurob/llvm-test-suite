@@ -1,0 +1,50 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/attribute/baseObj/baseObjPending02.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Attribute
+#CREATOR	= GM Manual Creation
+#DATE		= 20060119
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)baseObjPending02.f
+#OUTPUT		= baseObjPending02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= baseObjPending02$(OBJ)
+#OUTPUT		= baseObjPending02$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= baseObjPending02$(EXE)
+#ENDCMD
+
+#CMD		= SED
+#OPTS		= -e '1,/^\*\* asynchronouswrite   === End of Compilation 2 ===$/d'
+#INPUT		= baseObjPending02$(LST)
+#STDOUT		= baseObjPending02.sed.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i '^aLog'
+#INPUT		= baseObjPending02.sed.stdout
+#STDOUT		= baseObjPending02.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= baseObjPending02.stdout
+#VALIDRCS	= $(GREP_FAIL)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

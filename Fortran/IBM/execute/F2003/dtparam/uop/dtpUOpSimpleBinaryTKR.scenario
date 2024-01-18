@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpSimpleBinaryTKR.scenario
+#FEATURE   = User-Defined Operators - correct binary operators are used for a given TKR
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpSimpleBinaryTKR.f
+#OUTPUT    = dtpUOpSimpleBinaryTKR$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpSimpleBinaryTKR$(OBJ)
+#OUTPUT    = dtpUOpSimpleBinaryTKR$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpSimpleBinaryTKR$(EXE)
+#STDOUT    = dtpUOpSimpleBinaryTKR.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUOpSimpleBinaryTKR$(product)vf) dtpUOpSimpleBinaryTKR.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/construct/definedAssgn005a.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071219
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)definedAssgn005a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = definedAssgn005a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = definedAssgn005a$(OBJ)
+#OUTPUT    = definedAssgn005a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = definedAssgn005a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

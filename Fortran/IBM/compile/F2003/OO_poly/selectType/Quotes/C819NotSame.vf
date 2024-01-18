@@ -1,0 +1,5 @@
+"C819NotSame.f", line 61.21: 1511-118 (E) Construct name end on the type guard statement does not match the one specified on the corresponding SELECT TYPE statement.  The construct name on the type guard statement is ignored.
+"C819NotSame.f", line 65.14: 1511-119 (E) The construct name on the END SELECT statement does not match the one specified on the corresponding SELECT CASE or SELECT TYPE statement.  The construct names are ignored.
+"C819NotSame.f", 1516-036 (S) Entity end has undefined type.
+** c819notsame   === End of Compilation 1 ===
+1501-511  Compilation failed for file C819NotSame.f.

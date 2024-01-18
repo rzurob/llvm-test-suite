@@ -1,0 +1,18 @@
+"shiftl_shiftr01d.f", line 41.18: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "shiftl".
+"shiftl_shiftr01d.f", line 42.18: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "shiftl".
+"shiftl_shiftr01d.f", line 43.21: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "shiftl".
+"shiftl_shiftr01d.f", line 44.21: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "shiftl".
+"shiftl_shiftr01d.f", line 45.21: 1516-144 (S) The value of the argument must be between 0 and 32.
+"shiftl_shiftr01d.f", line 46.21: 1516-144 (S) The value of the argument must be between 0 and 32.
+"shiftl_shiftr01d.f", line 47.21: 1516-144 (S) The value of the argument must be between 0 and 32.
+"shiftl_shiftr01d.f", line 48.28: 1516-144 (S) The value of the argument must be between 0 and 64.
+"shiftl_shiftr01d.f", line 50.18: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "shiftr".
+"shiftl_shiftr01d.f", line 51.18: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "shiftr".
+"shiftl_shiftr01d.f", line 52.21: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "shiftr".
+"shiftl_shiftr01d.f", line 53.21: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "shiftr".
+"shiftl_shiftr01d.f", line 54.21: 1516-144 (S) The value of the argument must be between 0 and 32.
+"shiftl_shiftr01d.f", line 55.21: 1516-144 (S) The value of the argument must be between 0 and 32.
+"shiftl_shiftr01d.f", line 56.21: 1516-144 (S) The value of the argument must be between 0 and 32.
+"shiftl_shiftr01d.f", line 57.28: 1516-144 (S) The value of the argument must be between 0 and 64.
+** shiftl_shiftr   === End of Compilation 1 ===
+1501-511  Compilation failed for file shiftl_shiftr01d.f.

@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/otherSpec/pendingSynchRead04d.scenario
+#FEATURE	= Asynchronous I/O -- Wait Operation
+#CREATOR	= GM Manual Creation
+#DATE		= 20060331
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)pendingSynchRead04d.f
+#OUTPUT		= pendingSynchRead04d$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= pendingSynchRead04d$(OBJ)
+#OUTPUT		= pendingSynchRead04d$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= pendingSynchRead04d$(EXE)
+#STDERR		= pendingSynchRead04d.stderr
+#VALIDRCS	= $(RC_FAIL)
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)pendingSynchRead04d$(product)vf)	\
+				pendingSynchRead04d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

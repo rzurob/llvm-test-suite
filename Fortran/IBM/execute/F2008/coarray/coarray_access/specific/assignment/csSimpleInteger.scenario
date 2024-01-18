@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_access/specific/assignment/csSimpleInteger
+#FEATURE        = CAF coarray access (specific) - assignment - assign simple values to integer coarray scalars and arrays
+#CREATOR        = DF
+#DATE           = 2010-10-04
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)csSimpleInteger.f
+#OUTPUT = csSimpleInteger$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = csSimpleInteger$(OBJ)
+#OUTPUT = csSimpleInteger$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = csSimpleInteger$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

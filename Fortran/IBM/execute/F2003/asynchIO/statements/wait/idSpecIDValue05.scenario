@@ -1,0 +1,75 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/wait/idSpecIDValue05.scenario
+#FEATURE	= Asynchronous I/O -- WAIT() Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060307
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#IF on (linuxle)
+    XLFRTEOPTS=$(CONVERT_UFMT_IO_ENDIANESS<66>)
+#ENDIF
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)idSpecIDValue05.f
+#OUTPUT		= idSpecIDValue05$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= idSpecIDValue05$(OBJ)
+#OUTPUT		= idSpecIDValue05$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= idSpecIDValue05$(EXE)
+#STDOUT		= idSpecIDValue05.sed
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)idSpecIDValue05$(product)vf) fort.66
+#ENDCMD
+
+#CMD		= RENAME
+#INPUT		= fort.66 fort.66.original
+#ENDCMD
+
+
+#CMD		= SED
+#OPTS		= -f idSpecIDValue05.sed
+#INPUT		= $(tcasedir)idSpecIDValue05.f
+#STDOUT		= idSpecIDValue05.f
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#INPUT		= idSpecIDValue05.f
+#OUTPUT		= idSpecIDValue05.sed$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= idSpecIDValue05.sed$(OBJ)
+#OUTPUT		= idSpecIDValue05.sed$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= idSpecIDValue05.sed$(EXE)
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)idSpecIDValue05$(product)vf) fort.66
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

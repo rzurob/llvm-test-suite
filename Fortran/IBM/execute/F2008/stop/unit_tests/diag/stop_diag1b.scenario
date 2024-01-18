@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = stop_diag1b.scenario
+#FEATURE    = F2008 extension to stop code
+#CREATOR    = Tarique Islam
+#DATE       = 20100929
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+  #CMD        = XLF2003_COMPILE
+  #INPUT      = $(tcasedir)stop_diag1.f
+  #OPTS       = $(OPT_ENABLE_MSG_NUM<1518-317>) $(OPT_ENABLE_MSG_NUM<1516-267>) $(OPT_SET_LANG_LEVEL<2003std>)
+  #STDERR     = stop_diag1b.err
+  #VALIDRCS   = 1
+  #ENDCMD
+
+  #CMD        = XLDIFF
+  #INPUT      = stop_diag1b.err $(tcasedir)stop_diag1b.vf
+  #ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/selectType/Quotes/Target1.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071004
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=      F_COMPILE
+#INPUT=    $(tcasedir)Target1.f
+#STDERR=   Target1.err
+#VALIDRCS= 1
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    Target1.err $($(tcasedir)Target1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

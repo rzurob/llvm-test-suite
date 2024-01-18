@@ -1,0 +1,2 @@
+ OPEN(ASYNCHRONOUS='no'): ioStatus = ( 24 ) 1525-024 The OPEN statement cannot be processed because ASYNCHRONOUS=NO was coded in the OPEN statement but the file asynchSpecOpen10d.dat is already connected to this unit with a different ASYNCHRONOUS value.  The program will recover by ignoring the ASYNCHRONOUS= specifier.
+                                                                                                           

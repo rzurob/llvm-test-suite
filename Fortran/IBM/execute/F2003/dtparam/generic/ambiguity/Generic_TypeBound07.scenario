@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/F2003/dtparam/generic/ambiguity/Generic_TypeBound07.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20081015
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)Generic_TypeBound07.f
+#OUTPUT= Generic_TypeBound07$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  Generic_TypeBound07$(OBJ)
+#OUTPUT= Generic_TypeBound07$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  Generic_TypeBound07$(EXE)
+#STDOUT= Generic_TypeBound07.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

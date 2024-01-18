@@ -1,0 +1,27 @@
+ 10
+ 10
+ 20
+ 10
+ 20
+ test 2
+ assignment 1
+ finalizeChildArray1
+ finalizeChild
+ finalizeChild
+ finalizeBase
+ finalizeBase
+ assignment 2
+ finalizeChildArray1
+ finalizeChild
+ deallocate name
+ finalizeChild
+ finalizeBase
+ deallocate id
+ finalizeBase
+ deallocate id
+   10 xlftest             
+                          
+                          
+   10 xlftest             
+   20 team members        
+ end

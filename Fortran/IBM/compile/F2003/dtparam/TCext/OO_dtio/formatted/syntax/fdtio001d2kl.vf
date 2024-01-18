@@ -1,0 +1,4 @@
+"fdtio001d2kl.f", line 39.8: 1514-650 (S) Dummy argument v_list of the derived-type I/O procedure formattedread must be an assumed-shape array.
+** m   === End of Compilation 1 ===
+** fdtio001d2kl   === End of Compilation 2 ===
+1501-511  Compilation failed for file fdtio001d2kl.f.

@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/associate/StmtByStmt/Exec/ArrDummy.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070914
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)ArrDummy.f
+#OUTPUT= ArrDummy$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  ArrDummy$(OBJ)
+#OUTPUT= ArrDummy$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  ArrDummy$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

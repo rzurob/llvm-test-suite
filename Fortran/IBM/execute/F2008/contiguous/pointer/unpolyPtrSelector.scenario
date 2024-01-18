@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)unpolyPtrSelector.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = unpolyPtrSelector$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = unpolyPtrSelector$(OBJ)
+#OUTPUT    = unpolyPtrSelector$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = unpolyPtrSelector$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

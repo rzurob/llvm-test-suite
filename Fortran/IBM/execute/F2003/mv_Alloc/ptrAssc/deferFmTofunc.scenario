@@ -1,0 +1,36 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       deferFmTofunc.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)deferFmTofunc.f
+#OUTPUT= deferFmTofunc$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  deferFmTofunc$(OBJ)
+#OUTPUT= deferFmTofunc$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  deferFmTofunc$(EXE)
+#STDOUT= deferFmTofunc.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

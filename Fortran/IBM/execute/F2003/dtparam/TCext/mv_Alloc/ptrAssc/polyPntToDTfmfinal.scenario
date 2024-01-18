@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/ptrAssc/polyPntToDTfmfinal.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071105
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)polyPntToDTfmfinal.f
+#OUTPUT= polyPntToDTfmfinal$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  polyPntToDTfmfinal$(OBJ)
+#OUTPUT= polyPntToDTfmfinal$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  polyPntToDTfmfinal$(EXE)
+#STDOUT= polyPntToDTfmfinal.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

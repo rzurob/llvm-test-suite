@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/typeparam/kindparamSpecexpr003.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)kindparamSpecexpr003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = kindparamSpecexpr003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = kindparamSpecexpr003$(OBJ)
+#OUTPUT    = kindparamSpecexpr003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = kindparamSpecexpr003$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

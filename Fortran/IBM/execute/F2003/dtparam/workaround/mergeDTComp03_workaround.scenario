@@ -1,0 +1,32 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/intrinsics/merge/mergeDTComp03_workaround.scenario
+#FEATURE= 355754
+#CREATOR= Nancy Wang
+#DATE   = Sept. 15 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)mergeDTComp03_workaround.f
+#OUTPUT= mergeDTComp03_workaround$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = mergeDTComp03_workaround$(OBJ)
+#OUTPUT= mergeDTComp03_workaround$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = mergeDTComp03_workaround$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

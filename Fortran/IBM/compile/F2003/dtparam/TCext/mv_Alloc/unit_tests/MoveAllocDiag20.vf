@@ -1,0 +1,4 @@
+"MoveAllocDiag20.f", line 34.17: 1516-287 (S) The FROM argument to the intrinsic procedure MOVE_ALLOC must have the ALLOCATABLE attribute.
+"MoveAllocDiag20.f", line 34.27: 1516-287 (S) The TO argument to the intrinsic procedure MOVE_ALLOC must have the ALLOCATABLE attribute.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file MoveAllocDiag20.f.

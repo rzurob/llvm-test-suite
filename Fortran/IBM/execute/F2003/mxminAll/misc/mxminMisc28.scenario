@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/mxminAll/misc/mxminMisc28.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mxminMisc28.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = mxminMisc28$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = mxminMisc28$(OBJ)
+#OUTPUT    = mxminMisc28$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminMisc28$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fort.4 $($(tcasedir)mxminMisc28$(product)vf)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

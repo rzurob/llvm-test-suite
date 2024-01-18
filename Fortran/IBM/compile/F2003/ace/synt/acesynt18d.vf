@@ -1,0 +1,26 @@
+** mod   === End of Compilation 1 ===
+"acesynt18d.f", line 54.37: 1515-019 (S) Syntax is incorrect.
+"acesynt18d.f", line 55.42: 1515-019 (S) Syntax is incorrect.
+"acesynt18d.f", line 56.40: 1516-036 (S) Entity double has undefined type.
+"acesynt18d.f", line 56.47: 1515-022 (S) Syntax Error: Extra token " complex " was found. The token is ignored.
+"acesynt18d.f", line 56.54: 1515-022 (S) Syntax Error: Extra token " :: " was found. The token is ignored.
+"acesynt18d.f", line 56.57: 1515-022 (S) Syntax Error: Extra token " - " was found. The token is ignored.
+"acesynt18d.f", line 56.58: 1515-022 (S) Syntax Error: Extra token " 1.0 " was found. The token is ignored.
+"acesynt18d.f", line 57.45: 1515-022 (S) Syntax Error: Extra token " double " was found. The token is ignored.
+"acesynt18d.f", line 57.52: 1515-022 (S) Syntax Error: Extra token " complex " was found. The token is ignored.
+"acesynt18d.f", line 57.59: 1515-022 (S) Syntax Error: Extra token " :: " was found. The token is ignored.
+"acesynt18d.f", line 58.15: 1515-019 (S) Syntax is incorrect.
+"acesynt18d.f", line 59.39: 1515-022 (S) Syntax Error: Extra token " complex " was found. The token is ignored.
+"acesynt18d.f", line 59.46: 1515-022 (S) Syntax Error: Extra token " :: " was found. The token is ignored.
+"acesynt18d.f", line 63.37: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt18d.f", line 64.37: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt18d.f", line 65.37: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt18d.f", line 66.37: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt18d.f", line 67.37: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt18d.f", line 68.37: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt18d.f", line 69.37: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt18d.f", line 75.54: 1516-044 (S) A conversion from type LOGICAL is not permitted.
+"acesynt18d.f", line 76.54: 1516-044 (S) A conversion from type CHARACTER is not permitted.
+"acesynt18d.f", line 77.54: 1516-044 (S) A conversion from type derived is not permitted.
+** acesynt18d   === End of Compilation 2 ===
+1501-511  Compilation failed for file acesynt18d.f.

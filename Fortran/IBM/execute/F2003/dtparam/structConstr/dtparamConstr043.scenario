@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/structConstr/dtparamConstr043.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamConstr043.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamConstr043$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtparamConstr043$(OBJ)
+#OUTPUT    = dtparamConstr043$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamConstr043$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

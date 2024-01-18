@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/TCext/OO_dtio/formatted/DT/crossFeature/final/final003kl.scenario
+#FEATURE = OO_dtio and derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070618
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)final003kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = final003kl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = final003kl$(OBJ)
+#OUTPUT    = final003kl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = final003kl$(EXE)
+#STDOUT    = final003kl.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)final003kl$(product)vf) final003kl.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

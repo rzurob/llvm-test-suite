@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/decimaledit/dtio/dcmlChildWrite006a.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of decimaledit/*
+#DATE      = 20071213
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dcmlChildWrite006a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dcmlChildWrite006a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dcmlChildWrite006a$(OBJ)
+#OUTPUT    = dcmlChildWrite006a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dcmlChildWrite006a$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fort.1 $($(tcasedir)dcmlChildWrite006a$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,94 @@
+!*********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : kindArgIndex4
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Jun. 12, 2006
+!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*
+!*  SECONDARY FUNCTIONS TESTED : INDEX 
+!*
+!*  REFERENCE                  : Feature Number 289083 
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  : -qfree=f90
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*
+!*   
+!*   
+!*  Returns the starting position of a substring within a string 
+!*    
+!*  (322624/325890) 
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+
+  PROGRAM kindArgIndex4
+
+
+  INTEGER(1) :: I1
+  INTEGER(2) :: I2
+  INTEGER(4) :: I4
+  INTEGER(8) :: I8
+     
+  CHARACTER(:), POINTER :: Str(:)
+  CHARACTER(:), ALLOCATABLE :: CC(:)
+
+  !ALLOCATE(CC(0:127), SOURCE=(/CHARACTER::(ACHAR(I=I, KIND=1), I=0, 127)/))
+  !ALLOCATE(Str(0:127), SOURCE=(/CHARACTER(3)::("  " // CC(I), I=0, 127)/))
+
+  ALLOCATE(CC(0:127), SOURCE=(/(ACHAR(I=I, KIND=1), I=0, 127)/))
+  ALLOCATE(Str(0:127), SOURCE=(/("  " // CC(I), I=0, 127)/))
+
+
+  DO I1 = 0, 127
+    IF (INDEX(STRING=Str(I1), SUBSTRING=CC(I1), BACK=.TRUE._1, KIND=1_1 ) .NE. 3) STOP 11
+    IF (INDEX(STRING=Str(I1), SUBSTRING=CC(I1), BACK=.TRUE._2, KIND=1_2 ) .NE. 3) STOP 12
+    IF (INDEX(STRING=Str(I1), SUBSTRING=CC(I1), BACK=.TRUE._4, KIND=1_4 ) .NE. 3) STOP 13
+    IF (INDEX(STRING=Str(I1), SUBSTRING=CC(I1), BACK=.TRUE._8, KIND=1_8 ) .NE. 3) STOP 14
+  END DO
+
+  DO I2 = 0, 127
+    IF (INDEX(STRING=Str(I2), SUBSTRING=CC(I2), BACK=.TRUE._8, KIND=2_1 ) .NE. 3) STOP 21
+    IF (INDEX(STRING=Str(I2), SUBSTRING=CC(I2), BACK=.TRUE._4, KIND=2_2 ) .NE. 3) STOP 22
+    IF (INDEX(STRING=Str(I2), SUBSTRING=CC(I2), BACK=.TRUE._2, KIND=2_4 ) .NE. 3) STOP 23
+    IF (INDEX(STRING=Str(I2), SUBSTRING=CC(I2), BACK=.TRUE._1, KIND=2_8 ) .NE. 3) STOP 24
+  END DO
+
+  DO I4 =0, 127
+    IF (INDEX(STRING=Str(I4), SUBSTRING=CC(I4), BACK=.TRUE._2, KIND=4_1 ) .NE. 3) STOP 41
+    IF (INDEX(STRING=Str(I4), SUBSTRING=CC(I4), BACK=.TRUE._4, KIND=4_2 ) .NE. 3) STOP 42
+    IF (INDEX(STRING=Str(I4), SUBSTRING=CC(I4), BACK=.TRUE._1, KIND=4_4 ) .NE. 3) STOP 43
+    IF (INDEX(STRING=Str(I4), SUBSTRING=CC(I4), BACK=.TRUE._8, KIND=4_8 ) .NE. 3) STOP 44
+  END DO
+
+  DO I8 = 0, 127
+    IF (INDEX(STRING=Str(I8), SUBSTRING=CC(I8), BACK=.TRUE._2, KIND=8_1 ) .NE. 3) STOP 81
+    IF (INDEX(STRING=Str(I8), SUBSTRING=CC(I8), BACK=.TRUE._4, KIND=8_2 ) .NE. 3) STOP 82
+    IF (INDEX(STRING=Str(I8), SUBSTRING=CC(I8), BACK=.TRUE._8, KIND=8_4 ) .NE. 3) STOP 83
+    IF (INDEX(STRING=Str(I8), SUBSTRING=CC(I8), BACK=.TRUE._1, KIND=8_8 ) .NE. 3) STOP 84
+  END DO
+
+  IF (ANY(INDEX(STRING=Str, SUBSTRING=CC, BACK=.TRUE., KIND=1_1 ) .NE. 3)) STOP 91
+  IF (ANY(INDEX(STRING=Str(0:31),   SUBSTRING=CC(0:31))                       .NE. 3)) STOP 92
+  IF (ANY(INDEX(STRING=Str(32:32),  SUBSTRING=CC(32:32))                      .NE. 1)) STOP 93
+  IF (ANY(INDEX(STRING=Str(33:127), SUBSTRING=CC(33:127))                     .NE. 3)) STOP 94
+
+  IF (ANY( INDEX(STRING=Str, SUBSTRING=CC, BACK=.FALSE., KIND=1_8) .NE. INDEX(STRING=Str, SUBSTRING=CC))) STOP 111 
+  IF (ANY( INDEX(STRING=Str, SUBSTRING=CC, BACK=.FALSE., KIND=1_4) .NE. INDEX(STRING=Str, SUBSTRING=CC))) STOP 112 
+  IF (ANY( INDEX(STRING=Str, SUBSTRING=CC, BACK=.FALSE., KIND=1_2) .NE. INDEX(STRING=Str, SUBSTRING=CC))) STOP 113 
+  IF (ANY( INDEX(STRING=Str, SUBSTRING=CC, BACK=.FALSE., KIND=1_1) .NE. INDEX(STRING=Str, SUBSTRING=CC))) STOP 114 
+
+  END
+

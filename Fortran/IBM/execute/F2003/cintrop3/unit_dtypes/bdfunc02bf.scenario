@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/cintrop3/unit_dtypes/bdfunc02bf.scenario
+#FEATURE = cintrop3 tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)bdfunc02bf.F
+#OPTS      = -qalign=bindc=packed
+#OUTPUT    = bdfunc02bf$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = -qalign=bindc=packed
+#INPUT     =  bdfunc02bf$(OBJ)
+#OUTPUT    = bdfunc02bf$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = bdfunc02bf$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

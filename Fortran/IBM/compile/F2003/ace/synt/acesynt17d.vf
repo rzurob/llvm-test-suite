@@ -1,0 +1,35 @@
+** mod   === End of Compilation 1 ===
+"acesynt17d.f", line 64.23: 1514-080 (S) The use of derived type name derived is not permitted in this context.
+"acesynt17d.f", line 64.30: 1515-022 (S) Syntax Error: Extra token " :: " was found. The token is ignored.
+"acesynt17d.f", line 64.33: 1515-022 (S) Syntax Error: Extra token " derived " was found. The token is ignored.
+"acesynt17d.f", line 64.40: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acesynt17d.f", line 64.41: 1515-022 (S) Syntax Error: Extra token " 'a " was found. The token is ignored.
+"acesynt17d.f", line 64.44: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acesynt17d.f", line 65.37: 1514-080 (S) The use of derived type name derived is not permitted in this context.
+"acesynt17d.f", line 65.44: 1515-022 (S) Syntax Error: Extra token " :: " was found. The token is ignored.
+"acesynt17d.f", line 65.47: 1515-022 (S) Syntax Error: Extra token " derived " was found. The token is ignored.
+"acesynt17d.f", line 65.54: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acesynt17d.f", line 65.55: 1515-022 (S) Syntax Error: Extra token " 'b " was found. The token is ignored.
+"acesynt17d.f", line 65.58: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acesynt17d.f", line 66.58: 1515-019 (S) Syntax is incorrect.
+"acesynt17d.f", line 67.64: 1515-022 (S) Syntax Error: Extra token " derived " was found. The token is ignored.
+"acesynt17d.f", line 67.71: 1515-022 (S) Syntax Error: Extra token " :: " was found. The token is ignored.
+"acesynt17d.f", line 68.15: 1515-019 (S) Syntax is incorrect.
+"acesynt17d.f", line 69.25: 1514-080 (S) The use of derived type name derived is not permitted in this context.
+"acesynt17d.f", line 69.32: 1515-022 (S) Syntax Error: Extra token " :: " was found. The token is ignored.
+"acesynt17d.f", line 73.41: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt17d.f", line 74.41: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt17d.f", line 75.41: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt17d.f", line 76.41: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt17d.f", line 77.41: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt17d.f", line 78.41: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt17d.f", line 79.41: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt17d.f", line 81.51: 1516-044 (S) A conversion from type REAL*4 is not permitted.
+"acesynt17d.f", line 82.51: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"acesynt17d.f", line 83.51: 1516-044 (S) A conversion from type COMPLEX*16 is not permitted.
+"acesynt17d.f", line 84.51: 1516-044 (S) A conversion from type REAL*8 is not permitted.
+"acesynt17d.f", line 85.51: 1516-044 (S) A conversion from type COMPLEX*8 is not permitted.
+"acesynt17d.f", line 86.51: 1516-044 (S) A conversion from type LOGICAL is not permitted.
+"acesynt17d.f", line 87.51: 1516-044 (S) A conversion from type CHARACTER is not permitted.
+** acesynt17d   === End of Compilation 2 ===
+1501-511  Compilation failed for file acesynt17d.f.

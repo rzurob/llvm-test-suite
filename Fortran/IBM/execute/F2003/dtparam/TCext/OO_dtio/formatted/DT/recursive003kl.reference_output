@@ -1,0 +1,11 @@
+ element number 1  iotype:DT v_list: -5 -6  100   101
+ element number 2  iotype:DT v_list: -6 -7   200    201
+ element number 3  iotype:DT v_list: -7 -8    300
+ element number 4  iotype:DT v_list: -8 -9     400      401
+ element number 5  iotype:DT v_list: -9 -10      500       501
+
+ element number 5  iotype:DT_ll v_list: -4 -5 100  101
+ element number 6  iotype:DT v_list: -5 -6  200   201
+ element number 7  iotype:DT v_list: -6 -7   300
+ element number 8  iotype:DT v_list: -7 -8    400     401
+ element number 9  iotype:DT v_list: -8 -9     500      501

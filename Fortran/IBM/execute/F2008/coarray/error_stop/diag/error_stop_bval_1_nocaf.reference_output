@@ -1,0 +1,18 @@
+"error_stop_bval_1.f", line 33.14: 1516-332 (S) The stop code in the ERROR STOP statement must be a scalar constant expression of character or integer type.
+"error_stop_bval_1.f", line 34.14: 1516-332 (S) The stop code in the ERROR STOP statement must be a scalar constant expression of character or integer type.
+"error_stop_bval_1.f", line 35.16: 1515-022 (S) Syntax Error: Extra token " 2 " was found. The token is ignored.
+"error_stop_bval_1.f", line 36.15: 1515-022 (S) Syntax Error: Extra token " k " was found. The token is ignored.
+"error_stop_bval_1.f", line 37.14: 1515-022 (S) Syntax Error: Extra token " . " was found. The token is ignored.
+"error_stop_bval_1.f", line 38.14: 1515-022 (S) Syntax Error: Extra token " * " was found. The token is ignored.
+"error_stop_bval_1.f", line 39.14: 1516-332 (S) The stop code in the ERROR STOP statement must be a scalar constant expression of character or integer type.
+"error_stop_bval_1.f", line 40.15: 1515-022 (S) Syntax Error: Extra token " xz " was found. The token is ignored.
+"error_stop_bval_1.f", line 41.14: 1515-018 (S) Incorrect character found in source at line 41 in column 14.  Hexadecimal value of character is 5C.
+"error_stop_bval_1.f", line 41.15: 1515-022 (S) Syntax Error: Extra token " t " was found. The token is ignored.
+"error_stop_bval_1.f", line 42.14: 1516-332 (S) The stop code in the ERROR STOP statement must be a scalar constant expression of character or integer type.
+"error_stop_bval_1.f", line 42.15: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"error_stop_bval_1.f", line 42.16: 1515-022 (S) Syntax Error: Extra token " 2 " was found. The token is ignored.
+"error_stop_bval_1.f", line 43.14: 1515-019 (S) Syntax is incorrect.
+"error_stop_bval_1.f", line 44.14: 1516-332 (S) The stop code in the ERROR STOP statement must be a scalar constant expression of character or integer type.
+"error_stop_bval_1.f", line 44.20: 1515-022 (S) Syntax Error: Extra token " stop " was found. The token is ignored.
+** error_stop_bval   === End of Compilation 1 ===
+1501-511  Compilation failed for file error_stop_bval_1.f.

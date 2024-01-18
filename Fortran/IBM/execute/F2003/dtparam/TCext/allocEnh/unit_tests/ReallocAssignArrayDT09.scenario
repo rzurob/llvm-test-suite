@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/unit_tests/ReallocAssignArrayDT09.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071220
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ReallocAssignArrayDT09.f
+#OUTPUT    = ReallocAssignArrayDT09$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = ReallocAssignArrayDT09$(OBJ)
+#OUTPUT    = ReallocAssignArrayDT09$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ReallocAssignArrayDT09$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

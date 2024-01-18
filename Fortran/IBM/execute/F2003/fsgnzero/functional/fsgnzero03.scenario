@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/sgnzero/fsgnzero03.scenario
+#FEATURE = F2003/sgnzero tests
+#CREATOR = automated conversion script
+#DATE    = 20060411
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fsgnzero03.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fsgnzero03$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fsgnzero03$(OBJ)
+#OUTPUT    = fsgnzero03$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fsgnzero03$(EXE)
+#STDOUT    = fsgnzero03.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -a 0.1E-37 -r1.0e-5
+#INPUT     = fsgnzero03.out $(tcasedir)fsgnzero03.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,67 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE =
+#CREATOR = Denis Navotniy
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_COARRAY)
+#INPUT     = $(tcasedir)mod001f.f
+#OUTPUT    = mod001f$(OBJ)
+#ENDCMD
+
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_COARRAY)
+#INPUT     = $(tcasedir)module_variables_001a.f
+#OUTPUT    = module_variables_001a$(OBJ)
+#ENDCMD
+
+
+#CMD       = F_LINK
+#INPUT     = mod001f$(OBJ) module_variables_001a$(OBJ)
+#OUTPUT    = module_variables_001a$(EXE)
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = module_variables_001a$(EXE)
+#ENDCMD
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)module_variables_001b.f
+#OUTPUT    = module_variables_001b$(OBJ)
+#ENDCMD
+
+
+#CMD       = F_LINK
+#INPUT     = mod001f$(OBJ) module_variables_001b$(OBJ)
+#OUTPUT    = module_variables_001b$(EXE)
+#ENDCMD
+
+!#CMD       = SET_DYN_ENV
+!#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = module_variables_001b$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+
+

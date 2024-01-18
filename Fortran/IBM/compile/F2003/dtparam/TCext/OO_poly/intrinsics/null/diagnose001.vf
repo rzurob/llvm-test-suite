@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"diagnose001.f", line 33.11: 1516-263 (S) The MOLD argument of the NULL intrinsic must have the POINTER or ALLOCATABLE attribute.
+** diagnose001   === End of Compilation 2 ===
+1501-511  Compilation failed for file diagnose001.f.

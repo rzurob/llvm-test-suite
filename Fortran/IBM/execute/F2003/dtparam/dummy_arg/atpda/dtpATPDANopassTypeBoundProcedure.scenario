@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/dummy_arg/atpda/dtpATPDANopassTypeBoundProcedure.scenario
+#FEATURE   = Assumed type parameters and dummy arguments - nopass typebound procedure
+#CREATOR   = DF Manual Update
+#DATE      = 20081015
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpATPDANopassTypeBoundProcedure.f
+#OUTPUT    = dtpATPDANopassTypeBoundProcedure$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpATPDANopassTypeBoundProcedure$(OBJ)
+#OUTPUT    = dtpATPDANopassTypeBoundProcedure$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpATPDANopassTypeBoundProcedure$(EXE)
+#STDOUT    = dtpATPDANopassTypeBoundProcedure.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpATPDANopassTypeBoundProcedure$(product)vf) dtpATPDANopassTypeBoundProcedure.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

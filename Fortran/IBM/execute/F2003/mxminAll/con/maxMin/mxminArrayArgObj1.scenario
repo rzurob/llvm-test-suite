@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/mxminAll/con/maxMin/mxminArrayArgObj1.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mxminArrayArgObj1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = mxminArrayArgObj1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = mxminArrayArgObj1$(OBJ)
+#OUTPUT    = mxminArrayArgObj1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminArrayArgObj1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/ieee/unit/tailrec.scenario
+#FEATURE = ieee tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)tailrec.f
+#OUTPUT    = tailrec$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     =  tailrec$(OBJ)
+#OUTPUT    = tailrec$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = tailrec$(EXE)
+#STDOUT    = tailrec.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)tailrec$(product)vf) tailrec.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

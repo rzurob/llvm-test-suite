@@ -1,0 +1,7 @@
+"C464_008dkl.f", line 46.29: 1514-567 (S) The passed-object dummy argument of the binding uread for an extensible type must be polymorphic.
+"C464_008dkl.f", line 47.29: 1514-567 (S) The passed-object dummy argument of the binding uwrite for an extensible type must be polymorphic.
+"C464_008dkl.f", line 48.29: 1514-567 (S) The passed-object dummy argument of the binding fread for an extensible type must be polymorphic.
+"C464_008dkl.f", line 49.29: 1514-565 (S) The passed-object dummy argument dtv of binding fwrite must be of type base.
+** m   === End of Compilation 1 ===
+** c464_008dkl   === End of Compilation 2 ===
+1501-511  Compilation failed for file C464_008dkl.f.

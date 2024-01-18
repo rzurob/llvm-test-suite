@@ -1,0 +1,49 @@
+"purevalue06d.f", line 20.23: 1513-165 (S) A dummy argument of a pure subroutine must be given the INTENT or VALUE attribute, unless it is a dummy procedure, it is an asterisk, or it has the POINTER attribute.
+"purevalue06d.f", line 20.27: 1513-165 (S) A dummy argument of a pure subroutine must be given the INTENT or VALUE attribute, unless it is a dummy procedure, it is an asterisk, or it has the POINTER attribute.
+"purevalue06d.f", line 20.31: 1513-165 (S) A dummy argument of a pure subroutine must be given the INTENT or VALUE attribute, unless it is a dummy procedure, it is an asterisk, or it has the POINTER attribute.
+"purevalue06d.f", line 20.35: 1513-165 (S) A dummy argument of a pure subroutine must be given the INTENT or VALUE attribute, unless it is a dummy procedure, it is an asterisk, or it has the POINTER attribute.
+"purevalue06d.f", line 20.39: 1513-165 (S) A dummy argument of a pure subroutine must be given the INTENT or VALUE attribute, unless it is a dummy procedure, it is an asterisk, or it has the POINTER attribute.
+"purevalue06d.f", line 20.43: 1513-165 (S) A dummy argument of a pure subroutine must be given the INTENT or VALUE attribute, unless it is a dummy procedure, it is an asterisk, or it has the POINTER attribute.
+"purevalue06d.f", line 20.47: 1513-165 (S) A dummy argument of a pure subroutine must be given the INTENT or VALUE attribute, unless it is a dummy procedure, it is an asterisk, or it has the POINTER attribute.
+"purevalue06d.f", line 20.51: 1513-165 (S) A dummy argument of a pure subroutine must be given the INTENT or VALUE attribute, unless it is a dummy procedure, it is an asterisk, or it has the POINTER attribute.
+"purevalue06d.f", line 20.55: 1513-165 (S) A dummy argument of a pure subroutine must be given the INTENT or VALUE attribute, unless it is a dummy procedure, it is an asterisk, or it has the POINTER attribute.
+"purevalue06d.f", line 20.59: 1513-165 (S) A dummy argument of a pure subroutine must be given the INTENT or VALUE attribute, unless it is a dummy procedure, it is an asterisk, or it has the POINTER attribute.
+"purevalue06d.f", line 20.63: 1513-165 (S) A dummy argument of a pure subroutine must be given the INTENT or VALUE attribute, unless it is a dummy procedure, it is an asterisk, or it has the POINTER attribute.
+** psub   === End of Compilation 1 ===
+"purevalue06d.f", line 34.30: 1513-164 (S) A dummy argument of a pure function that does not have the POINTER attribute and is not a dummy procedure must have the INTENT(IN) or VALUE attribute.
+"purevalue06d.f", line 34.34: 1513-164 (S) A dummy argument of a pure function that does not have the POINTER attribute and is not a dummy procedure must have the INTENT(IN) or VALUE attribute.
+"purevalue06d.f", line 34.38: 1513-164 (S) A dummy argument of a pure function that does not have the POINTER attribute and is not a dummy procedure must have the INTENT(IN) or VALUE attribute.
+"purevalue06d.f", line 34.42: 1513-164 (S) A dummy argument of a pure function that does not have the POINTER attribute and is not a dummy procedure must have the INTENT(IN) or VALUE attribute.
+"purevalue06d.f", line 34.46: 1513-164 (S) A dummy argument of a pure function that does not have the POINTER attribute and is not a dummy procedure must have the INTENT(IN) or VALUE attribute.
+"purevalue06d.f", line 34.50: 1513-164 (S) A dummy argument of a pure function that does not have the POINTER attribute and is not a dummy procedure must have the INTENT(IN) or VALUE attribute.
+"purevalue06d.f", line 34.54: 1513-164 (S) A dummy argument of a pure function that does not have the POINTER attribute and is not a dummy procedure must have the INTENT(IN) or VALUE attribute.
+"purevalue06d.f", line 34.58: 1513-164 (S) A dummy argument of a pure function that does not have the POINTER attribute and is not a dummy procedure must have the INTENT(IN) or VALUE attribute.
+"purevalue06d.f", line 34.62: 1513-164 (S) A dummy argument of a pure function that does not have the POINTER attribute and is not a dummy procedure must have the INTENT(IN) or VALUE attribute.
+"purevalue06d.f", line 34.66: 1513-164 (S) A dummy argument of a pure function that does not have the POINTER attribute and is not a dummy procedure must have the INTENT(IN) or VALUE attribute.
+"purevalue06d.f", line 34.70: 1513-164 (S) A dummy argument of a pure function that does not have the POINTER attribute and is not a dummy procedure must have the INTENT(IN) or VALUE attribute.
+** pfunc   === End of Compilation 2 ===
+"purevalue06d.f", line 49.28: 1513-165 (S) A dummy argument of a pure subroutine must be given the INTENT or VALUE attribute, unless it is a dummy procedure, it is an asterisk, or it has the POINTER attribute.
+"purevalue06d.f", line 49.32: 1513-165 (S) A dummy argument of a pure subroutine must be given the INTENT or VALUE attribute, unless it is a dummy procedure, it is an asterisk, or it has the POINTER attribute.
+"purevalue06d.f", line 49.36: 1513-165 (S) A dummy argument of a pure subroutine must be given the INTENT or VALUE attribute, unless it is a dummy procedure, it is an asterisk, or it has the POINTER attribute.
+"purevalue06d.f", line 49.40: 1513-165 (S) A dummy argument of a pure subroutine must be given the INTENT or VALUE attribute, unless it is a dummy procedure, it is an asterisk, or it has the POINTER attribute.
+"purevalue06d.f", line 49.44: 1513-165 (S) A dummy argument of a pure subroutine must be given the INTENT or VALUE attribute, unless it is a dummy procedure, it is an asterisk, or it has the POINTER attribute.
+"purevalue06d.f", line 49.48: 1513-165 (S) A dummy argument of a pure subroutine must be given the INTENT or VALUE attribute, unless it is a dummy procedure, it is an asterisk, or it has the POINTER attribute.
+"purevalue06d.f", line 49.52: 1513-165 (S) A dummy argument of a pure subroutine must be given the INTENT or VALUE attribute, unless it is a dummy procedure, it is an asterisk, or it has the POINTER attribute.
+"purevalue06d.f", line 49.56: 1513-165 (S) A dummy argument of a pure subroutine must be given the INTENT or VALUE attribute, unless it is a dummy procedure, it is an asterisk, or it has the POINTER attribute.
+"purevalue06d.f", line 49.60: 1513-165 (S) A dummy argument of a pure subroutine must be given the INTENT or VALUE attribute, unless it is a dummy procedure, it is an asterisk, or it has the POINTER attribute.
+"purevalue06d.f", line 49.64: 1513-165 (S) A dummy argument of a pure subroutine must be given the INTENT or VALUE attribute, unless it is a dummy procedure, it is an asterisk, or it has the POINTER attribute.
+"purevalue06d.f", line 49.68: 1513-165 (S) A dummy argument of a pure subroutine must be given the INTENT or VALUE attribute, unless it is a dummy procedure, it is an asterisk, or it has the POINTER attribute.
+** esub   === End of Compilation 3 ===
+"purevalue06d.f", line 63.35: 1513-164 (S) A dummy argument of a pure function that does not have the POINTER attribute and is not a dummy procedure must have the INTENT(IN) or VALUE attribute.
+"purevalue06d.f", line 63.39: 1513-164 (S) A dummy argument of a pure function that does not have the POINTER attribute and is not a dummy procedure must have the INTENT(IN) or VALUE attribute.
+"purevalue06d.f", line 63.43: 1513-164 (S) A dummy argument of a pure function that does not have the POINTER attribute and is not a dummy procedure must have the INTENT(IN) or VALUE attribute.
+"purevalue06d.f", line 63.47: 1513-164 (S) A dummy argument of a pure function that does not have the POINTER attribute and is not a dummy procedure must have the INTENT(IN) or VALUE attribute.
+"purevalue06d.f", line 63.51: 1513-164 (S) A dummy argument of a pure function that does not have the POINTER attribute and is not a dummy procedure must have the INTENT(IN) or VALUE attribute.
+"purevalue06d.f", line 63.55: 1513-164 (S) A dummy argument of a pure function that does not have the POINTER attribute and is not a dummy procedure must have the INTENT(IN) or VALUE attribute.
+"purevalue06d.f", line 63.59: 1513-164 (S) A dummy argument of a pure function that does not have the POINTER attribute and is not a dummy procedure must have the INTENT(IN) or VALUE attribute.
+"purevalue06d.f", line 63.63: 1513-164 (S) A dummy argument of a pure function that does not have the POINTER attribute and is not a dummy procedure must have the INTENT(IN) or VALUE attribute.
+"purevalue06d.f", line 63.67: 1513-164 (S) A dummy argument of a pure function that does not have the POINTER attribute and is not a dummy procedure must have the INTENT(IN) or VALUE attribute.
+"purevalue06d.f", line 63.71: 1513-164 (S) A dummy argument of a pure function that does not have the POINTER attribute and is not a dummy procedure must have the INTENT(IN) or VALUE attribute.
+"purevalue06d.f", line 63.75: 1513-164 (S) A dummy argument of a pure function that does not have the POINTER attribute and is not a dummy procedure must have the INTENT(IN) or VALUE attribute.
+** efunc   === End of Compilation 4 ===
+1501-511  Compilation failed for file purevalue06d.f.

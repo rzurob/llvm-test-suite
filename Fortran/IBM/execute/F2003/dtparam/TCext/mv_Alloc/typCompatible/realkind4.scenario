@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/typCompatible/realkind4.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071126
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)realkind4.f
+#OUTPUT= realkind4$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  realkind4$(OBJ)
+#OUTPUT= realkind4$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  realkind4$(EXE)
+#STDOUT= realkind4.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = realkind4.out $(tcasedir)realkind4.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,52 @@
+! Replacing bdfunc01.sh
+#CMD    = WHICH_FILE
+#ENVAR  = FILE_SRC=$(tcasedir)
+#IF on(linux)
+  #INPUT  = TARGET:bdfunc01.ft SUSE10UP:bdfunc01.ft_gcc4 FC6UP:bdfunc01.ft_gcc4 RHEL5UP:bdfunc01.ft_gcc4 DEFAULT:bdfunc01.ft_nogcc4
+#ELSE
+  #INPUT  = TARGET:bdfunc01.ft DEFAULT:bdfunc01.ft_gcc4
+#ENDIF
+#ENDCMD
+
+! forget Mac settings completely, removed from *ft files
+
+! align settings are propagated via CTCARG variable
+! test case file names are all based on FTCARG variable
+
+#CMD    = COPY
+#INPUT  = $(tcasedir)c$FTCARG.c .
+#ENDCMD
+
+#CMD    = COPY
+#IF on (bgq)
+#INPUT  = $(tcasedir)cbdfunc01.bgq.h cbdfunc01.h
+#ELSE
+#INPUT  = $(tcasedir)cbdfunc01.h .
+#ENDIF
+#ENDCMD
+
+#CMD    = COPY
+#INPUT  = $(tcasedir)$FTCARG.F .
+#ENDCMD
+
+#CMD    = XLC_COMPILE
+#OPTS   = $(C_COMPILER_OPTS) $(OPT_SET_LANG_LEVEL_STDC99) $(OPT_CHECK_TYPES_AT_BIND_TIME) -qalign=$CTCARG 
+#INPUT  = c$FTCARG.c
+#OUTPUT = c$FTCARG$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#OPTS   = -qalign=bindc=$CTCARG 
+#INPUT  = $FTCARG.F
+#OUTPUT = $FTCARG$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#OPTS   = -qalign=bindc=$CTCARG
+#INPUT  = c$FTCARG$(OBJ) $FTCARG$(OBJ)
+#OUTPUT = $FTCARG$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = $FTCARG$(EXE)
+#ENDCMD

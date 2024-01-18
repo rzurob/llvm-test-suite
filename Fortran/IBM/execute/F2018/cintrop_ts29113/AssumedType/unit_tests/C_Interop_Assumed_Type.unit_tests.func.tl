@@ -1,0 +1,7 @@
+AssumedTypeObj01f.scenario
+AssumedTypeObj02f.scenario
+AssumedTypeObj03f.scenario
+AssumedTypeObj04f.scenario
+AssumedTypeObj05f.scenario
+AssumedTypeObj06f.scenario
+AssumedTypeObj07f.scenario

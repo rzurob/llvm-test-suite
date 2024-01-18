@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/class/fclass008a.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071006
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fclass008a.f
+#OPTS = -qxlf2003=dynamicacval
+#OUTPUT    = fclass008a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fclass008a$(OBJ)
+#OUTPUT    = fclass008a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fclass008a$(EXE)
+#STDOUT    = fclass008a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fclass008a.out $($(tcasedir)fclass008a$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

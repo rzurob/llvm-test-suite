@@ -1,0 +1,7 @@
+** mod   === End of Compilation 1 ===
+"acetdt33dext.f", line 83.28: 1514-077 (S) Identifier associate appearing as a derived type name is defined in this scoping unit with conflicting attributes.
+"acetdt33dext.f", line 83.43: 1514-077 (S) Identifier associate appearing as a derived type name is defined in this scoping unit with conflicting attributes.
+"acetdt33dext.f", line 88.26: 1514-077 (S) Identifier derived appearing as a derived type name is defined in this scoping unit with conflicting attributes.
+"acetdt33dext.f", line 88.39: 1514-077 (S) Identifier derived appearing as a derived type name is defined in this scoping unit with conflicting attributes.
+** acetdt33dext   === End of Compilation 2 ===
+1501-511  Compilation failed for file acetdt33dext.f.

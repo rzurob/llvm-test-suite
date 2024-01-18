@@ -1,0 +1,15 @@
+mxminvalVarArgObj1.scenario
+mxminvalVarArgObj2.scenario
+mxminvalVarArgSub1.scenario
+mxminvalVarArgSub2.scenario
+mxminvalVarArgSub3.scenario
+mxminvalVarArgSubEntry.scenario
+mxminvalVarArrPointer.scenario
+mxminvalVarBindC1.scenario
+mxminvalVarConform01.scenario
+mxminvalVarConform01d.scenario
+mxminvalVarConform02.scenario
+mxminvalVarDefAssign.scenario
+mxminvalVarForallWhere.scenario
+mxminvalVarGenInterface.scenario
+mxminvalVarIntrin.scenario

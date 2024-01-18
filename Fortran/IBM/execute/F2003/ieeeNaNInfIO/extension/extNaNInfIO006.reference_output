@@ -1,0 +1,6 @@
+nan   -INF   NaNQ    -INF    NaNS
+inf  -NaNS  -NaNQ    NaNS     INF
+xl-NaNQ-NaNS-3.14 NaNQ
+ "NaN" " = {" NaNQ "," NaNS "," (-NaNQ;3,140000105) "}" "iNf" " = {" -NaNQ "," NaNQ "," (-INF;-NaNS) "}"
+NaN NaNQ NaNS****3.14
+ xLf = { -NaNS , +NaNQ , (+INF,-NaNQ) }

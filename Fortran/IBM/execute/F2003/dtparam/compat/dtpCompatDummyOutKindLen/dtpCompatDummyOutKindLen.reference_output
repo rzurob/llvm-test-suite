@@ -1,0 +1,8 @@
+ start
+ b - base:  100
+ calling old implementation to copy object of type base; not expecting runtime error message
+ b2 - base:  100
+ allocating child
+ c - child(1,*): 99 3 3 >abc< 3 123 45 67 89 3 >def<
+ calling old implementation to copy; expecting runtime error message
+1525-239 XL Fortran detected a mismatch in a compiler-generated routine. If your code contains compilation units compiled with XL Fortran V11.1 or V12.1, recompile them with the latest XL Fortran compiler.

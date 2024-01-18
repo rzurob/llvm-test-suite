@@ -1,0 +1,44 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/formatted/namelist/namelist.1.3/logical001kl.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070720
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)logical001kl.1 .
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)logical001kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = logical001kl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = logical001kl$(OBJ)
+#OUTPUT    = logical001kl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = logical001kl$(EXE)
+#STDOUT    = logical001kl.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)logical001kl$(product)vf) logical001kl.out
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

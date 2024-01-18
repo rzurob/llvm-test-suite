@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME	   = F2003/asynchIO/statements/wait/futurePending01.scenario
+#FEATURE   = Asynchronous I/O -- CLOSE Statement
+#CREATOR   = GM Manual Creation
+#DATE	   = 20060324
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#IF on (linuxle)
+    XLFRTEOPTS=$(CONVERT_UFMT_IO_ENDIANESS<9>)
+#ENDIF
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)futurePending01.f
+#OUTPUT		= futurePending01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= futurePending01$(OBJ)
+#OUTPUT		= futurePending01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= futurePending01$(EXE)
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)futurePending01$(product)vf) fort.9
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

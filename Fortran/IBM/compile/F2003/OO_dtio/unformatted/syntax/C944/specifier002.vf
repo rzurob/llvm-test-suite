@@ -1,0 +1,9 @@
+** m1   === End of Compilation 1 ===
+  110.30   01510061 UNITÜ
+  121.41   01510061 ERRÜ
+** specifier002   === End of Compilation 2 ===
+  148.29   01510061 ERRÜ
+** readunformatted   === End of Compilation 3 ===
+  166.4   01510061 UNITÜ
+** writeunformatted   === End of Compilation 4 ===
+1501-510  Compilation successful for file specifier002.f.

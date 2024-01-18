@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2003/dtparam/intrinsics/pack/fChildp13a.scenario
+#FEATURE = dtp intrinsics
+#CREATOR = Adrian Green
+#DATE    = 20080821
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)fChildp13a.f
+#OUTPUT   = fChildp13a$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = fChildp13a$(OBJ)
+#OUTPUT   = fChildp13a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fChildp13a$(EXE)
+#STDOUT   = fChildp13a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $(tcasedir)fChildp13a.vf fChildp13a.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

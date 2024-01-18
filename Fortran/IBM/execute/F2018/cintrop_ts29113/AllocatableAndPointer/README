@@ -1,0 +1,29 @@
+!*******************************************************************************
+!* Bucket brief description.
+!*
+!* DESCRIPTION: C Interop: Allocatable, pointer arguments
+!*
+!*
+!*******************************************************************************
+Feature XLC/XLF V13/V15
+
+   RTC Master Story 26305: C Interop: Allocatable, pointer arguments
+      https://compjazz.torolab.ibm.com:9443/jazz/web/projects/XL%20Compilers#action=com.ibm.team.workitem.viewWorkItem&id=26305
+
+   I0  document is kept in CMVC
+     family: aix, release: des.dev, component: design.i0,
+     file: designs/i0/c_interop_allocatabe_and_pointer/c_interop_allocatabe_and_pointer.html
+         FF: https://featureflowbe.torolab.ibm.com/featureflow/show/6682
+
+   IT1 document is kept in CMVC
+     family:aix,  release: des.dev, component: design.it1,
+     file: designs/it1/it1_for_c_interop__allocatable_and_pointer_dummy_argument/it1_for_c_interop__allocatable_and_pointer_dummy_argument.html
+         FF: https://featureflowbe.torolab.ibm.com/featureflow/show/6764
+
+   IT2 document is kept in CMVC
+     family:aix,  release: des.dev, component: design.it2,
+     file:  designs/it2/it2_for_c_interop__allocatable_and_pointer_dummy_argument/it2_for_c_interop__allocatable_and_pointer_dummy_argument.html
+         FF: https://featureflow.torolab.ibm.com/featureflow/show?id=7124
+
+  See the ./doc subdirectory for details
+

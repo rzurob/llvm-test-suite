@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/associat/smp/fxass125.scenario
+#FEATURE = associat tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+    #IF on (aix)
+       OMP_STACKSIZE=1M
+    #ENDIF
+#ENDDEFS
+#INVALID_PRODUCT= bgl_system,bgl
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)fxass125.f
+#OPTS      = $(OPT_OPTIMIZE_FOR_SMP) -F:xlf90_r $(OPT_FIXED_SOURCE_FORM)
+#OUTPUT    = fxass125$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#OPTS      = $(OPT_OPTIMIZE_FOR_SMP) -F:xlf90_r $(OPT_FIXED_SOURCE_FORM)
+#INPUT     =  fxass125$(OBJ)
+#OUTPUT    = fxass125$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxass125$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

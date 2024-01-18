@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/diag/types/derived/acetdt33d.scenario
+#FEATURE	= Array constructor enhancement - derived TS: shadowed SC in AC in ASSOCIATE construct
+#CREATOR	= DF Manual Update
+#DATE		= 20060927
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt33d.f
+#OPTS       = -qdebug=noline070112:shutup
+#OUTPUT		= acetdt33d$(OBJ)
+#STDERR		= acetdt33d.stderr
+#VALIDRCS       = $(RC_COMP_S)
+#ENDCMD
+
+#CMD            = XLDIFF
+#INPUT          = $($(tcasedir)acetdt33d$(product)vf) acetdt33d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

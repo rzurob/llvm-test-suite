@@ -1,0 +1,5 @@
+"Data1.f", line 58.27: 1514-127 (E) Identifier procptr declared with EXTERNAL/INTRINSIC attribute was defined elsewhere with conflicting attributes.  Identifier is ignored.
+"Data1.f", line 61.39: 1514-127 (E) Identifier cprocptr declared with EXTERNAL/INTRINSIC attribute was defined elsewhere with conflicting attributes.  Identifier is ignored.
+"Data1.f", line 67.8: 1514-091 (S) Invalid structure component reference.  The object name and all component names (except the rightmost) must be of type derived.
+** data1   === End of Compilation 1 ===
+1501-511  Compilation failed for file Data1.f.

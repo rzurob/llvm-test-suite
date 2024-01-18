@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/exprEval/order/arrayExprVectorIndex01.scenario
+#FEATURE	= Intrinsic Assignment -- Order of Expression Evaluation
+#CREATOR	= GM Manual Creation
+#DATE		= 20060926
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)arrayExprVectorIndex01.f
+#OUTPUT		= arrayExprVectorIndex01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= arrayExprVectorIndex01$(OBJ)
+#OUTPUT		= arrayExprVectorIndex01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= arrayExprVectorIndex01$(EXE)
+#STDOUT		= arrayExprVectorIndex01.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)arrayExprVectorIndex01$(product)vf)	\
+				arrayExprVectorIndex01.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

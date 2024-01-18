@@ -1,0 +1,4 @@
+"fdtio001d4.f", line 57.8: 1514-604 (S) Dummy argument v_list of the derived-type I/O procedure formattedread must be specified with the INTENT(IN) attribute.
+** m   === End of Compilation 1 ===
+** fdtio001d4   === End of Compilation 2 ===
+1501-511  Compilation failed for file fdtio001d4.f.

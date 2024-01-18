@@ -1,0 +1,4 @@
+"procptr_intrin_002.f", line 6.35: 1516-234 (S) The interface name abs in the PROCEDURE statement is elemental.  The procedure pp1 declared in the PROCEDURE statement must be an external procedure.
+"procptr_intrin_002.f", line 7.36: 1516-234 (S) The interface name iabs in the PROCEDURE statement is elemental.  The procedure pp2 declared in the PROCEDURE statement must be an external procedure.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file procptr_intrin_002.f.

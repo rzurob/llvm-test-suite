@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/abstracti/abstracti051.scenario
+#FEATURE = Abstract Interface Tests
+#CREATOR = automated conversion script
+#DATE    = 20060220
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)abstracti051.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = abstracti051$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = abstracti051$(OBJ)
+#OUTPUT    = abstracti051$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = abstracti051$(EXE)
+#STDOUT    = abstracti051.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = abstracti051.out $(tcasedir)abstracti051.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

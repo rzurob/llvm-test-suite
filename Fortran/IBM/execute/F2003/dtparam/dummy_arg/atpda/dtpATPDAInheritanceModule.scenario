@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/dummy_arg/atpda/dtpATPDAInheritanceModule.scenario
+#FEATURE   = Assumed type parameters and dummy arguments - test the length passed in
+#CREATOR   = DF Manual Update
+#DATE      = 20081015
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpATPDAInheritanceModule.f
+#OUTPUT    = dtpATPDAInheritanceModule$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpATPDAInheritanceModule$(OBJ)
+#OUTPUT    = dtpATPDAInheritanceModule$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpATPDAInheritanceModule$(EXE)
+#STDOUT    = dtpATPDAInheritanceModule.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpATPDAInheritanceModule$(product)vf) dtpATPDAInheritanceModule.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

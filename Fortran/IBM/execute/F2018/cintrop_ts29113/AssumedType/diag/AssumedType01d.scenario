@@ -1,0 +1,78 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/AssumedType/diag/AssumedType01d.scenario
+#FEATURE   = C Interop: Assumed Type
+#CREATOR   = Dorra Bouchiha
+#DATE      = 2012-06-20
+#TEST_TYPE = diagnostic
+#KEYWORDS  = C Interop, Assumed Type
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)AssumedType01c.c
+#OPTS      = $(C_COMPILER_OPTS)
+#OUTPUT    = AssumedType01c$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AssumedType01d.f
+#OUTPUT    = AssumedType01d$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = AssumedType01d$(OBJ) AssumedType01c$(OBJ)
+#OUTPUT    = AssumedType01d$(EXE)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_SHOW_ATTRIBUTES_USED)
+#INPUT     = $(tcasedir)AssumedType01d.f
+#OUTPUT    = AssumedType01d_1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_SHOW_ATTRIBUTES_USED)
+#INPUT     = AssumedType01d_1$(OBJ) AssumedType01c$(OBJ)
+#OUTPUT    = AssumedType01d_1$(EXE)
+#ENDCMD
+
+#CMD      = GREP
+#INPUT    = "Target,.*Assumed type" AssumedType01d.lst
+#ENDCMD
+
+#CMD      = GREP
+#INPUT    = "Optional,.*Assumed type" AssumedType01d.lst
+#ENDCMD
+
+#CMD      = GREP
+#INPUT    = "Volatile,.*Assumed type" AssumedType01d.lst
+#ENDCMD
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT     = $(tcasedir)AssumedType01d.f
+#OUTPUT    = AssumedType01d_2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT     = AssumedType01d_2$(OBJ) AssumedType01c$(OBJ)
+#OUTPUT    = AssumedType01d_2$(EXE)
+#ENDCMD
+
+#CMD      = GREP
+#INPUT    = "Target,.*Assumed type" AssumedType01d.lst
+#ENDCMD
+
+#CMD      = GREP
+#INPUT    = "Optional,.*Assumed type" AssumedType01d.lst
+#ENDCMD
+
+#CMD      = GREP
+#INPUT    = "Volatile,.*Assumed type" AssumedType01d.lst
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

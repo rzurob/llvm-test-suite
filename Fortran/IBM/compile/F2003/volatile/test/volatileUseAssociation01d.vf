@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"volatileUseAssociation01d.f", line 30.18: 1514-245 (E) Identifier mixed is accessed by use association. It must not be redeclared or initialized.
+** volatileuseassociation01d   === End of Compilation 2 ===
+1501-510  Compilation successful for file volatileUseAssociation01d.f.

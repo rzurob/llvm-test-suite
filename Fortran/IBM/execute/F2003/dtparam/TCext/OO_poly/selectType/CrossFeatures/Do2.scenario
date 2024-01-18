@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/selectType/CrossFeatures/Do2.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071003
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)Do2.f
+#OUTPUT= Do2$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  Do2$(OBJ)
+#OUTPUT= Do2$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  Do2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

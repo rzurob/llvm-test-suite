@@ -1,0 +1,3 @@
+"AssumedLen01d.f", line 33.30: 1513-292 (S) Procedure sub_1 is declared with the BIND(C) attribute.  Character dummy argument arg1 of sub_1 has the POINTER attribute. arg1 must have deferred length.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file AssumedLen01d.f.

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/decimaledit/defaultIO/decEditDesc006.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of decimaledit/*
+#DATE      = 20071213
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)decEditDesc006.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = decEditDesc006$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = decEditDesc006$(OBJ)
+#OUTPUT    = decEditDesc006$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = decEditDesc006$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = aWrite.out $(tcasedir)decEditDesc006.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

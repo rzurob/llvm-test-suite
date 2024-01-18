@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/spread/spreadSourceIsScalarPolyComp01.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Oct. 15 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)spreadSourceIsScalarPolyComp01.f
+#OUTPUT= spreadSourceIsScalarPolyComp01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = spreadSourceIsScalarPolyComp01$(OBJ)
+#OUTPUT= spreadSourceIsScalarPolyComp01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = spreadSourceIsScalarPolyComp01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

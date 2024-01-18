@@ -1,0 +1,4 @@
+ 1525-076 A comma was expected after the I edit descriptor in a format specification.  The program will recover by assuming a comma.
+                                                                                                                                                                        
+ 1525-071 The initial left parenthesis in the format specification is missing.  The program will recover by assuming an initial left parenthesis.
+                                                                                                                                                           

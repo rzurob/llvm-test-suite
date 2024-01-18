@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/selectType/Quotes/C817TypeIsPoly.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071004
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=      F_COMPILE
+#INPUT=    $(tcasedir)C817TypeIsPoly.f
+#OUTPUT=   C817TypeIsPoly$(OBJ)
+#STDERR=   C817TypeIsPoly.err
+#VALIDRCS= 0
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  C817TypeIsPoly$(OBJ)
+#OUTPUT= C817TypeIsPoly$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  C817TypeIsPoly$(EXE)
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    C817TypeIsPoly.err $($(tcasedir)C817TypeIsPoly$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

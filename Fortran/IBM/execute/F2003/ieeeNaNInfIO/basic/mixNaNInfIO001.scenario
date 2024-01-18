@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = mixNaNInfIO001.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 14, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)mixNaNInfIO001.f
+#OUTPUT   =  mixNaNInfIO001$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  mixNaNInfIO001$(OBJ)
+#OUTPUT   =  mixNaNInfIO001$(EXE)
+#ENDCMD
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)mixNaNInfIO001.dat
+#OUTPUT   = mixNaNInfIO001.dat
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  mixNaNInfIO001$(EXE)
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = mixNaNInfIO001.out $(tcasedir)mixNaNInfIO001.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

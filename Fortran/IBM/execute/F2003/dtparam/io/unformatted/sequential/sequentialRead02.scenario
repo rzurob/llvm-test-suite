@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/io/unformatted/sequential/sequentialRead02.scenario
+#FEATURE	= Unformatted Intrinsic I/O (with Derived Type Parameters)
+#CREATOR	= Glen Mateer
+#DATE		= 20081022
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)sequentialRead02.f
+#OUTPUT		= sequentialRead02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= sequentialRead02$(OBJ)
+#OUTPUT		= sequentialRead02$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= sequentialRead02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

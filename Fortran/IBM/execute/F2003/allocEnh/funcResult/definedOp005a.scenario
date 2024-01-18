@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/allocEnh/funcResult/definedOp005a.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)definedOp005a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = definedOp005a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = definedOp005a$(OBJ)
+#OUTPUT    = definedOp005a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = definedOp005a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

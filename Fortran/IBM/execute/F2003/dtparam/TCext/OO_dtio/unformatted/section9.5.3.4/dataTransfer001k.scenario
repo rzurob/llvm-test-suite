@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2003/dtparam/TCext/OO_dtio/unformatted/section9.5.3.4/dataTransfer001k.scenario
+#FEATURE = OO_dtio + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070918
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataTransfer001k.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataTransfer001k$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  dataTransfer001k$(OBJ)
+#OUTPUT    = dataTransfer001k$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataTransfer001k$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

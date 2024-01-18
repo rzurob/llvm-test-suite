@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/ieee/unit/fxmisc01.scenario
+#FEATURE = ieee tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)fxmisc01.f
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#OUTPUT    = fxmisc01$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     =  fxmisc01$(OBJ)
+#OUTPUT    = fxmisc01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxmisc01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,56 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/attribute/otherAttr/asynchDimAttr01.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Attribute
+#CREATOR	= GM Manual Creation
+#DATE		= 20060208
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)asynchDimAttr01.dat .
+#ENDCMD
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)asynchDimAttr01.f
+#OUTPUT		= asynchDimAttr01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= asynchDimAttr01$(OBJ)
+#OUTPUT		= asynchDimAttr01$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= asynchDimAttr01$(EXE)
+#STDOUT		= asynchDimAttr01.stdout
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)asynchDimAttr01$(product)vf)	\
+				asynchDimAttr01.stdout
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= -i '^words[ 	]'
+#INPUT		= asynchDimAttr01$(LST)
+#STDOUT		= asynchDimAttr01.egrep.stdout
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= asynchDimAttr01.egrep.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

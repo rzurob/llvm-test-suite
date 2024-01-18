@@ -1,0 +1,6 @@
+"dtpImplicit8.f", line 51.10: 1514-693 (S) Derived type object r with deferred type parameters requires the POINTER or ALLOCATABLE attribute.
+"dtpImplicit8.f", line 52.10: 1514-694 (S) Derived type object s with assumed type parameters must be a dummy argument.
+"dtpImplicit8.f", 1514-540 (S) The entity v declared with the CLASS keyword must be a dummy argument, or have the ALLOCATABLE or POINTER attribute.
+"dtpImplicit8.f", 1514-540 (S) The entity u declared with the CLASS keyword must be a dummy argument, or have the ALLOCATABLE or POINTER attribute.
+** dtpimplicit7   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtpImplicit8.f.

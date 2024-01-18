@@ -1,0 +1,5 @@
+ aIDs( 1 ) = ' 1 '
+ aIDs( 2 ) = ' 2 '
+ aIDs( 3 ) = ' 3 '
+ INQUIRE(ERR=100,ID= 3 ) 1525-001 The READ statement on the file pendingNoIOSTATSpec01d.dat cannot be completed because the end of the file was reached.  The program will stop.
+                                                                                                        

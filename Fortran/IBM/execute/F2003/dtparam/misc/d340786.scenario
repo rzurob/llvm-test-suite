@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/misc/d340786.scenario
+#FEATURE   = Defect 340786
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20070827
+#TEST_TYPE =
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d340786.f
+#OUTPUT    = d340786$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d340786$(OBJ)
+#OUTPUT    = d340786$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d340786$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

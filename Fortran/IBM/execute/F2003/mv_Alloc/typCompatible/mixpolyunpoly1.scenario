@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       mixpolyunpoly1.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)mixpolyunpoly1.f
+#OUTPUT= mixpolyunpoly1$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  mixpolyunpoly1$(OBJ)
+#OUTPUT= mixpolyunpoly1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  mixpolyunpoly1$(EXE)
+#STDOUT= mixpolyunpoly1.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = mixpolyunpoly1.out $(tcasedir)mixpolyunpoly1.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

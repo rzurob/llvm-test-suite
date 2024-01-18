@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=automatic_var_in_block.scenario
+#FEATURE = F2008 BLOCK construct
+#CREATOR = Pooja Dayanand
+#DATE    = 20101021
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)automatic_var_in_block.f
+#OUTPUT    = automatic_var_in_block$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#INPUT     = automatic_var_in_block$(OBJ)
+#OUTPUT    = automatic_var_in_block$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = automatic_var_in_block$(EXE)
+#STDOUT    = automatic_var_in_block.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = automatic_var_in_block.out $(tcasedir)automatic_var_in_block.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

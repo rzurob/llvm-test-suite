@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/coarray/array_intrinsics/cshiftCoarray03.scenario
+#FEATURE   =
+#CREATOR   = Shahid Alam
+#DATE      = 20101220
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)cshiftCoarray03.f
+#OUTPUT    = cshiftCoarray03$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = cshiftCoarray03$(OBJ)
+#OUTPUT    = cshiftCoarray03$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+   #CMD       = MPRUN
+   #ENVAR     = XLFRTEOPTS=$(XLFRTEOPTS):errimagenum=yes
+   #INPUT     = cshiftCoarray03$(EXE)
+   #STDOUT    = cshiftCoarray03.out
+   #STDERR    = cshiftCoarray03.out
+   #ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

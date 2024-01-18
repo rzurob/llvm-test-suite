@@ -1,0 +1,9 @@
+"kindArgCount.f", line 53.20: 1513-133 (S) KIND must be an integer constant.
+"kindArgCount.f", line 54.20: 1513-040 (S) The argument DIM must be a scalar.
+"kindArgCount.f", line 56.22: 1513-040 (S) The argument KIND must be a scalar.
+"kindArgCount.f", line 58.22: 1513-133 (S) KIND must be an integer constant.
+"kindArgCount.f", line 59.22: 1513-133 (S) KIND must be an integer constant.
+"kindArgCount.f", line 60.22: 1513-133 (S) KIND must be an integer constant.
+"kindArgCount.f", line 61.22: 1513-133 (S) KIND must be an integer constant.
+** kindargcount   === End of Compilation 1 ===
+1501-511  Compilation failed for file kindArgCount.f.

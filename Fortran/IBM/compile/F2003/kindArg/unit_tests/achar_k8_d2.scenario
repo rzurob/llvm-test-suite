@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=achar_k8_d2.scenario
+#FEATURE = Support new Kind Parameter for Several Intrinsics
+#CREATOR = Vince Yuen
+#DATE    = 20060414
+#TEST_TYPE=diagnostic ut
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)achar_k8_d2.f
+#STDERR    = achar_k8_d2.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = achar_k8_d2.out $(tcasedir)achar_k8_d2.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

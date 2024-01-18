@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/streamio/unit/posread03.scenario
+#FEATURE = streamio tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)posread03.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = posread03$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  posread03$(OBJ)
+#OUTPUT    = posread03$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = posread03$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

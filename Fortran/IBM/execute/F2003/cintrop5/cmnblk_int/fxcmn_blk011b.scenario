@@ -1,0 +1,392 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/cintrop5/cmnblk_int/fxcmn_blk011b.scenario
+#FEATURE = cintrop5 tests - regression run bucket
+#CREATOR = SH Manual conversion
+#DATE    = 20041129
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_XOPTS = $(F_COMPILE^OPT_GEN_64BIT_COMPILER_MODE)
+#ENDENV
+
+#BEGINCONTROL
+
+#IF on (aix)
+
+#CMD     = XLC_COMPILE
+#INPUT    = $(tcasedir)cxcmn_blk011.c
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc $(C_COMPILER_OPTS) $(OPT_DEFINE_MACRO<STDINT>) $(OPT_SET_LANG_LEVEL_STDC99)
+#ENDIF
+#OPTS    = $(C_COMPILER_OPTS) $(OPT_DEFINE_MACRO<STDINT>) $(OPT_SET_LANG_LEVEL_STDC99)
+#OUTPUT  = cxcmn_blk011$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_COMPILE
+#INPUT    = $(tcasedir)fxcmn_blk011b.f
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc
+#ENDIF
+#OUTPUT  = fxcmn_blk011b$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_LINK
+#INPUT    = fxcmn_blk011b$(OBJ) cxcmn_blk011$(OBJ)
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc
+#ENDIF
+#OUTPUT  = fxcmn_blk011b$(EXE)
+#ENDCMD
+
+#CMD     = RUN
+#INPUT    = fxcmn_blk011b$(EXE)
+#ENDCMD
+
+#CMD     = XLC_COMPILE
+#INPUT    = $(tcasedir)cxcmn_blk011.c
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc $(C_COMPILER_OPTS) $(OPT_DEFINE_MACRO<STDINT>) $(OPT_ALIGN_BIT_PACKED) $(OPT_SET_LANG_LEVEL_STDC99)
+#ENDIF
+#OPTS    = $(C_COMPILER_OPTS) $(OPT_DEFINE_MACRO<STDINT>) $(OPT_ALIGN_BIT_PACKED) $(OPT_SET_LANG_LEVEL_STDC99)
+#OUTPUT  = cxcmn_blk011$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_COMPILE
+#INPUT    = $(tcasedir)fxcmn_blk011b.f
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc -qalign=bindc=bit_packed
+#ENDIF
+#OPTS    = -qalign=bindc=bit_packed
+#OUTPUT  = fxcmn_blk011b$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_LINK
+#INPUT    = fxcmn_blk011b$(OBJ) cxcmn_blk011$(OBJ)
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc -qalign=bindc=bit_packed
+#ENDIF
+#OPTS    = -qalign=bindc=bit_packed
+#OUTPUT  = fxcmn_blk011b$(EXE)
+#ENDCMD
+
+#CMD     = RUN
+#INPUT    = fxcmn_blk011b$(EXE)
+#ENDCMD
+
+#CMD     = XLC_COMPILE
+#INPUT    = $(tcasedir)cxcmn_blk011.c
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc $(C_COMPILER_OPTS) $(OPT_DEFINE_MACRO<STDINT>) $(OPT_ALIGN_BYTE<full>) $(OPT_SET_LANG_LEVEL_STDC99)
+#ENDIF
+#OPTS    = $(C_COMPILER_OPTS) $(OPT_DEFINE_MACRO<STDINT>) $(OPT_ALIGN_BYTE<full>) $(OPT_SET_LANG_LEVEL_STDC99)
+#OUTPUT  = cxcmn_blk011$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_COMPILE
+#INPUT    = $(tcasedir)fxcmn_blk011b.f
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc -qalign=bindc=full
+#ENDIF
+#OPTS    = -qalign=bindc=full
+#OUTPUT  = fxcmn_blk011b$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_LINK
+#INPUT    = fxcmn_blk011b$(OBJ) cxcmn_blk011$(OBJ)
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc -qalign=bindc=full
+#ENDIF
+#OPTS    = -qalign=bindc=full
+#OUTPUT  = fxcmn_blk011b$(EXE)
+#ENDCMD
+
+#CMD     = RUN
+#INPUT    = fxcmn_blk011b$(EXE)
+#ENDCMD
+
+#CMD     = XLC_COMPILE
+#INPUT    = $(tcasedir)cxcmn_blk011.c
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc $(C_COMPILER_OPTS) $(OPT_DEFINE_MACRO<STDINT>) $(OPT_ALIGN_MAC68K) $(OPT_SET_LANG_LEVEL_STDC99)
+#ENDIF
+#OPTS    = $(C_COMPILER_OPTS) $(OPT_DEFINE_MACRO<STDINT>) $(OPT_ALIGN_MAC68K) $(OPT_SET_LANG_LEVEL_STDC99)
+#OUTPUT  = cxcmn_blk011$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_COMPILE
+#INPUT    = $(tcasedir)fxcmn_blk011b.f
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc -qalign=bindc=mac68k
+#ENDIF
+#OPTS    = -qalign=bindc=mac68k
+#OUTPUT  = fxcmn_blk011b$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_LINK
+#INPUT    = fxcmn_blk011b$(OBJ) cxcmn_blk011$(OBJ)
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc -qalign=bindc=mac68k
+#ENDIF
+#OPTS    = -qalign=bindc=mac68k
+#OUTPUT  = fxcmn_blk011b$(EXE)
+#ENDCMD
+
+#CMD     = RUN
+#INPUT    = fxcmn_blk011b$(EXE)
+#ENDCMD
+
+
+#CMD     = XLC_COMPILE
+#INPUT    = $(tcasedir)cxcmn_blk011.c
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc $(C_COMPILER_OPTS) $(OPT_DEFINE_MACRO<STDINT>) $(OPT_ALIGN_NATURAL) $(OPT_SET_LANG_LEVEL_STDC99)
+#ENDIF
+#OPTS    = $(C_COMPILER_OPTS) $(OPT_DEFINE_MACRO<STDINT>) $(OPT_ALIGN_NATURAL) $(OPT_SET_LANG_LEVEL_STDC99)
+#OUTPUT  = cxcmn_blk011$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_COMPILE
+#INPUT    = $(tcasedir)fxcmn_blk011b.f
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc -qalign=bindc=natural
+#ENDIF
+#OPTS    = -qalign=bindc=natural
+#OUTPUT  = fxcmn_blk011b$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_LINK
+#INPUT    = fxcmn_blk011b$(OBJ) cxcmn_blk011$(OBJ)
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc -qalign=bindc=natural
+#ENDIF
+#OPTS    = -qalign=bindc=natural
+#OUTPUT  = fxcmn_blk011b$(EXE)
+#ENDCMD
+
+#CMD     = RUN
+#INPUT    = fxcmn_blk011b$(EXE)
+#ENDCMD
+
+#CMD     = XLC_COMPILE
+#INPUT    = $(tcasedir)cxcmn_blk011.c
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc $(C_COMPILER_OPTS) $(OPT_DEFINE_MACRO<STDINT>) $(OPT_ALIGN_PACKED) $(OPT_SET_LANG_LEVEL_STDC99)
+#ENDIF
+#OPTS    = $(C_COMPILER_OPTS) $(OPT_DEFINE_MACRO<STDINT>) $(OPT_ALIGN_PACKED) $(OPT_SET_LANG_LEVEL_STDC99)
+#OUTPUT  = cxcmn_blk011$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_COMPILE
+#INPUT    = $(tcasedir)fxcmn_blk011b.f
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc -qalign=bindc=packed
+#ENDIF
+#OPTS    = -qalign=bindc=packed
+#OUTPUT  = fxcmn_blk011b$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_LINK
+#INPUT    = fxcmn_blk011b$(OBJ) cxcmn_blk011$(OBJ)
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc -qalign=bindc=packed
+#ENDIF
+#OPTS    = -qalign=bindc=packed
+#OUTPUT  = fxcmn_blk011b$(EXE)
+#ENDCMD
+
+#CMD     = RUN
+#INPUT    = fxcmn_blk011b$(EXE)
+#ENDCMD
+
+#CMD     = XLC_COMPILE
+#INPUT    = $(tcasedir)cxcmn_blk011.c
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc $(C_COMPILER_OPTS) $(OPT_DEFINE_MACRO<STDINT>) $(OPT_ALIGN_POWER) $(OPT_SET_LANG_LEVEL_STDC99)
+#ENDIF
+#OPTS    = $(C_COMPILER_OPTS) $(OPT_DEFINE_MACRO<STDINT>) $(OPT_ALIGN_POWER) $(OPT_SET_LANG_LEVEL_STDC99)
+#OUTPUT  = cxcmn_blk011$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_COMPILE
+#INPUT    = $(tcasedir)fxcmn_blk011b.f
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc -qalign=bindc=power
+#ENDIF
+#OPTS    = -qalign=bindc=power
+#OUTPUT  = fxcmn_blk011b$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_LINK
+#INPUT    = fxcmn_blk011b$(OBJ) cxcmn_blk011$(OBJ)
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc -qalign=bindc=power
+#ENDIF
+#OPTS    = -qalign=bindc=power
+#OUTPUT  = fxcmn_blk011b$(EXE)
+#ENDCMD
+
+#CMD     = RUN
+#INPUT    = fxcmn_blk011b$(EXE)
+#ENDCMD
+
+#CMD     = XLC_COMPILE
+#INPUT    = $(tcasedir)cxcmn_blk011.c
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc $(C_COMPILER_OPTS) $(OPT_DEFINE_MACRO<STDINT>) $(OPT_ALIGN_TWOBYTE) $(OPT_SET_LANG_LEVEL_STDC99)
+#ENDIF
+#OPTS    = $(C_COMPILER_OPTS) $(OPT_DEFINE_MACRO<STDINT>) $(OPT_ALIGN_TWOBYTE) $(OPT_SET_LANG_LEVEL_STDC99)
+#OUTPUT  = cxcmn_blk011$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_COMPILE
+#INPUT    = $(tcasedir)fxcmn_blk011b.f
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc -qalign=bindc=twobyte
+#ENDIF
+#OPTS    = -qalign=bindc=twobyte
+#OUTPUT  = fxcmn_blk011b$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_LINK
+#INPUT    = fxcmn_blk011b$(OBJ) cxcmn_blk011$(OBJ)
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc -qalign=bindc=twobyte
+#ENDIF
+#OPTS    = -qalign=bindc=twobyte
+#OUTPUT  = fxcmn_blk011b$(EXE)
+#ENDCMD
+
+#CMD     = RUN
+#INPUT    = fxcmn_blk011b$(EXE)
+#ENDCMD
+
+#ELSE
+
+#CMD     = XLC_COMPILE
+#INPUT    = $(tcasedir)cxcmn_blk011.c
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc $(C_COMPILER_OPTS) $(OPT_DEFINE_MACRO<STDINT>) $(OPT_SET_LANG_LEVEL_STDC99)
+#ENDIF
+#OPTS    = $(C_COMPILER_OPTS) $(OPT_DEFINE_MACRO<STDINT>) $(OPT_SET_LANG_LEVEL_STDC99)
+#OUTPUT  = cxcmn_blk011$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_COMPILE
+#INPUT    = $(tcasedir)fxcmn_blk011b.f
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc
+#ENDIF
+#OUTPUT  = fxcmn_blk011b$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_LINK
+#INPUT    = fxcmn_blk011b$(OBJ) cxcmn_blk011$(OBJ)
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc
+#ENDIF
+#OUTPUT  = fxcmn_blk011b$(EXE)
+#ENDCMD
+
+#CMD     = RUN
+#INPUT    = fxcmn_blk011b$(EXE)
+#ENDCMD
+
+#CMD     = XLC_COMPILE
+#INPUT    = $(tcasedir)cxcmn_blk011.c
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc $(C_COMPILER_OPTS) $(OPT_DEFINE_MACRO<STDINT>) $(OPT_ALIGN_BIT_PACKED) $(OPT_SET_LANG_LEVEL_STDC99)
+#ENDIF
+#OPTS    = $(C_COMPILER_OPTS) $(OPT_DEFINE_MACRO<STDINT>) $(OPT_ALIGN_BIT_PACKED) $(OPT_SET_LANG_LEVEL_STDC99)
+#OUTPUT  = cxcmn_blk011$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_COMPILE
+#INPUT    = $(tcasedir)fxcmn_blk011b.f
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc -qalign=bindc=bit_packed
+#ENDIF
+#OPTS    = -qalign=bindc=bit_packed
+#OUTPUT  = fxcmn_blk011b$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_LINK
+#INPUT    = fxcmn_blk011b$(OBJ) cxcmn_blk011$(OBJ)
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc -qalign=bindc=bit_packed
+#ENDIF
+#OPTS    = -qalign=bindc=bit_packed
+#OUTPUT  = fxcmn_blk011b$(EXE)
+#ENDCMD
+
+#CMD     = RUN
+#INPUT    = fxcmn_blk011b$(EXE)
+#ENDCMD
+
+#CMD     = XLC_COMPILE
+#INPUT    = $(tcasedir)cxcmn_blk011.c
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc $(C_COMPILER_OPTS) $(OPT_DEFINE_MACRO<STDINT>) $(OPT_ALIGN_PPC_LINUX) $(OPT_SET_LANG_LEVEL_STDC99)
+#ENDIF
+#OPTS    = $(C_COMPILER_OPTS) $(OPT_DEFINE_MACRO<STDINT>) $(OPT_ALIGN_PPC_LINUX) $(OPT_SET_LANG_LEVEL_STDC99)
+#OUTPUT  = cxcmn_blk011$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_COMPILE
+#INPUT    = $(tcasedir)fxcmn_blk011b.f
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc -qalign=bindc=linuxppc
+#ENDIF
+#OPTS    = -qalign=bindc=linuxppc
+#OUTPUT  = fxcmn_blk011b$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_LINK
+#INPUT    = fxcmn_blk011b$(OBJ) cxcmn_blk011$(OBJ)
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc -qalign=bindc=linuxppc
+#ENDIF
+#OPTS    = -qalign=bindc=linuxppc
+#OUTPUT  = fxcmn_blk011b$(EXE)
+#ENDCMD
+
+#CMD     = RUN
+#INPUT    = fxcmn_blk011b$(EXE)
+#ENDCMD
+
+#CMD     = GCC_COMPILE
+#INPUT    = $(tcasedir)cxcmn_blk011.c
+#OPTS    = $(GCC_COMPILER_OPTS) $(OPT_DEFINE_MACRO<STDINT>)
+#OUTPUT  = cxcmn_blk011$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_COMPILE
+#INPUT    = $(tcasedir)fxcmn_blk011b.f
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc -qalign=bindc=linuxppc
+#ENDIF
+#OPTS    = -qalign=bindc=linuxppc
+#OUTPUT  = fxcmn_blk011b$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_LINK
+#INPUT    = fxcmn_blk011b$(OBJ) cxcmn_blk011$(OBJ)
+#IF in ($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT))
+#OPTS    = $(F_COMPILE^OPT_INTERPROCEDURAL_ANALYSIS)=pdfname=._pdf_xlc -qalign=bindc=linuxppc
+#ENDIF
+#OPTS    = -qalign=bindc=linuxppc
+#OUTPUT  = fxcmn_blk011b$(EXE)
+#ENDCMD
+
+#CMD     = RUN
+#INPUT    = fxcmn_blk011b$(EXE)
+#ENDCMD
+
+#ENDIF
+
+
+#ENDCONTROL
+#ENDSCENARIO

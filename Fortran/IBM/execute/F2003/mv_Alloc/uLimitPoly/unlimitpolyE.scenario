@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       unlimitpolyE.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)unlimitpolyE.f
+#OUTPUT= unlimitpolyE$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  unlimitpolyE$(OBJ)
+#OUTPUT= unlimitpolyE$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  unlimitpolyE$(EXE)
+#STDOUT= unlimitpolyE.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = unlimitpolyE.out $($(tcasedir)unlimitpolyE$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

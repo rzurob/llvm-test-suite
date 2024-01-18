@@ -1,0 +1,31 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      C819StartMissed.f
+#FEATURE= SELECT TYPE STATEMENT
+#CREATOR=   Feng Ye
+#DATE=      11-01-05
+#TEST_TYPE= DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=      F_COMPILE
+#OPTS=     $(OPT_FREE_SOURCE_FORM)
+#INPUT=    $(tcasedir)C819StartMissed.f
+#STDERR=   C819StartMissed.err
+#VALIDRCS= 1
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    C819StartMissed.err $($(tcasedir)C819StartMissed$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

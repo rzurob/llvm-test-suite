@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_procptr/CrossFeatures1/FuncRet7.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_procptr/*
+#DATE      = 20071011
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)FuncRet7.f
+#OUTPUT= FuncRet7$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  FuncRet7$(OBJ)
+#OUTPUT= FuncRet7$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  FuncRet7$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

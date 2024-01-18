@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrEoshiftOther.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrEoshiftOther.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrEoshiftOther$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrEoshiftOther$(OBJ)
+#OUTPUT    = dataPtrEoshiftOther$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrEoshiftOther$(EXE)
+#STDOUT    = dataPtrEoshiftOther.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrEoshiftOther.out $($(tcasedir)dataPtrEoshiftOther$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

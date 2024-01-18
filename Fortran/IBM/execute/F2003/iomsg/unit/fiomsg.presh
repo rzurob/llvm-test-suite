@@ -1,0 +1,12 @@
+#!/bin/ksh
+${COMPILER} $TR_SRC/$1.f -o $1 $OPTIONS
+$1 > $1.err 2>&1
+echo "compare with the .vf file."
+diff $1.err $TR_SRC/$1.vf
+if [ $? -ne 0 ]
+then
+   exit 1
+else
+   /bin/rm -f $1 $1.err
+   exit 0
+fi

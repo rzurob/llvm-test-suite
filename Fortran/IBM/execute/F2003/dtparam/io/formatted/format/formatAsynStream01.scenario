@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/format/formatAsynStream01.scenario
+#FEATURE   = 359704
+#CREATOR   = Nancy Wang
+#DATE      = Dec. 21 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=bgq
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)formatAsynStream01.f
+#OUTPUT= formatAsynStream01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = formatAsynStream01$(OBJ)
+#OUTPUT= formatAsynStream01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = formatAsynStream01$(EXE)
+#STDOUT= formatAsynStream01.out
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT  = $($(tcasedir)formatAsynStream01$(product)vf) formatAsynStream01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

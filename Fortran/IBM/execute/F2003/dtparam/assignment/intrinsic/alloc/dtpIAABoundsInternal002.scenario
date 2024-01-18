@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/assignment/intrinsic/alloc/dtpIAABoundsInternal002.scenario
+#FEATURE   = Intrinsic Assignment with Allocation - allocate DTP array (len) via intrinsic assignment(bounds) (in internal subroutine)
+#CREATOR   = DF Manual Update
+#DATE      = 20090522
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAABoundsInternal002.f
+#OUTPUT    = dtpIAABoundsInternal002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAABoundsInternal002$(OBJ)
+#OUTPUT    = dtpIAABoundsInternal002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAABoundsInternal002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

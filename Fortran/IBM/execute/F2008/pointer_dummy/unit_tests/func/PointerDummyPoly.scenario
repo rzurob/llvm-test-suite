@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = $(tcasedir)PointerDummyPoly.scenario
+#FEATURE   = 916820
+#CREATOR   = Ren Jian Gang
+#DATE      = June 4, 2011
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)PointerDummyPoly.f
+#OUTPUT   =  PointerDummyPoly$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  PointerDummyPoly$(OBJ)
+#OUTPUT   =  PointerDummyPoly$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  PointerDummyPoly$(EXE)
+#STDOUT   =  PointerDummyPoly.out
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = PointerDummyPoly.out $(tcasedir)PointerDummyPoly.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

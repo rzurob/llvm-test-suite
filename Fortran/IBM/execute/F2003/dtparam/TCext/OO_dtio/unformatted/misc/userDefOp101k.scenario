@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/unformatted/misc/userDefOp101k.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070910
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)userDefOp101k.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = userDefOp101k$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = userDefOp101k$(OBJ)
+#OUTPUT    = userDefOp101k$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = userDefOp101k$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

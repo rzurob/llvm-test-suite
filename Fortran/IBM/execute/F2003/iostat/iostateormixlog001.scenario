@@ -1,0 +1,51 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=iostateormixlog001.scenario
+#FEATURE = 299314
+#CREATOR = Rob Wheeler
+#DATE    = 20060109
+#TEST_TYPE=fvt
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)iostateormixlog001.f
+#OPTS      =
+#OUTPUT    = iostateormixlog001$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      =
+#INPUT     = iostateormixlog001$(OBJ)
+#OUTPUT    = iostateormixlog001$(EXE)
+#ENDCMD
+
+
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)fmtdat.txt .
+#ENDCMD
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)file1.txt .
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = iostateormixlog001$(EXE)
+#STDOUT    = iostateormixlog001.out
+#STDERR    = iostateormixlog001.out
+#ENDCMD
+
+#CMD	   = DIFF
+#OPTS	   = -b
+#INPUT     = iostateormixlog001.out $($(tcasedir)iostateormixlog001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

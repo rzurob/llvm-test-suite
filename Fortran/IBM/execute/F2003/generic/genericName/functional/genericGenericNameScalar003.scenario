@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/genericName/functional/genericGenericNameScalar003.scenario
+#FEATURE = generic tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericGenericNameScalar003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericGenericNameScalar003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericGenericNameScalar003$(OBJ)
+#OUTPUT    = genericGenericNameScalar003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericGenericNameScalar003$(EXE)
+#STDOUT    = genericGenericNameScalar003.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericGenericNameScalar003.out $(tcasedir)genericGenericNameScalar003.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

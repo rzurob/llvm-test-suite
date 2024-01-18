@@ -1,0 +1,858 @@
+<script language="JavaScript1.2" type="text/javaScript" src="/scripts/scripts.js"></script>
+<link rel="stylesheet" type="text/css" href="/stylesheets/v4-screen.css" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/featureflow.css" />
+<style type="text/css" media="all">
+<!--
+@import url("/stylesheets/screen.css");
+@import url("/stylesheets/interior.css");
+@import url("/stylesheets/icons.css");
+@import url("/stylesheets/tables.css");
+-->
+</style>
+<!-- print stylesheet MUST follow imported stylesheets -->
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/print.css" />
+	<script type="text/javascript" language="JavaScript1.2">
+	<!-- 
+	function msover(image) { // Mouse Over 
+		if (document.images) { 
+			document[image].src = eval(image + "on.src") 
+		} 
+	} 
+	function msout(image) { // Mouse Out 
+		if (document.images) { 
+			document[image].src = eval(image + ".src") 
+		} 
+	} 
+	/* ----------------------------------------- */ 
+	function popup(hp, f3) { 
+		if (document.layers) { 
+			document[hp].visibility = "visible" 
+			document[hp].top = 0 
+			document[hp].left = f3.x + 23 
+			//document[hp].top = f3.pageY + 10 
+		} else { 
+			if (document.all) { 
+				document.all[hp].style.visibility = "visible" 
+				document.all[hp].style.left = f3.x + 23 
+				//document.all[hp].style.top = f3.y + 10 
+				document.all[hp].style.top = 0 
+			} 
+		} 
+	} 
+	function cpopup(hp) { 
+		if (document.layers) { 
+			document[hp].visibility = "hidden" 
+		} else { 
+			if (document.all) { 
+				document.all[hp].style.visibility = "hidden" 
+			} 
+		} 
+	} 
+	function lpopup(lyr) { 
+		if (document.layers) { 
+			if (document[lyr].visibility == "show") { 
+				document[lyr].visibility = "hidden" 
+			} else { 
+				document[lyr].visibility = "visible" 
+			} 
+		} else { 
+			if (document.all) { 
+				if (document.all[lyr].style.visibility == "visible") { 
+					document.all[lyr].style.visibility = "hidden" 
+				} else { 
+					document.all[lyr].style.visibility = "visible" 
+				} 
+			} 
+		} 
+	} 
+function selectAll() { for(var i=0;i<document.theform.elements.length;i++) {if(document.theform.elements[i].type == "checkbox"){document.theform.elements[i].checked = true;};};}
+function DeselectAll() { for(var i=0;i<document.theform.elements.length;i++) {if(document.theform.elements[i].type == "checkbox"){document.theform.elements[i].checked = false;};};}
+function goback() { 
+    if (true) 
+         history.back() 
+} 
+function fixdays(d_obj, m_obj) {
+   var numdays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+   for (var i = (eval(d_obj).length-1); i>=0; i--) {
+      eval(d_obj).options[i] = null;
+   }
+
+   for (var i = 1; i<=numdays[eval(m_obj).value]; i++) {
+      var optionadd = new Option(i, i);
+      eval(d_obj).options[eval(d_obj).length] = optionadd;
+   }
+}
+	//--> 
+</script><noscript> <!--  //--> </noscript>
+<script src="/javascripts/prototype.js?1303223321" type="text/javascript"></script>
+<script src="/javascripts/effects.js?1303223321" type="text/javascript"></script>
+<script src="/javascripts/dragdrop.js?1303223321" type="text/javascript"></script>
+
+<script src="/javascripts/controls.js?1303223321" type="text/javascript"></script>
+</head>
+<body  id="w3-ibm-com" class="article">
+   <div id="content-main">
+      <head>
+  <script src="/javascripts/prototype.js?1303223321" type="text/javascript"></script>
+<script src="/javascripts/effects.js?1303223321" type="text/javascript"></script>
+<script src="/javascripts/dragdrop.js?1303223321" type="text/javascript"></script>
+<script src="/javascripts/controls.js?1303223321" type="text/javascript"></script>
+
+  <script src="/javascripts/fckeditor.js?1303223321" type="text/javascript"></script>
+  <script src="/javascripts/effects.js?1303223321" type="text/javascript"></script>
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/featureflow.css" />
+<title>
+IT1/IT2: Internal procedure as Actual Argument or Pointer Target - F E A T U R E - F L O W
+</title>
+
+</head>
+<span id="dummy" style="position: absolute; overflow:hidden; width:0; height:0">
+<form>
+<textarea id="dummytext">
+</textarea>
+</form>
+
+</span>
+<script>
+   var oFCKeditor = new FCKeditor( 'dummytext' ) ;
+   oFCKeditor.Config['LinkBrowser'] = false ; 
+   oFCKeditor.Config['ImageBrowser'] = true ;
+   oFCKeditor.Config["CustomConfigurationsPath"] =
+          '/javascripts/railsfck_comments.js?1303223321';
+/*   oFCKeditor.Config["SkinPath"] = 'skins/SilverNarrow/' ; */
+   oFCKeditor.ReplaceTextarea() ;   
+function edit(comment_id, id)
+{
+   var ac ;
+   var entry='' ;
+   var ref=comment_id ;
+   if (!id) {
+      entry='_entry' ;
+   } else {
+      ref = id ;
+   }
+   var parent_id=null;
+   var match=comment_id.match(/(\d+)_(\d+)/) ;
+   if (match) {
+      parent_id = match[1] ;
+   }
+
+   var old_comment_type		= null;
+   var comment_type_element	= document.getElementById('ctype'+id+'_'+comment_id);
+   if (comment_type_element != null) {
+	   old_comment_type	= comment_type_element.selectedIndex;
+   }
+
+   ac = document.getElementById('comments'+entry+ref) ;
+   if (!id && ac.innerHTML!='') {
+      var myb=document.getElementById('mycancelbutton'+ref) ;
+      myb.scrollIntoView(false) ;
+      return ;
+   }
+   var con = document.getElementById('comments_content'+id) ;
+   var content = '' ;
+   if (con) {
+      content = unlinkfy(con.innerHTML) ;
+      /* remove response */
+      content = content.replace(/<p><font size=\"?-1\"?>\(reply\)<\/font><\/p>\s*$/i,'');
+
+      /* Defect 336615: escape &lt and &gt so that the FCK editor does not treat these as HTML tags */
+      content = content.replace(/&lt;/g, '&amp;lt;');
+      content = content.replace(/&gt;/g, '&amp;gt;');
+   }
+   ac.originalInnerHTML = ac.innerHTML ;
+   ac.innerHTML='<table border=0 style="text-decoration:none;font-size:13px;">'+
+'<tr><td width="100%">'+
+'<form id="text_comments_form'+comment_id+'"'+
+' method="post" '+
+' onsubmit="myCommentEditorSubmit(\''+comment_id+'\', \''+id+'\'); return false ;">'+
+'<input id="id" name="id" size="30" type="hidden" value="'+id+'">'+
+'<input id="commentid" name="commentid" size="30" type="hidden" value="'+comment_id+'">'+
+'<input id="document_id" name="document_id" size="30" type="hidden" value="'+5365+'">'+
+'<table bgcolor="80FF80" width="600" border=1 cellpadding=0 cellspacing=0>'+
+'<tr><td>'+
+'<font color=blue>User:</font> Feng Ye '+
+((parent_id == null) ?  '<font color=blue>Type:</font> <select id="ctype_edit' + id + '_' + comment_id + '" name="ctype">'+
+   '<option value="Typo">Typo</option>'+
+   '<option value="Comment" selected>Comment</option>'+
+   '<option value="Problem">Problem</option>'+
+   '<option value="Issue">Issue</option>'+
+   '</select>'+
+   ' <font color=blue>Disposition:</font>'+ 
+   '<input id="disposition" name="disposition" value="Unassigned" type="hidden"/>'+
+   'Unassigned'
+: '') +
+'</td></tr>'+
+'<tr><td width="100%">'+
+'<table border=0 cellpadding=1 width="100%">'+
+'<tr><td td width="100%">'+
+'<textarea id="text_comment'+comment_id+'" name="text_comment'+comment_id+'" cols=76 rows=12 style="font-family:courier; background:#80FF80">'+
+content+
+'</textarea></td></tr>'+
+'</td></tr>'+
+'</table>'+
+'<tr><td>'+
+'<input type="button" value="Clear" onclick="var oEditor=FCKeditorAPI.GetInstance(\'text_comment'+comment_id+'\'); oEditor.SetHTML(\'\') ; return false;">'+
+'<input type="submit" value="Submit">'+
+'<input type="submit" value="Submit+Notify" onclick="myCommentEditorSubmit(\''+comment_id+'\', \''+id+'\', true); return false ;">'+
+'<input id="mycancelbutton'+ref+'" type="button" value="Cancel" onclick="hideEditor(\''+entry+ref+'\'); return false;">'+
+'</td></tr>'+
+'</table>'+
+'</form>'+
+'</td></tr></table>';
+
+   if (old_comment_type != null) {
+	   document.getElementById('ctype_edit' + id + '_' + comment_id).selectedIndex	= old_comment_type;
+   }
+
+   var part='text_comment' + comment_id ;
+   var oFCKeditor = new FCKeditor( part ) ;
+   oFCKeditor.Height=200;
+/* work around an IE bug here that temporarily blanks the screen */
+   if ( navigator.userAgent.toLowerCase().indexOf("msie") == -1) {
+     oFCKeditor.Config['StartupFocus'] = true ; 
+   } 
+   oFCKeditor.Config['LinkBrowser'] = false ; 
+   oFCKeditor.Config['ImageBrowser'] = true ;
+   oFCKeditor.Config["CustomConfigurationsPath"] =
+          '/javascripts/railsfck_comments.js?1303223321';
+/*   oFCKeditor.Config["SkinPath"] = 'skins/SilverNarrow/' ; */
+   var ta=document.getElementById(part) ;
+   ta.style.height='0px';
+   oFCKeditor.ReplaceTextarea() ; 
+   var myb=document.getElementById('mycancelbutton'+ref) ;
+   myb.scrollIntoView(false) ;
+}
+function hideEditor(where)
+{
+   var ac = document.getElementById('comments'+where) ;
+   ac.innerHTML=ac.originalInnerHTML; 
+}
+
+function myCommentEditorSubmit(comment_id, id, notify)
+{
+   var entry='' ;
+   var ref=comment_id ;
+   if (!id || id == 'undefined') {
+      entry='_entry' ;
+   } else {
+      ref = id ;
+   }
+  var submit_notify=0
+  var parent_id=null;
+  var match=comment_id.match(/(\d+)_(\d+)/) ;
+  if (match) {
+     parent_id = match[1];
+  }
+  if (notify) {
+     if (parent_id) {
+        if (confirm("Send a notification to the participants in this comment thread (and the author) about this reply ?")) {
+           submit_notify=1;
+        }
+     } else if (confirm("Send a notification to the author about this comment?")) {
+        submit_notify=1;
+     }
+  }
+
+  var frm = document.getElementById('text_comments_form'+comment_id) ; 
+  var oEditor=FCKeditorAPI.GetInstance('text_comment'+comment_id); 
+  var textArea = document.getElementById('text_comment'+comment_id) ; 
+  textArea.value = oEditor.GetXHTML() +  '<p><font size=\"-1\">(reply)</font></p>' ;
+  var params = Form.serialize(frm) ;
+  params = params + '&notify='+submit_notify
+  var ac=document.getElementById('comments'+entry+ref) ;
+  var editSave = ac.innerHTML ;
+  var errFunc = function(t) {
+       alert('Error ' + t.status + ' -- ' + t.statusText +'  - try re-submitting ');
+  }
+  var succFunc = function(t) {
+       hideEditor(entry+ref) ;
+  }
+  if (ref != id) {
+    new Ajax.Updater('comments'+comment_id,'/featureflow/update_comment', {method:'post', 
+          parameters: params, asynchronous:true, evalScripts:true, insertion:Insertion.Bottom, 
+          onFailure:errFunc, onSuccess:succFunc});
+  } else {
+    new Ajax.Updater('comments'+id,'/featureflow/update_comment', {method:'post', 
+          parameters: params, asynchronous:true, evalScripts:true, 
+          onFailure:errFunc, onSuccess:succFunc});
+  }
+  return false;
+}
+function changeCommentAttribute(document_id, inp, param, currentValue, last_comment_id)
+{
+  var s=document.getElementById(inp) ;
+  var v=s.options[s.selectedIndex].value; 
+  var errFunc = function(t) {
+       alert('Error ' + t.status + ' -- ' + t.statusText +'  - try re-submitting ');
+  }
+  new Ajax.Updater('comments'+last_comment_id, '/featureflow/update_comment', 
+        {method:'post', 
+        parameters:'id=undefined'+
+           '&commentid='+last_comment_id+
+           '&document_id='+document_id+
+           '&'+param+'='+encodeURIComponent(v),
+        asynchronous:true, evalScripts:true, insertion:Insertion.Bottom,
+        onFailure:errFunc});
+}
+function unlinkfy(str)
+{
+   var s1=str.replace(/<a class=\"?review\"? .*?><span id=\"?line_(.*?)\"?>/ig, "") ;
+   var s2=s1.replace(/<\/span><\/a><span id=\"?comments(.*?)>/ig, "") ;
+   var s3 = s2.replace(/<\/span><span id=\"?comments_entry(.*?)\"?><\/span>/ig, "") ;
+   // Adam D'Andrea: February 19, 2007: remove (reply) when it goes into editor
+   var s4 = s3.replace(/<font size=\"?-1\"?>\(reply\)<\/font>/ig, "");
+   return s4;
+}
+
+function collapse(expander, lineBreak)
+{
+   var ac=document.getElementById('expander'+expander) ;
+   ac.innerHTML='<a href="javascript:expand(\''+expander+'\');"><img src="/images/expand_small.gif" alt="Expand"></a>' ;
+   var expanded=document.getElementById('expanded'+expander) ;
+   expanded.saveHTML = expanded.innerHTML ;
+   expanded.innerHTML = (lineBreak) ? '<br>' : '' ;
+}
+function expand(expander)
+{
+   var ac=document.getElementById('expander'+expander) ;
+   ac.innerHTML='<a href="javascript:collapse(\''+expander+'\');"><img src="/images/collapse_small.gif" alt="Collapse"></a>'
+   var expanded=document.getElementById('expanded'+expander) ;
+   if (typeof expanded.saveHTML == 'undefined')
+      expanded.innerHTML = document.sections['expanded'+expander]
+   else
+      expanded.innerHTML = expanded.saveHTML ;
+}
+</script>
+
+
+<table cellspacing="0" cellpadding="0" border="1" width="100%" class="MsoNormalTable" style="WIDTH: 100%; BACKGROUND: rgb(192,225,255) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 100%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: navy; FONT-SIZE: 10pt">Document Control Information:</span></strong><span style="FONT-FAMILY: Helvetica; COLOR: navy; FONT-SIZE: 10pt"> </span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            <p>The official version of this document is kept in CMVC in the <span style="FONT-WEIGHT: bold; TEXT-DECORATION: underline">aix</span> family, release <span style="FONT-WEIGHT: bold; TEXT-DECORATION: underline">des.dev</span>, component <span style="FONT-WEIGHT: bold; TEXT-DECORATION: underline">design.it1</span>, file <span style="COLOR: rgb(255,102,102); FONT-WEIGHT: bold; TEXT-DECORATION: underline">designs/it1/it1_it2__interprocedure_as_actual_argument_or_pointer_target/it1_it2__interprocedure_as_actual_argument_or_pointer_target.html</span>. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.<br />
+
+            <br />
+            CMVC Extraction Information: %W% %H% %I% sccsid<br />
+            </p>
+            <p>CMVC_Family=aix, CMVC_Release=test.dev, CMVC_Component=test.values</p>
+            <p><br />
+            This document is IBM Confidential.</p>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+<p class="MsoNormal"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><u1:p></u1:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<table cellspacing="3" cellpadding="0" border="1" width="100%" class="MsoNormalTable" style="WIDTH: 100%; BACKGROUND: rgb(204,204,255) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+    <tbody>
+        <tr>
+            <td valign="top" style="PADDING-BOTTOM: 1pt; PADDING-LEFT: 1pt; PADDING-RIGHT: 1pt; PADDING-TOP: 1pt">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Reviewers</span></strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">: </span><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Please click the 'Reviewed' check-box beside your name to indicate your participation in the review.</span></p>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="MsoNormal" style="MARGIN-BOTTOM: 6pt"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"></span><u1:p></u1:p></p>
+<p class="MsoNormal" style="MARGIN-BOTTOM: 12pt"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><table border=0 cellpadding=0 cellspacing=20><tr><td><table border=3 cellpadding=0 cellspacing=0><tr><th>Reviewer</th><th>Reviewed</th></tr><tr><td>Francesco Cassullo</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1693" disabled></form></td></tr><tr><td>Grigor Nikolov</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1360" disabled></form></td></tr><tr><td>Jim Xia</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1380" disabled></form></td></tr><tr><td>Rafik Zurob</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1405" disabled></form></td></tr><tr><td>Ying Zhang</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1401" disabled></form></td></tr><tr><td>renjg@cn.ibm.com</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_2054" disabled></form></td></tr></table></td></tr></table></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+
+<table cellspacing="0" cellpadding="0" border="1" width="100%" class="MsoNormalTable" style="WIDTH: 100%; BACKGROUND: rgb(224,255,191) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+    <tbody>
+        <tr>
+            <td width="21%" valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 21.22%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p>Document Title<u2:p></u2:p></span></strong><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td width="78%" valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 78.78%; PADDING-RIGHT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">IT1/IT2: Internal procedure as Actual Argument or Pointer Target</span></strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt"></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+
+            </td>
+        </tr>
+        <tr>
+            <td width="21%" valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 21.22%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">CMVC Feature Number:</span></strong><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td width="78%" valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 78.78%; PADDING-RIGHT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">303977 <u2:p></u2:p></span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Feature Title:</span></strong><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt"> </span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Author(s):</span></strong><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt"> Feng Ye</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Mandatory Reviewers:<u2:p></u2:p></span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">(Approver)</span></strong><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt"></span></strong></p>
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">Francesco Cassullo, renjg@cn.ibm.com
+            </span></strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Component Reviewers:(optional participation)</span></strong><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+
+            <td valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">
+            Rafik Zurob</span></strong></p>
+            </blockquote></td>
+        </tr>
+        <tr>
+            <td valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Team Reviewers: (optional participation)</span></strong><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"></span></p>
+
+            </td>
+            <td valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">
+            Grigor Nikolov, Jim Xia, Ying Zhang
+            </span></strong></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="MsoNormal" style="MARGIN-BOTTOM: 12pt"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><u2:p></u2:p></span><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+
+<table cellspacing="0" cellpadding="0" border="1" width="100%" class="MsoNormalTable" style="WIDTH: 100%; BACKGROUND: rgb(255,102,102) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 100%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><u2:p></u2:p>IT1 Status: <!-- Start -->For Approval </span><!-- End --></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+<p class="MsoNormal"><u2:p><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Approvers Only:</span></strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"> Click on the 'Approve' checkbox beside your name in the table below if you agree with the technical and user interface content of this document; not checking your 'approve' checkbox signifies you do not approve.<o:p></o:p></span></u2:p></p>
+<p class="MsoNormal"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><table border=0 cellpadding=0 cellspacing=20><tr><td><table border=3 cellpadding=0 cellspacing=0><tr><th>Approver</th><th>Approved</th></tr><tr><td>Francesco Cassullo</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="approval_1693" disabled></form></td></tr><tr><td>renjg@cn.ibm.com</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="approval_2054" disabled></form></td></tr></table></td></tr></table><o:p></o:p></span></p>
+<p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Approval Comments</span></strong></p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="TEXT-ALIGN: left; BACKGROUND-COLOR: rgb(224,255,191); WIDTH: 100%; FONT-FAMILY: Arial; FONT-SIZE: 12pt">
+    <tbody>
+
+        <tr>
+            <td style="FONT-FAMILY: Arial; VERTICAL-ALIGN: top"><strong>Access Change History</strong>  </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<span id="expander_sec1"><a href="javascript:expand('_sec1');"><img src="/images/expand_small.gif" alt="Expand"></a></span>&nbsp;<strong>Access Change History</strong><div id="expanded_sec1"></div>
+<p class="MsoNormal"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<table cellspacing="0" cellpadding="0" border="1" width="100%" class="MsoNormalTable" style="WIDTH: 100%; BACKGROUND: rgb(191,191,255) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 100%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt">
+            <p align="center" class="MsoNormal" style="TEXT-ALIGN: center"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 14pt"><u1:p></u1:p><u2:p></u2:p>Overview</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><!-- Start Overview --><u2:p></u2:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;"></span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;">Fortran 2008 allows an internal procedure as actual argument or procedure pointer target. This test plan covers typical scenarios based on our understanding on the standard.<br />
+</span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><br />
+<br />
+</span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><u2:p></u2:p></span><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<table cellspacing="0" cellpadding="0" border="1" width="100%" class="MsoNormalTable" style="WIDTH: 100%; BACKGROUND: rgb(191,191,255) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 100%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt">
+            <p align="center" class="MsoNormal" style="TEXT-ALIGN: center"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 14pt"><!-- End Overview --><u2:p></u2:p>Test Strategy</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><u2:p></u2:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;"></span></p>
+<p style="margin: 2pt 0in;"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"></span><span style="font-family: Helvetica; font-size: 11pt;"></span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;">The test will be focusing on the following areas:</span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;">- Pass internal procedures as actual argument and test argument association<br />
+- Associate procedure pointer to Internal procedure<br />
+- langlvl test<br />
+
+- Host instance. Make sure the host instance is correctly accessed<br />
+- Associate procedure pointer component with internal procedure<br />
+- Miscellaneous testing</span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;"><br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;">All tests will primarily target at making sure that<br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;">-- The internal procedure is correctly associated, and<br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;">-- The entities in its host instance can be correctly accessed.<br />
+</span></p>
+
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;"></span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;"><br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;">A typical example:</span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;"><br />
+&nbsp; PROGRAM intproc_basic_1<br />
+&nbsp; INTEGER :: i=0<br />
+<br />
+&nbsp; CALL Intsubp(Intsub1)<br />
+&nbsp; IF ( i .NE. -1 ) STOP 11<br />
+
+<br />
+&nbsp; CONTAINS<br />
+<br />
+&nbsp; SUBROUTINE Intsub1()<br />
+&nbsp;&nbsp;&nbsp; i = -1<br />
+&nbsp; END SUBROUTINE<br />
+<br />
+&nbsp; SUBROUTINE Intsubp(proc)<br />
+
+&nbsp; PROCEDURE() :: proc<br />
+&nbsp;&nbsp;&nbsp; CALL proc()<br />
+&nbsp; END SUBROUTINE<br />
+<br />
+&nbsp; END<br />
+<br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;"></span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;"><br />
+
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;"></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><br />
+</span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><u2:p></u2:p></span><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<table cellspacing="0" cellpadding="0" border="1" width="100%" class="MsoNormalTable" style="WIDTH: 100%; BACKGROUND: rgb(191,191,255) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 100%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt">
+            <p align="center" class="MsoNormal" style="TEXT-ALIGN: center"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 14pt"><!-- End Multi-Platform Considerations --><u2:p></u2:p>Test Procedures/Scenarios</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><!-- Start Internal Interfaces --><u2:p></u2:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;"></span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;"></span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;"></span></p>
+<p style="margin: 2pt 0in;">
+<table height="943" cellspacing="1" cellpadding="1" border="1" align="" width="852" summary="">
+    <caption>Test Scenarios</caption>
+    <tbody>
+        <tr>
+
+            <td>Test Case Name</td>
+            <td>Description</td>
+        </tr>
+        <tr>
+            <td>intproc_basic_1.scenario</td>
+            <td>internal procedure as actual argument of internal procedure in main</td>
+        </tr>
+
+        <tr>
+            <td>intproc_basic_2.scenario</td>
+            <td>internal procedure as actual argument of internal procedure in module </td>
+        </tr>
+        <tr>
+            <td>intproc_basic_3.scenario</td>
+            <td>internal procedure as actual argument of  internal procedure in external procedure</td>
+
+        </tr>
+        <tr>
+            <td>intproc_basic_4.scenario</td>
+            <td>pass internal procedure around to main/module/external procedure</td>
+        </tr>
+        <tr>
+            <td>intproc_ptr_basic_1.scenario </td>
+
+            <td>internal procedure in main as procedure pointer target</td>
+        </tr>
+        <tr>
+            <td>intproc_ptr_basic_2.scenario </td>
+            <td>internal procedure in module as procedure pointer target</td>
+        </tr>
+        <tr>
+
+            <td>intproc_ptr_basic_3.scenario </td>
+            <td>internal procedure in external procedure as procedure pointer target</td>
+        </tr>
+        <tr>
+            <td>intproc_arg_1.scenario</td>
+            <td>Diagnosis on passing internal procedure to data dummy</td>
+        </tr>
+
+        <tr>
+            <td>intproc_arg_2.scenario</td>
+            <td>Diagnosis on passing internal procedure to procedure dummy with different characteristics</td>
+        </tr>
+        <tr>
+            <td>intproc_arg_3.scenario</td>
+            <td>A pure internal procedure is associated with a dummy argument that is not pure</td>
+
+        </tr>
+        <tr>
+            <td>intproc_arg_4.scenario</td>
+            <td>An elemental internal procedure is associated with a dummy argument that is not elemental</td>
+        </tr>
+        <tr>
+            <td>intproc_arg_5.scenario</td>
+
+            <td>Internal procedure as actual argument&nbsp; and the dummy procedure's interface is implicit </td>
+        </tr>
+        <tr>
+            <td>intproc_arg_6.scenario</td>
+            <td>The internal function as actual argument whose result is DTP with auto type parameter</td>
+        </tr>
+
+        <tr>
+            <td>intproc_arg_7.scenario</td>
+            <td>The interface of the dummy procedure is implicit and the dummy procedure is invoked as subroutine.</td>
+        </tr>
+        <tr>
+            <td>intproc_arg_8.scenario</td>
+            <td>The actual procedure argument has the name that is the same as a generic name</td>
+
+        </tr>
+        <tr>
+            <td>intproc_arg_9.scenario</td>
+            <td>The dummy is procedure pointer and the actual argument is a procedure pointer associated with an internal procedure</td>
+        </tr>
+        <tr>
+            <td>intproc_arg_10.scenario</td>
+
+            <td>The dummy is procedure pointer and the actual argument is a reference to a function that returns a procedure pointer associated with an internal procedure.</td>
+        </tr>
+        <tr>
+            <td>intproc_arg_11.scenario</td>
+            <td>The dummy is procedure pointer and the actual argument is an internal procedure</td>
+        </tr>
+        <tr>
+
+            <td>intproc_arg_12.scenario</td>
+            <td>The dummy is procedure pointer with intent &amp; optional attributes</td>
+        </tr>
+        <tr>
+            <td>intproc_arg_13.scenario</td>
+            <td>The actual argument is a procedure pointer associated with internal procedure</td>
+
+        </tr>
+        <tr>
+            <td>intproc_arg_14.scenario</td>
+            <td>The dummy is procedure is a procedure and the actual argument is an internal function reference which returns a procedure pointer</td>
+        </tr>
+        <tr>
+            <td>intproc_arg_15.scenario</td>
+
+            <td>Diagnosis : A nonintrinsic elemental procedure shall not be used as an actual argument</td>
+        </tr>
+        <tr>
+            <td>intproc_host_1.scenario</td>
+            <td>Access the environment in external procedure via passing internal procedure<br />
+            </td>
+        </tr>
+
+        <tr>
+            <td>intproc_host_2.scenario</td>
+            <td>Access the variable with the SAVE attribute via passing internal procedure</td>
+        </tr>
+        <tr>
+            <td>intproc_host_3.scenario</td>
+            <td>A Call chain -- access various host environments via passing internal procedure</td>
+
+        </tr>
+        <tr>
+            <td>intproc_host_4.scenario</td>
+            <td>Access variables from the host instance through argument association via passing internal procedure</td>
+        </tr>
+        <tr>
+            <td>intproc_host_5.scenario</td>
+
+            <td>Access variables from the host instance through pointer association via passing internal procedure</td>
+        </tr>
+        <tr>
+            <td>intproc_pcomp_1.scenario</td>
+            <td>Procedure pointer component associated with internal procdure<br />
+            </td>
+        </tr>
+
+        <tr>
+            <td>intproc_pcomp_2.scenario</td>
+            <td>Structure constructor with procedure pointer component associated with internal procedure</td>
+        </tr>
+        <tr>
+            <td>intproc_pcomp_3.scenario</td>
+            <td>Procedure pointer component with The PASS attribute associated with internal procedure</td>
+
+        </tr>
+        <tr>
+            <td>intproc_pcomp_4.scenario</td>
+            <td>Procedure pointer component  associated with internal procedure -- The type of variable is polymorphic</td>
+        </tr>
+        <tr>
+            <td>intproc_misc_1.scenario</td>
+
+            <td>Recursive internal subroutine</td>
+        </tr>
+        <tr>
+            <td>intproc_misc_2.scenario</td>
+            <td>Recursive internal function</td>
+        </tr>
+        <tr>
+
+            <td>intproc_misc_3.scenario</td>
+            <td>Recursive internal function returning procedure pointer</td>
+        </tr>
+        <tr>
+            <td>intproc_misc_4.scenario</td>
+            <td>Recursive internal function returning data pointer</td>
+        </tr>
+
+        <tr>
+            <td>intproc_misc_5.scenario</td>
+            <td>Diagnosis: The proc-target shall not be a nonintrinsic elemental procedure</td>
+        </tr>
+        <tr>
+            <td>intproc_misc_6.scenario</td>
+            <td>Diagnosis: Any procedure actual argument of pure procedure must be pure</td>
+
+        </tr>
+        <tr>
+            <td>intproc_misc_7.scenario</td>
+            <td>Call type bound procedure with internal procedure argument</td>
+        </tr>
+        <tr>
+            <td>intproc_misc_8.scenario</td>
+
+            <td>Intrisic assignment on object of derived type that has procedure pointer component associated with internal procedure</td>
+        </tr>
+        <tr>
+            <td>intproc_misc_9.scenario</td>
+            <td>Argument association on data object of derived type that has procedure pointer component associated with internal procedure</td>
+        </tr>
+        <tr>
+
+            <td>intproc_misc_10.scenario</td>
+            <td>Dummy with VALUE and of derived type that has procedure pointer component associated with internal procedure</td>
+        </tr>
+        <tr>
+            <td>intproc_misc_11.scenario</td>
+            <td>host variables are not directly accesse</td>
+        </tr>
+
+        <tr>
+            <td>intproc_misc_12.scenario</td>
+            <td>Miscellaneous access of host variables</td>
+        </tr>
+        <tr>
+            <td>intproc_misc_13.scenario</td>
+            <td>Access local variable through data pointer via internal procedure call chain <br />
+
+            </td>
+        </tr>
+        <tr>
+            <td>intproc_misc_14.scenario</td>
+            <td>Reference of internal function returning procedure pointer as actual argument while the dummy is non pointer procedure</td>
+        </tr>
+        <tr>
+            <td>intproc_misc_15.scenario</td>
+
+            <td>Reference of internal function returning procedure pointer as actual argument while the dummy is procedure pointer<br />
+            </td>
+        </tr>
+    </tbody>
+</table>
+<span style="font-family: Helvetica; font-size: 11pt;"></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><br />
+</span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><u2:p></u2:p></span><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<table cellspacing="0" cellpadding="0" border="1" width="100%" class="MsoNormalTable" style="WIDTH: 100%; BACKGROUND: rgb(191,191,255) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+    <tbody>
+
+        <tr>
+            <td width="100%" valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 100%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt">
+            <p align="center" class="MsoNormal" style="TEXT-ALIGN: center"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 14pt"><!-- End Internal Interfaces --><u2:p></u2:p>IT2 Information</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><!-- Start Inter-Component Communication/Interfaces --><u2:p></u2:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;"></span></p>
+<p style="margin: 2pt 0in;">&nbsp;</p>
+
+<p style="margin: 2pt 0in;">Location of this bucket:</p>
+<p style="margin: 2pt 0in;">/tstdev/F2008/internal_procptr</p>
+<p style="margin: 2pt 0in;">&nbsp;</p>
+<p style="margin: 2pt 0in;">&nbsp;</p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"></span><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"></span> </p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><u2:p></u2:p></span><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<table cellspacing="0" cellpadding="0" border="1" width="100%" class="MsoNormalTable" style="WIDTH: 100%; BACKGROUND: rgb(191,191,255) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 100%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt">
+
+            <p align="center" class="MsoNormal" style="TEXT-ALIGN: center"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 14pt"><!-- End Inter-Component Communication/Interfaces --><u2:p></u2:p>Build Sanity Candidate Information</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><u2:p></u2:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;"></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;">/tstdev/F2008/internal_procptr/intproc_basic_1.scenario</p>
+<p style="margin: 2pt 0in;">/tstdev/F2008/internal_procptr/intproc_ptr_basic_1.scenario</p>
+
+<br />
+<p> </p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><u2:p></u2:p></span><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<table cellspacing="0" cellpadding="0" border="1" width="100%" class="MsoNormalTable" style="WIDTH: 100%; BACKGROUND: rgb(191,191,255) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 100%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt">
+            <p align="center" class="MsoNormal" style="TEXT-ALIGN: center"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 14pt"><!-- End Inter-Component Communication/Interfaces --><u2:p></u2:p>Appendices/References</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><u2:p></u2:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p>&nbsp;FORTRAN Language International Standard ISO/IEC DIST 1539-1, Third edition, 2010-04-20</p>
+<p><br />
+</p><script>document.sections={};</script><script>document.sections['expanded_sec1']='<p><table border=1 cellspacing=0 cellpadding=0><tr><th>Change Date</th><th>Updater</th><th>Access Change</th></tr><tr><td><p>12-May-11 09:02</p></td><td><p>Feng Ye</p></td><td><p>Added Rene Matteau (matteau@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Derek Truong (trong@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Sarah McNamara (mcnamara@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Si Yuan Zhang (siyuan.zhang@cn.ibm.com) as <b>Release Management Contact</b></p><p>Added Dave Paulmark (dvp@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Wang Chen (wdchen@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Guirlyn Olivar (guirlyn@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Jeff Heath (jrheath@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Tatjana Kolakovic (tatjana@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Larry Lindsay (llindsay@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Lu Yang (luyang@ca.ibm.com) as <b>Author</b></p><p>Added Vicky Chin (vwkchin@ca.ibm.com) as <b>Release Management Contact</b></p></td></tr><tr><td><p>12-May-11 10:51</p></td><td><p>Feng Ye</p></td><td><p>Removed Lu Yang (luyang@ca.ibm.com) as <b>Author</b></p></td></tr><tr><td><p>12-May-11 11:00</p></td><td><p>Feng Ye</p></td><td><p>Added Grigor Nikolov (gnikolov@ca.ibm.com) as <b>Team Reviewer</b></p><p>Added Rafik Zurob (rzurob@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added renjg@cn.ibm.com (renjg@cn.ibm.com) as <b>Approver</b></p><p>Added Ying Zhang (zhangy@ca.ibm.com) as <b>Team Reviewer</b></p><p>Added Francesco Cassullo (cassullo@ca.ibm.com) as <b>Approver</b></p><p>Removed Rene Matteau (matteau@ca.ibm.com) as <b>Release Management Contact</b></p><p>Removed Sarah McNamara (mcnamara@ca.ibm.com) as <b>Release Management Contact</b></p><p>Removed Derek Truong (trong@ca.ibm.com) as <b>Release Management Contact</b></p><p>Removed Si Yuan Zhang (siyuan.zhang@cn.ibm.com) as <b>Release Management Contact</b></p><p>Removed Dave Paulmark (dvp@ca.ibm.com) as <b>Release Management Contact</b></p><p>Removed Wang Chen (wdchen@ca.ibm.com) as <b>Release Management Contact</b></p><p>Removed Guirlyn Olivar (guirlyn@ca.ibm.com) as <b>Release Management Contact</b></p><p>Removed Jeff Heath (jrheath@ca.ibm.com) as <b>Release Management Contact</b></p><p>Removed Tatjana Kolakovic (tatjana@ca.ibm.com) as <b>Release Management Contact</b></p><p>Removed Larry Lindsay (llindsay@ca.ibm.com) as <b>Release Management Contact</b></p><p>Removed Vicky Chin (vwkchin@ca.ibm.com) as <b>Release Management Contact</b></p></td></tr><tr><td><p>12-May-11 11:01</p></td><td><p>Feng Ye</p></td><td></td></tr><tr><td><p>12-May-11 15:19</p></td><td><p>Feng Ye</p></td><td><p>Added Jim Xia (jimxia@ca.ibm.com) as <b>Team Reviewer</b></p></td></tr></table></p>';</script><br>
+
+
+
+		<!--END MAIN BODY CONTENT-->
+		<a href="http://w3.ibm.com/w3/info_terms_of_use.html" class="terms">Terms of use</a><br />
+
+   </div>
+</body>
+</html>
+

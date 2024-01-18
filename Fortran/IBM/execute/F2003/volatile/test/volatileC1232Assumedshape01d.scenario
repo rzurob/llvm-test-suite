@@ -1,0 +1,74 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=release/F2003/volatile/volatileC1232Assumedshape01d.f
+#FEATURE = VOLATILE 255728
+#CREATOR = William Zhang
+#DATE    = 05/30/2006
+#TEST_TYPE= diagnostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)volatileC1232Assumedshape01d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = volatileC1232Assumedshape01d$(OBJ)
+#STDERR    = volatileC1232Assumedshape01d.err
+#VALIDRCS  = $(RC_COMP_S)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)volatileC1232Assumedshape01d$(product)vf) volatileC1232Assumedshape01d.err
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)volatileC1232Assumedshape01d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = volatileC1232Assumedshape01da$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = volatileC1232Assumedshape01da$(OBJ)
+#OUTPUT    = volatileC1232Assumedshape01da$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = volatileC1232Assumedshape01da$(EXE)
+#ENDCMD
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)volatileC1232Assumedshape01d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = volatileC1232Assumedshape01db$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#INPUT     = volatileC1232Assumedshape01db$(OBJ)
+#OUTPUT    = volatileC1232Assumedshape01db$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = volatileC1232Assumedshape01db$(EXE)
+#ENDCMD
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)volatileC1232Assumedshape01d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = volatileC1232Assumedshape01dc$(OBJ)
+#ENDCMD
+
+#CMD       = XLF_LINK
+#INPUT     = volatileC1232Assumedshape01dc$(OBJ)
+#OUTPUT    = volatileC1232Assumedshape01dc$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = volatileC1232Assumedshape01dc$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

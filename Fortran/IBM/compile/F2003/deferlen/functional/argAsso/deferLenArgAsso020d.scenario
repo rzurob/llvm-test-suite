@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/deferlen/functional/argAsso/deferLenArgAsso020d.scenario
+#FEATURE = deferlen tests
+#CREATOR = Robert Ma
+#DATE    = 20060501
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)deferLenArgAsso020d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = deferLenArgAsso020d$(OBJ)
+#STDERR    = deferLenArgAsso020d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = deferLenArgAsso020d.err $($(tcasedir)deferLenArgAsso020d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

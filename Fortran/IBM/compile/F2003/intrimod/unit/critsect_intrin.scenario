@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/intrimod/unit/critsect_intrin.scenario
+#FEATURE = intrimod tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT=aix
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF95_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) -qdebug=intmsg $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP)  $(COMP_LIBS)
+#ENDDEFS
+#INVALID_PRODUCT=cbe_smp,cbe_spu
+#ENDENV
+
+#BEGINCONTROL
+
+! This chunk was DCOMP
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)critsect_intrin.f
+#OPTS      = -qdebug=intmsg $(OPT_OPTIMIZE_FOR_SMP) -qdebug=intmsg:shutup
+#OUTPUT    = critsect_intrin$(OBJ)
+#STDERR    = critsect_intrin.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)critsect_intrin$(product)vf) critsect_intrin.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/cmdline/LangFeatures/fxcllf41.scenario
+#FEATURE = cmdline tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041204
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+CmdLine="fxcllf41 , , , , ,"
+COMPILER=$(tproddir)$(XLF95_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) $(F_COMPILE^OPT_FIXED_SOURCE_FORM<132>)  $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       =  XLF95_COMPILE
+#INPUT     =  $(tcasedir)fxcllf41.f
+#OPTS      =  $(OPT_FIXED_SOURCE_FORM<132>)
+#OUTPUT    =  fxcllf41$(OBJ)
+#ENDCMD
+
+#CMD       =  XLF95_LINK
+#INPUT     =  fxcllf41$(OBJ)
+#OPTS      =  $(OPT_FIXED_SOURCE_FORM<132>)
+#OUTPUT    =  fxcllf41$(EXE)
+#ENDCMD
+
+#CMD       =  RUN
+#INPUT     =  fxcllf41$(EXE)
+#OPTS      =  , , , , ,
+#STDOUT    =  fxcllf41.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

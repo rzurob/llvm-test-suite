@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/SpecExp/d356960.f
+#FEATURE   = DTP - Specification expression - Host Association
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20090526
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d356960.f
+#OUTPUT    = d356960$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d356960$(OBJ)
+#OUTPUT    = d356960$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d356960$(EXE)
+#STDOUT    = d356960.out
+#ENDCMD
+
+#CMD       = DIFF
+#OPTS      = -b
+#INPUT     = d356960.out $(tcasedir)d356960.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

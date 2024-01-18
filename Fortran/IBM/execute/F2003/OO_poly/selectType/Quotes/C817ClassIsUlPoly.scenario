@@ -1,0 +1,44 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      C817ClassIsUlPoly.f
+#FEATURE=   SELECT TYPE STATEMENT
+#CREATOR=   Feng Ye
+#DATE=      11-01-05
+#TEST_TYPE= DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=      F_COMPILE
+#OPTS=     $(OPT_FREE_SOURCE_FORM)
+#INPUT=    $(tcasedir)C817ClassIsUlPoly.f
+#OUTPUT=   C817ClassIsUlPoly$(OBJ)
+#STDERR=   C817ClassIsUlPoly.err
+#VALIDRCS= 0
+#ENDCMD
+
+
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  C817ClassIsUlPoly$(OBJ)
+#OUTPUT= C817ClassIsUlPoly$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  C817ClassIsUlPoly$(EXE)
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    C817ClassIsUlPoly.err $($(tcasedir)C817ClassIsUlPoly$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

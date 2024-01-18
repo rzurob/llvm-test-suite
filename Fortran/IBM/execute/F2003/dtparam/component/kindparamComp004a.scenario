@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/component/kindparamComp004a.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)kindparamComp004a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = kindparamComp004a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = kindparamComp004a$(OBJ)
+#OUTPUT    = kindparamComp004a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = kindparamComp004a$(EXE)
+#STDOUT    = kindparamComp004a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = kindparamComp004a.out $($(tcasedir)kindparamComp004$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

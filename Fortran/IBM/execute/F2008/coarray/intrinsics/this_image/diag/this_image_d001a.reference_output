@@ -1,0 +1,7 @@
+** modfdc   === End of Compilation 1 ===
+"this_image_d001a.f", line 37.8: 1516-036 (S) Entity this_image has undefined type.
+"this_image_d001a.f", line 39.6: 1516-026 (S) Non-arrays must not be subscripted.
+"this_image_d001a.f", line 44.11: 1516-026 (S) Non-arrays must not be subscripted.
+"this_image_d001a.f", line 49.8: 1516-026 (S) Non-arrays must not be subscripted.
+** main   === End of Compilation 2 ===
+1501-511  Compilation failed for file this_image_d001a.f.

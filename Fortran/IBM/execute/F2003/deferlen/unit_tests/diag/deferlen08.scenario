@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE =
+#CREATOR = James Ren
+#DATE    = 20060207
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = $(tcasedir)deferlen08.f
+#STDERR    = deferlen08.err
+#OUTPUT    = deferlen08$(OBJ)
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)deferlen08$(product)vf) deferlen08.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

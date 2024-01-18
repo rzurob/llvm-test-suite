@@ -1,0 +1,9 @@
+        signed char c_i = 100;
+        short c_j = 200;
+        int c_k = 300;
+        long c_l = 400;
+        int c_m = 5;
+        int c_i_res[5] = {0, 0, 0, 0, 0};
+        int c_i_arr[5] = {11, 22, 33, 44, 55};
+        int c_i_arr2[5] = {0, 0, 0, 0, 0};
+        _Bool c_lvar = 1;

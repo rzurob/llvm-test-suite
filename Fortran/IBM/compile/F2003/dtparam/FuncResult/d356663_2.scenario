@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/misc/RTO/d356663_2.f
+#FEATURE   = DTP - Function Result
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20090315
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d356663_2.f
+#OUTPUT    = d356663_2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d356663_2$(OBJ)
+#OUTPUT    = d356663_2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

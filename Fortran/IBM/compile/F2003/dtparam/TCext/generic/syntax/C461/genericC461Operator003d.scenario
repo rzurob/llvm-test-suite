@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/syntax/C461/genericC461Operator003d.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericC461Operator003d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericC461Operator003d$(OBJ)
+#STDERR    = genericC461Operator003d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = genericC461Operator003d.err $($(tcasedir)genericC461Operator003d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

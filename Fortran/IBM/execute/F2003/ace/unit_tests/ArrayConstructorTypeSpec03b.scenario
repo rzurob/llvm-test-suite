@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=ArrayConstructor/ArrayConstructorTypeSpec03
+#FEATURE = Array constructor enhancements
+#CREATOR = Rob James
+#DATE    = 20060915
+#TEST_TYPE=Unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ArrayConstructorTypeSpec03.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#OUTPUT    = ArrayConstructorTypeSpec03$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = ArrayConstructorTypeSpec03$(OBJ)
+#OUTPUT    = ArrayConstructorTypeSpec03$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ArrayConstructorTypeSpec03$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

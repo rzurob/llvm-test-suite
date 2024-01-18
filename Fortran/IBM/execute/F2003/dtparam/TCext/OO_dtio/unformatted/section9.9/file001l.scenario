@@ -1,0 +1,44 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2003/dtparam/TCext/OO_dtio/unformatted/section9.9/file001l.scenario
+#FEATURE = OO_dtio + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070928
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)file001l.tmp .
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)file001l.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = file001l$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  file001l$(OBJ)
+#OUTPUT    = file001l$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = file001l$(EXE)
+#STDOUT    = file001l.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = file001l.out $(tcasedir)file001l.vf
+
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

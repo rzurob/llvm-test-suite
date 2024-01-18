@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2008/value/pure/unit_tests/elemental/elem15e.scenario
+#FEATURE = 384867 \
+           F2008: VALUE attribute allowed for dummy args of PURE procedures
+#CREATOR = Gaby Baghdadi (copy of /tstdev/elemental/unit/elem15e.scenario)
+#DATE    = 20101201
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)elem15e.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM) $(OPT_FIXED_SOURCE_FORM)
+#OUTPUT    = elem15e$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     =  elem15e$(OBJ)
+#OUTPUT    = elem15e$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = elem15e$(EXE)
+#STDOUT    = elem15e.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)elem15e$(product)vf) elem15e.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/FuncResult/FunctionResult11_ASSOCIATE.scenario
+#FEATURE   = DTP - Function Result
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20090326
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)FunctionResult11_ASSOCIATE.f
+#OUTPUT    = FunctionResult11_ASSOCIATE$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = FunctionResult11_ASSOCIATE$(OBJ)
+#OUTPUT    = FunctionResult11_ASSOCIATE$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = FunctionResult11_ASSOCIATE$(EXE)
+#STDOUT    = FunctionResult11_ASSOCIATE.out
+#ENDCMD
+
+#CMD       = DIFF
+#OPTS      = -b
+#INPUT     = $($(tcasedir)FunctionResult11_ASSOCIATE$(product)vf) FunctionResult11_ASSOCIATE.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

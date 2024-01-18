@@ -1,0 +1,4 @@
+"volatileC1232ArraySection01d.f", line 33.31: 1516-271 (S) Dummy argument x of procedure arraysectionvolatile was specified with the VOLATILE attribute.  The corresponding actual argument must be definable.
+** volatilec1232arraysection01d   === End of Compilation 1 ===
+** arraysectionvolatile   === End of Compilation 2 ===
+1501-511  Compilation failed for file volatileC1232ArraySection01d.f.

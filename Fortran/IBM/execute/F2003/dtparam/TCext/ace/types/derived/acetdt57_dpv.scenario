@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/derived/acetdt57_dpv.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
+				Default Initialization of Derived Type _component_			\
+				(Derived Type))
+#CREATOR	= Glen Mateer (derived from work by David Forster)
+#DATE		= 20080123
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt57_dpv.f
+#OUTPUT		= acetdt57_dpv$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt57_dpv$(OBJ)
+#OUTPUT		= acetdt57_dpv$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt57_dpv$(EXE)
+#STDOUT		= acetdt57_dpv.stdout
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetdt57_dpv$(product)vf) acetdt57_dpv.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

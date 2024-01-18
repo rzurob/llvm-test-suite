@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/io/unformatted/sequential/sequentialWrite01.scenario
+#FEATURE	= Unformatted Intrinsic I/O (with Derived Type Parameters)
+#CREATOR	= Glen Mateer
+#DATE		= 20081002
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#IF on (linuxle)
+    XLFRTEOPTS=$(CONVERT_UFMT_IO_ENDIANESS<33>)
+#ENDIF
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)sequentialWrite01.f
+#OUTPUT		= sequentialWrite01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= sequentialWrite01$(OBJ)
+#OUTPUT		= sequentialWrite01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= sequentialWrite01$(EXE)
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)sequentialWrite01$(product)vf) fort.33
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

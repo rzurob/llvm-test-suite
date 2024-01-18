@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/decimaledit/defaultIO/dcmlCharExprRW005.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of decimaledit/*
+#DATE      = 20071213
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dcmlCharExprRW005.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dcmlCharExprRW005$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dcmlCharExprRW005$(OBJ)
+#OUTPUT    = dcmlCharExprRW005$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dcmlCharExprRW005$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

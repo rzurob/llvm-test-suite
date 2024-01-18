@@ -1,0 +1,5 @@
+"d326307.f", line 39.18: 1515-019 (S) Syntax is incorrect.
+"d326307.f", line 39.24: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"d326307.f", line 40.12: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+** deferredarrexprvectidx01   === End of Compilation 1 ===
+1501-511  Compilation failed for file d326307.f.

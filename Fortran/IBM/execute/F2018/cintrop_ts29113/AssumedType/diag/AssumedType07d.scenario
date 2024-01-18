@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/AssumedType/diag/AssumedType07d.scenario
+#FEATURE   = C Interop: Assumed Type
+#CREATOR   = Dorra Bouchiha
+#DATE      = 2012-06-20
+#TEST_TYPE = diagnostic
+#KEYWORDS  = C Interop, Assumed Type
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AssumedType07d.f
+#OUTPUT    = AssumedType07d$(OBJ)
+#STDERR    = AssumedType07d.err
+#VALIDRCS  = $(RC_COMP_S)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = AssumedType07d.err $($(tcasedir)AssumedType07d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

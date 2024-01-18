@@ -1,0 +1,10 @@
+** m   === End of Compilation 1 ===
+"Misc11.f", line 93.18: 1515-122 (S) The procedure pointer was declared as a subroutine, or is referenced as a subroutine.  The procedure pointer assignment target must be declared as a subroutine.
+"Misc11.f", line 98.18: 1515-122 (S) The procedure pointer was declared as a subroutine, or is referenced as a subroutine.  The procedure pointer assignment target must be declared as a subroutine.
+** m1   === End of Compilation 2 ===
+"Misc11.f", line 112.18: 1515-122 (S) The procedure pointer was declared as a subroutine, or is referenced as a subroutine.  The procedure pointer assignment target must be declared as a subroutine.
+"Misc11.f", line 113.18: 1515-122 (S) The procedure pointer was declared as a subroutine, or is referenced as a subroutine.  The procedure pointer assignment target must be declared as a subroutine.
+"Misc11.f", line 114.18: 1515-122 (S) The procedure pointer was declared as a subroutine, or is referenced as a subroutine.  The procedure pointer assignment target must be declared as a subroutine.
+"Misc11.f", line 115.9: 1516-001 (S) Identifier v%procptr was elsewhere defined or used as a subroutine.
+** misc11   === End of Compilation 3 ===
+1501-511  Compilation failed for file Misc11.f.

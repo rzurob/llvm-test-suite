@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_procptr/bindc2/procptrBindcPoly03.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)procptrBindcPoly03.c
+#OPTS      = $(C_COMPILER_OPTS)
+#OUTPUT    = BindcPoly03$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)procptrBindcPoly03.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = procptrBindcPoly03$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = procptrBindcPoly03$(OBJ) BindcPoly03$(OBJ)
+#OUTPUT    = procptrBindcPoly03$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = procptrBindcPoly03$(EXE)
+#STDOUT    = procptrBindcPoly03.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

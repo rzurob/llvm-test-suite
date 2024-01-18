@@ -1,0 +1,4 @@
+"intlog1.f", line 38.33: 1516-289 (S) The TO argument of the intrinsic procedure MOVE_ALLOC must be type compatible with the FROM argument.
+** _main   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file intlog1.f.

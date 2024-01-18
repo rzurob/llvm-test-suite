@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/exprEval/order/arrayExprVectorIndex08.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071220
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)arrayExprVectorIndex08.f
+#OUTPUT		= arrayExprVectorIndex08$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= arrayExprVectorIndex08$(OBJ)
+#OUTPUT		= arrayExprVectorIndex08$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= arrayExprVectorIndex08$(EXE)
+#STDOUT		= arrayExprVectorIndex08.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)arrayExprVectorIndex08$(product)vf)	\
+				arrayExprVectorIndex08.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

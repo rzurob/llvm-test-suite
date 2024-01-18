@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/basic/char/unAllocatedArrayCharExpr03.scenario
+#FEATURE	= Intrinsic Assignment -- Basic Tests: CHARACTER Intrinsic Type
+#CREATOR	= GM Manual Creation
+#DATE		= 20060918
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)unAllocatedArrayCharExpr03.f
+#OUTPUT		= unAllocatedArrayCharExpr03$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= unAllocatedArrayCharExpr03$(OBJ)
+#OUTPUT		= unAllocatedArrayCharExpr03$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= unAllocatedArrayCharExpr03$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

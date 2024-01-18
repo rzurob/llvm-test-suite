@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/diag/types/intrinsics/acetint50di2.scenario
+#FEATURE	= Array constructor enhancement - incompatible AC in SOURCE of ALLOCATE
+#CREATOR	= DF Manual Update
+#DATE		= 20061116
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint50d.f
+#OPTS		= $(OPT_INTSIZE_2)
+#OUTPUT		= acetint50d$(OBJ)
+#STDERR		= acetint50d.stderr
+#VALIDRCS       = $(RC_COMP_S)
+#ENDCMD
+
+#CMD            = XLDIFF
+#INPUT          = $($(tcasedir)acetint50di2$(product)vf) acetint50d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

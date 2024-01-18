@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/refToVar/exprIsArrayConstructor01.scenario
+#FEATURE	= Intrinsic Assignment -- variable and/or expr Reference variable
+#CREATOR	= GM Manual Creation
+#DATE		= 20061016
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)exprIsArrayConstructor01.f
+#OUTPUT		= exprIsArrayConstructor01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= exprIsArrayConstructor01$(OBJ)
+#OUTPUT		= exprIsArrayConstructor01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= exprIsArrayConstructor01$(EXE)
+#STDOUT		= exprIsArrayConstructor01.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)exprIsArrayConstructor01$(product)vf)	\
+				exprIsArrayConstructor01.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

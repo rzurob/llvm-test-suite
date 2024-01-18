@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/C503/implicit009.scenario
+#FEATURE   = OO_type/abstract tests - regression run bucket
+#CREATOR   = GB copy from OO_type/abstract/C503/implicit009.scenario
+#DATE      = 20070426
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)implicit009.f
+#OUTPUT    = implicit009$(OBJ)
+#STDERR    = implicit009.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)implicit009$(product)vf) implicit009.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

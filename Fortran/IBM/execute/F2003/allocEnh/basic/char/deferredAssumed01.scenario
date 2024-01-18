@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/basic/char/deferredAssumed01.scenario
+#FEATURE	= Intrinsic Assignment -- Basic Tests: CHARACTER Intrinsic Type
+#CREATOR	= GM Manual Creation
+#DATE		= 20060922
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)deferredAssumed01.f
+#OUTPUT		= deferredAssumed01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= deferredAssumed01$(OBJ)
+#OUTPUT		= deferredAssumed01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= deferredAssumed01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

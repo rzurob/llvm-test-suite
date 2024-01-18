@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/typeQuery/typeDeclaration005.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071001
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)typeDeclaration005.f
+#OUTPUT    = typeDeclaration005$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = typeDeclaration005$(OBJ)
+#OUTPUT    = typeDeclaration005$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = typeDeclaration005$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

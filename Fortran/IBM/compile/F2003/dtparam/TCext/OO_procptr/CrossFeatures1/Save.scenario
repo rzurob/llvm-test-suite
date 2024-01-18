@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_procptr/CrossFeatures1/Save.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_procptr/*
+#DATE      = 20071011
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=      F_COMPILE
+#INPUT=    $(tcasedir)Save.f
+#STDERR=   Save.err
+#VALIDRCS= 0
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    Save.err $($(tcasedir)Save$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

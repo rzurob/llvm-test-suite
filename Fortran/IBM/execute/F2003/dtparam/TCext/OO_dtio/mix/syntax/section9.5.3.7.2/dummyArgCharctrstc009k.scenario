@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/mix/syntax/section9.5.3.7.2/dummyArgCharctrstc009k.scenario
+#FEATURE = OO_dtio/mix/syntax/section9.5.3.7.2 tests - regression run bucket + derived type parameters
+#CREATOR = automated conversion script
+#DATE    = 20070909
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dummyArgCharctrstc009k.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dummyArgCharctrstc009k$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  dummyArgCharctrstc009k$(OBJ)
+#OUTPUT    = dummyArgCharctrstc009k$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dummyArgCharctrstc009k$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

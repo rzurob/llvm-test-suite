@@ -1,0 +1,37 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = cobound11d.scenario
+#FEATURE    = Cobound inquiry intrinsics
+#CREATOR    = Bardia Mahjour
+#DATE       = August 2010
+#TEST_TYPE  = unit test
+#ENDDOC
+
+! Scenario Environment Tags
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)cobound11d.f
+#OPTS      = -c
+#STDOUT    = cobound11d.err
+#STDERR    = cobound11d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD	   = XLDIFF
+#INPUT     = cobound11d.err $($(tcasedir)cobound11d$(product)vf)
+#OPTS      =
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

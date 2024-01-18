@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"fArg022d1.f", line 50.29: 1516-271 (S) Dummy argument b of procedure externalasynccall was specified with the VOLATILE attribute.  The corresponding actual argument must be definable.
+** farg022d1   === End of Compilation 2 ===
+1501-511  Compilation failed for file fArg022d1.f.

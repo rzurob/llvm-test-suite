@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_access/specific/assignment/csAssignConstant
+#FEATURE        = CAF coarray access (specific) - assignment - assign constants of various intrinsic types to coarray variables (scalar and array) in main program
+#CREATOR        = DF
+#DATE           = 2010-10-04
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)csAssignConstant.f
+#OUTPUT = csAssignConstant$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = csAssignConstant$(OBJ)
+#OUTPUT = csAssignConstant$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = csAssignConstant$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

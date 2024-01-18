@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       ptrassnf007.f
+#FEATURE=
+#CREATOR=    Daniel Chen
+#DATE=       04/07
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)ptrassnf007.f
+#OUTPUT= ptrassnf007$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  ptrassnf007$(OBJ)
+#OUTPUT= ptrassnf007$(EXE)
+#ENDCMD
+
+#CMD     = RUN
+#INPUT   = ptrassnf007$(EXE)
+#STDOUT  = ptrassnf007.out
+#ENDCMD
+
+#CMD     = DIFF
+#INPUT   = ptrassnf007.out $($(tcasedir)ptrassnf007$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

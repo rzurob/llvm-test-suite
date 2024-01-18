@@ -1,0 +1,3 @@
+"goto_into_block.f", line 3.1: 1518-368 (S) Transfer of control into a BLOCK construct is not permitted.  Check all references to this label.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file goto_into_block.f.

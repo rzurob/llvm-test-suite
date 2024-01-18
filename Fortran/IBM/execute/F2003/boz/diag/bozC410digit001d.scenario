@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/F2003/boz/int/bozC410digit001d.scenario
+#FEATURE = boz-literal-constant
+#CREATOR = Vicram Uppal
+#DATE    = 20060116
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)bozC410digit001d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_LANG_LEVEL<2003std>) $(OPT_ENABLE_MSG_NUM<1518-317>)
+#OUTPUT    = bozC410digit001d$(OBJ)
+#STDERR    = bozC410digit001d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = bozC410digit001d.err $($(tcasedir)bozC410digit001d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

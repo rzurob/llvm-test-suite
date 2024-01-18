@@ -1,0 +1,32 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/intrinsics/merge/mergePolyAsArg02.scenario
+#FEATURE= 355754
+#CREATOR= Nancy Wang
+#DATE   = Sept. 21 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)mergePolyAsArg02.f
+#OUTPUT= mergePolyAsArg02$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = mergePolyAsArg02$(OBJ)
+#OUTPUT= mergePolyAsArg02$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = mergePolyAsArg02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

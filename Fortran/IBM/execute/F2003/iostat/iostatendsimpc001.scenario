@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=iostatendsimpc001.scenario
+#FEATURE = 299314
+#CREATOR = Rob Wheeler
+#DATE    = 20060109
+#TEST_TYPE=fvt
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)iostatendsimpc001.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#OUTPUT    = iostatendsimpc001$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = iostatendsimpc001$(OBJ)
+#OUTPUT    = iostatendsimpc001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = iostatendsimpc001$(EXE)
+#STDOUT    = iostatendsimpc001.out
+#STDERR    = iostatendsimpc001.out
+#ENDCMD
+
+#CMD	   = DIFF
+#OPTS	   = -b
+#INPUT     = iostatendsimpc001.out $($(tcasedir)iostatendsimpx001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

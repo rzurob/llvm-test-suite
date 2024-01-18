@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/mix/generic/functional/crossFeature/funcRetrn/funcRetrn003kl.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070807
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)funcRetrn003kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = funcRetrn003kl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = funcRetrn003kl$(OBJ)
+#OUTPUT    = funcRetrn003kl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = funcRetrn003kl$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = funcRetrn003kl.1 $(tcasedir)funcRetrn003kl.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

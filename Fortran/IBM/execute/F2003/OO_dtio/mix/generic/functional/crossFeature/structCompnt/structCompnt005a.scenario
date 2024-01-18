@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/mix/generic/functional/crossFeature/structCompnt/structCompnt005a.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)structCompnt005a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = structCompnt005a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = structCompnt005a$(OBJ)
+#OUTPUT    = structCompnt005a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = structCompnt005a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

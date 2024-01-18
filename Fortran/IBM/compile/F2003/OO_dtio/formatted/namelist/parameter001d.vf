@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"parameter001d.f", line 64.19: 1514-716 (S) Named constant b3 must not appear in a namelist.
+** parameter001d   === End of Compilation 2 ===
+1501-511  Compilation failed for file parameter001d.f.

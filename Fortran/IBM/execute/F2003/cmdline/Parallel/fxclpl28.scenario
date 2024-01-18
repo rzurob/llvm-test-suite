@@ -1,0 +1,38 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cmdline/Parallel/fxclpl28.scenario
+#FEATURE   = cmdline tests - regression run bucket
+#CREATOR   = automated conversion script
+#DATE      = 20081013
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+	CmdLine="fxclpl28 -=ert erty-=ery ewrt--= ewrtwert"
+#ENDDEFS
+#INVALID_PRODUCT=cbe_ssc
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)fxclpl28.f
+#OUTPUT = fxclpl28$(OBJ)
+#OPTS 	= $(OPT_FREE_SOURCE_FORM) $(OPT_STORAGE_CLASS_AUTO)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = fxclpl28$(OBJ)
+#OUTPUT = fxclpl28$(EXE)
+#OPTS 	= $(OPT_FREE_SOURCE_FORM) $(OPT_STORAGE_CLASS_AUTO)
+#ENDCMD
+
+#CMD 	= RUN
+#INPUT 	= fxclpl28$(EXE)
+#OPTS	= -=ert erty-=ery ewrt--= ewrtwert
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/procPtrComp/dtpPPCDummyPassNArgModKSub.scenario
+#FEATURE   = Procedure Pointers as Components - interface spec'd by contained procedures (PASS, subroutines, kind param, mixed type args), ref via dummy arg
+#CREATOR   = DF Manual Update
+#DATE      = 20090323
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPPCDummyPassNArgModKSub.f
+#OUTPUT    = dtpPPCDummyPassNArgModKSub$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPPCDummyPassNArgModKSub$(OBJ)
+#OUTPUT    = dtpPPCDummyPassNArgModKSub$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPPCDummyPassNArgModKSub$(EXE)
+#STDOUT    = dtpPPCDummyPassNArgModKSub.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpPPCDummyPassNArgModKSub$(product)vf) dtpPPCDummyPassNArgModKSub.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

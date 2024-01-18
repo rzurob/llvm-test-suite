@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/stmt/openBlankSpec01.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS= Specifier in I/O Statements
+#CREATOR	= GM Manual Creation
+#DATE		= 20060221
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)openBlankSpec01.dat .
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)openBlankSpec01.f
+#OUTPUT		= openBlankSpec01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= openBlankSpec01$(OBJ)
+#OUTPUT		= openBlankSpec01$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= openBlankSpec01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

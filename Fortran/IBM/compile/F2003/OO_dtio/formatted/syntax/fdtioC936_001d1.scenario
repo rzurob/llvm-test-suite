@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = OO_dtio/formatted/syntax/fdtioC936_001d1.scenario
+#FEATURE = OO_dtio/formatted tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fdtioC936_001d1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fdtioC936_001d1$(EXE)
+#STDERR    = fdtioC936_001d1.stderr
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = fdtioC936_001d1.stderr $($(tcasedir)fdtioC936_001d1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

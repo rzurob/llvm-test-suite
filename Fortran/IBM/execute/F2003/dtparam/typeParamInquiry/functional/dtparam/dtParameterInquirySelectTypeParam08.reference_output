@@ -1,0 +1,27 @@
+ type is integer
+ 4 4
+ in gettype
+ it is integer
+ 4 4
+ exit gettype
+ function return type is integer
+ 4 4
+ type is base
+ 4 2 2
+ in gettype
+ it is base
+ 4 2 2
+ exit gettype
+ function return type is base
+ 4 2 2
+ type is child
+ 2 2 2
+ -4 8 8
+ in gettype
+ it is child
+ 2 2 2
+ -4 8 8
+ exit gettype
+ function return type is child
+ 2 2 2
+ -4 8 8

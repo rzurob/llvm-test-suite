@@ -1,0 +1,7 @@
+** m0   === End of Compilation 1 ===
+** m1   === End of Compilation 2 ===
+** m   === End of Compilation 3 ===
+"DerTypeComp.f", line 82.25: 1514-088 (S) Invalid component name.
+"DerTypeComp.f", line 85.25: 1514-088 (S) Invalid component name.
+** dertypeseq   === End of Compilation 4 ===
+1501-511  Compilation failed for file DerTypeComp.f.

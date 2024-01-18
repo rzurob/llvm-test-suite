@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrMulMix.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrMulMix.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrMulMix$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrMulMix$(OBJ)
+#OUTPUT    = dataPtrMulMix$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrMulMix$(EXE)
+#STDOUT    = dataPtrMulMix.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrMulMix.out $($(tcasedir)dataPtrMulMix$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

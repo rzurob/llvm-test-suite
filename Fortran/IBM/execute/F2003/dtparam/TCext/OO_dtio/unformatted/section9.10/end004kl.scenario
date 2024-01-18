@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/unformatted/section9.5.2/write/end004kl.scenario
+#FEATURE = OO_dtio + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070910
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)end004kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = end004kl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  end004kl$(OBJ)
+#OUTPUT    = end004kl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = end004kl$(EXE)
+#STDOUT    = end004kl.out
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)end004kl$(product)vf) end004kl.out
+#ENDCMD
+#ENDCONTROL
+#ENDSCENARIO

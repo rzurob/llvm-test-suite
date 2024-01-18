@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_dummy/assumed_size/cdaasBasicCopy
+#FEATURE        = CAF dummy arguments - assumed size - copy data from specific image (Q) to "this" (P)
+#CREATOR        = DF
+#DATE           = 2010-09-29
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)cdaasBasicCopy.f
+#OUTPUT = cdaasBasicCopy$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = cdaasBasicCopy$(OBJ)
+#OUTPUT = cdaasBasicCopy$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = cdaasBasicCopy$(EXE)
+#STDOUT = cdaasBasicCopy.out
+#ENDCMD
+
+#CMD    = SPIFF
+#OPTS   = -r1e-5
+#INPUT  = $($(tcasedir)cdaasBasicCopy$(product)vf) cdaasBasicCopy.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

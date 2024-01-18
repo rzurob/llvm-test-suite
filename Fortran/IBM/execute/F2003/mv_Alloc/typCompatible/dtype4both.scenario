@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dtype4both.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dtype4both.f
+#OUTPUT= dtype4both$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  dtype4both$(OBJ)
+#OUTPUT= dtype4both$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dtype4both$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

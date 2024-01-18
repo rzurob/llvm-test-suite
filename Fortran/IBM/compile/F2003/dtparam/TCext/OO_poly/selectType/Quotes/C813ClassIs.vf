@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"C813ClassIs.f", line 96.16: 1511-109 (S) The type specified in the type guard statement is not compatible with the declared type of the selector.
+** c813classis   === End of Compilation 2 ===
+1501-511  Compilation failed for file C813ClassIs.f.

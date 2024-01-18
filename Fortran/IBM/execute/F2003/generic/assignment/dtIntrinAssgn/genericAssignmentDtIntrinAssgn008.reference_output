@@ -1,0 +1,19 @@
+ set c1
+ baseassignment
+ baseassignment
+ allocate c2
+ baseassignment
+ baseassignment
+ baseassignment
+ baseassignment
+ allocate c3
+ set c3
+ baseassignment
+ baseassignment
+ 102 200 302 T T
+ set c3
+ baseassignment
+ baseassignment
+ baseassignment
+ baseassignment
+ 1002 200 2002 3002 200 4002 T T

@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop1/isocbindi/fxisoi06.scenario
+#FEATURE = cintrop1 tests - regression run bucket
+#CREATOR = Manual conversion CPR
+#DATE    = 20060613
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+FTCARG="fxisoi06"
+CTCARG="cxisoi06"
+#ENDDEFS
+#IF on(aix)
+  #RESOURCES_REQ  = AIX52UP
+#ENDIF
+#ENDENV
+
+#BEGINCONTROL
+
+#INCLUDE   = scrisoa00.preshinclude
+
+#ENDCONTROL
+#ENDSCENARIO

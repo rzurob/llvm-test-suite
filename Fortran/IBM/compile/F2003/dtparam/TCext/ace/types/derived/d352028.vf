@@ -1,0 +1,13 @@
+** mod   === End of Compilation 1 ===
+"d352028.f", line 54.16: 1514-718 (S) Identifier derived appearing as a type name has not been defined in a derived type definition.
+"d352028.f", line 54.30: 1516-044 (S) A conversion from type derived is not permitted.
+"d352028.f", line 55.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"d352028.f", line 55.29: 1514-718 (S) Identifier derived appearing as a type name has not been defined in a derived type definition.
+"d352028.f", line 55.43: 1516-044 (S) A conversion from type derived is not permitted.
+"d352028.f", line 59.15: 1514-718 (S) Identifier derived appearing as a type name has not been defined in a derived type definition.
+"d352028.f", line 59.29: 1516-044 (S) A conversion from type derived is not permitted.
+"d352028.f", line 60.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"d352028.f", line 60.28: 1514-718 (S) Identifier derived appearing as a type name has not been defined in a derived type definition.
+"d352028.f", line 60.42: 1516-044 (S) A conversion from type derived is not permitted.
+** d352028   === End of Compilation 2 ===
+1501-511  Compilation failed for file d352028.f.

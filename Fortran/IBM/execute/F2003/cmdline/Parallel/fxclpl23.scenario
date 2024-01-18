@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = cmdline/Parallel/fxclpl23.scenario
+#FEATURE = cmdline tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041204
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+	CmdLine="fxclpl23 =-=-=-=-=-=-=--=-=-245324-523=-5=2321351=34-"
+#ENDDEFS
+#INVALID_PRODUCT= bgl_system,bgl,mac
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = XLF95_R_COMPILE
+#INPUT  = $(tcasedir)fxclpl23.f
+#OUTPUT = fxclpl23$(OBJ)
+#OPTS 	= $(OPT_FREE_SOURCE_FORM) $(OPT_STORAGE_CLASS_AUTO)
+#ENDCMD
+
+#CMD    = XLF95_R_LINK
+#INPUT  = fxclpl23$(OBJ)
+#OUTPUT = fxclpl23$(EXE)
+#OPTS 	= $(OPT_FREE_SOURCE_FORM) $(OPT_STORAGE_CLASS_AUTO)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = fxclpl23$(EXE)
+#OPTS 	= =-=-=-=-=-=-=--=-=-245324-523=-5=2321351=34-
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

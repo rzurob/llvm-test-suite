@@ -1,0 +1,91 @@
+!*********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : InitExpDefElemINDEX.f  
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Apr. 10, 2006
+!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*
+!*  SECONDARY FUNCTIONS TESTED : 
+!*
+!*  REFERENCE                  : Feature Number 289074 
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  : -qfree=f90
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*
+!*  
+!*  a reference to an elemental intrinsic
+!* 
+!*  -  INDEX 
+!*  ()
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+
+
+  PROGRAM  InitExpDefElemINDEX
+
+  CHARACTER(128), PARAMETER  :: C =                                                                     &
+  CHAR(0)//CHAR(1)//CHAR(2)//CHAR(3)//CHAR(4)//CHAR(5)//CHAR(6)//CHAR(7)//CHAR(8)//CHAR(9)//            & 
+  CHAR(10)//CHAR(11)//CHAR(12)//CHAR(13)//CHAR(14)//CHAR(15)//CHAR(16)//CHAR(17)//CHAR(18)//CHAR(19)//  & 
+  CHAR(20)//CHAR(21)//CHAR(22)//CHAR(23)//CHAR(24)//CHAR(25)//CHAR(26)//CHAR(27)//CHAR(28)//CHAR(29)//  & 
+  CHAR(30)//CHAR(31)//CHAR(32)//CHAR(33)//CHAR(34)//CHAR(35)//CHAR(36)//CHAR(37)//CHAR(38)//CHAR(39)//  & 
+  CHAR(40)//CHAR(41)//CHAR(42)//CHAR(43)//CHAR(44)//CHAR(45)//CHAR(46)//CHAR(47)//CHAR(48)//CHAR(49)//  & 
+  CHAR(50)//CHAR(51)//CHAR(52)//CHAR(53)//CHAR(54)//CHAR(55)//CHAR(56)//CHAR(57)//CHAR(58)//CHAR(59)//  & 
+  CHAR(60)//CHAR(61)//CHAR(62)//CHAR(63)//CHAR(64)//CHAR(65)//CHAR(66)//CHAR(67)//CHAR(68)//CHAR(69)//  & 
+  CHAR(70)//CHAR(71)//CHAR(72)//CHAR(73)//CHAR(74)//CHAR(75)//CHAR(76)//CHAR(77)//CHAR(78)//CHAR(79)//  & 
+  CHAR(80)//CHAR(81)//CHAR(82)//CHAR(83)//CHAR(84)//CHAR(85)//CHAR(86)//CHAR(87)//CHAR(18)//CHAR(89)//  & 
+  CHAR(90)//CHAR(91)//CHAR(92)//CHAR(93)//CHAR(94)//CHAR(95)//CHAR(96)//CHAR(97)//CHAR(98)//CHAR(99)//  & 
+  CHAR(100)//CHAR(101)//CHAR(102)//CHAR(103)//CHAR(104)//CHAR(105)//CHAR(106)//CHAR(107)//CHAR(108)//CHAR(109)//  & 
+  CHAR(110)//CHAR(111)//CHAR(112)//CHAR(113)//CHAR(114)//CHAR(115)//CHAR(116)//CHAR(117)//CHAR(118)//CHAR(119)//  & 
+  CHAR(120)//CHAR(121)//CHAR(122)//CHAR(123)//CHAR(124)//CHAR(125)//CHAR(126)//CHAR(127)
+ 
+  IMPLICIT INTEGER(INDEX(STRING=C,    SUBSTRING=C(2:55),  KIND=1))(A) 
+  IMPLICIT INTEGER(INDEX(STRING=C(:), SUBSTRING=C(4:5),   KIND=1, BACK=.TRUE._8))(B) 
+  !IMPLICIT INTEGER(2)(A) 
+  !IMPLICIT INTEGER(4)(B) 
+
+
+  INTEGER :: I, J
+
+  CHARACTER(128),      PARAMETER  :: C1(128) = (/(C(1:I)//C(I+1:), I=0, 127)/)
+
+  INTEGER, PARAMETER :: IC1 = INDEX(SUBSTRING=C(2:3), STRING=C(1:3))
+  INTEGER, PARAMETER :: IC2 = INDEX(SUBSTRING=C( :5), STRING=C(6:))
+  INTEGER, PARAMETER :: IC3 = INDEX(SUBSTRING=C(6:5), STRING=C(:))
+
+  INTEGER, PARAMETER :: IC4(128) = INDEX(SUBSTRING=C(2:3), STRING=C(:),   BACK=.TRUE._1, KIND=1)
+  INTEGER, PARAMETER :: IC5(128) = INDEX(SUBSTRING=C( :5), STRING=C(6:),  BACK=.TRUE._2, KIND=1)
+  INTEGER, PARAMETER :: IC6(128) = INDEX(SUBSTRING=C(6:5), STRING=C(:),   BACK=.TRUE._8, KIND=1)
+
+
+  CLASS(*), ALLOCATABLE :: R(:)
+
+  IF ( KIND(A)    .NE. 2 )         STOP 10
+  IF ( KIND(B)    .NE. 4 )         STOP 11
+
+  IF ( IC1    .NE. 2 )             STOP 12
+  IF ( IC2    .NE. 0 )             STOP 13
+  IF ( IC3    .NE. 1 )             STOP 14
+
+  IF ( ANY( IC4    .NE. 2 ))       STOP 15
+  IF ( ANY( IC5    .NE. 0 ))       STOP 16
+  IF ( ANY( IC6    .NE. 129))      STOP 17
+
+ 
+
+  END
+
+

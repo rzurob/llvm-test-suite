@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/mix/interface/fdtio523.f
+#FEATURE = OO_dtio
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fdtio523.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fdtio523$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fdtio523$(OBJ)
+#OUTPUT    = fdtio523$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fdtio523$(EXE)
+#STDOUT    = fdtio523.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fdtio523.out $($(tcasedir)fdtio523$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

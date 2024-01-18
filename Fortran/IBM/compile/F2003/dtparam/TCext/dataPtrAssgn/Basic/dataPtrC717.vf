@@ -1,0 +1,5 @@
+"dataPtrC717.f", line 73.3: 1515-105 (S) The target in the pointer assignment statement is unlimited polymorphic.  The pointer must be unlimited polymorphic, or of a non-extensible derived type.
+"dataPtrC717.f", line 75.3: 1515-105 (S) The target in the pointer assignment statement is unlimited polymorphic.  The pointer must be unlimited polymorphic, or of a non-extensible derived type.
+"dataPtrC717.f", line 77.3: 1515-105 (S) The target in the pointer assignment statement is unlimited polymorphic.  The pointer must be unlimited polymorphic, or of a non-extensible derived type.
+** dataptrc717   === End of Compilation 1 ===
+1501-511  Compilation failed for file dataPtrC717.f.

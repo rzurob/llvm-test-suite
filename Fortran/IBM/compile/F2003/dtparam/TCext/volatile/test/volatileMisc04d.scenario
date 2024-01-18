@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/volatile/test/volatileMisc04d.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of volatile/*
+#DATE      = 20071101
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)volatileMisc04d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_LANG_LEVEL<2003pure>) -qxlf2003=novolatile
+#OUTPUT    = volatileMisc04d$(OBJ)
+#STDERR    = volatileMisc04d.err
+#VALIDRCS  = $(RC_COMP_S)
+#ENDCMD
+
+#CMD       = XLDIFF
+#IF in($(F_COMPILE^OPT_OPTIMIZE_FOR_SMP))  ||  in($(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT))
+        #INPUT  = $($(tcasedir)volatileMisc04d.smp$(product)vf)\
+                                volatileMisc04d.err
+#ELSE
+        #INPUT  = $($(tcasedir)volatileMisc04d$(product)vf)   \
+                                volatileMisc04d.err
+#ENDIF
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

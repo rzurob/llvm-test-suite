@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/diag/polyToFm1.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071105
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = $(tcasedir)polyToFm1.f
+#OUTPUT    = polyToFm1$(OBJ)
+#STDERR    = polyToFm1.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    polyToFm1.err $($(tcasedir)polyToFm1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

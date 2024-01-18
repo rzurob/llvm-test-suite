@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/use/dtpUseAssignTo01.scenario
+#FEATURE   = DTP and USE - type specifier in ACE
+#CREATOR   = DF Manual Update
+#DATE      = 20080903
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $OMP_OPTS
+#INPUT     = $(tcasedir)dtpUseAssignTo01.f
+#OUTPUT    = dtpUseAssignTo01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $OMP_OPTS
+#INPUT     = dtpUseAssignTo01$(OBJ)
+#OUTPUT    = dtpUseAssignTo01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUseAssignTo01$(EXE)
+#STDOUT    = dtpUseAssignTo01.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUseAssignTo01$(product)vf) dtpUseAssignTo01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

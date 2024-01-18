@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/initExp/Def/InitExpDefElemLEN_TRIM.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of F2003/initExp/*
+#DATE      = 20071107
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)InitExpDefElemLEN_TRIM.f
+#OUTPUT= InitExpDefElemLEN_TRIM$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  InitExpDefElemLEN_TRIM$(OBJ)
+#OUTPUT= InitExpDefElemLEN_TRIM$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  InitExpDefElemLEN_TRIM$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

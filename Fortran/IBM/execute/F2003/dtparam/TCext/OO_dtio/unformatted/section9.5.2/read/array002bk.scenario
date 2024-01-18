@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2003/dtparam/TCext/OO_dtio/unformatted/section9.5.2/read/array002bk.scenario
+#FEATURE = OO_dtio + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070913
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)array002bk.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = array002bk$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  array002bk$(OBJ)
+#OUTPUT    = array002bk$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = array002bk$(EXE)
+#STDOUT    = array002bk.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)array002bk$(product)vf) array002bk.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

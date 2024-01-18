@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_access/specific/assignment/csSimpleCharacter
+#FEATURE        = CAF coarray access (specific) - assignment - assign simple values to character coarray scalars and arrays
+#CREATOR        = DF
+#DATE           = 2010-10-04
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)csSimpleCharacter.f
+#OUTPUT = csSimpleCharacter$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = csSimpleCharacter$(OBJ)
+#OUTPUT = csSimpleCharacter$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = csSimpleCharacter$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

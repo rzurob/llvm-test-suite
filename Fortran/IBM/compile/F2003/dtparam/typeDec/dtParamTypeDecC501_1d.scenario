@@ -1,0 +1,26 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dtParamTypeDecC501_1d.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       04-24-07
+#TEST_TYPE=  DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=      F_COMPILE
+#INPUT=    $(tcasedir)dtParamTypeDecC501_1d.f
+#STDERR=   dtParamTypeDecC501_1d.err
+#OUTPUT = dtParamTypeDecC501_1d$(OBJ)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

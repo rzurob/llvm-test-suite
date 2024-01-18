@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/DT/scalar104.scenario
+#FEATURE = OO_dtio
+#CREATOR = Robert Ma
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)scalar104.1 .
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)scalar104.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = scalar104$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = scalar104$(OBJ)
+#OUTPUT    = scalar104$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = scalar104$(EXE)
+#STDOUT    = scalar104.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)scalar104$(product)vf) scalar104.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

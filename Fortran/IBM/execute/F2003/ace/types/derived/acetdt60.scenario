@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetdt60.scenario
+#FEATURE	= Array constructor enhancement - array construction intrinsics (derived type)
+#CREATOR	= DF Manual Update
+#DATE		= 20061124
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt60.f
+#OUTPUT		= acetdt60$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt60$(OBJ)
+#OUTPUT		= acetdt60$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt60$(EXE)
+#STDOUT		= acetdt60.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetdt60$(product)vf) acetdt60.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,13 @@
+cdaasAdjustable.scenario
+cdaasBasic.scenario
+cdaasBasicCopy.scenario
+cdaasBasicNewBounds.scenario
+cdaasBasicSet.scenario
+cdaasCorankChg.scenario
+cdaasEffective.scenario
+cdaasModule.scenario
+cdaasMultiple.scenario
+cdaasRankChg.scenario
+cdaasRankCorankChg.scenario
+cdaasShapeChg.scenario
+cdaasShapeCorankChg.scenario

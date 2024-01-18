@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/dtparam/unit_tests/declaration/dtparamdecl002d.scenario
+#FEATURE = declaration
+#CREATOR = Chris Tandy
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamdecl002d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamdecl002d$(OBJ)
+#STDERR    = dtparamdecl002d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)dtparamdecl002d$(product)vf) dtparamdecl002d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

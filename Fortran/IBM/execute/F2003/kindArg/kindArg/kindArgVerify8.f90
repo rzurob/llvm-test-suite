@@ -1,0 +1,134 @@
+!*********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : kindArgVerify8
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Jul. 07, 2006
+!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*
+!*  SECONDARY FUNCTIONS TESTED : VERIFY 
+!*
+!*  REFERENCE                  : Feature Number 289083 
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  : -qfree=f90
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*
+!*   
+!*   
+!*  Result Value.
+!*  Case (iii): The value of the result is zero if each character in STRING is in SET or if STRING
+!*  has zero length.
+!* 
+!*
+!*  
+!*  () 
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+
+  PROGRAM kindArgVerify8
+  IMPLICIT NONE
+
+
+  INTEGER(1) :: I1
+  INTEGER(2) :: I2
+  INTEGER(4) :: I4, I, J
+  INTEGER(8) :: I8
+
+
+  CHARACTER(128) :: C= ""
+  CHARACTER(128) :: CC(0:127)= ""
+
+  
+  DO J =0, 127
+    C(J+1:J+1)= ACHAR(J)
+  END DO
+  DO I =0, 127
+  DO J =0, 127
+    CC(I)(J+1:J+1)= ACHAR(J)
+  END DO
+  END DO
+
+  DO I1 = 0, 127
+    IF (     VERIFY(STRING=CC(I1)(I+1:I), SET=CC(I1), BACK=.TRUE._1, KIND=IACHAR(ACHAR(8)))   .NE. 0)             STOP 11
+    IF (KIND(VERIFY(STRING=CC(I1)(I+1:I), SET=CC(I1), BACK=.TRUE._1, KIND=IACHAR(ACHAR(8))))  .NE. 8)             STOP 12
+    IF (     VERIFY(STRING=CC(I1)(I+1:I), SET=CC(I1), BACK=.TRUE._2, KIND=IACHAR(ACHAR(4)))   .NE. 0)             STOP 13
+    IF (KIND(VERIFY(STRING=CC(I1)(I+1:I), SET=CC(I1), BACK=.TRUE._2, KIND=IACHAR(ACHAR(4))))  .NE. 4)             STOP 14
+    IF (     VERIFY(STRING=CC(I1)(I+1:I), SET=CC(I1), BACK=.TRUE._4, KIND=IACHAR(ACHAR(2)))   .NE. 0)             STOP 15
+    IF (KIND(VERIFY(STRING=CC(I1)(I+1:I), SET=CC(I1), BACK=.TRUE._4, KIND=IACHAR(ACHAR(2))))  .NE. 2)             STOP 16
+    IF (     VERIFY(STRING=CC(I1)(I+1:I), SET=CC(I1), BACK=.TRUE._8, KIND=IACHAR(ACHAR(1)))   .NE. 0)             STOP 17
+    IF (KIND(VERIFY(STRING=CC(I1)(I+1:I), SET=CC(I1), BACK=.TRUE._8, KIND=IACHAR(ACHAR(1))))  .NE. 1)             STOP 18
+  END DO
+
+  DO I2 = 0, 127
+    IF (     VERIFY(STRING=CC(I2)(I+1:I), SET=CC(I2)(I+1:I), BACK=.TRUE._4, KIND=IACHAR(ACHAR(8)))   .NE. 0)         STOP 21
+    IF (KIND(VERIFY(STRING=CC(I2)(I+1:I), SET=CC(I2)(I+1:I), BACK=.TRUE._4, KIND=IACHAR(ACHAR(8))))  .NE. 8)         STOP 22
+    IF (     VERIFY(STRING=CC(I2)(I+1:I), SET=CC(I2)(I+1:I), BACK=.TRUE._1, KIND=IACHAR(ACHAR(4)))   .NE. 0)         STOP 23
+    IF (KIND(VERIFY(STRING=CC(I2)(I+1:I), SET=CC(I2)(I+1:I), BACK=.TRUE._1, KIND=IACHAR(ACHAR(4))))  .NE. 4)         STOP 24
+    IF (     VERIFY(STRING=CC(I2)(I+1:I), SET=CC(I2)(I+1:I), BACK=.TRUE._2, KIND=IACHAR(ACHAR(2)))   .NE. 0)         STOP 25
+    IF (KIND(VERIFY(STRING=CC(I2)(I+1:I), SET=CC(I2)(I+1:I), BACK=.TRUE._2, KIND=IACHAR(ACHAR(2))))  .NE. 2)         STOP 26
+    IF (     VERIFY(STRING=CC(I2)(I+1:I), SET=CC(I2)(I+1:I), BACK=.TRUE._8, KIND=IACHAR(ACHAR(1)))   .NE. 0)         STOP 27
+    IF (KIND(VERIFY(STRING=CC(I2)(I+1:I), SET=CC(I2)(I+1:I), BACK=.TRUE._8, KIND=IACHAR(ACHAR(1))))  .NE. 1)         STOP 28
+  END DO
+
+  DO I4 = 0, 127
+    IF (     VERIFY(STRING=CC(I4), SET=C, BACK=.TRUE._8, KIND=IACHAR(ACHAR(8)))   .NE. 0)        STOP 41
+    IF (KIND(VERIFY(STRING=CC(I4), SET=C, BACK=.TRUE._8, KIND=IACHAR(ACHAR(8))))  .NE. 8)        STOP 42
+    IF (     VERIFY(STRING=CC(I4), SET=C, BACK=.TRUE._4, KIND=IACHAR(ACHAR(4)))   .NE. 0)        STOP 43
+    IF (KIND(VERIFY(STRING=CC(I4), SET=C, BACK=.TRUE._4, KIND=IACHAR(ACHAR(4))))  .NE. 4)        STOP 44
+    IF (     VERIFY(STRING=CC(I4), SET=C, BACK=.TRUE._2, KIND=IACHAR(ACHAR(2)))   .NE. 0)        STOP 45
+    IF (KIND(VERIFY(STRING=CC(I4), SET=C, BACK=.TRUE._2, KIND=IACHAR(ACHAR(2))))  .NE. 2)        STOP 46
+    IF (     VERIFY(STRING=CC(I4), SET=C, BACK=.TRUE._1, KIND=IACHAR(ACHAR(1)))   .NE. 0)        STOP 47
+    IF (KIND(VERIFY(STRING=CC(I4), SET=C, BACK=.TRUE._1, KIND=IACHAR(ACHAR(1))))  .NE. 1)        STOP 48
+  END DO
+
+  DO I8 = 0, 127
+    IF (     VERIFY(STRING=CC(I8), SET=CC(I8), BACK=.FALSE._2, KIND=IACHAR(ACHAR(8)))   .NE. 0)        STOP 83
+    IF (KIND(VERIFY(STRING=CC(I8), SET=CC(I8), BACK=.FALSE._2, KIND=IACHAR(ACHAR(8))))  .NE. 8)        STOP 82
+    IF (     VERIFY(STRING=CC(I8), SET=CC(I8), BACK=.FALSE._8, KIND=IACHAR(ACHAR(4)))   .NE. 0)        STOP 83
+    IF (KIND(VERIFY(STRING=CC(I8), SET=CC(I8), BACK=.FALSE._8, KIND=IACHAR(ACHAR(4))))  .NE. 4)        STOP 84
+    IF (     VERIFY(STRING=CC(I8), SET=CC(I8), BACK=.FALSE._1, KIND=IACHAR(ACHAR(2)))   .NE. 0)        STOP 85
+    IF (KIND(VERIFY(STRING=CC(I8), SET=CC(I8), BACK=.FALSE._1, KIND=IACHAR(ACHAR(2))))  .NE. 2)        STOP 86
+    IF (     VERIFY(STRING=CC(I8), SET=CC(I8), BACK=.FALSE._4, KIND=IACHAR(ACHAR(1)))   .NE. 0)        STOP 87
+    IF (KIND(VERIFY(STRING=CC(I8), SET=CC(I8), BACK=.FALSE._4, KIND=IACHAR(ACHAR(1))))  .NE. 1)        STOP 88
+  END DO
+
+
+
+  IF (ANY( VERIFY(STRING=CC, SET=C, BACK=.TRUE._8, KIND=IACHAR(ACHAR(8)))   .NE. 0))         STOP 91
+  IF (KIND(VERIFY(STRING=CC, SET=C, BACK=.TRUE._8, KIND=IACHAR(ACHAR(8))))  .NE. 8)          STOP 92
+  IF (ANY( VERIFY(STRING=CC, SET=C, BACK=.TRUE._4, KIND=IACHAR(ACHAR(4)))   .NE. 0))         STOP 93
+  IF (KIND(VERIFY(STRING=CC, SET=C, BACK=.TRUE._4, KIND=IACHAR(ACHAR(4))))  .NE. 4)          STOP 94
+  IF (ANY( VERIFY(STRING=CC, SET=C, BACK=.TRUE._2, KIND=IACHAR(ACHAR(2)))   .NE. 0))         STOP 95
+  IF (KIND(VERIFY(STRING=CC, SET=C, BACK=.TRUE._2, KIND=IACHAR(ACHAR(2))))  .NE. 2)          STOP 96
+  IF (ANY( VERIFY(STRING=CC, SET=C, BACK=.TRUE._1, KIND=IACHAR(ACHAR(1)))   .NE. 0))         STOP 97
+  IF (KIND(VERIFY(STRING=CC, SET=C, BACK=.TRUE._1, KIND=IACHAR(ACHAR(1))))  .NE. 1)          STOP 98
+
+
+  IF (ANY( VERIFY(STRING=CC, SET=CC, KIND=IACHAR(ACHAR(8)))   .NE. 0))         STOP 71
+  IF (KIND(VERIFY(STRING=CC, SET=CC, KIND=IACHAR(ACHAR(8))))  .NE. 8)          STOP 72
+  IF (ANY( VERIFY(STRING=CC, SET=CC, KIND=IACHAR(ACHAR(4)))   .NE. 0))         STOP 73
+  IF (KIND(VERIFY(STRING=CC, SET=CC, KIND=IACHAR(ACHAR(4))))  .NE. 4)          STOP 74
+  IF (ANY( VERIFY(STRING=CC, SET=CC, KIND=IACHAR(ACHAR(2)))   .NE. 0))         STOP 75
+  IF (KIND(VERIFY(STRING=CC, SET=CC, KIND=IACHAR(ACHAR(2))))  .NE. 2)          STOP 76
+  IF (ANY( VERIFY(STRING=CC, SET=CC, KIND=IACHAR(ACHAR(1)))   .NE. 0))         STOP 77
+  IF (KIND(VERIFY(STRING=CC, SET=CC, KIND=IACHAR(ACHAR(1))))  .NE. 1)          STOP 78
+
+
+
+  END
+
+
+

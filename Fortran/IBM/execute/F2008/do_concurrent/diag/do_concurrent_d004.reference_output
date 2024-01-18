@@ -1,0 +1,13 @@
+"do_concurrent_d004.f", line 31.6: 1511-048 (E) Missing construct name on END DO.
+"do_concurrent_d004.f", line 36.6: 1511-043 (E) END DO must not contain a construct name. Statement will be matched with the previous DO-loop.
+"do_concurrent_d004.f", line 41.6: 1511-048 (E) Missing construct name on END DO.
+"do_concurrent_d004.f", line 46.6: 1511-043 (E) END DO must not contain a construct name. Statement will be matched with the previous DO-loop.
+"do_concurrent_d004.f", line 53.6: 1511-048 (E) Missing construct name on END DO.
+"do_concurrent_d004.f", line 60.6: 1511-043 (E) END DO must not contain a construct name. Statement will be matched with the previous DO-loop.
+"do_concurrent_d004.f", line 64.8: 1511-048 (E) Missing construct name on END DO.
+"do_concurrent_d004.f", line 71.8: 1511-043 (E) END DO must not contain a construct name. Statement will be matched with the previous DO-loop.
+"do_concurrent_d004.f", line 76.8: 1511-043 (E) END DO must not contain a construct name. Statement will be matched with the previous DO-loop.
+"do_concurrent_d004.f", line 82.6: 1511-048 (E) Missing construct name on END DO.
+"do_concurrent_d004.f", line 87.6: 1511-036 (E) Missing construct name on ENDIF statement.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file do_concurrent_d004.f.

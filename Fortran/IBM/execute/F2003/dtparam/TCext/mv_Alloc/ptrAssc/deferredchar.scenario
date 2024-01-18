@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/ptrAssc/deferredchar.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071105
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)deferredchar.f
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#OUTPUT= deferredchar$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  deferredchar$(OBJ)
+#OUTPUT= deferredchar$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  deferredchar$(EXE)
+#STDOUT= deferredchar.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = deferredchar.out $(tcasedir)deferredchar.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

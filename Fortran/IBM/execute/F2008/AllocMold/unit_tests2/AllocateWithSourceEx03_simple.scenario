@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/allocate/SourceExp/AllocateWithSourceEx03_simple.f
+#FEATURE   = DTP - Allocate with source expression
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20090126
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AllocateWithSourceEx03_simple.f
+#OUTPUT    =AllocateWithSourceEx03_simple$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = AllocateWithSourceEx03_simple$(OBJ)
+#OUTPUT    = AllocateWithSourceEx03_simple$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = AllocateWithSourceEx03_simple$(EXE)
+#STDOUT    = AllocateWithSourceEx03_simple.out
+#ENDCMD
+
+#CMD       = DIFF
+#OPTS      = -b
+#INPUT     = $($(tcasedir)AllocateWithSourceEx03_simple$(product)vf) AllocateWithSourceEx03_simple.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

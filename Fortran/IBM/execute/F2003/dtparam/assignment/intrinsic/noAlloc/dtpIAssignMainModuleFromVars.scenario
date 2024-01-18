@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpIAssignMainModuleFromVars.scenario
+#FEATURE   = Intrinsic Assignment without Allocation - assign variables to module variables in main program
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAssignMainModuleFromVars.f
+#OUTPUT    = dtpIAssignMainModuleFromVars$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAssignMainModuleFromVars$(OBJ)
+#OUTPUT    = dtpIAssignMainModuleFromVars$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAssignMainModuleFromVars$(EXE)
+#STDOUT    = dtpIAssignMainModuleFromVars.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpIAssignMainModuleFromVars$(product)vf) dtpIAssignMainModuleFromVars.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

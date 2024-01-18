@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/genericName/functional/genericGenericNameScalar019d.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20051215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericGenericNameScalar019d.f
+#OUTPUT    = genericGenericNameScalar019d$(OBJ)
+#STDERR    = genericGenericNameScalar019d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = genericGenericNameScalar019d.err $($(tcasedir)genericGenericNameScalar019d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

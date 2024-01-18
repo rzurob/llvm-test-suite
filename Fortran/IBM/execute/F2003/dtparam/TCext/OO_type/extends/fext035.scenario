@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/extends/fext035.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_type/*
+#DATE      = 20071003
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fext035.f
+#OUTPUT    = fext035$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fext035$(OBJ)
+#OUTPUT    = fext035$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fext035$(EXE)
+#STDOUT    = fext035.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)fext035$(product)vf) fext035.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

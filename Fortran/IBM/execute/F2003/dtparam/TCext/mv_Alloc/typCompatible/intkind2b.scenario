@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/typCompatible/intkind2b.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071119
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM) $(OPT_INTSIZE_2)
+#INPUT=  $(tcasedir)intkind2b.f
+#OUTPUT= intkind2b$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  intkind2b$(OBJ)
+#OUTPUT= intkind2b$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  intkind2b$(EXE)
+#STDOUT= intkind2b.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = intkind2b.out $($(tcasedir)intkind2b$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

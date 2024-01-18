@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/streamio/unit/poscdestrm01.scenario
+#FEATURE = streamio tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)poscdestrm01.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = poscdestrm01$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  poscdestrm01$(OBJ)
+#OUTPUT    = poscdestrm01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = poscdestrm01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

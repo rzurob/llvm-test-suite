@@ -1,0 +1,38 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cmdline/Parallel/fxclpl13.scenario
+#FEATURE   = cmdline tests - regression run bucket
+#CREATOR   = automated conversion script
+#DATE      = 20081013
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+	CmdLine="fxclpl13 --2412--- 2342---- 24123412342"
+#ENDDEFS
+#INVALID_PRODUCT=cbe_ssc
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)fxclpl13.f
+#OUTPUT = fxclpl13$(OBJ)
+#OPTS 	= $(OPT_FREE_SOURCE_FORM) $(OPT_STORAGE_CLASS_AUTO)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = fxclpl13$(OBJ)
+#OUTPUT = fxclpl13$(EXE)
+#OPTS 	= $(OPT_FREE_SOURCE_FORM) $(OPT_STORAGE_CLASS_AUTO)
+#ENDCMD
+
+#CMD 	= RUN
+#INPUT 	= fxclpl13$(EXE)
+#OPTS	= --2412--- 2342---- 24123412342
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

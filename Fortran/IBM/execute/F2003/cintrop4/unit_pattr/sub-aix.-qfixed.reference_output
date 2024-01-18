@@ -1,0 +1,19 @@
+*** testcase variant:  -qfixed
+
+** s1bind   === End of Compilation 1 ===
+** s2   === End of Compilation 2 ===
+** s3   === End of Compilation 3 ===
+** s4   === End of Compilation 4 ===
+  34.34   01610192 =Ü
+  34.35   01610192 'S1Ü
+** sn1bind   === End of Compilation 5 ===
+** sn2   === End of Compilation 6 ===
+** sn3   === End of Compilation 7 ===
+** sn4   === End of Compilation 8 ===
+  52.34   01610192 =Ü
+  52.35   01610192 'sd1Ü
+** sd1bind   === End of Compilation 9 ===
+** sd2   === End of Compilation 10 ===
+** sd3   === End of Compilation 11 ===
+** sd4   === End of Compilation 12 ===
+1501-511  Compilation failed for file sub.f.

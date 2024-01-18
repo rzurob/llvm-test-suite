@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/asynchIO/misc/derivedTypeArrayConstructor01d.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of asynchIO/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)derivedTypeArrayConstructor01d.f
+#OUTPUT		= derivedTypeArrayConstructor01d$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= derivedTypeArrayConstructor01d$(OBJ)
+#OUTPUT		= derivedTypeArrayConstructor01d$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= derivedTypeArrayConstructor01d$(EXE)
+#STDERR		= derivedTypeArrayConstructor01d.stdout
+#STDOUT		= derivedTypeArrayConstructor01d.stderr
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)derivedTypeArrayConstructor01d$(product)vf)	\
+					derivedTypeArrayConstructor01d.stdout
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= derivedTypeArrayConstructor01d.stdout	\
+				derivedTypeArrayConstructor01d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

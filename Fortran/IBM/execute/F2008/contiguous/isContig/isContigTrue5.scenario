@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/contiguous/isContig/isContigTrue5.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20101028
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)isContigTrue5.f
+#OUTPUT    = isContigTrue5$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = isContigTrue5$(OBJ)
+#OUTPUT    = isContigTrue5$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = isContigTrue5$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2008/value/pure/unit_tests/purevalue01.scenario
+#FEATURE = VALUE attribute for dummy args of PURE procedures
+#CREATOR = Rafik Zurob
+#DATE    = 20100826
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)purevalue01.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<2003std>) $(OPT_DISABLE_MSG_NUM<1518-317>)
+#OUTPUT    = purevalue01$(OBJ)
+#STDERR    = purevalue01.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)purevalue01$(product)vf) purevalue01.err
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = purevalue01$(OBJ)
+#OUTPUT    = purevalue01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = purevalue01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

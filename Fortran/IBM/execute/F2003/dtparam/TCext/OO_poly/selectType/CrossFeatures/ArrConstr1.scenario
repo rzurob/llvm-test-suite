@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/selectType/CrossFeatures/ArrConstr1.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071003
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)ArrConstr1.f
+#OPTS = -qxlf2003=dynamicacval
+#OUTPUT= ArrConstr1$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  ArrConstr1$(OBJ)
+#OUTPUT= ArrConstr1$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  ArrConstr1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/initExp/Misc/InitExpTypInq2.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of F2003/initExp/*
+#DATE      = 20071221
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)InitExpTypInq2.f
+#OUTPUT= InitExpTypInq2$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  InitExpTypInq2$(OBJ)
+#OUTPUT= InitExpTypInq2$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  InitExpTypInq2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

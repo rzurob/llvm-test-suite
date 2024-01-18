@@ -1,0 +1,37 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2003/dtparam/typeParamInquiry/functional/intrinsic/typeParamInquiryIntrinsicRes01.scenario
+#FEATURE= Type Parameter Inquiry(354612)
+#CREATOR=   Nancy Wang
+#DATE= July 28 2008
+#TEST_TYPE=  Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)typeParamInquiryIntrinsicRes01.f
+#OUTPUT= typeParamInquiryIntrinsicRes01$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  typeParamInquiryIntrinsicRes01$(OBJ)
+#OUTPUT= typeParamInquiryIntrinsicRes01$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  typeParamInquiryIntrinsicRes01$(EXE)
+#STDOUT =typeParamInquiryIntrinsicRes01.out
+#ENDCMD
+
+#CMD    = DIFF
+#INPUT  = $($(tcasedir)typeParamInquiryIntrinsicRes01$(product)vf)  typeParamInquiryIntrinsicRes01.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

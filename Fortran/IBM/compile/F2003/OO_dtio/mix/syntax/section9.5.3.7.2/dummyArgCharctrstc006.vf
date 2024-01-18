@@ -1,0 +1,10 @@
+** m   === End of Compilation 1 ===
+  62.6   01610703 unit‹readunformatted‹VALUE‹
+  62.6   01610703 dtv‹readunformatted‹OPTIONAL‹
+  72.6   01610703 iomsg‹writeunformatted‹OPTIONAL‹
+  82.6   01610703 v_list‹readformatted‹OPTIONAL‹
+  82.6   01610703 iotype‹readformatted‹OPTIONAL‹
+  94.6   01610703 iostat‹writeformatted‹OPTIONAL‹
+  94.6   01610703 iotype‹writeformatted‹OPTIONAL‹
+** dummyargcharctrstc006   === End of Compilation 2 ===
+1501-511  Compilation failed for file dummyArgCharctrstc006.f.

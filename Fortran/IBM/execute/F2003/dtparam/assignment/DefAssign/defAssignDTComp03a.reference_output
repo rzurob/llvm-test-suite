@@ -1,0 +1,5 @@
+ 1 2 3 4 5 abcdefghijklmnop T F T F ABCDEFGHIJKLMNOP F T F T testteamfailpass F T T F TESTTEAMFAILPASS T F F T
+ 1 2 3 4 5 abcdefghijklmnop T F T F ABCDEFGHIJKLMNOP F T F T testteamfailpass F T T F TESTTEAMFAILPASS T F F T
+ -99 -99 -99 -99 -99 **************** F F F F **************** F F F F **************** F F F F **************** F F F F
+ 1 2 3 4 5 abcdefghijklmnop T F T F ABCDEFGHIJKLMNOP F T F T testteamfailpass F T T F TESTTEAMFAILPASS T F F T
+ 1 2 3 4 5 abcdefghijklmnop T F T F ABCDEFGHIJKLMNOP F T F T testteamfailpass F T T F TESTTEAMFAILPASS T F F T

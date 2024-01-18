@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpSimpleBinaryMixedAssign.scenario
+#FEATURE   = User-Defined Operators - mixed result types, binary ops in assignment statements
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpSimpleBinaryMixedAssign.f
+#OUTPUT    = dtpUOpSimpleBinaryMixedAssign$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpSimpleBinaryMixedAssign$(OBJ)
+#OUTPUT    = dtpUOpSimpleBinaryMixedAssign$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpSimpleBinaryMixedAssign$(EXE)
+#STDOUT    = dtpUOpSimpleBinaryMixedAssign.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUOpSimpleBinaryMixedAssign$(product)vf) dtpUOpSimpleBinaryMixedAssign.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

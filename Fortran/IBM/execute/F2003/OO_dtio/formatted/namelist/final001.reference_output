@@ -1,0 +1,24 @@
+ &FB
+ DTV=c=IBM
+ /
+ &FB
+ DTV=c=IBM
+ /
+ &FC
+ DTV=i=1001 c=IBM
+ /
+ &FB
+ DTV=c=IBM
+ /
+ &FC
+ DTV=i=1001 c=IBM
+ /
+ &FB
+ DTV=c=IBM
+ /
+ &FC
+ DTV=i=-999 c=xxx
+ /
+ &FB
+ DTV=c=xxx
+ /

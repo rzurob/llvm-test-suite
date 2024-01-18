@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       pure2.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)pure2.f
+#OUTPUT= pure2$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  pure2$(OBJ)
+#OUTPUT= pure2$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  pure2$(EXE)
+#STDOUT= pure2.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = pure2.out $($(tcasedir)pure2$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

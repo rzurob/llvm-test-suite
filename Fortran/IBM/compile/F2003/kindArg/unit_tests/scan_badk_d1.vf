@@ -1,0 +1,4 @@
+"scan_badk_d1.f", line 25.54: 1513-133 (S) KIND must be an integer constant.
+"scan_badk_d1.f", line 27.41: 1513-143 (S) Invalid KIND value.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file scan_badk_d1.f.

@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/func_return/ffuncRet006a.scenario
+#FEATURE = OO_poly tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ffuncRet006a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ffuncRet006a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  ffuncRet006a$(OBJ)
+#OUTPUT    = ffuncRet006a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ffuncRet006a$(EXE)
+#STDOUT    = ffuncRet006a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)ffuncRet006a$(product)vf) ffuncRet006a.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

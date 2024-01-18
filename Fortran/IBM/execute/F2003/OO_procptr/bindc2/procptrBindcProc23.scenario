@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_procptr/bindc2/procptrBindcProc23.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)procptrBindcProc23.c
+#OPTS      = $(C_COMPILER_OPTS)
+#OUTPUT    = BindcProc23$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)procptrBindcProc23.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = procptrBindcProc23$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = procptrBindcProc23$(OBJ) BindcProc23$(OBJ)
+#OUTPUT    = procptrBindcProc23$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = procptrBindcProc23$(EXE)
+#STDOUT    = procptrBindcProc23.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/move_alloc/move_allocToIsPoly01.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Oct. 6 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)move_allocToIsPoly01.f
+#OUTPUT= move_allocToIsPoly01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = move_allocToIsPoly01$(OBJ)
+#OUTPUT= move_allocToIsPoly01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = move_allocToIsPoly01$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

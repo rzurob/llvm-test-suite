@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BNoCycled.scenario
+#FEATURE   = F2008 BLOCK - cannot cycle a block
+#CREATOR   = DF Manual Update
+#DATE      = 20101214
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)BNoCycled.f
+#OUTPUT    = BNoCycled$(OBJ)
+#STDERR    = BNoCycled.err
+#STDOUT    = BNoCycled.err
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD      = XLDIFF
+#INPUT    = $($(tcasedir)BNoCycled$(product)vf) BNoCycled.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

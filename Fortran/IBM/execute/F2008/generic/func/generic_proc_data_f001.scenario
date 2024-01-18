@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME		= F2008/generic/func/generic_proc_data_f001.scenario
+#FEATURE        = #917301 F2008: Generic resolution extensions
+#CREATOR        = Grigor Nikolov
+#DATE           = 20120629
+#TEST_TYPE      = Functional
+#KEYWORDS       = F2008 GENERIC resolution
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)generic_proc_data_f001.f
+#OUTPUT		= generic_proc_data_f001$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= generic_proc_data_f001$(OBJ)
+#OUTPUT		= generic_proc_data_f001$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= generic_proc_data_f001$(EXE)
+#STDOUT         = generic_proc_data_f001.out
+#STDERR         = generic_proc_data_f001.out
+#ENDCMD
+
+#CMD            = XLDIFF
+#INPUT          = generic_proc_data_f001.out $($(tcasedir)generic_proc_data_f001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

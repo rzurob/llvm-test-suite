@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/syntax/C459/genericC459Operator005d.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20051215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericC459Operator005d.f
+#OUTPUT    = genericC459Operator005d$(OBJ)
+#STDERR    = genericC459Operator005d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = genericC459Operator005d.err $($(tcasedir)genericC459Operator005d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

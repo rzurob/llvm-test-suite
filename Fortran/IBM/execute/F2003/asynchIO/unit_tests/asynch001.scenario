@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#INVALID_PRODUCT= bgl
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)asynch001.f
+#OUTPUT    = asynch001$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#INPUT     = asynch001$(OBJ)
+#OUTPUT    = asynch001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = asynch001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/unit_tests/data/diaBlockDataDTParm.scenario
+#FEATURE	= 333315
+#CREATOR	= Zheming Gu
+#DATE		= May 11,2007
+#TEST_TYPE	= diagnostic test
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)diaBlockDataDTParm.f
+#STDERR		= diaBlockDataDTParm.out
+#VALIDRCS	= $(RC_COMP_E)
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= diaBlockDataDTParm.out $($(tcasedir)diaBlockDataDTParm$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

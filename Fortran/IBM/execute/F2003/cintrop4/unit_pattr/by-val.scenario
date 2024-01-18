@@ -1,0 +1,69 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/cintrop4/unit_pattr/by-val.scenario
+#FEATURE = cintrop4 tests - regression run bucket
+#CREATOR = ST Manual conversion
+#DATE    = 2000504
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)by-val-c.c
+#OUTPUT    = by-val-c$(OBJ)
+#OPTS      = $(C_COMPILER_OPTS)
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)by-val.f
+#OUTPUT    = by-val$(OBJ)
+#STDOUT    = by-val.cmp
+#STDERR    = by-val.cmp
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = by-val-c$(OBJ) by-val$(OBJ)
+#OUTPUT    = by-val$(EXE)
+#STDOUT    = by-val.lnk
+#STDERR    = by-val.lnk
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = by-val$(EXE)
+#STDOUT    = by-val.run
+#STDERR    = by-val.run
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = by-val.cmp by-val.lnk by-val.run
+#STDOUT    = by-val.out
+#ENDCMD
+
+#IF on(bgl)
+  #CMD     = SORT
+  #INPUT   = by-val.out
+  #STDOUT  = file1
+  #ENDCMD
+
+  #CMD     = SORT
+  #INPUT   = $($(tcasedir)by-val$(product)vf)
+  #STDOUT  = file2
+  #ENDCMD
+
+  #CMD     = DIFF
+  #INPUT   = file1 file2
+  #ENDCMD
+#ELSE
+  #CMD       = DIFF
+  #INPUT     = by-val.out $($(tcasedir)by-val$(product)vf)
+  #ENDCMD
+#ENDIF
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/unformatted/section9.1.2/zerosized001l.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070910
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)zerosized001l.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = zerosized001l$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = zerosized001l$(OBJ)
+#OUTPUT    = zerosized001l$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = zerosized001l$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

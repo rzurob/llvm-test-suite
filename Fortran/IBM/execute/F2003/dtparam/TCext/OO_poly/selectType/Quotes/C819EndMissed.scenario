@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/selectType/Quotes/C819EndMissed.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071004
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=      F_COMPILE
+#INPUT=    $(tcasedir)C819EndMissed.f
+#OUTPUT=   C819EndMissed$(OBJ)
+#STDERR=   C819EndMissed.err
+#VALIDRCS= 0
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  C819EndMissed$(OBJ)
+#OUTPUT= C819EndMissed$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  C819EndMissed$(EXE)
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    C819EndMissed.err $($(tcasedir)C819EndMissed$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

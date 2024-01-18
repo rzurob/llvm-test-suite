@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BInInt2ModProc.scenario
+#FEATURE   = F2008 BLOCK - block in different contexts (internal of module)
+#CREATOR   = DF Manual Update
+#DATE      = 20101214
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)BInInt2ModProc.f
+#OUTPUT    = BInInt2ModProc$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = BInInt2ModProc$(OBJ)
+#OUTPUT    = BInInt2ModProc$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = BInInt2ModProc$(EXE)
+#STDOUT    = BInInt2ModProc.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)BInInt2ModProc$(product)vf) BInInt2ModProc.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

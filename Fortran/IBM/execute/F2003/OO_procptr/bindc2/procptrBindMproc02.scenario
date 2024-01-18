@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_procptr/bindc2/procptrBindMproc02.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)procptrBindMproc02.c
+#OPTS      = $(C_COMPILER_OPTS)
+#OUTPUT    = BindcMproc02$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)procptrBindMproc02.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = procptrBindMproc02$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = procptrBindMproc02$(OBJ) BindcMproc02$(OBJ)
+#OUTPUT    = procptrBindMproc02$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = procptrBindMproc02$(EXE)
+#STDOUT    = procptrBindMproc02.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

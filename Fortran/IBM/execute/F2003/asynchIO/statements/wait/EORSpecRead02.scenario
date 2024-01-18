@@ -1,0 +1,48 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/wait/EORSpecRead02.scenario
+#FEATURE	= Asynchronous I/O -- WAIT() Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060308
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#IF on (linuxle)
+    XLFRTEOPTS=$(CONVERT_UFMT_IO_ENDIANESS<1901>)
+#ENDIF
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)EORSpecRead02.dat .
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)EORSpecRead02.f
+#OUTPUT		= EORSpecRead02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= EORSpecRead02$(OBJ)
+#OUTPUT		= EORSpecRead02$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= EORSpecRead02$(EXE)
+#STDOUT		= EORSpecRead02.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)EORSpecRead02$(product)vf) EORSpecRead02.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

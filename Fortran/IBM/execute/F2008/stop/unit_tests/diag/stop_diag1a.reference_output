@@ -1,0 +1,4 @@
+"stop_diag1.f", line 52.8: 1516-332 (S) The stop code in the STOP statement must be a scalar constant expression of character or integer type.
+"stop_diag1.f", line 53.8: 1516-332 (S) The stop code in the STOP statement must be a scalar constant expression of character or integer type.
+** p   === End of Compilation 1 ===
+1501-511  Compilation failed for file stop_diag1.f.

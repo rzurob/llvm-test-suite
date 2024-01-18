@@ -1,0 +1,9 @@
+** m1   === End of Compilation 1 ===
+  111.28   01510061 IOSTATÜ
+  121.26   01510061 IOMSGÜ
+** specifier001   === End of Compilation 2 ===
+  148.33   01510061 IOSTATÜ
+** readunformatted   === End of Compilation 3 ===
+  164.31   01510061 IOMSGÜ
+** writeunformatted   === End of Compilation 4 ===
+1501-510  Compilation successful for file specifier001.f.

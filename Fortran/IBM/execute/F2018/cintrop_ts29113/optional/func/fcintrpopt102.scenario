@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/optional/func/fcintrpopt102.scenario
+#FEATURE   = 399982 - C Interop: Optional Argument
+#CREATOR   = Ying Zhang
+#DATE      = 2012-05-01
+#TEST_TYPE = functional
+#KEYWORDS  = C Interop, Optional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fcintrpopt102.f
+#OPTS      = -qxlf2008=checkpresence  -qinit
+#OUTPUT    = fcintrpopt102$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fcintrpopt102$(OBJ)
+#OUTPUT    = fcintrpopt102$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fcintrpopt102$(EXE)
+#STDOUT    = fcintrpopt102.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

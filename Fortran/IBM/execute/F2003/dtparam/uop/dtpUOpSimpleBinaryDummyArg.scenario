@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpSimpleBinaryDummyArg.scenario
+#FEATURE   = User-Defined Operators - binary ops appearing as dummy arguments
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpSimpleBinaryDummyArg.f
+#OUTPUT    = dtpUOpSimpleBinaryDummyArg$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpSimpleBinaryDummyArg$(OBJ)
+#OUTPUT    = dtpUOpSimpleBinaryDummyArg$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpSimpleBinaryDummyArg$(EXE)
+#STDOUT    = dtpUOpSimpleBinaryDummyArg.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUOpSimpleBinaryDummyArg$(product)vf) dtpUOpSimpleBinaryDummyArg.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

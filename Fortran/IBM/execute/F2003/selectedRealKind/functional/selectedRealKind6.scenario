@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = selectedRealKind6.scenario
+#FEATURE  = SELECTED_REAL_KIND tests
+#CREATOR  = Salma Elshatanoufy
+#DATE     = 20070827
+#TEST_TYPE= functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+!#INVALID_PRODUCT =bgl
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)selectedRealKind6.f
+#OUTPUT    = selectedRealKind6$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = selectedRealKind6$(OBJ)
+#OUTPUT    = selectedRealKind6$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = selectedRealKind6$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

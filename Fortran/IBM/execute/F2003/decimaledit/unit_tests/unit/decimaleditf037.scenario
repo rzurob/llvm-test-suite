@@ -1,0 +1,52 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=decimaleditf037.scenario
+#FEATURE = functional test for decimal edit mode introduced in F2003 std.
+#CREATOR = Bardia Mahjour
+#DATE    = 20060104
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)decimaleditf037.f
+#OPTS      = -Q -O -lxlfzz2
+#OUTPUT    = decimaleditf037$(OBJ)
+#VALIDRCS  = 0
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#INPUT     = decimaleditf037$(OBJ)
+#OUTPUT    = decimaleditf037$(EXE)
+#ENDCMD
+
+#CMD       = DELETE
+#OPTS      = -f
+#INPUT     = decimaleditf037.out
+#ENDCMD
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)decimaleditf037.?.dat
+#OUTPUT    = ./
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = decimaleditf037$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = decimaleditf037.out $($(tcasedir)decimaleditf037$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

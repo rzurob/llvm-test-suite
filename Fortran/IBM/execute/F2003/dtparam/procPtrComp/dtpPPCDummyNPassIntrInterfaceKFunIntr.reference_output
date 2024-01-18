@@ -1,0 +1,78 @@
+  neg   neg   zero  one   two   three four  five  six   seven eight nine  ten   big   big  
+  what? what? dunno i     ii    iii   iv    v     vi    vii   viii  ix    x     mmix  mmix 
+ 12 -1 0 1 2 3 4 5 6 7 8 9 10 11
+ 12 -1 0 1 2 3 4 5 6 7 8 9 10 11
+ 
+ e1a % p1(int(e1a%ival,2)): character, l= 5 >big  <
+ e1a % p1(int(e1b%ival,2)): character, l= 5 >nine <
+ e1a % p1(e2a%ival): character, l= 5 >five <
+ e1a % p1(e2b%ival): character, l= 5 >neg  <
+ e1a % p2(e1a%chval): i*2= 5
+ e1a % p2(e1b%chval): i*2= 8
+ e1a % p2(e2a%chval): i*2= 12
+ e1a % p2(e2b%chval): i*2= 0
+ 
+ e1b % p1(int(e1a%ival,2)): character, l= 5 >mmix <
+ e1b % p1(int(e1b%ival,2)): character, l= 5 >ix   <
+ e1b % p1(e2a%ival): character, l= 5 >v    <
+ e1b % p1(e2b%ival): character, l= 5 >what?<
+ e1b % p2(r1a%chval): i*2= 5
+ e1b % p2(r1b%chval): i*2= 8
+ e1b % p2(r2a%chval): i*2= 12
+ e1b % p2(r2b%chval): i*2= 0
+ 
+ e2a % p1(int(e1a%ival,2)): character, l= 5 >big  <
+ e2a % p1(int(e1b%ival,2)): character, l= 5 >nine <
+ e2a % p1(e2a%ival): character, l= 5 >five <
+ e2a % p1(e2b%ival): character, l= 5 >neg  <
+ e2a % p2(e1a%chval): i*2= 5
+ e2a % p2(e1b%chval): i*2= 8
+ e2a % p2(e2a%chval): i*2= 12
+ e2a % p2(e2b%chval): i*2= 0
+ 
+ e2b % p1(int(e1a%ival,2)): character, l= 5 >mmix <
+ e2b % p1(int(e1b%ival,2)): character, l= 5 >ix   <
+ e2b % p1(e2a%ival): character, l= 5 >v    <
+ e2b % p1(e2b%ival): character, l= 5 >what?<
+ e2b % p2(r1a%chval): i*2= 5
+ e2b % p2(r1b%chval): i*2= 8
+ e2b % p2(r2a%chval): i*2= 12
+ e2b % p2(r2b%chval): i*2= 0
+ 
+ e1a % p1(int(e1a%ival,2)): character, l= 5 >mmix <
+ e1a % p1(int(e1b%ival,2)): character, l= 5 >ix   <
+ e1a % p1(e2a%ival): character, l= 5 >v    <
+ e1a % p1(e2b%ival): character, l= 5 >what?<
+ e1a % p2(r1a%chval): i*2= 5
+ e1a % p2(r1b%chval): i*2= 8
+ e1a % p2(r2a%chval): i*2= 12
+ e1a % p2(r2b%chval): i*2= 0
+ 
+ e1b % p1(int(e1a%ival,2)): character, l= 5 >big  <
+ e1b % p1(int(e1b%ival,2)): character, l= 5 >nine <
+ e1b % p1(e2a%ival): character, l= 5 >five <
+ e1b % p1(e2b%ival): character, l= 5 >neg  <
+ e1b % p2(e1a%chval): i*2= 5
+ e1b % p2(e1b%chval): i*2= 8
+ e1b % p2(e2a%chval): i*2= 12
+ e1b % p2(e2b%chval): i*2= 0
+ 
+ e2a % p1(int(e1a%ival,2)): character, l= 5 >mmix <
+ e2a % p1(int(e1b%ival,2)): character, l= 5 >ix   <
+ e2a % p1(e2a%ival): character, l= 5 >v    <
+ e2a % p1(e2b%ival): character, l= 5 >what?<
+ e2a % p2(r1a%chval): i*2= 5
+ e2a % p2(r1b%chval): i*2= 8
+ e2a % p2(r2a%chval): i*2= 12
+ e2a % p2(r2b%chval): i*2= 0
+ 
+ e2b % p1(int(e1a%ival,2)): character, l= 5 >big  <
+ e2b % p1(int(e1b%ival,2)): character, l= 5 >nine <
+ e2b % p1(e2a%ival): character, l= 5 >five <
+ e2b % p1(e2b%ival): character, l= 5 >neg  <
+ e2b % p2(e1a%chval): i*2= 5
+ e2b % p2(e1b%chval): i*2= 8
+ e2b % p2(e2a%chval): i*2= 12
+ e2b % p2(e2b%chval): i*2= 0
+ 
+ done

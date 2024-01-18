@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/allocate/TypeSpec/AllocateWithTypeSpec01.f
+#FEATURE   = DTP - Allocate with type-spec
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20090126
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AllocateWithTypeSpec01.f
+#OUTPUT    = AllocateWithTypeSpec01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = AllocateWithTypeSpec01$(OBJ)
+#OUTPUT    = AllocateWithTypeSpec01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = AllocateWithTypeSpec01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

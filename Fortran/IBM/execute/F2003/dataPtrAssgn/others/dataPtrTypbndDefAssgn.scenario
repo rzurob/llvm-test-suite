@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrTypbndDefAssgn.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrTypbndDefAssgn.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrTypbndDefAssgn$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrTypbndDefAssgn$(OBJ)
+#OUTPUT    = dataPtrTypbndDefAssgn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrTypbndDefAssgn$(EXE)
+#STDOUT    = dataPtrTypbndDefAssgn.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrTypbndDefAssgn.out $($(tcasedir)dataPtrTypbndDefAssgn$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,7 @@
+"genericC463Assignment003d.f", line 44.38: 1514-709 (S) onearg must have exactly 2 dummy arguments. onearg will not be included in the ASSIGNMENT(=) generic interface.
+"genericC463Assignment003d.f", line 45.56: 1514-709 (S) threearg must have exactly 2 dummy arguments. threearg will not be included in the ASSIGNMENT(=) generic interface.
+"genericC463Assignment003d.f", line 53.38: 1514-709 (S) noarg must have exactly 2 dummy arguments. noarg will not be included in the ASSIGNMENT(=) generic interface.
+"genericC463Assignment003d.f", line 53.38: 1514-672 (S) Specific binding noarg with the NOPASS attribute must not be specified for the generic binding with the generic specification ASSIGNMENT(=).
+** m   === End of Compilation 1 ===
+** genericc463assignment003d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericC463Assignment003d.f.

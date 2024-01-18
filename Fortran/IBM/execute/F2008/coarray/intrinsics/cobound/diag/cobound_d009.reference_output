@@ -1,0 +1,25 @@
+"cobound_d009.f", line 45.20: 1514-776 (S) The coarray argument of intrinsic procedure lcobound must be a coarray.
+"cobound_d009.f", line 46.33: 1513-065 (S) Once an argument keyword has been specified, all subsequent actual arguments must have a keyword specified.
+"cobound_d009.f", line 47.28: 1513-065 (S) Once an argument keyword has been specified, all subsequent actual arguments must have a keyword specified.
+"cobound_d009.f", line 48.40: 1513-065 (S) Once an argument keyword has been specified, all subsequent actual arguments must have a keyword specified.
+"cobound_d009.f", line 49.41: 1513-065 (S) Once an argument keyword has been specified, all subsequent actual arguments must have a keyword specified.
+"cobound_d009.f", line 50.35: 1513-065 (S) Once an argument keyword has been specified, all subsequent actual arguments must have a keyword specified.
+"cobound_d009.f", line 51.11: 1513-146 (S) Missing argument "coarray".
+"cobound_d009.f", line 52.11: 1513-146 (S) Missing argument "coarray".
+"cobound_d009.f", line 53.11: 1513-146 (S) Missing argument "coarray".
+"cobound_d009.f", line 57.26: 1513-133 (S) KIND must be an integer constant.
+"cobound_d009.f", line 58.29: 1514-776 (S) The coarray argument of intrinsic procedure lcobound must be a coarray.
+"cobound_d009.f", line 59.42: 1513-133 (S) KIND must be an integer constant.
+"cobound_d009.f", line 63.20: 1514-776 (S) The coarray argument of intrinsic procedure ucobound must be a coarray.
+"cobound_d009.f", line 64.33: 1513-065 (S) Once an argument keyword has been specified, all subsequent actual arguments must have a keyword specified.
+"cobound_d009.f", line 65.28: 1513-065 (S) Once an argument keyword has been specified, all subsequent actual arguments must have a keyword specified.
+"cobound_d009.f", line 66.40: 1513-065 (S) Once an argument keyword has been specified, all subsequent actual arguments must have a keyword specified.
+"cobound_d009.f", line 67.41: 1513-065 (S) Once an argument keyword has been specified, all subsequent actual arguments must have a keyword specified.
+"cobound_d009.f", line 68.35: 1513-065 (S) Once an argument keyword has been specified, all subsequent actual arguments must have a keyword specified.
+"cobound_d009.f", line 69.11: 1513-146 (S) Missing argument "coarray".
+"cobound_d009.f", line 70.11: 1513-146 (S) Missing argument "coarray".
+"cobound_d009.f", line 71.11: 1513-146 (S) Missing argument "coarray".
+"cobound_d009.f", line 75.26: 1513-133 (S) KIND must be an integer constant.
+"cobound_d009.f", line 76.29: 1514-776 (S) The coarray argument of intrinsic procedure ucobound must be a coarray.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file cobound_d009.f.

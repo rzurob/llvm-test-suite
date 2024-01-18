@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/procPtrComp/dtpPPCBasicNoPassSubroutine.scenario
+#FEATURE   = Procedure Pointers as Components - reference to subroutine without passed-object dummy argument
+#CREATOR   = DF Manual Update
+#DATE      = 20090323
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPPCBasicNoPassSubroutine.f
+#OUTPUT    = dtpPPCBasicNoPassSubroutine$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPPCBasicNoPassSubroutine$(OBJ)
+#OUTPUT    = dtpPPCBasicNoPassSubroutine$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPPCBasicNoPassSubroutine$(EXE)
+#STDOUT    = dtpPPCBasicNoPassSubroutine.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpPPCBasicNoPassSubroutine$(product)vf) dtpPPCBasicNoPassSubroutine.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

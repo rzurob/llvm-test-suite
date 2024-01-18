@@ -1,0 +1,8 @@
+"deferLenC403_003d.f", line 41.23: 1514-704 (S) Entity c1 is declared with a deferred type parameter. c1 must have the POINTER or ALLOCATABLE attribute.
+** m   === End of Compilation 1 ===
+"deferLenC403_003d.f", line 48.17: 1514-704 (S) Entity c2 is declared with a deferred type parameter. c2 must have the POINTER or ALLOCATABLE attribute.
+"deferLenC403_003d.f", line 53.26: 1514-704 (S) Entity c3 is declared with a deferred type parameter. c3 must have the POINTER or ALLOCATABLE attribute.
+** deferlenc403_001d   === End of Compilation 2 ===
+"deferLenC403_003d.f", line 58.23: 1514-704 (S) Entity c4 is declared with a deferred type parameter. c4 must have the POINTER or ALLOCATABLE attribute.
+** c4   === End of Compilation 3 ===
+1501-511  Compilation failed for file deferLenC403_003d.f.

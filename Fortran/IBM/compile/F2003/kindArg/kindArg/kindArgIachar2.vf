@@ -1,0 +1,7 @@
+"kindArgIachar2.f", line 42.30: 1513-145 (S) Argument keyword "kindd" does not match the dummy argument specified in the interface for the intrinsic procedure "iachar".
+"kindArgIachar2.f", line 43.25: 1513-145 (S) Argument keyword "kid" does not match the dummy argument specified in the interface for the intrinsic procedure "iachar".
+"kindArgIachar2.f", line 44.29: 1513-067 (S) Argument keyword "kind" was already specified for an actual argument.
+"kindArgIachar2.f", line 45.11: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "iachar".
+"kindArgIachar2.f", line 46.11: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "iachar".
+** kindargiachar2   === End of Compilation 1 ===
+1501-511  Compilation failed for file kindArgIachar2.f.

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/derived/acetdt50.scenario
+#FEATURE	= Array constructor enhancement - AC in SOURCE of ALLOCATE (derived type)
+#CREATOR	= DF Manual Update
+#DATE		= 20061116
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt50.f
+#OUTPUT		= acetdt50$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt50$(OBJ)
+#OUTPUT		= acetdt50$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt50$(EXE)
+#STDOUT		= acetdt50.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetdt50$(product)vf) acetdt50.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

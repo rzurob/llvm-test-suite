@@ -1,0 +1,15 @@
+ &NMLB
+ BARG=1, 1, 1, 1, 1, 1, "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    "
+ /
+ &NMLF
+ FUNC=99, 99, 99, 99, 99, 99, "TEST      ", "TEST      ", "TEST      ", "TEST      ", "TEST      ", "TEST      ", "TEST      ", "TEST      ", "TEST      ", "TEST      ", 1, 1, 1, 1, 1, 1, "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    "
+ /
+ &NMLB
+ B1=1, 1, 1, 1, 1, 1, "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    "
+ /
+ &NMLC
+ C1=1, 1, 1, 1, 1, 1, "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", "Niels     ", 6, 6, 6, 6, 6, 6, "Erwin     ", "Erwin     ", "Erwin     ", "Erwin     ", "Erwin     ", "Erwin     ", "Erwin     ", "Erwin     ", "Erwin     ", "Erwin     "
+ /
+ &NMLT
+ B1=1, 1, 1, 1, 1, 1, "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", C2=99, 99, 99, 99, 99, 99, "TEST      ", "TEST      ", "TEST      ", "TEST      ", "TEST      ", "TEST      ", "TEST      ", "TEST      ", "TEST      ", "TEST      ", 1, 1, 1, 1, 1, 1, "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    ", "Werner    "
+ /

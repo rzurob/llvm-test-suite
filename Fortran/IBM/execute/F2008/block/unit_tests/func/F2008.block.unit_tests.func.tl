@@ -1,0 +1,11 @@
+automatic_var_in_block.scenario
+exit_stmt_in_block1.scenario
+exit_stmt_in_block2.scenario
+finalization_in_block.scenario
+func_call_in_block.scenario
+goto_stmt_in_block.scenario
+implicit_typing_with_block.scenario
+local_var_in_block.scenario
+nested_blocks.scenario
+saved_var_in_block.scenario
+goto_out_of_block.scenario

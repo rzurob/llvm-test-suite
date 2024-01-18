@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2008/impure/unit_tests/func/impure01.scenario
+#FEATURE = 917300 impure procedures
+#CREATOR = Paul Liu
+#DATE    = 20120308
+#TEST_TYPE=FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)impure01.f
+#OUTPUT    = impure01$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  impure01$(OBJ)
+#OUTPUT= impure01$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  impure01$(EXE)
+#STDOUT= impure01.out
+#ENDCMD
+
+#CMD   = XLDIFF
+#INPUT = $(tcasedir)impure01.vf impure01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

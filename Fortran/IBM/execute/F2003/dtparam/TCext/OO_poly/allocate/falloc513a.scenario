@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/allocate/falloc513a.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_poly/*
+#DATE      = 20070817
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)falloc513a.f
+#OUTPUT    = falloc513a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = falloc513a$(OBJ)
+#OUTPUT    = falloc513a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = falloc513a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,4 @@
+"Misc4.f", line 50.20: 1515-113 (E) The declaration of ptr as a procedure pointer component requires the POINTER attribute.  The POINTER attribute is assumed.
+"Misc4.f", line 50.20: 1515-111 (S) Procedure pointer component ptr was declared with an implicit interface. ptr must also be declared with the NOPASS attribute.
+** misc4   === End of Compilation 1 ===
+1501-511  Compilation failed for file Misc4.f.

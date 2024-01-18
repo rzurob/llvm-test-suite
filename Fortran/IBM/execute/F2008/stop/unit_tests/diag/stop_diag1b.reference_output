@@ -1,0 +1,11 @@
+"stop_diag1.f", line 44.8: 1518-370 (L) The stop code must be a scalar character constant or a string of digits by the Fortran 2003 standard.
+"stop_diag1.f", line 45.8: 1518-370 (L) The stop code must be a scalar character constant or a string of digits by the Fortran 2003 standard.
+"stop_diag1.f", line 46.8: 1518-370 (L) The stop code must be a scalar character constant or a string of digits by the Fortran 2003 standard.
+"stop_diag1.f", line 47.8: 1518-370 (L) The stop code must be a scalar character constant or a string of digits by the Fortran 2003 standard.
+"stop_diag1.f", line 48.8: 1518-370 (L) The stop code must be a scalar character constant or a string of digits by the Fortran 2003 standard.
+"stop_diag1.f", line 50.8: 1518-370 (L) The stop code must be a scalar character constant or a string of digits by the Fortran 2003 standard.
+"stop_diag1.f", line 52.8: 1516-067 (S) The code for STOP or PAUSE must be a character constant or a string of numeric digits.
+"stop_diag1.f", line 53.8: 1516-067 (S) The code for STOP or PAUSE must be a character constant or a string of numeric digits.
+"stop_diag1.f", line 56.8: 1518-370 (L) The stop code must be a scalar character constant or a string of digits by the Fortran 2003 standard.
+** p   === End of Compilation 1 ===
+1501-511  Compilation failed for file stop_diag1.f.

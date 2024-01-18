@@ -1,0 +1,12 @@
+  48.17   011100E6 DC‹in literal FMT specifier‹
+  49.16   011100E6 DC‹in literal FMT specifier‹
+  54.22   011100E6 DC‹in literal FMT specifier‹
+  55.22   011100E6 DC‹in literal FMT specifier‹
+  59.13   011100E6 DC‹in component number 1 of FORMAT statement‹
+  63.17   011100E6 DP‹in literal FMT specifier‹
+  64.16   011100E6 DP‹in literal FMT specifier‹
+  69.22   011100E6 DP‹in literal FMT specifier‹
+  70.22   011100E6 DP‹in literal FMT specifier‹
+  74.13   011100E6 DP‹in component number 1 of FORMAT statement‹
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file decimaleditd003.f.

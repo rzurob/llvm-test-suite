@@ -1,0 +1,20 @@
+ start
+ finalizePointRank2
+ 1 1 & 4 5
+ 2
+ 3
+ finalizePointRank2
+ 1 1 & 4 5
+ finalizePointRank2
+ 1 1 & 4 5
+ 4
+ finalizePointRank2
+ 1 1 & 4 5
+ finalizePointRank2
+ 1 1 & 5 6
+ 5
+ finalizePointRank2
+ 1 1 & 5 6
+ finalizePointRank2
+ 1 1 & 5 6
+ end

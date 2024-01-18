@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/ieeeNaNInfIO/misc/miscNaNInfIO011.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of ieeeNaNInfIO/misc/*
+#DATE      = 20071113
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)miscNaNInfIO011.dat
+#OUTPUT   = miscNaNInfIO011.dat
+#ENDCMD
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)miscNaNInfIO011.f
+#OUTPUT   =  miscNaNInfIO011$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  miscNaNInfIO011$(OBJ)
+#OUTPUT   =  miscNaNInfIO011$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  miscNaNInfIO011$(EXE)
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = miscNaNInfIO011.out $(tcasedir)miscNaNInfIO011.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

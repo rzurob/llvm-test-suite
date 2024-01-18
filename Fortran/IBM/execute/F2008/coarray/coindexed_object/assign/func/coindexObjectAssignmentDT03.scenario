@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2008/coarray/coindexed_object/assign/func/coindexObjectAssignmentDT03.scenario
+#FEATURE   =
+#CREATOR   = Shahid Alam
+#DATE      = 20110307
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)coindexObjectAssignmentDT03.f
+#OUTPUT    = coindexObjectAssignmentDT03$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = coindexObjectAssignmentDT03$(OBJ)
+#OUTPUT    = coindexObjectAssignmentDT03$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+   #CMD       = MPRUN
+   #INPUT     = coindexObjectAssignmentDT03$(EXE)
+   #STDOUT    = coindexObjectAssignmentDT03$(i).out
+   #STDERR    = coindexObjectAssignmentDT03$(i).out
+   #ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_tpbnd/specific/ftpbnd521d1.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_tpbnd/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ftpbnd521d1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=intmsg:shutup
+#OUTPUT    = ftpbnd521d1$(OBJ)
+#STDERR    = ftpbnd521d1.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)ftpbnd521d1$(product)vf) ftpbnd521d1.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

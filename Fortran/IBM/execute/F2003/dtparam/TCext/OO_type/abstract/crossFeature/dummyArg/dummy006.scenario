@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/crossFeature/dummyArg/dummy006.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/abstract/crossFeature/dummyArg/dummy006.scenario
+#DATE      = 20070612
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dummy006.f
+#OUTPUT    = dummy006$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dummy006$(OBJ)
+#OUTPUT    = dummy006$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dummy006$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/volatile/test/volatileC526Intent02.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of volatile/*
+#DATE      = 20071101
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)volatileC526Intent02.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_LANG_LEVEL<2003pure>)
+#OUTPUT    = volatileC526Intent02$(OBJ)
+#STDERR    = volatileC526Intent02.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#IF in($(F_COMPILE^OPT_OPTIMIZE_FOR_SMP))  ||  in($(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT))
+        #INPUT  = $($(tcasedir)volatileC526Intent02.smp$(product)vf)\
+                                volatileC526Intent02.err
+#ELSE
+        #INPUT  = $($(tcasedir)volatileC526Intent02$(product)vf)   \
+                                volatileC526Intent02.err
+#ENDIF
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

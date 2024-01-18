@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/decimaledit/dtio/dcmlChildWrite011.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dcmlChildWrite011.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dcmlChildWrite011$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dcmlChildWrite011$(OBJ)
+#OUTPUT    = dcmlChildWrite011$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dcmlChildWrite011$(EXE)
+#STDOUT    = dcmlChildWrite011.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dcmlChildWrite011.out $($(tcasedir)dcmlChildWrite011$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

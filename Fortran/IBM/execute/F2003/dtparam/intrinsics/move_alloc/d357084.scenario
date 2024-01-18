@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/move_alloc/d357084.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Oct. 6 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)d357084.f
+#OUTPUT= d357084$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = d357084$(OBJ)
+#OUTPUT= d357084$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = d357084$(EXE)
+#STDOUT = d357084.out
+#ENDCMD
+
+#CMD    = DIFF
+#INPUT  = $($(tcasedir)d357084$(product)vf) d357084.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

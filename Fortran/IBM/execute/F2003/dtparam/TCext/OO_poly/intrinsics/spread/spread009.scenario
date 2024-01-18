@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/spread/spread009.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070928
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)spread009.f
+#OUTPUT    = spread009$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = spread009$(OBJ)
+#OUTPUT    = spread009$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = spread009$(EXE)
+#STDOUT    = spread009.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)spread009$(product)vf) spread009.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

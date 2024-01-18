@@ -1,0 +1,15 @@
+** m   === End of Compilation 1 ===
+"nullDiagDiffType01.f", line 58.3: 1515-104 (S) The target in the pointer assignment statement is not unlimited polymorphic.  The pointer must be type compatible with the target, and the corresponding nondeferred type parameters must be equal.
+"nullDiagDiffType01.f", line 59.3: 1515-104 (S) The target in the pointer assignment statement is not unlimited polymorphic.  The pointer must be type compatible with the target, and the corresponding nondeferred type parameters must be equal.
+"nullDiagDiffType01.f", line 60.3: 1515-104 (S) The target in the pointer assignment statement is not unlimited polymorphic.  The pointer must be type compatible with the target, and the corresponding nondeferred type parameters must be equal.
+"nullDiagDiffType01.f", line 61.3: 1515-104 (S) The target in the pointer assignment statement is not unlimited polymorphic.  The pointer must be type compatible with the target, and the corresponding nondeferred type parameters must be equal.
+"nullDiagDiffType01.f", line 63.6: 1516-044 (S) A conversion from type CHARACTER is not permitted.
+"nullDiagDiffType01.f", line 64.6: 1516-044 (S) A conversion from type LOGICAL is not permitted.
+"nullDiagDiffType01.f", line 65.6: 1516-044 (S) A conversion from type CHARACTER is not permitted.
+"nullDiagDiffType01.f", line 66.6: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"nullDiagDiffType01.f", line 68.3: 1515-104 (S) The target in the pointer assignment statement is not unlimited polymorphic.  The pointer must be type compatible with the target, and the corresponding nondeferred type parameters must be equal.
+"nullDiagDiffType01.f", line 69.3: 1515-104 (S) The target in the pointer assignment statement is not unlimited polymorphic.  The pointer must be type compatible with the target, and the corresponding nondeferred type parameters must be equal.
+"nullDiagDiffType01.f", line 70.6: 1516-044 (S) A conversion from type b is not permitted.
+"nullDiagDiffType01.f", line 71.6: 1516-044 (S) A conversion from type a is not permitted.
+** nulldiagdifftype01   === End of Compilation 2 ===
+1501-511  Compilation failed for file nullDiagDiffType01.f.

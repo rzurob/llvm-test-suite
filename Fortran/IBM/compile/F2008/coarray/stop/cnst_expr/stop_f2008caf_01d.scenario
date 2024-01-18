@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/coarray/stop/cnst_expr/stop_f2008caf_01d.scenario
+#FEATURE   = Constant expression as stop code in STOP statement
+#CREATOR   = Shahid Alam
+#DATE      = 20101026
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)stop_f2008caf_01d.f
+#OUTPUT    = stop_f2008caf_01d$(OBJ)
+#STDOUT    = stop_f2008caf_01d.out
+#STDERR    = stop_f2008caf_01d.out
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = stop_f2008caf_01d.out $($(tcasedir)stop_f2008caf_01d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

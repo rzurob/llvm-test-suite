@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"dtSpec003d2.f", line 42.15: 1511-140 (S) Variable b1 must not be allocated by an ALLOCATE statement that does not have a type specification, SOURCE= specifier, or MOLD= specifier.
+** dtspec003d2   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtSpec003d2.f.

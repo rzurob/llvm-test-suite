@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/syncMemDefQLTP
+#FEATURE        = CAF SYNC MEMORY - Define followed by Query of length
+#CREATOR        = DF
+#DATE           = 2010-09-22
+#TEST_TYPE      = sanity
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)syncMemDefQLTP.f
+#OUTPUT = syncMemDefQLTP$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = syncMemDefQLTP$(OBJ)
+#OUTPUT = syncMemDefQLTP$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = syncMemDefQLTP$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

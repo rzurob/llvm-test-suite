@@ -1,0 +1,50 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = streamio/unit/iorw03.scenario
+#FEATURE = streamio tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD =  COPY
+#INPUT = $(tcasedir)mystream.std
+#OUTPUT =mystream
+#ENDCMD
+
+#CMD    = XLF_COMPILE
+#INPUT     = $(tcasedir)iorw03.f
+#OUTPUT    = iorw03$(OBJ)
+#OPTS = $(OPT_FREE_SOURCE_FORM)
+#ENDCMD
+
+#CMD    = XLF_LINK
+#INPUT		= iorw03$(OBJ)
+#OUTPUT		=  a.out
+#OPTS = $(OPT_FREE_SOURCE_FORM)
+#ENDCMD
+
+#CMD =RUN
+#INPUT = a.out
+#STDOUT =iorw03.out
+#ENDCMD
+
+#CMD =  XLDIFF
+#INPUT = iorw03.out $(tcasedir)iorw03.vf
+#ENDCMD
+
+#CMD =  XLDIFF
+#INPUT = mystream $(tcasedir)iorw03.rw
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/ieee/fpscr/fpscrmix01lx.scenario
+#FEATURE = ieee tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)fpscrmix01lx.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION)
+#OUTPUT    = fpscrmix01lx$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     =  fpscrmix01lx$(OBJ)
+#OUTPUT    = fpscrmix01lx$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fpscrmix01lx$(EXE)
+#STDOUT    = fpscrmix01lx.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

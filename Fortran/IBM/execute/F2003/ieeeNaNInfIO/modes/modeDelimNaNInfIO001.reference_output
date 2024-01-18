@@ -1,0 +1,20 @@
+ NaN(Q) "xlf" NaN(Q) "ibm" NaN(S) NaN(S) "Fortran" Inf -Inf
+ &MYNML
+ NANQ_POS=NaN(Q), XLF='xlf', NANQ_NEG=NaN(Q), IBM='ibm', NANS_POS=NaN(S), NANS_NEG=NaN(S), FORTRAN='Fortran', INF_POS=Inf, INF_NEG=-Inf
+ /
+ NaN(Q) 'xlf' NaN(Q) 'ibm' NaN(S) NaN(S) 'Fortran' Inf -Inf
+ &MYNML
+ NANQ_POS=NaN(Q), XLF="xlf", NANQ_NEG=NaN(Q), IBM="ibm", NANS_POS=NaN(S), NANS_NEG=NaN(S), FORTRAN="Fortran", INF_POS=Inf, INF_NEG=-Inf
+ /
+ NaN(Q) "xlf" NaN(Q) "ibm" NaN(S) NaN(S) "Fortran" Inf -Inf
+ &MYNML
+ NANQ_POS=NaN(Q), XLF='xlf', NANQ_NEG=NaN(Q), IBM='ibm', NANS_POS=NaN(S), NANS_NEG=NaN(S), FORTRAN='Fortran', INF_POS=Inf, INF_NEG=-Inf
+ /
+ NaN(Q) 'xlf' NaN(Q) 'ibm' NaN(S) NaN(S) 'Fortran' Inf -Inf
+ &MYNML
+ NANQ_POS=NaN(Q), XLF="xlf", NANQ_NEG=NaN(Q), IBM="ibm", NANS_POS=NaN(S), NANS_NEG=NaN(S), FORTRAN="Fortran", INF_POS=Inf, INF_NEG=-Inf
+ /
+ NaN(Q) "xlf" NaN(Q) "ibm" NaN(S) NaN(S) "Fortran" Inf -Inf
+ &MYNML
+ NANQ_POS=NaN(Q), XLF='xlf', NANQ_NEG=NaN(Q), IBM='ibm', NANS_POS=NaN(S), NANS_NEG=NaN(S), FORTRAN='Fortran', INF_POS=Inf, INF_NEG=-Inf
+ /

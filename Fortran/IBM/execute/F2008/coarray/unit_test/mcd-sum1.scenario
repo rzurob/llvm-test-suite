@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=mcd-sum1.scenario
+#FEATURE = Coarray access
+#CREATOR = Xing Xue
+#DATE    = 20090731
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = $(tcasedir)mcd-sum.f
+#OUTPUT    = mcd-sum1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = mcd-sum1$(OBJ)
+#OUTPUT    = mcd-sum1$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = mcd-sum1$(EXE)
+#STDOUT    = mcd-sum1.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

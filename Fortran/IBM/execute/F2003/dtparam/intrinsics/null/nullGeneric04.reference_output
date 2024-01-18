@@ -1,0 +1,28 @@
+ 1---
+ in sub1
+ dtp is not allocated
+ in sub2
+ dtp is not allocated
+ in sub3
+ dtp1 is not allocated
+ dtp2 is not allocated
+ 2---
+ in sub1
+ dtp is allocated
+ 2 3 1 2 3
+ in sub2
+ dtp is allocated
+ 4 6 11 12 13
+ in sub3
+ dtp1 is allocated
+ 2 3 1 2 3
+ dtp2 is allocated
+ 4 6 11 12 13
+ 3---
+ in sub1
+ dtp is not allocated
+ in sub2
+ dtp is not allocated
+ in sub3
+ dtp1 is not allocated
+ dtp2 is not allocated

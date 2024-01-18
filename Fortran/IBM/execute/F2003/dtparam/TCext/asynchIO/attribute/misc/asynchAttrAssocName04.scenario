@@ -1,0 +1,47 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/asynchIO/attribute/misc/asynchAttrAssocName04.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of asynchIO/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=bgq
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)asynchAttrAssocName04.f
+#OUTPUT		= asynchAttrAssocName04$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= asynchAttrAssocName04$(OBJ)
+#OUTPUT		= asynchAttrAssocName04$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= asynchAttrAssocName04$(EXE)
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= -i '^verType[ 	]'
+#INPUT		= asynchAttrAssocName04$(LST)
+#STDOUT		= asynchAttrAssocName04.egrep.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= asynchAttrAssocName04.egrep.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

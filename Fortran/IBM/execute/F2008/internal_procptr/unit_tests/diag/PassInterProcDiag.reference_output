@@ -1,0 +1,8 @@
+** m   === End of Compilation 1 ===
+"PassInterProcDiag.f", line 95.30: 1518-362 (L) print1 is an internal procedure. Internal procedures are not permitted as actual arguments by the Fortran 2003 standard.
+"PassInterProcDiag.f", line 97.30: 1518-362 (L) print2 is an internal procedure. Internal procedures are not permitted as actual arguments by the Fortran 2003 standard.
+"PassInterProcDiag.f", line 99.30: 1518-362 (L) print3 is an internal procedure. Internal procedures are not permitted as actual arguments by the Fortran 2003 standard.
+"PassInterProcDiag.f", line 101.30: 1518-362 (L) print4 is an internal procedure. Internal procedures are not permitted as actual arguments by the Fortran 2003 standard.
+"PassInterProcDiag.f", line 103.30: 1518-362 (L) print5 is an internal procedure. Internal procedures are not permitted as actual arguments by the Fortran 2003 standard.
+** passinterprocdiag   === End of Compilation 2 ===
+1501-510  Compilation successful for file PassInterProcDiag.f.

@@ -1,0 +1,18 @@
+** m   === End of Compilation 1 ===
+  65.25   01610109 
+  75.25   01610896 b1Ü
+  75.29   016108F3 b2ÜVALUEÜ
+  76.32   016108F3 c1ÜVALUEÜ
+  76.36   016108F3 c2ÜVALUEÜ
+  76.40   016108F3 c3ÜVALUEÜ
+  78.29   016108F4 e2ÜVALUEÜ
+  79.18   01610109 
+  79.29   016108F4 f2ÜVALUEÜ
+  80.34   016108F4 g2ÜVALUEÜ
+  81.23   016108F3 b3ÜVALUEÜ
+  81.31   016108F4 e3ÜVALUEÜ
+  81.35   016108F4 f3ÜVALUEÜ
+  81.39   016108F4 g3ÜVALUEÜ
+** sub   === End of Compilation 2 ===
+** foo   === End of Compilation 3 ===
+1501-511  Compilation failed for file dtParamDummyValueC528_01.f.

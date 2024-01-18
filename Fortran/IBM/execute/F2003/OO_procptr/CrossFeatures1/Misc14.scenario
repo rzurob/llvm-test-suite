@@ -1,0 +1,44 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = OO_procptr/CrossFeatures1/Misc14.scenario
+#FEATURE   = PROCEDURE POINTER
+#CREATOR   = Feng Ye
+#DATE      = 06-06-05
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_LANG_LEVEL<2003std>)
+#INPUT     = $(tcasedir)Misc14.f
+#STDERR    = Misc14.err
+#OUTPUT    = Misc14$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_LANG_LEVEL<2003std>)
+#INPUT     = Misc14$(OBJ)
+#OUTPUT    = Misc14$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = Misc14$(EXE)
+#ENDCMD
+
+#CMD       = SED
+#INPUT     = -e "/1518-317/d" Misc14.err
+#STDOUT    = Misc14.SEDerr
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = Misc14.SEDerr $($(tcasedir)Misc14$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

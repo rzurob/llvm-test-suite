@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"procInterface001e.f", line 43.5: 1518-379 (L) An internal procedure is not permitted as the target of a procedure pointer assignment statement by the Fortran 2003 standard.
+"procInterface001e.f", line 44.5: 1518-379 (L) An internal procedure is not permitted as the target of a procedure pointer assignment statement by the Fortran 2003 standard.
+** procinterface001e   === End of Compilation 2 ===
+1501-510  Compilation successful for file procInterface001e.f.

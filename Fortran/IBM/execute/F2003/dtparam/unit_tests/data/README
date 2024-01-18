@@ -1,0 +1,28 @@
+Diagnostic
+	diaDataDTParmInitExpr.f  
+                KIND and LEN type parameter is not scalar init-expr, or is assumed or deferred.
+	diaDataDTParmComp.f 
+               type and type parameters of the constants in the value-list is not the same as  the type   
+               of the variables in the object-list in a DATA stmt.
+	diaDataDTParmNested.f       
+               nested and extended type parameter and structure constructor related to above error  
+               messages
+	diaBlockDataDTParm.f       
+               KIND and LEN type parameter is not scalar init-expr, or is assumed or deferred in I             
+                Block Data
+
+Functional
+
+	funDataDTParm.f        
+               Single type structure constructors containing type parameters to the DATA 
+               statement.
+	funDataDTParmExtend.f
+                Extended type structure constructors containing type parameters to the DATA 
+               statement.
+	funDataDTParmNested.f
+               Nested type structure constructors containing type parameters to the DATA 
+               statement.
+	funBlockDataDTParm.f
+               type structure constructors containing type parameters to the Block DATA 
+               statement.
+

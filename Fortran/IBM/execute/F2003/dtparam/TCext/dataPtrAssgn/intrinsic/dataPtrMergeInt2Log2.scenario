@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/intrinsic/dataPtrMergeInt2Log2.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071216
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrMergeInt2Log2.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrMergeInt2Log2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrMergeInt2Log2$(OBJ)
+#OUTPUT    = dataPtrMergeInt2Log2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrMergeInt2Log2$(EXE)
+#STDOUT    = dataPtrMergeInt2Log2.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrMergeInt2Log2.out $($(tcasedir)dataPtrMergeInt2Log2$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,33 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       InitExpCharRelOP.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       09-07-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)InitExpCharRelOP.f
+#OUTPUT= InitExpCharRelOP$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  InitExpCharRelOP$(OBJ)
+#OUTPUT= InitExpCharRelOP$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  InitExpCharRelOP$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

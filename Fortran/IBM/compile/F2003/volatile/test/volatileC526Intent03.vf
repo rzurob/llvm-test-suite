@@ -1,0 +1,5 @@
+"volatileC526Intent03.f", line 25.20: 1518-208 (L) The entity b is not permitted to have both the INTENT(IN) attribute and the VOLATILE attribute by the Fortran 2003 standard.
+** volatilec526intent03   === End of Compilation 1 ===
+"volatileC526Intent03.f", line 42.15: 1518-208 (L) The entity b is not permitted to have both the INTENT(IN) attribute and the VOLATILE attribute by the Fortran 2003 standard.
+** subnew   === End of Compilation 2 ===
+1501-510  Compilation successful for file volatileC526Intent03.f.

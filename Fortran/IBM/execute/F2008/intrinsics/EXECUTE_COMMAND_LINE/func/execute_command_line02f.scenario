@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/intrinsics/EXECUTE_COMMAND_LINE/func/execute_command_line02f.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20101215
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)execute_command_line02f.f
+#OUTPUT   =  execute_command_line02f$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  execute_command_line02f$(OBJ)
+#OUTPUT   =  execute_command_line02f$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  execute_command_line02f$(EXE)
+#STDOUT   =  execute_command_line02f.out
+#ENDCMD
+
+#CMD      = DIFF
+#OPTS     = -b
+#INPUT    = execute_command_line02f.out $(tcasedir)execute_command_line02f.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

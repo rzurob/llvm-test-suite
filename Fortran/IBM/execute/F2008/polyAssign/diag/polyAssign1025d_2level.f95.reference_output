@@ -1,0 +1,23 @@
+"polyAssign1025d_2level.f", line 48.9: 1518-260 (L) The EXTENDS keyword is not permitted by the Fortran 95 standard.
+"polyAssign1025d_2level.f", line 50.9: 1518-260 (L) The EXTENDS keyword is not permitted by the Fortran 95 standard.
+"polyAssign1025d_2level.f", line 53.4: 1518-260 (L) The CLASS keyword is not permitted by the Fortran 95 standard.
+"polyAssign1025d_2level.f", line 54.5: 1518-400 (L) The variable being defined in the intrinsic assignment statement is not permitted to be polymorphic by the Fortran 95 standard.
+"polyAssign1025d_2level.f", line 55.22: 1518-285 (L) The ERROR STOP statement is not permitted by the Fortran 95 standard.
+"polyAssign1025d_2level.f", line 56.5: 1518-400 (L) The variable being defined in the intrinsic assignment statement is not permitted to be polymorphic by the Fortran 95 standard.
+"polyAssign1025d_2level.f", line 57.22: 1518-285 (L) The ERROR STOP statement is not permitted by the Fortran 95 standard.
+"polyAssign1025d_2level.f", line 58.5: 1518-400 (L) The variable being defined in the intrinsic assignment statement is not permitted to be polymorphic by the Fortran 95 standard.
+"polyAssign1025d_2level.f", line 59.22: 1518-285 (L) The ERROR STOP statement is not permitted by the Fortran 95 standard.
+"polyAssign1025d_2level.f", line 60.5: 1518-400 (L) The variable being defined in the intrinsic assignment statement is not permitted to be polymorphic by the Fortran 95 standard.
+"polyAssign1025d_2level.f", line 61.22: 1518-285 (L) The ERROR STOP statement is not permitted by the Fortran 95 standard.
+"polyAssign1025d_2level.f", line 62.4: 1518-191 (L) SELECT TYPE is not allowed in Fortran 95, Fortran 90, FORTRAN 77, or SAA.
+"polyAssign1025d_2level.f", line 63.6: 1518-191 (L) TYPE IS is not allowed in Fortran 95, Fortran 90, FORTRAN 77, or SAA.
+"polyAssign1025d_2level.f", line 64.8: 1518-285 (L) The ERROR STOP statement is not permitted by the Fortran 95 standard.
+"polyAssign1025d_2level.f", line 65.6: 1518-191 (L) TYPE IS is not allowed in Fortran 95, Fortran 90, FORTRAN 77, or SAA.
+"polyAssign1025d_2level.f", line 66.26: 1518-285 (L) The ERROR STOP statement is not permitted by the Fortran 95 standard.
+"polyAssign1025d_2level.f", line 67.27: 1518-285 (L) The ERROR STOP statement is not permitted by the Fortran 95 standard.
+"polyAssign1025d_2level.f", line 68.6: 1518-191 (L) CLASSDEFAULT is not allowed in Fortran 95, Fortran 90, FORTRAN 77, or SAA.
+"polyAssign1025d_2level.f", line 69.8: 1518-285 (L) The ERROR STOP statement is not permitted by the Fortran 95 standard.
+"polyAssign1025d_2level.f", 1518-318 (L) The STOPEXCEPT option can cause the program to behave in a way that is different from that specified by the Fortran 95 standard.
+"polyAssign1025d_2level.f", 1518-318 (L) The XLF2003(NOOLDNANINF) option can cause the program to behave in a way that is different from that specified by the Fortran 95 standard.
+** polyassign1025d   === End of Compilation 1 ===
+1501-510  Compilation successful for file polyAssign1025d_2level.f.

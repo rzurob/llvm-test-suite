@@ -1,0 +1,3 @@
+"polyAssign1010d_LHSpointerAssignment.f", line 42.5: 1515-103 (S) The polymorphic variable being defined in the intrinsic assignment must be allocatable.
+** test   === End of Compilation 1 ===
+1501-511  Compilation failed for file polyAssign1010d_LHSpointerAssignment.f.

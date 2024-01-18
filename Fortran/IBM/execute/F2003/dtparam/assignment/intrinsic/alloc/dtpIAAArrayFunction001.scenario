@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/assignment/intrinsic/alloc/dtpIAAArrayFunction001.scenario
+#FEATURE   = Intrinsic Assignment with Allocation - assign allocated DTP array (kind) returned from function
+#CREATOR   = DF Manual Update
+#DATE      = 20090522
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAAArrayFunction001.f
+#OUTPUT    = dtpIAAArrayFunction001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAAArrayFunction001$(OBJ)
+#OUTPUT    = dtpIAAArrayFunction001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAAArrayFunction001$(EXE)
+#STDOUT    = dtpIAAArrayFunction001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpIAAArrayFunction001$(product)vf) dtpIAAArrayFunction001.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/AttrSpecStmt/dtpAttrSpecStmtData17.scenario
+#FEATURE	= Data Object Declaration
+#CREATOR	= Glen Mateer
+#DATE		= 20090511
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS       = -qdebug=allowrpdt
+#INPUT		= $(tcasedir)dtpAttrSpecStmtData17.f
+#OUTPUT		= dtpAttrSpecStmtData17$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= dtpAttrSpecStmtData17$(OBJ)
+#OUTPUT		= dtpAttrSpecStmtData17$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= dtpAttrSpecStmtData17$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

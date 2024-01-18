@@ -1,0 +1,42 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = ieee/copy_sign/fcpsgn04.scenario
+#FEATURE   = ieee tests - regression run bucket
+#CREATOR   = automated conversion script
+#DATE      = 20081220
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)ieeeconsts.f
+#OUTPUT = ieeeconsts$(OBJ)
+#OPTS = $(OPT_FREE_SOURCE_FORM) $(OPT_FOLD_FLOATS_OFF) $(OPT_SET_STRICT_OPTIMIZATION) $(OPT_REALSIZE_4)
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)fcpsgn04.f
+#OUTPUT = fcpsgn04$(OBJ)
+#OPTS 	= -I./ $(OPT_FREE_SOURCE_FORM) $(OPT_FOLD_FLOATS_OFF) $(OPT_SET_STRICT_OPTIMIZATION) $(OPT_REALSIZE_4)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = fcpsgn04$(OBJ)
+#OUTPUT = fcpsgn04$(EXE)
+#OPTS 	= -I./ $(OPT_FREE_SOURCE_FORM) $(OPT_FOLD_FLOATS_OFF) $(OPT_SET_STRICT_OPTIMIZATION) $(OPT_REALSIZE_4)
+#ENDCMD
+
+#CMD	= RUN
+#INPUT	= fcpsgn04$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

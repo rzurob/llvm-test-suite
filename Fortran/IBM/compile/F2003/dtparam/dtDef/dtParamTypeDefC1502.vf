@@ -1,0 +1,5 @@
+"dtParamTypeDefC1502.f", line 38.20: 1514-730 (S) Derived type dt0 with the BIND attribute must not have type parameters.
+"dtParamTypeDefC1502.f", line 42.20: 1514-730 (S) Derived type dt1 with the BIND attribute must not have type parameters.
+"dtParamTypeDefC1502.f", line 46.20: 1514-730 (S) Derived type dt2 with the BIND attribute must not have type parameters.
+** dtparamtypedefc1502   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtParamTypeDefC1502.f.

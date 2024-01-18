@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/typeparam/kindparamInitexpr004.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)kindparamInitexpr004.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=allowrpdt
+#OUTPUT    = kindparamInitexpr004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = kindparamInitexpr004$(OBJ)
+#OUTPUT    = kindparamInitexpr004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = kindparamInitexpr004$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

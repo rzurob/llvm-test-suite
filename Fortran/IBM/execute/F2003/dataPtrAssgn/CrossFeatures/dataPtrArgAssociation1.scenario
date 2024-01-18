@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dataPtrArgAssociation1.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       02-20-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dataPtrArgAssociation1.f
+#OUTPUT= dataPtrArgAssociation1$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  dataPtrArgAssociation1$(OBJ)
+#OUTPUT= dataPtrArgAssociation1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dataPtrArgAssociation1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

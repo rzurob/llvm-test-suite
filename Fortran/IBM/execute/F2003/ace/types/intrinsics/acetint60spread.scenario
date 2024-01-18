@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint60spread.scenario
+#FEATURE	= Array constructor enhancement - array construction intrinsics
+#CREATOR	= DF Manual Update
+#DATE		= 20061124
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint60spread.f
+#OUTPUT		= acetint60spread$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint60spread$(OBJ)
+#OUTPUT		= acetint60spread$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint60spread$(EXE)
+#STDOUT		= acetint60spread.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -r1e-5
+#INPUT		= $($(tcasedir)acetint60spread$(product)vf) acetint60spread.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

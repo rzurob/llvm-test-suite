@@ -1,0 +1,3 @@
+ &NAN
+ cc='xLf', nanq_pos=NANQ, i1=2003, inf_neg=-INF, cx=(-nanq, +nAns), my_pi = 3.14, nans_neg=-NaNS, inf_pos=infinity
+/

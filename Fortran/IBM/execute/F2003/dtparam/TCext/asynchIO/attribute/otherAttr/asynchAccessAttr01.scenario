@@ -1,0 +1,82 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/asynchIO/attribute/otherAttr/asynchAccessAttr01.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of asynchIO/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=bgq
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)asynchAccessAttr01.f
+#OUTPUT		= asynchAccessAttr01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= asynchAccessAttr01$(OBJ)
+#OUTPUT		= asynchAccessAttr01$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= asynchAccessAttr01$(EXE)
+#ENDCMD
+
+
+#CMD		= SED
+#OPTS		= -e '/^\*\* mpublic   === End of Compilation 1 ===/,$d'
+#INPUT		= asynchAccessAttr01$(LST)
+#STDOUT		= asynchAccessAttr01.mpublic$(LST)
+#ENDCMD
+
+#CMD		= SED
+#OPTS		= -e '1,/^\*\* mpublic   === End of Compilation 1 ===/d'
+#INPUT		= asynchAccessAttr01$(LST)
+#STDOUT		= asynchAccessAttr01.mainline$(LST)
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= -i '^publicPrivatePt[ 	]'
+#INPUT		= asynchAccessAttr01.mpublic$(LST)
+#STDOUT		= asynchAccessAttr01.publicPrivatePt.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i '^publicPublicPt[ 	]'
+#INPUT		= asynchAccessAttr01.mainline$(LST)
+#STDOUT		= asynchAccessAttr01.publicPublicPt.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i '^publicDefaultPt[ 	]'
+#INPUT		= asynchAccessAttr01.mainline$(LST)
+#STDOUT		= asynchAccessAttr01.publicDefaultPt.stdout
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= asynchAccessAttr01.publicPrivatePt.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= asynchAccessAttr01.publicPublicPt.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= asynchAccessAttr01.publicDefaultPt.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

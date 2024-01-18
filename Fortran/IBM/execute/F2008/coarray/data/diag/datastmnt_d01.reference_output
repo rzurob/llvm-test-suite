@@ -1,0 +1,4 @@
+"datastmnt_d01.f", line 26.17: 1514-030 (W) Variable caf0 is initialized more than once.
+"datastmnt_d01.f", line 28.7: 1514-030 (W) Variable caf1 is initialized more than once.
+** main   === End of Compilation 1 ===
+1501-510  Compilation successful for file datastmnt_d01.f.

@@ -1,0 +1,13 @@
+"POPCNT_001d.f", line 40.1: 1518-260 (L) The BYTE keyword is not permitted by the Fortran 2008 standard.
+"POPCNT_001d.f", line 59.32: 1518-256 (L) The intrinsic procedure popcnt (with these arguments) is not permitted by the Fortran 2008 standard.
+"POPCNT_001d.f", line 60.41: 1518-256 (L) The intrinsic procedure popcnt (with these arguments) is not permitted by the Fortran 2008 standard.
+"POPCNT_001d.f", line 64.34: 1518-256 (L) The intrinsic procedure popcnt (with these arguments) is not permitted by the Fortran 2008 standard.
+"POPCNT_001d.f", line 65.34: 1518-256 (L) The intrinsic procedure popcnt (with these arguments) is not permitted by the Fortran 2008 standard.
+"POPCNT_001d.f", line 66.33: 1518-256 (L) The intrinsic procedure popcnt (with these arguments) is not permitted by the Fortran 2008 standard.
+"POPCNT_001d.f", line 67.33: 1518-256 (L) The intrinsic procedure popcnt (with these arguments) is not permitted by the Fortran 2008 standard.
+"POPCNT_001d.f", line 69.38: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "popcnt".
+"POPCNT_001d.f", line 70.39: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "popcnt".
+"POPCNT_001d.f", line 71.45: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "popcnt".
+"POPCNT_001d.f", 1518-296 (L) Tab characters have been detected in the source.  The tab character is not permitted by the Fortran 2008 standard.
+** popcnt_001d   === End of Compilation 1 ===
+1501-511  Compilation failed for file POPCNT_001d.f.

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/listdirect/listDirectCharCompRead01.scenario
+#FEATURE   = 360757
+#CREATOR   = Nancy Wang
+#DATE      = Jan. 12 2009
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = COPY
+#INPUT = $(tcasedir)listDirectCharCompRead01.dat .
+#ENDCMD
+
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)listDirectCharCompRead01.f
+#OUTPUT= listDirectCharCompRead01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = listDirectCharCompRead01$(OBJ)
+#OUTPUT= listDirectCharCompRead01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = listDirectCharCompRead01$(EXE)
+#ENDCMD
+
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

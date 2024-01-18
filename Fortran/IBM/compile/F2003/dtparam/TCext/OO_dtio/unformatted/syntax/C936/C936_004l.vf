@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"C936_004l.f", line 43.8: 1514-640 (S) Dummy argument dtv of the derived-type I/O procedure unformattedread is of an extensible type. dtv must be polymorphic.
+"C936_004l.f", line 53.8: 1514-640 (S) Dummy argument dtv of the derived-type I/O procedure unformattedwrite is of an extensible type. dtv must be polymorphic.
+** c936_004l   === End of Compilation 2 ===
+** unformattedread   === End of Compilation 3 ===
+** unformattedwrite   === End of Compilation 4 ===
+1501-511  Compilation failed for file C936_004l.f.

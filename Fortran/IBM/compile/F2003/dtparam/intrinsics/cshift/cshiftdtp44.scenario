@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= cshiftdtp44.scenario
+#FEATURE= cshift with parameterized derived types
+#CREATOR= Andy Sheung
+#DATE= 200807
+#TEST_TYPE= diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)cshiftdtp44.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = cshiftdtp44$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = cshiftdtp44.out
+#STDOUT    = cshiftdtp44.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = cshiftdtp44.out $(tcasedir)cshiftdtp44.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

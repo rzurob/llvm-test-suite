@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/none/acetnone10text.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
+				Arrays And Array Sections (Derived))
+#CREATOR	= Glen Mateer (derived from work by David Forster)
+#DATE		= 20080129
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetnone10text.f
+#OUTPUT		= acetnone10text$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetnone10text$(OBJ)
+#OUTPUT		= acetnone10text$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetnone10text$(EXE)
+#STDOUT		= acetnone10text.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetnone10text$(product)vf) acetnone10text.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

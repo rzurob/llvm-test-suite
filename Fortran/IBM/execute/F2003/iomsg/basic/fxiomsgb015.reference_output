@@ -1,0 +1,4 @@
+ 1525-094 The NAMELIST or list-directed READ statement cannot be completed because a repeat factor in the file fort.9 did not specify an integer in the range 1 to 9223372036854775807, inclusive.  The program will recover by discontinuing further processing of the READ statement.
+                     
+ 1525-096 A data item processed during an integer read is too large.  The program will recover by assigning the data item the value 9223372036854775807.
+                                                                                                                                                    

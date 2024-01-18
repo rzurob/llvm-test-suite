@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/userename/userenamediag013.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of userename/*
+#DATE      = 20071102
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)userenamediag013.f
+#OPTS      = -qdebug=intmsg
+#STDOUT    = userenamediag013.out
+#STDERR    = userenamediag013.out
+#OUTPUT    = userenamediag013$(OBJ)
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+
+#CMD       = XLDIFF
+#INPUT     = userenamediag013.out $($(tcasedir)userenamediag013$(product)vf)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

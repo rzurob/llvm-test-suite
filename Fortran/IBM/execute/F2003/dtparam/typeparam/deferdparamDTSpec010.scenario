@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/typeparam/deferdparamDTSpec010.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)deferdparamDTSpec010.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = deferdparamDTSpec010$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = deferdparamDTSpec010$(OBJ)
+#OUTPUT    = deferdparamDTSpec010$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = deferdparamDTSpec010$(EXE)
+#STDOUT    = deferdparamDTSpec010.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = deferdparamDTSpec010.out $($(tcasedir)deferdparamDTSpec010$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

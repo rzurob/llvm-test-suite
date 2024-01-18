@@ -1,0 +1,1 @@
+1525-212 The data item in the formatted READ statement must be processed by a DT edit descriptor.  The program will recover by ignoring the READ statement.

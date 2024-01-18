@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/ambiguity/genericAmbiguityTypeBound030.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/ambiguity/*
+#DATE      = 20071113
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericAmbiguityTypeBound030.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericAmbiguityTypeBound030$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericAmbiguityTypeBound030$(OBJ)
+#OUTPUT    = genericAmbiguityTypeBound030$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericAmbiguityTypeBound030$(EXE)
+#STDOUT    = genericAmbiguityTypeBound030.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericAmbiguityTypeBound030.out $(tcasedir)genericAmbiguityTypeBound030.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

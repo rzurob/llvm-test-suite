@@ -1,0 +1,49 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=release/F2003/volatile/volatileUseAssociation02.scenario
+#FEATURE = VOLATILE 255728
+#CREATOR = William Zhang
+#DATE    = 05/30/2006
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)volatileUseAssociation02.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qxlf2003=novolatile
+#OUTPUT    = volatileUseAssociation02$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = volatileUseAssociation02$(OBJ)
+#OUTPUT    = volatileUseAssociation02$(EXE)
+#ENDCMD
+
+
+#CMD       = RUN
+#INPUT     = volatileUseAssociation02$(EXE)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)volatileUseAssociation02.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = volatileUseAssociation02a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = volatileUseAssociation02a$(OBJ)
+#OUTPUT    = volatileUseAssociation02a$(EXE)
+#ENDCMD
+
+
+#CMD       = RUN
+#INPUT     = volatileUseAssociation02a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

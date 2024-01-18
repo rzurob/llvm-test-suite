@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpIAssignFunctionResultFromInternal.scenario
+#FEATURE   = Intrinsic Assignment without Allocation - assign to function result in internal procedure
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAssignFunctionResultFromInternal.f
+#OUTPUT    = dtpIAssignFunctionResultFromInternal$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAssignFunctionResultFromInternal$(OBJ)
+#OUTPUT    = dtpIAssignFunctionResultFromInternal$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAssignFunctionResultFromInternal$(EXE)
+#STDOUT    = dtpIAssignFunctionResultFromInternal.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpIAssignFunctionResultFromInternal$(product)vf) dtpIAssignFunctionResultFromInternal.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

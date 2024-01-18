@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)test_add_n_sub.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = test_add_n_sub$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = test_add_n_sub$(OBJ)
+#OUTPUT    = test_add_n_sub$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = test_add_n_sub$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

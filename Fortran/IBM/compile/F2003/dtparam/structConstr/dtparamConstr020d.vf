@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"dtparamConstr020d.f", line 63.26: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"dtparamConstr020d.f", line 65.44: 1513-020 (S) Procedure names must be specified with arguments in this context.
+** dtparamconstr020d   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtparamConstr020d.f.

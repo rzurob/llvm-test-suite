@@ -1,0 +1,11 @@
+"fxdmodprocstmt015.f", line 54.8: 1518-285 (L) The PROCEDURE statement is not permitted by the Fortran 90 standard.
+"fxdmodprocstmt015.f", line 61.26: 1513-099 (E) Entity s1 listed in a MODULE PROCEDURE statement is not a module procedure.  The MODULE keyword is ignored.
+"fxdmodprocstmt015.f", line 62.8: 1518-268 (L) Within an interface block, interface bodies must not appear after a MODULE PROCEDURE statement in the Fortran 90 standard.
+"fxdmodprocstmt015.f", line 68.26: 1513-099 (E) Entity s1 listed in a MODULE PROCEDURE statement is not a module procedure.  The MODULE keyword is ignored.
+"fxdmodprocstmt015.f", line 69.8: 1518-285 (L) The PROCEDURE statement is not permitted by the Fortran 90 standard.
+"fxdmodprocstmt015.f", line 70.8: 1518-268 (L) Within an interface block, interface bodies must not appear after a MODULE PROCEDURE statement in the Fortran 90 standard.
+"fxdmodprocstmt015.f", line 76.8: 1518-285 (L) The PROCEDURE statement is not permitted by the Fortran 90 standard.
+"fxdmodprocstmt015.f", line 77.26: 1513-099 (E) Entity s1 listed in a MODULE PROCEDURE statement is not a module procedure.  The MODULE keyword is ignored.
+"fxdmodprocstmt015.f", line 78.8: 1518-268 (L) Within an interface block, interface bodies must not appear after a MODULE PROCEDURE statement in the Fortran 90 standard.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file fxdmodprocstmt015.f.

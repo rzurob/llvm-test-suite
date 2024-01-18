@@ -1,0 +1,3 @@
+"C1232arraySect02d.f", line 59.25: 1516-272 (S) Dummy argument arraysection of procedure success was specified with the ASYNCHRONOUS attribute. arraysection is not an assumed-shape array.  The corresponding actual argument must not be an array section or an assumed-shape array.
+** c1232arraysect02d   === End of Compilation 1 ===
+1501-511  Compilation failed for file C1232arraySect02d.f.

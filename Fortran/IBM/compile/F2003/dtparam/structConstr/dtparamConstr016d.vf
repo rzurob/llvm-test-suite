@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"dtparamConstr016d.f", line 52.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"dtparamConstr016d.f", line 53.13: 1514-560 (S) The component keyword child does not match a component of the derived type child.
+"dtparamConstr016d.f", line 58.36: 1515-019 (S) Syntax is incorrect.
+** dtparamconstr016d   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtparamConstr016d.f.

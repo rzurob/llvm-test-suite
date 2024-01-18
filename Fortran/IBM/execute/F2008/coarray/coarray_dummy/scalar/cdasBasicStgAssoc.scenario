@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_dummy/assumed_size/cdasBasicStgAssoc
+#FEATURE        = CAF coarray dummy arguments - scalar - access only, storage association in multiple dimensions
+#CREATOR        = DF
+#DATE           = 2010-09-24
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)cdasBasicStgAssoc.f
+#OUTPUT = cdasBasicStgAssoc$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = cdasBasicStgAssoc$(OBJ)
+#OUTPUT = cdasBasicStgAssoc$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#FOR ITER = 1 TO 1
+
+  #CMD    = MPRUN
+  #INPUT  = cdasBasicStgAssoc$(EXE)
+  #ENDCMD
+
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

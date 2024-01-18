@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = ieee/class/fclass01.scenario
+#FEATURE = ieee tests - regression run bucket
+#CREATOR = YZ Manual Conversion
+#DATE    = 20070125
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_FOLD_FLOATS_OFF) $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     = $(tcasedir)ieeeconsts.f
+#OUTPUT    = ieeeconsts$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_FOLD_FLOATS_OFF) $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     = $(tcasedir)fclass01.f
+#OUTPUT    = fclass01$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = fclass01$(OBJ) ieeeconsts$(OBJ)
+#OUTPUT    = fclass01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fclass01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

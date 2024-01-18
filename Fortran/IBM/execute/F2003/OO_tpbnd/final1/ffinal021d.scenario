@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_tpbnd/final1/ffinal021d.scenario
+#FEATURE = OO_tpbnd tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ffinal021d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ffinal021d$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  ffinal021d$(OBJ)
+#OUTPUT    = ffinal021d$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ffinal021d$(EXE)
+#STDOUT    = ffinal021d.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)ffinal021d$(product)vf) ffinal021d.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

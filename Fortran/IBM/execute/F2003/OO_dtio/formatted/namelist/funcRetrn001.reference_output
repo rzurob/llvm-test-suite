@@ -1,0 +1,9 @@
+ &WB
+ WRITEBASE=c=IBM
+ /
+ &WC
+ WRITECHILD=i= 123 c=FTN
+ /
+ &WC
+ WRITECHILD=i=2005 c=IBM
+ /

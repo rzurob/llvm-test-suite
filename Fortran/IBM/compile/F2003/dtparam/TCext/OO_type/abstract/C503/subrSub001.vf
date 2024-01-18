@@ -1,0 +1,6 @@
+"subrSub001.f", line 70.12: 1514-645 (S) base is an abstract type. base is not permitted in this context.
+"subrSub001.f", line 74.3: 1515-019 (S) Syntax is incorrect.
+"subrSub001.f", line 74.43: 1513-056 (S) This procedure is either missing its SUBROUTINE or FUNCTION statement or that statement had a syntax error in it.
+** m   === End of Compilation 1 ===
+** subrsub001   === End of Compilation 2 ===
+1501-511  Compilation failed for file subrSub001.f.

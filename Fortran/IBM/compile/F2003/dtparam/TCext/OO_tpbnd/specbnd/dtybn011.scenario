@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_tpbnd/specbnd/dtybn011.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_tpbnd/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtybn011.f
+#OPTS      =  -qdebug=intmsg:shutup
+#OUTPUT    = dtybn011$(OBJ)
+#STDERR    = dtybn011.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)dtybn011$(product)vf) dtybn011.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

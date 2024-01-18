@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = this_image_f005.scenario
+#FEATURE  = CAF Intrinsics
+#CREATOR  = Francesco Cassullo
+#DATE     = July 2010
+#TEST_TYPE= FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_COARRAY_IMAGES<12>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = $(tcasedir)this_image_f005.f
+#OUTPUT    = this_image_f005$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_COARRAY_IMAGES<12>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = this_image_f005$(OBJ)
+#OUTPUT    = this_image_f005$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#ENVAR     = CAF_NUM_IMAGES=12
+#ENVAR     = MP_PROCS=1
+#INPUT     = this_image_f005$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

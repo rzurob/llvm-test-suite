@@ -1,0 +1,67 @@
+ after the 1st assignment
+element: 1  bounds: -1 : 0
+ 1 test1          
+ 2 test2          
+element: 2  bounds: 0 : 0
+ 100
+element: 3  bounds: 1 : 0
+element: 4  bounds: 1 : 3
+ 10 test_array_3   
+ 20 test_array_3   
+ 30 test_array_3   
+element: 5  bounds: 1 : 2
+ 200 test_b5        
+ 200 test_b5        
+element: 6  data not allocated
+element: 7  data not allocated
+element: 8  data not allocated
+element: 9  data not allocated
+element:10  data not allocated
+element:11  data not allocated
+element:12  data not allocated
+element:13  data not allocated
+element:14  data not allocated
+element:15  data not allocated
+element:16  data not allocated
+element:17  data not allocated
+element:18  data not allocated
+element:19  data not allocated
+element:20  data not allocated
+ after the FORALL construct
+ 
+element: 1  bounds: -1 : 0
+ 1 test1          
+ 2 test2          
+element: 2  bounds: 0 : 0
+ 100
+element: 3  bounds: 1 : 0
+element: 4  bounds: 1 : 3
+ 10 test_array_3   
+ 20 test_array_3   
+ 30 test_array_3   
+element: 5  bounds: 1 : 2
+ 200 test_b5        
+ 200 test_b5        
+element: 6  data not allocated
+element: 7  data not allocated
+element: 8  data not allocated
+element: 9  data not allocated
+element:10  data not allocated
+element:11  data not allocated
+element:12  data not allocated
+element:13  data not allocated
+element:14  data not allocated
+element:15  data not allocated
+element:16  bounds: 1 : 2
+ 200 test_b5        
+ 200 test_b5        
+element:17  bounds: 1 : 3
+ 10 test_array_3   
+ 20 test_array_3   
+ 30 test_array_3   
+element:18  bounds: 1 : 0
+element:19  bounds: 0 : 0
+ 100
+element:20  bounds: -1 : 0
+ 1 test1          
+ 2 test2          

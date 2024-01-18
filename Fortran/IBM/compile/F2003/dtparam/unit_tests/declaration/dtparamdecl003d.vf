@@ -1,0 +1,10 @@
+"dtparamdecl003d.f", line 67.30: 1514-688 (S) The type parameter keyword baselengt does not match a type parameter of the derived type baseproc.
+"dtparamdecl003d.f", line 70.21: 1514-688 (S) The type parameter keyword aselength does not match a type parameter of the derived type baseproc.
+"dtparamdecl003d.f", line 74.37: 1514-559 (S) Once a component keyword has been specified in a structure constructor, all subsequent values must have a keyword specified.
+"dtparamdecl003d.f", line 76.26: 1514-572 (S) The component id1 must be explicitly initialized in this structure constructor.
+"dtparamdecl003d.f", line 81.9: 1514-690 (S) Type parameter values must not be specified for type test.  Type test does not have type parameters.
+"dtparamdecl003d.f", line 85.30: 1514-689 (S) Once a type parameter keyword has been specified in a derived-type specifier, all subsequent values must have a keyword specified.
+"dtparamdecl003d.f", line 89.44: 1514-691 (S) The type parameter basekind has already been specified in the derived-type specifier.
+"dtparamdecl003d.f", line 93.9: 1514-692 (S) Type parameter basekind must be specified in this derived-type specifier.
+** dtparamdecl003d   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtparamdecl003d.f.

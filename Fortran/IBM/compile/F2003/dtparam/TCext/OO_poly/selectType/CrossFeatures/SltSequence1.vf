@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"SltSequence1.f", line 75.24: 1511-101 (S) The selector in the SELECT TYPE statement is not polymorphic.
+"SltSequence1.f", line 76.14: 1511-107 (S) Derived type dt0, specified in a type guard statement, must be extensible.
+** sltsequence1   === End of Compilation 2 ===
+1501-511  Compilation failed for file SltSequence1.f.

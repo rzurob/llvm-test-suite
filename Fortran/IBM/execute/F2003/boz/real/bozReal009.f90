@@ -1,0 +1,233 @@
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*  ===================================================================
+!*
+!*  TEST CASE TITLE            : bozReal009.f
+!*
+!*  PROGRAMMER                 : Vicram Uppal
+!*  DATE                       : 02/06/2006
+!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
+!*                             :
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Section 4.4.1: boz-literal-constant
+!*                             :
+!*  SECONDARY FUNCTIONS TESTED : REAL intrinsic
+!*
+!*  DRIVER STANZA              : xlf2003
+!*
+!*  DESCRIPTION                :If A is a boz-literal-constant     
+!*                              and KIND is present, the kind      
+!*                          	type parameter is that specified   
+!*				by the value of KIND               
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!* ===================================================================
+!*
+!*  REVISION HISTORY
+!*
+!*  MM/DD/YY:  Init:  Comments:
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+program bozReal009
+
+    real(8) :: testR
+    integer(8) :: testI
+
+    equivalence(testR, testI)
+
+    !Positive Infinity
+    testR = &
+    REAL(B"111111111110000000000000000000000000000000000000000000000000000", 8)
+
+    if (testI /= &
+    B"111111111110000000000000000000000000000000000000000000000000000") &
+    error stop 1_4
+
+    testR = REAL(O'777600000000000000000', 8)
+    if (testI /= O'777600000000000000000') error stop 2_4
+    testR = REAL(Z'7FF0000000000000', 8)
+    if (testI /= Z'7FF0000000000000') error stop 3_4
+
+    !Negative Infinity
+    testR = &
+    REAL(b'1111111111110000000000000000000000000000000000000000000000000000', 8)
+
+    if (testI /= &
+    b'1111111111110000000000000000000000000000000000000000000000000000') &
+    error stop 4_4 
+
+    testR = REAL(O'1777600000000000000000', 8)
+    if (testI /= O'1777600000000000000000') error stop 5_4
+    testR = REAL(Z'FFF0000000000000', 8)
+    if (testI /= Z'FFF0000000000000') error stop 6_4
+
+    !Positive NaNS (Lower Bound)
+    testR = &
+    REAL(B'111111111110000000000000000000000000000000000000000000000000001', 8)
+
+    if (testI /= &
+    B'111111111110000000000000000000000000000000000000000000000000001') &
+    error stop 7_4  
+
+    testR = REAL(O'777600000000000000001', 8)
+    if (testI /= O'777600000000000000001') error stop 8_4
+    testR = REAL(Z'7FF0000000000001', 8)
+    if (testI /= Z'7FF0000000000001') error stop 9_4
+
+    !Positive NaNS (Upper Bound)
+    testR = &
+    REAL(b"111111111110111111111111111111111111111111111111111111111111111", 8)
+
+    if (testI /= &
+    b"111111111110111111111111111111111111111111111111111111111111111") &
+    error stop 10_4
+
+    testR = REAL(O'777677777777777777777', 8)
+    if (testI /= O'777677777777777777777') error stop 11_4
+    testR = REAL(Z'7FF7FFFFFFFFFFFF', 8)
+    if (testI /= Z'7FF7FFFFFFFFFFFF') error stop 12_4
+
+    !Negative NaNS (Lower Bound)
+    testR = &
+    REAL(B"1111111111110000000000000000000000000000000000000000000000000001", 8)
+
+    if (testI /= &
+    b'1111111111110000000000000000000000000000000000000000000000000001') &
+    error stop 13_4
+
+    testR = REAL(O'1777600000000000000001', 8)
+    if (testI /= O'1777600000000000000001') error stop 14_4
+    testR = REAL(Z'FFF0000000000001', 8)
+    if (testI /= Z'FFF0000000000001') error stop 15_4
+
+    !Negative NaNS (Upper Bound)
+    testR = &
+    REAL(b'1111111111110111111111111111111111111111111111111111111111111111', 8)
+
+    if (testI /= &
+    B"1111111111110111111111111111111111111111111111111111111111111111") &
+    error stop 16_4
+
+    testR = REAL(O'1777677777777777777777', 8)
+    if (testI /= O'1777677777777777777777') error stop 17_4
+    testR = REAL(Z'FFF7FFFFFFFFFFFF', 8)
+    if (testI /= Z'FFF7FFFFFFFFFFFF') error stop 18_4
+
+    !Positive NaNQ (Lower Bound)
+    testR = &
+    REAL(B'111111111111000000000000000000000000000000000000000000000000000', 8)
+
+    if (testI /= &
+    B'111111111111000000000000000000000000000000000000000000000000000') &
+    error stop 19_4  
+
+    testR = REAL(O'777700000000000000000', 8)
+    if (testI /= O'777700000000000000000') error stop 20_4
+    testR = REAL(Z'7FF8000000000000', 8)
+    if (testI /= Z'7FF8000000000000') error stop 21_4
+
+    !Positive NaNQ (Upper Bound)
+    testR = &
+    REAL(b"111111111111111111111111111111111111111111111111111111111111111", 8)
+
+    if (testI /= &
+    b"111111111111111111111111111111111111111111111111111111111111111") &
+    error stop 22_4
+
+    testR = REAL(O'777777777777777777777', 8)
+    if (testI /= O'777777777777777777777') error stop 23_4
+    testR = REAL(Z'7FFFFFFFFFFFFFFF', 8)
+    if (testI /= Z'7FFFFFFFFFFFFFFF') error stop 24_4
+
+    !Negative NaNQ (Lower Bound)
+    testR = &
+    REAL(B"1111111111111000000000000000000000000000000000000000000000000000", 8)
+
+    if (testI /= &
+    b'1111111111111000000000000000000000000000000000000000000000000000') &
+    error stop 25_4
+
+    testR = REAL(O'1777700000000000000000', 8)
+    if (testI /= O'1777700000000000000000') error stop 26_4
+    testR = REAL(Z'FFF8000000000000', 8)
+    if (testI /= Z'FFF8000000000000') error stop 27_4
+
+    !Negative NaNQ (Upper Bound)
+    testR = &
+    REAL(b'1111111111111111111111111111111111111111111111111111111111111111', 8)
+
+    if (testI /= &
+    B"1111111111111111111111111111111111111111111111111111111111111111") &
+    error stop 28_4
+
+    testR = REAL(O'1777777777777777777777', 8)
+    if (testI /= O'1777777777777777777777') error stop 29_4
+    testR = REAL(Z'FFFFFFFFFFFFFFFF', 8)
+    if (testI /= Z'FFFFFFFFFFFFFFFF') error stop 30_4
+
+
+    !Test Kind Value
+
+    if (KIND(REAL(B"111111111110000000000000000000000000000000000000000000000000000", &
+    8)) /= 8) error stop 31_4
+
+    if (KIND(REAL(O"777600000000000000000", 8)) /= 8) error stop 32_4
+    if (KIND(REAL(Z"7FF0000000000000", 8)) /= 8) error stop 33_4
+
+    if (KIND(REAL(B"1111111111110000000000000000000000000000000000000000000000000000", &
+    8)) /= 8) error stop 34_4
+
+    if (KIND(REAL(O"1777600000000000000000", 8)) /= 8) error stop 35_4
+    if (KIND(REAL(Z"FFF0000000000000", 8)) /= 8) error stop 36_4
+
+    if (KIND(REAL(B"111111111110000000000000000000000000000000000000000000000000001", &
+    8)) /= 8) error stop 37_4
+
+    if (KIND(REAL(O"777600000000000000001", 8)) /= 8) error stop 38_4
+    if (KIND(REAL(Z"7FF0000000000001", 8)) /= 8) error stop 39_4
+
+    if (KIND(REAL(B"111111111110111111111111111111111111111111111111111111111111111", &
+    8)) /= 8) error stop 40_4
+
+    if (KIND(REAL(O"777677777777777777777", 8)) /= 8) error stop 41_4
+    if (KIND(REAL(Z"7FF7FFFFFFFFFFFF", 8)) /= 8) error stop 42_4
+
+    if (KIND(REAL(B"1111111111110000000000000000000000000000000000000000000000000001", &
+    8)) /= 8) error stop 43_4
+
+    if (KIND(REAL(O"1777600000000000000001", 8)) /= 8) error stop 44_4
+    if (KIND(REAL(Z"FFF0000000000001", 8)) /= 8) error stop 45_4
+
+    if (KIND(REAL(B"1111111111110111111111111111111111111111111111111111111111111111", &
+    8)) /= 8) error stop 46_4
+
+    if (KIND(REAL(O"1777677777777777777777", 8)) /= 8) error stop 47_4
+    if (KIND(REAL(Z"FFF7FFFFFFFFFFFF", 8)) /= 8) error stop 48_4
+
+    if (KIND(REAL(B"111111111111000000000000000000000000000000000000000000000000000", &
+    8)) /= 8) error stop 49_4
+
+    if (KIND(REAL(O"777700000000000000000", 8)) /= 8) error stop 50_4
+    if (KIND(REAL(Z"7FF8000000000000", 8)) /= 8) error stop 51_4
+
+    if (KIND(REAL(B"111111111111111111111111111111111111111111111111111111111111111", &
+    8)) /= 8) error stop 52_4
+
+    if (KIND(REAL(O"777777777777777777777", 8)) /= 8) error stop 53_4
+    if (KIND(REAL(Z"7FFFFFFFFFFFFFFF", 8)) /= 8) error stop 54_4
+
+    if (KIND(REAL(B"1111111111111000000000000000000000000000000000000000000000000000", &
+    8)) /= 8) error stop 55_4
+
+    if (KIND(REAL(O"1777700000000000000000", 8)) /= 8) error stop 56_4
+    if (KIND(REAL(Z"FFF8000000000000", 8)) /= 8) error stop 57_4
+
+    if (KIND(REAL(B"1111111111111111111111111111111111111111111111111111111111111111", &
+    8)) /= 8) error stop 58_4
+
+    if (KIND(REAL(O"1777777777777777777777", 8)) /= 8) error stop 59_4
+    if (KIND(REAL(Z"FFFFFFFFFFFFFFFF", 8)) /= 8) error stop 60_4
+
+end

@@ -1,0 +1,395 @@
+
+/*
+	C code for testcase "fxisoi18b.f"
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <inttypes.h>
+
+struct dtd0 {
+   int_fast16_t a[5][10];
+};
+
+struct dtd1 {
+   int_fast16_t a[5][10];
+   struct dtd0 d0;
+};
+
+struct dtd2 {
+   int_fast16_t a[5][10];
+   struct dtd1 d1;
+};
+
+void initdtd0(struct dtd0 *);
+void initdtd1(struct dtd1 *);
+void initdtd2(struct dtd2 *);
+
+int main() {
+
+   int fnt1(struct dtd0 *);
+   int fnt2(struct dtd0);
+   int fnt3(struct dtd1 *);
+   int fnt4(struct dtd1);
+   int fnt5(struct dtd2 *);
+   int fnt6(struct dtd2);
+   int fnt7(struct dtd0 *);
+   int fnt7a(const struct dtd0 *);
+   int fnt8(struct dtd0);
+   int fnt8a(const struct dtd0);
+   int fnt9(struct dtd1 *);
+   int fnt9a(const struct dtd1 *);
+   int fnt10(struct dtd1);
+   int fnt10a(const struct dtd1);
+   int fnt11(struct dtd2 *);
+   int fnt11a(const struct dtd2 *);
+   int fnt12(struct dtd2);
+   int fnt12a(const struct dtd2);
+   int fnt13(struct dtd0 *);
+   int fnt14(struct dtd1 *);
+   int fnt15(struct dtd2 *);
+
+   struct dtd0 dta;
+   struct dtd1 dtb;
+   struct dtd2 dtc;
+   int i, j, ret;
+
+/* Test 1 */
+
+   initdtd0(&dta);
+
+   ret = fnt1(&dta);
+
+   for ( i = 0; i < 5; i++ ) {
+      for ( j = 0; j < 10; j++ ) {
+         if ( dta.a[i][j] != i+j+2 ) exit(21);
+      }
+   }
+
+
+/* Test 2 */
+
+   initdtd0(&dta);
+
+   ret = fnt2(dta);
+
+   for ( i = 0; i < 5; i++ ) {
+      for ( j = 0; j < 10; j++ ) {
+         if ( dta.a[i][j] != i+j+1 ) exit(23);
+      }
+   }
+
+
+/* Test 3 */
+
+   initdtd1(&dtb);
+
+   ret = fnt3(&dtb);
+
+   for ( i = 0; i < 5; i++ ) {
+      for ( j = 0; j < 10; j++ ) {
+         if ( dtb.a[i][j] != i+j+2 ) exit(25);
+         if ( dtb.d0.a[i][j] != (i+j+2)*2-1 ) exit(27);
+      }
+   }
+
+
+/* Test 4 */
+
+   initdtd1(&dtb);
+
+   ret = fnt4(dtb);
+
+   for ( i = 0; i < 5; i++ ) {
+      for ( j = 0; j < 10; j++ ) {
+         if ( dtb.a[i][j] != i+j+1 ) exit(29);
+         if ( dtb.d0.a[i][j] != i+j+1 ) exit(31);
+      }
+   }
+
+
+/* Test 5 */
+
+   initdtd2(&dtc);
+
+   ret = fnt5(&dtc);
+
+   for ( i = 0; i < 5; i++ ) {
+      for ( j = 0; j < 10; j++ ) {
+         if ( dtc.a[i][j] != i+j+2 ) exit(33);
+         if ( dtc.d1.a[i][j] != (i+j+2)*2-1 ) exit(35);
+         if ( dtc.d1.d0.a[i][j] != (i+j+2)*2-1 ) exit(37);
+      }
+   }
+
+
+/* Test 6 */
+
+   initdtd2(&dtc);
+
+   ret = fnt6(dtc);
+
+   for ( i = 0; i < 5; i++ ) {
+      for ( j = 0; j < 10; j++ ) {
+         if ( dtc.a[i][j] != i+j+1 ) exit(39);
+         if ( dtc.d1.a[i][j] != i+j+1 ) exit(41);
+         if ( dtc.d1.d0.a[i][j] != i+j+1 ) exit(43);
+      }
+   }
+
+
+/* Test 7 */
+
+   initdtd0(&dta);
+
+   ret = fnt7(&dta);
+
+   for ( i = 0; i < 5; i++ ) {
+      for ( j = 0; j < 10; j++ ) {
+         if ( dta.a[i][j] != i+j+1 ) exit(45);
+      }
+   }
+
+
+/* Test 7a */
+
+   initdtd0(&dta);
+
+   ret = fnt7a(&dta);
+
+   for ( i = 0; i < 5; i++ ) {
+      for ( j = 0; j < 10; j++ ) {
+         if ( dta.a[i][j] != i+j+1 ) exit(47);
+      }
+   }
+
+
+/* Test 8 */
+
+   initdtd0(&dta);
+
+   ret = fnt8(dta);
+
+   for ( i = 0; i < 5; i++ ) {
+      for ( j = 0; j < 10; j++ ) {
+         if ( dta.a[i][j] != i+j+1 ) exit(49);
+      }
+   }
+
+
+/* Test 8a */
+
+   initdtd0(&dta);
+
+   ret = fnt8a(dta);
+
+   for ( i = 0; i < 5; i++ ) {
+      for ( j = 0; j < 10; j++ ) {
+         if ( dta.a[i][j] != i+j+1 ) exit(51);
+      }
+   }
+
+
+/* Test 9 */
+
+   initdtd1(&dtb);
+
+   ret = fnt9(&dtb);
+
+   for ( i = 0; i < 5; i++ ) {
+      for ( j = 0; j < 10; j++ ) {
+         if ( dtb.a[i][j] != i+j+1 ) exit(53);
+         if ( dtb.d0.a[i][j] != i+j+1 ) exit(55);
+      }
+   }
+
+
+/* Test 9a */
+
+   initdtd1(&dtb);
+
+   ret = fnt9a(&dtb);
+
+   for ( i = 0; i < 5; i++ ) {
+      for ( j = 0; j < 10; j++ ) {
+         if ( dtb.a[i][j] != i+j+1 ) exit(57);
+         if ( dtb.d0.a[i][j] != i+j+1 ) exit(59);
+      }
+   }
+
+
+/* Test 10 */
+
+   initdtd1(&dtb);
+
+   ret = fnt10(dtb);
+
+   for ( i = 0; i < 5; i++ ) {
+      for ( j = 0; j < 10; j++ ) {
+         if ( dtb.a[i][j] != i+j+1 ) exit(61);
+         if ( dtb.d0.a[i][j] != i+j+1 ) exit(63);
+      }
+   }
+
+
+/* Test 10a */
+
+   initdtd1(&dtb);
+
+   ret = fnt10a(dtb);
+
+   for ( i = 0; i < 5; i++ ) {
+      for ( j = 0; j < 10; j++ ) {
+         if ( dtb.a[i][j] != i+j+1 ) exit(65);
+         if ( dtb.d0.a[i][j] != i+j+1 ) exit(67);
+      }
+   }
+
+
+/* Test 11 */
+
+   initdtd2(&dtc);
+
+   ret = fnt11(&dtc);
+
+   for ( i = 0; i < 5; i++ ) {
+      for ( j = 0; j < 10; j++ ) {
+         if ( dtc.a[i][j] != i+j+1 ) exit(69);
+         if ( dtc.d1.a[i][j] != i+j+1 ) exit(71);
+         if ( dtc.d1.d0.a[i][j] != i+j+1 ) exit(73);
+      }
+   }
+
+
+/* Test 11a */
+
+   initdtd2(&dtc);
+
+   ret = fnt11a(&dtc);
+
+   for ( i = 0; i < 5; i++ ) {
+      for ( j = 0; j < 10; j++ ) {
+         if ( dtc.a[i][j] != i+j+1 ) exit(75);
+         if ( dtc.d1.a[i][j] != i+j+1 ) exit(77);
+         if ( dtc.d1.d0.a[i][j] != i+j+1 ) exit(79);
+      }
+   }
+
+
+/* Test 12 */
+
+   initdtd2(&dtc);
+
+   ret = fnt12(dtc);
+
+   for ( i = 0; i < 5; i++ ) {
+      for ( j = 0; j < 10; j++ ) {
+         if ( dtc.a[i][j] != i+j+1 ) exit(81);
+         if ( dtc.d1.a[i][j] != i+j+1 ) exit(83);
+         if ( dtc.d1.d0.a[i][j] != i+j+1 ) exit(85);
+      }
+   }
+
+
+/* Test 12a */
+
+   initdtd2(&dtc);
+
+   ret = fnt12a(dtc);
+
+   for ( i = 0; i < 5; i++ ) {
+      for ( j = 0; j < 10; j++ ) {
+         if ( dtc.a[i][j] != i+j+1 ) exit(87);
+         if ( dtc.d1.a[i][j] != i+j+1 ) exit(89);
+         if ( dtc.d1.d0.a[i][j] != i+j+1 ) exit(91);
+      }
+   }
+
+
+/* Test 13 */
+
+   initdtd0(&dta);
+
+   ret = fnt13(&dta);
+
+   for ( i = 0; i < 5; i++ ) {
+      for ( j = 0; j < 10; j++ ) {
+         if ( dta.a[i][j] != i+j+2 ) exit(93);
+      }
+   }
+
+
+/* Test 14 */
+
+   initdtd1(&dtb);
+
+   ret = fnt14(&dtb);
+
+   for ( i = 0; i < 5; i++ ) {
+      for ( j = 0; j < 10; j++ ) {
+         if ( dtb.a[i][j] != i+j+2 ) exit(95);
+         if ( dtb.d0.a[i][j] != (i+j+2)*2-1 ) exit(97);
+      }
+   }
+
+
+/* Test 15 */
+
+   initdtd2(&dtc);
+
+   ret = fnt15(&dtc);
+
+   for ( i = 0; i < 5; i++ ) {
+      for ( j = 0; j < 10; j++ ) {
+         if ( dtc.a[i][j] != i+j+2 ) exit(99);
+         if ( dtc.d1.a[i][j] != (i+j+2)*2-1 ) exit(101);
+         if ( dtc.d1.d0.a[i][j] != (i+j+2)*2-1 ) exit(103);
+      }
+   }
+
+
+   return 0;
+}
+
+void initdtd0(struct dtd0 *x) {
+
+   int i, j;
+
+   for ( i = 0; i < 5; i++ ) {
+      for ( j = 0; j < 10; j++ ) {
+         x->a[i][j] = i+j+1;
+      }
+   }
+
+
+}
+
+void initdtd1(struct dtd1 *x) {
+
+   int i, j;
+
+   for ( i = 0; i < 5; i++ ) {
+      for ( j = 0; j < 10; j++ ) {
+         x->a[i][j] = i+j+1;
+      }
+   }
+
+
+   initdtd0(&x->d0);
+
+}
+
+void initdtd2(struct dtd2 *x) {
+
+   int i, j;
+
+   for ( i = 0; i < 5; i++ ) {
+      for ( j = 0; j < 10; j++ ) {
+         x->a[i][j] = i+j+1;
+      }
+   }
+
+
+   initdtd1(&x->d1);
+
+}

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpPtrAssignCommonFromMainDeferredChk.scenario
+#FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - assign to COMMON variables in main program and check values via pointers with deferred length parameters
+#CREATOR   = DF Manual Update
+#DATE      = 20090112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPtrAssignCommonFromMainDeferredChk.f
+#OUTPUT    = dtpPtrAssignCommonFromMainDeferredChk$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPtrAssignCommonFromMainDeferredChk$(OBJ)
+#OUTPUT    = dtpPtrAssignCommonFromMainDeferredChk$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPtrAssignCommonFromMainDeferredChk$(EXE)
+#STDOUT    = dtpPtrAssignCommonFromMainDeferredChk.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpPtrAssignCommonFromMainDeferredChk$(product)vf) dtpPtrAssignCommonFromMainDeferredChk.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

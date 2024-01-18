@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/class/fclass002d2.f
+#FEATURE = OO_poly
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fclass002d2.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fclass002d2$(OBJ)
+#STDERR    = fclass002d2.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = fclass002d2.err $($(tcasedir)fclass002d2$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

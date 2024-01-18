@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/intrinsics/acetint57kl.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
+			   Default Initialization of Derived Type _component_ (intrinsics))
+#CREATOR	= Glen Mateer (derived from work by David Forster)
+#DATE		= 20080125
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint57kl.f
+#OUTPUT		= acetint57kl$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint57kl$(OBJ)
+#OUTPUT		= acetint57kl$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint57kl$(EXE)
+#STDOUT		= acetint57kl.stdout
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetint57kl$(product)vf) acetint57kl.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

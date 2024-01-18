@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/unit_tests/func/procdata01.scenario
+#FEATURE = Generic extensions
+#CREATOR = Rafik Zurob
+#DATE    = 20120620
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)procdata01.f
+#OUTPUT    = procdata01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = procdata01$(OBJ)
+#OUTPUT    = procdata01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = procdata01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

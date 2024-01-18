@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/argpresence/unit_tests/func/argpresence13f.f
+#FEATURE    = F386700
+#CREATOR    = David Nichols
+#DATE       = 20110302
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#OPTS       = -qxlf2008=checkpresence
+#INPUT      = $(tcasedir)argpresence13f.f
+#OUTPUT     = argpresence13f$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#INPUT      = argpresence13f$(OBJ)
+#OUTPUT     = argpresence13f$(EXE)
+#ENDCMD
+
+#CMD        = RUN
+#INPUT      = argpresence13f$(EXE)
+#STDOUT     = argpresence13f.out
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = argpresence13f.out $($(tcasedir)argpresence13f$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

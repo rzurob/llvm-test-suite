@@ -1,0 +1,4 @@
+"fext035d.f", line 63.21: 1514-587 (S) Component i2 is not permitted. i2 is the name of a component, binding, or type parameter that is inherited from type child.
+** m   === End of Compilation 1 ===
+** fext035d   === End of Compilation 2 ===
+1501-511  Compilation failed for file fext035d.f.

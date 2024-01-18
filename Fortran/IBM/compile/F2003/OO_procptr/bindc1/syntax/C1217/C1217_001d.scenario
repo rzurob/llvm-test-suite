@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_procptr/bindc1/syntax/C1217/C1217_001d.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)C1217_001d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=shutup
+#OUTPUT    = C1217_001d$(OBJ)
+#STDERR    = C1217_001d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)C1217_001d$(product)vf) C1217_001d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

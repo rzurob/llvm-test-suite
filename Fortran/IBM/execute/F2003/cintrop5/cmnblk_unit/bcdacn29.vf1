@@ -1,0 +1,5 @@
+** mod   === End of Compilation 1 ===
+"bcdacn29.f", line 56.9: 1514-005 (S) COMMON block identifier foo was defined elsewhere with conflicting attributes. This identifier and any element names are ignored.
+** sub   === End of Compilation 2 ===
+** bcdacn29   === End of Compilation 3 ===
+1501-511  Compilation failed for file bcdacn29.f.

@@ -1,0 +1,116 @@
+! GB DTP extension using:
+! ftcx_dtp -qck /tstdev/OO_procptr/CrossFeatures1/Arg17.f
+! opt variations: -qnock
+
+! *********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD: 
+! %COMPOPTS: -qfree=f90 
+! %GROUP: Arg17.f 
+! %VERIFY:  
+! %STDIN:
+! %STDOUT: 
+! %EXECARGS:
+! %POSTCMD:
+! %END
+! *********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : Arg17.f 
+!*  TEST CASE TITLE            : 
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : May. 25, 2005
+!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*
+!*  SECONDARY FUNCTIONS TESTED : 
+!*
+!*  REFERENCE                  : Feature 289058 
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*   
+!*  Argument association - implicit interface
+!*  dummy as actual arg 
+!* ()
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+  MODULE M
+  IMPLICIT TYPE(Base(1,3))(P)
+
+    TYPE :: Base(K1,N1)    ! (1,3)
+      INTEGER, KIND             :: K1
+      INTEGER, LEN              :: N1
+      CHARACTER(kind=K1,len=N1) :: C
+    END TYPE
+ 
+    INTERFACE
+      FUNCTION IntF(Arg)
+      IMPORT
+        TYPE(Base(1,*)), INTENT(IN) :: Arg 
+        TYPE(Base(1,3)):: IntF 
+      END FUNCTION
+    END INTERFACE
+
+  END MODULE
+
+  PURE FUNCTION ExtFun(Arg)
+  USE M
+  TYPE(Base(1,*)), INTENT(IN) :: Arg 
+  TYPE(Base(1,3)) :: ExtFun 
+    ExtFun = Arg
+  END FUNCTION
+
+
+  PROGRAM Arg17
+  USE M
+  IMPLICIT TYPE(Base(1,3))(P)
+  PROCEDURE(IntF) :: ExtFun
+
+  CALL IntSub0()
+  CALL IntSub0(ExtFun)
+
+  CONTAINS
+
+  SUBROUTINE IntSub0(Proc)
+  PROCEDURE(IntF), OPTIONAL :: Proc
+ 
+  IF ( PRESENT(Proc) ) THEN
+    CALL IntSub(Proc, Proc, Proc)
+  END IF
+
+  END SUBROUTINE
+
+  SUBROUTINE IntSub(Proc0, Proc1, Proc2)
+  IMPLICIT TYPE(Base(1,3))(P)
+
+  PROCEDURE(IntF) :: Proc0
+  PROCEDURE(IntF) :: Proc1
+  PROCEDURE(IntF) :: Proc2
+  TYPE(Base(1,3)) :: V
+
+  V = Proc0(Base(1,3)("321"))
+  IF (V%C .NE. "321") STOP 15
+
+  V = Proc1(Base(1,3)("123"))
+  IF (V%C .NE. "123") STOP 13
+
+  V = Proc2(Base(1,3)("abc"))
+  IF (V%C .NE. "abc") STOP 14
+
+  END SUBROUTINE
+
+  END
+

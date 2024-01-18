@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=volatile_coarray_in_block.scenario
+#FEATURE = F2008 BLOCK construct
+#CREATOR = Pooja Dayanand
+#DATE    = 20101021
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qcaf $(OPT_GEN_64BIT_COMPILER_MODE)
+#INPUT     = $(tcasedir)volatile_coarray_in_block.f
+#STDERR    = volatile_coarray_in_block.out
+#VALIDRCS  = $(RC_COMP_E)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = volatile_coarray_in_block.out $(tcasedir)volatile_coarray_in_block.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

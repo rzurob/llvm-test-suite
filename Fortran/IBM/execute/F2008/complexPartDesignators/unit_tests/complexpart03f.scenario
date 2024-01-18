@@ -1,0 +1,41 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/complexPartDesignators/unit_tests/complexpart03f.scenario
+#FEATURE    = F383634 - Complex part designator
+#CREATOR    = David Nichols
+#DATE       = 20110104
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  !#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)complexpart03f.f
+#OUTPUT     = complexpart03f$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#INPUT      = complexpart03f$(OBJ)
+#OUTPUT     = complexpart03f$(EXE)
+#ENDCMD
+
+#CMD        = RUN
+#INPUT      = complexpart03f$(EXE)
+#STDOUT     = complexpart03f.out
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = complexpart03f.out $($(tcasedir)complexpart01f$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,4 @@
+"dtpUOpDiagNoArgsInterface.f", line 46.23: 1514-707 (S) noargproc1 must have one or two dummy arguments. noargproc1 will not be included in the OPERATOR(.noarg.) generic interface.
+"dtpUOpDiagNoArgsInterface.f", line 47.23: 1514-707 (S) noargproc1l must have one or two dummy arguments. noargproc1l will not be included in the OPERATOR(.noarg.) generic interface.
+** dtpuopdiagnoargsinterfacemod   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtpUOpDiagNoArgsInterface.f.

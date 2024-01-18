@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_tpbnd/specbnd/ftybn092h.scenario
+#FEATURE = OO_tpbnd
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ftybn092h.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ftybn092h$(OBJ)
+#STDERR    = ftybn092h.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)ftybn092h$(product)vf) ftybn092h.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

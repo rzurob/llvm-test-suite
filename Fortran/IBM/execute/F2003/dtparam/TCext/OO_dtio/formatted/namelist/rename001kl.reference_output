@@ -1,0 +1,9 @@
+ &NML1
+ B1=c= abc , B2=c= def
+ /
+ &NML1A
+ B11=c= abc , B12=c= def
+ /
+ &NML2
+ B3=c= ghi , B4=c= ghi
+ /

@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/allocate/falloc006a17.scenario
+#FEATURE = OO_poly tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)falloc006a17.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = falloc006a17$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  falloc006a17$(OBJ)
+#OUTPUT    = falloc006a17$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = falloc006a17$(EXE)
+#STDOUT    = falloc006a17.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)falloc006a17$(product)vf) falloc006a17.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

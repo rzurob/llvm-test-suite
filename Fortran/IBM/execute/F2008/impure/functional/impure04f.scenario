@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/impure/functional/impure04f.scenario
+#FEATURE   = F2008 IMPURE elemental procedures
+#CREATOR   = Tapti Vaid
+#DATE      = 20120413
+#TEST_TYPE = functional
+#KEYWORDS =  F2008, IMPURE
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)impure04f.f
+#OUTPUT    = impure04f$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2008_LINK
+#INPUT     = impure04f$(OBJ)
+#OUTPUT    = impure04f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = impure04f$(EXE)
+#STDOUT    = impure04f.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)impure04f$(product)vf) impure04f.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+
+

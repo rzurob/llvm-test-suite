@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/mix/generic/stmtByStmt/multipleBinding001.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)multipleBinding001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = multipleBinding001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = multipleBinding001$(OBJ)
+#OUTPUT    = multipleBinding001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = multipleBinding001$(EXE)
+#STDOUT    = multipleBinding001.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

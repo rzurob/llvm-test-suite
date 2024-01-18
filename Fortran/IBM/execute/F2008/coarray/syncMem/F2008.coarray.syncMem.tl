@@ -1,0 +1,14 @@
+syncMemDefQBnds.scenario
+syncMemDefQDType.scenario
+syncMemDefQLTP.scenario
+syncMemDefRef.scenario
+syncMemDefRefBroadcast.scenario
+syncMemDefRefExt.scenario
+syncMemDefRefInt.scenario
+syncMemDefRefInterleaved.scenario
+syncMemDefRefMod.scenario
+syncMemDefRefOther.scenario
+syncMemDefRefPickup.scenario
+syncMemDefRefSelf.scenario
+syncMemDefRefSimple.scenario
+syncMemRefDef.scenario

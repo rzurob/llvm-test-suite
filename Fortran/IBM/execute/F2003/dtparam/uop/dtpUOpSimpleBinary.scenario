@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpSimpleBinary.scenario
+#FEATURE   = User-Defined Operators - correct binary operator functions are used for given type and kind (single operator)
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpSimpleBinary.f
+#OUTPUT    = dtpUOpSimpleBinary$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpSimpleBinary$(OBJ)
+#OUTPUT    = dtpUOpSimpleBinary$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpSimpleBinary$(EXE)
+#STDOUT    = dtpUOpSimpleBinary.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUOpSimpleBinary$(product)vf) dtpUOpSimpleBinary.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

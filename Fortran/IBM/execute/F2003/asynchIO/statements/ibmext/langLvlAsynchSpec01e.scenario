@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/ibmext/langLvlAsynchSpec01e.scenario
+#FEATURE	= Asynchronous I/O -- IBM Extensions with Language Level Options
+#CREATOR	= GM Manual Creation
+#DATE		= 20060411
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#IF on (linuxle)
+    XLFRTEOPTS=$(CONVERT_UFMT_IO_ENDIANESS<214>)
+#ENDIF
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SET_LANG_LEVEL<extended>)
+#INPUT		= $(tcasedir)langLvlAsynchSpec01.f
+#OUTPUT		= langLvlAsynchSpec01e$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= langLvlAsynchSpec01e$(OBJ)
+#OUTPUT		= langLvlAsynchSpec01e$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= langLvlAsynchSpec01e$(EXE)
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)langLvlAsynchSpec01e$(product)vf) fort.214
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

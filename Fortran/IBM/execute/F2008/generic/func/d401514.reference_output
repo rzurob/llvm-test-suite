@@ -1,0 +1,3 @@
+    inside i_alloc_func()  x= 900 800 700
+    inside i_ptr_func()  x= 1 -3 5
+  .... end

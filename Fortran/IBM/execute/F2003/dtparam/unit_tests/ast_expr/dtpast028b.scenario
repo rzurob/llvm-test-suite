@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=dtpast028b.scenario
+#FEATURE =
+#CREATOR = Michael Selvanayagam
+#DATE    = 20060331
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpast028b.f
+#OUTPUT    = dtpast028b$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpast028b$(OBJ)
+#OUTPUT    = dtpast028b$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpast028b$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

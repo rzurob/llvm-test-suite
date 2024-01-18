@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/syntax/C703/genericC703OpName001.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericC703OpName001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericC703OpName001$(OBJ)
+#STDERR    = genericC703OpName001.err
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericC703OpName001$(OBJ)
+#OUTPUT    = genericC703OpName001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericC703OpName001$(EXE)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = genericC703OpName001.err $(tcasedir)genericC703OpName001.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

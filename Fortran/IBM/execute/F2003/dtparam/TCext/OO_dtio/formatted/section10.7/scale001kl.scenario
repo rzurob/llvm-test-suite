@@ -1,0 +1,44 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/formatted/section10.7/scale001kl.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070723
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)scale001kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = scale001kl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = scale001kl$(OBJ)
+#OUTPUT    = scale001kl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = scale001kl$(EXE)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)scale001kl$(product)vf) scale001kl.1
+#ENDCMD
+
+#CMD       = DELETE
+#INPUT     = scale001kl.1
+#ENDCMD
+
+
+
+#ENDCONTROL
+#ENDSCENARIO

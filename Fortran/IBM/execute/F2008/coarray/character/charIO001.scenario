@@ -1,0 +1,52 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/coarray/character/charIO001.scenario
+#FEATURE   = character coarray
+#CREATOR   = Ke Wen Lin
+#DATE      = 20110412
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)charIO001.f
+#OUTPUT    = charIO001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = charIO001$(OBJ)
+#OUTPUT    = charIO001$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = charIO001$(EXE)
+#STDIN     = $(tcasedir)charIO001.in
+#STDOUT    = charIO001.out
+#ENDCMD
+
+#CMD       = SORT
+#INPUT     = charIO001.out
+#STDOUT    = charIO001.out.sort
+#ENDCMD
+
+#CMD       = SORT
+#INPUT     = $(tcasedir)charIO001.vf
+#STDOUT    = charIO001.vf.sort
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = charIO001.vf.sort charIO001.out.sort
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

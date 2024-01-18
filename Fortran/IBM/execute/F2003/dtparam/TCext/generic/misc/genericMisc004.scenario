@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/misc/genericMisc004.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericMisc004.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericMisc004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericMisc004$(OBJ)
+#OUTPUT    = genericMisc004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericMisc004$(EXE)
+#STDOUT    = genericMisc004.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

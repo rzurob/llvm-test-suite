@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2003/dtparam/intrinsics/transpose/fNesttp2a.scenario
+#FEATURE = dtp intrinsics
+#CREATOR = Adrian Green
+#DATE    = 20080821
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)fNesttp2a.f
+#OUTPUT   = fNesttp2a$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = fNesttp2a$(OBJ)
+#OUTPUT   = fNesttp2a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fNesttp2a$(EXE)
+#STDOUT   = fNesttp2a.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

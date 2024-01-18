@@ -1,0 +1,8 @@
+    -nan(s)       NaNq       NaNs       3.14      -Nanq        inf     -inf
+  -NANS         +NAnq       nanS       3,14      -nanQ   infinity -INF 
+      -nans       +nan       nanS       3.14      -nanq       +inf -infinity  
+      -naNS       nanQ       NaNS       3,14-nan(quiet) +infinity -Inf
+(-nan(s) , NaNq), NaNs 3.14 ,-Nanq, inf -inf    
+ ( -NANS;+NAnq); nanS ;3,14; -nanQ infinity -INF 
+(-nans,  +nan)   nanS 3.14 -nanq +inf   -infinity  
+  ( -naNS ; nanQ  ) NaNS 3,14 ;-nan(_qu1et_) ; +INF -Inf  

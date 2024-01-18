@@ -1,0 +1,11 @@
+ ioID( 1 ) = ' 1 '
+ ioID( 2 ) = ' 2 '
+ ioID( 3 ) = ' 3 '
+ ioID( 4 ) = ' 4 '
+ ioID( 5 ) = ' 5 '
+ ioID( 6 ) = ' 6 '
+ ioID( 7 ) = ' 7 '
+ ioID( 8 ) = ' 8 '
+ ioID( 9 ) = ' 9 '
+ ioID( 10 ) = ' 10 '
+1525-001 The READ statement on the file fort.45 cannot be completed because the end of the file was reached.  The program will stop.

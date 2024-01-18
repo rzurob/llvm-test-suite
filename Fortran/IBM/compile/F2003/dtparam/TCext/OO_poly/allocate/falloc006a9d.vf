@@ -1,0 +1,4 @@
+"falloc006a9d.f", line 68.12: 1511-123 (S) Program or subprogram contains SELECT TYPE constructs that are not closed prior to its end or prior to the start of internal procedures.
+** m   === End of Compilation 1 ===
+** falloc006a9d   === End of Compilation 2 ===
+1501-511  Compilation failed for file falloc006a9d.f.

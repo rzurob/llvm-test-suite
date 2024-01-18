@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/unformatted/syntax/C945/unit002l.scenario
+#FEATURE = OO_dtio + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070910
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)unit002l.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = unit002l$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  unit002l$(OBJ)
+#OUTPUT    = unit002l$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = unit002l$(EXE)
+#STDOUT    = unit002l.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = unit002l.out $(tcasedir)unit002l.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

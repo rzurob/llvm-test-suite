@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       unlimitpolyJ.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)unlimitpolyJ.f
+#OUTPUT= unlimitpolyJ$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  unlimitpolyJ$(OBJ)
+#OUTPUT= unlimitpolyJ$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  unlimitpolyJ$(EXE)
+#STDOUT= unlimitpolyJ.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = unlimitpolyJ.out $($(tcasedir)unlimitpolyJ$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

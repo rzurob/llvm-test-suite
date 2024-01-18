@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/typeConversion/exprIsIntrinsicFunc02.scenario
+#FEATURE	= Intrinsic Assignment -- Intrinsic Type Conversion
+#CREATOR	= GM Manual Creation
+#DATE		= 20061103
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)exprIsIntrinsicFunc02.f
+#OUTPUT		= exprIsIntrinsicFunc02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= exprIsIntrinsicFunc02$(OBJ)
+#OUTPUT		= exprIsIntrinsicFunc02$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= exprIsIntrinsicFunc02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

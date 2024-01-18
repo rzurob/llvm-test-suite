@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /syncAll/saStatNonIntd.scenario
+#FEATURE   = sync all - diagnostic message on non-integer or array stat-variable
+#CREATOR   = DF
+#DATE      = 20100727
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINENV
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)saStatNonIntd.f
+#STDOUT    = saStatNonIntd.err
+#STDERR    = saStatNonIntd.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = saStatNonIntd.err $($(tcasedir)saStatNonIntd$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

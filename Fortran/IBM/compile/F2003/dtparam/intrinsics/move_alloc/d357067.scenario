@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/move_alloc/d357067.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Oct. 3 2008
+#TEST_TYPE = Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)d357067.f
+#STDERR = d357067.err
+#VALIDRCS = $(RC_COMP_E)
+#ENDCMD
+
+#CMD    = XLDIFF
+#INPUT  = d357067.err $($(tcasedir)d357067$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

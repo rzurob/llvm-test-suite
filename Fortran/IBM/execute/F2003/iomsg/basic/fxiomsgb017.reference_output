@@ -1,0 +1,4 @@
+ 1525-097 A READ statement using decimal base input found the invalid digit 'T' in the input file.  The program will recover by assuming a zero in its place.
+                                                                                                                                               
+ 1525-097 A READ statement using decimal base input found the invalid digit ''' in the input file.  The program will recover by assuming a zero in its place.
+                                                                                                                                               

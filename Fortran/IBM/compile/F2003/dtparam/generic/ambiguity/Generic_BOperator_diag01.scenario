@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/F2003/dtparam/generic/ambiguity/Generic_BOperator_diag01.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20081015
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD      = F_COMPILE
+#OPTS     = $(OPT_FREE_SOURCE_FORM)
+#INPUT    = $(tcasedir)Generic_BOperator_diag01.f
+#OUTPUT   = Generic_BOperator_diag01$(OBJ)
+#STDERR   = Generic_BOperator_diag01.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = Generic_BOperator_diag01.err $(tcasedir)Generic_BOperator_diag01.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

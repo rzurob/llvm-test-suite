@@ -1,0 +1,160 @@
+In c_sub_1D 
+For dim 0, the extent is 5, lower bound is 1 and the stride is 12
+the value stored in the field a of element 1 is: 1
+the values stored in the field b of element 1 are: 2, 3
+the value stored in the field a of element 2 is: 2
+the values stored in the field b of element 2 are: 3, 4
+the value stored in the field a of element 3 is: 3
+the values stored in the field b of element 3 are: 4, 5
+the value stored in the field a of element 4 is: 4
+the values stored in the field b of element 4 are: 5, 6
+the value stored in the field a of element 5 is: 5
+the values stored in the field b of element 5 are: 6, 7
+arg1 = absent
+arg2 = absent
+In c_sub_1D 
+For dim 0, the extent is 5, lower bound is 1 and the stride is 12
+the value stored in the field a of element 1 is: 1
+the values stored in the field b of element 1 are: 2, 3
+the value stored in the field a of element 2 is: 2
+the values stored in the field b of element 2 are: 3, 4
+the value stored in the field a of element 3 is: 3
+the values stored in the field b of element 3 are: 4, 5
+the value stored in the field a of element 4 is: 4
+the values stored in the field b of element 4 are: 5, 6
+the value stored in the field a of element 5 is: 5
+the values stored in the field b of element 5 are: 6, 7
+arg1 = absent
+arg2 = 100
+In c_sub_1D 
+For dim 0, the extent is 5, lower bound is 1 and the stride is 12
+the value stored in the field a of element 1 is: 1
+the values stored in the field b of element 1 are: 2, 3
+the value stored in the field a of element 2 is: 2
+the values stored in the field b of element 2 are: 3, 4
+the value stored in the field a of element 3 is: 3
+the values stored in the field b of element 3 are: 4, 5
+the value stored in the field a of element 4 is: 4
+the values stored in the field b of element 4 are: 5, 6
+the value stored in the field a of element 5 is: 5
+the values stored in the field b of element 5 are: 6, 7
+arg1 = 100
+arg2 = 100
+In c_sub_1D 
+For dim 0, the extent is 5, lower bound is 1 and the stride is 12
+the value stored in the field a of element 1 is: 1
+the values stored in the field b of element 1 are: 2, 3
+the value stored in the field a of element 2 is: 2
+the values stored in the field b of element 2 are: 3, 4
+the value stored in the field a of element 3 is: 3
+the values stored in the field b of element 3 are: 4, 5
+the value stored in the field a of element 4 is: 4
+the values stored in the field b of element 4 are: 5, 6
+the value stored in the field a of element 5 is: 5
+the values stored in the field b of element 5 are: 6, 7
+arg1 = 100
+arg2 = absent
+In c_sub_1D_opt
+arg1 = absent
+arg2 = absent
+For dim 0, the extent is 5, lower bound is 1 and the stride is 12
+the value stored in the field a of element 1 is: 1
+the values stored in the field b of element 1 are: 2, 3
+the value stored in the field a of element 2 is: 2
+the values stored in the field b of element 2 are: 3, 4
+the value stored in the field a of element 3 is: 3
+the values stored in the field b of element 3 are: 4, 5
+the value stored in the field a of element 4 is: 4
+the values stored in the field b of element 4 are: 5, 6
+the value stored in the field a of element 5 is: 5
+the values stored in the field b of element 5 are: 6, 7
+In c_sub_1D_opt
+arg1 = absent
+arg2 = 100
+For dim 0, the extent is 5, lower bound is 1 and the stride is 12
+the value stored in the field a of element 1 is: 1
+the values stored in the field b of element 1 are: 2, 3
+the value stored in the field a of element 2 is: 2
+the values stored in the field b of element 2 are: 3, 4
+the value stored in the field a of element 3 is: 3
+the values stored in the field b of element 3 are: 4, 5
+the value stored in the field a of element 4 is: 4
+the values stored in the field b of element 4 are: 5, 6
+the value stored in the field a of element 5 is: 5
+the values stored in the field b of element 5 are: 6, 7
+In c_sub_1D_opt
+arg1 = 100
+arg2 = 100
+For dim 0, the extent is 5, lower bound is 1 and the stride is 12
+the value stored in the field a of element 1 is: 1
+the values stored in the field b of element 1 are: 2, 3
+the value stored in the field a of element 2 is: 2
+the values stored in the field b of element 2 are: 3, 4
+the value stored in the field a of element 3 is: 3
+the values stored in the field b of element 3 are: 4, 5
+the value stored in the field a of element 4 is: 4
+the values stored in the field b of element 4 are: 5, 6
+the value stored in the field a of element 5 is: 5
+the values stored in the field b of element 5 are: 6, 7
+In c_sub_1D_opt
+arg1 = 100
+arg2 = absent
+For dim 0, the extent is 5, lower bound is 1 and the stride is 12
+the value stored in the field a of element 1 is: 1
+the values stored in the field b of element 1 are: 2, 3
+the value stored in the field a of element 2 is: 2
+the values stored in the field b of element 2 are: 3, 4
+the value stored in the field a of element 3 is: 3
+the values stored in the field b of element 3 are: 4, 5
+the value stored in the field a of element 4 is: 4
+the values stored in the field b of element 4 are: 5, 6
+the value stored in the field a of element 5 is: 5
+the values stored in the field b of element 5 are: 6, 7
+In c_fnc_2D 
+For dim 0, the extent is 5, lower bound is 1 and the stride is 20
+For dim 1, the extent is 3, lower bound is 1 and the stride is 100
+the values stored in c of element 1 are: 3.000000, 4.000000
+the value stored in the field a of element 1 is: 1
+the values stored in the field b of element 1 are: 2, 3
+the values stored in c of element 2 are: 4.000000, 5.000000
+the value stored in the field a of element 2 is: 2
+the values stored in the field b of element 2 are: 3, 4
+the values stored in c of element 3 are: 5.000000, 6.000000
+the value stored in the field a of element 3 is: 3
+the values stored in the field b of element 3 are: 4, 5
+the values stored in c of element 4 are: 6.000000, 7.000000
+the value stored in the field a of element 4 is: 4
+the values stored in the field b of element 4 are: 5, 6
+the values stored in c of element 5 are: 7.000000, 8.000000
+the value stored in the field a of element 5 is: 5
+the values stored in the field b of element 5 are: 6, 7
+the values stored in c of element 1 are: 4.000000, 5.000000
+the value stored in the field a of element 1 is: 1
+the values stored in the field b of element 1 are: 2, 3
+the values stored in c of element 2 are: 5.000000, 6.000000
+the value stored in the field a of element 2 is: 2
+the values stored in the field b of element 2 are: 3, 4
+the values stored in c of element 3 are: 6.000000, 7.000000
+the value stored in the field a of element 3 is: 3
+the values stored in the field b of element 3 are: 4, 5
+the values stored in c of element 4 are: 7.000000, 8.000000
+the value stored in the field a of element 4 is: 4
+the values stored in the field b of element 4 are: 5, 6
+the values stored in c of element 5 are: 8.000000, 9.000000
+the value stored in the field a of element 5 is: 5
+the values stored in the field b of element 5 are: 6, 7
+the values stored in c of element 1 are: 5.000000, 6.000000
+the value stored in the field a of element 1 is: 1
+the values stored in the field b of element 1 are: 2, 3
+the values stored in c of element 2 are: 6.000000, 7.000000
+the value stored in the field a of element 2 is: 2
+the values stored in the field b of element 2 are: 3, 4
+the values stored in c of element 3 are: 7.000000, 8.000000
+the value stored in the field a of element 3 is: 3
+the values stored in the field b of element 3 are: 4, 5
+the values stored in c of element 4 are: 8.000000, 9.000000
+the value stored in the field a of element 4 is: 4
+the values stored in the field b of element 4 are: 5, 6
+the values stored in c of element 5 are: 9.000000, 10.000000
+the value stored in the field a of element 5 is: 5
+the values stored in the field b of element 5 are: 6, 7

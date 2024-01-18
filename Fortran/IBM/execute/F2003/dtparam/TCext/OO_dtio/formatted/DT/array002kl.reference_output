@@ -1,0 +1,14 @@
+ iotype:DTb1-1 empty v_list 100 iotype:DTb1-2 empty v_list 101
+ iotype:DTb1-1 empty v_list 102 iotype:DTb1-2 empty v_list 103
+ iotype:DTb2 empty v_list 200 abc
+ iotype:DTb2 empty v_list 201 def
+ iotype:DTb2 empty v_list 202 ghi
+ iotype:DTb2 empty v_list 203 jkl
+ iotype:DTc1-1 v_list: 10       300 ABC
+ iotype:DTc1-2 v_list: 10       301 DEF
+ iotype:DTc1-3 v_list: 10       302 GHI
+ iotype:DTc1-4 v_list: 10       303 JKL
+ iotype:DTc2 v_list: 10 5       300  ABC
+ iotype:DTc2 v_list: 10 5       301  DEF
+ iotype:DTc2 v_list: 10 5       302  GHI
+ iotype:DTc2 v_list: 10 5       303  JKL

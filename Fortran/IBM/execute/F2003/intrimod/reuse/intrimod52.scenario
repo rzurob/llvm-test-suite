@@ -1,0 +1,51 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/intrimod/reuse/intrimod52.scenario
+#FEATURE = intrimod tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)../fake_ieee_modules.f
+#OPTS      = $(OPT_FLOAT_NANS_SUPPORT) $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fake_ieee_modules$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)../ieeeconsts.f
+#OPTS      = $(OPT_FLOAT_NANS_SUPPORT) $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ieeeconsts$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)intrimod52.f
+#OPTS      = $(OPT_FLOAT_NANS_SUPPORT) $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = intrimod52$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FLOAT_NANS_SUPPORT) $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  fake_ieee_modules$(OBJ) ieeeconsts$(OBJ) intrimod52$(OBJ)
+#OUTPUT    = intrimod52$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = intrimod52$(EXE)
+#STDOUT    = intrimod52.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)../emptyout$(product)vf) intrimod52.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

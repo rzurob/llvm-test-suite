@@ -1,0 +1,22 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      dtParamTypeCompatSeq.scenario
+#FEATURE=   Derived Type Parameters - determination of derived types
+#CREATOR=   Rafik Zurob
+#DATE=      20060619
+#TEST_TYPE= unit
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=      F_COMPLINK
+#INPUT=    $(tcasedir)dtParamTypeCompatSeq.f
+#OPTS=     $(OPT_FREE_SOURCE_FORM)
+#OUTPUT=   dtParamTypeCompatSeq$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtParamTypeCompatSeq$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

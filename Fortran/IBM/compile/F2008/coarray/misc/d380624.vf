@@ -1,0 +1,5 @@
+"d380624.f", line 24.23: 1514-806 (S) Coarray caf2 must not be declared as a common block object.
+** main   === End of Compilation 1 ===
+"d380624.f", line 32.23: 1514-806 (S) Coarray a must not be declared as a common block object.
+** sub2   === End of Compilation 2 ===
+1501-511  Compilation failed for file d380624.f.

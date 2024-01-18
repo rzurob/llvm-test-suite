@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/mix/generic/misc/bindingOrder001.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)bindingOrder001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = bindingOrder001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = bindingOrder001$(OBJ)
+#OUTPUT    = bindingOrder001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = bindingOrder001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

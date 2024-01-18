@@ -1,0 +1,57 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/compat/dtpCompatDummyInNoDTP/dtpCompatDummyInNoDTP_111m.scenario
+#FEATURE   = Broken Compatability Warning - DTP code calls subroutine, passing in reference to extended type with no type parameters
+! - manual compile, v11.1
+#CREATOR   = DF Manual Update
+#DATE      = 20090613
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT=linuxle
+#ENDENV
+
+#BEGINCONTROL
+
+! Compile "post-DTP" files with the latest version of the latest compiler,
+! link with manually compiled (with 11.1 gold) object files, and run.
+! run:  Since no DTP data is actually defined, no error message should be output
+
+!!Since the files are manually compiled already, we do not need this step:
+!! Caution: do not just uncomment the next few lines: the name of the output
+!! file contains the product chain, which can't be good - it's just there for
+!! consistency with the next step, and to document the process.
+!#CMD      = V111_XLF2003_COMPILE (_RHEL)
+!#INPUT    = $(tcasedir)dtpCompatDummyInNoDTPPreDTP.f
+!#OUTPUT   = $(dtpCompatDummyInNoDTPPreDTP.111$(Q32_64_MODE)$(product)$(OBJ))
+!#ENDCMD
+
+!!BUT: we do need the .mod file, which we copy here:
+#CMD       = COPY
+#INPUT     = $($(tcasedir)dtpcompatdummyinnodtppredtpmod.111$(Q32_64_MODE)$(product).mod)
+#OUTPUT    = dtpcompatdummyinnodtppredtpmod.mod
+#ENDCMD
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)dtpCompatDummyInNoDTPPostDTP.f
+#OUTPUT    = dtpCompatDummyInNoDTPPostDTP$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = dtpCompatDummyInNoDTPPostDTP$(OBJ) $($(tcasedir)dtpCompatDummyInNoDTPPreDTP.111$(Q32_64_MODE)$(product)$(OBJ))
+#OUTPUT    = dtpCompatDummyInNoDTP$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpCompatDummyInNoDTP$(EXE)
+#STDOUT    = dtpCompatDummyInNoDTP.out
+#STDERR    = dtpCompatDummyInNoDTP.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpCompatDummyInNoDTP$(product)vf) dtpCompatDummyInNoDTP.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

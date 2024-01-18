@@ -1,0 +1,19 @@
+"roundspecifier001.f", line 42.42: 1518-283 (L) The ROUND= specifier is not permitted by the Fortran 95 standard.
+"roundspecifier001.f", line 44.29: 1518-283 (L) The ROUND= specifier is not permitted by the Fortran 95 standard.
+"roundspecifier001.f", line 46.24: 1518-283 (L) The ROUND= specifier is not permitted by the Fortran 95 standard.
+"roundspecifier001.f", line 48.29: 1518-283 (L) The ROUND= specifier is not permitted by the Fortran 95 standard.
+"roundspecifier001.f", line 50.24: 1518-283 (L) The ROUND= specifier is not permitted by the Fortran 95 standard.
+"roundspecifier001.f", line 52.29: 1518-283 (L) The ROUND= specifier is not permitted by the Fortran 95 standard.
+"roundspecifier001.f", line 54.24: 1518-283 (L) The ROUND= specifier is not permitted by the Fortran 95 standard.
+"roundspecifier001.f", line 56.13: 1518-283 (L) The ROUND= specifier is not permitted by the Fortran 95 standard.
+"roundspecifier001.f", line 62.42: 1518-283 (L) The ROUND= specifier is not permitted by the Fortran 95 standard.
+"roundspecifier001.f", line 64.17: 1518-075 (L) The RU descriptor is not permitted in Fortran 90 or Fortran 95.
+"roundspecifier001.f", line 66.19: 1518-075 (L) The RD descriptor is not permitted in Fortran 90 or Fortran 95.
+"roundspecifier001.f", line 68.15: 1518-075 (L) The RN descriptor is not permitted in Fortran 90 or Fortran 95.
+"roundspecifier001.f", line 70.18: 1518-075 (L) The RZ descriptor is not permitted in Fortran 90 or Fortran 95.
+"roundspecifier001.f", line 72.17: 1518-075 (L) The RC descriptor is not permitted in Fortran 90 or Fortran 95.
+"roundspecifier001.f", line 74.15: 1518-075 (L) The RP descriptor is not permitted in Fortran 90 or Fortran 95.
+"roundspecifier001.f", 1518-318 (L) The STOPEXCEPT option can cause the program to behave in a way that is different from that specified by the Fortran 95 standard.
+"roundspecifier001.f", 1518-318 (L) The XLF2003(NOOLDNANINF) option can cause the program to behave in a way that is different from that specified by the Fortran 95 standard.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file roundspecifier001.f.

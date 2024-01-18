@@ -1,0 +1,33 @@
+
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      diffDTPlen.f
+#FEATURE=
+#CREATOR=   Michelle Zhang
+#DATE=
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = $(tcasedir)diffDTPlen.f
+#OUTPUT    = diffDTPlen$(OBJ)
+#STDERR    = diffDTPlen.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    diffDTPlen.err $($(tcasedir)diffDTPlen$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

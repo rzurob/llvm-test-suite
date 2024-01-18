@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/crossFeature/final/final001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/abstract/crossFeature/final/final001.scenario
+#DATE      = 20070612
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)final001.f
+#OPTS      = -qdebug=intmsg:shutup
+#OUTPUT    = final001$(OBJ)
+#STDERR    = final001.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)final001$(product)vf) final001.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,11 @@
+l =  0, u =  0 (A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,)
+l = 13, u = 14 (AN,BO,CP,DQ,ER,FS,GT,HU,IV,JW,KX,LY,MZ,)
+l =  6, u =  8 (ANHU,BOIV,CPJW,DQKX,ERLY,FSMZ,)
+l =  3, u =  4 (ANHUDQKX,BOIVERLY,CPJWFSMZ,)
+l =  1, u =  3 (ANHUDQKXCPJWFSMZ,)
+ 
+l =  0, u =  0 (ANHUDQKXCPJWFSMZ,)
+l =  8, u =  9 (ANHUDQKX,CPJWFSMZ,)
+l =  4, u =  5 (ANHU,CPJW,DQKX,FSMZ,)
+l =  2, u =  3 (AN,CP,DQ,FS,HU,JW,KX,MZ,)
+l =  1, u =  2 (A,C,D,F,H,J,K,M,N,P,Q,S,U,W,X,Z,)

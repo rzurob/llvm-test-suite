@@ -1,0 +1,9 @@
+ start
+ b - base:  100
+ calling old implementation to copy object of type base; not expecting runtime error message
+ b2 - base:  100
+ allocating child
+ c - child(1): 99 >abc< 123 45 67 89 >def<
+ calling old implementation to copy; expecting no runtime error message
+ c2 - child(1): 99 >abc< 123 45 67 89 >def<
+ End.

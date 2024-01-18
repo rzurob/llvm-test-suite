@@ -1,0 +1,6 @@
+"module_variables_004d.f", line 41.2: 1516-036 (S) Entity di has undefined type.
+"module_variables_004d.f", line 52.2: 1516-036 (S) Entity dr has undefined type.
+"module_variables_004d.f", line 62.2: 1516-036 (S) Entity cch has undefined type.
+"module_variables_004d.f", line 77.2: 1516-036 (S) Entity al has undefined type.
+** module_variables_003a   === End of Compilation 1 ===
+1501-511  Compilation failed for file module_variables_004d.f.

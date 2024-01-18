@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2008/intrinsics/popcnt/func/POPCNT_005f.scenario
+#FEATURE = F2008 POPPAR and POPCNT
+#CREATOR = Denis Navotniy
+#DATE    = 20101130
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)modulePOPCNT.f
+#OUTPUT    = modulePOPCNT$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)POPCNT_005f.f
+#OUTPUT    = POPCNT_005f$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2008_LINK
+#INPUT     = modulePOPCNT$(OBJ) POPCNT_005f$(OBJ)
+#OUTPUT    = POPCNT_005f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = POPCNT_005f$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

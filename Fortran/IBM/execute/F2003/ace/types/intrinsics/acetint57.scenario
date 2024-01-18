@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint57.scenario
+#FEATURE	= Array constructor enhancement - default initialization of derived type _component_ (intrinsics)
+#CREATOR	= DF Manual Update
+#DATE		= 20061123
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint57.f
+#OUTPUT		= acetint57$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint57$(OBJ)
+#OUTPUT		= acetint57$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint57$(EXE)
+#STDOUT		= acetint57.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -r1e-5
+#INPUT		= $($(tcasedir)acetint57$(product)vf) acetint57.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

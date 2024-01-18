@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/assignment/intrinsic/alloc/dtpIAABasicFunction003.scenario
+#FEATURE   = Intrinsic Assignment with Allocation - allocate basic DTP variable (container) via function in intrinsic assignment statement
+#CREATOR   = DF Manual Update
+#DATE      = 20090522
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAABasicFunction003.f
+#OUTPUT    = dtpIAABasicFunction003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAABasicFunction003$(OBJ)
+#OUTPUT    = dtpIAABasicFunction003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAABasicFunction003$(EXE)
+#STDOUT    = dtpIAABasicFunction003.out
+#ENDCMD
+
+#CMD       = SORT
+#INPUT     = dtpIAABasicFunction003.out
+#STDOUT    = dtpIAABasicFunction003.out1
+#ENDCMD
+
+#CMD       = SORT
+#INPUT     = $($(tcasedir)dtpIAABasicFunction003$(product)vf)
+#STDOUT    = dtpIAABasicFunction003.vf1
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dtpIAABasicFunction003.vf1 dtpIAABasicFunction003.out1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

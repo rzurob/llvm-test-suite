@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/unpack/unpack004.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071002
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)unpack004.f
+#OUTPUT    = unpack004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = unpack004$(OBJ)
+#OUTPUT    = unpack004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = unpack004$(EXE)
+#STDOUT    = unpack004.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)unpack004$(product)vf) unpack004.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

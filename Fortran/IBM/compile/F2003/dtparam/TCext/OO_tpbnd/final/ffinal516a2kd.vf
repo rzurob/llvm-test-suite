@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"ffinal516a2kd.f", line 71.17: 1514-589 (S) Inaccessible component length must not be specified in the structure constructor for type base.
+** ffinal516a2kd   === End of Compilation 2 ===
+"ffinal516a2kd.f", line 90.29: 1514-589 (S) Inaccessible component length must not be specified in the structure constructor for type base.
+** test1   === End of Compilation 3 ===
+1501-511  Compilation failed for file ffinal516a2kd.f.

@@ -1,0 +1,30 @@
+ In Fortran before changing:
+ C
+ 1.000000000
+ 2
+ 3 3 3 3 3 3
+ In Fortran after changing:
+ F
+ 2.000000000
+ 3
+ 4 4 4 4 4 4
+In C main program:
+ch=C
+cf=1.000000
+ci=2
+ca[0][0][0]=3
+ca[0][0][1]=3
+ca[0][0][2]=3
+ca[0][1][0]=3
+ca[0][1][1]=3
+ca[0][1][2]=3
+Return to C main program:
+ch=F
+cf=2.000000
+ci=3
+ca[0][0][0]=4
+ca[0][0][1]=4
+ca[0][0][2]=4
+ca[0][1][0]=4
+ca[0][1][1]=4
+ca[0][1][2]=4

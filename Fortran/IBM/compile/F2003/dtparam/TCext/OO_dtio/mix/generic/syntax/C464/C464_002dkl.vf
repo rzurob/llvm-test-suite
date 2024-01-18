@@ -1,0 +1,4 @@
+"C464_002dkl.f", line 43.40: 1514-673 (S) Derived type I/O procedures must not be pure.
+** m   === End of Compilation 1 ===
+** c464_002dkl   === End of Compilation 2 ===
+1501-511  Compilation failed for file C464_002dkl.f.

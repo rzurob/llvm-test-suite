@@ -1,0 +1,13 @@
+ unary+
+ unary+
+ 1 2
+ binary*
+ binary*
+ 2 4
+ binary*
+ unary+
+ 2
+ binary*
+ binary*
+ unary+
+ 24

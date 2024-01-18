@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpIntrinsicTypesInterface.scenario
+#FEATURE   = User-Defined Operators - involvement of intrinsic types (generic interface)
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpIntrinsicTypesInterface.f
+#OUTPUT    = dtpUOpIntrinsicTypesInterface$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpIntrinsicTypesInterface$(OBJ)
+#OUTPUT    = dtpUOpIntrinsicTypesInterface$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpIntrinsicTypesInterface$(EXE)
+#STDOUT    = dtpUOpIntrinsicTypesInterface.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUOpIntrinsicTypesInterface$(product)vf) dtpUOpIntrinsicTypesInterface.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

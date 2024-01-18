@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/F2003/charVal/deferredLength/valueAttrDeferredLen003.scenario
+#FEATURE = Value Attribute with characters > 1
+#CREATOR = Vicram Uppal
+#DATE    = 20060403
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)valueAttrDeferredLen003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = valueAttrDeferredLen003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = valueAttrDeferredLen003$(OBJ)
+#OUTPUT    = valueAttrDeferredLen003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = valueAttrDeferredLen003$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/basic/char/d325661.scenario
+#FEATURE	= Intrinsic Assignment -- Basic Tests: CHARACTER Intrinsic Type
+#CREATOR	= GM Manual Creation
+#DATE		= 20060921
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)d325661.f
+#OUTPUT		= d325661$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= d325661$(OBJ)
+#OUTPUT		= d325661$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= d325661$(EXE)
+#STDOUT		= d325661.out
+#STDERR		= d325661.out
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)d325661$(product)vf) d325661.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

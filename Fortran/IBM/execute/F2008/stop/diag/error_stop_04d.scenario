@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/stop/error_stop_04d.scenario
+#FEATURE   = Constant expression as stop code in ERROR STOP statement
+#CREATOR   = Shahid Alam
+#DATE      = 20101020
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)error_stop_04d.f
+#OUTPUT    = error_stop_04d$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = error_stop_04d$(OBJ)
+#OUTPUT    = error_stop_04d$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = error_stop_04d$(EXE)
+#STDOUT    = error_stop_04d.out
+#STDERR    = error_stop_04d.out
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = GREP
+#OPTS      = "ERROR STOP 1"
+#INPUT     = error_stop_04d.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

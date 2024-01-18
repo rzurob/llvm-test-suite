@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"d357067.f", line 57.13: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"d357067.f", line 58.13: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"d357067.f", line 59.8: 1513-062 (S) Generic procedure reference can not be resolved due to incorrect actual argument attributes.
+"d357067.f", line 60.8: 1513-062 (S) Generic procedure reference can not be resolved due to incorrect actual argument attributes.
+** d357067   === End of Compilation 2 ===
+1501-511  Compilation failed for file d357067.f.

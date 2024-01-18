@@ -1,0 +1,3 @@
+"bcdamix5.f", line 38.12: 1514-161 (S) Identifier "Sub" appearing as a specific interface procedure/result name was defined elsewhere with conflicting attributes.  This definition is ignored.
+** mod   === End of Compilation 1 ===
+1501-511  Compilation failed for file bcdamix5.f.

@@ -1,0 +1,12 @@
+"C464_004d.f", line 42.29: 1514-567 (S) The passed-object dummy argument of the binding uread for an extensible type must be polymorphic.
+"C464_004d.f", line 42.29: 1514-565 (S) The passed-object dummy argument dtv of binding uread must be of type base.
+"C464_004d.f", line 43.29: 1514-565 (S) The passed-object dummy argument dtv of binding uwrite must be of type base.
+"C464_004d.f", line 49.43: 1514-578 (S) Dummy argument iostat of the derived-type I/O procedure fread must be of type default integer.
+"C464_004d.f", line 49.43: 1514-578 (S) Dummy argument v_list of the derived-type I/O procedure fread must be of type default integer.
+"C464_004d.f", line 49.43: 1514-578 (S) Dummy argument unit of the derived-type I/O procedure fread must be of type default integer.
+"C464_004d.f", line 50.43: 1514-579 (S) Dummy argument iomsg of the derived-type formatted I/O procedure fwrite must be of type character with assumed length.
+"C464_004d.f", line 50.43: 1514-578 (S) Dummy argument v_list of the derived-type I/O procedure fwrite must be of type default integer.
+"C464_004d.f", line 50.43: 1514-579 (S) Dummy argument iotype of the derived-type formatted I/O procedure fwrite must be of type character with assumed length.
+** m   === End of Compilation 1 ===
+** c464_004d   === End of Compilation 2 ===
+1501-511  Compilation failed for file C464_004d.f.

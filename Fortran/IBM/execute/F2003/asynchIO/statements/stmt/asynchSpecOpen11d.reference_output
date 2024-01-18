@@ -1,0 +1,2 @@
+ OPEN(ASYNCHRONOUS='yes'): ioStatus = ( 24 ) 1525-024 The OPEN statement cannot be processed because ASYNCHRONOUS=YES was coded in the OPEN statement but the file fort.15 is already connected to this unit with a different ASYNCHRONOUS value.  The program will recover by ignoring the ASYNCHRONOUS= specifier.
+                                                                                                                        

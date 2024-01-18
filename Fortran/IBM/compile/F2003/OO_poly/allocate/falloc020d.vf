@@ -1,0 +1,10 @@
+"falloc020d.f", line 43.14: 1513-088 (S) Procedure names must not be specified in this context.
+"falloc020d.f", line 45.17: 1513-088 (S) Procedure names must not be specified in this context.
+"falloc020d.f", line 47.17: 1513-088 (S) Procedure names must not be specified in this context.
+"falloc020d.f", line 49.14: 1513-088 (S) Procedure names must not be specified in this context.
+"falloc020d.f", line 50.17: 1513-088 (S) Procedure names must not be specified in this context.
+** falloc020d   === End of Compilation 1 ===
+** f   === End of Compilation 2 ===
+** g   === End of Compilation 3 ===
+** h   === End of Compilation 4 ===
+1501-511  Compilation failed for file falloc020d.f.

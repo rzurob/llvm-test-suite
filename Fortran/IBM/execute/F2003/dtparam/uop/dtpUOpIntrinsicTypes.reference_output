@@ -1,0 +1,42 @@
+ xk4d = xk4a+2+xk4b*xk4c*5
+ binaryPlus: 12 2 -> 14
+ binaryStarK: 2 3 -> 6
+ binaryStar: 6 5 -> 30
+ binaryPlusK: 14 30 -> 44
+ xk4d = ((xk4a+2)+(xk4b*xk4c*5))
+ binaryPlus: 12 2 -> 14
+ binaryStarK: 2 3 -> 6
+ binaryStar: 6 5 -> 30
+ binaryPlusK: 14 30 -> 44
+ xk4d = xk4a*xk4b+5+xk4c+55+7
+ binaryStarK: 12 2 -> 24
+ binaryPlus: 24 5 -> 29
+ binaryPlusK: 29 3 -> 32
+ binaryPlus: 32 55 -> 87
+ binaryPlus: 87 7 -> 94
+ xk4d = (((xk4a*xk4b+5)+xk4c)+55)+7
+ binaryStarK: 12 2 -> 24
+ binaryPlus: 24 5 -> 29
+ binaryPlusK: 29 3 -> 32
+ binaryPlus: 32 55 -> 87
+ binaryPlus: 87 7 -> 94
+ xk4d = (xk4a+xk4b)*xk4c
+ binaryPlusK: 12 2 -> 14
+ binaryStarK: 14 3 -> 42
+ xk4d = (xk4a-xk4b-77)*xk4c/xk4c
+ binaryMinusK: 12 2 -> 10
+ binaryMinus: 10 77 -> -67
+ binaryStarK: -67 3 -> -201
+ binarySlashK: -201 3 -> -67
+ xk4d = xk4a*xk4b+66+xk4b*xk4c+44
+ binaryStarK: 12 2 -> 24
+ binaryPlus: 24 66 -> 90
+ binaryStarK: 2 3 -> 6
+ binaryPlusK: 90 6 -> 96
+ binaryPlus: 96 44 -> 140
+ xk4d = xk4a/xk4b*xk4c**2**3-xk4c
+ binarySlashK: 12 2 -> 6
+ binaryPower: 3 8 -> 6561
+ binaryStarK: 6 6561 -> 39366
+ binaryMinusK: 39366 3 -> 39363
+ end

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BMMArithmetic.scenario
+#FEATURE   = F2008 BLOCK - mixed-mode arithmetic
+#CREATOR   = DF Manual Update
+#DATE      = 20101214
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)BMMArithmetic.f
+#OUTPUT    = BMMArithmetic$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = BMMArithmetic$(OBJ)
+#OUTPUT    = BMMArithmetic$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = BMMArithmetic$(EXE)
+#STDOUT    = BMMArithmetic.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-5
+#INPUT     = $($(tcasedir)BMMArithmetic$(product)vf) BMMArithmetic.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

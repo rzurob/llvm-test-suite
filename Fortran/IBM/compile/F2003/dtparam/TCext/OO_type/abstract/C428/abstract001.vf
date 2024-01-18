@@ -1,0 +1,4 @@
+"abstract001.f", line 55.6: 1514-595 (S) Type b1, specified with the ABSTRACT attribute, must not contain the SEQUENCE statement.
+** m   === End of Compilation 1 ===
+** abstract001   === End of Compilation 2 ===
+1501-511  Compilation failed for file abstract001.f.

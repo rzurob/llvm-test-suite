@@ -1,0 +1,3 @@
+"initexprDblelanglvl.f", line 25.38: 1518-016 (L) The letter Q is not permitted as an exponent letter in real constants by the Fortran 2003 standard.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file initexprDblelanglvl.f.

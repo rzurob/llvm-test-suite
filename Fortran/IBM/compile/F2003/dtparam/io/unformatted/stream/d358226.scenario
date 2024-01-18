@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/io/unformatted/stream/d358226.scenario
+#FEATURE	= Unformatted Intrinsic I/O (with Derived Type Parameters)
+#CREATOR	= Glen Mateer
+#DATE		= 20081030
+#TEST_TYPE	= Reduced Code
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)d358226.f
+#OUTPUT		= d358226$(OBJ)
+#STDOUT		= d358226.out
+#STDERR		= d358226.out
+#VALIDRCS	= $(RC_COMP_S)
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)d358226$(product)vf) d358226.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

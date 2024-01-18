@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/ptrAssc/sameDeclDiffdym4FTbasePnt.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071105
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)sameDeclDiffdym4FTbasePnt.f
+#OUTPUT= sameDeclDiffdym4FTbasePnt$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  sameDeclDiffdym4FTbasePnt$(OBJ)
+#OUTPUT= sameDeclDiffdym4FTbasePnt$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  sameDeclDiffdym4FTbasePnt$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,4 @@
+"falloc005d2.f", line 46.15: 1511-125 (S) Unlimited polymorphic variables require a type specification, SOURCE= specifier, or MOLD= specifier in the ALLOCATE statement.
+"falloc005d2.f", line 46.61: 1516-266 (S) The SOURCE= specifier must not be specified more than once in the ALLOCATE statement.
+** falloc005d2   === End of Compilation 1 ===
+1501-511  Compilation failed for file falloc005d2.f.

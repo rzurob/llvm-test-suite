@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/mxminAll/con/maxMin/mxminArrayArgForallWhere.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mxminArrayArgForallWhere.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = mxminArrayArgForallWhere$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = mxminArrayArgForallWhere$(OBJ)
+#OUTPUT    = mxminArrayArgForallWhere$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminArrayArgForallWhere$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

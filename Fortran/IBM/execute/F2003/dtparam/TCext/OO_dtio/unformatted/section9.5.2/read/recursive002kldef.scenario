@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2003/dtparam/TCext/OO_dtio/unformatted/section9.5.2/read/recursive002kldef.scenario
+#FEATURE = OO_dtio + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070917
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)recursive002kldef.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=allowrpdt
+#OUTPUT    = recursive002kldef$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = recursive002kldef$(OBJ)
+#OUTPUT    = recursive002kldef$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = recursive002kldef$(EXE)
+#STDOUT    = recursive002kldef.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)recursive002kldef$(product)vf) recursive002kldef.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = ieee/unordered/unord002.scenario
+#FEATURE = ieee tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)ieeeconsts.f
+#OUTPUT = ieeeconsts$(OBJ)
+#OPTS 	= $(OPT_FREE_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION)
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)unord002.f
+#OUTPUT = unord002$(OBJ)
+#OPTS 	= $(OPT_FREE_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION) -I./
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = unord002$(OBJ)
+#OUTPUT = unord002$(EXE)
+#OPTS 	= $(OPT_FREE_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION) -I./
+#ENDCMD
+
+#CMD	= RUN
+#INPUT	= unord002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

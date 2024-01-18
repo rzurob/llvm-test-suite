@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/C503/localVar006.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/abstract/C503/localVar006.scenario
+#DATE      = 20070611
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)localVar006.f
+#OUTPUT    = localVar006$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = localVar006$(OBJ)
+#OUTPUT    = localVar006$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = localVar006$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

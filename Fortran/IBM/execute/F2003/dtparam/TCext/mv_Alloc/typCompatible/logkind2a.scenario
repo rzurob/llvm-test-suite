@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/typCompatible/logkind2a.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071128
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM) $(OPT_INTSIZE_2)
+#INPUT=  $(tcasedir)logkind2a.f
+#OUTPUT= logkind2a$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  logkind2a$(OBJ)
+#OUTPUT= logkind2a$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  logkind2a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

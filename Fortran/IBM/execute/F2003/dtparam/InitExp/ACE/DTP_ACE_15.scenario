@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/InitExp/ACE/DTP_ACE_15.scenario
+#FEATURE   = DTP - Array constructor with TypeSpec
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20090514
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)DTP_ACE_15.f
+#OUTPUT    = DTP_ACE_15$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = DTP_ACE_15$(OBJ)
+#OUTPUT    = DTP_ACE_15$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = DTP_ACE_15$(EXE)
+#STDOUT    = DTP_ACE_15.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

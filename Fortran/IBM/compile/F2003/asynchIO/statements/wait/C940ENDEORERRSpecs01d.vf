@@ -1,0 +1,5 @@
+"C940ENDEORERRSpecs01d.f", line 60.30: 1516-052 (S) The statement label 100 is referenced but not defined in this scope.
+"C940ENDEORERRSpecs01d.f", line 60.39: 1516-052 (S) The statement label 200 is referenced but not defined in this scope.
+"C940ENDEORERRSpecs01d.f", line 60.48: 1516-052 (S) The statement label 300 is referenced but not defined in this scope.
+** c940endeorerrspecs01d   === End of Compilation 1 ===
+1501-511  Compilation failed for file C940ENDEORERRSpecs01d.f.

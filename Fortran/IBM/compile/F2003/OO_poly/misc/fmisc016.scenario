@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME	 = OO_poly/misc/fmisc016.scenario
+#FEATURE = OO_poly tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)fmisc016.f
+#OUTPUT = fmisc016$(OBJ)
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#STDERR = fmisc016.err
+#VALIDRCS = $(RC_FAIL)
+#ENDCMD
+
+#CMD    = XLDIFF
+#INPUT  = fmisc016.err $($(tcasedir)fmisc016$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

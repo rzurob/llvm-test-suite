@@ -1,0 +1,4 @@
+** mod1   === End of Compilation 1 ===
+"Generic_BOperator_diag02.f", line 105.19: 1516-064 (S) Operands to the * operator must be compatible with the intrinsic uses of the operator, or with a specific interface within an accessible defined operator generic interface.
+** generic_operator03c   === End of Compilation 2 ===
+1501-511  Compilation failed for file Generic_BOperator_diag02.f.

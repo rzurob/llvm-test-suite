@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/filePos/pendingBackspace03.scenario
+#FEATURE	= Asynchronous I/O -- BACKSPACE Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20061130
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $($(tcasedir)pendingBackspace03$(product)dat) .
+#ENDCMD
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)pendingBackspace03.f
+#OUTPUT		= pendingBackspace03$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= pendingBackspace03$(OBJ)
+#OUTPUT		= pendingBackspace03$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= pendingBackspace03$(EXE)
+#STDOUT		= pendingBackspace03.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)pendingBackspace03$(product)vf) \
+                pendingBackspace03.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

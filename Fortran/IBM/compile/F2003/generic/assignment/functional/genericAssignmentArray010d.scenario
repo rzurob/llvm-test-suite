@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/assignment/functional/genericAssignmentArray010d.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20051215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericAssignmentArray010d.f
+#OUTPUT    = genericAssignmentArray010d$(OBJ)
+#STDERR    = genericAssignmentArray010d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = genericAssignmentArray010d.err $($(tcasedir)genericAssignmentArray010d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

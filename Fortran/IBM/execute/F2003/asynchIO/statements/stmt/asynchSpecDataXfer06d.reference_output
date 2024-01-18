@@ -1,0 +1,4 @@
+ WRITE(ERROR_UNIT,ASYNCHRONOUS='yes'): ioStatus = ( 169 ) 1525-169 The asynchronous I/O statement on unit 0 cannot be completed because the unit is connected for synchronous I/O only.  The program will stop.
+                                                                                                          
+ WRITE(0,ASYNCHRONOUS='yes'): ioStatus = ( 169 ) 1525-169 The asynchronous I/O statement on unit 0 cannot be completed because the unit is connected for synchronous I/O only.  The program will stop.
+                                                                                                          

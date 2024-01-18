@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrNEReal.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrNEReal.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrNEReal$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrNEReal$(OBJ)
+#OUTPUT    = dataPtrNEReal$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrNEReal$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

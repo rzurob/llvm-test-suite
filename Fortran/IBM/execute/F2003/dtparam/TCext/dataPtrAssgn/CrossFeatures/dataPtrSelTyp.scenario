@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/CrossFeatures/dataPtrSelTyp.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071216
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM) -qdebug=allowrpdt
+#INPUT=  $(tcasedir)dataPtrSelTyp.f
+#OUTPUT= dataPtrSelTyp$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  dataPtrSelTyp$(OBJ)
+#OUTPUT= dataPtrSelTyp$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dataPtrSelTyp$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

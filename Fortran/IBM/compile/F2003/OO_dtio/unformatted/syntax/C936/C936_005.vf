@@ -1,0 +1,6 @@
+"C936_005.f", line 52.8: 1514-649 (S) Dummy argument dtv of the derived type I/O procedure unformattedread must not be unlimited polymorphic.
+"C936_005.f", line 61.8: 1514-649 (S) Dummy argument dtv of the derived type I/O procedure unformattedwrite must not be unlimited polymorphic.
+** c936_005   === End of Compilation 1 ===
+** unformattedread   === End of Compilation 2 ===
+** unformattedwrite   === End of Compilation 3 ===
+1501-511  Compilation failed for file C936_005.f.

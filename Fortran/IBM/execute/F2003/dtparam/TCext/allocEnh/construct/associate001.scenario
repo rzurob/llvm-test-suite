@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/construct/associate001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071219
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)associate001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = associate001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = associate001$(OBJ)
+#OUTPUT    = associate001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = associate001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,28 @@
+"cobound_d003.f", line 41.20: 1514-776 (S) The coarray argument of intrinsic procedure lcobound must be a coarray.
+"cobound_d003.f", line 42.20: 1514-776 (S) The coarray argument of intrinsic procedure lcobound must be a coarray.
+"cobound_d003.f", line 43.20: 1514-776 (S) The coarray argument of intrinsic procedure lcobound must be a coarray.
+"cobound_d003.f", line 44.20: 1514-776 (S) The coarray argument of intrinsic procedure lcobound must be a coarray.
+"cobound_d003.f", line 46.20: 1514-776 (S) The coarray argument of intrinsic procedure lcobound must be a coarray.
+"cobound_d003.f", line 47.20: 1514-776 (S) The coarray argument of intrinsic procedure lcobound must be a coarray.
+"cobound_d003.f", line 48.20: 1514-776 (S) The coarray argument of intrinsic procedure lcobound must be a coarray.
+"cobound_d003.f", line 49.20: 1514-776 (S) The coarray argument of intrinsic procedure lcobound must be a coarray.
+"cobound_d003.f", line 51.20: 1514-776 (S) The coarray argument of intrinsic procedure lcobound must be a coarray.
+"cobound_d003.f", line 52.20: 1514-776 (S) The coarray argument of intrinsic procedure lcobound must be a coarray.
+"cobound_d003.f", line 53.20: 1514-776 (S) The coarray argument of intrinsic procedure lcobound must be a coarray.
+"cobound_d003.f", line 54.20: 1514-776 (S) The coarray argument of intrinsic procedure lcobound must be a coarray.
+"cobound_d003.f", line 55.20: 1514-776 (S) The coarray argument of intrinsic procedure lcobound must be a coarray.
+"cobound_d003.f", line 63.20: 1514-776 (S) The coarray argument of intrinsic procedure ucobound must be a coarray.
+"cobound_d003.f", line 64.20: 1514-776 (S) The coarray argument of intrinsic procedure ucobound must be a coarray.
+"cobound_d003.f", line 65.20: 1514-776 (S) The coarray argument of intrinsic procedure ucobound must be a coarray.
+"cobound_d003.f", line 66.20: 1514-776 (S) The coarray argument of intrinsic procedure ucobound must be a coarray.
+"cobound_d003.f", line 68.20: 1514-776 (S) The coarray argument of intrinsic procedure ucobound must be a coarray.
+"cobound_d003.f", line 69.20: 1514-776 (S) The coarray argument of intrinsic procedure ucobound must be a coarray.
+"cobound_d003.f", line 70.20: 1514-776 (S) The coarray argument of intrinsic procedure ucobound must be a coarray.
+"cobound_d003.f", line 71.20: 1514-776 (S) The coarray argument of intrinsic procedure ucobound must be a coarray.
+"cobound_d003.f", line 73.20: 1514-776 (S) The coarray argument of intrinsic procedure ucobound must be a coarray.
+"cobound_d003.f", line 74.20: 1514-776 (S) The coarray argument of intrinsic procedure ucobound must be a coarray.
+"cobound_d003.f", line 75.20: 1514-776 (S) The coarray argument of intrinsic procedure ucobound must be a coarray.
+"cobound_d003.f", line 76.20: 1514-776 (S) The coarray argument of intrinsic procedure ucobound must be a coarray.
+"cobound_d003.f", line 77.20: 1514-776 (S) The coarray argument of intrinsic procedure ucobound must be a coarray.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file cobound_d003.f.

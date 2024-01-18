@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/none/acetnone02slk.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
+			   No Type Specifier Tests)
+#CREATOR	= Glen Mateer (derived from work by David Forster)
+#DATE		= 20080129
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetnone02slk.f
+#OUTPUT		= acetnone02slk$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetnone02slk$(OBJ)
+#OUTPUT		= acetnone02slk$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetnone02slk$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

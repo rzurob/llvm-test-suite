@@ -1,0 +1,8 @@
+** m   === End of Compilation 1 ===
+"fconstr004d.f", line 50.10: 1514-572 (S) The component id must be explicitly initialized in this structure constructor.
+"fconstr004d.f", line 51.10: 1514-572 (S) The component name must be explicitly initialized in this structure constructor.
+"fconstr004d.f", line 52.10: 1514-090 (S) Wrong number of arguments specified for structure constructor.
+"fconstr004d.f", line 53.16: 1516-044 (S) A conversion from type CHARACTER Literal is not permitted.
+"fconstr004d.f", line 54.10: 1514-572 (S) The component id must be explicitly initialized in this structure constructor.
+** fconstr004d   === End of Compilation 2 ===
+1501-511  Compilation failed for file fconstr004d.f.

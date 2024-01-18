@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/stmt/asynchSpecDataXfer06d.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS= Specifier in I/O Statements
+#CREATOR	= GM Manual Creation
+#DATE		= 20060127
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)asynchSpecDataXfer06d.f
+#OUTPUT		= asynchSpecDataXfer06d$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= asynchSpecDataXfer06d$(OBJ)
+#OUTPUT		= asynchSpecDataXfer06d$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= asynchSpecDataXfer06d$(EXE)
+#STDOUT		= asynchSpecDataXfer06d.stdout
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)asynchSpecDataXfer06d$(product)vf)	\
+				asynchSpecDataXfer06d.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

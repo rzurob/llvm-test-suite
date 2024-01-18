@@ -1,0 +1,9 @@
+** m   === End of Compilation 1 ===
+"d356506.f", line 49.19: 1516-078 (S) Operands must be conformable.
+"d356506.f", line 50.19: 1516-078 (S) Operands must be conformable.
+"d356506.f", line 51.19: 1516-078 (S) Operands must be conformable.
+"d356506.f", line 53.25: 1516-078 (S) Operands must be conformable.
+"d356506.f", line 54.25: 1516-078 (S) Operands must be conformable.
+"d356506.f", line 55.25: 1516-078 (S) Operands must be conformable.
+** d356506   === End of Compilation 2 ===
+1501-511  Compilation failed for file d356506.f.

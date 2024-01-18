@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_dummy/assumed_size/cdaasMultiple
+#FEATURE        = CAF dummy arguments - assumed size - multiple images
+#CREATOR        = DF
+#DATE           = 2010-09-30
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)cdaasMultiple.f
+#OUTPUT = cdaasMultiple$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = cdaasMultiple$(OBJ)
+#OUTPUT = cdaasMultiple$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = cdaasMultiple$(EXE)
+#STDOUT = cdaasMultiple.out
+#ENDCMD
+
+#CMD    = SPIFF
+#OPTS   = -r1e-5
+#INPUT  = $($(tcasedir)cdaasMultiple$(product)vf) cdaasMultiple.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

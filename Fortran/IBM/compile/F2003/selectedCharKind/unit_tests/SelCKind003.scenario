@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/selectedCharName/unit_tests/SelCKind003.scenario
+#FEATURE   = 317648
+#CREATOR   = Zheming Gu
+#DATE      = August 02, 2006
+#TEST_TYPE = Diagnostic Unit Test
+#ENDDOC
+
+
+#BEGINENV
+#ENDENV
+
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)SelCKind003.f
+#STDERR    = SelCKind003.out
+#VALIDRCS  = $(RC_COMP_S)
+#ENDCMD
+
+
+#CMD      = XLDIFF
+#INPUT    = $($(tcasedir)SelCKind003$(product)vf) SelCKind003.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

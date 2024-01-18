@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/filePos/pendingEndfile01.scenario
+#FEATURE	= Asynchronous I/O -- ENDFILE Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060317
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)pendingEndfile01.f
+#OUTPUT		= pendingEndfile01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= pendingEndfile01$(OBJ)
+#OUTPUT		= pendingEndfile01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= pendingEndfile01$(EXE)
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)pendingEndfile01$(product)vf) pendingEndfile01.dat
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

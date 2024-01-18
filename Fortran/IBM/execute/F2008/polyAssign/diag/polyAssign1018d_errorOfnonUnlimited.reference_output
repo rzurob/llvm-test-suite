@@ -1,0 +1,4 @@
+"polyAssign1018d_errorOfnonUnlimited.f", line 47.5: 1516-044 (S) A conversion from type t1 is not permitted.
+"polyAssign1018d_errorOfnonUnlimited.f", line 54.14: 1511-109 (S) The type specified in the type guard statement is not compatible with the declared type of the selector.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file polyAssign1018d_errorOfnonUnlimited.f.

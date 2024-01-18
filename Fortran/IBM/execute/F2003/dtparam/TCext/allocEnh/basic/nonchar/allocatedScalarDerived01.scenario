@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/basic/nonchar/allocatedScalarDerived01.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071219
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)allocatedScalarDerived01.f
+#OUTPUT		= allocatedScalarDerived01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= allocatedScalarDerived01$(OBJ)
+#OUTPUT		= allocatedScalarDerived01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= allocatedScalarDerived01$(EXE)
+#STDOUT		= allocatedScalarDerived01.out
+#STDERR		= allocatedScalarDerived01.out
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)allocatedScalarDerived01$(product)vf)	\
+				allocatedScalarDerived01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

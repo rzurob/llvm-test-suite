@@ -1,0 +1,14 @@
+ **read ptr%b1comp**
+ output1:
+ -99 -2 -4
+ -5 xlfXLF***IBM
+ -99 -2 -4 -5 xlfXLF***IBM
+ -5 xlfXLF***IBM
+ -99 -2 -4 -5 xlfXLF***IBM
+ **read ptr**
+ output2:
+ -99 -2 -4
+ -5 xlfXLF***IBM
+ -99 -2 -4 -5 xlfXLF***IBM
+ -5 xlfXLF***IBM
+ -99 -2 -4 -5 xlfXLF***IBM

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/allocate/SourceExp/AllocateWithTypeSpec14.f
+#FEATURE   = DTP - Allocate with source expression
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20090126
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AllocateWithTypeSpec14.f
+#OUTPUT    = AllocateWithTypeSpec14$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = AllocateWithTypeSpec14$(OBJ)
+#OUTPUT    = AllocateWithTypeSpec14$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = AllocateWithTypeSpec14$(EXE)
+#STDOUT    = AllocateWithTypeSpec14.out
+#ENDCMD
+
+#CMD       = DIFF
+#OPTS      = -b
+#INPUT     = $($(tcasedir)AllocateWithTypeSpec14$(product)vf) AllocateWithTypeSpec14.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

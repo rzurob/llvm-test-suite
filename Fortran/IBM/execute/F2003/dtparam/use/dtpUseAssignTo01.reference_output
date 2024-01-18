@@ -1,0 +1,12 @@
+ 42 T 3 99 127
+ 19 F -5 -10 -25
+ start assign
+ in baseAssign: 42 <= 19
+ after assign 1
+ in other4Assign: T
+ after assign 2
+ in lenBaseAssign: 3 3
+ in lenBaseAssign: 3 99 127 <= -5 -10 -25
+ end assign
+ 19 F -5 -10 -25
+ 19 F -5 -10 -25

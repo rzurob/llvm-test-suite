@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/override/override005d.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/*
+#DATE      = 20070613
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)override005d.f
+#OPTS      = -qdebug=shutup
+#OUTPUT    = override005d$(OBJ)
+#STDERR    = override005d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)override005d$(product)vf) override005d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

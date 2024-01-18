@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/attribute/otherAttr/asynchPointerAttr02d.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Attribute
+#CREATOR	= GM Manual Creation
+#DATE		= 20060214
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)asynchPointerAttr02d.f
+#OUTPUT		= asynchPointerAttr02d$(OBJ)
+#STDERR		= asynchPointerAttr02d.stderr
+#VALIDRCS	= $(RC_COMP_S)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)asynchPointerAttr02d$(product)vf)	\
+				asynchPointerAttr02d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

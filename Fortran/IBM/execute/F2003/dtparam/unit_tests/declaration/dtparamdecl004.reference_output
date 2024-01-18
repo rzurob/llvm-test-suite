@@ -1,0 +1,5 @@
+  base1%basearray= 3 6 3 3
+  base2%basearray= 5 9 5 5 5 5
+ base1%logptr1 not associated
+ base1%real1 not allocated
+ base1%real1= 20.34000015

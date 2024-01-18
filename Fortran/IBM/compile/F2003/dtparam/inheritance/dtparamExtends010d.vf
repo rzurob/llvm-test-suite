@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"dtparamExtends010d.f", line 47.17: 1514-587 (S) Component l is not permitted. l is the name of a component, binding, or type parameter that is inherited from type base.
+** m1   === End of Compilation 2 ===
+** dtparamextends010d   === End of Compilation 3 ===
+1501-511  Compilation failed for file dtparamExtends010d.f.

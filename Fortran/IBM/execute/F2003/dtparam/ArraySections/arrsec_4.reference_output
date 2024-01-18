@@ -1,0 +1,9 @@
+ dta(1)%bc%id= 1 2 3
+ dta(1)%bc(:)%id= 1 2 3
+ dta(1)%bc(:N)%id= 1 2 3
+ dta(1)%bc(1::1)%id= 1 2 3
+ dta(1)%bc(1:)%id= 1 2 3
+ dtb(:)%bc(N)%id= 3 4 5 6
+ dtb(:2*N)%bc(N)%id= 3 4 5 6
+ dtb(N:)%bc(N)%id= 3 4 5 6
+ dtb(N::1)%bc(N)%id= 3 4 5 6

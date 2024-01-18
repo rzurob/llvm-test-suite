@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/internal_procptr/PassInterProcNest.scenario
+#FEATURE   = 303977
+#CREATOR   = Ren Jian Gang
+#DATE      = March 01, 2011
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)PassInterProcNest.f
+#OUTPUT   =  PassInterProcNest$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  PassInterProcNest$(OBJ)
+#OUTPUT   =  PassInterProcNest$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  PassInterProcNest$(EXE)
+#STDOUT   =  PassInterProcNest.out
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = $(tcasedir)PassInterProcNest.vf PassInterProcNest.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

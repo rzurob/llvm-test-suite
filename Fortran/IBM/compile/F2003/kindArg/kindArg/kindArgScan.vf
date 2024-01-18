@@ -1,0 +1,9 @@
+"kindArgScan.f", line 49.32: 1513-133 (S) KIND must be an integer constant.
+"kindArgScan.f", line 50.66: 1513-040 (S) The argument KIND must be a scalar.
+"kindArgScan.f", line 52.51: 1513-040 (S) The argument KIND must be a scalar.
+"kindArgScan.f", line 54.34: 1513-133 (S) KIND must be an integer constant.
+"kindArgScan.f", line 55.34: 1513-133 (S) KIND must be an integer constant.
+"kindArgScan.f", line 56.34: 1513-133 (S) KIND must be an integer constant.
+"kindArgScan.f", line 57.34: 1513-133 (S) KIND must be an integer constant.
+** kindargscan   === End of Compilation 1 ===
+1501-511  Compilation failed for file kindArgScan.f.

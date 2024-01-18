@@ -1,0 +1,4 @@
+** bcunchk4   === End of Compilation 1 ===
+1501-510  Compilation successful for file bcunchk4.f.
+ld: 0711-197 ERROR: Type mismatches for symbol: blk
+ld: 0711-345 Use the -bloadmap or -bnoquiet option to obtain more information.

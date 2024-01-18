@@ -1,0 +1,67 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop4/unit_pattr/v7.scenario
+#FEATURE = cintrop4 tests - regression run bucket
+#CREATOR = CPR Manual conversion
+#DATE    = 20060810
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)v7-c.c
+#OUTPUT    = v7-c$(OBJ)
+#OPTS      = $(C_COMPILER_OPTS)
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)v7.f
+#OUTPUT    = v7$(OBJ)
+#STDOUT    = v7.cmp
+#STDERR    = v7.cmp
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = v7-c$(OBJ) v7$(OBJ)
+#OUTPUT    = v7$(EXE)
+#STDOUT    = v7.lnk
+#STDERR    = v7.lnk
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = v7$(EXE)
+#STDOUT    = v7.run
+#STDERR    = v7.run
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = v7.cmp v7.lnk v7.run
+#STDOUT    = v7.out
+#ENDCMD
+
+#IF on(bgl)
+  #CMD     = SORT
+  #INPUT   = v7.out
+  #STDOUT  = file1
+  #ENDCMD
+
+  #CMD     = SORT
+  #INPUT   = $($(tcasedir)v7$(product)vf)
+  #STDOUT  = file2
+  #ENDCMD
+
+  #CMD     = DIFF
+  #INPUT   = file1 file2
+  #ENDCMD
+#ELSE
+  #CMD       = DIFF
+  #INPUT     = v7.out $($(tcasedir)v7$(product)vf)
+  #ENDCMD
+#ENDIF
+
+#ENDCONTROL
+#ENDSCENARIO

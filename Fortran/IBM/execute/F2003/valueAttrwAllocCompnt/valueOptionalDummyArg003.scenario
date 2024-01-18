@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/home/robertma/tc/F2003/valueAttrDTwAllocatableComponents/valueOptionalDummyArg003.scenario
+#FEATURE = value attribute with DT containing allocatable components test cases
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)valueOptionalDummyArg003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = valueOptionalDummyArg003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = valueOptionalDummyArg003$(OBJ)
+#OUTPUT    = valueOptionalDummyArg003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = valueOptionalDummyArg003$(EXE)
+#STDOUT    = valueOptionalDummyArg003.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = valueOptionalDummyArg003.out $(tcasedir)valueOptionalDummyArg003.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

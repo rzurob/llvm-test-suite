@@ -1,0 +1,4 @@
+"override002d.f", line 46.29: 1514-657 (S) Inherited binding getid is pure.  The overriding binding must also be pure.
+** m   === End of Compilation 1 ===
+** override002d   === End of Compilation 2 ===
+1501-511  Compilation failed for file override002d.f.

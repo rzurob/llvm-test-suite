@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/inquire/pendingIDSpecError02.scenario
+#FEATURE	= Asynchronous I/O -- INQUIRE Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060323
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)pendingIDSpecError02.f
+#OUTPUT		= pendingIDSpecError02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= pendingIDSpecError02$(OBJ)
+#OUTPUT		= pendingIDSpecError02$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= pendingIDSpecError02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

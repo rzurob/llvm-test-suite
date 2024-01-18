@@ -1,0 +1,37 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = OptionalArg03d.scenario
+#FEATURE    = 399982 - C Interop: Optional Argument
+#CREATOR    = Bardia Mahjour
+#DATE       = May 2012
+#TEST_TYPE  = Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)OptionalArg03d.f
+#OPTS       = $(OPT_SET_LANG_LEVEL<2008std>) $(OPT_ENABLE_MSG_NUM<1518-317>)
+#STDERR    = OptionalArg03d.err
+#ENDCMD
+
+#CMD	   = XLDIFF
+#INPUT     = OptionalArg03d.err $($(tcasedir)OptionalArg03d$(product)vf)
+#ENDCMD
+
+
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)OptionalArg03d.f
+#OPTS       = $(OPT_SET_LANG_LEVEL<2008pure>) $(OPT_ENABLE_MSG_NUM<1518-317>)
+#STDERR    = OptionalArg03d.err2
+#ENDCMD
+
+#CMD	   = XLDIFF
+#INPUT     = OptionalArg03d.err2 $($(tcasedir)OptionalArg03d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

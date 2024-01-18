@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/component/dtparamProcComp005_defer.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamProcComp005_defer.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamProcComp005_defer$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dtparamProcComp005_defer$(OBJ)
+#OUTPUT    = dtparamProcComp005_defer$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamProcComp005_defer$(EXE)
+#STDOUT    = dtparamProcComp005_defer.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dtparamProcComp005_defer.out $($(tcasedir)dtparamProcComp005_defer$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

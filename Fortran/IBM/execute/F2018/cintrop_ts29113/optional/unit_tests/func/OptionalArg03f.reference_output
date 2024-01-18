@@ -1,0 +1,8 @@
+a = absent
+b = absent
+a = -10
+b = -3.14
+a = -20
+b = absent
+a = absent
+b = 3.14

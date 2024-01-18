@@ -1,0 +1,4 @@
+"C464_003dkl.f", line 43.42: 1514-674 (S) Derived-type I/O procedures must not be elemental.
+** m   === End of Compilation 1 ===
+** c464_003dkl   === End of Compilation 2 ===
+1501-511  Compilation failed for file C464_003dkl.f.

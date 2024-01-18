@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/defAssignn/defAssignIntrinsicComp02a.scenario
+#FEATURE   = 361704
+#CREATOR   = Nancy Wang
+#DATE      = Feb. 2 2009
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)defAssignIntrinsicComp02a.f
+#OUTPUT= defAssignIntrinsicComp02a$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = defAssignIntrinsicComp02a$(OBJ)
+#OUTPUT= defAssignIntrinsicComp02a$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = defAssignIntrinsicComp02a$(EXE)
+#STDOUT= defAssignIntrinsicComp02a.out
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT  = $($(tcasedir)defAssignIntrinsicComp02a$(product)vf) defAssignIntrinsicComp02a.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

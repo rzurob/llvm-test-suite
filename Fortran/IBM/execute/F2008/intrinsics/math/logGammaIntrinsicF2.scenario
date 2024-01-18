@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/intrinsics/math/logGammaIntrinsicF2.scenario
+#FEATURE   = Math intrinsic functions
+#CREATOR   = Shahid Alam
+#DATE      = 20101116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPILE
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     = $(tcasedir)logGammaIntrinsicF2.f
+#OUTPUT    = logGammaIntrinsicF2$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     = logGammaIntrinsicF2$(OBJ)
+#OUTPUT    = logGammaIntrinsicF2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = logGammaIntrinsicF2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

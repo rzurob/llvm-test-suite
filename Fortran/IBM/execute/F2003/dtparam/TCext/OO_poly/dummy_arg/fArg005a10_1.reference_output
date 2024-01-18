@@ -1,0 +1,10 @@
+ begin
+ 1 c_const             
+ finalizeChild
+ finalizeBase
+ 2 temp                
+ finalizeChild
+ finalizeBase
+ finalizeChild
+ finalizeBase
+ end

@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/ace/aceScalarVariableExpr03.scenario
+#FEATURE	= Basic (non-Polymorphic) Array Constructors with DTP
+#CREATOR	= Glen Mateer
+#DATE		= 20081111
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)aceScalarVariableExpr03.f
+#OUTPUT		= aceScalarVariableExpr03$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= aceScalarVariableExpr03$(OBJ)
+#OUTPUT		= aceScalarVariableExpr03$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= aceScalarVariableExpr03$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

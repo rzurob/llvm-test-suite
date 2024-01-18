@@ -1,0 +1,20 @@
+!*******************************************************************************
+!* Bucket brief description.
+!*
+!* DESCRIPTION: C Interop: Allow scalar actual corresponding to assumed-type and assumed-size dummy
+!*
+!*
+!*******************************************************************************
+Feature XLC/XLF V13/V15 (PTF1)
+
+   RTC Master Story 76321: C-InteropTS:MPI3.0ERRATA:Allow scalar actual corresponding to assumed-type and assumed-size dummy
+       https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/76321
+
+   I0  document is kept in CMVC
+     family: aix, release: des.dev, component: design.i0,
+     file:   designs/i0/c_interop_ts/c_interop_ts__allow_scalar_actual_arg.html
+         FF: https://featureflowbe.torolab.ibm.com/featureflow/show/7510
+
+   Unit test cases only feature ==> no IT1 and IT2 documents
+
+

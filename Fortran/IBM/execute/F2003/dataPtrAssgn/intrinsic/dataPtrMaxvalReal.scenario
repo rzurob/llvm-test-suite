@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrMaxvalReal.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrMaxvalReal.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrMaxvalReal$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrMaxvalReal$(OBJ)
+#OUTPUT    = dataPtrMaxvalReal$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrMaxvalReal$(EXE)
+#STDOUT    = dataPtrMaxvalReal.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrMaxvalReal.out $($(tcasedir)dataPtrMaxvalReal$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2003/dtparam/TCext/OO_tpbnd/final/ffinal006akll.f
+#FEATURE = OO_tpbnd + derived type parameters
+#CREATOR = David Forster (derived from work by Jim Xia)
+#DATE    = 20071031
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ffinal006akll.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ffinal006akll$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = ffinal006akll$(OBJ)
+#OUTPUT    = ffinal006akll$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ffinal006akll$(EXE)
+#STDOUT    = ffinal006akll.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = ffinal006akll.out $($(tcasedir)ffinal006akll$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

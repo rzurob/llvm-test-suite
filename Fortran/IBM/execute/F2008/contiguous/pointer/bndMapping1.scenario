@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/contiguous/pointer/bndMapping3.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20101025
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)bndMapping3.f
+#OUTPUT    = bndMapping3$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = bndMapping3$(OBJ)
+#OUTPUT    = bndMapping3$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = bndMapping3$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

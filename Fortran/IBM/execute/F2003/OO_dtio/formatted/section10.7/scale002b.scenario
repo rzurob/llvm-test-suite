@@ -1,0 +1,45 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/section10.7/scale002b.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)scale002b.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = scale002b$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = scale002b$(OBJ)
+#OUTPUT    = scale002b$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = scale002b$(EXE)
+#STDOUT    = scale002b.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)scale002b$(product)vf) scale002b.out
+#ENDCMD
+
+#CMD       = DELETE
+#INPUT     = scale002b.out
+#ENDCMD
+
+
+
+#ENDCONTROL
+#ENDSCENARIO

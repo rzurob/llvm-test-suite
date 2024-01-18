@@ -1,0 +1,6 @@
+"kindArgMaxloc2.f", line 42.31: 1513-145 (S) Argument keyword "kindd" does not match the dummy argument specified in the interface for the intrinsic procedure "maxloc".
+"kindArgMaxloc2.f", line 43.40: 1513-145 (S) Argument keyword "kid" does not match the dummy argument specified in the interface for the intrinsic procedure "maxloc".
+"kindArgMaxloc2.f", line 44.37: 1513-067 (S) Argument keyword "array" was already specified for an actual argument.
+"kindArgMaxloc2.f", line 45.34: 1513-067 (S) Argument keyword "dim" was already specified for an actual argument.
+** kindargmaxloc2   === End of Compilation 1 ===
+1501-511  Compilation failed for file kindArgMaxloc2.f.

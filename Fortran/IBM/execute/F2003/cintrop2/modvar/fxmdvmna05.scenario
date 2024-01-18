@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop2/modvar/fxmdvmna05.scenario
+#FEATURE = cintrop2 tests - regression run bucket
+#CREATOR = Manual conversion CPR
+#DATE    = 20060711
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+FTCARG="fxmdvmna05"
+CTCARG1="cxmdvmna05a"
+CTCARG2="cxmdvmna05b"
+CTCARG3="cxmdvmna05c"
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#INCLUDE   = rundev.shinclude
+
+#ENDCONTROL
+#ENDSCENARIO

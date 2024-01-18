@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrSpreadDbleCmplxPrec.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrSpreadDbleCmplxPrec.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qalias=nostd
+#OUTPUT    = dataPtrSpreadDbleCmplxPrec$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrSpreadDbleCmplxPrec$(OBJ)
+#OUTPUT    = dataPtrSpreadDbleCmplxPrec$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrSpreadDbleCmplxPrec$(EXE)
+#STDOUT    = dataPtrSpreadDbleCmplxPrec.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrSpreadDbleCmplxPrec.out $($(tcasedir)dataPtrSpreadDbleCmplxPrec$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

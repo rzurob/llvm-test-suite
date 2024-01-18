@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/crossFeature/ptrAsgn/ptrAsgn005.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/*
+#DATE      = 20070725
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ptrAsgn005.f
+#OUTPUT    = ptrAsgn005$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = ptrAsgn005$(OBJ)
+#OUTPUT    = ptrAsgn005$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ptrAsgn005$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

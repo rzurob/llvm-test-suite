@@ -1,0 +1,55 @@
+#!/bin/ksh
+#
+export XLFRTEOPTS=buffering=disable_all
+
+OS=`isAIX`
+echo 'compiling .c files'
+echo "$OPTIONS" | grep "\-q64" > /dev/null
+if [ $? -eq 0 ]
+then
+  echo "64"
+    if [ $OS -eq 0 ]; then
+     xlc -c -q64 ${TR_SRC}/in.c
+     RC=$?
+    else
+#     /opt/cross/bin/powerpc64-linux-gcc  -c $TR_SRC/in.c
+     gcc -m64 -c $TR_SRC/in.c
+     RC=$?
+    fi
+else
+      if [ $OS -eq 0 ]; then
+       xlc -c ${TR_SRC}/in.c
+       RC=$?
+      else
+       gcc -m32 -c $TR_SRC/in.c
+       RC=$?
+      fi
+fi
+
+if [ $RC = 0 ]
+then
+  echo 'compilation success of .c files'
+else
+  echo 'compilation failure of .c files'; exit 10
+fi
+
+echo 'compiling Fortran routine and linking'
+${COMPILER}  -o $1 ${TR_SRC}/$1.f ./in.o ${OPTIONS}
+RC=$?
+if [ $RC = 0 ]
+then
+  echo 'compilation done'
+else
+  echo 'compilation failed on Fortran routine'; exit 10
+fi
+./$1
+
+RC=$?
+if [ $RC = 0 ]
+then
+        echo "execution successful"
+else
+        echo " execution Failed"
+fi
+
+exit 0

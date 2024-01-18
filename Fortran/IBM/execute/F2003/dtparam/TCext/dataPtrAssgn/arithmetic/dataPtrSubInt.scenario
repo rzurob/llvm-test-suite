@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/arithmetic/dataPtrSubInt.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071216
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrSubInt.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrSubInt$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrSubInt$(OBJ)
+#OUTPUT    = dataPtrSubInt$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrSubInt$(EXE)
+#STDOUT    = dataPtrSubInt.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrSubInt.out $($(tcasedir)dataPtrSubInt$(product)vf)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

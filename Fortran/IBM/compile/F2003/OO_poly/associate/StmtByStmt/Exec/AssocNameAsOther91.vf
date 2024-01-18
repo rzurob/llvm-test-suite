@@ -1,0 +1,3 @@
+"AssocNameAsOther91.f", line 49.15: 1514-188 (S) Identifier nl was defined elsewhere with conflicting attributes. Identifier is ignored in this context.
+** assocnameasother91   === End of Compilation 1 ===
+1501-511  Compilation failed for file AssocNameAsOther91.f.

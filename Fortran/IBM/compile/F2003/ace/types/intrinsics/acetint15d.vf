@@ -1,0 +1,6 @@
+** mod   === End of Compilation 1 ===
+"acetint15d.f", line 165.27: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acetint15d.f", line 174.35: 1514-214 (E) Invalid KIND number for CHARACTER. Assuming default KIND.  Acceptable value(s): 1
+"acetint15d.f", line 174.51: 1514-214 (E) Invalid KIND number for CHARACTER. Assuming default KIND.  Acceptable value(s): 1
+** acetint15d   === End of Compilation 2 ===
+1501-511  Compilation failed for file acetint15d.f.

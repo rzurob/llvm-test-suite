@@ -1,0 +1,53 @@
+** m   === End of Compilation 1 ===
+"underflowModeDiag1.f", line 48.30: 1514-038 (W) The literal string has length 12 which is longer than 10, the length of the variable being initialized.  The string will be truncated.
+"underflowModeDiag1.f", line 56.17: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "ieee_set_underflow_mode".
+"underflowModeDiag1.f", line 57.17: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "ieee_set_underflow_mode".
+"underflowModeDiag1.f", line 58.17: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "ieee_get_underflow_mode".
+"underflowModeDiag1.f", line 59.17: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "ieee_get_underflow_mode".
+"underflowModeDiag1.f", line 64.17: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "ieee_set_underflow_mode".
+"underflowModeDiag1.f", line 65.17: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "ieee_get_underflow_mode".
+"underflowModeDiag1.f", line 70.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_set_underflow_mode".
+"underflowModeDiag1.f", line 71.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_set_underflow_mode".
+"underflowModeDiag1.f", line 72.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_set_underflow_mode".
+"underflowModeDiag1.f", line 73.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_get_underflow_mode".
+"underflowModeDiag1.f", line 74.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_get_underflow_mode".
+"underflowModeDiag1.f", line 75.41: 1513-144 (S) Argument of invalid INTENT.
+"underflowModeDiag1.f", line 80.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_set_underflow_mode".
+"underflowModeDiag1.f", line 81.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_set_underflow_mode".
+"underflowModeDiag1.f", line 82.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_set_underflow_mode".
+"underflowModeDiag1.f", line 83.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_get_underflow_mode".
+"underflowModeDiag1.f", line 84.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_get_underflow_mode".
+"underflowModeDiag1.f", line 85.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_get_underflow_mode".
+"underflowModeDiag1.f", line 90.41: 1513-144 (S) Argument of invalid INTENT.
+"underflowModeDiag1.f", line 91.41: 1513-144 (S) Argument of invalid INTENT.
+"underflowModeDiag1.f", line 92.41: 1513-144 (S) Argument of invalid INTENT.
+"underflowModeDiag1.f", line 97.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_set_underflow_mode".
+"underflowModeDiag1.f", line 98.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_set_underflow_mode".
+"underflowModeDiag1.f", line 99.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_set_underflow_mode".
+"underflowModeDiag1.f", line 100.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_get_underflow_mode".
+"underflowModeDiag1.f", line 101.41: 1513-144 (S) Argument of invalid INTENT.
+"underflowModeDiag1.f", line 102.41: 1513-144 (S) Argument of invalid INTENT.
+"underflowModeDiag1.f", line 107.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_set_underflow_mode".
+"underflowModeDiag1.f", line 108.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_set_underflow_mode".
+"underflowModeDiag1.f", line 109.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_set_underflow_mode".
+"underflowModeDiag1.f", line 110.43: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_set_underflow_mode".
+"underflowModeDiag1.f", line 111.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_get_underflow_mode".
+"underflowModeDiag1.f", line 112.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_get_underflow_mode".
+"underflowModeDiag1.f", line 113.41: 1513-144 (S) Argument of invalid INTENT.
+"underflowModeDiag1.f", line 114.43: 1513-144 (S) Argument of invalid INTENT.
+"underflowModeDiag1.f", line 119.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_set_underflow_mode".
+"underflowModeDiag1.f", line 120.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_set_underflow_mode".
+"underflowModeDiag1.f", line 121.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_set_underflow_mode".
+"underflowModeDiag1.f", line 122.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_set_underflow_mode".
+"underflowModeDiag1.f", line 123.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_get_underflow_mode".
+"underflowModeDiag1.f", line 124.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_get_underflow_mode".
+"underflowModeDiag1.f", line 125.41: 1513-144 (S) Argument of invalid INTENT.
+"underflowModeDiag1.f", line 126.41: 1513-144 (S) Argument of invalid INTENT.
+"underflowModeDiag1.f", line 131.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_set_underflow_mode".
+"underflowModeDiag1.f", line 132.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_get_underflow_mode".
+"underflowModeDiag1.f", line 137.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_set_underflow_mode".
+"underflowModeDiag1.f", line 139.15: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_set_underflow_mode".
+"underflowModeDiag1.f", line 140.41: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "ieee_get_underflow_mode".
+"underflowModeDiag1.f", line 142.15: 1513-144 (S) Argument of invalid INTENT.
+** underflowmodediag1   === End of Compilation 2 ===
+1501-511  Compilation failed for file underflowModeDiag1.f.

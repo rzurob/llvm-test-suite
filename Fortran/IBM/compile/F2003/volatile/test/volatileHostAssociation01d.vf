@@ -1,0 +1,4 @@
+"volatileHostAssociation01d.f", 1516-217 (S) Entity a is imported from the host scoping unit. a must not become inaccessible in this scoping unit.
+"volatileHostAssociation01d.f", 1516-217 (S) Entity b is imported from the host scoping unit. b must not become inaccessible in this scoping unit.
+** volatilehostassociation01d   === End of Compilation 1 ===
+1501-511  Compilation failed for file volatileHostAssociation01d.f.

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=     /tst141/F2008/newunit/func/fxopen-newunit03.scenario
+#FEATURE =  FEATURE 377344 (NEWUNIT) - regression run bucket
+#CREATOR =  Sarah Kouchanki Ramezan
+#DATE    =  Oct. 2010
+#TEST_TYPE= TESTCASE
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)fxopen-newunit03.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fxopen-newunit03$(OBJ)
+#ENDCMD
+
+#CMD       = XLF_LINK
+#INPUT     = fxopen-newunit03$(OBJ)
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fxopen-newunit03$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxopen-newunit03$(EXE)
+#STDOUT    = fxopen-newunit03.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/class/fclass023.f
+#FEATURE = OO_poly
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fclass023.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fclass023$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fclass023$(OBJ)
+#OUTPUT    = fclass023$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fclass023$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

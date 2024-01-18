@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=roundX4WriteEdit01.scenario
+#FEATURE = 289037
+#CREATOR = William Zhang
+#DATE    = 07/24/2006
+#TEST_TYPE= functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)roundX4WriteEdit01.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = roundX4WriteEdit01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = roundX4WriteEdit01$(OBJ)
+#OUTPUT    = roundX4WriteEdit01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = roundX4WriteEdit01$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = roundX4WriteEdit01.out $($(tcasedir)roundX4WriteEdit01$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,63 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/wait/idSpecIDValue02d.scenario
+#FEATURE	= Asynchronous I/O -- WAIT() Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060306
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#IF on (linuxle)
+    XLFRTEOPTS=$(CONVERT_UFMT_IO_ENDIANESS<10-20>)
+#ENDIF
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)idSpecIDValue02d.dat fort.12
+#ENDCMD
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)idSpecIDValue02d.dat fort.14
+#ENDCMD
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)idSpecIDValue02d.dat fort.16
+#ENDCMD
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)idSpecIDValue02d.dat fort.18
+#ENDCMD
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)idSpecIDValue02d.dat fort.20
+#ENDCMD
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)idSpecIDValue02d.f
+#OUTPUT		= idSpecIDValue02d$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= idSpecIDValue02d$(OBJ)
+#OUTPUT		= idSpecIDValue02d$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= idSpecIDValue02d$(EXE)
+#STDOUT		= idSpecIDValue02d.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)idSpecIDValue02d$(product)vf) idSpecIDValue02d.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

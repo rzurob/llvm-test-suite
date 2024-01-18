@@ -1,0 +1,10 @@
+** m   === End of Compilation 1 ===
+"Arg19.f", line 62.14: 1515-122 (S) The procedure pointer was declared as a subroutine, or is referenced as a subroutine.  The procedure pointer assignment target must be declared as a subroutine.
+"Arg19.f", line 67.14: 1516-001 (S) Identifier procptr was elsewhere defined or used as a subroutine.
+"Arg19.f", line 71.8: 1516-002 (S) Identifier procptr1 was elsewhere defined or used as a function.
+"Arg19.f", line 73.16: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"Arg19.f", line 74.16: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"Arg19.f", line 80.10: 1516-002 (S) Identifier procptr was elsewhere defined or used as a function.
+** arg19   === End of Compilation 2 ===
+** extsub   === End of Compilation 3 ===
+1501-511  Compilation failed for file Arg19.f.

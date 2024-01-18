@@ -1,0 +1,9 @@
+** m   === End of Compilation 1 ===
+"dtpObjDecProtected.f", line 71.3: 1516-157 (S) Module entity t1 with the PROTECTED attribute is not definable when it is accessed by use association.
+"dtpObjDecProtected.f", line 75.3: 1516-157 (S) Module entity t3%ptr2 with the PROTECTED attribute is not definable when it is accessed by use association.
+"dtpObjDecProtected.f", line 77.3: 1516-157 (S) Module entity t3%t0 with the PROTECTED attribute is not definable when it is accessed by use association.
+"dtpObjDecProtected.f", line 79.3: 1516-157 (S) Module entity t3%i with the PROTECTED attribute is not definable when it is accessed by use association.
+"dtpObjDecProtected.f", line 81.3: 1516-157 (S) Module entity t4%ptr2 with the PROTECTED attribute is not definable when it is accessed by use association.
+"dtpObjDecProtected.f", line 83.3: 1516-157 (S) Module entity t4%i with the PROTECTED attribute is not definable when it is accessed by use association.
+** dtpobjdeccprotected   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtpObjDecProtected.f.

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/abstracti/abstracti020.scenario
+#FEATURE = Abstract Interface Tests
+#CREATOR = automated conversion script
+#DATE    = 20060220
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)abstracti020.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = abstracti020$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = abstracti020$(OBJ)
+#OUTPUT    = abstracti020$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = abstracti020$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/argpresence/unit_tests/func/argpresence08f.f
+#FEATURE    = F386700
+#CREATOR    = David Nichols
+#DATE       = 20110302
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#OPTS       = -qxlf2008=checkpresence
+#INPUT      = $(tcasedir)argpresence08f.f
+#OUTPUT     = argpresence08f$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#INPUT      = argpresence08f$(OBJ)
+#OUTPUT     = argpresence08f$(EXE)
+#ENDCMD
+
+#CMD        = RUN
+#INPUT      = argpresence08f$(EXE)
+#STDOUT     = argpresence08f.out
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = argpresence08f.out $($(tcasedir)argpresence08f$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

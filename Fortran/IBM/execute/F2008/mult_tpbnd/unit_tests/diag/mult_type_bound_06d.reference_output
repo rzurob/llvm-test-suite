@@ -1,0 +1,4 @@
+"mult_type_bound_06d.f", line 40.26: 1515-020 (S) Syntax Error: Token " :: " is missing. A token is supplied.
+** m   === End of Compilation 1 ===
+** t   === End of Compilation 2 ===
+1501-511  Compilation failed for file mult_type_bound_06d.f.

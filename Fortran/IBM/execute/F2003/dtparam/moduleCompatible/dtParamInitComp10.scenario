@@ -1,0 +1,41 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dtParamInitComp10.f
+#FEATURE=
+#CREATOR=    MZ
+#DATE=       20100504
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_ALT_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dtParamInitComp10_mod.f
+#OUTPUT= dtParamInitComp10_mod$(OBJ)
+#ENDCMD
+
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dtParamInitComp10_main.f
+#OUTPUT= dtParamInitComp10_main$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  dtParamInitComp10_mod$(OBJ) dtParamInitComp10_main$(OBJ)
+#OUTPUT= dtParamInitComp10$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dtParamInitComp10$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

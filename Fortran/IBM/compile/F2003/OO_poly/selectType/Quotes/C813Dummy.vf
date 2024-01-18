@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"C813Dummy.f", line 91.16: 1511-101 (S) The selector in the SELECT TYPE statement is not polymorphic.
+"C813Dummy.f", line 99.24: 1511-101 (S) The selector in the SELECT TYPE statement is not polymorphic.
+** c813dummy   === End of Compilation 2 ===
+1501-511  Compilation failed for file C813Dummy.f.

@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint51.scenario
+#FEATURE	= Array constructor enhancement compatible types of values in ac-implied-do are allowed
+#CREATOR	= DF Manual Update
+#DATE		= 20061116
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#ENDENV
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint51.f
+#OUTPUT		= acetint51$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint51$(OBJ)
+#OUTPUT		= acetint51$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint51$(EXE)
+#STDOUT		= acetint51.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -r1e-5
+#INPUT		= $($(tcasedir)acetint51$(product)vf) acetint51.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

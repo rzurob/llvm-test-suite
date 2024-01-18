@@ -1,0 +1,45 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/ieee/unit/fxieee34.scenario
+#FEATURE = ieee tests - regression run bucket
+#CREATOR = CPR&SH Manual conversion
+#DATE    = 20041208
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)ieeeconsts.f
+#OPTS      = -qflttrap $(OPT_FREE_SOURCE_FORM)
+#ENDCMD
+
+#CMD       = XLF95_COMPLINK
+#INPUT     = $(tcasedir)fxieee34.f
+#OPTS      = -qflttrap $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fxieee34$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ./fxieee34
+#STDOUT    = fxieee34.res
+#IF on(linux)
+  #VALIDSIGNALS = FPE
+#ELSE IF on(aix)
+  #VALIDSIGNALS = TRAP
+#ENDIF
+#VALIDRCS  = 0,$(RC_TRAP)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fxieee34.res $($(tcasedir)correctout$(product)vf)
+#ENDCMD
+#ENDCONTROL
+#ENDSCENARIO

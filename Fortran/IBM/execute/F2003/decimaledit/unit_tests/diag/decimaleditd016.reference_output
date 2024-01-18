@@ -1,0 +1,9 @@
+1525-066 A repeat specification is not allowed for the DC edit descriptor in a format specification.  The program will recover by ignoring the repeat specification.
+1525-066 A repeat specification is not allowed for the DP edit descriptor in a format specification.  The program will recover by ignoring the repeat specification.
+1525-076 A comma was expected after the DC edit descriptor in a format specification.  The program will recover by assuming a comma.
+1525-079 . is an incorrect edit descriptor in a format specification.  The program will recover by ignoring the . descriptor.
+1525-076 A comma was expected after the DP edit descriptor in a format specification.  The program will recover by assuming a comma.
+1525-079 . is an incorrect edit descriptor in a format specification.  The program will recover by ignoring the . descriptor.
+1525-076 A comma was expected after the DP edit descriptor in a format specification.  The program will recover by assuming a comma.
+1525-079 . is an incorrect edit descriptor in a format specification.  The program will recover by ignoring the . descriptor.
+1525-079 . is an incorrect edit descriptor in a format specification.  The program will recover by ignoring the . descriptor.

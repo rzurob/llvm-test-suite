@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2003/dtparam/TCext/OO_dtio/unformatted/section9.5.2/write/structureComp001all.scenario
+#FEATURE = OO_dtio/unformatted/section9.5.2 tests - regression run bucket + derived type parameters
+#CREATOR = automated conversion script
+#DATE    = 20071003
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)structureComp001all.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = structureComp001all$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  structureComp001all$(OBJ)
+#OUTPUT    = structureComp001all$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = structureComp001all$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

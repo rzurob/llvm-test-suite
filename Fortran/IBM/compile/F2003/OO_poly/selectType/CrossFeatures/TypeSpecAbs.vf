@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"TypeSpecAbs.f", line 83.14: 1514-645 (S) dt1 is an abstract type. dt1 is not permitted in this context.
+"TypeSpecAbs.f", line 84.6: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+** typespecabs   === End of Compilation 2 ===
+1501-511  Compilation failed for file TypeSpecAbs.f.

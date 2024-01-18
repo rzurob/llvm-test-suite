@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+** base1_2args   === End of Compilation 2 ===
+"genericAmbiguityInterface006d.f", line 89.17: 1514-699 (S) Procedure "base1_3args" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "base1_2args", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** genericambiguityinterface006d   === End of Compilation 3 ===
+1501-511  Compilation failed for file genericAmbiguityInterface006d.f.

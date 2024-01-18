@@ -1,0 +1,4 @@
+"bcdaeq1a.f", line 41.14: 1516-210 (S) Members of BIND(C) COMMON blocks must not appear as equivalence group objects in EQUIVALENCE statements.
+** mod   === End of Compilation 1 ===
+** bcdaeq1a   === End of Compilation 2 ===
+1501-511  Compilation failed for file bcdaeq1a.f.

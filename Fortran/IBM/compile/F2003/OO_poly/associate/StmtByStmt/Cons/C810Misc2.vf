@@ -1,0 +1,3 @@
+"C810Misc2.f", line 47.23: 1511-101 (S) The selector in the SELECT TYPE statement is not polymorphic.
+** c810misc2   === End of Compilation 1 ===
+1501-511  Compilation failed for file C810Misc2.f.

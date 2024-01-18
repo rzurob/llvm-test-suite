@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=ptrassign003d.scenario
+#FEATURE = Pointer Assignment Enhancement
+#CREATOR = Michael Selvanayagam
+#DATE    = 20060331
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+!  Add $(OPT_ENABLE_MSG_NUM<1518-317>) to avoid extra err msg in $(OPT_OPTIMIZE_FOR_SMP) or $(OPT_OPTIMIZE_FOR_SMP_NOOPT)
+#CMD       = XLF90_COMPILE
+#OPTS      = $(OPT_SET_LANG_LEVEL<90std>)  $(OPT_ENABLE_MSG_NUM<1518-317>)
+#INPUT     = $(tcasedir)ptrassign003d.f
+#STDERR    = ptrassign003d.err
+#OUTPUT    = ptrassign003d$(OBJ)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = ptrassign003d.err $($(tcasedir)ptrassign003d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/genericName/functional/genericGenericNameDummyProc001.scenario
+#FEATURE = generic tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericGenericNameDummyProc001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericGenericNameDummyProc001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericGenericNameDummyProc001$(OBJ)
+#OUTPUT    = genericGenericNameDummyProc001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericGenericNameDummyProc001$(EXE)
+#STDOUT    = genericGenericNameDummyProc001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericGenericNameDummyProc001.out $(tcasedir)genericGenericNameDummyProc001.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

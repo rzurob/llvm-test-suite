@@ -1,0 +1,9 @@
+ deallocate a1
+ finalizeBaseRank1
+ finalizeBaseRank1
+ deallocate a2
+ finalizeBaseRank1
+ finalizeBaseRank1
+ finalizeBaseRank1
+ finalizeBaseRank1
+ end

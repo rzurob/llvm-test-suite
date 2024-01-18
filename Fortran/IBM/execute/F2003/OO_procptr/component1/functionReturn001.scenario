@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_procptr/component1/functionReturn001.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050418
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)functionReturn001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = functionReturn001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = functionReturn001$(OBJ)
+#OUTPUT    = functionReturn001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = functionReturn001$(EXE)
+#STDOUT    = functionReturn001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)functionReturn001$(product)vf) functionReturn001.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

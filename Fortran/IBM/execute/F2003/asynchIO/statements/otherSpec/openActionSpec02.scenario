@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/stmt/openActionSpec02.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS= Specifier in I/O Statements
+#CREATOR	= GM Manual Creation
+#DATE		= 20060221
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)openActionSpec02.f
+#OUTPUT		= openActionSpec02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= openActionSpec02$(OBJ)
+#OUTPUT		= openActionSpec02$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= openActionSpec02$(EXE)
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)openActionSpec02$(product)vf) openActionSpec02.dat
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

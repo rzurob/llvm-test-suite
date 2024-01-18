@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/dummy_arg/atpda/dtpATPDAPure.scenario
+#FEATURE   = Assumed type parameters and dummy arguments - pure procedure
+#CREATOR   = DF Manual Update
+#DATE      = 20081015
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpATPDAPure.f
+#OUTPUT    = dtpATPDAPure$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpATPDAPure$(OBJ)
+#OUTPUT    = dtpATPDAPure$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpATPDAPure$(EXE)
+#STDOUT    = dtpATPDAPure.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpATPDAPure$(product)vf) dtpATPDAPure.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

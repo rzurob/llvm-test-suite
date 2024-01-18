@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= reshapedtp53.scenario
+#FEATURE= reshape with parameterized derived types
+#CREATOR= Andy Sheung
+#DATE= 200807
+#TEST_TYPE= functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)reshapedtp53.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = reshapedtp53$(OBJ)
+#ENDCMD
+
+#CMD       = XLF_LINK
+#INPUT     = reshapedtp53$(OBJ)
+#OUTPUT    = reshapedtp53$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = reshapedtp53$(EXE)
+#STDOUT    = reshapedtp53.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = reshapedtp53.out $(tcasedir)reshapedtp53.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

@@ -1,0 +1,8 @@
+ start
+ c - child(1): 99 123 123456789 -121
+ storing and recalling via old implementation
+ allocate in new via pointer from old
+ d - child(1): 99 123 123456789 -121
+ calling old implementation to copy; expecting no runtime error message
+ bp2 - child(1): 99 123 123456789 -121
+ End.

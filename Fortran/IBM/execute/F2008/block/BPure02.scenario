@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BPure02.scenario
+#FEATURE   = block in pure procedure
+#CREATOR   = DF
+#DATE      = 2010-12-06
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = F_COMPILE
+#INPUT    = $(tcasedir)BPure02.f
+#OUTPUT   = BPure02$(OBJ)
+#ENDCMD
+
+#CMD      = F_LINK
+#INPUT    = BPure02$(OBJ)
+#OUTPUT   = BPure02$(EXE)
+#ENDCMD
+
+#CMD      = RUN
+#INPUT    = BPure02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

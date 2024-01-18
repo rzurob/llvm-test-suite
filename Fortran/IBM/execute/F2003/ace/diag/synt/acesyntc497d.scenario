@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/diag/synt/acesyntc497d.scenario
+#FEATURE	= Array constructor enhancement ac-do-variables in nested implied-do's should not be repeated
+#CREATOR	= DF Manual Update
+#DATE		= 20061119
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acesyntc497d.f
+#OPTS       = $(OPT_ENABLE_MSG_NUM<1520-003>)
+#OUTPUT		= acesyntc497d$(OBJ)
+#STDERR		= acesyntc497d.stderr
+#VALIDRCS       = $(RC_COMP_S)
+#ENDCMD
+
+#CMD            = XLDIFF
+#INPUT          = $($(tcasedir)acesyntc497d$(product)vf) acesyntc497d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

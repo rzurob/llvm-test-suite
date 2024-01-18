@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"d358633.f", line 36.18: 1516-150 (S) The NULL() intrinsic must only be used where the data object, the component, or the corresponding dummy argument has the POINTER attribute; or for an allocatable component in a structure constructor.
+** d358633   === End of Compilation 2 ===
+1501-511  Compilation failed for file d358633.f.

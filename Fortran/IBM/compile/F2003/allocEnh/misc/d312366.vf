@@ -1,0 +1,6 @@
+"d312366.f", line 34.12: 1516-299 (S) ENTRY statement must not appear within the ASSOCIATE construct.
+"d312366.f", line 45.12: 1516-299 (S) ENTRY statement must not appear within the ASSOCIATE construct.
+"d312366.f", line 47.16: 1516-299 (S) ENTRY statement must not appear within the SELECT TYPE construct.
+** m   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file d312366.f.

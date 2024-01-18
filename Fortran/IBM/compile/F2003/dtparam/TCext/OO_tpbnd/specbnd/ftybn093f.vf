@@ -1,0 +1,4 @@
+"ftybn093f.f", line 55.31: 1514-657 (S) Inherited binding bind_b is pure.  The overriding binding must also be pure.
+** mod   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file ftybn093f.f.

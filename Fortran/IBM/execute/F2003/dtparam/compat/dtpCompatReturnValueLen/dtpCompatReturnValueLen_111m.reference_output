@@ -1,0 +1,5 @@
+ start
+ c - child(*): 11111111 3 3 >abc< 123456789 123 65 -31 -87654321
+ storing and recalling via old implementation
+ allocate in new via pointer from old
+1525-239 XL Fortran detected a mismatch in a compiler-generated routine. If your code contains compilation units compiled with XL Fortran V11.1 or V12.1, recompile them with the latest XL Fortran compiler.

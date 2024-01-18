@@ -1,0 +1,73 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/attribute/otherAttr/asynchSaveAttr01.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Attribute
+#CREATOR	= GM Manual Creation
+#DATE		= 20060216
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)asynchSaveAttr01.f
+#OUTPUT		= asynchSaveAttr01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= asynchSaveAttr01$(OBJ)
+#OUTPUT		= asynchSaveAttr01$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= asynchSaveAttr01$(EXE)
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)asynchSaveAttr01$(product)vf) fort.39
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= -i '^counter[ 	]'
+#INPUT		= asynchSaveAttr01$(LST)
+#STDOUT		= asynchSaveAttr01.counter.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i '^aCounter[ 	]'
+#INPUT		= asynchSaveAttr01$(LST)
+#STDOUT		= asynchSaveAttr01.aCounter.stdout
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= 'Static'
+#INPUT		= asynchSaveAttr01.counter.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= asynchSaveAttr01.counter.stdout
+#VALIDRCS	= $(GREP_FAIL)
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= 'Static'
+#INPUT		= asynchSaveAttr01.aCounter.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= asynchSaveAttr01.aCounter.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

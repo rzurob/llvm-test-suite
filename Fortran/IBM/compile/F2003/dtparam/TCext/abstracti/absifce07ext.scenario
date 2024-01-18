@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/abstracti/absifce07ext.scenario
+#FEATURE	= Derived Type Parameters(+Abstract Interface Diagnostic Test Cases)
+#CREATOR	= Glen Mateer (derived from work by James Ren)
+#DATE		= 20071106
+#TEST_TYPE	= Diagnostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= XLF2003_COMPILE
+#INPUT		= $(tcasedir)absifce07ext.f
+#STDERR		= absifce07ext.err
+#OUTPUT		= absifce07ext$(OBJ)
+#VALIDRCS	= $(RC_COMP_S)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)absifce07ext$(product)vf) absifce07ext.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

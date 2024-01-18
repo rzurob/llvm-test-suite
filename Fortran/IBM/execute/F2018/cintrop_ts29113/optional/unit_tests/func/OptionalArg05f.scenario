@@ -1,0 +1,37 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = OptionalArg05f.scenario
+#FEATURE    = 399982 - C Interop: Optional Argument
+#CREATOR    = Bardia Mahjour
+#DATE       = May 2012
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      =
+#INPUT     = $(tcasedir)OptionalArg05f.f
+#OUTPUT    = OptionalArg05f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = OptionalArg05f$(OBJ)
+#OUTPUT    = OptionalArg05f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = OptionalArg05f$(EXE)
+#STDOUT    = OptionalArg05f.out
+#STDERR    = OptionalArg05f.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = OptionalArg05f.out $($(tcasedir)OptionalArg05f$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/mix/generic/functional/usage/dtioArgAsso001kl.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070813
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtioArgAsso001kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtioArgAsso001kl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dtioArgAsso001kl$(OBJ)
+#OUTPUT    = dtioArgAsso001kl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtioArgAsso001kl$(EXE)
+#STDOUT    = dtioArgAsso001kl.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dtioArgAsso001kl.out $(tcasedir)dtioArgAsso001kl.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

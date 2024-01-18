@@ -1,0 +1,38 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME   = F2003/dtparam/typeParamInquiry/functional/dtparam/dtParameterInquiryWithoutComp01_d353191.scenario
+#FEATURE= Type Parameter Inquiry(354612)
+#CREATOR= Nancy Wang
+#DATE   = July 23 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)dtParameterInquiryWithoutComp01_d353191.f
+#OUTPUT= dtParameterInquiryWithoutComp01_d353191$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = dtParameterInquiryWithoutComp01_d353191$(OBJ)
+#OUTPUT= dtParameterInquiryWithoutComp01_d353191$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = dtParameterInquiryWithoutComp01_d353191$(EXE)
+#STDOUT= dtParameterInquiryWithoutComp01_d353191.out
+#ENDCMD
+
+
+#CMD  = DIFF
+#INPUT= $($(tcasedir)dtParameterInquiryWithoutComp01_d353191$(product)vf) dtParameterInquiryWithoutComp01_d353191.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

@@ -1,0 +1,5 @@
+** dtpattrspecstmtsavec570   === End of Compilation 1 ===
+"dtpAttrSpecStmtSaveC570.f", line 55.28: 1515-160 (L) A SAVE statement without a list of saved entities appears in this scoping unit.  This occurrence of SAVE is not permitted by the Fortran 2003 standard.
+"dtpAttrSpecStmtSaveC570.f", line 58.8: 1515-160 (L) A SAVE statement without a list of saved entities appears in this scoping unit.  This occurrence of SAVE is not permitted by the Fortran 2003 standard.
+** s   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtpAttrSpecStmtSaveC570.f.

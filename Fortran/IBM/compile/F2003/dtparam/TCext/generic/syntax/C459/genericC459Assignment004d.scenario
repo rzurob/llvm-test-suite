@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/syntax/C459/genericC459Assignment004d.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericC459Assignment004d.f
+#OUTPUT    = genericC459Assignment004d$(OBJ)
+#STDERR    = genericC459Assignment004d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = genericC459Assignment004d.err $($(tcasedir)genericC459Assignment004d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

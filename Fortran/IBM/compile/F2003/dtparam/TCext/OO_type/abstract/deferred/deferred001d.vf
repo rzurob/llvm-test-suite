@@ -1,0 +1,6 @@
+"deferred001d.f", line 42.44: 1514-682 (S) Identifier setid appearing as a binding of derived type base has already been defined as a component, binding, or type parameter of the same derived type.
+"deferred001d.f", line 48.43: 1514-084 (S) Identifier dtv is being declared with type name base which has not been defined in a derived type definition.
+"deferred001d.f", line 56.43: 1514-084 (S) Identifier dtv is being declared with type name base which has not been defined in a derived type definition.
+** n   === End of Compilation 1 ===
+** deferred001d   === End of Compilation 2 ===
+1501-511  Compilation failed for file deferred001d.f.

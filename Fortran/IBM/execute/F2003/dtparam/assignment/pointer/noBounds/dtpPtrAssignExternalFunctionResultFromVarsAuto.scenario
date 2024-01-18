@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignExternalFunctionResultFromVarsAuto.scenario
+#FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - assign variables to function result in external procedure with fixed length parameter pointers
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPtrAssignExternalFunctionResultFromVarsAuto.f
+#OUTPUT    = dtpPtrAssignExternalFunctionResultFromVarsAuto$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPtrAssignExternalFunctionResultFromVarsAuto$(OBJ)
+#OUTPUT    = dtpPtrAssignExternalFunctionResultFromVarsAuto$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPtrAssignExternalFunctionResultFromVarsAuto$(EXE)
+#STDOUT    = dtpPtrAssignExternalFunctionResultFromVarsAuto.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpPtrAssignExternalFunctionResultFromVarsAuto$(product)vf) dtpPtrAssignExternalFunctionResultFromVarsAuto.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

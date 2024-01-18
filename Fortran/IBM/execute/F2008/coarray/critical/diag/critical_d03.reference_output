@@ -1,0 +1,5 @@
+"critical_d03.f", line 27.1: 1516-053 (S) The construct name a was seen with conflicting attributes.
+"critical_d03.f", line 27.1: 1516-053 (S) The construct name a was seen with conflicting attributes.
+** main   === End of Compilation 1 ===
+** sub1   === End of Compilation 2 ===
+1501-511  Compilation failed for file critical_d03.f.

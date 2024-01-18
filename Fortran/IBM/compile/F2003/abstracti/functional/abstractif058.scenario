@@ -1,0 +1,22 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2003/abstracti/functional/abstractif058.scenario
+#FEATURE = Abstract Interface Tests
+#CREATOR = Manual conversion CPR
+#DATE    = 20070326
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+FTCARG="abstractif058"
+CTCARG="abstractic058"
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#INCLUDE   = scrdtya00.preshinclude
+
+#ENDCONTROL
+#ENDSCENARIO

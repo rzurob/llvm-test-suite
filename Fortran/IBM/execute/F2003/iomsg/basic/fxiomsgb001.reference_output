@@ -1,0 +1,6 @@
+ 1525-001 The READ statement on the file fort.10 cannot be completed because the end of the file was reached.  The program will stop.
+                                                                                                                                                                       
+ 1525-001 The READ statement on the file fort.12 cannot be completed because the end of the file was reached.  The program will stop.
+                                                                                                                                                                       
+ 1525-002 The I/O statement on the internal file cannot be completed because the end of the internal file was reached.  The program will stop.
+                                                                                                                                                              

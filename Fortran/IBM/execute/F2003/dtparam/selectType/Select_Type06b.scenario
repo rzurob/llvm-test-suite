@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/selectType/Select_Type06b.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20080826
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM) -qdebug=allowrpdt
+#INPUT=  $(tcasedir)Select_Type06b.f
+#OUTPUT= Select_Type06b$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  Select_Type06b$(OBJ)
+#OUTPUT= Select_Type06b$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  Select_Type06b$(EXE)
+#STDOUT= Select_Type06b.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

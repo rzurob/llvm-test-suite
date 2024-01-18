@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/derived/acetdt00kl.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement	\
+			   -- Derived TS, No Parameters, Simple Objects of Correct Type)
+#CREATOR	= Glen Mateer (based on work by David Forster)
+#DATE		= 20071207
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt00kl.f
+#OUTPUT		= acetdt00kl$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt00kl$(OBJ)
+#OUTPUT		= acetdt00kl$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt00kl$(EXE)
+#STDOUT		= acetdt00kl.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -r1-e5
+#INPUT		= $($(tcasedir)acetdt00kl$(product)vf) acetdt00kl.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

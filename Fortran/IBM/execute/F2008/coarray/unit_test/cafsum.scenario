@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cafsum.scenario
+#FEATURE = Coarray access
+#CREATOR = Xing Xue
+#DATE    = 20090731
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = $(tcasedir)cafsum.f
+#OUTPUT    = cafsum$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = cafsum$(OBJ)
+#OUTPUT    = cafsum$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = cafsum$(EXE)
+#STDOUT    = cafsum.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

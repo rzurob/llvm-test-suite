@@ -1,0 +1,48 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME	   = F2003/asynchIO/statements/wait/pendingClose03.scenario
+#FEATURE   = Asynchronous I/O -- CLOSE Statement
+#CREATOR   = GM Manual Creation
+#DATE	   = 20060412
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#IF on (linuxle)
+    XLFRTEOPTS=$(CONVERT_UFMT_IO_ENDIANESS<24>)
+#ENDIF
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)pendingClose03.dat .
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)pendingClose03.f
+#OUTPUT		= pendingClose03$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= pendingClose03$(OBJ)
+#OUTPUT		= pendingClose03$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= pendingClose03$(EXE)
+#STDERR		= pendingClose03.stderr
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)pendingClose03$(product)vf) pendingClose03.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

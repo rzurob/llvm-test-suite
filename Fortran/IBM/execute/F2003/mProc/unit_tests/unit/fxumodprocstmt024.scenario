@@ -1,0 +1,44 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=fxdmodprocstmt024.scenario
+#FEATURE = functional for generalization of mod proc stmts in F2003
+#CREATOR = Bardia Mahjour
+#DATE    = 20060411
+#TEST_TYPE=diag test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)fxumodprocstmt024.f
+#OPTS      = -qdebug=intmsg -Q -O -lxlfzz2
+#OUTPUT    = fxumodprocstmt024$(OBJ)
+#VALIDRCS  = 0
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#INPUT     = fxumodprocstmt024$(OBJ)
+#OUTPUT    = fxumodprocstmt024$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxumodprocstmt024$(EXE)
+#STDOUT    = fxumodprocstmt024.out
+#STDERR    = fxumodprocstmt024.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fxumodprocstmt024.out $($(tcasedir)fxumodprocstmt024$(product)vf)
+#OPTS      = -bw
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

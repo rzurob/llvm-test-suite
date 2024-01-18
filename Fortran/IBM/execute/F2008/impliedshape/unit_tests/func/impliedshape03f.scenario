@@ -1,0 +1,35 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/impliedshape/unit_tests/func/impliedshape03f.scenario
+#FEATURE    = F385594 - Implied-shape Arrays
+#CREATOR    = David Nichols
+#DATE       = 20110214
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)impliedshape03f.f
+#OUTPUT     = impliedshape03f$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#INPUT      = impliedshape03f$(OBJ)
+#OUTPUT     = impliedshape03f$(EXE)
+#ENDCMD
+
+#CMD        = RUN
+#INPUT      = impliedshape03f$(EXE)
+#STDOUT     = impliedshape03f.out
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = impliedshape03f.out $($(tcasedir)impliedshape03f$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

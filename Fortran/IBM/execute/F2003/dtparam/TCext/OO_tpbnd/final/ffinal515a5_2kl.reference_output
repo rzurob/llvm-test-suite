@@ -1,0 +1,10 @@
+ finalizeChild
+ finalizeBase
+ true
+ finalizeData
+ deallocating d%data
+ finalizeChild
+ finalizeBase
+ false condition test
+ finalizeData
+ end

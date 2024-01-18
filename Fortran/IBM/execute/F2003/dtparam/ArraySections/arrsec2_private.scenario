@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/ArraySections/arrsec2_private.scenario
+#FEATURE   = 353925
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20081013
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)arrsec2_private.f
+#OUTPUT    = arrsec2_private$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = arrsec2_private$(OBJ)
+#OUTPUT    = arrsec2_private$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = arrsec2_private$(EXE)
+#STDOUT    = arrsec2_private.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)arrsec2_private$(product)vf) arrsec2_private.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

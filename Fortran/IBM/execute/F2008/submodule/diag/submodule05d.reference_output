@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+** b   === End of Compilation 2 ===
+"submodule05d.f", line 46.17: 1513-101 (S) Global entity b was seen elsewhere as a global entity with conflicting attributes.
+** b   === End of Compilation 3 ===
+** submodule05d   === End of Compilation 4 ===
+1501-511  Compilation failed for file submodule05d.f.

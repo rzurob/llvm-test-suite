@@ -1,0 +1,52 @@
+"intrinsictype03d.F", line 34.18: 1514-690 (S) Type parameter values must not be specified for type #error_drx.  Type #error_drx does not have type parameters.
+"intrinsictype03d.F", line 34.18: 1511-130 (S) The type specification must specify an accessible derived type or an intrinsic type.
+"intrinsictype03d.F", line 35.18: 1511-130 (S) The type specification must specify an accessible derived type or an intrinsic type.
+"intrinsictype03d.F", line 35.18: 1514-690 (S) Type parameter values must not be specified for type #error_drx.  Type #error_drx does not have type parameters.
+"intrinsictype03d.F", line 36.18: 1511-130 (S) The type specification must specify an accessible derived type or an intrinsic type.
+"intrinsictype03d.F", line 36.18: 1514-690 (S) Type parameter values must not be specified for type #error_drx.  Type #error_drx does not have type parameters.
+"intrinsictype03d.F", line 37.18: 1514-690 (S) Type parameter values must not be specified for type #error_drx.  Type #error_drx does not have type parameters.
+"intrinsictype03d.F", line 37.18: 1511-130 (S) The type specification must specify an accessible derived type or an intrinsic type.
+"intrinsictype03d.F", line 38.18: 1514-690 (S) Type parameter values must not be specified for type #error_drx.  Type #error_drx does not have type parameters.
+"intrinsictype03d.F", line 38.18: 1511-130 (S) The type specification must specify an accessible derived type or an intrinsic type.
+"intrinsictype03d.F", line 40.13: 1515-019 (S) Syntax is incorrect.
+"intrinsictype03d.F", line 41.13: 1515-019 (S) Syntax is incorrect.
+"intrinsictype03d.F", line 42.13: 1515-019 (S) Syntax is incorrect.
+"intrinsictype03d.F", line 43.13: 1515-019 (S) Syntax is incorrect.
+"intrinsictype03d.F", line 44.13: 1515-019 (S) Syntax is incorrect.
+"intrinsictype03d.F", line 49.15: 1515-019 (S) Syntax is incorrect.
+"intrinsictype03d.F", line 49.31: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"intrinsictype03d.F", line 50.8: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"intrinsictype03d.F", line 50.14: 1511-026 (S) Type of operand is not permitted for comparison operation.
+"intrinsictype03d.F", line 50.30: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"intrinsictype03d.F", line 50.38: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"intrinsictype03d.F", line 51.8: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"intrinsictype03d.F", line 52.15: 1515-019 (S) Syntax is incorrect.
+"intrinsictype03d.F", line 52.28: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"intrinsictype03d.F", line 53.8: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"intrinsictype03d.F", line 53.14: 1511-026 (S) Type of operand is not permitted for comparison operation.
+"intrinsictype03d.F", line 53.32: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"intrinsictype03d.F", line 53.40: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"intrinsictype03d.F", line 54.8: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"intrinsictype03d.F", line 55.15: 1515-019 (S) Syntax is incorrect.
+"intrinsictype03d.F", line 55.31: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"intrinsictype03d.F", line 56.8: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"intrinsictype03d.F", line 56.14: 1516-026 (S) Non-arrays must not be subscripted.
+"intrinsictype03d.F", line 56.38: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"intrinsictype03d.F", line 56.46: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"intrinsictype03d.F", line 57.8: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"intrinsictype03d.F", line 58.15: 1515-019 (S) Syntax is incorrect.
+"intrinsictype03d.F", line 58.36: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"intrinsictype03d.F", line 59.8: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"intrinsictype03d.F", line 59.14: 1511-026 (S) Type of operand is not permitted for comparison operation.
+"intrinsictype03d.F", line 59.32: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"intrinsictype03d.F", line 59.40: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"intrinsictype03d.F", line 60.8: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"intrinsictype03d.F", line 61.15: 1515-019 (S) Syntax is incorrect.
+"intrinsictype03d.F", line 61.31: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"intrinsictype03d.F", line 62.8: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"intrinsictype03d.F", line 62.14: 1516-042 (S) Operand must be type LOGICAL.
+"intrinsictype03d.F", line 62.37: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"intrinsictype03d.F", line 62.45: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+"intrinsictype03d.F", line 63.8: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+** intrinsictype03d   === End of Compilation 1 ===
+1501-511  Compilation failed for file intrinsictype03d.F.

@@ -1,0 +1,514 @@
+<script language="JavaScript1.2" type="text/javaScript" src="/scripts/scripts.js"></script>
+<link rel="stylesheet" type="text/css" href="/stylesheets/v4-screen.css" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/featureflow.css" />
+<style type="text/css" media="all">
+<!--
+@import url("/stylesheets/screen.css");
+@import url("/stylesheets/interior.css");
+@import url("/stylesheets/icons.css");
+@import url("/stylesheets/tables.css");
+-->
+</style>
+<!-- print stylesheet MUST follow imported stylesheets -->
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/print.css" />
+	<script type="text/javascript" language="JavaScript1.2">
+	<!-- 
+	function msover(image) { // Mouse Over 
+		if (document.images) { 
+			document[image].src = eval(image + "on.src") 
+		} 
+	} 
+	function msout(image) { // Mouse Out 
+		if (document.images) { 
+			document[image].src = eval(image + ".src") 
+		} 
+	} 
+	/* ----------------------------------------- */ 
+	function popup(hp, f3) { 
+		if (document.layers) { 
+			document[hp].visibility = "visible" 
+			document[hp].top = 0 
+			document[hp].left = f3.x + 23 
+			//document[hp].top = f3.pageY + 10 
+		} else { 
+			if (document.all) { 
+				document.all[hp].style.visibility = "visible" 
+				document.all[hp].style.left = f3.x + 23 
+				//document.all[hp].style.top = f3.y + 10 
+				document.all[hp].style.top = 0 
+			} 
+		} 
+	} 
+	function cpopup(hp) { 
+		if (document.layers) { 
+			document[hp].visibility = "hidden" 
+		} else { 
+			if (document.all) { 
+				document.all[hp].style.visibility = "hidden" 
+			} 
+		} 
+	} 
+	function lpopup(lyr) { 
+		if (document.layers) { 
+			if (document[lyr].visibility == "show") { 
+				document[lyr].visibility = "hidden" 
+			} else { 
+				document[lyr].visibility = "visible" 
+			} 
+		} else { 
+			if (document.all) { 
+				if (document.all[lyr].style.visibility == "visible") { 
+					document.all[lyr].style.visibility = "hidden" 
+				} else { 
+					document.all[lyr].style.visibility = "visible" 
+				} 
+			} 
+		} 
+	} 
+function selectAll() { for(var i=0;i<document.theform.elements.length;i++) {if(document.theform.elements[i].type == "checkbox"){document.theform.elements[i].checked = true;};};}
+function DeselectAll() { for(var i=0;i<document.theform.elements.length;i++) {if(document.theform.elements[i].type == "checkbox"){document.theform.elements[i].checked = false;};};}
+function goback() { 
+    if (true) 
+         history.back() 
+} 
+function fixdays(d_obj, m_obj) {
+   var numdays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+   for (var i = (eval(d_obj).length-1); i>=0; i--) {
+      eval(d_obj).options[i] = null;
+   }
+
+   for (var i = 1; i<=numdays[eval(m_obj).value]; i++) {
+      var optionadd = new Option(i, i);
+      eval(d_obj).options[eval(d_obj).length] = optionadd;
+   }
+}
+	//--> 
+</script><noscript> <!--  //--> </noscript>
+<script src="/javascripts/prototype.js?1307100769" type="text/javascript"></script>
+<script src="/javascripts/effects.js?1307100769" type="text/javascript"></script>
+<script src="/javascripts/dragdrop.js?1307100769" type="text/javascript"></script>
+
+<script src="/javascripts/controls.js?1307100769" type="text/javascript"></script>
+</head>
+<body  id="w3-ibm-com" class="article">
+   <div id="content-main">
+      <head>
+  <script src="/javascripts/prototype.js?1307100769" type="text/javascript"></script>
+<script src="/javascripts/effects.js?1307100769" type="text/javascript"></script>
+<script src="/javascripts/dragdrop.js?1307100769" type="text/javascript"></script>
+<script src="/javascripts/controls.js?1307100769" type="text/javascript"></script>
+
+  <script src="/javascripts/fckeditor.js?1307100769" type="text/javascript"></script>
+  <script src="/javascripts/effects.js?1307100769" type="text/javascript"></script>
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/featureflow.css" />
+<title>
+IT1/IT2: SYNC IMAGES - F E A T U R E - F L O W
+</title>
+
+</head>
+<span id="dummy" style="position: absolute; overflow:hidden; width:0; height:0">
+<form>
+<textarea id="dummytext">
+</textarea>
+</form>
+
+</span>
+<script>
+   var oFCKeditor = new FCKeditor( 'dummytext' ) ;
+   oFCKeditor.Config['LinkBrowser'] = false ; 
+   oFCKeditor.Config['ImageBrowser'] = true ;
+   oFCKeditor.Config["CustomConfigurationsPath"] =
+          '/javascripts/railsfck_comments.js?1307100769';
+/*   oFCKeditor.Config["SkinPath"] = 'skins/SilverNarrow/' ; */
+   oFCKeditor.ReplaceTextarea() ;   
+function edit(comment_id, id)
+{
+   var ac ;
+   var entry='' ;
+   var ref=comment_id ;
+   if (!id) {
+      entry='_entry' ;
+   } else {
+      ref = id ;
+   }
+   var parent_id=null;
+   var match=comment_id.match(/(\d+)_(\d+)/) ;
+   if (match) {
+      parent_id = match[1] ;
+   }
+
+   var old_comment_type		= null;
+   var comment_type_element	= document.getElementById('ctype'+id+'_'+comment_id);
+   if (comment_type_element != null) {
+	   old_comment_type	= comment_type_element.selectedIndex;
+   }
+
+   ac = document.getElementById('comments'+entry+ref) ;
+   if (!id && ac.innerHTML!='') {
+      var myb=document.getElementById('mycancelbutton'+ref) ;
+      myb.scrollIntoView(false) ;
+      return ;
+   }
+   var con = document.getElementById('comments_content'+id) ;
+   var content = '' ;
+   if (con) {
+      content = unlinkfy(con.innerHTML) ;
+      /* remove response */
+      content = content.replace(/<p><font size=\"?-1\"?>\(reply\)<\/font><\/p>\s*$/i,'');
+
+      /* Defect 336615: escape &lt and &gt so that the FCK editor does not treat these as HTML tags */
+      content = content.replace(/&lt;/g, '&amp;lt;');
+      content = content.replace(/&gt;/g, '&amp;gt;');
+   }
+   ac.originalInnerHTML = ac.innerHTML ;
+   ac.innerHTML='<table border=0 style="text-decoration:none;font-size:13px;">'+
+'<tr><td width="100%">'+
+'<form id="text_comments_form'+comment_id+'"'+
+' method="post" '+
+' onsubmit="myCommentEditorSubmit(\''+comment_id+'\', \''+id+'\'); return false ;">'+
+'<input id="id" name="id" size="30" type="hidden" value="'+id+'">'+
+'<input id="commentid" name="commentid" size="30" type="hidden" value="'+comment_id+'">'+
+'<input id="document_id" name="document_id" size="30" type="hidden" value="'+5672+'">'+
+'<table bgcolor="80FF80" width="600" border=1 cellpadding=0 cellspacing=0>'+
+'<tr><td>'+
+'<font color=blue>User:</font> Feng Ye '+
+((parent_id == null) ?  '<font color=blue>Type:</font> <select id="ctype_edit' + id + '_' + comment_id + '" name="ctype">'+
+   '<option value="Typo">Typo</option>'+
+   '<option value="Comment" selected>Comment</option>'+
+   '<option value="Problem">Problem</option>'+
+   '<option value="Issue">Issue</option>'+
+   '</select>'+
+   ' <font color=blue>Disposition:</font>'+ 
+   '<input id="disposition" name="disposition" value="Unassigned" type="hidden"/>'+
+   'Unassigned'
+: '') +
+'</td></tr>'+
+'<tr><td width="100%">'+
+'<table border=0 cellpadding=1 width="100%">'+
+'<tr><td td width="100%">'+
+'<textarea id="text_comment'+comment_id+'" name="text_comment'+comment_id+'" cols=76 rows=12 style="font-family:courier; background:#80FF80">'+
+content+
+'</textarea></td></tr>'+
+'</td></tr>'+
+'</table>'+
+'<tr><td>'+
+'<input type="button" value="Clear" onclick="var oEditor=FCKeditorAPI.GetInstance(\'text_comment'+comment_id+'\'); oEditor.SetHTML(\'\') ; return false;">'+
+'<input type="submit" value="Submit">'+
+'<input type="submit" value="Submit+Notify" onclick="myCommentEditorSubmit(\''+comment_id+'\', \''+id+'\', true); return false ;">'+
+'<input id="mycancelbutton'+ref+'" type="button" value="Cancel" onclick="hideEditor(\''+entry+ref+'\'); return false;">'+
+'</td></tr>'+
+'</table>'+
+'</form>'+
+'</td></tr></table>';
+
+   if (old_comment_type != null) {
+	   document.getElementById('ctype_edit' + id + '_' + comment_id).selectedIndex	= old_comment_type;
+   }
+
+   var part='text_comment' + comment_id ;
+   var oFCKeditor = new FCKeditor( part ) ;
+   oFCKeditor.Height=200;
+/* work around an IE bug here that temporarily blanks the screen */
+   if ( navigator.userAgent.toLowerCase().indexOf("msie") == -1) {
+     oFCKeditor.Config['StartupFocus'] = true ; 
+   } 
+   oFCKeditor.Config['LinkBrowser'] = false ; 
+   oFCKeditor.Config['ImageBrowser'] = true ;
+   oFCKeditor.Config["CustomConfigurationsPath"] =
+          '/javascripts/railsfck_comments.js?1307100769';
+/*   oFCKeditor.Config["SkinPath"] = 'skins/SilverNarrow/' ; */
+   var ta=document.getElementById(part) ;
+   ta.style.height='0px';
+   oFCKeditor.ReplaceTextarea() ; 
+   var myb=document.getElementById('mycancelbutton'+ref) ;
+   myb.scrollIntoView(false) ;
+}
+function hideEditor(where)
+{
+   var ac = document.getElementById('comments'+where) ;
+   ac.innerHTML=ac.originalInnerHTML; 
+}
+
+function myCommentEditorSubmit(comment_id, id, notify)
+{
+   var entry='' ;
+   var ref=comment_id ;
+   if (!id || id == 'undefined') {
+      entry='_entry' ;
+   } else {
+      ref = id ;
+   }
+  var submit_notify=0
+  var parent_id=null;
+  var match=comment_id.match(/(\d+)_(\d+)/) ;
+  if (match) {
+     parent_id = match[1];
+  }
+  if (notify) {
+     if (parent_id) {
+        if (confirm("Send a notification to the participants in this comment thread (and the author) about this reply ?")) {
+           submit_notify=1;
+        }
+     } else if (confirm("Send a notification to the author about this comment?")) {
+        submit_notify=1;
+     }
+  }
+
+  var frm = document.getElementById('text_comments_form'+comment_id) ; 
+  var oEditor=FCKeditorAPI.GetInstance('text_comment'+comment_id); 
+  var textArea = document.getElementById('text_comment'+comment_id) ; 
+  textArea.value = oEditor.GetXHTML() +  '<p><font size=\"-1\">(reply)</font></p>' ;
+  var params = Form.serialize(frm) ;
+  params = params + '&notify='+submit_notify
+  var ac=document.getElementById('comments'+entry+ref) ;
+  var editSave = ac.innerHTML ;
+  var errFunc = function(t) {
+       alert('Error ' + t.status + ' -- ' + t.statusText +'  - try re-submitting ');
+  }
+  var succFunc = function(t) {
+       hideEditor(entry+ref) ;
+  }
+  if (ref != id) {
+    new Ajax.Updater('comments'+comment_id,'/featureflow/update_comment', {method:'post', 
+          parameters: params, asynchronous:true, evalScripts:true, insertion:Insertion.Bottom, 
+          onFailure:errFunc, onSuccess:succFunc});
+  } else {
+    new Ajax.Updater('comments'+id,'/featureflow/update_comment', {method:'post', 
+          parameters: params, asynchronous:true, evalScripts:true, 
+          onFailure:errFunc, onSuccess:succFunc});
+  }
+  return false;
+}
+function changeCommentAttribute(document_id, inp, param, currentValue, last_comment_id)
+{
+  var s=document.getElementById(inp) ;
+  var v=s.options[s.selectedIndex].value; 
+  var errFunc = function(t) {
+       alert('Error ' + t.status + ' -- ' + t.statusText +'  - try re-submitting ');
+  }
+  new Ajax.Updater('comments'+last_comment_id, '/featureflow/update_comment', 
+        {method:'post', 
+        parameters:'id=undefined'+
+           '&commentid='+last_comment_id+
+           '&document_id='+document_id+
+           '&'+param+'='+encodeURIComponent(v),
+        asynchronous:true, evalScripts:true, insertion:Insertion.Bottom,
+        onFailure:errFunc});
+}
+function unlinkfy(str)
+{
+   var s1=str.replace(/<a class=\"?review\"? .*?><span id=\"?line_(.*?)\"?>/ig, "") ;
+   var s2=s1.replace(/<\/span><\/a><span id=\"?comments(.*?)>/ig, "") ;
+   var s3 = s2.replace(/<\/span><span id=\"?comments_entry(.*?)\"?><\/span>/ig, "") ;
+   // Adam D'Andrea: February 19, 2007: remove (reply) when it goes into editor
+   var s4 = s3.replace(/<font size=\"?-1\"?>\(reply\)<\/font>/ig, "");
+   return s4;
+}
+
+function collapse(expander, lineBreak)
+{
+   var ac=document.getElementById('expander'+expander) ;
+   ac.innerHTML='<a href="javascript:expand(\''+expander+'\');"><img src="/images/expand_small.gif" alt="Expand"></a>' ;
+   var expanded=document.getElementBy            </td>
+            <td valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt"></span></strong></p>
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">Xing Xue, Jim Xia
+            </span></strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Component Reviewers:(optional participation)</span></strong><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+
+            <td valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">
+            Grigor Nikolov</span></strong></p>
+            </blockquote></td>
+        </tr>
+        <tr>
+            <td valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Team Reviewers: (optional participation)</span></strong><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"></span></p>
+
+            </td>
+            <td valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">
+            Shahid Alam, Ying Zhang
+            </span></strong></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN-BOTTOM: 12pt" class="MsoNormal"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><u2:p></u2:p></span><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+
+<table cellspacing="0" cellpadding="0" border="1" width="100%" style="WIDTH: 100%; BACKGROUND: rgb(255,102,102) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 100%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><u2:p></u2:p>IT1 Status: <!-- Start -->For Approval </span><!-- End --></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+<p class="MsoNormal"><u2:p><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Approvers Only:</span></strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"> Click on the 'Approve' checkbox beside your name in the table below if you agree with the technical and user interface content of this document; not checking your 'approve' checkbox signifies you do not approve.<o:p></o:p></span></u2:p></p>
+<p class="MsoNormal"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><table border=0 cellpadding=0 cellspacing=20><tr><td><table border=3 cellpadding=0 cellspacing=0><tr><th>Approver</th><th>Approved</th></tr><tr><td>Jim Xia</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="approval_1380" disabled></form></td></tr><tr><td>Xing Xue</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="approval_1331" disabled></form></td></tr></table></td></tr></table><o:p></o:p></span></p>
+<p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Approval Comments</span></strong></p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="TEXT-ALIGN: left; BACKGROUND-COLOR: rgb(224,255,191); WIDTH: 100%; FONT-FAMILY: Arial; FONT-SIZE: 12pt">
+    <tbody>
+
+        <tr>
+            <td style="FONT-FAMILY: Arial; VERTICAL-ALIGN: top"><strong>Access Change History</strong>  </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<span id="expander_sec1"><a href="javascript:expand('_sec1');"><img src="/images/expand_small.gif" alt="Expand"></a></span>&nbsp;<strong>Access Change History</strong><div id="expanded_sec1"></div>
+<p class="MsoNormal"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<table cellspacing="0" cellpadding="0" border="1" width="100%" style="WIDTH: 100%; BACKGROUND: rgb(191,191,255) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable">
+
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 100%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt">
+            <p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 14pt"><u1:p></u1:p><u2:p></u2:p>Overview</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><!-- Start Overview --><u2:p></u2:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;"></span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;"><br />
+Fortran 2008 introduces the SYNC IMAGES statement to support synchronization. This test plan covers typical scenarios of this feature.</span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><br />
+</span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><u2:p></u2:p></span><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<table cellspacing="0" cellpadding="0" border="1" width="100%" style="WIDTH: 100%; BACKGROUND: rgb(191,191,255) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 100%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt">
+            <p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 14pt"><!-- End Overview --><u2:p></u2:p>Test Strategy</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><u2:p></u2:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"></span><span style="font-family: Helvetica; font-size: 11pt;"></span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;">The test will be focusing on the following areas:<br />
+<br />
+- Syntax. Various legal expressions for image set.</span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;">- Synchronization. <br />
+- Segment ordering.</span></p>
+
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;">- Some typical synchronization small applications.</span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;"><br />
+All tests will make sure that synchronization is achieved.</span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;"><br />
+A typical example:<br />
+<br />
+ROGRAM sync_images_app_1<br />
+&nbsp; IMPLICIT NONE<br />
+&nbsp; INTEGER :: num_img, me, j, i<br />
+
+&nbsp; INTEGER, SAVE :: work[*]<br />
+<br />
+&nbsp; me = this_image()<br />
+&nbsp; num_img = num_images()<br />
+<br />
+&nbsp; DO j=1, 100<br />
+&nbsp;&nbsp;&nbsp; CALL sub(j)<br />
+
+&nbsp; END DO<br />
+<br />
+&nbsp; CONTAINS<br />
+<br />
+&nbsp; SUBROUTINE sub(j)<br />
+&nbsp; INTEGER :: j<br />
+<br />
+&nbsp;&nbsp;&nbsp; work = me * j<br />
+
+<br />
+&nbsp;&nbsp;&nbsp; IF ( me .EQ. 1) THEN<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SYNC IMAGES(*)<br />
+&nbsp;&nbsp;&nbsp; ELSE<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SYNC IMAGES(1)<br />
+&nbsp;&nbsp;&nbsp; END IF<br />
+<br />
+
+&nbsp;&nbsp;&nbsp; IF ( work[mod(me, num_img)+1] .NE. (mod(me, num_img)+1)*j ) then<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ERROR STOP &quot;err 11&quot;<br />
+&nbsp;&nbsp;&nbsp; END IF<br />
+<br />
+&nbsp;&nbsp;&nbsp; SYNC IMAGES(*)<br />
+<br />
+&nbsp; END SUBROUTINE<br />
+
+END</span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;"><br />
+</span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><br />
+</span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><u2:p></u2:p></span><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<table cellspacing="0" cellpadding="0" border="1" width="100%" style="WIDTH: 100%; BACKGROUND: rgb(191,191,255) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 100%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt">
+            <p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 14pt"><!-- End Multi-Platform Considerations --><u2:p></u2:p>Test Procedures/Scenarios</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><!-- Start Internal Interfaces --><u2:p></u2:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;"></span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica; font-size: 11pt;">Test scenario design</span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt">
+<table height="481" cellspacing="1" cellpadding="1" border="1" align="" width="753" summary="">
+    <caption>Test Scenario</caption>
+    <tbody>
+
+        <tr>
+            <td>Test Case Name</td>
+            <td>Description</td>
+        </tr>
+        <tr>
+            <td>sync_images_syntax_1.scenario</td>
+            <td>Basic syntax and functionality</td>
+
+        </tr>
+        <tr>
+            <td>sync_images_syntax_2.scenario</td>
+            <td>Basic syntax with specifiers -- stat and errmsg <br />
+            </td>
+        </tr>
+        <tr>
+            <td>sync_images_syntax_3.scenario</td>
+
+            <td>Diagnosis on syntax and the constraint C852 <br />
+            </td>
+        </tr>
+        <tr>
+            <td>sync_images_set_1.scenario</td>
+            <td>Test the array forms of the image_set: array with vector subscript as image set</td>
+        </tr>
+
+        <tr>
+            <td>sync_images_set_2.scenario</td>
+            <td>ALL images are synchronized with SYNC IMAGES(*)</td>
+        </tr>
+        <tr>
+            <td>sync_images_set_3.scenario</td>
+            <td>Use.html" class="terms">Terms of use</a><br />
+   </div>
+</body>
+</html>
+
+
+

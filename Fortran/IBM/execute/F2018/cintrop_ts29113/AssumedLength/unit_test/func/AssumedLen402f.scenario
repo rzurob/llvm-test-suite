@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/AssumedLength/func/AssumedLen402f.scenario
+#FEATURE   = C Interop, Assumed Length
+#CREATOR   = Maryam Moghadas
+#DATE      = 2014-06-25
+#TEST_TYPE = functional
+#KEYWORDS  = C Interop, Assumed Length
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)AssumedLen402c.c
+#OPTS      = $(C_COMPILER_OPTS) -I$(xlf_include)
+#OUTPUT    = AssumedLen402c$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AssumedLen402f.f
+#OPTS      = -qdebug=BCASSUMEDLEN
+#OUTPUT    = AssumedLen402f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = AssumedLen402c$(OBJ) AssumedLen402f$(OBJ)
+#OUTPUT    = AssumedLen402f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = AssumedLen402f$(EXE)
+#STDOUT    = AssumedLen402f.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

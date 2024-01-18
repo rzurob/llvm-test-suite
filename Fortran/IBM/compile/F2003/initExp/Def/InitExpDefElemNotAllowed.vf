@@ -1,0 +1,5 @@
+"InitExpDefElemNotAllowed.f", line 43.31: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"InitExpDefElemNotAllowed.f", line 43.33: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"InitExpDefElemNotAllowed.f", line 45.36: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+** initexpdefelemnotallowed   === End of Compilation 1 ===
+1501-511  Compilation failed for file InitExpDefElemNotAllowed.f.

@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/kindArg/kindArg/kindArgLen3.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of F2003/kindArg/*
+#DATE      = 20071107
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)kindArgLen3.f
+#OUTPUT= kindArgLen3$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  kindArgLen3$(OBJ)
+#OUTPUT= kindArgLen3$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  kindArgLen3$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

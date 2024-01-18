@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/DT/crossFeature/dummyArg/dummyArg104a.scenario
+#FEATURE = OO_dtio
+#CREATOR = Robert Ma
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)dummyArg104a.1 .
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dummyArg104a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dummyArg104a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dummyArg104a$(OBJ)
+#OUTPUT    = dummyArg104a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dummyArg104a$(EXE)
+#STDOUT    = dummyArg104a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dummyArg104a$(product)vf) dummyArg104a.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

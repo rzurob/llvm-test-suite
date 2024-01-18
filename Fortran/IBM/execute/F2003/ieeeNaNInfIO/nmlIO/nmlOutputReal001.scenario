@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = nmlOutputReal001.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 19, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)nmlOutputReal001.f
+#OUTPUT   =  nmlOutputReal001$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  nmlOutputReal001$(OBJ)
+#OUTPUT   =  nmlOutputReal001$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  nmlOutputReal001$(EXE)
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = nmlOutputReal001.out $(tcasedir)nmlOutputReal001.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

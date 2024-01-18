@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/InitExp/ExplicitInitExp/d364965.f
+#FEATURE   = DTP
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20090426
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d364965.f
+#OUTPUT    = d364965$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d364965$(OBJ)
+#OUTPUT    = d364965$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d364965$(EXE)
+#STDOUT    = d364965.out
+#ENDCMD
+
+#CMD       = DIFF
+#OPTS      = -b
+#INPUT     = d364965.out $(tcasedir)d364965.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

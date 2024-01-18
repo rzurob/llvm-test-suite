@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/derived/acetdt38.scenario
+#FEATURE	= Array constructor enhancement AC in I/O, as output-item, using DTIO, incl. polymorphism
+#CREATOR	= DF Manual Update
+#DATE		= 20061116
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt38.f
+#OPTS = -qxlf2003=dynamicacval
+#OUTPUT		= acetdt38$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt38$(OBJ)
+#OUTPUT		= acetdt38$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt38$(EXE)
+#STDOUT		= acetdt38.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $(tcasedir)acetdt38.vf acetdt38.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

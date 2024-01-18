@@ -1,0 +1,9 @@
+** m   === End of Compilation 1 ===
+"structComp003.f", line 89.15: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+"structComp003.f", line 93.34: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"structComp003.f", line 93.34: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+"structComp003.f", line 95.15: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+"structComp003.f", line 96.32: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"structComp003.f", line 96.32: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+** structcomp003   === End of Compilation 2 ===
+1501-511  Compilation failed for file structComp003.f.

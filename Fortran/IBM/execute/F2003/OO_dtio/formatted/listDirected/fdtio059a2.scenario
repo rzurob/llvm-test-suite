@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/listDirected/fdtio059a2.scenario
+#FEATURE = OO_dtio/formatted tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fdtio059a2.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fdtio059a2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  fdtio059a2$(OBJ)
+#OUTPUT    = fdtio059a2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fdtio059a2$(EXE)
+#STDOUT    = fdtio059a2.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)fdtio059a2$(product)vf) fdtio059a2.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

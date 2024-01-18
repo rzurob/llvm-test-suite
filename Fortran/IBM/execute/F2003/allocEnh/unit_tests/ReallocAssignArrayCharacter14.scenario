@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2003/allocEnh/unit_tests/ReallocAssignArrayCharacter14.scenario
+#FEATURE = Reallocation on assignment to an allocatable object
+#CREATOR = Rob James
+#DATE    = 20060609
+#TEST_TYPE=Functional unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ReallocAssignArrayCharacter14.f
+#OUTPUT    = ReallocAssignArrayCharacter14$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = ReallocAssignArrayCharacter14$(OBJ)
+#OUTPUT    = ReallocAssignArrayCharacter14$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ReallocAssignArrayCharacter14$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

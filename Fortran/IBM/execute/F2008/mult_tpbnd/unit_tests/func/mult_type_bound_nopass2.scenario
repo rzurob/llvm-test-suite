@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2008/mult_tpbnd/unit_tests/func/mult_type_bound_nopass2.scenario
+#FEATURE = 916819 F2008:Multiple type-bound procedures in a single procedure stmt
+#CREATOR = Paul Liu
+#DATE    = 20110525
+#TEST_TYPE=FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+! no module
+! nopass attribute
+! procedure,nopass :: foo=>real_foo,bar
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mult_type_bound_nopass2.f
+#OUTPUT    = mult_type_bound_nopass2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = mult_type_bound_nopass2$(OBJ)
+#OUTPUT    = mult_type_bound_nopass2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mult_type_bound_nopass2$(EXE)
+#STDOUT    = mult_type_bound_nopass2.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $(tcasedir)mult_type_bound_nopass2.vf mult_type_bound_nopass2.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

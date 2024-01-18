@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/home/robertma/tc/F2003/valueAttrDTwAllocatableComponents/valueAsynchronousDummyArg002.scenario
+#FEATURE = value attribute with DT containing allocatable components test cases
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#INVALID_PRODUCT=bgl
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)valueAsynchronousDummyArg002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = valueAsynchronousDummyArg002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = valueAsynchronousDummyArg002$(OBJ)
+#OUTPUT    = valueAsynchronousDummyArg002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = valueAsynchronousDummyArg002$(EXE)
+#STDOUT    = valueAsynchronousDummyArg002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = valueAsynchronousDummyArg002.out $(tcasedir)valueAsynchronousDummyArg002.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

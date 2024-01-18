@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/null/ptrAssignment008.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070925
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ptrAssignment008.f
+#OUTPUT    = ptrAssignment008$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = ptrAssignment008$(OBJ)
+#OUTPUT    = ptrAssignment008$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ptrAssignment008$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

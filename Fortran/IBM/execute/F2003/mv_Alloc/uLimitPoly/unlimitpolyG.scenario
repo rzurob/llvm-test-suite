@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       unlimitpolyG.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)unlimitpolyG.f
+#OUTPUT= unlimitpolyG$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  unlimitpolyG$(OBJ)
+#OUTPUT= unlimitpolyG$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  unlimitpolyG$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

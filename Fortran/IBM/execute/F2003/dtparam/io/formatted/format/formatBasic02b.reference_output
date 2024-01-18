@@ -1,0 +1,28 @@
+ -----100 : tbase1
+|xlf-123+-456+-789+abcde   |
+|ON 000  111  222  ibmcanad|
+ -----101 : tbase1
+|       xlf     -123+     -456+     -789+  abcde   |
+|       ON      000       111       222    ibmcanad|
+ -----102 : tbase1
+|xlf-12|
+|-45-78|
+|abcON |
+|000111|
+|222ibm|
+ -----100 : tbase1
+|ON 000  111  222  ibmcanad|
+|xlf-123+-456+-789+abcde   |
+ -----101 : tbase1
+|       ON      000       111       222    ibmcanad|
+ -----102 : tbase1
+|xlf-12|
+|-45-78|
+|abc
+ -----103 : tbase2
+| |rointcabl    televxyz|  |   |xl-12-456    -789+abc|
+ -----104 : tbase2
+|rointcatelevxy  xlf|
+-1-456+-7abcde|
+ -----105 : tbase2
+|rinctexxl|-1-45-7abc|

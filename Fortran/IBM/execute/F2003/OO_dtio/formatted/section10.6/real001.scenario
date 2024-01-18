@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/section10.6/real001.scenario
+#FEATURE = OO_dtio/formatted tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)real001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = real001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  real001$(OBJ)
+#OUTPUT    = real001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = real001$(EXE)
+#STDOUT    = real001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)real001$(product)vf) real001.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

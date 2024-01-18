@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME		=F2008/value/array/diag/valuearray_d201.scenario
+#FEATURE   	= VALUE(F2008 extension) - dummy argument arrays allowed with value
+#CREATOR   	= Cezar Lutac
+#DATE      	= 20150924
+#TEST_TYPE 	= functional
+#KEYWORDS  	= F2008, value, arrays, array
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)valuearray_d201.f
+#STDOUT  = comp.err
+#STDERR  = comp.err
+#VALIDRCS=  $(RC_COMP_S)
+#ENDCMD
+
+#CMD     = XLDIFF
+#INPUT   = comp.err $(tcasedir)valuearray_d201.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

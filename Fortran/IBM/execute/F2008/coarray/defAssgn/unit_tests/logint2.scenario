@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2008/coarray/defAssgn/unit_tests/logint2.scenario
+#FEATURE = Coarray defined assignment
+#CREATOR = Pooja Dayanand
+#DATE    = 20101014
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_COARRAY_IMAGES<4>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = $(tcasedir)logint2.f
+#OUTPUT    = logint2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_COARRAY_IMAGES<4>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = logint2$(OBJ)
+#OUTPUT    = logint2$(EXE)
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD       = RUN
+	#ENVAR     = CAF_NUM_IMAGES=4
+	#ENVAR     = MP_PROCS=1
+	#INPUT     = logint2$(EXE)
+	#STDOUT    = logint2.out
+	#ENDCMD
+	
+	#CMD       = DIFF
+	#INPUT     = logint2.out $(tcasedir)logint2.vf
+	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

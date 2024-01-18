@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = initexprAtan.f
+#FEATURE   =
+#CREATOR   = Kelvin Li
+#DATE      = March 31, 2006
+#TEST_TYPE = Unit Test
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ  = 60
+#ENDENV
+
+#BEGINCONTROL
+#CMD    = F_COMPILE
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#INPUT  = $(tcasedir)initexprAtan.f
+#OUTPUT = initexprAtan$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#INPUT  = initexprAtan$(OBJ)
+#OUTPUT = initexprAtan$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = initexprAtan$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

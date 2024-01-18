@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME	 = OO_type/extends/fext100d1.scenario
+#FEATURE = OO_type/extends tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)fext100d1.f
+#OUTPUT = fext100d1$(OBJ)
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#STDERR	= fext100d1.err
+#VALIDRCS = $(RC_FAIL)
+#ENDCMD
+
+#CMD    = XLDIFF
+#INPUT  = fext100d1.err $($(tcasedir)fext100d1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

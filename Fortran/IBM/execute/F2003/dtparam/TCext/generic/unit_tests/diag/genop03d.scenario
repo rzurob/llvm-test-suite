@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/unit_tests/diag/genop03d.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)genop03d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=intmsg:shutup
+#OUTPUT    = genop03d$(OBJ)
+#STDERR    = genop03d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)genop03d$(product)vf) genop03d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,57 @@
+! *********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Misc20.f
+! %VERIFY:
+! %STDIN:
+! %STDOUT:
+! %EXECARGS:
+! %POSTCMD:
+! %END
+! *********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : Misc20
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Jan. 20, 2005
+!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Associate
+!*
+!*  SECONDARY FUNCTIONS TESTED :
+!*
+!*  REFERENCE                  : Feature 219934
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*  ICE on implicit logical vars as selector.
+!*
+!* (ICE-298497 )
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+
+  PROGRAM Misc20
+
+  IMPLICIT LOGICAL(P)
+
+  ASSOCIATE ( P1 => .true., P2 => P1 .and. P1)
+    PRINT*, P1
+    PRINT*, P2
+    IF (P1 .NEQV. .TRUE. ) STOP 11
+  END ASSOCIATE
+  END
+
+

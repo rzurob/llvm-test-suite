@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      =
+#FEATURE   =
+#CREATOR   = Maryam Moghadas
+#DATE      = 20130527
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)findloc06f.f
+#OUTPUT   =  findloc06f$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  findloc06f$(OBJ)
+#OUTPUT   =  findloc06f$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  findloc06f$(EXE)
+#STDOUT   =  findloc06f.out
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

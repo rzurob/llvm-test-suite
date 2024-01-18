@@ -1,0 +1,4 @@
+"dtpEquivC579.f", line 58.17: 1514-102 (S) Subscripts must be integer constant expressions in an EQUIVALENCE statement.
+"dtpEquivC579.f", line 59.17: 1514-102 (S) Subscripts must be integer constant expressions in an EQUIVALENCE statement.
+** dtpequivc579   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtpEquivC579.f.

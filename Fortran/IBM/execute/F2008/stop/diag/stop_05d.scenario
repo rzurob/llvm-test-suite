@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/stop/stop_05d.scenario
+#FEATURE   = Constant expression as stop code in STOP statement
+#CREATOR   = Shahid Alam
+#DATE      = 20101020
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)stop_05d.f
+#OUTPUT    = stop_05d$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = stop_05d$(OBJ)
+#OUTPUT    = stop_05d$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = stop_05d$(EXE)
+#STDOUT    = stop_05d.out
+#STDERR    = stop_05d.out
+#VALIDRCS  = 121
+#ENDCMD
+
+#CMD       = GREP
+#OPTS      = "STOP 121"
+#INPUT     = stop_05d.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

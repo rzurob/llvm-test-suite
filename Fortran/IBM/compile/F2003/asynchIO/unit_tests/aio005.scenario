@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/unit_tests/aio005.scenario
+#FEATURE	= Asynchronous I/O -- Unit Tests
+#CREATOR	= CDC Manual Creation
+#DATE		= 20060124
+#TEST_TYPE	= unit
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= XLF90_COMPILE
+#INPUT		= $(tcasedir)aio005.f
+#OPTS		= -qdebug=intmsg:shutup $(OPT_SET_LANG_LEVEL<2003std>) $(OPT_ENABLE_MSG_NUM<1518-318>)
+#OUTPUT		= aio005$(OBJ)
+#STDERR		= aio005.stderr
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#IF in($(F_COMPILE^OPT_OPTIMIZE_FOR_SMP))  ||  in($(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT))
+	#INPUT	= $($(tcasedir)aio005.smp$(product)vf) aio005.stderr
+#ELSE
+	#INPUT	= $($(tcasedir)aio005$(product)vf) aio005.stderr
+#ENDIF
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

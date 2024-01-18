@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/formatted/namelist/save001kl.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070706
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)save001kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = save001kl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = save001kl$(OBJ)
+#OUTPUT    = save001kl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = save001kl$(EXE)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)save001kl$(product)vf) save001kl.1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrCshiftLog.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrCshiftLog.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrCshiftLog$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrCshiftLog$(OBJ)
+#OUTPUT    = dataPtrCshiftLog$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrCshiftLog$(EXE)
+#STDOUT    = dataPtrCshiftLog.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrCshiftLog.out $($(tcasedir)dataPtrCshiftLog$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

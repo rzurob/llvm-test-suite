@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/pointer/allocatedArrayTarget02a.scenario
+#FEATURE	= Intrinsic Assignment -- variable is a POINTER
+#CREATOR	= GM Manual Creation
+#DATE		= 20061013
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)allocatedArrayTarget02a.f
+#OUTPUT		= allocatedArrayTarget02a$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= allocatedArrayTarget02a$(OBJ)
+#OUTPUT		= allocatedArrayTarget02a$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= allocatedArrayTarget02a$(EXE)
+#STDOUT		= allocatedArrayTarget02a.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)allocatedArrayTarget02$(product)vf)	\
+				allocatedArrayTarget02a.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

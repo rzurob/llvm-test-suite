@@ -1,0 +1,47 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = cobound06.scenario
+#FEATURE    = Cobound inquiry intrinsics
+#CREATOR    = Bardia Mahjour
+#DATE       = August 2010
+#TEST_TYPE  = unit test
+#ENDDOC
+
+! Scenario Environment Tags
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_COARRAY_IMAGES<30>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = $(tcasedir)cobound06.f
+#OUTPUT    = cobound06$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_COARRAY_IMAGES<30>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = cobound06$(OBJ)
+#OUTPUT    = cobound06$(EXE)
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD       = RUN
+	#ENVAR     = CAF_NUM_IMAGES=30
+	#ENVAR     = MP_PROCS=1
+	#INPUT     = cobound06$(EXE)
+	#STDOUT    = cobound06.out
+	#ENDCMD
+	
+	#CMD	   = DIFF
+	#INPUT     = cobound06.out $($(tcasedir)cobound06$(product)vf)
+	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/eoshift/transpose001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070924
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)transpose001.f
+#OUTPUT    = transpose001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = transpose001$(OBJ)
+#OUTPUT    = transpose001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = transpose001$(EXE)
+#STDOUT    = transpose001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)transpose001$(product)vf) transpose001.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

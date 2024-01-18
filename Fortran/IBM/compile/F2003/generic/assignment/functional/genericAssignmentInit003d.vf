@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"genericAssignmentInit003d.f", line 95.18: 1516-077 (S) Conformable array is required in this context.
+"genericAssignmentInit003d.f", line 96.20: 1516-077 (S) Conformable array is required in this context.
+"genericAssignmentInit003d.f", line 97.20: 1516-077 (S) Conformable array is required in this context.
+** genericassignmentinit003d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericAssignmentInit003d.f.

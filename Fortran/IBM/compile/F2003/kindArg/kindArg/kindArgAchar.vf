@@ -1,0 +1,9 @@
+"kindArgAchar.f", line 52.18: 1513-133 (S) KIND must be an integer constant.
+"kindArgAchar.f", line 53.18: 1513-040 (S) The argument KIND must be a scalar.
+"kindArgAchar.f", line 55.17: 1513-040 (S) The argument KIND must be a scalar.
+"kindArgAchar.f", line 57.17: 1513-133 (S) KIND must be an integer constant.
+"kindArgAchar.f", line 58.17: 1513-133 (S) KIND must be an integer constant.
+"kindArgAchar.f", line 59.17: 1513-133 (S) KIND must be an integer constant.
+"kindArgAchar.f", line 60.17: 1513-133 (S) KIND must be an integer constant.
+** kindargachar   === End of Compilation 1 ===
+1501-511  Compilation failed for file kindArgAchar.f.

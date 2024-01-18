@@ -1,0 +1,25 @@
+#!/usr/bin/ksh
+
+rm -f fort.*
+
+echo "$KILL xlf95_r $TR_SRC/fxstio0114.f $OPTIONS -qsmp=omp -o fxstio014"
+$KILL xlf95_r $TR_SRC/fxstio014.f $OPTIONS -qsmp=omp -o fxstio014
+
+rc=$?
+if [ $rc -ne 0 ]; then
+   echo "Compilation Failed!"
+   exit $rc
+fi
+
+echo "$KILL fxstio014"
+$KILL fxstio014
+
+rc=$?
+if [ $rc -ne 0 ]; then
+   echo "Execution failed!"
+   exit $rc
+fi
+
+if [[ $TRUN_SAVE != "YES" && $TRUN_SAVE != "yes" ]]; then
+   rm -f fxstio014.o fxstio014 
+fi

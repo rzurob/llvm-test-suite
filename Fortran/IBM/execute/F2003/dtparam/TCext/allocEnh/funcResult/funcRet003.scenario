@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/funcResult/funcRet003.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071220
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)funcRet003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = funcRet003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = funcRet003$(OBJ)
+#OUTPUT    = funcRet003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = funcRet003$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

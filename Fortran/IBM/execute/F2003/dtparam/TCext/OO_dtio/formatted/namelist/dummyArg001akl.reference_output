@@ -1,0 +1,12 @@
+ &NML
+ DTV=c= abc , c= def , c= ghi
+ /
+ &NML
+ DTV=i=    1 c= IBM , i=    2 c= IBM , i=    3 c= IBM
+ /
+ &NML
+ DTV=c= jkl , c= jkl , c= jkl
+ /
+ &NML
+ DTV=c= mno , c= pqr , c= stu
+ /

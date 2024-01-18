@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/DT/crossFeature/structCompnt/structCompnt104.scenario
+#FEATURE = OO_dtio
+#CREATOR = Robert Ma
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)structCompnt104.1 .
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)structCompnt104.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = structCompnt104$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = structCompnt104$(OBJ)
+#OUTPUT    = structCompnt104$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = structCompnt104$(EXE)
+#STDOUT    = structCompnt104.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)structCompnt104$(product)vf) structCompnt104.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

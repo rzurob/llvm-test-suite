@@ -1,0 +1,28 @@
+"dshiftl_dshiftr01d.f", line 49.43: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "dshiftl".
+"dshiftl_dshiftr01d.f", line 50.46: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "dshiftl".
+"dshiftl_dshiftr01d.f", line 52.44: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "dshiftr".
+"dshiftl_dshiftr01d.f", line 53.47: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "dshiftr".
+"dshiftl_dshiftr01d.f", line 55.46: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "dshiftl".
+"dshiftl_dshiftr01d.f", line 56.46: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "dshiftr".
+"dshiftl_dshiftr01d.f", line 59.62: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "dshiftl".
+"dshiftl_dshiftr01d.f", line 60.62: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "dshiftr".
+"dshiftl_dshiftr01d.f", line 62.48: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "dshiftl".
+"dshiftl_dshiftr01d.f", line 63.48: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "dshiftr".
+"dshiftl_dshiftr01d.f", line 66.66: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "dshiftl".
+"dshiftl_dshiftr01d.f", line 67.66: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "dshiftr".
+"dshiftl_dshiftr01d.f", line 73.54: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "dshiftl".
+"dshiftl_dshiftr01d.f", line 74.54: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "dshiftr".
+"dshiftl_dshiftr01d.f", line 76.56: 1516-144 (S) The value of the argument must be between 0 and 8.
+"dshiftl_dshiftr01d.f", line 77.56: 1516-144 (S) The value of the argument must be between 0 and 8.
+"dshiftl_dshiftr01d.f", line 79.57: 1516-144 (S) The value of the argument must be between 0 and 16.
+"dshiftl_dshiftr01d.f", line 80.57: 1516-144 (S) The value of the argument must be between 0 and 16.
+"dshiftl_dshiftr01d.f", line 82.49: 1516-144 (S) The value of the argument must be between 0 and 32.
+"dshiftl_dshiftr01d.f", line 83.49: 1516-144 (S) The value of the argument must be between 0 and 32.
+"dshiftl_dshiftr01d.f", line 85.57: 1516-144 (S) The value of the argument must be between 0 and 32.
+"dshiftl_dshiftr01d.f", line 86.57: 1516-144 (S) The value of the argument must be between 0 and 32.
+"dshiftl_dshiftr01d.f", line 88.57: 1516-144 (S) The value of the argument must be between 0 and 64.
+"dshiftl_dshiftr01d.f", line 89.57: 1516-144 (S) The value of the argument must be between 0 and 64.
+"dshiftl_dshiftr01d.f", line 91.49: 1516-144 (S) The value of the argument must be between 0 and 32.
+"dshiftl_dshiftr01d.f", line 92.49: 1516-144 (S) The value of the argument must be between 0 and 32.
+** dshiftl_dshiftr   === End of Compilation 1 ===
+1501-511  Compilation failed for file dshiftl_dshiftr01d.f.

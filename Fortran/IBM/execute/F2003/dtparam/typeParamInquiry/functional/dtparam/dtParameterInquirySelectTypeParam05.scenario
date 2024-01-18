@@ -1,0 +1,32 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/typeParamInquiry/functional/dtparam/dtParameterInquirySelectTypeParam05.scenario
+#FEATURE= Type Parameter Inquiry(354612)
+#CREATOR= Nancy Wang
+#DATE   = July 24 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)dtParameterInquirySelectTypeParam05.f
+#OUTPUT= dtParameterInquirySelectTypeParam05$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = dtParameterInquirySelectTypeParam05$(OBJ)
+#OUTPUT= dtParameterInquirySelectTypeParam05$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = dtParameterInquirySelectTypeParam05$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"declaration005.f", line 36.10: 1514-589 (S) Inaccessible component pp1 must not be specified in the structure constructor for type base.
+** declaration005   === End of Compilation 2 ===
+1501-511  Compilation failed for file declaration005.f.

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint07.scenario
+#FEATURE	= Array constructor enhancement - Intrinsic type specifier combinations
+#CREATOR	= DF Manual Update
+#DATE		= 20061024
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint07.f
+#OUTPUT		= acetint07$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint07$(OBJ)
+#OUTPUT		= acetint07$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint07$(EXE)
+#STDOUT		= acetint07.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -r1e-5
+#INPUT		= $($(tcasedir)acetint07$(product)vf) acetint07.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

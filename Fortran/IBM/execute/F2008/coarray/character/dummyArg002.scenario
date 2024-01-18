@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/coarray/character/dummyArg002.scenario
+#FEATURE   = character coarray
+#CREATOR   = Ke Wen Lin
+#DATE      = 20110412
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dummyArg002.f
+#OUTPUT    = dummyArg002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dummyArg002$(OBJ)
+#OUTPUT    = dummyArg002$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+   #CMD       = MPRUN
+   #INPUT     = dummyArg002$(EXE)
+   #STDOUT    = dummyArg002$(i).out
+   #STDERR    = dummyArg002$(i).out
+   #ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

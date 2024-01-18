@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=roundR4ReadEdit01.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)roundR4ReadEdit01.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = roundR4ReadEdit01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = roundR4ReadEdit01$(OBJ)
+#OUTPUT    = roundR4ReadEdit01$(EXE)
+#ENDCMD
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)roundR4ReadEdit01.dat
+#OUTPUT   = ./
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = roundR4ReadEdit01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

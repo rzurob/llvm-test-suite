@@ -1,0 +1,53 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       fcompver03
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2008_COMPILE
+#INPUT=  $(tcasedir)fcompver03.f
+#OUTPUT= fcompver03$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_LINK
+#INPUT=  fcompver03$(OBJ)
+#OUTPUT= fcompver03$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fcompver03$(EXE)
+#STDOUT=  fcompver03.out
+#ENDCMD
+
+#CMD=    XLF2008_COMPILE
+#OPTS=   -qversion
+#INPUT=  $(tcasedir)fcompver03.f
+#STDOUT= fcompver03_qversion.out
+#ENDCMD
+
+#CMD = SED
+#OPTS = -e 's/^ //' -e 's/Version/Version:/'
+#INPUT = fcompver03.out
+#STDOUT = fcompver03.sed
+#ENDCMD
+
+#CMD = AWK
+#OPTS = '{ sub(/ \(DEV\) /, "\n"); print; }'
+#INPUT = fcompver03.sed
+#STDOUT = fcompver03.awk
+#ENDCMD
+
+#CMD = DIFF
+#INPUT = fcompver03_qversion.out fcompver03.awk
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

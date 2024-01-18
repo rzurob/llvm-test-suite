@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/operator/functional/genericOperatorImplicit001.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericOperatorImplicit001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericOperatorImplicit001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericOperatorImplicit001$(OBJ)
+#OUTPUT    = genericOperatorImplicit001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericOperatorImplicit001$(EXE)
+#STDOUT    = genericOperatorImplicit001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericOperatorImplicit001.out $(tcasedir)genericOperatorImplicit001.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/format/formatStreamAccessReadWrite01.scenario
+#FEATURE   = 359704
+#CREATOR   = Nancy Wang
+#DATE      = Dec. 12 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)formatStreamAccessReadWrite01.f
+#OUTPUT= formatStreamAccessReadWrite01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = formatStreamAccessReadWrite01$(OBJ)
+#OUTPUT= formatStreamAccessReadWrite01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = formatStreamAccessReadWrite01$(EXE)
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT  = $($(tcasedir)formatStreamAccessReadWrite01$(product)vf) formatStreamAccessReadWrite01.out
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

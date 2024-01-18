@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint09i.scenario
+#FEATURE	= Array constructor enhancement - data pointers in AC's with intrinsic type specifiers (integer)
+#CREATOR	= DF Manual Update
+#DATE		= 20061024
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint09i.f
+#OUTPUT		= acetint09i$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint09i$(OBJ)
+#OUTPUT		= acetint09i$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint09i$(EXE)
+#STDOUT		= acetint09i.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetint09i$(product)vf) acetint09i.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

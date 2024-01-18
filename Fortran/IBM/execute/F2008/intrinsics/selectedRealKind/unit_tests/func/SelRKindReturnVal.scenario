@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/intrinsics/selectedRealKind/unit_tests/func/SelRKindReturnVal.scenario
+#FEATURE   = 376076
+#CREATOR   = Ren Jian Gang
+#DATE      = November 05, 2010
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)SelRKindReturnVal.f
+#OUTPUT   =  SelRKindReturnVal$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  SelRKindReturnVal$(OBJ)
+#OUTPUT   =  SelRKindReturnVal$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  SelRKindReturnVal$(EXE)
+#STDOUT   =  SelRKindReturnVal.out
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = SelRKindReturnVal.out $(tcasedir)SelRKindReturnVal.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

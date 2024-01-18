@@ -1,0 +1,6 @@
+"kindArgVerify2.f", line 42.41: 1513-145 (S) Argument keyword "kindd" does not match the dummy argument specified in the interface for the intrinsic procedure "verify".
+"kindArgVerify2.f", line 43.41: 1513-145 (S) Argument keyword "kid" does not match the dummy argument specified in the interface for the intrinsic procedure "verify".
+"kindArgVerify2.f", line 44.45: 1513-067 (S) Argument keyword "kind" was already specified for an actual argument.
+"kindArgVerify2.f", line 45.41: 1513-067 (S) Argument keyword "set" was already specified for an actual argument.
+** kindargverify2   === End of Compilation 1 ===
+1501-511  Compilation failed for file kindArgVerify2.f.

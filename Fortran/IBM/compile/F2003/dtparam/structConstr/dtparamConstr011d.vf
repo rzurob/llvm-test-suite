@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"dtparamConstr011d.f", line 49.10: 1514-601 (S) The component data or an inheritance-associated component has already been explicitly initialized in this structure constructor.
+** dtparamconstr011d   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtparamConstr011d.f.

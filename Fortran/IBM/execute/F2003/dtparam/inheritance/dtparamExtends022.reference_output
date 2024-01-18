@@ -1,0 +1,10 @@
+ Type Polygon  3
+Vertex    1      1.00      2.00
+Vertex    2      2.00      3.00
+Vertex    3      3.00      0.00
+ Type Circle
+Center:       1.00      1.00
+Radius:       2.00
+ Type Circle
+Center:       0.00      1.00
+Radius:       1.00

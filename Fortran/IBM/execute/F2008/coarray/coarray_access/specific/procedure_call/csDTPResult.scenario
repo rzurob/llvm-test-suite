@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_dummy/assumed_size/csDTPResult
+#FEATURE        = CAF coarray access (specific) - procedure call - function accepts coarray actual argument and returns derived type object (i.e., constructs the derived type object from data stored in coarray variables)
+#CREATOR        = DF
+#DATE           = 2010-10-15
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)csDTPResult.f
+#OUTPUT = csDTPResult$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = csDTPResult$(OBJ)
+#OUTPUT = csDTPResult$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = csDTPResult$(EXE)
+#STDOUT = csDTPResult.out
+#ENDCMD
+
+#CMD    = DIFF
+#INPUT  = $(tcasedir)csDTPResult$(product)vf) csDTPResult.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

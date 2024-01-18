@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_procptr/bindc2/procptrBindcProc26b.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)procptrBindcProc26b.c
+#OPTS      = $(C_COMPILER_OPTS)
+#OUTPUT    = BindcProc26b$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)procptrBindcProc26b.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = procptrBindcProc26b$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = procptrBindcProc26b$(OBJ) BindcProc26b$(OBJ)
+#OUTPUT    = procptrBindcProc26b$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = procptrBindcProc26b$(EXE)
+#STDOUT    = procptrBindcProc26b.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

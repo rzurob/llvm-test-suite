@@ -1,0 +1,518 @@
+<html><head><title>IT1 for C Interop: Assumed Type Objects</title></head><body><table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#c0e1ff">
+    <tbody>
+        <tr>
+            <td align="left" width="100%" valign="top" style="font-family: Arial; color: rgb(0, 0, 128); font-size: 12pt;"><strong>Document Control Information:</strong>
+            <p style="color: rgb(0, 0, 0);">The official version of this document is kept in CMVC in the <span style="font-weight: bold; text-decoration: underline;">%CMVC_Family%</span> family, release <span style="font-weight: bold; text-decoration: underline;">%CMVC_Release%</span>, component <span style="font-weight: bold; text-decoration: underline;">%CMVC_Component%</span>, file <span style="color: rgb(255, 102, 102); font-weight: bold; text-decoration: underline;">%CMVC_PathName%</span>. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.<br />
+            <br />
+            CMVC Extraction Information: %W% %H% %I% sccsid<br />
+            <br />
+            This document is IBM Confidential.<br />
+            </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table cellspacing="0" cellpadding="5" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td align="left" width="20%" valign="top"><strong>CMVC Feature Number</strong> </td>
+            <td align="left" width="80%" valign="top" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%CMVC_Feature%</td>
+        </tr>
+        <tr>
+            <td align="left" valign="top"><strong>Feature Title</strong> </td>
+            <td align="left" valign="top" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Document_Name% %Note{By default the feature title and document name are the same. You can either change the document name (through Properties), or replace the tag with the title of the feature}%</td>
+        </tr>
+        <tr>
+            <td align="left" valign="top"><strong>Author(s)</strong> </td>
+            <td align="left" valign="top" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Authors%</td>
+        </tr>
+        <tr>
+            <td align="left" valign="top"><strong>Applicable Product Releases</strong>       </td>
+            <td align="left" valign="top" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Note{ List all the products and their release numbers for which the information in this document is/will be correct. For example:<br />
+            XL C/C++ v7.0 and 8.0 on Linux and AIX<br />
+            XL Fortran v9.1 and 10.1 on Linux and AIX.<br />
+            <br />
+            If you are updating this IT1, remove old products from the list if they will not support this updated I0's behaviour. For example, if this IT1 was first written for XL Fortran v9.1 and a change is being made in XL Fortran v10.1 that will not be ported back to v9.1, then v9.1 should not appear in the list.<br />
+            <br />
+            For prototype or experimental code that isn't scheduled to ship in any release yet, note possible future targets like this: &quot;Experimental code, may ship in future XL Fortran and XL C/C++ AIX releases&quot; }%</td>
+        </tr>
+        <tr>
+            <td align="left" valign="top"><strong>Keyword(s)</strong>       </td>
+            <td align="left" valign="top" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Note{ Define KEYWORDS to be used to identify/classify this feature }%</td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#ff6666">
+    <tbody>
+        <tr>
+            <td align="center" width="100%" valign="top" style="text-align: left; font-family: Arial; font-size: 12pt;"><strong>IT1 Status</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<p>
+<table cellspacing="0" cellpadding="5" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td align="left" valign="top"><strong>Approvers</strong> (mandatory participation) </td>
+            <td align="left" valign="top" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Note{Insert the names of people who will have approval authority for this review. These people, in aggregate, are responsible for approving the technical and user interface content of the document. Generally, this list should include people who represent compiler components that will need to change if this review is approved.<br />
+            The I0 Process document provides detailed guidance on choosing your list of approvers.<br />
+            A member of the Option Review Board must approve any i0 that adds an option or pragma.<br />
+            Use Access Control to add/delete people from this list. The initial access control list is populated with the people from the Component Reviewers section below. You can use Access Control to change their role to Approver, or add additional approvers.}%<br />
+            %Approvers%</td>
+        </tr>
+        <tr>
+            <td align="left" valign="top"><strong>Reviewers</strong> (optional participation) </td>
+            <td align="left" valign="top" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Note{List any additional people you feel need to participate in the review. These people do not have approval authority. Use Access Control to add/delete people from this list.}%<br />
+            %Release_Management_Contact%<br />
+            %Team_Reviewers%<br />
+            %Component_Reviewers%</td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p><br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td style="font-family: Arial; vertical-align: top;"><strong>Approvers</strong>: Please click the 'Approved' check-box beside your name in the table below if you agree with the technical content of this document; not checking your 'approve' check-box signifies you do not approve.</td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%Approvals%
+<p>Approval Comments</p>
+<p><br />
+<br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td style="font-family: Arial; vertical-align: top;"><strong>Reviewers</strong>: Please click the 'Reviewed' checkbox beside your name to indicate your participation in the review. </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%Reviews%</p>
+<p>Review Comments</p>
+<p><br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td style="font-family: Arial; vertical-align: top;"><strong>Access Change History</strong> %Note{Authors: Access Change History will list any changes to the access control done to the document draft. These changes would not be visible in a review. In a review, this section would only list the access changes done to the review itself.<br />
+            Please note that changes to the access control of a review are not automatically reflected in the access control of the draft document.}% </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%CollapsedSection{<strong>Access Change History</strong>}{%Access_Change_History%}%<br />
+</p>
+<p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td align="center" width="100%" valign="top" style="font-family: Arial; font-size: 12pt;"><strong>Overview</strong> </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%Note{A brief description of the feature, its application(s) and limitation(s).<br />
+<br />
+Feature syntax may also be mentioned here.  Since it is in the I0 document, it is optional.}%<br />
+</p>
+&nbsp; The current system of interoperability between C and Fortran, defined in F2008 standard, does not provide means for interoperability to a C pointer to void.&nbsp; <br />
+&nbsp; <br />
+&nbsp; In TS 29113 <em>Further Interoperability of Fortran with C</em>, the interoperability facilities have been extended to allow C procedures with void * parameters to interoperate with Fortran procedures through the newly introduced assumed type objects. The support for this feature is guarded by a langlvl option.<br />
+<p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td align="center" width="100%" valign="top" style="font-family: Arial; font-size: 12pt;"><strong>Test Strategy</strong></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%Note{This is the most important section of the document.  <br />
+<br />
+Detail the test methodology and coverage for the feature to be tested.<br />
+<br />
+Test strategy is not to identify all possible defects under all conditions with the feature.  In most cases, this is unrealistic.<br />
+It is to identify and report defects with the feature under specific conditions likely to be used by the customer.  <br />
+As a tester, you are the first customer of the feature.  So you, the tester, need to understand how a certain feature would be used in the real world and come up with a Test strategy to validate those use cases.  <br />
+<br />
+Use cases to be validated should be documented here.<br />
+<br />
+Provide examples if they are needed to explain the test method or coverage. <br />
+<br />
+If applicable, organize the coverage into diagnostic and functional sections.  <br />
+<br />
+Diagnostic test cases verify error handling of the feature and the corresponding messages that are produced.  This would also include verifying that valid syntax does not produce any unexpected messages.<br />
+This type of testing usually fall under the umbrella of unit tests. The developer of the feature is expected to write fully automated unit tests, but this can be negotiated if it is unfeasible for the developer to do so.<br />
+<br />
+Test cases that verify values are referred to as functional test cases. <br />
+<br />
+For large features, there may not be resource/time to completely test the feature. Certain parts of the feature will be more important than others.  <br />
+Prioritize the test coverage and clearly document what will be covered in testing and what will be omitted.  Risk assessment on the parts omitted should also be documented.  This needs to be reviewed and agreed to by the requirements owner(s).<br />
+<br />
+If there is already coverage in existing test suites, explicitly document it here.<br />
+<br />
+Often, a feature by itself will work fine, but when combined with existing functionality or other new features, it may not work correctly.  So ensure this type of testing is covered in the test coverage.  This implies that other new features being developed for the release should also be understood.   <br />
+<br />
+Backward compatibility, portability, and any other migration Issues should be considered.  One of the main complaints from customers is migrating from release to release (or from one platform to another).  <br />
+<br />
+Document any dependancies or open issues with the feature, so these are not over-looked.}%<br />
+<br />
+Testing will be done to ensure the proper use of the newly introduced assumed type objects. Assumed type object can only appear as dummy argument of either a BIND(C) procedure or a Fortran procedure. An assumed-type object is unlimited polymorphic and there is no mechanism to determine the actual type of an assumed-type entity.<br />
+<br />
+This feature will not cover assumed type entities that are assumed rank and assumed shape. <br />
+<br />
+Functional and diagnostic test cases will be created for this feature covering the following items: <br />
+<p><strong>Diagnostic Testing:</strong></p>
+<p><strong><br />
+</strong></p>
+<p>Positive diagnostic: make sure assumed type objects are accepted where the TS allows it:&nbsp; <br />
+</p>
+<ul>
+    <li>Assumed type dummy argument accepted for procedures with and without BIND(C) without  -qlanglvl and with  -qlanglvl set to extended or ts</li>
+    <li>Assumed type dummy argument accepted for procedures with and without BIND(C) with  -qlanglvl set to other than extended or ts ==&gt; an (L) level message emitted</li>
+    <li><span id="comments55624"><span id="expanded55624"><span id="comments_content55624">Ensure that we give the right information for the assumed type object in the listing file with -qattr</span></span></span></li>
+    <li>Assumed type object can only be a dummy argument</li>
+    <li>Assumed type object as an actual argument that is argument associated with an assumed type dummy argument <br />
+    </li>
+    <li>Assumed type object as the first argument of IS_CONTIGUOUS, LBOUND, UBOUND, PRESENT, SHAPE, RANK, SIZE and C_LOC&nbsp; <br />
+    </li>
+</ul>
+<br />
+Negative diagnostic: diagnose and emit error message when assumed type appears where it is disallowed by the TS
+<ul>
+    <li>Assumed type objects cannot appear in a print statement&nbsp;</li>
+    <li>Assumed type objects cannot appear in an assignment statement <br />
+    </li>
+    <li>Assumed type objects cannot appear as an argument of an intrinsic procedure other than the ones listed above (Addition, Multiplication, MAX, MIN, ...)</li>
+    <li>Assumed type objects&nbsp; cannot be <span id="comments55623"><span id="expanded55623"><span id="comments_content55623">declared as a local or module variable with or without the bind(c) or save attributes </span></span></span></li>
+    <li>Assumed type object as an actual argument that is argument associated with a dummy argument that is not assumed type</li>
+    <li><span id="comments55621"><span id="expanded55621"><span id="comments_content55621">* and TYPE(*) cannot appear as the type-spec in an ALLOCATE statement.</span></span></span></li>
+    <li><span id="comments55620"><span id="expanded55620"><span id="comments_content55620">TYPE(*) can't appear as the type-spec in an array constructor</span></span></span></li>
+    <li>Assumed type object cannot appear as a selector of a SELECT TYPE statement&nbsp;</li>
+    <li>TYPE(*) cannot appear as the type guard statement in a SELECT TYPE construct </li>
+    <li>Assumed type object cannot appear <span id="comments55619"><span id="expanded55619"><span id="comments_content55619">as the selector</span></span></span> in an ASSOCIATE statement&nbsp; </li>
+    <li>Test that:&nbsp;<span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><font size="2" color="#000000"> </font><a class="review" title="Click on the text to add a comment"><span id="line__130"><font size="2" color="#000000">An assumed-type entity shall be a dummy variable that does not have the</font></span></a></span></span></span></span></span></span>
+    <ul>
+        <li><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><a class="review" title="Click on the text to add a comment"><span id="line__130"><font size="2" color="#000000">ALLOCATABLE</font></span></a></span></span></span></span></span></span></li>
+        <li><span style="color:rgb(0,128,0);font-size:20px"><a class="review" title="Click on the text to add a comment"><span id="line__131"><span style="color:rgb(0,128,0);font-size:20px"><span style="color:rgb(0,128,0);font-size:20px"><span style="color:rgb(0,128,0);font-size:20px"><span style="color:rgb(0,128,0);font-size:20px"><span style="color:rgb(0,128,0);font-size:20px"><font size="2" color="#000000">CODIMENSION</font></span></span></span></span></span></span></a></span></li>
+        <li><span style="color: rgb(0, 128, 0); font-size: 20px;"><a class="review" title="Click on the text to add a comment"><span id="line__132"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><font size="2" color="#000000">INTENT(OUT)</font></span></span></span></span></span></span></a></span></li>
+        <li><span style="color: rgb(0, 128, 0); font-size: 20px;"><a class="review" title="Click on the text to add a comment"><span id="line__132"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><font size="2" color="#000000">POINTER</font></span></span></span></span></span></span></a></span></li>
+        <li><span style="color: rgb(0, 128, 0); font-size: 20px;"><a class="review" title="Click on the text to add a comment"><span id="line__132"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><font size="2" color="#000000">VALUE <br />
+        </font></span></span></span></span></span></span></a></span></li>
+        <li><span style="color: rgb(0, 128, 0); font-size: 20px;"><a class="review" title="Click on the text to add a comment"><span id="line__132"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><font size="2" color="#000000">explicit-shape array <br />
+        </font></span></span></span></span></span></span></a></span></li>
+    </ul>
+    </li>
+    <li>Assumed type dummy argument cannot be argument associated with an actual argument that is of derived type if it <br />
+    <ul>
+        <li>has type parameters</li>
+        <li>a type-bound procedure</li>
+        <li>or a final subroutine</li>
+    </ul>
+    </li>
+</ul>
+<br />
+<strong>Functional Testing :</strong>
+<p>1). The test cases will cover the following cases:<br />
+</p>
+<ul>
+    <li>Calling  from C a BIND(C) procedure defined in Fortran</li>
+    <li>Calling from Fortran a BIND(C) procedure defined in C<br />
+    </li>
+    <li>Calling from Fortran a BIND(C) procedure defined in Fortran<br />
+    </li>
+    <li>Calling from Fortran a non-BIND(C) procedure defined in Fortran</li>
+</ul>
+<br />
+We will use nested calls and/or multiple arguments to verify that the type and type parameters of the dummy argument are properly obtained from the effective argument. We will explicitly provide additional information to the procedure in order to determine the type and the size of the object. The called function can modify the passed object through void * pointer to ensure the address of the correct object is passed. <span id="comments_84"><span id="comments56076"><span id="expanded56076"><span id="comments_content56076"><a title="Click on the text to add a comment" class="review"><span id="line_56076_1"></span></a></span></span></span></span><br />
+<br />
+2). Test that the assumed type dummy arguments can be one of the following:<br />
+<ul>
+    <li>Scalar assumed type entity  </li>
+    <li>Assumed type entity that is an assumed size array  (1 or multiple dimensions)</li>
+    <li>Assumed type entity with OPTIONAL attribute</li>
+    <li>Assumed type entity with CONTIGUOUS attribute </li>
+    <li>Assumed type entity with VOLATILE attribute <br />
+    </li>
+    <li>Assumed type entity with TARGET attribute</li>
+</ul>
+<br />
+3). Test that the actual argument associated with the assumed type dummy arguments can be one of the following:<br />
+<p> </p>
+<ul>
+    <li>Of interoperable intrinsic type (see table below)</li>
+    <li>Of derived types</li>
+    <li>polymorphic object with a dynamic type that is interoperable with C     </li>
+    <li>unlimited polymorphic object with a dynamic type that is interoperable with C</li>
+</ul>
+<table width="453" cellspacing="1" cellpadding="0" border="1" class="MsoNormalTable" style="mso-cellspacing:.7pt;width:339.5pt">
+    <tbody>
+        <tr style="mso-yfti-firstrow:yes;mso-yfti-irow:0">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">FORTRAN type</p>
+            </td>
+            <td style="padding:.75pt">
+            <p class="MsoNormal">Kind type parameter</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:1">
+            <td rowspan="20" style="padding:.75pt">
+            <p class="MsoNormal">INTEGER</p>
+            </td>
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_INT</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:2">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_SHORT</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:3">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_LONG</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:4">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_LONG_LONG</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:5">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_SIGNED_CHAR</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:6">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_SIZE_T</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:7">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_INT8_T</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:8">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_INT16_T</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:9">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_INT32_T</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:10">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_INT64_T</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:11">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_INT_LEAST8_T</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:12">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_INT_LEAST16_T</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:13">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_INT_LEAST32_T</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:14">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_INT_LEAST64_T</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:15">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_INT_FAST8_T</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:16">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_INT_FAST16_T</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:17">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_INT_FAST32_T</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:18">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_INT_FAST64_T</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:19">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_INTMAX_T</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:20">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_INTPTR_T</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:21">
+            <td rowspan="3" style="padding:.75pt">
+            <p class="MsoNormal">REAL</p>
+            </td>
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_FLOAT</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:22">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_DOUBLE</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:23">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_LONG_DOUBLE</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:24">
+            <td rowspan="3" style="padding:.75pt">
+            <p class="MsoNormal">COMPLEX</p>
+            </td>
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_FLOAT_COMPLEX</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:25">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_DOUBLE_COMPLEX</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:26">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_LONG_DOUBLE_COMPLEX</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:27">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">LOGICAL</p>
+            </td>
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_BOOL</p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow:28;mso-yfti-lastrow:yes">
+            <td style="padding:.75pt">
+            <p class="MsoNormal">CHARACTER</p>
+            </td>
+            <td style="padding:.75pt">
+            <p class="MsoNormal">C_CHAR</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td align="center" width="100%" valign="top" style="font-family: Arial; font-size: 12pt;"><strong>Test Procedure and Scenario</strong></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%Note{A Test procedure provides detailed instructions for the execution of one or more test cases.  <br />
+<br />
+Most good software development models call for both a Test Plan and a Test Procedure document. <br />
+Although in principle this sounds good, test procedures are costly to develop and maintain.  When writing test cases, Test procedures often require updating, requiring IT1 [test plan] to be re-opened.<br />
+<br />
+Currently, development teams review this section, and not necessarily the test cases themselves.  So there is definitely value in having this information available.  If it is not provided in the IT1 document, it needs to be provided during test case review, and reviewed by developer.  <br />
+.}%<br />
+<br />
+<br />
+<p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td align="center" width="100%" valign="top" style="font-family: Arial; font-size: 12pt;"><strong>Test cases Information</strong></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%Note{This section details the test case location and other test case related information<br />
+<br />
+Technically, this is not part of a &quot;Test plan&quot;.  <br />
+<br />
+Following information may not be known during IT1 time-frame.  If it's known, it should be documented:<br />
+Document information about release name. component name. cmvc location and test cases shadow location<br />
+<br />
+Document information about the feature bucket structure.  If the feature is big enough, sub-buckets will be necessary to maintain some organization. <br />
+<br />
+Document  information about the feature test case naming convention.  <br />
+Example: https://featureflow.torolab.ibm.com/featureflow/edit/6227<br />
+xxx_001f.scenario (functional) <br />
+xxx_001d.scenario (diagnostic) <br />
+where xxx can be the feature name or function name that the test case is testing. <br />
+<br />
+<br />
+If you plan to have a combined IT1 and test case review, further test case information needs to be added to this section:<br />
+Following statement needs to be added::<br />
+&quot;Test case approval will also be done through this document, so no formal test case review document will be published.<br />
+Please review the test cases from the location provided below, and only approve this document if you are satisfied with <br />
+the IT1 (test plan) and the test cases.&quot; <br />
+List of test case names, so that comments can be added per test case; if there are too many test cases, list groups of test cases, or test lists.}%<br />
+<br />
+<font size="2" face="Arial"><br />
+</font>
+<p><font size="2" face="Arial"><span style="font-family: Helvetica; font-size: 11pt;">Component : </span><span id="comments55063"><span id="expanded55063"><span id="comments_content55063">xlftest.cinterop_ts29113</span></span></span></font></p>
+<p><font size="2" face="Arial"><span id="comments55063"><span id="expanded55063"><span id="comments_content55063"></span></span></span><span style="font-family: Helvetica; font-size: 11pt;">Release : tstdev</span></font></p>
+<p><font size="2" face="Arial"><span style="font-family: Helvetica; font-size: 11pt;"></span><span style="font-family: Helvetica; font-size: 11pt;">Location: </span><span id="comments55050"><span id="expanded55050"><span id="comments_content55050"> &lt;release&gt;/cintrop_ts29113/assumed_type</span></span></span></font></p>
+<span id="comments55063"><span id="expanded55063"><span id="comments_content55063"></span></span></span>
+<p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td align="center" width="100%" valign="top" style="font-family: Arial; font-size: 12pt;"><strong>Build Sanity Candidate(s)</strong></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%Note{List one or more test cases that are to be added to the BDS test list.  <br />
+<br />
+If the test cases are already identified during IT1 time-frame, it should be documented here.<br />
+<br />
+BDS test candidates may not be known until test case review time-frame.&nbsp; Thus not identifying the candidate during IT1 time-frame does not prevent it from being approved.  For this case, a URL  link to RTC task must exist.<br />
+<br />
+Not all features require test cases to be added to BDS.  This must be explicitly stated here (or in RTC task if not known during IT1 time-frame).<br />
+}%<br />
+<br />
+<br />
+<p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td align="center" width="100%" valign="top" style="font-family: Arial; font-size: 12pt;"><strong>Reference</strong></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%Note{I0 Location and any references (including standards) that may help understand the IT1.}%<strong style="color: rgb(0, 128, 0); font-size: 20px;"><br />
+</strong><span style="color: rgb(0, 128, 0); font-size: 20px;"><br />
+</span>
+<p><span style="color: rgb(0, 128, 0); font-size: 20px;">I0 location: https://featureflow.torolab.ibm.com/featureflow/show/6287</span></p>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;">  </strong><!--HTML Wrapper--></body></html>

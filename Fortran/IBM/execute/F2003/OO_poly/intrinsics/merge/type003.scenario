@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/merge/type003.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050125
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)type003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = type003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = type003$(OBJ)
+#OUTPUT    = type003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = type003$(EXE)
+#STDOUT    = type003.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)type003$(product)vf) type003.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

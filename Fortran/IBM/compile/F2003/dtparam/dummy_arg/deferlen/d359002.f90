@@ -1,0 +1,43 @@
+!*********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : d359002.f   
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Nancy Wang 
+!*  DATE                       : Nov. 18 2008 
+!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Dummy Argument with deferred length 
+!*
+!*  SECONDARY FUNCTIONS TESTED :  
+!*
+!*  REFERENCE                  : 
+!*
+!*  DRIVER STANZA              : xlf2003
+!*
+!*
+!*  DESCRIPTION
+!*  Defect 359002
+!234567890123456789012345678901234567890123456789012345678901234567890
+module m
+  type base(k1,l1)
+     integer,kind :: k1
+     integer,len  :: l1
+  end type
+type,extends(base) :: child(l2)
+     integer,len   :: l2
+end type
+end module
+
+program d359002
+
+use m
+implicit none
+type(child(2,3,:)),pointer    :: child1
+
+allocate(child(2,:,4) :: child1)
+
+end

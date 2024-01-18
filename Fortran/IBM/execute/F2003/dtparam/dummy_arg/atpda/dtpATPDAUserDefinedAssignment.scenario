@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/dummy_arg/atpda/dtpATPDAUserDefinedAssignment.scenario
+#FEATURE   = Assumed type parameters and dummy arguments - user-defined assignment
+#CREATOR   = DF Manual Update
+#DATE      = 20081015
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpATPDAUserDefinedAssignment.f
+#OUTPUT    = dtpATPDAUserDefinedAssignment$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpATPDAUserDefinedAssignment$(OBJ)
+#OUTPUT    = dtpATPDAUserDefinedAssignment$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpATPDAUserDefinedAssignment$(EXE)
+#STDOUT    = dtpATPDAUserDefinedAssignment.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpATPDAUserDefinedAssignment$(product)vf) dtpATPDAUserDefinedAssignment.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

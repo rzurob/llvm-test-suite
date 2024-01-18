@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"dfinal001ck.f", line 44.17: 1514-596 (S) The final subroutine finalizebase must have a derived type dummy argument of the type, child, being defined.
+"dfinal001ck.f", line 49.16: 1514-245 (S) Identifier finalizebase is accessed by use association. It must not be redeclared or initialized.
+"dfinal001ck.f", line 50.44: 1514-540 (S) The entity b1 declared with the CLASS keyword must be a dummy argument, or have the ALLOCATABLE or POINTER attribute.
+** m1   === End of Compilation 2 ===
+** _main   === End of Compilation 3 ===
+1501-511  Compilation failed for file dfinal001ck.f.

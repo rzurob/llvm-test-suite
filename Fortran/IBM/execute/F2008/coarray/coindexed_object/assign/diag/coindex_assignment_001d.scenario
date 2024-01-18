@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE =
+#CREATOR = Andy Chen
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)coindex_assignment_001d.f
+#OUTPUT    = coindex_assignment_001d$(OBJ)
+#STDOUT    = coindex_assignment_001d.err
+#STDERR    = coindex_assignment_001d.err
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)coindex_assignment_001d$(product)vf) coindex_assignment_001d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

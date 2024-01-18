@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/assignment/functional/genericAssignmentSave002.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071114
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericAssignmentSave002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericAssignmentSave002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericAssignmentSave002$(OBJ)
+#OUTPUT    = genericAssignmentSave002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericAssignmentSave002$(EXE)
+#STDOUT    = genericAssignmentSave002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericAssignmentSave002.out $(tcasedir)genericAssignmentSave002.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

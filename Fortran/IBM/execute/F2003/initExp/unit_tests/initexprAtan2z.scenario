@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = initexprAtan2z.f
+#FEATURE   =
+#CREATOR   = Kelvin Li
+#DATE      = March 31, 2006
+#TEST_TYPE = Unit Test
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#TIME_REQ  = 60
+#ENDENV
+
+#BEGINCONTROL
+#CMD    = F_COMPILE
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#INPUT  = $(tcasedir)initexprAtan2z.f
+#OUTPUT = initexprAtan2z$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#INPUT  = initexprAtan2z$(OBJ)
+#OUTPUT = initexprAtan2z$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = initexprAtan2z$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

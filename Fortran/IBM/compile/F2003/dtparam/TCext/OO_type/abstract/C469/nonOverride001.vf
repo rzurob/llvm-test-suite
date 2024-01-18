@@ -1,0 +1,4 @@
+"nonOverride001.f", line 57.25: 1514-558 (S) Binding print was declared with the NON_OVERRIDABLE attribute. print must not be declared with the DEFERRED attribute.
+** m   === End of Compilation 1 ===
+** nonoverride001   === End of Compilation 2 ===
+1501-511  Compilation failed for file nonOverride001.f.

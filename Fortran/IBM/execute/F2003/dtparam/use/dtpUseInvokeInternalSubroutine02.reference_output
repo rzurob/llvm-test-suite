@@ -1,0 +1,29 @@
+ in intSub1
+ 12 12 12 12 12 l: 5 k: 4 4 5
+ 13 13 13 13 13 l: 5 k: 4 4 5
+ 14 k: 4 4
+ 15 k: 4 4
+ 16 16 16 16 16 l: 5 k: 1 5
+ 17 17 17 17 17 l: 5 k: 1 5
+ start intSub2
+ calling intSub3(tkl_extra_45_1, tk_extra_4_1, tl_extra_5_1)
+ in intSub3
+ 17 17 17 17 17 l: 5 k: 4 4 5
+ 18 k: 4 4
+ 19 19 19 19 19 l: 5 k: 1 5
+ end intSub3
+ 17 17 17 17 17 l: 5 k: 4 4 5
+ 18 k: 4 4
+ 19 19 19 19 19 l: 5 k: 1 5
+ calling intSub3(tkl_45_1, tk_4_1, tl_5_1)
+ in intSub3
+ 20 20 20 20 20 l: 5 k: 4 4 5
+ 21 k: 4 4
+ 22 22 22 22 22 l: 5 k: 1 5
+ end intSub3
+ 20 20 20 20 20 l: 5 k: 4 4 5
+ 21 k: 4 4
+ 22 22 22 22 22 l: 5 k: 1 5
+ end intSub2
+ end intSub1
+ end

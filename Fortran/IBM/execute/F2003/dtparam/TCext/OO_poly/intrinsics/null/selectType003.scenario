@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/null/selectType003.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070925
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)selectType003.f
+#OUTPUT    = selectType003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = selectType003$(OBJ)
+#OUTPUT    = selectType003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = selectType003$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,31 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       kindArgIchar1.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       06-12-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=      F_COMPILE
+#OPTS=     $(OPT_FREE_SOURCE_FORM)
+#INPUT=    $(tcasedir)kindArgIchar1.f
+#STDERR=   kindArgIchar1.err
+#VALIDRCS= $(RC_COMP_E)
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    kindArgIchar1.err $($(tcasedir)kindArgIchar1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

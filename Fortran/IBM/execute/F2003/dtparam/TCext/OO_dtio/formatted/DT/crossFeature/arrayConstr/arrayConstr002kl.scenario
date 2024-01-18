@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/TCext/OO_dtio/formatted/DT/crossFeature/arrayConstr/arrayConstr002kl.scenario
+#FEATURE = OO_dtio and derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070618
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)arrayConstr002kl.f
+#OPTS      = -qxlf2003=dynamicacval $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = arrayConstr002kl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = arrayConstr002kl$(OBJ)
+#OUTPUT    = arrayConstr002kl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = arrayConstr002kl$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)arrayConstr002kl$(product)vf) arrayConstr002kl.1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

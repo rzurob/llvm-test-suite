@@ -1,0 +1,84 @@
+Type is short, the received value is 2
+ The actual value being: 2
+Type is short, the received value is 32767
+ The actual value being: 32767
+Type is short, the received value is -32767
+ The actual value being: -32767
+Type is int, the received value is 4
+ The actual value being: 4
+Type is int, the received value is 32767
+ The actual value being: 32767
+Type is int, the received value is -32767
+ The actual value being: -32767
+Type is long, the received value is 4
+ The actual value being: 4
+Type is long, the received value is -2147483647
+ The actual value being: -2147483647
+Type is long, the received value is 2147483647
+ The actual value being: 2147483647
+Type is long long, the received value is 8
+ The actual value being: 8
+Type is long long, the received value is 120000000
+ The actual value being: 120000000
+Type is long long, the received value is 0
+ The actual value being: 0
+Type is long long, the received value is -2147483647
+ The actual value being: -2147483647
+Type is long long, the received value is 2147483647
+ The actual value being: 2147483647
+Type is signed char, the received value is -127
+ The actual value being: -127
+Type is signed char, the received value is 0
+ The actual value being: 0
+Type is signed char, the received value is 127
+ The actual value being: 127
+Type is int8_t, the received value is 15
+ The actual value being: 15
+Type is int16_t, the received value is 30
+ The actual value being: 30
+Type is int32_t, the received value is 60
+ The actual value being: 60
+Type is int64_t, the received value is 480
+ The actual value being: 480
+Type is int_least8_t, the received value is 8
+ The actual value being: 8
+Type is int_least16_t, the received value is 16
+ The actual value being: 16
+Type is int_least32_t, the received value is 32
+ The actual value being: 32
+Type is int_least64_t, the received value is 64
+ The actual value being: 64
+Type is int_fast8_t, the received value is 8
+ The actual value being: 8
+Type is int_fast16_t, the received value is 16
+ The actual value being: 16
+Type is int_fast32_t, the received value is 32
+ The actual value being: 32
+Type is int_fast64_t, the received value is 64
+ The actual value being: 64
+Type is intmax_t, the received value is 100
+ The actual value being: 100
+Type is intptr_t, the received value is 20
+ The actual value being: 20
+Type is float, the received value is 1.030000
+ The actual value being: 1.029999971
+Type is double, the received value is 9.002500
+ The actual value being: 9.00249958038330078
+Type is long double, the received value is 0.000000
+ The actual value being: 0.000000
+Type is float complex, the received value is (5.000000, 5.000000)
+ The actual value being: (5.000000000,5.000000000)
+Type is double complex, the received value is (10.000000, 10.000000)
+ The actual value being: (10.0000000000000000,10.0000000000000000)
+Type is long double complex, the received value is (15.000000, 15.000000)
+ The actual value being: (15.000000000000000000000000000000000,15.000000000000000000000000000000000)
+Type is _Bool, the received value is 1
+ The actual value being: T
+Type is char, the received value is A
+ The actual value being: A
+Type is size_t, the received value is 8
+ The actual value being: 8
+Type is struct, the received value is A 1
+ The actual value being:A 1
+Type is struct, the received value is B 2 A 1
+ The actual value being:B 2 A 1

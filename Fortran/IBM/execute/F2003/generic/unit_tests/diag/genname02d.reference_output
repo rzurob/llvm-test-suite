@@ -1,0 +1,7 @@
+"genname02d.f", line 6.18: 1514-682 (S) Identifier bar appearing as a binding of derived type mt has already been defined as a component, binding, or type parameter of the same derived type.
+"genname02d.f", line 17.13: 1514-587 (S) Component bar is not permitted. bar is the name of a component, binding, or type parameter that is inherited from type dt.
+"genname02d.f", line 23.26: 1514-702 (S) Binding bar is not permitted. bar is the name of a component, binding, or type parameter that is inherited from type dt.
+"genname02d.f", line 28.16: 1514-702 (S) Binding i is not permitted. i is the name of a component, binding, or type parameter that is inherited from type dt.
+"genname02d.f", line 34.16: 1514-702 (S) Binding foo is not permitted. foo is the name of a component, binding, or type parameter that is inherited from type dt.
+** m   === End of Compilation 1 ===
+1501-511  Compilation failed for file genname02d.f.

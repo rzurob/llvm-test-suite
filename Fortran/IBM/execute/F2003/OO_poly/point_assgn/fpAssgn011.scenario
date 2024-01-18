@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/point_assgn/fpAssgn011.scenario
+#FEATURE = OO_poly tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fpAssgn011.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fpAssgn011$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  fpAssgn011$(OBJ)
+#OUTPUT    = fpAssgn011$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fpAssgn011$(EXE)
+#STDOUT    = fpAssgn011.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)fpAssgn011$(product)vf) fpAssgn011.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

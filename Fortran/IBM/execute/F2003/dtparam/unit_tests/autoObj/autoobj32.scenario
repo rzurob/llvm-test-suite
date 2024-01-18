@@ -1,0 +1,34 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       autoobj32.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       11-30-08
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)autoobj32.f
+#OUTPUT= autoobj32$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  autoobj32$(OBJ)
+#OUTPUT= autoobj32$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  autoobj32$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

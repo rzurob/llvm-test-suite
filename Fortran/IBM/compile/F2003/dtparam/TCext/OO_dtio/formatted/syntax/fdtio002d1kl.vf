@@ -1,0 +1,4 @@
+"fdtio002d1kl.f", line 40.8: 1514-578 (S) Dummy argument unit of the derived-type I/O procedure formattedread must be of type default integer.
+** m   === End of Compilation 1 ===
+** fdtio002d1kl   === End of Compilation 2 ===
+1501-511  Compilation failed for file fdtio002d1kl.f.

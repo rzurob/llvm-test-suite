@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/polyAssign/polyUnitTests/test4.scenario
+#FEATURE   = LHS of intrinsic assignment is allowed to be polymorphic
+#CREATOR   = Aaron Liu
+#DATE      = 20150707
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)test4.f
+#OUTPUT    = test4$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = test4$(OBJ)
+#OUTPUT    = test4$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = test4$(EXE)
+#STDOUT    = test4.out
+#ENDCMD
+
+#CMD       = DIFF
+#OPTS      = -b
+#INPUT     = $($(tcasedir)test4$(product)vf) test4.out
+#ENDCMD
+#ENDCONTROL
+
+#ENDSCENARIO

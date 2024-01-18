@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = cmdline/ArgTypes/fxclat42.scenario
+#FEATURE = cmdline tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041204
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+CmdLine="fxclat42 @@@@@@@@@@@@@@@@@@@@ -@@@@@- +"
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD	 	= XLF95_COMPILE
+#INPUT 		= $(tcasedir)fxclat42.f
+#OUTPUT 	= fxclat42$(OBJ)
+#OPTS 		= $(OPT_FREE_SOURCE_FORM) $(OPT_INTSIZE_8)
+#ENDCMD
+
+#CMD	 	= XLF95_LINK
+#INPUT		= fxclat42$(OBJ)
+#OUTPUT		= fxclat42$(EXE)
+#OPTS		= $(OPT_FREE_SOURCE_FORM) $(OPT_INTSIZE_8)
+#ENDCMD
+
+#CMD 		= RUN
+#INPUT 		= fxclat42$(EXE)
+#OPTS 		=  @@@@@@@@@@@@@@@@@@@@ -@@@@@- +
+#ENDCMD
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,6 @@
+"bcdalag1.f", line 37.8: 1518-207 (L) The BIND attribute is not permitted by the Fortran 95 standard.
+"bcdalag1.f", 1518-317 (L) The -qsmp option can cause the compiler to accept code that does not conform to the Fortran 95 standard.
+** mod   === End of Compilation 1 ===
+"bcdalag1.f", 1518-317 (L) The -qsmp option can cause the compiler to accept code that does not conform to the Fortran 95 standard.
+** bcdalag1   === End of Compilation 2 ===
+1501-510  Compilation successful for file bcdalag1.f.

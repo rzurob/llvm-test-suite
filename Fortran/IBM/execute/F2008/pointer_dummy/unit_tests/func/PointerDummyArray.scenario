@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = $(tcasedir)PointerDummyArray.scenario
+#FEATURE   = 916820
+#CREATOR   = Ren Jian Gang
+#DATE      = May 22, 2011
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)PointerDummyArray.f
+#OUTPUT   =  PointerDummyArray$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  PointerDummyArray$(OBJ)
+#OUTPUT   =  PointerDummyArray$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  PointerDummyArray$(EXE)
+#STDOUT   =  PointerDummyArray.out
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = PointerDummyArray.out $(tcasedir)PointerDummyArray.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

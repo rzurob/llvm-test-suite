@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       HostAssocConstStructArr.f
+#FEATURE= ASSOCIATE STATEMENT
+#CREATOR=    Feng Ye
+#DATE=       11-01-05
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)HostAssocConstStructArr.f
+#OUTPUT= HostAssocConstStructArr$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  HostAssocConstStructArr$(OBJ)
+#OUTPUT= HostAssocConstStructArr$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  HostAssocConstStructArr$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

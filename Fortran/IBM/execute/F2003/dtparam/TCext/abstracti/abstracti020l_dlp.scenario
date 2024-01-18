@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/abstracti/abstracti020l_dlp.scenario
+#FEATURE	= Derived Type Parameters + Abstract Interface Tests
+#CREATOR	= Glen Mateer (derived from work by automated conversion script)
+#DATE		= 20071026
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)abstracti020l_dlp.f
+#OUTPUT		= abstracti020l_dlp$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= abstracti020l_dlp$(OBJ)
+#OUTPUT		= abstracti020l_dlp$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= abstracti020l_dlp$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

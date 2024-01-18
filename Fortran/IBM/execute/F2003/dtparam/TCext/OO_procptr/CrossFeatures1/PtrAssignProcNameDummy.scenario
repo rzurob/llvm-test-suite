@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_procptr/CrossFeatures1/PtrAssignProcNameDummy.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_procptr/*
+#DATE      = 20071011
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)PtrAssignProcNameDummy.f
+#OUTPUT= PtrAssignProcNameDummy$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  PtrAssignProcNameDummy$(OBJ)
+#OUTPUT= PtrAssignProcNameDummy$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  PtrAssignProcNameDummy$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

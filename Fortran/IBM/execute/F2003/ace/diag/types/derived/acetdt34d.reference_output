@@ -1,0 +1,6 @@
+** acetdt34mod   === End of Compilation 1 ===
+"acetdt34d.f", line 60.20: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"acetdt34d.f", line 61.9: 1516-022 (S) Subscript, stride, or substring expression must be a valid arithmetic expression.
+"acetdt34d.f", line 62.9: 1516-022 (S) Subscript, stride, or substring expression must be a valid arithmetic expression.
+** acetdt34   === End of Compilation 2 ===
+1501-511  Compilation failed for file acetdt34d.f.

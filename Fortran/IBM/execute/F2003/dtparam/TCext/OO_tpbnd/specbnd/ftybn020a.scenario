@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_tpbnd/specbnd/ftybn020a.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_tpbnd/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ftybn020a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ftybn020a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  ftybn020a$(OBJ)
+#OUTPUT    = ftybn020a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ftybn020a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

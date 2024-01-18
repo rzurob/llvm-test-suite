@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/AssumedRank/func/d92989.scenario
+#FEATURE   = C Interop, Assumed Rank
+#FEATURE   = RTC 92989: ASSUMED_RANK: copy_in BIF does not work properly for non-contiguous actual argument
+#CREATOR   = Grigor Nikolov from Tarique Islam's TC
+#DATE      = 20140730
+#TEST_TYPE = defect
+#KEYWORDS  = C Interop, Assumed Rank, CFI functions
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)d92989c.c
+#OPTS      = $(C_COMPILER_OPTS) -I$(xlf_include)
+#OUTPUT    = d92989c$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d92989.f
+#OUTPUT    = d92989$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d92989c$(OBJ) d92989$(OBJ)
+#OUTPUT    = d92989$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d92989$(EXE)
+#STDOUT    = d92989.out
+#STDERR    = d92989.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)d92989$(product)vf) d92989.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

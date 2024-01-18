@@ -1,0 +1,6 @@
+"kindArgVerify1.f", line 43.51: 1513-143 (S) Invalid KIND value.
+"kindArgVerify1.f", line 44.51: 1513-143 (S) Invalid KIND value.
+"kindArgVerify1.f", line 45.18: 1513-143 (S) Invalid KIND value.
+"kindArgVerify1.f", line 47.52: 1513-143 (S) Invalid KIND value.
+** kindargverify1   === End of Compilation 1 ===
+1501-511  Compilation failed for file kindArgVerify1.f.

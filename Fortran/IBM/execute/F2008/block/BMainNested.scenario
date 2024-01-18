@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /block/BMainNested.scenario
+#FEATURE   = F2008 BLOCK - nested blocks in main program
+#CREATOR   = DF
+#DATE      = 2010-11-17
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = F_COMPILE
+#INPUT    = $(tcasedir)BMainNested.f
+#OUTPUT   = BMainNested$(OBJ)
+#ENDCMD
+
+#CMD      = F_LINK
+#INPUT    = BMainNested$(OBJ)
+#OUTPUT   = BMainNested$(EXE)
+#ENDCMD
+
+#CMD      = RUN
+#INPUT    = BMainNested$(EXE)
+#STDOUT   = BMainNested.out
+#ENDCMD
+
+#CMD      = SPIFF
+#OPTS     = -r1e-5
+#INPUT    = $($(tcasedir)BMainNested$(product)vf) BMainNested.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

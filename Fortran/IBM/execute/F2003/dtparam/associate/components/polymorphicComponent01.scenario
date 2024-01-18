@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/associate/components/polymorphicComponent01.scenario
+#FEATURE	= ASSOCIATE Contruct (with Derived Type Parameters) --	\
+				Component Attributes
+#CREATOR	= Glen Mateer
+#DATE		= 20080819
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)polymorphicComponent01.f
+#OUTPUT		= polymorphicComponent01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= polymorphicComponent01$(OBJ)
+#OUTPUT		= polymorphicComponent01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= polymorphicComponent01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

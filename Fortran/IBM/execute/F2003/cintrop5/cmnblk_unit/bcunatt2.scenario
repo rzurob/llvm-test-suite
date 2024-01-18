@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop5/cmnblk_unit/bcunatt2.scenario
+#FEATURE = cintrop5 tests - regression run bucket
+#CREATOR = Manual conversion CPR
+#DATE    = 20060829
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl_system,bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)bcunatt2.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_SHOW_ATTRIBUTES_USED) $(OPT_SHOW_XREF_ALL_VARIABLES) $(OPT_GEN_BASIC_LISTING)
+#OUTPUT    = bcunatt2$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = bcunatt2$(OBJ)
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_SHOW_ATTRIBUTES_USED) $(OPT_SHOW_XREF_ALL_VARIABLES) $(OPT_GEN_BASIC_LISTING)
+#OUTPUT    = bcunatt2$(EXE)
+#ENDCMD
+
+#CMD       = AWK
+#INPUT     = '/SOURCE SECTION/, /OBJECT SECTION/' bcunatt2.lst
+#STDOUT    = bcunatt2.attrlst
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = bcunatt2.attrlst $(tcasedir)bcunatt2.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

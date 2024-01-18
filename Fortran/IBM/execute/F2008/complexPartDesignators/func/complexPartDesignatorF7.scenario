@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/complexPartDesignator/func/complexPartDesignatorF7.scenario
+#FEATURE   = Complex Part Designator
+#CREATOR   = Shahid Alam
+#DATE      = 20110119
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     = $(tcasedir)complexPartDesignatorF7.f
+#OUTPUT    = complexPartDesignatorF7$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     = complexPartDesignatorF7$(OBJ)
+#OUTPUT    = complexPartDesignatorF7$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = complexPartDesignatorF7$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

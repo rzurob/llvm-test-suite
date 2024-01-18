@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/use/dtpUseNamelistRead01.scenario
+#FEATURE   = DTP and USE - namelist input
+#CREATOR   = DF Manual Update
+#DATE      = 20081008
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUseNamelistRead01.f
+#OUTPUT    = dtpUseNamelistRead01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUseNamelistRead01$(OBJ)
+#OUTPUT    = dtpUseNamelistRead01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUseNamelistRead01$(EXE)
+#STDIN     = $(tcasedir)dtpUseNamelistRead01.in
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

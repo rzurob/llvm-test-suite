@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2003/dtparam/intrinsics/pack/fPntCompp4.scenario
+#FEATURE = dtp intrinsics
+#CREATOR = Adrian Green
+#DATE    = 20080821
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)fPntCompp4.f
+#OUTPUT   = fPntCompp4$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = fPntCompp4$(OBJ)
+#OUTPUT   = fPntCompp4$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fPntCompp4$(EXE)
+#STDOUT   = fPntCompp4.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $(tcasedir)fPntCompp4.vf fPntCompp4.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/syntax/C922/C922_001.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+! This chunk was DCOMP
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)C922_001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=shutup
+#OUTPUT    = C922_001$(OBJ)
+#STDERR    = C922_001.err
+#VALIDRCS  = 0
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)C922_001$(product)vf) C922_001.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

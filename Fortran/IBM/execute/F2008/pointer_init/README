@@ -1,0 +1,12 @@
+This directory contains test cases for the following feature:
+FEATURE: F2008: Pointer initialization
+
+Overview:
+Fortran 2008 standard allows data pointers and procedure pointers to
+be initialized to values other than NULL().
+
+RTC work item:  160700
+github issue:  https://github.ibm.com/compiler/wyvern/issues/3663
+
+The unit_tests/func subdirectory contains functional test cases
+The unit_tests/diag subdirectory contains diagnostic test cases

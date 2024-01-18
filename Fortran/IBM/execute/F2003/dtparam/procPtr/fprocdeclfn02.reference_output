@@ -1,0 +1,4 @@
+ PrntValue 1 , the value of the character is ABCDEFGHIJ          
+ PrntValue 2 , the value of the character is ABCDEFGHIJ          
+ TYPE IS BASE(4, 20 )
+ PrntValue 3 , the value of the character is ABCDEFGHIJ           and when it is adjusted left ABCDEFGHIJ          .

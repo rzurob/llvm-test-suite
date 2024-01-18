@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetnone03d.scenario
+#FEATURE	= Array constructor enhancement no type specifier tests
+#CREATOR	= DF Manual Update
+#DATE		= 20060726
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetnone03d.f
+#OPTS       = -qdebug=noline070112:shutup
+#OUTPUT		= acetnone03d$(OBJ)
+#STDERR         = acetnone03d.stderr
+#VALIDRCS       = $(RC_COMP_S)
+#ENDCMD
+
+#CMD            = XLDIFF
+#INPUT          = $(tcasedir)acetnone03d.vf acetnone03d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

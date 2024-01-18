@@ -1,0 +1,5 @@
+"do_concurrent_d009.f", line 30.19: 1516-001 (S) Identifier ieee_get_halting_mode was elsewhere defined or used as a subroutine.
+"do_concurrent_d009.f", line 34.18: 1516-381 (S) Procedure ieee_set_halting_mode from the intrinsic module IEEE_EXCEPTIONS must not appear in a DO CONCURRENT construct.
+"do_concurrent_d009.f", line 38.18: 1516-381 (S) Procedure ieee_get_flag from the intrinsic module IEEE_EXCEPTIONS must not appear in a DO CONCURRENT construct.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file do_concurrent_d009.f.

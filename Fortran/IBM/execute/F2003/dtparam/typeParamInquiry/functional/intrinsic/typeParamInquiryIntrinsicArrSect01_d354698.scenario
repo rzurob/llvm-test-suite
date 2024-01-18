@@ -1,0 +1,31 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2003/dtparam/typeParamInquiry/functional/intrinsic/typeParamInquiryIntrinsicArrSect01_d354698.scenario
+#FEATURE= Type Parameter Inquiry(354612)
+#CREATOR=   Nancy Wang
+#DATE= August 6 2008
+#TEST_TYPE=  Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)typeParamInquiryIntrinsicArrSect01_d354698.f
+#OUTPUT= typeParamInquiryIntrinsicArrSect01_d354698$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = typeParamInquiryIntrinsicArrSect01_d354698$(OBJ)
+#OUTPUT= typeParamInquiryIntrinsicArrSect01_d354698$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = typeParamInquiryIntrinsicArrSect01_d354698$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

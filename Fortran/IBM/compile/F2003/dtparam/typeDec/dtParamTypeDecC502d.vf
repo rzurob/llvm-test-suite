@@ -1,0 +1,4 @@
+"dtParamTypeDecC502d.f", line 47.9: 1514-539 (S) The derived type dt specified with the CLASS keyword must be extensible.
+"dtParamTypeDecC502d.f", line 58.9: 1514-539 (S) The derived type dt1 specified with the CLASS keyword must be extensible.
+** dtparamtypedecc502d   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtParamTypeDecC502d.f.

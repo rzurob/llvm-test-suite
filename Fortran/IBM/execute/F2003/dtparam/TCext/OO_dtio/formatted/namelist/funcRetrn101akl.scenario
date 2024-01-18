@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/formatted/namelist/funcRetrn101akl.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070705
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)funcRetrn101akl.1 .
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)funcRetrn101akl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = funcRetrn101akl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = funcRetrn101akl$(OBJ)
+#OUTPUT    = funcRetrn101akl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = funcRetrn101akl$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

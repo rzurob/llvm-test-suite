@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/complexPartDesignator/func/complexPartDesignatorF6.scenario
+#FEATURE   = Complex Part Designator
+#CREATOR   = Shahid Alam
+#DATE      = 20110112
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)complexPartDesignatorF6.f
+#OUTPUT    = complexPartDesignatorF6$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = complexPartDesignatorF6$(OBJ)
+#OUTPUT    = complexPartDesignatorF6$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = complexPartDesignatorF6$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/refToVar/exprIsArraySection06.scenario
+#FEATURE	= Intrinsic Assignment -- variable and/or expr Reference variable
+#CREATOR	= GM Manual Creation
+#DATE		= 20061019
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)exprIsArraySection06.f
+#OUTPUT		= exprIsArraySection06$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= exprIsArraySection06$(OBJ)
+#OUTPUT		= exprIsArraySection06$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= exprIsArraySection06$(EXE)
+#STDOUT		= exprIsArraySection06.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)exprIsArraySection06$(product)vf)	\
+				exprIsArraySection06.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

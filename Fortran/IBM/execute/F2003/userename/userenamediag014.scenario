@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=userenamediag014.scenario
+#FEATURE = Renaming the operator in a use statement
+#CREATOR = Rob Wheeler
+#DATE    = 20060330
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)userenamediag014.f
+#OUTPUT    = userenamediag014$(OBJ)
+#ENDCMD
+
+
+#CMD       = F_LINK
+#INPUT     = userenamediag014$(OBJ)
+#OUTPUT    = userenamediag014$(EXE)
+#ENDCMD
+
+
+#CMD       = RUN
+#INPUT     = userenamediag014$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

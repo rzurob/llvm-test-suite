@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/submodule/diag/submodule19d.scenario
+#FEATURE   = F2008 Submodule
+#CREATOR   = Bernard Kan
+#DATE      = 20121208
+#TEST_TYPE = Diagnostic
+#KEYWORDS  = F2008, submodule, F2008 submodule
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD          = F_COMPILE
+#INPUT        = $(tcasedir)submodule19d.f
+#OUTPUT       = submodule19d$(OBJ)
+#STDOUT       = submodule19d.out
+#STDERR       = submodule19d.out
+#VALIDRCS     = $(RC_COMP_E)
+#ENDCMD
+
+#CMD          = XLDIFF
+#INPUT        = submodule19d.out $($(tcasedir)submodule19d$(product)vf)
+#ENDCMD
+
+#CMD          = F_COMPILE
+#INPUT        = $(tcasedir)submodule19ad.f
+#OUTPUT       = submodule19ad$(OBJ)
+#STDOUT       = submodule19ad.out
+#STDERR       = submodule19ad.out
+#VALIDRCS     = $(RC_COMP_E)
+#ENDCMD
+
+#CMD          = XLDIFF
+#INPUT        = submodule19ad.out $($(tcasedir)submodule19ad$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      ulmtintentpnt.f
+#FEATURE=
+#CREATOR=   Michelle Zhang
+#DATE=
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ulmtintentpnt.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ulmtintentpnt$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = ulmtintentpnt$(OBJ)
+#OUTPUT    = ulmtintentpnt$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ulmtintentpnt$(EXE)
+#STDOUT    = ulmtintentpnt.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = ulmtintentpnt.out $(tcasedir)ulmtintentpnt.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+
+

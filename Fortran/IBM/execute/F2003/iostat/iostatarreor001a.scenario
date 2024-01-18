@@ -1,0 +1,53 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=iostatarreor001a.scenario
+#FEATURE = 299314
+#CREATOR = Rob Wheeler
+#DATE    = 20060109
+#TEST_TYPE=fvt
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)iostatarreor001a.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#OUTPUT    = iostatarreor001a$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = iostatarreor001a$(OBJ)
+#OUTPUT    = iostatarreor001a$(EXE)
+#ENDCMD
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)file1.txt .
+#ENDCMD
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)file2.txt .
+#ENDCMD
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)file3.txt .
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = iostatarreor001a$(EXE)
+#STDOUT    = iostatarreor001a.out
+#STDERR    = iostatarreor001a.out
+#ENDCMD
+
+#CMD	   = DIFF
+#OPTS	   = -b
+#INPUT     = iostatarreor001a.out $($(tcasedir)iostatarreor001a$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

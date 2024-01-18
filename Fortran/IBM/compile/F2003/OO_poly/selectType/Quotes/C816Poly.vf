@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"C816Poly.f", line 78.14: 1511-109 (S) The type specified in the type guard statement is not compatible with the declared type of the selector.
+"C816Poly.f", line 80.14: 1511-109 (S) The type specified in the type guard statement is not compatible with the declared type of the selector.
+"C816Poly.f", line 82.14: 1511-109 (S) The type specified in the type guard statement is not compatible with the declared type of the selector.
+"C816Poly.f", line 84.14: 1514-645 (S) level0 is an abstract type. level0 is not permitted in this context.
+** c816poly   === End of Compilation 2 ===
+1501-511  Compilation failed for file C816Poly.f.

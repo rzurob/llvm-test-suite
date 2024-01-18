@@ -1,0 +1,1243 @@
+<html><head><script language="JavaScript1.2" type="text/javaScript" src="/scripts/scripts.js"></script><link rel="stylesheet" type="text/css" href="/stylesheets/v4-screen.css"><link rel="stylesheet" type="text/css" href="/stylesheets/featureflow.css"><style type="text/css" media="all">
+<!--
+@import url("/stylesheets/screen.css");
+@import url("/stylesheets/interior.css");
+@import url("/stylesheets/icons.css");
+@import url("/stylesheets/tables.css");
+-->
+</style><link rel="stylesheet" type="text/css" media="print" href="/stylesheets/print.css"><script type="text/javascript" language="JavaScript1.2">
+	var pageExitWarn = false;
+
+	<!-- 
+	function msover(image) { // Mouse Over 
+		if (document.images) { 
+			document[image].src = eval(image + "on.src") 
+		} 
+	} 
+	function msout(image) { // Mouse Out 
+		if (document.images) { 
+			document[image].src = eval(image + ".src") 
+		} 
+	} 
+	/* ----------------------------------------- */ 
+	function popup(hp, f3) { 
+		if (document.layers) { 
+			document[hp].visibility = "visible" 
+			document[hp].top = 0 
+			document[hp].left = f3.x + 23 
+			//document[hp].top = f3.pageY + 10 
+		} else { 
+			if (document.all) { 
+				document.all[hp].style.visibility = "visible" 
+				document.all[hp].style.left = f3.x + 23 
+				//document.all[hp].style.top = f3.y + 10 
+				document.all[hp].style.top = 0 
+			} 
+		} 
+	} 
+	function cpopup(hp) { 
+		if (document.layers) { 
+			document[hp].visibility = "hidden" 
+		} else { 
+			if (document.all) { 
+				document.all[hp].style.visibility = "hidden" 
+			} 
+		} 
+	} 
+	function lpopup(lyr) { 
+		if (document.layers) { 
+			if (document[lyr].visibility == "show") { 
+				document[lyr].visibility = "hidden" 
+			} else { 
+				document[lyr].visibility = "visible" 
+			} 
+		} else { 
+			if (document.all) { 
+				if (document.all[lyr].style.visibility == "visible") { 
+					document.all[lyr].style.visibility = "hidden" 
+				} else { 
+					document.all[lyr].style.visibility = "visible" 
+				} 
+			} 
+		} 
+	} 
+function selectAll() { for(var i=0;i<document.theform.elements.length;i++) {if(document.theform.elements[i].type == "checkbox"){document.theform.elements[i].checked = true;};};}
+function DeselectAll() { for(var i=0;i<document.theform.elements.length;i++) {if(document.theform.elements[i].type == "checkbox"){document.theform.elements[i].checked = false;};};}
+function goback() { 
+    if (true) 
+         history.back() 
+} 
+function fixdays(d_obj, m_obj) {
+   var numdays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+   for (var i = (eval(d_obj).length-1); i>=0; i--) {
+      eval(d_obj).options[i] = null;
+   }
+
+   for (var i = 1; i<=numdays[eval(m_obj).value]; i++) {
+      var optionadd = new Option(i, i);
+      eval(d_obj).options[eval(d_obj).length] = optionadd;
+   }
+}
+	//--> 
+
+function jsPageExitEnable() {
+    pageExitWarn = true;
+}
+
+function jsPageExitDisable() {
+    pageExitWarn = false;
+}
+    
+function pageExitWarning(){
+    if (pageExitWarn) {
+	return "All changes will be lost by leaving this page.";
+    }
+}
+
+
+
+</script></head><body><noscript>  <!--  //--></noscript>
+<title> F2008: Submodule -  F E A T U R E - F L O W</title>
+<script src="/javascripts/prototype.js?1321281883" type="text/javascript"></script>
+<script src="/javascripts/effects.js?1321281883" type="text/javascript"></script>
+<script src="/javascripts/dragdrop.js?1321281883" type="text/javascript"></script>
+<script src="/javascripts/controls.js?1321281883" type="text/javascript"></script>
+
+
+
+<div class="skip"><a href="#content-main" accesskey="2">Skip to main content</a></div>
+<div class="skip"><a href="#left-nav" accesskey="n">Skip to navigation</a></div>
+<div id="access-info">
+	<p class="access">The access keys for this page are:</p>
+	<ul class="access">
+		<li>ALT plus 0 links to this site's <a href="https://w3.ibm.com/w3/access-stmt.html" accesskey="0">Accessibility Statement.</a></li>
+		<li>ALT plus 1 links to the w3.ibm.com home page.</li>
+		<li>ALT plus 2 skips to main content.</li>
+		<li>ALT plus 4 skips to the search form.</li>
+		<li>ALT plus 9 links to the feedback page.</li>
+		<li>ALT plus N skips to navigation.</li>
+	</ul>
+	<p class="access">Additional accessibility information for w3.ibm.com can be found <a href="https://w3.ibm.com/w3/access-stmt.html">on the w3 Accessibility Statement page.</a></p>
+</div>
+
+
+<div id="masthead">
+	<h2 class="access">Start of masthead</h2>
+	<div id="prt-w3-sitemark"><img src="/stylesheets/images/id-w3-sitemark-simple.gif" alt="" width="54" height="33"></div>
+	<div id="prt-ibm-logo"><img src="/stylesheets/images/id-ibm-logo-black.gif" alt="IBM Logo" width="44" height="15"></div>
+	<div id="w3-sitemark"><img src="/stylesheets/images/id-w3-sitemark-large.gif" alt="" width="266" height="70" usemap="#sitemark_map"><map id="sitemark_map" name="sitemark_map"><area shape="rect" alt="Link to W3 Home Page" coords="0,0,130,70" href="http://w3.ibm.com/" accesskey="1"></map></div>
+   
+   <div id="personalization-links">
+      Logged on as bkan@ca.ibm.com |
+      <a class="wpsToolbarLink" href="/featureflow/user_profile">User Profile</a> |
+
+      <a class="wpsToolbarLink" href="/login/logout">Sign Out</a>
+   </div>
+   
+	<div id="site-title-only">F E A T U R E - F L O W</div>
+	<div id="ibm-logo"><img src="/stylesheets/images/id-ibm-logo.gif" alt="IBM Logo" width="44" height="15"></div>
+	<div id="persistent-nav"><a id="w3home" href="http://w3.canlab.ibm.com/"> w3 home </a><a id="bluepages" href="http://w3.ibm.com/bluepages/"> BluePages </a><a id="helpnow" href="/featureflow/help"> Help </a><a id="feedback" href="mailto:kwongray@ca.ibm.com,cntaylor@ca.ibm.com" accesskey="9"> Feedback </a></div>
+	<div id="header-search">
+		<form action="http://w3.ibm.com/search/w3results.jsp" method="get" id="search">
+		<table cellspacing="0" cellpadding="0" class="header-search">
+		<tr><td class="label"><label for="header-search-field">Search w3</label></td><td class="field"><input id="header-search-field" name="qt" type="text" accesskey="4"></td><td class="submit"><input id="header-search-btn" type="image" alt="Go" src="/stylesheets/images/btn-go-dark.gif"></td></tr>
+		</table>
+		</form>
+	</div>
+	<div id="browser-warning"><img src="/stylesheets/images/icon-system-status-alert.gif" alt="Error" width="12" height="10"> This Web page is best used in a modern browser. Since your browser is no longer supported by IBM, please upgrade your web browser at the <a href="http://w3.ibm.com/download/">ISSI site</a>.</div>
+</div>
+
+
+<div id="navigation">
+	<h2 class="access">Start of left navigation</h2>
+	
+	<div id="left-nav">
+		<div class="top-level">
+			<a href="http://w3.ibm.com/">w3 Home</a>
+			<a href="https://bluepages.ibm.com/tools/groups/protect/groupsgui.wss">BlueGroups</a>
+         
+         <a href="/featureflow">Feature Flow</a>
+         <div class="second-level">
+            <a href="/featureflow/documents">Documents</a>
+            <a href="/featureflow/reviews">Reviews</a>
+            <a href="/featureflow/search">Search (Beta)</a>
+        </div>
+         
+		</div>
+      <div name="document_control" id="document_control" style="border-bottom:1px solid #fff;">
+      
+<p> </p>
+<span style="width: 140px; overflow:hidden;">
+<table style="width: 140px; overflow:hidden;" border="1" width="100%" cellpadding="0" cellspacing="0" bgcolor="#CCE5FF">
+
+<tr><td align="center"><b>Document Actions</b></td></tr>
+<tr><td>
+<table style="width: 148px; overflow:hidden;">
+<tr><td>
+<a href="/featureflow/show/6394">Show</a>
+<a href="/featureflow/show/6394?fullscreen=true"><font size="-2">(print/!frame)</font></a>
+</td></tr>
+<tr><td>
+
+
+<div style="padding-left: 1em"><a href="/featureflow/show/6785">Most Recent Review...</a>
+
+</div></td></tr>
+<tr><td>
+
+<a href="/featureflow/edit/6394">Edit</a>
+
+</td></tr>
+<tr><td>
+
+<a href="/featureflow/delete/6394" onclick="return confirm('Really delete F2008: Submodule');">Delete...</a>
+
+</td></tr>
+<tr><td>
+<a href="/featureflow/properties/6394">Properties...</a>
+</td></tr>
+<tr><td>
+<a href="/featureflow/access_control/6394">Access Control...</a>
+</td></tr>
+<tr><td>
+
+
+<a href="/featureflow/create_review/6394">Create Review...</a>
+
+</td></tr>
+</table>
+
+</td></tr><tr><td><table style="width: 148px; overflow:hidden;"><tr><td>Compare To:</td></tr><tr><td align="center"><form action="/featureflow/show"><select id="compare_to" style="width: 120px; overflow:hidden;" name="compare_to" onchange="var s=document.getElementById('compare_to'); var v=s.options[s.selectedIndex].value; location.href='/featureflow/show/6394'+ ((v != 0) ? '?compare_to='+v : '');"><option value="0">None</option><option value="6648">rev. 1</option><option value="6772">rev. 2</option><option value="6785">rev. 3</option></select></form></td></tr></table></td></tr>
+<tr><td><font color="red"></font></td></tr>
+</table>
+</span>
+
+      </div>
+      <div name="document_info" id="document_info" style="border-bottom:1px solid #fff;">
+      
+      </div>
+	</div>
+	
+	
+	
+<!-- start related links --><!-- ** If there's related links, html goes here.  Otherwise, remove this line ** --><!-- stop related links --></div>
+
+
+<div id="content">
+	<h1 class="access">Start of main content</h1>
+	
+	<div id="content-head">
+	
+	<!-- <p id="breadcrumbs"></p> --></div>
+	
+	
+	<div id="content-main">
+		
+      
+  <script src="/javascripts/prototype.js?1321281883" type="text/javascript"></script>
+<script src="/javascripts/effects.js?1321281883" type="text/javascript"></script>
+<script src="/javascripts/dragdrop.js?1321281883" type="text/javascript"></script>
+<script src="/javascripts/controls.js?1321281883" type="text/javascript"></script>
+  <script src="/javascripts/fckeditor.js?1321281883" type="text/javascript"></script>
+  <script src="/javascripts/effects.js?1321281883" type="text/javascript"></script>
+
+
+<span id="dummy" style="position: absolute; overflow:hidden; width:0; height:0">
+<form>
+<textarea id="dummytext">
+</textarea>
+</form>
+</span>
+<script>
+   var oFCKeditor = new FCKeditor( 'dummytext' ) ;
+   oFCKeditor.Config['LinkBrowser'] = false ; 
+   oFCKeditor.Config['ImageBrowser'] = true ;
+   oFCKeditor.Config["CustomConfigurationsPath"] =
+          '/javascripts/railsfck_comments.js?1321281883';
+/*   oFCKeditor.Config["SkinPath"] = 'skins/SilverNarrow/' ; */
+   oFCKeditor.ReplaceTextarea() ;   
+function edit(comment_id, id)
+{
+   var ac ;
+   var entry='' ;
+   var ref=comment_id ;
+   if (!id) {
+      entry='_entry' ;
+   } else {
+      ref = id ;
+   }
+   var parent_id=null;
+   var match=comment_id.match(/(\d+)_(\d+)/) ;
+   if (match) {
+      parent_id = match[1] ;
+   }
+
+   var old_comment_type		= null;
+   var comment_type_element	= document.getElementById('ctype'+id+'_'+comment_id);
+   if (comment_type_element != null) {
+	   old_comment_type	= comment_type_element.selectedIndex;
+   }
+
+   ac = document.getElementById('comments'+entry+ref) ;
+   if (!id && ac.innerHTML!='') {
+      var myb=document.getElementById('mycancelbutton'+ref) ;
+      myb.scrollIntoView(false) ;
+      return ;
+   }
+   var con = document.getElementById('comments_content'+id) ;
+   var content = '' ;
+   if (con) {
+      content = unlinkfy(con.innerHTML) ;
+      /* remove response */
+      content = content.replace(/<p><font size=\"?-1\"?>\(reply\)<\/font><\/p>\s*$/i,'');
+
+      /* Defect 336615: escape &lt and &gt so that the FCK editor does not treat these as HTML tags */
+      content = content.replace(/&lt;/g, '&amp;lt;');
+      content = content.replace(/&gt;/g, '&amp;gt;');
+   }
+   ac.originalInnerHTML = ac.innerHTML ;
+   ac.innerHTML='<table border=0 style="text-decoration:none;font-size:13px;">'+
+'<tr><td width="100%">'+
+'<form id="text_comments_form'+comment_id+'"'+
+' method="post" '+
+' onsubmit="myCommentEditorSubmit(\''+comment_id+'\', \''+id+'\'); return false ;">'+
+'<input id="id" name="id" size="30" type="hidden" value="'+id+'">'+
+'<input id="commentid" name="commentid" size="30" type="hidden" value="'+comment_id+'">'+
+'<input id="document_id" name="document_id" size="30" type="hidden" value="'+6394+'">'+
+'<table bgcolor="FFFF00" width="600" border=1 cellpadding=0 cellspacing=0>'+
+'<tr><td>'+
+'<font color=blue>User:</font> Bernard Kan '+
+((parent_id == null) ?  '<font color=blue>Type:</font> <select id="ctype_edit' + id + '_' + comment_id + '" name="ctype">'+
+   '<option value="Typo">Typo</option>'+
+   '<option value="Comment" selected>Comment</option>'+
+   '<option value="Problem">Problem</option>'+
+   '<option value="Issue">Issue</option>'+
+   '</select>'+
+   ' <font color=blue>Disposition:</font>'+ 
+   '<input id="disposition" name="disposition" value="Unassigned" type="hidden"/>'+
+   'Unassigned'
+: '') +
+'</td></tr>'+
+'<tr><td width="100%">'+
+'<table border=0 cellpadding=1 width="100%">'+
+'<tr><td td width="100%">'+
+'<textarea id="text_comment'+comment_id+'" name="text_comment'+comment_id+'" cols=76 rows=12 style="font-family:courier; background:#FFFF00">'+
+content+
+'</textarea></td></tr>'+
+'</td></tr>'+
+'</table>'+
+'<tr><td>'+
+'<input type="button" value="Clear" onclick="var oEditor=FCKeditorAPI.GetInstance(\'text_comment'+comment_id+'\'); oEditor.SetHTML(\'\') ; return false;">'+
+'<input type="submit" value="Submit">'+
+'<input type="submit" value="Submit+Notify" onclick="myCommentEditorSubmit(\''+comment_id+'\', \''+id+'\', true); return false ;">'+
+'<input id="mycancelbutton'+ref+'" type="button" value="Cancel" onclick="hideEditor(\''+entry+ref+'\'); return false;">'+
+'</td></tr>'+
+'</table>'+
+'</form>'+
+'</td></tr></table>';
+
+   if (old_comment_type != null) {
+	   document.getElementById('ctype_edit' + id + '_' + comment_id).selectedIndex	= old_comment_type;
+   }
+
+   var part='text_comment' + comment_id ;
+   var oFCKeditor = new FCKeditor( part ) ;
+   oFCKeditor.Height=200;
+/* work around an IE bug here that temporarily blanks the screen */
+   if ( navigator.userAgent.toLowerCase().indexOf("msie") == -1) {
+     oFCKeditor.Config['StartupFocus'] = true ; 
+   } 
+   oFCKeditor.Config['LinkBrowser'] = false ; 
+   oFCKeditor.Config['ImageBrowser'] = true ;
+   oFCKeditor.Config["CustomConfigurationsPath"] =
+          '/javascripts/railsfck_comments.js?1321281883';
+/*   oFCKeditor.Config["SkinPath"] = 'skins/SilverNarrow/' ; */
+   var ta=document.getElementById(part) ;
+   ta.style.height='0px';
+   oFCKeditor.ReplaceTextarea() ; 
+   var myb=document.getElementById('mycancelbutton'+ref) ;
+   myb.scrollIntoView(false) ;
+}
+function hideEditor(where)
+{
+   var ac = document.getElementById('comments'+where) ;
+   ac.innerHTML=ac.originalInnerHTML; 
+}
+
+function myCommentEditorSubmit(comment_id, id, notify)
+{
+   var entry='' ;
+   var ref=comment_id ;
+   if (!id || id == 'undefined') {
+      entry='_entry' ;
+   } else {
+      ref = id ;
+   }
+  var submit_notify=0
+  var parent_id=null;
+  var match=comment_id.match(/(\d+)_(\d+)/) ;
+  if (match) {
+     parent_id = match[1];
+  }
+  if (notify) {
+     if (parent_id) {
+        if (confirm("Send a notification to the participants in this comment thread (and the author) about this reply ?")) {
+           submit_notify=1;
+        }
+     } else if (confirm("Send a notification to the author about this comment?")) {
+        submit_notify=1;
+     }
+  }
+
+  var frm = document.getElementById('text_comments_form'+comment_id) ; 
+  var oEditor=FCKeditorAPI.GetInstance('text_comment'+comment_id); 
+  var textArea = document.getElementById('text_comment'+comment_id) ; 
+  textArea.value = oEditor.GetXHTML() +  '<p><font size=\"-1\">(reply)</font></p>' ;
+  var params = Form.serialize(frm) ;
+  params = params + '&notify='+submit_notify
+  var ac=document.getElementById('comments'+entry+ref) ;
+  var editSave = ac.innerHTML ;
+  var errFunc = function(t) {
+       alert('Error ' + t.status + ' -- ' + t.statusText +'  - try re-submitting ');
+  }
+  var succFunc = function(t) {
+       hideEditor(entry+ref) ;
+  }
+  if (ref != id) {
+    new Ajax.Updater('comments'+comment_id,'/featureflow/update_comment', {method:'post', 
+          parameters: params, asynchronous:true, evalScripts:true, insertion:Insertion.Bottom, 
+          onFailure:errFunc, onSuccess:succFunc});
+  } else {
+    new Ajax.Updater('comments'+id,'/featureflow/update_comment', {method:'post', 
+          parameters: params, asynchronous:true, evalScripts:true, 
+          onFailure:errFunc, onSuccess:succFunc});
+  }
+  return false;
+}
+function changeCommentAttribute(document_id, inp, param, currentValue, last_comment_id)
+{
+  var s=document.getElementById(inp) ;
+  var v=s.options[s.selectedIndex].value; 
+  var errFunc = function(t) {
+       alert('Error ' + t.status + ' -- ' + t.statusText +'  - try re-submitting ');
+  }
+  new Ajax.Updater('comments'+last_comment_id, '/featureflow/update_comment', 
+        {method:'post', 
+        parameters:'id=undefined'+
+           '&commentid='+last_comment_id+
+           '&document_id='+document_id+
+           '&'+param+'='+encodeURIComponent(v),
+        asynchronous:true, evalScripts:true, insertion:Insertion.Bottom,
+        onFailure:errFunc});
+}
+function unlinkfy(str)
+{
+   var s1=str.replace(/<a class=\"?review\"? .*?><span id=\"?line_(.*?)\"?>/ig, "") ;
+   var s2=s1.replace(/<\/span><\/a><span id=\"?comments(.*?)>/ig, "") ;
+   var s3 = s2.replace(/<\/span><span id=\"?comments_entry(.*?)\"?><\/span>/ig, "") ;
+   // Adam D'Andrea: February 19, 2007: remove (reply) when it goes into editor
+   var s4 = s3.replace(/<font size=\"?-1\"?>\(reply\)<\/font>/ig, "");
+   return s4;
+}
+
+function collapse(expander, lineBreak)
+{
+   var ac=document.getElementById('expander'+expander) ;
+   ac.innerHTML='<a href="javascript:expand(\''+expander+'\');"><img src="/images/expand_small.gif" alt="Expand"></a>' ;
+   var expanded=document.getElementById('expanded'+expander) ;
+   expanded.saveHTML = expanded.innerHTML ;
+   expanded.innerHTML = (lineBreak) ? '<br>' : '' ;
+}
+function expand(expander)
+{
+   var ac=document.getElementById('expander'+expander) ;
+   ac.innerHTML='<a href="javascript:collapse(\''+expander+'\');"><img src="/images/collapse_small.gif" alt="Collapse"></a>'
+   var expanded=document.getElementById('expanded'+expander) ;
+   if (typeof expanded.saveHTML == 'undefined')
+      expanded.innerHTML = document.sections['expanded'+expander]
+   else
+      expanded.innerHTML = expanded.saveHTML ;
+}
+</script>
+
+
+<table border="1" cellspacing="0" cellpadding="2" frame="sunken"><tr><td>
+<div id="show_scroller" style="width:100%; height:400px; overflow:scroll;">
+<script type="text/javascript">
+function resizeScroller() 
+{
+  var e=document.getElementById('show_scroller') ;
+  e.style.height = document.body.clientHeight-120 ; 
+  e.style.width = document.body.clientWidth-180 ;
+}
+resizeScroller() ;
+window.onresize = resizeScroller ;
+</script>
+
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#c0e1ff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="left" style="font-family: Arial; color: rgb(0, 0, 128); font-size: 12pt;"><strong>Document Control Information:</strong>
+            <p style="color: rgb(0, 0, 0);">The official version of this document is kept in CMVC in the <span style="font-weight: bold; text-decoration: underline;">aix</span> family, release <span style="font-weight: bold; text-decoration: underline;">des.dev</span>, component <span style="font-weight: bold; text-decoration: underline;">design.i0</span>, file <span style="color: rgb(255, 102, 102); font-weight: bold; text-decoration: underline;">designs/i0/f2008__submodule/f2008__submodule.html</span>. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.<br>
+            <br>
+            CMVC Extraction Information: %W% %H% %I% sccsid<br>
+            <br>
+            This document is IBM Confidential.<br>
+            </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<br>
+<table cellspacing="0" cellpadding="5" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td width="20%" valign="top" align="left"><strong>CMVC Feature Number</strong> </td>
+            <td width="80%" valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">917294</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Feature Title</strong> </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">F2008: Submodule </td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Author(s)</strong> </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;"> Bernard Kan,  Daniel C Chen (primary),  linka@cn.ibm.com</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Applicable Product Releases</strong>       </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">XL Fortran v15.1 on Linux and AIX.<br>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Affected Components</strong>       </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">Front Ends: Fortran<br>
+            Documentation: Language Reference and Compiler Reference<br>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<br>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#ff6666">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="text-align: left; font-family: Arial; font-size: 12pt;"><strong>Document Status: For Approval</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<p><strong>Approvers Only:</strong> Click on the 'Approve' check-box beside your name in the table below if you agree with the technical and user interface content of this document; not checking your 'approve' check-box signifies you do not approve.</p>
+<p></p><table border="0" cellpadding="0" cellspacing="20"><tr><td><table border="3" cellpadding="0" cellspacing="0"><tr><th>Approver</th><th>Approved</th></tr><tr><td>Grigor Nikolov</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="approval_1360" disabled></form></td></tr><tr><td>Rafik Zurob</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="approval_1405" disabled></form></td></tr></table></td></tr></table>
+<p>Approval Comments</p>
+<p>
+</p><table cellspacing="0" cellpadding="5" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td valign="top" align="left"><strong>Approvers</strong> (mandatory participation) </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">
+            Grigor Nikolov, Rafik Zurob</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Release Management Contact</strong> (optional participation) </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">Dave Paulmark, Jeff Heath, Larry Lindsay, Rene Matteau, Sarah McNamara, Si Yuan Zhang, Wang Chen, shereen@ca.ibm.com <br>
+            
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Component Reviewers</strong> (optional participation) </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255);">       <br>
+            Chad McIntyre, Dickson Chau, Enrique Varillas, Ian McIntosh, Igor Todorovski, Irina Rada, Jian Xu, Jin Yan Chen, Kelvin Li, Kendrick Wong, Kit Barton, Kobi Vinayagamoorthy, Leon L Kiriliuk, Lu Yang, Michelle Zhang, Rajan Bhakta, Raul Silvera, Raymond Mak, Roch Archambault, Sean Perry, Vicky Chin, Visda Vokhshoori, Wei Zhong Shan, Yan Liu, Zbigniew Sarbinowski, denispal@ca.ibm.com</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Team Reviewers</strong> (optional participation) </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">
+            Bardia Mahjour, Tarique Islam, Ying Zhang, maryammo@ca.ibm.com</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><br>
+<br>
+</p>
+<p>
+</p><table cellspacing="2" cellpadding="2" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td style="font-family: Arial; vertical-align: top;"><strong>Reviewers</strong>: Please click the 'Reviewed' checkbox beside your name to indicate your participation in the review. </td>
+        </tr>
+    </tbody>
+</table>
+
+<p></p><table border="0" cellpadding="0" cellspacing="20"><tr><td><table border="3" cellpadding="0" cellspacing="0"><tr><th>Reviewer</th><th>Reviewed</th></tr><tr><td>Bardia Mahjour</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1399" disabled></form></td></tr><tr><td>Bernard Kan</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1726" disabled></form></td></tr><tr><td>Chad McIntyre</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1640" disabled></form></td></tr><tr><td>Daniel C Chen</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1350" disabled></form></td></tr><tr><td>Dave Paulmark</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1371" disabled></form></td></tr><tr><td>Dickson Chau</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1290" disabled></form></td></tr><tr><td>Enrique Varillas</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1293" disabled></form></td></tr><tr><td>Grigor Nikolov</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1360" disabled></form></td></tr><tr><td>Ian McIntosh</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1332" disabled></form></td></tr><tr><td>Igor Todorovski</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1477" disabled></form></td></tr><tr><td>Irina Rada</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1300" disabled></form></td></tr><tr><td>Jeff Heath</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1284" disabled></form></td></tr><tr><td>Jian Xu</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1638" disabled></form></td></tr><tr><td>Jin Yan Chen</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1716" disabled></form></td></tr><tr><td>Jing Chen</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1432" disabled></form></td></tr></table></td><td><table border="3" cellpadding="0" cellspacing="0"><tr><th>Reviewer</th><th>Reviewed</th></tr><tr><td>Kelvin Li</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1377" disabled></form></td></tr><tr><td>Kendrick Wong</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1318" disabled></form></td></tr><tr><td>Kit Barton</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1364" disabled></form></td></tr><tr><td>Kobi Vinayagamoorthy</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1289" disabled></form></td></tr><tr><td>Larry Lindsay</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1357" disabled></form></td></tr><tr><td>Leon L Kiriliuk</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1478" disabled></form></td></tr><tr><td>Lu Yang</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1346" disabled></form></td></tr><tr><td>Michelle Zhang</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1335" disabled></form></td></tr><tr><td>Nan Zhang</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1439" disabled></form></td></tr><tr><td>Rafik Zurob</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1405" disabled></form></td></tr><tr><td>Rajan Bhakta</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1348" disabled></form></td></tr><tr><td>Raul Silvera</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1372" disabled></form></td></tr><tr><td>Raymond Mak</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1322" disabled></form></td></tr><tr><td>Rene Matteau</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1435" disabled></form></td></tr><tr><td>Roch Archambault</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1457" disabled></form></td></tr></table></td><td><table border="3" cellpadding="0" cellspacing="0"><tr><th>Reviewer</th><th>Reviewed</th></tr><tr><td>Sarah McNamara</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1518" disabled></form></td></tr><tr><td>Sean Perry</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1408" disabled></form></td></tr><tr><td>Si Yuan Zhang</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1948" disabled></form></td></tr><tr><td>Tarique Islam</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1622" disabled></form></td></tr><tr><td>Vicky Chin</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1418" disabled></form></td></tr><tr><td>Visda Vokhshoori</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1476" disabled></form></td></tr><tr><td>Wang Chen</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1366" disabled></form></td></tr><tr><td>Wei Zhong Shan</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1749" disabled></form></td></tr><tr><td>Yan Liu</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1373" disabled></form></td></tr><tr><td>Ying Zhang</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1401" disabled></form></td></tr><tr><td>Zbigniew Sarbinowski</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1400" disabled></form></td></tr><tr><td>denispal@ca.ibm.com</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_2277" disabled></form></td></tr><tr><td>linka@cn.ibm.com</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_2049" disabled></form></td></tr><tr><td>maryammo@ca.ibm.com</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_2383" disabled></form></td></tr><tr><td>shereen@ca.ibm.com</td><td align="center"><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_2168" disabled></form></td></tr></table></td></tr></table>
+
+<p>
+</p><table cellspacing="2" cellpadding="2" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td style="font-family: Arial; vertical-align: top;"><strong>Access Change History</strong>  </td>
+        </tr>
+    </tbody>
+</table>
+
+<p><span id="expander_sec1"><a href="javascript:expand('_sec1');"><img src="/images/expand_small.gif" alt="Expand"></a></span> <strong>Access Change History</strong></p><div id="expanded_sec1"></div>
+
+<p>
+</p><table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Feature Overview</strong> </td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<font size="2">Submodule is introduced in Fortran 2008 standard. It provides additional structuring facilities for modules. A submodule is a program unit that extends a module or another submodule. A submodule may provide definitions for procedures whose interfaces are  declared in an ancestor module or submodule. It may also contain  declarations and definitions of other entities, which are accessible in  its descendants.  The declarations and the definitions of entities in a module or submodule are accessible by host association in its descendants.</font><br>
+<h2>Key Requirements</h2>
+<br>
+<font size="2">1. Implement the submodule feature so that it can provide definitions for procedures whose interface are declared in an ancestor module or submodule.<br>
+2.  Implement the host association access of variables among module and its descendant submodules. </font>
+<h2>Key Design Issues</h2>
+<br>
+<font size="2">1. How to implement the host association access of a submodule and its ancestors as submodules and modules are all program units.<br>
+2. What file suffix should we use for the module symbol file created for a submodule.<br>
+3. How to handle the derived type promotion from submodule procedures scope into outer scope.<br>
+</font><br>
+<h2>Key Design Decisions</h2>
+<br>
+<font size="2">1. The ancestor module and each of its descendant submodule will have its own scope. While the ancestor module possesses the outer most scope, a containing-contained scope relationship is established to achieve the host association.<br>
+2. Vendors don't need to ship the  the module symbol files created for submodules as users only need to use a module. Therefore, we decided to use &quot;.smod&quot; file suffix for the module symbol files created for submodules to differentiate &quot;.mod&quot; for modules so that it is easy to filter them out.<br>
+3. We promote the use-associated derived types and all related internal symbols from the module procedure scope to its containing scope. Since the same module may be used by the ancestor module or submodules of a particular submodule, we need to search up to the ancestor module scope and create the symbol in the current submodule scope if it is not found.</font><br>
+<h2>Testing Strategy</h2>
+
+<br>
+<font size="2">There will be diagnostic and functional test cases covering the general use of submodule.<br>
+<br>
+<strong>Positive diagnostic:</strong><br>
+these will be scattered among functional test cases but involve:<br>
+- changing the lettering case of keywords such as 'subModuLe'<br>
+- changing the ordering of keywords such as 'module integer function f()' vs 'integer module function f()'<br>
+<br>
+<strong>Negative diagnostic:</strong><br>
+- the use of access modifiers for attributes in module functions<br>
+- function or subroutine defined in a submodule but not declared in any parent module<br>
+- function or subroutine defined in a submodule but declared in a parent module and a USE associated module<br>
+- other invalid uses of variables, procedures in scoping units<br>
+<br>
+<strong>Functional:</strong><br>
+- simple use declaring a submodule should pass<br>
+- checking variable accessibility in different scoping units<br>
+<br>
+However, given that the code involving scoping units is higher risk, testing will be more heavily weighted towards scoping.  There are two ways scoping will be covered:<br>
+<br>
+1.  Host association when extending a module with a submodule, which by default allows access to the host variables, type definitions, subroutine and function definitions<br>
+<br>
+    The effect of access modifiers on variables, type definitions, functions and subroutines will be consired.  Test cases will consider the use of interfaces and also examine the name mangling of these functions and subroutines to verify the correct routine is called.<br>
+<br>
+2.  Constructs that create a new scoping unit such as blocks, loops, USE association on a different module than the host, etc.<br>
+<br>
+    These test cases consider the following:<br>
+    - scopes created by blocks, loops, etc are local to those blocks but can access host-associated items<br>
+    - with USE association on modules with conflicting attributes, which attribute is accessed and in which situation?<br>
+      - USE association can be set up within a local scoping unit or in the submodule</font><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<p> </p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>User Documentation</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Overview</h3>
+</strong> </strong></strong>
+<p><font size="3"><span style="color: rgb(0, 128, 0);"><span style="color: rgb(0, 128, 0);"> </span></span></font></p>
+<p><font size="2">Submodule is introduced in Fortran 2008 standard. It provides additional  structuring facilities for modules. A submodule is a program unit that  extends a module or another submodule. A submodule may provide definitions for procedures whose interfaces are  declared in an ancestor module or submodule. It may also contain  declarations and definitions of other entities, which are accessible in  its descendants.  The declarations and the definitions of entities in a  module or submodule are accessible by host association in its  descendants.</font></p>
+<font size="2"> <font size="3"> </font>  <strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"> <strong style="color: rgb(0, 128, 0); font-size: 20px;">  <strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>User Benefits</h3>
+</strong> </strong></strong></strong>
+<p><font size="2">The submodule feature provides an improvement in backward compatibility and usability. For example, when users use a module that contains the interfaces of module procedures, its descendant submodules may provide implementation of those module procedures. If vendors of those procedures change their implementation, as long as the interface remain the same, users are not required to recompile the files that contains the module. <br>
+</font></p>
+<p><font size="2"><font size="2">Becau<font size="2">se submodules can <font size="2">not be accessed by use-assoc<font size="2">iation, </font></font></font><font size="2">submodules of two m<font size="2">odules can use each other<font size="2"> without causing the circular dependency.</font></font></font></font></font></p>
+<p><font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><font size="2">Users can put entities in the intermedia<font size="2">te submodule level that are shared by it de<font size="2">s<font size="2">cendan<font size="2">t</font> submodules</font>. <font size="2">C</font></font>hanging these entities cannot change the interpretation of anything that is accessible from the module<font size="2"> </font>by use association<font size="2">. <font size="2">User</font></font></font>s of modules that embody large complicated concepts can exploit this possibility<font size="2"> </font>to organize components of the concept into submodules, while preserving the privacy of entities that are shared<font size="2"> </font>by the submodules and that ought not to be exposed to users of the module. Putting these shared entities at an<font size="2"> </font>intermediate level also prevents cascades of reprocessing and testing if some of them are changed.</font></font></font></font></font><br>
+</font></p>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Public Interface</h3>
+</strong></strong></strong></strong><font size="2"><br>
+<font size="2">1. Syntax:<br>
+</font></font><blockquote><font size="2">Submodule is:<br>
+</font> <blockquote><font size="2">submodule-stmt<br>
+</font> </blockquote><blockquote><blockquote><font size="2">[ speci<font size="2">fi</font>ation-part ]<br>
+</font> </blockquote></blockquote><blockquote><blockquote><font size="2">[ module-subprogram-part ]<br>
+</font> </blockquote></blockquote><blockquote><font size="2">end-submodule-stmt<br>
+</font> </blockquote><font size="2">submodule-stmt is:<br>
+</font> <blockquote><font size="2">SUBMODULE (parent-identifier) submodule-name<br>
+</font> </blockquote><font size="2">parent-identifier is:<br>
+</font> <blockquote><font size="2">ancestor-module-name [: parent-submodule-name]<br>
+</font> </blockquote><font size="2">end-submodule-stmt is:<br>
+</font> <blockquote><font size="2">END [ SUBMODULE [ submodule-name ] ]<br>
+</font> </blockquote></blockquote><font size="2">2. Generated files:</font><font size="2"><br>
+</font><blockquote><font size="2">ancestor-module-name_submodule-name.smod: <br>
+</font> <blockquote><font size="2">The submodule symbol fi<font size="2">le</font>. It is used by its descendant submodules. The name of the file is the conjunction of the ancestor module name and the submodule name. The suffix of the file is &quot;.smod&quot; to allow users filtering them out easily. Unlike module symbol files (.mod files), the .smod files don't need to be shipped to the end users.<br>
+</font> </blockquote><font size="2">file<font size="2">_name</font>.o:<br>
+</font> <blockquote><font size="2">The object file of a submodule. It contains the executable code of separate module procedures that are implemented in the submodule.</font></blockquote></blockquote><font size="2"><br>
+</font><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Constraints</h3>
+</strong> </strong></strong></strong><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;">
+<p><font size="2">T<font size="2">he <font size="2">following constraints are <font size="2">straightly copied from the standard.</font></font></font><br>
+</font></p>
+<p><font size="2">C1112: A submodule specification-part shall not contain a format-stmt , entry-stmt , or stmt-function-stmt. (same constraint as module)</font></p>
+<p><font size="2">C1113: The ancestor-module-name shall be the name of a nonintrinsic module; the parent-submodule-name shall be the name of a descendant of that module.<br>
+<br>
+C1114: If a submodule-name appears in the end-submodule-stmt , it shall be identical to the one in the submodule-stmt.</font></p>
+<p><font size="2">C1506: A procedure defined in a submodule shall not have a binding label unless its interface is declared in the ancestor module.</font></p>
+<p><font size="2">C1247: MODULE shall appear only in the function-stmt or subroutine-stmt of a module subprogram or of a nonabstract interface body that is declared in the scoping unit of a module or submodule.</font></p>
+<p><font size="2">C517: An access-spec shall appear only in the specification-part of a module. (it is not valid in submodules).<br>
+</font></p>
+</span></span></span><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"> <strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Rules</h3>
+</strong> </strong></strong></strong>
+<p>1. A submodule is a program unit.</p>
+<p>2. A submodule may contain module subprograms. It is the host scoping unit of the module subprograms.</p>
+<p>3. A submodule may provide definitions for procedures whose interfaces are declared in an ancestor module or submodule. It may also contain declarations and definitions of other entities, which are accessible in its descendants. An entity declared in a submodule is not accessible by use association unless it is a module procedure whose interface is declared in the ancestor module.</p>
+<p>4. A submodule has access to entities in its parent module of submodule by host association.<br>
+</p>
+<p>5. The end-submodule-stmt is nonexecutable. <br>
+</p>
+<p><font size="2">6. </font>A local variable of a submodule is accessible only in that submodule scoping unit and in any contained scoping units.</p>
+<p>7. A variable, common block, or procedure pointer declared in the scoping unit of a submodule implicitly has the SAVE attribute, which may be confirmed by explicit specification.</p>
+<p>8. If a specification expression in the specification-part of a submodule includes a reference to a generic entity, that generic entity shall have no specific procedures defined in the submodule subsequent to the specification expression.</p>
+<p>9. If a constant expression in the specification-part of a submodule includes a reference to a generic entity, that generic entity shall have no specific procedures defined in the submodule subsequent to the constant expression.</p>
+<p>10. A submodule has exactly one ancestor module and may optionally have one or more ancestor submodules.</p>
+<p>11. The submodule identifier of a submodule is a global identifier.</p>
+<p>12. Submodule identifiers are global identifiers, but because they consist of a module name and a descendant submodule name, the name of a submodule can be the same as the name of another submodule so long as they do not have the same ancestor module.</p>
+<p><font size="2">13. A separate module procedure shall not be <font size="2">defined</font> more than once.</font><br>
+</p>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Language Standard Considerations</h3>
+</strong> </strong></strong></strong></font><font size="2"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><font size="2"><font size="2"><font size="2"><font size="2">SU<font size="2">BMODULE</font> is<font size="2"> a new feature </font>in Fortran 2008 standard. A langlvl message is issue<font size="2">d <font size="2">at the MODULE prefix keyword </font></font>if the -qlanglvl option specifies older version of the standard.</font></font></font></font></span></span></span><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"> <strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Messages</h3>
+</strong></strong></strong></strong><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><font size="2"><br>
+All the m<font size="2">essages have been approved by the XLF Message Commit<font size="2">tee<font size="2">.<br>
+</font></font></font></font></span></span></span><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"> <strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Runtime and Compile Time Performance Considerations</h3>
+</strong> </strong></strong></strong><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;">
+<p><font size="2"><font size="2"><font color="#000000">Search<font size="2">ing and reus<font size="2">ing the symbols that have been use-associated in ancestor <font size="2">module <font size="2">or submodules wi<font size="2">ll reduce the <font size="2">number o<font size="2">f symbols<font size="2">. It <font size="2">will help the aliasing calculation so to improve<font size="2"> the comp<font size="2">ile time performance.</font></font></font></font></font></font></font></font></font></font></font></font></font></font><br>
+</p>
+</span></span></span><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"> <strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Multi-Platform/Portability Considerations</h3>
+</strong></strong></strong></strong><font size="2"><br>
+None.</font><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><br>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Migration/Co-Existence/Binary-Compatibility Considerations</h3>
+</strong> </strong></strong></strong><font size="2"><font size="2"><br>
+S<font size="2">ubmodules can extend <font size="2">exi<font size="2">sting modules.</font></font></font></font></font><br>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Debug Considerations</h3>
+</strong> </strong></strong>
+<p><font size="2"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><font size="2"><font size="2"><font size="2"> </font></font></font></span></span></span></font></p>
+</strong><span style="font-size: 20px;">
+<p><font size="2"><font size="2"><font size="2"><font size="2">1. The name mangling scheme should be documented so that the debugger can demangle it.</font></font></font></font></p>
+<font size="2"><font size="2">
+<p><font size="2"><font size="2">2. <font size="2"><font size="2">Should t</font>he name of the <font size="2">s<font size="2">ubmodule appear as </font></font></font></font></font>&quot;submod<font size="2">ule<font size="2">name&quot; or <font size="2">&quot;<font size="2">(modulename)submodulename&quot;.</font></font></font></font></p>
+<p><font size="2"><font size="2"><font size="2"><font size="2"><font size="2">3. Submodule variables are invisible with Aix7 Dw<font size="2">arf<font size="2">.</font></font></font></font></font></font></font></p>
+</font></font></span></font><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><br>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>NLS (Unicode) Considerations</h3>
+</strong> </strong></strong></strong><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><font size="2" color="#000000"><br>
+None.</font></span></span></span><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><br>
+</strong></strong></strong><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Samples</h3>
+</strong> <br>
+</strong></strong></strong><br>
+<font size="2"><font size="2"><code> </code></font></font> <font size="2"><font size="2"><code>
+<p><font size="2" face="Courier New"></font></p>
+<pre><font size="2" face="Courier New">Module <font size="2">m</font></font><p><font size="2" face="Courier New">  interface</font><font face="Courier New"> </font> </p><p><font size="2" face="Courier New">    module subroutine sub(arg)</font> </p><p><font size="2" face="Courier New">      integer arg</font></p><p><font size="2" face="Courier New">    end subroutine</font></p><p><font size="2" face="Courier New">  end interface</font></p><p><font size="2" face="Courier New">end modu<font size="2">le</font></font></p><p><font size="2" face="Courier New"><font size="2"><br></font></font></p><p><font size="2" face="Courier New">submodule (m) n</font><font size="2" face="Courier New">  </font><font face="Courier New"> </font> </p><p><font size="2" face="Courier New">contains</font><font size="2" face="Courier New">  </font><font face="Courier New"> </font> </p><p><font size="2" face="Courier New">  module subroutine sub(arg)</font><font size="2" face="Courier New"> </font><font face="Courier New"> </font> </p><p><font size="2" face="Courier New">    integer arg</font><font face="Courier New"> </font> </p><p><font size="2" face="Courier New">    arg = 1</font></p><p><font size="2" face="Courier New">  end </font></p><p><font size="2" face="Courier New">end sub<font size="2">module</font> </font><font face="Courier New"> </font></p><p> <font face="Courier New"> </font><font size="2" face="Courier New"> </font><font size="2" face="Courier New">  </font><font face="Courier New"> </font> </p><p><font size="2" face="Courier New">Program main</font><font size="2" face="Courier New"> </font><font size="2" face="Courier New">  </font><font face="Courier New"> </font> </p><p><font size="2" face="Courier New">  use m<br></font><font size="2" face="Courier New"></font></p><p><font size="2" face="Courier New">  integer i </font> <font size="2" face="Courier New">  </font><font face="Courier New"> </font> </p><p><font size="2" face="Courier New">  call sub(i)</font></p><p><font size="2" face="Courier New">end program</font></p></pre>
+<p> </p>
+</code></font></font><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><br>
+</strong></strong></strong> <strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Architecture Review Board</strong> </td>
+        </tr>
+    </tbody>
+</table>
+</strong></strong></strong><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><br>
+<font size="2" color="#000000">ARB review is not necessary as this is a FE only feature.<br>
+</font><br>
+</span></span></span><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Internal Compiler Team Information</strong>       </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Product Dependencies</h3>
+</strong> </strong></strong></strong><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><font size="2" color="#000000"><br>
+None.<br>
+<br>
+</font> </span></span></span><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"> <strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Patent/Disclosure Implications</h3>
+</strong> </strong></strong></strong><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><font size="2" color="#000000"><br>
+None.<br>
+<br>
+</font> </span></span></span><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"> <strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Scientific Research and Experimental Development</h3>
+</strong></strong></strong></strong><font size="2">None.<br>
+</font><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><br>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Build and Packaging Considerations</h3>
+</strong></strong></strong></strong><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><font size="2" color="#000000"><br>
+None.</font></span></span></span> <font face="Arial"><br>
+</font><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Information Development Impacts</h3>
+<p>
+</p><table width="791" height="73" cellspacing="1" cellpadding="1" border="1" align="" summary="">
+    <tbody>
+        <tr>
+            <td colspan="2"><font color="#000000"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;"><span style="font-weight: bold;"><br>
+            Overview</span>: </strong></strong></strong></strong></strong><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;">Update the Language Reference with the Submodule syntax, usage, and rules. Add a section in Optimization and Programming guide talk about a complete module and submodule example. For ID impact on the MODULE prefix part, see the MODULE prefix i0.<br>
+            </span></span></span></span></span></font></td>
+        </tr>
+        <tr>
+            <td><font color="#000000"><strong><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;">New terminology:<br>
+            </span></span></span></span></span></strong><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">
+            <p><font face="Arial">-- submodule<br>
+            </font></p>
+            <p><font face="Arial">-- parent submodule<br>
+            </font></p>
+            <p><font face="Arial">-- <font color="#000000">module procedure</font> interface body</font></p>
+            <p><font face="Arial">-- separate module procedure</font></p>
+            <p><font face="Arial"><font color="#000000">Changed terminology</font></font></p>
+            <p><font face="Arial"><font color="#000000">-- host association</font><br>
+            </font></p>
+            </strong></strong></strong></strong></strong></font></td>
+            <td> </td>
+        </tr>
+    </tbody>
+</table>
+
+<strong style="color: rgb(0, 128, 0); font-size: 12px;">
+<table cellspacing="1.5" cellpadding="2" border="1" style="text-align: left; width: 100%; height: 408px;">
+    <tbody>
+        <tr>
+            <td colspan="3" style="vertical-align: top;"><strong>Publication Name:</strong> Language Reference</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="vertical-align: top;"><span style="font-weight: bold;"></span><span style="font-weight: bold;"></span><span style="font-weight: bold;">Chapter: </span>Program units and procedures<br>
+            <br>
+            <span style="font-weight: bold;">Section: </span>Program units, procedures, and subprograms<br>
+            <br>
+            <span style="font-weight: bold;">Update/New/Delete: </span>update<br>
+            <br>
+            <strong>http://vaidbld.canlab.ibm.com:10201/help/topic/com.ibm.xlf151.aix.doc/language_ref/progunits_procs_subprogs.html</strong></td>
+            <td style="vertical-align: top;"><span style="font-weight: bold;"></span><span style="font-weight: bold;">Description:</span> State that a submodule is a program unit.<br>
+            <br>
+            <span style="font-weight: bold;">Related cross references/links:</span><br>
+            <br>
+            <span style="font-weight: bold;">Impact on external interfaces:</span><br>
+            <br>
+            <span style="font-weight: bold;">Other dependencies:  internal / external subprograms / module subprograms<br>
+            </span>             </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="vertical-align: top;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;"><span style="font-weight: bold;">Chapter: </span>Program units and procedures<br>
+            <br>
+            <span style="font-weight: bold;">Section: </span>Scoping unit<br>
+            <br>
+            <span style="font-weight: bold;">Update/New/Delete: </span>update<br>
+            <br>
+            http://vaidbld.canlab.ibm.com:10201/help/topic/com.ibm.xlf151.aix.doc/language_ref/scoping_unit.html</strong></strong></strong></strong></strong></td>
+            <td style="vertical-align: top;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;"><span style="font-weight: bold;">Description:</span> Update the description for host association.<br>
+            <br>
+            <span style="font-weight: bold;">Related cross references/links:</span><br>
+            <br>
+            <span style="font-weight: bold;">Impact on external interfaces:</span><br>
+            <br>
+            <span style="font-weight: bold;">Other dependencies: <br>
+            </span></strong></strong></strong></strong></strong></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="vertical-align: top;"><span style="font-weight: bold;">Chapter: </span>Program units and procedures<br>
+            <br>
+            <span style="font-weight: bold;">Section: </span>Submodules<br>
+            <br>
+            <span style="font-weight: bold;">Update/New/Delete: </span>new<br>
+            <br>
+            http://vaidbld.canlab.ibm.com:10201/help/topic/com.ibm.xlf151.aix.doc/language_ref/submodules.html</td>
+            <td style="vertical-align: top;"><span style="font-weight: bold;">Description:</span> Add a new section to introduce submodule with syntax and usage<br>
+            <br>
+            <span style="font-weight: bold;">Related cross references/links:</span> Module, Host association, Use association<br>
+            <br>
+            <span style="font-weight: bold;">Impact on external interfaces:</span><br>
+            <br>
+            <span style="font-weight: bold;">Other dependencies:</span></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="vertical-align: top;"><span style="font-weight: bold;">Chapter: </span>Program units and procedures<br>
+            <br>
+            <span style="font-weight: bold;">Section: </span>Association -&gt; Host association<br>
+            <br>
+            <span style="font-weight: bold;">Update/New/Delete: </span>update<br>
+            <br>
+            http://vaidbld.canlab.ibm.com:10201/help/topic/com.ibm.xlf151.aix.doc/language_ref/host_association.html</td>
+            <td style="vertical-align: top;"><span style="font-weight: bold;">Description:</span> To indicate that a submodule access entities from its ancestor module and submodules via host association<br>
+            <br>
+            <span style="font-weight: bold;">Related cross references/links:</span><br>
+            <br>
+            <span style="font-weight: bold;">Impact on external interfaces:</span><br>
+            <br>
+            <span style="font-weight: bold;">Other dependencies:</span></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="vertical-align: top;"><span style="font-weight: bold;">Chapter: </span>Statements and attributes<br>
+            <br>
+            <span style="font-weight: bold;">Section: </span>SUBMODULE<br>
+            <br>
+            <span style="font-weight: bold;">Update/New/Delete: </span>new<br>
+            <br>
+            http://vaidbld.torolab.ibm.com:10201/help/topic/com.ibm.xlf151.aix.doc/language_ref/submodule.html</td>
+            <td style="vertical-align: top;"><span style="font-weight: bold;">Description:</span> State the SUBMODULE syntax, rules, and examples.<br>
+            <br>
+            <span style="font-weight: bold;">Related cross references/links:</span> Submodules (new), MODULE statement<br>
+            <br>
+            <span style="font-weight: bold;">Impact on external interfaces:</span><br>
+            <br>
+            <span style="font-weight: bold;">Other dependencies:  <br>
+            <br>
+            </span></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="vertical-align: top;"><span style="font-weight: bold;">Chapter: </span>Statements and attributes<br>
+            <br>
+            <span style="font-weight: bold;">Section: </span>END<br>
+            <br>
+            <span style="font-weight: bold;">Update/New/Delete: </span>update<br>
+            <br>
+            http://vaidbld.torolab.ibm.com:10201/help/topic/com.ibm.xlf151.aix.doc/language_ref/end.html</td>
+            <td style="vertical-align: top;"><span style="font-weight: bold;">Description:</span> Add SUBMODULE to the syntax and description<br>
+            <br>
+            <span style="font-weight: bold;">Related cross references/links:</span><br>
+            <br>
+            <span style="font-weight: bold;">Impact on external interfaces:</span><br>
+            <br>
+            <span style="font-weight: bold;">Other dependencies:  </span></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="vertical-align: top;"><span style="font-weight: bold;">Chapter: </span>Statements and attributes<br>
+            <br>
+            <span style="font-weight: bold;">Section: (the main section)</span><br>
+            <br>
+            <span style="font-weight: bold;">Update/New/Delete: </span>update<br>
+            <br>
+            http://vaidbld.canlab.ibm.com:10201/help/topic/com.ibm.xlf151.aix.doc/language_ref/stmts.html</td>
+            <td style="vertical-align: top;"><span style="font-weight: bold;">Description:</span> Add SUBMODULE and END SUBMODULE to the statement list<br>
+            <br>
+            <span style="font-weight: bold;">Related cross references/links:</span><br>
+            <br>
+            <span style="font-weight: bold;">Impact on external interfaces:</span><br>
+            <br>
+            <span style="font-weight: bold;">Other dependencies:  </span></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="vertical-align: top;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;"><span style="font-weight: bold;">Chapter: </span></strong></strong></strong></strong></strong>XL Fortran language fundamentals <br>
+            <strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">             <br>
+            <span style="font-weight: bold;">Section: </span>Order of statements and execution sequence<br>
+            <br>
+            <span style="font-weight: bold;">Update/New/Delete: </span>update<br>
+            <br>
+            ttp://vaidbld.canlab.ibm.com:10201/help/topic/com.ibm.xlf151.aix.doc/language_ref/statementorder.html</strong></strong></strong></strong></strong></td>
+            <td style="vertical-align: top;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;"><span style="font-weight: bold;">Description:</span> Add SUBMODULE to the first statement list<br>
+            <br>
+            <span style="font-weight: bold;">Related cross references/links:</span><br>
+            <br>
+            <span style="font-weight: bold;">Impact on external interfaces:</span><br>
+            <br>
+            <span style="font-weight: bold;">Other dependencies:  </span></strong></strong></strong></strong></strong></td>
+        </tr>
+        <tr>
+            <td colspan="3" style="vertical-align: top;"><strong><br>
+            Note:</strong> There are many other impacted topics in LR that are not listed in this I0,  including different statements and hardware-specific directives.<br>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;"> </strong>
+<table cellspacing="2" cellpadding="2" border="1">
+    <tbody>
+        <tr>
+            <td colspan="3" style="vertical-align: top;"><strong>Publication Name:</strong>  Optimization and Programming Guide<br>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="vertical-align: top;"><span style="font-weight: bold;">Chapter: </span>Compiler-friendly programming techniques<br>
+            <br>
+            <span style="font-weight: bold;">Section: </span>Modules with submodules (Fortran 2008)<br>
+            <br>
+            <span style="font-weight: bold;">Update/New/Delete: </span>new<br>
+            <br>
+            <strong>Reference:</strong> C.8.4 Modules with submodules (11.2.3)<br>
+            <br>
+            </td>
+            <td style="vertical-align: top;"><span style="font-weight: bold;">Description:</span> <font face="Arial">Add a new section in OPG <strong>and include </strong></font><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;"><font face="Arial">a complete program example to illustrate submodules, including the following points:<br>
+            </font></strong></strong></strong></strong></strong>
+            <ul>
+                <li><span id="comments_379"><span id="comments60050"><span id="expanded60050"><span id="comments_content60050"><a title="Click on the text to add a comment" class="review"><span id="line_60050_2"></span></a><a title="Click on the text to add a comment" class="review"><span id="line_60050_3">Recompilation cascade when the implementation, but not the interface, of a module procedure is changed.</span></a><span id="comments60050_3"></span><span id="comments_entry60050_3"></span> <a title="Click on the text to add a comment" class="review"><span id="line_60050_7"></span></a><span id="comments60050_7"></span><span id="comments_entry60050_7"></span> <a title="Click on the text to add a comment" class="review"><span id="line_60050_8"></span></a><a title="Click on the text to add a comment" class="review"><span id="line_60050_9"></span></a><span id="comments60050_9"></span><span id="comments_entry60050_9"></span></span></span></span></span></li>
+                <li><span id="comments_379"><span id="comments60050"><span id="expanded60050"><span id="comments_content60050">             <a title="Click on the text to add a comment" class="review"><span id="line_60050_10"> </span></a><span id="comments60050_10"></span><span id="comments_entry60050_10"></span> <a title="Click on the text to add a comment" class="review"><span id="line_60050_11">Circular dependencies between module files is prevented.</span></a><span id="comments60050_11"></span><span id="comments_entry60050_11"></span> </span></span></span></span></li>
+                <li><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;">The benefit of putting entities in the intermediate level of submodules.</span></span></span></span></span></li>
+                <li>             <font face="Arial">The submodule name is not specified in the source file on the USE side.</font></li>
+            </ul>
+            <span style="font-weight: bold;">Related cross references/links:</span><br>
+            <ul>
+                <li>The Submodules section in Language Reference</li>
+                <li>The SUBMODULE syntax and rules in Language Reference.</li>
+                <li>The submodule .smod files in Compiler Reference.</li>
+            </ul>
+            <br>
+            <span style="font-weight: bold;">Impact on external interfaces:</span> N/A<br>
+            <br>
+            <br>
+            <span style="font-weight: bold;">Other dependencies: N/A<br>
+            </span></td>
+        </tr>
+    </tbody>
+</table>
+<h3>  </h3>
+<h3>
+</h3><table width="785" height="231" cellspacing="1" cellpadding="1" border="1" align="" summary="">
+    <tbody>
+        <tr>
+            <td colspan="2"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">           </strong>
+            <h3><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong>Publication Name:</strong> Getting Started<br>
+            </strong></strong></strong></strong></strong></strong></h3>
+            </strong></strong></strong></strong></td>
+        </tr>
+        <tr>
+            <td><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">           </strong>
+            <h3><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">             </strong></strong></strong></strong></strong></strong><span style="color: rgb(0, 128, 0); font-size: 12px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;">
+            <h3><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;">Chapter: What's new for IBM XL Fortran, V15.1<br>
+            <br>
+            Section: Fortran 2008 features<br>
+            <br>
+            Update/New/Delete: update<br>
+            <br>
+            http://vaidbld.canlab.ibm.com:10201/help/topic/com.ibm.xlf151.aix.doc/getstart/new_flangupdates_v15.html</span></span></span></span></span></h3>
+            </span></span></span></span></span></span><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">             </strong></strong></strong></strong></strong></strong></h3>
+            </strong></strong></strong></strong></td>
+            <td><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">           </strong>
+            <h3><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">
+            <h3><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;"><span style="font-weight: bold;">Description:</span> add a section to summarize F2008 submodules</span></span></span></span></span></h3>
+            </strong></strong></strong></strong></strong></strong><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">
+            <h3><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;"><span style="font-weight: bold;">Related cross references/links:</span><br>
+            <br>
+            <span style="font-weight: bold;">Impact on external interfaces:</span><br>
+            <br>
+            <span style="font-weight: bold;">Other dependencies:  </span></span></span></span></span></span></h3>
+            </strong></strong></strong></strong></strong></strong></h3>
+            </strong></strong></strong></strong></td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;"><span style="font-weight: bold;">Chapter: </span></strong></strong></strong></strong></strong><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;"><span class="item"><a role="treeitem" title="Setting up and customizing XL Fortran" href="http://vaidbld.canlab.ibm.com:10201/help/topic/com.ibm.xlf151.aix.doc/getstart/setupch.html">Setting up and customizing XL Fortran</a><br>
+            <br>
+            </span><span style="font-weight: bold;">Section: </span>XL Fortran input and output files<br>
+            <br>
+            <span style="font-weight: bold;">Update/New/Delete: </span>update<br>
+            <br>
+            http://vaidbld.canlab.ibm.com:10201/help/topic/com.ibm.xlf151.aix.doc/getstart/inputoutput_files.html</strong></strong></strong></strong></strong></td>
+            <td><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+            <h3>             </h3>
+            <h3><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">
+            <h3><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;"><span style="font-weight: bold;">Description:</span> add .smod files in the input and output files tables<br>
+            </span></span></span></span></span></h3>
+            </strong></strong></strong></strong></strong></strong></strong><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">
+            <h3><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;"><span style="font-weight: bold;">Related cross references/links:</span><br>
+            <br>
+            <span style="font-weight: bold;">Impact on external interfaces:</span><br>
+            <br>
+            <span style="font-weight: bold;">Other dependencies:  </span></span></span></span></span></span></h3>
+            </strong></strong></strong></strong></strong></strong></h3>
+            </strong></strong></strong></strong></td>
+            <td> </td>
+        </tr>
+    </tbody>
+</table>
+
+<h3> </h3>
+</strong></strong></strong></strong></strong>
+<table width="785" height="231" cellspacing="1" cellpadding="1" border="1" align="" summary="">
+    <tbody>
+        <tr>
+            <td colspan="3"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">           </strong>
+            <h3><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong>Publication Name:</strong> Compiler Reference<br>
+            </strong></strong></strong></strong></strong></strong></h3>
+            </strong></strong></strong></strong></td>
+        </tr>
+        <tr>
+            <td><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">           </strong>
+            <h3><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">
+            <h3><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;"><span style="font-weight: bold;">Chapter: </span></span></span></span></span></span><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;"><span class="item"><a role="treeitem" title="Editing, compiling, linking, and running XL Fortran programs" href="http://vaidbld.canlab.ibm.com:10201/help/topic/com.ibm.xlf151.aix.doc/compiler_ref/compile.html">Editing, compiling, linking, and running XL Fortran programs</a></span>             <br>
+            <span style="font-weight: bold;"></span></span></span></span></span></span></h3>
+            <h3><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;"><span style="font-weight: bold;">Section: </span></span></span></span></span></span><span><span><span class="resultofText" name="resultofMatch"><span><span class="resultofText" name="resultofMatch">Compil</span>ation</span></span> </span><span class="resultofText" name="resultofMatch">order</span> for </span><span class="keyword">Fortran</span> programs</h3>
+            </strong></strong></strong></strong></strong></strong></h3>
+            </strong></strong></strong></strong><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+            <h3><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">
+            <h3><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;">             <span style="font-weight: bold;">Update/New/Delete: </span>update<br>
+            <br>
+            http://vaidbld.canlab.ibm.com:10201/help/topic/com.ibm.xlf151.aix.doc/compiler_ref/compilation_order.html</span></span></span></span></span></h3>
+            </strong></strong></strong></strong></strong></strong></h3>
+            </strong></strong></strong></strong></td>
+            <td><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">
+            <h3><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+            <h3><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">
+            <h3><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;"><span style="font-weight: bold;">Description:</span> talk about submodules and it does not require recompilation of the ancestor module when only the submodule implementation is changed.<br>
+            </span></span></span></span></span></h3>
+            </strong></strong></strong></strong></strong></strong></strong><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">
+            <h3><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;"><span style="font-weight: bold;">Related cross references/links:</span><br>
+            <br>
+            <span style="font-weight: bold;">Impact on external interfaces:</span><br>
+            <br>
+            <span style="font-weight: bold;">Other dependencies:  </span></span></span></span></span></span></h3>
+            </strong></strong></strong></strong></strong></strong></h3>
+            </strong></strong></strong></strong></h3>
+            </strong></strong></strong></strong></strong></td>
+        </tr>
+        <tr>
+            <td><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+            <h3><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">
+            <h3><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;"><span style="font-weight: bold;">Chapter: </span></span></span></span></span></span><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;"><span class="item"><a role="treeitem" title="Editing, compiling, linking, and running XL Fortran programs" href="http://vaidbld.canlab.ibm.com:10201/help/topic/com.ibm.xlf151.aix.doc/compiler_ref/compile.html">Editing, compiling, linking, and running XL Fortran programs</a></span>             <br>
+            <span style="font-weight: bold;"></span></span></span></span></span></span></h3>
+            <h3><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;"><span style="font-weight: bold;">Section: </span></span></span></span></span></span><span><span><span class="resultofText" name="resultofMatch"><span><span class="resultofText" name="resultofMatch">XL Fortran input files</span></span></span></span></span></h3>
+            </strong></strong></strong></strong></strong></strong></h3>
+            </strong></strong></strong></strong><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+            <h3><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">
+            <h3><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;">             <span style="font-weight: bold;">Update/New/Delete: </span>update<br>
+            <br>
+            http://vaidbld.canlab.ibm.com:10201/help/topic/com.ibm.xlf151.aix.doc/compiler_ref/inputfiles.html</span></span></span></span></span></h3>
+            </strong></strong></strong></strong></strong></strong></h3>
+            </strong></strong></strong></strong></td>
+            <td><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">
+            <h3><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+            <h3><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">
+            <h3><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;"><span style="font-weight: bold;">Description:</span> </span></span></span></span></span><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;">add the description for the .smod file</span></span></span></span></span></h3>
+            </strong></strong></strong></strong></strong></strong></strong><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">
+            <h3><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;"><span style="font-weight: bold;">Related cross references/links:</span><br>
+            <br>
+            <span style="font-weight: bold;">Impact on external interfaces:</span><br>
+            <br>
+            <span style="font-weight: bold;">Other dependencies:  </span></span></span></span></span></span></h3>
+            </strong></strong></strong></strong></strong></strong></h3>
+            </strong></strong></strong></strong></h3>
+            </strong></strong></strong></strong></strong></td>
+        </tr>
+        <tr>
+            <td><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+            <h3><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">
+            <h3><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;"><span style="font-weight: bold;">Chapter: </span></span></span></span></span></span><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;"><span class="item"><a role="treeitem" title="Editing, compiling, linking, and running XL Fortran programs" href="http://vaidbld.canlab.ibm.com:10201/help/topic/com.ibm.xlf151.aix.doc/compiler_ref/compile.html">Editing, compiling, linking, and running XL Fortran programs</a></span>             <br>
+            <span style="font-weight: bold;"></span></span></span></span></span></span></h3>
+            <h3><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;"><span style="font-weight: bold;">Section: </span></span></span></span></span></span><span><span><span class="resultofText" name="resultofMatch"><span><span class="resultofText" name="resultofMatch">XL Fortran output files</span></span></span></span></span></h3>
+            </strong></strong></strong></strong></strong></strong></h3>
+            </strong></strong></strong></strong><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+            <h3><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">             </strong>             </strong></strong></strong>
+            <h3><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">
+            <h3><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;">http://vaidbld.canlab.ibm.com:10201/help/topic/com.ibm.xlf151.aix.doc/compiler_ref/outputfiles.html</span></span></span></span></span></h3>
+            </strong></strong></strong></strong></strong></strong></strong></h3>
+            </strong></strong>             </h3>
+            <h3><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;">             <span style="font-weight: bold;">Update/New/Delete: </span>update<br>
+            <br>
+            </span></span></span></span></span><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">             </strong></strong></strong>             </strong></strong></strong>             </h3>
+            </strong></strong></strong></strong>             </td>
+            <td><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">
+            <h3><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+            <h3><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">
+            <h3><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;"><span style="font-weight: bold;">Description:</span> add the description for the .smod file<br>
+            </span></span></span></span></span></h3>
+            </strong></strong></strong></strong></strong></strong></strong><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">
+            <h3><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;"><span style="font-weight: bold;">Related cross references/links:</span><br>
+            <br>
+            <span style="font-weight: bold;">Impact on external interfaces:</span><br>
+            <br>
+            <span style="font-weight: bold;">Other dependencies:  </span></span></span></span></span></span></h3>
+            </strong></strong></strong></strong></strong></strong></h3>
+            </strong></strong></strong></strong></h3>
+            </strong></strong></strong></strong></strong></td>
+        </tr>
+    </tbody>
+</table>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">
+<h3><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">Testing Consideration</strong></strong></strong><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"></span></span></span><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;">s</span></span></span></h3>
+</strong></strong></strong></strong></strong><font size="2"><br>
+Since we use a containing scope chain to <font size="2">implement the host association among module and its submodules, <font size="2">the following test scenarios should be <font size="2">considered.<br>
+<br>
+</font> <font size="2">1. <font size="2">Procedure pointer using procedure<font size="2">s declared in different module/submodule scopes as its interface name or target.<br>
+<font size="2">2. Use statements in different module or submoduel procedures to test the derived type promotion.<br>
+<font size="2">3. <font size="2">Use modules in submodule scope to test the use-association vs the host association.<br>
+<font size="2">4. Te<font size="2">st derived type I/O to make sure <font size="2">all the internal created I/<font size="2">O d<font size="2">escriptor<font size="2">s are in the corr<font size="2">ect scope.</font></font></font></font></font></font></font><br>
+</font></font></font></font></font></font></font></font></font><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><br>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Internal or Hidden Options</h3>
+</strong> </strong></strong></strong></strong></strong></strong></strong><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><font size="2" color="#000000"><br>
+None.<br>
+<br>
+</font> </span></span></span></span></span></span></span><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>High-Level Implementation Design</strong>       </td>
+        </tr>
+    </tbody>
+</table>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Implementation Design Overview</h3>
+</strong></strong></strong></strong></strong></strong></strong></strong><br>
+<span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 12px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><font size="2"><font size="2"><font size="2">
+<p>1. If <font size="2">a <font size="2">module procedure<font size="2"> </font>interface body</font></font> is declared in a module, the <font size="2">mangled name of its corresponding separate module procedure</font> and all the references to the <font size="2">separate module pr<font size="2">ocedur<font size="2">e is:</font></font></font></p>
+</font></font></font></span></span></span></span></span></span></span><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><font size="2"><font size="2"><font size="2"> </font></font></font></strong></strong></strong></strong></strong></strong></strong><blockquote><font size="2">__NMOD_mod<font size="2">ulename_procedurename<font size="2">  // This is same as <font size="2">the existing name mangl<font size="2">in<font size="2">g</font> schema for <font size="2">module p<font size="2">rocedures.<br>
+</font></font></font></font></font></font></font></blockquote><font size="2">2. If a <font size="2">module procedure</font> interface body is declared in a submodule, its corres<font size="2">pondin<font size="2">g</font> separate</font></font>  module procedure, if there is one, and all the references to the  separate module procedure must be in its descendant submodules.  Therefore, the including the ancestor module name and the name of the  submodule in which the module procedure interface body is declared makes a  unique mangled name as:<br>
+<blockquote>__submodulename_NMOD_modulename_$procedurename<br>
+</blockquote>3. Same as a module, a submodule is also a program unit. We  also create a hidden module procedure for debugging purpose for a  submodule and mangle its name as:<br>
+<blockquote>__submodulename_NMOD_modulename_$_&amp;&amp;_submodulename<br>
+</blockquote>4. We also mangle the name of the container of submodule variables as:<br>
+<blockquote>&amp;&amp;N&amp;submodulename_$_modulename      // for initialized submodule variables.<br>
+&amp;&amp;N&amp;@submodulename_$_modulename  // for uninitialized submodule variables.<br>
+</blockquote><font size="2">5. A containing scope ch<font size="2">ain is used to represent the hos<font size="2">t association. The outermost scope is the module scope. The current submodule scope is the <font size="2">inn<font size="2">ermost program unit scope.</font></font></font></font></font><br>
+<blockquote> </blockquote><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><br>
+<strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3>Inter-Component Communication/Interfaces</h3>
+</strong> </strong></strong></strong></strong></strong></strong></strong><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;">
+<p><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><font size="2" color="#000000">None.</font></span></span></span></span></span></span></span></p>
+</span></span></span></span><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<h3><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">Other Implementation Design Information</strong></strong></strong></strong></h3>
+<strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"> </strong> </strong></strong></strong></strong></strong></strong></strong><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 12px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><font size="2"><font color="#000000"><br>
+None.<br>
+<br>
+</font> <br>
+</font></span></span></span></span></span></span></span><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;">
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Appendix/Reference</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+</strong></strong> </strong></strong></strong></strong></strong><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 12px;">
+<p><font size="2">J3/10-007r1 (F2008 Working document)</font></p>
+</span></span></span></span></span><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 12px;">
+<p><font size="2"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"><span style="color: rgb(0, 128, 0); font-size: 20px;"></span></span></span></span></font></p>
+</strong></strong></strong></strong></strong><script>document.sections={};</script><script>document.sections['expanded_sec1']='<p><table border=1 cellspacing=0 cellpadding=0><tr><th>Change Date</th><th>Updater</th><th>Access Change</th></tr><tr><td><p>26-Sep-12 10:20</p></td><td><p>Daniel C Chen</p></td><td><p>Added Tarique Islam (tislam@ca.ibm.com) as <b>Author</b></p><p>Added Roch Archambault (archie@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Rene Matteau (matteau@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Sean Perry (perry@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Sarah McNamara (mcnamara@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Enrique Varillas (enriquev@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Ian McIntosh (ianm@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Chad McIntyre (cmcintyr@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Si Yuan Zhang (siyuan.zhang@cn.ibm.com) as <b>Release Management Contact</b></p><p>Added shereen@ca.ibm.com (shereen@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Grigor Nikolov (gnikolov@ca.ibm.com) as <b>Author</b></p><p>Added Dave Paulmark (dvp@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Bardia Mahjour (bmahjour@ca.ibm.com) as <b>Author</b></p><p>Added Irina Rada (irinar@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Raymond Mak (rmak@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Kobi Vinayagamoorthy (kobiv@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Kelvin Li (kli@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Wang Chen (wdchen@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Rafik Zurob (rzurob@ca.ibm.com) as <b>Author</b></p><p>Added Raul Silvera (rauls@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Jeff Heath (jrheath@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added linka@cn.ibm.com (linka@cn.ibm.com) as <b>Author</b></p><p>Added Kendrick Wong (kendrick@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Ying Zhang (zhangy@ca.ibm.com) as <b>Author</b></p><p>Added Michelle Zhang (zhangmy@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Leon L Kiriliuk (leonk@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Larry Lindsay (llindsay@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Vicky Chin (vwkchin@ca.ibm.com) as <b>Component Reviewer</b></p></td></tr><tr><td><p>14-Nov-12 11:14</p></td><td><p>Daniel C Chen</p></td><td><p>Added Wei Zhong Shan (swzhong@cn.ibm.com) as <b>Component Reviewer</b></p></td></tr><tr><td><p>27-Nov-12 11:59</p></td><td><p>Daniel C Chen</p></td><td><p>Added Bernard Kan (bkan@ca.ibm.com) as <b>Author</b></p></td></tr><tr><td><p>07-Jan-13 16:14</p></td><td><p>Daniel C Chen</p></td><td><p>Added Kit Barton (kbarton@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added denispal@ca.ibm.com (denispal@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Jin Yan Chen (chenjiny@cn.ibm.com) as <b>Component Reviewer</b></p><p>Added maryammd@ca.ibm.com (maryammd@ca.ibm.com) as <b>Team Reviewer</b></p><p>Added Rajan Bhakta (rbhakta@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Visda Vokhshoori (visdav@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Zbigniew Sarbinowski (zibi@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Igor Todorovski (itodorov@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Dickson Chau (dickson.chau@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Yan Liu (yanliu@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Lu Yang (luyang@ca.ibm.com) as <b>Component Reviewer</b></p><p>Added Jian Xu (jianxu@ca.ibm.com) as <b>Component Reviewer</b></p><p>Modified Tarique Islam (tislam@ca.ibm.com) role from Author to <b>Team Reviewer</b></p><p>Modified Grigor Nikolov (gnikolov@ca.ibm.com) role from Author to <b>Approver</b></p><p>Modified Bardia Mahjour (bmahjour@ca.ibm.com) role from Author to <b>Team Reviewer</b></p><p>Modified Rafik Zurob (rzurob@ca.ibm.com) role from Author to <b>Approver</b></p><p>Modified Ying Zhang (zhangy@ca.ibm.com) role from Author to <b>Team Reviewer</b></p></td></tr><tr><td><p>07-Jan-13 16:16</p></td><td><p>Daniel C Chen</p></td><td><p>Added maryammo@ca.ibm.com (maryammo@ca.ibm.com) as <b>Team Reviewer</b></p><p>Removed maryammd@ca.ibm.com (maryammd@ca.ibm.com) as <b>Team Reviewer</b></p></td></tr></table></p>';</script><br>
+
+
+</div></td></tr></table>
+
+
+		
+		<a href="http://w3.ibm.com/w3/info_terms_of_use.html" class="terms">Terms of use</a><br>
+	</div>
+	
+<!-- stop main content --></div>
+
+<!-- stop content --></body></html>

@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/crossFeature/arrayConst/arrayConstr001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/abstract/crossFeature/arrayConst/arrayConstr001.scenario
+#DATE      = 20070612
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)arrayConstr001.f
+#OUTPUT    = arrayConstr001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = arrayConstr001$(OBJ)
+#OUTPUT    = arrayConstr001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = arrayConstr001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

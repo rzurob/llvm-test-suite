@@ -1,0 +1,12 @@
+ &NML
+ DTV=i=   11 c= abc , i=   12 c= def , i=   13 c= ghi , i=   14 c= jkl
+ /
+ &NML
+ DTV=i=   21 c= ABC , i=   22 c= DEF , i=   23 c= GHI , i=   24 c= JKL
+ /
+ &NML
+ DTV=i=   31 c= mno , i=   32 c= pqr , i=   33 c= stu , i=   34 c= vwx
+ /
+ &NML
+ DTV=i=   41 c= MNO , i=   42 c= PQR , i=   43 c= STU , i=   44 c= VWX
+ /

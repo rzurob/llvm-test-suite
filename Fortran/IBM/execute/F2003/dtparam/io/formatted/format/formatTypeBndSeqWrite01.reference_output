@@ -1,0 +1,22 @@
+ in writeOuter
+  foo
+  red
+  pot
+   +123
+   -456
+   +789
+ in writeInner
+    123
+   -456
+    789
+ in printOuter
+  foo
+  red
+  pot
+         1111011
+  1777777777777777777070
+       315
+ in printInner
+         1111011
+  1777777777777777777070
+       315

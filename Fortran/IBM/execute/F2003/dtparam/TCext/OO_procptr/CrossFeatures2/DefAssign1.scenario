@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_procptr/CrossFeatures2/DefAssign1.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_procptr/*
+#DATE      = 20071011
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS  = -qdebug=allowrpdt
+#INPUT=  $(tcasedir)DefAssign1.f
+#OUTPUT= DefAssign1$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  DefAssign1$(OBJ)
+#OUTPUT= DefAssign1$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  DefAssign1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

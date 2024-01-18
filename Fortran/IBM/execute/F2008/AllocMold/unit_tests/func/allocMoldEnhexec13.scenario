@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME = allocMoldEnhexec13.scenario
+#FEATURE = Allocate stmt f2008 enhancement
+#CREATOR = Daniel Chen
+#DATE    = 20111108
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)allocMoldEnhexec13.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = allocMoldEnhexec13$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = allocMoldEnhexec13$(OBJ)
+#OUTPUT    = allocMoldEnhexec13$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = allocMoldEnhexec13$(EXE)
+#STDOUT    = allocMoldEnhexec13.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = allocMoldEnhexec13.out $(tcasedir)allocMoldEnhexec13.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

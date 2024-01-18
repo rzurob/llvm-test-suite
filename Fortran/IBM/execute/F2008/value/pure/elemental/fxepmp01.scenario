@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2008/value/pure/unit_tests/elemental/fxepmp01.scenario
+#FEATURE = 384867 \
+           F2008: VALUE attribute allowed for dummy args of PURE procedures
+#CREATOR = Gaby Baghdadi (copy of /tstdev/elemental/epmp/fxepmp01.scenario)
+#DATE    = 20101201
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#INVALID_PRODUCT= sles,rhel
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)fxepmp01.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION) $(OPT_FLOAT_USE_MULTIPLY_ADD_OFF)
+#OUTPUT    = fxepmp01$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION) $(OPT_FLOAT_USE_MULTIPLY_ADD_OFF)
+#INPUT     =  fxepmp01$(OBJ)
+#OUTPUT    = fxepmp01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxepmp01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

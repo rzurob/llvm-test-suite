@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"target001.f", line 46.12: 1515-118 (S) The target of the procedure pointer assignment statement must be: an external procedure, a module procedure, an internal procedure, a dummy procedure, a function reference that returns a procedure pointer or another procedure pointer.
+"target001.f", line 47.12: 1515-118 (S) The target of the procedure pointer assignment statement must be: an external procedure, a module procedure, an internal procedure, a dummy procedure, a function reference that returns a procedure pointer or another procedure pointer.
+** target001   === End of Compilation 2 ===
+** sub1   === End of Compilation 3 ===
+** func1   === End of Compilation 4 ===
+1501-511  Compilation failed for file target001.f.

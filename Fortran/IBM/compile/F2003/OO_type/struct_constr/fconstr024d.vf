@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"fconstr024d.f", line 61.30: 1514-560 (S) The component keyword base does not match a component of the derived type child.
+"fconstr024d.f", line 62.30: 1514-560 (S) The component keyword base does not match a component of the derived type child.
+"fconstr024d.f", line 63.58: 1514-560 (S) The component keyword base does not match a component of the derived type child.
+** fconstr024d   === End of Compilation 2 ===
+1501-511  Compilation failed for file fconstr024d.f.

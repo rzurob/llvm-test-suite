@@ -1,0 +1,49 @@
+#!/bin/sh
+# Repeat this file with:
+# ----------------------------------------
+# emapfn-2.vf: integer*2
+# ...
+
+case $1 in
+  -tc) tcname=$2; shift; shift ;;  # Test Case name
+  '') tcname=`basename $0 .sh` ;;
+  *) tcname=$1; shift ;;  # TRUN
+esac
+
+
+#
+#  Defect:  288647 - Skip Test Cases *-12/*-22 for options:  -O4/-O5 -q64
+#  Set $skip to "1" for these Options; default to "0".
+#
+q64Mode=`expr "$OPTIONS" : '.*\(-q64\)'`
+optLevel=`expr "$OPTIONS" : '.*\(-O[45]\)'`
+
+skip=0
+case $tcname in
+	*-?2*)
+		if [ -n "$q64Mode" -a -n "$optLevel" ]
+		then
+			skip=1
+		fi
+		;;
+esac
+
+
+## Pick compilation options for common source file, depending on test case.
+case $tcname in *-2*)
+  k=',-DMOD'
+esac
+
+case $tcname in
+  *-?1*) fF="-WF,-DFTYPE=integer*2$k" cF="-DCTYPE=short -DCFORMAT=%hd" ;;
+  *-?2*) fF="-WF,-DFTYPE=integer*4$k" cF="-DCTYPE=int -DCFORMAT=%ld" ;;
+  *-?3*) fF="-WF,-DFTYPE=integer*8$k" cF="-DCTYPE='long long' -DCFORMAT=%lld" ;;
+
+  *-?4*) fF="-WF,-DFTYPE=real*4$k"  cF="-DCTYPE=float -DCFORMAT=%.9f" ;;
+  *-?5*) fF="-WF,-DFTYPE=real*8$k"  cF="-DCTYPE=double -DCFORMAT=%.17f" ;;
+  *-?6*) fF="-WF,-DFTYPE=real*16$k" cF="-DCTYPE='long double' -DCFORMAT=%.34Lf"
+    ;;
+esac
+
+
+echo "fF=\"$fF\" cF=\"$cF\" skip=\"$skip\""

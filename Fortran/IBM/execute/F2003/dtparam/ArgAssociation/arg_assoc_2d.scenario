@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/ArgAssociation/arg_assoc_2d.scenario
+#FEATURE   = 361232
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20090119
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)arg_assoc_2d.f
+#OUTPUT    = arg_assoc_2d$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = arg_assoc_2d$(OBJ)
+#OUTPUT    = arg_assoc_2d$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = arg_assoc_2d$(EXE)
+#STDOUT    = arg_assoc_2d.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)arg_assoc_2d$(product)vf) arg_assoc_2d.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

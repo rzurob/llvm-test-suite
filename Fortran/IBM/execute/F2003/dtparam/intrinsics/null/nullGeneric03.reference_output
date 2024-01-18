@@ -1,0 +1,28 @@
+ 1---
+ in sub1
+ dtp is not associated
+ in sub2
+ dtp is not associated
+ in sub3
+ dtp1 is not associated
+ dtp2 is not associated
+ 2---
+ in sub1
+ dtp is associated
+ 2 3 1 2 3
+ in sub2
+ dtp is associated
+ 4 6 11 12 13
+ in sub3
+ dtp1 is associated
+ 2 3 1 2 3
+ dtp2 is associated
+ 4 6 11 12 13
+ 3---
+ in sub1
+ dtp is not associated
+ in sub2
+ dtp is not associated
+ in sub3
+ dtp1 is not associated
+ dtp2 is not associated

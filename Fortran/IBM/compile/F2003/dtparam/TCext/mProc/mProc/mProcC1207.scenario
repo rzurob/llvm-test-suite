@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mProc/mProc/mProcC1207.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mProc/*
+#DATE      = 20071106
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=      F_COMPILE
+#OPTS=     $(OPT_FREE_SOURCE_FORM)
+#INPUT=    $(tcasedir)mProcC1207.f
+#STDERR=   mProcC1207.err
+!#VALIDRCS= $(RC_COMP_E)
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    mProcC1207.err $($(tcasedir)mProcC1207$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=decimaleditd006.f
+#FEATURE = diagnostic for decimal= specifier and dp and dc edit descriptors.
+#CREATOR = Bardia Mahjour
+#DATE    = 20051205
+#TEST_TYPE=diag test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)decimaleditd006.f
+#OPTS      = -qdebug=intmsg
+#STDERR    = decimaleditd006.err
+#STDOUT    = decimaleditd006.out
+#OUTPUT    = decimaleditd006$(OBJ)
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = decimaleditd006.err $($(tcasedir)decimaleditd006$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

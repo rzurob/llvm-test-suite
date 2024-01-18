@@ -1,0 +1,33 @@
+#!/bin/ksh
+
+cp -r ${TR_SRC}/existStreamFile .
+cp -r ${TR_SRC}/fileWithHole .
+
+echo 'Compiling files'
+echo ${COMPILER} ${TR_SRC}/$1.f ${OPTIONS}
+${COMPILER} ${TR_SRC}/$1.f ${OPTIONS}
+RC=$?
+
+if [ $RC = 0 ]
+then
+  echo 'Compilation done'
+else
+  echo 'Compilation failed'; exit $RC
+fi
+
+a.out > $1.out
+xldiff $1.out ${TR_SRC}/$1.vf
+RC=$?
+
+if [ $RC = 0 ]
+then
+  echo 'Verification successful'
+else
+  echo 'Verification failed'; exit $RC
+fi
+
+rm -r a.out
+rm -r $1.out
+rm -r *.mod
+rm -r newStreamFile
+exit 0

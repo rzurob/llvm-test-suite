@@ -1,0 +1,10 @@
+"mult_type_bound_02d.f", line 41.9: 1514-582 (S) The interface iface and the binding procedure real_bar must not both be specified for the same binding.
+"mult_type_bound_02d.f", line 47.47: 1514-084 (S) Identifier dtv is being declared with type name fox_base which has not been defined in a derived type definition.
+"mult_type_bound_02d.f", line 62.35: 1514-088 (S) Invalid component name.
+"mult_type_bound_02d.f", line 62.43: 1514-088 (S) Invalid component name.
+"mult_type_bound_02d.f", line 67.35: 1514-088 (S) Invalid component name.
+"mult_type_bound_02d.f", line 67.43: 1514-088 (S) Invalid component name.
+"mult_type_bound_02d.f", line 72.35: 1514-088 (S) Invalid component name.
+"mult_type_bound_02d.f", line 72.43: 1514-088 (S) Invalid component name.
+** m   === End of Compilation 1 ===
+1501-511  Compilation failed for file mult_type_bound_02d.f.

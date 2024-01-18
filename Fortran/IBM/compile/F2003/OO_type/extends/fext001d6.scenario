@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_type/extends/fext001d6.scenario
+#FEATURE = OO_type
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fext001d6.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fext001d6$(OBJ)
+#STDERR    = fext001d6.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = fext001d6.err $($(tcasedir)fext001d6$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

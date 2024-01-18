@@ -1,0 +1,4 @@
+"genericAssignmentArray010d.f", line 65.14: 1513-038 (S) Assumed-size array is not permitted in this context.
+** m   === End of Compilation 1 ===
+** genericassignmentarray010d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericAssignmentArray010d.f.

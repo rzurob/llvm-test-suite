@@ -1,0 +1,8 @@
+"BNoCycled.f", line 41.33: 1511-049 (S) Construct name on CYCLE does not match name on DO-loop.
+"BNoCycled.f", line 57.33: 1511-049 (S) Construct name on CYCLE does not match name on DO-loop.
+"BNoCycled.f", line 75.28: 1511-049 (S) Construct name on CYCLE does not match name on DO-loop.
+"BNoCycled.f", line 93.25: 1511-049 (S) Construct name on CYCLE does not match name on DO-loop.
+"BNoCycled.f", line 101.23: 1511-049 (S) Construct name on CYCLE does not match name on DO-loop.
+"BNoCycled.f", line 105.16: 1511-037 (S) CYCLE statement was not found within the range of a DO-loop.
+** bnocycled   === End of Compilation 1 ===
+1501-511  Compilation failed for file BNoCycled.f.

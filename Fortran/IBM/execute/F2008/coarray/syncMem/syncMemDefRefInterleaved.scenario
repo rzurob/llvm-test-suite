@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/syncMem/syncMemDefRefInterleaved.scenario
+#FEATURE        = CAF SYNC MEMORY - simple test of definition preceding reference
+#CREATOR        = DF
+#DATE           = 2010-09-07
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)syncMemDefRefInterleaved.f
+#OUTPUT = syncMemDefRefInterleaved$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = syncMemDefRefInterleaved$(OBJ)
+#OUTPUT = syncMemDefRefInterleaved$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = syncMemDefRefInterleaved$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

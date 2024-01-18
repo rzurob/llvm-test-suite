@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = ieee/select/select006.scenario
+#FEATURE = ieee tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)ieeeconsts.f
+#OUTPUT = ieeeconsts$(OBJ)
+#OPTS   = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION) -qautodbl=dbl4
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)select006.f
+#OUTPUT = select006$(OBJ)
+#OPTS   = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION) -qautodbl=dbl4 -I./
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = select006$(OBJ)
+#OUTPUT = select006$(EXE)
+#OPTS   = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION) -qautodbl=dbl4 -I./
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = select006$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

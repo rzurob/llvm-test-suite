@@ -1,0 +1,5 @@
+"bindc025d.f", line 44.25: 1516-190 (S) Variables with the BIND(C) attribute must not appear as equivalence group objects in EQUIVALENCE statements, or as common block objects in COMMON statements.
+"bindc025d.f", line 46.27: 1516-190 (S) Variables with the BIND(C) attribute must not appear as equivalence group objects in EQUIVALENCE statements, or as common block objects in COMMON statements.
+** m   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file bindc025d.f.

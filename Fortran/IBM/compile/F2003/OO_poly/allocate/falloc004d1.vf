@@ -1,0 +1,3 @@
+"falloc004d1.f", line 36.33: 1516-266 (S) The ERRMSG= specifier must not be specified more than once in the DEALLOCATE statement.
+** falloc004d1   === End of Compilation 1 ===
+1501-511  Compilation failed for file falloc004d1.f.

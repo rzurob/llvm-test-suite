@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/allocate/SourceExp/SimpleAllocateWithSourceEx03.f
+#FEATURE   = DTP - Allocate with source expression
+#CREATOR   = Izhak Jakov
+#DATE      = 20090126
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)SimpleAllocateWithSourceEx03.f
+#OUTPUT    = SimpleAllocateWithSourceEx03$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = SimpleAllocateWithSourceEx03$(OBJ)
+#OUTPUT    = SimpleAllocateWithSourceEx03$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = SimpleAllocateWithSourceEx03$(EXE)
+#STDOUT    = SimpleAllocateWithSourceEx03.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

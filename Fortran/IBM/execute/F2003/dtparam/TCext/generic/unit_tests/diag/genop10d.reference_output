@@ -1,0 +1,4 @@
+"genop10d.f", line 17.4: 1514-703 (S) All generic bindings with generic specification OPERATOR(**) in type base must have the same accessibility.
+"genop10d.f", line 18.4: 1514-703 (S) All generic bindings with generic specification OPERATOR(**) in type base must have the same accessibility.
+** m   === End of Compilation 1 ===
+1501-511  Compilation failed for file genop10d.f.

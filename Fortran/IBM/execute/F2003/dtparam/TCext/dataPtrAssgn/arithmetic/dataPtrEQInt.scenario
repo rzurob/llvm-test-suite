@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/arithmetic/dataPtrEQInt.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071217
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)dataPtrEQInt_c.c
+#OPTS      = $(C_COMPILER_OPTS)
+#OUTPUT    = dataPtrEQInt_c$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrEQInt.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrEQInt$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrEQInt$(OBJ) dataPtrEQInt_c$(OBJ)
+#OUTPUT    = dataPtrEQInt$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrEQInt$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

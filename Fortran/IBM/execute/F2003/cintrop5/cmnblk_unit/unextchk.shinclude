@@ -1,0 +1,31 @@
+! This replaces unextchk.sh
+
+#CMD     = XLC_COMPILE
+#INPUT   = $(tcasedir)$CTCARG.c
+#OPTS    = $(C_COMPILER_OPTS) $(OPT_CHECK_TYPES_AT_BIND_TIME) $TCOPTS
+#OUTPUT  = $CTCARG$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_COMPILE
+#INPUT   = $(tcasedir)$FTCARG.f
+#OPTS    = $(OPT_CHECK_TYPES_AT_BIND_TIME) $TCOPTS
+#OUTPUT  = $FTCARG$(OBJ)
+#STDERR  = comp.err
+#ENDCMD
+
+#CMD     = XLF95_LINK
+#INPUT   = $CTCARG$(OBJ) $FTCARG$(OBJ)
+#OPTS    = $(OPT_CHECK_TYPES_AT_BIND_TIME) $TCOPTS
+#OUTPUT  = $FTCARG$(EXE)
+#STDERR  = link.err
+#VALIDRCS=$(RC_ANY)
+#ENDCMD
+
+#CMD     = CAT
+#INPUT   = comp.err link.err
+#STDOUT  = test.outs
+#ENDCMD
+
+#CMD     = XLDIFF
+#INPUT   = test.outs $(tcasedir)$FTCARG.vf
+#ENDCMD

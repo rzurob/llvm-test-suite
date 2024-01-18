@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_procptr/CrossFeatures1/Associated4.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_procptr/*
+#DATE      = 20071011
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)Associated4.f
+#OUTPUT= Associated4$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  Associated4$(OBJ)
+#OUTPUT= Associated4$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  Associated4$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

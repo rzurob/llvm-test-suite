@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/DT/crossFeature/funcRetrn/funcRetrn002.scenario
+#FEATURE = OO_dtio
+#CREATOR = Robert Ma
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)funcRetrn002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = funcRetrn002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = funcRetrn002$(OBJ)
+#OUTPUT    = funcRetrn002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = funcRetrn002$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)funcRetrn002$(product)vf) funcRetrn002.1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

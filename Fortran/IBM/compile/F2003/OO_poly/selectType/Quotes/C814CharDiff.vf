@@ -1,0 +1,4 @@
+"C814CharDiff.f", line 56.13: 1511-111 (S) The character type specified in the type guard statement must have inherited length.
+"C814CharDiff.f", line 57.6: 1511-124 (E) The statement following a SELECT TYPE statement must be either a type guard statement or an END SELECT statement.
+** c814chardiff   === End of Compilation 1 ===
+1501-511  Compilation failed for file C814CharDiff.f.

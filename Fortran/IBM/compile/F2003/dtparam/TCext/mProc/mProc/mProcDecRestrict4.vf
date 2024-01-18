@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"mProcDecRestrict4.f", line 93.15: 1514-699 (S) Procedure "procptr" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "readf", present and type incompatible, present with different kind type parameters, or present with a different rank.
+"mProcDecRestrict4.f", line 97.15: 1514-699 (S) Procedure "proc" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "readf", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** mprocdecrestrict4   === End of Compilation 2 ===
+1501-511  Compilation failed for file mProcDecRestrict4.f.

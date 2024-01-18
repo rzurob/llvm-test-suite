@@ -1,0 +1,4 @@
+"Misc4.f", line 47.23: 1511-101 (S) The selector in the SELECT TYPE statement is not polymorphic.
+"Misc4.f", line 48.11: 1511-112 (S) The selector in the SELECT TYPE statement is not unlimited polymorphic.  Intrinsic type CHARACTER must not appear in the TYPE IS statement.
+** misc4   === End of Compilation 1 ===
+1501-511  Compilation failed for file Misc4.f.

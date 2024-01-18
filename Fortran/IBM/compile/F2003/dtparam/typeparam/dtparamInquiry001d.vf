@@ -1,0 +1,4 @@
+"dtparamInquiry001d.f", line 39.5: 1515-025 (S) Only a name of a variable, array element, or character substring is permitted on the left hand side of an assignment statement.
+"dtparamInquiry001d.f", line 40.5: 1515-025 (S) Only a name of a variable, array element, or character substring is permitted on the left hand side of an assignment statement.
+** dtparaminquiry001d   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtparamInquiry001d.f.

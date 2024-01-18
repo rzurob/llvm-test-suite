@@ -1,0 +1,36 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       kindArgVerify8.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       07-06-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)kindArgVerify8.f
+#OUTPUT= kindArgVerify8$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  kindArgVerify8$(OBJ)
+#OUTPUT= kindArgVerify8$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  kindArgVerify8$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

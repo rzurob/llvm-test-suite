@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2008/coarray/coindexed_object/procedure/func/coindexObjectProcedureDT12.scenario
+#FEATURE   =
+#CREATOR   = Shahid Alam
+#DATE      = 20110520
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)coindexObjectProcedureDT12.f
+#OUTPUT    = coindexObjectProcedureDT12$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = coindexObjectProcedureDT12$(OBJ)
+#OUTPUT    = coindexObjectProcedureDT12$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+   #CMD       = MPRUN
+   #INPUT     = coindexObjectProcedureDT12$(EXE)
+   #STDOUT    = coindexObjectProcedureDT12$(i).out
+   #STDERR    = coindexObjectProcedureDT12$(i).out
+   #ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

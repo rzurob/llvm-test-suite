@@ -1,0 +1,30 @@
+"impliedshape06d.f", line 29.29: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 30.29: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 31.29: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 33.29: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 36.26: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 37.26: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 38.26: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 40.26: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 44.38: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 45.38: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 46.38: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 48.38: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 52.29: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 53.29: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 54.29: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 56.29: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 59.31: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 60.31: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 61.31: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 63.31: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 67.29: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 68.29: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 70.29: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 73.29: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 79.32: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 80.32: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 82.32: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"impliedshape06d.f", line 84.32: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+** impliedshape06d   === End of Compilation 1 ===
+1501-510  Compilation successful for file impliedshape06d.f.

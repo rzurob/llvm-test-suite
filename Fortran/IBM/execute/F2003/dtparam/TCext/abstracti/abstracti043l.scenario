@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/abstracti/abstracti043l.scenario
+#FEATURE	= Derived Type Parameters (+ Abstract Interface Tests)
+#CREATOR	= Glen Mateer (derived from work by automated conversion script)
+#DATE		= 20071031
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)abstracti043l.f
+#OUTPUT		= abstracti043l$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= abstracti043l$(OBJ)
+#OUTPUT		= abstracti043l$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= abstracti043l$(EXE)
+#STDOUT		= abstracti043l.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)abstracti043l$(product)vf) abstracti043l.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2004/ace/types/intrinsics/acetint40za.scenario
+#FEATURE	= Array constructor enhancement - assign AC with complex constants of different kinds
+#CREATOR	= DF Manual Update
+#DATE		= 20060614
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint40za.f
+#OUTPUT		= acetint40za$(OBJ)
+#STDERR		= acetint40za.err
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= acetint40za.err $(tcasedir)acetint40za.vf
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint40za$(OBJ)
+#OUTPUT		= acetint40za$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint40za$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

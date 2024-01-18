@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/AllocatableAndPointer/func/AllocatableDummyArgument314f.scenario
+#FEATURE   = C Interop, Allocatable, Pointer
+#CREATOR   = Dorra Bouchiha
+#DATE      = 2013-05-22
+#TEST_TYPE = functional
+#KEYWORDS  = C Interop, Allocatable, Pointer
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)AllocatableDummyArgument314c.c
+#OPTS      = $(C_COMPILER_OPTS) -I$(xlf_include)
+#OUTPUT    = AllocatableDummyArgument314c$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AllocatableDummyArgument314f.f
+#OUTPUT    = AllocatableDummyArgument314f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = AllocatableDummyArgument314c$(OBJ) AllocatableDummyArgument314f$(OBJ)
+#OUTPUT    = AllocatableDummyArgument314f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = AllocatableDummyArgument314f$(EXE)
+#STDOUT    = AllocatableDummyArgument314f.out
+#ENDCMD
+
+#CMD       = DIFF
+#OPTS      = -w
+#INPUT     = $($(tcasedir)AllocatableDummyArgument314f$(product)vf) AllocatableDummyArgument314f.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

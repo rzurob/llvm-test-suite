@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/kindArg/kindArg/kindArgCount6.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of F2003/kindArg/*
+#DATE      = 20071107
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)kindArgCount6.f
+#OUTPUT= kindArgCount6$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  kindArgCount6$(OBJ)
+#OUTPUT= kindArgCount6$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  kindArgCount6$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

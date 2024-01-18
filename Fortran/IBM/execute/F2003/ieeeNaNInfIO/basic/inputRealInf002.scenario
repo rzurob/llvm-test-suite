@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = inputRealInf002.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 8, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)inputRealInf002.f
+#OUTPUT   =  inputRealInf002$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  inputRealInf002$(OBJ)
+#OUTPUT   =  inputRealInf002$(EXE)
+#ENDCMD
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)real_inf_pos.dat $(tcasedir)real_inf_neg.dat
+#OUTPUT   = ./
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  inputRealInf002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

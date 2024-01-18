@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/ieeeNaNInfIO/misc/d330415.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d330415.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qinitauto=ff
+#OUTPUT    = d330415$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d330415$(OBJ)
+#OUTPUT    = d330415$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d330415$(EXE)
+#STDOUT    = d330415.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = d330415.out $($(tcasedir)d330415$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

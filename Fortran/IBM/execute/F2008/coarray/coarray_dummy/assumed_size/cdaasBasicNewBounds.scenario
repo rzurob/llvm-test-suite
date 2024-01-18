@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_dummy/assumed_size/cdaasBasicNewBounds
+#FEATURE        = CAF dummy arguments - assumed size - everything but the bounds are the same
+#CREATOR        = DF
+#DATE           = 2010-09-28
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)cdaasBasicNewBounds.f
+#OUTPUT = cdaasBasicNewBounds$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = cdaasBasicNewBounds$(OBJ)
+#OUTPUT = cdaasBasicNewBounds$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = cdaasBasicNewBounds$(EXE)
+#STDOUT = cdaasBasicNewBounds.out
+#ENDCMD
+
+#CMD    = SPIFF
+#OPTS   = -r1e-5
+#INPUT  = $($(tcasedir)cdaasBasicNewBounds$(product)vf) cdaasBasicNewBounds.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

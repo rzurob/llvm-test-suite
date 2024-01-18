@@ -1,0 +1,5 @@
+** acetdt35cdmod   === End of Compilation 1 ===
+"acetdt35cd.f", line 64.12: 1512-125 (S) A derived-type entity containing a component with the POINTER attribute must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+"acetdt35cd.f", line 65.12: 1512-125 (S) A derived-type entity containing a component with the POINTER attribute must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+** acetdt35cd   === End of Compilation 2 ===
+1501-511  Compilation failed for file acetdt35cd.f.

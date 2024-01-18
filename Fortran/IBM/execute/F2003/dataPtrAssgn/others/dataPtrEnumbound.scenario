@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrEnumbound.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrEnumbound.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrEnumbound$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrEnumbound$(OBJ)
+#OUTPUT    = dataPtrEnumbound$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrEnumbound$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

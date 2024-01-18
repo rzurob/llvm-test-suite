@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"fext038d3.f", 1514-587 (S) Component child is not permitted. child is the name of a component, binding, or type parameter that is inherited from type child.
+** fext038d3   === End of Compilation 2 ===
+1501-511  Compilation failed for file fext038d3.f.

@@ -1,0 +1,68 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       kindArgLbound9.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       06-13-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM) $(OPT_INTSIZE_2)
+#INPUT=  $(tcasedir)kindArgLbound9.f
+#OUTPUT= kindArgLbound9$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM) $(OPT_INTSIZE_2)
+#INPUT=  kindArgLbound9$(OBJ)
+#OUTPUT= kindArgLbound9$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  kindArgLbound9$(EXE)
+#ENDCMD
+
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM) $(OPT_INTSIZE_4)
+#INPUT=  $(tcasedir)kindArgLbound9.f
+#OUTPUT= kindArgLbound9$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM) $(OPT_INTSIZE_4)
+#INPUT=  kindArgLbound9$(OBJ)
+#OUTPUT= kindArgLbound9$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  kindArgLbound9$(EXE)
+#ENDCMD
+
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM) $(OPT_INTSIZE_8)
+#INPUT=  $(tcasedir)kindArgLbound9.f
+#OUTPUT= kindArgLbound9$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM) $(OPT_INTSIZE_8)
+#INPUT=  kindArgLbound9$(OBJ)
+#OUTPUT= kindArgLbound9$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  kindArgLbound9$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

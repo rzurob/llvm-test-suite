@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    =  F2008/intrinsics/csizeof/funcAsArg.scenario
+#FEATURE =  F2008 ISO_C_BINDING C_SIZEOF function 381475
+#CREATOR =  Michelle Zhang
+#DATE    =  2011/01/14
+#TEST_TYPE= functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)expAsArg.c
+#OPTS      = $(C_COMPILER_OPTS) $(OPT_SET_LANG_LEVEL_EXTENDED) $(OPT_GEN_64BIT_LONGLONG)
+#OUTPUT    = ctest$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)funcAsArg.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = funcAsArg$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = funcAsArg$(OBJ) ctest$(OBJ)
+#OUTPUT    = funcAsArg$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = funcAsArg$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

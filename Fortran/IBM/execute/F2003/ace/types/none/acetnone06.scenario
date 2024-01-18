@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/none/acetnone06.scenario
+#FEATURE	= Array constructor enhancement hollerith literals
+#CREATOR	= DF Manual Update
+#DATE		= 20060809
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetnone06.f
+#OUTPUT		= acetnone06$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetnone06$(OBJ)
+#OUTPUT		= acetnone06$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetnone06$(EXE)
+#STDOUT		= acetnone06.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $(tcasedir)acetnone06.vf acetnone06.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

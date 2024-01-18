@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/deferlen/unit_tests/func/deferlen48.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of deferlen/*
+#DATE      = 20071213
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)deferlen48.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = deferlen48$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = deferlen48$(OBJ)
+#OUTPUT    = deferlen48$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = deferlen48$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

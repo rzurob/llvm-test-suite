@@ -1,0 +1,4 @@
+"bcdabl08.f", line 40.1: 1516-192 (S) The binding label must be a scalar character initialization expression.
+"bcdabl08.f", line 40.16: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+** bcdabl08   === End of Compilation 1 ===
+1501-511  Compilation failed for file bcdabl08.f.

@@ -1,0 +1,10 @@
+** mod1   === End of Compilation 1 ===
+"Generic_TypeBound_diag03.f", line 119.33: 1514-088 (S) Invalid component name.
+"Generic_TypeBound_diag03.f", line 122.34: 1514-088 (S) Invalid component name.
+"Generic_TypeBound_diag03.f", line 125.34: 1514-088 (S) Invalid component name.
+"Generic_TypeBound_diag03.f", line 127.35: 1514-088 (S) Invalid component name.
+"Generic_TypeBound_diag03.f", line 128.35: 1514-088 (S) Invalid component name.
+"Generic_TypeBound_diag03.f", line 129.35: 1514-088 (S) Invalid component name.
+"Generic_TypeBound_diag03.f", line 130.35: 1514-088 (S) Invalid component name.
+** generic_typebound_diag03   === End of Compilation 2 ===
+1501-511  Compilation failed for file Generic_TypeBound_diag03.f.

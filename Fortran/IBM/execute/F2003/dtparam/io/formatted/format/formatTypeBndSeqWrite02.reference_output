@@ -1,0 +1,28 @@
+ in writeOuter
+    T   F
+   -2.8
+   +2.2   -2.2
+ +123 +456 +789
+blugredar
+ -123 -456 -789
+abcefgijk
+ in printInner
+  123  456  789
+blugredar
+ in printInner
+ -123 -456 -789
+abcefgijk
+ in printOuter
+    T   F
+   -2.8
+   +2.2   -2.2
+ +123 +456 +789
+blugredar
+ -123 -456 -789
+abcefgijk
+ in printInner
+  123  456  789
+blugredar
+ in printInner
+ -123 -456 -789
+abcefgijk

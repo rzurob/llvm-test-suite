@@ -1,0 +1,73 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/attribute/misc/scopeModule02.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Attribute
+#CREATOR	= GM Manual Creation
+#DATE		= 20060120
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)scopeModule02.f
+#OUTPUT		= scopeModule02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= scopeModule02$(OBJ)
+#OUTPUT		= scopeModule02$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= scopeModule02$(EXE)
+#ENDCMD
+
+#CMD		= SED
+#OPTS		= -e '1,/^\*\* mpoint   === End of Compilation 1 ===$/d'
+#INPUT		= scopeModule02$(LST)
+#STDOUT		= scopeModule02.sed-main-start.stdout
+#ENDCMD
+
+#CMD		= SED
+#OPTS		= -e '/^\*\* scopemodule02   === End of Compilation 2 ===$/,$d'
+#INPUT		= scopeModule02.sed-main-start.stdout
+#STDOUT		= scopeModule02.sed-main.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i '^aPtr[ 	]'
+#INPUT		= scopeModule02.sed-main.stdout
+#STDOUT		= scopeModule02.main.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= scopeModule02.main.stdout
+#VALIDRCS	= $(GREP_FAIL)
+#ENDCMD
+
+#CMD		= SED
+#OPTS		= -e '1,/^\*\* scopemodule02   === End of Compilation 2 ===$/d'
+#INPUT		= scopeModule02$(LST)
+#STDOUT		= scopeModule02.sed-sub.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i '^aPtr[ 	]'
+#INPUT		= scopeModule02.sed-sub.stdout
+#STDOUT		= scopeModule02.sub.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= scopeModule02.sub.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

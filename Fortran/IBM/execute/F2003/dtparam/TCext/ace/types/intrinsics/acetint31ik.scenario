@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/intrinsics/acetint31ik.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
+			   Procedure Pointers can be Invoked for Data (Integer))
+#CREATOR	= Glen Mateer (based on work by David Forster)
+#DATE		= 20080125
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint31ik.f
+#OUTPUT		= acetint31ik$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint31ik$(OBJ)
+#OUTPUT		= acetint31ik$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint31ik$(EXE)
+#STDOUT		= acetint31ik.stdout
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetint31ik$(product)vf) acetint31ik.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/stop/stop_03d.scenario
+#FEATURE   = Constant expression as stop code in STOP statement
+#CREATOR   = Shahid Alam
+#DATE      = 20101020
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)stop_03d.f
+#OUTPUT    = stop_03d$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = stop_03d$(OBJ)
+#OUTPUT    = stop_03d$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = stop_03d$(EXE)
+#STDOUT    = stop_03d.out
+#STDERR    = stop_03d.out
+#VALIDRCS  = 4
+#ENDCMD
+
+#CMD       = GREP
+#OPTS      = "STOP 4"
+#INPUT     = stop_03d.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

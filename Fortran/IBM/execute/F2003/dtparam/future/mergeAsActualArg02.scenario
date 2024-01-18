@@ -1,0 +1,32 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/intrinsics/merge/mergeAsActualArg02.scenario
+#FEATURE= 355754
+#CREATOR= Nancy Wang
+#DATE   = Sept. 18 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)mergeAsActualArg02.f
+#OUTPUT= mergeAsActualArg02$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = mergeAsActualArg02$(OBJ)
+#OUTPUT= mergeAsActualArg02$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = mergeAsActualArg02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mxminAll/misc/mxminMisc21.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mxminAll/*
+#DATE      = 20071105
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mxminMisc21.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = mxminMisc21$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = mxminMisc21$(OBJ)
+#OUTPUT    = mxminMisc21$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminMisc21$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

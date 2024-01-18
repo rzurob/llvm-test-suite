@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/ArraySections/arrsec3_allocatable.scenario
+#FEATURE   = 353925
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20081013
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)arrsec3_allocatable.f
+#OUTPUT    = arrsec3_allocatable$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = arrsec3_allocatable$(OBJ)
+#OUTPUT    = arrsec3_allocatable$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = arrsec3_allocatable$(EXE)
+#STDOUT    = arrsec3_allocatable.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)arrsec3_allocatable$(product)vf) arrsec3_allocatable.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

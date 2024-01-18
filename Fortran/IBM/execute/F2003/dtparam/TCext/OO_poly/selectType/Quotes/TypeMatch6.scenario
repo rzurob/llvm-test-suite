@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/selectType/Quotes/TypeMatch6.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071004
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)TypeMatch6.f
+#OUTPUT= TypeMatch6$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  TypeMatch6$(OBJ)
+#OUTPUT= TypeMatch6$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  TypeMatch6$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

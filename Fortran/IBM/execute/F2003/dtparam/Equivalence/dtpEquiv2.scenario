@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dtpEquiv2.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       07-05-07
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dtpEquiv2.f
+#OUTPUT= dtpEquiv2$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  dtpEquiv2$(OBJ)
+#OUTPUT= dtpEquiv2$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dtpEquiv2$(EXE)
+#STDOUT= dtpEquiv2.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

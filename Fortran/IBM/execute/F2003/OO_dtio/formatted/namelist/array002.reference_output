@@ -1,0 +1,6 @@
+ &NML1
+ B1=i=    1 c= abc , i=    2 c= def , B2=i=    3 c= ghi , i=    4 c= jkl
+ /
+ &NML2
+ Z3=i=    1 c= abc , i=    2 c= def , i=    3 c= ghi , i=    4 c= jkl , Z4=i=    3 c= ghi
+ /

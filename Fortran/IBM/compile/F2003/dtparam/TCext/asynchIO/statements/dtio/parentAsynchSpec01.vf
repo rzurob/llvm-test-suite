@@ -1,0 +1,7 @@
+** mbase   === End of Compilation 1 ===
+"parentAsynchSpec01.f", line 140.60: 1512-684 (S) A parent data transfer statement must not be asynchronous.
+"parentAsynchSpec01.f", line 154.68: 1512-684 (S) A parent data transfer statement must not be asynchronous.
+** parentasynchspec01   === End of Compilation 2 ===
+** tbasewrite   === End of Compilation 3 ===
+** tbaseread   === End of Compilation 4 ===
+1501-511  Compilation failed for file parentAsynchSpec01.f.

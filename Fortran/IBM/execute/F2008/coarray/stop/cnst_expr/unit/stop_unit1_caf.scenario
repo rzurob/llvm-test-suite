@@ -1,0 +1,50 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = stop_unit1_caf.scenario
+#FEATURE    = F2008 extension to stop code
+#CREATOR    = Tarique Islam
+#DATE       = 20100929
+#TEST_TYPE  = Functional
+#ENDDOC
+
+! Scenario Environment Tags
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+
+#BEGINCONTROL
+
+  #CMD        = XLF2003_COMPILE
+  #INPUT      = $(tcasedir)stop_unit1_caf.f
+  #OPTS       = -qxlf2003=nostopexcept
+  #OUTPUT     = stop_unit1_caf$(OBJ)
+  #ENDCMD
+
+  #CMD        = XLF2003_LINK
+  #OPTS       = -qxlf2003=nostopexcept
+  #INPUT      = stop_unit1_caf$(OBJ)
+  #OUTPUT     = stop_unit1_caf$(EXE)
+  #ENDCMD
+
+  #CMD        = SET_DYN_ENV
+  #ENDCMD
+
+  #CMD        = MPRUN
+  #INPUT      = stop_unit1_caf$(EXE)
+  #STDOUT     = stop_unit1_caf.out
+  #STDERR     = stop_unit1_caf.err
+  #VALIDRCS   = 0
+  #ENDCMD
+
+  #CMD        = GREP
+  #OPTS       = "STOP CHAR EXPRESSION"
+  #INPUT      = stop_unit1_caf.err
+  #ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

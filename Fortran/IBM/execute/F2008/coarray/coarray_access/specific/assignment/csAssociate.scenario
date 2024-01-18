@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_access/specific/assignment/csAssociate
+#FEATURE        = CAF coarray access (specific) - assignment - in ASSOCIATE construct, assign associate-name to coarray variables and vice-versa (and probably play with DT components)
+#CREATOR        = DF
+#DATE           = 2010-10-04
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)csAssociate.f
+#OUTPUT = csAssociate$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = csAssociate$(OBJ)
+#OUTPUT = csAssociate$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = csAssociate$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

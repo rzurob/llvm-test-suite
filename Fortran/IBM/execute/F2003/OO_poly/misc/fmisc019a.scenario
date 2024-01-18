@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/misc/fmisc019a.f
+#FEATURE = OO_poly
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fmisc019a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fmisc019a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fmisc019a$(OBJ)
+#OUTPUT    = fmisc019a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fmisc019a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

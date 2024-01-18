@@ -1,0 +1,26 @@
+#BEGINENV
+#REQUIRED_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#ENDENV
+coindex_assignment_001f.scenario
+coindex_assignment_002f.scenario
+coindex_assignment_003f.scenario
+coindex_assignment_004f.scenario
+coindexObjectAssignmentDT01.scenario
+coindexObjectAssignmentDT02.scenario
+coindexObjectAssignmentDT03.scenario
+coindexObjectAssignmentDT04.scenario
+coindexObjectAssignmentDT05.scenario
+coindexObjectAssignmentDT06.scenario
+coindexObjectAssignmentDT07.scenario
+coindexObjectAssignmentDT08.scenario
+coindexObjectAssignmentDT09.scenario
+coindexObjectAssignmentDT10.scenario
+coindexObjectAssignmentDT11.scenario
+coindexObjectAssignmentDT12.scenario
+coindexObjectAssignmentDT13.scenario
+coindexObjectAssignmentDT14.scenario
+coindexObjectAssignmentDT15.scenario
+coindexObjectAssignmentDT16.scenario
+coindexObjectAssignmentDT17.scenario
+coindexObjectAssignmentDT18.scenario
+

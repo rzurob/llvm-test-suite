@@ -1,0 +1,11 @@
+"image_index_d005.f", line 31.26: 1516-328 (S) The size of the SUB argument to the IMAGE_INDEX intrinsic procedure must be equal to the corank of the COARRAY argument.
+"image_index_d005.f", line 32.26: 1516-328 (S) The size of the SUB argument to the IMAGE_INDEX intrinsic procedure must be equal to the corank of the COARRAY argument.
+"image_index_d005.f", line 35.26: 1516-328 (S) The size of the SUB argument to the IMAGE_INDEX intrinsic procedure must be equal to the corank of the COARRAY argument.
+"image_index_d005.f", line 36.26: 1516-328 (S) The size of the SUB argument to the IMAGE_INDEX intrinsic procedure must be equal to the corank of the COARRAY argument.
+"image_index_d005.f", line 37.26: 1516-328 (S) The size of the SUB argument to the IMAGE_INDEX intrinsic procedure must be equal to the corank of the COARRAY argument.
+"image_index_d005.f", line 39.26: 1516-328 (S) The size of the SUB argument to the IMAGE_INDEX intrinsic procedure must be equal to the corank of the COARRAY argument.
+"image_index_d005.f", line 40.26: 1516-328 (S) The size of the SUB argument to the IMAGE_INDEX intrinsic procedure must be equal to the corank of the COARRAY argument.
+"image_index_d005.f", line 42.26: 1516-328 (S) The size of the SUB argument to the IMAGE_INDEX intrinsic procedure must be equal to the corank of the COARRAY argument.
+"image_index_d005.f", line 43.26: 1516-328 (S) The size of the SUB argument to the IMAGE_INDEX intrinsic procedure must be equal to the corank of the COARRAY argument.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file image_index_d005.f.

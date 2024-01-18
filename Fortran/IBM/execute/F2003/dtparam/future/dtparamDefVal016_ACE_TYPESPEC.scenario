@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/dtSpec/dtparamDefVal016_ACE_TYPESPEC.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamDefVal016_ACE_TYPESPEC.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamDefVal016_ACE_TYPESPEC$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dtparamDefVal016_ACE_TYPESPEC$(OBJ)
+#OUTPUT    = dtparamDefVal016_ACE_TYPESPEC$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamDefVal016_ACE_TYPESPEC$(EXE)
+#STDOUT    = dtparamDefVal016_ACE_TYPESPEC.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dtparamDefVal016_ACE_TYPESPEC.out $($(tcasedir)dtparamDefVal016_ACE_TYPESPEC$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

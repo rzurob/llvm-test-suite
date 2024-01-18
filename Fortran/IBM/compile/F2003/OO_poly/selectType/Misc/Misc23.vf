@@ -1,0 +1,3 @@
+"Misc23.f", line 49.3: 1514-087 (S) Attempt made to implicitly declare an identifier with type name x which has not been defined in a derived type definition.
+** misc23   === End of Compilation 1 ===
+1501-511  Compilation failed for file Misc23.f.

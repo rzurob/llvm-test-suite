@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/dummy_arg/atpda/dtpATPDAExternalProcedurePointer.scenario
+#FEATURE   = Assumed type parameters and dummy arguments - procedure pointers
+#CREATOR   = DF Manual Update
+#DATE      = 20081015
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpATPDAExternalProcedurePointer.f
+#OUTPUT    = dtpATPDAExternalProcedurePointer$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpATPDAExternalProcedurePointer$(OBJ)
+#OUTPUT    = dtpATPDAExternalProcedurePointer$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpATPDAExternalProcedurePointer$(EXE)
+#STDOUT    = dtpATPDAExternalProcedurePointer.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpATPDAExternalProcedurePointer$(product)vf) dtpATPDAExternalProcedurePointer.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

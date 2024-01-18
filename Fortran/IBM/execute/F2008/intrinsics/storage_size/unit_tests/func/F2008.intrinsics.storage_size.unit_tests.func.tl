@@ -1,0 +1,11 @@
+storagesizef1a.scenario
+storagesizef1b.scenario
+storagesizef1c.scenario
+storagesizef1d.scenario
+storagesizef2.scenario
+storagesizef3.scenario
+storagesizef4.scenario
+storagesizef5.scenario
+storagesizef6.scenario
+storagesizef7.scenario
+storagesizef8.scenario

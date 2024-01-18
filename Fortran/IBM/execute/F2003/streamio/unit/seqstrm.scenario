@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/streamio/unit/seqstrm.scenario
+#FEATURE = streamio tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+XLFRTEOPTS=multconn=yes
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)seqstrm.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = seqstrm$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  seqstrm$(OBJ)
+#OUTPUT    = seqstrm$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#ENVAR     = XLFRTEOPTS=multconn=yes
+#INPUT     = seqstrm$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,9 @@
+"kindArgLen_trim.f", line 50.23: 1513-133 (S) KIND must be an integer constant.
+"kindArgLen_trim.f", line 51.23: 1513-040 (S) The argument KIND must be a scalar.
+"kindArgLen_trim.f", line 53.38: 1513-040 (S) The argument KIND must be a scalar.
+"kindArgLen_trim.f", line 55.29: 1513-133 (S) KIND must be an integer constant.
+"kindArgLen_trim.f", line 56.29: 1513-133 (S) KIND must be an integer constant.
+"kindArgLen_trim.f", line 57.29: 1513-133 (S) KIND must be an integer constant.
+"kindArgLen_trim.f", line 58.29: 1513-133 (S) KIND must be an integer constant.
+** kindarglen_trim   === End of Compilation 1 ===
+1501-511  Compilation failed for file kindArgLen_trim.f.

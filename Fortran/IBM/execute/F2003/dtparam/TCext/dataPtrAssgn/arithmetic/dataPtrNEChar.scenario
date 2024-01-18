@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/arithmetic/dataPtrNEChar.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071216
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrNEChar.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrNEChar$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrNEChar$(OBJ)
+#OUTPUT    = dataPtrNEChar$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrNEChar$(EXE)
+#STDOUT    = dataPtrNEChar.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrNEChar.out $($(tcasedir)dataPtrNEChar$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

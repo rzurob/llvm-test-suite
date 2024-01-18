@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       mixunlmtpolyDT.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)mixunlmtpolyDT.f
+#OUTPUT= mixunlmtpolyDT$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  mixunlmtpolyDT$(OBJ)
+#OUTPUT= mixunlmtpolyDT$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  mixunlmtpolyDT$(EXE)
+#STDOUT= mixunlmtpolyDT.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = mixunlmtpolyDT.out $(tcasedir)mixunlmtpolyDT.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

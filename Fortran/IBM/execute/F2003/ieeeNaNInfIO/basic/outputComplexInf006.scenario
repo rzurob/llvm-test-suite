@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = outputComplexInf006.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 9, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)outputComplexInf006.f
+#OUTPUT   =  outputComplexInf006$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  outputComplexInf006$(OBJ)
+#OUTPUT   =  outputComplexInf006$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  outputComplexInf006$(EXE)
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = outputComplexInf006.out $(tcasedir)outputComplexInf006.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

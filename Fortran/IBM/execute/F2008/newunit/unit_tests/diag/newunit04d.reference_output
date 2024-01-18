@@ -1,0 +1,3 @@
+"newunit04d.f", line 3.41: 1512-017 (E) The NEWUNIT keyword has already been specified on this I/O statement.  Keyword is ignored.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file newunit04d.f.

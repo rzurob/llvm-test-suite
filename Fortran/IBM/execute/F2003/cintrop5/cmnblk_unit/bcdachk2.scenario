@@ -1,0 +1,57 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop5/cmnblk_unit/bcdachk2.scenario
+#FEATURE = cintrop5 tests - regression run bucket
+#CREATOR = Manual conversion CPR
+#DATE    = 20060829
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+FTCARG="bcdachk2"
+CTCARG="comc3"
+#ENDDEFS
+#INVALID_PRODUCT= sles,rhel,mac,yhpc
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD     = XLC_COMPILE
+#INPUT   = $(tcasedir)comc3.c
+#OPTS    = $(C_COMPILER_OPTS) $(OPT_CHECK_TYPES_AT_BIND_TIME) $(OPT_DISABLE_MSG_NUM<1586-347>)
+#OUTPUT  = comc3$(OBJ)
+#ENDCMD
+
+#CMD     = XLF95_COMPILE
+#INPUT   = $(tcasedir)bcdachk2.f
+#OPTS    = $(OPT_CHECK_TYPES_AT_BIND_TIME) $(OPT_DISABLE_MSG_NUM<1586-347>)
+#OUTPUT  = bcdachk2$(OBJ)
+#STDERR  = comp.err
+#ENDCMD
+
+#CMD     = XLF95_LINK
+#INPUT   = comc3$(OBJ) bcdachk2$(OBJ)
+#OPTS    = $(OPT_CHECK_TYPES_AT_BIND_TIME) $(OPT_DISABLE_MSG_NUM<1586-347>)
+#OUTPUT  = bcdachk2$(EXE)
+#STDERR  = link.err
+#VALIDRCS=$(RC_ANY)
+#ENDCMD
+
+#CMD     = CAT
+#INPUT   = comp.err link.err
+#STDOUT  = test.outs
+#ENDCMD
+
+#IF in ($(F_COMPILE^OPT_OPTIMIZE_LEVEL5)) || in ($(F_COMPILE^OPT_OPTIMIZE_LEVEL4))
+#CMD     = XLDIFF
+#INPUT   = test.outs $(tcasedir)bcdachk2.vf
+#ENDCMD
+#ELSE
+#CMD     = XLDIFF
+#INPUT   = test.outs $(tcasedir)bcdachk2.vf1
+#ENDCMD
+#ENDIF
+
+#ENDCONTROL
+#ENDSCENARIO

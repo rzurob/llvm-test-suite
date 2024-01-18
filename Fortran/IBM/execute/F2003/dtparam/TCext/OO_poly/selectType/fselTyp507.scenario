@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/selectType/fselTyp507.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071004
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fselTyp507.f
+#OUTPUT    = fselTyp507$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fselTyp507$(OBJ)
+#OUTPUT    = fselTyp507$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fselTyp507$(EXE)
+#STDOUT    = fselTyp507.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fselTyp507.out $($(tcasedir)fselTyp507$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

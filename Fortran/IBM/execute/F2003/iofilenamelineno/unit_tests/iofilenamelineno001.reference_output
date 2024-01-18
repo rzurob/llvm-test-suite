@@ -1,0 +1,1 @@
+"iofilenamelineno001.f", line 43: 1525-090 The NAMELIST READ statement cannot be completed because an incorrect character was encountered in a NAMELIST group name or item name.  The program will recover by discontinuing further processing of the READ statement.

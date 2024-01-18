@@ -1,0 +1,59 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2003/dtparam/TCext/OO_tpbnd/final/ffinal514a18_1.scenario
+#FEATURE = OO_tpbnd tests - regression run bucket + derived type parameters
+#CREATOR = automated conversion script
+#DATE    = 20071107
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ffinal514a18_1k.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ffinal514a18_1k$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = ffinal514a18_1k$(OBJ)
+#OUTPUT    = ffinal514a18_1k$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ffinal514a18_1k$(EXE)
+#STDOUT    = ffinal514a18_1k.out
+#ENDCMD
+
+#CMD       = F_COMPLINK
+#INPUT     = $(tcasedir)mydiff.f
+#OUTPUT    = mydiff$(EXE)
+#ENDCMD
+
+#IF on(bgq)
+! Create the local copies on BG/Q, which removes fs visibility on partitions
+  #CMD       = COPY
+  #INPUT     = $($(tcasedir)ffinal514a18_1$(product)vf1) file.vf1
+  #ENDCMD
+
+  #CMD       = COPY
+  #INPUT     = $($(tcasedir)ffinal514a18_1$(product)vf2) file.vf2
+  #ENDCMD
+#ENDIF
+
+#CMD       = RUN
+#INPUT     = mydiff$(EXE)
+#IF on(bgq)
+! Use the local files on BG/Q
+  #OPTS      = ffinal514a18_1k.out file.vf1 file.vf2
+#ELSE
+  #OPTS      = ffinal514a18_1k.out $($(tcasedir)ffinal514a18_1$(product)vf1) $($(tcasedir)ffinal514a18_1$(product)vf2)
+#ENDIF
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

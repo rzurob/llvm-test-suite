@@ -1,0 +1,2 @@
+1525-097 A READ statement using decimal base input found the invalid digit '.' in the input file.  The program will recover by assuming a zero in its place.
+1525-043 The list-directed or NAMELIST READ statement cannot be completed because the input data in the file iofilenamelineno018.dat did not specify a valid complex value.  The program will recover by discontinuing further processing of the READ statement.

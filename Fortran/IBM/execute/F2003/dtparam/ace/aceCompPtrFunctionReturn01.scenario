@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/ace/aceCompPtrFunctionReturn01.scenario
+#FEATURE	= Basic (non-Polymorphic) Array Constructors with DTP
+#CREATOR	= Glen Mateer
+#DATE		= 20081121
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)aceCompPtrFunctionReturn01.f
+#OUTPUT		= aceCompPtrFunctionReturn01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= aceCompPtrFunctionReturn01$(OBJ)
+#OUTPUT		= aceCompPtrFunctionReturn01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= aceCompPtrFunctionReturn01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

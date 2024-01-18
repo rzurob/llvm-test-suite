@@ -1,0 +1,20 @@
+"do_concurrent_d001.f", line 32.46: 1516-380 (S) Procedure p is not pure. p must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d001.f", line 36.46: 1516-380 (S) Procedure q is not pure. q must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d001.f", line 42.38: 1516-380 (S) Procedure p is not pure. p must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d001.f", line 48.38: 1516-380 (S) Procedure q is not pure. q must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d001.f", line 54.48: 1516-380 (S) Procedure p is not pure. p must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d001.f", line 58.48: 1516-380 (S) Procedure q is not pure. q must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d001.f", line 64.39: 1516-380 (S) Procedure p is not pure. p must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d001.f", line 70.39: 1516-380 (S) Procedure q is not pure. q must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d001.f", line 77.38: 1516-380 (S) Procedure p is not pure. p must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d001.f", line 83.38: 1516-380 (S) Procedure q is not pure. q must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d001.f", line 89.57: 1516-380 (S) Procedure p is not pure. p must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d001.f", line 93.57: 1516-380 (S) Procedure q is not pure. q must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d001.f", line 99.49: 1516-380 (S) Procedure p is not pure. p must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d001.f", line 105.49: 1516-380 (S) Procedure q is not pure. q must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d001.f", line 112.38: 1516-380 (S) Procedure p is not pure. p must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+"do_concurrent_d001.f", line 118.38: 1516-380 (S) Procedure q is not pure. q must not be referenced in DO CONCURRENT mask expressions or DO CONCURRENT construct blocks.
+** _main   === End of Compilation 1 ===
+** p   === End of Compilation 2 ===
+** q   === End of Compilation 3 ===
+1501-511  Compilation failed for file do_concurrent_d001.f.

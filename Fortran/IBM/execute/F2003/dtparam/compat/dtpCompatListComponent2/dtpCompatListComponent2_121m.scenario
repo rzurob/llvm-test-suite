@@ -1,0 +1,57 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/compat/dtpCompatListComponent2/dtpCompatListComponent2_121m.scenario
+#FEATURE   = Broken Compatability Warning - use of derived type components with polymorphic references (list includes DTP object)
+! - manual compile, v12.1
+#CREATOR   = DF Manual Update
+#DATE      = 20090613
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT=linuxle
+#ENDENV
+
+#BEGINCONTROL
+
+! Compile "post-DTP" files with the latest version of the latest compiler,
+! link with manually compiled (with 12.1 gold) object files, and run.
+! run:  DTP with KIND parameters alone generates no error message
+
+!!Since the files are manually compiled already, we do not need this step:
+!! Caution: do not just uncomment the next few lines: the name of the output
+!! file contains the product chain, which can't be good - it's just there for
+!! consistency with the next step, and to document the process.
+!#CMD      = V121_XLF2003_COMPILE
+!#INPUT    = $(tcasedir)dtpCompatListComponent2PreDTP.f
+!#OUTPUT   = $(dtpCompatListComponent2PreDTP.121$(Q32_64_MODE)$(product)$(OBJ))
+!#ENDCMD
+
+!!BUT: we do need the .mod file, which we copy here:
+#CMD       = COPY
+#INPUT     = $($(tcasedir)dtpcompatlistcomponent2predtpmod.121$(Q32_64_MODE)$(product).mod)
+#OUTPUT    = dtpcompatlistcomponent2predtpmod.mod
+#ENDCMD
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)dtpCompatListComponent2PostDTP.f
+#OUTPUT    = dtpCompatListComponent2PostDTP$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = dtpCompatListComponent2PostDTP$(OBJ) $($(tcasedir)dtpCompatListComponent2PreDTP.121$(Q32_64_MODE)$(product)$(OBJ))
+#OUTPUT    = dtpCompatListComponent2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpCompatListComponent2$(EXE)
+#STDOUT    = dtpCompatListComponent2.out
+#STDERR    = dtpCompatListComponent2.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpCompatListComponent2$(product)vf) dtpCompatListComponent2.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

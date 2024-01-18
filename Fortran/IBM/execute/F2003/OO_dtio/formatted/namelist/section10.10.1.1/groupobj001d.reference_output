@@ -1,0 +1,2 @@
+ 88 1525-088 The NAMELIST READ statement cannot be completed because item b3 is not a member of the NAMELIST group nml.  The program will recover by discontinuing further processing of the READ statement.
+ 88 1525-088 The NAMELIST READ statement cannot be completed because item b3 is not a member of the NAMELIST group nml.  The program will recover by discontinuing further processing of the READ statement.

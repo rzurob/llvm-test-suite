@@ -1,0 +1,85 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=fxdmodprocstmt011.scenario
+#FEATURE = diagnostic for generalization of mod proc stmts in F2003
+#CREATOR = Bardia Mahjour
+#DATE    = 20050922
+#TEST_TYPE=diag test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)fxdmodprocstmt011.f
+#OUTPUT    = fxdmodprocstmt011.f
+#ENDCMD
+
+#CMD       = XLF90_COMPILE
+#INPUT     = fxdmodprocstmt011.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<90std>) -Q -O -lxlfzz2 $(OPT_ENABLE_MSG_NUM<1518-317>)
+#STDERR    = fxdmodprocstmt011.out
+#STDOUT    = fxdmodprocstmt011.out
+#OUTPUT    = fxdmodprocstmt011$(OBJ)
+#VALIDRCS  = 0
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fxdmodprocstmt011.out $($(tcasedir)fxdmodprocstmt011a$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+
+#CMD       = XLF90_COMPILE
+#INPUT     = fxdmodprocstmt011.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<90pure>) -Q -O -lxlfzz2 $(OPT_ENABLE_MSG_NUM<1518-317>)
+#STDERR    = fxdmodprocstmt011.out
+#STDOUT    = fxdmodprocstmt011.out
+#OUTPUT    = fxdmodprocstmt011$(OBJ)
+#VALIDRCS  = 0
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fxdmodprocstmt011.out $($(tcasedir)fxdmodprocstmt011a$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+
+#CMD       = XLF90_COMPILE
+#INPUT     = fxdmodprocstmt011.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<95std>) -Q -O -lxlfzz2 $(OPT_ENABLE_MSG_NUM<1518-317>)
+#STDERR    = fxdmodprocstmt011.out
+#STDOUT    = fxdmodprocstmt011.out
+#OUTPUT    = fxdmodprocstmt011$(OBJ)
+#VALIDRCS  = 0
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fxdmodprocstmt011.out $($(tcasedir)fxdmodprocstmt011b$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+
+#CMD       = XLF90_COMPILE
+#INPUT     = fxdmodprocstmt011.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<95pure>) -Q -O -lxlfzz2 $(OPT_ENABLE_MSG_NUM<1518-317>)
+#STDERR    = fxdmodprocstmt011.out
+#STDOUT    = fxdmodprocstmt011.out
+#OUTPUT    = fxdmodprocstmt011$(OBJ)
+#VALIDRCS  = 0
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fxdmodprocstmt011.out $($(tcasedir)fxdmodprocstmt011b$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)test_copy_out_scalar01.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = test_copy_out_scalar01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = test_copy_out_scalar01$(OBJ)
+#OUTPUT    = test_copy_out_scalar01$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD       = MPRUN
+	#INPUT     = test_copy_out_scalar01$(EXE)
+	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO
+

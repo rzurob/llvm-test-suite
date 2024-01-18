@@ -1,0 +1,9 @@
+"SelCKind002.f", line 36.24: 1518-256 (L) The intrinsic procedure selected_char_kind (with these arguments) is not permitted by the Fortran 90 standard.
+"SelCKind002.f", line 37.17: 1518-256 (L) The intrinsic procedure selected_char_kind (with these arguments) is not permitted by the Fortran 90 standard.
+"SelCKind002.f", 1518-318 (L) The XLF2003(NOOLDNANINF) option can cause the program to behave in a way that is different from that specified by the Fortran 90 standard.
+"SelCKind002.f", 1518-318 (L) The STOPEXCEPT option can cause the program to behave in a way that is different from that specified by the Fortran 90 standard.
+"SelCKind002.f", 1518-317 (L) The -qsmp option can cause the compiler to accept code that does not conform to the Fortran 90 standard.
+"SelCKind002.f", 1518-318 (L) The SIGNEDZERO option can cause the program to behave in a way that is different from that specified by the Fortran 90 standard.
+"SelCKind002.f", 1518-318 (L) The NOOLDPAD option can cause the program to behave in a way that is different from that specified by the Fortran 90 standard.
+** selckind002   === End of Compilation 1 ===
+1501-510  Compilation successful for file SelCKind002.f.

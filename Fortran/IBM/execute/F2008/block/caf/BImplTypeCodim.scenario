@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/caf/BImplTypeCodim.scenario
+#FEATURE   = F2008 BLOCK - implicit typing (var appears in CODIMENSION statement)
+#CREATOR   = DF Manual Update
+#DATE      = 20101214
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)BImplTypeCodim.f
+#OUTPUT    = BImplTypeCodim$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = BImplTypeCodim$(OBJ)
+#OUTPUT    = BImplTypeCodim$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+
+  #CMD       = MPRUN
+  #INPUT     = BImplTypeCodim$(EXE)
+  #STDOUT    = BImplTypeCodim.out
+  #ENDCMD
+
+  #CMD       = DIFF
+  #INPUT     = $($(tcasedir)BImplTypeCodim$(product)vf) BImplTypeCodim.out
+  #ENDCMD
+
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

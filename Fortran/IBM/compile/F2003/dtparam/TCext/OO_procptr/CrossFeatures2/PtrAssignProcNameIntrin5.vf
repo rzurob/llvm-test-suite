@@ -1,0 +1,4 @@
+"PtrAssignProcNameIntrin5.f", line 72.45: 1516-234 (S) The interface name extsign in the PROCEDURE statement is elemental.  The procedure ptrsign declared in the PROCEDURE statement must be an external procedure.
+"PtrAssignProcNameIntrin5.f", line 80.22: 1514-084 (S) Identifier v is being declared with type name dt which has not been defined in a derived type definition.
+** ptrassignprocnameintrin5   === End of Compilation 1 ===
+1501-511  Compilation failed for file PtrAssignProcNameIntrin5.f.

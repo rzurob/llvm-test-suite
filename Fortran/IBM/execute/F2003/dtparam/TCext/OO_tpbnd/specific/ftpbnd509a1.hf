@@ -1,0 +1,24 @@
+! GB DTP extension using:
+! ftcx_dtp -qck -ql -qdeferredlp -qreuse=base /tstdev/OO_tpbnd/specific/ftpbnd509a1.hf
+! opt variations: -qnock -qnol -qnodeferredlp -qreuse=none
+
+module m
+    type base(n1,k1)    ! (20,4)
+        integer, kind :: k1
+        integer, len  :: n1
+        integer(k1)   :: id
+
+        contains
+
+        procedure :: print => printBase
+    end type
+
+    private printBase
+
+    interface
+        subroutine printBase (b)
+        import base
+            class (base(*,4)), intent(in) :: b
+        end subroutine
+    end interface
+end module

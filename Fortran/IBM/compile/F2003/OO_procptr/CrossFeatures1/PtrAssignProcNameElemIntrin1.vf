@@ -1,0 +1,12 @@
+** m   === End of Compilation 1 ===
+"PtrAssignProcNameElemIntrin1.f", line 65.41: 1516-234 (S) The interface name intsub in the PROCEDURE statement is elemental.  The procedure ptr1 declared in the PROCEDURE statement must be an external procedure.
+"PtrAssignProcNameElemIntrin1.f", line 66.41: 1516-234 (S) The interface name getchildid in the PROCEDURE statement is elemental.  The procedure ptr2 declared in the PROCEDURE statement must be an external procedure.
+** m1   === End of Compilation 2 ===
+"PtrAssignProcNameElemIntrin1.f", line 91.37: 1516-234 (S) The interface name intsub in the PROCEDURE statement is elemental.  The procedure ptr1 declared in the PROCEDURE statement must be an external procedure.
+"PtrAssignProcNameElemIntrin1.f", line 92.37: 1516-234 (S) The interface name getchildid in the PROCEDURE statement is elemental.  The procedure ptr2 declared in the PROCEDURE statement must be an external procedure.
+"PtrAssignProcNameElemIntrin1.f", line 100.39: 1516-234 (S) The interface name intsub in the PROCEDURE statement is elemental.  The procedure ptr1 declared in the PROCEDURE statement must be an external procedure.
+"PtrAssignProcNameElemIntrin1.f", line 101.39: 1516-234 (S) The interface name getchildid in the PROCEDURE statement is elemental.  The procedure ptr2 declared in the PROCEDURE statement must be an external procedure.
+** ptrassignprocnameelemintrin1   === End of Compilation 3 ===
+"PtrAssignProcNameElemIntrin1.f", line 113.37: 1516-234 (S) The interface name getchildid in the PROCEDURE statement is elemental.  The procedure ptr2 declared in the PROCEDURE statement must be an external procedure.
+** extsub   === End of Compilation 4 ===
+1501-511  Compilation failed for file PtrAssignProcNameElemIntrin1.f.

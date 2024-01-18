@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/defAssignn/defAssignMis02.scenario
+#FEATURE   = 361704
+#CREATOR   = Nancy Wang
+#DATE      = Feb. 20 2009
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)defAssignMis02.f
+#OUTPUT= defAssignMis02$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = defAssignMis02$(OBJ)
+#OUTPUT= defAssignMis02$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = defAssignMis02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

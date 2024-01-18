@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"genericC459Assignment002.f", line 75.9: 1514-703 (S) All generic bindings with generic specification ASSIGNMENT(=) in type gen3 must have the same accessibility.
+** n   === End of Compilation 2 ===
+** genericc459assignment002   === End of Compilation 3 ===
+1501-511  Compilation failed for file genericC459Assignment002.f.

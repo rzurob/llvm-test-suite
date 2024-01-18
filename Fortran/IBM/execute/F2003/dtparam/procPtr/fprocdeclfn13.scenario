@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2003/dtparam/procPtr/fprocdeclfn13.scenario
+#FEATURE = Procedure Declaration statement
+#CREATOR = Morteza Ershad-Manesh
+#DATE    = 20080805
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)fprocdeclfn13.f
+#OUTPUT    = fprocdeclfn13$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = fprocdeclfn13$(OBJ)
+#OUTPUT    = fprocdeclfn13$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fprocdeclfn13$(EXE)
+#STDOUT    = fprocdeclfn13.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r0.0001
+#INPUT     = $($(tcasedir)fprocdeclfn13$(product)vf) fprocdeclfn13.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

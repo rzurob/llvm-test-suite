@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME	 = cmdline/Misc/fxclms16.scenario
+#FEATURE = cmdline tests - regression run bucket
+#CREATOR = SH Manual conversion
+#DATE    = 20041206
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+CmdLine=fxclms16 -1 -a -2 -B -;fxclms16 -1 -a -2 -B -;fxclms16 -1 -a -2 -B -;fxclms16 -1 -a -2 -B -
+#ENDDEFS
+#INVALID_PRODUCT = bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)fxclms16.f
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT = fxclms16$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = fxclms16$(OBJ)
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT = fxclms16$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = fxclms16$(EXE);fxclms16$(EXE);fxclms16$(EXE);fxclms16$(EXE)
+#OPTS	= -1 -a -2 -B -
+#STDOUT = fxclms16.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

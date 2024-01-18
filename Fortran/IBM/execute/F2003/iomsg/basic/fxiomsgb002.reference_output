@@ -1,0 +1,6 @@
+ 1525-003 The unformatted I/O statement on the file fort.10 cannot be completed because the end of the record was reached.  The program will recover by ignoring the remaining data items.
+                                                                                                                  
+ 1525-004 The formatted I/O statement on the file fort.11 cannot be completed because the end of the record was reached.  The program will recover by ignoring the remaining data items.
+                                                                                                                    
+ 1525-005 The formatted I/O statement on the internal file cannot be completed because the end of the record was reached.  The program will recover by ignoring the remaining data items in the I/O statement.
+                                                                                              

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/formatted/namelist/parameter101kl.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070706
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+! This chunk was DCOMP
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)parameter101kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=shutup
+#OUTPUT    = parameter101kl$(OBJ)
+#STDERR    = parameter101kl.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)parameter101kl$(product)vf) parameter101kl.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

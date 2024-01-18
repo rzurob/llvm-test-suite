@@ -1,0 +1,61 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME      = F2008/value/pure/unit_tests/purevalue09.scenario
+#FEATURE   = 384867 \
+             F2008: VALUE attribute allowed for dummy args of PURE procedures
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20101201
+#TEST_TYPE = Unit test
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT = bgq
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+!Here $(OPT_BIGGER_LONG_DOUBLE) change to $(OPT_BIGGER_LONG_DOUBLE) since Linux don't support $(OPT_BIGGER_LONG_DOUBLE)
+#OPTS      = $(C_COMPILER_OPTS) $(OPT_BIGGER_LONG_DOUBLE)
+#IF in ($(F_COMPILE^OPT_GEN_64BIT_COMPILER_MODE))
+  #OPTS    = $(OPT_DEFINE_MACRO<__64BIT__>)
+#ENDIF
+#INPUT     = $(tcasedir)purevalue09.c
+#OUTPUT    = purevalue09c$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#IF in ($(F_COMPILE^OPT_GEN_64BIT_COMPILER_MODE))
+  #OPTS    = $(OPT_DEFINE_MACRO<__64BIT__>)
+#ENDIF
+#INPUT     = $(tcasedir)pcheck_prec.f
+#OUTPUT    = pcheck_prec$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#IF in ($(F_COMPILE^OPT_GEN_64BIT_COMPILER_MODE))
+  #OPTS    = $(OPT_DEFINE_MACRO<__64BIT__>)
+#ENDIF
+#IF on (linux)
+  #OPTS    = -qfloat=complexgcc
+#ENDIF
+#INPUT     = $(tcasedir)purevalue09.F
+#OUTPUT    = purevalue09f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = purevalue09c$(OBJ) purevalue09f$(OBJ) pcheck_prec$(OBJ)
+#OUTPUT    = purevalue09$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = purevalue09$(EXE)
+#STDOUT    = purevalue09.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

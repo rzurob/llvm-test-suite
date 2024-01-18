@@ -1,0 +1,58 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/compat/dtpCompatDummyInKindLen/dtpCompatDummyInKindLen_121m.scenario
+#FEATURE   = Broken Compatability Warning - DTP code passes reference to extended type with both KIND and LEN type parameters in to subroutine
+! - manual compile, v12.1
+#CREATOR   = DF Manual Update
+#DATE      = 20090613
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT=linuxle
+#ENDENV
+
+#BEGINCONTROL
+
+! Compile "post-DTP" files with the latest version of the latest compiler,
+! link with manually compiled (with 12.1 gold) object files, and run.
+! An error message should be generated.
+
+!!Since the files are manually compiled already, we do not need this step:
+!! Caution: do not just uncomment the next few lines: the name of the output
+!! file contains the product chain, which can't be good - it's just there for
+!! consistency with the next step, and to document the process.
+!#CMD      = V121_XLF2003_COMPILE
+!#INPUT    = $(tcasedir)dtpCompatDummyInKindLenPreDTP.f
+!#OUTPUT   = $(dtpCompatDummyInKindLenPreDTP.121$(Q32_64_MODE)$(product)$(OBJ))
+!#ENDCMD
+
+!!BUT: we do need the .mod file, which we copy here:
+#CMD       = COPY
+#INPUT     = $($(tcasedir)dtpcompatdummyinkindlenpredtpmod.121$(Q32_64_MODE)$(product).mod)
+#OUTPUT    = dtpcompatdummyinkindlenpredtpmod.mod
+#ENDCMD
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)dtpCompatDummyInKindLenPostDTP.f
+#OUTPUT    = dtpCompatDummyInKindLenPostDTP$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = dtpCompatDummyInKindLenPostDTP$(OBJ) $($(tcasedir)dtpCompatDummyInKindLenPreDTP.121$(Q32_64_MODE)$(product)$(OBJ))
+#OUTPUT    = dtpCompatDummyInKindLen$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpCompatDummyInKindLen$(EXE)
+#STDOUT    = dtpCompatDummyInKindLen.out
+#STDERR    = dtpCompatDummyInKindLen.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpCompatDummyInKindLen$(product)vf) dtpCompatDummyInKindLen.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

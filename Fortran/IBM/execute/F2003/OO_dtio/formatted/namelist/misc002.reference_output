@@ -1,0 +1,13 @@
+  &DTIO
+ I=1, 2, C=abc
+ / &DTIO
+ I=3, 4, C=def
+ /
+  &DTIO
+ I=5, 6, C=ghi
+ / &DTIO
+ I=7, 8, C=jkl
+ /
+  &DTIO
+ I=9, 10, C=mno
+ /

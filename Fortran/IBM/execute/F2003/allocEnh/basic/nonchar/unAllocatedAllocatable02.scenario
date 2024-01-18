@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/basic/nonchar/unAllocatedAllocatable02.scenario
+#FEATURE	= Intrinsic Assignment -- Basic Tests: Non-CHARACTER Intrinsic Types
+#CREATOR	= GM Manual Creation
+#DATE		= 20060607
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)unAllocatedAllocatable02.f
+#OUTPUT		= unAllocatedAllocatable02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= unAllocatedAllocatable02$(OBJ)
+#OUTPUT		= unAllocatedAllocatable02$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= unAllocatedAllocatable02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

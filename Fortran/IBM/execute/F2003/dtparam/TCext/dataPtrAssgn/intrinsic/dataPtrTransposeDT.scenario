@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/intrinsic/dataPtrTransposeDT.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071216
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrTransposeDT.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrTransposeDT$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrTransposeDT$(OBJ)
+#OUTPUT    = dataPtrTransposeDT$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrTransposeDT$(EXE)
+#STDOUT    = dataPtrTransposeDT.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrTransposeDT.out $($(tcasedir)dataPtrTransposeDT$(product)vf)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

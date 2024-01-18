@@ -1,0 +1,29 @@
+** acetdt32dmod   === End of Compilation 1 ===
+"acetdt32d.f", line 145.16: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d.f", line 145.28: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d.f", line 147.21: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d.f", line 147.33: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d.f", line 151.16: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d.f", line 151.28: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d.f", line 153.21: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d.f", line 153.33: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d.f", line 157.16: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d.f", line 157.29: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d.f", line 159.21: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d.f", line 159.34: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d.f", line 164.16: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d.f", line 164.27: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d.f", line 166.21: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d.f", line 166.32: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d.f", line 171.16: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d.f", line 171.26: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d.f", line 173.21: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d.f", line 173.31: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d.f", line 176.16: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d.f", line 176.24: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d.f", line 178.21: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"acetdt32d.f", line 178.29: 1513-020 (S) Procedure names must be specified with arguments in this context.
+** acetdt32d   === End of Compilation 2 ===
+** externfunc   === End of Compilation 3 ===
+** anotherfunc   === End of Compilation 4 ===
+1501-511  Compilation failed for file acetdt32d.f.

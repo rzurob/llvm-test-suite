@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BImplType.scenario
+#FEATURE   = F2008 BLOCK - implicit typing rules
+#CREATOR   = DF Manual Update
+#DATE      = 20101214
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)BImplType.f
+#OUTPUT    = BImplType$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = BImplType$(OBJ)
+#OUTPUT    = BImplType$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = BImplType$(EXE)
+#STDOUT    = BImplType.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-5
+#INPUT     = $($(tcasedir)BImplType$(product)vf) BImplType.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

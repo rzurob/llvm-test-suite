@@ -1,0 +1,135 @@
+!*********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : InitExpTypSpecSltTyp.f  
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Aug. 30, 2006
+!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*
+!*  SECONDARY FUNCTIONS TESTED : 
+!*
+!*  REFERENCE                  : Feature Number 289074 
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  : -qfree=f90
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*
+!*  
+!*  Type Spec in SELECT TYPE STMT 
+!* 
+!* (324712) 
+!* 
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+
+  PROGRAM InitExpTypSpecSltTyp 
+  IMPLICIT NONE
+
+  CLASS(*), ALLOCATABLE :: I1(:)
+  CLASS(*), ALLOCATABLE :: I2(:)
+  CLASS(*), ALLOCATABLE :: I4(:)
+  CLASS(*), ALLOCATABLE :: I8(:)
+
+  CLASS(*), POINTER  :: L1(:)
+  CLASS(*), POINTER  :: L2(:)
+  CLASS(*), POINTER  :: L4(:)
+  CLASS(*), POINTER  :: L8(:)
+
+  ALLOCATE(I1(128), SOURCE=-1_1)
+  ALLOCATE(I2(128), SOURCE=-2_2)
+  ALLOCATE(I4(128), SOURCE=-4_4)
+  ALLOCATE(I8(128), SOURCE=-8_8)
+
+  ALLOCATE(L1(128), SOURCE=.TRUE._1)
+  ALLOCATE(L2(128), SOURCE=.TRUE._2)
+  ALLOCATE(L4(128), SOURCE=.TRUE._4)
+  ALLOCATE(L8(128), SOURCE=.TRUE._8)
+
+  SELECT TYPE ( I1 )
+  TYPE IS (INTEGER(KIND=KIND([-1_1])))
+    IF ( KIND(I1) .NE. 1     ) STOP 11
+    IF ( SIZE(I1) .NE. 128   ) STOP 12
+    IF ( ANY( I1  .NE. -1_1 )) STOP 13
+  CLASS DEFAULT
+    STOP 14
+  END SELECT 
+
+  SELECT TYPE ( I2 )
+  TYPE IS (INTEGER(KIND=KIND([-2_2])))
+    IF ( KIND(I2) .NE. 2     ) STOP 21
+    IF ( SIZE(I2) .NE. 128   ) STOP 22
+    IF ( ANY( I2  .NE. -2_1 )) STOP 23
+  CLASS DEFAULT
+    STOP 24
+  END SELECT 
+
+  SELECT TYPE ( I4 )
+  TYPE IS (INTEGER(KIND=KIND([-4_4])))
+    IF ( KIND(I4) .NE. 4     ) STOP 31
+    IF ( SIZE(I4) .NE. 128   ) STOP 32
+    IF ( ANY( I4  .NE. -4_4 )) STOP 33
+  CLASS DEFAULT
+    STOP 34
+  END SELECT 
+
+  SELECT TYPE ( I8 )
+  TYPE IS (INTEGER(KIND=KIND([-8_8])))
+    IF ( KIND(I8) .NE. 8     ) STOP 41
+    IF ( SIZE(I8) .NE. 128   ) STOP 42
+    IF ( ANY( I8  .NE. -8_8 )) STOP 43
+  CLASS DEFAULT
+    STOP 44
+  END SELECT 
+
+  SELECT TYPE ( L1 )
+  TYPE IS (LOGICAL(KIND=KIND([.FALSE._1])))
+    IF ( KIND(L1) .NE. 1     )       STOP 51
+    IF ( SIZE(L1) .NE. 128   )       STOP 52
+    IF ( ANY( L1  .NEQV. .TRUE._1 )) STOP 53
+  CLASS DEFAULT
+    STOP 54
+  END SELECT 
+
+  SELECT TYPE ( L2 )
+  TYPE IS (LOGICAL(KIND=KIND([.FALSE._2])))
+    IF ( KIND(L2) .NE. 2     )       STOP 61
+    IF ( SIZE(L2) .NE. 128   )       STOP 62
+    IF ( ANY( L2  .NEQV. .TRUE._2 )) STOP 63
+  CLASS DEFAULT
+    STOP 64
+  END SELECT 
+
+  SELECT TYPE ( L4 )
+  TYPE IS (LOGICAL(KIND=KIND([.FALSE._4])))
+    IF ( KIND(L4) .NE. 4     )       STOP 71
+    IF ( SIZE(L4) .NE. 128   )       STOP 72
+    IF ( ANY( L4  .NEQV. .TRUE._4 )) STOP 73
+  CLASS DEFAULT
+    STOP 74
+  END SELECT 
+
+  SELECT TYPE ( L8 )
+  TYPE IS (LOGICAL(KIND=KIND([.FALSE._8])))
+    IF ( KIND(L8) .NE. 8     )       STOP 81
+    IF ( SIZE(L8) .NE. 128   )       STOP 82
+    IF ( ANY( L8  .NEQV. .TRUE._8 )) STOP 83
+  CLASS DEFAULT
+    STOP 84
+  END SELECT 
+
+
+  END
+
+ 

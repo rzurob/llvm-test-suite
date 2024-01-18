@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = ieee/scalb/scalb002.scenario
+#FEATURE = ieee tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)ieeeconsts.f
+#OUTPUT = ieeeconsts$(OBJ)
+#OPTS   = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION)
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)scalb002.f
+#OUTPUT = scalb002$(OBJ)
+#OPTS   = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION) -I./
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = scalb002$(OBJ)
+#OUTPUT = scalb002$(EXE)
+#OPTS   = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION) -I./
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = scalb002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

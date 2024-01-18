@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = boundaryRealNaN007.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 12, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)boundaryRealNaN007.f
+#OUTPUT   =  boundaryRealNaN007$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  boundaryRealNaN007$(OBJ)
+#OUTPUT   =  boundaryRealNaN007$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  boundaryRealNaN007$(EXE)
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = boundaryRealNaN007.out $(tcasedir)boundaryRealNaN007.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

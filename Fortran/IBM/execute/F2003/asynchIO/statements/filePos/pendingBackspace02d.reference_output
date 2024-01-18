@@ -1,0 +1,4 @@
+ BACKSPACE() < 233 > 1525-233 The BACKSPACE statement cannot be performed on unit 2003 because it does not have read access.  The program will recover by ignoring the BACKSPACE statement.
+                                                                                         
+ BACKSPACE() < 233 > 1525-233 The BACKSPACE statement cannot be performed on unit 2003 because it does not have read access.  The program will recover by ignoring the BACKSPACE statement.
+                                                                                         

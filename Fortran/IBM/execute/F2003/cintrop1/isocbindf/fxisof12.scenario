@@ -1,0 +1,22 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop1/isocbindf/fxisof12.scenario
+#FEATURE = cintrop1 tests - regression run bucket
+#CREATOR = Manual conversion CPR
+#DATE    = 20060613
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+FTCARG="fxisof12"
+CTCARG="cxisof12"
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#INCLUDE   = scrisoa00.preshinclude
+
+#ENDCONTROL
+#ENDSCENARIO

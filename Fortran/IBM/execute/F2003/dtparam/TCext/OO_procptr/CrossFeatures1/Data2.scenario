@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_procptr/CrossFeatures1/Data2.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_procptr/*
+#DATE      = 20071011
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)Data2.f
+#OUTPUT= Data2$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  Data2$(OBJ)
+#OUTPUT= Data2$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  Data2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

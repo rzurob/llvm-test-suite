@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/mix/generic/functional/resolve/resolve005a.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)resolve005a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = resolve005a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = resolve005a$(OBJ)
+#OUTPUT    = resolve005a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = resolve005a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

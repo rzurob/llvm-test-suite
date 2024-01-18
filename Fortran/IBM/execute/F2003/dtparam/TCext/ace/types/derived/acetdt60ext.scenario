@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/intrinsics/acetdt60ext.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
+				Array Construction Intrinsics (Derived Type))
+#CREATOR	= Glen Mateer (derived from work by David Forster)
+#DATE		= 20080123
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt60ext.f
+#OUTPUT		= acetdt60ext$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt60ext$(OBJ)
+#OUTPUT		= acetdt60ext$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt60ext$(EXE)
+#STDOUT		= acetdt60ext.stdout
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetdt60ext$(product)vf) acetdt60ext.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

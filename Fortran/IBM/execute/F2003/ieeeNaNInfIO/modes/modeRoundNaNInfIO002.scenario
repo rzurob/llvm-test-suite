@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = modeRoundNaNInfIO002.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = July 7, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)modeRoundNaNInfIO002.dat
+#OUTPUT   = modeRoundNaNInfIO002.dat
+#ENDCMD
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)modeRoundNaNInfIO002.f
+#OUTPUT   =  modeRoundNaNInfIO002$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  modeRoundNaNInfIO002$(OBJ)
+#OUTPUT   =  modeRoundNaNInfIO002$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  modeRoundNaNInfIO002$(EXE)
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = modeRoundNaNInfIO002.out $(tcasedir)modeRoundNaNInfIO002.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

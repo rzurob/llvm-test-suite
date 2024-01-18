@@ -1,0 +1,46 @@
+ log4: T
+ int4: 1
+ char:c1_m module variable
+real8:         1.20
+real8:         2.40
+real8:         3.60
+real8:         4.80
+real8:         6.00
+real8:         7.20
+real8:         8.40
+real8:         9.60
+real8:        10.80
+real8:        12.00
+real8:        13.20
+real8:        14.40
+real8:        15.60
+real8:        16.80
+real8:        18.00
+real8:        19.20
+real8:        20.40
+real8:        21.60
+real8:        22.80
+real8:        24.00
+ log8: T
+ int8: 2
+ char:c1 local variable in
+real8:         2.40
+real8:         4.80
+real8:         7.20
+real8:         9.60
+real8:        12.00
+real8:        14.40
+real8:        16.80
+real8:        19.20
+real8:        21.60
+real8:        24.00
+real8:        26.40
+real8:        28.80
+real8:        31.20
+real8:        33.60
+real8:        36.00
+real8:        38.40
+real8:        40.80
+real8:        43.20
+real8:        45.60
+real8:        48.00

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/derived/acetdt31k_dpv.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --
+			   Procedure Pointers Can Be Invoked For Data (Derived Type))
+#CREATOR	= Glen Mateer (derived from work by David Forster)
+#DATE		= 20080114
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt31k_dpv.f
+#OUTPUT		= acetdt31k_dpv$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt31k_dpv$(OBJ)
+#OUTPUT		= acetdt31k_dpv$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt31k_dpv$(EXE)
+#STDOUT		= acetdt31k_dpv.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -a1e-6
+#INPUT		= $($(tcasedir)acetdt31k_dpv$(product)vf) acetdt31k_dpv.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,4 @@
+"impliedshape07d.f", line 30.15: 1513-038 (S) Assumed-size array is not permitted in this context.
+"impliedshape07d.f", line 30.23: 1513-038 (S) Assumed-size array is not permitted in this context.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file impliedshape07d.f.

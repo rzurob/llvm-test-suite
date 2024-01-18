@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2003/allocEnh/unit_tests/ReallocAssignScalarCharacter04.scenario
+#FEATURE = Reallocation on assignment to an allocatable object
+#CREATOR = Rob James
+#DATE    = 20060605
+#TEST_TYPE=Functional unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ReallocAssignScalarCharacter04.f
+#OUTPUT    = ReallocAssignScalarCharacter04$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = ReallocAssignScalarCharacter04$(OBJ)
+#OUTPUT    = ReallocAssignScalarCharacter04$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ReallocAssignScalarCharacter04$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

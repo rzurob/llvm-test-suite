@@ -1,0 +1,14 @@
+"argpresence01d.f", line 38.13: 1518-378 (L) The presence of dummy argument w corresponding to this actual argument might differ from the presence specified by the Fortran 2003 standard.
+"argpresence01d.f", line 38.16: 1518-378 (L) The presence of dummy argument x corresponding to this actual argument might differ from the presence specified by the Fortran 2003 standard.
+"argpresence01d.f", line 38.19: 1518-378 (L) The presence of dummy argument y corresponding to this actual argument might differ from the presence specified by the Fortran 2003 standard.
+"argpresence01d.f", line 38.22: 1518-378 (L) The presence of dummy argument z corresponding to this actual argument might differ from the presence specified by the Fortran 2003 standard.
+"argpresence01d.f", line 39.14: 1518-378 (L) The presence of dummy argument w corresponding to this actual argument might differ from the presence specified by the Fortran 2003 standard.
+"argpresence01d.f", line 39.17: 1518-378 (L) The presence of dummy argument x corresponding to this actual argument might differ from the presence specified by the Fortran 2003 standard.
+"argpresence01d.f", line 39.20: 1518-378 (L) The presence of dummy argument y corresponding to this actual argument might differ from the presence specified by the Fortran 2003 standard.
+"argpresence01d.f", line 39.23: 1518-378 (L) The presence of dummy argument z corresponding to this actual argument might differ from the presence specified by the Fortran 2003 standard.
+** _main   === End of Compilation 1 ===
+** msub1   === End of Compilation 2 ===
+** mfunc1   === End of Compilation 3 ===
+** msub2   === End of Compilation 4 ===
+** mfunc2   === End of Compilation 5 ===
+1501-510  Compilation successful for file argpresence01d.f.

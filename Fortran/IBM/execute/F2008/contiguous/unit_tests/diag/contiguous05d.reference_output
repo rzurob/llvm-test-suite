@@ -1,0 +1,8 @@
+"contiguous05d.f", line 41.34: 1514-788 (S) ic was declared with the CONTIGUOUS attribute. ic must be an array pointer, an array pointer component, an assumed-shape array, or an assumed-rank object.
+"contiguous05d.f", line 41.38: 1514-788 (S) iac was declared with the CONTIGUOUS attribute. iac must be an array pointer, an array pointer component, an assumed-shape array, or an assumed-rank object.
+"contiguous05d.f", line 41.43: 1514-788 (S) ipc was declared with the CONTIGUOUS attribute. ipc must be an array pointer, an array pointer component, an assumed-shape array, or an assumed-rank object.
+"contiguous05d.f", line 43.25: 1514-788 (S) rc was declared with the CONTIGUOUS attribute. rc must be an array pointer, an array pointer component, an assumed-shape array, or an assumed-rank object.
+"contiguous05d.f", line 43.30: 1514-788 (S) rpc was declared with the CONTIGUOUS attribute. rpc must be an array pointer, an array pointer component, an assumed-shape array, or an assumed-rank object.
+"contiguous05d.f", line 43.35: 1514-788 (S) rac was declared with the CONTIGUOUS attribute. rac must be an array pointer, an array pointer component, an assumed-shape array, or an assumed-rank object.
+** contiguous05d   === End of Compilation 1 ===
+1501-511  Compilation failed for file contiguous05d.f.

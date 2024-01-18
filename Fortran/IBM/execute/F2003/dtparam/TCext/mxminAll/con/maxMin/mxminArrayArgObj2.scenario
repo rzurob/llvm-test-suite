@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mxminAll/con/maxMin/mxminArrayArgObj2.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mxminAll/*
+#DATE      = 20071102
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mxminArrayArgObj2.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = mxminArrayArgObj2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = mxminArrayArgObj2$(OBJ)
+#OUTPUT    = mxminArrayArgObj2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminArrayArgObj2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

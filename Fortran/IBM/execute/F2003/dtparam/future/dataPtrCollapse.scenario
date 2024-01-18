@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/others/dataPtrCollapse.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071217
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrCollapse.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrCollapse$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrCollapse$(OBJ)
+#OUTPUT    = dataPtrCollapse$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrCollapse$(EXE)
+#STDOUT    = dataPtrCollapse.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrCollapse.out $($(tcasedir)dataPtrCollapse$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

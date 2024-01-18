@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/dummy_arg/deferlen/dummyArgDeferPolyOptional01.scenario
+#FEATURE   = 358458
+#CREATOR   = Nancy Wang
+#DATE      = Nov. 21 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)dummyArgDeferPolyOptional01.f
+#OUTPUT= dummyArgDeferPolyOptional01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = dummyArgDeferPolyOptional01$(OBJ)
+#OUTPUT= dummyArgDeferPolyOptional01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = dummyArgDeferPolyOptional01$(EXE)
+#STDOUT= dummyArgDeferPolyOptional01.out
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT  = $($(tcasedir)dummyArgDeferPolyOptional01$(product)vf) dummyArgDeferPolyOptional01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

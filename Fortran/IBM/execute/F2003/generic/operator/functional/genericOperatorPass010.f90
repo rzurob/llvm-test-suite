@@ -1,0 +1,73 @@
+!+  ===================================================================
+!+  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!+  ===================================================================
+!+  ===================================================================
+!+
+!+  TEST CASE TITLE            :
+!+
+!+  PROGRAMMER                 : Robert Ma
+!+  DATE                       : 11/01/2005
+!+  ORIGIN                     : AIX Compiler Development, Toronto Lab
+!+                             :
+!+
+!+  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
+!+                             :
+!+  SECONDARY FUNCTIONS TESTED : with Operator( )
+!+
+!+  DRIVER STANZA              : xlf95
+!+
+!+  DESCRIPTION                : Binary Operator: multiple spec-binding pointing to the same procedure and all being put in the same generic binding
+!+  KEYWORD(S)                 :
+!+  TARGET(S)                  :
+!+ ===================================================================
+!+
+!+  REVISION HISTORY
+!+
+!+  MM/DD/YY:  Init:  Comments:
+!+ ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+module m
+
+   type base
+      integer :: i = -999
+      contains
+         procedure, pass(b) :: base1 => base_base_base
+         procedure, pass(b) :: base2 => base_base_base
+         procedure, pass(b) :: base3 => base_base_base
+         procedure, pass(b) :: base4 => base_base_base
+         procedure, pass(b) :: base5 => base_base_base
+         generic :: operator(+) => base1, base2, base3, base4, base5
+   end type
+
+   contains
+
+   type(base) function base_base_base ( a, b )
+      class(base), intent(in) :: a
+      class(base), intent(in) :: b
+
+      base_base_base%i = a%i + b%i
+   end function
+
+end module
+
+program genericOperatorPass010
+   use m
+
+   type(base) :: b1, b2
+
+   b1 = base(10) + base(20)
+   b2 = b1 + base(30)
+
+   print *, b1, b2
+
+   b1 = b1 + b1 + b1 + b1 + b2 + b2 + b2
+   print *, b1
+
+   b1 = b1%base1(b2)
+   print *, b1
+
+   b2 = b2%base1(b2) + b2%base2(b2) + b2%base3(b2) + b2%base4(b2) + b2%base5(b2)
+   print *, b2
+
+end program

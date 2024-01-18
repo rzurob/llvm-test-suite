@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=ArrayConstructor/ArrayConstructorBrackets05
+#FEATURE = Array constructor enhancements
+#CREATOR = Rob James
+#DATE    = 20060915
+#TEST_TYPE=Unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)ArrayConstructorBrackets05.f
+#OUTPUT    = ArrayConstructorBrackets05$(OBJ)
+#STDERR    = ArrayConstructorBrackets05.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+    #IF in($(F_COMPILE^OPT_OPTIMIZE_FOR_SMP)) || in($(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT))
+        #INPUT = $($(tcasedir)ArrayConstructorBrackets05$(product)smp.vf) \
+                 ArrayConstructorBrackets05.err
+    #ELSE
+        #INPUT = $($(tcasedir)ArrayConstructorBrackets05$(product)vf) \
+                 ArrayConstructorBrackets05.err
+    #ENDIF
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

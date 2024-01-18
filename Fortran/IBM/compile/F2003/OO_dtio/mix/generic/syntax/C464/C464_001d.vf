@@ -1,0 +1,4 @@
+"C464_001d.f", line 41.41: 1514-575 (S) The derived-type formatted input/ouput procedure write must be a subroutine with exactly six nonoptional dummy arguments.
+** m   === End of Compilation 1 ===
+** c464_001d   === End of Compilation 2 ===
+1501-511  Compilation failed for file C464_001d.f.

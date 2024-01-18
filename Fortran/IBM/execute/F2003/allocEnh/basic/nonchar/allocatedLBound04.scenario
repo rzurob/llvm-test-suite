@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/basic/nonchar/allocatedLBound04.scenario
+#FEATURE	= Intrinsic Assignment -- Basic Tests: Non-CHARACTER Intrinsic Types
+#CREATOR	= GM Manual Creation
+#DATE		= 20060801
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)allocatedLBound04.f
+#OUTPUT		= allocatedLBound04$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= allocatedLBound04$(OBJ)
+#OUTPUT		= allocatedLBound04$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= allocatedLBound04$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

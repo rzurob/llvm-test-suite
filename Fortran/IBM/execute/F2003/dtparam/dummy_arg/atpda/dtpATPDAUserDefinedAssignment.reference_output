@@ -1,0 +1,87 @@
+ Long student numbers:
+ There are 4 students with first names of 6 or fewer characters, and last names of 8 or fewer characters
+ Jonas  Salk    : 1234567
+ Albert Einstein: 2345678
+ Marie  Curie   : 3456789
+ Isaac  Newton  : 4567890
+ Long student numbers:
+ There are 3 students with first names of 8 or fewer characters, and last names of 16 or fewer characters
+ Pyotr    Tschaikovsky    : 1234567
+ Nicolai  Rimsky-Korsakov : 2345678
+ Modest   Mussorgsky      : 3456789
+ 
+ Mid-length student numbers:
+ There are 6 students with first names of 3 or fewer characters, and last names of 3 or fewer characters
+ bbbbbbb: 5
+ ccccccc: 25
+ ddddddd: 125
+ eeeeeee: 625
+ fffffff: 3125
+ ggggggg: 15625
+ Mid-length student numbers:
+ There are 1 students with first names of 11 or fewer characters, and last names of 6 or fewer characters
+ Heironymous Bosch : 32767
+ 
+ Long student numbers:
+ There are 4 students with first names of 6 or fewer characters, and last names of 8 or fewer characters
+ Alex   Borodin : 1234567
+ Albert Einstein: 999999999
+ Anders Angstrom: 555555555
+ Isaac  Newton  : 4567890
+ Long student numbers:
+ There are 3 students with first names of 8 or fewer characters, and last names of 16 or fewer characters
+ Pyotr    Tschaikovsky    : 1234567
+ Alex   Borodin           : 1234567
+ Modest   Mussorgsky      : 3456789
+ 
+ Long student numbers:
+ There are 3 students with first names of 8 or fewer characters, and last names of 16 or fewer characters
+ Alex   Borodin           : 1234567
+ Albert Einstein          : 999999999
+ Anders Angstrom          : 555555555
+ Long student numbers:
+ There are 4 students with first names of 6 or fewer characters, and last names of 8 or fewer characters
+ Alex   Borodin : 1234567
+ Albert Einstein: 999999999
+ Anders Angstrom: 555555555
+ Isaac  Newton  : 4567890
+ Long student numbers:
+ There are 4 students with first names of 6 or fewer characters, and last names of 8 or fewer characters
+ Alex   Borodin : 1234567
+ Albert Einstein: 999999999
+ Anders Angstrom: 555555555
+ Isaac  Newton  : 4567890
+ 
+ 
+ Mid-length student numbers:
+ There are 6 students with first names of 3 or fewer characters, and last names of 3 or fewer characters
+ #######: 5
+ ccccccc: 9999
+ $$$$$$$: 5555
+ eeeeeee: 625
+ fffffff: 3125
+ ggggggg: 15625
+ Mid-length student numbers:
+ There are 1 students with first names of 11 or fewer characters, and last names of 6 or fewer characters
+ ccccccc           : 9999
+ 
+ Mid-length student numbers:
+ There are 1 students with first names of 11 or fewer characters, and last names of 6 or fewer characters
+ #######           : 5
+ Mid-length student numbers:
+ There are 6 students with first names of 3 or fewer characters, and last names of 3 or fewer characters
+ #######: 5
+ ccccccc: 9999
+ $$$$$$$: 5555
+ eeeeeee: 625
+ fffffff: 3125
+ ggggggg: 15625
+ Mid-length student numbers:
+ There are 6 students with first names of 3 or fewer characters, and last names of 3 or fewer characters
+ #######: 5
+ ccccccc: 9999
+ $$$$$$$: 5555
+ eeeeeee: 625
+ fffffff: 3125
+ ggggggg: 15625
+ done

@@ -1,0 +1,94 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/coarray/stop/func/stop_f002.scenario
+#FEATURE    = CAF: STOP statement (feature #351605.31)
+#CREATOR    = Grigor Nikolov
+#DATE       = 20101019
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD        = F_COMPILE
+#OPTS       = -WF,-DTC_STOP_VALUE=1
+#INPUT      = $(tcasedir)stop_intvalue1.F
+#OUTPUT     = stop_intvalue1$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#INPUT      = stop_intvalue1$(OBJ)
+#OUTPUT     = stop_intvalue1$(EXE)
+#ENDCMD
+
+#CMD        = MPRUN
+#INPUT      = stop_intvalue1$(EXE)
+#STDOUT     = stop_intvalue1_1.out
+#STDERR     = stop_intvalue1_1.out
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "\[ .* \] Error Code Value set to:  1"
+#INPUT      = stop_intvalue1_1.out
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "STOP 1"
+#INPUT      = stop_intvalue1_1.out
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "FAILURE if this message"
+#INPUT      = stop_intvalue1_1.out
+#VALIDRCS   = 1
+#ENDCMD
+
+#FOR run_iter=128 TO 255
+  #CMD        = F_COMPILE
+  #OPTS       = -WF,-DTC_STOP_VALUE=$(run_iter)
+  #INPUT      = $(tcasedir)stop_intvalue1.F
+  #OUTPUT     = stop_intvalue1$(OBJ)
+  #ENDCMD
+
+  #CMD        = F_LINK
+  #INPUT      = stop_intvalue1$(OBJ)
+  #OUTPUT     = stop_intvalue1$(EXE)
+  #ENDCMD
+
+  #CMD        = MPRUN
+  #INPUT      = stop_intvalue1$(EXE)
+  #STDOUT     = stop_intvalue1_$(run_iter).out
+  #STDERR     = stop_intvalue1_$(run_iter).out
+  #ENDCMD
+
+  #CMD        = GREP
+  #OPTS       = -e "\[ .* \] Error Code Value set to:  $(run_iter)"
+  #INPUT      = stop_intvalue1_$(run_iter).out
+  #ENDCMD
+
+  #CMD        = GREP
+  #OPTS       = -e "STOP $(run_iter)"
+  #INPUT      = stop_intvalue1_$(run_iter).out
+  #ENDCMD
+
+  #CMD        = GREP
+  #OPTS       = -e "FAILURE if this message"
+  #INPUT      = stop_intvalue1_$(run_iter).out
+  #VALIDRCS   = 1
+  #ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

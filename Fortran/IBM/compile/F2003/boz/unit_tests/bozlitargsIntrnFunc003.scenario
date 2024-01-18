@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=bozlitargsIntrnFunc003.scenario
+#FEATURE = diagnotic testing of boz-literal constants as args to REAL, INT, CMPLX and DBLE intrinsics
+#CREATOR = Michael Selvanayagam
+#DATE    = 20050826
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)bozlitargsIntrnFunc003.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<2003std>) $(OPT_ENABLE_MSG_NUM<1518-317>) -qxlf2003=nobozlitargs
+#STDERR    = bozlitargsIntrnFunc003.err
+#OUTPUT    = bozlitargsIntrnFunc003$(OBJ)
+#ENDCMD
+
+
+#CMD       = XLDIFF
+#INPUT     = bozlitargsIntrnFunc003.err $($(tcasedir)bozlitargsIntrnFunc003$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

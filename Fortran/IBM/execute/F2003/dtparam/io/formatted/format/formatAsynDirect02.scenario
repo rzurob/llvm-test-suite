@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/format/formatAsynDirect02.scenario
+#FEATURE   = 359704
+#CREATOR   = Nancy Wang
+#DATE      = Dec. 24 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=bgq
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)formatAsynDirect02.f
+#OUTPUT= formatAsynDirect02$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = formatAsynDirect02$(OBJ)
+#OUTPUT= formatAsynDirect02$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = formatAsynDirect02$(EXE)
+#STDOUT= formatAsynDirect02.out
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT  = $($(tcasedir)formatAsynDirect02$(product)vf) formatAsynDirect02.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

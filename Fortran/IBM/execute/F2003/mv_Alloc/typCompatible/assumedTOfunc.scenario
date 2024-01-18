@@ -1,0 +1,33 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       assumedTOfunc.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)assumedTOfunc.f
+#OUTPUT= assumedTOfunc$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  assumedTOfunc$(OBJ)
+#OUTPUT= assumedTOfunc$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  assumedTOfunc$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

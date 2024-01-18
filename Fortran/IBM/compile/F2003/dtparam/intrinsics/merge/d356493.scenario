@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/merge/d356493.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Sept. 20 2008
+#TEST_TYPE = Diagnostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      = F_COMPILE
+#INPUT    = $(tcasedir)d356493.f
+#STDERR   = d356493.err
+#VALIDRCS = $(RC_COMP_E)
+#ENDCMD
+
+#CMD      = XLDIFF
+#IF in($(F_COMPILE^OPT_COARRAY))
+	#INPUT    = $($(tcasedir)d356493$(product)caf.vf) d356493.err
+#ELSE
+	#INPUT    = $($(tcasedir)d356493$(product)vf) d356493.err
+#ENDIF
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

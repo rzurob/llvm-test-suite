@@ -1,0 +1,5 @@
+"abstracti063.f", line 50.15: 1513-239 (S) Identifier t was declared inside an abstract interface. t must not be used in this context.
+** abstracti063   === End of Compilation 1 ===
+** test1   === End of Compilation 2 ===
+** t   === End of Compilation 3 ===
+1501-511  Compilation failed for file abstracti063.f.

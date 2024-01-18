@@ -1,0 +1,2 @@
+ 1525-093 The CLOSE statement cannot be processed because the CLOSE statement is not allowed on unit 0, which is connected to standard error.  The program will recover by ignoring the CLOSE statement.
+                                                                                                    

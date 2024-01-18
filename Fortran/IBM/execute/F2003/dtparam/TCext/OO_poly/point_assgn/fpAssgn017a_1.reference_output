@@ -1,0 +1,18 @@
+ 20 c1                  
+ 10
+ -2
+ -1
+ 300 c2_3                
+ 500 c2_5                
+ 200
+ finalizeChild
+ finalizeBase
+ finalizeBase
+ finalizeBase
+ finalizeBase
+ finalizeChild
+ finalizeBase
+ finalizeChild
+ finalizeBase
+ finalizeBase
+ 7 nodes deallocated

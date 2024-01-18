@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       deferredchar1.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)deferredchar1.f
+#OUTPUT= deferredchar1$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  deferredchar1$(OBJ)
+#OUTPUT= deferredchar1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  deferredchar1$(EXE)
+#STDOUT= deferredchar1.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = deferredchar1.out $(tcasedir)deferredchar1.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

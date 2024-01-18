@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=AssumedSizeScalar02.scenario
+#FEATURE   = Scalar corresponds to assumed-type and assumed-size dummy
+#CREATOR   = Daniel Chen
+#DATE      = 20140603
+#TEST_TYPE = unit
+#KEYWORDS  = C Interop, Assumed-type, Assumed-size
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)AssumedSizeScalar02.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<ts>) $(OPT_ENABLE_MSG_NUM<1518-317>)
+#OUTPUT    = AssumedSizeScalar02$(OBJ)
+#VALIDRCS  = 0
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = AssumedSizeScalar02$(OBJ)
+#OUTPUT    = AssumedSizeScalar02$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = AssumedSizeScalar02$(EXE)
+#STDOUT    = AssumedSizeScalar02.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = AssumedSizeScalar02.out $($(tcasedir)AssumedSizeScalar02$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

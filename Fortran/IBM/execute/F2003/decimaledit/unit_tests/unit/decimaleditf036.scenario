@@ -1,0 +1,110 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=decimaleditf036.scenario
+#FEATURE = functional test for decimal edit mode introduced in F2003 std.
+#CREATOR = Bardia Mahjour
+#DATE    = 20060104
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+! -------------------- 77 ----------------------
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)decimaleditf036.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<77std>) -Q -O -lxlfzz2
+#OUTPUT    = decimaleditf036$(OBJ)
+#VALIDRCS  = 0
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#INPUT     = decimaleditf036$(OBJ)
+#OUTPUT    = decimaleditf036$(EXE)
+#ENDCMD
+
+#CMD       = DELETE
+#OPTS      = -f
+#INPUT     = decimaleditf036.out
+#ENDCMD
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)decimaleditf036.?.dat
+#OUTPUT    = ./
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = decimaleditf036$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = decimaleditf036.out $($(tcasedir)decimaleditf036$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+!----------------------- 90 --------------------
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)decimaleditf036.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<90std>) -Q -O -lxlfzz2
+#OUTPUT    = decimaleditf036$(OBJ)
+#VALIDRCS  = 0
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#INPUT     = decimaleditf036$(OBJ)
+#OUTPUT    = decimaleditf036$(EXE)
+#ENDCMD
+
+#CMD       = DELETE
+#OPTS      = -f
+#INPUT     = decimaleditf036.out
+#ENDCMD
+
+#CMD       = RUN
+#ENVAR     = XLFRTEOPTS=langlvl=90std
+#INPUT     = decimaleditf036$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = decimaleditf036.out $($(tcasedir)decimaleditf036$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+! ------------------ 95 ---------------------
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)decimaleditf036.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<95std>) -Q -O -lxlfzz2
+#OUTPUT    = decimaleditf036$(OBJ)
+#VALIDRCS  = 0
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#INPUT     = decimaleditf036$(OBJ)
+#OUTPUT    = decimaleditf036$(EXE)
+#ENDCMD
+
+#CMD       = DELETE
+#OPTS      = -f
+#INPUT     = decimaleditf036.out
+#ENDCMD
+
+#CMD       = RUN
+#ENVAR     = XLFRTEOPTS=langlvl=95std
+#INPUT     = decimaleditf036$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = decimaleditf036.out $($(tcasedir)decimaleditf036$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

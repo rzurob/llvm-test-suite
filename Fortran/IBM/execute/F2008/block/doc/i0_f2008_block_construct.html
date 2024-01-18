@@ -1,0 +1,710 @@
+<html><head><title>i0_F2008_block_construct</title></head><body><table cellspacing="0" cellpadding="5" border="1" bgcolor="#c0e1ff" width="100%">
+    <tbody>
+        <tr>
+            <td align="left" width="100%" valign="top" style="font-size: 12pt; color: rgb(0, 0, 128); font-family: Arial;"><strong>Document Control Information:</strong>
+            <p style="color: rgb(0, 0, 0);">The official version of this document is kept in CMVC in the <span style="font-weight: bold; text-decoration: underline;">%CMVC_Family%</span> family, release <span style="font-weight: bold; text-decoration: underline;">%CMVC_Release%</span>, component <span style="font-weight: bold; text-decoration: underline;">%CMVC_Component%</span>, file <span style="font-weight: bold; color: rgb(255, 102, 102); text-decoration: underline;">%CMVC_PathName%</span>. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.<br />
+            <br />
+            CMVC Extraction Information: %W% %H% %I% sccsid<br />
+            <br />
+            This document is IBM Confidential.<br />
+            </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table cellspacing="0" cellpadding="5" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td align="left" width="20%" valign="top"><strong>CMVC Feature Number</strong> </td>
+            <td align="left" width="80%" valign="top" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%CMVC_Feature%</td>
+        </tr>
+        <tr>
+            <td align="left" valign="top"><strong>Feature Title</strong> </td>
+            <td align="left" valign="top" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Document_Name% <br />
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top"><strong>Author(s)</strong> </td>
+            <td align="left" valign="top" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Authors%</td>
+        </tr>
+        <tr>
+            <td align="left" valign="top"><strong>Applicable Product Releases</strong> </td>
+            <td align="left" valign="top" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">XL Fortran v14.1 on Linux and AIX <br />
+            <br />
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top"><strong>Affected Components</strong> </td>
+            <td align="left" valign="top" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">Front Ends: Fortran<br />
+            Optimizers: ASTI, TPO<br />
+            Back Ends: TOBEY <br />
+            Documentation: Product documentation<br />
+            <br />
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table cellspacing="0" cellpadding="5" border="1" bgcolor="#ff6666" width="100%">
+    <tbody>
+        <tr>
+            <td align="center" width="100%" valign="top" style="font-size: 12pt; font-family: Arial; text-align: left;"><strong>Document Status: For Approval</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<p><strong>Approvers Only:</strong> Click on the 'Approve' check-box beside your name in the table below if you agree with the technical and user interface content of this document; not checking your 'approve' check-box signifies you do not approve.</p>
+<p>%Approvals%</p>
+<p>Approval Comments</p>
+<p>
+<table cellspacing="0" cellpadding="5" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td align="left" valign="top"><strong>Approvers</strong> (mandatory participation) </td>
+            <td align="left" valign="top" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Approvers%</td>
+        </tr>
+        <tr>
+            <td align="left" valign="top"><strong>Release Management Contact</strong> (optional participation) </td>
+            <td align="left" valign="top" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Release_Management_Contact% </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top"><strong>Component Reviewers</strong> (optional participation) </td>
+            <td align="left" valign="top" style="color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">%Component_Reviewers%</td>
+        </tr>
+        <tr>
+            <td align="left" valign="top"><strong>Team Reviewers</strong> (optional participation) </td>
+            <td align="left" valign="top" style="font-weight: bold; color: rgb(0, 0, 255); background-color: rgb(255, 255, 255);">             %Team_Reviewers%</td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p><br />
+<br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td style="vertical-align: top; font-family: Arial;"><strong>Reviewers</strong>: Please click the 'Reviewed' checkbox beside your name to indicate your participation in the review. </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%Reviews%<br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td style="vertical-align: top; font-family: Arial;"><strong>Access Change History</strong> <br />
+            </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%CollapsedSection{<strong>Access Change History</strong>}{%Access_Change_History%}%<br />
+</p>
+<p>
+<table cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff" width="100%">
+    <tbody>
+        <tr>
+            <td align="center" width="100%" valign="top" style="font-size: 12pt; font-family: Arial;"><strong>Feature Overview</strong> </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<pre><font face="Arial">The BLOCK construct is an executable construct that is allowed to contain declarations. This is a new Fortran 2008 feature.</font></pre>
+<h2>Key Requirements</h2>
+The user will be able to use the BLOCK keyword to declare block constructs in the source code. Since this is a F2008 feature the compiler will emit language-level messages if -qlanglvl=2003std or lower is specified.  <br />
+<br />
+<h2>Key Design Issues</h2>
+1. Since there are no constraints on the construct name that a user can specify, we need to be able to distinguish between the end statement for a block data program unit and the end statement for a BLOCK construct with construct name &quot;data&quot;.<br />
+<br />
+i.e. <br />
+<br />
+<pre>block data<br />end block data&nbsp;&nbsp;&nbsp;&nbsp; <br /></pre>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; vs. <br />
+</p>
+<pre>data : block<br />end block data <br /><br /></pre>
+2. Within the BLOCK construct, the ASYNCHRONOUS or VOLATILE attributes can be specified for an object which is not a construct entity. In this case, the object will only have the attribute within the scope of the construct. This is a problem since we mark these attributes on the SYM which gives the object the attribute within the entire compilation unit. <br />
+<br />
+<h2>Key Design Decisions</h2>
+1. Set a bit when we encounter the BLOCK statement in the lexer. This will allow us to generate the correct tokens if we enter the &quot;end block data&quot; rule later.<br />
+<br />
+2. If the ASYNCHRONOUS/VOLATILE attribute is specified we'll use a special set of wcode load and store instructions that will perform loads and stores from/to memory in the order in which they are specified. We will also generate bifs to mark the objects as used and killed in TOBEY to prevent loads and stores to them being moved across the BLOCK construct.<br />
+<br />
+e.g.<br />
+<pre>integer :: a,b<br />a = 5<br />block <br />&nbsp; volatile :: a<br />&nbsp; a = 3<br />end block <br />b = a</pre>
+<br />
+will become (in pseudocode)<br />
+<br />
+<pre>LDC 5<br />STR a<br />! -----------------&gt; enter block<br />LDA a<br />CUP __kill<br />LDA a<br />CUP __use<br />LDC 3<br />STR{volatile} a&nbsp; ! -----------&gt; use volatile loads and stores within the block<br />LDA a<br />CUP __kill<br />! -----------------&gt; exit block<br />LOD a<br />STR&nbsp; b</pre>
+<br />
+<h2>Testing Strategy</h2>
+<font color="#ff0000"><font color="#000000">We will have diagnostic test cases that test that all the constraints listed below as well as functional test cases for the BLOCK construct.<br />
+</font> <strong style="font-size: 20px; color: rgb(0, 128, 0);"> </strong><strong style="font-size: 20px; color: rgb(0, 128, 0);"> </strong> </font>
+<p><font color="#ff0000"> </font></p>
+<table cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff" width="100%">
+    <tbody>
+        <tr>
+            <td align="center" width="100%" valign="top" style="font-size: 12pt; font-family: Arial;"><strong>User Documentation</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<font color="#ff0000"><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Overview</h3>
+</strong> </font>
+<p><font color="#000000">The user will be able to use the BLOCK construct&nbsp; to define an executable block that contains declarations. <br />
+</font></p>
+<p><font color="#000000"><br />
+</font></p>
+<font color="#ff0000"><strong style="font-size: 20px; color: rgb(0, 128, 0);"> </strong>  <strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3><strong style="font-size: 20px; color: rgb(0, 128, 0);"> </strong> </h3>
+</strong><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>User Benefits</h3>
+</strong> </font>
+<p><font color="#000000">Declarations were not permitted within the execution part of a Fortran program unit. With the F2008 BLOCK construct, users can now add declarations to the execution part of a program unit. <br />
+</font></p>
+<p><font color="#000000"><br />
+</font></p>
+<font color="#ff0000"><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Public Interface</h3>
+</strong> </font>       <style type="text/css">
+	<!--
+		@page { size: 8.27in 11.69in; margin: 0.79in }
+		P { margin-top: 0in; margin-bottom: 0.08in }
+	-->
+	</style>
+<p><font size="2" color="#000000"><strong><br />
+</strong></font></p>
+<p><font size="2" color="#000000"><strong>BLOCK construct syntax</strong></font></p>
+<font color="#000000">&gt;&gt;-BLOCK_statement----------------------------------------&gt;&lt;<br />
+&gt;&gt;-+------------------+---------------------------------&gt;&lt;<br />
+&nbsp; &nbsp; &nbsp;  '-specification_part-'&nbsp;&nbsp; <br />
+&gt;&gt;-statement_block----------------------------------------&gt;&lt;<br />
+&gt;&gt;-END_BLOCK_statement------------------------------------&gt;&lt;<br />
+<br />
+</font> <br />
+<font size="2" color="#000000"><strong>BLOCK statement syntax<br />
+<br />
+</strong></font> <font color="#000000">&gt;&gt;-+---------------------------+--BLOCK---------------------&gt;&lt;<br />
+&nbsp; &nbsp;&nbsp;&nbsp;  '-BLOCK_construct_name--:-'      &nbsp;&nbsp; <br />
+</font>
+<p><font size="2" color="#000000"><strong>END BLOCK statement syntax</strong></font></p>
+<font color="#000000">&gt;&gt;-+-END BLOCK----+--------------------------+----------------&gt;&lt;<br />
+&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; '-BLOCK_construct_name---'    &nbsp;&nbsp; <br />
+</font>
+<p>&nbsp;</p>
+<font color="#ff0000"><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+<h3>Constraints</h3>
+</strong> </font>
+<ol> <font color="#000000">     </font></ol>
+    <font color="#000000">1. COMMON, EQUIVALENCE, IMPLICIT, INTENT, NAMELIST, OPTIONAL, statement function and VALUE statements are not allowed in the specification part of <br />
+    &nbsp;&nbsp;&nbsp; a BLOCK construct.&nbsp; <br />
+    <br />
+    2.<strong> </strong></font><font color="#000000">A common block name is not allowed in the saved entity list of a SAVE statement in a BLOCK construct. <br />
+    <br />
+    3.<strong> </strong></font><font color="#000000">If a block construct name is specified in a BLOCK statement, the corresponding END BLOCK statement must also specify the same name. If no block <br />
+    &nbsp;&nbsp;&nbsp; construct name is specified in the BLOCK statement, the corresponding END BLOCK statement must also not specify a construct name.<br />
+    <br />
+    4. Transfer of control to the interior of the BLOCK construct from the outside is not allowed, except for the return from a procedure call inside the construct.&nbsp; <br />
+    <br />
+    5. The VOLATILE attribute cannot be specified inside a BLOCK construct for a coarray object that is not a construct entity of that construct.<br />
+    <br />
+    6. A local variable of a BLOCK construct within a pure subprogram cannot have the SAVE or STATIC attribute.<br />
+    <br />
+    </font>          <font color="#ff0000"><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+    <h3>Rules</h3>
+    </strong> </font>
+    <p><font color="#000000">None.</font></p>
+    <p><font color="#000000"><br />
+    </font></p>
+    <font color="#ff0000"><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+    <h3>Language Standard Considerations</h3>
+    </strong> </font>
+    <p><font color="#000000">The BLOCK construct is a Fortran 2008 feature so the compiler will generate language-level messages if the construct is used when the -qlanglvl option specifies Fortran 2003 or an older standard.</font></p>
+    <p><font color="#000000"><br />
+    </font></p>
+    <font color="#ff0000"><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+    <h3>Messages</h3>
+    </strong> </font>
+    <p><font color="#000000">Messages will be generated in the following situations:</font></p>
+    <p><font color="#000000"><strong>1.</strong> Presence of a&nbsp; COMMON, EQUIVALENCE, IMPLICIT, INTENT, NAMELIST, OPTIONAL, statement function or VALUE statement in a BLOCK construct.</font></p>
+    <p><font color="#000000"><font face="Courier New" color="#0000ff">1516-299&nbsp; %1$s statement must not appear within the %2$s construct.</font></font><font color="#000000"><br />
+    </font></p>
+    <p><font face="Courier New" color="#0000ff">1516-340&nbsp; A statement function definition must not appear in the %1$s construct.</font></p>
+    <p><font color="#000000"><strong>2. </strong>Presence of a common block name in the saved entity list of a SAVE statement in a BLOCK construct.</font></p>
+    <p><font color="#000000"><font face="Courier New" color="#0000ff">1514-791&nbsp; Common block %1$s must not be specified in a %2$s statement inside a %3$s construct.</font> <br />
+    </font></p>
+    <p><font color="#000000"><strong>3.</strong> The block construct name on the BLOCK statement is different from the one on the corresponding END BLOCK statement.</font></p>
+    <font color="#0000ff"><font face="Courier New">1511-133&nbsp; Construct name %1$s on the %2$s statement does not match the one specified on the corresponding %3$s statement.&nbsp; Construct name %1$s will be ignored.<br />
+    </font></font>
+    <p><font color="#000000"><strong>4.</strong> The BLOCK statement has a construct name but the corresponding END BLOCK statement does not.</font></p>
+    <em>    </em>
+    <p><font face="Courier New" color="#0000ff">1516-246 The construct name for the %1$s statement is missing.&nbsp; The statement will be matched with the previous %2$s statement.</font><em><font color="#000000"><br />
+    </font></em></p>
+    <em>    </em>
+    <p><font color="#000000"><strong>5.</strong> The END BLOCK statement has a construct name but the corresponding BLOCK statement does not.<br />
+    </font></p>
+    <font face="Courier New" color="#0000ff">1511-116 The %1$s statement must not contain a construct name.&nbsp; Construct name %2$s is ignored.<br />
+    <br />
+    <font face="Arial" color="#000000"><strong>6. </strong>The VOLATILE attribute is specified for a coarray that is not a construct entity.<br />
+    <br />
+    <font face="Courier New" color="#0000ff">1514-790 Coarray %1$s is not a construct entity of the %2$s construct.&nbsp; It must not be specified with the %3$s attribute.</font><em><br />
+    <br />
+    </em></font></font><font color="#ff0000"><font color="#ff0000"><font color="#339966"><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+    <h3>Performance Considerations</h3>
+    </strong></font> </font></font>
+    <p><font color="#000000">None.</font></p>
+    <p><font color="#000000"><br />
+    </font></p>
+    <font color="#ff0000"><font color="#ff0000"><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+    <h3>Multi-Platform/Portability Considerations</h3>
+    </strong> </font></font>
+    <p><font color="#000000">None.</font></p>
+    <p><font color="#000000"><br />
+    </font></p>
+    <font color="#ff0000"><font color="#ff0000"><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+    <h3>Migration/Co-Existence/Binary-Compatibility Considerations</h3>
+    </strong> </font></font>
+    <p><font color="#000000">None.</font></p>
+    <p><font color="#000000"><br />
+    </font></p>
+    <font color="#ff0000"><font color="#ff0000"><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+    <h3>Debug Considerations</h3>
+    </strong> </font></font>
+    <p><font color="#ff0000"><font color="#000000">Existing BB/EB wcode instructions can be used to indicate the presence of a BLOCK construct for debugging purposes.</font></font></p>
+    <p><font color="#ff0000"><font color="#ff0000"><font color="#000000"><br />
+    </font><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+    <h3>NLS (Unicode) Considerations</h3>
+    </strong> </font></font></p>
+    <p><font color="#000000">None.</font></p>
+    <p><font color="#000000"><br />
+    </font></p>
+    <font color="#ff0000"><font color="#ff0000"><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+    <h3>Samples</h3>
+    </strong></font></font>                                                                                           <style type="text/css">
+	<!--
+		@page { size: 8.27in 11.69in; margin: 0.79in }
+		P { margin-top: 0in; margin-bottom: 0.08in }
+	-->
+	</style>
+    <p align="LEFT" style="margin-top: 0in; margin-bottom: 0in;"><strong>Examples of valid BLOCK constructs</strong></p>
+    <p align="LEFT" style="margin-top: 0in; margin-bottom: 0in;"><strong><br />
+    </strong></p>
+    <p align="LEFT" style="margin-top: 0in; margin-bottom: 0in;"><u>Unnamed BLOCK construct</u></p>
+    <p align="LEFT" style="margin-top: 0in; margin-bottom: 0in;"><u><br />
+    </u></p>
+    <pre align="LEFT" style="margin-top: 0in; margin-bottom: 0in;"><font face="Courier New">SUBROUTINE swap(i, j)</font></pre>
+    <pre align="LEFT" style="margin-top: 0in; margin-bottom: 0in;"><font face="Courier New">&nbsp; </font><font face="Courier New">INTEGER i, j</font></pre>
+    <pre align="LEFT" style="margin-top: 0in; margin-bottom: 0in;"><font face="Courier New">&nbsp; </font><font face="Courier New">IF (i &lt; j)</font></pre>
+    <pre align="LEFT" style="margin-top: 0in; margin-bottom: 0in;"><font face="Courier New">&nbsp;&nbsp;&nbsp; </font><font face="Courier New">BLOCK</font></pre>
+    <pre align="LEFT" style="margin-top: 0in; margin-bottom: 0in;"><font face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="Courier New">INTEGER temp</font></pre>
+    <pre align="LEFT" style="margin-top: 0in; margin-bottom: 0in;"><font face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="Courier New">temp = i</font></pre>
+    <pre align="LEFT" style="margin-top: 0in; margin-bottom: 0in;"><font face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="Courier New">i = j</font></pre>
+    <pre align="LEFT" style="margin-top: 0in; margin-bottom: 0in;"><font face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="Courier New">j = temp</font></pre>
+    <pre align="LEFT" style="margin-top: 0in; margin-bottom: 0in;"><font face="Courier New">&nbsp;&nbsp;&nbsp; </font><font face="Courier New">END BLOCK</font></pre>
+    <pre align="LEFT" style="margin-top: 0in; margin-bottom: 0in;"><font face="Courier New">&nbsp; </font><font face="Courier New">END IF</font></pre>
+    <pre align="LEFT" style="margin-top: 0in; margin-bottom: 0in;"><font face="Courier New">END SUBROUTINE<br /><br /></font></pre>
+    <p align="LEFT" style="margin-top: 0in; margin-bottom: 0in;"><font face="Courier, monospace">      </font> </p>
+    <p align="LEFT" style="margin-top: 0in; margin-bottom: 0in;"><u><font face="Arial, sans-serif">Named and nested BLOCK constructs</font></u></p>
+    <pre><font face="Courier New">PROGRAM foo<br />  INTEGER a<br />  add1 : BLOCK<br />    INTEGER res1<br />    res1 = a + 1<br />    add2 : BLOCK<br />      INTEGER res2<br />      res2 = res1 + 1<br />    END BLOCK add2<br />  END BLOCK add1<br />END PROGRAM </font></pre>
+    <em>    </em>
+    <p align="LEFT" style="margin-top: 0in; margin-bottom: 0in;"><em> </em></p>
+    <em>    <br />
+    </em>
+    <p style="margin-top: 0in; margin-bottom: 0in;"><em><br />
+    </em></p>
+    <em>    <font color="#000000">             </font>                          <font color="#000000">
+    <table cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff" width="100%">
+        <tbody>
+            <tr>
+                <td align="center" width="100%" valign="top" style="font-size: 12pt; font-family: Arial;"><strong>Internal Compiler Team Information</strong> </td>
+            </tr>
+        </tbody>
+    </table>
+    </font></em><font color="#000000"><font color="#ff0000"><font color="#ff0000"><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+    <h3>Product Dependencies</h3>
+    </strong> <font color="#000000">None.<br />
+    </font> </font></font>             </font>
+    <p><font color="#000000"><font color="#ff0000"><font color="#ff0000"><br />
+    </font></font></font></p>
+    <font color="#000000">            <font color="#ff0000"><font color="#ff0000"><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+    <h3>Patent/Disclosure Implications</h3>
+    </strong> </font></font>             </font>
+    <p><font color="#000000"><font color="#000000">None.<br />
+    </font></font></p>
+    <font color="#000000">            </font>
+    <p><font color="#000000"><font color="#ff0000"><font color="#ff0000"><br />
+    </font></font></font></p>
+    <font color="#000000">            <font color="#ff0000"><font color="#ff0000"><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+    <h3>Build and Packaging Considerations</h3>
+    </strong> </font></font>             </font>
+    <p><font color="#000000"><font color="#000000">None.<br />
+    </font></font></p>
+    <font color="#000000">            </font>
+    <p><font color="#000000"><font color="#000000"><br />
+    </font></font></p>
+    <font color="#000000">            <font color="#ff0000"><font color="#ff0000"><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+    <h3>Information Development Impacts</h3>
+    </strong> </font></font>             </font>
+    <p><font color="#000000"><font color="#ff0000"><font color="#ff0000">       <style type="text/css">
+	<!--
+		@page { size: 8.27in 11.69in; margin: 0.79in }
+		P { margin-top: 0in; margin-bottom: 0.08in }
+		TD P { margin-top: 0in; margin-bottom: 0.08in }
+		TH P { margin-top: 0in; margin-bottom: 0.08in; font-style: italic; font-weight: bold; text-align: center }
+	-->
+	</style> </font></font></font></p>
+    <font color="#000000">            </font>
+    <p style="margin-top: 0in; margin-bottom: 0in;"><font color="#000000"><font color="#ff0000"><font color="#ff0000"><br />
+    </font></font></font></p>
+    <font color="#000000">
+    <table cellspacing="0" cellpadding="4" bordercolor="#000000" border="1" width="100%">
+        <col width="85*"></col> 	<col width="85*"></col> 	<col width="85*"></col>
+        <thead>
+            <tr valign="TOP">
+                <th width="33%">
+                <p>Language Reference Section/Page</p>
+                </th>
+                <th width="33%">
+                <p>Updates required</p>
+                </th>
+                <th width="33%">
+                <p>Relevant sections in Fortran 2008 Standard  				</p>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr valign="TOP">
+                <td width="33%">
+                <p align="LEFT">Glossary</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">Update definition of scoping unit</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">1.3.124 scoping unit</p>
+                </td>
+            </tr>
+            <tr valign="TOP">
+                <td width="33%">
+                <p align="LEFT">Scope</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">update definition of scoping unit</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">2.4.3.2.1 Variable</p>
+                </td>
+            </tr>
+            <tr valign="TOP">
+                <td width="33%">
+                <p align="LEFT">Free source form &gt; White space</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">Include END BLOCK in Table 1</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">3.3.2.2 Blank characters in free form</p>
+                </td>
+            </tr>
+            <tr valign="TOP">
+                <td width="33%">
+                <p align="LEFT">When finalization occurs</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">finalization also occurs immediately 				before exiting a BLOCK construct</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">4.5.6.3 When finalization occurs</p>
+                </td>
+            </tr>
+            <tr valign="TOP">
+                <td width="33%">
+                <p align="LEFT">Automatic objects  				</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">automatic objects can also appear in 				BLOCK constructs</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">5.2.2 Automatic data objects</p>
+                </td>
+            </tr>
+            <tr valign="TOP">
+                <td width="33%">
+                <p align="LEFT">Explicit-shape arrays</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">arrays with bounds that are not 				constant expressions can also be declared in BLOCK constructs  				</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">5.3.8.2 Explicit-shape array</p>
+                </td>
+            </tr>
+            <tr valign="TOP">
+                <td width="33%">
+                <p align="LEFT">Statements and attributes &gt; SAVE</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">SAVE attribute can also be specified 				in BLOCK construct  				</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">5.3.16 SAVE attribute</p>
+                </td>
+            </tr>
+            <tr valign="TOP">
+                <td width="33%">
+                <p align="LEFT" style="margin-top: 0in; margin-bottom: 0in;">Statements 				and attributes &gt; VOLATILE</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">A noncoarray object can be volatile 				inside a BLOCK construct even if it doesn't have the attribute 				outside</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">5.3.19 VOLATILE attribute</p>
+                </td>
+            </tr>
+            <tr valign="TOP">
+                <td width="33%">
+                <p align="LEFT" style="margin-top: 0in; margin-bottom: 0in;">Statements 				and attributes &gt; IMPLICIT</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">Implicit typing is not affected by the 				BLOCK construct</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">5.5 IMPLICIT statement</p>
+                </td>
+            </tr>
+            <tr valign="TOP">
+                <td width="33%">
+                <p align="LEFT" style="margin-top: 0in; margin-bottom: 0in;">Allocation 				status</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">Unsaved allocatable local variables 				are deallocated upon exiting the BLOCK construct  				</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">6.7.3.2 Deallocation of allocatable 				variables</p>
+                </td>
+            </tr>
+            <tr valign="TOP">
+                <td width="33%">
+                <p align="LEFT" style="margin-top: 0in; margin-bottom: 0in;">Statements 				and attributes &gt; BLOCK  				</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">Need to create a page for the BLOCK 				statement</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">8.1.4 BLOCK construct</p>
+                </td>
+            </tr>
+            <tr valign="TOP">
+                <td width="33%">Statements and attributes &gt; END (Construct)</td>
+                <td width="33%">Add END BLOCK statement</td>
+                <td width="33%">8.1.4 BLOCK construct</td>
+            </tr>
+            <tr valign="TOP">
+                <td width="33%">
+                <p align="LEFT" style="margin-top: 0in; margin-bottom: 0in;">Execution 				control &gt; BLOCK construct</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">Need to create a page for the BLOCK 				construct  				</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">8.1.4 BLOCK construct</p>
+                <p align="LEFT" style="margin-top: 0in; margin-bottom: 0in;"><br />
+                </p>
+                </td>
+            </tr>
+            <tr valign="TOP">
+                <td width="33%"><font color="#000000">Statements and attributes &gt; EXIT</font></td>
+                <td width="33%">An EXIT statement with the same construct name as a BLOCK construct can be used to complete execution of that construct.<br />
+                </td>
+                <td width="33%">8.1.10 EXIT statement<br />
+                </td>
+            </tr>
+            <tr valign="TOP">
+                <td width="33%">
+                <p align="LEFT" style="margin-top: 0in; margin-bottom: 0in;">Pure 				procedures</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">Local variables of a pure subprogram 				or a BLOCK construct within it are not allowed to have the SAVE 				attribute   				</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">12.7 Pure procedures</p>
+                </td>
+            </tr>
+            <tr valign="TOP">
+                <td width="33%">
+                <p align="LEFT">Statement and construct entities</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">update definition of construct entity 				to include local variables in BLOCK construct</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">16.4 Statement and construct entities</p>
+                </td>
+            </tr>
+            <tr valign="TOP">
+                <td width="33%">
+                <p align="LEFT">Pointer association</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">update pointer association status upon 				entering/exiting BLOCK construct</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">16.5.2.3 Events that cause pointers to 				become associated</p>
+                <p align="LEFT">16.5.2.4 Events that cause 				pointers to become disassociated  				</p>
+                <p align="LEFT">16.5.2.5 Events that cause the association 				status of pointers to become undefined</p>
+                </td>
+            </tr>
+            <tr valign="TOP">
+                <td width="33%">
+                <p align="LEFT">Definition status of variables</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">update variable definition status upon 				entering/exiting BLOCK construct</p>
+                </td>
+                <td width="33%">
+                <p align="LEFT">16.6.5 Events that cause variables to 				become defined</p>
+                <p align="LEFT">16.6.6 Events that cause 				variables to become undefined  				</p>
+                </td>
+            </tr>
+            <tr valign="TOP">
+                <th width="33%">
+                <p>Getting Started</p>
+                <p> Section/Page</p>
+                </th>
+                <th width="33%">
+                <p>Updates required</p>
+                </th>
+                <th width="33%">
+                <p>Relevant sections in Fortran 2008 Standard  				</p>
+                </th>
+            </tr>
+            <tr valign="TOP">
+                <td width="33%">What's new for IBM XL Fortran for AIX, V14.1 &gt; XL Fortran language-related updates</td>
+                <td width="33%">Add an entry of the BLOCK construct feature</td>
+                <td width="33%">N/A</td>
+            </tr>
+        </tbody>
+    </table>
+    </font><br />
+    <br />
+    <font color="#000000"><font color="#ff0000"><font color="#ff0000"><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+    <h3>Testing Considerations</h3>
+    </strong> </font></font>             </font>
+    <p>                                   <style type="text/css">
+	<!--
+		@page { size: 8.27in 11.69in; margin: 0.79in }
+		P { margin-top: 0in; margin-bottom: 0.08in }
+	-->
+	</style>     </p>
+    <p style="margin-top: 0in; margin-bottom: 0in;"><font color="#000000"><font color="#000000">In addition to testing that the constraints are respected, the BLOCK construct allows declarations in the executable part of the program and begins a new scope we also need to test the following things:</font></font><br />
+    </p>
+    <p style="margin-top: 0in; margin-bottom: 0in;">1.&nbsp;&nbsp; default initialization occurs as expected upon entering the construct</p>
+    <p style="margin-top: 0in; margin-bottom: 0in;">2. &nbsp; pointer association status is as expected upon exiting construct</p>
+    <p style="margin-top: 0in; margin-bottom: 0in;">3.&nbsp;&nbsp; finalization occurs upon exiting construct</p>
+    <p style="margin-top: 0in; margin-bottom: 0in;">4.&nbsp;&nbsp; deallocation of unsaved allocatable  objects occurs upon exiting construct</p>
+    <p style="margin-top: 0in; margin-bottom: 0in;">5.&nbsp;&nbsp; SAVE statements outside the construct do not affect local objects</p>
+    <p style="margin-top: 0in; margin-bottom: 0in;">6.&nbsp;&nbsp; automatic objects have correct length, bounds, etc. upon entering the construct</p>
+    <p style="margin-top: 0in; margin-bottom: 0in;">8.&nbsp;&nbsp; local objects with SAVE attribute retain their values upon exiting construct</p>
+    <p style="margin-top: 0in; margin-bottom: 0in;">9.&nbsp;&nbsp; ASYNCHRONOUS or VOLATILE attributes specified within the construct do not persist upon exiting construct.</p>
+    <p style="margin-top: 0in; margin-bottom: 0in;">10. the debugging of variables declared in the BLOCK construct in totalview, dbx and gdb</p>
+    <p style="margin-top: 0in; margin-bottom: 0in;">11. branching into the middle of a BLOCK construct using GOTO, etc. is not allowed</p>
+    <p style="margin-top: 0in; margin-bottom: 0in;">12. data scoping rules within OMP constructs<br />
+    </p>
+    <p>&nbsp;</p>
+    <p><em><font color="#000000"><font color="#000000"><br />
+    </font></font></em></p>
+    <em>        <font color="#000000">
+    <table cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff" width="100%">
+        <tbody>
+            <tr>
+                <td align="center" width="100%" valign="top" style="font-size: 12pt; font-family: Arial;"><strong>High-Level Implementation Design</strong> </td>
+            </tr>
+        </tbody>
+    </table>
+    </font></em><font color="#000000"><font color="#ff0000"><font color="#ff0000"><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+    <h3>Implementation Design Overview</h3>
+    </strong> </font></font>             </font>
+    <p>                                                               <style type="text/css">
+	<!--
+		@page { size: 8.27in 11.69in; margin: 0.79in }
+		P { margin-top: 0in; margin-bottom: 0.08in }
+	-->
+	</style>         </p>
+    <strong>FORTRAN Front End<br />
+    </strong><br />
+    1. The 	frontend lexer will be modified to accept the BLOCK and END BLOCK 	keywords. A bit will be set when the BLOCK keyword is encountered so we can generate the correct tokens, END_BLOCK and IDENTIFIER &quot;data&quot;,&nbsp; if we go into the &quot;END BLOCK DATA&quot; rule and the statement we are processing is an END BLOCK statement.<br />
+    2. The 	frontend grammar will be modified to accept the new BLOCK construct 	syntax and allow a specification part inside an executable construct. <br />
+    3. The openblk and create_scope routines will be used to create a new scope when a BLOCK construct is entered. New constants BLK_BLOCK_CONSTRUCT and BLOCK_SCOPE_KIND will be added to ft_cons.h for this purpose. curr_scope will be set to the new scope so no changes will be needed in the d_group routines.<br />
+    4. A new global_state bit in_block will be added and set when we enter a block construct. This bit will be used to enforce the constraints specified for the BLOCK construct and marking local variables private/firstprivate if the BLOCK construct is enclosed in a parallel/task region.<br />
+    5. All the pointer/allocatable/finalizable local objects are added to the block cleanup chain which is used to generate calls to nullify/deallocate/ final routines upon exiting the BLOCK construct. <br />
+    6. Non-construct entities that are specified with the asynchronous/volatile attribute within the block are added to the construct's volatile chain which is used to set the appropriate&nbsp; flags on the VAR instructions for those entities.<br />
+    7. Volatile load and store instructions will be issued for any loads and stores to non-construct entities that are specified with the asynchronous/volatile attribute within the block.<br />
+    8. The 	leave_scope and closeblk routines will used to exit the scope of the 	construct.<br />
+    9. If there is an EXIT statement that specifies the same construct name as the BLOCK construct we will generate code to exit the construct.<br />
+    <font color="#0000ff"><font color="#000000">10. There are no changes that need to be made to the reading/writing of modules.<br />
+    <br />
+    </font></font>
+    <p><strong><font color="#000000"><font color="#ff0000"><font color="#ff0000"><font color="#000000">ASTI</font></font></font></font></strong></p>
+    <p><font color="#000000"><font color="#ff0000"><font color="#ff0000"><font color="#000000">1.  BS/ES turned into a STMT_KIND_SCOPE&nbsp; (SCOPE because we already have a  block statement kind, which has very different semantics) that has a  ST_INDEX (the first statement of the body of the scope,) a ST_INDEX each  for the prolog and finalization sections, and a list of DI_INDEX (the  variables declared in this scope)</font></font></font></font></p>
+    <p><font color="#000000"><font color="#ff0000"><font color="#ff0000"><font color="#000000">2. The various statement walks (in hw, sc, aug, and replacer) need to be taught to recurse into these scopes.</font></font></font></font></p>
+    <font color="#000000"><font color="#ff0000"><font color="#ff0000"><font color="#000000">3.  Prolog-generating code will have to be made sensitive to scopes. There  may be assumptions about the current procedure all over the place.</font></font></font></font><br />
+    <br />
+    4. ASTI will also generate calls to the _kill and _use bifs upon entering the BLOCK and the _kill bif upon exiting the construct for non-construct entities that are given the ASYNCHRONOUS/VOLATILE attribute within the BLOCK scope.<br />
+    <font color="#0000ff"><font color="#000000">     <br />
+    <br />
+    <strong>TPO</strong><br />
+    <br />
+    1. When TPO sees e.g. a LOD operation with type == volatile on variable &quot;a&quot;, TPO creates a temporary variable &quot;temp&quot; to save the value of a; temp will then be used instead of a for subsequent operations that involve a.<br />
+    2. When TPO sees load &amp; store operations with type == volatile, it will perform checks similar to those for volatile symbols.<br />
+    3. TPO will not aggregate block scope volatile symbols with normal symbols into structures in an attempt to optimize these structures.<br />
+    <br />
+    <br />
+    <strong>TOBEY<br />
+    </strong><br />
+    1. Implement the new&nbsp; load and store instructions with the memory attribute (ACR 229) as follows: for volatile loads and stores, we will create a new dr, alias it properly and operate on it instead of the original.<br />
+    2. Implement the new&nbsp; kill and use builtins and expand them when encountered in the code. This ensures that upon exit and entrance in the block the right value of a variable will be used.<br />
+    <br />
+    <br />
+    </font>     </font><font color="#000000"><font color="#ff0000"><font color="#ff0000"><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+    <h3>Inter-Component Communication/Interfaces</h3>
+    </strong> </font></font>             </font>
+    <p><font color="#000000"><font color="#ff0000"><font color="#ff0000"> <font color="#000000"><strong>FE - ASTI interface</strong><br />
+    </font></font></font></font></p>
+    <font color="#000000">            </font>
+    <p><font color="#000000"><font color="#ff0000"><font color="#ff0000"><font color="#000000">We will require new wcode++ opcodes BS/ES (Begin Scope/End Scope) to delimit the BLOCK construct. We need new opcodes since BB/EB is meant to be used as a debugging mechanism and we don't want to overload BC/EC anymore. We will also need a VAR opcode in wcode++ that we can use to create a variable list so ASTI can know which variables are local to the BLOCK construct.</font></font></font></font></p>
+    <font color="#000000">            </font>
+    <p><font color="#000000"><font color="#ff0000"><font color="#ff0000"><font color="#000000">The frontend will always generate the BS/ES block containing a variable list for a BLOCK construct. It will only generate the BB/EB instructions if the -g option is specified. <br />
+    </font></font></font></font></p>
+    <font color="#000000">            </font>
+    <p><font color="#000000"><font color="#ff0000"><font color="#ff0000"><font color="#000000">ASTI will use the BS instruction as the insertion point for prolog code for local variables. It will use the ES instruction as the insertion point for finalization and deallocation code.</font></font></font></font></p>
+    <p><font color="#000000"><font color="#ff0000"><font color="#ff0000"><font color="#000000"><strong>ASTI - BE interface</strong></font></font></font></font></p>
+    <font color="#000000">            </font>
+    <p><font color="#000000"><font color="#ff0000"><font color="#ff0000"><font color="#000000">ASTI will remove the BS/ES block as well as the VAR instructions when it is generating the wcode for the backend. The BB/EB instructions, if present,&nbsp; will be passed on to the backend.</font></font></font></font></p>
+    <p><font color="#000000"><font color="#ff0000"><font color="#ff0000"><font color="#000000">ASTI will also insert calls to the __use and __kill bifs for variables from outer scopes that are asynchronous or volatile within the block and pass any volatile load and store instructions generated by the front-end to the back-end.<br />
+    </font></font></font></font></p>
+    <font color="#000000">            </font>                  <font color="#000000">            <font color="#ff0000"><font color="#ff0000"><strong style="font-size: 20px; color: rgb(0, 128, 0);">
+    <h3>Other Implementation Design Information</h3>
+    </strong> </font></font>             </font>
+    <p><font color="#000000"><font color="#000000">None.<br />
+    </font></font></p>
+    <p><font color="#000000"><font color="#000000"><br />
+    </font></font></p>
+    <em>        <font color="#000000">
+    <table cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff" width="100%">
+        <tbody>
+            <tr>
+                <td align="center" width="100%" valign="top" style="font-size: 12pt; font-family: Arial;"><strong>Appendix/References</strong> </td>
+            </tr>
+        </tbody>
+    </table>
+    </font>         </em>
+    <p><em><font color="#000000"><font color="#000000"><br />
+    </font></font></em><font color="#000000"><font color="#000000">Section 8.1.4 of the </font></font><font color="#000000"><font color="#000000">Fortran 2008 Standard <br />
+    ACR229: Volatile Load and Store Instructions<br />
+    </font></font></p>
+    <p><font color="#000000"><font color="#000000">&nbsp;</font></font></p><!--HTML Wrapper--></body></html>

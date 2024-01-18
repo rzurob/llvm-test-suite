@@ -1,0 +1,43 @@
+! Replacing scrisoi00.presh
+
+#CMD    = XLC_COMPILE
+#OPTS   = $(C_COMPILER_OPTS)
+#INPUT  = $(tcasedir)$CTCARG.c
+#OUTPUT = $CTCARG$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)$FTCARG.f
+#OUTPUT = $FTCARG$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+#OUTPUT = $FTCARG$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = $FTCARG$(EXE)
+#ENDCMD
+
+#IF !on(aix)
+  #CMD    = GCC_COMPILE
+  #OPTS   = $(GCC_COMPILER_OPTS)
+  #INPUT  = $(tcasedir)$CTCARG.c
+  #OUTPUT = $CTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_COMPILE
+  #INPUT  = $(tcasedir)$FTCARG.f
+  #OUTPUT = $FTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_LINK
+  #INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+  #OUTPUT = $FTCARG$(EXE)
+  #ENDCMD
+
+  #CMD    = RUN
+  #INPUT  = $FTCARG$(EXE)
+  #ENDCMD
+#ENDIF

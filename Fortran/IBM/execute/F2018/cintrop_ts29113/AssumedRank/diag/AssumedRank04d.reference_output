@@ -1,0 +1,3 @@
+"AssumedRank04d.f", line 37.23: 1514-848 (S) Dummy argument a has assumed-rank. a must not be declared with the VALUE attribute.
+** sub   === End of Compilation 1 ===
+1501-511  Compilation failed for file AssumedRank04d.f.

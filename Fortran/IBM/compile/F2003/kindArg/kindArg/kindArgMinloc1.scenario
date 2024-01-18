@@ -1,0 +1,31 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       kindArgMinloc1.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       06-27-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=      F_COMPILE
+#OPTS=     $(OPT_FREE_SOURCE_FORM)
+#INPUT=    $(tcasedir)kindArgMinloc1.f
+#STDERR=   kindArgMinloc1.err
+#VALIDRCS= $(RC_COMP_E)
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    kindArgMinloc1.err $($(tcasedir)kindArgMinloc1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

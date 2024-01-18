@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/deferlen/functional/allocate/deferLenPtrAssgn010.scenario
+#FEATURE = character with deferred length type parameter
+#CREATOR = Robert Ma
+#DATE    = 20060501
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)deferLenPtrAssgn010.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = deferLenPtrAssgn010$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = deferLenPtrAssgn010$(OBJ)
+#OUTPUT    = deferLenPtrAssgn010$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = deferLenPtrAssgn010$(EXE)
+#STDOUT    = deferLenPtrAssgn010.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = deferLenPtrAssgn010.out $(tcasedir)deferLenPtrAssgn010.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/use/dtpUseInvokeExternalDTFunction01.scenario
+#FEATURE   = DTP and USE - external procedure invocation
+#CREATOR   = DF
+#DATE      = 20080825
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUseInvokeExternalDTFunction01.f
+#OUTPUT    = dtpUseInvokeExternalDTFunction01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUseInvokeExternalDTFunction01$(OBJ)
+#OUTPUT    = dtpUseInvokeExternalDTFunction01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUseInvokeExternalDTFunction01$(EXE)
+#STDOUT    = dtpUseInvokeExternalDTFunction01.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUseInvokeExternalDTFunction01$(product)vf) dtpUseInvokeExternalDTFunction01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

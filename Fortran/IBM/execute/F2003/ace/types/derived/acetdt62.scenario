@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetdt62.scenario
+#FEATURE	= Array constructor enhancement pointer with specified lower bound in AC
+#CREATOR	= DF Manual Update
+#DATE		= 20061126
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt62.f
+#OUTPUT		= acetdt62$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt62$(OBJ)
+#OUTPUT		= acetdt62$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt62$(EXE)
+#STDOUT		= acetdt62.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -r1e-6
+#INPUT		= $($(tcasedir)acetdt62$(product)vf) acetdt62.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

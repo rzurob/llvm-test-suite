@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_type/abstract/C503/interface004.scenario
+#FEATURE = OO_type/abstract tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)interface004.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = interface004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  interface004$(OBJ)
+#OUTPUT    = interface004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = interface004$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

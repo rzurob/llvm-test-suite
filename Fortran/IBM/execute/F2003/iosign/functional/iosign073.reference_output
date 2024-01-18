@@ -1,0 +1,18 @@
+ 
+Test 1
+
+ &MYVALS
+ I2=1, I=1, I4=1, I8=1
+ /
+ 
+Test 2
+
+ &MYVALS
+ I2=+1, I=+1, I4=+1, I8=+1
+ /
+ 
+Test 3
+
+ &MYVALS
+ I2=1, I=1, I4=1, I8=1
+ /

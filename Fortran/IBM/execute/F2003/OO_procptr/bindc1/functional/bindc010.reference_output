@@ -1,0 +1,12 @@
+here are the elements of i1: 101.000000, 102.000000, 103.000000
+here are the elements of i2[0][0][0-1]: a, b
+here are the elements of i2[0][1][0-1]: c, d
+here are the elements of i2[1][0][0-1]: e, f
+here are the elements of i2[1][1][0-1]: g, h
+here are the elements of i3: (201.000000, 202.000000), (203.000000, 204.000000), (205.000000, 206.000000)
+here are the elements of i1: 301.000000, 302.000000, 303.000000
+here are the elements of i2[0][0]: 401.000000
+here are the elements of i2[1][0]: 402.000000
+here are the elements of i2[2][0]: 403.000000
+here are the elements of i2[3][0]: 404.000000
+here are the elements of i2[4][0]: 405.000000

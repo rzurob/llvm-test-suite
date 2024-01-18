@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/intrinsics/typeQuery/functionReturn009.scenario
+#FEATURE = OO_poly/intrinsics tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)functionReturn009.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = functionReturn009$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  functionReturn009$(OBJ)
+#OUTPUT    = functionReturn009$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = functionReturn009$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

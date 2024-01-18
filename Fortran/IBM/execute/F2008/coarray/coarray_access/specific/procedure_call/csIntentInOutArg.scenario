@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_access/specific/procedure_call/csIntentInOutArg
+#FEATURE        = CAF coarray access (specific) - procedure call - pass coarray actual arguments into intent(inout) dummy argument of procedure
+#CREATOR        = DF
+#DATE           = 2010-10-04
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)csIntentInOutArg.f
+#OUTPUT = csIntentInOutArg$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = csIntentInOutArg$(OBJ)
+#OUTPUT = csIntentInOutArg$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD    = MPRUN
+	#INPUT  = csIntentInOutArg$(EXE)
+	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

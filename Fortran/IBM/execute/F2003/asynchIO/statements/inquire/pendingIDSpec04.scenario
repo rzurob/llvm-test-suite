@@ -1,0 +1,59 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/inquire/pendingIDSpec04.scenario
+#FEATURE	= Asynchronous I/O -- INQUIRE Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060321
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)pendingIDSpec04.dat fort.14
+#ENDCMD
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)pendingIDSpec04.dat fort.34
+#ENDCMD
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)pendingIDSpec04.dat fort.54
+#ENDCMD
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)pendingIDSpec04.dat fort.74
+#ENDCMD
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)pendingIDSpec04.dat fort.94
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)pendingIDSpec04.f
+#OUTPUT		= pendingIDSpec04$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= pendingIDSpec04$(OBJ)
+#OUTPUT		= pendingIDSpec04$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= pendingIDSpec04$(EXE)
+#STDOUT		= pendingIDSpec04.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)pendingIDSpec04$(product)vf) pendingIDSpec04.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

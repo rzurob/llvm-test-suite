@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/wait/C938EORSpec01d.scenario
+#FEATURE	= Asynchronous I/O -- WAIT() Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060315
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)C938EORSpec01d.f
+#OUTPUT		= C938EORSpec01d$(OBJ)
+#STDERR		= C938EORSpec01d.stderr
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)C938EORSpec01d$(product)vf) C938EORSpec01d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

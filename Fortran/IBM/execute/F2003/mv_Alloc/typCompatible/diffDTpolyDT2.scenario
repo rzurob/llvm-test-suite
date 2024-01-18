@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       diffDTpolyDT2.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)diffDTpolyDT2.f
+#OUTPUT= diffDTpolyDT2$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  diffDTpolyDT2$(OBJ)
+#OUTPUT= diffDTpolyDT2$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  diffDTpolyDT2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

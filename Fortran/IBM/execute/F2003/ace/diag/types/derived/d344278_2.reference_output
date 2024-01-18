@@ -1,0 +1,7 @@
+** mod   === End of Compilation 1 ===
+"d344278_2.f", line 76.28: 1511-142 (S) Identifier associate specified in the array constructor has not been defined in a derived type definition.
+"d344278_2.f", line 76.50: 1516-022 (S) Subscript, stride, or substring expression must be a valid arithmetic expression.
+"d344278_2.f", line 80.26: 1511-142 (S) Identifier derived specified in the array constructor has not been defined in a derived type definition.
+"d344278_2.f", line 80.44: 1516-022 (S) Subscript, stride, or substring expression must be a valid arithmetic expression.
+** d344278_2   === End of Compilation 2 ===
+1501-511  Compilation failed for file d344278_2.f.

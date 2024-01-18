@@ -1,0 +1,48 @@
+!#######################################################################
+! SCCS ID Information
+! %W%, %I%
+! Extract Date/Time: %D% %T%
+! Checkin Date/Time: %E% %U%
+!#######################################################################
+! *********************************************************************
+!*  =================================================================== 
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
+!*  =================================================================== 
+!*  =================================================================== 
+!*
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Jim Xia
+!*  DATE                       : 06/02/2006
+!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
+!*
+!*
+!*  DESCRIPTION                : miscellaneous (defect 320967)
+!*
+!*
+!*
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+module m
+
+    contains
+
+    character(:) function genMode (i)
+        integer, intent(in) :: i
+
+        pointer :: genMode
+
+        if (i >= 0) then
+            allocate (genMode, source='COMMA')
+        else
+            allocate (genMode, source='POINT ')
+        end if
+    end function
+end module
+
+
+use m
+    write (*, '(f10.2)', decimal=genMode(10)) 1.2
+    write (*, '(f10.2)', decimal=genMode(-10)) 1.2
+end

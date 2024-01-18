@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/assignment/functional/genericAssignmentDeferred005.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071114
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericAssignmentDeferred005.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericAssignmentDeferred005$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericAssignmentDeferred005$(OBJ)
+#OUTPUT    = genericAssignmentDeferred005$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericAssignmentDeferred005$(EXE)
+#STDOUT    = genericAssignmentDeferred005.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericAssignmentDeferred005.out $(tcasedir)genericAssignmentDeferred005.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

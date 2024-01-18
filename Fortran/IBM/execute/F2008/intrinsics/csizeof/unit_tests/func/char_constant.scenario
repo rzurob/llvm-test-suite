@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2008/intrinsics/csizeof/unit_tests/func/char_constant.scenario
+#FEATURE = F2008 ISO_C_BINDING - C_SIZEOF
+#CREATOR = Paul Liu
+#DATE    = 20101226
+#TEST_TYPE=FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)char_constant.f
+#OUTPUT    = char_constant$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = char_constant$(OBJ)
+#OUTPUT    = char_constant$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = char_constant$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

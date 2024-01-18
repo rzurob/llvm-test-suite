@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE = Initialization Expression Enhancement
+#CREATOR = James Ren
+#DATE    = 20060404
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)iesqrt.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = iesqrt$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = iesqrt$(OBJ)
+#OUTPUT    = iesqrt$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = iesqrt$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

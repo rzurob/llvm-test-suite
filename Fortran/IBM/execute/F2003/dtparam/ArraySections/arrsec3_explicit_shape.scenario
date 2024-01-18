@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/ArraySections/arrsec3_explicit_shape.scenario
+#FEATURE   = 353925
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20081013
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)arrsec3_explicit_shape.f
+#OUTPUT    = arrsec3_explicit_shape$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = arrsec3_explicit_shape$(OBJ)
+#OUTPUT    = arrsec3_explicit_shape$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = arrsec3_explicit_shape$(EXE)
+#STDOUT    = arrsec3_explicit_shape.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)arrsec3_explicit_shape$(product)vf) arrsec3_explicit_shape.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/mix/generic/functional/crossFeature/funcRetrn/funcRetrn003a.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)funcRetrn003a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = funcRetrn003a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = funcRetrn003a$(OBJ)
+#OUTPUT    = funcRetrn003a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = funcRetrn003a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

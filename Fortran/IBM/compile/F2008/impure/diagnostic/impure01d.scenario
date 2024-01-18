@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/impure/diagnostic/impure01d.scenario
+#FEATURE   = F2008 IMPURE - IMPURE elemental procedures in F2008
+#CREATOR   = Tapti Vaid
+#DATE      = 20120413
+#TEST_TYPE = diagnostic
+#KEYWORDS =  F2008, IMPURE
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)impure01d.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<2003std>)
+#OUTPUT    = impure01d$(OBJ)
+#STDOUT    = impure01d.out
+#STDERR    = impure01d.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#IF in ($(XLF2008_COMPILE^OPT_OPTIMIZE_FOR_SMP)) || in ($$(XLF2008_COMPILE^OPT_OPTIMIZE_FOR_SMP<.*>))
+  #INPUT   = $($(tcasedir)impure01d$(product)smp.vf) impure01d.out
+#ELSE
+  #INPUT   = $($(tcasedir)impure01d$(product)vf) impure01d.out
+#ENDIF
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

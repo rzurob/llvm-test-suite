@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/derived/acetdt50k.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
+			    AC in SOURCE of ALLOCATE (derived type))
+#CREATOR	= Glen Mateer (based on work by David Forster)
+#DATE		= 20080122
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt50k.f
+#OUTPUT		= acetdt50k$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt50k$(OBJ)
+#OUTPUT		= acetdt50k$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt50k$(EXE)
+#STDOUT		= acetdt50k.stdout
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetdt50k$(product)vf) acetdt50k.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

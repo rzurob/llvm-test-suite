@@ -1,0 +1,7 @@
+"override005d1.f", line 46.33: 1514-670 (S) Dummy argument dtv of overridden binding setid and the corresponding dummy argument of overriding binding setid must have the same type and type parameters.
+"override005d1.f", line 46.33: 1514-593 (S) Dummy argument dtv of overridden binding setid was declared with the INTENT(IN) attribute.  The corresponding dummy argument of overriding binding setid must also be declared with the INTENT(IN) attribute.
+"override005d1.f", line 46.33: 1514-569 (S) The passed-object dummy argument j of inherited binding setid is in position 1.  The passed-object dummy argument of the overriding binding must have the same name and position.
+"override005d1.f", line 46.33: 1514-593 (S) Dummy argument j of overridden binding setid was declared with the INTENT(INOUT) attribute.  The corresponding dummy argument of overriding binding setid must also be declared with the INTENT(INOUT) attribute.
+** n   === End of Compilation 1 ===
+** override005d1   === End of Compilation 2 ===
+1501-511  Compilation failed for file override005d1.f.

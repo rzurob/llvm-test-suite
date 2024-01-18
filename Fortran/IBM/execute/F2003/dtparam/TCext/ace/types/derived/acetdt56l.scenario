@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/derived/acetdt56l.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
+				AC as function return value (derived types))
+#CREATOR	= Glen Mateer (derived from work by David Forster)
+#DATE		= 20080123
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt56l.f
+#OUTPUT		= acetdt56l$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt56l$(OBJ)
+#OUTPUT		= acetdt56l$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt56l$(EXE)
+#STDOUT		= acetdt56l.stdout
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetdt56l$(product)vf) acetdt56l.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

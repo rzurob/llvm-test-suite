@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"dtSpec003d.f", line 40.19: 1514-691 (S) The type parameter k has already been specified in the derived-type specifier.
+"dtSpec003d.f", line 40.29: 1514-691 (S) The type parameter n has already been specified in the derived-type specifier.
+** dtspec003d   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtSpec003d.f.

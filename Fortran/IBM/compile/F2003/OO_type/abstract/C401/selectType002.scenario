@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_type/abstract/C401/selectType002.scenario
+#FEATURE = OO_type tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)selectType002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=shutup
+#OUTPUT    = selectType002$(OBJ)
+#STDERR    = selectType002.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)selectType002$(product)vf) selectType002.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

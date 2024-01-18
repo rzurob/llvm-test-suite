@@ -1,0 +1,7 @@
+"misc001.f", line 53.21: 1516-026 (S) Non-arrays must not be subscripted.
+"misc001.f", line 55.30: 1516-026 (S) Non-arrays must not be subscripted.
+"misc001.f", line 57.21: 1516-026 (S) Non-arrays must not be subscripted.
+"misc001.f", line 59.30: 1516-026 (S) Non-arrays must not be subscripted.
+** m   === End of Compilation 1 ===
+** dtspec008a1   === End of Compilation 2 ===
+1501-511  Compilation failed for file misc001.f.

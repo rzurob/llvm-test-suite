@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/listdirect/d360946.scenario
+#FEATURE   = 360757
+#CREATOR   = Nancy Wang
+#DATE      = Jan. 13 2009
+#TEST_TYPE = Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)d360946.f
+#STDERR = d360946.err
+#VALIDRCS = $(RC_COMP_E)
+#ENDCMD
+
+#CMD    = XLDIFF
+#INPUT  = d360946.err $($(tcasedir)d360946$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

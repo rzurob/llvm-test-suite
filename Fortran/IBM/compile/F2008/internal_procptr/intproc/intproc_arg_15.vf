@@ -1,0 +1,4 @@
+"intproc_arg_15.f", line 41.15: 1513-200 (S) User-defined elemental procedures may not be passed as actual arguments.
+"intproc_arg_15.f", line 42.15: 1513-200 (S) User-defined elemental procedures may not be passed as actual arguments.
+** intproc_arg_15   === End of Compilation 1 ===
+1501-511  Compilation failed for file intproc_arg_15.f.

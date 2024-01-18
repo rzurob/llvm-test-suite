@@ -1,0 +1,32 @@
+
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      C425.f
+#FEATURE=
+#CREATOR=   Feng Ye
+#DATE=      11-29-05
+#TEST_TYPE= DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=      F_COMPILE
+#OPTS=     $(OPT_FREE_SOURCE_FORM)
+#INPUT=    $(tcasedir)dtParamTypeDefC425.f
+#STDERR=   dtParamTypeDefC425.err
+#VALIDRCS= $(RC_COMP_E)
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    dtParamTypeDefC425.err $($(tcasedir)dtParamTypeDefC425$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

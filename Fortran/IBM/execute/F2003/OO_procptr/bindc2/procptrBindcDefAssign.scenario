@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_procptr/bindc2/procptrBindcDefAssign.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)procptrBindcDefAssign.c
+#OPTS      = $(C_COMPILER_OPTS)
+#OUTPUT    = BindcDefAssign$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)procptrBindcDefAssign.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = procptrBindcDefAssign$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = procptrBindcDefAssign$(OBJ) BindcDefAssign$(OBJ)
+#OUTPUT    = procptrBindcDefAssign$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = procptrBindcDefAssign$(EXE)
+#STDOUT    = procptrBindcDefAssign.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

@@ -1,0 +1,11 @@
+  iotype:DT_base-1 v_list: 4 101
+  iotype:DT_base-2 v_list: 5  102
+  iotype:DT_base-3 v_list: 6   103
+  iotype:DT_child-1 v_list: 4 4 201 ABC
+  iotype:DT_child-2 v_list: 5 5  202  DEF
+  iotype:DT_child-3 v_list: 6 6   203   GHI
+  iotype:DT_base-1 v_list: 4 301
+  iotype:DT_base-1 v_list: 4 302
+  iotype:DT_base-1 v_list: 4 303
+  iotype:DT_child-1 v_list: 5 5  401  IBM  iotype:DT_child-2 v_list: 6 6   402   IBM
+  iotype:DT_child-1 v_list: 5 5  403  IBM

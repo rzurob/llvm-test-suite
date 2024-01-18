@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"fdtioC936_001d.f", line 61.8: 1514-640 (S) Dummy argument dtv of the derived-type I/O procedure writepointformatted is of an extensible type. dtv must be polymorphic.
+** fdtioc936_001d   === End of Compilation 2 ===
+1501-511  Compilation failed for file fdtioC936_001d.f.

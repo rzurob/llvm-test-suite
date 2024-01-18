@@ -1,0 +1,10 @@
+** m   === End of Compilation 1 ===
+  15.39   01610197 
+  17.39   01610197 
+  20.39   0161060D 
+  20.39   01610197 
+  23.39   015107E3 x3ÜPOINTERÜPARAMETERÜPARAMETERÜ
+  25.23   016107F7 x4ÜCOMMONÜBIND(C)Ü
+  26.39   01610197 
+** foo   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtParamTypeDeclC514_01.f.

@@ -1,0 +1,8 @@
+"contiguous07d.f", line 52.21: 1513-246 (S) The target of a pointer assignment with bounds remapping must be simply contiguous or an array of rank 1.
+"contiguous07d.f", line 56.21: 1513-246 (S) The target of a pointer assignment with bounds remapping must be simply contiguous or an array of rank 1.
+"contiguous07d.f", line 62.22: 1513-246 (S) The target of a pointer assignment with bounds remapping must be simply contiguous or an array of rank 1.
+"contiguous07d.f", line 71.22: 1513-246 (S) The target of a pointer assignment with bounds remapping must be simply contiguous or an array of rank 1.
+"contiguous07d.f", line 83.21: 1513-246 (S) The target of a pointer assignment with bounds remapping must be simply contiguous or an array of rank 1.
+"contiguous07d.f", line 88.22: 1513-246 (S) The target of a pointer assignment with bounds remapping must be simply contiguous or an array of rank 1.
+** contiguous07d   === End of Compilation 1 ===
+1501-511  Compilation failed for file contiguous07d.f.

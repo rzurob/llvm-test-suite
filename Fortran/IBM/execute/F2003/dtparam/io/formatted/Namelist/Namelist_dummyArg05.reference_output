@@ -1,0 +1,24 @@
+ &NMLB
+ B1=4, 4, 4, 4, 4, 4, (4.000000000,4.000000000), (4.000000000,4.000000000), ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      , B2=4, 4, 4, 4, 4, 4, (4.000000000,4.000000000), (4.000000000,4.000000000), ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD
+ /
+ &NMLC
+ C1=1, 1, 1, 1, 1, 1, (9.500000000,9.500000000), (9.500000000,9.500000000), Niels     Niels     Niels     Niels     Niels     Niels     Niels     Niels     Niels     Niels     , 6, 6, 6, 6, 6, 6, (6.599999905,6.599999905), (6.599999905,6.599999905), Erwin     Erwin     Erwin     Erwin     Erwin     Erwin     Erwin     Erwin     Erwin     Erwin     , C2=4, 4, 4, 4, 4, 4, (4.000000000,4.000000000), (4.000000000,4.000000000), ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      , 4, 4, 4, 4, 4, 4, (4.000000000,4.000000000), (4.000000000,4.000000000), ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD
+ /
+ &NMLB
+ B1=4, 4, 4, 4, 4, 4, (4.000000000,4.000000000), (4.000000000,4.000000000), ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      , B2=1, 1, 1, 1, 1, 1, (1.100000024,1.100000024), (1.100000024,1.100000024), Sfoo      Sfoo      Sfoo      Sfoo      Sfoo      Sfoo      Sfoo      Sfoo      Sfoo      Sfoo
+ /
+ &NMLC
+ C1=1, 1, 1, 1, 1, 1, (9.500000000,9.500000000), (9.500000000,9.500000000), Niels     Niels     Niels     Niels     Niels     Niels     Niels     Niels     Niels     Niels     , 6, 6, 6, 6, 6, 6, (6.599999905,6.599999905), (6.599999905,6.599999905), Erwin     Erwin     Erwin     Erwin     Erwin     Erwin     Erwin     Erwin     Erwin     Erwin     , C2=4, 4, 4, 4, 4, 4, (4.000000000,4.000000000), (4.000000000,4.000000000), ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      , 4, 4, 4, 4, 4, 4, (4.000000000,4.000000000), (4.000000000,4.000000000), ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD
+ /
+ &NMLB
+ BARG=4, 4, 4, 4, 4, 4, (4.000000000,4.000000000), (4.000000000,4.000000000), ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD
+ /
+ &NMLC
+ CARG=1, 1, 1, 1, 1, 1, (9.500000000,9.500000000), (9.500000000,9.500000000), Niels     Niels     Niels     Niels     Niels     Niels     Niels     Niels     Niels     Niels     , 6, 6, 6, 6, 6, 6, (6.599999905,6.599999905), (6.599999905,6.599999905), Erwin     Erwin     Erwin     Erwin     Erwin     Erwin     Erwin     Erwin     Erwin     Erwin
+ /
+ &NMLB
+ B1=4, 4, 4, 4, 4, 4, (4.000000000,4.000000000), (4.000000000,4.000000000), ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD      ABCD
+ /
+ &NMLC
+ C1=1, 1, 1, 1, 1, 1, (9.500000000,9.500000000), (9.500000000,9.500000000), Niels     Niels     Niels     Niels     Niels     Niels     Niels     Niels     Niels     Niels     , 6, 6, 6, 6, 6, 6, (6.599999905,6.599999905), (6.599999905,6.599999905), Erwin     Erwin     Erwin     Erwin     Erwin     Erwin     Erwin     Erwin     Erwin     Erwin
+ /

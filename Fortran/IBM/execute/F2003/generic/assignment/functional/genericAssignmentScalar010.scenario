@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/assignment/functional/genericAssignmentScalar010.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericAssignmentScalar010.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericAssignmentScalar010$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericAssignmentScalar010$(OBJ)
+#OUTPUT    = genericAssignmentScalar010$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericAssignmentScalar010$(EXE)
+#STDOUT    = genericAssignmentScalar010.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericAssignmentScalar010.out $(tcasedir)genericAssignmentScalar010.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

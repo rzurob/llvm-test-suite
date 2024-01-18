@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = inputComplexNaN002.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 8, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)inputComplexNaN002.f
+#OUTPUT   =  inputComplexNaN002$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  inputComplexNaN002$(OBJ)
+#OUTPUT   =  inputComplexNaN002$(EXE)
+#ENDCMD
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)cpx_nan_q.dat $(tcasedir)cpx_nan_s.dat
+#OUTPUT   = ./
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  inputComplexNaN002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

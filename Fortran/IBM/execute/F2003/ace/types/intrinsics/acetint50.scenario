@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint50.scenario
+#FEATURE	= Array constructor enhancement AC in SOURCE of ALLOCATE
+#CREATOR	= DF Manual Update
+#DATE		= 20061116
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint50.f
+#OUTPUT		= acetint50$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint50$(OBJ)
+#OUTPUT		= acetint50$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint50$(EXE)
+#STDOUT		= acetint50.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -r1e-6
+#INPUT		= $(tcasedir)acetint50.vf acetint50.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

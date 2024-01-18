@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/structConstr/dtparamConstr010.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamConstr010.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamConstr010$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dtparamConstr010$(OBJ)
+#OUTPUT    = dtparamConstr010$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamConstr010$(EXE)
+#STDOUT    = dtparamConstr010.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1.0e-15
+#INPUT     = dtparamConstr010.out $($(tcasedir)dtparamConstr010$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

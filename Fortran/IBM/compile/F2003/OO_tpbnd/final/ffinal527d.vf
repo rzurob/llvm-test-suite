@@ -1,0 +1,4 @@
+"ffinal527d.f", line 81.46: 1516-261 (S) Pure procedure finalizedata must not finalize an object with non-pure final subroutine finalizebase.
+** m   === End of Compilation 1 ===
+** ffinal527d   === End of Compilation 2 ===
+1501-511  Compilation failed for file ffinal527d.f.

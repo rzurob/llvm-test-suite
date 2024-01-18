@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/misc/d372839.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d372839.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = d372839$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d372839$(OBJ)
+#OUTPUT    = d372839$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d372839$(EXE)
+#STDOUT    = d372839.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = d372839.out $($(tcasedir)d372839$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,5 @@
+"genericC461Operator003d.f", line 37.36: 1514-672 (S) Specific binding lessthan with the NOPASS attribute must not be specified for the generic binding with the generic specification OPERATOR(<).
+"genericC461Operator003d.f", line 39.40: 1514-672 (S) Specific binding myproc with the NOPASS attribute must not be specified for the generic binding with the generic specification OPERATOR(.myproc.).
+** m   === End of Compilation 1 ===
+"genericC461Operator003d.f", line 60.8: 1514-219 (S) Unable to access module symbol file for module m. Check path and file permissions of file. Use association not done for this module.
+1501-511  Compilation failed for file genericC461Operator003d.f.

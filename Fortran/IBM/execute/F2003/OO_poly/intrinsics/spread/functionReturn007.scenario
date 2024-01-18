@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/intrinsics/spread/functionReturn007.scenario
+#FEATURE = OO_poly/intrinsics tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)functionReturn007.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = functionReturn007$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  functionReturn007$(OBJ)
+#OUTPUT    = functionReturn007$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = functionReturn007$(EXE)
+#STDOUT    = functionReturn007.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)functionReturn007$(product)vf) functionReturn007.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

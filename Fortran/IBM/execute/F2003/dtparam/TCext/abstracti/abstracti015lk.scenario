@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/abstracti/abstracti015lk.scenario
+#FEATURE	= Derived Type Parameters (+ Abstract Interface Tests)
+#CREATOR	= Glen Mateer (derived from work by Alberto Alvarez-Mesquida)
+#DATE		= 20071025
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)abstracti015lk.f
+#OUTPUT		= abstracti015lk$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= abstracti015lk$(OBJ)
+#OUTPUT		= abstracti015lk$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= abstracti015lk$(EXE)
+#STDOUT		= abstracti015lk.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)abstracti015lk$(product)vf) abstracti015lk.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

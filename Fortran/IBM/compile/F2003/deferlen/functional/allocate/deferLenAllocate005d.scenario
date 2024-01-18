@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2005/deferlen/functional/allocate/deferLenAllocate005d.scenario
+#FEATURE = deferlen tests
+#CREATOR = Robert Ma
+#DATE    = 20060501
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)deferLenAllocate005d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = deferLenAllocate005d$(OBJ)
+#STDERR    = deferLenAllocate005d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = deferLenAllocate005d.err $($(tcasedir)deferLenAllocate005d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

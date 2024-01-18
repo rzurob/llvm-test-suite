@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = dtparamIntrinsic010.scenario
+#CREATOR  = James Ren
+#DATE     = April, 16, 2007
+#TEST_TYPE= Unit Test
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ = 60
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#INPUT  = $(tcasedir)dtparamIntrinsic010.f
+#OUTPUT = dtparamIntrinsic010$(OBJ)
+#ENDCMD
+
+
+#CMD    = F_LINK
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#INPUT = dtparamIntrinsic010$(OBJ)
+#OUTPUT = dtparamIntrinsic010$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT = dtparamIntrinsic010$(EXE)
+#STDOUT = dtparamIntrinsic010.out
+#ENDCMD
+
+#CMD    = DIFF
+#INPUT  = dtparamIntrinsic010.out $($(tcasedir)dtparamIntrinsic010$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

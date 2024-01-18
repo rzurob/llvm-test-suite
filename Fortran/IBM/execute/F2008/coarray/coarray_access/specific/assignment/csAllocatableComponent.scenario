@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_access/specific/assignment/csAllocatableComponent
+#FEATURE        = CAF coarray access (specific) - assignment - in main program, assign allocatable intrinsic components of derived type variables to coarray variables and vice-versa
+#CREATOR        = DF
+#DATE           = 2010-10-04
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)csAllocatableComponent.f
+#OUTPUT = csAllocatableComponent$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = csAllocatableComponent$(OBJ)
+#OUTPUT = csAllocatableComponent$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = csAllocatableComponent$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

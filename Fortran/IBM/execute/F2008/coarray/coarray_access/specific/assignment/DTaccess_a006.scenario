@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_access/specific/assignment/DTaccess_a006
+#FEATURE        = CAF coarray access (specific) - assignment
+#CREATOR        = Francesco Cassullo
+#DATE           = March 2011
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)DTaccess_a006.f
+#OUTPUT = DTaccess_a006$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = DTaccess_a006$(OBJ)
+#OUTPUT = DTaccess_a006$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD    = MPRUN
+	#INPUT  = DTaccess_a006$(EXE)
+	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/decimaledit/defaultIO/dcmlCharVarInquir001d.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dcmlCharVarInquir001d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dcmlCharVarInquir001d$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = dcmlCharVarInquir001d.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = dcmlCharVarInquir001d.err $($(tcasedir)dcmlCharVarInquir001d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

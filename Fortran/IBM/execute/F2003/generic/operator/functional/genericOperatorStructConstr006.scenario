@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/operator/functional/genericOperatorStructConstr006.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20051122
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericOperatorStructConstr006.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericOperatorStructConstr006$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericOperatorStructConstr006$(OBJ)
+#OUTPUT    = genericOperatorStructConstr006$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericOperatorStructConstr006$(EXE)
+#STDOUT    = genericOperatorStructConstr006.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericOperatorStructConstr006.out $(tcasedir)genericOperatorStructConstr006.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/optional/func/fcintrpopt031.scenario
+#FEATURE   = 399982 - C Interop: Optional Argument
+!old#CREATOR = Ying Zhang
+#CREATOR   = Izhak Jakov
+#DATE      = 2012-05-01
+#TEST_TYPE = functional
+#KEYWORDS  = C Interop, Optional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)cintrpopt031c.c
+#OPTS      = $(C_COMPILER_OPTS) $(OPT_SET_LANG_LEVEL_EXTENDED) $(OPT_GEN_64BIT_LONGLONG)
+#OUTPUT    = cintrpopt031c$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)cintrpopt031f.f
+#OUTPUT    = cintrpopt031f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = cintrpopt031f$(OBJ) cintrpopt031c$(OBJ)
+#OUTPUT    = cintrpopt031$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = cintrpopt031$(EXE)
+#STDOUT    = cintrpopt031.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

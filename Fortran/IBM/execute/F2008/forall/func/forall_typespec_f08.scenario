@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = forall_typespec_f08.scenario
+#REFERENCE = /tst91/hpf_forall/construct/fxfc027.scenario
+#FEATURE   = 400906 Support typespec on FORALL
+#CREATOR   = Bernard Kan
+#DATE      = 20120621
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+PROCS=2
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)forall_typespec_f08.f
+#OPTS      =  $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = forall_typespec_f08$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#OPTS      =  $(OPT_FREE_SOURCE_FORM)
+#INPUT     = forall_typespec_f08$(OBJ)
+#OUTPUT    = forall_typespec_f08$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = forall_typespec_f08$(EXE)
+#STDOUT    = forall_typespec_f08.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)forall_typespec_f08$(product)vf) forall_typespec_f08.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

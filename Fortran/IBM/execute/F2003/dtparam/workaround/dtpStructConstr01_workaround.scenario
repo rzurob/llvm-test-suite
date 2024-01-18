@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/InitExp/StructConstr/dtpStructConstr01_workaround.scenario
+#FEATURE	= init-expr (DATA Statement, Structure Constructor, and		\
+				Default Initialization)
+#CREATOR	= Glen Mateer
+#DATE		= 20090525
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)dtpStructConstr01_workaround.f
+#OUTPUT		= dtpStructConstr01_workaround$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= dtpStructConstr01_workaround$(OBJ)
+#OUTPUT		= dtpStructConstr01_workaround$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= dtpStructConstr01_workaround$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

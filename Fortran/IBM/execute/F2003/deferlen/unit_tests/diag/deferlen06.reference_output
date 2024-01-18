@@ -1,0 +1,3 @@
+"deferlen06.f", line 22.21: 1516-295 (S) The character length appearing in an ALLOCATE statement type specification must be a scalar integer expression or an asterisk.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file deferlen06.f.

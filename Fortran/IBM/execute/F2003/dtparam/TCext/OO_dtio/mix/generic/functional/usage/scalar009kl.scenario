@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/mix/generic/functional/usage/scalar009kl.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070813
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)scalar009kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = scalar009kl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = scalar009kl$(OBJ)
+#OUTPUT    = scalar009kl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = scalar009kl$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,18 @@
+This directory contains test cases for the following feature:
+FEATURE   : F2008: LHS of intrinsic assignment is allowed to be polymorphic (96086)
+
+  I0  document: no I0
+
+  IT1 document is kept in CMVC in the aix family, release des.dev, component design.it1, file designs/it1/f2008_lhs_intrinsic_polymorphic_assignment_/f2008_lhs_intrinsic_polymorphic_assignment_.html.
+https://featureflow.torolab.ibm.com/featureflow/show/8054
+
+  IT2 document is kept in CMVC in the aix family, release des.dev, component design.it2, file
+                  https://featureflow.torolab.ibm.com/featureflow/show/8031
+
+  See the ./doc subdirectory for details
+
+
+func subdirectory contains functional test cases
+diag subdirectory contains diagnostic test cases
+unit_test  subdirectory contains unit test cases
+ 

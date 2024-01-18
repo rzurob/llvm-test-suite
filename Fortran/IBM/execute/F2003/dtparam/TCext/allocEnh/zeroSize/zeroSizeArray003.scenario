@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/zeroSize/zeroSizeArray003.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071220
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)zeroSizeArray003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = zeroSizeArray003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = zeroSizeArray003$(OBJ)
+#OUTPUT    = zeroSizeArray003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = zeroSizeArray003$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

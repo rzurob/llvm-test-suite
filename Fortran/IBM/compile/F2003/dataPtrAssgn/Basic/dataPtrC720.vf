@@ -1,0 +1,7 @@
+"dataPtrC720.f", line 49.16: 1513-246 (S) The target of a pointer assignment with bounds remapping must be simply contiguous or an array of rank 1.
+"dataPtrC720.f", line 50.3: 1515-041 (S) Pointer and target must have the same rank in the pointer assignment statement.
+"dataPtrC720.f", line 55.3: 1515-041 (S) Pointer and target must have the same rank in the pointer assignment statement.
+"dataPtrC720.f", line 56.3: 1515-041 (S) Pointer and target must have the same rank in the pointer assignment statement.
+"dataPtrC720.f", line 57.3: 1515-041 (S) Pointer and target must have the same rank in the pointer assignment statement.
+** dataptrc720   === End of Compilation 1 ===
+1501-511  Compilation failed for file dataPtrC720.f.

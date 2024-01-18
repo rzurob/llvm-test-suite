@@ -1,0 +1,15 @@
+** m   === End of Compilation 1 ===
+  69.19   0161065C newbase1Ü
+  77.19   0161065C base2Ü
+  89.19   0161065C newbase1Ü
+  97.19   0161065C base2Ü
+** c936_003   === End of Compilation 2 ===
+  111.11   0161065C newbase1Ü
+** unformattedread1   === End of Compilation 3 ===
+  127.11   0161065C newbase1Ü
+** unformattedwrite1   === End of Compilation 4 ===
+  138.11   0161065C base2Ü
+** unformattedread2   === End of Compilation 5 ===
+  153.11   0161065C base2Ü
+** unformattedwrite2   === End of Compilation 6 ===
+1501-511  Compilation failed for file C936_003.f.

@@ -1,0 +1,35 @@
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE TITLE            : Deferred Character Length
+!*
+!*  PROGRAMMER                 : James Ren
+!*  ORIGIN                     : AIX Compiler Development,
+!*                             : IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Unit testing
+!*
+!*  DRIVER STANZA              : xlf90/95
+!*  REQUIRED COMPILER OPTIONS  : -qfree=f90
+!*
+!*  DESCRIPTION                : Testing the allocatable attributes on
+!*                               characters with deferred length.
+!*
+!* ===================================================================
+!234567890123456789012345678901234567890123456789012345678901234567890
+      character(:), allocatable ::char(:)
+      call sub(char)
+      contains
+      subroutine sub(char)
+         implicit none
+         character(:), allocatable :: char(:)
+         character(10) :: result
+         allocate (character(5)::char(8))
+         char = 'ABCD'
+         result = char(1)//char(8)
+         if (result /= 'ABCDABCD') error stop 1
+         deallocate(char)
+      end subroutine
+      end
+

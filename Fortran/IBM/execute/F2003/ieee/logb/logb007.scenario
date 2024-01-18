@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = ieee/logb/logb007.scenario
+#FEATURE = ieee tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT = linuxle, aix
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)ieeeconsts.f
+#OUTPUT = ieeeconsts$(OBJ)
+#OPTS   = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION) -qautodbl=dblpad
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)logb007.f
+#OUTPUT = logb007$(OBJ)
+#OPTS   = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION) -qautodbl=dblpad -I./
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = logb007$(OBJ)
+#OUTPUT = logb007$(EXE)
+#OPTS   = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION) -qautodbl=dblpad -I./
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = logb007$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

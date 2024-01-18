@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/argpresence/unit_tests/func/argpresence01d.scenario
+#FEATURE    = F386700
+#CREATOR    = David Nichols
+#DATE       = 20110302
+#TEST_TYPE  = Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#OPTS       = -qxlf2008=checkpresence $(OPT_SET_LANG_LEVEL<2003std>) $(OPT_ENABLE_MSG_NUM<1518-317>)
+#INPUT      = $(tcasedir)argpresence01d.f
+#OUTPUT     = argpresence01d$(OBJ)
+#STDERR     = argpresence01d.out
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = argpresence01d.out $($(tcasedir)argpresence01d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

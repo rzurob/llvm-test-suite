@@ -1,0 +1,4 @@
+ lbounds: 1 1 ubounds: 2 2
+ F F T T
+ lbounds: 1 1 ubounds: 2 2
+ T T F F

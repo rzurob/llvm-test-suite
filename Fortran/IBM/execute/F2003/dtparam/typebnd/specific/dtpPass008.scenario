@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/typebnd/specific/dtpPass008.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)dtpPass008a.c
+#OPTS      = $(C_COMPILER_OPTS)
+#OUTPUT    = dtpPass008a$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPass008.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtpPass008$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPass008$(OBJ) dtpPass008a$(OBJ)
+#OUTPUT    = dtpPass008$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPass008$(EXE)
+#STDOUT    = dtpPass008.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dtpPass008.out $($(tcasedir)dtpPass008$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

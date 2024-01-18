@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"input101dkl.f", line 68.13: 1512-125 (S) A derived-type entity containing a component with the ALLOCATABLE attribute must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+** input101dkl   === End of Compilation 2 ===
+** readformatted   === End of Compilation 3 ===
+1501-511  Compilation failed for file input101dkl.f.

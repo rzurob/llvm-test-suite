@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+  27.4   016108A8 bar‹foo‹
+** _main   === End of Compilation 2 ===
+** bar   === End of Compilation 3 ===
+1501-511  Compilation failed for file genop18d.f.

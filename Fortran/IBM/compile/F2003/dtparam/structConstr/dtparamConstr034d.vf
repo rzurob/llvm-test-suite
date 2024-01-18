@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"dtparamConstr034d.f", line 48.11: 1515-039 (S) The target in the pointer assignment must have the TARGET or POINTER attribute.
+** dtparamconstr034d   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtparamConstr034d.f.

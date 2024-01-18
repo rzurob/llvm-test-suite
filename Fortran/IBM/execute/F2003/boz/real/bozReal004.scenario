@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/F2003/boz/real/bozReal004.scenario
+#FEATURE = boz-literal-constant in REAL intrinsic
+#CREATOR = Vicram Uppal
+#DATE    = 20060201
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)bozReal004.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_REALSIZE_8)
+#OUTPUT    = bozReal004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_REALSIZE_8)
+#INPUT     = bozReal004$(OBJ)
+#OUTPUT    = bozReal004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = bozReal004$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

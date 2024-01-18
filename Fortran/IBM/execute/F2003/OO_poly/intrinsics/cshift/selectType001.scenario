@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/cshift/selectType001.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050127
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)selectType001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = selectType001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = selectType001$(OBJ)
+#OUTPUT    = selectType001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = selectType001$(EXE)
+#STDOUT    = selectType001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)selectType001$(product)vf) selectType001.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

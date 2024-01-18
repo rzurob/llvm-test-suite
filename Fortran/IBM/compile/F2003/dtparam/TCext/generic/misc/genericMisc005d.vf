@@ -1,0 +1,4 @@
+"genericMisc005d.f", line 36.17: 1514-594 (S) A derived type may not have parent type whereisit that has not been defined in a derived type definition.
+** m   === End of Compilation 1 ===
+** genericmisc005   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericMisc005d.f.

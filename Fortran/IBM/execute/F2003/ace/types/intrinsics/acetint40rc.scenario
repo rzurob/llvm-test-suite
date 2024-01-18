@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2004/ace/types/intrinsics/acetint40rc.scenario
+#FEATURE	= Array constructor enhancement - call subroutine with AC of real constants of different kinds
+#CREATOR	= DF Manual Update
+#DATE		= 2006c06c14
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint40rc.f
+#OUTPUT		= acetint40rc$(OBJ)
+#STDERR		= acetint40rc.err
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= acetint40rc.err $(tcasedir)acetint40rc.vf
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint40rc$(OBJ)
+#OUTPUT		= acetint40rc$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint40rc$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

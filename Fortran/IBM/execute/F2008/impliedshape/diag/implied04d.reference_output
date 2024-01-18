@@ -1,0 +1,5 @@
+"implied04d.f", line 4.18: 1514-796 (S) Implied-shape arrays must be declared with the PARAMETER attribute.
+"implied04d.f", line 6.17: 1514-796 (S) Implied-shape arrays must be declared with the PARAMETER attribute.
+"implied04d.f", line 12.17: 1514-004 (S) Name given for constant with PARAMETER attribute was defined elsewhere with conflicting attributes. Name is ignored.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file implied04d.f.

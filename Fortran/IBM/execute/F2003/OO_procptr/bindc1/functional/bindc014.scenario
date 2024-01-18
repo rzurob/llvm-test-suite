@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_procptr/bindc1/functional/bindc014.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS)
+#INPUT     = $(tcasedir)bindc014.c
+#OUTPUT    = bindc014c$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)bindc014.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = bindc014$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = bindc014c$(OBJ) bindc014$(OBJ)
+#OUTPUT    = bindc014$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = bindc014$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

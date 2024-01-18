@@ -1,0 +1,7 @@
+** m1   === End of Compilation 1 ===
+** anc_mod   === End of Compilation 2 ===
+** submod1   === End of Compilation 3 ===
+"acc_private14.f", line 63.20: 1514-084 (S) Identifier o2 is being declared with type name other which has not been defined in a derived type definition.
+** submod2   === End of Compilation 4 ===
+** main   === End of Compilation 5 ===
+1501-511  Compilation failed for file acc_private14.f.

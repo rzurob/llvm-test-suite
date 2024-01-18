@@ -1,0 +1,5 @@
+/#CMD\>.*\<_COMP/ {
+  :start_loop
+  N
+  /#ENDCMD/!b start_loop
+}

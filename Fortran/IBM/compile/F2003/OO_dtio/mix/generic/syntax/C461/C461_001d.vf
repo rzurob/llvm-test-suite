@@ -1,0 +1,5 @@
+"C461_001d.f", line 43.52: 1514-672 (S) Specific binding uread with the NOPASS attribute must not be specified for the generic binding with the generic specification READ(UNFORMATTED).
+"C461_001d.f", line 44.52: 1514-672 (S) Specific binding fread with the NOPASS attribute must not be specified for the generic binding with the generic specification READ(FORMATTED).
+** m   === End of Compilation 1 ===
+** c461_001d   === End of Compilation 2 ===
+1501-511  Compilation failed for file C461_001d.f.

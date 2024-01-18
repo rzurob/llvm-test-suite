@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=release/F2003/volatile/volatileOtherAttr04.scenario
+#FEATURE = VOLATILE 255728
+#CREATOR = William Zhang
+#DATE    = 06/12/2006
+#TEST_TYPE= functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)volatileOtherAttr04.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = volatileOtherAttr04$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = volatileOtherAttr04$(OBJ)
+#OUTPUT    = volatileOtherAttr04$(EXE)
+#ENDCMD
+
+
+#CMD       = RUN
+#INPUT     = volatileOtherAttr04$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

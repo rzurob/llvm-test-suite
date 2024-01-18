@@ -1,0 +1,92 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=decimaleditd002.f
+#FEATURE = diagnostic for decimal= specifier and dp and dc edit descriptors.
+#CREATOR = Bardia Mahjour
+#DATE    = 20051202
+#TEST_TYPE=diag test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)decimaleditd002.f
+#OPTS      = -qdebug=intmsg $(OPT_SET_LANG_LEVEL<77std>) $(OPT_ZEROSIZE_OFF) $(OPT_ENABLE_MSG_NUM<1518-317>)
+#STDERR    = decimaleditd002.out
+#STDOUT    = decimaleditd002.out
+#OUTPUT    = decimaleditd002$(OBJ)
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = decimaleditd002.out $($(tcasedir)decimaleditd002a$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)decimaleditd002.f
+#OPTS      = -qdebug=intmsg $(OPT_SET_LANG_LEVEL<90std>) $(OPT_ENABLE_MSG_NUM<1518-317>)
+#STDERR    = decimaleditd002.out
+#STDOUT    = decimaleditd002.out
+#OUTPUT    = decimaleditd002$(OBJ)
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+
+#CMD       = DIFF
+#INPUT     = decimaleditd002.out $($(tcasedir)decimaleditd002b$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)decimaleditd002.f
+#OPTS      = -qdebug=intmsg $(OPT_SET_LANG_LEVEL<90pure>) $(OPT_ENABLE_MSG_NUM<1518-317>)
+#STDERR    = decimaleditd002.out
+#STDOUT    = decimaleditd002.out
+#OUTPUT    = decimaleditd002$(OBJ)
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = decimaleditd002.out $($(tcasedir)decimaleditd002b$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)decimaleditd002.f
+#OPTS      = -qdebug=intmsg $(OPT_SET_LANG_LEVEL<95std>) $(OPT_ENABLE_MSG_NUM<1518-317>)
+#STDERR    = decimaleditd002.out
+#STDOUT    = decimaleditd002.out
+#OUTPUT    = decimaleditd002$(OBJ)
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = decimaleditd002.out $($(tcasedir)decimaleditd002c$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)decimaleditd002.f
+#OPTS      = -qdebug=intmsg $(OPT_SET_LANG_LEVEL<95pure>) $(OPT_ENABLE_MSG_NUM<1518-317>)
+#STDERR    = decimaleditd002.out
+#STDOUT    = decimaleditd002.out
+#OUTPUT    = decimaleditd002$(OBJ)
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = decimaleditd002.out $($(tcasedir)decimaleditd002c$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

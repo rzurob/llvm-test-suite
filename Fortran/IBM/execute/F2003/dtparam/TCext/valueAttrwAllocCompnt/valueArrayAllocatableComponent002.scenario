@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/valueAttrwAllocCompnt/valueArrayAllocatableComponent002.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of valueAttrwAllocCompnt/*
+#DATE      = 20071102
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)valueArrayAllocatableComponent002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = valueArrayAllocatableComponent002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = valueArrayAllocatableComponent002$(OBJ)
+#OUTPUT    = valueArrayAllocatableComponent002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = valueArrayAllocatableComponent002$(EXE)
+#STDOUT    = valueArrayAllocatableComponent002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = valueArrayAllocatableComponent002.out $(tcasedir)valueArrayAllocatableComponent002.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

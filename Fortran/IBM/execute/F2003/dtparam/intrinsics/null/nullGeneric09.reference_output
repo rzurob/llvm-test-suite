@@ -1,0 +1,30 @@
+ in sub1
+ typeA is associated
+ 4 1
+ in sub2
+ typeA is allocated
+ 2 1
+ in sub3
+ typeB is associated
+ 4 -1
+ in sub4
+ typeB is allocated
+ 2 -1
+ in sub5
+ typeB is associated
+ 4 1 2 3 4
+ in sub6
+ typeB is associated
+ 4 1 2 3 4
+ in sub1
+ typeA is not associated
+ in sub2
+ typeA is not allocated
+ in sub3
+ typeB is not associated
+ in sub4
+ typeB is not allocated
+ in sub5
+ typeB is not associated
+ in sub6
+ typeB is not associated

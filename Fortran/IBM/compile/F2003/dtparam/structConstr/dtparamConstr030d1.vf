@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"dtparamConstr030d1.f", line 55.27: 1516-044 (S) A conversion from type base is not permitted.
+** dtparamconstr030d1   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtparamConstr030d1.f.

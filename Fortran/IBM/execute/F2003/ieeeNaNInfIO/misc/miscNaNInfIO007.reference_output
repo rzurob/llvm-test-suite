@@ -1,0 +1,5 @@
+       Inf  NaN NaN(S)
+     +3,14    NaN(S)      +Inf
+ NaN(S) -Inf (NaN(Q),NaN(S)) Inf
+ (+Inf;NaN(S)) NaN(Q)
+  -NaN() +infinity -nan -infinity +nan(_ab12)

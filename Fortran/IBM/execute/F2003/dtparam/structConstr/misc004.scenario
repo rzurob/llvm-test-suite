@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/structConstr/misc004.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)misc004.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = misc004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = misc004$(OBJ)
+#OUTPUT    = misc004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = misc004$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

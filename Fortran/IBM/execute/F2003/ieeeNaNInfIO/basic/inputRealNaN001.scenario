@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = inputRealNaN001.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 7, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)inputRealNaN001.f
+#OUTPUT   =  inputRealNaN001$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  inputRealNaN001$(OBJ)
+#OUTPUT   =  inputRealNaN001$(EXE)
+#ENDCMD
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)real_nan_q.dat $(tcasedir)real_nan_s.dat
+#OUTPUT   = ./
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  inputRealNaN001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

@@ -1,0 +1,5 @@
+"ftpbnd508d.f", line 39.19: 1514-024 (S) Procedure names, program unit names, ENTRY names, RESULT names and NAMELIST names must not be initialized.
+"ftpbnd508d.f", line 39.35: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+** m   === End of Compilation 1 ===
+** ftpbnd508d   === End of Compilation 2 ===
+1501-511  Compilation failed for file ftpbnd508d.f.

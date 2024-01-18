@@ -1,0 +1,4 @@
+"bcdapt03.f", line 39.9: 1516-208 (S) Variable z that has the POINTER attribute may not appear as a member of a COMMON block with the BIND(C) attribute.
+** sub   === End of Compilation 1 ===
+** bcdapt03   === End of Compilation 2 ===
+1501-511  Compilation failed for file bcdapt03.f.

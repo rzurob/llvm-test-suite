@@ -1,0 +1,4 @@
+"bcdasc02.f", line 37.10: 1516-207 (S) This COMMON block appears in a BIND statement, but did not appear in a COMMON statement in the same scoping unit.
+** mod   === End of Compilation 1 ===
+** bcdasc02   === End of Compilation 2 ===
+1501-511  Compilation failed for file bcdasc02.f.

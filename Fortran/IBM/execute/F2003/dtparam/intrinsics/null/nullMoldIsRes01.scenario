@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/intrinsics/null/nullMoldIsRes01.scenario
+#FEATURE= 355754
+#CREATOR= Nancy Wang
+#DATE   = Sept. 26 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)nullMoldIsRes01.f
+#OUTPUT= nullMoldIsRes01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = nullMoldIsRes01$(OBJ)
+#OUTPUT= nullMoldIsRes01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = nullMoldIsRes01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

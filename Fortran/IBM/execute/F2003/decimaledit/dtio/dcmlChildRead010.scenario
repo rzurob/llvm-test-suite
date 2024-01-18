@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/decimaledit/dtio/dcmlChildRead010.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dcmlChildRead010.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dcmlChildRead010$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dcmlChildRead010$(OBJ)
+#OUTPUT    = dcmlChildRead010$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dcmlChildRead010$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

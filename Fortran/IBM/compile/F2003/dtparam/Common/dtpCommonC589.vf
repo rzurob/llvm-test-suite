@@ -1,0 +1,3 @@
+"dtpCommonC589.f", line 43.2: 1516-128 (S) The variable s is in or is equivalenced to a variable in blank COMMON and is of a type that has default initialization.  A variable in blank COMMON must not be initialized.
+** dtpcommonc589   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtpCommonC589.f.

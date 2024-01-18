@@ -1,0 +1,13 @@
+isContigFalse1.scenario
+isContigFalse2.scenario
+isContigFalse3.scenario
+isContigFalse4.scenario
+isContigFalse6.scenario
+isContigFalse7.scenario
+isContigTrue1.scenario
+isContigTrue2.scenario
+isContigTrue3.scenario
+isContigTrue4.scenario
+isContigTrue5.scenario
+isContigTrue6.scenario
+isContigTrue9.scenario

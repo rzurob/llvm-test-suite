@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = intrimod/exec/intrimod25.scenario
+#FEATURE = intrimod tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = XLC_COMPILE
+#INPUT  = $(tcasedir)intrimod25_c.c
+#OUTPUT = intrimod25_c$(OBJ)
+#OPTS 	= $(C_COMPILER_OPTS)
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)intrimod25.f
+#OUTPUT = intrimod25$(OBJ)
+#OPTS 	= $(OPT_INTLOG) $(OPT_HALT_ON_WARNING)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = intrimod25$(OBJ) intrimod25_c$(OBJ)
+#OUTPUT = intrimod25$(EXE)
+#OPTS 	= $(OPT_INTLOG) $(OPT_HALT_ON_WARNING)
+#ENDCMD
+
+#CMD	= RUN
+#INPUT	= intrimod25$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

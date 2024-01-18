@@ -1,0 +1,47 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/optional/fcintrpopt300.scenario
+#FEATURE   = 399982 - C Interop: Optional Argument
+#CREATOR   = Ying Zhang
+#DATE      = 2012-05-01
+#TEST_TYPE = functional
+#KEYWORDS  = C Interop, Optional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+  XLFRTEOPTS=buffering=disable_preconn
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)ccintrpopt300.c
+#OPTS      = $(C_COMPILER_OPTS) $(OPT_SET_LANG_LEVEL_EXTENDED)
+#OUTPUT    = ccintrpopt300$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fcintrpopt300.f
+#OPTS      = -qinit
+#OUTPUT    = fcintrpopt300$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = ccintrpopt300$(OBJ) fcintrpopt300$(OBJ)
+#OUTPUT    = fcintrpopt300$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fcintrpopt300$(EXE)
+#STDOUT    = fcintrpopt300.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-5
+#INPUT     = $($(tcasedir)fcintrpopt300$(product)vf) fcintrpopt300.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

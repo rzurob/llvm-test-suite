@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    = 07/09/2010
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)grid_field_parallel.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = grid_field_parallel$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = grid_field_parallel$(OBJ)
+#OUTPUT    = grid_field_parallel$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = grid_field_parallel$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

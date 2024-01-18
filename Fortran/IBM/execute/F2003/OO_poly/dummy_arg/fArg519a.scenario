@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/dummy_arg/fArg519a.scenario
+#FEATURE = OO_poly tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fArg519a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fArg519a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  fArg519a$(OBJ)
+#OUTPUT    = fArg519a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fArg519a$(EXE)
+#STDOUT    = fArg519a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)fArg519a$(product)vf) fArg519a.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

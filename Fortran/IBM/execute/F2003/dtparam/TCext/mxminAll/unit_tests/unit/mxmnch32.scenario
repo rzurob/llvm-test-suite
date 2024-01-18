@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mxminAll/unit_tests/unit/mxmnch32.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mxminAll/*
+#DATE      = 20071105
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)mxmnch32.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#OUTPUT    = mxmnch32$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = mxmnch32$(OBJ)
+#OUTPUT    = mxmnch32$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxmnch32$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

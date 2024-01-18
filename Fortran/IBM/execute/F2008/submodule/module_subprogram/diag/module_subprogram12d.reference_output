@@ -1,0 +1,8 @@
+** m   === End of Compilation 1 ===
+"module_subprogram12d.f", line 53.13: 1514-069 (S) Identifier func was defined elsewhere with conflicting data type.  First type specified is assumed.
+"module_subprogram12d.f", line 58.10: 1514-071 (W) Identifier func2 was previously defined with same type.
+"module_subprogram12d.f", line 59.10: 1514-069 (S) Identifier arg1 was defined elsewhere with conflicting data type.  First type specified is assumed.
+** n   === End of Compilation 2 ===
+"module_subprogram12d.f", line 70.11: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+** module_subprogram12d   === End of Compilation 3 ===
+1501-511  Compilation failed for file module_subprogram12d.f.

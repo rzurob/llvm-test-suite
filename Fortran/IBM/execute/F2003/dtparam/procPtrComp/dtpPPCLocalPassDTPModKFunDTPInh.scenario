@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/procPtrComp/dtpPPCLocalPassDTPModKFunDTPInh.scenario
+#FEATURE   = Procedure Pointers as Components - reference to pass function, DTP arg + result w/ K parameter, ref via local var, interface from module procedure, inheritance
+#CREATOR   = DF Manual Update
+#DATE      = 20090324
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPPCLocalPassDTPModKFunDTPInh.f
+#OUTPUT    = dtpPPCLocalPassDTPModKFunDTPInh$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPPCLocalPassDTPModKFunDTPInh$(OBJ)
+#OUTPUT    = dtpPPCLocalPassDTPModKFunDTPInh$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPPCLocalPassDTPModKFunDTPInh$(EXE)
+#STDOUT    = dtpPPCLocalPassDTPModKFunDTPInh.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpPPCLocalPassDTPModKFunDTPInh$(product)vf) dtpPPCLocalPassDTPModKFunDTPInh.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

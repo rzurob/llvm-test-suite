@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/home/robertma/tc/F2010/valueAttrDTwAllocatableComponents/valueTypeBoundAllocatableComponent001.scenario
+#FEATURE = value attribute with DT containing allocatable components test cases
+#CREATOR = Robert Ma
+#DATE    = 20101215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)valueTypeBoundAllocatableComponent001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = valueTypeBoundAllocatableComponent001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = valueTypeBoundAllocatableComponent001$(OBJ)
+#OUTPUT    = valueTypeBoundAllocatableComponent001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = valueTypeBoundAllocatableComponent001$(EXE)
+#STDOUT    = valueTypeBoundAllocatableComponent001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = valueTypeBoundAllocatableComponent001.out $(tcasedir)valueTypeBoundAllocatableComponent001.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

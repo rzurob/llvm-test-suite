@@ -1,0 +1,3 @@
+"bcdaty5a.f", line 40.18: 1516-209 (S) Members of BIND(C) COMMON blocks must have type and type parameters that are interoperable with any C type.
+** bcdaty5a   === End of Compilation 1 ===
+1501-511  Compilation failed for file bcdaty5a.f.

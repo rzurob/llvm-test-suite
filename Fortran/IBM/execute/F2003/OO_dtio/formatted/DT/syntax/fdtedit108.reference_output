@@ -1,0 +1,1 @@
+  BASE:DT dtv%i= 10  CHILD:DTb2 dtv%i= 20 dtv%j= 30  BASE1:DTb3 1 dtv%c=ABC BASE2:DTb4 1 2 dtv%c=DEF

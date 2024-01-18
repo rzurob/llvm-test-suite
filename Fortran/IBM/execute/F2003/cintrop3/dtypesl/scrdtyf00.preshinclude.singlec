@@ -1,0 +1,268 @@
+! Replacing scrdtyf00.presh for instances of single C files
+
+! forget Mac settings of 'default' 'natural' 'packed' 'port'
+
+! first do settings common to all platforms - default, bit_packed
+! do default - no align setting
+
+#CMD    = XLC_COMPILE
+#IF on(aix)
+  #OPTS   = $(C_COMPILER_OPTS) $(OPT_BIGGER_LONG_DOUBLE) $(OPT_SET_LANG_LEVEL_STDC99)
+#ELSE
+  #OPTS   = $(C_COMPILER_OPTS) -qdebug=aixldbl128 $(OPT_SET_LANG_LEVEL_STDC99)
+#ENDIF
+#INPUT  = $(tcasedir)$CTCARG.c
+#OUTPUT = $CTCARG$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)$FTCARG.f
+#OUTPUT = $FTCARG$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+#OUTPUT = $FTCARG$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = $FTCARG$(EXE)
+#ENDCMD
+
+! do bit_packed
+
+#CMD    = XLC_COMPILE
+#IF on(aix)
+  #OPTS   = $(C_COMPILER_OPTS) $(OPT_BIGGER_LONG_DOUBLE) $(OPT_SET_LANG_LEVEL_STDC99) $(OPT_ALIGN_BIT_PACKED)
+#ELSE
+  #OPTS   = $(C_COMPILER_OPTS) -qdebug=aixldbl128 $(OPT_SET_LANG_LEVEL_STDC99) $(OPT_ALIGN_BIT_PACKED)
+#ENDIF
+#INPUT  = $(tcasedir)$CTCARG.c
+#OUTPUT = $CTCARG$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#OPTS    = -qalign=bindc=bit_packed
+#INPUT  = $(tcasedir)$FTCARG.f
+#OUTPUT = $FTCARG$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#OPTS    = -qalign=bindc=bit_packed
+#INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+#OUTPUT = $FTCARG$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = $FTCARG$(EXE)
+#ENDCMD
+
+! settings specific to Linux - linuxppc
+
+#IF on(linux)
+  #CMD    = XLC_COMPILE
+  #OPTS   = $(C_COMPILER_OPTS) -qdebug=aixldbl128 $(OPT_SET_LANG_LEVEL_STDC99) \
+            $(OPT_ALIGN_PPC_LINUX)
+  #INPUT  = $(tcasedir)$CTCARG.c
+  #OUTPUT = $CTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_COMPILE
+  #OPTS    = -qalign=bindc=linuxppc
+  #INPUT  = $(tcasedir)$FTCARG.f
+  #OUTPUT = $FTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_LINK
+  #OPTS    = -qalign=bindc=linuxppc
+  #INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+  #OUTPUT = $FTCARG$(EXE)
+  #ENDCMD
+
+  #CMD    = RUN
+  #INPUT  = $FTCARG$(EXE)
+  #ENDCMD
+#ENDIF
+
+! settings specific to AIX - full, power, mac68k, twobyte, natural, packed
+
+#IF on(aix)
+  ! do full
+  #CMD    = XLC_COMPILE
+  #OPTS   = $(C_COMPILER_OPTS) $(OPT_BIGGER_LONG_DOUBLE) $(OPT_SET_LANG_LEVEL_STDC99) $(OPT_ALIGN_BYTE<full>)
+  #INPUT  = $(tcasedir)$CTCARG.c
+  #OUTPUT = $CTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_COMPILE
+  #OPTS    = -qalign=bindc=full
+  #INPUT  = $(tcasedir)$FTCARG.f
+  #OUTPUT = $FTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_LINK
+  #OPTS    = -qalign=bindc=full
+  #INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+  #OUTPUT = $FTCARG$(EXE)
+  #ENDCMD
+
+  #CMD    = RUN
+  #INPUT  = $FTCARG$(EXE)
+  #ENDCMD
+
+  ! do power
+  #CMD    = XLC_COMPILE
+  #OPTS   = $(C_COMPILER_OPTS) $(OPT_BIGGER_LONG_DOUBLE) $(OPT_SET_LANG_LEVEL_STDC99) $(OPT_ALIGN_POWER)
+  #INPUT  = $(tcasedir)$CTCARG.c
+  #OUTPUT = $CTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_COMPILE
+  #OPTS    = -qalign=bindc=power
+  #INPUT  = $(tcasedir)$FTCARG.f
+  #OUTPUT = $FTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_LINK
+  #OPTS    = -qalign=bindc=power
+  #INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+  #OUTPUT = $FTCARG$(EXE)
+  #ENDCMD
+
+  #CMD    = RUN
+  #INPUT  = $FTCARG$(EXE)
+  #ENDCMD
+
+  ! do mac68k
+  #CMD    = XLC_COMPILE
+  #OPTS   = $(C_COMPILER_OPTS) $(OPT_BIGGER_LONG_DOUBLE) $(OPT_SET_LANG_LEVEL_STDC99) $(OPT_ALIGN_MAC68K)
+  #INPUT  = $(tcasedir)$CTCARG.c
+  #OUTPUT = $CTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_COMPILE
+  #OPTS    = -qalign=bindc=mac68k
+  #INPUT  = $(tcasedir)$FTCARG.f
+  #OUTPUT = $FTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_LINK
+  #OPTS    = -qalign=bindc=mac68k
+  #INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+  #OUTPUT = $FTCARG$(EXE)
+  #ENDCMD
+
+  #CMD    = RUN
+  #INPUT  = $FTCARG$(EXE)
+  #ENDCMD
+ 
+  ! do twobyte
+  #CMD    = XLC_COMPILE
+  #OPTS   = $(C_COMPILER_OPTS) $(OPT_BIGGER_LONG_DOUBLE) $(OPT_SET_LANG_LEVEL_STDC99) $(OPT_ALIGN_TWOBYTE)
+  #INPUT  = $(tcasedir)$CTCARG.c
+  #OUTPUT = $CTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_COMPILE
+  #OPTS    = -qalign=bindc=twobyte
+  #INPUT  = $(tcasedir)$FTCARG.f
+  #OUTPUT = $FTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_LINK
+  #OPTS    = -qalign=bindc=twobyte
+  #INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+  #OUTPUT = $FTCARG$(EXE)
+  #ENDCMD
+
+  #CMD    = RUN
+  #INPUT  = $FTCARG$(EXE)
+  #ENDCMD
+
+  ! do natural
+  #CMD    = XLC_COMPILE
+  #OPTS   = $(C_COMPILER_OPTS) $(OPT_BIGGER_LONG_DOUBLE) $(OPT_SET_LANG_LEVEL_STDC99) $(OPT_ALIGN_NATURAL)
+  #INPUT  = $(tcasedir)$CTCARG.c
+  #OUTPUT = $CTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_COMPILE
+  #OPTS    = -qalign=bindc=natural
+  #INPUT  = $(tcasedir)$FTCARG.f
+  #OUTPUT = $FTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_LINK
+  #OPTS    = -qalign=bindc=natural
+  #INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+  #OUTPUT = $FTCARG$(EXE)
+  #ENDCMD
+
+  #CMD    = RUN
+  #INPUT  = $FTCARG$(EXE)
+  #ENDCMD
+
+  ! do packed
+  #CMD    = XLC_COMPILE
+  #OPTS   = $(C_COMPILER_OPTS) $(OPT_BIGGER_LONG_DOUBLE) $(OPT_SET_LANG_LEVEL_STDC99) $(OPT_ALIGN_PACKED)
+  #INPUT  = $(tcasedir)$CTCARG.c
+  #OUTPUT = $CTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_COMPILE
+  #OPTS    = -qalign=bindc=packed
+  #INPUT  = $(tcasedir)$FTCARG.f
+  #OUTPUT = $FTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_LINK
+  #OPTS    = -qalign=bindc=packed
+  #INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+  #OUTPUT = $FTCARG$(EXE)
+  #ENDCMD
+
+  #CMD    = RUN
+  #INPUT  = $FTCARG$(EXE)
+  #ENDCMD
+#ENDIF
+
+#IF !on(aix)
+! This following chunk of code is to enable GCC testing on machines with gcc4+
+! installed.  If the gcc level is below this, the test will pull in empty
+! files for testing.  Essentially a NOOP test, which preserves the behaviour
+! of the original test.  Note that the object files created preserve the
+! original testcase name.
+! This implementation is used to bypass the inability of TD2 to do processing
+! on the client side.
+! only do default for gcc - no align setting
+  #CMD    = WHICH_FILE
+  #ENVAR  = FILE_SRC=$(tcasedir)
+  #INPUT  = TARGET:ctest.c gcc4:$CTCARG.c DEFAULT:empty.c
+  #ENDCMD
+
+  #CMD    = WHICH_FILE
+  #ENVAR  = FILE_SRC=$(tcasedir)
+  #INPUT  = TARGET:ftest.f gcc4:$FTCARG.f DEFAULT:empty.f
+  #ENDCMD
+
+  #CMD    = GCC_COMPILE
+  #OPTS   = $(GCC_COMPILER_OPTS) $(OPT_GCC_LONG_DOUBLE)
+  #INPUT  = ctest.c
+  #OUTPUT = $CTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_COMPILE
+  #INPUT  = ftest.f
+  #OUTPUT = $FTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_LINK
+  #INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+  #OUTPUT = $FTCARG$(EXE)
+  #ENDCMD
+
+  #CMD    = RUN
+  #INPUT  = $FTCARG$(EXE)
+  #ENDCMD
+
+#ENDIF

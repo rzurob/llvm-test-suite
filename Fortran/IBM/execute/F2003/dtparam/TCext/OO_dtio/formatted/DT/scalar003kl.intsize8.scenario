@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/TCext/OO_dtio/formatted/DT/scalar003kl.intsize8.scenario
+#FEATURE = OO_dtio and derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070618
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)scalar003kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_INTSIZE_8)
+#OUTPUT    = scalar003kl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = scalar003kl$(OBJ)
+#OUTPUT    = scalar003kl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = scalar003kl$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)scalar003kl$(product)vf) scalar003kl.1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

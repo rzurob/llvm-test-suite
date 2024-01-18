@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/mix/generic/functional/resolve/resolve003a.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)resolve003a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = resolve003a$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = resolve003a.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = resolve003a.err $($(tcasedir)resolve003a$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

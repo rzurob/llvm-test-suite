@@ -1,0 +1,4 @@
+"fmisc005.f", line 64.43: 1514-084 (S) Identifier b is being declared with type name base which has not been defined in a derived type definition.
+** m   === End of Compilation 1 ===
+** fmisc005   === End of Compilation 2 ===
+1501-511  Compilation failed for file fmisc005.f.

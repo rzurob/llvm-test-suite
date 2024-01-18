@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/associate/basic/d355425.scenario
+#FEATURE	= ASSOCIATE Contruct (with Derived Type Parameters) --	\
+				Reduced Code for Defect d355425
+#CREATOR	= Glen Mateer
+#DATE		= 20080826
+#TEST_TYPE	= Defect
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)d355425.f
+#OUTPUT		= d355425$(OBJ)
+#VALIDRCS   = 1
+#STDERR     = d355425.err
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= d355425.err $($(tcasedir)d355425$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

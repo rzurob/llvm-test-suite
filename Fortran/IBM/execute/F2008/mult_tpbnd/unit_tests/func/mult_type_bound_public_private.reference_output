@@ -1,0 +1,6 @@
+ real_foo
+ real_fox
+ call private subroutine start
+ real_dog
+ real_cat
+ call private subroutine end

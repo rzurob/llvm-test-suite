@@ -1,0 +1,204 @@
+      module MODNAME
+        type, bind(c) :: dt
+          character a
+          character b
+          character c
+#ifdef __APPLE__
+          logical(4) d
+#else
+          logical(1) d
+#endif
+          character e
+          integer(1) f
+          character g
+          integer(2) h
+          character i
+          integer(4) j
+          character k
+          real(4) l
+          character m
+          integer(8) n
+          character o
+          real(8) p
+          character q
+          complex(4) r
+          character s
+          real(16) t
+          character u
+          complex(8) v
+          character w
+          complex(16) x
+          character y
+        end type
+      contains
+        subroutine modsub(bcdt)
+          type(dt) VALUE_ATTR :: bcdt
+          interface
+            subroutine extsub(x)
+              type, bind(c) :: dt
+                character a
+                character b
+                character c
+#ifdef __APPLE__
+                logical(4) d
+#else
+                logical(1) d
+#endif
+                character e
+                integer(1) f
+                character g
+                integer(2) h
+                character i
+                integer(4) j
+                character k
+                real(4) l
+                character m
+                integer(8) n
+                character o
+                real(8) p
+                character q
+                complex(4) r
+                character s
+                real(16) t
+                character u
+                complex(8) v
+                character w
+                complex(16) x
+                character y
+              end type
+              type(dt) :: x
+            end subroutine extsub
+          end interface
+          call extsub(bcdt)
+        end subroutine modsub
+      end module
+
+      program PROGNAME
+        use MODNAME
+        type(dt) :: foo
+        foo = dt('a', 'b', 'c', .false., 'e', 6,                             &
+     &           'g', 8, 'i', 10, 'k', 12.0_4,                               &
+     &           'm', 14, 'o', 16.0_8, 'q',                                  &
+     &           (18.0_4, 36.0_4), 's', 20.0_16,                             &
+     &           'u', (22.0_8, 44.0_8), 'w',                                 &
+     &           (24.0_16, 48.0_16), 'y')
+        call modsub(foo)
+#if (!VALUE_SPECIFIED)
+        if (foo%a /= 'A') error stop 26
+        if (foo%b /= 'B') error stop 27
+        if (foo%c /= 'C') error stop 28
+        if (foo%d .neqv. .true.) error stop 29
+        if (foo%e /= 'E') error stop 30
+        if (foo%f /= 60) error stop 31
+        if (foo%g /= 'G') error stop 32
+        if (foo%h /= 80) error stop 33
+        if (foo%i /= 'I') error stop 34
+        if (foo%j /= 100) error stop 35
+        if (foo%k /= 'K') error stop 36
+        if (foo%l /= 120.0_4) error stop 37
+        if (foo%m /= 'M') error stop 38
+        if (foo%n /= 140) error stop 39
+        if (foo%o /= 'O') error stop 40
+        if (foo%p /= 160.0_8) error stop 41
+        if (foo%q /= 'Q') error stop 42
+        if (foo%r /= (180.0_4, 360.0_4)) error stop 43
+        if (foo%s /= 'S') error stop 44
+        if (foo%t /= 200.0_16) error stop 45
+        if (foo%u /= 'U') error stop 46
+        if (foo%v /= (220.0_8, 440.0_8)) error stop 47
+        if (foo%w /= 'W') error stop 48
+        if (foo%x /= (240.0_16, 480.0_16)) error stop 49
+        if (foo%y /= 'Y') error stop 50
+#else
+        if (foo%a /= 'a') error stop 26
+        if (foo%b /= 'b') error stop 27
+        if (foo%c /= 'c') error stop 28
+        if (foo%d .neqv. .false.) error stop 29
+        if (foo%e /= 'e') error stop 30
+        if (foo%f /= 6) error stop 31
+        if (foo%g /= 'g') error stop 32
+        if (foo%h /= 8) error stop 33
+        if (foo%i /= 'i') error stop 34
+        if (foo%j /= 10) error stop 35
+        if (foo%k /= 'k') error stop 36
+        if (foo%l /= 12.0_4) error stop 37
+        if (foo%m /= 'm') error stop 38
+        if (foo%n /= 14) error stop 39
+        if (foo%o /= 'o') error stop 40
+        if (foo%p /= 16.0_8) error stop 41
+        if (foo%q /= 'q') error stop 42
+        if (foo%r /= (18.0_4, 36.0_4)) error stop 43
+        if (foo%s /= 's') error stop 44
+        if (foo%t /= 20.0_16) error stop 45
+        if (foo%u /= 'u') error stop 46
+        if (foo%v /= (22.0_8, 44.0_8)) error stop 47
+        if (foo%w /= 'w') error stop 48
+        if (foo%x /= (24.0_16, 48.0_16)) error stop 49
+        if (foo%y /= 'y') error stop 50
+#endif
+      end program PROGNAME
+
+      subroutine extsub(foo)
+        type, bind(c) :: dt
+          character a
+          character b
+          character c
+#ifdef __APPLE__
+          logical(4) d
+#else
+          logical(1) d
+#endif
+          character e
+          integer(1) f
+          character g
+          integer(2) h
+          character i
+          integer(4) j
+          character k
+          real(4) l
+          character m
+          integer(8) n
+          character o
+          real(8) p
+          character q
+          complex(4) r
+          character s
+          real(16) t
+          character u
+          complex(8) v
+          character w
+          complex(16) x
+          character y
+        end type
+        type(dt) :: foo
+        if (foo%a /= 'a') error stop 1
+        if (foo%b /= 'b') error stop 2
+        if (foo%c /= 'c') error stop 3
+        if (foo%d .neqv. .false.) error stop 4
+        if (foo%e /= 'e') error stop 5
+        if (foo%f /= 6) error stop 6
+        if (foo%g /= 'g') error stop 7
+        if (foo%h /= 8) error stop 8
+        if (foo%i /= 'i') error stop 9
+        if (foo%j /= 10) error stop 10
+        if (foo%k /= 'k') error stop 11
+        if (foo%l /= 12.0_4) error stop 12
+        if (foo%m /= 'm') error stop 13
+        if (foo%n /= 14) error stop 14
+        if (foo%o /= 'o') error stop 15
+        if (foo%p /= 16.0_8) error stop 16
+        if (foo%q /= 'q') error stop 17
+        if (foo%r /= (18.0_4, 36.0_4)) error stop 18
+        if (foo%s /= 's') error stop 19
+        if (foo%t /= 20.0_16) error stop 20
+        if (foo%u /= 'u') error stop 21
+        if (foo%v /= (22.0_8, 44.0_8)) error stop 22
+        if (foo%w /= 'w') error stop 23
+        if (foo%x /= (24.0_16, 48.0_16)) error stop 24
+        if (foo%y /= 'y') error stop 25
+        foo = dt('A', 'B', 'C', .true., 'E', 60, 'G', 80, 'I', 100,          &
+     &           'K', 120.0_4, 'M', 140, 'O', 160.0_8, 'Q',                  &
+     &           (180.0_4, 360.0_4), 'S', 200.0_16, 'U',                     &
+     &           (220.0_8, 440.0_8), 'W', (240.0_16, 480.0_16),              &
+     &           'Y')
+      end subroutine extsub

@@ -1,0 +1,32 @@
+ in sub1
+ dtp is not allocated
+ in sub2
+ dtp is not allocated
+ in sub1
+ dtp is not allocated
+ in sub2
+ dtp is not allocated
+ in sub1
+ dtp is allocated
+ 2 3
+ 1 123
+ in sub2
+ dtp is allocated
+ 4 6
+ 2 456   
+ in sub1
+ dtp is allocated
+ 2 5
+ 11 000  
+ in sub2
+ dtp is allocated
+ 4 10
+ 22 111       
+ in sub1
+ dtp is not allocated
+ in sub2
+ dtp is not allocated
+ in sub1
+ dtp is not allocated
+ in sub2
+ dtp is not allocated

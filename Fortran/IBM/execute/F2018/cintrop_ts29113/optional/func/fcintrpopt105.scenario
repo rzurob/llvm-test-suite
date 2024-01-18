@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/optional/func/fcintrpopt105.scenario
+#FEATURE   = 399982 - C Interop: Optional Argument
+#CREATOR   = Ying Zhang
+#DATE      = 2012-05-01
+#TEST_TYPE = functional
+#KEYWORDS  = C Interop, Optional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fcintrpopt105.f
+#OUTPUT    = fcintrpopt105$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fcintrpopt105$(OBJ)
+#OUTPUT    = fcintrpopt105$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fcintrpopt105$(EXE)
+#STDOUT    = fcintrpopt105.out
+#ENDCMD
+
+#CMD       = SPIFF
+#INPUT     = $($(tcasedir)fcintrpopt105$(product)vf) fcintrpopt105.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

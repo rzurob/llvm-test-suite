@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/InitExp/StructConstr/dtpStructConstr03.scenario
+#FEATURE	= init-expr (DATA Statement, Structure Constructor, and		\
+				Default Initialization)
+#CREATOR	= Glen Mateer
+#DATE		= 20090527
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)dtpStructConstr03.f
+#OUTPUT		= dtpStructConstr03$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= dtpStructConstr03$(OBJ)
+#OUTPUT		= dtpStructConstr03$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= dtpStructConstr03$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

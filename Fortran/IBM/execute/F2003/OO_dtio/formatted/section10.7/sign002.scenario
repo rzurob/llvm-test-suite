@@ -1,0 +1,44 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/section10.7/sign002.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)sign002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = sign002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = sign002$(OBJ)
+#OUTPUT    = sign002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = sign002$(EXE)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)sign002$(product)vf) sign002.1
+#ENDCMD
+
+#CMD       = DELETE
+#INPUT     = sign002.1
+#ENDCMD
+
+
+
+#ENDCONTROL
+#ENDSCENARIO

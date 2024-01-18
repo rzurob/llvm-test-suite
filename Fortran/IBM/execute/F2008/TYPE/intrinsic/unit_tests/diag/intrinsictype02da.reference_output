@@ -1,0 +1,29 @@
+"intrinsictype02d.F", line 24.6: 1518-381 (L) An intrinsic type specification is not permitted within the TYPE type declaration statement by the Fortran 2003 standard.
+"intrinsictype02d.F", line 25.6: 1518-381 (L) An intrinsic type specification is not permitted within the TYPE type declaration statement by the Fortran 2003 standard.
+"intrinsictype02d.F", line 26.6: 1518-381 (L) An intrinsic type specification is not permitted within the TYPE type declaration statement by the Fortran 2003 standard.
+"intrinsictype02d.F", line 26.20: 1518-262 (L) The length specification for a non-character declaration is not permitted in the Fortran 2003 standard.
+"intrinsictype02d.F", line 28.6: 1518-381 (L) An intrinsic type specification is not permitted within the TYPE type declaration statement by the Fortran 2003 standard.
+"intrinsictype02d.F", line 29.6: 1518-381 (L) An intrinsic type specification is not permitted within the TYPE type declaration statement by the Fortran 2003 standard.
+"intrinsictype02d.F", line 30.6: 1518-381 (L) An intrinsic type specification is not permitted within the TYPE type declaration statement by the Fortran 2003 standard.
+"intrinsictype02d.F", line 30.17: 1518-262 (L) The length specification for a non-character declaration is not permitted in the Fortran 2003 standard.
+"intrinsictype02d.F", line 32.6: 1518-381 (L) An intrinsic type specification is not permitted within the TYPE type declaration statement by the Fortran 2003 standard.
+"intrinsictype02d.F", line 33.6: 1518-381 (L) An intrinsic type specification is not permitted within the TYPE type declaration statement by the Fortran 2003 standard.
+"intrinsictype02d.F", line 34.6: 1518-381 (L) An intrinsic type specification is not permitted within the TYPE type declaration statement by the Fortran 2003 standard.
+"intrinsictype02d.F", line 34.20: 1518-262 (L) The length specification for a non-character declaration is not permitted in the Fortran 2003 standard.
+"intrinsictype02d.F", line 36.6: 1518-381 (L) An intrinsic type specification is not permitted within the TYPE type declaration statement by the Fortran 2003 standard.
+"intrinsictype02d.F", line 37.6: 1518-381 (L) An intrinsic type specification is not permitted within the TYPE type declaration statement by the Fortran 2003 standard.
+"intrinsictype02d.F", line 38.6: 1518-381 (L) An intrinsic type specification is not permitted within the TYPE type declaration statement by the Fortran 2003 standard.
+"intrinsictype02d.F", line 40.6: 1518-381 (L) An intrinsic type specification is not permitted within the TYPE type declaration statement by the Fortran 2003 standard.
+"intrinsictype02d.F", line 41.6: 1518-381 (L) An intrinsic type specification is not permitted within the TYPE type declaration statement by the Fortran 2003 standard.
+"intrinsictype02d.F", line 42.6: 1518-381 (L) An intrinsic type specification is not permitted within the TYPE type declaration statement by the Fortran 2003 standard.
+"intrinsictype02d.F", line 42.20: 1518-262 (L) The length specification for a non-character declaration is not permitted in the Fortran 2003 standard.
+"intrinsictype02d.F", line 44.13: 1518-381 (L) An intrinsic type specification is not permitted within the TYPE type declaration statement by the Fortran 2003 standard.
+"intrinsictype02d.F", line 44.13: 1518-260 (L) The BYTE keyword is not permitted by the Fortran 2003 standard.
+"intrinsictype02d.F", line 46.6: 1518-381 (L) An intrinsic type specification is not permitted within the TYPE type declaration statement by the Fortran 2003 standard.
+"intrinsictype02d.F", line 46.12: 1518-260 (L) The VECTOR keyword is not permitted by the Fortran 2003 standard.
+"intrinsictype02d.F", line 47.6: 1518-381 (L) An intrinsic type specification is not permitted within the TYPE type declaration statement by the Fortran 2003 standard.
+"intrinsictype02d.F", line 47.12: 1518-260 (L) The VECTOR keyword is not permitted by the Fortran 2003 standard.
+"intrinsictype02d.F", line 48.6: 1518-381 (L) An intrinsic type specification is not permitted within the TYPE type declaration statement by the Fortran 2003 standard.
+"intrinsictype02d.F", line 48.12: 1518-260 (L) The VECTOR keyword is not permitted by the Fortran 2003 standard.
+** intrinsictype02d   === End of Compilation 1 ===
+1501-510  Compilation successful for file intrinsictype02d.F.

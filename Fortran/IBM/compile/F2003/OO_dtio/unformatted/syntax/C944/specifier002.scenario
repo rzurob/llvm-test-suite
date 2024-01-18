@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/unformatted/syntax/C944/specifier002.scenario
+#FEATURE = OO_dtio/unformatted/syntax tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(F_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) $(F_COMPILE^OPT_FREE_SOURCE_FORM)  $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+! This chunk was DCOMP
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)specifier002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=intmsg:shutup
+#OUTPUT    = specifier002$(OBJ)
+#STDERR    = specifier002.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)specifier002$(product)vf) specifier002.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

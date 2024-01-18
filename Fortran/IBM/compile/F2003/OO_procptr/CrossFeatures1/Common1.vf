@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"Common1.f", line 61.10: 1516-190 (S) Variables with the BIND(C) attribute must not appear as equivalence group objects in EQUIVALENCE statements, or as common block objects in COMMON statements.
+"Common1.f", line 64.10: 1514-015 (S) SUBROUTINE, FUNCTION and ENTRY names are not permitted in a COMMON block. Name is ignored.
+"Common1.f", line 71.10: 1514-013 (S) Identifier procptr in COMMON block appeared elsewhere as a dummy argument. Identifier is ignored.
+** common1   === End of Compilation 2 ===
+1501-511  Compilation failed for file Common1.f.

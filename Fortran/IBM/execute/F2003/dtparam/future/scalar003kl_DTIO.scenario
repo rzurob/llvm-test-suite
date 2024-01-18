@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/formatted/namelist/scalar003kl_DTIO.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070707
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)scalar003kl_DTIO.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = scalar003kl_DTIO$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = scalar003kl_DTIO$(OBJ)
+#OUTPUT    = scalar003kl_DTIO$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = scalar003kl_DTIO$(EXE)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)scalar003kl_DTIO$(product)vf) scalar003kl_DTIO.1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

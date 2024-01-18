@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/wait/ERRSpecRead01.scenario
+#FEATURE	= Asynchronous I/O -- WAIT() Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060315
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)ERRSpecRead01.dat .
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)ERRSpecRead01.f
+#OUTPUT		= ERRSpecRead01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= ERRSpecRead01$(OBJ)
+#OUTPUT		= ERRSpecRead01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= ERRSpecRead01$(EXE)
+#STDERR		= ERRSpecRead01.stderr
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)ERRSpecRead01$(product)vf) ERRSpecRead01.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

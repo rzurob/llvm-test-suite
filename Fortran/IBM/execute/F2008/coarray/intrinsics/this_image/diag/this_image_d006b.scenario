@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = this_image_d006b.scenario
+#FEATURE  = CAF Intrinsics
+#CREATOR  = Francesco Cassullo
+#DATE     = July 2010
+#TEST_TYPE= DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_COARRAY_IMAGES<15>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = $(tcasedir)this_image_d006b.f
+#OUTPUT    = this_image_d006b$(OBJ)
+#STDOUT    = this_image_d006b.err
+#STDERR    = this_image_d006b.err
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)this_image_d006b$(product)vf) this_image_d006b.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

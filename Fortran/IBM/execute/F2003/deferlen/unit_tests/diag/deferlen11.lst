@@ -1,0 +1,306 @@
+XL Fortran Enterprise Edition DEV Version for AIX (XL Fortran DEV)  Version 10.01.0000.9999 --- deferlen11.f 02/23/06 23:39:01
+   <program init stmt> ::=
+ pass= 1  prod# +mai-36   (act=36)    mpx= 1 spx= 2
+   <program prefix> ::= <program init stmt> END_START_OPTIONS
+ pass= 1  prod# +mai-45   (act=45)    mpx= 1 spx= 1
+ 
+>>>>> OPTIONS SECTION <<<<<
+***   Options In Effect   ***
+  
+         ==  On / Off Options  ==
+         32              CR              ESCAPE          I4
+         NOLIBESSL       NOLIBPOSIX      OBJECT          STDFRAMEWORK
+         SWAPOMP         UNWIND          ZEROSIZE
+  
+         ==  Options Of Integer Type ==
+         MAXMEM(8192)          SPILLSIZE(512)        STACKTEMP(0)
+  
+  
+         ==  Options Of Character Type  ==
+         ALIAS(STD,NOINTPTR)   ALIGN(BINDC(POWER),STRUCT(NATURAL))
+         ARCH(COM)             AUTODBL(NONE)         DIRECTIVE(IBM*)
+         ENUM()                FLAG(I,I)             FLOAT(MAF,FOLD,RNGCHK)
+         FREE(F90)             HALT(S)               IEEE(NEAR)
+         INTSIZE(4)            LIST()                LANGLVL(EXTENDED)
+         REALSIZE(4)           TUNE(PWR3)            UNROLL(AUTO)
+         XFLAG()               XLF2003(NOPOLYMORPHIC,NOBOZLITARGS)
+         XLF77(LEADZERO,BLANKPAD)
+         XLF90(NOSIGNEDZERO,NOAUTODEALLOC)
+  
+>>>>> SOURCE SECTION <<<<<
+  <program prefix part> ::= <program prefix>
+pass= 1  prod# +mai-50   (act=50)    mpx= 1 spx= 1
+  <program header part> ::= <program prefix part>
+pass= 1  prod# +mai-55   (act=55)    mpx= 1 spx= 1
+  <specification beg> ::= <program header part>
+pass= 1  prod# .dcl-170  (act=570)   mpx= 2 spx= 3
+  <implicit stmt> ::= IMPLICIT NONE
+pass= 1  prod# +mai-187  (act=187)   mpx= 2 spx= 2
+  <specn stmt> ::= <implicit stmt>
+pass= 1  prod# +mai-170  (act=170)   mpx= 2 spx= 3
+  <specn statement> ::= <specn stmt> end_of_statement
+pass= 1  prod# +mai-58   (act=58)    mpx= 2 spx= 2
+  <accum unambig spec part> ::= <specn statement>
+pass= 1  prod# +mai-56   (act=56)    mpx= 2 spx= 2
+  <specification part> ::= <accum unambig spec part>
+pass= 1  prod# +mai-76   (act=76)    mpx= 2 spx= 2
+  <all specification> ::= <specification part>
+pass= 1  prod# +mai-79   (act=79)    mpx= 1 spx= 2
+  <program beginning> ::= <specification beg> <all specification>
+pass= 1  prod# +mai-134  (act=134)   mpx= 2 spx= 2
+  <contains stmt> ::= CONTAINS
+pass= 1  prod# +mai-132  (act=132)   mpx= 2 spx= 3
+  <contains statement> ::= <contains stmt> end_of_statement
+pass= 1  prod# .dcl-73   (act=473)   mpx= 3 spx= 3
+  <char func kwd> ::= CHARFUNCTION
+pass= 1  prod# .dcl-52   (act=452)   mpx= 3 spx= 3
+  <function type kore ok> ::= <char func kwd>
+pass= 1  prod# .dcl-542  (act=942)   mpx= 5 spx= 6
+  <type kind ceq> ::= CHARLEN equals
+pass= 1  prod# .dcl-535  (act=935)   mpx= 6 spx= 6
+  <exporstarorcol> ::= colon
+pass= 1  prod# .dcl-537  (act=937)   mpx= 4 spx= 7
+  <type kind> ::= lparen <type kind ceq> <exporstarorcol> rparen
+pass= 1  prod# .dcl-23   (act=423)   mpx= 3 spx= 4
+  <prefix spec> ::= <function type kore ok> <type kind>
+pass= 1  prod# .dcl-17   (act=417)   mpx= 3 spx= 3
+  <prefix> ::= <prefix spec>
+pass= 1  prod# -exp-264  (act=2164)  mpx= 5 spx= 5
+  <identifier> ::= IDENTIFIER
+pass= 1  prod# .dcl-45   (act=445)   mpx= 3 spx= 5
+  <function name> ::= <prefix> FUNCTION <identifier>
+pass= 1  prod# .dcl-38   (act=438)   mpx= 3 spx= 5
+  <function stmt> ::= <function name> lparen rparen
+pass= 1  prod# +mai-154  (act=154)   mpx= 3 spx= 3
+  <internal hdr stmt> ::= <function stmt>
+pass= 1  prod# +mai-149  (act=149)   mpx= 3 spx= 4
+  <internal proc hdr stmt> ::= <internal hdr stmt> end_of_statement
+pass= 1  prod# +mai-142  (act=142)   mpx= 3 spx= 3
+  <internal proc beg> ::= <internal proc hdr stmt>
+pass= 1  prod# +mai-28   (act=28)    mpx= 4 spx= 5
+  <efunc stmt> ::= END_FUNCTION ENDIDENTIFIER
+pass= 1  prod# +mai-17   (act=17)    mpx= 4 spx= 5
+  <end stmt> ::= <efunc stmt> end_of_statement
+pass= 1  prod# +mai-11   (act=11)    mpx= 4 spx= 4
+  <end statement> ::= <end stmt>
+pass= 1  prod# +mai-138  (act=138)   mpx= 3 spx= 4
+  <internal proc> ::= <internal proc beg> <end statement>
+pass= 1  prod# +mai-127  (act=127)   mpx= 2 spx= 3
+  <contains grp> ::= <contains statement> <internal proc>
+pass= 1  prod# +mai-13   (act=13)    mpx= 3 spx= 3
+  <end stmt> ::= END
+  <end statement> ::= <end stmt>
+pass= 1  prod# +mai-8    (act=8)     mpx= 1 spx= 3
+  <program> ::= <program beginning> <contains grp> <end statement>
+pass= 1  prod# +mai-1    (act=1)     mpx= 1 spx= 1
+  <parser goal> ::= <program>
+ 
+ 
+pass= 2  compilation-unit= 1
+pass= 2  prod# +mai-41   (act=41)    mpx= 1 spx= 0
+  <program init stmt> ::=
+pass= 2  prod# +mai-36   (act=36)    mpx= 1 spx= 2
+  <program prefix> ::= <program init stmt> END_START_OPTIONS
+pass= 2  prod# +mai-45   (act=45)    mpx= 1 spx= 1
+  <program prefix part> ::= <program prefix>
+pass= 2  prod# +mai-50   (act=50)    mpx= 1 spx= 1
+  <program header part> ::= <program prefix part>
+pass= 2  prod# +mai-55   (act=55)    mpx= 1 spx= 1
+  <specification beg> ::= <program header part>
+pass= 2  prod# .dcl-170  (act=570)   mpx= 2 spx= 3
+  <implicit stmt> ::= IMPLICIT NONE
+pass= 2  prod# +mai-187  (act=187)   mpx= 2 spx= 2
+  <specn stmt> ::= <implicit stmt>
+pass= 2  prod# +mai-170  (act=170)   mpx= 2 spx= 3
+  <specn statement> ::= <specn stmt> end_of_statement
+pass= 2  prod# +mai-58   (act=58)    mpx= 2 spx= 2
+  <accum unambig spec part> ::= <specn statement>
+pass= 2  prod# +mai-56   (act=56)    mpx= 2 spx= 2
+  <specification part> ::= <accum unambig spec part>
+pass= 2  prod# +mai-76   (act=76)    mpx= 2 spx= 2
+  <all specification> ::= <specification part>
+pass= 2  prod# +mai-79   (act=79)    mpx= 1 spx= 2
+  <program beginning> ::= <specification beg> <all specification>
+pass= 2  prod# +mai-134  (act=134)   mpx= 2 spx= 2
+  <contains stmt> ::= CONTAINS
+pass= 2  prod# +mai-132  (act=132)   mpx= 2 spx= 3
+  <contains statement> ::= <contains stmt> end_of_statement
+pass= 2  prod# .dcl-73   (act=473)   mpx= 3 spx= 3
+  <char func kwd> ::= CHARFUNCTION
+pass= 2  prod# .dcl-52   (act=452)   mpx= 3 spx= 3
+  <function type kore ok> ::= <char func kwd>
+pass= 2  prod# .dcl-542  (act=942)   mpx= 5 spx= 6
+  <type kind ceq> ::= CHARLEN equals
+pass= 2  prod# .dcl-535  (act=935)   mpx= 6 spx= 6
+  <exporstarorcol> ::= colon
+pass= 2  prod# .dcl-537  (act=937)   mpx= 4 spx= 7
+  <type kind> ::= lparen <type kind ceq> <exporstarorcol> rparen
+pass= 2  prod# .dcl-23   (act=423)   mpx= 3 spx= 4
+  <prefix spec> ::= <function type kore ok> <type kind>
+pass= 2  prod# .dcl-17   (act=417)   mpx= 3 spx= 3
+  <prefix> ::= <prefix spec>
+pass= 2  prod# -exp-264  (act=2164)  mpx= 5 spx= 5
+  <identifier> ::= IDENTIFIER
+pass= 2  prod# .dcl-45   (act=445)   mpx= 3 spx= 5
+  <function name> ::= <prefix> FUNCTION <identifier>
+pass= 2  prod# .dcl-38   (act=438)   mpx= 3 spx= 5
+  <function stmt> ::= <function name> lparen rparen
+pass= 2  prod# +mai-154  (act=154)   mpx= 3 spx= 3
+  <internal hdr stmt> ::= <function stmt>
+pass= 2  prod# +mai-149  (act=149)   mpx= 3 spx= 4
+  <internal proc hdr stmt> ::= <internal hdr stmt> end_of_statement
+pass= 2  prod# +mai-142  (act=142)   mpx= 3 spx= 3
+  <internal proc beg> ::= <internal proc hdr stmt>
+pass= 2  prod# +mai-28   (act=28)    mpx= 4 spx= 5
+  <efunc stmt> ::= END_FUNCTION ENDIDENTIFIER
+pass= 2  prod# +mai-17   (act=17)    mpx= 4 spx= 5
+  <end stmt> ::= <efunc stmt> end_of_statement
+pass= 2  prod# +mai-11   (act=11)    mpx= 4 spx= 4
+  <end statement> ::= <end stmt>
+pass= 2  prod# +mai-138  (act=138)   mpx= 3 spx= 4
+  <internal proc> ::= <internal proc beg> <end statement>
+pass= 2  prod# +mai-127  (act=127)   mpx= 2 spx= 3
+  <contains grp> ::= <contains statement> <internal proc>
+pass= 2  prod# +mai-13   (act=13)    mpx= 3 spx= 3
+  <end stmt> ::= END
+pass= 2  prod# +mai-11   (act=11)    mpx= 3 spx= 3
+  <end statement> ::= <end stmt>
+pass= 2  prod# +mai-8    (act=8)     mpx= 1 spx= 3
+  <program> ::= <program beginning> <contains grp> <end statement>
+pass= 2  prod# +mai-1    (act=1)     mpx= 1 spx= 1
+  <parser goal> ::= <program>
+ 
+ 
+pass= 3  compilation-unit= 1
+pass= 3  prod# +mai-41   (act=41)    mpx= 1 spx= 0
+  <program init stmt> ::=
+pass= 3  prod# +mai-36   (act=36)    mpx= 1 spx= 2
+  <program prefix> ::= <program init stmt> END_START_OPTIONS
+pass= 3  prod# +mai-45   (act=45)    mpx= 1 spx= 1
+  <program prefix part> ::= <program prefix>
+pass= 3  prod# +mai-50   (act=50)    mpx= 1 spx= 1
+  <program header part> ::= <program prefix part>
+pass= 3  prod# +mai-80   (act=80)    mpx= 1 spx= 1
+  <program beginning> ::= <program header part>
+pass= 3  prod# +mai-134  (act=134)   mpx= 2 spx= 2
+  <contains stmt> ::= CONTAINS
+pass= 3  prod# +mai-132  (act=132)   mpx= 2 spx= 3
+  <contains statement> ::= <contains stmt> end_of_statement
+pass= 3  prod# .dcl-73   (act=473)   mpx= 3 spx= 3
+  <char func kwd> ::= CHARFUNCTION
+pass= 3  prod# .dcl-22   (act=422)   mpx= 3 spx= 3
+  <prefix spec> ::= <char func kwd>
+pass= 3  prod# .dcl-17   (act=417)   mpx= 3 spx= 3
+  <prefix> ::= <prefix spec>
+pass= 3  prod# -exp-264  (act=2164)  mpx= 5 spx= 5
+  <identifier> ::= IDENTIFIER
+pass= 3  prod# .dcl-45   (act=445)   mpx= 3 spx= 5
+  <function name> ::= <prefix> FUNCTION <identifier>
+pass= 3  prod# .dcl-38   (act=438)   mpx= 3 spx= 5
+  <function stmt> ::= <function name> lparen rparen
+pass= 3  prod# +mai-154  (act=154)   mpx= 3 spx= 3
+  <internal hdr stmt> ::= <function stmt>
+pass= 3  prod# +mai-149  (act=149)   mpx= 3 spx= 4
+  <internal proc hdr stmt> ::= <internal hdr stmt> end_of_statement
+pass= 3  prod# +mai-142  (act=142)   mpx= 3 spx= 3
+  <internal proc beg> ::= <internal proc hdr stmt>
+pass= 3  prod# +mai-28   (act=28)    mpx= 4 spx= 5
+  <efunc stmt> ::= END_FUNCTION ENDIDENTIFIER
+pass= 3  prod# +mai-17   (act=17)    mpx= 4 spx= 5
+  <end stmt> ::= <efunc stmt> end_of_statement
+pass= 3  prod# +mai-11   (act=11)    mpx= 4 spx= 4
+  <end statement> ::= <end stmt>
+pass= 3  prod# +mai-138  (act=138)   mpx= 3 spx= 4
+  <internal proc> ::= <internal proc beg> <end statement>
+pass= 3  prod# +mai-127  (act=127)   mpx= 2 spx= 3
+  <contains grp> ::= <contains statement> <internal proc>
+pass= 3  prod# +mai-13   (act=13)    mpx= 3 spx= 3
+  <end stmt> ::= END
+pass= 3  prod# +mai-11   (act=11)    mpx= 3 spx= 3
+  <end statement> ::= <end stmt>
+pass= 3  prod# +mai-8    (act=8)     mpx= 1 spx= 3
+  <program> ::= <program beginning> <contains grp> <end statement>
+pass= 3  prod# +mai-1    (act=1)     mpx= 1 spx= 1
+= errorcl..51 errorfe..58 dr_map..142 map_dic..174 p3_fmai..148 process_non_terminal3..804 pass3..720 get_fpo..105
+      ftphas1..93 dophase..375 ftroot..111 ftmain..317 f8ent..52 ..00000240
+  <parser goal> ::= <program>
+ 
+ 
+pass= 4  compilation-unit= 1
+pass= 4  prod# +mai-41   (act=41)    mpx= 1 spx= 0
+  <program init stmt> ::=
+pass= 4  prod# +mai-36   (act=36)    mpx= 1 spx= 2
+  <program prefix> ::= <program init stmt> END_START_OPTIONS
+pass= 4  prod# +mai-45   (act=45)    mpx= 1 spx= 1
+  <program prefix part> ::= <program prefix>
+pass= 4  prod# +mai-50   (act=50)    mpx= 1 spx= 1
+  <program header part> ::= <program prefix part>
+pass= 4  prod# +mai-80   (act=80)    mpx= 1 spx= 1
+  <program beginning> ::= <program header part>
+pass= 4  prod# +mai-134  (act=134)   mpx= 2 spx= 2
+  <contains stmt> ::= CONTAINS
+pass= 4  prod# +mai-132  (act=132)   mpx= 2 spx= 3
+  <contains statement> ::= <contains stmt> end_of_statement
+pass= 4  prod# .dcl-73   (act=473)   mpx= 3 spx= 3
+  <char func kwd> ::= CHARFUNCTION
+pass= 4  prod# .dcl-22   (act=422)   mpx= 3 spx= 3
+  <prefix spec> ::= <char func kwd>
+pass= 4  prod# .dcl-17   (act=417)   mpx= 3 spx= 3
+  <prefix> ::= <prefix spec>
+pass= 4  prod# -exp-264  (act=2164)  mpx= 5 spx= 5
+  <identifier> ::= IDENTIFIER
+pass= 4  prod# .dcl-45   (act=445)   mpx= 3 spx= 5
+  <function name> ::= <prefix> FUNCTION <identifier>
+pass= 4  prod# .dcl-38   (act=438)   mpx= 3 spx= 5
+  <function stmt> ::= <function name> lparen rparen
+pass= 4  prod# +mai-154  (act=154)   mpx= 3 spx= 3
+  <internal hdr stmt> ::= <function stmt>
+pass= 4  prod# +mai-149  (act=149)   mpx= 3 spx= 4
+  <internal proc hdr stmt> ::= <internal hdr stmt> end_of_statement
+pass= 4  prod# +mai-142  (act=142)   mpx= 3 spx= 3
+  <internal proc beg> ::= <internal proc hdr stmt>
+pass= 4  prod# +mai-28   (act=28)    mpx= 4 spx= 5
+  <efunc stmt> ::= END_FUNCTION ENDIDENTIFIER
+pass= 4  prod# +mai-17   (act=17)    mpx= 4 spx= 5
+  <end stmt> ::= <efunc stmt> end_of_statement
+pass= 4  prod# +mai-11   (act=11)    mpx= 4 spx= 4
+  <end statement> ::= <end stmt>
+pass= 4  prod# +mai-138  (act=138)   mpx= 3 spx= 4
+  <internal proc> ::= <internal proc beg> <end statement>
+pass= 4  prod# +mai-127  (act=127)   mpx= 2 spx= 3
+  <contains grp> ::= <contains statement> <internal proc>
+pass= 4  prod# +mai-13   (act=13)    mpx= 3 spx= 3
+  <end stmt> ::= END
+pass= 4  prod# +mai-11   (act=11)    mpx= 3 spx= 3
+  <end statement> ::= <end stmt>
+pass= 4  prod# +mai-8    (act=8)     mpx= 1 spx= 3
+  <program> ::= <program beginning> <contains grp> <end statement>
+pass= 4  prod# +mai-1    (act=1)     mpx= 1 spx= 1
+  <parser goal> ::= <program>
+ "deferlen11.f", 1514-704 (S) Entity pfnc is declared with a deferred type parameter. pfnc must have the POINTER or ALLOCATABLE attribute.
+** _main   === End of Compilation 1 ===
+ 
+>>>>> OBJECT SECTION <<<<<
+ 
+ 
+>>>>> FILE TABLE SECTION <<<<<
+ 
+ 
+                                       FILE CREATION        FROM
+FILE NO   FILENAME                    DATE       TIME       FILE    LINE
+     0    deferlen11.f                02/13/06   10:38:12
+ 
+ 
+>>>>> COMPILATION EPILOGUE SECTION <<<<<
+ 
+ 
+FORTRAN Summary of Diagnosed Conditions
+ 
+TOTAL   UNRECOVERABLE  SEVERE       ERROR     WARNING    INFORMATIONAL
+               (U)       (S)         (E)        (W)          (I)
+    1           0         1           0          0            0
+ 
+ 
+    Source records read.......................................      27
+1501-511  Compilation failed for file deferlen11.f.
+1501-544  Object file not created.

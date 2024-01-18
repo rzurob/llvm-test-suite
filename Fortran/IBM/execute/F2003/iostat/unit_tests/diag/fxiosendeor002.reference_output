@@ -1,0 +1,18 @@
+  40.16   016100C8 is_iostat_end‹
+  43.16   016100C8 is_iostat_end‹
+  46.16   016100C8 is_iostat_end‹
+  47.15   016100C8 is_iostat_end‹
+  49.16   016100C8 is_iostat_end‹
+  50.15   016100C8 is_iostat_end‹
+  52.16   016100C8 is_iostat_end‹
+  53.15   016100C8 is_iostat_end‹
+  55.16   016100C8 is_iostat_eor‹
+  58.16   016100C8 is_iostat_eor‹
+  61.16   016100C8 is_iostat_eor‹
+  62.15   016100C8 is_iostat_eor‹
+  64.16   016100C8 is_iostat_eor‹
+  65.15   016100C8 is_iostat_eor‹
+  67.16   016100C8 is_iostat_eor‹
+  68.15   016100C8 is_iostat_eor‹
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file fxiosendeor002.f.

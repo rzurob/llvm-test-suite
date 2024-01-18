@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"d354454.f", line 80.13: 1514-091 (S) Invalid structure component reference.  The object name and all component names (except the rightmost) must be of type derived.
+** dtparameterinquiryresparam04   === End of Compilation 2 ===
+** setdt   === End of Compilation 3 ===
+"d354454.f", line 127.13: 1514-091 (S) Invalid structure component reference.  The object name and all component names (except the rightmost) must be of type derived.
+** setchar   === End of Compilation 4 ===
+1501-511  Compilation failed for file d354454.f.

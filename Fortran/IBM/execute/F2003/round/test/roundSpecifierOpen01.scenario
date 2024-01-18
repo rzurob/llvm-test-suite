@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=roundSpecifierOpen01.scenario
+#FEATURE = 289037
+#CREATOR = William Zhang
+#DATE    = 07/24/2006
+#TEST_TYPE= functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)roundSpecifierOpen01.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = roundSpecifierOpen01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = roundSpecifierOpen01$(OBJ)
+#OUTPUT    = roundSpecifierOpen01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = roundSpecifierOpen01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

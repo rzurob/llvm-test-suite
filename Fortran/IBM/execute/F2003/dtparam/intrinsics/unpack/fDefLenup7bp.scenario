@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2003/dtparam/intrinsics/unpack/fDefLenup7bp.scenario
+#FEATURE = dtp intrinsics
+#CREATOR = Adrian Green
+#DATE    = 20080821
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)fDefLenup7bp.f
+#OUTPUT   = fDefLenup7bp$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = fDefLenup7bp$(OBJ)
+#OUTPUT   = fDefLenup7bp$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fDefLenup7bp$(EXE)
+#STDOUT   = fDefLenup7bp.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $(tcasedir)fDefLenup7bp.vf fDefLenup7bp.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

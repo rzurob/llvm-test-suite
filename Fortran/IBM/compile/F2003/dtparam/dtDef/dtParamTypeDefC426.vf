@@ -1,0 +1,5 @@
+"dtParamTypeDefC426.f", line 50.30: 1514-727 (S) Type parameter k is not permitted. k is the name of a type parameter that is inherited from type dt1.
+"dtParamTypeDefC426.f", line 57.26: 1514-528 (S) Type dt5 in the EXTENDS clause must be extensible.
+** m   === End of Compilation 1 ===
+** dtparamtypedefc426   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtParamTypeDefC426.f.

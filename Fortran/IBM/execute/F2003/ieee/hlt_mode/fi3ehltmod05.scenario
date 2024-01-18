@@ -1,0 +1,64 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/ieee/hlt_mode/fi3ehltmod05.scenario
+#FEATURE = ieee tests - regression run bucket
+#CREATOR = CPR Manual conversion
+#DATE    = 20041200
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=bgl_system
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= XLF95_COMPILE
+#INPUT		= $($(tcasedir)ieeeconsts$(product)f)
+#OPTS		= $(OPT_FOLD_FLOATS_OFF) -qflttrap=inexact -qsigtrap $(OPT_SET_STRICT_OPTIMIZATION)
+#OUTPUT		= ieeeconsts$(OBJ)
+#ENDCMD
+
+#CMD		= XLF95_COMPILE
+#INPUT		= $($(tcasedir)fi3ehltmod05$(product)f)
+#OPTS		= $(OPT_FOLD_FLOATS_OFF) -qflttrap=inexact -qsigtrap $(OPT_SET_STRICT_OPTIMIZATION)
+#OUTPUT		= fi3ehltmod05$(OBJ)
+#ENDCMD
+
+#CMD		= XLF95_LINK
+#INPUT		= fi3ehltmod05$(OBJ) ieeeconsts$(OBJ)
+#OPTS		= $(OPT_FOLD_FLOATS_OFF) -qflttrap=inexact -qsigtrap $(OPT_SET_STRICT_OPTIMIZATION)
+#OUTPUT		= fi3ehltmod05$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= fi3ehltmod05$(EXE)
+#STDERR		= fi3ehltmod05.err
+#VALIDRCS	= $(RC_FAIL)
+#VALIDSIGNALS	= TRAP,SEGV
+#ENDCMD
+
+#IF on(aix)
+	#CMD	= GREP
+	#OPTS	= "FP * " fi3ehltmod05.err
+	#STDOUT	= fi3ehltmod05.grep
+	#ENDCMD
+	
+	#CMD	= DIFF
+	#OPTS	= fi3ehltmod05.grep $(tcasedir)fi3ehltmod05.vf
+	#ENDCMD
+#ELSE
+	#CMD	= GREP
+	#OPTS	= "SIGFPE * " fi3ehltmod05.err
+	#STDOUT	= fi3ehltmod05.grep
+	#ENDCMD
+	
+	#CMD	= DIFF
+	#OPTS	= fi3ehltmod05.grep $(tcasedir)fxi3e.lx.vf
+	#ENDCMD
+#ENDIF
+
+#ENDCONTROL
+#ENDSCENARIO

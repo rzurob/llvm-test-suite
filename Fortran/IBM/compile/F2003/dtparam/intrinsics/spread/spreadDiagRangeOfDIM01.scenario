@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/spread/spreadDiagRangeOfDIM01.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Oct. 16 2008
+#TEST_TYPE = Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)spreadDiagRangeOfDIM01.f
+#STDERR = spreadDiagRangeOfDIM01.err
+#VALIDRCS = $(RC_COMP_E)
+#ENDCMD
+
+#CMD    = XLDIFF
+#INPUT  = spreadDiagRangeOfDIM01.err $($(tcasedir)spreadDiagRangeOfDIM01$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BInModProc.scenario
+#FEATURE   = F2008 BLOCK - block in different contexts (module procedure)
+#CREATOR   = DF Manual Update
+#DATE      = 20101214
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)BInModProc.f
+#OUTPUT    = BInModProc$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = BInModProc$(OBJ)
+#OUTPUT    = BInModProc$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = BInModProc$(EXE)
+#STDOUT    = BInModProc.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)BInModProc$(product)vf) BInModProc.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

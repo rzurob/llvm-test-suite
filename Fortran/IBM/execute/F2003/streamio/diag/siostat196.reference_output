@@ -1,0 +1,2 @@
+1525-196 The POS= specifier with value 3 in the I/O statement on unit 11 is not allowed because the unit is connected to the non-stream file fort.11.  The program will recover by ignoring the I/O statement.
+1525-196 The POS= specifier with value 3 in the I/O statement on unit 11 is not allowed because the unit is connected to the non-stream file fort.11.  The program will recover by ignoring the I/O statement.

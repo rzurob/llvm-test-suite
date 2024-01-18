@@ -1,0 +1,38 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cmdline/Parallel/fxclpl40.scenario
+#FEATURE   = cmdline tests - regression run bucket
+#CREATOR   = SH Manual conversion
+#DATE      = 20081013
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT = cbe_ssc
+#BEGINDEFS
+	CmdLine=fxclpl40 \^$
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)fxclpl40.f
+#OUTPUT = fxclpl40$(OBJ)
+#OPTS 	= $(OPT_FREE_SOURCE_FORM) $(OPT_STORAGE_CLASS_AUTO)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = fxclpl40$(OBJ)
+#OUTPUT = fxclpl40$(EXE)
+#OPTS 	= $(OPT_FREE_SOURCE_FORM) $(OPT_STORAGE_CLASS_AUTO)
+#ENDCMD
+
+#CMD 	= RUN
+#INPUT 	= fxclpl40$(EXE)
+#OPTS	= \\^$
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

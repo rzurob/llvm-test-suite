@@ -1,0 +1,11 @@
+ NaN(Q) NaN(Q) NaN(S) NaN(S) Inf -Inf
+ NaN(Q) NaN(Q) NaN(S) NaN(S) Inf -Inf
+ NaN(Q) NaN(Q) NaN(S) NaN(S) Inf -Inf
+ (-Inf,NaN(S)) (NaN(Q),Inf) (NaN(S),NaN(Q))
+    NaN(Q)    NaN(Q)    NaN(S)    NaN(S)       Inf      -Inf
+    NaN(Q)    NaN(Q)    NaN(S)    NaN(S)       Inf      -Inf
+    NaN(Q)    NaN(Q)    NaN(S)    NaN(S)       Inf      -Inf
+      -Inf    NaN(S)    NaN(Q)       Inf    NaN(S)    NaN(Q)
+***  NaN-Inf
+ NaN(Q)      +Inf
+NaN(S)NaN***Inf

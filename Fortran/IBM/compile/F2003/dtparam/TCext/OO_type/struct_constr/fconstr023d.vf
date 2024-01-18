@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"fconstr023d.f", line 48.24: 1516-078 (S) Operands must be conformable.
+"fconstr023d.f", line 50.24: 1516-078 (S) Operands must be conformable.
+** fconstr023d   === End of Compilation 2 ===
+1501-511  Compilation failed for file fconstr023d.f.

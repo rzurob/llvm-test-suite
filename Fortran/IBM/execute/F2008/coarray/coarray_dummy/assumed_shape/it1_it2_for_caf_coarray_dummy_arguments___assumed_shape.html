@@ -1,0 +1,522 @@
+<html><head><title>IT1/IT2 for CAF Coarray dummy arguments - assumed-shape</title></head><body><table width="100%" cellspacing="0" cellpadding="0" border="1" class="MsoNormalTable" style="background: none repeat scroll 0% 50% rgb(192, 225, 255); width: 100%;">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="padding: 2.5pt; width: 100%;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: navy; font-family: Helvetica;">Document Control Information:</span></strong><span style="font-size: 10pt; color: navy; font-family: Helvetica;"> </span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            <p>The official version of this document is kept in CMVC in the <span style="font-weight: bold; text-decoration: underline;">%CMVC_Family%</span> family, release <span style="font-weight: bold; text-decoration: underline;">%CMVC_Release%</span>, component <span style="font-weight: bold; text-decoration: underline;">%CMVC_Component%</span>, file <span style="font-weight: bold; color: rgb(255, 102, 102); text-decoration: underline;">%CMVC_PathName%</span>. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.<br />
+            <br />
+            CMVC Extraction Information: %W% %H% %I% sccsid<br />
+            </p>
+            <p>CMVC_Family=aix, CMVC_Release=test.dev, CMVC_Component=test.values</p>
+            <p><br />
+            This document is IBM Confidential.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Helvetica;"><u1:p></u1:p></span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<table width="100%" cellspacing="3" cellpadding="0" border="1" class="MsoNormalTable" style="background: none repeat scroll 0% 50% rgb(204, 204, 255); width: 100%;">
+    <tbody>
+        <tr>
+            <td valign="top" style="padding: 1pt;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">Reviewers</span></strong><span style="font-size: 10pt; font-family: Helvetica;">: </span><span style="font-size: 10pt; font-family: Helvetica;">Please click the 'Reviewed' check-box beside your name to indicate your participation in the review.</span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="MsoNormal" style="margin-bottom: 6pt;"><span style="font-size: 10pt; font-family: Helvetica;"></span><u1:p></u1:p></p>
+<p class="MsoNormal" style="margin-bottom: 12pt;"><span style="font-size: 10pt; font-family: Helvetica;">%Reviews%</span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" class="MsoNormalTable" style="background: none repeat scroll 0% 50% rgb(224, 255, 191); width: 100%;">
+    <tbody>
+        <tr>
+            <td width="21%" valign="top" style="padding: 2.5pt; width: 21.22%;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p>Document Title<u2:p></u2:p></span></strong><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+            <td width="78%" valign="top" style="padding: 2.5pt; background: none repeat scroll 0% 50% white; width: 78.78%;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%Document_Name%</span></strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%Note{or IT1 for name of the feature you are testing}%</span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="21%" valign="top" style="padding: 2.5pt; width: 21.22%;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">CMVC Feature Number:</span></strong><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+            <td width="78%" valign="top" style="padding: 2.5pt; background: none repeat scroll 0% 50% white; width: 78.78%;"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%CMVC_Feature% <u2:p></u2:p></span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="padding: 2.5pt;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">Feature Title:</span></strong><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="padding: 2.5pt; background: none repeat scroll 0% 50% white;"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%Note{Feature Title (usually contain feature number, editable by Properties Action)}%</span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="padding: 2.5pt;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">Author(s):</span></strong><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="padding: 2.5pt; background: none repeat scroll 0% 50% white;"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%Authors%</span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="padding: 2.5pt;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">Mandatory Reviewers:<u2:p></u2:p></span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">(Approver)</span></strong><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="padding: 2.5pt; background: none repeat scroll 0% 50% white;"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%Note{These reviewers have technical approval authority and MUST approve this IT1. Generally, only list reviewers from the Component Reviewer list whose component is directly affected by this feature. Use Access Control to add or delete a reviewer.}%</span></strong></p>
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%Approvers%<br />
+            </span></strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="padding: 2.5pt;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">Component Reviewers:(optional participation)</span></strong><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="padding: 2.5pt; background: none repeat scroll 0% 50% white;"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%Note{ These groups must be made aware of the IT1, assign one person representing each. The names are suggested contacts (</span></strong><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">The component leads directly affected by AIX/Linux are in the list by default</span></strong><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">):</span></strong></p>
+            <ul>
+                <li>
+                <div class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;"></span></strong><strong><span style="font-size: 10pt; font-family: Helvetica;"><strong><font face="Arial">C FE and related tools/libraries/driver:</font></strong></span></strong></div>
+                </li>
+            </ul>
+            <blockquote dir="ltr" style="margin-right: 0px;">
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><strong><font face="Arial"></font></strong>AIX - Enrique Varillas (<a href="mailto:enriquev@ca.ibm.com">enriquev@ca.ibm.com</a><a href="mailto:philipl@ca.ibm.com"></a>)</span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">Linux - David Salinas (<a href="mailto:dsalinas@ca.ibm.com">dsalinas@ca.ibm.com</a><a href="mailto:philipl@ca.ibm.com"></a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">zOS - Jing Chen (<a href="mailto:kendrick@ca.ibm.com">chenjing@ca.ibm.com</a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">CELL - Larry Lindsay (<a href="mailto:llindsay@ca.ibm.com">llindsay@ca.ibm.com</a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>UPC - Kevin Lou</strong> <strong>(<a href="mailto:kendrick@ca.ibm.com">gklou@ca.ibm.com</a></strong><strong>)</strong></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>C++ FE and related tools/libraries/driver:</strong></font></span></strong></div>
+                </li>
+            </ul>
+            <blockquote dir="ltr" style="margin-right: 0px;">
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"></span></strong><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">AIX/</font></span></strong><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">Linux - Sasha Kasapinovic (<a href="mailto:skasapin@ca.ibm.com">skasapin@ca.ibm.com</a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">zOS - Michael Wong (<a href="mailto:michaelw@ca.ibm.com">michaelw@ca.ibm.com</a>) </font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">BG/</font></span>CELL - Yan Liu (<a href="mailto:kevshin@ca.ibm.com">yanliu@ca.ibm.com</a>)</font></span></strong></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>Fortran FE, ASTI, PLIX, and related tools/libraries/driver:</strong></font></span></strong></div>
+                </li>
+            </ul>
+            <blockquote dir="ltr" style="margin-right: 0px;">
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">AIX, PLIX - Rafik Zurob (<a href="mailto:rzurob@ca.ibm.com">rzurob@ca.ibm.com</a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">Linux - Xing Xue (<a href="mailto:xingxue@ca.ibm.com">xingxue@ca.ibm.com</a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">BG/L - Daniel Chen (<a href="mailto:cdchen@ca.ibm.com">cdchen@ca.ibm.com</a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">CELL - Kelvin Li (<a href="mailto:kli@ca.ibm.com">kli@ca.ibm.com</a>) </font></span></strong></p>
+            </blockquote>
+            <ul>
+                <li>
+                <div align="left"><span><font size="1"><font face="Arial">PL/X Development: </font><font face="Arial">Kirk Crane (<a href="mailto:krcrane@ca.ibm.com">krcrane@ca.ibm.com</a>)</font></font></span></div>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                <div align="left"><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>TPO and associated tools/libraries (libxlopt, SMPRT, MASS):</strong></font></span></div>
+                </li>
+            </ul>
+            <blockquote dir="ltr" style="margin-right: 0px;">
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">AIX -&nbsp;<strong>Yan Zhang&nbsp;(<a href="mailto:edwinc@ca.ibm.com)">zhangyan@ca.ibm.com)</a></strong></font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"></span></strong><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">Linux - <strong>Tommy Wong (<a href="mailto:tomwong@ca.ibm.com">tomwong@ca.ibm.com</a>)</strong></font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">zOS - <strong>Chris Miclea (<a href="mailto:cmiclea@ca.ibm.com">cmiclea@ca.ibm.com</a>)</strong></font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>BG - Amy Wang (<a href="mailto:aktwang@ca.ibm.com">aktwang@ca.ibm.com</a>)</strong></font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"></span></strong><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>CELL -&nbsp;Yue Zhao&nbsp;(<a href="mailto:aktwang@ca.ibm.com">aktwang@ca.ibm.com</a>)</strong></font></span></strong></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>TOBEY and associated tools/libraries: (dis, libxl, bolt)</strong></font></span></strong></div>
+                </li>
+            </ul>
+            <blockquote dir="ltr" style="margin-right: 0px;">
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"></span></strong><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">AIX - Christopher Lapkowski</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">Linux - <strong>Irina Rada (<a href="mailto:irinar@ca.ibm.com">irinar@ca.ibm.com</a>)</strong></font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">zOS - Chwan-Hang Lee (<a href="mailto:chwan@ca.ibm.com">chwan@ca.ibm.com</a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>BG - Damien Bonaventure (damien@ca.ibm.com), Leon Ding (Xiaoliang Ding/Piscataway/IBM@IBMUS, <a href="mailto:dingxi@us.ibm.com">dingxi@us.ibm.com</a>)</strong></font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>CELL - Dickson Chau (<a href="mailto:dickchau@ca.ibm.com">dickchau@ca.ibm.com</a>)</strong></font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">dis (AIX/Linux) - Ian McIntosh (<a href="mailto:ianm@ca.ibm.com">ianm@ca.ibm.com</a>)</font></span></strong></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>WCode: </strong></font></span></strong><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">Roland Froese (<a href="mailto:froese@ca.ibm.com">froese@ca.ibm.com</a>) </font></span></strong></div>
+                </li>
+            </ul>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>Information Development:</strong></font></span></strong></div>
+                </li>
+            </ul>
+            <blockquote dir="ltr" style="margin-right: 0px;">
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">C/C++ - Kathleen Dowling (<a href="mailto:dowling@ca.ibm.com">dowling@ca.ibm.com</a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">Fortran - Joe Sobura (<a href="mailto:sobura@ca.ibm.com">sobura@ca.ibm.com</a>) </font></span></strong></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>Customer Service and Support:</strong></font></span></strong></div>
+                </li>
+            </ul>
+            <blockquote dir="ltr" style="margin-right: 0px;">
+            <p align="left" class="MsoNormal"><span><font face="Arial"><strong>AIX/Linux - </strong></font><font face="Arial"><strong>Cell -</strong> </font></span><span><font face="Arial" color="#ff0000"><font color="#000000" size="1">Youssef Himo <strong>(</strong></font><a href="mailto:himo@ca.ibm.com"><font size="1">himo@ca.ibm.com</font></a><strong><font color="#000000" size="1">)</font></strong></font></span></p>
+            <p align="left" class="MsoNormal">&nbsp;</p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><span><font face="Arial"><strong><font size="2">Compiler Enablement:Dwayne Moore (</font><a href="mailto:dwayne@ca.ibm.com"><font size="2">dwayne@ca.ibm.com</font></a><font size="2">) </font></strong></font></span></div>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                <div align="left"><span><font face="Arial"><font size="2"><strong>Fortran Test:</strong><strong>Kobi Vinayagamoorthy (<a href="mailto:kobiv@ca.ibm.com">kobiv@ca.ibm.com</a>) </strong></font></font></span></div>
+                </li>
+                <li>
+                <div align="left"><font size="2"><span><font face="Arial"><strong>C/C++ Test:</strong></font><font face="Arial" color="#ff0000"><strong> </strong></font></span><span></span><span><font face="Arial"><strong>Lu Yang(system p) (<a href="mailto:gatea@ca.ibm.com">luyang@ca.ibm.com</a>) </strong></font></span></font></div>
+                </li>
+                <li><strong><span><font size="2"><span>zOS C/C++ Test: </span><font color="#000000">Leon L Kiriliuk (z/OS) (</font></font><a href="mailto:leonk@ca.ibm.com)"><font face="Times New Roman"></font></a><font face="Times New Roman"><a href="mailto:leonk@ca.ibm.com)"><font size="2">leonk@ca.ibm.com)</font></a></font></span></strong><span><font face="Arial"><strong></strong></font></span> </li>
+                <li><font size="2"><span><font face="Arial"><strong>PL/X Test: </strong></font></span><span><font face="Arial"><strong>Anne Wylie (<a href="mailto:wylie@ca.ibm.com">wylie@ca.ibm.com</a>) </strong></font></span></font></li>
+                <li><span><font face="Arial" size="2"><strong>Build and Packaging Team: </strong></font></span></li>
+            </ul>
+            <blockquote dir="ltr" style="margin-right: 0px;">
+            <p align="left" class="MsoNormal"><span><font face="Arial"><strong><font size="2">AIX - Ray Kivisto (<a href="mailto:rkivisto@ca.ibm.com">rkivisto@ca.ibm.com</a></font><font size="2">) </font></strong></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><strong><font size="2">Linux - Viktor Ganich (</font><a href="mailto:vganich@ca.ibm.com"><font size="2">vganich@ca.ibm.com</font></a><font size="2">)</font></strong></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><strong><font size="2">BGL - Steven Chen (</font><a href="mailto:stevchen@ca.ibm.com"><font size="2">stevchen@ca.ibm.com</font></a><font size="2">)</font></strong></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><strong><font size="2">Cell - Kevin Yuen (</font><a href="mailto:kchyuen@ca.ibm.com"><font size="2">kchyuen@ca.ibm.com</font></a><font size="2">)</font></strong></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><strong><font size="2">z/OS - Steve Chen (</font><a href="mailto:schen@ca.ibm.com"><font size="2">schen@ca.ibm.com</font></a><font size="2">)</font></strong></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><strong><font size="2">Dale Soldiuk (</font><a href="mailto:soldiuk@ca.ibm.com"><font size="2">soldiuk@ca.ibm.com</font></a><font size="2">) (Please include Dale as optional on all reviews)</font></strong></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><span><font face="Arial"><font size="2"><strong>Performance Measurement and Analysis Team: </strong><strong>John Tam (<a href="mailto:johntam@ca.ibm.com">johntam@ca.ibm.com</a>)</strong></font></font></span></div>
+                </li>
+            </ul>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><font size="2"><span><font face="Arial"><strong>Planning: </strong></font></span><span><font face="Arial"><strong>Mary Chan (<a href="mailto:marychan@ca.ibm.com">marychan@ca.ibm.com</a>) </strong></font></span></font></div>
+                </li>
+            </ul>
+            <blockquote dir="ltr" style="margin-right: 0px;">
+            <p align="left" class="MsoNormal"><span></span><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">Use Access Control comments to add/delete people from this list.}%<br />
+            %Component_Reviewers%</span></strong></p>
+            </blockquote></td>
+        </tr>
+        <tr>
+            <td valign="top" style="padding: 2.5pt;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">Team Reviewers: (optional participation)</span></strong><u1:p></u1:p><span style="font-family: Helvetica;"></span></p>
+            </td>
+            <td valign="top" style="padding: 2.5pt; background: none repeat scroll 0% 50% white;"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%Note{List any additional reviewers assigned to the review. These reviewers do not have approval authority. </span></strong><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">Use Access Control to add or delete a reviewer.</span></strong><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">}%<br />
+            %Team_Reviewers%<br />
+            </span></strong></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="MsoNormal" style="margin-bottom: 12pt;"><span style="font-size: 10pt; font-family: Helvetica;"><u2:p></u2:p></span><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" class="MsoNormalTable" style="background: none repeat scroll 0% 50% rgb(255, 102, 102); width: 100%;">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="padding: 2.5pt; width: 100%;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><u2:p></u2:p>IT1 Status: <!-- Start -->For Approval </span><!-- End --></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="MsoNormal"><u2:p><strong><span style="font-size: 10pt; font-family: Helvetica;">Approvers Only:</span></strong><span style="font-size: 10pt; font-family: Helvetica;"> Click on the 'Approve' checkbox beside your name in the table below if you agree with the technical and user interface content of this document; not checking your 'approve' checkbox signifies you do not approve.<o:p></o:p></span></u2:p></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Helvetica;">%Approvals%<o:p></o:p></span></p>
+<p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">Approval Comments</span></strong></p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td style="vertical-align: top; font-family: Arial;"><strong>Access Change History</strong> %Note{Authors: Access Change History will list any changes to the access control done to the document draft. These changes would not be visible in a review. In a review, this section would only list the access changes done to the review itself.<br />
+            Please note that changes to the access control of a review are not automatically reflected in the access control of the draft document.}% </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%CollapsedSection{<strong>Access Change History</strong>}{%Access_Change_History%}%
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Helvetica;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" class="MsoNormalTable" style="background: none repeat scroll 0% 50% rgb(191, 191, 255); width: 100%;">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="padding: 2.5pt; width: 100%;">
+            <p align="center" class="MsoNormal" style="text-align: center;"><strong><span style="font-size: 14pt; font-family: Helvetica;"><u1:p></u1:p><u2:p></u2:p>Overview</span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><!-- Start Overview --><u2:p></u2:p></span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">%Note{Simple description of the feature; In which product it is first implemented, is it common for other platforms, is it common for both C and C++ and so on.}%</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">There is no I0 for this feature. This feature tests the assumed shape dummy argument co-arrays. An example of a co-array declaration:</span></p>
+<p style="margin: 2pt 0in;"><font face="Courier New" size="3"><span style="font-size: 11pt; font-family: Helvetica;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; real, save :: a(N,N)[p,*]</span></font></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">This is a real array of size N*N which will be replicated on each image. If p = 4 and assuming there are 16 images then the CAF environment will create a map as follows:</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"></span></p>
+<p style="margin: 2pt 0in;">
+<table width="200" cellspacing="1" cellpadding="1" border="1" align="center" summary="">
+    <tbody>
+        <tr>
+            <td align="center"><strong></strong></td>
+            <td align="center"><strong>1</strong></td>
+            <td align="center"><strong>2</strong></td>
+            <td align="center"><strong>3</strong></td>
+            <td align="center"><strong>4</strong></td>
+        </tr>
+        <tr>
+            <td align="center"><strong>1</strong></td>
+            <td align="center">1</td>
+            <td align="center">5</td>
+            <td align="center">9</td>
+            <td align="center">13</td>
+        </tr>
+        <tr>
+            <td align="center"><strong>2</strong></td>
+            <td align="center">2</td>
+            <td align="center">6</td>
+            <td align="center">10</td>
+            <td align="center">14</td>
+        </tr>
+        <tr>
+            <td align="center"><strong>3</strong></td>
+            <td align="center">3</td>
+            <td align="center">7</td>
+            <td align="center">11</td>
+            <td align="center">15</td>
+        </tr>
+        <tr>
+            <td align="center"><strong>4</strong></td>
+            <td align="center">4</td>
+            <td align="center">8</td>
+            <td align="center">12</td>
+            <td align="center">16</td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">In this map the image 12 will be referred to as (/ 4,3 /) and so on. It's easy to access such a co-array if the number of images (already known) is a square but becomes difficult if this number is dynamic or is not a square. An example code is given in Section Test Strategy to make this more clear.<br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"></span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><u2:p></u2:p></span><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" class="MsoNormalTable" style="background: none repeat scroll 0% 50% rgb(191, 191, 255); width: 100%;">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="padding: 2.5pt; width: 100%;">
+            <p align="center" class="MsoNormal" style="text-align: center;"><strong><span style="font-size: 14pt; font-family: Helvetica;"><!-- End Overview --><u2:p></u2:p>Test Strategy</span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><u2:p></u2:p></span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">%Note{Test strategy used in the test}%</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">The purpose of this testing is to test the use of assumed shape dummy arguments co-arrays </span><span style="font-size: 11pt; font-family: Helvetica;">in the CAF environment. All the tests are functional tests. Following are some of the considerations for writing the TCs:</span></p>
+<ul>
+    <li><span style="font-size: 11pt; font-family: Helvetica;">Different shapes and ranks of the array and the co-array will be tested.</span><span style="font-size: 11pt; font-family: Helvetica;"></span></li>
+    <li><span style="font-size: 11pt; font-family: Helvetica;">Values will be set in one image, copied to other images and the copy will be verified.</span><span style="font-size: 11pt; font-family: Helvetica;"></span></li>
+    <li><span style="font-size: 11pt; font-family: Helvetica;">Passing of co-array with different shapes and ranks to other intrinsic functions.</span><span style="font-size: 11pt; font-family: Helvetica;"></span></li>
+    <li><span style="font-size: 11pt; font-family: Helvetica;">Use of co-arrays in the derived type will be tested with different shapes and ranks.</span><span style="font-size: 11pt; font-family: Helvetica;"></span></li>
+    <li><span style="font-size: 11pt; font-family: Helvetica;">As mentioned above, in Section Overview, if the number of images is a square (in above case 4*4 = 16) it's easy to access the co-array. But If the number of images is dynamic it's difficult to map the images onto the co-array. Here is an example:</span><span style="font-size: 11pt; font-family: Helvetica;"></span>
+    <ul>
+        <li><span style="font-size: 11pt; font-family: Helvetica;">We want to set the data in image 1 and pass it to all other images</span><span style="font-size: 11pt; font-family: Helvetica;"></span></li>
+    </ul>
+    </li>
+</ul>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; integer :: x, y, row<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; integer, save :: A(3)[3,*]<br />
+<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; if (</span><span style="font-size: 11pt; font-family: Helvetica;">this_image()</span><span style="font-size: 11pt; font-family: Helvetica;"> .EQ. 1) then<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; do x = 1, 3<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; do y = 1, 3<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; do row = 1, 3<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A(row)[x,y] = row + this_image() - 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ! All the images to be initialized with values: 1, 2 and 3<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end do<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end do<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end do<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end if<br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; SYNC ALL</span></p>
+<ul>
+    <ul>
+        <li><span style="font-size: 11pt; font-family: Helvetica;">The  above code assumes the co-array is 3 x 3. But what if the above code is  run for 1 or 2 image(s). The loop will try to access an image (3,1)  which is not present. We need to introduce some checks so that the above  code should run good with any (dynamic) number of images. See the three  last TCs as listed in the table below for these checks.</span></li>
+    </ul>
+</ul>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><u2:p></u2:p></span><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" class="MsoNormalTable" style="background: none repeat scroll 0% 50% rgb(191, 191, 255); width: 100%;">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="padding: 2.5pt; width: 100%;">
+            <p align="center" class="MsoNormal" style="text-align: center;"><strong><span style="font-size: 14pt; font-family: Helvetica;"><!-- End Multi-Platform Considerations --><u2:p></u2:p>Test Procedures/Scenarios</span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><!-- Start Internal Interfaces --><u2:p></u2:p></span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">%Note{List and brief descriptions of the test cases created for the feature}%</span></p>
+<p style="margin: 2pt;"><span style="font-size: 11pt; font-family: Helvetica;">The following table describes in detail all the TCs:<br />
+</span></p>
+<br />
+<table width="90%" height="58" cellspacing="1" cellpadding="1" border="1" align="" summary="">
+    <tbody>
+        <tr align="center">
+            <td>
+            <p><font face="Arial" color="#000000" size="4"><strong><a class="review" title="Click on the text to add a comment"><span id="line__57">TCs</span></a><span id="comments_57"></span><span id="comments_entry_57"></span></strong></font></p>
+            </td>
+            <td>
+            <p><font face="Arial" color="#000000" size="4"><strong><a class="review" title="Click on the text to add a comment"><span id="line__58">Description</span></a><span id="comments_58"></span><span id="comments_entry_58"></span></strong></font></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray01.scenario</span></a></span></span></font></p>
+            <p><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray02.scenario</span></a></span></span></font></p>
+            <p><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray03.scenario</span></a></span></span></font></p>
+            <p><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray04.scenario</span></a></span></span></font></p>
+            </td>
+            <td>
+            <p><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;">Arguments passed to control the shape (different shapes) with same co-rank. Type used logical, character, integer, real and complex</span></span></a><a class="review" title="Click on the text to add a comment"><span id="line__64"></span></a><span id="comments_64"></span><span id="comments_entry_64"></span></font></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray05.scenario</span></a></span></span></font></p>
+            <p><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray06.scenario</span></a></span></span></font></p>
+            <p><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray07.scenario</span></a></span></span></font></p>
+            <p><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray08.scenario</span></a></span></span></font></p>
+            </td>
+            <td>
+            <p><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;">Arguments passed to control the shape (different shapes) with different co-ranks. Type used logical, character, integer, real and complex<br />
+            </span></span></a></font></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray09.scenario</span></a></span></span></font></p>
+            </td>
+            <td>
+            <p><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;">Copying/moving data from image one to other images. </span></span></a><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;">Type used logical, character, integer, real and complex</span></span></a></font></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray10.scenario</span></a></span></span></font></p>
+            </td>
+            <td>
+            <p><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;">Copying/moving data from other images (picked image 2) to image one. Run with at least two images. </span></span></a><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;">Type used logical, character, integer, real and complex</span></span></a></font></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray11.scenario</span></a></span></span></font><a class="review" title="Click on the text to add a comment"><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></font></a><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__59"><br />
+            </span></a></font></p>
+            <p><a class="review" title="Click on the text to add a comment"><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></font></a><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray12.scenario</span></a></font></p>
+            <p><a class="review" title="Click on the text to add a comment"></a><a class="review" title="Click on the text to add a comment"><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></font></a><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray13.scenario</span></a></font></p>
+            <p><a class="review" title="Click on the text to add a comment"></a><a class="review" title="Click on the text to add a comment"></a><a class="review" title="Click on the text to add a comment"><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></font></a><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray14.scenario</span></a></font></p>
+            <p><a class="review" title="Click on the text to add a comment"></a><a class="review" title="Click on the text to add a comment"></a><a class="review" title="Click on the text to add a comment"></a><a class="review" title="Click on the text to add a comment"><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></font></a><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray15.scenario<br />
+            </span></a></font></p>
+            </td>
+            <td>
+            <p><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;">Copying/moving data among images (neighbors). Works with only multiple of 3 images. The extra or less number of images are ignored. Image transfers 1/3 of it's array to it's left and right neighbors. The assumedShapeCoarray1&lt;N&gt;.scenario</span></span></a><a class="review" title="Click on the text to add a comment"><span id="line__59">, </span></a><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;">where N = 1, 2, 3, 4 and 5</span></span></a><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;">,</span></span></a><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;"> use type integer, real, complex, character and logical respectively</span></span></a></font></p>
+            <p><font face="Arial" color="#000000" size="4">             </font></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray16.scenario</span></a></span></span></font></p>
+            <p><a class="review" title="Click on the text to add a comment"><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></font></a><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray17.scenario<br />
+            </span></a></font></p>
+            <p><a class="review" title="Click on the text to add a comment"></a><a class="review" title="Click on the text to add a comment"><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></font></a><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray18.scenario<br />
+            </span></a></font></p>
+            <p><a class="review" title="Click on the text to add a comment"></a><a class="review" title="Click on the text to add a comment"><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></font></a><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray19.scenario</span></a></font></p>
+            </td>
+            <td>
+            <p><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;">Passing of arrays to other intrinsic functions. Uses the same corank but different shapes. Copying/moving data among images. Works with only even number of images. The extra or less number of images will be ignored. Images 1,3,... use image 2,4,... to compute the values. After the computation is complete the data is passed back to be verified. Trignometric functions are used to compute the values. Type used are real (</span></span></a></font><a class="review" title="Click on the text to add a comment"><font face="Arial" color="#000000" size="4"></font></a><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;">assumedShapeCoarray16.scenario and </span></span></a></font><a class="review" title="Click on the text to add a comment"><font face="Arial" color="#000000" size="4"></font></a><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></a></font><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;">assumedShapeCoarray17.scenario</span></span></a></font><font face="Arial" color="#000000" size="4"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;">) </span></span></font><font face="Arial" color="#000000" size="4"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;"></span></span><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"><a class="review" title="Click on the text to add a comment"><span id="line__59">and complex (</span></a></span></span></font><a class="review" title="Click on the text to add a comment"><font face="Arial" color="#000000" size="4"></font></a><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></a></font><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;">assumedShapeCoarray18.scenario and </span></span></a></font><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></a></font><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;">assumedShapeCoarray19.scenario</span></span></a></font><font face="Arial" color="#000000" size="4"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></font><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"><a class="review" title="Click on the text to add a comment"><span id="line__59">)</span></a></span></span></font><font face="Arial" color="#000000" size="4"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;"><br />
+            </span></span></font></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray20.scenario</span></a></span></span></font></p>
+            <p><a class="review" title="Click on the text to add a comment"><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></font></a><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray21.scenario<br />
+            </span></a></font></p>
+            <p><a class="review" title="Click on the text to add a comment"></a><a class="review" title="Click on the text to add a comment"><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></font></a><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray22.scenario<br />
+            </span></a></font></p>
+            <p><a class="review" title="Click on the text to add a comment"></a><a class="review" title="Click on the text to add a comment"></a><a class="review" title="Click on the text to add a comment"><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></font></a><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray23.scenario<br />
+            </span></a></font></p>
+            </td>
+            <td>
+            <p><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;">Same as above but uses different coranks and different shapes.</span></span></a><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;"> Type used are real (</span></span></a><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray20.scenario and </span></a></span></span></font><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray21.scenario)</span></a></span></span><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></a><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"><a class="review" title="Click on the text to add a comment"><span id="line__59"> and complex (assumedShapeCoarray22.scenario and assumedShapeCoarray23) </span></a></span></span></font></p>
+            <p><a class="review" title="Click on the text to add a comment"><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"></span></font><font face="Arial" color="#000000" size="4"></font></a><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__59"></span></a></font></p>
+            </td>
+        </tr>
+        <tr>
+            <td><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray24.scenario<br />
+            <br />
+            </span></a></span></span></font><a class="review" title="Click on the text to add a comment"><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></font></a><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray25.scenario</span></a></font><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__59"></span></a></font><font face="Arial" size="4"><br />
+            </font>             </td>
+            <td><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;">Use of coarrays as derived type. Uses same/different coranks (assumedShapeCoarray24.scenario</span></span></a></font><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;"> and assumedShapeCoarray25.scenario) uses different coranks) and different shapes. Copying/moving data among images. Works with only even number of images. The extra or less number of images will be ignored. Data from images 1,3,... is copied to images 2,4,... Data copying is verified by images 1,3,... Type used real</span></span></a></font></td>
+        </tr>
+        <tr>
+            <td><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray26.scenario<br />
+            <br />
+            </span></a></span></span></font><a class="review" title="Click on the text to add a comment"><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></font></a><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray27.scenario</span></a></font><font face="Arial" size="4"><br />
+            </font>             </td>
+            <td><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;">Use of coarrays as derived type in a module. Uses same/different coranks </span></span></a></font><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;">assumedShapeCoarray26.scenario uses same corank and assumedShaprCoarray27.scenario uses different coranks)</span></span></a></font><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;"> </span></span></a></font><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;">and different shapes. Copying/moving data among images. Works with only even number of images. The extra or less number of images will be ignored. Data from images 1,3,... is copied to images 2,4,... Data copying is verified by images 1,3,... Type used integer</span></span></a></font></td>
+        </tr>
+        <tr>
+            <td><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray28.scenario<br />
+            <br />
+            </span></a></span></span></font><font face="Arial" size="4"><a class="review" title="Click on the text to add a comment"><font color="#000000"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></font></a><font color="#000000"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray29.scenario</span></a></font><br />
+            <br />
+            <font color="#000000"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray30.scenario</span></a></span></span></font><br />
+            </font></td>
+            <td><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;">Uses different coranks and different shapes. Setting data in image 1 for other images. The number of images should be either less than SIZE or multiple of SIZE (SIZE = 3). The extra number of images will be ignored. Type used in </span></span></a></font><font face="Arial" size="4"><a class="review" title="Click on the text to add a comment"><font color="#000000"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></font></a><font color="#000000"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray28.scenario, </span></a></font><a class="review" title="Click on the text to add a comment"><font color="#000000"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></font></a><font color="#000000"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray29.scenario and </span></a></font><a class="review" title="Click on the text to add a comment"><font color="#000000"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></font></a><font color="#000000"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray30.scenario are </span></a></font></font><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;">integer, character and logical respectively<br />
+            </span></span></a></font></td>
+        </tr>
+        <tr>
+            <td><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray31.scenario<br />
+            <br />
+            </span></a></span></span></font><a class="review" title="Click on the text to add a comment"><font face="Arial" color="#000000" size="4"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></font></a><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray32.scenario</span></a></font><br />
+            </td>
+            <td><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;">Uses same extent dummy arguments but different bounds.</span></span></a></font><a class="review" title="Click on the text to add a comment"><font face="Arial" color="#000000" size="4"></font></a><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;"> Type used in </span></span></a></font><font face="Arial" size="4"><a class="review" title="Click on the text to add a comment"><font color="#000000"><span style="font-family: Helvetica; font-size: 11pt;"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></font></a><font color="#000000"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray31.scenario and </span></a></font><font color="#000000"><a class="review" title="Click on the text to add a comment"><span id="line__59">assumedShapeCoarray32.scenario are real and complex</span></a></font></font><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;"> respectively</span></span></a></font><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__61"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></a></font></td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin: 2pt;">&nbsp;</p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"></span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><u2:p></u2:p></span><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" class="MsoNormalTable" style="background: none repeat scroll 0% 50% rgb(191, 191, 255); width: 100%;">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="padding: 2.5pt; width: 100%;">
+            <p align="center" class="MsoNormal" style="text-align: center;"><strong><span style="font-size: 14pt; font-family: Helvetica;"><!-- End Internal Interfaces --><u2:p></u2:p>IT2 Information</span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><!-- Start Inter-Component Communication/Interfaces --><u2:p></u2:p></span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">%Note{IT2 Location and other IT2 related information}%</span></p>
+<p style="margin: 2pt;"><span style="font-family: Helvetica; font-size: 11pt;">Current Location of TCs:</span></p>
+<p style="margin: 2pt;"><a class="review" title="Click on the text to add a comment"><span id="line__52"><span style="font-family: Helvetica; font-size: 11pt;"></span></span></a>/gsa/tlbgsa/home/s/h/shahida/CAF/dummyAssumedShape/<br />
+<span style="font-family: Helvetica; font-size: 11pt;"></span></p>
+<p style="margin: 2pt;"><span style="font-family: Helvetica; font-size: 11pt;">Permanent Location of TCs:</span></p>
+<p style="margin: 2pt;">/tstdev/F2008/coarray/coarray_dummy/assumed_shape/<br />
+<span style="font-family: Helvetica; font-size: 11pt;"></span></p>
+<p style="margin: 2pt;"><span style="font-family: Helvetica; font-size: 11pt;"><br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"></span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><u2:p></u2:p></span><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" class="MsoNormalTable" style="background: none repeat scroll 0% 50% rgb(191, 191, 255); width: 100%;">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="padding: 2.5pt; width: 100%;">
+            <p align="center" class="MsoNormal" style="text-align: center;"><strong><span style="font-size: 14pt; font-family: Helvetica;"><!-- End Inter-Component Communication/Interfaces --><u2:p></u2:p>Appendices/References</span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><u2:p></u2:p></span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">%Note{I0 Location and any references may help understand the IT1}%</span></p>
+<p style="margin: 2pt 0in;"><font face="Arial" color="#000000" size="4"><a class="review" title="Click on the text to add a comment"><span id="line__130"><span style="font-family: Helvetica; font-size: 11pt;">[1] Coarrays in the next Fortran Standard, ISO/IEC JTC1/SC22/WG5 N1824 2010-04-21 @</span></span></a><span id="comments_130"></span><span id="comments_entry_130"></span> <a class="review" title="Click on the text to add a comment"><span id="line__131"><span style="font-family: Helvetica; font-size: 11pt;">ftp://ftp.nag.co.uk/sc22wg5/N1801-N1850/N1824.pdf</span></span></a></font><span id="comments_131"></span><span id="comments_entry_131"></span>   <span style="font-size: 11pt; font-family: Helvetica;"></span><span style="font-family: Helvetica;"><o:p></o:p></span></p><!--HTML Wrapper--></body></html>

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignInternalCommonFromVarsFixed.scenario
+#FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - via pointers with fixed length parameter, assign variables to variables in common in internal procedures
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPtrAssignInternalCommonFromVarsFixed.f
+#OUTPUT    = dtpPtrAssignInternalCommonFromVarsFixed$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPtrAssignInternalCommonFromVarsFixed$(OBJ)
+#OUTPUT    = dtpPtrAssignInternalCommonFromVarsFixed$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPtrAssignInternalCommonFromVarsFixed$(EXE)
+#STDOUT    = dtpPtrAssignInternalCommonFromVarsFixed.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpPtrAssignInternalCommonFromVarsFixed$(product)vf) dtpPtrAssignInternalCommonFromVarsFixed.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

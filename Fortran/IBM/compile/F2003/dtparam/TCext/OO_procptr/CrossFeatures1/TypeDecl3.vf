@@ -1,0 +1,5 @@
+"TypeDecl3.f", line 56.19: 1514-154 (E) A procedure name or an ENTRY name may not be declared VOLATILE.
+"TypeDecl3.f", line 60.28: 1514-154 (E) A procedure name or an ENTRY name may not be declared VOLATILE.
+"TypeDecl3.f", line 70.8: 1516-332 (S) The stop code in the STOP statement must be a scalar constant expression of character or integer type.
+** typedecl3   === End of Compilation 1 ===
+1501-511  Compilation failed for file TypeDecl3.f.

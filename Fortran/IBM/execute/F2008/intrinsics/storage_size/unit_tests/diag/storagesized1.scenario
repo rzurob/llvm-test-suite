@@ -1,0 +1,20 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=storagesized1.scenario
+#FEATURE = STORAGE_SIZE intrinsic
+#CREATOR = Daniel Chen
+#DATE    = 20140818
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)storagesized1.f
+#OPTS      = $(OPT_DISABLE_MSG_NUM<1518-317>)
+#OUTPUT    = storagesized1$(OBJ)
+#STDERR    = storagesized1.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

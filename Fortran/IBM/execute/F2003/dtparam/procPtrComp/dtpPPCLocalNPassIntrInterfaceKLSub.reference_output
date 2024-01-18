@@ -1,0 +1,65 @@
+ in disp1: >abc<
+ in disp1: > <
+ in disp1: ><
+ in disp2: 12345678
+ in disp4: 12345
+ 
+ in disp1a: >defg<
+ in disp1a: > <
+ in disp1a: ><
+ in disp2a: 87654321
+ in disp4: -1
+ 
+ in disp1: >hijklm<
+ in disp1: > <
+ in disp1: ><
+ in disp2: -1111111
+ in disp4: 32765
+ 
+ in disp1: >hijklm<
+ in disp1: > <
+ in disp1: ><
+ in disp2: -1111111
+ in disp4: 32765
+ 
+ in disp1: >nopqrs<
+ in disp1: >tuv<
+ in disp2: 2139062143
+ in disp2: -16843009
+ in disp4: -16843
+ 
+ in disp1a: >abc<
+ in disp1a: > <
+ in disp1a: ><
+ in disp2a: 12345678
+ in disp4: 12345
+ 
+ in disp1: >defg<
+ in disp1: > <
+ in disp1: ><
+ in disp2: 87654321
+ in disp4: -1
+ 
+ in disp1a: >hijklm<
+ in disp1a: > <
+ in disp1a: ><
+ in disp2a: -1111111
+ in disp4: 32765
+ 
+ in disp1a: >hijklm<
+ in disp1a: > <
+ in disp1a: ><
+ in disp2a: -1111111
+ in disp4: 32765
+ 
+ in disp1a: >nopqrs<
+ in disp1a: >tuv<
+ in disp2a: 2139062143
+ in disp2a: -16843009
+ in disp4: -16843
+ 
+ in disp1: >t4p<
+ in disp2: 444444444
+ in disp4: 4444
+ 
+ done

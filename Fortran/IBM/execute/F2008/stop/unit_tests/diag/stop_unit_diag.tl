@@ -1,0 +1,2 @@
+stop_diag1a.scenario
+stop_diag1b.scenario

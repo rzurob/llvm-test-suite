@@ -1,0 +1,5 @@
+"OptionalArg04d.f", line 7.31: 1518-385 (L) Procedure foo is declared with the BIND(C) attribute.  Dummy argument b of foo is not permitted to have the OPTIONAL attribute by the Fortran 2008 standard.
+** foo   === End of Compilation 1 ===
+"OptionalArg04d.f", line 25.35: 1518-385 (L) Procedure foo is declared with the BIND(C) attribute.  Dummy argument b of foo is not permitted to have the OPTIONAL attribute by the Fortran 2008 standard.
+** main   === End of Compilation 2 ===
+1501-510  Compilation successful for file OptionalArg04d.f.

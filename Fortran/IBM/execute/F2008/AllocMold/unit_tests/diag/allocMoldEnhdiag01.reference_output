@@ -1,0 +1,4 @@
+"allocMoldEnhdiag01.f", line 8.10: 1516-025 (S) Too few subscripts specified for array jjj.
+"allocMoldEnhdiag01.f", line 8.27: 1516-353 (S) The SOURCE= and MOLD= specifiers must not both appear in the same ALLOCATE statement.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file allocMoldEnhdiag01.f.

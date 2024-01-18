@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpIAssignModuleFromModule02.scenario
+#FEATURE   = Intrinsic Assignment without Allocation - assign to module variables via module procedures
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAssignModuleFromModule02.f
+#OUTPUT    = dtpIAssignModuleFromModule02$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAssignModuleFromModule02$(OBJ)
+#OUTPUT    = dtpIAssignModuleFromModule02$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAssignModuleFromModule02$(EXE)
+#STDOUT    = dtpIAssignModuleFromModule02.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpIAssignModuleFromModule02$(product)vf) dtpIAssignModuleFromModule02.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

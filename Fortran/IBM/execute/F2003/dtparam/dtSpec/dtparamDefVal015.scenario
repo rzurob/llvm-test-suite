@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/dtSpec/dtparamDefVal015.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamDefVal015.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamDefVal015$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dtparamDefVal015$(OBJ)
+#OUTPUT    = dtparamDefVal015$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamDefVal015$(EXE)
+#STDOUT    = dtparamDefVal015.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dtparamDefVal015.out $($(tcasedir)dtparamDefVal014$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

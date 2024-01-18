@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"VarDefContext1.f", line 101.18: 1511-139 (S) Associate name ptr%dt0%c is not associated with an entity that can be defined. ptr%dt0%c must not be redefined or become undefined.
+** vardefcontext1   === End of Compilation 2 ===
+1501-511  Compilation failed for file VarDefContext1.f.

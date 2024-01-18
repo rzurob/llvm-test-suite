@@ -1,0 +1,23 @@
+!Scenario list
+fpscrflg01.scenario
+fpscrflg02.scenario
+fpscrflg03.scenario
+fpscrflg04.scenario
+fpscrflg05.scenario
+fpscrflg_dp.scenario
+fpscrflg_r4.scenario
+fpscrflg_r8.scenario
+fpscrhlt01.scenario
+fpscrhlt02.scenario
+fpscrhlt03.scenario
+fpscrhlt04.scenario
+fpscrhlt05.scenario
+fpscrhlt06.scenario
+fpscrhlt07.scenario
+fpscrhlt08.scenario
+fpscrrnd01.scenario
+fpscrrnd02.scenario
+fpscrrnd03.scenario
+fpscrrnd05.scenario
+fpscrmix01.scenario
+fpscrmix01lx.scenario

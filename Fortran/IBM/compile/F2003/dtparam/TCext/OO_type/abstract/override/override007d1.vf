@@ -1,0 +1,4 @@
+"override007d1.f", line 47.28: 1514-632 (S) The function results of the overridden binding setid and overridding binding setid must have the same type and type parameters.
+** n   === End of Compilation 1 ===
+** override007d   === End of Compilation 2 ===
+1501-511  Compilation failed for file override007d1.f.

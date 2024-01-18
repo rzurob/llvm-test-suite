@@ -1,0 +1,4 @@
+ finalizeChild 10
+ finalizeBase
+ re-assign pointer b
+ finalizeBase

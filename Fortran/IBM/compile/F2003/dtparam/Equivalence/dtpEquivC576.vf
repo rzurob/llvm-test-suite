@@ -1,0 +1,18 @@
+** m   === End of Compilation 1 ===
+"dtpEquivC576.f", line 66.15: 1516-190 (S) Variables with the BIND(C) attribute must not appear as equivalence group objects in EQUIVALENCE statements, or as common block objects in COMMON statements.
+"dtpEquivC576.f", line 72.15: 1516-210 (S) Members of BIND(C) COMMON blocks must not appear as equivalence group objects in EQUIVALENCE statements.
+** m1   === End of Compilation 2 ===
+"dtpEquivC576.f", line 83.15: 1514-651 (S) Entity p with the POINTER attribute must not appear in the EQUIVALENCE statement.
+"dtpEquivC576.f", line 86.15: 1514-651 (S) Entity a with the ALLOCATABLE attribute must not appear in the EQUIVALENCE statement.
+"dtpEquivC576.f", line 95.15: 1514-652 (S) Derived-type entity ta containing a component with the ALLOCATABLE attribute must not appear in a EQUIVALENCE statement.
+"dtpEquivC576.f", line 103.15: 1514-641 (S) The derived-type variable ns, specified in the EQUIVALENCE statement, must be of a sequence type or of a derived type with the BIND(C) attribute.
+"dtpEquivC576.f", line 112.15: 1514-652 (S) Derived-type entity tp containing a component with the POINTER attribute must not appear in a EQUIVALENCE statement.
+"dtpEquivC576.f", line 115.15: 1514-104 (S) PARAMETER constants are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"dtpEquivC576.f", line 122.15: 1514-105 (S) Dummy arguments are not permitted in EQUIVALENCE statements.  Identifier is ignored.
+"dtpEquivC576.f", line 125.15: 1514-202 (S) Automatic objects are not permitted in EQUIVALENCE statements.
+"dtpEquivC576.f", line 128.15: 1516-006 (S) Identifier was defined elsewhere as a PROGRAM, subprogram, INTRINSIC function, ENTRY name or RESULT name.  Identifier is not included in EQUIVALENCE group.
+"dtpEquivC576.f", line 135.15: 1516-006 (S) Identifier was defined elsewhere as a PROGRAM, subprogram, INTRINSIC function, ENTRY name or RESULT name.  Identifier is not included in EQUIVALENCE group.
+** dtpequivc576   === End of Compilation 3 ===
+"dtpEquivC576.f", line 147.15: 1516-006 (S) Identifier was defined elsewhere as a PROGRAM, subprogram, INTRINSIC function, ENTRY name or RESULT name.  Identifier is not included in EQUIVALENCE group.
+** f   === End of Compilation 4 ===
+1501-511  Compilation failed for file dtpEquivC576.f.

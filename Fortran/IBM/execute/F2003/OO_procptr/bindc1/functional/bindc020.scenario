@@ -1,0 +1,45 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_procptr/bindc1/functional/bindc020.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS)
+#INPUT     = $(tcasedir)bindc020.c
+#OUTPUT    = bindc020c$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)bindc020.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = bindc020$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = bindc020c$(OBJ) bindc020$(OBJ)
+#OUTPUT    = bindc020$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = bindc020$(EXE)
+#STDOUT    = bindc020.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $(tcasedir)bindc020.vf bindc020.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

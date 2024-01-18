@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/ieee/misc/ieeemisc22.scenario
+#FEATURE = ieee tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)ieeemisc22.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION)
+#OUTPUT    = ieeemisc22$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     =  ieeemisc22$(OBJ)
+#OUTPUT    = ieeemisc22$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ieeemisc22$(EXE)
+#STDOUT    = ieeemisc22.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,44 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=fxumodprocstmt019.scenario
+#FEATURE = functional test for generalization of mod proc stmts in F2003
+#CREATOR = Bardia Mahjour
+#DATE    = 20050922
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)fxumodprocstmt019.f
+#OPTS      = -qdebug=intmsg -Q -O -lxlfzz2
+#OUTPUT    = fxumodprocstmt019$(OBJ)
+#VALIDRCS  = 0
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#INPUT     = fxumodprocstmt019$(OBJ)
+#OUTPUT    = fxumodprocstmt019$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxumodprocstmt019$(EXE)
+#STDOUT    = fxumodprocstmt019.out
+#STDERR    = fxumodprocstmt019.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fxumodprocstmt019.out $($(tcasedir)fxumodprocstmt019$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

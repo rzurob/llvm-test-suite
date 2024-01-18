@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpIAssignModuleCommonFromVars.scenario
+#FEATURE   = Intrinsic Assignment without Allocation - assign variables to variables in common in module procedure
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAssignModuleCommonFromVars.f
+#OUTPUT    = dtpIAssignModuleCommonFromVars$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAssignModuleCommonFromVars$(OBJ)
+#OUTPUT    = dtpIAssignModuleCommonFromVars$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAssignModuleCommonFromVars$(EXE)
+#STDOUT    = dtpIAssignModuleCommonFromVars.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpIAssignModuleCommonFromVars$(product)vf) dtpIAssignModuleCommonFromVars.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

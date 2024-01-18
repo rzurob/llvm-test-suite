@@ -1,0 +1,4 @@
+"d355172.f", line 30.34: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+** m   === End of Compilation 1 ===
+"d355172.f", line 39.7: 1514-219 (S) Unable to access module symbol file for module m. Check path and file permissions of file. Use association not done for this module.
+1501-511  Compilation failed for file d355172.f.

@@ -1,0 +1,33 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       InitExpMisc.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       09-11-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)InitExpMisc.f
+#OUTPUT= InitExpMisc$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  InitExpMisc$(OBJ)
+#OUTPUT= InitExpMisc$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  InitExpMisc$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

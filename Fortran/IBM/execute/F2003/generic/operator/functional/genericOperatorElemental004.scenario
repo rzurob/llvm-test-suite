@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/operator/functional/genericOperatorElemental004.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20051122
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericOperatorElemental004.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericOperatorElemental004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericOperatorElemental004$(OBJ)
+#OUTPUT    = genericOperatorElemental004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericOperatorElemental004$(EXE)
+#STDOUT    = genericOperatorElemental004.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericOperatorElemental004.out $(tcasedir)genericOperatorElemental004.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

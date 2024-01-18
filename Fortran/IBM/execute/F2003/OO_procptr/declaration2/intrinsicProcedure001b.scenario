@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_procptr/declaration2/intrinsicProcedure001b.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050618
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)intrinsicProcedure001b.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = intrinsicProcedure001b$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = intrinsicProcedure001b$(OBJ)
+#OUTPUT    = intrinsicProcedure001b$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = intrinsicProcedure001b$(EXE)
+#STDOUT    = intrinsicProcedure001b.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)intrinsicProcedure001b$(product)vf) intrinsicProcedure001b.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

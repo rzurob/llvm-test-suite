@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/mix/interface/fdtio507a4kl.scenario
+#FEATURE = OO_dtio/mix tests - regression run bucket + derived type parameters
+#CREATOR = automated conversion script
+#DATE    = 20070814
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fdtio507a4kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fdtio507a4kl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  fdtio507a4kl$(OBJ)
+#OUTPUT    = fdtio507a4kl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fdtio507a4kl$(EXE)
+#STDOUT    = fdtio507a4kl.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)fdtio507a4kl$(product)vf) fdtio507a4kl.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

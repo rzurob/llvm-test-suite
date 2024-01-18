@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= maxlocinitc02.scenario
+#FEATURE = back argument for maxloc/minloc
+#CREATOR = Pooja Dayanand
+#DATE    = 20120629
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)maxlocinitc02.f
+#OUTPUT    = maxlocinitc02$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2008_LINK
+#INPUT     = maxlocinitc02$(OBJ)
+#OUTPUT    = maxlocinitc02$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = maxlocinitc02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

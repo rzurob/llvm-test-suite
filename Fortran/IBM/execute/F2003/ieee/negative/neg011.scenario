@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = ieee/negative/neg011.scenario
+#FEATURE = ieee tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)ieeeconsts.f
+#OUTPUT = ieeeconsts$(OBJ)
+#OPTS   = $(OPT_SET_STRICT_OPTIMIZATION) $(OPT_FLOAT_USE_MULTIPLY_ADD_OFF) -qautodbl=dbl4 $(OPT_FREE_SOURCE_FORM) -qxlf90=signedzero $(OPT_AUTODBL_OFF)
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)neg011.f
+#OUTPUT = neg011$(OBJ)
+#OPTS   = $(OPT_SET_STRICT_OPTIMIZATION) $(OPT_FLOAT_USE_MULTIPLY_ADD_OFF) -qautodbl=dbl4 $(OPT_FREE_SOURCE_FORM) -qxlf90=signedzero -I./
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = neg011$(OBJ)
+#OUTPUT = neg011$(EXE)
+#OPTS   = $(OPT_SET_STRICT_OPTIMIZATION) $(OPT_FLOAT_USE_MULTIPLY_ADD_OFF) -qautodbl=dbl4 $(OPT_FREE_SOURCE_FORM) -qxlf90=signedzero -I./
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = neg011$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

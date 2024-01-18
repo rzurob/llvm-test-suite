@@ -1,0 +1,12 @@
+  3.18   016108EF dt2‹BIND‹
+  8.18   016108EF dt‹BIND‹
+  15.15   01610252 x‹dt‹
+  19.22   016108EF dt2‹BIND‹
+  24.22   016108EF dt‹BIND‹
+  30.19   01610252 a‹dt‹
+** _main   === End of Compilation 1 ===
+  40.20   016108EF dt2‹BIND‹
+  45.20   016108EF dt‹BIND‹
+  51.17   01610252 a‹dt‹
+** sub   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtParamTypeCompatBind.f.

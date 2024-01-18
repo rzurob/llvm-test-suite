@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"alloc010.f", line 49.15: 1514-645 (S) abstractbase is an abstract type. abstractbase is not permitted in this context.
+"alloc010.f", line 50.15: 1514-645 (S) abstractchild is an abstract type. abstractchild is not permitted in this context.
+** alloc010   === End of Compilation 2 ===
+1501-511  Compilation failed for file alloc010.f.

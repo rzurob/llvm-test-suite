@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=missing_end_block_constr_name.scenario
+#FEATURE = F2008 BLOCK construct
+#CREATOR = Pooja Dayanand
+#DATE    = 20101021
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)missing_end_block_constr_name.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#STDERR    = missing_end_block_constr_name.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = missing_end_block_constr_name.out $(tcasedir)missing_end_block_constr_name.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

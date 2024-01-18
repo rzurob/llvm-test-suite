@@ -1,0 +1,8 @@
+ dtp1--shape: 3 param: 2 value: 1 1 1
+ dtp2--shape: 0 param: 4 value:
+ dtp3--shape: 1 param: 8 value: 3
+ dtp4--shape: 3 param: 1 value: 4 4 4
+ dtp5--shape: 2 param: 2 value: 5 5
+ dtp6--shape: 0 param: 8 value:
+ dtp7--shape: 3 param: 1 value: 7 7 7
+ dtp8--shape: 4 param: 4 value: 8 8 8 8

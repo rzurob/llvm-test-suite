@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=move_alloc/MoveAllocDiag18
+#FEATURE = MOVE_ALLOC intrinsic procedure
+#CREATOR = Rob James
+#DATE    = 20060428
+#TEST_TYPE=Diagnostic unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)MoveAllocDiag18.f
+#OUTPUT    = MoveAllocDiag18$(OBJ)
+#STDERR    = MoveAllocDiag18.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)MoveAllocDiag18$(product)vf) MoveAllocDiag18.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

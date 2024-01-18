@@ -1,0 +1,5 @@
+         36 |character*1, bind(c, name="foo"
+            ..........................a.....
+a - "bcdachs9.f", line 36.26: 1515-019 (S) Syntax is incorrect.
+** mod   === End of Compilation 1 ===
+1501-511  Compilation failed for file bcdachs9.f.

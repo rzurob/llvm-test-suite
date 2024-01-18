@@ -1,0 +1,11 @@
+** m   === End of Compilation 1 ===
+"move_allocDiagNonDeferredParam01.f", line 47.29: 1516-289 (S) The TO argument of the intrinsic procedure MOVE_ALLOC must be type compatible with the FROM argument.
+"move_allocDiagNonDeferredParam01.f", line 48.29: 1516-289 (S) The TO argument of the intrinsic procedure MOVE_ALLOC must be type compatible with the FROM argument.
+"move_allocDiagNonDeferredParam01.f", line 49.29: 1516-289 (S) The TO argument of the intrinsic procedure MOVE_ALLOC must be type compatible with the FROM argument.
+"move_allocDiagNonDeferredParam01.f", line 50.29: 1516-289 (S) The TO argument of the intrinsic procedure MOVE_ALLOC must be type compatible with the FROM argument.
+"move_allocDiagNonDeferredParam01.f", line 52.29: 1516-289 (S) The TO argument of the intrinsic procedure MOVE_ALLOC must be type compatible with the FROM argument.
+"move_allocDiagNonDeferredParam01.f", line 53.29: 1516-289 (S) The TO argument of the intrinsic procedure MOVE_ALLOC must be type compatible with the FROM argument.
+"move_allocDiagNonDeferredParam01.f", line 54.29: 1516-289 (S) The TO argument of the intrinsic procedure MOVE_ALLOC must be type compatible with the FROM argument.
+"move_allocDiagNonDeferredParam01.f", line 55.29: 1516-289 (S) The TO argument of the intrinsic procedure MOVE_ALLOC must be type compatible with the FROM argument.
+** move_allocdiagnondeferredparam01   === End of Compilation 2 ===
+1501-511  Compilation failed for file move_allocDiagNonDeferredParam01.f.

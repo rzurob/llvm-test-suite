@@ -1,0 +1,3 @@
+"bcdacm02.f", line 39.21: 1516-190 (S) Variables with the BIND(C) attribute must not appear as equivalence group objects in EQUIVALENCE statements, or as common block objects in COMMON statements.
+** mod   === End of Compilation 1 ===
+1501-511  Compilation failed for file bcdacm02.f.

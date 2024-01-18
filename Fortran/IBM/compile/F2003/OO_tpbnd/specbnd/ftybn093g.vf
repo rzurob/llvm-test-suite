@@ -1,0 +1,4 @@
+"ftybn093g.f", line 47.31: 1514-570 (S) Inherited binding bind_b is elemental.  The overriding binding must also be elemental.
+** mod   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file ftybn093g.f.

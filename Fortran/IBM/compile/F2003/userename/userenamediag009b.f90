@@ -1,0 +1,70 @@
+!**********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD:
+! %COMPOPTS:
+! %GROUP: userenamediag008.f
+! %VERIFY:
+! %STDIN:
+! %STDOUT:
+! %EXECARGS:
+! %POSTCMD:
+! %END
+!**********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE TITLE            : userenamediag008.f
+!*
+!*  PROGRAMMER                 : Rob Wheeler
+!*  DATE                       : Mar. 30, 2006
+!*  ORIGIN                     : AIX Compiler Development,
+!*                             : IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Rename operator in  USE statement
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
+!*  DRIVER STANZA              : xlf2003
+!*  REQUIRED COMPILER OPTIONS  : 
+!*
+!*  DESCRIPTION                : ensure switchign target and destination yields error
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+module opmod
+ 
+  interface operator(.add.)
+    module procedure plus
+  end interface
+
+  contains
+    function plus(a,b)
+      real :: plus
+      real, intent(in) :: a,b
+      plus = a+b
+    end function plus
+
+end module
+
+
+program main
+  use opmod ,  operator(.PlUs.) => operator(.add.)
+  interface operator(.plus.)
+    function plus2(a,b)
+    real :: plus2
+    real, intent(in) :: a,b
+    end function
+  end interface
+   
+  real :: a,b,c
+  c=a.plus.b
+  b=a.Plus.c
+  a=b.pLuS.c
+  
+end program
+
+function plus2(a,b)
+      real :: plus2
+      real, intent(in) :: a,b
+      plus2 = a+b
+end function plus2

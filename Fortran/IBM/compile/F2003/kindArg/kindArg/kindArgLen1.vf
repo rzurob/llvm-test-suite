@@ -1,0 +1,6 @@
+"kindArgLen1.f", line 43.29: 1513-143 (S) Invalid KIND value.
+"kindArgLen1.f", line 44.26: 1513-143 (S) Invalid KIND value.
+"kindArgLen1.f", line 45.26: 1513-143 (S) Invalid KIND value.
+"kindArgLen1.f", line 47.26: 1513-143 (S) Invalid KIND value.
+** kindarglen1   === End of Compilation 1 ===
+1501-511  Compilation failed for file kindArgLen1.f.

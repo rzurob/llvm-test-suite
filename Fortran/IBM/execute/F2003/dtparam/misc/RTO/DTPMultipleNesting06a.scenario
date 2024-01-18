@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/misc/RTO/DTPMultipleNesting06a.scenario
+#FEATURE   = DTP - RTO coverage
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20090205
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)DTPMultipleNesting06a.f
+#OUTPUT    = DTPMultipleNesting06a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = DTPMultipleNesting06a$(OBJ)
+#OUTPUT    = DTPMultipleNesting06a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = DTPMultipleNesting06a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

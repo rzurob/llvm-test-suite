@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=dcafsum.scenario
+#FEATURE = Coarray access
+#CREATOR = Xing Xue
+#DATE    = 20090731
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = $(tcasedir)dcafsum.f
+#OUTPUT    = dcafsum$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dcafsum$(OBJ)
+#OUTPUT    = dcafsum$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = dcafsum$(EXE)
+#STDOUT    = dcafsum.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

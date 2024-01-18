@@ -1,0 +1,18 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/C503/d337818.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB per defect d337818
+#DATE      = 20070612
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d337818.f
+#OUTPUT    = d337818$(OBJ)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

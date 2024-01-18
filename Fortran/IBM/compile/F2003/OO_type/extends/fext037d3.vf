@@ -1,0 +1,4 @@
+"fext037d3.f", line 64.33: 1514-587 (S) Component base is not permitted. base is the name of a component, binding, or type parameter that is inherited from type child.
+** m   === End of Compilation 1 ===
+** fext037d3   === End of Compilation 2 ===
+1501-511  Compilation failed for file fext037d3.f.

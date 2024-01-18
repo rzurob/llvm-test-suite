@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/selectType/Quotes/C815TypeIsSeq.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071004
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=      F_COMPILE
+#INPUT=    $(tcasedir)C815TypeIsSeq.f
+#STDERR=   C815TypeIsSeq.err
+#VALIDRCS= 1
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    C815TypeIsSeq.err $($(tcasedir)C815TypeIsSeq$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

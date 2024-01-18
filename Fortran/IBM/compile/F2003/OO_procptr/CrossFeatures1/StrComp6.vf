@@ -1,0 +1,8 @@
+** m   === End of Compilation 1 ===
+"StrComp6.f", line 79.10: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"StrComp6.f", line 80.24: 1513-020 (S) Procedure names must be specified with arguments in this context.
+"StrComp6.f", line 81.31: 1515-118 (S) The target of the procedure pointer assignment statement must be: an external procedure, a module procedure, an internal procedure, a dummy procedure, a function reference that returns a procedure pointer or another procedure pointer.
+"StrComp6.f", line 82.40: 1515-118 (S) The target of the procedure pointer assignment statement must be: an external procedure, a module procedure, an internal procedure, a dummy procedure, a function reference that returns a procedure pointer or another procedure pointer.
+"StrComp6.f", line 84.15: 1515-122 (S) The procedure pointer was declared as a subroutine, or is referenced as a subroutine.  The procedure pointer assignment target must be declared as a subroutine.
+** strcomp6   === End of Compilation 2 ===
+1501-511  Compilation failed for file StrComp6.f.

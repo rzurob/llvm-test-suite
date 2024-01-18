@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/intrimod/exec/intrimod06.scenario
+#FEATURE = intrimod tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)../ieeeconsts.f
+#OUTPUT    = ieeeconsts$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)intrimod06.f
+#OUTPUT    = intrimod06$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     =  ieeeconsts$(OBJ) intrimod06$(OBJ)
+#OUTPUT    = intrimod06$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = intrimod06$(EXE)
+#STDOUT    = intrimod06.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)../emptyout$(product)vf) intrimod06.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

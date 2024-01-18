@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2008/mult_tpbnd/unit_tests/diag/mult_type_bound_08d.scenario
+#FEATURE = 916819 F2008:Multiple type-bound procedures in a single procedure stmt
+#CREATOR = Paul Liu
+#DATE    = 20110525
+#TEST_TYPE=FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+! within module
+! private type bound procedure can't be accessed outof module
+! procedure, private,nopass :: dog => real_dog, cat => real_cat
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mult_type_bound_08d.f
+#OUTPUT    = mult_type_bound_08d$(OBJ)
+#STDERR    = mult_type_bound_08d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $(tcasedir)mult_type_bound_08d.vf mult_type_bound_08d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dataPtrAssociate.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       02-17-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dataPtrAssociate.f
+#OUTPUT= dataPtrAssociate$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  dataPtrAssociate$(OBJ)
+#OUTPUT= dataPtrAssociate$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dataPtrAssociate$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

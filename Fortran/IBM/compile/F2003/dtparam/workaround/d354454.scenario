@@ -1,0 +1,29 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/future/d354454.scenario
+#FEATURE= Type Parameter Inquiry(354612)
+#CREATOR= Nancy Wang
+#DATE   = July 29 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)d354454.f
+#OUTPUT= d354454$(OBJ)
+#STDERR = d354454.err
+#VALIDRCS= 1
+#ENDCMD
+
+#CMD   = XLDIFF
+#INPUT = d354454.err $($(tcasedir)d354454$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

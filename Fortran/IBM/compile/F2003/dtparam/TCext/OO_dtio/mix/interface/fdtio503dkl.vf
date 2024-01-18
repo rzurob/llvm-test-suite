@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"fdtio503dkl.f", line 76.14: 1512-125 (S) A derived-type entity containing a component with the POINTER attribute must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+"fdtio503dkl.f", line 78.13: 1512-125 (S) A derived-type entity containing a component with the POINTER attribute must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+** fdtio503dkl   === End of Compilation 2 ===
+** unformattedread   === End of Compilation 3 ===
+** unformattedwrite   === End of Compilation 4 ===
+1501-511  Compilation failed for file fdtio503dkl.f.

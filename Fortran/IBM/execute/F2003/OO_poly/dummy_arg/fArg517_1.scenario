@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/dummy_arg/fArg517_1.scenario
+#FEATURE = OO_poly tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(F_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) $(F_COMPILE^OPT_FREE_SOURCE_FORM)  $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fArg517_1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fArg517_1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  fArg517_1$(OBJ)
+#OUTPUT    = fArg517_1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fArg517_1$(EXE)
+#STDOUT    = fArg517_1.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r.000001
+#INPUT     = fArg517_1.out $($(tcasedir)fArg517_1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

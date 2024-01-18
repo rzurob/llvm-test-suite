@@ -1,0 +1,18 @@
+"this_image_d003.f", line 46.29: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "this_image".
+"this_image_d003.f", line 47.29: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "this_image".
+"this_image_d003.f", line 48.29: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "this_image".
+"this_image_d003.f", line 50.29: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "this_image".
+"this_image_d003.f", line 51.29: 1513-040 (S) The argument DIM must be a scalar.
+"this_image_d003.f", line 52.29: 1513-040 (S) The argument DIM must be a scalar.
+"this_image_d003.f", line 53.29: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "this_image".
+"this_image_d003.f", line 55.29: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "this_image".
+"this_image_d003.f", line 56.29: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "this_image".
+"this_image_d003.f", line 57.29: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "this_image".
+"this_image_d003.f", line 58.29: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "this_image".
+"this_image_d003.f", line 60.29: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "this_image".
+"this_image_d003.f", line 61.29: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "this_image".
+"this_image_d003.f", line 62.29: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "this_image".
+"this_image_d003.f", line 63.29: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "this_image".
+"this_image_d003.f", line 65.29: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "this_image".
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file this_image_d003.f.

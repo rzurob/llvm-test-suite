@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/basic/char/deferredAssumed05.scenario
+#FEATURE	= Intrinsic Assignment -- Basic Tests: CHARACTER Intrinsic Type
+#CREATOR	= GM Manual Creation
+#DATE		= 20060922
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)deferredAssumed05.f
+#OUTPUT		= deferredAssumed05$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= deferredAssumed05$(OBJ)
+#OUTPUT		= deferredAssumed05$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= deferredAssumed05$(EXE)
+#STDOUT		= deferredAssumed05.out
+#STDERR		= deferredAssumed05.out
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)deferredAssumed05$(product)vf) deferredAssumed05.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

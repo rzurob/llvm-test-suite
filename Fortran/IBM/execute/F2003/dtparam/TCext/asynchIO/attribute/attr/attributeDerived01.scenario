@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/asynchIO/attribute/attr/attributeDerived01.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of asynchIO/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)attributeDerived01.f
+#OUTPUT		= attributeDerived01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= attributeDerived01$(OBJ)
+#OUTPUT		= attributeDerived01$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= attributeDerived01$(EXE)
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i '^asynchPoint[ 	]'
+#INPUT		= attributeDerived01$(LST)
+#STDOUT		= attributeDerived01.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= attributeDerived01.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

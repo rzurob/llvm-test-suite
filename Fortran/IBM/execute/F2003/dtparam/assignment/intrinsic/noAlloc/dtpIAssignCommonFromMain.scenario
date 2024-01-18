@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpIAssignCommonFromMain.scenario
+#FEATURE   = Intrinsic Assignment without Allocation - assign to common variables in main program
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAssignCommonFromMain.f
+#OUTPUT    = dtpIAssignCommonFromMain$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAssignCommonFromMain$(OBJ)
+#OUTPUT    = dtpIAssignCommonFromMain$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAssignCommonFromMain$(EXE)
+#STDOUT    = dtpIAssignCommonFromMain.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpIAssignCommonFromMain$(product)vf) dtpIAssignCommonFromMain.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

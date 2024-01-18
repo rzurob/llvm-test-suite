@@ -1,0 +1,13 @@
+ constrNoArg
+ constr1Arg
+ constr2Arg
+ -999 -999
+ 100 100
+ 200 300
+ -999 -999
+ constrNoArg
+ -999 -999
+ constr1Arg
+ 1000 1000
+ constr2Arg
+ 2000 3000

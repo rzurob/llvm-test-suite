@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrUnpackDblPrec.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrUnpackDblPrec.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrUnpackDblPrec$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrUnpackDblPrec$(OBJ)
+#OUTPUT    = dataPtrUnpackDblPrec$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrUnpackDblPrec$(EXE)
+#STDOUT    = dataPtrUnpackDblPrec.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrUnpackDblPrec.out $($(tcasedir)dataPtrUnpackDblPrec$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

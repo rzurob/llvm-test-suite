@@ -1,0 +1,10 @@
+"cobound05d.f", line 32.35: 1513-143 (S) Invalid KIND value.
+"cobound05d.f", line 33.35: 1513-143 (S) Invalid KIND value.
+"cobound05d.f", line 34.47: 1513-143 (S) Invalid KIND value.
+"cobound05d.f", line 36.32: 1513-143 (S) Invalid KIND value.
+"cobound05d.f", line 40.35: 1513-143 (S) Invalid KIND value.
+"cobound05d.f", line 41.35: 1513-143 (S) Invalid KIND value.
+"cobound05d.f", line 42.47: 1513-143 (S) Invalid KIND value.
+"cobound05d.f", line 44.32: 1513-143 (S) Invalid KIND value.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file cobound05d.f.

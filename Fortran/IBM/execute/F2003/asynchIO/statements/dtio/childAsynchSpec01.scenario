@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/dtio/childAsynchSpec01.scenario
+#FEATURE	= Asynchronous I/O -- Derived-Type I/O (DTIO)
+#CREATOR	= GM Manual Creation
+#DATE		= 20060412
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)childAsynchSpec01.f
+#OUTPUT		= childAsynchSpec01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= childAsynchSpec01$(OBJ)
+#OUTPUT		= childAsynchSpec01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= childAsynchSpec01$(EXE)
+#STDERR		= childAsynchSpec01.stderr
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)childAsynchSpec01$(product)vf)	\
+				childAsynchSpec01.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

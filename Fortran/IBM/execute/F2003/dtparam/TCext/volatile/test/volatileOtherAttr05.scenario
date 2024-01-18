@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/volatile/test/volatileOtherAttr05.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of volatile/*
+#DATE      = 20071101
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)volatileOtherAttr05.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = volatileOtherAttr05$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = volatileOtherAttr05$(OBJ)
+#OUTPUT    = volatileOtherAttr05$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = volatileOtherAttr05$(EXE)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)volatileOtherAttr05.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qxlf2003=novolatile
+#OUTPUT    = volatileOtherAttr05a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = volatileOtherAttr05a$(OBJ)
+#OUTPUT    = volatileOtherAttr05a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = volatileOtherAttr05a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

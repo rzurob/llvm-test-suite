@@ -1,0 +1,9 @@
+** m1   === End of Compilation 1 ===
+  93.3   01610067 
+  101.3   01610067 
+** unit001l   === End of Compilation 2 ===
+  126.4   01610067 
+** readunformatted   === End of Compilation 3 ===
+  142.4   01610067 
+** writeunformatted   === End of Compilation 4 ===
+1501-511  Compilation failed for file unit001l.f.

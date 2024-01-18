@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/cintrop4/unit_pattr/langlvl.scenario
+#FEATURE = cintrop4 tests - regression run bucket
+#CREATOR = AC Manual update
+#DATE    = 20040928
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= XLF95_COMPILE
+#OPTS           = -qdebug=intmsg $(OPT_SET_LANG_LEVEL<95std>) $(OPT_ENABLE_MSG_NUM<1518-128>)
+#INPUT		= $(tcasedir)langlvl.f
+#STDERR         = langlvl.err
+#ENDCMD
+
+#CMD		= XLDIFF
+#IF in($(F_COMPILE^OPT_OPTIMIZE_FOR_SMP)) || in ($(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT))
+#INPUT		= langlvl.err $(tcasedir)langlvl.smp.vf
+#ELSE
+#INPUT		= langlvl.err $(tcasedir)langlvl.vf
+#ENDIF
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)compute1Image.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = compute1Image$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = compute1Image$(OBJ)
+#OUTPUT    = compute1Image$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = compute1Image$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

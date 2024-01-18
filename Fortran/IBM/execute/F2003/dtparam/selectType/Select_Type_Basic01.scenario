@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/selectType/Select_Type_Basic01.scenario
+#FEATURE   = DTP - Select Type
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20080826
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)Select_Type_Basic01.f
+#OUTPUT    = Select_Type_Basic01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = Select_Type_Basic01$(OBJ)
+#OUTPUT    = Select_Type_Basic01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = Select_Type_Basic01$(EXE)
+#STDOUT    = Select_Type_Basic01.out
+#ENDCMD
+
+#CMD       = DIFF
+#OPTS      = -b
+#INPUT     = $($(tcasedir)Select_Type_Basic01$(product)vf) Select_Type_Basic01.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

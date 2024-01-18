@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2008/submodule/unit_tests/func/acc_private10.f
+#FEATURE =
+#CREATOR = Daniel Chen
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)acc_private10.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = acc_private10$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = acc_private10$(OBJ)
+#OUTPUT    = acc_private10$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = acc_private10$(EXE)
+#STDOUT    = acc_private10.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = acc_private10.out $($(tcasedir)acc_private10$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

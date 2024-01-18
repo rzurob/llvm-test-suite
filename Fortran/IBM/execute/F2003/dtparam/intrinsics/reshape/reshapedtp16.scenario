@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= reshapedtp16.scenario
+#FEATURE= reshape with parameterized derived types
+#CREATOR= dayanand
+#DATE= 2008010
+#TEST_TYPE= functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)reshapedtp16.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = reshapedtp16$(OBJ)
+#ENDCMD
+
+#CMD       = XLF_LINK
+#INPUT     = reshapedtp16$(OBJ)
+#OUTPUT    = reshapedtp16$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = reshapedtp16$(EXE)
+#STDOUT    = reshapedtp16.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = reshapedtp16.out $(tcasedir)reshapedtp16.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

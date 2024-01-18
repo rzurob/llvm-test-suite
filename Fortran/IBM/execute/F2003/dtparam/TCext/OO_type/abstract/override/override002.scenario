@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/override/override002.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/*
+#DATE      = 20070613
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)override002.f
+#OUTPUT    = override002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = override002$(OBJ)
+#OUTPUT    = override002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = override002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

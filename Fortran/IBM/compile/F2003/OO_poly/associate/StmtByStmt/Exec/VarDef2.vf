@@ -1,0 +1,3 @@
+"VarDef2.f", line 58.15: 1516-265 (S) Object in the NULLIFY statement must be definable.
+** vardef2   === End of Compilation 1 ===
+1501-511  Compilation failed for file VarDef2.f.

@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"genericOperatorInit001d.f", line 60.30: 1516-037 (S) Type of operand is not permitted for arithmetic.
+"genericOperatorInit001d.f", line 60.46: 1516-037 (S) Type of operand is not permitted for arithmetic.
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericOperatorInit001d.f.

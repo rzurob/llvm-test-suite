@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/selectType/d358734.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20081113
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d358734.f
+#OUTPUT    = d358734$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d358734$(OBJ)
+#OUTPUT    = d358734$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

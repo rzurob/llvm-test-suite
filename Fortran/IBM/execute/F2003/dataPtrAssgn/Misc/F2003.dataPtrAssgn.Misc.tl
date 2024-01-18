@@ -1,0 +1,11 @@
+dataPtrAllocateShpSpec.scenario
+dataPtrArrSize.scenario
+dataPtrCopyPrivate.scenario
+dataPtrDeallocArrSec.scenario
+dataPtrLbound.scenario
+dataPtrProcPtr.scenario
+dataPtrSubscriptOrder.scenario
+dataPtrTypBndDefAssgn.scenario
+dataPtrTypBndDefOp.scenario
+dataPtrTypBndElemental.scenario
+dataPtrTypBndGenName.scenario

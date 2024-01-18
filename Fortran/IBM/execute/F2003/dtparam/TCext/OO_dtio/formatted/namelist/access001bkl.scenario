@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/TCext/OO_dtio/formatted/namelist/access001bkl.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070620
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)access001bkl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = access001bkl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = access001bkl$(OBJ)
+#OUTPUT    = access001bkl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = access001bkl$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)access001bkl$(product)vf) access001bkl.1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

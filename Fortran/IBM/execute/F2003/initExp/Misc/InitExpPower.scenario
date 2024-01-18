@@ -1,0 +1,33 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       InitExpPower.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       09-06-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)InitExpPower.f
+#OUTPUT= InitExpPower$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  InitExpPower$(OBJ)
+#OUTPUT= InitExpPower$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  InitExpPower$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

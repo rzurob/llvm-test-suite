@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"dtparamConstr010d.f", line 48.10: 1514-571 (S) The component data has already been explicitly initialized in this structure constructor.
+"dtparamConstr010d.f", line 50.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"dtparamConstr010d.f", line 50.26: 1514-571 (S) The component id has already been explicitly initialized in this structure constructor.
+** dtparamconstr010d   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtparamConstr010d.f.

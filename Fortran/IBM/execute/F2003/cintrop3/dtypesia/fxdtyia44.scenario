@@ -1,0 +1,21 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop3/dtypesia/fxdtyia44.scenario
+#FEATURE = cintrop3 tests - regression run bucket
+#CREATOR = Manual conversion CPR
+#DATE    = 20060725
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+FTCARG="fxdtyia44"
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#INCLUDE   = scrdtya01.preshinclude
+
+#ENDCONTROL
+#ENDSCENARIO

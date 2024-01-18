@@ -1,0 +1,7 @@
+  iotype:DT_btbound v_list: 7 2 101.00
+  iotype:DT_ctbound v_list: 7 2 8 3 102.00 103.000
+  iotype:DTmod1 v_list: 7 1  100.0
+  iotype:DTInt1 v_list: 7 1 8 2  102.0  103.00  iotype:DTInt2 v_list: 8 2 9 3  102.00  103.000
+  iotype:DTInt1 v_list: 7 1 8 2  102.0  103.00  iotype:DTInt2 v_list: 8 2 9 3  102.00  103.000
+  iotype:DTExt1 v_list: 7 1  100.0  iotype:DTExt2 v_list: 8 2  100.00
+  iotype:DTExt1 v_list: 7 1  100.0

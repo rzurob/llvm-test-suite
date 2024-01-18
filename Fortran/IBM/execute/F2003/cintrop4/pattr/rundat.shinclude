@@ -1,0 +1,7 @@
+! replaces rundat.sh, and includes run.shinclude
+
+#CMD    = COPY
+#INPUT  = $(tcasedir)$FTCARG.??? .
+#ENDCMD
+
+#INCLUDE   = run.shinclude

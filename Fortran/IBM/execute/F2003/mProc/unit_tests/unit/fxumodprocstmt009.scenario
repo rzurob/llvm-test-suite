@@ -1,0 +1,47 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=fxumodprocstmt009.scenario
+#FEATURE = functional test for generalization of mod proc stmts in F2003
+#CREATOR = Bardia Mahjour
+#DATE    = 20050922
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)fxumodprocstmt009.f
+#OPTS      = -qdebug=ooall -Q -O -lxlfzz2
+#OUTPUT    = fxumodprocstmt009$(OBJ)
+#VALIDRCS  = 0
+#ENDCMD
+! NOTE: error messages are emitted, but we don't
+! care about them, as long as compilation is
+! successful.
+
+#CMD       = XLF90_LINK
+#INPUT     = fxumodprocstmt009$(OBJ)
+#OUTPUT    = fxumodprocstmt009$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxumodprocstmt009$(EXE)
+#STDOUT    = fxumodprocstmt009.out
+#STDERR    = fxumodprocstmt009.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fxumodprocstmt009.out $($(tcasedir)fxumodprocstmt009$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

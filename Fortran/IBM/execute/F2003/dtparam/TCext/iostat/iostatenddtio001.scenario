@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/iostat/iostatenddtio001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of iostat/*
+#DATE      = 20071107
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)iostatdtio.dat .
+#ENDCMD
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)iostatenddtio001.f
+#OPTS      =
+#OUTPUT    = iostatenddtio001$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#OPTS      =
+#INPUT     = iostatenddtio001$(OBJ)
+#OUTPUT    = iostatenddtio001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = iostatenddtio001$(EXE)
+#STDOUT    = iostatenddtio001.out
+#STDERR    = iostatenddtio001.out
+#ENDCMD
+
+#CMD	   = DIFF
+#OPTS	   = -b
+#INPUT     = iostatenddtio001.out $($(tcasedir)iostatenddtio001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

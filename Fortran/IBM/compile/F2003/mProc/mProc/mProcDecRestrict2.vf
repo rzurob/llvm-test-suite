@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"mProcDecRestrict2.f", line 62.24: 1514-699 (S) Procedure "s2" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "procptr", present and type incompatible, present with different kind type parameters, or present with a different rank.
+"mProcDecRestrict2.f", line 66.19: 1514-699 (S) Procedure "proc" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "s1", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** mprocdecrestrict2   === End of Compilation 2 ===
+1501-511  Compilation failed for file mProcDecRestrict2.f.

@@ -1,0 +1,8 @@
+"mxminVarConform01d.f", line 41.24: 1515-019 (S) Syntax is incorrect.
+"mxminVarConform01d.f", line 43.22: 1516-078 (S) Operands must be conformable.
+"mxminVarConform01d.f", line 45.22: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "min".
+"mxminVarConform01d.f", line 47.25: 1516-078 (S) Operands must be conformable.
+"mxminVarConform01d.f", line 49.31: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "min".
+"mxminVarConform01d.f", line 53.22: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "min".
+** mxminvarconform01d   === End of Compilation 1 ===
+1501-511  Compilation failed for file mxminVarConform01d.f.

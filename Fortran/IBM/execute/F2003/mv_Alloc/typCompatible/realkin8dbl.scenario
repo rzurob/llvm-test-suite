@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       realkin8dbl.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)realkin8dbl.f
+#OUTPUT= realkin8dbl$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  realkin8dbl$(OBJ)
+#OUTPUT= realkin8dbl$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  realkin8dbl$(EXE)
+#STDOUT= realkin8dbl.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = realkin8dbl.out $(tcasedir)realkin8dbl.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

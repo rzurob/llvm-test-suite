@@ -1,0 +1,45 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=iostatinteof001b.scenario
+#FEATURE = 299314
+#CREATOR = Rob Wheeler
+#DATE    = 20060109
+#TEST_TYPE=fvt
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)iostatinteof001b.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#OUTPUT    = iostatinteof001b$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = iostatinteof001b$(OBJ)
+#OUTPUT    = iostatinteof001b$(EXE)
+#ENDCMD
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)file1.txt .
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = iostatinteof001b$(EXE)
+#STDOUT    = iostatinteof001b.out
+#STDERR    = iostatinteof001b.out
+#ENDCMD
+
+#CMD	   = DIFF
+#OPTS	   = -b
+#INPUT     = iostatinteof001b.out $($(tcasedir)iostatinteof001b$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

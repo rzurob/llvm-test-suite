@@ -1,0 +1,29 @@
+ DT1: 121 40 > base/abc/def/ghi/jkl/mno<
+ DT2: 28402 40 > base:abc:def:ghi:jkl:mno<
+ DT4: 224468127 40 > base;abc,p;def,q<
+ DT4: 98766678 40 > base;p,abc;q,def<
+ 
+ DT1: -117 40 > /abc/def/ghi/jkl/mno<
+ DT1: 117 40 > !p!q<
+ DT1: 13 40 > ijk/abc/def/ghi/jkl/mno<
+ DT1: -13 40 > lmn!p!q<
+ DT1: 13 40 > ijk/abc/def/ghi/jkl/mno<
+ DT2: 9504 40 > abcd:abc:def:ghi:jkl:mno<
+ DT2: -5264 40 > efgh@p@q<
+ DT4: 123454543 40 > opqrs;abc,p;def,q<
+ 
+ 97  base!abc!def!ghi!jkl!mno
+ 5165  base@abc@def@ghi@jkl@mno
+ 224468127  base;abc,p;def,q
+ 98766678  base;p,abc;q,def
+ 
+ 115  !abc!def!ghi!jkl!mno
+ -115  /p/q
+ -11  ijk!abc!def!ghi!jkl!mno
+ 11  lmn/p/q
+ -12  opqrs!abc!def!ghi!jkl!mno
+ 13646  abcd@abc@def@ghi@jkl@mno
+ -28949  efgh:p:q
+ 123454543  opqrs;abc,p;def,q
+ 
+ done

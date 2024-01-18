@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrTransferDT.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrTransferDT.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrTransferDT$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrTransferDT$(OBJ)
+#OUTPUT    = dataPtrTransferDT$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrTransferDT$(EXE)
+#STDOUT    = dataPtrTransferDT.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrTransferDT.out $($(tcasedir)dataPtrTransferDT$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

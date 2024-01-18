@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = dtparamIntrinsic024.scenario
+#CREATOR  = James Ren
+#DATE     = April, 16, 2007
+#TEST_TYPE= Unit Test
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ = 60
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#INPUT  = $(tcasedir)dtparamIntrinsic024.f
+#OUTPUT = dtparamIntrinsic024$(OBJ)
+#ENDCMD
+
+
+#CMD    = F_LINK
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#INPUT = dtparamIntrinsic024$(OBJ)
+#OUTPUT = dtparamIntrinsic024$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT = dtparamIntrinsic024$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

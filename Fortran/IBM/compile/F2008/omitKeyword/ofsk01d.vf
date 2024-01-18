@@ -1,0 +1,4 @@
+"ofsk01d.f", line 32.6: 1515-019 (S) Syntax is incorrect.
+"ofsk01d.f", 1515-002 (S) END card is missing.  One is assumed.
+** test   === End of Compilation 1 ===
+1501-511  Compilation failed for file ofsk01d.f.

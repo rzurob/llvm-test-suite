@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2007/generic/assignment/functional/genericAssignmentDtIntrinAssgn007.scenario
+#FEATURE = generic tests
+#CREATOR = Robert Ma
+#DATE    = 20071215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericAssignmentDtIntrinAssgn007.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericAssignmentDtIntrinAssgn007$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericAssignmentDtIntrinAssgn007$(OBJ)
+#OUTPUT    = genericAssignmentDtIntrinAssgn007$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericAssignmentDtIntrinAssgn007$(EXE)
+#STDOUT    = genericAssignmentDtIntrinAssgn007.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericAssignmentDtIntrinAssgn007.out $(tcasedir)genericAssignmentDtIntrinAssgn007.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

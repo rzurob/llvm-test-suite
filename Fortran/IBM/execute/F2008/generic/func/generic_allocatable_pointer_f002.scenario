@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME		= F2008/generic/func/generic_allocatable_pointer_f002.scenario
+#FEATURE        = #917301 F2008: Generic resolution extensions
+#CREATOR        = Grigor Nikolov
+#DATE           = 20120629
+#TEST_TYPE      = Functional
+#KEYWORDS       = F2008 GENERIC resolution
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #INVALID_PRODUCT  = bgp bgq cbe
+  #RESOURCES_REQ    = SIMD
+  #RESOURCES_REQ    = VSX
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)generic_allocatable_pointer_f002.f
+#OPTS           = $(OPT_GEN_CODE_FOR_NATIVE_ARCHITECTURE) $(OPT_SIMD)
+#OUTPUT		= generic_allocatable_pointer_f002$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#OPTS           = $(OPT_GEN_CODE_FOR_NATIVE_ARCHITECTURE) $(OPT_SIMD)
+#INPUT		= generic_allocatable_pointer_f002$(OBJ)
+#OUTPUT		= generic_allocatable_pointer_f002$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= generic_allocatable_pointer_f002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

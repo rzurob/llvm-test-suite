@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = boundaryComplexInf007.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 14, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)boundaryComplexInf007.f
+#OUTPUT   =  boundaryComplexInf007$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  boundaryComplexInf007$(OBJ)
+#OUTPUT   =  boundaryComplexInf007$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  boundaryComplexInf007$(EXE)
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = boundaryComplexInf007.out $(tcasedir)boundaryComplexInf007.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

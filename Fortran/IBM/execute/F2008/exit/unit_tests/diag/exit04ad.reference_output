@@ -1,0 +1,11 @@
+"exit04d.f", line 29.8: 1518-380 (L) The EXIT statement is not permitted to belong to the ASSOCIATE construct by the Fortran 2003 standard.
+"exit04d.f", line 34.8: 1518-380 (L) The EXIT statement is not permitted to belong to the BLOCK construct by the Fortran 2003 standard.
+"exit04d.f", line 46.8: 1518-380 (L) The EXIT statement is not permitted to belong to the IF construct by the Fortran 2003 standard.
+"exit04d.f", line 52.8: 1518-285 (L) The ERROR STOP statement is not permitted by the Fortran 2003 standard.
+"exit04d.f", line 54.8: 1518-380 (L) The EXIT statement is not permitted to belong to the SELECT CASE construct by the Fortran 2003 standard.
+"exit04d.f", line 57.8: 1518-285 (L) The ERROR STOP statement is not permitted by the Fortran 2003 standard.
+"exit04d.f", line 62.8: 1518-285 (L) The ERROR STOP statement is not permitted by the Fortran 2003 standard.
+"exit04d.f", line 64.8: 1518-380 (L) The EXIT statement is not permitted to belong to the SELECT TYPE construct by the Fortran 2003 standard.
+"exit04d.f", line 67.8: 1518-285 (L) The ERROR STOP statement is not permitted by the Fortran 2003 standard.
+** exit04d   === End of Compilation 1 ===
+1501-510  Compilation successful for file exit04d.f.

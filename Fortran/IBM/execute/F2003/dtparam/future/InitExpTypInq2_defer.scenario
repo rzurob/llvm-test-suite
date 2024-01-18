@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/initExp/Misc/InitExpTypInq2_defer.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of F2003/initExp/*
+#DATE      = 20071221
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)InitExpTypInq2_defer.f
+#OUTPUT= InitExpTypInq2_defer$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  InitExpTypInq2_defer$(OBJ)
+#OUTPUT= InitExpTypInq2_defer$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  InitExpTypInq2_defer$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

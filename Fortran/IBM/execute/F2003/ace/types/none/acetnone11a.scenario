@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME       = F2003/ace/types/none/acetnone11a.scenario
+#FEATURE    = Array constructor enhancement automatic arrays and array sections (real)
+#CREATOR    = DF Manual Update
+#DATE       = 20060811
+#TEST_TYPE  = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#OPTS       = $(OPT_SET_STRICT_OPTIMIZATION<nans>)
+#INPUT      = $(tcasedir)acetnone11a.f
+#OUTPUT     = acetnone11a$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#INPUT      = acetnone11a$(OBJ)
+#OUTPUT     = acetnone11a$(EXE)
+#ENDCMD
+
+#CMD        = RUN
+#INPUT      = acetnone11a$(EXE)
+#STDOUT     = acetnone11a.out
+#ENDCMD
+
+#CMD        = SPIFF
+#OPTS       = -r1e-6
+#INPUT      = $($(tcasedir)acetnone11a$(product)vf) acetnone11a.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

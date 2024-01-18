@@ -1,0 +1,4 @@
+  iotype:DT v_list: 7 2 101.00
+  iotype:DT_b2 v_list: 7 2 8 3 102.00 103.000
+  iotype:DT_c1 v_list: 8 3 9 4 201.000 202.0000
+  iotype:DT_c2 v_list: 7 2 9 4 203.00 204.0000

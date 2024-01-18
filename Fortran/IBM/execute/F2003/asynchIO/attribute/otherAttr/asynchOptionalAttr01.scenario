@@ -1,0 +1,77 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/attribute/otherAttr/asynchOptionalAttr01.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Attribute
+#CREATOR	= GM Manual Creation
+#DATE		= 20060209
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)asynchOptionalAttr01.f
+#OUTPUT		= asynchOptionalAttr01$(OBJ)
+#ENDCMD
+
+
+#CMD		= F_LINK
+#INPUT		= asynchOptionalAttr01$(OBJ)
+#OUTPUT		= asynchOptionalAttr01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= asynchOptionalAttr01$(EXE)
+#STDOUT		= asynchOptionalAttr01.stdout
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)asynchOptionalAttr01$(product)vf)	\
+				asynchOptionalAttr01.stdout
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= -i '^optArg[ 	]'
+#INPUT		= asynchOptionalAttr01$(LST)
+#STDOUT		= asynchOptionalAttr01.optArg.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i '^optArgAsynch[ 	]'
+#INPUT		= asynchOptionalAttr01$(LST)
+#STDOUT		= asynchOptionalAttr01.optArgAsynch.stdout
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= 'Optional'
+#INPUT		= asynchOptionalAttr01.optArg.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= asynchOptionalAttr01.optArg.stdout
+#VALIDRCS	= $(GREP_FAIL)
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= 'Optional'
+#INPUT		= asynchOptionalAttr01.optArgAsynch.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= asynchOptionalAttr01.optArgAsynch.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/contiguous/pointer/arraySectTar1.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20101025
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = PREV_XLF95_COMPILE
+#INPUT     = $(tcasedir)arraySectTar1_mod.f
+#OUTPUT    = arraySectTar1_mod$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)arraySectTar1.f
+#OUTPUT    = arraySectTar1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = arraySectTar1$(OBJ) arraySectTar1_mod$(OBJ)
+#OUTPUT    = arraySectTar1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = arraySectTar1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

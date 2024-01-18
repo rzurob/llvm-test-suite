@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/eoshift/spread002.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050204
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)spread002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = spread002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = spread002$(OBJ)
+#OUTPUT    = spread002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = spread002$(EXE)
+#STDOUT    = spread002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)spread002$(product)vf) spread002.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

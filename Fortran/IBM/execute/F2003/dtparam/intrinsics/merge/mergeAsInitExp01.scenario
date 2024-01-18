@@ -1,0 +1,32 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/intrinsics/merge/mergeAsInitExp01.scenario
+#FEATURE= 355754
+#CREATOR= Nancy Wang
+#DATE   = Sept. 19 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)mergeAsInitExp01.f
+#OUTPUT= mergeAsInitExp01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = mergeAsInitExp01$(OBJ)
+#OUTPUT= mergeAsInitExp01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = mergeAsInitExp01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

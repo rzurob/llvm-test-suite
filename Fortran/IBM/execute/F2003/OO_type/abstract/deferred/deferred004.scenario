@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_type/abstract/deferred/deferred004.scenario
+#FEATURE = OO_type/abstract/crossFeature tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)deferred004.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = deferred004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = deferred004$(OBJ)
+#OUTPUT    = deferred004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = deferred004$(EXE)
+#STDOUT    = deferred004.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = deferred004.out $(tcasedir)deferred004.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

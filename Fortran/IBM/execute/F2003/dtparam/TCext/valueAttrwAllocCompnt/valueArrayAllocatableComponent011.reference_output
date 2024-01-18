@@ -1,0 +1,6 @@
+ deallocating component of b1 101 102 103 104 105 106 107 108 109 110 11 20 T
+ inside foo 101 102 103 104 105 106 107 108 109 110 11 20 T
+ deallocating component of b1 101 102 103 104 105 106 107 108 109 110 11 20 T
+ F
+ after deallocActual 101 102 103 104 105 106 107 108 109 110 11 20 T
+ main: F

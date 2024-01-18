@@ -1,0 +1,58 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/compat/dtpCompatDummyOutGrandChild/dtpCompatDummyOutGrandChild_121m.scenario
+#FEATURE   = Broken Compatability Warning - DTP code expects "old" code to copy extended type with KIND and LEN type parameters in grandchild / no DTP in child (fail)
+! - manual compile, v12.1
+#CREATOR   = DF Manual Update
+#DATE      = 20090613
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT=linuxle
+#ENDENV
+
+#BEGINCONTROL
+
+! Compile "post-DTP" files with the latest version of the latest compiler,
+! link with manually compiled (with 12.1 gold) object files, and run.
+! An error message should be generated.
+
+!!Since the files are manually compiled already, we do not need this step:
+!! Caution: do not just uncomment the next few lines: the name of the output
+!! file contains the product chain, which can't be good - it's just there for
+!! consistency with the next step, and to document the process.
+!#CMD      = V121_XLF2003_COMPILE
+!#INPUT    = $(tcasedir)dtpCompatDummyOutGrandChildPreDTP.f
+!#OUTPUT   = $(dtpCompatDummyOutGrandChildPreDTP.121$(Q32_64_MODE)$(product)$(OBJ))
+!#ENDCMD
+
+!!BUT: we do need the .mod file, which we copy here:
+#CMD       = COPY
+#INPUT     = $($(tcasedir)dtpcompatdummyoutgrandchildpredtpmod.121$(Q32_64_MODE)$(product).mod)
+#OUTPUT    = dtpcompatdummyoutgrandchildpredtpmod.mod
+#ENDCMD
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)dtpCompatDummyOutGrandChildPostDTP.f
+#OUTPUT    = dtpCompatDummyOutGrandChildPostDTP$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = dtpCompatDummyOutGrandChildPostDTP$(OBJ) $($(tcasedir)dtpCompatDummyOutGrandChildPreDTP.121$(Q32_64_MODE)$(product)$(OBJ))
+#OUTPUT    = dtpCompatDummyOutGrandChild$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpCompatDummyOutGrandChild$(EXE)
+#STDOUT    = dtpCompatDummyOutGrandChild.out
+#STDERR    = dtpCompatDummyOutGrandChild.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpCompatDummyOutGrandChild$(product)vf) dtpCompatDummyOutGrandChild.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

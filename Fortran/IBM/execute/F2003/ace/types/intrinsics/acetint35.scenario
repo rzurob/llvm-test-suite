@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint35.scenario
+#FEATURE	= Array constructor enhancement intrinsic AC's in static initialisation
+#CREATOR	= DF Manual Update
+#DATE		= 20061114
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint35.f
+#OUTPUT		= acetint35$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint35$(OBJ)
+#OUTPUT		= acetint35$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint35$(EXE)
+#STDOUT		= acetint35.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -r1e-5
+#INPUT		= $(tcasedir)acetint35.vf acetint35.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

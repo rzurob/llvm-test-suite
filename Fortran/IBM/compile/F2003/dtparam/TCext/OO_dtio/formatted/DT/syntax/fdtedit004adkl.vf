@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"fdtedit004adkl.f", line 72.14: 1512-142 (E) The v-list of the DT edit descriptor does not contain any values.  The v-list is ignored.
+"fdtedit004adkl.f", line 82.19: 1512-142 (E) The v-list of the DT edit descriptor does not contain any values.  The v-list is ignored.
+** fdtedit004adkl   === End of Compilation 2 ===
+** readformatted   === End of Compilation 3 ===
+** writeformatted   === End of Compilation 4 ===
+1501-510  Compilation successful for file fdtedit004adkl.f.

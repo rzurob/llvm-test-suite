@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/assignment/intrinsic/alloc/dtpIAAArrayFunction007e.scenario
+#FEATURE   = Intrinsic Assignment with Allocation - assign allocated DTP (container) with allocatable components returned from elemental functions
+#CREATOR   = DF Manual Update
+#DATE      = 20090522
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAAArrayFunction007e.f
+#OUTPUT    = dtpIAAArrayFunction007e$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAAArrayFunction007e$(OBJ)
+#OUTPUT    = dtpIAAArrayFunction007e$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAAArrayFunction007e$(EXE)
+#STDOUT    = dtpIAAArrayFunction007e.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpIAAArrayFunction007e$(product)vf) dtpIAAArrayFunction007e.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

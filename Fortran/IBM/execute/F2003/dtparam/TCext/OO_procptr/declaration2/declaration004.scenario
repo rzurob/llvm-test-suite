@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_procptr/declaration2/declaration004.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_procptr/*
+#DATE      = 20071012
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)declaration004.f
+#OUTPUT    = declaration004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = declaration004$(OBJ)
+#OUTPUT    = declaration004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = declaration004$(EXE)
+#STDOUT    = declaration004.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)declaration004$(product)vf) declaration004.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

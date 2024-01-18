@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/scalarExpr/varIsArrSectExprIsScalar03.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071220
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)varIsArrSectExprIsScalar03.f
+#OUTPUT		= varIsArrSectExprIsScalar03$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= varIsArrSectExprIsScalar03$(OBJ)
+#OUTPUT		= varIsArrSectExprIsScalar03$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= varIsArrSectExprIsScalar03$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

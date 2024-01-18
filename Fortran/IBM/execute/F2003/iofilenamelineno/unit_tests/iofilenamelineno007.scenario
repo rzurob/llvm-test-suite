@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=iofilenamelineno007.scenario
+#FEATURE = Display file name and line no. for I/O failures
+#CREATOR = Michael Selvanayagam
+#DATE    = 20070301
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)iofilenamelineno007.f
+#OUTPUT    = ./
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = iofilenamelineno007.f
+#STDERR    = iofilenamelineno007.err
+#OUTPUT    = iofilenamelineno007$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = iofilenamelineno007$(OBJ)
+#OUTPUT    = iofilenamelineno007$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = iofilenamelineno007$(EXE)
+#STDERR    = iofilenamelineno007.err
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = iofilenamelineno007.err $($(tcasedir)iofilenamelineno007$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

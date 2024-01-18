@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/dtSpec/dtparamValConvert001.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamValConvert001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamValConvert001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dtparamValConvert001$(OBJ)
+#OUTPUT    = dtparamValConvert001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamValConvert001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

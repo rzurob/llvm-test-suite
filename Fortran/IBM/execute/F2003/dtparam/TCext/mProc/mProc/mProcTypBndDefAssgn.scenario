@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mProc/mProc/mProcTypBndDefAssgn.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mProc/*
+#DATE      = 20071106
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)mProcTypBndDefAssgn.f
+#OUTPUT= mProcTypBndDefAssgn$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  mProcTypBndDefAssgn$(OBJ)
+#OUTPUT= mProcTypBndDefAssgn$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  mProcTypBndDefAssgn$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

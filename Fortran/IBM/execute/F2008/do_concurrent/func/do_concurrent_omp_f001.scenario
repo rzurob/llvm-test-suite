@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME = F2008/do_concurrent/func/do_concurrent_omp_f001.scenario
+#FEATURE = RTC 17293 - F2008: DO CONCURRENT construct
+#CREATOR = Nicole Negherbon
+#DATE    = August 12, 2015
+#REFERENCE = /tst91/wkshare/unit/fxssc006.scenario
+#TEST_TYPE = functional
+#KEYWORDS = DO CONCURRENT, OMP WORKSHARE
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF2008_R_COMPILE
+#OPTS      = $(OPT_OPTIMIZE_FOR_SMP)
+#INPUT     = $(tcasedir)do_concurrent_omp_f001.f
+#OUTPUT    = do_concurrent_omp_f001$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2008_R_LINK
+#OPTS      = $(OPT_OPTIMIZE_FOR_SMP)
+#INPUT     = do_concurrent_omp_f001$(OBJ)
+#OUTPUT    = do_concurrent_omp_f001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = do_concurrent_omp_f001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

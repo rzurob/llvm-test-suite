@@ -1,0 +1,20 @@
+ This is OMP_SET_NUM_THREADS called with num_thread =  10
+ This is OMP_SET_DYNAMIC called with value =  T
+ This is OMP_SET_NESTED called with value =  T
+ This is OMP_GET_NUM_THREADS
+ This is OMP_GET_MAX_THREADS
+ This is OMP_GET_THREAD_NUM
+ This is OMP_GET_NUM_PROCS
+ This is OMP_IN_PARALLEL
+ This is OMP_GET_DYNAMIC
+ This is OMP_GET_NESTED
+ This is OMP_INIT_LOCK called with value =  511
+ This is OMP_SET_LOCK called with value =  511
+ This is OMP_UNSET_LOCK called with value =  511
+ This is OMP_DESTROY_LOCK called with value =  511
+ This is OMP_TEST_LOCK called with value =  511
+ This is OMP_INIT_NEST_LOCK called with value =  611
+ This is OMP_SET_NEST_LOCK called with value =  611
+ This is OMP_UNSET_NEST_LOCK called with value =  611
+ This is OMP_DESTROY_NEST_LOCK called with value =  611
+ This is OMP_TEST_NEST_LOCK called with value =  611

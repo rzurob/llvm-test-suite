@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/ieee_underflow/mode/underflowMode2.f
+#FEATURE = 289080
+#CREATOR = Nancy Wang
+#DATE    = Nov. 15 2007
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT=cbe_spu
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)underflowMode2.f
+#OUTPUT    = underflowMode2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = underflowMode2$(OBJ)
+#OUTPUT    = underflowMode2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = underflowMode2$(EXE)
+#ENDCMD
+#ENDCONTROL
+
+#ENDSCENARIO

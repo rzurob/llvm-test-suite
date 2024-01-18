@@ -1,0 +1,86 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       fcompOptions
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2003_COMPILE
+#OPTS=   -qsaveopts
+#INPUT=  $(tcasedir)fcompOptions.f
+#OUTPUT= fcompOptions$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2003_LINK
+#OPTS=   -qsaveopts
+#INPUT=  fcompOptions$(OBJ)
+#OUTPUT= fcompOptions$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fcompOptions$(EXE)
+#STDOUT= fcompOptions.out
+#ENDCMD
+
+#CMD =  GREP
+#INPUT = fcompOptions.out
+#IF  XOPTS == ()
+ #OPTS = "\-qsaveopts"
+#ELSE
+ #OPTS  = "\$(?XOPTS)"
+#ENDIF
+#STDOUT = fcompOptions.output
+#ENDCMD
+
+#CMD      = STRINGS
+#OPTS     = -a
+#IF in($(F_COMPILE^LINK_TIME_OPTIMIZATION)) || in($(F_COMPILE^OPT_OPTIMIZE_LEVEL<4>)) || in($(F_COMPILE^OPT_OPTIMIZE_LEVEL<5>))
+  #INPUT  = fcompOptions$(EXE)
+#ELSE
+  #INPUT  = fcompOptions$(OBJ)
+#ENDIF
+#STDOUT   = fcompOptions.strings
+#ENDCMD
+
+#CMD            = FGREP
+#IF  XOPTS == ()
+ #OPTS           = -e "-qsaveopts"
+#ELSE
+ #OPTS           = -e "$(?XOPTS)"
+#ENDIF
+#INPUT          = fcompOptions.strings
+#STDOUT         = fcompOptions1.output
+#ENDCMD
+
+#CMD    = SED
+#OPTS   = -e 's!$(tcasedir)fcompOptions.f! !g'  -e 's!.*@! @!g'
+#INPUT  = fcompOptions1.output
+#STDOUT = fcompOptions1.sed.1
+#ENDCMD
+
+! Adding this sed line to remove the duplicate lines
+#CMD    = SED
+#OPTS   = -e '$!N; /^\(.*\)\n\1$/!P; D'
+#INPUT  = fcompOptions1.sed.1
+#STDOUT = fcompOptions1.sed
+#ENDCMD
+
+#CMD    = SED
+#OPTS   = -e 's!$(tcasedir)fcompOptions.f! !g'
+#INPUT  = fcompOptions.output
+#STDOUT = fcompOptions.sed
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT = fcompOptions.sed fcompOptions1.sed
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/C401/alloc006.scenario
+#FEATURE   = OO_type tests - regression run bucket
+#CREATOR   = GB copy from OO_type/abstract/C401/alloc006.scenario
+#DATE      = 20070426
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)alloc006.f
+#OPTS      = -qdebug=intmsg:shutup
+#OUTPUT    = alloc006$(OBJ)
+#STDERR    = alloc006.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)alloc006$(product)vf) alloc006.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

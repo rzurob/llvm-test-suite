@@ -1,0 +1,12 @@
+"dtParamTypParamC434.f", line 47.25: 1514-685 (S) Identifier l is not a type parameter. l must not have the KIND attribute.
+"dtParamTypParamC434.f", line 51.24: 1514-685 (S) Identifier k is not a type parameter. k must not have the LEN attribute.
+"dtParamTypParamC434.f", line 55.22: 1514-685 (S) Identifier l is not a type parameter. l must not have the KIND attribute.
+"dtParamTypParamC434.f", line 59.22: 1514-685 (S) Identifier k is not a type parameter. k must not have the KIND attribute.
+"dtParamTypParamC434.f", line 63.22: 1514-685 (S) Identifier i is not a type parameter. i must not have the KIND attribute.
+"dtParamTypParamC434.f", line 66.29: 1514-727 (S) Type parameter k is not permitted. k is the name of a type parameter that is inherited from type dt0.
+"dtParamTypParamC434.f", line 73.20: 1514-683 (S) Identifier k appearing as a component of derived type dt7 has already been defined as a component, binding, or type parameter of the same derived type.
+"dtParamTypParamC434.f", line 77.25: 1514-685 (S) Identifier k is not a type parameter. k must not have the KIND attribute.
+"dtParamTypParamC434.f", line 81.15: 1515-019 (S) Syntax is incorrect.
+"dtParamTypParamC434.f", line 82.3: 1515-019 (S) Syntax is incorrect.
+** dtparamtypparamc435   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtParamTypParamC434.f.

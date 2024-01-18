@@ -1,0 +1,49 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/coarray/stop/cnst_expr/stop_f2008caf_12f.scenario
+#FEATURE   = Constant expression as stop code in STOP statement
+#CREATOR   = Shahid Alam
+#DATE      = 20101026
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)stop_f2008caf_10f.f
+#OUTPUT    = stop_f2008caf_12f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = stop_f2008caf_12f$(OBJ)
+#OUTPUT    = stop_f2008caf_12f$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#ENVAR     = XLFRTEOPTS=$(XLFRTEOPTS):errimagenum=yes
+#INPUT     = stop_f2008caf_12f$(EXE)
+#STDOUT    = stop_f2008caf_12f.out
+#STDERR    = stop_f2008caf_12f.out
+#ENDCMD
+
+#CMD       = GREP
+#OPTS      = "Result: 34"
+#INPUT     = stop_f2008caf_12f.out
+#ENDCMD
+
+#CMD       = GREP
+#OPTS      = "<Image .*> STOP 9"
+#INPUT     = stop_f2008caf_12f.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

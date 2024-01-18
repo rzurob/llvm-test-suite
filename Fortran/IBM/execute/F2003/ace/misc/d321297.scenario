@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/misc/d321297.scenario
+#FEATURE	= INQUIRE: Defect #321297: "F2003: ICE: INQUIRE with many specifiers"
+#CREATOR	= DF Manual Update
+#DATE		= 20061006
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)d321297.f
+#OUTPUT		= d321297$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= d321297$(OBJ)
+#OUTPUT		= d321297$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= d321297$(EXE)
+#ENDCMD
+
+! Too many INQUIRE results are processor-dependent for us to check reliably
+
+#ENDCONTROL
+#ENDSCENARIO

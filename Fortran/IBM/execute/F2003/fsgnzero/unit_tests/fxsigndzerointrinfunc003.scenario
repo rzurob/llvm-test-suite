@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=fxsigndzerointrinfunc003.scenario
+#FEATURE = functional testing of signed zeros as args to ATAN2, LOG and SQRT intrinsics
+#CREATOR = Michael Selvanayagam
+#DATE    = 20050826
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)fxsigndzerointrinfunc003.f
+#OPTS      = -qxlf2003=signdzerointr
+#OUTPUT    = fxsigndzerointrinfunc003$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = -qxlf2003=signdzerointr
+#INPUT     = fxsigndzerointrinfunc003$(OBJ)
+#OUTPUT    = fxsigndzerointrinfunc003$(EXE)
+#ENDCMD
+
+
+#CMD       = RUN
+#INPUT     = fxsigndzerointrinfunc003$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

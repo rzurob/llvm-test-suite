@@ -1,0 +1,14 @@
+ in sub1: lbound =  17
+ in sub1: ubound =  117
+ in sub1: modInt =  100
+ in sub2: lbound =  7
+ in sub2: ubound =  107
+ in sub2: arg4 = helloworld
+ in sub2: modInt =  101
+ in sub3: lbound =  7
+ in sub3: ubound =  107
+ in sub3: arg3%i =  1.000000000
+ in sub3: modInt =  102
+ in sub4: modInt =  103
+ in sub5: modInt =  104
+ in sub6: modInt =  102

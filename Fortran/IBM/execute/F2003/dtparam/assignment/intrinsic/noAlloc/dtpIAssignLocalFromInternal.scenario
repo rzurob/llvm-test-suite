@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpIAssignLocalFromInternal.scenario
+#FEATURE   = Intrinsic Assignment without Allocation - assign to local variables in internal subprogram
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAssignLocalFromInternal.f
+#OUTPUT    = dtpIAssignLocalFromInternal$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAssignLocalFromInternal$(OBJ)
+#OUTPUT    = dtpIAssignLocalFromInternal$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAssignLocalFromInternal$(EXE)
+#STDOUT    = dtpIAssignLocalFromInternal.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpIAssignLocalFromInternal$(product)vf) dtpIAssignLocalFromInternal.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

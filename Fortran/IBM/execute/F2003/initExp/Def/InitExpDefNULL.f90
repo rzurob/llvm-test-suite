@@ -1,0 +1,119 @@
+!*********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : InitExpDefNULL.f  
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Mar 29, 2006
+!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*
+!*  SECONDARY FUNCTIONS TESTED : 
+!*
+!*  REFERENCE                  : Feature Number 289074 
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  : -qfree=f90
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*
+!*  
+!*  a reference to an tranformational intrinsic
+!* 
+!*  - NULL 
+!*  (319366)
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+
+  PROGRAM  InitExpDefNULL 
+  IMPLICIT NONE
+  INTEGER :: I, J, K
+
+  TYPE :: DTI
+    INTEGER(1), ALLOCATABLE :: I1
+    INTEGER(2), POINTER     :: I2 => NULL()
+    INTEGER(4), ALLOCATABLE :: I4
+    INTEGER(8), POINTER     :: I8 => NULL()
+  END TYPE
+
+  TYPE(DTI), PARAMETER :: T1=DTI(I1=NULL(), I4=NULL())
+
+  TYPE(DTI) :: TI=DTI(NULL(T1%I1), NULL(T1%I2), NULL(T1%I4), NULL(T1%I8) )
+
+  TYPE :: DTL
+    LOGICAL(1), ALLOCATABLE :: L1
+    LOGICAL(2), POINTER     :: L2 => NULL()
+    LOGICAL(4), ALLOCATABLE :: L4
+    LOGICAL(8), POINTER     :: L8 => NULL()
+  END TYPE
+
+  TYPE(DTL), PARAMETER :: T2=DTL(L1=NULL(), L4=NULL())
+
+  TYPE(DTL) :: TL=DTL(NULL(T2%L1), NULL(T2%L2), NULL(T2%L4), NULL(T2%L8) )
+
+  TYPE :: DTR
+    REAL(4), ALLOCATABLE :: R4
+    REAL(8), POINTER     :: R8 => NULL()
+    REAL(16),ALLOCATABLE :: R16
+  END TYPE
+
+  TYPE(DTR), PARAMETER :: T3=DTR(R4=NULL(), R16=NULL())
+
+  TYPE(DTR) :: TR=DTR(R4=NULL(T3%R4), R16=NULL(T3%R16) )
+
+  TYPE :: DTZ
+    COMPLEX(4), ALLOCATABLE :: Z4
+    COMPLEX(8), POINTER     :: Z8 => NULL()
+    COMPLEX(16),ALLOCATABLE :: Z16
+  END TYPE
+
+  TYPE(DTZ), PARAMETER :: T4=DTZ(Z4=NULL(), Z16=NULL())
+
+  TYPE(DTZ) :: TZ=DTZ(Z4=NULL(T4%Z4), Z16=NULL(T4%Z16) )
+
+  TYPE :: DTC
+    CHARACTER(4), ALLOCATABLE :: C4
+    CHARACTER(8), POINTER     :: C8 => NULL()
+  END TYPE
+
+  TYPE(DTC), PARAMETER :: T5=DTC(C4=NULL())
+
+  TYPE(DTC) :: TC=DTC(C4=NULL(T5%C4), C8=NULL(T5%C8) )
+
+
+  IF ( ALLOCATED (TI%I1) )       STOP 11
+  IF ( ASSOCIATED(TI%I2) )       STOP 12
+  IF ( ALLOCATED (TI%I4) )       STOP 13
+  IF ( ASSOCIATED(TI%I8) )       STOP 14
+
+  IF ( ALLOCATED (TL%L1) )       STOP 21
+  IF ( ASSOCIATED(TL%L2) )       STOP 22
+  IF ( ALLOCATED (TL%L4) )       STOP 23
+  IF ( ASSOCIATED(TL%L8) )       STOP 24
+
+  IF ( ALLOCATED (TR%R4) )       STOP 31
+  IF ( ASSOCIATED(TR%R8) )       STOP 32
+  IF ( ALLOCATED (TR%R16))       STOP 33
+
+  IF ( ALLOCATED (TZ%Z4) )       STOP 41
+  IF ( ASSOCIATED(TZ%Z8) )       STOP 42
+  IF ( ALLOCATED (TZ%Z16))       STOP 43
+
+  IF ( ALLOCATED (TC%C4) )       STOP 51
+  IF ( ASSOCIATED(TC%C8) )       STOP 52
+
+
+
+  END
+
+
+ 

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint59c.scenario
+#FEATURE	= Array constructor enhancement self-referential assignment, including array sections (characters)
+#CREATOR	= DF Manual Update
+#DATE		= 20061124
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint59c.f
+#OUTPUT		= acetint59c$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint59c$(OBJ)
+#OUTPUT		= acetint59c$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint59c$(EXE)
+#STDOUT		= acetint59c.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetint59c$(product)vf) acetint59c.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

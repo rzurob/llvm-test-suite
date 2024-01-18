@@ -1,0 +1,61 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = decimaleditf034.scenario
+#FEATURE = functional test for decimal edit mode introduced in F2003 std.
+#CREATOR = Bardia Mahjour - fixed CPR 20090121
+#DATE    = 20060104
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)decimaleditf034.f
+#OPTS      = -Q -O -lxlfzz2
+#OUTPUT    = decimaleditf034$(OBJ)
+#VALIDRCS  = 0
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#INPUT     = decimaleditf034$(OBJ)
+#OUTPUT    = decimaleditf034$(EXE)
+#ENDCMD
+
+#CMD       = DELETE
+#OPTS      = -f
+#INPUT     = decimaleditf034.out
+#ENDCMD
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)decimaleditf034.std*
+#OUTPUT    = ./
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = decimaleditf034$(EXE)
+#OPTS      = decimaleditf034.out
+#STDERR    = decimaleditf034.stderr
+#STDOUT    = decimaleditf034.stdout
+#STDIN     = decimaleditf034.stdin
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = decimaleditf034.out $($(tcasedir)decimaleditf034a$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = decimaleditf034.stderr $($(tcasedir)decimaleditf034b$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = decimaleditf034.stdout $($(tcasedir)decimaleditf034b$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

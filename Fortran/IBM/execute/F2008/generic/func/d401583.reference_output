@@ -1,0 +1,5 @@
+ 999
+    inside assgn_alloc()  x%i= 1009   y%i= 999
+ 1009
+    inside assgn_ptr()  x%i= 899   y%i= 999
+ 899

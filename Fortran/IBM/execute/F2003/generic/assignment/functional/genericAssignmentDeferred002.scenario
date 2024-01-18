@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/assignment/functional/genericAssignmentDeferred002.scenario
+#FEATURE = generic tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericAssignmentDeferred002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericAssignmentDeferred002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericAssignmentDeferred002$(OBJ)
+#OUTPUT    = genericAssignmentDeferred002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericAssignmentDeferred002$(EXE)
+#STDOUT    = genericAssignmentDeferred002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericAssignmentDeferred002.out $(tcasedir)genericAssignmentDeferred002.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

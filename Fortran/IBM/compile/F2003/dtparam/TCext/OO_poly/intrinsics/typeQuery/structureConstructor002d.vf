@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"structureConstructor002d.f", line 43.30: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "extends_type_of".
+"structureConstructor002d.f", line 43.30: 1514-644 (S) The MOLD argument to the intrinsic procedure EXTENDS_TYPE_OF must be of an extensible type.
+"structureConstructor002d.f", line 44.27: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "same_type_as".
+"structureConstructor002d.f", line 44.27: 1514-644 (S) The B argument to the intrinsic procedure SAME_TYPE_AS must be of an extensible type.
+** structureconstructor002d   === End of Compilation 2 ===
+1501-511  Compilation failed for file structureConstructor002d.f.

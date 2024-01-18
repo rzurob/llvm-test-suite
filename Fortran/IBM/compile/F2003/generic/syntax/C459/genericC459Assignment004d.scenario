@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/syntax/C459/genericC459Assignment004d.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericC459Assignment004d.f
+#OUTPUT    = genericC459Assignment004d$(OBJ)
+#STDERR    = genericC459Assignment004d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = genericC459Assignment004d.err $($(tcasedir)genericC459Assignment004d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

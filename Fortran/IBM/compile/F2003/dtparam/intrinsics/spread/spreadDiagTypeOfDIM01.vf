@@ -1,0 +1,8 @@
+** m   === End of Compilation 1 ===
+"spreadDiagTypeOfDIM01.f", line 43.23: 1513-040 (S) The argument DIM must be a scalar.
+"spreadDiagTypeOfDIM01.f", line 44.23: 1513-040 (S) The argument DIM must be a scalar.
+"spreadDiagTypeOfDIM01.f", line 45.23: 1513-131 (S) DIM must be a scalar of type integer.
+"spreadDiagTypeOfDIM01.f", line 46.23: 1513-131 (S) DIM must be a scalar of type integer.
+"spreadDiagTypeOfDIM01.f", line 47.23: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "spread".
+** spreaddiagtypeofdim01   === End of Compilation 2 ===
+1501-511  Compilation failed for file spreadDiagTypeOfDIM01.f.

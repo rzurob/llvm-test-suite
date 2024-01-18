@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/generic/operator/functional/genericOperatorPass009.scenario
+#FEATURE   =
+#CREATOR   = Gaby Baghdadi (for defect 345243)
+#DATE      = 20080102
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericOperatorPass009.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericOperatorPass009$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericOperatorPass009$(OBJ)
+#OUTPUT    = genericOperatorPass009$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericOperatorPass009$(EXE)
+#STDOUT    = genericOperatorPass009.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericOperatorPass009.out $(tcasedir)genericOperatorPass009.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

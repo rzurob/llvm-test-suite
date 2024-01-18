@@ -1,0 +1,15 @@
+"dataPtrSyntax1.f", line 58.3: 1516-025 (S) Too few subscripts specified for array t%iptr1.
+"dataPtrSyntax1.f", line 60.3: 1513-251 (S) The number of dimensions specified in the pointer lower bounds specification or bounds remapping list must be equal to the rank of the pointer.
+"dataPtrSyntax1.f", line 62.3: 1513-251 (S) The number of dimensions specified in the pointer lower bounds specification or bounds remapping list must be equal to the rank of the pointer.
+"dataPtrSyntax1.f", line 64.3: 1513-251 (S) The number of dimensions specified in the pointer lower bounds specification or bounds remapping list must be equal to the rank of the pointer.
+"dataPtrSyntax1.f", line 67.3: 1513-251 (S) The number of dimensions specified in the pointer lower bounds specification or bounds remapping list must be equal to the rank of the pointer.
+"dataPtrSyntax1.f", line 69.3: 1513-251 (S) The number of dimensions specified in the pointer lower bounds specification or bounds remapping list must be equal to the rank of the pointer.
+"dataPtrSyntax1.f", line 71.3: 1513-251 (S) The number of dimensions specified in the pointer lower bounds specification or bounds remapping list must be equal to the rank of the pointer.
+"dataPtrSyntax1.f", line 73.3: 1513-251 (S) The number of dimensions specified in the pointer lower bounds specification or bounds remapping list must be equal to the rank of the pointer.
+"dataPtrSyntax1.f", line 75.3: 1513-251 (S) The number of dimensions specified in the pointer lower bounds specification or bounds remapping list must be equal to the rank of the pointer.
+"dataPtrSyntax1.f", line 77.3: 1513-251 (S) The number of dimensions specified in the pointer lower bounds specification or bounds remapping list must be equal to the rank of the pointer.
+"dataPtrSyntax1.f", line 79.3: 1513-251 (S) The number of dimensions specified in the pointer lower bounds specification or bounds remapping list must be equal to the rank of the pointer.
+"dataPtrSyntax1.f", line 81.3: 1513-251 (S) The number of dimensions specified in the pointer lower bounds specification or bounds remapping list must be equal to the rank of the pointer.
+"dataPtrSyntax1.f", line 83.3: 1514-638 (S) In the structure component reference, part-name iptr1 must not have the POINTER attribute if it is to the right of a part-ref with non-zero rank.
+** dataptrsyntax1   === End of Compilation 1 ===
+1501-511  Compilation failed for file dataPtrSyntax1.f.

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/dtDef/dtParamTypeDefSeq5_.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtParamTypeDefSeq5_.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtParamTypeDefSeq5_$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtParamTypeDefSeq5_$(OBJ)
+#OUTPUT    = dtParamTypeDefSeq5_$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtParamTypeDefSeq5_$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

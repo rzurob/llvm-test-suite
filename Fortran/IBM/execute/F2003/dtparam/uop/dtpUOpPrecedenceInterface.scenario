@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpPrecedenceInterface.scenario
+#FEATURE   = User-Defined Operators - correct pairings of operators and operands, given precedence - all same type (generic interface)
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpPrecedenceInterface.f
+#OUTPUT    = dtpUOpPrecedenceInterface$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpPrecedenceInterface$(OBJ)
+#OUTPUT    = dtpUOpPrecedenceInterface$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpPrecedenceInterface$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

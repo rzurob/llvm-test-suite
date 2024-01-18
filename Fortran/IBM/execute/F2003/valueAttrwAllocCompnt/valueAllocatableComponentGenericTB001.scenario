@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/home/robertma/tc/F2003/valueAttrDTwAllocatableComponents/valueAllocatableComponentGenericTB001.scenario
+#FEATURE = value attribute with DT containing allocatable components test cases
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)valueAllocatableComponentGenericTB001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = valueAllocatableComponentGenericTB001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = valueAllocatableComponentGenericTB001$(OBJ)
+#OUTPUT    = valueAllocatableComponentGenericTB001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = valueAllocatableComponentGenericTB001$(EXE)
+#STDOUT    = valueAllocatableComponentGenericTB001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = valueAllocatableComponentGenericTB001.out $(tcasedir)valueAllocatableComponentGenericTB001.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

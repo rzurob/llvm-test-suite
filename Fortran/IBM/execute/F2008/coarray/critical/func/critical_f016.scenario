@@ -1,0 +1,45 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/coarray/critical/func/critical_f016.scenario
+#FEATURE    = 381021
+#CREATOR    = Francesco Cassullo
+#DATE       = Feb 2011
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD     = F_COMPILE
+#INPUT   = $(tcasedir)critical_f016.f
+#OPTS    = $(OPT_COARRAY_IMAGES<4>) $(OPT_COARRAY_DNODES<4>)
+#OUTPUT  = critical_f016$(OBJ)
+#ENDCMD
+
+#CMD     = F_LINK
+#INPUT   = critical_f016$(OBJ)
+#OPTS    = $(OPT_COARRAY_IMAGES<4>) $(OPT_COARRAY_DNODES<4>)
+#OUTPUT  = critical_f016$(EXE)
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD     = RUN
+	#ENVAR   = CAF_NUM_IMAGES=4
+     #ENVAR   = MP_PROCS=4
+	#INPUT   = critical_f016$(EXE)
+	#STDOUT  = critical_f016$(i).out
+	#ENDCMD
+	
+	#CMD     = DIFF
+	#INPUT   = $($(tcasedir)critical_f016$(product)vf) critical_f016$(i).out
+	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

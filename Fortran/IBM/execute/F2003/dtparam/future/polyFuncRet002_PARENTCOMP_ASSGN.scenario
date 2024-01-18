@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/funcResult/polyFuncRet002_PARENTCOMP_ASSGN.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071220
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)polyFuncRet002_PARENTCOMP_ASSGN.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = polyFuncRet002_PARENTCOMP_ASSGN$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = polyFuncRet002_PARENTCOMP_ASSGN$(OBJ)
+#OUTPUT    = polyFuncRet002_PARENTCOMP_ASSGN$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = polyFuncRet002_PARENTCOMP_ASSGN$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/unit_tests/ptrassign009d.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071217
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ptrassign009d.f
+#OPTS      = -qxlf2003=polymorphic
+#STDERR    = ptrassign009d.err
+#OUTPUT    = ptrassign009d$(OBJ)
+#VALIDRCS  = 1
+#ENDCMD
+
+
+#CMD       = XLDIFF
+#INPUT     = ptrassign009d.err $($(tcasedir)ptrassign009d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

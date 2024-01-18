@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/crossFeature/associate/associate008.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/abstract/crossFeature/associate/associate008.scenario
+#DATE      = 20070612
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)associate008.f
+#OUTPUT    = associate008$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = associate008$(OBJ)
+#OUTPUT    = associate008$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = associate008$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

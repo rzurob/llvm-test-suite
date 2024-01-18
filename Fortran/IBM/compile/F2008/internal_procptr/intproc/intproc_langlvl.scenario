@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      intproc_langlvl.f
+#FEATURE=
+#CREATOR=   Feng Ye
+#DATE=      11-04-27
+#TEST_TYPE= DIAGNOSTIC
+#KEYWORDS=  F2008, internal procedure, dummy, procedure pointer target
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=      F_COMPILE
+#INPUT=    $(tcasedir)intproc_langlvl.f
+#OPTS =    $(OPT_SET_LANG_LEVEL<2003std>) $(OPT_ENABLE_MSG_NUM<1518-317>)
+#STDERR=   intproc_langlvl.err
+!#VALIDRCS= $(RC_FAIL)
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    intproc_langlvl.err $($(tcasedir)intproc_langlvl$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+
+

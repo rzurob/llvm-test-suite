@@ -1,0 +1,94 @@
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE TITLE            : Generic_TypeBound_diag07
+!*                               DTP - Generic Type-Bound
+!*
+!*  PROGRAMMER                 : Dorra Bouchiha 
+!*  DATE                       : October 02, 2008
+!*  ORIGIN                     : AIX Compiler Development,
+!*                             : IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY SUBROUTINES TESTED   : Generic Resolution - Derived-type parameters
+!*  SECONDARY SUBROUTINES TESTED : distinguish by name using PASS  
+!*                     
+!*
+!*  DRIVER STANZA              : xlf2003
+!*  REQUIRED COMPILER OPTIONS  : 
+!*
+!*  KEYWORD(S)                 : GENERIC
+!*
+!*  DESCRIPTION                :
+!*
+!*  R448 type-bound-procedure-part is contains-stmt
+!*                                     [ binding-private-stmt ]
+!*                                     proc-binding-stmt
+!*                                     [ proc-binding-stmt ] ...
+!*
+!*  R450 proc-binding-stmt is specific-binding
+!*                         or generic-binding
+!*                         or final-binding
+!*
+!*  R451 specific-binding is PROCEDURE [ (interface-name) ] &
+!*                                    & [ [, binding-attr -list ] :: ] &
+!*                                    & binding-name [ => procedure-name ]
+!*
+!*  R452 generic-binding is GENERIC [, access-spec ] :: generic-spec => binding-name-list
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+      MODULE Mod1
+      IMPLICIT NONE 
+
+      TYPE Base  (k,l)
+        INTEGER, KIND :: k
+        INTEGER, LEN :: l 
+      END TYPE Base 
+
+      TYPE, EXTENDS(Base) :: Child1 (k1)
+        INTEGER, KIND :: k1 
+
+        CONTAINS 
+         PROCEDURE, PASS(Arg0) :: sub1      
+         PROCEDURE, PASS(Arg0) :: sub2
+         GENERIC :: SUB =>  sub2, sub1
+      END TYPE Child1 
+
+      TYPE, EXTENDS(Base) :: Child2 (k2)
+        INTEGER, KIND :: k2 
+      END TYPE Child2 
+
+
+      CHARACTER(10) :: tag
+
+      CONTAINS 
+!*
+      SUBROUTINE sub1(Arg0,Arg1,Arg2,Arg3)
+      CLASS(Child1(4,*,4)) :: Arg0, Arg2
+      CLASS(Child2(4,*,4)) :: Arg1, Arg3
+
+      IF (Arg0%k .NE. Arg2%k) STOP 10
+      IF (Arg1%k .NE. Arg3%k) STOP 11
+
+      tag ="1"
+
+      END SUBROUTINE sub1
+
+      SUBROUTINE sub2(Arg1,Arg0,Arg3,Arg2)
+      CLASS(Child1(4,*,4)) :: Arg0, Arg3 
+      CLASS(Child2(4,*,4)) :: Arg1, Arg2
+
+      IF (Arg0%k .NE. Arg3%k) STOP 12
+      IF (Arg1%k .NE. Arg2%k) STOP 13
+
+      tag ="2"
+
+      END SUBROUTINE sub2
+
+      END MODULE Mod1
+!*
+      PROGRAM Generic_TypeBound_diag07
+
+      !call b41%sub(b81, b42, b82)  !possible call to sub1 and sub2
+
+      END PROGRAM Generic_TypeBound_diag07

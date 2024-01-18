@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"fdtio001d.f", line 80.21: 1513-038 (S) Assumed-size array is not permitted in this context.
+** fdtio001d   === End of Compilation 2 ===
+1501-511  Compilation failed for file fdtio001d.f.

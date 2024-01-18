@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/assignment/functional/genericAssignmentUnlimitedPoly002.scenario
+#FEATURE = generic tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericAssignmentUnlimitedPoly002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericAssignmentUnlimitedPoly002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericAssignmentUnlimitedPoly002$(OBJ)
+#OUTPUT    = genericAssignmentUnlimitedPoly002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericAssignmentUnlimitedPoly002$(EXE)
+#STDOUT    = genericAssignmentUnlimitedPoly002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericAssignmentUnlimitedPoly002.out $(tcasedir)genericAssignmentUnlimitedPoly002.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

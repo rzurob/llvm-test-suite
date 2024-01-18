@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"ffuncRet004d1.f", line 82.14: 1512-138 (S) A polymorphic entity must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+** ffuncret004d1   === End of Compilation 2 ===
+1501-511  Compilation failed for file ffuncRet004d1.f.

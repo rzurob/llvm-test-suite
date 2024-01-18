@@ -1,0 +1,57 @@
+!#######################################################################
+! SCCS ID Information
+! %W%, %I%
+! Extract Date/Time: %D% %T%
+! Checkin Date/Time: %E% %U%
+!#######################################################################
+! *********************************************************************
+!*  =================================================================== 
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
+!*  =================================================================== 
+!*  =================================================================== 
+!*
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Jim Xia
+!*  DATE                       : 04/11/2005
+!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
+!*
+!*
+!*  DESCRIPTION                : specific type bound (section 12.7.3: elemental
+!                               subroutine and INTENT(OUT) dummy-arg)
+!*
+!*
+!*
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+module m
+    type base
+        integer(4) :: id
+
+        contains
+
+        procedure :: assgn => assgnBase
+    end type
+
+    contains
+
+    elemental subroutine assgnBase (b, b1)
+        class (base), intent(out) :: b
+        class (base), intent(in) :: b1
+
+        b%id = b1%id
+    end subroutine
+
+end module
+
+program ftpbnd505d
+use m
+    type (base) :: b3(10), b4(10)
+
+    b4 = (/(base(i), i=2,11)/)
+
+    call b3(1)%assgn(b4)        !<-- this is an invalid call
+
+    call assgnBase (b3(1), b4)  !<-- this is an invalid call
+end

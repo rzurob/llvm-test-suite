@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"C811ArrBnd.f", line 87.21: 1514-088 (S) Invalid component name.
+"C811ArrBnd.f", line 90.17: 1511-106 (S) The selector in the SELECT TYPE statement is not a named variable.  An associate name should appear.
+** c811arrbnd   === End of Compilation 2 ===
+1501-511  Compilation failed for file C811ArrBnd.f.

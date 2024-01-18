@@ -1,0 +1,9 @@
+"kindArgMaxloc.f", line 49.37: 1513-133 (S) KIND must be an integer constant.
+"kindArgMaxloc.f", line 50.46: 1513-040 (S) The argument KIND must be a scalar.
+"kindArgMaxloc.f", line 52.43: 1513-040 (S) The argument KIND must be a scalar.
+"kindArgMaxloc.f", line 54.25: 1513-133 (S) KIND must be an integer constant.
+"kindArgMaxloc.f", line 55.25: 1513-133 (S) KIND must be an integer constant.
+"kindArgMaxloc.f", line 56.25: 1513-133 (S) KIND must be an integer constant.
+"kindArgMaxloc.f", line 57.25: 1513-133 (S) KIND must be an integer constant.
+** kindargmaxloc   === End of Compilation 1 ===
+1501-511  Compilation failed for file kindArgMaxloc.f.

@@ -1,0 +1,42 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = streamio/misc/fxstio308.scenario
+#FEATURE   = streamio tests - regression run bucket
+#CREATOR   = automated conversion script
+#DATE      = 20081130
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#IF on(aix)
+	#CMD    = XLC_COMPILE
+	#INPUT  = $(tcasedir)cxstio308.c
+	#OUTPUT = cxstio308$(OBJ)
+	#OPTS   = $(C_COMPILER_OPTS)
+	#ENDCMD
+#ELSE
+	#CMD    = GCC_COMPILE
+	#INPUT  = $(tcasedir)cxstio308.c
+	#OUTPUT = cxstio308$(OBJ)
+	#OPTS   = $(GCC_COMPILER_OPTS)
+	#ENDCMD
+#ENDIF
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)fxstio308.f
+#OUTPUT = fxstio308$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = fxstio308$(OBJ) cxstio308$(OBJ)
+#OUTPUT = fxstio308$(EXE)
+#ENDCMD
+
+#CMD 	= RUN
+#INPUT 	= fxstio308$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,15 @@
+ &MYNML
+ RL1=NaN(S), I1=11, RL2=Inf, C1=IBM, RL3=NaN(S), I2=22, RL4=-Inf, C2=xlf
+ /
+ &MYNML
+ RL1=NaN(Q), I1=11, RL2=Inf, C1=IBM, RL3=NaN(Q), I2=22, RL4=-Inf, C2=xlf
+ /
+ &MYNML
+ RL1=NaN(Q), I1=11, RL2=Inf, C1=IBM, RL3=NaN(S), I2=22, RL4=-Inf, C2=xlf
+ /
+ &MYNML
+ RL1=-Inf, I1=11, RL2=Inf, C1=IBM, RL3=NaN(S), I2=22, RL4=NaN(Q), C2=xlf
+ /
+ &MYNML
+ RL1=3.00000000000000000, I1=11, RL2=-Inf, C1=IBM, RL3=2.00000000000000000, I2=22, RL4=NaN(Q), C2=xlf
+ /

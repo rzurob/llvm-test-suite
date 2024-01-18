@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2008/generic/unit_tests/diag/ptralloc01d.scenario
+#FEATURE = Generic extensions
+#CREATOR = Rafik Zurob
+#DATE    = 20120620
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ptralloc01d.f
+#STDERR    = ptralloc01d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)ptralloc01d$(product)vf) ptralloc01d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

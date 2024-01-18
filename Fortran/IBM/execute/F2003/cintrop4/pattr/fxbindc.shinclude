@@ -1,0 +1,59 @@
+! Replacing fxbindc.sh
+
+#CMD    = XLC_COMPILE
+#IF on(aix)
+  #OPTS   = $(C_COMPILER_OPTS) $(OPT_SET_LANG_LEVEL_STDC99) -lm
+#ELSE
+  #OPTS   = $(C_COMPILER_OPTS) $(OPT_SET_LANG_LEVEL_STDC99) -qfloat=nocomplexgcc -lm
+#ENDIF
+#INPUT  = $(tcasedir)$CTCARG.c
+#OUTPUT = $CTCARG$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#IF on(aix)
+  #OPTS    = -qfree=f90
+#ELSE
+  #OPTS    = -qfloat=nocomplexgcc -qfree=f90
+#ENDIF
+#INPUT  = $(tcasedir)$FTCARG.f
+#OUTPUT = $FTCARG$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#IF on(aix)
+  #OPTS    = -qfree=f90
+#ELSE
+  #OPTS    = -qfloat=nocomplexgcc -qfree=f90
+#ENDIF
+#INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+#OUTPUT = $FTCARG$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = $FTCARG$(EXE)
+#ENDCMD
+
+#IF !on(aix)
+  #CMD    = GCC_COMPILE
+  #OPTS   = $(GCC_COMPILER_OPTS) -std=c99
+  #INPUT  = $(tcasedir)$CTCARG.c
+  #OUTPUT = $CTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_COMPILE
+  #OPTS   = -qfloat=complexgcc -qfree=f90
+  #INPUT  = $(tcasedir)$FTCARG.f
+  #OUTPUT = $FTCARG$(OBJ)
+  #ENDCMD
+
+  #CMD    = XLF95_LINK
+  #OPTS   = -qfloat=complexgcc -qfree=f90
+  #INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+  #OUTPUT = $FTCARG$(EXE)
+  #ENDCMD
+
+  #CMD    = RUN
+  #INPUT  = $FTCARG$(EXE)
+  #ENDCMD
+#ENDIF

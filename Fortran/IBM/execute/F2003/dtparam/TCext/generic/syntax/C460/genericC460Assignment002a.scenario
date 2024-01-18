@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/syntax/C460/genericC460Assignment002a.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericC460Assignment002a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericC460Assignment002a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericC460Assignment002a$(OBJ)
+#OUTPUT    = genericC460Assignment002a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericC460Assignment002a$(EXE)
+#STDOUT    = genericC460Assignment002a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericC460Assignment002a.out $($(tcasedir)genericC460Assignment002a$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

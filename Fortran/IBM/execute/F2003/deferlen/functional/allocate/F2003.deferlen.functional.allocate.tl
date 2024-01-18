@@ -1,0 +1,33 @@
+!
+!  Automatically Generated .tl file
+!  Bucket:      F2003/deferlen
+!  Sub-Bucket:  functional/allocate
+!
+deferLenAllocate001.scenario
+deferLenAllocate002.scenario
+deferLenAllocate003d.scenario
+deferLenAllocate004d.scenario
+deferLenAllocate005d.scenario
+deferLenAllocate006.scenario
+deferLenAllocate007.scenario
+deferLenAllocate008.scenario
+deferLenAllocate009.scenario
+deferLenAllocate010.scenario
+deferLenAllocate011.scenario
+deferLenAllocate012.scenario
+deferLenAllocate013.scenario
+deferLenAllocate014.scenario
+deferLenAllocate015.scenario
+deferLenAllocate016.scenario
+deferLenAllocate017.scenario
+deferLenAllocate018.scenario
+deferLenAllocate020.scenario
+deferLenAllocate021.scenario
+deferLenAllocate022.scenario
+deferLenAllocate023.scenario
+deferLenAllocate024.scenario
+deferLenAllocate025.scenario
+deferLenAllocate026.scenario
+deferLenAllocate027.scenario
+deferLenAllocate028.scenario
+deferLenAllocate029.scenario

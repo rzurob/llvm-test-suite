@@ -1,0 +1,35 @@
+ Before Setting Values
+ --------------------
+ CUBE's Property:
+ Cube name: Object
+ Cube SIDES LENGHT: 0.0000000000E+00
+ Cube Volume: 0.0000000000E+00
+ Cube Surface: 0.0000000000E+00
+ CUBE
+ POINTED HERE BY THE PTRSWITCH, the TYPE IS: TYPE
+ 
+ After Setting Values
+ --------------------
+ CUBE's Property:
+ Cube name: MyCube
+ Cube SIDES LENGHT: 4.000000000
+ Cube Volume: 64.00000000
+ Cube Surface: 96.00000000
+ --------------------
+ Before Setting Values
+ --------------------
+ Rectangular Prism Property:
+ RP name: Object
+ RP SIDES LENGHT: 0.0000000000E+00 0.0000000000E+00 0.0000000000E+00
+ RP Volume: 0.0000000000E+00
+ RP Surface: 0.0000000000E+00
+ 
+ After Setting Values
+ --------------------
+ Rectangular Prism Property:
+ RP name: MyRP2
+ RP SIDES LENGHT: 10.19999981 33.00000000 55.23300171
+ RP Volume: 18591.42969
+ RP Surface: 5445.331543
+ rectangular_prism 
+ POINTED HERE BY THE PTRSWITCH, the TYPE IS: TYPE

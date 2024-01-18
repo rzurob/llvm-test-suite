@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/dtSpec/dtSpec009_workaround.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtSpec009_workaround.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtSpec009_workaround$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dtSpec009_workaround$(OBJ)
+#OUTPUT    = dtSpec009_workaround$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtSpec009_workaround$(EXE)
+#STDOUT    = dtSpec009_workaround.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dtSpec009_workaround.out $($(tcasedir)dtSpec009_workaround$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       AssocNameIntrinsic.f
+#FEATURE= SELECT TYPE STATEMENT
+#CREATOR=    Feng Ye
+#DATE=       11-01-05
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)AssocNameIntrinsic.f
+#OUTPUT= AssocNameIntrinsic$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  AssocNameIntrinsic$(OBJ)
+#OUTPUT= AssocNameIntrinsic$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  AssocNameIntrinsic$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

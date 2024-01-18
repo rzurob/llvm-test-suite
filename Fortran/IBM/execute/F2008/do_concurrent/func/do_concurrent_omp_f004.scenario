@@ -1,0 +1,60 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/do_concurrent/func/do_concurrent_omp_f004.scenario
+#FEATURE    = RTC 17293 - F2008: DO CONCURRENT Construct
+#CREATOR    = Nicole Negherbon
+#DATE       = August 12, 2015
+#REFERENCE  = omp30/misc/wait_policy/omp_wait_policy_02f.scenario
+#TEST_TYPE  = FUNCTIONAL
+#KEYWORDS   = DO CONCURRENT, OMP, PARALLEL, THREAD_WAIT_POLICY
+#ENDDOC
+
+! Scenario Environment Tags
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+#CMD        = XLF2008_R_COMPILE
+#OPTS       = $(OPT_OPTIMIZE_FOR_SMP)
+#INPUT      = $(tcasedir)do_concurrent_omp_f004.f
+#OUTPUT     = do_concurrent_omp_f004$(OBJ)
+#ENDCMD
+
+#CMD        = XLF2008_R_LINK
+#OPTS       = $(OPT_OPTIMIZE_FOR_SMP)
+#INPUT      = do_concurrent_omp_f004$(OBJ)
+#OUTPUT     = do_concurrent_omp_f004$(EXE)
+#ENDCMD
+
+#FOR run_iter=1 TO 5
+  #CMD      = RUN
+  #ENVAR    = OMP_WAIT_POLICY=ACTIVE
+  #ENVAR    = XLSMPOPTS=SPINS=0:DELAYS=0:YIELDS=0
+  #INPUT    = do_concurrent_omp_f004$(EXE)
+  #ENDCMD
+#ENDFOR
+
+#FOR run_iter=1 TO 5
+  #CMD      = RUN
+  #ENVAR    = OMP_WAIT_POLICY=active
+  #ENVAR    = XLSMPOPTS=SPINS=1:DELAYS=1:YIELDS=1
+  #INPUT    = do_concurrent_omp_f004$(EXE)
+  #ENDCMD
+#ENDFOR
+
+#FOR run_iter=1 TO 5
+  #CMD      = RUN
+  #ENVAR    = OMP_WAIT_POLICY=ACTIVE
+  #ENVAR    = XLSMPOPTS=SPINS=100:DELAYS=100:YIELDS=100
+  #INPUT    = do_concurrent_omp_f004$(EXE)
+  #ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO
+

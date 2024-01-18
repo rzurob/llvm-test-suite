@@ -1,0 +1,12 @@
+ Testing ss overwrite sign=specifier mode
+ 20  10.5
+ 20  10.5
+ 20  10.5
+ Testing sp overwrite sign=specifier mode
++20 +10.5
++20 +10.5
++20 +10.5
+ Testing s overwrite sign=specifier mode
+ 20  10.5
+ 20  10.5
+ 20  10.5

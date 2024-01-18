@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/wait/noIDSpecPending04.scenario
+#FEATURE	= Asynchronous I/O -- WAIT() Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060314
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)noIDSpecPending04.f
+#OUTPUT		= noIDSpecPending04$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= noIDSpecPending04$(OBJ)
+#OUTPUT		= noIDSpecPending04$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= noIDSpecPending04$(EXE)
+#STDOUT		= noIDSpecPending04.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

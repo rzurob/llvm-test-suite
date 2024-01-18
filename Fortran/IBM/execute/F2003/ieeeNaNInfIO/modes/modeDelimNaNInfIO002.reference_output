@@ -1,0 +1,20 @@
+ (NaN(Q),NaN(S)) "xlf" (NaN(Q),Inf) "ibm" (-Inf,NaN(S))
+ &MYNML
+ CX1=(NaN(Q),NaN(S)), XLF='xlf', CX2=(NaN(Q),Inf), IBM='ibm', CX3=(-Inf,NaN(S))
+ /
+ (NaN(Q),NaN(S)) 'xlf' (NaN(Q),Inf) 'ibm' (-Inf,NaN(S))
+ &MYNML
+ CX1=(NaN(Q),NaN(S)), XLF="xlf", CX2=(NaN(Q),Inf), IBM="ibm", CX3=(-Inf,NaN(S))
+ /
+ (NaN(Q),NaN(S)) "xlf" (NaN(Q),Inf) "ibm" (-Inf,NaN(S))
+ &MYNML
+ CX1=(NaN(Q),NaN(S)), XLF='xlf', CX2=(NaN(Q),Inf), IBM='ibm', CX3=(-Inf,NaN(S))
+ /
+ (NaN(Q),NaN(S)) 'xlf' (NaN(Q),Inf) 'ibm' (-Inf,NaN(S))
+ &MYNML
+ CX1=(NaN(Q),NaN(S)), XLF="xlf", CX2=(NaN(Q),Inf), IBM="ibm", CX3=(-Inf,NaN(S))
+ /
+ (NaN(Q),NaN(S)) "xlf" (NaN(Q),Inf) "ibm" (-Inf,NaN(S))
+ &MYNML
+ CX1=(NaN(Q),NaN(S)), XLF='xlf', CX2=(NaN(Q),Inf), IBM='ibm', CX3=(-Inf,NaN(S))
+ /

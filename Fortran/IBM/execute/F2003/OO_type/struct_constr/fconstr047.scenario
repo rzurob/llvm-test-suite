@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_type/struct_constr/fconstr047.scenario
+#FEATURE = OO_type tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fconstr047.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fconstr047$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  fconstr047$(OBJ)
+#OUTPUT    = fconstr047$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fconstr047$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

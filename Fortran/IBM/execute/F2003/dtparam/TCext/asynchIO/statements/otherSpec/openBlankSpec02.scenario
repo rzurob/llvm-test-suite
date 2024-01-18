@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/asynchIO/statements/otherSpec/openBlankSpec02.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of asynchIO/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=bgq
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)openBlankSpec02.dat .
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)openBlankSpec02.f
+#OUTPUT		= openBlankSpec02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= openBlankSpec02$(OBJ)
+#OUTPUT		= openBlankSpec02$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= openBlankSpec02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

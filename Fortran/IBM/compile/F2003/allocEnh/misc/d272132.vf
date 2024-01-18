@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"d272132.f", line 36.20: 1514-741 (L) Generic interface block base has the same name as a derived type.  Subroutines are not permitted to appear in the interface block by the Fortran 2003 standard.
+** _main   === End of Compilation 2 ===
+** abc   === End of Compilation 3 ===
+1501-511  Compilation failed for file d272132.f.

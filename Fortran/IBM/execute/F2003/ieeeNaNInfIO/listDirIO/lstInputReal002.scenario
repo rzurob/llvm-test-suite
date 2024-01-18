@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = lstInputReal002.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 23, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)lstInputReal002.dat
+#OUTPUT   = lstInputReal002.dat
+#ENDCMD
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)lstInputReal002.f
+#OUTPUT   =  lstInputReal002$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  lstInputReal002$(OBJ)
+#OUTPUT   =  lstInputReal002$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  lstInputReal002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

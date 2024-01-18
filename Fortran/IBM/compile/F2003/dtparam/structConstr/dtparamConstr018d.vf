@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"dtparamConstr018d.f", line 57.10: 1514-589 (S) Inaccessible component data must not be specified in the structure constructor for type base.
+"dtparamConstr018d.f", line 58.10: 1514-589 (S) Inaccessible component data must not be specified in the structure constructor for type child.
+** dtparamconstr018d   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtparamConstr018d.f.

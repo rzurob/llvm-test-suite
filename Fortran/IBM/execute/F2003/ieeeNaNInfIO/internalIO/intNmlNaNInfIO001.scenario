@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = intNmlNaNInfIO001.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 27, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)intNmlNaNInfIO001.f
+#OUTPUT   =  intNmlNaNInfIO001$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  intNmlNaNInfIO001$(OBJ)
+#OUTPUT   =  intNmlNaNInfIO001$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  intNmlNaNInfIO001$(EXE)
+#STDOUT   =  intNmlNaNInfIO001.out
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = intNmlNaNInfIO001.out $(tcasedir)intNmlNaNInfIO001.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

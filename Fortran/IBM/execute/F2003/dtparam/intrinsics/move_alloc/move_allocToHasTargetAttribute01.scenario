@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/move_alloc/move_allocToHasTargetAttribute01.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Oct. 2 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)move_allocToHasTargetAttribute01.f
+#OUTPUT= move_allocToHasTargetAttribute01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = move_allocToHasTargetAttribute01$(OBJ)
+#OUTPUT= move_allocToHasTargetAttribute01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = move_allocToHasTargetAttribute01$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

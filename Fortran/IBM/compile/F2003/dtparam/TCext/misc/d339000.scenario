@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/misc/d339000.scenario
+#FEATURE   = Defect 339000
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20070828
+#TEST_TYPE =
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d339000.f
+#OUTPUT    = d339000$(OBJ)
+#STDERR    = d339000.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = d339000.err $(tcasedir)d339000.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

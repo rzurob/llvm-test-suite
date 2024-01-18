@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/operator/functional/genericOperatorScalar016d.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericOperatorScalar016d.f
+#STDERR    = genericOperatorScalar016d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = genericOperatorScalar016d.err $(tcasedir)genericOperatorScalar016d.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

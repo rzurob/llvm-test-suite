@@ -1,0 +1,58 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/compat/dtpCompatReturnValueGrandChild/dtpCompatReturnValueGrandChild_111m.scenario
+#FEATURE   = Broken Compatability Warning - DTP code returns pointer to grandchild extended type with both KIND and LEN type parameters (child does not use DTP)
+! - manual compile, v11.1
+#CREATOR   = DF Manual Update
+#DATE      = 20090613
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT=linuxle
+#ENDENV
+
+#BEGINCONTROL
+
+! Compile "post-DTP" files with the latest version of the latest compiler,
+! link with manually compiled (with 11.1 gold) object files, and run.
+! run:  Since no DTP data is actually defined, no OUTor message should be out
+
+!!Since the files are manually compiled already, we do not need this step:
+!! Caution: do not just uncomment the next few lines: the name of the output
+!! file contains the product chain, which can't be good - it's just there for
+!! consistency with the next step, and to document the process.
+!#CMD      = V111_XLF2003_COMPILE (_RHEL)
+!#INPUT    = $(tcasedir)dtpCompatReturnValueGrandChildPreDTP.f
+!#OUTPUT   = $(dtpCompatReturnValueGrandChildPreDTP.111$(Q32_64_MODE)$(product)$(OBJ))
+!#ENDCMD
+
+!!BUT: we do need the .mod file, which we copy here:
+#CMD       = COPY
+#INPUT     = $($(tcasedir)dtpcompatreturnvaluegrandchildpredtpmod.111$(Q32_64_MODE)$(product).mod)
+#OUTPUT    = dtpcompatreturnvaluegrandchildpredtpmod.mod
+#ENDCMD
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)dtpCompatReturnValueGrandChildPostDTP.f
+#OUTPUT    = dtpCompatReturnValueGrandChildPostDTP$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = dtpCompatReturnValueGrandChildPostDTP$(OBJ) $($(tcasedir)dtpCompatReturnValueGrandChildPreDTP.111$(Q32_64_MODE)$(product)$(OBJ))
+#OUTPUT    = dtpCompatReturnValueGrandChild$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpCompatReturnValueGrandChild$(EXE)
+#STDOUT    = dtpCompatReturnValueGrandChild.out
+#STDERR    = dtpCompatReturnValueGrandChild.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpCompatReturnValueGrandChild_111m$(product)vf) dtpCompatReturnValueGrandChild.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

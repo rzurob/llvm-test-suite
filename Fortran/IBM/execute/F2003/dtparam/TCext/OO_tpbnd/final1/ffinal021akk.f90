@@ -1,0 +1,69 @@
+!**********************************************************************
+!*  ===================================================================
+!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : ffinal021akk.f
+!*  TEST CASE NAME             : type-bound procedure ffinal021akk
+!*
+!*  PROGRAMMER                 : David Forster (derived from ffinal021a by Catherine Sun)
+!*  DATE                       : 2007-11-26 (original: )
+!*  ORIGIN                     : IBM Software Solutions Toronto Lab
+!* 
+!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines 
+!*  SECONDARY FUNCTIONS TESTED : type bound 
+!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
+!*  DRIVER STANZA              : xlf2003
+!*
+!*  DESCRIPTION                : testing final subroutines: 
+!*                               derived type with static attribute.
+!*    
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+module m
+    type base (kbase_1) ! kbase_1=4
+       integer, kind :: kbase_1
+        integer(kbase_1) :: x
+    contains
+        final :: finalizeBase
+    end type
+    
+    type, extends(base) :: child (kchild) ! kchild=1
+       integer, kind :: kchild
+    contains
+       final :: finalizeChild
+    end type
+
+    type(child(4,1)), allocatable :: t_c1 ! tcx: (4,1)
+
+    contains
+    subroutine finalizeBase (b1)
+        type (base(4)), intent(inout) :: b1 ! tcx: (4)
+        print *, 'finalizeBase'
+    end subroutine
+
+    subroutine finalizeChild (b1)
+        type (child(4,1)), intent(inout) :: b1 ! tcx: (4,1)
+        print *, 'finalizeChild'
+    end subroutine
+
+end module
+
+    use m
+
+    call example
+end
+
+subroutine example
+
+use m
+    type(base(4))  :: dt1 ! tcx: (4)
+    type(child(4,1)), static :: dt2 ! tcx: (4,1)
+
+end subroutine
+
+
+! Extensions to introduce derived type parameters:
+! type: base - added parameters (kbase_1) to invoke with (4) / declare with (4) - 2 changes
+! type: child - added parameters (kchild) to invoke with (4,1) / declare with (4,1) - 3 changes

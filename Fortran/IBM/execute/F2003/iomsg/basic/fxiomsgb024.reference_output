@@ -1,0 +1,20 @@
+ 1525-190 A data edit descriptor with a field width of 0 is not allowed to be used with a data item in a READ statement.  The program will recover by assuming a default width.
+                                                                                                                             
+ 1525-061 A field width of 2001 is invalid for the I edit descriptor in a format specification.  The program will recover by assuming a default value.
+                                                                                                                                                      
+ 1525-190 A data edit descriptor with a field width of 0 is not allowed to be used with a data item in a READ statement.  The program will recover by assuming a default width.
+                                                                                                                             
+ 1525-061 A field width of 2001 is invalid for the F edit descriptor in a format specification.  The program will recover by assuming a default value.
+                                                                                                                                                      
+ 1525-061 A field width of 0 is invalid for the L edit descriptor in a format specification.  The program will recover by assuming a default value.
+                                                                                                                                                         
+ 1525-061 A field width of 2001 is invalid for the L edit descriptor in a format specification.  The program will recover by assuming a default value.
+                                                                                                                                                      
+ 1525-061 A field width of 0 is invalid for the A edit descriptor in a format specification.  The program will recover by assuming a default value.
+                                                                                                                                                         
+ 1525-061 A field width of 0 is invalid for the A edit descriptor in a format specification.  The program will recover by assuming a default value.
+                                                                                                                                                         
+ 1525-190 A data edit descriptor with a field width of 0 is not allowed to be used with a data item in a READ statement.  The program will recover by assuming a default width.
+                                                                                                                             
+ 1525-061 A field width of 2001 is invalid for the B edit descriptor in a format specification.  The program will recover by assuming a default value.
+                                                                                                                                                      

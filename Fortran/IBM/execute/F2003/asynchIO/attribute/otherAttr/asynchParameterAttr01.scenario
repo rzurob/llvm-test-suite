@@ -1,0 +1,77 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/attribute/otherAttr/asynchParameterAttr01.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Attribute
+#CREATOR	= GM Manual Creation
+#DATE		= 20060209
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)asynchParameterAttr01.f
+#OUTPUT		= asynchParameterAttr01$(OBJ)
+#ENDCMD
+
+
+#CMD		= F_LINK
+#INPUT		= asynchParameterAttr01$(OBJ)
+#OUTPUT		= asynchParameterAttr01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= asynchParameterAttr01$(EXE)
+#STDOUT		= asynchParameterAttr01.stdout
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)asynchParameterAttr01$(product)vf)	\
+				asynchParameterAttr01.stdout
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= -i '^greeting[ 	]'
+#INPUT		= asynchParameterAttr01$(LST)
+#STDOUT		= asynchParameterAttr01.greeting.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i '^salutation[ 	]'
+#INPUT		= asynchParameterAttr01$(LST)
+#STDOUT		= asynchParameterAttr01.salutation.stdout
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= 'Parameter'
+#INPUT		= asynchParameterAttr01.greeting.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= asynchParameterAttr01.greeting.stdout
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= 'Parameter'
+#INPUT		= asynchParameterAttr01.salutation.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= asynchParameterAttr01.salutation.stdout
+#VALIDRCS	= $(GREP_FAIL)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

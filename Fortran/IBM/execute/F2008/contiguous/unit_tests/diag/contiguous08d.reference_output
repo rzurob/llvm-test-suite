@@ -1,0 +1,6 @@
+"contiguous08d.f", line 40.23: 1516-335 (S) Argument x of intrinsic procedure c_loc must be contiguous.
+"contiguous08d.f", line 41.23: 1516-335 (S) Argument x of intrinsic procedure c_loc must be contiguous.
+"contiguous08d.f", line 42.21: 1516-335 (W) Argument x of intrinsic procedure loc must be contiguous.
+"contiguous08d.f", line 43.21: 1516-335 (W) Argument x of intrinsic procedure loc must be contiguous.
+** contiguous08d   === End of Compilation 1 ===
+1501-511  Compilation failed for file contiguous08d.f.

@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/attribute/stmt/statementDerived01.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060116
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)statementDerived01.f
+#OUTPUT		= statementDerived01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= statementDerived01$(OBJ)
+#OUTPUT		= statementDerived01$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= statementDerived01$(EXE)
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i '^asynchPoint[ 	]'
+#INPUT		= statementDerived01$(LST)
+#STDOUT		= statementDerived01.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= statementDerived01.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

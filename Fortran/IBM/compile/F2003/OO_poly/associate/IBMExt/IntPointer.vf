@@ -1,0 +1,3 @@
+"IntPointer.f", line 52.21: 1514-188 (S) Identifier intptr was defined elsewhere with conflicting attributes. Identifier is ignored in this context.
+** intpointer   === End of Compilation 1 ===
+1501-511  Compilation failed for file IntPointer.f.

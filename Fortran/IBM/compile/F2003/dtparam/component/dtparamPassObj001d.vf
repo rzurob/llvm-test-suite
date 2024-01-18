@@ -1,0 +1,4 @@
+"dtparamPassObj001d.f", line 35.39: 1514-713 (S) The length type parameters of the passed-object dummy argument b1 of binding p must be assumed.
+** m   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtparamPassObj001d.f.

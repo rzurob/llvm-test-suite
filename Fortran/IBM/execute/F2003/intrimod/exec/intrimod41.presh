@@ -1,0 +1,40 @@
+#!/usr/bin/ksh
+
+OS=`isAIX | awk '/0/ {print "AIX"} /1/ {print "LX"} /2/ {print "MAC"}'`
+IS64=`echo $OPTIONS | awk '/q64/ {print "_64"}'`
+
+
+rm -f ./*.o ./*.mod
+
+echo "cp $TR_SRC/my_main.o.${OS}${IS64}.81 ./my_main.o"
+cp $TR_SRC/my_main.o.${OS}${IS64}.81 ./my_main.o
+echo "cp $TR_SRC/my_mod.o.${OS}${IS64}.81 ./my_mod.o"
+cp $TR_SRC/my_mod.o.${OS}${IS64}.81 ./my_mod.o
+echo "cp $TR_SRC/my_mod.mod.${OS}${IS64}.81 ./my_mod.mod"
+cp $TR_SRC/my_mod.mod.${OS}${IS64}.81 ./my_mod.mod
+echo "cp $TR_SRC/constants.mod.${OS}${IS64}.81 ./constants.mod"
+cp $TR_SRC/constants.mod.${OS}${IS64}.81 ./constants.mod
+
+echo "$KILL $COMPILER ./my_mod.o ./my_main.o $OPTIONS -o intrimod41" 
+$KILL $COMPILER ./my_mod.o ./my_main.o $OPTIONS -o intrimod41
+
+rc=$?
+if [ $rc -ne 0 ]; then
+   echo "Compilation Failed!"
+   exit $rc
+fi
+
+$KILL ./intrimod41 > intrimod41.out
+rc=$?
+if [ $rc -ne 0 ]; then
+   echo "Execution Failed!"
+   exit $rc
+fi
+
+diff ./intrimod41.out $TR_SRC/../emptyout.vf
+
+if [[ $TRUN_SAVE != "YES" && $TRUN_SAVE != "yes" ]]
+then
+   rm -f ./intrimod41.out ./intrimod41 ./my_main.o ./my_mod.o 
+   rm -f ./my_mod.mod ./constants.mod
+fi

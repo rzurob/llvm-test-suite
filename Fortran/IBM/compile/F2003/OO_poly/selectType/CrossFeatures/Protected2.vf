@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"Protected2.f", line 80.10: 1516-157 (S) Module entity v with the PROTECTED attribute is not definable when it is accessed by use association.
+** protected2   === End of Compilation 2 ===
+1501-511  Compilation failed for file Protected2.f.

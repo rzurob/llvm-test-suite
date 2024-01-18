@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/mix/interface/fdtio503d.scenario
+#FEATURE = OO_dtio/mix
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = $(tcasedir)fdtio503d.f
+#OUTPUT    = fdtio503d$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = fdtio503d.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = fdtio503d.err $($(tcasedir)fdtio503d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

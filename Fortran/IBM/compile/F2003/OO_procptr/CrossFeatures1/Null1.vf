@@ -1,0 +1,8 @@
+** m   === End of Compilation 1 ===
+"Null1.f", line 77.16: 1516-263 (S) The MOLD argument of the NULL intrinsic must have the POINTER or ALLOCATABLE attribute.
+"Null1.f", line 78.14: 1516-263 (S) The MOLD argument of the NULL intrinsic must have the POINTER or ALLOCATABLE attribute.
+"Null1.f", line 87.16: 1515-124 (S) The procedure pointer was declared with an explicit interface.  The procedure pointer assignment target must also be declared with an explicit interface.
+"Null1.f", line 93.15: 1515-123 (S) The procedure pointer assignment statement target must be declared with the same type and type parameters as the procedure pointer.
+** nulltest   === End of Compilation 2 ===
+** extfun   === End of Compilation 3 ===
+1501-511  Compilation failed for file Null1.f.

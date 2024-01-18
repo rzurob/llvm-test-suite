@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"fconstr053d1.f", line 65.24: 1514-560 (S) The component keyword id does not match a component of the derived type base.
+"fconstr053d1.f", line 67.10: 1514-589 (S) Inaccessible component id must not be specified in the structure constructor for type base.
+** fconstr053d1   === End of Compilation 2 ===
+1501-511  Compilation failed for file fconstr053d1.f.

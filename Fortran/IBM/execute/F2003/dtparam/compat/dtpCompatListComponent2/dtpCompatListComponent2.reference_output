@@ -1,0 +1,22 @@
+ p 1
+  list 0 101  - base: 1
+  list 0 102  - base: 2
+ p2 1
+  list 0 101  - base: 1
+  list 0 44  - base: 2
+ p2 2
+  list 0 101  - base: 1
+  list 0 55  - base: 2
+ deepishCopy: calling old implementation to copy; expecting no runtime error message
+ p 2
+  list 0 101  - base: 1
+  list 0 44  - base: 2
+  list 4 103  - child: 3 >abc< 123 45 67 89 >def<
+  list 0 66  - base: 4
+ p2 3
+  list 0 101  - base: 1
+  list 0 44  - base: 2
+  list 4 103  - child: 3 >abc< 123 45 67 89 >def<
+  list 0 104  - base: 4
+ 4
+ End.

@@ -1,0 +1,34 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/critical/diag/critical05d.scenario
+#FEATURE    = F381021 - Critical Unit Tests
+#CREATOR    = David Nichols
+#DATE       = 20101013
+#TEST_TYPE  = Diagnostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)critical05d.f
+#OUTPUT     = critical05d$(OBJ)
+#STDOUT     = critical05d.out
+#STDERR     = critical05d.err
+#VALIDRCS   = $(RC_COMP_E)
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = critical05d.err $($(tcasedir)critical05d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

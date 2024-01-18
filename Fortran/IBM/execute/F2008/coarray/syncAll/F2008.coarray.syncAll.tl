@@ -1,0 +1,17 @@
+saBasic.scenario
+saBasicMessage.scenario
+saBasicMessageOne.scenario
+saBasicOne.scenario
+saBasicStatus.scenario
+saBasicStatusOne.scenario
+saBasicSync.scenario
+saBasicSyncOne.scenario
+saErrmsgNonChard.scenario
+saExternNMain.scenario
+saInternNExtern.scenario
+saMainNModule.scenario
+saModuleNIntern.scenario
+saProgramUnit.scenario
+saStatNonIntd.scenario
+saSyncStatd.scenario
+saBasicStatusNMsg.scenario

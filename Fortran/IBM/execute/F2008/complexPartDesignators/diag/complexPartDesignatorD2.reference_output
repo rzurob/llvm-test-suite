@@ -1,0 +1,31 @@
+** m   === End of Compilation 1 ===
+"complexPartDesignatorD2.f", line 73.11: 1516-044 (S) A conversion from type CHARACTER Literal is not permitted.
+"complexPartDesignatorD2.f", line 74.11: 1516-044 (S) A conversion from type CHARACTER Literal is not permitted.
+"complexPartDesignatorD2.f", line 75.11: 1516-044 (S) A conversion from type CHARACTER Literal is not permitted.
+"complexPartDesignatorD2.f", line 76.11: 1516-044 (S) A conversion from type CHARACTER Literal is not permitted.
+"complexPartDesignatorD2.f", line 78.4: 1514-091 (S) Invalid structure component reference.  The object name and all component names (except the rightmost) must be of type derived.
+"complexPartDesignatorD2.f", line 79.4: 1514-091 (S) Invalid structure component reference.  The object name and all component names (except the rightmost) must be of type derived.
+"complexPartDesignatorD2.f", line 80.4: 1514-091 (S) Invalid structure component reference.  The object name and all component names (except the rightmost) must be of type derived.
+"complexPartDesignatorD2.f", line 81.4: 1514-091 (S) Invalid structure component reference.  The object name and all component names (except the rightmost) must be of type derived.
+"complexPartDesignatorD2.f", line 82.4: 1514-091 (S) Invalid structure component reference.  The object name and all component names (except the rightmost) must be of type derived.
+"complexPartDesignatorD2.f", line 83.4: 1514-091 (S) Invalid structure component reference.  The object name and all component names (except the rightmost) must be of type derived.
+"complexPartDesignatorD2.f", line 84.4: 1514-091 (S) Invalid structure component reference.  The object name and all component names (except the rightmost) must be of type derived.
+"complexPartDesignatorD2.f", line 85.4: 1514-091 (S) Invalid structure component reference.  The object name and all component names (except the rightmost) must be of type derived.
+"complexPartDesignatorD2.f", line 87.11: 1514-091 (S) Invalid structure component reference.  The object name and all component names (except the rightmost) must be of type derived.
+"complexPartDesignatorD2.f", line 88.11: 1514-091 (S) Invalid structure component reference.  The object name and all component names (except the rightmost) must be of type derived.
+"complexPartDesignatorD2.f", line 89.11: 1514-091 (S) Invalid structure component reference.  The object name and all component names (except the rightmost) must be of type derived.
+"complexPartDesignatorD2.f", line 90.11: 1514-091 (S) Invalid structure component reference.  The object name and all component names (except the rightmost) must be of type derived.
+"complexPartDesignatorD2.f", line 91.11: 1514-091 (S) Invalid structure component reference.  The object name and all component names (except the rightmost) must be of type derived.
+"complexPartDesignatorD2.f", line 92.11: 1514-091 (S) Invalid structure component reference.  The object name and all component names (except the rightmost) must be of type derived.
+"complexPartDesignatorD2.f", line 93.11: 1514-091 (S) Invalid structure component reference.  The object name and all component names (except the rightmost) must be of type derived.
+"complexPartDesignatorD2.f", line 94.11: 1514-091 (S) Invalid structure component reference.  The object name and all component names (except the rightmost) must be of type derived.
+"complexPartDesignatorD2.f", line 96.13: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"complexPartDesignatorD2.f", line 97.13: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"complexPartDesignatorD2.f", line 98.14: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"complexPartDesignatorD2.f", line 99.14: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"complexPartDesignatorD2.f", line 100.13: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"complexPartDesignatorD2.f", line 101.13: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"complexPartDesignatorD2.f", line 104.13: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"complexPartDesignatorD2.f", line 105.13: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+** main   === End of Compilation 2 ===
+1501-511  Compilation failed for file complexPartDesignatorD2.f.

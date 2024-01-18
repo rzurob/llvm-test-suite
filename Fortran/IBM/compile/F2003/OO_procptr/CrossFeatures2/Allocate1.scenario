@@ -1,0 +1,31 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      Allocate1.f
+#FEATURE= PROCEDURE POINTER
+#CREATOR=   Feng Ye
+#DATE=      06-06-05
+#TEST_TYPE= DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=      F_COMPILE
+#OPTS=     $(OPT_FREE_SOURCE_FORM)
+#INPUT=    $(tcasedir)Allocate1.f
+#STDERR=   Allocate1.err
+#VALIDRCS= 1
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    Allocate1.err $($(tcasedir)Allocate1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

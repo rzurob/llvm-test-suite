@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"valuefordtalloc012.f", line 53.10: 1513-017 (E) %REF and %VAL are not permitted in this context.
+"valuefordtalloc012.f", line 53.14: 1513-016 (E) %VAL is not permitted for characters longer than 1, arrays, procedure arguments, pointers or structures with allocatable components. %VAL is ignored.
+"valuefordtalloc012.f", line 54.7: 1513-017 (E) %REF and %VAL are not permitted in this context.
+"valuefordtalloc012.f", line 54.12: 1513-016 (E) %VAL is not permitted for characters longer than 1, arrays, procedure arguments, pointers or structures with allocatable components. %VAL is ignored.
+** mainf   === End of Compilation 2 ===
+1501-510  Compilation successful for file valuefordtalloc012.f.

@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=bozlitargsIntrnFunc002.scenario
+#FEATURE = functional testing of boz-literal constants as args to REAL, INT, CMPLX and DBLE intrinsics
+#CREATOR = Michael Selvanayagam
+#DATE    = 20050826
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)bozlitargsIntrnFunc002.F
+#OUTPUT    = bozlitargsIntrnFunc002$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = bozlitargsIntrnFunc002$(OBJ)
+#OUTPUT    = bozlitargsIntrnFunc002$(EXE)
+#ENDCMD
+
+
+#CMD       = RUN
+#INPUT     = bozlitargsIntrnFunc002$(EXE)
+#ENDCMD
+
+
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,63 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/kindArg/kindArg/kindArgLbound9.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of F2003/kindArg/*
+#DATE      = 20071107
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM) $(OPT_INTSIZE_2)
+#INPUT=  $(tcasedir)kindArgLbound9.f
+#OUTPUT= kindArgLbound9$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM) $(OPT_INTSIZE_2)
+#INPUT=  kindArgLbound9$(OBJ)
+#OUTPUT= kindArgLbound9$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  kindArgLbound9$(EXE)
+#ENDCMD
+
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM) $(OPT_INTSIZE_4)
+#INPUT=  $(tcasedir)kindArgLbound9.f
+#OUTPUT= kindArgLbound9$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM) $(OPT_INTSIZE_4)
+#INPUT=  kindArgLbound9$(OBJ)
+#OUTPUT= kindArgLbound9$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  kindArgLbound9$(EXE)
+#ENDCMD
+
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM) $(OPT_INTSIZE_8)
+#INPUT=  $(tcasedir)kindArgLbound9.f
+#OUTPUT= kindArgLbound9$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM) $(OPT_INTSIZE_8)
+#INPUT=  kindArgLbound9$(OBJ)
+#OUTPUT= kindArgLbound9$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  kindArgLbound9$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

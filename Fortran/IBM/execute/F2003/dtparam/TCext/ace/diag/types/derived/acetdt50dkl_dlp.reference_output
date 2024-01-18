@@ -1,0 +1,7 @@
+** acetdt50dkl_dlpmod   === End of Compilation 1 ===
+"acetdt50dkl_dlp.f", line 70.30: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt50dkl_dlp.f", line 72.30: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt50dkl_dlp.f", line 74.30: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt50dkl_dlp.f", line 76.30: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+** acetdt50dkl_dlp   === End of Compilation 2 ===
+1501-511  Compilation failed for file acetdt50dkl_dlp.f.

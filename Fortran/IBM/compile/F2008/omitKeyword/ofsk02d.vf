@@ -1,0 +1,5 @@
+"ofsk02d.f", line 28.13: 1515-019 (S) Syntax is incorrect.
+"ofsk02d.f", line 30.16: 1513-085 (S) Improper END statement specified. This END statement will be matched with the program unit or procedure named test_mod.
+** test_mod   === End of Compilation 1 ===
+"ofsk02d.f", line 34.9: 1514-219 (S) Unable to access module symbol file for module test_mod. Check path and file permissions of file. Use association not done for this module.
+1501-511  Compilation failed for file ofsk02d.f.

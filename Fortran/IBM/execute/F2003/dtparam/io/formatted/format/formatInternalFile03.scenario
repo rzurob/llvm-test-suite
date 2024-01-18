@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/format/formatInternalFile03.scenario
+#FEATURE   = 359704
+#CREATOR   = Nancy Wang
+#DATE      = Dec. 10 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)formatInternalFile03.f
+#OUTPUT= formatInternalFile03$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = formatInternalFile03$(OBJ)
+#OUTPUT= formatInternalFile03$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = formatInternalFile03$(EXE)
+#STDOUT= formatInternalFile03.out
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT  = $($(tcasedir)formatInternalFile03$(product)vf) formatInternalFile03.out
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

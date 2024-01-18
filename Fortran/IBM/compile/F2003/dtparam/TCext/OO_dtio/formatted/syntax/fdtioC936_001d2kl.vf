@@ -1,0 +1,4 @@
+"fdtioC936_001d2kl.f", line 36.22: 1514-730 (S) Derived type btype with the BIND attribute must not have type parameters.
+** m   === End of Compilation 1 ===
+"fdtioC936_001d2kl.f", line 44.5: 1514-219 (S) Unable to access module symbol file for module m. Check path and file permissions of file. Use association not done for this module.
+1501-511  Compilation failed for file fdtioC936_001d2kl.f.

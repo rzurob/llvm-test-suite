@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpIAssignExternalCommonFromVars.scenario
+#FEATURE   = Intrinsic Assignment without Allocation - assign variables to variables in common in external procedure
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAssignExternalCommonFromVars.f
+#OUTPUT    = dtpIAssignExternalCommonFromVars$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAssignExternalCommonFromVars$(OBJ)
+#OUTPUT    = dtpIAssignExternalCommonFromVars$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAssignExternalCommonFromVars$(EXE)
+#STDOUT    = dtpIAssignExternalCommonFromVars.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpIAssignExternalCommonFromVars$(product)vf) dtpIAssignExternalCommonFromVars.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

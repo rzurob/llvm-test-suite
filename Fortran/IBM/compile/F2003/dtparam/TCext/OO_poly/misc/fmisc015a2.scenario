@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/misc/fmisc015a2.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071002
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fmisc015a2.f
+#OUTPUT    = fmisc015a2$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = fmisc015a2.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = fmisc015a2.err $($(tcasedir)fmisc015a2$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

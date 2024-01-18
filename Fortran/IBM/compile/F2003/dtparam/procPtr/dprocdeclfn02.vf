@@ -1,0 +1,5 @@
+"dprocdeclfn02.f", line 4.19: 1514-728 (E) The type declaration statement for type parameter k1 must appear before the PRIVATE statement.
+"dprocdeclfn02.f", line 5.19: 1514-728 (E) The type declaration statement for type parameter len1 must appear before the PRIVATE statement.
+** m   === End of Compilation 1 ===
+"dprocdeclfn02.f", line 33.5: 1514-219 (S) Unable to access module symbol file for module m. Check path and file permissions of file. Use association not done for this module.
+1501-511  Compilation failed for file dprocdeclfn02.f.

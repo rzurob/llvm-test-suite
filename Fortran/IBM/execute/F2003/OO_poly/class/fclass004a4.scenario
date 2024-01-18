@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/class/fclass004a4.scenario
+#FEATURE = OO_poly tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fclass004a4.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fclass004a4$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  fclass004a4$(OBJ)
+#OUTPUT    = fclass004a4$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fclass004a4$(EXE)
+#STDOUT    = fclass004a4.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)fclass004a4$(product)vf) fclass004a4.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

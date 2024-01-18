@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/mxminAll/var/maxMin/mxminVarArgBindC1.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)mxminVarBindC1.c
+#OPTS      = $(C_COMPILER_OPTS)
+#OUTPUT    = mxminVarBindC1$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mxminVarArgBindC1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qnullterm
+#OUTPUT    = mxminVarArgBindC1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = -qnullterm
+#INPUT     = mxminVarArgBindC1$(OBJ) mxminVarBindC1$(OBJ)
+#OUTPUT    = mxminVarArgBindC1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminVarArgBindC1$(EXE)
+#STDOUT    = mxminVarArgBindC1.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

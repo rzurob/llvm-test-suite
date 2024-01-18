@@ -1,0 +1,33 @@
+ Start
+ 
+ Block 1:
+ dtS: Assigned dt[t=7,d=30,s=0,a=0,a2=0] to dt[t=2,d=-1,s=0,a=0,a2=0] yielding dt[t=2,d=30,s=1,a=0,a2=0] at 1
+ dtS: Assigned dt[t=2,d=30,s=1,a=0,a2=0] to dt[t=1,d=-1,s=0,a=0,a2=0] yielding dt[t=1,d=30,s=1,a=0,a2=0] at 2
+ dtA: Assigned dt[t=2,d=30,s=1,a=0,a2=0] to dt{1:dt[t=5,d=-1,s=0,a=0,a2=0],2:dt[t=6,d=-1,s=0,a=0,a2=0]} yielding dt{1:dt[t=5,d=30,s=0,a=1,a2=0],2:dt[t=6,d=30,s=0,a=1,a2=0]} at 3
+ dtA2: Assigned dt{1:dt[t=5,d=30,s=0,a=1,a2=0],2:dt[t=6,d=30,s=0,a=1,a2=0]} to dt{1:dt[t=3,d=-1,s=0,a=0,a2=0],2:dt[t=4,d=-1,s=0,a=0,a2=0]} yielding dt{1:dt[t=3,d=30,s=0,a=0,a2=1],2:dt[t=4,d=30,s=0,a=0,a2=1]} at 4
+ dtS: Assigned dt[t=3,d=30,s=0,a=0,a2=1] to dt[t=6,d=30,s=0,a=1,a2=0] yielding dt[t=6,d=30,s=1,a=1,a2=0] at 5
+ 
+ Block 2:
+ dtA2: Assigned dt{1:dt[t=1,d=30,s=1,a=0,a2=0],2:dt[t=2,d=30,s=1,a=0,a2=0]} to dt{1:dt[t=5,d=30,s=0,a=1,a2=0],2:dt[t=6,d=30,s=1,a=1,a2=0]} yielding dt{1:dt[t=5,d=30,s=0,a=1,a2=1],2:dt[t=6,d=30,s=1,a=1,a2=1]} at 6
+ dtA2: Assigned dt{1:dt[t=5,d=30,s=0,a=1,a2=1],2:dt[t=6,d=30,s=1,a=1,a2=1]} to dt{1:dt[t=3,d=30,s=0,a=0,a2=1],2:dt[t=4,d=30,s=0,a=0,a2=1]} yielding dt{1:dt[t=3,d=30,s=0,a=0,a2=2],2:dt[t=4,d=30,s=0,a=0,a2=2]} at 7
+ dtA2: Assigned dt{1:dt[t=1,d=30,s=1,a=0,a2=0],2:dt[t=2,d=30,s=1,a=0,a2=0]} to dt{1:dt[t=5,d=30,s=0,a=1,a2=1],2:dt[t=6,d=30,s=1,a=1,a2=1]} yielding dt{1:dt[t=5,d=30,s=0,a=1,a2=2],2:dt[t=6,d=30,s=1,a=1,a2=2]} at 8
+ dtA2: Assigned dt{1:dt[t=5,d=30,s=0,a=1,a2=2],2:dt[t=6,d=30,s=1,a=1,a2=2]} to dt{1:dt[t=3,d=30,s=0,a=0,a2=2],2:dt[t=4,d=30,s=0,a=0,a2=2]} yielding dt{1:dt[t=3,d=30,s=0,a=0,a2=3],2:dt[t=4,d=30,s=0,a=0,a2=3]} at 9
+ 
+ Block 3:
+ 
+ Block 4:
+ dtS: Assigned dt[t=10,d=31,s=0,a=0,a2=0] to dt[t=8,d=-1,s=0,a=0,a2=0] yielding dt[t=8,d=31,s=1,a=0,a2=0] at 10
+ dtS: Assigned dt[t=11,d=32,s=0,a=0,a2=0] to dt[t=8,d=31,s=1,a=0,a2=0] yielding dt[t=8,d=32,s=2,a=0,a2=0] at 11
+ dtS: Assigned dt[t=12,d=33,s=0,a=0,a2=0] to dt[t=9,d=-1,s=0,a=0,a2=0] yielding dt[t=9,d=33,s=1,a=0,a2=0] at 12
+ 
+ Block 5:
+ dtA2: Assigned dt{1:dt[t=13,d=34,s=0,a=0,a2=0],2:dt[t=8,d=32,s=2,a=0,a2=0]} to dt{1:dt[t=3,d=30,s=0,a=0,a2=3],2:dt[t=4,d=30,s=0,a=0,a2=3]} yielding dt{1:dt[t=3,d=34,s=0,a=0,a2=4],2:dt[t=4,d=32,s=0,a=0,a2=4]} at 13
+ dtA2: Assigned dt{1:dt[t=14,d=35,s=0,a=0,a2=0],2:dt[t=8,d=32,s=2,a=0,a2=0]} to dt{1:dt[t=5,d=30,s=0,a=1,a2=2],2:dt[t=6,d=30,s=1,a=1,a2=2]} yielding dt{1:dt[t=5,d=35,s=0,a=1,a2=3],2:dt[t=6,d=32,s=1,a=1,a2=3]} at 14
+ dtA2: Assigned dt{1:dt[t=8,d=32,s=2,a=0,a2=0],2:dt[t=9,d=33,s=1,a=0,a2=0]} to dt{1:dt[t=3,d=34,s=0,a=0,a2=4],2:dt[t=4,d=32,s=0,a=0,a2=4]} yielding dt{1:dt[t=3,d=32,s=0,a=0,a2=5],2:dt[t=4,d=33,s=0,a=0,a2=5]} at 15
+ dtA2: Assigned dt{1:dt[t=3,d=32,s=0,a=0,a2=5],2:dt[t=4,d=33,s=0,a=0,a2=5]} to dt{1:dt[t=3,d=32,s=0,a=0,a2=5],2:dt[t=4,d=33,s=0,a=0,a2=5]} yielding dt{1:dt[t=3,d=32,s=0,a=0,a2=6],2:dt[t=4,d=33,s=0,a=0,a2=6]} at 16
+ dtA2: Assigned dt{1:dt[t=15,d=36,s=0,a=0,a2=0],2:dt[t=8,d=32,s=2,a=0,a2=0]} to dt{1:dt[t=5,d=35,s=0,a=1,a2=3],2:dt[t=6,d=32,s=1,a=1,a2=3]} yielding dt{1:dt[t=5,d=36,s=0,a=1,a2=4],2:dt[t=6,d=32,s=1,a=1,a2=4]} at 17
+ dtA2: Assigned dt{1:dt[t=8,d=32,s=2,a=0,a2=0],2:dt[t=16,d=37,s=0,a=0,a2=0]} to dt{1:dt[t=3,d=32,s=0,a=0,a2=6],2:dt[t=4,d=33,s=0,a=0,a2=6]} yielding dt{1:dt[t=3,d=32,s=0,a=0,a2=7],2:dt[t=4,d=37,s=0,a=0,a2=7]} at 18
+ dtA2: Assigned dt{1:dt[t=17,d=38,s=0,a=0,a2=0],2:dt[t=9,d=33,s=1,a=0,a2=0]} to dt{1:dt[t=5,d=36,s=0,a=1,a2=4],2:dt[t=6,d=32,s=1,a=1,a2=4]} yielding dt{1:dt[t=5,d=38,s=0,a=1,a2=5],2:dt[t=6,d=33,s=1,a=1,a2=5]} at 19
+ dtA2: Assigned dt{1:dt[t=5,d=38,s=0,a=1,a2=5],2:dt[t=6,d=33,s=1,a=1,a2=5]} to dt{1:dt[t=5,d=38,s=0,a=1,a2=5],2:dt[t=6,d=33,s=1,a=1,a2=5]} yielding dt{1:dt[t=5,d=38,s=0,a=1,a2=6],2:dt[t=6,d=33,s=1,a=1,a2=6]} at 20
+ 
+ End

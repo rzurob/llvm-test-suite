@@ -1,0 +1,9 @@
+** m   === End of Compilation 1 ===
+"dtParamTypeDefDeterm9.f", line 190.8: 1516-044 (S) A conversion from type dt2 is not permitted.
+"dtParamTypeDefDeterm9.f", line 192.8: 1516-044 (S) A conversion from type dt3 is not permitted.
+"dtParamTypeDefDeterm9.f", line 194.8: 1516-044 (S) A conversion from type dt4 is not permitted.
+"dtParamTypeDefDeterm9.f", line 196.8: 1516-044 (S) A conversion from type dt5 is not permitted.
+"dtParamTypeDefDeterm9.f", line 198.8: 1516-044 (S) A conversion from type dt6 is not permitted.
+"dtParamTypeDefDeterm9.f", line 200.8: 1516-044 (S) A conversion from type dt7 is not permitted.
+** dtparamtypedefdeterm9   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtParamTypeDefDeterm9.f.

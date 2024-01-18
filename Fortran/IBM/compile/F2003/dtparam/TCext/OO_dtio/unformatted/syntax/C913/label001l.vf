@@ -1,0 +1,10 @@
+** m1   === End of Compilation 1 ===
+"label001l.f", line 116.18: 1516-052 (S) The statement label 500 is referenced but not defined in this scope.
+"label001l.f", line 138.24: 1516-052 (S) The statement label 300 is referenced but not defined in this scope.
+"label001l.f", line 145.23: 1516-052 (S) The statement label 300 is referenced but not defined in this scope.
+** label001l   === End of Compilation 2 ===
+** readunformatted   === End of Compilation 3 ===
+** writeunformatted   === End of Compilation 4 ===
+** readformatted   === End of Compilation 5 ===
+** writeformatted   === End of Compilation 6 ===
+1501-511  Compilation failed for file label001l.f.

@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/associate/CrossFeatures/FinalArrConstr.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071005
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)FinalArrConstr.f
+#OPTS = -qxlf2003=dynamicacval
+#OUTPUT= FinalArrConstr$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  FinalArrConstr$(OBJ)
+#OUTPUT= FinalArrConstr$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  FinalArrConstr$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

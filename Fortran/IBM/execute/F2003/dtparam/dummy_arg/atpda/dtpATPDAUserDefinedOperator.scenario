@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/dummy_arg/atpda/dtpATPDAUserDefinedOperator.scenario
+#FEATURE   = Assumed type parameters and dummy arguments - passed object generic procedure
+#CREATOR   = DF Manual Update
+#DATE      = 20081015
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpATPDAUserDefinedOperator.f
+#OUTPUT    = dtpATPDAUserDefinedOperator$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpATPDAUserDefinedOperator$(OBJ)
+#OUTPUT    = dtpATPDAUserDefinedOperator$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpATPDAUserDefinedOperator$(EXE)
+#STDOUT    = dtpATPDAUserDefinedOperator.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpATPDAUserDefinedOperator$(product)vf) dtpATPDAUserDefinedOperator.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

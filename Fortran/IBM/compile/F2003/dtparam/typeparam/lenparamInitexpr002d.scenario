@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/typeparam/lenparamInitexpr002d.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)lenparamInitexpr002d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = lenparamInitexpr002d$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = lenparamInitexpr002d.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = lenparamInitexpr002d.err $($(tcasedir)lenparamInitexpr002d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

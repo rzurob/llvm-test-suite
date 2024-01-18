@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignCommonFromModuleDeferredChk.scenario
+#FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - assign to common variables in module procedures, then check values via pointers with deferred length parameters
+#CREATOR   = DF Manual Update
+#DATE      = 20090126
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPtrAssignCommonFromModuleDeferredChk.f
+#OUTPUT    = dtpPtrAssignCommonFromModuleDeferredChk$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPtrAssignCommonFromModuleDeferredChk$(OBJ)
+#OUTPUT    = dtpPtrAssignCommonFromModuleDeferredChk$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPtrAssignCommonFromModuleDeferredChk$(EXE)
+#STDOUT    = dtpPtrAssignCommonFromModuleDeferredChk.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpPtrAssignCommonFromModuleDeferredChk$(product)vf) dtpPtrAssignCommonFromModuleDeferredChk.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

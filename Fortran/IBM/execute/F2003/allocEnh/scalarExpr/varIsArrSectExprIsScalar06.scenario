@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/scalarExpr/varIsArrSectExprIsScalar06.scenario
+#FEATURE	= Intrinsic Assignment -- expr is a Scalar and variable is an Array
+#CREATOR	= GM Manual Creation
+#DATE		= 20061102
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)varIsArrSectExprIsScalar06.f
+#OUTPUT		= varIsArrSectExprIsScalar06$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= varIsArrSectExprIsScalar06$(OBJ)
+#OUTPUT		= varIsArrSectExprIsScalar06$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= varIsArrSectExprIsScalar06$(EXE)
+#STDOUT		= varIsArrSectExprIsScalar06.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)varIsArrSectExprIsScalar06$(product)vf)	\
+				varIsArrSectExprIsScalar06.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

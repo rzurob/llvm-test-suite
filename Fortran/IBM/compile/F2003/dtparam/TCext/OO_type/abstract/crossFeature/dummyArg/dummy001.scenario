@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/crossFeature/dummyArg/dummy001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/abstract/crossFeature/dummyArg/dummy001.scenario
+#DATE      = 20070612
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dummy001.f
+#OPTS      = -qdebug=intmsg:shutup
+#OUTPUT    = dummy001$(OBJ)
+#STDERR    = dummy001.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)dummy001$(product)vf) dummy001.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       fkindlogical
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2008_COMPILE
+#INPUT=  $(tcasedir)fkindlogical.f
+#OUTPUT= fkindlogical$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_LINK
+#INPUT=  fkindlogical$(OBJ)
+#OUTPUT= fkindlogical$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fkindlogical$(EXE)
+#STDOUT=  fkindlogical.out
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT = fkindlogical.out $($(tcasedir)fkindlogical$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

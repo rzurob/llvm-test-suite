@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/allocate/TypeSpec/d361745.f
+#FEATURE   = DTP - Allocate with type-spec
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20090126
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d361745.f
+#OUTPUT    = d361745$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d361745$(OBJ)
+#OUTPUT    = d361745$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d361745$(EXE)
+#STDOUT    = d361745.out
+#ENDCMD
+
+#CMD       = DIFF
+#OPTS      = -b
+#INPUT     = d361745.out $(tcasedir)d361745.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

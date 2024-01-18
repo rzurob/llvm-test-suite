@@ -1,0 +1,16 @@
+** m1   === End of Compilation 1 ===
+"specifier001.f", line 107.3: 1512-017 (E) The UNIT keyword has already been specified on this I/O statement.  Keyword is ignored.
+"specifier001.f", line 108.18: 1512-017 (E) The UNIT keyword has already been specified on this I/O statement.  Keyword is ignored.
+"specifier001.f", line 109.30: 1512-017 (E) The IOMSG keyword has already been specified on this I/O statement.  Keyword is ignored.
+"specifier001.f", line 110.32: 1512-017 (E) The IOSTAT keyword has already been specified on this I/O statement.  Keyword is ignored.
+"specifier001.f", line 114.3: 1512-017 (E) The UNIT keyword has already been specified on this I/O statement.  Keyword is ignored.
+"specifier001.f", line 115.24: 1512-017 (E) The IOMSG keyword has already been specified on this I/O statement.  Keyword is ignored.
+"specifier001.f", line 116.26: 1512-017 (E) The IOSTAT keyword has already been specified on this I/O statement.  Keyword is ignored.
+"specifier001.f", line 117.16: 1516-052 (S) The statement label 100 is referenced but not defined in this scope.
+"specifier001.f", line 117.21: 1512-017 (E) The END keyword has already been specified on this I/O statement.  Keyword is ignored.
+** specifier001   === End of Compilation 2 ===
+** readunformatted   === End of Compilation 3 ===
+** writeunformatted   === End of Compilation 4 ===
+** readformatted   === End of Compilation 5 ===
+** writeformatted   === End of Compilation 6 ===
+1501-511  Compilation failed for file specifier001.f.

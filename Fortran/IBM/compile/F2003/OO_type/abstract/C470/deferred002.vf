@@ -1,0 +1,5 @@
+"deferred002.f", line 56.16: 1514-581 (S) Binding print with the DEFERRED attribute must be specified with an interface.
+"deferred002.f", line 62.37: 1514-084 (S) Identifier a is being declared with type name base which has not been defined in a derived type definition.
+** m   === End of Compilation 1 ===
+** deferred002   === End of Compilation 2 ===
+1501-511  Compilation failed for file deferred002.f.

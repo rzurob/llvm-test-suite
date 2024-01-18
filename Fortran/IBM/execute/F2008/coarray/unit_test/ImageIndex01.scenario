@@ -1,0 +1,50 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=ImageIndex01.scenario
+#FEATURE = IMAGE_INDEX intrinsic
+#CREATOR = Xing Xue
+#DATE    = 20090731
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_COARRAY_IMAGES<4>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = $(tcasedir)ImageIndex01.f
+#OUTPUT    = ImageIndex01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_COARRAY_IMAGES<4>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = ImageIndex01$(OBJ)
+#OUTPUT    = ImageIndex01$(EXE)
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD       = RUN
+	#ENVAR     = CAF_NUM_IMAGES=4
+        #ENVAR     = MP_PROCS=1
+	#INPUT     = ImageIndex01$(EXE)
+	#STDOUT    = ImageIndex01.out
+	#ENDCMD
+
+	#CMD       = SORT
+	#INPUT     = ImageIndex01.out
+	#STDOUT    = ImageIndex01.out1
+	#ENDCMD
+
+	#CMD       = DIFF
+	#INPUT     = ImageIndex01.out1 $($(tcasedir)ImageIndex01$(product)vf)
+	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO
+

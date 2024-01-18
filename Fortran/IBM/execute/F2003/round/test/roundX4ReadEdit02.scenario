@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/round/test/roundX4ReadEdit02.f
+#FEATURE	=
+#CREATOR	= William Zhang
+#DATE		=
+#TEST_TYPE	=
+#ENDDOC
+
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)roundX4ReadEdit02.f
+#OUTPUT		= roundX4ReadEdit02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= roundX4ReadEdit02$(OBJ)
+#OUTPUT		= roundX4ReadEdit02$(EXE)
+#ENDCMD
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)roundX4ReadEdit02.dat
+#OUTPUT		= .
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= roundX4ReadEdit02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

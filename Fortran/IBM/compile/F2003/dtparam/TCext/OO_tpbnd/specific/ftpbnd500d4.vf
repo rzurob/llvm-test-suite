@@ -1,0 +1,6 @@
+"ftpbnd500d4.f", line 63.39: 1514-531 (S) Entity printbase, specified in procedure binding print, must be a module procedure or an external procedure with an explicit interface.
+"ftpbnd500d4.f", line 64.39: 1514-531 (S) Entity countbase, specified in procedure binding count, must be a module procedure or an external procedure with an explicit interface.
+** ftpbnd500d4   === End of Compilation 1 ===
+** printbase   === End of Compilation 2 ===
+** countbase   === End of Compilation 3 ===
+1501-511  Compilation failed for file ftpbnd500d4.f.

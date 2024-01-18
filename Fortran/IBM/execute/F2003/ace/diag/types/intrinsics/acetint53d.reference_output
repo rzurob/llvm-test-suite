@@ -1,0 +1,7 @@
+"acetint53d.f", line 51.32: 1516-089 (S) Statement entity, log, was seen with conflicting attributes.
+"acetint53d.f", line 58.32: 1516-089 (S) Statement entity, cmplx, was seen with conflicting attributes.
+"acetint53d.f", line 59.27: 1516-026 (S) Non-arrays must not be subscripted.
+"acetint53d.f", line 62.7: 1516-089 (S) Statement entity, count, was seen with conflicting attributes.
+"acetint53d.f", line 64.23: 1516-089 (S) Statement entity, cmplx, was seen with conflicting attributes.
+** acetint53d   === End of Compilation 1 ===
+1501-511  Compilation failed for file acetint53d.f.

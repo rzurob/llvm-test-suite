@@ -1,0 +1,24 @@
+ assumedsize
+ ab
+ 1000
+ assumedsize
+ ab
+ 2000
+ assumedsize2d
+ ab
+ 700
+ assumedsize2d
+ ab
+ 1400
+ assumedsize
+ c
+ 1000 -999
+ assumedsize
+ c
+ 2000 -2000
+ assumedsize2d
+ c
+ 700 -999
+ assumedsize2d
+ c
+ 1400 -1400

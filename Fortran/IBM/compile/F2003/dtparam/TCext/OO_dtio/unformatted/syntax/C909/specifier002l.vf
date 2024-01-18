@@ -1,0 +1,11 @@
+** m1   === End of Compilation 1 ===
+** specifier002l   === End of Compilation 2 ===
+"specifier002l.f", line 98.32: 1512-017 (E) The IOSTAT keyword has already been specified on this I/O statement.  Keyword is ignored.
+** readunformatted   === End of Compilation 3 ===
+"specifier002l.f", line 109.3: 1512-017 (E) The UNIT keyword has already been specified on this I/O statement.  Keyword is ignored.
+** writeunformatted   === End of Compilation 4 ===
+"specifier002l.f", line 123.38: 1512-017 (E) The ADVANCE keyword has already been specified on this I/O statement.  Keyword is ignored.
+** readformatted   === End of Compilation 5 ===
+"specifier002l.f", line 137.20: 1512-017 (E) The FMT keyword has already been specified on this I/O statement.  Keyword is ignored.
+** writeformatted   === End of Compilation 6 ===
+1501-510  Compilation successful for file specifier002l.f.

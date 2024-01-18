@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2003/dtparam/TCext/OO_dtio/unformatted/section9.9/name001l.scenario
+#FEATURE = OO_dtio/unformatted tests - regression run bucket + derived type parameters
+#CREATOR = automated conversion script
+#DATE    = 20070928
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)name001l.disconnected .
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)name001l.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = name001l$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  name001l$(OBJ)
+#OUTPUT    = name001l$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = name001l$(EXE)
+#STDIN     = $(tcasedir)name001l.stdin
+#STDOUT    = name001l.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

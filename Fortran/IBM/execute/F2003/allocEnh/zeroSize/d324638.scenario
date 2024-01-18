@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/allocEnh/zeroSize/d324638.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d324638.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = d324638$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d324638$(OBJ)
+#OUTPUT    = d324638$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d324638$(EXE)
+#STDOUT    = d324638.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = d324638.out $($(tcasedir)d324638$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

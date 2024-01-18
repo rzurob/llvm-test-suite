@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/deferlen/syntax/C403/deferLenC403_001d.scenario
+#FEATURE = deferlen tests
+#CREATOR = Robert Ma
+#DATE    = 20060501
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)deferLenC403_001d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = deferLenC403_001d$(OBJ)
+#STDERR    = deferLenC403_001d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = deferLenC403_001d.err $($(tcasedir)deferLenC403_001d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = intLstInputComplex001.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 27, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)intLstInputComplex001.f
+#OUTPUT   =  intLstInputComplex001$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  intLstInputComplex001$(OBJ)
+#OUTPUT   =  intLstInputComplex001$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  intLstInputComplex001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

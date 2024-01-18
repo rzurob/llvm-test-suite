@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/unformatted/section9.5.2/write/dummyArg006a.scenario
+#FEATURE = OO_dtio
+#CREATOR = Robert Ma
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dummyArg006a.f
+#OPTS      = -qxlf2003=dynamicacval $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dummyArg006a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  dummyArg006a$(OBJ)
+#OUTPUT    = dummyArg006a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dummyArg006a$(EXE)
+#STDOUT    = dummyArg006a.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

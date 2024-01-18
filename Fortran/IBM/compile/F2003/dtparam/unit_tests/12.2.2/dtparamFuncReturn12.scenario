@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = dtparamFuncReturn12.scenario
+#CREATOR  = James Ren
+#DATE     = June 15, 2007
+#TEST_TYPE= Unit Test
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#INPUT  = $(tcasedir)dtparamFuncReturn12.f
+#STDERR = dtparamFuncReturn12.err
+#VALIDRCS= 1
+#ENDCMD
+
+#CMD    = XLDIFF
+#INPUT  = dtparamFuncReturn12.err $($(tcasedir)dtparamFuncReturn12$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

@@ -1,0 +1,8 @@
+
+/#OPTS\s*=/ {
+  s/\$(OPT_FREE_SOURCE_FORM<[a-zA-Z0-9]*>)\(.*\$(OPT_FIXED_SOURCE_FORM\)/\1/g
+  s/\$(OPT_FIXED_SOURCE_FORM<[0-9]*>)\(.*\$(OPT_FREE_SOURCE_FORM\)/\1/g
+
+  s/\$(OPT_FREE_SOURCE_FORM)\(.*\$(OPT_FIXED_SOURCE_FORM\)/\1/g
+  s/\$(OPT_FIXED_SOURCE_FORM)\(.*\$(OPT_FREE_SOURCE_FORM\)/\1/g
+}

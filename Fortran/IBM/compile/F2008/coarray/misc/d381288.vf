@@ -1,0 +1,4 @@
+"d381288.f", line 1.29: 1514-789 (S) The cobound must be an expression of type integer.
+"d381288.f", line 2.26: 1514-789 (S) The cobound must be an expression of type integer.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file d381288.f.

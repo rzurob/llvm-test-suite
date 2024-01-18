@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/misc/RTO/d355488_1.f
+#FEATURE   = DTP - RTO coverage
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20090209
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d355488_1.f
+#OUTPUT    = d355488_1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d355488_1$(OBJ)
+#OUTPUT    = d355488_1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d355488_1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

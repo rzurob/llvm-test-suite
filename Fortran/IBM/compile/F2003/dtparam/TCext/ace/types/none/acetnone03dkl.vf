@@ -1,0 +1,22 @@
+** mod   === End of Compilation 1 ===
+"acetnone03dkl.f", line 69.23: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acetnone03dkl.f", line 69.32: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acetnone03dkl.f", line 69.41: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acetnone03dkl.f", line 70.23: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acetnone03dkl.f", line 70.50: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acetnone03dkl.f", line 70.59: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acetnone03dkl.f", line 71.24: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acetnone03dkl.f", line 71.34: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acetnone03dkl.f", line 72.55: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acetnone03dkl.f", line 76.55: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acetnone03dkl.f", line 77.55: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acetnone03dkl.f", line 79.29: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acetnone03dkl.f", line 80.25: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acetnone03dkl.f", line 81.51: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acetnone03dkl.f", line 82.26: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acetnone03dkl.f", line 83.30: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acetnone03dkl.f", line 84.52: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acetnone03dkl.f", 1516-036 (S) Entity carr has undefined type.
+"acetnone03dkl.f", 1516-036 (S) Entity complx has undefined type.
+** acenone03d   === End of Compilation 2 ===
+1501-511  Compilation failed for file acetnone03dkl.f.

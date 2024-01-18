@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/allocEnh/argAssociation/dummyArg018.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dummyArg018.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dummyArg018$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dummyArg018$(OBJ)
+#OUTPUT    = dummyArg018$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dummyArg018$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

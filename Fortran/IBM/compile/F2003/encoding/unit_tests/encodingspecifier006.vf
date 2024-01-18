@@ -1,0 +1,9 @@
+"encodingspecifier006.f", line 32.35: 1512-014 (S) The value given for the ENCODING specifier is incorrect.
+"encodingspecifier006.f", line 36.30: 1512-016 (E) The specifier encoding is not permitted for the READ statement.  Specifier is ignored.
+"encodingspecifier006.f", line 38.32: 1512-016 (E) The specifier encoding is not permitted for the WRITE statement.  Specifier is ignored.
+"encodingspecifier006.f", line 40.10: 1512-016 (E) The specifier encoding is not permitted for the WAIT statement.  Specifier is ignored.
+"encodingspecifier006.f", line 42.15: 1512-016 (E) The specifier encoding is not permitted for the BACKSPACE statement.  Specifier is ignored.
+"encodingspecifier006.f", line 44.11: 1512-016 (E) The specifier encoding is not permitted for the FLUSH statement.  Specifier is ignored.
+"encodingspecifier006.f", line 46.11: 1512-016 (E) The specifier encoding is not permitted for the CLOSE statement.  Specifier is ignored.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file encodingspecifier006.f.

@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)build_mask.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = build_mask$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = build_mask$(OBJ)
+#OUTPUT    = build_mask$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD       = MPRUN
+	#INPUT     = build_mask$(EXE)
+	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO
+

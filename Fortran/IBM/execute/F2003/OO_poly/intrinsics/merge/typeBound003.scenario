@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/merge/typeBound003.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050125
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)typeBound003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = typeBound003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = typeBound003$(OBJ)
+#OUTPUT    = typeBound003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = typeBound003$(EXE)
+#STDOUT    = typeBound003.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)typeBound003$(product)vf) typeBound003.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

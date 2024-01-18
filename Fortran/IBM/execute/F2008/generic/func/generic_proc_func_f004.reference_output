@@ -1,0 +1,16 @@
+    inside subintr_l1()  x= 1010
+    inside subintr_l2()  x= 202
+    inside subintr_l3()  x= 606
+        -- inside fun_a10()
+    inside func_fsub()  y= 49 49 49 49 49 49 49 49 49 49
+        -- inside fun_int()
+    inside proc_fsub()    y= -8
+        -- inside sub_int()
+    inside proc_ssub()    y= -300
+        -- inside fun_a10()
+    inside func_ffunc()  y= 7 7 7 7 7 7 7 7 7 7
+        -- inside fun_int()
+    inside proc_ffunc()
+        -- inside sub_int()
+    inside proc_sfunc()
+    inside main()  inmain= 606

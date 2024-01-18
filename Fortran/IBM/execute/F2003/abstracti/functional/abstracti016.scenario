@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/abstracti/abstracti016.scenario
+#FEATURE = Abstract Interface Tests
+#CREATOR = Jim Xia
+#DATE    = 20060220
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)abstracti016.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = abstracti016$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = abstracti016$(OBJ)
+#OUTPUT    = abstracti016$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = abstracti016$(EXE)
+#STDOUT    = abstracti016.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = abstracti016.out $($(tcasedir)abstracti016$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

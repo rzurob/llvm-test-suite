@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_tpbnd/specbnd/ftybn020d.scenario
+#FEATURE = OO_tpbnd tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ftybn020d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ftybn020d$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  ftybn020d$(OBJ)
+#OUTPUT    = ftybn020d$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ftybn020d$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

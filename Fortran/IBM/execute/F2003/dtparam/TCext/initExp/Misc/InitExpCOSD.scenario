@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/initExp/Misc/InitExpCOSD.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of F2003/initExp/*
+#DATE      = 20071128
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)InitExpCOSD.f
+#OUTPUT= InitExpCOSD$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  InitExpCOSD$(OBJ)
+#OUTPUT= InitExpCOSD$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  InitExpCOSD$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

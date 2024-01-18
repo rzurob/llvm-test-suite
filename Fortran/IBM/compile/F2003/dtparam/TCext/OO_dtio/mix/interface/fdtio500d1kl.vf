@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"fdtio500d1kl.f", line 56.15: 1512-138 (S) A polymorphic entity must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+** fdtio500d1kl   === End of Compilation 2 ===
+** unformattedwrite   === End of Compilation 3 ===
+1501-511  Compilation failed for file fdtio500d1kl.f.

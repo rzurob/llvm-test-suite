@@ -1,0 +1,46 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_tpbnd/final/ffinal506.f
+#FEATURE = OO_tpbnd
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ffinal506.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ffinal506$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = ffinal506$(OBJ)
+#OUTPUT    = ffinal506$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ffinal506$(EXE)
+#VALIDRCS  = 1
+#STDOUT    = ffinal506.out
+#STDERR    = ffinal506.err
+#ENDCMD
+
+#CMD       = TEST
+#OPTS      = -s
+#INPUT     = ffinal506.err
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = ffinal506.out $($(tcasedir)ffinal506$(product)vf)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

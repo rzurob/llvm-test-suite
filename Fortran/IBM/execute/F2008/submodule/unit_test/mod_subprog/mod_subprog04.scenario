@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = submodule/unit_test/mod_subprog/mod_subprog04.scenario
+#FEATURE   = F2008 Submodule
+#CREATOR   = Daniel Chen
+#DATE      = 20131120
+#TEST_TYPE = unit test
+#KEYWORDS  = F2008, submodule, F2008 submodule
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mod_subprog04.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = mod_subprog04$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = mod_subprog04$(OBJ)
+#OUTPUT    = mod_subprog04$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mod_subprog04$(EXE)
+#STDOUT    = mod_subprog04.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = mod_subprog04.out $($(tcasedir)mod_subprog04$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"userDefAssgn001.f", line 69.14: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+"userDefAssgn001.f", line 70.10: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+** userdefassgn001   === End of Compilation 2 ===
+** aaa   === End of Compilation 3 ===
+1501-511  Compilation failed for file userDefAssgn001.f.

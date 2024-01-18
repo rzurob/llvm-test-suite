@@ -1,0 +1,14 @@
+  39.4   0111087A Fortran 90Ü
+  53.6   01110797 CLASSÜFortran 90Ü
+    011107D1 XLF2003(NOOLDNANINF)ÜFortran 90Ü
+    011107D1 SIGNEDZEROÜFortran 90Ü
+    011107D1 NOOLDPADÜFortran 90Ü
+    011107D1 STOPEXCEPTÜFortran 90Ü
+** opmod   === End of Compilation 1 ===
+  62.13   0111089C USEÜFortran 90Ü
+    011107D1 XLF2003(NOOLDNANINF)ÜFortran 90Ü
+    011107D1 STOPEXCEPTÜFortran 90Ü
+    011107D1 SIGNEDZEROÜFortran 90Ü
+    011107D1 NOOLDPADÜFortran 90Ü
+** main   === End of Compilation 2 ===
+1501-510  Compilation successful for file userenamediag001.f.

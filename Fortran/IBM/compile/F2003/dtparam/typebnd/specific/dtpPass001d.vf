@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"dtpPass001d.f", line 56.24: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"dtpPass001d.f", line 58.10: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"dtpPass001d.f", line 60.10: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+** dtppass001d   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtpPass001d.f.

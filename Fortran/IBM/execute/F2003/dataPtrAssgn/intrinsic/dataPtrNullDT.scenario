@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrNullDT.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrNullDT.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrNullDT$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrNullDT$(OBJ)
+#OUTPUT    = dataPtrNullDT$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrNullDT$(EXE)
+#STDOUT    = dataPtrNullDT.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrNullDT.out $($(tcasedir)dataPtrNullDT$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

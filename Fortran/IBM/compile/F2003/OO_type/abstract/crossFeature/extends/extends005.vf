@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"extends005.f", line 79.16: 1514-088 (S) Invalid component name.
+"extends005.f", line 80.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"extends005.f", line 80.26: 1514-589 (S) Inaccessible component i must not be specified in the structure constructor for type child.
+** extends005   === End of Compilation 2 ===
+1501-511  Compilation failed for file extends005.f.

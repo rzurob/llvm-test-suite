@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/mix/interface/fdtio519b1kl.f
+#FEATURE = OO_dtio + derived type parameters
+#CREATOR = David Forster (derived from work by Jim Xia)
+#DATE    = 20070816
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fdtio519b1kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fdtio519b1kl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fdtio519b1kl$(OBJ)
+#OUTPUT    = fdtio519b1kl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fdtio519b1kl$(EXE)
+#STDERR    = fdtio519b1kl.err
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fdtio519b1kl.err $($(tcasedir)fdtio519b1kl$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

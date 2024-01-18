@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/namelist/access101a.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)access101a.1 .
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)access101a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = access101a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = access101a$(OBJ)
+#OUTPUT    = access101a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = access101a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

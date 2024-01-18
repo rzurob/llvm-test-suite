@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"parameter101.f", line 110.27: 1516-056 (S) An accessible explicit interface has a dummy argument with the INTENT(OUT) or INTENT(INOUT) attribute specified. Corresponding actual argument which is not definable is not permitted in this context.
+"parameter101.f", line 111.27: 1516-056 (S) An accessible explicit interface has a dummy argument with the INTENT(OUT) or INTENT(INOUT) attribute specified. Corresponding actual argument which is not definable is not permitted in this context.
+** parameter101   === End of Compilation 2 ===
+** readformatted   === End of Compilation 3 ===
+1501-511  Compilation failed for file parameter101.f.

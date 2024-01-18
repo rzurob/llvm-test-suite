@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/mxminAll/con/maxMin/mxminHollerithNullterm.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mxminHollerithNullterm.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qnullterm $(OPT_STORAGE_CLASS_STATIC)
+#OUTPUT    = mxminHollerithNullterm$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qnullterm $(OPT_STORAGE_CLASS_STATIC)
+#INPUT     = mxminHollerithNullterm$(OBJ)
+#OUTPUT    = mxminHollerithNullterm$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminHollerithNullterm$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/valueAttrwAllocCompnt/valueAllocatableComponentMultCalls002.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of valueAttrwAllocCompnt/*
+#DATE      = 20071102
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)valueAllocatableComponentMultCalls002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = valueAllocatableComponentMultCalls002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = valueAllocatableComponentMultCalls002$(OBJ)
+#OUTPUT    = valueAllocatableComponentMultCalls002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = valueAllocatableComponentMultCalls002$(EXE)
+#STDOUT    = valueAllocatableComponentMultCalls002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = valueAllocatableComponentMultCalls002.out $(tcasedir)valueAllocatableComponentMultCalls002.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

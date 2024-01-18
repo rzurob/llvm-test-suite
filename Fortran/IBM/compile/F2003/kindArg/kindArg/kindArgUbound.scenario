@@ -1,0 +1,31 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       kindArgUbound.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       07-05-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=      F_COMPILE
+#OPTS=     $(OPT_FREE_SOURCE_FORM)
+#INPUT=    $(tcasedir)kindArgUbound.f
+#STDERR=   kindArgUbound.err
+#VALIDRCS= $(RC_COMP_E)
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    kindArgUbound.err $($(tcasedir)kindArgUbound$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

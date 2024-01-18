@@ -1,0 +1,42 @@
+#!/usr/bin/ksh
+
+rm -fr /tmp/intrimod33
+mkdir /tmp/intrimod33
+
+# Compile NON_INTRINSIC modules
+$KILL $COMPILER -c $TR_SRC/../fake_ieee_modules.f $TR_SRC/../ieeeconsts.f $OPTIONS
+if [ $? -ne 0 ] 
+then 
+    echo "Failed to compile NON_INTRINSIC modules."
+    exit 32
+fi
+
+# Move the .mod files to a temporary location
+mv ieee_*.mod xlf_fp_util.mod constants_for_ieee.mod /tmp/intrimod33
+
+$KILL $COMPILER $TR_SRC/intrimod33.f ieeeconsts.o fake_ieee_modules.o $OPTIONS -o intrimod33
+if [ $? -ne 0 ] 
+then 
+    echo "Failed to compile the source code."
+    exit 33
+fi
+
+$KILL intrimod33 > intrimod33.out
+if [ $? -ne 0 ] 
+then 
+    echo "Failed in execution."
+    exit 33
+fi
+
+diff intrimod33.out $TR_SRC/fakeout1.vf
+if [ $? -ne 0 ] 
+then 
+    echo "Failed in verification."
+    exit 34
+fi
+
+if [[ $TRUN_SAVE != "YES" && $TRUN_SAVE != "yes" ]]
+then
+   rm -r /tmp/intrimod33
+   rm -f intrimod33.out intrimod33 ieeeconsts.o fake_ieee_modules.o
+fi

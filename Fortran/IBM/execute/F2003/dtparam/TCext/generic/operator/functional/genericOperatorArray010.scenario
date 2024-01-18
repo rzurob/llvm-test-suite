@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/operator/functional/genericOperatorArray010.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericOperatorArray010.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericOperatorArray010$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericOperatorArray010$(OBJ)
+#OUTPUT    = genericOperatorArray010$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericOperatorArray010$(EXE)
+#STDOUT    = genericOperatorArray010.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericOperatorArray010.out $(tcasedir)genericOperatorArray010.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/unformatted/syntax/C945/unit002.scenario
+#FEATURE = OO_dtio
+#CREATOR = Robert Ma
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)unit002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = unit002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  unit002$(OBJ)
+#OUTPUT    = unit002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = unit002$(EXE)
+#STDOUT    = unit002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = unit002.out $(tcasedir)unit002.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

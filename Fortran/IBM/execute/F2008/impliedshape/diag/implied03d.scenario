@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2008/impliedshape/diag/implied03d.scenario
+#FEATURE = F2008 Implied-shape array
+#CREATOR = Rafik Zurob
+#DATE    = 20110225
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)implied03d.f
+#OUTPUT    = implied03d$(OBJ)
+#STDERR    = implied03d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)implied03d$(product)vf) implied03d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

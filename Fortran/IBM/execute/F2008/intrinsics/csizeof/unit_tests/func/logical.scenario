@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2008/intrinsics/csizeof/unit_tests/func/logical.scenario
+#FEATURE = F2008 ISO_C_BINDING - C_SIZEOF
+#CREATOR = Paul Liu
+#DATE    = 20101226
+#TEST_TYPE=FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)logical.f
+#OUTPUT    = logical$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = logical$(OBJ)
+#OUTPUT    = logical$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = logical$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_procptr/CrossFeatures2/StrComp6.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_procptr/*
+#DATE      = 20071011
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS =  -qdebug=allowrpdt
+#INPUT=  $(tcasedir)StrComp6.f
+#OUTPUT= StrComp6$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  StrComp6$(OBJ)
+#OUTPUT= StrComp6$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  StrComp6$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

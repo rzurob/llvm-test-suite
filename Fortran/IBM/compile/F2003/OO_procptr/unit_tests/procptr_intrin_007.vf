@@ -1,0 +1,3 @@
+"procptr_intrin_007.f", line 4.18: 1516-230 (S) The intrinsic procedure log must not be used as an interface name in the PROCEDURE statement.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file procptr_intrin_007.f.

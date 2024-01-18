@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"dummyArgCharctrstc005k.f", line 45.6: 1514-604 (S) Dummy argument dtv of the derived-type I/O procedure readunformatted must be specified with the INTENT(INOUT) attribute.
+"dummyArgCharctrstc005k.f", line 55.6: 1514-604 (S) Dummy argument iomsg of the derived-type I/O procedure writeunformatted must be specified with the INTENT(INOUT) attribute.
+"dummyArgCharctrstc005k.f", line 65.6: 1514-604 (S) Dummy argument unit of the derived-type I/O procedure readformatted must be specified with the INTENT(IN) attribute.
+"dummyArgCharctrstc005k.f", line 77.6: 1514-604 (S) Dummy argument iostat of the derived-type I/O procedure writeformatted must be specified with the INTENT(OUT) attribute.
+** dummyargcharctrstc005k   === End of Compilation 2 ===
+1501-511  Compilation failed for file dummyArgCharctrstc005k.f.

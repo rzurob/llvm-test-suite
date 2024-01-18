@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"ffinal515a6dk.f", line 58.9: 1516-262 (S) An object with non-pure final subroutine finalizebase must not be finalized within a FORALL statement or construct.
+"ffinal515a6dk.f", 1516-262 (S) An object with non-pure final subroutine finalizebase must not be finalized within a FORALL statement or construct.
+** ffinal515a6dk   === End of Compilation 2 ===
+1501-511  Compilation failed for file ffinal515a6dk.f.

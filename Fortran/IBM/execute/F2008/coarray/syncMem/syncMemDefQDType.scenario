@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/syncMemDefQDType
+#FEATURE        = CAF SYNC MEMORY - Define followed by Query of dynamic type
+#CREATOR        = DF
+#DATE           = 2010-09-22
+#TEST_TYPE      = sanity
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)syncMemDefQDType.f
+#OUTPUT = syncMemDefQDType$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = syncMemDefQDType$(OBJ)
+#OUTPUT = syncMemDefQDType$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = syncMemDefQDType$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

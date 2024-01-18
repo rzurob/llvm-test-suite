@@ -1,0 +1,5 @@
+dshiftl_dshiftr01d.scenario
+maskl_maskr01d.scenario
+merge_bits01d.scenario
+shifta01d.scenario
+shiftl_shiftr01d.scenario

@@ -1,0 +1,3 @@
+ call sub
+ reset id to 0
+ after sub

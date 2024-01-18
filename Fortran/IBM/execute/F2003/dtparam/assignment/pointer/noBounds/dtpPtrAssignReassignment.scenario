@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignReassignment.scenario
+#FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - verify that pointers with deferred length parameters reflect parameters of target, even after reassignment
+#CREATOR   = DF Manual Update
+#DATE      = 20090121
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPtrAssignReassignment.f
+#OUTPUT    = dtpPtrAssignReassignment$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPtrAssignReassignment$(OBJ)
+#OUTPUT    = dtpPtrAssignReassignment$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPtrAssignReassignment$(EXE)
+#STDOUT    = dtpPtrAssignReassignment.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpPtrAssignReassignment$(product)vf) dtpPtrAssignReassignment.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

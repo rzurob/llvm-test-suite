@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/stmt/asynchSpecOpen11d.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS= Specifier in I/O Statements
+#CREATOR	= GM Manual Creation
+#DATE		= 20060201
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)asynchSpecOpen11d.f
+#OUTPUT		= asynchSpecOpen11d$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= asynchSpecOpen11d$(OBJ)
+#OUTPUT		= asynchSpecOpen11d$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= asynchSpecOpen11d$(EXE)
+#STDOUT		= asynchSpecOpen11d.stdout
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)asynchSpecOpen11d$(product)vf)	\
+				asynchSpecOpen11d.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/assignment/intrinsic/alloc/dtpIAAArray004.scenario
+#FEATURE   = Intrinsic Assignment with Allocation - allocate DTP array (kind parameter) with allocatable component via intrinsic assignment
+#CREATOR   = DF Manual Update
+#DATE      = 20090522
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAAArray004.f
+#OUTPUT    = dtpIAAArray004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAAArray004$(OBJ)
+#OUTPUT    = dtpIAAArray004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAAArray004$(EXE)
+#STDOUT    = dtpIAAArray004.out
+#ENDCMD
+
+#CMD       = SORT
+#INPUT     = dtpIAAArray004.out
+#STDOUT    = dtpIAAArray004.out1
+#ENDCMD
+
+#CMD       = SORT
+#INPUT     = $($(tcasedir)dtpIAAArray004$(product)vf)
+#STDOUT    = dtpIAAArray004.vf1
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpIAAArray004$(product)vf) dtpIAAArray004.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

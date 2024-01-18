@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2003/decimaledit/defaultIO/decEditDesc006a.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT=bgl
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)decEditDesc006a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = decEditDesc006a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = decEditDesc006a$(OBJ)
+#OUTPUT    = decEditDesc006a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = decEditDesc006a$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = aWrite.out $(tcasedir)decEditDesc006a.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,16 @@
+ b1_m allocated
+ -100 test1          
+ b2_m unallocated
+ b1_m allocated
+ -100 test1          
+ b2_m allocated with bounds: 0 : 1
+ 0 b2_m           
+ 1 b2_m           
+ b1_m allocated
+ -100 test1          
+ b2_m allocated with bounds: -1 : 1
+ -200 test2          
+ -200 test2          
+ -200 test2          
+ b1_m unallocated
+ b2_m unallocated

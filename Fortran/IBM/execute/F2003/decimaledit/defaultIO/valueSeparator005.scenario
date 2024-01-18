@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/decimaledit/defaultIO/valueSeparator005.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)valueSeparator005.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = valueSeparator005$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = valueSeparator005$(OBJ)
+#OUTPUT    = valueSeparator005$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = valueSeparator005$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

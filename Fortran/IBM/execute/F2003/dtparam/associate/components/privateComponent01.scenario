@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/associate/components/privateComponent01.scenario
+#FEATURE	= ASSOCIATE Contruct (with Derived Type Parameters) --	\
+				Component Attributes
+#CREATOR	= Glen Mateer
+#DATE		= 20080821
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)privateComponent01.f
+#OUTPUT		= privateComponent01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= privateComponent01$(OBJ)
+#OUTPUT		= privateComponent01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= privateComponent01$(EXE)
+#STDOUT		= privateComponent01.out
+#STDERR		= privateComponent01.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)privateComponent01$(product)vf)	\
+				privateComponent01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+???Missing error ???
+"PtrAssignCharacteristics3.f", line 121.3: 1515-137 (S) Dummy argument proc of Procedure pointer procptr2 and the corresponding dummy argument of procedure pointer assignment target intsub must have the same type and type parameters.
+** ptrassigncharacteristics3   === End of Compilation 2 ===
+1501-511  Compilation failed for file PtrAssignCharacteristics3.f.

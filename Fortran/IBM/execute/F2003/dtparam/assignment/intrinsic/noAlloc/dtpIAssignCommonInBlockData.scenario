@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpIAssignCommonInBlockData.scenario
+#FEATURE   = Intrinsic Assignment without Allocation - assign to common variables in internal subprograms
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAssignCommonInBlockData.f
+#OUTPUT    = dtpIAssignCommonInBlockData$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAssignCommonInBlockData$(OBJ)
+#OUTPUT    = dtpIAssignCommonInBlockData$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAssignCommonInBlockData$(EXE)
+#STDOUT    = dtpIAssignCommonInBlockData.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpIAssignCommonInBlockData$(product)vf) dtpIAssignCommonInBlockData.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

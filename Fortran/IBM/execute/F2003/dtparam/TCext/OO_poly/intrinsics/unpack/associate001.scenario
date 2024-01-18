@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/unpack/associate001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071002
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)associate001.f
+#OUTPUT    = associate001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = associate001$(OBJ)
+#OUTPUT    = associate001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = associate001$(EXE)
+#STDOUT    = associate001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)associate001$(product)vf) associate001.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

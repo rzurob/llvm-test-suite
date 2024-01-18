@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/refToVar/funcResultDummyArgs06.scenario
+#FEATURE	= Intrinsic Assignment -- variable and/or expr Reference variable
+#CREATOR	= GM Manual Creation
+#DATE		= 20061020
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)funcResultDummyArgs06.f
+#OUTPUT		= funcResultDummyArgs06$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= funcResultDummyArgs06$(OBJ)
+#OUTPUT		= funcResultDummyArgs06$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= funcResultDummyArgs06$(EXE)
+#STDOUT		= funcResultDummyArgs06.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)funcResultDummyArgs06$(product)vf)	\
+				funcResultDummyArgs06.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

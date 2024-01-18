@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/attribute/misc/implicitDerived01.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Attribute
+#CREATOR	= GM Manual Creation
+#DATE		= 20060117
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)implicitDerived01.f
+#OUTPUT		= implicitDerived01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= implicitDerived01$(OBJ)
+#OUTPUT		= implicitDerived01$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= implicitDerived01$(EXE)
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i '^implicitAsynchPoint[ 	]'
+#INPUT		= implicitDerived01$(LST)
+#STDOUT		= implicitDerived01.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= implicitDerived01.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

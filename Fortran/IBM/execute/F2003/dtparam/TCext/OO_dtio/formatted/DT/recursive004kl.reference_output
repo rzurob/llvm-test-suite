@@ -1,0 +1,13 @@
+ Linked list:  iotype:DT v_list: 5 6
+ iotype:DTbase  100   101
+ iotype:DTbase   200    201
+ iotype:DTbase    300
+ iotype:DTbase     400      401
+ iotype:DTbase      500       501
+
+ Linked list:  iotype:DT_ll v_list: 4 5
+ iotype:DTbase 100  101
+ iotype:DTbase  200   201
+ iotype:DTbase   300
+ iotype:DTbase    400     401
+ iotype:DTbase     500      501

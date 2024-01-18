@@ -1,0 +1,4 @@
+"fpAssgn001d4.f", line 53.21: 1515-041 (S) Pointer and target must have the same rank in the pointer assignment statement.
+"fpAssgn001d4.f", line 53.43: 1515-041 (S) Pointer and target must have the same rank in the pointer assignment statement.
+** fpassgn001d4   === End of Compilation 1 ===
+1501-511  Compilation failed for file fpAssgn001d4.f.

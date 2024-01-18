@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=roundX16WriteEdit02.scenario
+#FEATURE = 289037
+#CREATOR = William Zhang
+#DATE    = 07/24/2006
+#TEST_TYPE= functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)roundX16WriteEdit02.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = roundX16WriteEdit02$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = roundX16WriteEdit02$(OBJ)
+#OUTPUT    = roundX16WriteEdit02$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = roundX16WriteEdit02$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = roundX16WriteEdit02.out $($(tcasedir)roundX16WriteEdit02$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

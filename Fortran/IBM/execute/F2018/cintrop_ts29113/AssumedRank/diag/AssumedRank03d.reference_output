@@ -1,0 +1,3 @@
+"AssumedRank03d.f", line 33.10: 1516-369 (S) Dummy argument t of procedure foo has assumed rank.  The corresponding assumed type actual argument must also have assumed rank or must be an assumed-shape array.
+** sub   === End of Compilation 1 ===
+1501-511  Compilation failed for file AssumedRank03d.f.

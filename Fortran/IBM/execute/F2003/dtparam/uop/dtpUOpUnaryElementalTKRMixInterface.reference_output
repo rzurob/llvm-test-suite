@@ -1,0 +1,47 @@
+ Compare:
+ unaryPlusK2 (elt) 2
+ unaryPlusK4 (elt) 13
+ unaryPlusK2 (elt) 2
+ unaryPlusK4 (elt) 4
+ unaryPlusK2 (elt) 2 4 2
+ unaryPlusK2 (elt) 6 1
+ unaryPlusK4 (elt) 1000003 1000004 1000005 1000006 1000007 1000008 1 2 3
+ unaryPlusK4R1 28 46 2
+ unaryPlusK4R2 2063 3085 2 1
+ unaryPlusK4R1 18 36 2
+ unaryPlusK4R2 2052 3073 4094 3083 4104 5125 4114 5135 6156 5145 6166 7187 3 4
+ unaryPlus2K24 (elt) 53 138
+ unaryPlus2K24 (elt) 53 138
+ unaryPlus2K24 (elt) 53 138 53 138 54 139 55 140 56 141 53 138 6
+ unaryPlus2K24R2 21 31 24 34 22 32 21 31 23 33 22 32 2 3
+ unaryPlusL (elt)AbCdE@
+ unaryPlusLR1fGhIj!KlMnO"pQrSt# 3
+ unaryPlusLR2AbCdE fGhIjyKlMnOspQrStlKlMnOffGhIj_ 2 3
+ unaryPlus2L2 (elt)aBcDeFgHi% 4137
+ unaryPlus2L2R1 9
+ unaryPlus2L4 (elt)cDeFgHi^ 8235
+ unaryPlus2L4 (elt)cDeFgHi^ 8235 CdEfGhI^ 8236 2
+ with:
+ unaryPlusK2 (elt) 2
+ unaryPlusK4 (elt) 13
+ unaryPlusK2 (elt) 2
+ unaryPlusK4 (elt) 4
+ unaryPlusK2 (elt) 2 4 2
+ unaryPlusK2 (elt) 6 1
+ unaryPlusK4 (elt) 1000003 1000004 1000005 1000006 1000007 1000008 1 2 3
+ unaryPlusK4R1 28 46 2
+ unaryPlusK4R2 2063 3085 2 1
+ unaryPlusK4R1 18 36 2
+ unaryPlusK4R2 2052 3073 4094 3083 4104 5125 4114 5135 6156 5145 6166 7187 3 4
+ unaryPlus2K24 (elt) 53 138
+ unaryPlus2K24 (elt) 53 138
+ unaryPlus2K24 (elt) 53 138 53 138 54 139 55 140 56 141 53 138 6
+ unaryPlus2K24R2 21 31 24 34 22 32 21 31 23 33 22 32 2 3
+ unaryPlusL (elt)AbCdE@
+ unaryPlusLR1fGhIj!KlMnO"pQrSt# 3
+ unaryPlusLR2AbCdElpQrStefGhIj_KlMnOXKlMnORfGhIjK 2 3
+ unaryPlus2L2 (elt)aBcDeFgHi% 4137
+ unaryPlus2L2R1 9
+ unaryPlus2L4 (elt)cDeFgHi^ 8235
+ unaryPlus2L4 (elt)cDeFgHi^ 8235 CdEfGhI^ 8236 2
+ done

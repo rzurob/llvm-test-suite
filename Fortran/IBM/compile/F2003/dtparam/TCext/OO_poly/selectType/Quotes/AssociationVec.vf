@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"AssociationVec.f", line 104.9: 1511-139 (S) Associate name ptr%dt0%iarr is not associated with an entity that can be defined. ptr%dt0%iarr must not be redefined or become undefined.
+"AssociationVec.f", line 105.9: 1511-139 (S) Associate name ptr%dt0%iarr is not associated with an entity that can be defined. ptr%dt0%iarr must not be redefined or become undefined.
+** associationptr   === End of Compilation 2 ===
+1501-511  Compilation failed for file AssociationVec.f.

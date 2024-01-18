@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/ptrAssc/diffDeclDT4all.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071105
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)diffDeclDT4all.f
+#OUTPUT= diffDeclDT4all$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  diffDeclDT4all$(OBJ)
+#OUTPUT= diffDeclDT4all$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  diffDeclDT4all$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

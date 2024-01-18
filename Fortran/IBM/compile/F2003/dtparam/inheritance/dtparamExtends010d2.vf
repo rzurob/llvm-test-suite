@@ -1,0 +1,5 @@
+** dtparamextends010d2   === End of Compilation 1 ===
+** m   === End of Compilation 2 ===
+"dtparamExtends010d2.f", line 47.35: 1514-747 (S) Type parameter k is not permitted. k is the name of a component that is inherited from type base.
+** m1   === End of Compilation 3 ===
+1501-511  Compilation failed for file dtparamExtends010d2.f.

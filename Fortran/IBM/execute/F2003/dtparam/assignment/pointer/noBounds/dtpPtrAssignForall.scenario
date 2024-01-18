@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignForall.scenario
+#FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - FORALL statement
+#CREATOR   = DF Manual Update
+#DATE      = 20090121
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPtrAssignForall.f
+#OUTPUT    = dtpPtrAssignForall$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPtrAssignForall$(OBJ)
+#OUTPUT    = dtpPtrAssignForall$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPtrAssignForall$(EXE)
+#STDOUT    = dtpPtrAssignForall.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpPtrAssignForall$(product)vf) dtpPtrAssignForall.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

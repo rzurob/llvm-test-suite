@@ -1,0 +1,70 @@
+ iotype: DT_u1 v_list: 1
+     abc
+     101
+     111
+ iotype: DT_u1 v_list: 1
+     def
+     102
+     112
+ iotype: DT_u1 v_list: 1
+     ghi
+     103
+     113
+ iotype: DT_u1 v_list: 1
+     jkl
+     104
+     114
+
+ iotype: DT_u2-1 v_list: 2 3
+     ABC
+     201
+ iotype: DT_u2-2 v_list: 3 4
+     DEF
+     202
+ iotype: DT_u2-1 v_list: 2 3
+     GHI
+     203
+ iotype: DT_u2-2 v_list: 3 4
+     JKL
+     204
+ iotype: DT_u3-1 v_list: 5
+     jkl
+     104
+     114
+ iotype: DT_u3-2 v_list: 6
+     ghi
+     103
+     113
+ iotype: DT_u3-3 v_list: 7
+     def
+     102
+     112
+ iotype: DT_u3-1 v_list: 5
+     abc
+     101
+     111
+
+ iotype: DT_u4 v_list: 8
+     ABC
+     201
+ iotype: DT_u4 v_list: 8
+     DEF
+     202
+ iotype: DT_u4 v_list: 8
+     GHI
+     203
+ iotype: DT_u4 v_list: 8
+     JKL
+     204
+ iotype: DT_u4 v_list: 9 10 11
+     abc
+     101
+ iotype: DT_u4 v_list: 9 10 11
+     def
+     102
+ iotype: DT_u4 v_list: 9 10 11
+     ghi
+     103
+ iotype: DT_u4 v_list: 9 10 11
+     jkl
+     104

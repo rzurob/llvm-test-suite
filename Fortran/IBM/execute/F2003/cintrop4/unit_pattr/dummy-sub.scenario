@@ -1,0 +1,66 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop4/unit_pattr/dummy-sub.scenario
+#FEATURE = cintrop4 tests - regression run bucket
+#CREATOR = CPR Manual update
+#DATE    = 20060811
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)dummy-sub.f
+#STDERR    = dummy-sub.out1
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = dummy-sub$(OBJ)
+#OUTPUT    = dummy-sub$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dummy-sub$(EXE)
+#STDOUT    = dummy-sub.out2
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = dummy-sub.out1 dummy-sub.out2
+#STDOUT    = dummy-sub.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = dummy-sub.out $(tcasedir)dummy-sub.vf
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)dummy-sub.f
+#STDERR    = dummy-sub.out1
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = dummy-sub$(OBJ)
+#OUTPUT    = dummy-sub$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dummy-sub$(EXE)
+#STDOUT    = dummy-sub.out2
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = dummy-sub.out1 dummy-sub.out2
+#STDOUT    = dummy-sub.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = dummy-sub.out $(tcasedir)dummy-sub.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

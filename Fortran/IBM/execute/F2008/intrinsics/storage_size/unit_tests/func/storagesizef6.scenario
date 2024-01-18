@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=storagesizef6.scenario
+#FEATURE = STORAGE_SIZE intrinsic
+#CREATOR = Daniel Chen
+#DATE    = 20140818
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)storagesizef6.f
+#OPTS      = $(OPT_DISABLE_MSG_NUM<1518-317>) $(OPT_GEN_CODE_FOR_ARCHITECTURE<pwr8>)
+#OUTPUT    = storagesizef6$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2008_LINK
+#INPUT     = storagesizef6$(OBJ)
+#OUTPUT    = storagesizef6$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = storagesizef6$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

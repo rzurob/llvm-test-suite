@@ -1,0 +1,41 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = ieee/class/fclass03.scenario
+#FEATURE   = ieee tests - regression run bucket
+#CREATOR   = automated conversion script
+#DATE      = 20081220
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)ieeeconsts.f
+#OUTPUT = ieeeconsts$(OBJ)
+#OPTS	= $(OPT_FREE_SOURCE_FORM) $(OPT_FOLD_FLOATS_OFF) $(OPT_SET_STRICT_OPTIMIZATION)
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)fclass03.f
+#OUTPUT = fclass03$(OBJ)
+#OPTS 	= -I./ $(OPT_FREE_SOURCE_FORM) $(OPT_FOLD_FLOATS_OFF) $(OPT_SET_STRICT_OPTIMIZATION)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = fclass03$(OBJ)
+#OUTPUT = fclass03$(EXE)
+#OPTS 	= -I./ $(OPT_FREE_SOURCE_FORM) $(OPT_FOLD_FLOATS_OFF) $(OPT_SET_STRICT_OPTIMIZATION)
+#ENDCMD
+
+#CMD	= RUN
+#INPUT	= fclass03$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

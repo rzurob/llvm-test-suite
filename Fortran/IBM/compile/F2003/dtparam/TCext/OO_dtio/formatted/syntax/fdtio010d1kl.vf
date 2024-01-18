@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"fdtio010d1kl.f", line 42.8: 1514-649 (S) Dummy argument dtv of the derived type I/O procedure writepointformatted must not be unlimited polymorphic.
+** fdtio010d1kl   === End of Compilation 2 ===
+1501-511  Compilation failed for file fdtio010d1kl.f.

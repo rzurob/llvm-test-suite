@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/operator/resolve/genericOperatorResolve006.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericOperatorResolve006.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericOperatorResolve006$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericOperatorResolve006$(OBJ)
+#OUTPUT    = genericOperatorResolve006$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericOperatorResolve006$(EXE)
+#STDOUT    = genericOperatorResolve006.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericOperatorResolve006.out $(tcasedir)genericOperatorResolve006.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

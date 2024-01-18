@@ -1,0 +1,7 @@
+"dtparamdecl001d.f", line 57.18: 1514-682 (S) Identifier basekind appearing as a binding of derived type baseproc has already been defined as a component, binding, or type parameter of the same derived type.
+"dtparamdecl001d.f", line 64.18: 1514-683 (S) Identifier basekind appearing as a component of derived type baseproc2 has already been defined as a component, binding, or type parameter of the same derived type.
+"dtparamdecl001d.f", line 73.18: 1514-682 (S) Identifier basekind appearing as a binding of derived type base has already been defined as a component, binding, or type parameter of the same derived type.
+"dtparamdecl001d.f", line 81.18: 1514-683 (S) Identifier basekind appearing as a component of derived type base2 has already been defined as a component, binding, or type parameter of the same derived type.
+"dtparamdecl001d.f", line 84.24: 1514-684 (S) Identifier basekind appearing as a type parameter of derived type base3 has already been defined as a component, binding, or type parameter of the same derived type.
+** dtparamdecl001d   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtparamdecl001d.f.

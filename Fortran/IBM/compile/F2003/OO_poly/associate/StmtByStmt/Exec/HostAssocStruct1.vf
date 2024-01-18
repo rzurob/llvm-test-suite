@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"HostAssocStruct1.f", line 63.5: 1511-139 (S) Associate name as0 is not associated with an entity that can be defined. as0 must not be redefined or become undefined.
+** hostassocstruct1   === End of Compilation 2 ===
+1501-511  Compilation failed for file HostAssocStruct1.f.

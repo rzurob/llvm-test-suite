@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint31z.scenario
+#FEATURE	= Array constructor enhancement - procedure pointers can be invoked for data (complex)
+#CREATOR	= DF Manual Update
+#DATE		= 20060830
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint31z.f
+#OUTPUT		= acetint31z$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint31z$(OBJ)
+#OUTPUT		= acetint31z$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint31z$(EXE)
+#STDOUT		= acetint31z.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -a1e-6
+#INPUT		= $(tcasedir)acetint31z.vf acetint31z.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

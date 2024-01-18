@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"Misc6.f", line 69.20: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+** misc6   === End of Compilation 2 ===
+1501-511  Compilation failed for file Misc6.f.

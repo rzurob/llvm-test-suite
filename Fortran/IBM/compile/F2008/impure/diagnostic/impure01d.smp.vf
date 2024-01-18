@@ -1,0 +1,4 @@
+"impure01d.f", line 32.4: 1518-260 (L) The IMPURE keyword is not permitted by the Fortran 2003 standard.
+"impure01d.f", 1518-317 (L) The -qsmp option can cause the compiler to accept code that does not conform to the Fortran 2003 standard.
+** main   === End of Compilation 1 ===
+1501-510  Compilation successful for file impure01d.f.

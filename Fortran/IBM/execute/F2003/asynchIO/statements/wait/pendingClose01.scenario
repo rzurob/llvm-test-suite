@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME	   = F2003/asynchIO/statements/wait/pendingClose01.scenario
+#FEATURE   = Asynchronous I/O -- CLOSE Statement
+#CREATOR   = GM Manual Creation
+#DATE	   = 20060324
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)pendingClose01.f
+#OUTPUT		= pendingClose01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= pendingClose01$(OBJ)
+#OUTPUT		= pendingClose01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= pendingClose01$(EXE)
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)pendingClose01$(product)vf) fort.185
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

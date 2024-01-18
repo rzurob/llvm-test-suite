@@ -1,0 +1,4 @@
+"valuearray_d101.f", line 22.15: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"valuearray_d101.f", line 28.8: 1514-849 (S) Dummy argument arg has assumed-size. arg must not be declared with the VALUE attribute.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file valuearray_d101.f.

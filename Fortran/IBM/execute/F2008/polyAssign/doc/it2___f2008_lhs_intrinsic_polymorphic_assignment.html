@@ -1,0 +1,738 @@
+<html><head><title>IT2 - F2008 LHS intrinsic polymorphic assignment</title></head><body><div class="Section1">
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="BACKGROUND: rgb(175,191,195) 0% 50%; WIDTH: 100%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-BOTTOM: 2.5pt; WIDTH: 100%; PADDING-TOP: 2.5pt">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; COLOR: navy; FONT-FAMILY: Helvetica">Document Control Information:</span></strong><span style="FONT-SIZE: 10pt; COLOR: navy; FONT-FAMILY: Helvetica"> </span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            <p>The official version of this document is kept in CMVC in the <span style="FONT-WEIGHT: bold; TEXT-DECORATION: underline">%CMVC_Family%</span> family, release <span style="FONT-WEIGHT: bold; TEXT-DECORATION: underline">%CMVC_Release%</span>, component <span style="FONT-WEIGHT: bold; TEXT-DECORATION: underline">%CMVC_Component%</span>, file <span style="FONT-WEIGHT: bold; COLOR: rgb(255,102,102); TEXT-DECORATION: underline">%CMVC_PathName%</span>. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.<br />
+            <br />
+            CMVC Extraction Information: %W% %H% %I% sccsid<br />
+            </p>
+            <p>CMVC_Family=aix, CMVC_Release=test.dev, CMVC_Component=test.values<br />
+            </p>
+            <p>This document is IBM Confidential.<span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><u1:p></u1:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<table width="100%" cellspacing="3" cellpadding="0" border="1" style="BACKGROUND: rgb(255,204,153) 0% 50%; WIDTH: 100%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td valign="top" style="PADDING-RIGHT: 1pt; PADDING-LEFT: 1pt; PADDING-BOTTOM: 1pt; PADDING-TOP: 1pt">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Reviewers</span></strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">: </span><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Please click the 'Reviewed' check-box beside your name to indicate your participation in the review.</span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN-BOTTOM: 6pt" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN-BOTTOM: 12pt" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">%Reviews%</span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<u1:p></u1:p><u1:p></u1:p><u1:p></u1:p><u1:p></u1:p><u1:p></u1:p><u1:p></u1:p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="BACKGROUND: rgb(224,255,191) 0% 50%; WIDTH: 100%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="21%" valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-BOTTOM: 2.5pt; WIDTH: 21.22%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p>Document Title<u1:p></u1:p></span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td width="78%" valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-BOTTOM: 2.5pt; WIDTH: 78.78%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica">%Document_Name%%Note{or IT2 for name of the feature you are testing}%</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="21%" valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-BOTTOM: 2.5pt; WIDTH: 21.22%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">CMVC Feature Number:</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td width="78%" valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-BOTTOM: 2.5pt; WIDTH: 78.78%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica">%CMVC_Feature%</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Feature Title:</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica">%Note{Feature Title (please remember to change the title in the raw HTML, otherwise it shows up as ITSample in Web Review)}%</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Author(s):</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica">%Authors%</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Mandatory Reviewers:<u1:p></u1:p></span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">(Approver)</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica">%Note{These reviewers have technical approval authority and MUST approve this IT2. Generally, only list reviewers from the Component Reviewer list whose component is directly affected by this feature. Use Access Control to add or delete a reviewer}%</span></strong></p>
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica">%Approvers%</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Component Reviewers:(optional participation)</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica">%Note{ These groups must be made aware of the IT2, assign one person representing each. The names are suggested contacts (</span></strong><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica">The component leads directly affected by AIX/Linux are in the list by default</span></strong><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica">):</span></strong></p>
+            <ul>
+                <li>
+                <div><span><font face="Arial" color="#0000ff">C FE and related tools/libraries/driver:</font></span></div>
+                </li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p class="MsoNormal"><span><font face="Arial"><font color="#0000ff">AIX - Philip Luk (</font><a href="mailto:philipl@ca.ibm.com"><font color="#0000ff">philipl@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            </blockquote><blockquote style="COLOR: blue; MARGIN-RIGHT: 0px" dir="ltr" class="MsoNormal">
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">Linux - Philip Luk (</font><a href="mailto:philipl@ca.ibm.com"><font color="#0000ff">philipl@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">zOS - Kendrick Wong (</font><a href="mailto:kendrick@ca.ibm.com"><font color="#0000ff">kendrick@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">CELL - Larry Lindsay (</font><a href="mailto:llindsay@ca.ibm.com"><font color="#0000ff">llindsay@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">UPC - Philip Luk (</font><a href="mailto:philipl@ca.ibm.com"><font color="#0000ff">philipl@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            </blockquote>
+            <ul type="disc" style="MARGIN-TOP: 0in">
+                <li>
+                <div align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial" color="#0000ff">C++ FE and related tools/libraries/driver:</font></span></div>
+                </li>
+            </ul>
+            <blockquote style="COLOR: blue; MARGIN-RIGHT: 0px" dir="ltr" class="MsoNormal">
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font color="#0000ff">AIX - Jeff Heath (</font><a href="mailto:jrheath@ca.ibm.com"><font color="#0000ff">jrheath@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">Linux - Sasha Kasapinovic (</font><a href="mailto:skasapin@ca.ibm.com"><font color="#0000ff">skasapin@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">zOS - Michael Wong (</font><a href="mailto:michaelw@ca.ibm.com"><font color="#0000ff">michaelw@ca.ibm.com</font></a><font color="#0000ff">) </font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">CELL - Kevin Shin (</font><a href="mailto:kevshin@ca.ibm.com"><font color="#0000ff">kevshin@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            </blockquote>
+            <p>&nbsp;</p>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial" color="#0000ff">Fortran FE, ASTI, PLIX, and related tools/libraries/driver:</font></span></div>
+                </li>
+            </ul>
+            <p>&nbsp;</p>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">AIX, PLIX - Rafik Zurob (</font><a href="mailto:rzurob@ca.ibm.com"><font color="#0000ff">rzurob@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">Linux - Xing Xue (</font><a href="mailto:xingxue@ca.ibm.com"><font color="#0000ff">xingxue@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">BG/L - Daniel Chen (</font><a href="mailto:cdchen@ca.ibm.com"><font color="#0000ff">cdchen@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">CELL - Kelvin Li (</font><a href="mailto:kli@ca.ibm.com"><font color="#0000ff">kli@ca.ibm.com</font></a><font color="#0000ff">) </font></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><span><font size="2"><font color="#0000ff"><font face="Arial">PL/X Development: </font><font face="Arial">Kirk Crane (<a href="mailto:krcrane@ca.ibm.com">krcrane@ca.ibm.com</a>)</font></font></font></span></div>
+                </li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial" color="#0000ff">TPO and associated tools/libraries (libxlopt, SMPRT, MASS):</font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">AIX - Edwin Chan (<a href="mailto:edwinc@ca.ibm.com)">edwinc@ca.ibm.com)</a></font></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font color="#0000ff">Linux - Tommy Wong (<a href="mailto:tomwong@ca.ibm.com">tomwong@ca.ibm.com</a>)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">zOS - Chris Miclea (<a href="mailto:cmiclea@ca.ibm.com">cmiclea@ca.ibm.com</a>)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">BG - Damien Bonaventure (</font><a href="mailto:damien@ca.ibm.com"><font color="#0000ff">damien@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">CELL - Amy Wang (</font><a href="mailto:aktwang@ca.ibm.com"><font color="#0000ff">aktwang@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial" color="#0000ff">TOBEY and associated tools/libraries: (dis, libxl, bolt)</font></span></div>
+                </li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p align="left" class="MsoNormal"><span><font face="Arial" color="#0000ff">AIX - Christopher Lapkowski</font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">Linux - Irina Rada (<a href="mailto:irinar@ca.ibm.com">irinar@ca.ibm.com</a>)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">zOS - Chwan-Hang Lee (</font><a href="mailto:chwan@ca.ibm.com"><font color="#0000ff">chwan@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">BG - Damien Bonaventure (damien@ca.ibm.com), Leon Ding (Xiaoliang Ding/Piscataway/IBM@IBMUS, </font><a href="mailto:dingxi@us.ibm.com"><font color="#0000ff">dingxi@us.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">CELL - Dickson Chau (</font><a href="mailto:dickchau@ca.ibm.com"><font color="#0000ff">dickchau@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">dis (AIX/Linux) - Ian McIntosh (</font><a href="mailto:ianm@ca.ibm.com"><font color="#0000ff">ianm@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><font color="#0000ff"><span><font face="Arial">WCode: </font><font face="Arial">Roland Froese (<a href="mailto:froese@ca.ibm.com">froese@ca.ibm.com</a>) </font></span></font></div>
+                </li>
+            </ul>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial" color="#0000ff">Information Development:</font></span></div>
+                </li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">C/C++ - Kathleen Dowling (</font><a href="mailto:dowling@ca.ibm.com"><font color="#0000ff">dowling@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">Fortran - Joe Sobura (</font><a href="mailto:sobura@ca.ibm.com"><font color="#0000ff">sobura@ca.ibm.com</font></a><font color="#0000ff">) </font></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial" color="#0000ff">Customer Service and Support:</font></span></div>
+                </li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">AIX/Linux - Zoran Kulina (</font><a href="mailto:zoran@ca.ibm.com"><font color="#0000ff">zoran@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><font face="Arial"><font color="#0000ff">Cell - Sean Kennedy (</font><a href="mailto:seanpk@ca.ibm.com"><font color="#0000ff">seanpk@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font size="2" color="#0000ff">Youssef Himo (</font><a href="mailto:himo@ca.ibm.com"><font size="2" color="#0000ff">himo@ca.ibm.com</font></a><font size="2" color="#0000ff">)</font></font></span></p>
+            </blockquote>
+            <ul>
+                <li>
+                <div align="left" class="MsoNormal"><span><font face="Arial"><font size="2" color="#0000ff">Compiler Enablement:Dwayne Moore (</font><a href="mailto:dwayne@ca.ibm.com"><font size="2" color="#0000ff">dwayne@ca.ibm.com</font></a><font size="2" color="#0000ff">) </font></font></span></div>
+                </li>
+                <li>
+                <div align="left" class="MsoNormal"><span><font face="Arial"><font size="2"><font color="#0000ff">Fortran Test:Kobi Vinayagamoorthy (<a href="mailto:kobiv@ca.ibm.com">kobiv@ca.ibm.com</a>) </font></font></font></span></div>
+                </li>
+                <li>
+                <div align="left" class="MsoNormal"><font size="2"><font color="#0000ff"><span><font face="Arial">C/C++ Test:</font><font face="Arial"> </font></span><span></span><span><font face="Arial">Adrian Gatea (system p) (<a href="mailto:gatea@ca.ibm.com">gatea@ca.ibm.com</a>) </font></span></font></font></div>
+                </li>
+                <li class="MsoNormal"><span><font size="2"><font color="#0000ff"><span>zOS C/C++ Test: </span>Leon L Kiriliuk (z/OS) (</font></font><a href="mailto:leonk@ca.ibm.com)"><font face="Times New Roman"></font></a><a href="mailto:leonk@ca.ibm.com)"><font size="2" color="#0000ff">leonk@ca.ibm.com)</font></a><font face="Arial"></font></span> </li>
+                <li class="MsoNormal"><font size="2"><font color="#0000ff"><span><font face="Arial">PL/X Test: </font></span><span><font face="Arial">Anne Wylie (<a href="mailto:wylie@ca.ibm.com">wylie@ca.ibm.com</a>) </font></span></font></font></li>
+                <li class="MsoNormal"><span><font size="2" face="Arial" color="#0000ff">Build and Packaging Team: </font></span></li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font size="2" color="#0000ff">AIX - Chris Taylor (</font><a href="mailto:cntaylor@ca.ibm.com"><font size="2" color="#0000ff">cntaylor@ca.ibm.com</font></a><font size="2" color="#0000ff">) </font></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font size="2" color="#0000ff">Linux - Viktor Ganich (</font><a href="mailto:vganich@ca.ibm.com"><font size="2" color="#0000ff">vganich@ca.ibm.com</font></a><font size="2" color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font size="2" color="#0000ff">BGL - Steven Chen (</font><a href="mailto:stevchen@ca.ibm.com"><font size="2" color="#0000ff">stevchen@ca.ibm.com</font></a><font size="2" color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font size="2" color="#0000ff">Cell - Kevin Yuen (</font><a href="mailto:kchyuen@ca.ibm.com"><font size="2" color="#0000ff">kchyuen@ca.ibm.com</font></a><font size="2" color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font size="2" color="#0000ff">z/OS - Steve Chen (</font><a href="mailto:schen@ca.ibm.com"><font size="2" color="#0000ff">schen@ca.ibm.com</font></a><font size="2" color="#0000ff">)</font></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><font size="2" color="#0000ff">Dale Soldiuk (</font><a href="mailto:soldiuk@ca.ibm.com"><font size="2" color="#0000ff">soldiuk@ca.ibm.com</font></a><font size="2" color="#0000ff">) (Please include Dale as optional on all reviews)</font></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><span><font face="Arial"><font size="2"><font color="#0000ff">Performance Measurement and Analysis Team: John Tam (<a href="mailto:johntam@ca.ibm.com">johntam@ca.ibm.com</a>)</font></font></font></span></div>
+                </li>
+            </ul>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><font size="2"><span><font face="Arial" color="#0000ff">Planning: </font></span><span><font face="Arial"><font color="#0000ff">Mary Chan (</font><a href="mailto:marychan@ca.ibm.com"><font color="#0000ff">marychan@ca.ibm.com</font></a><font color="#0000ff">)</font> </font></span></font></div>
+                </li>
+            </ul>
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica"><span class="GramE"></span>Use Access Control comments to add/delete people from this list.}%<br />
+            <br />
+            %Component_Reviewers%</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Team Reviewers: (optional participation)</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-BOTTOM: 2.5pt; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica"><span class="GramE">%Note{</span>List any additional reviewers assigned to the review. These reviewers do not have approval authority. </span></strong><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica">Use Access Control to add or delete a reviewer.</span></strong><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica">}%<u1:p></u1:p><o:p></o:p></span></strong></p>
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; COLOR: blue; FONT-FAMILY: Helvetica">%Team_Reviewers%<o:p></o:p></span></strong></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN-BOTTOM: 12pt" class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><u1:p></u1:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<u1:p></u1:p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="BACKGROUND: rgb(184,213,226) 0% 50%; WIDTH: 100%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-BOTTOM: 2.5pt; WIDTH: 100%; PADDING-TOP: 2.5pt">
+            <p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">IT2 Status: <!-- Start -->For Approval </span><!-- End --></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="MsoNormal"><strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Approvers Only:</span></strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"> Click on the 'Approve' check-box beside your name in the table below if you agree with the technical and user interface content of this document; not checking your 'approve' check-box signifies you do not approve.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">%Approvals%<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><strong>Approval Comments</strong></span></p>
+<p class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><strong><br />
+</strong></span></p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="FONT-SIZE: 12pt; WIDTH: 100%; FONT-FAMILY: Arial; BACKGROUND-COLOR: rgb(200,175,200); TEXT-ALIGN: left">
+    <tbody>
+        <tr>
+            <td style="VERTICAL-ALIGN: top; FONT-FAMILY: Arial"><strong>Access Change History</strong> %Note{Authors: Access Change History will list any changes to the access control done to the document draft. These changes would not be visible in a review. In a review, this section would only list the access changes done to the review itself.<br />
+            Please note that changes to the access control of a review are not automatically reflected in the access control of the draft document.}% </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%CollapsedSection{<strong>Access Change History</strong>}{%Access_Change_History%}%
+<p class="MsoNormal"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in" class="MsoNormal"><span style="FONT-SIZE: 11pt; FONT-FAMILY: Helvetica"></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<u1:p></u1:p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="BACKGROUND: rgb(200,175,200) 0% 50%; WIDTH: 100%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-BOTTOM: 2.5pt; WIDTH: 100%; PADDING-TOP: 2.5pt">
+            <p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong><span style="FONT-SIZE: 14pt; FONT-FAMILY: Helvetica">IT2 Comments</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><!-- Start Overview -->Reviewers, add you IT2 comments in this section.<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><u1:p><o:p></o:p></u1:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">%Note { <o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><u><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">General Comments:<u1:p></u1:p></span></u><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">&lt;<span class="GramE">comments</span>&gt;<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><u><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">Comments Specific to Individual Test Cases:<u1:p></u1:p></span></u><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">
+<list all="" your="" scenarios="" here="" eg=""></list>
+<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span lang="PT-BR" style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">xxxxx001f.scenario<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span lang="PT-BR" style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">xxxxx002f.scenario<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span lang="PT-BR" style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">xxxxx003f.scenario<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><!-- End Overview -->xxxxx004f.scenario<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">...<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">}%</span></p>
+<p style="MARGIN: 0in 0in 0pt">&nbsp;</p>
+<p style="MARGIN: 0in 0in 0pt"><br />
+<font size="5"><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:16.0pt">Diagnostic test cases:</span></strong></font><br />
+&nbsp; <br />
+</p>
+polyAssign1001d_LHSscaRHSarr1.scenario<br />
+<ul>
+    <li>Test the following conditions</li>
+    <li>LHS is an unallocated allocatable scalar,&nbsp; RHS is an unallocated allocatable array with rank 1.</li>
+    <li>LHS is an unallocated allocatable scalar,&nbsp; RHS is an allocated array with rank 1.</li>
+    <li>LHS is an allocated scalar,&nbsp; RHS is an unallocated allocatable array with rank 1.</li>
+    <li>LHS is an allocated scalar,&nbsp; RHS is an allocated array with rank 1.</li>
+    <li>Test when LHS and RHS are not comfortable.</li>
+</ul>
+<br />
+polyAssign1002d_LHSscaRHSarr2.scenario<br />
+<ul>
+    <li>Test the following conditions</li>
+    <li>LHS is an unallocated allocatable scalar,&nbsp; RHS is an unallocated allocatable array with rank 2.</li>
+    <li>LHS is an unallocated allocatable scalar,&nbsp; RHS is an allocated array with rank 2.</li>
+    <li>LHS is an allocated scalar,&nbsp; RHS is an unallocated allocatable array with rank 2.</li>
+    <li>LHS is an allocated scalar,&nbsp; RHS is an allocated array with rank 2.</li>
+    <li>Test when LHS and RHS are not comfortable.</li>
+</ul>
+&nbsp;
+<p style="MARGIN: 0in 0in 0pt">polyAssign1008d_conversionNotPermitted.scenario<br />
+</p>
+<ul>
+    <li>LHS is a base type allocatable scalar, not a class allocatable scalar, RHS is a derived type scalar.</li>
+    <li>Test polymorphic assignment with derived types objects with attributes of class and type.</li>
+    <li>The above produce the type conversion error when object is defined with type attributes rather than class attributes.</li>
+</ul>
+<p style="MARGIN: 0in 0in 0pt">&nbsp;</p>
+polyAssign1010d_LHSpointerAssignment.scenario
+<ul>
+    <li><font size="2">LHS is a base type of pointer, not allocatable, RHS is an object of base type.</font></li>
+    <li>Test polymorphic assignment with derived type objects with allocatable and pointer.</li>
+    <li>When the derived type object is defined with pointer attribute, it produce errors on &quot;The polymorphic variable being defined in the intrinsic assignment must be allocatable&quot;.</li>
+</ul>
+<p style="MARGIN: 0in 0in 0pt">&nbsp;&nbsp; </p>
+<p style="MARGIN: 0in 0in 0pt">polyAssign1012d_LHSnonallocAssign.scenario</p>
+<ul>
+    <li><font size="2">LHS is a base type of pointer, not allocatable, RHS are allocatable scalars with class and type attributes.</font></li>
+    <li>Test polymorphic assignment with derived type objects.</li>
+    <li>Test attributes with class, type, allocatable and pointer variable for polymorphic assignment.</li>
+</ul>
+<br />
+&nbsp;
+<p style="MARGIN: 0in 0in 0pt">polyAssign1018d_errorOfnonUnlimited.scenario</p>
+<ul>
+    <li>LHS is a allocatable base type scalar, RHS is a derived type which is not a child of the base type.</li>
+    <li>Test non-properly used polymorphic assignment, with conversion of types on derived types without extension.</li>
+    <li>Define LHS as a non-unlimited polymorphic variable, produce errors on polymorphic assignment when type is not extensible.</li>
+</ul>
+<br />
+<p style="MARGIN: 0in 0in 0pt">polyAssign1023d_DiffRank.scenario<br />
+</p>
+<ul>
+    <li>&nbsp;LHS rank=2, RHS rank=1.</li>
+    <li>Test polymorphic assignment with different ranks.</li>
+    <li>When do assignment between different ranks, will produce the &quot;Operands must be conformable.&quot; errors</li>
+    <li>Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.</li>
+    <li>We test array polymorphic assignment to two levels of extensible derived types with integer type inside.</li>
+    <li>Test when LHS is unallocated initially.</li>
+    <li>Test polymorphic assignment to an unallocated array, in this  stuation the unallocated LHS is allocated with RHS, when RHS is  allocated and has the same type and same shape.</li>
+    <li>&nbsp;We add arrays with rank=2, LHS is unallocated, RHS is allocated.</li>
+</ul>
+<br />
+<p style="MARGIN: 0in 0in 0pt">polyAssign1023d_DiffRank<br />
+</p>
+<ul>
+    <li>&nbsp;LHS rank=1, RHS rank=2.</li>
+    <li>Test polymorphic assignment with different ranks.</li>
+    <li>When do assignment between different ranks, will produce the &quot;Operands must be conformable.&quot; errors</li>
+    <li>Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.</li>
+    <li>We test array polymorphic assignment to two levels of extensible derived types with integer type inside.</li>
+    <li>Test when LHS is unallocated initially.</li>
+    <li>Test polymorphic assignment to an unallocated array, in this stuation the unallocated LHS is allocated with RHS, when RHS is allocated and has the same type and same shape.</li>
+    <li>&nbsp;We add arrays with rank=2, LHS is unallocated, RHS is allocated.</li>
+</ul>
+<p style="MARGIN: 0in 0in 0pt">&nbsp; <br />
+</p>
+polyAssign1025d_2level.scenario.scenario<br />
+<ul>
+    <li>Test compiling with Fortran language standards: Fortran 2003std, 95std, 90std, 77std.</li>
+    <li>Test whether the variable of an intrinsic assignment is polymorphic.</li>
+    <li>Variables should be allocated and assigned with the corresponding dynamic type.</li>
+    <li>We test polymorphic assignment to two levels of extensible derived types.<br />
+    </li>
+</ul>
+<br />
+polyAssign1026d_lvl2declInverse.scenario<br />
+<ul>
+    <li>Test object declared with child type is assigned with an object declared with parent type.</li>
+    <li>Test whether the variable of an intrinsic assignment is polymorphic.</li>
+    <li>In this situation the compiler should give the error of &quot;A conversion from the base type to child type is not permitted&quot;.</li>
+    <li>We test polymorphic assignment to two levels of extensible derived types.</li>
+</ul>
+<br />
+<br />
+<br />
+<font size="5"><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:16.0pt">Functional test cases:</span></strong></font><br />
+<br />
+polyAssign1001f_2level.scenario<br />
+<ul>
+    <li>Test whether the variable of an intrinsic assignment is polymorphic.</li>
+    <li>Variables should be allocated and assigned with the corresponding dynamic type.</li>
+    <li>We test polymorphic assignment to two levels of extensible derived types.</li>
+</ul>
+<br />
+polyAssign1001fa_2levelInverse.scenario<br />
+<ul>
+    <li>This test from low level to high-level polymorphic assignment.</li>
+    <li>Plus  polymorphic assignment to two levels of extensible derived types.</li>
+</ul>
+<br />
+polyAssign1003f_3level.scenario<br />
+<ul>
+    <li>We test polymorphic assignment to three levels of extensible derived types.</li>
+    <li>Variables should be allocated and assigned with the corresponding dynamic type.</li>
+</ul>
+<br />
+polyAssign1003fa_3level_inverse.scenario<br />
+<ul>
+    <li>Besides polymorphic assignment to three levels of extensible derived types.</li>
+    <li>Add inverse assignment: low level child type object is assigned with high level parent type.</li>
+    <li>Also test the same level of assignment.</li>
+</ul>
+<br />
+polyAssign1004f_4level.scenario<br />
+<ul>
+    <li>We test polymorphic assignment to four levels of extensible derived types.</li>
+    <li>Test whether the variable of an intrinsic assignment is polymorphic.</li>
+</ul>
+<br />
+polyAssign1004fa_4level_inverse.scenario<br />
+<ul>
+    <li>Besides polymorphic assignment to four levels of extensible derived types</li>
+    <li>&nbsp;Add inverse assignment:low level child type object is assigned with high level parent type.</li>
+</ul>
+<br />
+polyAssign1005f_5level.scenario<br />
+<ul>
+    <li>We test polymorphic assignment to five levels of extensible derived types</li>
+    <li> Test whether the variable of an intrinsic assignment is polymorphic.</li>
+</ul>
+<br />
+polyAssign1005fa_5level_inverse.scenario<br />
+<ul>
+    <li>Besides polymorphic assignment to five levels of extensible derived types</li>
+    <li>&nbsp;Add inverse assignment:low level child type object is assigned with high level parent type.</li>
+</ul>
+<br />
+polyAssign1006f_6level.scenario<br />
+<ul>
+    <li>We test polymorphic assignment to six levels of extensible derived types</li>
+    <li> Test whether the variable of an intrinsic assignment is polymorphic.</li>
+</ul>
+<br />
+polyAssign1006fa_6level_inverse.scenario<br />
+<ul>
+    <li>Besides polymorphic assignment to six levels of extensible derived types</li>
+    <li>&nbsp;Add inverse assignment:low level child type object is assigned with high level parent type.</li>
+</ul>
+<br />
+polyAssign1007f_7level.scenario<br />
+<ul>
+    <li>We test polymorphic assignment to seven levels of extensible derived types</li>
+    <li> Test whether the variable of an intrinsic assignment is polymorphic.</li>
+</ul>
+<br />
+polyAssign1008f_8level.scenario<br />
+<ul>
+    <li>We test polymorphic assignment to eight levels of extensible derived types</li>
+    <li>Test whether the variable of an intrinsic assignment is polymorphic.</li>
+</ul>
+<br />
+polyAssign1009f_8levelInts.scenario<br />
+<ul>
+    <li>Use integer*1, integer*2, integer*4, integer*8 to the derived type to test polymorphic assignment with different integers.</li>
+</ul>
+<br />
+polyAssign1010f_8LvlIntLogicals.scenario<br />
+<ul>
+    <li>Use logical*1, logical*2, logical*4, logical*8&nbsp; to the derived type to test polymorphic assignment with different kinds of logical types.</li>
+</ul>
+<br />
+polyAssign1018f_arrDim1Lv2IntLHSunallocInitialization.scenario<br />
+<ul>
+    <li> We test array polymorphic assignment&nbsp; of extensible derived types with integer type inside.</li>
+    <li> Test the initialization for an unallocated allocatable array with base type.</li>
+</ul>
+<br />
+<br />
+polyAssign1019f_arrDim1Lv2IntLHSunallocSameType.scenario<br />
+<ul>
+    <li>Test polymorphic assignment to an unallocated array, in this stuation the unallocated LHS is allocated with RHS, when RHS is allocated and has the same type and same shape.</li>
+    <li>We test array polymorphic assignment to two levels of extensible derived types.</li>
+    <li>Test the initialization for an unallocated allocatable array with base type.</li>
+</ul>
+<br />
+polyAssign1020f_arrDim1Lv2IntLHSunallocSameTypeDiffShape.scenario<br />
+<ul>
+    <li>Test polymorphic assignment LHS is unallocated, RHS is allocated, LHS and have the same type but different shape.</li>
+    <li>We test array polymorphic assignment to two levels of extensible derived types.</li>
+    <li>Test the initialization for an unallocated allocatable aray with base type.</li>
+</ul>
+<br />
+polyAssign1021f_arrDim1Lv2IntLHSunallocDiffTypeSameShape.scenario<br />
+<ul>
+    <li>Test when LHS is unallocated initially  and RHS is allocated and hve different types. LHS is base type and RHS  is an extended derived type. LHS and RHS have different type and the same shape.</li>
+    <li>Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.</li>
+    <li>&nbsp;We test array polymorphic assignment to two levels of extensible derived types.</li>
+</ul>
+<br />
+polyAssign1022f_arrDim1Lv2IntLHSunallocDiffTypeDiffShape.scenario<br />
+<ul>
+    <li>Test when LHS is unallocated initially and RHS is allocated and have different types. LHS is base type and RHS is an extended derived type.</li>
+</ul>
+<ul>
+    <li>&nbsp;--LHS and RHS have different type and different shape.</li>
+</ul>
+<ul>
+    <li>Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.</li>
+    <li>&nbsp;We test array polymorphic assignment to two levels of extensible derived types.</li>
+</ul>
+<br />
+polyAssign1023f_LHSallocInitialization.scenario<br />
+<ul>
+    <li> Test the basic situation that the LHS array is allocated, and the initialization for LHS with base derived type.</li>
+    <li>Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.</li>
+    <li>We test array polymorphic assignment to two levels of extensible derived types.</li>
+</ul>
+<br />
+polyAssign1024f_LHSallocSameTypeSameShape.scenario<br />
+<ul>
+    <li>Test the situations that all arrays on the LHS and RHS are allocated, assign with the same type and the same shape, but different bounds, i.e. same rank and extent but different bounds.</li>
+    <li>&nbsp;-In the above situation LHS should have element by element copy from RHS, but the bounds should not be changed.</li>
+    <li>Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.</li>
+    <li>&nbsp;We test array polymorphic assignment to two levels of extensible derived types with integer type inside.</li>
+</ul>
+<br />
+polyAssign1025f_LHSallocSameTypeDiffShape.scenario<br />
+<ul>
+    <li>Test the situations that all arrays on the LHS and RHS are allocated, but LHS and RHS have different shapes, i.e. same rank but different extents.</li>
+    <li>-In the above situation LHS should get exactly the same copy as RHS, and the extent is changed after polymorphic assignment.</li>
+    <li>Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.</li>
+    <li>We test array polymorphic assignment to two levels of extensible derived types.</li>
+</ul>
+<br />
+polyAssign1026f_LHSallocDiffTypeSameShape.scenario<br />
+<ul>
+    <li>LHS and RHS are different type: LHS is base type and RHS is an extended derived type.</li>
+    <li>LHS and RHS have the same shape.</li>
+    <li>Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.</li>
+    <li>We test array polymorphic assignment to two levels of extensible derived types.</li>
+    <li>Test the situations that all arrays on the LHS and RHS are allocated.</li>
+</ul>
+<br />
+polyAssign1027f_LHSallocDiffTypeDiffShape.scenario<br />
+<ul>
+    <li> LHS and RHS are different type: LHS is base type and RHS is an extended derived type.</li>
+    <li> LHS and RHS have different shape.</li>
+    <li> Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.</li>
+    <li> We test array polymorphic assignment to two levels of extensible derived types.</li>
+    <li> Test the situations that all arrays on the LHS and RHS are allocated.</li>
+</ul>
+<br />
+polyAssign1028f_LHSallocRHSunalloc.scenario<br />
+<ul>
+    <li>Test the situations that LHS is allocated, RHS is unallocated.</li>
+    <li>Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.</li>
+    <li>We test array polymorphic assignment to two levels of extensible derived types.</li>
+</ul>
+<br />
+polyAssign1029f_arrDim2LHSunallocSameTypeSameShape.scenario<br />
+<ul>
+    <li>Test polymorphic assignment to an unallocated array, in this stuation the unallocated LHS is allocated with RHS, when RHS is allocated and has the same type and same shape!</li>
+    <li>We add arrays with rank=2, LHS is unallocated, RHS is allocated.</li>
+    <li>Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.</li>
+    <li>We test array polymorphic assignment to two levels of extensible derived types.</li>
+    <li>Test when LHS is unallocated initially.</li>
+</ul>
+<br />
+polyAssign1030f_arrDim2LHSunallocSameTypeDiffShape.scenario<br />
+<ul>
+    <li>Test polymorphic assignment LHS is unallocated, RHS is allocated, LHS and have the same type but different shape.</li>
+    <li>We add arrays with rank=2, LHS is unallocated, RHS is allocated.</li>
+    <li>Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.</li>
+    <li>We test array polymorphic assignment to two levels of extensible derived types.</li>
+    <li>Test when LHS is unallocated initially.</li>
+    <li>Test the initialization for an unallocated allocatable aray with base type.</li>
+</ul>
+<br />
+polyAssign1031f_arrDim2LHSunallocDiffTypeSameShape.scenario<br />
+<ul>
+    <li>Test when LHS is unallocated initially and RHS is allocated and hve different types. LHS is base type and RHS is an extended derived type.</li>
+    <li>&nbsp;--LHS and RHS have different type and the same shape.</li>
+    <li>We add arrays with rank=2, LHS is unallocated, RHS is allocated.</li>
+    <li>Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.</li>
+    <li>&nbsp;We test array polymorphic assignment to two levels of extensible derived types.</li>
+</ul>
+<br />
+polyAssign1032f_arrDim2LHSunallocDiffTypeDiffShape.scenario<br />
+<ul>
+    <li>Test when LHS is unallocated initially and RHS is allocated and have different types. LHS is base type and RHS is an extended derived type.</li>
+    <li>&nbsp;--LHS and RHS have different type and different shape.</li>
+    <li>We add arrays with rank=2, LHS is unallocated, RHS is allocated.</li>
+    <li>Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.</li>
+    <li>We test array polymorphic assignment to two levels of extensible derived types.</li>
+</ul>
+<br />
+polyAssign1033f_Dim2LHSallocSameTypeSameShape.scenario<br />
+<ul>
+    <li>Test the situations that all arrays on the LHS and RHS are allocated, assign with the same type and the same shape, but different bounds, i.e. same rank and extent but different bounds.</li>
+    <li>&nbsp;-In the above situation LHS should have element by element copy from RHS, but the bounds should not be changed.</li>
+    <li>We add arrays with rank=2, LHS is allocated, RHS is allocated.</li>
+    <li>Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.</li>
+    <li>We test array polymorphic assignment to two levels of extensible derived types.</li>
+</ul>
+<br />
+polyAssign1034f_Dim2LHSallocSameTypeDiffShape.scenario<br />
+<ul>
+    <li>Test polymorphic assignment LHS is allocated, RHS is allocated, LHS and have the same type but different shape.</li>
+    <li>We add arrays with rank=2, LHS is allocated, RHS is allocated.</li>
+    <li>Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.</li>
+    <li>We test array polymorphic assignment to two levels of extensible derived types.</li>
+</ul>
+<br />
+polyAssign1035f_Dim2LHSallocDiffTypeSameShape.scenario<br />
+<ul>
+    <li>Test when LHS is allocated initially and RHS is allocated and hve different types. LHS is base type and RHS is an extended derived type.</li>
+    <li>&nbsp;--LHS and RHS have different type and the same shape.</li>
+    <li>We add arrays with rank=2, LHS is allocated, RHS is allocated.</li>
+    <li>Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.</li>
+    <li>We test array polymorphic assignment to two levels of extensible derived types.</li>
+</ul>
+<br />
+polyAssign1036f_Dim2LHSallocDiffTypeDiffShape.scenario<br />
+<ul>
+    <li>Test when LHS is allocated initially and RHS is allocated and have different types. LHS is base type and RHS is an extended derived type.</li>
+    <li>--LHS and RHS have different type and different shape.</li>
+    <li>We add arrays with rank=2, LHS is allocated, RHS is allocated.</li>
+    <li>Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.</li>
+    <li>We test array polymorphic assignment to two levels of extensible derived types.</li>
+</ul>
+<br />
+polyAssign1037f_LHSallocSameTypeSameShapeSection.scenario<br />
+<ul>
+    <li>Test section array operation for polymorphic assignment.</li>
+    <li>Test whether the array of an intrinsic assignment is allowed to be polymorphic for the same type and different bounds.</li>
+    <li>We test array polymorphic assignment to two levels of extensible derived types with integer type inside.</li>
+    <li>Test the situations that all arrays on the LHS and RHS are allocated, assign with the same type and the same shape, but different bounds, i.e. same rank and extent but different bounds.</li>
+</ul>
+<br />
+polyAssign1038f_LHSallocSameTypeDiffShapeSection.scenario<br />
+<ul>
+    <li>Test section array operation for polymorphic assignment for arrays with the same type and different shape.</li>
+    <li>Test the situations that all arrays on the LHS and RHS are allocated, but LHS and RHS have different shapes, i.e. same rank but different extents.</li>
+    <li>Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.</li>
+    <li>We test array polymorphic assignment to two levels of extensible derived types with integer type inside.</li>
+</ul>
+<br />
+polyAssign1039f_LHSallocDiffTypeDiffShapeSection.scenario<br />
+<ul>
+    <li>Test section array operation for polymorphic assignment for array with different type and different shape.</li>
+    <li>LHS and RHS are different type: LHS is base type and RHS is an extended derived type.</li>
+    <li>Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.</li>
+    <li>We test array polymorphic assignment to two levels of extensible derived types with integer type inside.</li>
+    <li>Test the situations that all arrays on the LHS and RHS are allocated.</li>
+</ul>
+<br />
+polyAssign1040f_ICE.scenario<br />
+<ul>
+    <li>Test when LHS is an unlimited poly array component.</li>
+    <li>Test allocatable array within a derived type for polymorphic assignment.</li>
+    <li>We test polymorphic assignment that unlimited-polymorphic-allocatable-assumed-array inside a derived type is assigned with an integer array.</li>
+</ul>
+&nbsp; <br />
+<p style="MARGIN: 0in 0in 0pt">polyAssign1041f_unlimitedPolyAssignbyFunReturn.scenario</p>
+<ul>
+    <li>A<span id="comments_277"><span id="comments74918"><span id="expanded74918"><span id="comments_content74918">rray element as an array which is a derived type with unlimited polymorphic.</span></span></span></span></li>
+    <li><span id="comments_277"><span id="comments74918"><span id="expanded74918"><span id="comments_content74918">Component type is also a derived type.</span></span></span></span></li>
+    <li>Test LHS of intrinsic assignment with function return.</li>
+    <li>LHS variable is unlimited polymorphic entity.</li>
+    <li>RHS expression is a function returning an allocatable object.</li>
+    <li>Change the type of argument inside the function.</li>
+    <li>Re-assign LHS variable with other type which is different with LHS.</li>
+    <li>Define array whose element is an allocatable unlimited type.</li>
+    <li>Re-assign array element with other defined type.</li>
+    <br />
+</ul>
+<br />
+<p style="MARGIN: 0in 0in 0pt">polyAssign1042f_variousAttributes.scenario</p>
+<ul>
+    <li><font size="2">LHS is an unlimited polymorphic scalar, RHS is an object of a derived type which is also an element of an array. </font></li>
+    <li>A<span id="comments_277"><span id="comments74918"><span id="expanded74918"><span id="comments_content74918">rray element as an array which is a derived type with unlimited polymorphic.</span></span></span></span></li>
+    <li><span id="comments_277"><span id="comments74918"><span id="expanded74918"><span id="comments_content74918">Component type is also a derived type.</span></span></span></span></li>
+    <li>Test LHS of intrinsic assignment with attributes of unlimited polymorphic, target, pointer and allocatable.</li>
+    <li>LHS variable is unlimited polymorphic entity,&nbsp; RHS is an object of a derived type.<br />
+    </li>
+    <li>Define array whose elements are allocatable unlimited type</li>
+    <li>Re-assign array element with other defined type</li>
+</ul>
+<br />
+polyAssign1043f_LHSunlimiArrSec.scenario.scenario<br />
+<ul>
+    <li>LHS is an unlimited polymorphic array section, RHS is an integer.</li>
+    <li>LHS of intrinsic assignment is allowed to be polymorphic for array sections.</li>
+</ul>
+<br />
+polyAssign1044f_LHSunlimiArrSecUnalloc.scenario<br />
+<ul>
+    <li>Adding LHS is unallocated, RHS is an array.</li>
+    <li>LHS is an unlimited polymorphic array section, RHS is an integer.</li>
+    <li>LHS of intrinsic assignment is allowed to be polymorphic for array sections.</li>
+</ul>
+<br />
+<br />
+<br />
+<br />
+<br />
+<p style="MARGIN: 0in 0in 0pt"><strong style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:16.0pt"></span></strong><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<u1:p></u1:p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="BACKGROUND: rgb(200,175,200) 0% 50%; WIDTH: 100%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-BOTTOM: 2.5pt; WIDTH: 100%; PADDING-TOP: 2.5pt">
+            <p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong><span style="FONT-SIZE: 14pt; FONT-FAMILY: Helvetica"><u1:p></u1:p></span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            <p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong><span style="FONT-SIZE: 14pt; FONT-FAMILY: Helvetica">IT2 Information</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 11pt; FONT-FAMILY: Helvetica"><u1:p></u1:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica">%Note{<span class="GramE"></span>IT2 location and other related information}%</span></p>
+<p style="MARGIN: 2pt 0in">&nbsp;</p>
+<br />
+<a class="review" title="Click on the text to add a comment"><span id="line__231"><font size="4">Location of test cases:</font></span></a><span id="comments_231"></span><span id="comments_entry_231"></span><font size="4"><br />
+</font><a class="review" title="Click on the text to add a comment"><span id="line__232"><font size="4"> CMVC Family:               aix@aix.torolab.ibm.com@1500</font></span></a><span id="comments_232"></span><span id="comments_entry_232"></span><font size="4"><br />
+</font><a class="review" title="Click on the text to add a comment"><span id="line__233"><font size="4"> CMVC Component:       xlftest.F2008</font></span></a><span id="comments_233"></span><span id="comments_entry_233"></span><font size="4"><br />
+</font><a class="review" title="Click on the text to add a comment"><span id="line__234"><font size="4"> CMVC Release:            tstdev,  tst151</font></span></a><span id="comments_234"></span><span id="comments_entry_234"></span><font size="4"><br />
+</font><a class="review" title="Click on the text to add a comment"><span id="line__235"><font size="4"> CMVC path:                  &lt;release&gt;/F2008/polyAssign/func</font></span></a><span id="comments_235"></span><span id="comments_entry_235"></span><font size="4"><br />
+</font><a class="review" title="Click on the text to add a comment"><span id="line__236"><font size="4">                                      &lt;release&gt;/F2008/polyAssign/diag</font></span></a><span id="comments_236"></span><span id="comments_entry_236"></span><font size="4"><br />
+</font><a class="review" title="Click on the text to add a comment"><span id="line__237"><font size="4">                                      &lt;release&gt;/F2008/polyAssign/doc<br />
+<br />
+Sanity test case: </font></span>polyAssign1001f_2level.scenario</a><span id="comments_237"></span><span id="comments_entry_237"></span>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 11pt; FONT-FAMILY: Helvetica"><u1:p></u1:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<u1:p></u1:p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="BACKGROUND: rgb(200,175,200) 0% 50%; WIDTH: 100%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="PADDING-RIGHT: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-BOTTOM: 2.5pt; WIDTH: 100%; PADDING-TOP: 2.5pt">
+            <p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong><span style="FONT-SIZE: 14pt; FONT-FAMILY: Helvetica"><!-- End Multi-Platform Considerations -->Appendices/References</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 11pt; FONT-FAMILY: Helvetica"><u1:p></u1:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><span class="GramE">%Note{</span>I0 and IT1 location and other related information}%</span></p>
+<p style="MARGIN: 2pt 0in">&nbsp;</p>
+<p style="MARGIN: 2pt 0in"><a class="review" title="Click on the text to add a comment"><span id="line__242"><font size="3"><font size="5">No I0 for this feature as per RTC WI 96086.</font></font></span></a></p>
+<p style="MARGIN: 2pt 0in"><font size="5">IT1: https://featureflow.torolab.ibm.com/featureflow/show/8054</font><a class="review" title="Click on the text to add a comment"><span id="line__242"><font size="3"><font size="5"></font></font></span></a><span id="comments_242"></span><span id="comments_entry_242"></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-SIZE: 10pt; FONT-FAMILY: Helvetica"><u1:p></u1:p><o:p></o:p></span></p>
+</div>
+<!-- End Internal Interfaces --><!--HTML Wrapper--></body></html>

@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"functionReturn002.f", line 49.14: 1512-138 (S) A polymorphic entity must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+** functionreturn002   === End of Compilation 2 ===
+1501-511  Compilation failed for file functionReturn002.f.

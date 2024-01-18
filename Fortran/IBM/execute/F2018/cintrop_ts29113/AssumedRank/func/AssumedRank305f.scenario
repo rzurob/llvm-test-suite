@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/AssumedRank/func/AssumedRank305f.scenario
+#FEATURE   = C Interop, Assumed Rank
+#CREATOR   = Dorra Bouchiha
+#DATE      = 2013-10-18
+#TEST_TYPE = functional
+#KEYWORDS  = C Interop, Assumed Rank, CFI functions
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)AssumedRank305c.c
+#OPTS      = $(C_COMPILER_OPTS) -I$(xlf_include)
+#OUTPUT    = AssumedRank305c$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AssumedRank305f.f
+#OUTPUT    = AssumedRank305f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = AssumedRank305c$(OBJ) AssumedRank305f$(OBJ)
+#OUTPUT    = AssumedRank305f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = AssumedRank305f$(EXE)
+#STDOUT    = AssumedRank305f.out
+#ENDCMD
+
+#CMD       = DIFF
+#OPTS      = -w
+#INPUT     = $($(tcasedir)AssumedRank305f$(product)vf) AssumedRank305f.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

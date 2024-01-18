@@ -1,0 +1,16 @@
+PtrTar1.scenario
+PtrTar2.scenario
+alloctArrTar.scenario
+arraySectTar1.scenario
+arraySectTar2.scenario
+assumeShapeTar.scenario
+assumeSizeTar.scenario
+bndMapping1.scenario
+bndMapping2.scenario
+bndMapping3.scenario
+bndMapping4.scenario
+dtCompTar.scenario
+funcPtr.scenario
+ptrAssgnDummyTar.scenario
+structConstr.scenario
+unpolyPtrSelector.scenario

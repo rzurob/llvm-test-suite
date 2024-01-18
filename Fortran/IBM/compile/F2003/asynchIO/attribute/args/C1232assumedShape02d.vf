@@ -1,0 +1,5 @@
+** dumpdata   === End of Compilation 1 ===
+** c1232assumedshape02d   === End of Compilation 2 ===
+"C1232assumedShape02d.f", line 93.27: 1516-272 (S) Dummy argument outdata of procedure dumpdata was specified with the ASYNCHRONOUS attribute. outdata is not an assumed-shape array.  The corresponding actual argument must not be an array section or an assumed-shape array.
+** massageanddump   === End of Compilation 3 ===
+1501-511  Compilation failed for file C1232assumedShape02d.f.

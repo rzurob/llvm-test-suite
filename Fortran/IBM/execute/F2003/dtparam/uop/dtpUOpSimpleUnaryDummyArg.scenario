@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpSimpleUnaryDummyArg.scenario
+#FEATURE   = User-Defined Operators - unary ops appearing as dummy arguments
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpSimpleUnaryDummyArg.f
+#OUTPUT    = dtpUOpSimpleUnaryDummyArg$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpSimpleUnaryDummyArg$(OBJ)
+#OUTPUT    = dtpUOpSimpleUnaryDummyArg$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpSimpleUnaryDummyArg$(EXE)
+#STDOUT    = dtpUOpSimpleUnaryDummyArg.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUOpSimpleUnaryDummyArg$(product)vf) dtpUOpSimpleUnaryDummyArg.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

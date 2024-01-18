@@ -1,0 +1,30 @@
+ inside foo 1000
+ inside bar 1000
+ after bar F
+ inside foo1 1000
+ after foo T -999
+ main, b1: 1000
+ inside foo 2000
+ inside bar 2000
+ after bar F
+ inside foo1 2000
+ after foo T -999
+ main, c1: 2000
+ inside foo 123
+ inside bar 123
+ after bar F
+ inside foo1 123
+ after foo T -999
+ main: struct constr 123
+ inside foo 2000
+ inside bar 2000
+ after bar F
+ inside foo1 2000
+ after foo T -999
+ main: c1 2000
+ inside foo 2000
+ inside bar 2000
+ after bar F
+ inside foo1 2000
+ after foo T -999
+ main: c1 2000

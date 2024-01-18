@@ -1,0 +1,9 @@
+"genericAmbiguityTypeBound009d.f", line 45.30: 1514-699 (S) Procedure "printb" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "printa", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** genericname   === End of Compilation 1 ===
+"genericAmbiguityTypeBound009d.f", line 77.36: 1514-699 (S) Procedure "addb" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "adda", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** binoperator   === End of Compilation 2 ===
+"genericAmbiguityTypeBound009d.f", line 106.38: 1514-710 (S) Dummy argument b of procedure or binding assgn1 must not be specified with the POINTER attribute. assgn1 will not be included in the ASSIGNMENT(=) generic interface.
+"genericAmbiguityTypeBound009d.f", line 112.38: 1514-710 (S) Dummy argument b of procedure or binding assgn2 must not be specified with the POINTER attribute. assgn2 will not be included in the ASSIGNMENT(=) generic interface.
+** assignment   === End of Compilation 3 ===
+** genericambiguitytypebound009d   === End of Compilation 4 ===
+1501-511  Compilation failed for file genericAmbiguityTypeBound009d.f.

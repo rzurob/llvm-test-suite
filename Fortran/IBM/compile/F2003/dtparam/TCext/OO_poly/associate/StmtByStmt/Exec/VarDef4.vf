@@ -1,0 +1,3 @@
+"VarDef4.f", line 62.8: 1511-139 (S) Associate name i is not associated with an entity that can be defined. i must not be redefined or become undefined.
+** vardef4   === End of Compilation 1 ===
+1501-511  Compilation failed for file VarDef4.f.

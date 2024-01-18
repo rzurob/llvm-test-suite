@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpIAssignExternalModule.scenario
+#FEATURE   = Intrinsic Assignment without Allocation - assign to module variables in external procedures
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAssignExternalModule.f
+#OUTPUT    = dtpIAssignExternalModule$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAssignExternalModule$(OBJ)
+#OUTPUT    = dtpIAssignExternalModule$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAssignExternalModule$(EXE)
+#STDOUT    = dtpIAssignExternalModule.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpIAssignExternalModule$(product)vf) dtpIAssignExternalModule.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

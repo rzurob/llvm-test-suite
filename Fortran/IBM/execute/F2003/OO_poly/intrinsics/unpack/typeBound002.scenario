@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/unpack/typeBound002.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050225
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)typeBound002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = typeBound002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = typeBound002$(OBJ)
+#OUTPUT    = typeBound002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = typeBound002$(EXE)
+#STDOUT    = typeBound002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)typeBound002$(product)vf) typeBound002.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

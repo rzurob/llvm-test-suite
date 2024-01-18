@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/asynchIO/attribute/diag/R441StructComp01d.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of asynchIO/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)R441StructComp01d.f
+#OUTPUT		= R441StructComp01d$(OBJ)
+#STDERR		= R441StructComp01d.stderr
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)R441StructComp01d$(product)vf) R441StructComp01d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,4 @@
+"asynchSpecDataXfer02d.f", line 60.17: 1512-014 (S) The value given for the ASYNCHRONOUS specifier is incorrect.
+"asynchSpecDataXfer02d.f", line 84.16: 1512-014 (S) The value given for the ASYNCHRONOUS specifier is incorrect.
+** asynchspecdataxfer02d   === End of Compilation 1 ===
+1501-511  Compilation failed for file asynchSpecDataXfer02d.f.

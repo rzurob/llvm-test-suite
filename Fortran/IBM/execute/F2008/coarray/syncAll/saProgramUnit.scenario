@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /syncAll/saProgramUnit.scenario
+#FEATURE   = CAF SYNC ALL - synchronisation from different contexts in program unit
+#CREATOR   = DF
+#DATE      = 20100727
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)saProgramUnit.f
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = saProgramUnit$(OBJ)
+#OUTPUT    = saProgramUnit$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = saProgramUnit$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,7 @@
+"AssumedType12d.f", line 33.26: 1514-809 (S) Entity c has assumed type. c must not have the POINTER attribute.
+** mod   === End of Compilation 1 ===
+"AssumedType12d.f", line 46.27: 1514-809 (S) Entity a has assumed type. a must not have the POINTER attribute.
+"AssumedType12d.f", line 51.27: 1514-809 (S) Entity a has assumed type. a must not have the POINTER attribute.
+"AssumedType12d.f", line 58.27: 1514-809 (S) Entity a has assumed type. a must not have the POINTER attribute.
+** assumedtype12d   === End of Compilation 2 ===
+1501-511  Compilation failed for file AssumedType12d.f.

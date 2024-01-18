@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/typCompatible/dtype4both.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071105
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dtype4both.f
+#OUTPUT= dtype4both$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  dtype4both$(OBJ)
+#OUTPUT= dtype4both$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dtype4both$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

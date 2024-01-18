@@ -1,0 +1,30 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dtpEquivC579.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       07-06-09
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dtpEquivC579.f
+#STDERR=   dtpEquivC579.err
+#VALIDRCS= $(RC_COMP_E)
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    dtpEquivC579.err $($(tcasedir)dtpEquivC579$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

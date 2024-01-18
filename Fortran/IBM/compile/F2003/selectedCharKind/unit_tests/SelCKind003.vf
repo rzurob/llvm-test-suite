@@ -1,0 +1,4 @@
+"SelCKind003.f", line 36.36: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "selected_char_kind".
+"SelCKind003.f", line 37.17: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "selected_char_kind".
+** selckind003   === End of Compilation 1 ===
+1501-511  Compilation failed for file SelCKind003.f.

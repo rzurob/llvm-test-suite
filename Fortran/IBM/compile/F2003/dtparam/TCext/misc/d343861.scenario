@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/misc/d343861.scenario
+#FEATURE   = Defect 343861
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20071115
+#TEST_TYPE =
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT     = $(tcasedir)d343861.f
+#OUTPUT    = d343861$(OBJ)
+#ENDCMD
+
+#CMD       = GREP
+#OPTS      = "bbb%k.*Offset: -"
+#INPUT     = d343861.lst
+#VALIDRCS  = 1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

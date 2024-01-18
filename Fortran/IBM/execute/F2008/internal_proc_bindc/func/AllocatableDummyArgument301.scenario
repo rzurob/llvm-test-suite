@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/AllocatableAndPointer/func/AllocatableDummyArgument301f.scenario
+#FEATURE   = C Interop, Allocatable, Pointer
+!old#CREATOR = Dorra Bouchiha
+#CREATOR   = Izhak Jakov
+#DATE      = 2013-01-22
+#TEST_TYPE = functional
+#KEYWORDS  = C Interop, Allocatable, Pointer
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)AllocatableDummyArgument301c.c
+#OPTS      = $(C_COMPILER_OPTS) -I$(xlf_include)
+#OUTPUT    = AllocatableDummyArgument301c$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AllocatableDummyArgument301f.f
+#OUTPUT    = AllocatableDummyArgument301f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = AllocatableDummyArgument301f$(OBJ) AllocatableDummyArgument301c$(OBJ)
+#OUTPUT    = AllocatableDummyArgument301$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = AllocatableDummyArgument301$(EXE)
+#STDOUT    = AllocatableDummyArgument301.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

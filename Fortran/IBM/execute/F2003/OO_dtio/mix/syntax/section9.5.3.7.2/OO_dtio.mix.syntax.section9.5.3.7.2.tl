@@ -1,0 +1,10 @@
+! automatically generated
+dummyArgCharctrstc001.scenario
+dummyArgCharctrstc002.scenario
+dummyArgCharctrstc003.scenario
+dummyArgCharctrstc004.scenario
+dummyArgCharctrstc005.scenario
+dummyArgCharctrstc006.scenario
+dummyArgCharctrstc007.scenario
+dummyArgCharctrstc009.scenario
+dummyArgCharctrstc009a.scenario

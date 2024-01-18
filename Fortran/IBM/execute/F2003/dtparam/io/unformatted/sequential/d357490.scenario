@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/io/unformatted/sequential/d357490.scenario
+#FEATURE	= Unformatted Intrinsic I/O (with Derived Type Parameters)
+#CREATOR	= Glen Mateer
+#DATE		= 20081015
+#TEST_TYPE	= Reduced Code
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)d357490.f
+#OUTPUT		= d357490$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= d357490$(OBJ)
+#OUTPUT		= d357490$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= d357490$(EXE)
+#ENDCMD
+
+#CMD		= CMP
+#INPUT		= $($(tcasedir)d357490$(product)vf) fort.99
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

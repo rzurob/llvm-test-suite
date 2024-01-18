@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/unit_tests/MoveAllocScalar21.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071106
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)MoveAllocScalar21.f
+#OUTPUT    = MoveAllocScalar21$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = MoveAllocScalar21$(OBJ)
+#OUTPUT    = MoveAllocScalar21$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = MoveAllocScalar21$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,40 @@
+** mod   === End of Compilation 1 ===
+"acesynt17dk.f", line 70.28: 1514-692 (S) Type parameter k1 must be specified in this derived-type specifier.
+"acesynt17dk.f", line 70.28: 1514-692 (S) Type parameter l1 must be specified in this derived-type specifier.
+"acesynt17dk.f", line 70.41: 1515-023 (S) Syntax Error: Illegal token " :: " is replaced by token " , ".
+"acesynt17dk.f", line 71.47: 1514-692 (S) Type parameter k1 must be specified in this derived-type specifier.
+"acesynt17dk.f", line 71.47: 1514-692 (S) Type parameter l1 must be specified in this derived-type specifier.
+"acesynt17dk.f", line 71.60: 1515-023 (S) Syntax Error: Illegal token " :: " is replaced by token " , ".
+"acesynt17dk.f", line 72.66: 1514-692 (S) Type parameter l1 must be specified in this derived-type specifier.
+"acesynt17dk.f", line 72.66: 1514-692 (S) Type parameter k1 must be specified in this derived-type specifier.
+"acesynt17dk.f", line 72.79: 1515-023 (S) Syntax Error: Illegal token " :: " is replaced by token " , ".
+"acesynt17dk.f", line 73.85: 1514-692 (S) Type parameter l1 must be specified in this derived-type specifier.
+"acesynt17dk.f", line 73.85: 1514-692 (S) Type parameter k1 must be specified in this derived-type specifier.
+"acesynt17dk.f", line 73.97: 1515-022 (S) Syntax Error: Extra token " :: " was found. The token is ignored.
+"acesynt17dk.f", line 74.84: 1515-022 (S) Syntax Error: Extra token " derived " was found. The token is ignored.
+"acesynt17dk.f", line 74.91: 1515-022 (S) Syntax Error: Extra token " ( " was found. The token is ignored.
+"acesynt17dk.f", line 74.92: 1515-022 (S) Syntax Error: Extra token " 4 " was found. The token is ignored.
+"acesynt17dk.f", line 74.93: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acesynt17dk.f", line 74.94: 1515-022 (S) Syntax Error: Extra token " 1 " was found. The token is ignored.
+"acesynt17dk.f", line 74.95: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acesynt17dk.f", line 74.96: 1515-022 (S) Syntax Error: Extra token " :: " was found. The token is ignored.
+"acesynt17dk.f", line 75.15: 1515-019 (S) Syntax is incorrect.
+"acesynt17dk.f", line 76.30: 1514-692 (S) Type parameter l1 must be specified in this derived-type specifier.
+"acesynt17dk.f", line 76.30: 1514-692 (S) Type parameter k1 must be specified in this derived-type specifier.
+"acesynt17dk.f", line 76.42: 1515-022 (S) Syntax Error: Extra token " :: " was found. The token is ignored.
+"acesynt17dk.f", line 79.51: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt17dk.f", line 80.51: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt17dk.f", line 81.51: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt17dk.f", line 82.51: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt17dk.f", line 83.51: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt17dk.f", line 84.51: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt17dk.f", line 85.51: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt17dk.f", line 87.66: 1516-044 (S) A conversion from type REAL*4 is not permitted.
+"acesynt17dk.f", line 88.66: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"acesynt17dk.f", line 89.66: 1516-044 (S) A conversion from type COMPLEX*16 is not permitted.
+"acesynt17dk.f", line 90.66: 1516-044 (S) A conversion from type REAL*8 is not permitted.
+"acesynt17dk.f", line 91.66: 1516-044 (S) A conversion from type COMPLEX*8 is not permitted.
+"acesynt17dk.f", line 92.66: 1516-044 (S) A conversion from type LOGICAL is not permitted.
+"acesynt17dk.f", line 93.66: 1516-044 (S) A conversion from type CHARACTER is not permitted.
+** acesynt17dk   === End of Compilation 2 ===
+1501-511  Compilation failed for file acesynt17dk.f.

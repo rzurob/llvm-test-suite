@@ -1,0 +1,6 @@
+"polyAssign1012d_LHSnonallocAssign.f", line 42.5: 1515-103 (S) The polymorphic variable being defined in the intrinsic assignment must be allocatable.
+"polyAssign1012d_LHSnonallocAssign.f", line 60.5: 1515-103 (S) The polymorphic variable being defined in the intrinsic assignment must be allocatable.
+"polyAssign1012d_LHSnonallocAssign.f", line 61.5: 1515-103 (S) The polymorphic variable being defined in the intrinsic assignment must be allocatable.
+"polyAssign1012d_LHSnonallocAssign.f", line 62.5: 1515-103 (S) The polymorphic variable being defined in the intrinsic assignment must be allocatable.
+** test   === End of Compilation 1 ===
+1501-511  Compilation failed for file polyAssign1012d_LHSnonallocAssign.f.

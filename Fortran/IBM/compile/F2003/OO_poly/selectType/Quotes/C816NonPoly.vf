@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"C816NonPoly.f", line 79.17: 1511-101 (S) The selector in the SELECT TYPE statement is not polymorphic.
+"C816NonPoly.f", line 88.14: 1514-645 (S) level0 is an abstract type. level0 is not permitted in this context.
+** c816nonpoly   === End of Compilation 2 ===
+1501-511  Compilation failed for file C816NonPoly.f.

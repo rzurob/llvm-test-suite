@@ -1,0 +1,4 @@
+"volatileHostAssociation04d.f", line 40.25: 1514-091 (S) Invalid structure component reference.  The object name and all component names (except the rightmost) must be of type derived.
+** m   === End of Compilation 1 ===
+"volatileHostAssociation04d.f", line 46.10: 1514-219 (S) Unable to access module symbol file for module m. Check path and file permissions of file. Use association not done for this module.
+1501-511  Compilation failed for file volatileHostAssociation04d.f.

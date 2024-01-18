@@ -1,0 +1,4 @@
+ 1525-056 A formatted READ statement using B format found the invalid digit 'G' in the input file.  The program will recover by assuming a zero in its place.
+                                                                                                                                               
+ 1525-056 A formatted READ statement using Z format found the invalid digit 'G' in the input file.  The program will recover by assuming a zero in its place.
+                                                                                                                                               

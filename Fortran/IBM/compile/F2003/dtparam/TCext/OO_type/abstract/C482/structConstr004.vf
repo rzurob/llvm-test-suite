@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"structConstr004.f", line 68.16: 1514-645 (S) newbase is an abstract type. newbase is not permitted in this context.
+"structConstr004.f", line 70.16: 1514-645 (S) base2 is an abstract type. base2 is not permitted in this context.
+** structconstr004   === End of Compilation 2 ===
+1501-511  Compilation failed for file structConstr004.f.

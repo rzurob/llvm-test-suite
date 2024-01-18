@@ -1,0 +1,44 @@
+ xk4d = xk4a .addit. xk4b
+ binaryPlusK: 12 2 -> 14
+ xk4d = xk4a .addit. 2 .addit. xk4b
+ binaryPlus: 12 2 -> 14
+ binaryPlusK: 14 2 -> 16
+ xk4d = ((xk4a .addit. 2) .addit. xk4b)
+ binaryPlus: 12 2 -> 14
+ binaryPlusK: 14 2 -> 16
+ xk4d = xk4a .subit. xk4c
+ binaryMinusK: 12 3 -> 9
+ xk4d = (xk4a .subit. xk4b .subit. 77)
+ binaryMinusK: 12 2 -> 10
+ binaryMinus: 10 77 -> -67
+ xk4d = xk4a .addit. 5 .addit. xk4c .addit. 55 .addit. 7
+ binaryPlus: 12 5 -> 17
+ binaryPlusK: 17 3 -> 20
+ binaryPlus: 20 55 -> 75
+ binaryPlus: 75 7 -> 82
+ xk4d = (((xk4a .addit. 5) .addit. xk4c) .addit. 55) .addit. 7
+ binaryPlus: 12 5 -> 17
+ binaryPlusK: 17 3 -> 20
+ binaryPlus: 20 55 -> 75
+ binaryPlus: 75 7 -> 82
+ xk4d = xk4a .addit. 66 .addit. xk4b .addit. 44
+ binaryPlus: 12 66 -> 78
+ binaryPlusK: 78 2 -> 80
+ binaryPlus: 80 44 -> 124
+ xk4d = xk4a .subit. .neg. xk4c
+ unaryNegK: 3 -> -3
+ binaryMinusK: 12 -3 -> 15
+ xk4d = xk4a .subit. (.neg. xk4c)
+ unaryNegK: 3 -> -3
+ binaryMinusK: 12 -3 -> 15
+ xk4d = xk4a .subit. .neg. xk4c .addit. xk4b
+ unaryNegK: 3 -> -3
+ binaryMinusK: 12 -3 -> 15
+ binaryPlusK: 15 2 -> 17
+ xk4d = xk4a .subit. .neg. xk4c .addit. .neg. (.neg. 99)
+ unaryNegK: 3 -> -3
+ binaryMinusK: 12 -3 -> 15
+ unaryNeg: 99 -> -99
+ unaryNegK: -99 -> 99
+ binaryPlusK: 15 99 -> 114
+ end

@@ -1,0 +1,3 @@
+"submodule04cd.f", line 39.17: 1513-101 (S) Global entity m was seen elsewhere as a global entity with conflicting attributes.
+** m   === End of Compilation 1 ===
+1501-511  Compilation failed for file submodule04cd.f.

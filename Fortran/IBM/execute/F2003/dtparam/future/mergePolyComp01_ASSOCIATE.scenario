@@ -1,0 +1,32 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/intrinsics/merge/mergePolyComp01_ASSOCIATE.scenario
+#FEATURE= 355754
+#CREATOR= Nancy Wang
+#DATE   = Sept. 22 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)mergePolyComp01_ASSOCIATE.f
+#OUTPUT= mergePolyComp01_ASSOCIATE$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = mergePolyComp01_ASSOCIATE$(OBJ)
+#OUTPUT= mergePolyComp01_ASSOCIATE$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = mergePolyComp01_ASSOCIATE$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

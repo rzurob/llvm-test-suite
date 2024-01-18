@@ -1,0 +1,81 @@
+! GB DTP extension using:
+! ftcx_dtp -ql -qnodefaultpv -qdeferredlp -qreuse=self /tstdev/OO_poly/intrinsics/transfer/argAssociation007.f
+! opt variations: -qnol -qdefaultpv -qnodeferredlp -qreuse=none
+
+! *********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: argAssociation007.f
+! %VERIFY: argAssociation007.out:argAssociation007.vf
+! %STDIN:
+! %STDOUT: argAssociation007.out
+! %EXECARGS:
+! %POSTCMD:
+! %END
+! *********************************************************************
+!*  =================================================================== 
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
+!*  =================================================================== 
+!*  TEST CASE TITLE            :
+!*  PROGRAMMER                 : Yong Du
+!*  DATE                       : 12/29/2004
+!*  ORIGIN                     :
+!*  PRIMARY FUNCTIONS TESTED   : transfer
+!*  SECONDARY FUNCTIONS TESTED :
+!*  DRIVER STANZA              : xlf90
+!*  DESCRIPTION                :
+!*    SOURCE or MOLD of TRANSFER is a dummy argument. Dummy argument
+!*  is a pointer or allocatable, non-poly, and is scalar.
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  ===================================================================
+!*  REVISION HISTORY
+!*                    MM/DD/YY :
+!*                        Init :
+!*                    Comments :
+!*  ===================================================================
+!2345678901234567890123456789012345678901234567890123456789012345678901
+
+module m
+    type Base(n1,k1)    ! (20,4)
+        integer, kind :: k1
+        integer, len  :: n1
+        integer(k1)      i
+        integer(k1)      j
+    end type
+
+    type Base1(k2,n2)    ! (4,20)
+        integer, kind     :: k2
+        integer, len      :: n2
+        integer(k2)          j
+        type(Base(n2,k2)) :: k
+        integer(k2)          m
+    end type
+end module
+
+program argAssociation007
+use m
+    type(Base(:,4)), pointer :: b
+    type(Base1(4,:)), allocatable :: b1
+
+    allocate(b, SOURCE=Base(20,4)(j=11,i=10))
+    allocate(b1, SOURCE=Base1(4,20)(6, Base(20,4)(7,8), 9))
+
+    call sub1(b, b1)
+
+    contains
+
+    subroutine sub1(arg1, arg2)
+        type(Base(:,4)), pointer :: arg1
+        type(Base1(4,:)), allocatable :: arg2
+
+        associate(name1=>transfer(arg1, arg2))
+            print *, name1%j, name1%k%i
+        end associate
+
+        print *, transfer(arg2, arg1, 2)
+    end subroutine
+end

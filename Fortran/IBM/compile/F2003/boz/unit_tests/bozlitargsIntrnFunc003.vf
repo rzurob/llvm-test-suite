@@ -1,0 +1,4 @@
+"bozlitargsIntrnFunc003.f", line 39.11: 1518-339 (L) Binary, octal and hexadecimal literal constants appearing as the A argument of the REAL and INT intrinsic functions are not interpreted as specified by Fortran 2003 when the XLF2003(NOBOZLITARGS) option is specified.
+"bozlitargsIntrnFunc003.f", line 40.12: 1518-339 (L) Binary, octal and hexadecimal literal constants appearing as the A argument of the REAL and INT intrinsic functions are not interpreted as specified by Fortran 2003 when the XLF2003(NOBOZLITARGS) option is specified.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file bozlitargsIntrnFunc003.f.

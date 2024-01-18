@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/streamio/unit/ufmtint01.scenario
+#FEATURE = streamio tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#IF on (linuxle)
+XLFRTEOPTS=ufmt_bigendian=11
+#ENDIF
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)ufmtint01.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ufmtint01$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  ufmtint01$(OBJ)
+#OUTPUT    = ufmtint01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ufmtint01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/derived/acetdt00.scenario
+#FEATURE	= Array constructor enhancement derived TS, no parameters, simple objects of correct type
+#CREATOR	= DF Manual Update
+#DATE		= 20060927
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt00.f
+#OUTPUT		= acetdt00$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt00$(OBJ)
+#OUTPUT		= acetdt00$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt00$(EXE)
+#STDOUT		= acetdt00.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -r1-e5
+#INPUT		= $(tcasedir)acetdt00.vf acetdt00.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

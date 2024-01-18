@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/io/defaultIO/dtparamWrite001.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamWrite001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamWrite001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtparamWrite001$(OBJ)
+#OUTPUT    = dtparamWrite001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamWrite001$(EXE)
+#STDOUT    = dtparamWrite001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dtparamWrite001.out $($(tcasedir)dtparamWrite001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

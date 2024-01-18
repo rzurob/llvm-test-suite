@@ -1,0 +1,6 @@
+"dtSpec001d1.f", line 30.12: 1514-726 (E) The type declaration statement for type parameter n must appear before the type declaration statement for component data.
+"dtSpec001d1.f", line 30.12: 1514-724 (E) Type parameter n of derived type a must appear in a type declaration statement. n is assumed to be a default integer kind type parameter.
+** m   === End of Compilation 1 ===
+"dtSpec001d1.f", line 38.13: 1514-213 (S) A type parameter in this position must be a scalar integer initialization expression.
+** dtspec001d1   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtSpec001d1.f.

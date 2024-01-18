@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=charvalueattrd010.f
+#FEATURE = diagnostic for VALUE attribute for characters with length other than 1. (feature 298120).
+#CREATOR = Bardia Mahjour
+#DATE    = 20060124
+#TEST_TYPE=diag test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)charvalueattrd010.f
+#OPTS      = -qdebug=intmsg
+#STDERR    = charvalueattrd010.out
+#STDOUT    = charvalueattrd010.out
+#OUTPUT    = charvalueattrd010$(OBJ)
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = charvalueattrd010.out $($(tcasedir)charvalueattrd010$(product)vf)
+#OPTS      = -bw
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE =
+#CREATOR = Daniel Chen
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)hostassoc02.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = hostassoc02$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = hostassoc02$(OBJ)
+#OUTPUT    = hostassoc02$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = hostassoc02$(EXE)
+#STDOUT    = hostassoc02.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = hostassoc02.out $($(tcasedir)hostassoc02$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

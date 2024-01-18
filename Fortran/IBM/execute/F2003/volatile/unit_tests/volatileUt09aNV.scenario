@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= volatileUt09aNV.scenario
+#FEATURE = Supporting VOLATILE for F2003
+#CREATOR = Vince Yuen
+#DATE    = 20060606
+#TEST_TYPE= ut
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = -qxlf2003=novolatile
+#INPUT     = $(tcasedir)volatileUt09a.f
+#OUTPUT    = volatileUt09a$(OBJ)
+#STDERR    = volatileUt09a.out
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = volatileUt09a$(OBJ)
+#OUTPUT    = volatileUt09a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = volatileUt09a$(EXE)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = volatileUt09a.out $(tcasedir)volatileUt09aNV.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

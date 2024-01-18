@@ -1,0 +1,4 @@
+"Misc6.f", line 54.20: 1511-101 (S) The selector in the SELECT TYPE statement is not polymorphic.
+** m   === End of Compilation 1 ===
+** misc6   === End of Compilation 2 ===
+1501-511  Compilation failed for file Misc6.f.

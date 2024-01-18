@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       mProcTypBndDefAssgn.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       03-06-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)mProcTypBndDefAssgn.f
+#OUTPUT= mProcTypBndDefAssgn$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  mProcTypBndDefAssgn$(OBJ)
+#OUTPUT= mProcTypBndDefAssgn$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  mProcTypBndDefAssgn$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

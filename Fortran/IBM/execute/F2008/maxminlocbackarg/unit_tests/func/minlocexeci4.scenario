@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= minlocexeci4.scenario
+#FEATURE = back argument for maxloc/minloc
+#CREATOR = Pooja Dayanand
+#DATE    = 20120629
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)minlocexeci4.f
+#OUTPUT    = minlocexeci4$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2008_LINK
+#INPUT     = minlocexeci4$(OBJ)
+#OUTPUT    = minlocexeci4$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = minlocexeci4$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

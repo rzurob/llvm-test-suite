@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2008/newunit/unit_tests/diag/newunit03d.scenario
+#FEATURE = NEWUNIT= specifier
+#CREATOR = Rafik Zurob
+#DATE    = 20100510
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)newunit03d.f
+#OUTPUT    = newunit03d$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = newunit03d$(OBJ)
+#OUTPUT    = newunit03d$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = newunit03d$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

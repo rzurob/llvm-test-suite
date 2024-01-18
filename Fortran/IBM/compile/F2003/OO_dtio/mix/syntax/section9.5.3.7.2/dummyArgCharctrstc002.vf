@@ -1,0 +1,8 @@
+** m1   === End of Compilation 1 ===
+  65.6   016106A8 iomsg‹read1‹
+  76.6   016106A8 iomsg‹write1‹
+  76.6   016106A7 iostat‹write1‹
+** dummyargcharctrstc002   === End of Compilation 2 ===
+** read1   === End of Compilation 3 ===
+** write1   === End of Compilation 4 ===
+1501-511  Compilation failed for file dummyArgCharctrstc002.f.

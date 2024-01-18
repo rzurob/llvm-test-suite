@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = ffuncRet005a1.scenario
+#FEATURE   =
+#CREATOR   = MZ adapted from dtparam/TCext/OO_poly/func_return/ffuncRet005a1.f
+#DATE      = 20100504
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_ALT_COMPILE
+#INPUT     = $(tcasedir)ffuncRet005a1_mod.f
+#OUTPUT    = ffuncRet005a1_mod$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ffuncRet005a1_main.f
+#OUTPUT    = ffuncRet005a1_main$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = ffuncRet005a1_mod$(OBJ) ffuncRet005a1_main$(OBJ)
+#OUTPUT    = ffuncRet005a1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ffuncRet005a1$(EXE)
+#STDOUT    = ffuncRet005a1.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)ffuncRet005a1$(product)vf) ffuncRet005a1.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

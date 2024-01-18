@@ -1,0 +1,10 @@
+  50.11   01110793 max‹Fortran 90‹
+  51.11   01110793 min‹Fortran 90‹
+  52.11   01110793 maxval‹Fortran 90‹
+  53.11   01110793 minval‹Fortran 90‹
+  54.11   01110793 maxval‹Fortran 90‹
+  55.11   01110793 minval‹Fortran 90‹
+    011107D1 NOOLDPAD‹Fortran 90‹
+    011107D1 SIGNEDZERO‹Fortran 90‹
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file mxmn_langlvl_90p.f.

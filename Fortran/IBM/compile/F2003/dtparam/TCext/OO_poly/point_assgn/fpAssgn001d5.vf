@@ -1,0 +1,9 @@
+** m   === End of Compilation 1 ===
+"fpAssgn001d5.f", line 51.5: 1515-038 (S) Only an object with the POINTER attribute is permitted on the left hand side of a pointer assignment.
+"fpAssgn001d5.f", line 52.4: 1515-044 (S) Object in the NULLIFY statement must have the POINTER attribute.
+"fpAssgn001d5.f", line 53.17: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"fpAssgn001d5.f", line 57.13: 1515-038 (S) Only an object with the POINTER attribute is permitted on the left hand side of a pointer assignment.
+"fpAssgn001d5.f", line 58.12: 1515-044 (S) Object in the NULLIFY statement must have the POINTER attribute.
+"fpAssgn001d5.f", line 59.25: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+** fpassgn001d5   === End of Compilation 2 ===
+1501-511  Compilation failed for file fpAssgn001d5.f.

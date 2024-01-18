@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/use/dtpUseSelectType03.scenario
+#FEATURE   = DTP and USE - select type
+#CREATOR   = DF Manual Update
+#DATE      = 20080903
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUseSelectType03.f
+#OUTPUT    = dtpUseSelectType03$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUseSelectType03$(OBJ)
+#OUTPUT    = dtpUseSelectType03$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUseSelectType03$(EXE)
+#STDOUT    = dtpUseSelectType03.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpUseSelectType03$(product)vf) dtpUseSelectType03.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

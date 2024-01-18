@@ -1,0 +1,20 @@
+"complexPartDesignatorD1.f", line 43.4: 1514-091 (S) Invalid structure component reference.  The object name and all component names (except the rightmost) must be of type derived.
+"complexPartDesignatorD1.f", line 44.4: 1514-091 (S) Invalid structure component reference.  The object name and all component names (except the rightmost) must be of type derived.
+"complexPartDesignatorD1.f", line 45.4: 1515-038 (S) Only an object with the POINTER attribute is permitted on the left hand side of a pointer assignment.
+"complexPartDesignatorD1.f", line 46.4: 1515-038 (S) Only an object with the POINTER attribute is permitted on the left hand side of a pointer assignment.
+"complexPartDesignatorD1.f", line 47.18: 1515-022 (S) Syntax Error: Extra token " % " was found. The token is ignored.
+"complexPartDesignatorD1.f", line 47.19: 1515-022 (S) Syntax Error: Extra token " re " was found. The token is ignored.
+"complexPartDesignatorD1.f", line 48.18: 1515-022 (S) Syntax Error: Extra token " % " was found. The token is ignored.
+"complexPartDesignatorD1.f", line 48.19: 1515-022 (S) Syntax Error: Extra token " im " was found. The token is ignored.
+"complexPartDesignatorD1.f", line 49.13: 1515-022 (S) Syntax Error: Extra token " % " was found. The token is ignored.
+"complexPartDesignatorD1.f", line 49.14: 1515-022 (S) Syntax Error: Extra token " re " was found. The token is ignored.
+"complexPartDesignatorD1.f", line 50.13: 1515-022 (S) Syntax Error: Extra token " % " was found. The token is ignored.
+"complexPartDesignatorD1.f", line 50.14: 1515-022 (S) Syntax Error: Extra token " im " was found. The token is ignored.
+"complexPartDesignatorD1.f", line 53.8: 1516-044 (S) A conversion from type REAL*4 is not permitted.
+"complexPartDesignatorD1.f", line 54.8: 1516-044 (S) A conversion from type REAL*4 is not permitted.
+"complexPartDesignatorD1.f", line 55.9: 1516-044 (S) A conversion from type REAL*4 is not permitted.
+"complexPartDesignatorD1.f", line 56.9: 1516-044 (S) A conversion from type REAL*4 is not permitted.
+"complexPartDesignatorD1.f", line 66.13: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "imag".
+"complexPartDesignatorD1.f", line 67.14: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "aimag".
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file complexPartDesignatorD1.f.

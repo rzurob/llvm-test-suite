@@ -1,0 +1,6 @@
+ 1525-036 A unit number of -9 is not allowed in the BACKSPACE statement.  Unit numbers must be non-negative.  The program will recover by ignoring the BACKSPACE statement.
+                                                                                                                                 
+ 1525-017 The BACKSPACE statement cannot be performed on unit 8 because it is connected for direct I/O.  The program will recover by ignoring the BACKSPACE statement.
+                                                                                                                                      
+ 1525-017 The BACKSPACE statement cannot be performed on unit 9 because it is connected for direct I/O.  The program will recover by ignoring the BACKSPACE statement.
+                                                                                                                                      

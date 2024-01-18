@@ -1,0 +1,9 @@
+"diagIsContig.f", line 42.30: 1513-134 (S) Array argument required.
+"diagIsContig.f", line 43.30: 1513-134 (S) Array argument required.
+"diagIsContig.f", line 44.30: 1513-134 (S) Array argument required.
+"diagIsContig.f", line 45.30: 1513-134 (S) Array argument required.
+"diagIsContig.f", line 48.30: 1513-134 (S) Array argument required.
+"diagIsContig.f", line 51.30: 1513-134 (S) Array argument required.
+"diagIsContig.f", line 53.30: 1513-134 (S) Array argument required.
+** diagiscontig   === End of Compilation 1 ===
+1501-511  Compilation failed for file diagIsContig.f.

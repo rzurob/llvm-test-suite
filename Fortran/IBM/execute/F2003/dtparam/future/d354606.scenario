@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/future/d354606.scenario
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d354606.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = d354606$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d354606$(OBJ)
+#OUTPUT    = d354606$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d354606$(EXE)
+#STDOUT    = d354606.out
+#ENDCMD
+
+
+#CMD       = DIFF
+#INPUT     = d354606.out $($(tcasedir)d354606$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

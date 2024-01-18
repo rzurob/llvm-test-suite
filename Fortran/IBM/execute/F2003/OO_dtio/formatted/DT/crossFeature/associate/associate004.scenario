@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/DT/crossFeature/associate/associate004.scenario
+#FEATURE = OO_dtio
+#CREATOR = Robert Ma
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)associate004.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = associate004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = associate004$(OBJ)
+#OUTPUT    = associate004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = associate004$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)associate004$(product)vf) associate004.1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/procPtrComp/dtpPPCPassKindSubContained.scenario
+#FEATURE   = Procedure Pointers as Components - interface spec'd by contained procedures (PASS, subroutines, kind param, mixed type args)
+#CREATOR   = DF Manual Update
+#DATE      = 20090323
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPPCPassKindSubContained.f
+#OUTPUT    = dtpPPCPassKindSubContained$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPPCPassKindSubContained$(OBJ)
+#OUTPUT    = dtpPPCPassKindSubContained$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPPCPassKindSubContained$(EXE)
+#STDOUT    = dtpPPCPassKindSubContained.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpPPCPassKindSubContained$(product)vf) dtpPPCPassKindSubContained.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

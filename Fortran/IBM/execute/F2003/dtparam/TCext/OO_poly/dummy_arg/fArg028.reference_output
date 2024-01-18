@@ -1,0 +1,15 @@
+ id = 1 , and data is:
+ 20
+ id = 2 , data is null
+ id = 3 , and data is:
+ id = 30 , and data is:
+ 10
+ second test
+ id = 1 , and data is:
+ 20
+ id = 2 , and data is:
+ id = 1 , and data is:
+ 20
+ id = 3 , and data is:
+ id = 30 , and data is:
+ 10

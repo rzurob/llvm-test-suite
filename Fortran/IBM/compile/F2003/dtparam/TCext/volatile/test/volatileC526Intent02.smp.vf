@@ -1,0 +1,6 @@
+"volatileC526Intent02.f", line 34.20: 1518-208 (L) The entity b is not permitted to have both the INTENT(IN) attribute and the VOLATILE attribute by the Fortran 2003 standard.
+"volatileC526Intent02.f", 1518-317 (L) The -qsmp option can cause the compiler to accept code that does not conform to the Fortran 2003 standard.
+** m   === End of Compilation 1 ===
+"volatileC526Intent02.f", 1518-317 (L) The -qsmp option can cause the compiler to accept code that does not conform to the Fortran 2003 standard.
+** volatilec526intent02   === End of Compilation 2 ===
+1501-510  Compilation successful for file volatileC526Intent02.f.

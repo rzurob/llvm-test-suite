@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/dummy_arg/atpda/dtpATPDAAtypicalPassedObjectPosition.scenario
+#FEATURE   = Assumed type parameters and dummy arguments - passed object at a different position in the call sequence
+#CREATOR   = DF Manual Update
+#DATE      = 20081015
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpATPDAAtypicalPassedObjectPosition.f
+#OUTPUT    = dtpATPDAAtypicalPassedObjectPosition$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpATPDAAtypicalPassedObjectPosition$(OBJ)
+#OUTPUT    = dtpATPDAAtypicalPassedObjectPosition$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpATPDAAtypicalPassedObjectPosition$(EXE)
+#STDOUT    = dtpATPDAAtypicalPassedObjectPosition.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpATPDAAtypicalPassedObjectPosition$(product)vf) dtpATPDAAtypicalPassedObjectPosition.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

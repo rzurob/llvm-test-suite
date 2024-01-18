@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/impure/diagnostic/impure08f_d.scenario
+#NAME_OLD  = F2008/impurefunctional//impure08f.scenario
+#FEATURE   = F2008 IMPURE - IMPURE elemental procedures in F2008
+#FEATURE   = 96144: F08_0024:ELEMENTAL:dummy arg without VALUE must have INTENT specified.
+#CREATOR   = Grigor Nikolov
+#DATE      = 20150323
+#TEST_TYPE = diagnostic
+#KEYWORDS  = F2008, IMPURE, ELEMENTAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2008_COMPILE
+#INPUT     = $($(tcasedir)impure08f_d$(product)f)
+#OUTPUT    = impure08f_d$(OBJ)
+#STDOUT    = impure08f_d.out
+#STDERR    = impure08f_d.out
+#VALIDRCS  = $(RC_COMP_E)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)impure08f_d$(product)vf) impure08f_d.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,45 @@
+******DIAGNOSTIC********
+001-compile time langlvl messages
+002-runtime langlvl messages
+003-unformatted I/O, compile time messages 
+004-unformatted I/O, runtime messages
+005-Incorrect specifiers, compile time messages
+006-Incorrect specifiers, compile time messages
+007-Incorrect specifiers, runtime messages
+008-test IOSTAT values
+
+******FUNCTIONAL******
+009-rounding mode with READ statement
+010-rounding mode with WRITE statement
+011-rounding mode with PRINT statement
+012-OPEN and INQUIRE statements
+013-rounding mode with READ statement (round descriptors)
+014-rounding mode with WRITE statement (round descriptors)
+015-Internal files, ROUND= specifier
+016-Internal files, round descriptors
+017-READ and WRITE with d edit descriptor and round descriptor
+018-READ and WRITE with e edit descriptor and round descriptor
+019-READ and WRITE with en edit descriptor and round descriptor
+020-READ and WRITE with es edit descriptor and round descriptor
+021-READ and WRITE with g edit descriptor and round descriptor
+022-READ and WRITE for real*8 w/ round descriptors
+023-READ and WRITE for real*8 w/ ROUND= specifier
+024-READ and WRITE for real*16 w/ round descriptors
+025-READ and WRITE for real*16 w/ ROUND=specifier
+026-READ and WRITE for complex*4 w/ ROUND= specifier
+027-READ and WRITE for complex*4 w/ round descriptor
+028-READ and WRITE for complex*8 w/ ROUND= specifier
+029-READ and WRITE for complex*8 w/ round descriptor
+030-READ and WRITE for complex*16 w/ ROUND= specifier
+031-READ and WRITE for complex*16 w/ round descriptor
+032-READ statement w/NAMELIST
+033-WRITE statement w/NAMELIST           
+034-READ statement w/NAMELIST (probably unecissary)
+035-list directed I/O w/ ROUND= specifiers, real*4, READ statement
+036-list directed I/O w/ ROUND= specifiers, real*4, WRITE statement
+037-list directed I/O w/ ROUND= specifiers, real*8, READ statement
+038-list directed I/O w/ ROUND= specifiers, real*8, WRITE statement
+039-list directed I/O w/ ROUND= specifiers, real*16, READ statement
+040-list directed I/O w/ ROUND= specifiers, real*16, WRITE statement
+041- DTIO, READ
+042- DTIO, WRITE

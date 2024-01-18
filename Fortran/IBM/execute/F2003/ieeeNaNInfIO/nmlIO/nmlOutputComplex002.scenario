@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = nmlOutputComplex002.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 19, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)nmlOutputComplex002.f
+#OUTPUT   =  nmlOutputComplex002$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  nmlOutputComplex002$(OBJ)
+#OUTPUT   =  nmlOutputComplex002$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  nmlOutputComplex002$(EXE)
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = nmlOutputComplex002.out $(tcasedir)nmlOutputComplex002.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

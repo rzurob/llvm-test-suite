@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/typebnd/specific/dtpPass012.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPass012.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtpPass012$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)sorting.f90
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = sorting$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = sorting$(OBJ) dtpPass012$(OBJ)
+#OUTPUT    = dtpPass012$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPass012$(EXE)
+#STDOUT    = dtpPass012.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dtpPass012.out $($(tcasedir)dtpPass012$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

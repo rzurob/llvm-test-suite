@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/pack/transfer004.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050218
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)transfer004.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = transfer004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = transfer004$(OBJ)
+#OUTPUT    = transfer004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = transfer004$(EXE)
+#STDOUT    = transfer004.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)transfer004$(product)vf) transfer004.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

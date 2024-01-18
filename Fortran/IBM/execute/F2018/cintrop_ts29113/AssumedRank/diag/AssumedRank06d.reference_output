@@ -1,0 +1,6 @@
+"AssumedRank06d.f", line 41.4: 1516-368 (S) Entity ipac is an assumed-rank object. ipac must not be used in this context.
+"AssumedRank06d.f", line 41.13: 1516-368 (S) Entity ita is an assumed-rank object. ita must not be used in this context.
+"AssumedRank06d.f", line 44.17: 1516-368 (S) Entity ipac is an assumed-rank object. ipac must not be used in this context.
+"AssumedRank06d.f", line 45.17: 1516-368 (S) Entity ita is an assumed-rank object. ita must not be used in this context.
+** sub   === End of Compilation 1 ===
+1501-511  Compilation failed for file AssumedRank06d.f.

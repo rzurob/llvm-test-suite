@@ -1,0 +1,14 @@
+ between -1.0 and +1.0
+-0.420
+ 0.553
+ 0.001
+ less than +10.0, or greater than -10.0
+    -1.23000
+     1.24000
+     3.00000
+ others
+    10.3    
+    100.    
+   0.240E+08
+    12.6    
+ Total: real*4 -->  3 ; real*8 -->  3 ; real*16 -->  4

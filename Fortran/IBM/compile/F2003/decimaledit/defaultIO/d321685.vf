@@ -1,0 +1,4 @@
+"d321685.f", line 27.26: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"d321685.f", line 28.26: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file d321685.f.

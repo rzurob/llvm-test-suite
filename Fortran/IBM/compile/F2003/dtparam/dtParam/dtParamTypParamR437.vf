@@ -1,0 +1,12 @@
+"dtParamTypParamR437.f", line 50.12: 1515-019 (S) Syntax is incorrect.
+"dtParamTypParamR437.f", line 50.23: 1514-095 (S) Invalid statement within derived type definition.
+"dtParamTypParamR437.f", line 54.20: 1514-687 (E) A LEN attribute has already been specified for this type parameter.  The LEN attribute has been ignored.
+"dtParamTypParamR437.f", line 58.21: 1514-687 (E) A KIND attribute has already been specified for this type parameter.  The KIND attribute has been ignored.
+"dtParamTypParamR437.f", line 62.18: 1514-687 (E) A KIND attribute has already been specified for this type parameter.  The LEN attribute has been ignored.
+"dtParamTypParamR437.f", line 70.30: 1514-747 (S) Type parameter k is not permitted. k is the name of a component that is inherited from type dt01.
+"dtParamTypParamR437.f", line 75.22: 1514-725 (E) Identifier k has already been declared as a type parameter of derived type dt8.  This declaration of k is ignored.
+"dtParamTypParamR437.f", line 80.22: 1514-683 (S) Identifier k appearing as a component of derived type dt9 has already been defined as a component, binding, or type parameter of the same derived type.
+"dtParamTypParamR437.f", line 84.4: 1514-235 (E) PRIVATE and PUBLIC are only allowed within the specification section of a module.
+"dtParamTypParamR437.f", line 84.31: 1514-721 (S) Identifier k is a kind type parameter. k must not have the PRIVATE attribute.
+** dtparamtypparamr437   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtParamTypParamR437.f.

@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = initexprMatmul4.f
+#FEATURE   =
+#CREATOR   = Kelvin Li
+#DATE      = March 31, 2006
+#TEST_TYPE = Unit Test
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#TIME_REQ  = 60
+#ENDENV
+
+#BEGINCONTROL
+#CMD    = F_COMPILE
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#INPUT  = $(tcasedir)initexprMatmul4.f
+#OUTPUT = initexprMatmul4$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#INPUT  = initexprMatmul4$(OBJ)
+#OUTPUT = initexprMatmul4$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = initexprMatmul4$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

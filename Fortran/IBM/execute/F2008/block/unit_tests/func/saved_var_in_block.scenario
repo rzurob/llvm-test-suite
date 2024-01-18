@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=saved_var_in_block.scenario
+#FEATURE = F2008 BLOCK construct
+#CREATOR = Pooja Dayanand
+#DATE    = 20101021
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)saved_var_in_block.f
+#OUTPUT    = saved_var_in_block$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#INPUT     = saved_var_in_block$(OBJ)
+#OUTPUT    = saved_var_in_block$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = saved_var_in_block$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

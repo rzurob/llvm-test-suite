@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/operator/functional/genericOperatorPrecedence010.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericOperatorPrecedence010.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericOperatorPrecedence010$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericOperatorPrecedence010$(OBJ)
+#OUTPUT    = genericOperatorPrecedence010$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericOperatorPrecedence010$(EXE)
+#STDOUT    = genericOperatorPrecedence010.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericOperatorPrecedence010.out $(tcasedir)genericOperatorPrecedence010.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

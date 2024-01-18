@@ -1,0 +1,4 @@
+"genericAmbiguityTypeBound025d.f", line 45.44: 1514-714 (S) Procedures fourargs2 and fourargs1 must not appear in the same generic interface.  The dummy argument that disambiguates the procedures by argument keyword appears earlier in the argument list than the dummy argument that disambiguates by position.
+** genericname   === End of Compilation 1 ===
+** genericambiguitytypebound025d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericAmbiguityTypeBound025d.f.

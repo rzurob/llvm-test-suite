@@ -1,0 +1,9 @@
+"initexprAbslanglvl.f", line 18.24: 1518-256 (L) The intrinsic procedure abs (with these arguments) is not permitted by the Fortran 2003 standard.
+"initexprAbslanglvl.f", line 18.31: 1518-016 (L) The letter Q is not permitted as an exponent letter in real constants by the Fortran 2003 standard.
+"initexprAbslanglvl.f", line 26.21: 1518-257 (L) The intrinsic function abs (with these arguments) is not permitted in an initialization expression by the Fortran 2003 standard.
+"initexprAbslanglvl.f", line 27.25: 1518-257 (L) The intrinsic function abs (with these arguments) is not permitted in an initialization expression by the Fortran 2003 standard.
+"initexprAbslanglvl.f", line 28.25: 1518-256 (L) The intrinsic procedure abs (with these arguments) is not permitted by the Fortran 2003 standard.
+"initexprAbslanglvl.f", line 29.27: 1518-256 (L) The intrinsic procedure abs (with these arguments) is not permitted by the Fortran 2003 standard.
+"initexprAbslanglvl.f", line 29.35: 1518-016 (L) The letter Q is not permitted as an exponent letter in real constants by the Fortran 2003 standard.
+** main   === End of Compilation 1 ===
+1501-510  Compilation successful for file initexprAbslanglvl.f.

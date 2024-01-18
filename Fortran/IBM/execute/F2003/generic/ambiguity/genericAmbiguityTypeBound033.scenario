@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/ambiguity/genericAmbiguityTypeBound033.scenario
+#FEATURE = generic tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericAmbiguityTypeBound033.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericAmbiguityTypeBound033$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericAmbiguityTypeBound033$(OBJ)
+#OUTPUT    = genericAmbiguityTypeBound033$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericAmbiguityTypeBound033$(EXE)
+#STDOUT    = genericAmbiguityTypeBound033.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericAmbiguityTypeBound033.out $(tcasedir)genericAmbiguityTypeBound033.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

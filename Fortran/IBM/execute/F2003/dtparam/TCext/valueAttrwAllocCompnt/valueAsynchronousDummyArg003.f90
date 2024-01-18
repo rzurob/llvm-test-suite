@@ -1,0 +1,144 @@
+! GB DTP extension using:
+! ftcx_dtp -qk -qnol /tstdev/F2003/valueAttrwAllocCompnt/valueAsynchronousDummyArg003.f
+! opt variations: -qnok -ql
+
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*  ===================================================================
+!*
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Robert Ma
+!*  DATE                       : 11/01/2005
+!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
+!*                             :
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Value Attribute for derived type containing allocatable components
+!*                             :
+!*  SECONDARY FUNCTIONS TESTED :
+!*
+!*  DRIVER STANZA              : xlf2003
+!*
+!*  DESCRIPTION                : value attribute with derived type containing allocatable components
+!*                                 - type: derived type with unlimited-polymorphic allocatable components
+!*                                 - actual arg: non-polymorphic data arg (non-pointer non-allocatable, pointer, allocatable) with asynchronous attribute
+!*                                 - dummy arg: non-polymorphic with value attribute
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!* ===================================================================
+!*
+!*  REVISION HISTORY
+!*
+!*  MM/DD/YY:  Init:  Comments:
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+module m
+
+   type inner(k1)    ! (4)
+      integer, kind            :: k1
+      integer(k1), allocatable :: i
+   end type
+
+   type base(k2)    ! (4)
+       integer, kind :: k2
+      class(*), allocatable :: in
+   end type
+
+   contains
+
+   integer function foo ( a )
+      type(base(4)), value, asynchronous :: a
+
+      select type ( g => a%in )
+         type is ( integer )
+            write( 1, asynchronous="yes", iostat = foo ) g
+         type is ( inner(4) )
+            write( 1, asynchronous="yes", iostat = foo ) g%i
+      end select
+
+   end function
+
+   integer function bar ( a )
+      type(base(4)), asynchronous :: a
+
+      select type  ( g => a%in )
+         type is ( integer )
+            read( 1, asynchronous="yes", iostat = bar ) g
+         type is ( inner(4) )
+            read( 1, asynchronous="yes", iostat = bar  ) g%i
+      end select
+
+   end function
+
+   integer function badbar ( a )
+      type(base(4)), asynchronous, value :: a
+      integer :: myid
+
+      print *, 'inside badbar'
+
+      select type  ( g => a%in )
+         type is ( integer )
+            read( 1, asynchronous="yes", id= myid, iostat = badbar  ) g
+            wait(1,id=myid)
+            print *, g
+         type is ( inner(4) )
+            read( 1, asynchronous="yes", id= myid, iostat = badbar ) g%i
+            wait(1,id=myid)
+            print *, g%i
+      end select
+
+   end function
+
+end module
+
+program valueOptionalDummyArg003
+   use m
+
+   type(base(4)) :: b1
+   type(base(4)), allocatable :: b2
+   
+   integer :: i
+
+   b1 = base(4)(100)
+   allocate ( b2, source =  base(4)(inner(4)(1000)) )
+   open ( 1, file="valueOptionalDummyArg003.1", asynchronous="yes", form="unformatted" )
+
+   i= foo ( b1 )
+   if ( i /= 0 ) error stop 1_4
+   b1 = base(4)(-999)
+   select type ( g => b1%in )
+      type is ( integer )
+         print *, g
+   end select
+
+   i= foo ( b2 )
+   if ( i /= 0 ) error stop 1_4
+   b2 = base(4)(inner(4)(-999))
+   select type ( g => b2%in )
+      type is ( inner(4) )
+         print *, g%i
+   end select
+
+   rewind 1
+
+   i= bar(b1)
+   if ( i /= 0 ) error stop 1_4
+   print *, 'after bar'
+   select type ( g => b1%in )
+      type is ( integer )
+         print *, g
+   end select
+
+   i= badbar(b2)
+   if ( i /= 0 ) error stop 1_4
+   print *, 'after badbar'
+   select type ( g => b2%in )
+      type is ( inner(4) )
+         print *, g%i
+   end select
+
+   close ( 1, status="delete" )
+
+end program

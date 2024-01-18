@@ -1,0 +1,33 @@
+
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      funcAsFmTo.f
+#FEATURE=
+#CREATOR=   Michelle Zhang
+#DATE=
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = $(tcasedir)funcAsFmTo.f
+#OUTPUT    = funcAsFmTo$(OBJ)
+#STDERR    = funcAsFmTo.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    funcAsFmTo.err $($(tcasedir)funcAsFmTo$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

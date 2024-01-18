@@ -1,0 +1,4 @@
+"contiguous04d.f", line 44.16: 1515-173 (S) A pointer declared with the CONTIGUOUS attribute must only be pointer-associated with a contiguous target.
+"contiguous04d.f", line 48.16: 1515-173 (S) A pointer declared with the CONTIGUOUS attribute must only be pointer-associated with a contiguous target.
+** contiguous04d   === End of Compilation 1 ===
+1501-511  Compilation failed for file contiguous04d.f.

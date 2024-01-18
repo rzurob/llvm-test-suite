@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/refToVar/exprIsZeroLengthArraySection07.scenario
+#FEATURE	= Intrinsic Assignment -- variable and/or expr Reference variable
+#CREATOR	= GM Manual Creation
+#DATE		= 20061018
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)exprIsZeroLengthArraySection07.f
+#OUTPUT		= exprIsZeroLengthArraySection07$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= exprIsZeroLengthArraySection07$(OBJ)
+#OUTPUT		= exprIsZeroLengthArraySection07$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= exprIsZeroLengthArraySection07$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,4 @@
+"override007d.f", line 47.28: 1514-660 (S) Overridden binding setid is a subroutine.  Overriding binding setid must also be a subroutine.
+** n   === End of Compilation 1 ===
+** override007d   === End of Compilation 2 ===
+1501-511  Compilation failed for file override007d.f.

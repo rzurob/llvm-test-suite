@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/arithmetic/dataPtrANDLog.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071216
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrANDLog.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrANDLog$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrANDLog$(OBJ)
+#OUTPUT    = dataPtrANDLog$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrANDLog$(EXE)
+#STDOUT    = dataPtrANDLog.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrANDLog.out $($(tcasedir)dataPtrANDLog$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

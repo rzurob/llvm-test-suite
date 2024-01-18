@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/syntax/C704/genericC704OpName001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericC704OpName001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericC704OpName001$(OBJ)
+#STDERR    = genericC704OpName001.err
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericC704OpName001$(OBJ)
+#OUTPUT    = genericC704OpName001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericC704OpName001$(EXE)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = genericC704OpName001.err $(tcasedir)genericC704OpName001.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

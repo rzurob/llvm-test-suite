@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      intproc_misc_5.f
+#FEATURE=
+#CREATOR=   Feng Ye
+#DATE=      11-05-02
+#TEST_TYPE= DIAGNOSTIC
+#KEYWORDS=  F2008, internal procedure, dummy, procedure pointer target
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=      F_COMPILE
+#INPUT=    $(tcasedir)intproc_misc_5.f
+#STDERR=   intproc_misc_5.err
+#VALIDRCS= $(RC_FAIL)
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    intproc_misc_5.err $($(tcasedir)intproc_misc_5$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+
+

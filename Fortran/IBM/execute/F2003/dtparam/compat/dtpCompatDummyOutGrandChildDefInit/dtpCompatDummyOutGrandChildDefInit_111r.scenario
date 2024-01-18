@@ -1,0 +1,52 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/compat/dtpCompatDummyOutGrandChildDefInit/dtpCompatDummyOutGrandChildDefInit_111.scenario
+#FEATURE   = Broken Compatability Warning - use of default initialisation of DTP objects from within 12.1 is also broken
+! - latest PTF, v. 11.1
+#CREATOR   = DF Manual Update
+#DATE      = 20090613
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+! See F2003/dtparam/compat/README for details (especially if this TC produces a NORESOURCES error).
+#REQUIRED_PRODUCT = rhel
+#REQUIRED_RESOURCES = RHEL5UP
+#INVALID_PRODUCT=linuxle
+#ENDENV
+
+#BEGINCONTROL
+
+! Compile "pre-DTP" files with the latest 11.1 PTF compiler,
+! compile "post-DTP" files with the latest version of the latest compiler for RHEL,
+! link with the latest version of the latest compiler,
+! run:  Since no DTP data is actually defined, no error message should be generated.
+
+#CMD       = V111_XLF2003_COMPILE_RHEL
+#INPUT     = $(tcasedir)dtpCompatDummyOutGrandChildDefInitPreDTP.f
+#OUTPUT    = dtpCompatDummyOutGrandChildDefInitPreDTP$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)dtpCompatDummyOutGrandChildDefInitPostDTP.f
+#OUTPUT    = dtpCompatDummyOutGrandChildDefInitPostDTP$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = dtpCompatDummyOutGrandChildDefInitPostDTP$(OBJ) dtpCompatDummyOutGrandChildDefInitPreDTP$(OBJ)
+#OUTPUT    = dtpCompatDummyOutGrandChildDefInit$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpCompatDummyOutGrandChildDefInit$(EXE)
+#STDOUT    = dtpCompatDummyOutGrandChildDefInit.out
+#STDERR    = dtpCompatDummyOutGrandChildDefInit.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpCompatDummyOutGrandChildDefInit$(product)vf) dtpCompatDummyOutGrandChildDefInit.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

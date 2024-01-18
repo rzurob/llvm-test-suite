@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_type/struct_constr/fconstr053d1.scenario
+#FEATURE = OO_type tests - regression run bucket
+#CREATOR = Jim Xia
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fconstr053d1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fconstr053d1$(OBJ)
+#STDERR    = fconstr053d1.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)fconstr053d1$(product)vf) fconstr053d1.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

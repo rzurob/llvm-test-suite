@@ -1,0 +1,14 @@
+"forall_typespec_d05.f", line 50.3: 1511-092 (W) The variable which appears on the left-hand side of the forall assignment statement has no non-constant subscripts, section subscripts or substring bounds.  Make sure that this was intended.
+"forall_typespec_d05.f", line 56.3: 1511-092 (W) The variable which appears on the left-hand side of the forall assignment statement has no non-constant subscripts, section subscripts or substring bounds.  Make sure that this was intended.
+"forall_typespec_d05.f", line 61.3: 1511-092 (W) The variable which appears on the left-hand side of the forall assignment statement has no non-constant subscripts, section subscripts or substring bounds.  Make sure that this was intended.
+"forall_typespec_d05.f", line 66.16: 1518-076 (E) This value is out of the range allowed for the default kind of integer.  Assuming a larger type kind.
+"forall_typespec_d05.f", line 67.3: 1511-092 (W) The variable which appears on the left-hand side of the forall assignment statement has no non-constant subscripts, section subscripts or substring bounds.  Make sure that this was intended.
+"forall_typespec_d05.f", line 71.25: 1518-076 (E) This value is out of the range allowed for the default kind of integer.  Assuming a larger type kind.
+"forall_typespec_d05.f", line 72.3: 1511-092 (W) The variable which appears on the left-hand side of the forall assignment statement has no non-constant subscripts, section subscripts or substring bounds.  Make sure that this was intended.
+"forall_typespec_d05.f", line 77.16: 1518-076 (E) This value is out of the range allowed for the default kind of integer.  Assuming a larger type kind.
+"forall_typespec_d05.f", line 77.16: 1515-037 (E) Magnitude of constant exceeds allowable maximum.  A magnitude of 9223372036854775807 (largest positive integer) is assumed.
+"forall_typespec_d05.f", line 78.3: 1511-092 (W) The variable which appears on the left-hand side of the forall assignment statement has no non-constant subscripts, section subscripts or substring bounds.  Make sure that this was intended.
+"forall_typespec_d05.f", line 82.25: 1518-076 (E) This value is out of the range allowed for the default kind of integer.  Assuming a larger type kind.
+"forall_typespec_d05.f", line 82.25: 1515-037 (E) Magnitude of constant exceeds allowable maximum.  A magnitude of 9223372036854775807 (largest positive integer) is assumed.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file forall_typespec_d05.f.

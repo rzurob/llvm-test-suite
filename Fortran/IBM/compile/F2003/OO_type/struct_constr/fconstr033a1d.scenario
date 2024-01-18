@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME	 = OO_type/struct_constr/fconstr033a1d.scenario
+#FEATURE = OO_type tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)fconstr033a1d.f
+#OUTPUT = fconstr033a1d$(OBJ)
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#STDERR = fconstr033a1d.err
+#ENDCMD
+
+#CMD    = XLDIFF
+#INPUT  = fconstr033a1d.err $($(tcasedir)fconstr033a1d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

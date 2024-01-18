@@ -1,0 +1,5 @@
+  iotype:DT_con1-1 v_list: 4 abc  iotype:DT_con1-23 v_list: 5  def  iotype:DT_con1-23 v_list: 5  ghi
+  iotype:DT_con1-23 v_list: 5  jkl
+  iotype:DT_con2 v_list: 6 7   aaa    AAA  iotype:DT_con2 v_list: 5 6  bbb   BBB  iotype:DT_con2 v_list: 6 7   ccc    CCC  iotype:DT_con2 v_list: 5 6  ddd   DDD
+  iotype:DT_con2base v_list: 8     aaa  iotype:DT_con2base v_list: 8     bbb  iotype:DT_con2base v_list: 8     ccc  iotype:DT_con2base v_list: 8     ddd
+  iotype:DT_con1-1 v_list: 4 4 abc ABC  iotype:DT_con1-2 v_list: 5 5  def  DEF

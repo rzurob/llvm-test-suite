@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/round/unit_tests/roundspecifier041.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of round/*
+#DATE      = 20071102
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPLINK
+#INPUT     = $(tcasedir)roundspecifier041.f
+#OUTPUT    = roundspecifier041$(EXE)
+#ENDCMD
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)real4.dat
+#OUTPUT    = ./
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = roundspecifier041$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

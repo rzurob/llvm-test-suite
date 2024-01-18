@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/null/generic002.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050303
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)generic002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = generic002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = generic002$(OBJ)
+#OUTPUT    = generic002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = generic002$(EXE)
+#STDOUT    = generic002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)generic002$(product)vf) generic002.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

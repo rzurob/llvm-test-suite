@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint31c.scenario
+#FEATURE	= Array constructor enhancement - procedure pointers can be invoked for data (character)
+#CREATOR	= DF Manual Update
+#DATE		= 20060830
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint31c.f
+#OUTPUT		= acetint31c$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint31c$(OBJ)
+#OUTPUT		= acetint31c$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint31c$(EXE)
+#STDOUT		= acetint31c.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $(tcasedir)acetint31c.vf acetint31c.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

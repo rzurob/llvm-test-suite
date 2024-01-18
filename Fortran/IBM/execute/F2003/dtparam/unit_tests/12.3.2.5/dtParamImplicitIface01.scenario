@@ -1,0 +1,22 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      dtParamImplicitIface01.scenario
+#FEATURE=   Derived Type Parameters - Implicit interface specification
+#CREATOR=   Rafik Zurob
+#DATE=      20060621
+#TEST_TYPE= unit
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=      F_COMPLINK
+#INPUT=    $(tcasedir)dtParamImplicitIface01.f
+#OPTS=     $(OPT_FREE_SOURCE_FORM)
+#OUTPUT=   dtParamImplicitIface01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtParamImplicitIface01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

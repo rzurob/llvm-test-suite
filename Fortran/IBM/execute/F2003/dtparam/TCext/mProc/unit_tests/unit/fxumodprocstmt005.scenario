@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mProc/unit_tests/unit/fxumodprocstmt005.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mProc/*
+#DATE      = 20071106
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)fxumodprocstmt005.f
+#OPTS      = -qdebug=ooall -Q -O -lxlfzz2
+#OUTPUT    = fxumodprocstmt005$(OBJ)
+#VALIDRCS  = 0
+#ENDCMD
+! NOTE: error messages are emitted, but we don't
+! care about them, as long as compilation is
+! successful.
+
+#CMD       = XLF90_LINK
+#INPUT     = fxumodprocstmt005$(OBJ)
+#OUTPUT    = fxumodprocstmt005$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxumodprocstmt005$(EXE)
+#STDOUT    = fxumodprocstmt005.out
+#STDERR    = fxumodprocstmt005.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fxumodprocstmt005.out $($(tcasedir)fxumodprocstmt005$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

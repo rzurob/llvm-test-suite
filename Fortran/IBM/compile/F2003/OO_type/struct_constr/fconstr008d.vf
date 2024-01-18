@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"fconstr008d.f", line 47.36: 1514-601 (S) The component base or an inheritance-associated component has already been explicitly initialized in this structure constructor.
+"fconstr008d.f", line 53.70: 1514-559 (S) Once a component keyword has been specified in a structure constructor, all subsequent values must have a keyword specified.
+** fconstr008d   === End of Compilation 2 ===
+1501-511  Compilation failed for file fconstr008d.f.

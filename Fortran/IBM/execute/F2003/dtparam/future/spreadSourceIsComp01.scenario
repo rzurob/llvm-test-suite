@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/spread/spreadSourceIsComp01.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Oct. 26 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)spreadSourceIsComp01.f
+#OUTPUT= spreadSourceIsComp01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = spreadSourceIsComp01$(OBJ)
+#OUTPUT= spreadSourceIsComp01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = spreadSourceIsComp01$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

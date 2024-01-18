@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrConcat.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrConcat.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrConcat$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrConcat$(OBJ)
+#OUTPUT    = dataPtrConcat$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrConcat$(EXE)
+#STDOUT    = dataPtrConcat.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrConcat.out $($(tcasedir)dataPtrConcat$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

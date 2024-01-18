@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/InitExp/ACE/DTP_ACE_15_workaround.scenario
+#FEATURE   = DTP - Array constructor with TypeSpec
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20090514
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)DTP_ACE_15_workaround.f
+#OUTPUT    = DTP_ACE_15_workaround$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = DTP_ACE_15_workaround$(OBJ)
+#OUTPUT    = DTP_ACE_15_workaround$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = DTP_ACE_15_workaround$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

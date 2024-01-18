@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"genericC459Operator002d.f", line 60.12: 1516-065 (S) A generic interface defining the * operator is not accessible.  The operation cannot be resolved.
+** genericc459operator002d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericC459Operator002d.f.

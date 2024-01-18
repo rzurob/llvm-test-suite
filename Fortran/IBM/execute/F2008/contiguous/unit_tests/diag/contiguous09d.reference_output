@@ -1,0 +1,4 @@
+"contiguous09d.f", line 45.30: 1516-339 (S) Dummy argument assumed of procedure sub_arg_volatile an assumed-shape array declared with the VOLATILE and CONTIGUOUS attributes.  The corresponding non-pointer actual argument with the VOLATILE attribute must be simply contiguous.
+"contiguous09d.f", line 48.28: 1516-338 (S) Dummy argument assumed of procedure sub_arg_asynch is declared with the ASYNCHRONOUS and CONTIGUOUS attributes.  The corresponding pointer actual argument that has the ASYNCHRONOUS attribute must also have the CONTIGUOUS attribute.
+** contiguous09d   === End of Compilation 1 ===
+1501-511  Compilation failed for file contiguous09d.f.

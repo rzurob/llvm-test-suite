@@ -1,0 +1,6 @@
+"C1218_002d.f", line 48.14: 1516-232 (S) The PROCEDURE statement specifies the BIND(C) attribute.  The specified interface must be interoperable.
+"C1218_002d.f", line 49.14: 1516-232 (S) The PROCEDURE statement specifies the BIND(C) attribute.  The specified interface must be interoperable.
+"C1218_002d.f", line 50.14: 1516-232 (S) The PROCEDURE statement specifies the BIND(C) attribute.  The specified interface must be interoperable.
+"C1218_002d.f", line 51.14: 1516-232 (S) The PROCEDURE statement specifies the BIND(C) attribute.  The specified interface must be interoperable.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file C1218_002d.f.

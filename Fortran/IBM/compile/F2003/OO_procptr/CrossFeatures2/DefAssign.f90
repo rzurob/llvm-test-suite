@@ -1,0 +1,83 @@
+! *********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : DefAssign.f 
+!*  TEST CASE TITLE            : 
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Jun. 23, 2005
+!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*
+!*  SECONDARY FUNCTIONS TESTED : 
+!*
+!*  REFERENCE                  : Feature 289058 
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*   
+!*  Defined assignment - it is incorrect to use procptr in defined assgn 
+!*  
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+
+  MODULE M
+
+    TYPE :: DT
+      INTEGER :: Id=0
+    CONTAINS
+      PROCEDURE, PASS :: Proc => ModFun
+    END TYPE
+
+    CONTAINS
+
+    FUNCTION ModFun(Arg)
+    CLASS(DT) :: Arg
+    TYPE(DT)  :: ModFun
+      ModFun = Arg
+    END FUNCTION
+
+    SUBROUTINE MyAssign1 (Arg1, Arg2)
+    TYPE(DT), INTENT(OUT) :: Arg1 
+    PROCEDURE(ModFun), POINTER, INTENT(IN) :: Arg2 
+      Arg1 = Arg2(Arg1)
+    END SUBROUTINE 
+ 
+  END MODULE
+
+
+  PROGRAM DefAssign 
+  USE M
+  IMPLICIT NONE 
+
+  PROCEDURE(ModFun), POINTER :: ProcPtr
+  TYPE(DT),          TARGET  :: U
+
+    INTERFACE ASSIGNMENT ( = )
+      MODULE PROCEDURE MyAssign1
+    END INTERFACE ASSIGNMENT ( = ) 
+
+  U = ProcPtr
+
+  U = RetPtr(ModFun) 
+
+  CONTAINS
+
+  FUNCTION RetPtr(Arg)
+  PROCEDURE(ModFun), POINTER :: RetPtr
+  PROCEDURE(ModFun) :: Arg 
+    RetPtr => Arg 
+  END FUNCTION
+
+  END
+

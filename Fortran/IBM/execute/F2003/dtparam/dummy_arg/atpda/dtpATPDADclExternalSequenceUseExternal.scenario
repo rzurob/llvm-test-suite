@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/dummy_arg/atpda/dtpATPDADclExternalSequenceUseExternal.scenario
+#FEATURE   = Assumed type parameters and dummy arguments - test the length passed in
+#CREATOR   = DF Manual Update
+#DATE      = 20081015
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpATPDADclExternalSequenceUseExternal.f
+#OUTPUT    = dtpATPDADclExternalSequenceUseExternal$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpATPDADclExternalSequenceUseExternal$(OBJ)
+#OUTPUT    = dtpATPDADclExternalSequenceUseExternal$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpATPDADclExternalSequenceUseExternal$(EXE)
+#STDOUT    = dtpATPDADclExternalSequenceUseExternal.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpATPDADclExternalSequenceUseExternal$(product)vf) dtpATPDADclExternalSequenceUseExternal.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

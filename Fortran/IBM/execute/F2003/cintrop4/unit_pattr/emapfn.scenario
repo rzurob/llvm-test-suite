@@ -1,0 +1,1457 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop4/unit_pattr/emapfn.scenario
+#FEATURE = cintrop4 tests - regression run bucket
+#CREATOR = CPR Manual update
+#DATE    = 20060811
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+! Default(11) variation
+! C OPTS = -DCTYPE=short -DCFORMAT=%hd
+! F OPTS = -WF,-DFTYPE=integer*2
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=short -DCFORMAT=%hd
+#INPUT     = $(tcasedir)emapfn-cmain.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=short -DCFORMAT=%hd
+#INPUT     = $(tcasedir)emapfn-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=short -DCFORMAT=%hd
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=integer*2
+#INPUT     = $(tcasedir)emapfn-fmain.f
+#STDERR    = emapfn.out1
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=integer*2
+#INPUT     = $(tcasedir)emapfn-f.F
+#STDERR    = emapfn.out2
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = emapfn-fmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out3
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = emapfn-cmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out4
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapfn.out1 emapfn.out2 emapfn.out3 emapfn.out4
+#STDOUT    = emapfn.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapfn.out $(tcasedir)emapfn-11.vf
+#ENDCMD
+
+! 11.fixed variation
+! C OPTS = -DCTYPE=short -DCFORMAT=%hd
+! F OPTS = -WF,-DFTYPE=integer*2
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=short -DCFORMAT=%hd
+#INPUT     = $(tcasedir)emapfn-cmain.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=short -DCFORMAT=%hd
+#INPUT     = $(tcasedir)emapfn-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=short -DCFORMAT=%hd
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=integer*2 $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)emapfn-fmain.f
+#STDERR    = emapfn.out1
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=integer*2 $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)emapfn-f.F
+#STDERR    = emapfn.out2
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = emapfn-fmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out3
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = emapfn-cmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out4
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapfn.out1 emapfn.out2 emapfn.out3 emapfn.out4
+#STDOUT    = emapfn.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapfn.out $(tcasedir)emapfn-11.vf
+#ENDCMD
+
+! 12 variation
+! C OPTS = -DCTYPE=int -DCFORMAT=%ld
+! F OPTS = -WF,-DFTYPE=integer*4
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=int -DCFORMAT=%ld
+#INPUT     = $(tcasedir)emapfn-cmain.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=int -DCFORMAT=%ld
+#INPUT     = $(tcasedir)emapfn-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=int -DCFORMAT=%ld
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=integer*4
+#INPUT     = $(tcasedir)emapfn-fmain.f
+#STDERR    = emapfn.out1
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=integer*4
+#INPUT     = $(tcasedir)emapfn-f.F
+#STDERR    = emapfn.out2
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = emapfn-fmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out3
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = emapfn-cmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out4
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapfn.out1 emapfn.out2 emapfn.out3 emapfn.out4
+#STDOUT    = emapfn.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapfn.out $(tcasedir)emapfn-12.vf
+#ENDCMD
+
+! 12.fixed variation
+! C OPTS = -DCTYPE=int -DCFORMAT=%ld
+! F OPTS = -WF,-DFTYPE=integer*4
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=int -DCFORMAT=%ld
+#INPUT     = $(tcasedir)emapfn-cmain.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=int -DCFORMAT=%ld
+#INPUT     = $(tcasedir)emapfn-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=int -DCFORMAT=%ld
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=integer*4 $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)emapfn-fmain.f
+#STDERR    = emapfn.out1
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=integer*4 $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)emapfn-f.F
+#STDERR    = emapfn.out2
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = emapfn-fmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out3
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = emapfn-cmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out4
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapfn.out1 emapfn.out2 emapfn.out3 emapfn.out4
+#STDOUT    = emapfn.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapfn.out $(tcasedir)emapfn-12.vf
+#ENDCMD
+
+! 13 variation
+! C OPTS = -DCTYPE='long long' -DCFORMAT=%lld
+! F OPTS = -WF,-DFTYPE=integer*8
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE='long long' -DCFORMAT=%lld
+#INPUT     = $(tcasedir)emapfn-cmain.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE='long long' -DCFORMAT=%lld
+#INPUT     = $(tcasedir)emapfn-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE='long long' -DCFORMAT=%lld
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=integer*8
+#INPUT     = $(tcasedir)emapfn-fmain.f
+#STDERR    = emapfn.out1
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=integer*8
+#INPUT     = $(tcasedir)emapfn-f.F
+#STDERR    = emapfn.out2
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = emapfn-fmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out3
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = emapfn-cmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out4
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapfn.out1 emapfn.out2 emapfn.out3 emapfn.out4
+#STDOUT    = emapfn.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapfn.out $(tcasedir)emapfn-13.vf
+#ENDCMD
+
+! 13.fixed variation
+! C OPTS = -DCTYPE='long long' -DCFORMAT=%lld
+! F OPTS = -WF,-DFTYPE=integer*8
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE='long long' -DCFORMAT=%lld
+#INPUT     = $(tcasedir)emapfn-cmain.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE='long long' -DCFORMAT=%lld
+#INPUT     = $(tcasedir)emapfn-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE='long long' -DCFORMAT=%lld
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=integer*8 $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)emapfn-fmain.f
+#STDERR    = emapfn.out1
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=integer*8 $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)emapfn-f.F
+#STDERR    = emapfn.out2
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = emapfn-fmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out3
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = emapfn-cmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out4
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapfn.out1 emapfn.out2 emapfn.out3 emapfn.out4
+#STDOUT    = emapfn.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapfn.out $(tcasedir)emapfn-13.vf
+#ENDCMD
+
+! 14 variation
+! C OPTS = -DCTYPE=float -DCFORMAT=%.9f
+! F OPTS = -WF,-DFTYPE=real*4
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=float -DCFORMAT=%.9f
+#INPUT     = $(tcasedir)emapfn-cmain.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=float -DCFORMAT=%.9f
+#INPUT     = $(tcasedir)emapfn-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=float -DCFORMAT=%.9f
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=real*4
+#INPUT     = $(tcasedir)emapfn-fmain.f
+#STDERR    = emapfn.out1
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=real*4
+#INPUT     = $(tcasedir)emapfn-f.F
+#STDERR    = emapfn.out2
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = emapfn-fmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out3
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = emapfn-cmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out4
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapfn.out1 emapfn.out2 emapfn.out3 emapfn.out4
+#STDOUT    = emapfn.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapfn.out $(tcasedir)emapfn-14.vf
+#ENDCMD
+
+! 14.fixed variation
+! C OPTS = -DCTYPE=float -DCFORMAT=%.9f
+! F OPTS = -WF,-DFTYPE=real*4
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=float -DCFORMAT=%.9f
+#INPUT     = $(tcasedir)emapfn-cmain.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=float -DCFORMAT=%.9f
+#INPUT     = $(tcasedir)emapfn-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=float -DCFORMAT=%.9f
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=real*4 $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)emapfn-fmain.f
+#STDERR    = emapfn.out1
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=real*4 $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)emapfn-f.F
+#STDERR    = emapfn.out2
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = emapfn-fmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out3
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = emapfn-cmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out4
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapfn.out1 emapfn.out2 emapfn.out3 emapfn.out4
+#STDOUT    = emapfn.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapfn.out $(tcasedir)emapfn-14.vf
+#ENDCMD
+
+! 15 variation
+! C OPTS = -DCTYPE=double -DCFORMAT=%.17f
+! F OPTS = -WF,-DFTYPE=real*8
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=double -DCFORMAT=%.17f
+#INPUT     = $(tcasedir)emapfn-cmain.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=double -DCFORMAT=%.17f
+#INPUT     = $(tcasedir)emapfn-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=double -DCFORMAT=%.17f
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=real*8
+#INPUT     = $(tcasedir)emapfn-fmain.f
+#STDERR    = emapfn.out1
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=real*8
+#INPUT     = $(tcasedir)emapfn-f.F
+#STDERR    = emapfn.out2
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = emapfn-fmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out3
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = emapfn-cmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out4
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapfn.out1 emapfn.out2 emapfn.out3 emapfn.out4
+#STDOUT    = emapfn.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapfn.out $(tcasedir)emapfn-15.vf
+#ENDCMD
+
+! 15.fixed variation
+! C OPTS = -DCTYPE=double -DCFORMAT=%.17f
+! F OPTS = -WF,-DFTYPE=real*8
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=double -DCFORMAT=%.17f
+#INPUT     = $(tcasedir)emapfn-cmain.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=double -DCFORMAT=%.17f
+#INPUT     = $(tcasedir)emapfn-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=double -DCFORMAT=%.17f
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=real*8 $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)emapfn-fmain.f
+#STDERR    = emapfn.out1
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=real*8 $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)emapfn-f.F
+#STDERR    = emapfn.out2
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = emapfn-fmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out3
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = emapfn-cmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out4
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapfn.out1 emapfn.out2 emapfn.out3 emapfn.out4
+#STDOUT    = emapfn.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapfn.out $(tcasedir)emapfn-15.vf
+#ENDCMD
+
+! 16 variation
+! C OPTS = -DCTYPE='long double' -DCFORMAT=%.34Lf
+! F OPTS = -WF,-DFTYPE=real*16
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE='long double' -DCFORMAT=%.34Lf
+#INPUT     = $(tcasedir)emapfn-cmain.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE='long double' -DCFORMAT=%.34Lf
+#INPUT     = $(tcasedir)emapfn-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE='long double' -DCFORMAT=%.34Lf
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=real*16
+#INPUT     = $(tcasedir)emapfn-fmain.f
+#STDERR    = emapfn.out1
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=real*16
+#INPUT     = $(tcasedir)emapfn-f.F
+#STDERR    = emapfn.out2
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = emapfn-fmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out3
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = emapfn-cmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out4
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapfn.out1 emapfn.out2 emapfn.out3 emapfn.out4
+#STDOUT    = emapfn.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapfn.out $(tcasedir)emapfn-16.vf
+#ENDCMD
+
+! 16.fixed variation
+! C OPTS = -DCTYPE='long double' -DCFORMAT=%.34Lf
+! F OPTS = -WF,-DFTYPE=real*16
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE='long double' -DCFORMAT=%.34Lf
+#INPUT     = $(tcasedir)emapfn-cmain.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE='long double' -DCFORMAT=%.34Lf
+#INPUT     = $(tcasedir)emapfn-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE='long double' -DCFORMAT=%.34Lf
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=real*16 $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)emapfn-fmain.f
+#STDERR    = emapfn.out1
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=real*16 $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)emapfn-f.F
+#STDERR    = emapfn.out2
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = emapfn-fmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out3
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = emapfn-cmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out4
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapfn.out1 emapfn.out2 emapfn.out3 emapfn.out4
+#STDOUT    = emapfn.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapfn.out $(tcasedir)emapfn-16.vf
+#ENDCMD
+
+! Now repeat all the above steps, adding $(OPT_DEFINE_MACRO<MOD>) to the Fortran options each time
+! Default(21) variation
+! C OPTS = -DCTYPE=short -DCFORMAT=%hd
+! F OPTS = -WF,-DFTYPE=integer*2,-DMOD
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=short -DCFORMAT=%hd
+#INPUT     = $(tcasedir)emapfn-cmain.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=short -DCFORMAT=%hd
+#INPUT     = $(tcasedir)emapfn-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=short -DCFORMAT=%hd
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=integer*2,-DMOD
+#INPUT     = $(tcasedir)emapfn-fmain.f
+#STDERR    = emapfn.out1
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=integer*2,-DMOD
+#INPUT     = $(tcasedir)emapfn-f.F
+#STDERR    = emapfn.out2
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = emapfn-fmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out3
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = emapfn-cmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out4
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapfn.out1 emapfn.out2 emapfn.out3 emapfn.out4
+#STDOUT    = emapfn.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapfn.out $(tcasedir)emapfn-21.vf
+#ENDCMD
+
+! 21.fixed variation
+! C OPTS = -DCTYPE=short -DCFORMAT=%hd
+! F OPTS = -WF,-DFTYPE=integer*2,-DMOD
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=short -DCFORMAT=%hd
+#INPUT     = $(tcasedir)emapfn-cmain.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=short -DCFORMAT=%hd
+#INPUT     = $(tcasedir)emapfn-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=short -DCFORMAT=%hd
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=integer*2,-DMOD $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)emapfn-fmain.f
+#STDERR    = emapfn.out1
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=integer*2,-DMOD $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)emapfn-f.F
+#STDERR    = emapfn.out2
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = emapfn-fmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out3
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = emapfn-cmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out4
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapfn.out1 emapfn.out2 emapfn.out3 emapfn.out4
+#STDOUT    = emapfn.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapfn.out $(tcasedir)emapfn-21.vf
+#ENDCMD
+
+! 22 variation
+! C OPTS = -DCTYPE=int -DCFORMAT=%ld
+! F OPTS = -WF,-DFTYPE=integer*4,-DMOD
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=int -DCFORMAT=%ld
+#INPUT     = $(tcasedir)emapfn-cmain.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=int -DCFORMAT=%ld
+#INPUT     = $(tcasedir)emapfn-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=int -DCFORMAT=%ld
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=integer*4,-DMOD
+#INPUT     = $(tcasedir)emapfn-fmain.f
+#STDERR    = emapfn.out1
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=integer*4,-DMOD
+#INPUT     = $(tcasedir)emapfn-f.F
+#STDERR    = emapfn.out2
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = emapfn-fmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out3
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = emapfn-cmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out4
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapfn.out1 emapfn.out2 emapfn.out3 emapfn.out4
+#STDOUT    = emapfn.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapfn.out $(tcasedir)emapfn-22.vf
+#ENDCMD
+
+! 22.fixed variation
+! C OPTS = -DCTYPE=int -DCFORMAT=%ld
+! F OPTS = -WF,-DFTYPE=integer*4,-DMOD
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=int -DCFORMAT=%ld
+#INPUT     = $(tcasedir)emapfn-cmain.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=int -DCFORMAT=%ld
+#INPUT     = $(tcasedir)emapfn-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=int -DCFORMAT=%ld
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=integer*4,-DMOD $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)emapfn-fmain.f
+#STDERR    = emapfn.out1
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=integer*4,-DMOD $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)emapfn-f.F
+#STDERR    = emapfn.out2
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = emapfn-fmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out3
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = emapfn-cmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out4
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapfn.out1 emapfn.out2 emapfn.out3 emapfn.out4
+#STDOUT    = emapfn.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapfn.out $(tcasedir)emapfn-22.vf
+#ENDCMD
+
+! 23 variation
+! C OPTS = -DCTYPE='long long' -DCFORMAT=%lld
+! F OPTS = -WF,-DFTYPE=integer*8,-DMOD
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE='long long' -DCFORMAT=%lld
+#INPUT     = $(tcasedir)emapfn-cmain.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE='long long' -DCFORMAT=%lld
+#INPUT     = $(tcasedir)emapfn-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE='long long' -DCFORMAT=%lld
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=integer*8,-DMOD
+#INPUT     = $(tcasedir)emapfn-fmain.f
+#STDERR    = emapfn.out1
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=integer*8,-DMOD
+#INPUT     = $(tcasedir)emapfn-f.F
+#STDERR    = emapfn.out2
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = emapfn-fmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out3
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = emapfn-cmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out4
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapfn.out1 emapfn.out2 emapfn.out3 emapfn.out4
+#STDOUT    = emapfn.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapfn.out $(tcasedir)emapfn-23.vf
+#ENDCMD
+
+! 23.fixed variation
+! C OPTS = -DCTYPE='long long' -DCFORMAT=%lld
+! F OPTS = -WF,-DFTYPE=integer*8,-DMOD
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE='long long' -DCFORMAT=%lld
+#INPUT     = $(tcasedir)emapfn-cmain.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE='long long' -DCFORMAT=%lld
+#INPUT     = $(tcasedir)emapfn-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE='long long' -DCFORMAT=%lld
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=integer*8,-DMOD $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)emapfn-fmain.f
+#STDERR    = emapfn.out1
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=integer*8,-DMOD $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)emapfn-f.F
+#STDERR    = emapfn.out2
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = emapfn-fmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out3
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = emapfn-cmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out4
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapfn.out1 emapfn.out2 emapfn.out3 emapfn.out4
+#STDOUT    = emapfn.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapfn.out $(tcasedir)emapfn-23.vf
+#ENDCMD
+
+! 24 variation
+! C OPTS = -DCTYPE=float -DCFORMAT=%.9f
+! F OPTS = -WF,-DFTYPE=real*4,-DMOD
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=float -DCFORMAT=%.9f
+#INPUT     = $(tcasedir)emapfn-cmain.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=float -DCFORMAT=%.9f
+#INPUT     = $(tcasedir)emapfn-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=float -DCFORMAT=%.9f
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=real*4,-DMOD
+#INPUT     = $(tcasedir)emapfn-fmain.f
+#STDERR    = emapfn.out1
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=real*4,-DMOD
+#INPUT     = $(tcasedir)emapfn-f.F
+#STDERR    = emapfn.out2
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = emapfn-fmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out3
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = emapfn-cmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out4
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapfn.out1 emapfn.out2 emapfn.out3 emapfn.out4
+#STDOUT    = emapfn.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapfn.out $(tcasedir)emapfn-24.vf
+#ENDCMD
+
+! 24.fixed variation
+! C OPTS = -DCTYPE=float -DCFORMAT=%.9f
+! F OPTS = -WF,-DFTYPE=real*4,-DMOD
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=float -DCFORMAT=%.9f
+#INPUT     = $(tcasedir)emapfn-cmain.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=float -DCFORMAT=%.9f
+#INPUT     = $(tcasedir)emapfn-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=float -DCFORMAT=%.9f
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=real*4,-DMOD $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)emapfn-fmain.f
+#STDERR    = emapfn.out1
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=real*4,-DMOD $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)emapfn-f.F
+#STDERR    = emapfn.out2
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = emapfn-fmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out3
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = emapfn-cmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out4
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapfn.out1 emapfn.out2 emapfn.out3 emapfn.out4
+#STDOUT    = emapfn.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapfn.out $(tcasedir)emapfn-24.vf
+#ENDCMD
+
+! 25 variation
+! C OPTS = -DCTYPE=double -DCFORMAT=%.17f
+! F OPTS = -WF,-DFTYPE=real*8,-DMOD
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=double -DCFORMAT=%.17f
+#INPUT     = $(tcasedir)emapfn-cmain.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=double -DCFORMAT=%.17f
+#INPUT     = $(tcasedir)emapfn-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=double -DCFORMAT=%.17f
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=real*8,-DMOD
+#INPUT     = $(tcasedir)emapfn-fmain.f
+#STDERR    = emapfn.out1
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=real*8,-DMOD
+#INPUT     = $(tcasedir)emapfn-f.F
+#STDERR    = emapfn.out2
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = emapfn-fmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out3
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = emapfn-cmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out4
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapfn.out1 emapfn.out2 emapfn.out3 emapfn.out4
+#STDOUT    = emapfn.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapfn.out $(tcasedir)emapfn-25.vf
+#ENDCMD
+
+! 25.fixed variation
+! C OPTS = -DCTYPE=double -DCFORMAT=%.17f
+! F OPTS = -WF,-DFTYPE=real*8,-DMOD
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=double -DCFORMAT=%.17f
+#INPUT     = $(tcasedir)emapfn-cmain.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=double -DCFORMAT=%.17f
+#INPUT     = $(tcasedir)emapfn-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE=double -DCFORMAT=%.17f
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=real*8,-DMOD $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)emapfn-fmain.f
+#STDERR    = emapfn.out1
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=real*8,-DMOD $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)emapfn-f.F
+#STDERR    = emapfn.out2
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = emapfn-fmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out3
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = emapfn-cmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out4
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapfn.out1 emapfn.out2 emapfn.out3 emapfn.out4
+#STDOUT    = emapfn.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapfn.out $(tcasedir)emapfn-25.vf
+#ENDCMD
+
+! 26 variation
+! C OPTS = -DCTYPE='long double' -DCFORMAT=%.34Lf
+! F OPTS = -WF,-DFTYPE=real*16,-DMOD
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE='long double' -DCFORMAT=%.34Lf
+#INPUT     = $(tcasedir)emapfn-cmain.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE='long double' -DCFORMAT=%.34Lf
+#INPUT     = $(tcasedir)emapfn-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE='long double' -DCFORMAT=%.34Lf
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=real*16,-DMOD
+#INPUT     = $(tcasedir)emapfn-fmain.f
+#STDERR    = emapfn.out1
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=real*16,-DMOD
+#INPUT     = $(tcasedir)emapfn-f.F
+#STDERR    = emapfn.out2
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = emapfn-fmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out3
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = emapfn-cmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out4
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapfn.out1 emapfn.out2 emapfn.out3 emapfn.out4
+#STDOUT    = emapfn.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapfn.out $(tcasedir)emapfn-26.vf
+#ENDCMD
+
+! 26.fixed variation
+! C OPTS = -DCTYPE='long double' -DCFORMAT=%.34Lf
+! F OPTS = -WF,-DFTYPE=real*16,-DMOD
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE='long double' -DCFORMAT=%.34Lf
+#INPUT     = $(tcasedir)emapfn-cmain.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE='long double' -DCFORMAT=%.34Lf
+#INPUT     = $(tcasedir)emapfn-c.c
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS) -DCTYPE='long double' -DCFORMAT=%.34Lf
+#INPUT     = $(tcasedir)pf.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=real*16,-DMOD $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)emapfn-fmain.f
+#STDERR    = emapfn.out1
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DFTYPE=real*16,-DMOD $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)emapfn-f.F
+#STDERR    = emapfn.out2
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = emapfn-fmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out3
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = emapfn-cmain$(OBJ) emapfn-c$(OBJ) emapfn-f$(OBJ) pf$(OBJ)
+#OUTPUT    = emapfn$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = emapfn$(EXE)
+#STDOUT    = emapfn.out4
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = emapfn.out1 emapfn.out2 emapfn.out3 emapfn.out4
+#STDOUT    = emapfn.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = emapfn.out $(tcasedir)emapfn-26.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

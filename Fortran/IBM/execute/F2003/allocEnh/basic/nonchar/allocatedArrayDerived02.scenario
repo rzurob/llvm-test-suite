@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/basic/nonchar/allocatedArrayDerived02.scenario
+#FEATURE	= Intrinsic Assignment -- Basic Tests: Non-CHARACTER Derived Type
+#CREATOR	= GM Manual Creation
+#DATE		= 20060808
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)allocatedArrayDerived02.f
+#OUTPUT		= allocatedArrayDerived02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= allocatedArrayDerived02$(OBJ)
+#OUTPUT		= allocatedArrayDerived02$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= allocatedArrayDerived02$(EXE)
+#STDOUT		= allocatedArrayDerived02.out
+#STDERR		= allocatedArrayDerived02.out
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)allocatedArrayDerived02$(product)vf)	\
+				allocatedArrayDerived02.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

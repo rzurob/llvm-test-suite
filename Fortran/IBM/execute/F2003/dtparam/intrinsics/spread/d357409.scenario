@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/spread/d357409.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Oct. 14 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)d357409.f
+#OUTPUT= d357409$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = d357409$(OBJ)
+#OUTPUT= d357409$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = d357409$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

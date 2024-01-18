@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/merge/merge004.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070925
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)merge004.f
+#OUTPUT    = merge004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = merge004$(OBJ)
+#OUTPUT    = merge004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = merge004$(EXE)
+#STDOUT    = merge004.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)merge004$(product)vf) merge004.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpIAssignElementalLocalFromVars.scenario
+#FEATURE   = Intrinsic Assignment without Allocation - assign variables to local variables in elemental procedure
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAssignElementalLocalFromVars.f
+#OUTPUT    = dtpIAssignElementalLocalFromVars$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAssignElementalLocalFromVars$(OBJ)
+#OUTPUT    = dtpIAssignElementalLocalFromVars$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAssignElementalLocalFromVars$(EXE)
+#STDOUT    = dtpIAssignElementalLocalFromVars.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpIAssignElementalLocalFromVars$(product)vf) dtpIAssignElementalLocalFromVars.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

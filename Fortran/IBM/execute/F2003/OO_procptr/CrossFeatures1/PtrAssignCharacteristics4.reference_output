@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"PtrAssignCharacteristics4.f", line 250.3: 1515-137 (S) Dummy argument arg of Procedure pointer procptr1 and the corresponding dummy argument of procedure pointer assignment target intfun1 must have the same type and type parameters.
+"PtrAssignCharacteristics4.f", line 270.3: 1515-138 (S) The dummy argument in position 1 of procedure pointer procptr11 is named arg.  The corresponding dummy argument in procedure pointer assignment target intfun11 must also be named arg.
+** ptrassigncharacteristics4   === End of Compilation 2 ===
+??? not enough ???
+1501-511  Compilation failed for file PtrAssignCharacteristics4.f.

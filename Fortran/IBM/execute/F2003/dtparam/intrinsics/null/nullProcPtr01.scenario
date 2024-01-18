@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/intrinsics/null/nullProcPtr01.scenario
+#FEATURE= 355754
+#CREATOR= Nancy Wang
+#DATE   = Sept. 26 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)nullProcPtr01.f
+#OUTPUT= nullProcPtr01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = nullProcPtr01$(OBJ)
+#OUTPUT= nullProcPtr01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = nullProcPtr01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

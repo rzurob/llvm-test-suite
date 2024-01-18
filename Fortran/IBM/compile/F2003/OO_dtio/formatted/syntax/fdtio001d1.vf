@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"fdtio001d1.f", line 59.8: 1514-613 (S) Dummy argument v_list of the derived-type I/O procedure formattedread must be an array of rank 1.
+** fdtio001d1   === End of Compilation 2 ===
+1501-511  Compilation failed for file fdtio001d1.f.

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpUnaryElementalTKRMixInterface.scenario
+#FEATURE   = User-Defined Operators - correct unary operators are used for a given TKR (mixed elemental and non-elemental, generic interface)
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpUnaryElementalTKRMixInterface.f
+#OUTPUT    = dtpUOpUnaryElementalTKRMixInterface$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpUnaryElementalTKRMixInterface$(OBJ)
+#OUTPUT    = dtpUOpUnaryElementalTKRMixInterface$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpUnaryElementalTKRMixInterface$(EXE)
+#STDOUT    = dtpUOpUnaryElementalTKRMixInterface.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUOpUnaryElementalTKRMixInterface$(product)vf) dtpUOpUnaryElementalTKRMixInterface.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

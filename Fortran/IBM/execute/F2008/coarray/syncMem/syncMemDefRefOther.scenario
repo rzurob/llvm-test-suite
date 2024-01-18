@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/syncMemDefRefOther
+#FEATURE        = CAF SYNC MEMORY - P defines covar in Q, R checks it
+#CREATOR        = DF
+#DATE           = 2010-09-17
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)syncMemDefRefOther.f
+#OUTPUT = syncMemDefRefOther$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = syncMemDefRefOther$(OBJ)
+#OUTPUT = syncMemDefRefOther$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = syncMemDefRefOther$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

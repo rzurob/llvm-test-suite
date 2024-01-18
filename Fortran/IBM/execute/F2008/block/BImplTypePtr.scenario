@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BImplTypePtr.scenario
+#FEATURE   = F2008 BLOCK - implicit typing (var appears in POINTER statement)
+#CREATOR   = DF Manual Update
+#DATE      = 20101214
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)BImplTypePtr.f
+#OUTPUT    = BImplTypePtr$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = BImplTypePtr$(OBJ)
+#OUTPUT    = BImplTypePtr$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = BImplTypePtr$(EXE)
+#STDOUT    = BImplTypePtr.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)BImplTypePtr$(product)vf) BImplTypePtr.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

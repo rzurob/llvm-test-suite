@@ -1,0 +1,4 @@
+"genericAmbiguityInterface010ad.f", line 37.38: 1514-699 (S) Procedure "assgn1" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "assgn2", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** assignment   === End of Compilation 1 ===
+"genericAmbiguityInterface010ad.f", line 64.8: 1514-219 (S) Unable to access module symbol file for module assignment. Check path and file permissions of file. Use association not done for this module.
+1501-511  Compilation failed for file genericAmbiguityInterface010ad.f.

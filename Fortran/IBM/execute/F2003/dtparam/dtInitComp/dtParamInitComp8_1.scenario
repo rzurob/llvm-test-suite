@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dtParamInitComp8_1.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       07-08-31
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dtParamInitComp8_1.f
+#OUTPUT= dtParamInitComp8_1$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  dtParamInitComp8_1$(OBJ)
+#OUTPUT= dtParamInitComp8_1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dtParamInitComp8_1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

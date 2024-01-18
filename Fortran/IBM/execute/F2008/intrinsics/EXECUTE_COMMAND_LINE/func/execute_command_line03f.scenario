@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/intrinsics/EXECUTE_COMMAND_LINE/func/execute_command_line03f.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20101215
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#FOR i=1 TO 4 STEP 1
+	#CMD      =  F_COMPILE
+	#INPUT    =  $(tcasedir)execute_command_line03f_$(i).f
+	#OUTPUT   =  execute_command_line03f_$(i)$(OBJ)
+	#ENDCMD
+
+	#CMD      =  F_LINK
+	#INPUT    =  execute_command_line03f_$(i)$(OBJ)
+	#OUTPUT   =  execute_command_line03f_$(i)$(EXE)
+	#ENDCMD
+
+	#CMD      =  RUN
+	#INPUT    =  execute_command_line03f_$(i)$(EXE)
+	#STDOUT   =  execute_command_line03f_$(i).out
+	#STDERR   =  execute_command_line03f_$(i).err
+        #VALIDRCS =  $(RC_FAIL)
+	#ENDCMD
+
+        ! Valid line : "1525-610 Error encountered while attempting to execute the command:"
+        #CMD      = GREP
+        #INPUT    = "1525-610" execute_command_line03f_$(i).err
+        #ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

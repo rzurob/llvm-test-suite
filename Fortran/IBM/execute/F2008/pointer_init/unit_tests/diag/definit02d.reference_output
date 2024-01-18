@@ -1,0 +1,6 @@
+"definit02d.f", line 14.31: 1518-402 (L) Initializing a pointer object to a value other than NULL() is not permitted by the Fortran 2003 standard.
+"definit02d.f", line 16.47: 1518-402 (L) Initializing a pointer object to a value other than NULL() is not permitted by the Fortran 2003 standard.
+"definit02d.f", line 20.29: 1518-402 (L) Initializing a pointer object to a value other than NULL() is not permitted by the Fortran 2003 standard.
+"definit02d.f", line 22.37: 1518-402 (L) Initializing a pointer object to a value other than NULL() is not permitted by the Fortran 2003 standard.
+** sub   === End of Compilation 1 ===
+1501-510  Compilation successful for file definit02d.f.

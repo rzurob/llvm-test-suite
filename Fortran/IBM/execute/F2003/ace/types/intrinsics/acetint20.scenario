@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint20.scenario
+#FEATURE	= Array constructor enhancement - Intrinsic type specifier in assignment, just numeric and logical - different kinds
+#CREATOR	= DF Manual Update
+#DATE		= 20060919
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint20.f
+#OUTPUT		= acetint20$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint20$(OBJ)
+#OUTPUT		= acetint20$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint20$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

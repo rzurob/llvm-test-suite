@@ -1,0 +1,26 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/impliedshape/unit_tests/diag/impliedshape05d.scenario
+#FEATURE    = F385594 - Implied-shape Arrays
+#CREATOR    = David Nichols
+#DATE       = 20110214
+#TEST_TYPE  = Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)impliedshape05d.f
+#STDERR     = impliedshape05d.out
+#VALIDRCS   = 1
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = impliedshape05d.out $($(tcasedir)impliedshape05d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/TCext/OO_dtio/formatted/DT/crossFeature/structCompnt/structCompnt007kl.scenario
+#FEATURE = OO_dtio and derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070618
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)structCompnt007kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = structCompnt007kl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = structCompnt007kl$(OBJ)
+#OUTPUT    = structCompnt007kl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = structCompnt007kl$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)structCompnt007kl$(product)vf) structCompnt007kl.1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

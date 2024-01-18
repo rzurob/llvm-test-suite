@@ -1,0 +1,22 @@
+
+    Feature #926303 C Interop: Assumed-type Objects
+
+  I0  document is kept in CMVC
+     family:aix,  release: des.dev, component: design.i0,
+     file designs/i0/c_interop__assumed_type_objects/c_interop__assumed_type_objects.html
+
+     https://featureflow.torolab.ibm.com/featureflow/show?id=6287 
+
+  IT1 document is kept in CMVC
+     family:aix,  release: des.dev, component: design.it1,
+     file designs/it1/it1_for_c_interop__assumed_type/it1_for_c_interop__assumed_type.html
+
+     https://featureflow.torolab.ibm.com/featureflow/show?id=6315 
+
+  IT2 document is kept in CMVC
+     family:aix,  release: des.dev, component: design.it2,
+     file designs/it2/it2_for_c_interop__assumed_type_objects/it2_for_c_interop__assumed_type_objects.html
+
+     https://featureflow.torolab.ibm.com/featureflow/show?id=6461
+
+  See the ./doc subdirectory for details

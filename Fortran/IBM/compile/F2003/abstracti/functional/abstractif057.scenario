@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2003/abstracti/functional/abstractif057.scenario
+#FEATURE = Abstract Interface Tests
+#CREATOR = Manual conversion CPR
+#DATE    = 20070326
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+FTCARG="abstractif057"
+CTCARG="abstractic057"
+
+#IF on(aix)
+  MAYBESTDINT=""
+#ELSE
+  MAYBESTDINT="-DSTDINT"
+#ENDIF
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#INCLUDE   = scrdtya00.preshinclude
+
+#ENDCONTROL
+#ENDSCENARIO

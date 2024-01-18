@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrMinlocChar.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrMinlocChar.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrMinlocChar$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrMinlocChar$(OBJ)
+#OUTPUT    = dataPtrMinlocChar$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrMinlocChar$(EXE)
+#STDOUT    = dataPtrMinlocChar.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrMinlocChar.out $($(tcasedir)dataPtrMinlocChar$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

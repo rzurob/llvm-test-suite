@@ -1,0 +1,16 @@
+ &NML
+ B1= &DTIO
+ DTV=2
+ /, B2= &DTIO
+ DTV=4
+ /
+ /
+ &NML1
+ B1= &DTIO
+ DTV=2
+ /, B2= &DTIO
+ DTV=4
+ /, B3= &DTIO
+ DTV=6
+ /
+ /

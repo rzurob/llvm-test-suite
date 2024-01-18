@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/allocEnh/construct/misc004a.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)misc004a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = misc004a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = misc004a$(OBJ)
+#OUTPUT    = misc004a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = misc004a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

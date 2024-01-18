@@ -1,0 +1,13 @@
+ opt1: one argument 4 6 8
+ opt2: first argument 4 6 8
+ opt2: second argument 3 6 12
+ opt2: 2 argument(s)
+ opt2: first argument 4 6 8
+ opt2: 1 argument(s)
+ opt2: first argument 3 6 12
+ opt2: 1 argument(s)
+ opt2: second argument 4 6 8
+ opt2: 1 argument(s)
+ opt1: no argument
+ opt2: 0 argument(s)
+ done

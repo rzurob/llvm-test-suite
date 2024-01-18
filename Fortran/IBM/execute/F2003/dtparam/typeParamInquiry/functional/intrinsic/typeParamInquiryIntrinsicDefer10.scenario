@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/typeParamInquiry/functional/intrinsic/typeParamInquiryIntrinsicDefer10.scenario
+#FEATURE= Type Parameter Inquiry(354612)
+#CREATOR=   Nancy Wang
+#DATE= August 5 2008
+#TEST_TYPE=  Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)typeParamInquiryIntrinsicDefer10.f
+#OUTPUT= typeParamInquiryIntrinsicDefer10$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = typeParamInquiryIntrinsicDefer10$(OBJ)
+#OUTPUT= typeParamInquiryIntrinsicDefer10$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = typeParamInquiryIntrinsicDefer10$(EXE)
+#STDIN = $(tcasedir)typeParamInquiryIntrinsicDefer10.in
+#STDOUT= typeParamInquiryIntrinsicDefer10.out
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT = $($(tcasedir)typeParamInquiryIntrinsicDefer10$(product)vf)  typeParamInquiryIntrinsicDefer10.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

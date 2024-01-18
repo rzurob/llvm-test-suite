@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/coarray/coarray_dummy/assumed_shape/assumedShapeCoarray27.scenario
+#FEATURE   =
+#CREATOR   = Shahid Alam
+#DATE      = 20110218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)assumedShapeCoarray27.f
+#OUTPUT    = assumedShapeCoarray27$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = assumedShapeCoarray27$(OBJ)
+#OUTPUT    = assumedShapeCoarray27$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+   #CMD       = MPRUN
+   #INPUT     = assumedShapeCoarray27$(EXE)
+   #STDOUT    = assumedShapeCoarray27$(i).out
+   #STDERR    = assumedShapeCoarray27$(i).out
+   #ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

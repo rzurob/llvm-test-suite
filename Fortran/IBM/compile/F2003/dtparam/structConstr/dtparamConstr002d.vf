@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"dtparamConstr002d.f", line 47.10: 1514-572 (S) The component cx must be explicitly initialized in this structure constructor.
+** dtparamconstr002d   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtparamConstr002d.f.

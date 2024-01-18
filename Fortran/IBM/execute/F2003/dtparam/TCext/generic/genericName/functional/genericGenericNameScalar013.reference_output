@@ -1,0 +1,13 @@
+ noarg
+ onearg: 10
+ twoargs: 50 50
+ noarg
+ onearg: 100
+ twoargs: 150 150
+ noarg
+ onearg: 200
+ noarg
+ twoargs: 150 300
+ noarg
+ onearg: 500
+ twoargs: 500 500

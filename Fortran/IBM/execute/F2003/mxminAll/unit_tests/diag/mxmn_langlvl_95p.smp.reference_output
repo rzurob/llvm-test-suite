@@ -1,0 +1,10 @@
+  50.11   01110793 max‹Fortran 95‹
+  51.11   01110793 min‹Fortran 95‹
+  52.11   01110793 maxval‹Fortran 95‹
+  53.11   01110793 minval‹Fortran 95‹
+  54.11   01110793 maxval‹Fortran 95‹
+  55.11   01110793 minval‹Fortran 95‹
+    011107CB Fortran 95‹
+    011107D0 -qsmp‹Fortran 95‹
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file mxmn_langlvl_95p.f.

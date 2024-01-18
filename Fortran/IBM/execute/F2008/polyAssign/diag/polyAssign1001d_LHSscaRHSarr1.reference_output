@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"polyAssign1001d_LHSscaRHSarr1.f", line 56.5: 1516-077 (S) Conformable array is required in this context.
+"polyAssign1001d_LHSscaRHSarr1.f", line 57.5: 1516-077 (S) Conformable array is required in this context.
+"polyAssign1001d_LHSscaRHSarr1.f", line 59.5: 1516-077 (S) Conformable array is required in this context.
+"polyAssign1001d_LHSscaRHSarr1.f", line 60.5: 1516-077 (S) Conformable array is required in this context.
+** polyassign1001   === End of Compilation 2 ===
+1501-511  Compilation failed for file polyAssign1001d_LHSscaRHSarr1.f.

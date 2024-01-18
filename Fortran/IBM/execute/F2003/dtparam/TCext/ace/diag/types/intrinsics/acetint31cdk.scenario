@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/diag/types/intrinsics/acetint31cdk.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
+				Procedure Pointers are not Acceptable Data (CHARACTER))
+#CREATOR	= Glen Mateer (based on work by David Forster)
+#DATE		= 20071203
+#TEST_TYPE	= Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint31cdk.f
+#OUTPUT		= acetint31cdk$(OBJ)
+#STDERR		= acetint31cdk.stderr
+#VALIDRCS	= $(RC_COMP_S)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)acetint31cdk$(product)vf) acetint31cdk.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

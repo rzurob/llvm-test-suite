@@ -1,0 +1,5 @@
+"resolve006.f", line 56.12: 1514-699 (S) Procedure "writebaseext" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "writebase", present and type incompatible, present with different kind type parameters, or present with a different rank.
+"resolve006.f", line 86.12: 1514-699 (S) Procedure "readbaseext" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "readbase", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** m   === End of Compilation 1 ===
+"resolve006.f", line 110.8: 1514-219 (S) Unable to access module symbol file for module m. Check path and file permissions of file. Use association not done for this module.
+1501-511  Compilation failed for file resolve006.f.

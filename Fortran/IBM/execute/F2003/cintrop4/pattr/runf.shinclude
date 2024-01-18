@@ -1,0 +1,20 @@
+! Replacing run.sh
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)assertmodule.f
+#OUTPUT = assertmodule$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)$FTCARG.f
+#OUTPUT = $FTCARG$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = assertmodule$(OBJ) $FTCARG$(OBJ)
+#OUTPUT = $FTCARG$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = $FTCARG$(EXE)
+#ENDCMD

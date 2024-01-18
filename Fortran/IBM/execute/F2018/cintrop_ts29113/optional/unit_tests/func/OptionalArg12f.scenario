@@ -1,0 +1,60 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = OptionalArg12f.scenario
+#FEATURE    = 399982 - C Interop: Optional Argument
+#CREATOR    = Bardia Mahjour
+#DATE       = May 2012
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+! Test with -qxlf2008=checkpresence
+#CMD       = F_COMPILE
+#OPTS      = -qxlf2008=checkpresence
+#INPUT     = $(tcasedir)OptionalArg12f.f
+#OUTPUT    = OptionalArg12f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = OptionalArg12f$(OBJ)
+#OUTPUT    = OptionalArg12f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = OptionalArg12f$(EXE)
+#STDOUT    = OptionalArg12f.out
+#STDERR    = OptionalArg12f.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = OptionalArg12f.out $($(tcasedir)OptionalArg12f_F2008chkp$(product)vf)
+#ENDCMD
+
+! Test with -qxlf2008=nocheckpresence
+#CMD       = F_COMPILE
+#OPTS      = -qxlf2008=nocheckpresence
+#INPUT     = $(tcasedir)OptionalArg12f.f
+#OUTPUT    = OptionalArg12f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = OptionalArg12f$(OBJ)
+#OUTPUT    = OptionalArg12f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = OptionalArg12f$(EXE)
+#STDOUT    = OptionalArg12f.out
+#STDERR    = OptionalArg12f.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = OptionalArg12f.out $($(tcasedir)OptionalArg12f_noF2008chkp$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

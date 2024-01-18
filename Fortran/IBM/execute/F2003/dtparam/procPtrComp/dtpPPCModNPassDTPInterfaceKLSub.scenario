@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/procPtrComp/dtpPPCModNPassDTPInterfaceKLSub.scenario
+#FEATURE   = Procedure Pointers as Components - via module variable, reference to subroutine without passed-object dummy argument, DTP arg w/ len parameter
+#CREATOR   = DF Manual Update
+#DATE      = 20090323
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPPCModNPassDTPInterfaceKLSub.f
+#OUTPUT    = dtpPPCModNPassDTPInterfaceKLSub$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPPCModNPassDTPInterfaceKLSub$(OBJ)
+#OUTPUT    = dtpPPCModNPassDTPInterfaceKLSub$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPPCModNPassDTPInterfaceKLSub$(EXE)
+#STDOUT    = dtpPPCModNPassDTPInterfaceKLSub.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpPPCModNPassDTPInterfaceKLSub$(product)vf) dtpPPCModNPassDTPInterfaceKLSub.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

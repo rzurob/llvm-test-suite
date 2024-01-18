@@ -1,0 +1,52 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/misc/acemc02.scenario
+#FEATURE	= Array constructor enhancement - Interoperability with C: values from C functions (real)
+#CREATOR	= DF Manual Update
+#DATE		= 20060922
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#IF on(bgl)
+  C_OPTS  =-qdebug=aixldbl128 -qfloat=nocomplexgcc $(C_COMPILER_OPTS)
+#ELSE IF on(aix)
+  C_OPTS  =$(XLC_COMPILE^OPT_BIGGER_LONG_DOUBLE) $(C_COMPILER_OPTS)
+#ELSE
+  C_OPTS  =$(XLC_COMPILE^OPT_BIGGER_LONG_DOUBLE) -qfloat=nocomplexgcc -qfloat=nogcclongdouble $(C_COMPILER_OPTS)
+#ENDIF
+#ENDDEFS
+!#INVALID_PRODUCT= rhel
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= XLC_COMPILE
+#INPUT		= $(tcasedir)naninf.c
+#OPTS		= $C_OPTS $(OPT_SET_LANG_LEVEL_STDC99)
+#OUTPUT		= naninf$(OBJ)
+#ENDCMD
+
+#CMD		= XLC_COMPILE
+#INPUT		= $(tcasedir)cfuns.c
+#OPTS		= $C_OPTS
+#OUTPUT		= cfuns$(OBJ)
+#ENDCMD
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acemc02.f
+#OUTPUT		= acemc02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acemc02$(OBJ) cfuns$(OBJ) naninf$(OBJ)
+#OUTPUT		= acemc02$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acemc02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

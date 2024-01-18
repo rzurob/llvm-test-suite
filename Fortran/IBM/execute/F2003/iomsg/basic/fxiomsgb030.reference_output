@@ -1,0 +1,4 @@
+ 1525-066 A repeat specification is not allowed for the TL edit descriptor in a format specification.  The program will recover by ignoring the repeat specification.
+                                                                                                                                       
+ 1525-066 A repeat specification is not allowed for the BN edit descriptor in a format specification.  The program will recover by ignoring the repeat specification.
+                                                                                                                                       

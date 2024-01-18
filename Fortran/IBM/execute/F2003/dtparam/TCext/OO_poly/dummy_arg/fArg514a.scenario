@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/dummy_arg/fArg514a.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070919
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fArg514a.f
+#OUTPUT    = fArg514a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fArg514a$(OBJ)
+#OUTPUT    = fArg514a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fArg514a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

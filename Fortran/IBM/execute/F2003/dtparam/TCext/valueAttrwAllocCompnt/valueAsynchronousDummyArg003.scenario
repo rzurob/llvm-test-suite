@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/valueAttrwAllocCompnt/valueAsynchronousDummyArg003.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of valueAttrwAllocCompnt/*
+#DATE      = 20071102
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=bgq
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)valueAsynchronousDummyArg003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = valueAsynchronousDummyArg003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = valueAsynchronousDummyArg003$(OBJ)
+#OUTPUT    = valueAsynchronousDummyArg003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = valueAsynchronousDummyArg003$(EXE)
+#STDOUT    = valueAsynchronousDummyArg003.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = valueAsynchronousDummyArg003.out $(tcasedir)valueAsynchronousDummyArg003.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

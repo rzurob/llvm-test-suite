@@ -1,0 +1,5 @@
+"dtParamTypeDecC504d.f", line 43.16: 1514-753 (S) Automatic object c is not permitted in the specification part of a module or main program.
+"dtParamTypeDecC504d.f", line 43.19: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"dtParamTypeDecC504d.f", line 49.19: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+** dtparamtypedecc504d   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtParamTypeDecC504d.f.

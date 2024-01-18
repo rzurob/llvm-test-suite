@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/procPtrComp/dtpPPCModPassDTPInterfaceKFunDTP.scenario
+#FEATURE   = Procedure Pointers as Components - reference to pass function, DTP arg + result w/ K parameter, ref via module var
+#CREATOR   = DF Manual Update
+#DATE      = 20090324
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPPCModPassDTPInterfaceKFunDTP.f
+#OUTPUT    = dtpPPCModPassDTPInterfaceKFunDTP$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPPCModPassDTPInterfaceKFunDTP$(OBJ)
+#OUTPUT    = dtpPPCModPassDTPInterfaceKFunDTP$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPPCModPassDTPInterfaceKFunDTP$(EXE)
+#STDOUT    = dtpPPCModPassDTPInterfaceKFunDTP.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpPPCModPassDTPInterfaceKFunDTP$(product)vf) dtpPPCModPassDTPInterfaceKFunDTP.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

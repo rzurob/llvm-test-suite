@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"dtpOverride004d.f", line 73.22: 1514-670 (S) Dummy argument b2 of overridden binding select and the corresponding dummy argument of overriding binding select must have the same type and type parameters.
+** m1   === End of Compilation 2 ===
+** dtpoverride004d   === End of Compilation 3 ===
+1501-511  Compilation failed for file dtpOverride004d.f.

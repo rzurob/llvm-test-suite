@@ -1,0 +1,30 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dtParamTypeDecC522d.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       05-11-07
+#TEST_TYPE=  DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=      F_COMPILE
+#INPUT=    $(tcasedir)dtParamTypeDecC522d.f
+#STDERR=   dtParamTypeDecC522d.err
+#VALIDRCS= $(RC_COMP_E)
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    dtParamTypeDecC522d.err $($(tcasedir)dtParamTypeDecC522d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

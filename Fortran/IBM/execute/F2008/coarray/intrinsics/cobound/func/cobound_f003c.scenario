@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = cobound_f003c.scenario
+#FEATURE  = CAF Intrinsics
+#CREATOR  = Francesco Cassullo
+#DATE     = September 2010
+#TEST_TYPE= FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_COARRAY_IMAGES<32>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = $(tcasedir)cobound_f003c.f
+#OUTPUT    = cobound_f003c$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_COARRAY_IMAGES<32>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = cobound_f003c$(OBJ)
+#OUTPUT    = cobound_f003c$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#ENVAR     = CAF_NUM_IMAGES=32
+#ENVAR     = MP_PROCS=1
+#INPUT     = cobound_f003c$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

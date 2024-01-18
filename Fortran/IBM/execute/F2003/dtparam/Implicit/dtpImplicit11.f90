@@ -1,0 +1,135 @@
+!*********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : dtpImplicit11
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Jun. 27, 2007
+!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : DERIVED CLASS PARAMETERS
+!*
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*
+!*  REFERENCE                  : Feature Number 289057
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  : -qfree=f90
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*
+!*   
+!* 
+!*  -- The implicit statement
+!*   on select type 
+!* 
+!*  (ICE)
+!*   
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+
+  MODULE M
+
+  TYPE :: DT0(K0, L0)
+    INTEGER, KIND :: K0=1
+    INTEGER, LEN  :: L0=1
+    CONTAINS
+    PROCEDURE :: ModFun
+  END TYPE 
+
+  TYPE,  EXTENDS(DT0)  :: DT1(K1, L1)
+    INTEGER(K0), KIND :: K1=1
+    INTEGER(K0), LEN  :: L1=1
+    REAL(K1) :: R(L1)=K1
+  END TYPE 
+
+  TYPE, EXTENDS(DT1) :: DT2(K2,L2)
+    INTEGER(K1), KIND :: K2=1
+    INTEGER(K1), LEN  :: L2=1
+    CHARACTER(L2) :: C(L2)=CHAR(K2)
+    INTEGER(K2)   :: I(L2)=K2
+    CLASS(DT2(K0,L0,K1,L0,K2,L2)), POINTER :: Ptr=>NULL()
+  END TYPE 
+  
+  TYPE(DT0(1,3))         :: R(97)
+  TYPE(DT1(1,3,4,5))     :: S(97)
+  TYPE(DT2(1,3,4,5,8,7)) :: T(97)
+  SAVE
+
+  CONTAINS
+
+  FUNCTION ModFun(Arg)
+  CLASS(DT0(1,*)) :: Arg
+  INTEGER ModFun
+    ModFun = -Arg%L0
+  END FUNCTION
+
+  END MODULE
+
+  PROGRAM dtpImplicit11
+  USE M
+
+  IMPLICIT TYPE(DT0(1,3))(R)
+  IMPLICIT TYPE(DT1(1,3,4,5))(S)
+  IMPLICIT TYPE(DT2(1,3,4,5,8,7))(T)
+
+  CALL IntSub( R1, S2, T3 )
+
+  CONTAINS
+
+  subroutine Intsub(RA,SA,TA)
+
+  IMPLICIT CLASS(*)(R)
+  IMPLICIT CLASS(*)(S)
+  IMPLICIT CLASS(*)(T)
+
+
+  SELECT TYPE (RA)
+  TYPE IS (DT0(1,*))
+  SELECT TYPE (SA)
+  TYPE IS (DT1(1,*,4,*))
+  SELECT TYPE (TA)
+  TYPE IS (DT2(1,*,4,*,8,*))
+
+
+    IF ( RA%ModFun()       .NE. -R%L0        ) STOP 31
+
+    IF ( SIZE( SA%R )      .NE. S%L1         ) STOP 32
+    IF ( SA%R%KIND         .NE. S%K1         ) STOP 33
+    IF ( ANY ( SA%R        .NE. S%K1       ) ) STOP 34
+
+    IF ( SIZE( TA%R )      .NE. T%L1         ) STOP 41
+    IF ( TA%R%KIND         .NE. T%K1         ) STOP 42
+    IF ( ANY ( TA%R        .NE. T%K1       ) ) STOP 43
+    IF ( SIZE( TA%I )      .NE. T%L2         ) STOP 44
+    IF ( TA%I%KIND         .NE. T%K2         ) STOP 45
+    IF ( ANY ( TA%I        .NE. T%K2       ) ) STOP 46
+    IF ( SIZE( TA%C )      .NE. T%L2         ) STOP 47
+    IF ( TA%C%LEN          .NE. T%L2         ) STOP 48
+    IF ( ANY (TA%C         .NE. CHAR(T%K2) ) ) STOP 49
+
+ 
+  CLASS default
+    STOP 80
+  END SELECT
+
+  CLASS default
+    STOP 81
+  END SELECT
+
+  CLASS default
+    STOP 82
+  END SELECT
+
+  END SUBROUTINE
+
+  END
+

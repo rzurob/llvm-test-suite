@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BBlockToBlock01.scenario
+#FEATURE   = vars declared in two blocks do not interfere
+#CREATOR   = DF
+#DATE      = 2010-12-06
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = F_COMPILE
+#INPUT    = $(tcasedir)BBlockToBlock01.f
+#OUTPUT   = BBlockToBlock01$(OBJ)
+#ENDCMD
+
+#CMD      = F_LINK
+#INPUT    = BBlockToBlock01$(OBJ)
+#OUTPUT   = BBlockToBlock01$(EXE)
+#ENDCMD
+
+#CMD      = RUN
+#INPUT    = BBlockToBlock01$(EXE)
+#STDOUT   = BBlockToBlock01.out
+#ENDCMD
+
+#CMD      = SPIFF
+#OPTS     = -r1e-5
+#INPUT    = $($(tcasedir)BBlockToBlock01$(product)vf) BBlockToBlock01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

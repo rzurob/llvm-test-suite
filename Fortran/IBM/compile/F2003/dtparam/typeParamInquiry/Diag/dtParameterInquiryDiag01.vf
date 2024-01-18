@@ -1,0 +1,22 @@
+** m   === End of Compilation 1 ===
+"dtParameterInquiryDiag01.f", line 48.3: 1515-025 (S) Only a name of a variable, array element, or character substring is permitted on the left hand side of an assignment statement.
+"dtParameterInquiryDiag01.f", line 49.3: 1515-025 (S) Only a name of a variable, array element, or character substring is permitted on the left hand side of an assignment statement.
+"dtParameterInquiryDiag01.f", line 50.3: 1515-025 (S) Only a name of a variable, array element, or character substring is permitted on the left hand side of an assignment statement.
+"dtParameterInquiryDiag01.f", line 51.3: 1515-025 (S) Only a name of a variable, array element, or character substring is permitted on the left hand side of an assignment statement.
+"dtParameterInquiryDiag01.f", line 52.3: 1515-025 (S) Only a name of a variable, array element, or character substring is permitted on the left hand side of an assignment statement.
+"dtParameterInquiryDiag01.f", line 53.3: 1515-025 (S) Only a name of a variable, array element, or character substring is permitted on the left hand side of an assignment statement.
+"dtParameterInquiryDiag01.f", line 54.3: 1515-025 (S) Only a name of a variable, array element, or character substring is permitted on the left hand side of an assignment statement.
+"dtParameterInquiryDiag01.f", line 55.3: 1515-025 (S) Only a name of a variable, array element, or character substring is permitted on the left hand side of an assignment statement.
+"dtParameterInquiryDiag01.f", line 56.3: 1515-025 (S) Only a name of a variable, array element, or character substring is permitted on the left hand side of an assignment statement.
+"dtParameterInquiryDiag01.f", line 57.3: 1515-025 (S) Only a name of a variable, array element, or character substring is permitted on the left hand side of an assignment statement.
+"dtParameterInquiryDiag01.f", line 58.3: 1515-025 (S) Only a name of a variable, array element, or character substring is permitted on the left hand side of an assignment statement.
+"dtParameterInquiryDiag01.f", line 59.3: 1515-025 (S) Only a name of a variable, array element, or character substring is permitted on the left hand side of an assignment statement.
+"dtParameterInquiryDiag01.f", line 60.3: 1515-025 (S) Only a name of a variable, array element, or character substring is permitted on the left hand side of an assignment statement.
+"dtParameterInquiryDiag01.f", line 61.3: 1515-025 (S) Only a name of a variable, array element, or character substring is permitted on the left hand side of an assignment statement.
+"dtParameterInquiryDiag01.f", line 62.3: 1515-025 (S) Only a name of a variable, array element, or character substring is permitted on the left hand side of an assignment statement.
+"dtParameterInquiryDiag01.f", line 63.3: 1515-025 (S) Only a name of a variable, array element, or character substring is permitted on the left hand side of an assignment statement.
+"dtParameterInquiryDiag01.f", line 64.3: 1515-025 (S) Only a name of a variable, array element, or character substring is permitted on the left hand side of an assignment statement.
+"dtParameterInquiryDiag01.f", line 65.3: 1515-025 (S) Only a name of a variable, array element, or character substring is permitted on the left hand side of an assignment statement.
+"dtParameterInquiryDiag01.f", line 66.3: 1515-025 (S) Only a name of a variable, array element, or character substring is permitted on the left hand side of an assignment statement.
+** dtparameterinquirydiag01   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtParameterInquiryDiag01.f.

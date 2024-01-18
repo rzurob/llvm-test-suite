@@ -1,0 +1,39 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dtpNamelist4.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       07-04-07
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dtpNamelist4.f
+#OUTPUT= dtpNamelist4$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  dtpNamelist4$(OBJ)
+#OUTPUT= dtpNamelist4$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dtpNamelist4$(EXE)
+#STDOUT= dtpNamelist4.out
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    dtpNamelist4.out $($(tcasedir)dtpNamelist4$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

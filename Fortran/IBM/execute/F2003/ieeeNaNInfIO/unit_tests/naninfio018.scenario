@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=naninfio018.scenario
+#FEATURE =
+#CREATOR = Michael Selvanayagam
+#DATE    = 20060331
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)naninfio018.f
+#OPTS      = -qxlf2003=oldnaninf
+#OUTPUT    = naninfio018$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = naninfio018$(OBJ)
+#OUTPUT    = naninfio018$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = naninfio018$(EXE)
+#STDOUT		 = naninfio018.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = naninfio018.out  $($(tcasedir)naninfio018$(product)vf)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

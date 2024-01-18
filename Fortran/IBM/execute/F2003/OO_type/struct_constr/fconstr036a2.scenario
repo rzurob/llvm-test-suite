@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_type/struct_constr/fconstr036a2.f
+#FEATURE = OO_type
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fconstr036a2.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fconstr036a2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fconstr036a2$(OBJ)
+#OUTPUT    = fconstr036a2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fconstr036a2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

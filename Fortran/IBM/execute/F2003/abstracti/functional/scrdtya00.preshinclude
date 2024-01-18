@@ -1,0 +1,244 @@
+! Replacing scrdtya00.presh
+
+! forget Mac settings of 'default' 'natural' 'packed' 'port'
+
+! first do settings common to all platforms - default, bit_packed
+! do default - no align setting
+
+#CMD    = XLC_COMPILE
+#OPTS   = $(C_COMPILER_OPTS) $MAYBESTDINT
+#INPUT  = $(tcasedir)$CTCARG.c
+#OUTPUT = $CTCARG$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)$FTCARG.f
+#OUTPUT = $FTCARG$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+#OUTPUT = $FTCARG$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = $FTCARG$(EXE)
+#ENDCMD
+
+! do bit_packed
+
+#CMD    = XLC_COMPILE
+#OPTS   = $(C_COMPILER_OPTS) $MAYBESTDINT $(OPT_ALIGN_BIT_PACKED)
+#INPUT  = $(tcasedir)$CTCARG.c
+#OUTPUT = $CTCARG$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#OPTS   = -qalign=bindc=bit_packed
+#INPUT  = $(tcasedir)$FTCARG.f
+#OUTPUT = $FTCARG$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#OPTS   = -qalign=bindc=bit_packed
+#INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+#OUTPUT = $FTCARG$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = $FTCARG$(EXE)
+#ENDCMD
+
+! settings specific to Linux - linuxppc
+
+#IF on(linux)
+
+    #CMD    = XLC_COMPILE
+    #OPTS   = $(C_COMPILER_OPTS) $MAYBESTDINT $(OPT_ALIGN_PPC_LINUX)
+    #INPUT  = $(tcasedir)$CTCARG.c
+    #OUTPUT = $CTCARG$(OBJ)
+    #ENDCMD
+
+    #CMD    = XLF95_COMPILE
+    #OPTS   = -qalign=bindc=linuxppc
+    #INPUT  = $(tcasedir)$FTCARG.f
+    #OUTPUT = $FTCARG$(OBJ)
+    #ENDCMD
+
+    #CMD    = XLF95_LINK
+    #OPTS   = -qalign=bindc=linuxppc
+    #INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+    #OUTPUT = $FTCARG$(EXE)
+    #ENDCMD
+
+    #CMD    = RUN
+    #INPUT  = $FTCARG$(EXE)
+    #ENDCMD
+
+#ENDIF
+
+! settings specific to AIX - full, power, mac68k, twobyte, natural, packed
+
+#IF on(aix)
+
+    ! do full
+    #CMD    = XLC_COMPILE
+    #OPTS   = $(C_COMPILER_OPTS) $MAYBESTDINT $(OPT_ALIGN_BYTE<full>)
+    #INPUT  = $(tcasedir)$CTCARG.c
+    #OUTPUT = $CTCARG$(OBJ)
+    #ENDCMD
+
+    #CMD    = XLF95_COMPILE
+    #OPTS   = -qalign=bindc=full
+    #INPUT  = $(tcasedir)$FTCARG.f
+    #OUTPUT = $FTCARG$(OBJ)
+    #ENDCMD
+
+    #CMD    = XLF95_LINK
+    #OPTS   = -qalign=bindc=full
+    #INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+    #OUTPUT = $FTCARG$(EXE)
+    #ENDCMD
+
+    #CMD    = RUN
+    #INPUT  = $FTCARG$(EXE)
+    #ENDCMD
+
+    ! do power
+    #CMD    = XLC_COMPILE
+    #OPTS   = $(C_COMPILER_OPTS) $MAYBESTDINT $(OPT_ALIGN_POWER)
+    #INPUT  = $(tcasedir)$CTCARG.c
+    #OUTPUT = $CTCARG$(OBJ)
+    #ENDCMD
+
+    #CMD    = XLF95_COMPILE
+    #OPTS   = -qalign=bindc=power
+    #INPUT  = $(tcasedir)$FTCARG.f
+    #OUTPUT = $FTCARG$(OBJ)
+    #ENDCMD
+
+    #CMD    = XLF95_LINK
+    #OPTS   = -qalign=bindc=power
+    #INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+    #OUTPUT = $FTCARG$(EXE)
+    #ENDCMD
+
+    #CMD    = RUN
+    #INPUT  = $FTCARG$(EXE)
+    #ENDCMD
+
+    ! do mac68k
+    #CMD    = XLC_COMPILE
+    #OPTS   = $(C_COMPILER_OPTS) $MAYBESTDINT $(OPT_ALIGN_MAC68K)
+    #INPUT  = $(tcasedir)$CTCARG.c
+    #OUTPUT = $CTCARG$(OBJ)
+    #ENDCMD
+
+    #CMD    = XLF95_COMPILE
+    #OPTS   = -qalign=bindc=mac68k
+    #INPUT  = $(tcasedir)$FTCARG.f
+    #OUTPUT = $FTCARG$(OBJ)
+    #ENDCMD
+
+    #CMD    = XLF95_LINK
+    #OPTS   = -qalign=bindc=mac68k
+    #INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+    #OUTPUT = $FTCARG$(EXE)
+    #ENDCMD
+
+    #CMD    = RUN
+    #INPUT  = $FTCARG$(EXE)
+    #ENDCMD
+
+    ! do twobyte
+    #CMD    = XLC_COMPILE
+    #OPTS   = $(C_COMPILER_OPTS) $MAYBESTDINT $(OPT_ALIGN_TWOBYTE)
+    #INPUT  = $(tcasedir)$CTCARG.c
+    #OUTPUT = $CTCARG$(OBJ)
+    #ENDCMD
+
+    #CMD    = XLF95_COMPILE
+    #OPTS   = -qalign=bindc=twobyte
+    #INPUT  = $(tcasedir)$FTCARG.f
+    #OUTPUT = $FTCARG$(OBJ)
+    #ENDCMD
+
+    #CMD    = XLF95_LINK
+    #OPTS   = -qalign=bindc=twobyte
+    #INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+    #OUTPUT = $FTCARG$(EXE)
+    #ENDCMD
+
+    #CMD    = RUN
+    #INPUT  = $FTCARG$(EXE)
+    #ENDCMD
+
+    ! do natural
+    #CMD    = XLC_COMPILE
+    #OPTS   = $(C_COMPILER_OPTS) $MAYBESTDINT $(OPT_ALIGN_NATURAL)
+    #INPUT  = $(tcasedir)$CTCARG.c
+    #OUTPUT = $CTCARG$(OBJ)
+    #ENDCMD
+
+    #CMD    = XLF95_COMPILE
+    #OPTS   = -qalign=bindc=natural
+    #INPUT  = $(tcasedir)$FTCARG.f
+    #OUTPUT = $FTCARG$(OBJ)
+    #ENDCMD
+
+    #CMD    = XLF95_LINK
+    #OPTS   = -qalign=bindc=natural
+    #INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+    #OUTPUT = $FTCARG$(EXE)
+    #ENDCMD
+
+    #CMD    = RUN
+    #INPUT  = $FTCARG$(EXE)
+    #ENDCMD
+
+    ! do packed
+    #CMD    = XLC_COMPILE
+    #OPTS   = $(C_COMPILER_OPTS) $MAYBESTDINT $(OPT_ALIGN_PACKED)
+    #INPUT  = $(tcasedir)$CTCARG.c
+    #OUTPUT = $CTCARG$(OBJ)
+    #ENDCMD
+
+    #CMD    = XLF95_COMPILE
+    #OPTS   = -qalign=bindc=packed
+    #INPUT  = $(tcasedir)$FTCARG.f
+    #OUTPUT = $FTCARG$(OBJ)
+    #ENDCMD
+
+    #CMD    = XLF95_LINK
+    #OPTS   = -qalign=bindc=packed
+    #INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+    #OUTPUT = $FTCARG$(EXE)
+    #ENDCMD
+
+    #CMD    = RUN
+    #INPUT  = $FTCARG$(EXE)
+    #ENDCMD
+
+#ELSE
+
+    #CMD    = GCC_COMPILE
+    #OPTS   = $(GCC_COMPILER_OPTS) $MAYBESTDINT
+    #INPUT  = $(tcasedir)$CTCARG.c
+    #OUTPUT = $CTCARG$(OBJ)
+    #ENDCMD
+
+    #CMD    = XLF95_COMPILE
+    #INPUT  = $(tcasedir)$FTCARG.f
+    #OUTPUT = $FTCARG$(OBJ)
+    #ENDCMD
+
+    #CMD    = XLF95_LINK
+    #INPUT  = $FTCARG$(OBJ) $CTCARG$(OBJ)
+    #OUTPUT = $FTCARG$(EXE)
+    #ENDCMD
+
+    #CMD    = RUN
+    #INPUT  = $FTCARG$(EXE)
+    #ENDCMD
+
+#ENDIF

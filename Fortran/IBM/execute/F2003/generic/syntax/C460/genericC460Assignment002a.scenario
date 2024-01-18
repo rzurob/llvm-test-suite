@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/syntax/C460/genericC460Assignment002a.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericC460Assignment002a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericC460Assignment002a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericC460Assignment002a$(OBJ)
+#OUTPUT    = genericC460Assignment002a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericC460Assignment002a$(EXE)
+#STDOUT    = genericC460Assignment002a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericC460Assignment002a.out $($(tcasedir)genericC460Assignment002a$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

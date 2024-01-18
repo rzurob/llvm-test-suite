@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=renameoperator007.scenario
+#FEATURE = Renaming the operator in a use statement
+#CREATOR = Michael Selvanayagam
+#DATE    = 20051028
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)renameoperator007.f
+#STDERR    = renameoperator007.err
+#OUTPUT    = renameoperator007$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = renameoperator007$(OBJ)
+#OUTPUT    = renameoperator007$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = renameoperator007$(EXE)
+#ENDCMD
+
+
+
+#ENDCONTROL
+#ENDSCENARIO

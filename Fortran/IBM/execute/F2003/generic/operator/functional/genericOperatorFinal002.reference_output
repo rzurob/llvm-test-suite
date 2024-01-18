@@ -1,0 +1,46 @@
+ finalized :
+ finalized :
+ 10
+ finalized :
+ 20
+ finalized array:
+ finalized :
+ 1
+ finalized :
+ 2
+ finalized :
+ 3
+ finalized :
+ 4
+ finalized :
+ 5
+ end of init
+ inside add
+ finalized :
+ 10
+ finalized :
+ 30
+ inside addarray
+ finalized array:
+ 1
+ 2
+ 3
+ 4
+ finalized array:
+ 30
+ 60
+ 90
+ 120
+ 150
+ inside addarray
+ finalized array:
+ 1
+ 2
+ 3
+ 4
+ 5
+ finalized array:
+ 600
+ 1200
+ 1800
+ 2400

@@ -1,0 +1,58 @@
+ =============================================
+ assumedsize
+ ab
+ 10
+ assumedsize
+ ab
+ 100
+ assumedsize
+ ab
+ 90
+ assumedsize2d
+ ab
+ 10
+ assumedsize2d
+ ab
+ 100
+ assumedsize2d
+ ab
+ 90
+ =============================================
+ assumedsize
+ c
+ 10 -10
+ assumedsize
+ c
+ 100 -100
+ assumedsize
+ c
+ 9 25
+ assumedsize2d
+ c
+ 10 -10
+ assumedsize2d
+ c
+ 100 -100
+ assumedsize2d
+ c
+ 9 25
+ =============================================
+ assumedsize
+ c
+ 10 -10
+ assumedsize
+ c
+ 100 -100
+ assumedsize
+ c
+ 9 25
+ assumedsize2d
+ c
+ 10 -10
+ assumedsize2d
+ c
+ 100 -100
+ assumedsize2d
+ c
+ 9 25
+ =============================================

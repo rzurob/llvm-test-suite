@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/formatted/namelist/namelist.1.2/input105kl.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070720
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)input105kl.1 .
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)input105kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = input105kl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = input105kl$(OBJ)
+#OUTPUT    = input105kl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = input105kl$(EXE)
+#STDOUT    = input105kl.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)input105kl$(product)vf) input105kl.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

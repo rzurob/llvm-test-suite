@@ -1,0 +1,31 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      PtrAssignCharacteristics2.f
+#FEATURE= PROCEDURE POINTER
+#CREATOR=   Feng Ye
+#DATE=      06-06-05
+#TEST_TYPE= DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=      F_COMPILE
+#OPTS=     $(OPT_FREE_SOURCE_FORM)
+#INPUT=    $(tcasedir)PtrAssignCharacteristics2.f
+#STDERR=   PtrAssignCharacteristics2.err
+#VALIDRCS= 1
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    PtrAssignCharacteristics2.err $($(tcasedir)PtrAssignCharacteristics2$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

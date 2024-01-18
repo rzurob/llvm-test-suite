@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/null/structureConstructor002.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050301
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)structureConstructor002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = structureConstructor002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = structureConstructor002$(OBJ)
+#OUTPUT    = structureConstructor002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = structureConstructor002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

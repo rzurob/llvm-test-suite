@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/assignment/intrinsic/alloc/dtpIAABoundsExternalSequence.scenario
+#FEATURE   = Intrinsic Assignment with Allocation - allocate basic sequence DTP array (container) with allocatable components via intrinsic assignment and check lower and upper bounds (in external subroutine)
+#CREATOR   = DF Manual Update
+#DATE      = 20090522
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAABoundsExternalSequence.f
+#OUTPUT    = dtpIAABoundsExternalSequence$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAABoundsExternalSequence$(OBJ)
+#OUTPUT    = dtpIAABoundsExternalSequence$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAABoundsExternalSequence$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

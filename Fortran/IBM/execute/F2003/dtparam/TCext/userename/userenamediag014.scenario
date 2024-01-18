@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/userename/userenamediag014.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of userename/*
+#DATE      = 20071102
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)userenamediag014.f
+#OUTPUT    = userenamediag014$(OBJ)
+#ENDCMD
+
+
+#CMD       = F_LINK
+#INPUT     = userenamediag014$(OBJ)
+#OUTPUT    = userenamediag014$(EXE)
+#ENDCMD
+
+
+#CMD       = RUN
+#INPUT     = userenamediag014$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

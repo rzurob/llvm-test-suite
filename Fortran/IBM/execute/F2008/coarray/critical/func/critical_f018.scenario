@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/coarray/critical/func/critical_f018.scenario
+#FEATURE    = 381021
+#CREATOR    = Francesco Cassullo
+#DATE       = Jan 2011
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD     = F_COMPILE
+#INPUT   = $(tcasedir)critical_f018.f
+#OUTPUT  = critical_f018$(OBJ)
+#ENDCMD
+
+#CMD     = F_LINK
+#INPUT   = critical_f018$(OBJ)
+#OUTPUT  = critical_f018$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD     = MPRUN
+	#INPUT   = critical_f018$(EXE)
+	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,8 @@
+** m   === End of Compilation 1 ===
+"PassInterProcPtrDiag.f", line 126.3: 1518-379 (L) An internal procedure is not permitted as the target of a procedure pointer assignment statement by the Fortran 2003 standard.
+"PassInterProcPtrDiag.f", line 127.3: 1518-379 (L) An internal procedure is not permitted as the target of a procedure pointer assignment statement by the Fortran 2003 standard.
+"PassInterProcPtrDiag.f", line 128.3: 1518-379 (L) An internal procedure is not permitted as the target of a procedure pointer assignment statement by the Fortran 2003 standard.
+"PassInterProcPtrDiag.f", line 129.3: 1518-379 (L) An internal procedure is not permitted as the target of a procedure pointer assignment statement by the Fortran 2003 standard.
+"PassInterProcPtrDiag.f", line 130.3: 1518-379 (L) An internal procedure is not permitted as the target of a procedure pointer assignment statement by the Fortran 2003 standard.
+** passinterprocptrdiag   === End of Compilation 2 ===
+1501-510  Compilation successful for file PassInterProcPtrDiag.f.

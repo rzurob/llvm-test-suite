@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/cshift/functionReturn003.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050202
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)functionReturn003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = functionReturn003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = functionReturn003$(OBJ)
+#OUTPUT    = functionReturn003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = functionReturn003$(EXE)
+#STDOUT    = functionReturn003.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)functionReturn003$(product)vf) functionReturn003.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

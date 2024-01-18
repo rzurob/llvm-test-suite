@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       pptrDTPextFunc05.f
+#FEATURE=    PROCEDURE POINTER
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)pptrDTPextFunc05.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = pptrDTPextFunc05$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = pptrDTPextFunc05$(OBJ)
+#OUTPUT    = pptrDTPextFunc05$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = pptrDTPextFunc05$(EXE)
+#STDOUT    = pptrDTPextFunc05.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)pptrDTPextFunc05$(product)vf) pptrDTPextFunc05.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

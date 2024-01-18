@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2008/value/pure/unit_tests/elemental/fxepmisc07.scenario
+#FEATURE = 384867 \
+           F2008: VALUE attribute allowed for dummy args of PURE procedures
+#CREATOR = Gaby Baghdadi (copy of /tstdev/elemental/epmisc/fxepmisc07.scenario)
+#DATE    = 20101201
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)fxepmisc07.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION) $(OPT_FLOAT_USE_MULTIPLY_ADD_OFF) $(OPT_FIXED_SOURCE_FORM<132>)
+#OUTPUT    = fxepmisc07$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION) $(OPT_FLOAT_USE_MULTIPLY_ADD_OFF) $(OPT_FIXED_SOURCE_FORM<132>)
+#INPUT     =  fxepmisc07$(OBJ)
+#OUTPUT    = fxepmisc07$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxepmisc07$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/cshift/transpose002.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050201
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)transpose002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = transpose002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = transpose002$(OBJ)
+#OUTPUT    = transpose002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = transpose002$(EXE)
+#STDOUT    = transpose002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)transpose002$(product)vf) transpose002.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

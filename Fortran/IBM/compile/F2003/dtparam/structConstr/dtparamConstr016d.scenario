@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/structConstr/dtparamConstr016d.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamConstr016d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamConstr016d$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = dtparamConstr016d.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = dtparamConstr016d.err $($(tcasedir)dtparamConstr016d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

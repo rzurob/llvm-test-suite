@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint34b.scenario
+#FEATURE	= Array constructor enhancement - vector subscript in LHS of assignment statement
+#CREATOR	= DF Manual Update
+#DATE		= 20061024
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_INTSIZE_4)
+#INPUT		= $(tcasedir)acetint34.f
+#OUTPUT		= acetint34$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint34$(OBJ)
+#OUTPUT		= acetint34$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint34$(EXE)
+#STDOUT		= acetint34.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetint34$(product)vf) acetint34.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

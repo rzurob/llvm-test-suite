@@ -1,0 +1,4 @@
+"dtpUseDeferredDT.f", line 42.23: 1514-704 (S) Entity datum is declared with a deferred type parameter. datum must have the POINTER or ALLOCATABLE attribute.
+"dtpUseDeferredDT.f", line 45.22: 1514-084 (S) Identifier sl is being declared with type name string_list which has not been defined in a derived type definition.
+** dtpusedeferreddt   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtpUseDeferredDT.f.

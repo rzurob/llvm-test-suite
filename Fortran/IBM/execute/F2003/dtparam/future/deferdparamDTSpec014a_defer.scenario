@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/typeparam/deferdparamDTSpec014a_defer.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)deferdparamDTSpec014a_defer.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = deferdparamDTSpec014a_defer$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = deferdparamDTSpec014a_defer$(OBJ)
+#OUTPUT    = deferdparamDTSpec014a_defer$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = deferdparamDTSpec014a_defer$(EXE)
+#STDOUT    = deferdparamDTSpec014a_defer.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = deferdparamDTSpec014a_defer.out $($(tcasedir)deferdparamDTSpec014a_defer$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

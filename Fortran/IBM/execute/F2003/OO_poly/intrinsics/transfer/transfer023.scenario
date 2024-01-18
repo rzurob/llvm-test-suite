@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/intrinsics/transfer/transfer023.scenario
+#FEATURE = OO_poly/intrinsics tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)transfer023.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = transfer023$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  transfer023$(OBJ)
+#OUTPUT    = transfer023$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = transfer023$(EXE)
+#STDOUT    = transfer023.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)transfer023$(product)vf) transfer023.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/pointer_init/unit_tests/diag/definit02d.scenario
+#FEATURE        = RTC 160700 F2008: Pointer initialization
+#CREATOR        = Rafik Zurob
+#DATE           = 20190715
+#TEST_TYPE      = Diagnostic
+#KEYWORDS       = F2008 pointer initialization
+#ENDDOC
+
+#BEGINENV
+#INVALID_XOPTS  = $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP) $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT)
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD        = F2003_COMPILE
+#INPUT      = $(tcasedir)definit02d.f
+#OPTS       = $(OPT_SET_LANG_LEVEL<2003std>)
+#STDERR     = definit02d.err
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = $($(tcasedir)definit02d$(product)vf) definit02d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

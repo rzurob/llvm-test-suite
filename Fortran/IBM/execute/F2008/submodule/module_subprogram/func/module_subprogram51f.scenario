@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/submodule/func/module_subprogram51f.scenario
+#FEATURE   = F2008 Submodule
+#CREATOR   = Bernard Kan
+#DATE      = 20121206
+#TEST_TYPE = Functional
+#KEYWORDS  = F2008, submodule, F2008 submodule
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD          = F_COMPILE
+#INPUT        = $(tcasedir)module_subprogram51f.f
+#OUTPUT       = module_subprogram51f$(OBJ)
+#ENDCMD
+
+#CMD          = F_LINK
+#INPUT        = module_subprogram51f$(OBJ)
+#OUTPUT       = module_subprogram51f$(EXE)
+#ENDCMD
+
+#CMD          = RUN
+#INPUT        = module_subprogram51f$(EXE)
+#STDOUT       = module_subprogram51f.out
+#STDERR       = module_subprogram51f.out
+#ENDCMD
+
+#CMD          = DIFF
+#INPUT        = module_subprogram51f.out $($(tcasedir)module_subprogram51f$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

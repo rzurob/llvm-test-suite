@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2003/dtparam/intrinsics/pack/fup6.scenario
+#FEATURE = dtp intrinsics
+#CREATOR = Adrian Green
+#DATE    = 20080821
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)fup6.f
+#OUTPUT   = fup6$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = fup6$(OBJ)
+#OUTPUT   = fup6$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fup6$(EXE)
+#STDOUT   = fup6.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $(tcasedir)fup6.vf fup6.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

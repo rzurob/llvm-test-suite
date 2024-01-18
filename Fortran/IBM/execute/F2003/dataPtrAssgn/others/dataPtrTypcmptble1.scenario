@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrTypcmptble1.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrTypcmptble1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrTypcmptble1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrTypcmptble1$(OBJ)
+#OUTPUT    = dataPtrTypcmptble1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrTypcmptble1$(EXE)
+#STDOUT    = dataPtrTypcmptble1.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrTypcmptble1.out $($(tcasedir)dataPtrTypcmptble1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

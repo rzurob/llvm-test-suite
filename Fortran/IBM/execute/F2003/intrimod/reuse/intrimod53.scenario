@@ -1,0 +1,51 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/intrimod/reuse/intrimod53.scenario
+#FEATURE = intrimod tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)../fake_ieee_modules.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fake_ieee_modules$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)../ieeeconsts.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ieeeconsts$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)intrimod53.f
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION<infinities>)
+#OUTPUT    = intrimod53$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  fake_ieee_modules$(OBJ) ieeeconsts$(OBJ) intrimod53$(OBJ)
+#OUTPUT    = intrimod53$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = intrimod53$(EXE)
+#STDOUT    = intrimod53.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)../emptyout$(product)vf) intrimod53.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

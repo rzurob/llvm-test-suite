@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"diagnose005.f", line 36.45: 1513-132 (S) Conformable argument required.
+** diagnose005   === End of Compilation 2 ===
+1501-511  Compilation failed for file diagnose005.f.

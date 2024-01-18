@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/spread/spreadSourceIsScalarCharComp01.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Oct. 13 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)spreadSourceIsScalarCharComp01.f
+#OUTPUT= spreadSourceIsScalarCharComp01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = spreadSourceIsScalarCharComp01$(OBJ)
+#OUTPUT= spreadSourceIsScalarCharComp01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = spreadSourceIsScalarCharComp01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

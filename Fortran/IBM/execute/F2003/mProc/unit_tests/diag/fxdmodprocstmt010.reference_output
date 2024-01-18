@@ -1,0 +1,6 @@
+"fxdmodprocstmt010.f", line 59.27: 1513-099 (E) Entity ptr1 listed in a MODULE PROCEDURE statement is not a module procedure.  The MODULE keyword is ignored.
+"fxdmodprocstmt010.f", line 62.27: 1513-099 (E) Entity ptr2 listed in a MODULE PROCEDURE statement is not a module procedure.  The MODULE keyword is ignored.
+** _main   === End of Compilation 1 ===
+** s1   === End of Compilation 2 ===
+** f1   === End of Compilation 3 ===
+1501-510  Compilation successful for file fxdmodprocstmt010.f.

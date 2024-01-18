@@ -1,0 +1,35 @@
+  ! %W%
+  ! %G%, %U%, %I% sccsid
+  #BEGINSCENARIO
+
+  #BEGINDOC
+  #NAME       = sync_images_syntax_3.scenario
+  #FEATURE    = SYNC IMAGES
+  #CREATOR    = FENG YE
+  #DATE       = 2011-07-11
+  #TEST_TYPE  = DIAGNOSTIC
+  #KEYWORDS   = SYNC, IMAGES, F2008
+  #ENDDOC
+
+  ! Scenario Environment Tags
+  #BEGINENV
+  #BEGINDEFS
+  #ENDDEFS
+    #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+  #ENDENV
+
+  ! Scenario Control Tags
+  #BEGINCONTROL
+
+  #CMD       = F_COMPILE
+  #INPUT     = $(tcasedir)sync_images_syntax_3.f
+  #STDERR    = sync_images_syntax_3.err
+  #VALIDRCS  = $(RC_FAIL)
+  #ENDCMD
+
+  #CMD       = XLDIFF
+  #INPUT     = sync_images_syntax_3.err $($(tcasedir)sync_images_syntax_3$(product)vf)
+  #ENDCMD
+
+  #ENDCONTROL
+  #ENDSCENARIO

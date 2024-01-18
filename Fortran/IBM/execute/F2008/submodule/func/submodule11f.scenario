@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2008/submodule/func/submodule11f.scenario
+#FEATURE	= F2008 submodule
+#CREATOR	= Bernard Kan
+#DATE		= 20130220
+#TEST_TYPE	= functional
+#KEYWORDS       = F2008, submodule, F2008 submodule
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)submodule11f.f
+#OUTPUT		= submodule11f$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= submodule11f$(OBJ)
+#OUTPUT		= submodule11f$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= submodule11f$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

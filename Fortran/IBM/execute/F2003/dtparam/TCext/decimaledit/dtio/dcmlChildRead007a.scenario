@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/decimaledit/dtio/dcmlChildRead007a.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of decimaledit/*
+#DATE      = 20071213
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dcmlChildRead007a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dcmlChildRead007a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dcmlChildRead007a$(OBJ)
+#OUTPUT    = dcmlChildRead007a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dcmlChildRead007a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

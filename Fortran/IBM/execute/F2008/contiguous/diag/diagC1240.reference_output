@@ -1,0 +1,9 @@
+** mod   === End of Compilation 1 ===
+"diagC1240.f", line 88.25: 1516-338 (S) Dummy argument arg of procedure sub_volatile is declared with the VOLATILE and CONTIGUOUS attributes.  The corresponding pointer actual argument that has the VOLATILE attribute must also have the CONTIGUOUS attribute.
+"diagC1240.f", line 89.29: 1516-338 (S) Dummy argument arg of procedure sub_volatile_ptr is declared with the VOLATILE and CONTIGUOUS attributes.  The corresponding pointer actual argument that has the VOLATILE attribute must also have the CONTIGUOUS attribute.
+"diagC1240.f", line 90.29: 1516-338 (S) Dummy argument arg of procedure sub_volatile_tgt is declared with the VOLATILE and CONTIGUOUS attributes.  The corresponding pointer actual argument that has the VOLATILE attribute must also have the CONTIGUOUS attribute.
+"diagC1240.f", line 100.21: 1516-338 (S) Dummy argument arg of procedure sub_asyn is declared with the ASYNCHRONOUS and CONTIGUOUS attributes.  The corresponding pointer actual argument that has the ASYNCHRONOUS attribute must also have the CONTIGUOUS attribute.
+"diagC1240.f", line 101.25: 1516-338 (S) Dummy argument arg of procedure sub_asyn_ptr is declared with the ASYNCHRONOUS and CONTIGUOUS attributes.  The corresponding pointer actual argument that has the ASYNCHRONOUS attribute must also have the CONTIGUOUS attribute.
+"diagC1240.f", line 102.25: 1516-338 (S) Dummy argument arg of procedure sub_asyn_tgt is declared with the ASYNCHRONOUS and CONTIGUOUS attributes.  The corresponding pointer actual argument that has the ASYNCHRONOUS attribute must also have the CONTIGUOUS attribute.
+** diagc1240   === End of Compilation 2 ===
+1501-511  Compilation failed for file diagC1240.f.

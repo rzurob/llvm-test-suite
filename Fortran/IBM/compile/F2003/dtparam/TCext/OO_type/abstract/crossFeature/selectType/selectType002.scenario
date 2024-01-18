@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/crossFeature/selectType/selectType002.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/abstract/crossFeature/selectType/selectType002.scenario
+#DATE      = 20070613
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)selectType002.f
+#OPTS      = -qdebug=intmsg:shutup
+#OUTPUT    = selectType002$(OBJ)
+#STDERR    = selectType002.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)selectType002$(product)vf) selectType002.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

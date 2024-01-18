@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/typeparam/dtparamInquiry001d.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamInquiry001d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamInquiry001d$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = dtparamInquiry001d.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = dtparamInquiry001d.err $($(tcasedir)dtparamInquiry001d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

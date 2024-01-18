@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/others/dataPtrNamelist.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071217
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrNamelist.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrNamelist$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrNamelist$(OBJ)
+#OUTPUT    = dataPtrNamelist$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrNamelist$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrNamelist.out $($(tcasedir)dataPtrNamelist$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

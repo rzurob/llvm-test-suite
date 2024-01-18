@@ -1,0 +1,5 @@
+"AssumedType20d.f", line 33.34: 1514-809 (S) Entity coa has assumed type. coa must not have the CODIMENSION attribute.
+** mod   === End of Compilation 1 ===
+"AssumedType20d.f", line 44.34: 1514-809 (S) Entity coa has assumed type. coa must not have the CODIMENSION attribute.
+** assumedtype20d   === End of Compilation 2 ===
+1501-511  Compilation failed for file AssumedType20d.f.

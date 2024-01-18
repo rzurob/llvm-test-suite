@@ -1,0 +1,4 @@
+"falloc005d1.f", line 43.26: 1516-044 (S) A conversion from type * is not permitted.
+"falloc005d1.f", line 47.10: 1516-044 (S) A conversion from type * is not permitted.
+** falloc005d1   === End of Compilation 1 ===
+1501-511  Compilation failed for file falloc005d1.f.

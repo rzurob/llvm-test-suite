@@ -1,0 +1,27 @@
+** dt   === End of Compilation 1 ===
+"coindexObjectAssignmentDT14.f", line 70.8: 1514-774 (S) Cobound or coindex must be a scalar integer value
+"coindexObjectAssignmentDT14.f", line 71.26: 1514-774 (S) Cobound or coindex must be a scalar integer value
+"coindexObjectAssignmentDT14.f", line 72.8: 1514-774 (S) Cobound or coindex must be a scalar integer value
+"coindexObjectAssignmentDT14.f", line 73.26: 1514-774 (S) Cobound or coindex must be a scalar integer value
+"coindexObjectAssignmentDT14.f", line 74.8: 1514-774 (S) Cobound or coindex must be a scalar integer value
+"coindexObjectAssignmentDT14.f", line 75.26: 1514-774 (S) Cobound or coindex must be a scalar integer value
+"coindexObjectAssignmentDT14.f", line 76.8: 1514-774 (S) Cobound or coindex must be a scalar integer value
+"coindexObjectAssignmentDT14.f", line 77.26: 1514-774 (S) Cobound or coindex must be a scalar integer value
+"coindexObjectAssignmentDT14.f", line 81.12: 1514-774 (S) Cobound or coindex must be a scalar integer value
+"coindexObjectAssignmentDT14.f", line 82.30: 1514-774 (S) Cobound or coindex must be a scalar integer value
+"coindexObjectAssignmentDT14.f", line 83.12: 1514-774 (S) Cobound or coindex must be a scalar integer value
+"coindexObjectAssignmentDT14.f", line 84.30: 1514-774 (S) Cobound or coindex must be a scalar integer value
+"coindexObjectAssignmentDT14.f", line 85.12: 1514-774 (S) Cobound or coindex must be a scalar integer value
+"coindexObjectAssignmentDT14.f", line 86.27: 1514-774 (S) Cobound or coindex must be a scalar integer value
+"coindexObjectAssignmentDT14.f", line 87.12: 1514-774 (S) Cobound or coindex must be a scalar integer value
+"coindexObjectAssignmentDT14.f", line 88.30: 1514-774 (S) Cobound or coindex must be a scalar integer value
+"coindexObjectAssignmentDT14.f", line 92.9: 1514-774 (S) Cobound or coindex must be a scalar integer value
+"coindexObjectAssignmentDT14.f", line 93.27: 1514-774 (S) Cobound or coindex must be a scalar integer value
+"coindexObjectAssignmentDT14.f", line 94.9: 1514-774 (S) Cobound or coindex must be a scalar integer value
+"coindexObjectAssignmentDT14.f", line 95.27: 1514-774 (S) Cobound or coindex must be a scalar integer value
+"coindexObjectAssignmentDT14.f", line 96.9: 1514-774 (S) Cobound or coindex must be a scalar integer value
+"coindexObjectAssignmentDT14.f", line 97.27: 1514-774 (S) Cobound or coindex must be a scalar integer value
+"coindexObjectAssignmentDT14.f", line 98.9: 1514-774 (S) Cobound or coindex must be a scalar integer value
+"coindexObjectAssignmentDT14.f", line 99.27: 1514-774 (S) Cobound or coindex must be a scalar integer value
+** main   === End of Compilation 2 ===
+1501-511  Compilation failed for file coindexObjectAssignmentDT14.f.

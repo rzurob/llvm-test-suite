@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/F2003/dtparam/generic/ambiguity/Generic_UOperator01b.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20081026
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)Generic_UOperator01b.f
+#OUTPUT= Generic_UOperator01b$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  Generic_UOperator01b$(OBJ)
+#OUTPUT= Generic_UOperator01b$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  Generic_UOperator01b$(EXE)
+#STDOUT= Generic_UOperator01b.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

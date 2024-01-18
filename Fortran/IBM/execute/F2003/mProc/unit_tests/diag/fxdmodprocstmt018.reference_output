@@ -1,0 +1,10 @@
+"fxdmodprocstmt018.f", line 53.17: 1515-019 (S) Syntax is incorrect.
+"fxdmodprocstmt018.f", line 54.17: 1515-019 (S) Syntax is incorrect.
+"fxdmodprocstmt018.f", line 55.17: 1515-019 (S) Syntax is incorrect.
+"fxdmodprocstmt018.f", line 57.6: 1515-019 (S) Syntax is incorrect.
+"fxdmodprocstmt018.f", line 58.6: 1515-019 (S) Syntax is incorrect.
+"fxdmodprocstmt018.f", line 59.6: 1515-019 (S) Syntax is incorrect.
+** _main   === End of Compilation 1 ===
+** s1   === End of Compilation 2 ===
+** f1   === End of Compilation 3 ===
+1501-511  Compilation failed for file fxdmodprocstmt018.f.

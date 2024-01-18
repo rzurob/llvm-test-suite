@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/format/formatAsynSequential03.scenario
+#FEATURE   = 359704
+#CREATOR   = Nancy Wang
+#DATE      = Dec. 24 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=bgq
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)formatAsynSequential03.f
+#OUTPUT= formatAsynSequential03$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = formatAsynSequential03$(OBJ)
+#OUTPUT= formatAsynSequential03$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = formatAsynSequential03$(EXE)
+#STDOUT= formatAsynSequential03.out
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT  = $($(tcasedir)formatAsynSequential03$(product)vf) formatAsynSequential03.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

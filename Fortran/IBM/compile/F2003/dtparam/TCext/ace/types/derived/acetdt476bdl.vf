@@ -1,0 +1,27 @@
+** mod   === End of Compilation 1 ===
+"acetdt476bdl.f", line 67.16: 1514-718 (S) Identifier derived appearing as a type name has not been defined in a derived type definition.
+"acetdt476bdl.f", line 68.16: 1514-718 (S) Identifier derived appearing as a type name has not been defined in a derived type definition.
+"acetdt476bdl.f", line 68.30: 1516-044 (S) A conversion from type derived is not permitted.
+"acetdt476bdl.f", line 69.16: 1514-718 (S) Identifier derived appearing as a type name has not been defined in a derived type definition.
+"acetdt476bdl.f", line 69.30: 1516-044 (S) A conversion from type derived is not permitted.
+"acetdt476bdl.f", line 71.16: 1514-718 (S) Identifier derived appearing as a type name has not been defined in a derived type definition.
+"acetdt476bdl.f", line 72.16: 1514-718 (S) Identifier derived appearing as a type name has not been defined in a derived type definition.
+"acetdt476bdl.f", line 72.30: 1516-044 (S) A conversion from type derived is not permitted.
+"acetdt476bdl.f", line 74.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476bdl.f", line 74.29: 1514-718 (S) Identifier derived appearing as a type name has not been defined in a derived type definition.
+"acetdt476bdl.f", line 76.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476bdl.f", line 76.29: 1514-718 (S) Identifier derived appearing as a type name has not been defined in a derived type definition.
+"acetdt476bdl.f", line 76.43: 1516-044 (S) A conversion from type derived is not permitted.
+"acetdt476bdl.f", line 78.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476bdl.f", line 78.29: 1514-718 (S) Identifier derived appearing as a type name has not been defined in a derived type definition.
+"acetdt476bdl.f", line 78.43: 1516-044 (S) A conversion from type derived is not permitted.
+"acetdt476bdl.f", line 82.15: 1514-718 (S) Identifier derived appearing as a type name has not been defined in a derived type definition.
+"acetdt476bdl.f", line 83.15: 1514-718 (S) Identifier derived appearing as a type name has not been defined in a derived type definition.
+"acetdt476bdl.f", line 83.29: 1516-044 (S) A conversion from type derived is not permitted.
+"acetdt476bdl.f", line 84.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476bdl.f", line 84.28: 1514-718 (S) Identifier derived appearing as a type name has not been defined in a derived type definition.
+"acetdt476bdl.f", line 84.42: 1516-044 (S) A conversion from type derived is not permitted.
+"acetdt476bdl.f", line 85.15: 1514-718 (S) Identifier derived appearing as a type name has not been defined in a derived type definition.
+"acetdt476bdl.f", line 85.29: 1516-044 (S) A conversion from type derived is not permitted.
+** acetdt476bdl   === End of Compilation 2 ===
+1501-511  Compilation failed for file acetdt476bdl.f.

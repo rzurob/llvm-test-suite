@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/allocate/falloc013a2.scenario
+#FEATURE = OO_poly tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=linux
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)falloc013a2.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = falloc013a2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#IF   on(aix)
+    #OPTS  = -bmaxdata:0x20000000
+#ENDIF
+#INPUT     =  falloc013a2$(OBJ)
+#OUTPUT    = falloc013a2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = falloc013a2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = d380624.scenario
+#CREATOR  = Francesco Cassullo
+#DATE     = July 2011
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d380624.f
+#OUTPUT    = d380624$(OBJ)
+#STDOUT    = d380624.out
+#STDERR    = d380624.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)d380624$(product)vf) d380624.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

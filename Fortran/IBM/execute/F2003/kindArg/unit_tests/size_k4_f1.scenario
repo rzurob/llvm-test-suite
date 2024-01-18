@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=size_k4_f1.scenario
+#FEATURE = Support new Kind Parameter for Several Intrinsics
+#CREATOR = Vince Yuen
+#DATE    = 20060414
+#TEST_TYPE=functional ut
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)size_k4_f1.f
+#OPTS      = $(OPT_INTSIZE_2)
+#OUTPUT    = size_k4_f1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = size_k4_f1$(OBJ)
+#OUTPUT    = size_k4_f1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = size_k4_f1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

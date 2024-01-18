@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_type/struct_constr/fconstr033a5.f
+#FEATURE = OO_type
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fconstr033a5.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fconstr033a5$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fconstr033a5$(OBJ)
+#OUTPUT    = fconstr033a5$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fconstr033a5$(EXE)
+#STDOUT    = fconstr033a5.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fconstr033a5.out $($(tcasedir)fconstr033a5$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

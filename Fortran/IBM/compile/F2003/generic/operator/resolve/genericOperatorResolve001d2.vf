@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"genericOperatorResolve001d2.f", line 56.7: 1514-699 (S) Procedure "elementalneg" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "neg", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** genericoperatorresolve001d2   === End of Compilation 2 ===
+** elementalneg   === End of Compilation 3 ===
+1501-511  Compilation failed for file genericOperatorResolve001d2.f.

@@ -1,0 +1,45 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=iostatspecend002.scenario
+#FEATURE = 299314
+#CREATOR = Rob Wheeler
+#DATE    = 20060109
+#TEST_TYPE=fvt
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)iostatspecend002.f
+#OPTS      =
+#OUTPUT    = iostatspecend002$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      =
+#INPUT     = iostatspecend002$(OBJ)
+#OUTPUT    = iostatspecend002$(EXE)
+#ENDCMD
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)file1.txt .
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = iostatspecend002$(EXE)
+#STDOUT    = iostatspecend002.out
+#STDERR    = iostatspecend002.out
+#ENDCMD
+
+#CMD	   = DIFF
+#OPTS	   = -b
+#INPUT     = iostatspecend002.out $($(tcasedir)iostatspecend002$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

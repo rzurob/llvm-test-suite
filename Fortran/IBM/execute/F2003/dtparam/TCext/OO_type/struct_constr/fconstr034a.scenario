@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/struct_constr/fconstr034a.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/*
+#DATE      = 20070709
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fconstr034a.f
+#OUTPUT    = fconstr034a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fconstr034a$(OBJ)
+#OUTPUT    = fconstr034a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fconstr034a$(EXE)
+#STDOUT    = fconstr034a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)fconstr034a$(product)vf) fconstr034a.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

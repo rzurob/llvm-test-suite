@@ -1,0 +1,35 @@
+#!/usr/bin/ksh
+
+OS=`isAIX | awk '/0/ {print "AIX"} /1/ {print "LX"} /2/ {print "MAC"}'`
+IS64=`echo $OPTIONS | awk '/q64/ {print "_64"}'`
+
+
+rm -f ./*.o ./*.mod
+
+echo "cp $TR_SRC/my_main.o.${OS}${IS64}.81 ./my_main.o"
+cp $TR_SRC/my_main.o.${OS}${IS64}.81 ./my_main.o
+
+
+echo "$KILL $COMPILER $TR_SRC/../fake_ieee_modules.f $TR_SRC/intrimod43.f ./my_mod.o $OPTIONS -o intrimod43" 
+$KILL $COMPILER $TR_SRC/../fake_ieee_modules.f $TR_SRC/intrimod43.f ./my_main.o $OPTIONS -o intrimod43
+
+rc=$?
+if [ $rc -ne 0 ]; then
+   echo "Compilation Failed!"
+   exit $rc
+fi
+
+$KILL ./intrimod43 > intrimod43.out
+rc=$?
+if [ $rc -ne 0 ]; then
+   echo "Execution Failed!"
+   exit $rc
+fi
+
+diff ./intrimod43.out $TR_SRC/../emptyout.vf
+
+if [[ $TRUN_SAVE != "YES" && $TRUN_SAVE != "yes" ]]
+then
+   rm -f ./intrimod43.out ./intrimod43 ./my_mod.o ./my_main.o
+   rm -f ./*.mod 
+fi

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/derived/acetdt09.scenario
+#FEATURE	= Array constructor enhancement derived type polymorphism tests
+#CREATOR	= DF Manual Update
+#DATE		= 20060620
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt09.f
+#OPTS = -qxlf2003=dynamicacval
+#OUTPUT		= acetdt09$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt09$(OBJ)
+#OUTPUT		= acetdt09$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt09$(EXE)
+#STDOUT		= acetdt09.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $(tcasedir)acetdt09.vf acetdt09.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

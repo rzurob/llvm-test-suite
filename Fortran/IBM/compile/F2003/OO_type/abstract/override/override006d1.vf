@@ -1,0 +1,7 @@
+"override006d1.f", line 44.33: 1514-593 (S) Dummy argument j of overridden binding setid was declared with the INTENT(IN) attribute.  The corresponding dummy argument of overriding binding setid must also be declared with the INTENT(IN) attribute.
+"override006d1.f", line 50.33: 1514-628 (S) Dummy argument j of overridden binding setid and the corresponding dummy argument of overriding binding setid must have the same shape.
+"override006d1.f", line 56.33: 1514-668 (S) Dummy argument j of overridden binding setid was declared without the OPTIONAL attribute.  The corresponding dummy argument of overriding binding setid must not be declared with the OPTIONAL attribute.
+"override006d1.f", line 62.33: 1514-668 (S) Dummy argument j of overridden binding setid was declared without the POINTER attribute.  The corresponding dummy argument of overriding binding setid must not be declared with the POINTER attribute.
+** n   === End of Compilation 1 ===
+** override006d1   === End of Compilation 2 ===
+1501-511  Compilation failed for file override006d1.f.

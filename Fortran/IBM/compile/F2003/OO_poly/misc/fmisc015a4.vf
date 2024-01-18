@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"fmisc015a4.f", line 42.21: 1513-020 (S) Procedure names must be specified with arguments in this context.
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file fmisc015a4.f.

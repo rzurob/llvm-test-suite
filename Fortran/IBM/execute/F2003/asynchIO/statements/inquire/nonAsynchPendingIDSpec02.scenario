@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME	   = F2003/asynchIO/statements/inquire/nonAsynchPendingIDSpec02.scenario
+#FEATURE   = Asynchronous I/O -- INQUIRE Statement
+#CREATOR   = GM Manual Creation
+#DATE	   = 20060322
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#IF on (linuxle)
+    XLFRTEOPTS=$(CONVERT_UFMT_IO_ENDIANESS<2121>)
+#ENDIF
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)nonAsynchPendingIDSpec02.f
+#OUTPUT		= nonAsynchPendingIDSpec02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= nonAsynchPendingIDSpec02$(OBJ)
+#OUTPUT		= nonAsynchPendingIDSpec02$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= nonAsynchPendingIDSpec02$(EXE)
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)nonAsynchPendingIDSpec02$(product)vf) fort.2121
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

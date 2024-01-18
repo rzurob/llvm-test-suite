@@ -1,0 +1,61 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop4/pattr/fxbind_c03wwd.scenario
+#FEATURE   = cintrop4 tests - regression run bucket
+#CREATOR   = SH Manual conversion
+#DATE      = 20041208
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#IF on(aix)
+  #RESOURCES_REQ = AIX52UP
+#ENDIF
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD        = XLC_COMPILE
+#IF on(aix)
+  #OPTS       = $(C_COMPILER_OPTS) $(OPT_SET_LANG_LEVEL_STDC99)
+#ELSE
+  #OPTS       = $(C_COMPILER_OPTS) $(OPT_SET_LANG_LEVEL_STDC99) -qfloat=complexgcc
+#ENDIF
+#INPUT      = $(tcasedir)cxbind_c03wwd.c
+#ENDCMD
+
+#CMD        = XLF95_COMPLINK
+#IF on(aix)
+  #OPTS       = -lm
+#ELSE
+  #OPTS       = -qfloat=complexgcc -lm
+#ENDIF
+#INPUT      = $(tcasedir)assertmodule.f $(tcasedir)fxbind_c03wwd.f cxbind_c03wwd$(OBJ)
+#OUTPUT     = fxbind_c03wwd$(EXE)
+#ENDCMD
+
+#CMD        = RUN
+#INPUT      = fxbind_c03wwd$(EXE)
+#ENDCMD
+
+#IF !on(aix)
+  #CMD        = GCC_COMPILE
+  #OPTS       = $(GCC_COMPILER_OPTS) -std=c99
+  #INPUT      = $(tcasedir)cxbind_c03wwd.c
+  #ENDCMD
+
+  #CMD        = XLF95_COMPLINK
+  #INPUT      = $(tcasedir)assertmodule.f $(tcasedir)fxbind_c03wwd.f cxbind_c03wwd$(OBJ)
+  #OPTS       = -qfloat=complexgcc
+  #OUTPUT     = fxbind_c03wwd$(EXE)
+  #ENDCMD
+
+  #CMD        = RUN
+  #INPUT      = fxbind_c03wwd$(EXE)
+  #ENDCMD
+#ENDIF
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,44 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/section10.7/scale003.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)scale003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = scale003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = scale003$(OBJ)
+#OUTPUT    = scale003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = scale003$(EXE)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)scale003$(product)vf) scale003.1
+#ENDCMD
+
+#CMD       = DELETE
+#INPUT     = scale003.1
+#ENDCMD
+
+
+
+#ENDCONTROL
+#ENDSCENARIO

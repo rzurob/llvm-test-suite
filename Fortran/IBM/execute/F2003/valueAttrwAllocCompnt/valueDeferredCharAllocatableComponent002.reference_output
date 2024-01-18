@@ -1,0 +1,20 @@
+ foo:
+ 0 
+ 3 xxxxxxxxx
+ end:
+ b1: 3 3 xxxxxxxxx
+ foo:
+ 3 xxxxxxxxx
+ 3 xxxxxxxxx
+ end:
+ b2: 3 3 xxxxxxxxx
+ foo:
+ 6 abcdefghijklmnopqr
+ 3 xxxxxxxxx
+ end:
+ b1: 3 3 xxxxxxxxx
+ foo:
+ 6 abcdefghijklmnopqr
+ 3 xxxxxxxxx
+ end:
+ b2: 3 3 xxxxxxxxx

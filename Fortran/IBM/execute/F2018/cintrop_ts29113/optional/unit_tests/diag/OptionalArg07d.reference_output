@@ -1,0 +1,5 @@
+"OptionalArg07d.f", line 11.33: 1518-385 (L) Procedure func1 is declared with the BIND(C) attribute.  Dummy argument a of func1 is not permitted to have the OPTIONAL attribute by the Fortran 2008 standard.
+"OptionalArg07d.f", line 18.33: 1518-385 (L) Procedure func2 is declared with the BIND(C) attribute.  Dummy argument a of func2 is not permitted to have the OPTIONAL attribute by the Fortran 2008 standard.
+"OptionalArg07d.f", line 25.33: 1518-385 (L) Procedure func3 is declared with the BIND(C) attribute.  Dummy argument a of func3 is not permitted to have the OPTIONAL attribute by the Fortran 2008 standard.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file OptionalArg07d.f.

@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/selectType/Quotes/BranchToEnd.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071004
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)BranchToEnd.f
+#OUTPUT= BranchToEnd$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  BranchToEnd$(OBJ)
+#OUTPUT= BranchToEnd$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  BranchToEnd$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

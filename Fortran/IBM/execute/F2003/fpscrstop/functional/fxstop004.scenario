@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=fxstop004.f
+#FEATURE = STOP should show FPSCR exception information. ( Feature 296350 )
+#CREATOR = Bardia Mahjour
+#DATE    = 20060221
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#OPTS      = -qxlf2003=stopexcept
+#INPUT     = $(tcasedir)fxstop004.f
+#OUTPUT    = fxstop004$(OBJ)
+#VALIDRCS  = 0
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#INPUT     = fxstop004$(OBJ)
+#OUTPUT    = fxstop004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxstop004$(EXE)
+#STDERR    = fxstop004.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fxstop004.out $($(tcasedir)fxstop004$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

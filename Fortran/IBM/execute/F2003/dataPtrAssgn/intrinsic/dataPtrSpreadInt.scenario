@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrSpreadInt.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrSpreadInt.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrSpreadInt$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrSpreadInt$(OBJ)
+#OUTPUT    = dataPtrSpreadInt$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrSpreadInt$(EXE)
+#STDOUT    = dataPtrSpreadInt.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrSpreadInt.out $($(tcasedir)dataPtrSpreadInt$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

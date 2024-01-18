@@ -1,0 +1,3 @@
+my_main.o: In function `.main':
+my_main.f:(.text+0x3c): undefined reference to `.__my_mod_MOD_sub1'
+my_main.f:(.text+0x44): undefined reference to `.__constants_MOD_sub2'

@@ -1,0 +1,2 @@
+"iofilenamelineno006.f", line 44: 1525-075 A decimal point and the number of digits to the right of the decimal point for the F edit descriptor are missing in a format specification.  The program will recover by assuming the decimal point followed by a default value.
+"iofilenamelineno006.f", line 44: 1525-001 The READ statement on the file iofilenamelineno006.dat cannot be completed because the end of the file was reached.  The program will stop.

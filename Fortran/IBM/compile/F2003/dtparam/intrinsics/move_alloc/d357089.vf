@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"d357089.f", line 40.12: 1514-729 (S) The derived type specifier must not specify more than 1 type parameter value(s) for type child.
+** d357089   === End of Compilation 2 ===
+1501-511  Compilation failed for file d357089.f.

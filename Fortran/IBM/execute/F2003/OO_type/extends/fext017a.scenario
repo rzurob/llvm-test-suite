@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_type/extends/fext017a.scenario
+#FEATURE = OO_type tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fext017a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fext017a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  fext017a$(OBJ)
+#OUTPUT    = fext017a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fext017a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

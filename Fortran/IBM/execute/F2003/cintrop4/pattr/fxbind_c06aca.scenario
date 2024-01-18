@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop4/pattr/fxbind_c06aca.scenario
+#FEATURE = cintrop4 tests - regression run bucket
+#CREATOR = Manual conversion CPR
+#DATE    = 20060725
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+FTCARG="fxbind_c06aca"
+CTCARG="cxbind_c06aca"
+TCOPTS="$(F_COMPILE^OPT_INTSIZE_8)"
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#INCLUDE   = run.shinclude
+
+#ENDCONTROL
+#ENDSCENARIO

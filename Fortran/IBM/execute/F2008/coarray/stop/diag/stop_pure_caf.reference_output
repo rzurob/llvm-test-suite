@@ -1,0 +1,14 @@
+"stop_pure.f", line 33.7: 1514-315 (S) PURE subprograms must not contain a STOP or PAUSE statement.
+** elemsub11   === End of Compilation 1 ===
+"stop_pure.f", line 42.11: 1516-108 (S) A pure subprogram must not contain a STOP or a PAUSE statement.
+"stop_pure.f", line 48.11: 1516-108 (S) A pure subprogram must not contain a STOP or a PAUSE statement.
+"stop_pure.f", line 54.11: 1516-108 (S) A pure subprogram must not contain a STOP or a PAUSE statement.
+"stop_pure.f", line 60.11: 1516-108 (S) A pure subprogram must not contain a STOP or a PAUSE statement.
+"stop_pure.f", line 66.11: 1516-108 (S) A pure subprogram must not contain a STOP or a PAUSE statement.
+** m   === End of Compilation 2 ===
+"stop_pure.f", line 74.10: 1516-108 (S) A pure subprogram must not contain a STOP or a PAUSE statement.
+** func1   === End of Compilation 3 ===
+"stop_pure.f", line 79.10: 1516-108 (S) A pure subprogram must not contain a STOP or a PAUSE statement.
+** func2   === End of Compilation 4 ===
+"stop_pure.f", line 83.10: 1514-219 (S) Unable to access module symbol file for module m. Check path and file permissions of file. Use association not done for this module.
+1501-511  Compilation failed for file stop_pure.f.

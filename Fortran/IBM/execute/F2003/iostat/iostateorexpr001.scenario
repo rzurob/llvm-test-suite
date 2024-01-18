@@ -1,0 +1,47 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=iostateorexpr001.scenario
+#FEATURE = 299314
+#CREATOR = Rob Wheeler
+#DATE    = 20060109
+#TEST_TYPE=fvt
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)iostateorexpr001.f
+#OPTS      =
+#OUTPUT    = iostateorexpr001$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      =
+#INPUT     = iostateorexpr001$(OBJ)
+#OUTPUT    = iostateorexpr001$(EXE)
+#ENDCMD
+
+
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)fmtdat.txt .
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = iostateorexpr001$(EXE)
+#STDOUT    = iostateorexpr001.out
+#STDERR    = iostateorexpr001.out
+#ENDCMD
+
+#CMD	   = DIFF
+#OPTS	   = -b
+#INPUT     = iostateorexpr001.out $($(tcasedir)iostateorexpr001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,5 @@
+"dtParamTypeDecC522d.f", line 53.41: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"dtParamTypeDecC522d.f", line 54.39: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+** dtparamtypedecc522d   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtParamTypeDecC522d.f.

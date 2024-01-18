@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME      = F2008/polyAssign/func/polyAssign1034f_Dim2LHSallocSameTypeDiffShape.scenario
+#FEATURE   = LHS of intrinsic assignment is allowed to be polymorphic
+#CREATOR   = Aaron Liu
+#DATE      = 20150901
+#TEST_TYPE = functional
+#KEYWORDS  = F2008, polymorphic, LHS, intrinsic assignment
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)polyAssign1034f_Dim2LHSallocSameTypeDiffShape.f
+#OUTPUT    =  polyAssign1034f_Dim2LHSallocSameTypeDiffShape$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     =  polyAssign1034f_Dim2LHSallocSameTypeDiffShape$(OBJ)
+#OUTPUT    =  polyAssign1034f_Dim2LHSallocSameTypeDiffShape$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     =  polyAssign1034f_Dim2LHSallocSameTypeDiffShape$(EXE)
+#STDOUT    =  polyAssign1034f_Dim2LHSallocSameTypeDiffShape.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

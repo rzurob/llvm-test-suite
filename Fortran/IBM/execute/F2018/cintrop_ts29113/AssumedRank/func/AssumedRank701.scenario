@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/AssumedRank/func/AssumedRank701.scenario
+#FEATURE   = C Interop, Assumed Rank
+#CREATOR   = Rafik Zurob
+#DATE      = 2014-04-22
+#TEST_TYPE = functional
+#KEYWORDS  = C Interop, Assumed Rank, generic
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AssumedRank701.f
+#OUTPUT    = AssumedRank701$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = AssumedRank701$(OBJ)
+#OUTPUT    = AssumedRank701$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = AssumedRank701$(EXE)
+#STDOUT    = AssumedRank701.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)AssumedRank701$(product)vf) AssumedRank701.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

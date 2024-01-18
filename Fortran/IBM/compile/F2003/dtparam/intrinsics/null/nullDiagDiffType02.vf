@@ -1,0 +1,10 @@
+** m   === End of Compilation 1 ===
+"nullDiagDiffType02.f", line 53.3: 1515-104 (S) The target in the pointer assignment statement is not unlimited polymorphic.  The pointer must be type compatible with the target, and the corresponding nondeferred type parameters must be equal.
+"nullDiagDiffType02.f", line 54.3: 1515-104 (S) The target in the pointer assignment statement is not unlimited polymorphic.  The pointer must be type compatible with the target, and the corresponding nondeferred type parameters must be equal.
+"nullDiagDiffType02.f", line 55.3: 1515-104 (S) The target in the pointer assignment statement is not unlimited polymorphic.  The pointer must be type compatible with the target, and the corresponding nondeferred type parameters must be equal.
+"nullDiagDiffType02.f", line 56.3: 1515-104 (S) The target in the pointer assignment statement is not unlimited polymorphic.  The pointer must be type compatible with the target, and the corresponding nondeferred type parameters must be equal.
+"nullDiagDiffType02.f", line 57.3: 1515-104 (S) The target in the pointer assignment statement is not unlimited polymorphic.  The pointer must be type compatible with the target, and the corresponding nondeferred type parameters must be equal.
+"nullDiagDiffType02.f", line 59.6: 1516-044 (S) A conversion from type a is not permitted.
+"nullDiagDiffType02.f", line 60.6: 1516-044 (S) A conversion from type a is not permitted.
+** nulldiagdifftype01   === End of Compilation 2 ===
+1501-511  Compilation failed for file nullDiagDiffType02.f.

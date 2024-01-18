@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"C809AssoName.f", line 68.38: 1516-248 (S) The associate name as must only be declared once in the ASSOCIATE statement.
+** c809assoname   === End of Compilation 2 ===
+1501-511  Compilation failed for file C809AssoName.f.

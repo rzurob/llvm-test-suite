@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/C470/deferred002.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/*
+#DATE      = 20070621
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)deferred002.f
+#OPTS      = -qdebug=shutup
+#OUTPUT    = deferred002$(OBJ)
+#STDERR    = deferred002.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)deferred002$(product)vf) deferred002.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

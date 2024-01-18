@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/mxminAll/con/mxminLoc/mxminlocBindC.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)mxminlocBindC.c
+#OPTS      = $(C_COMPILER_OPTS)
+#OUTPUT    = mxminlocCVarBindC$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mxminlocBindC.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = mxminlocBindC$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = mxminlocCVarBindC$(OBJ) mxminlocBindC$(OBJ)
+#OUTPUT    = mxminlocBindC$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminlocBindC$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

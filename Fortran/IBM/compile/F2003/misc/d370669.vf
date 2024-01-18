@@ -1,0 +1,3 @@
+"d370669.f", line 33.11: 1515-122 (S) The procedure pointer was declared as a subroutine, or is referenced as a subroutine.  The procedure pointer assignment target must be declared as a subroutine.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file d370669.f.

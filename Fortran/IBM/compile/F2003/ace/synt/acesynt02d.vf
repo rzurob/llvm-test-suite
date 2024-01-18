@@ -1,0 +1,64 @@
+"acesynt02d.f", line 39.57: 1515-020 (S) Syntax Error: Token " ] " is missing. A token is supplied.
+"acesynt02d.f", line 39.58: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt02d.f", line 40.46: 1515-019 (S) Syntax is incorrect.
+"acesynt02d.f", line 41.48: 1515-019 (S) Syntax is incorrect.
+"acesynt02d.f", line 42.47: 1515-019 (S) Syntax is incorrect.
+"acesynt02d.f", line 45.20: 1515-020 (S) Syntax Error: Token " ] " is missing. A token is supplied.
+"acesynt02d.f", line 46.21: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt02d.f", line 46.21: 1515-020 (S) Syntax Error: Token " ] " is missing. A token is supplied.
+"acesynt02d.f", line 47.11: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acesynt02d.f", line 47.13: 1515-022 (S) Syntax Error: Extra token " 2 " was found. The token is ignored.
+"acesynt02d.f", line 47.14: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acesynt02d.f", line 47.16: 1515-022 (S) Syntax Error: Extra token " 3 " was found. The token is ignored.
+"acesynt02d.f", line 47.17: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acesynt02d.f", line 47.19: 1515-022 (S) Syntax Error: Extra token " 4 " was found. The token is ignored.
+"acesynt02d.f", line 47.20: 1515-022 (S) Syntax Error: Extra token " ] " was found. The token is ignored.
+"acesynt02d.f", line 48.11: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acesynt02d.f", line 48.13: 1515-022 (S) Syntax Error: Extra token " 2 " was found. The token is ignored.
+"acesynt02d.f", line 48.14: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acesynt02d.f", line 48.16: 1515-022 (S) Syntax Error: Extra token " 3 " was found. The token is ignored.
+"acesynt02d.f", line 48.17: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acesynt02d.f", line 48.19: 1515-022 (S) Syntax Error: Extra token " 4 " was found. The token is ignored.
+"acesynt02d.f", line 48.20: 1515-022 (S) Syntax Error: Extra token " / " was found. The token is ignored.
+"acesynt02d.f", line 48.21: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acesynt02d.f", line 51.23: 1515-019 (S) Syntax is incorrect.
+"acesynt02d.f", line 52.24: 1515-019 (S) Syntax is incorrect.
+"acesynt02d.f", line 53.26: 1515-019 (S) Syntax is incorrect.
+"acesynt02d.f", line 54.27: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt02d.f", line 54.27: 1515-020 (S) Syntax Error: Token " ] " is missing. A token is supplied.
+"acesynt02d.f", line 55.10: 1516-078 (S) Operands must be conformable.
+"acesynt02d.f", line 55.19: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acesynt02d.f", line 55.21: 1515-022 (S) Syntax Error: Extra token " 4 " was found. The token is ignored.
+"acesynt02d.f", line 55.22: 1515-022 (S) Syntax Error: Extra token " ] " was found. The token is ignored.
+"acesynt02d.f", line 56.10: 1516-078 (S) Operands must be conformable.
+"acesynt02d.f", line 56.21: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acesynt02d.f", line 56.23: 1515-022 (S) Syntax Error: Extra token " 4 " was found. The token is ignored.
+"acesynt02d.f", line 56.24: 1515-022 (S) Syntax Error: Extra token " ] " was found. The token is ignored.
+"acesynt02d.f", line 57.10: 1516-078 (S) Operands must be conformable.
+"acesynt02d.f", line 57.25: 1515-022 (S) Syntax Error: Extra token " , " was found. The token is ignored.
+"acesynt02d.f", line 57.27: 1515-022 (S) Syntax Error: Extra token " 4 " was found. The token is ignored.
+"acesynt02d.f", line 57.28: 1515-022 (S) Syntax Error: Extra token " / " was found. The token is ignored.
+"acesynt02d.f", line 57.29: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acesynt02d.f", line 60.60: 1515-019 (S) Syntax is incorrect.
+"acesynt02d.f", line 61.65: 1515-019 (S) Syntax is incorrect.
+"acesynt02d.f", line 62.21: 1515-022 (S) Syntax Error: Extra token " :: " was found. The token is ignored.
+"acesynt02d.f", line 62.23: 1515-022 (S) Syntax Error: Extra token " / " was found. The token is ignored.
+"acesynt02d.f", line 62.24: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acesynt02d.f", line 63.21: 1515-022 (S) Syntax Error: Extra token " :: " was found. The token is ignored.
+"acesynt02d.f", line 63.23: 1515-022 (S) Syntax Error: Extra token " ] " was found. The token is ignored.
+"acesynt02d.f", line 64.32: 1515-022 (S) Syntax Error: Extra token " ] " was found. The token is ignored.
+"acesynt02d.f", line 65.32: 1515-020 (S) Syntax Error: Token " ] " is missing. A token is supplied.
+"acesynt02d.f", line 66.38: 1515-022 (S) Syntax Error: Extra token " / " was found. The token is ignored.
+"acesynt02d.f", line 66.39: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acesynt02d.f", line 67.39: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt02d.f", line 67.39: 1515-020 (S) Syntax Error: Token " ] " is missing. A token is supplied.
+"acesynt02d.f", line 70.48: 1515-020 (S) Syntax Error: Token " ] " is missing. A token is supplied.
+"acesynt02d.f", line 70.48: 1515-152 (S) An array constructor that does not begin with the "[" character must not end with the "]" character.
+"acesynt02d.f", line 71.47: 1515-022 (S) Syntax Error: Extra token " / " was found. The token is ignored.
+"acesynt02d.f", line 71.48: 1515-022 (S) Syntax Error: Extra token " ) " was found. The token is ignored.
+"acesynt02d.f", 1516-036 (S) Entity integer has undefined type.
+"acesynt02d.f", 1516-036 (S) Entity iparm2 has undefined type.
+"acesynt02d.f", 1516-036 (S) Entity iparma has undefined type.
+"acesynt02d.f", 1516-036 (S) Entity iparma2 has undefined type.
+** acesynt02d   === End of Compilation 1 ===
+1501-511  Compilation failed for file acesynt02d.f.

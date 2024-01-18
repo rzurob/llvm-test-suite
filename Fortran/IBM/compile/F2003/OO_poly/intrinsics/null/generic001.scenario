@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/null/generic001.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050303
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(F_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) $(F_COMPILE^OPT_FREE_SOURCE_FORM) $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)generic001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = generic001$(OBJ)
+#STDERR    = generic001.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)generic001$(product)vf) generic001.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

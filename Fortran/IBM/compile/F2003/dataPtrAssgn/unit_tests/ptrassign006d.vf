@@ -1,0 +1,4 @@
+"ptrassign006d.f", line 46.3: 1513-246 (S) The target of a pointer assignment with bounds remapping must be simply contiguous or an array of rank 1.
+"ptrassign006d.f", line 49.3: 1513-246 (S) The target of a pointer assignment with bounds remapping must be simply contiguous or an array of rank 1.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file ptrassign006d.f.

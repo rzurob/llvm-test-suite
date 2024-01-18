@@ -1,0 +1,23 @@
+>>>>> SOURCE SECTION <<<<<
+ 
+>>>>> ATTRIBUTE AND CROSS REFERENCE SECTION <<<<<
+ 
+ 
+ 
+IDENTIFIER NAME                  CROSS REFERENCE AND ATTRIBUTES
+ 
+bcunatt1                         Program
+                                 0-35.9$
+ 
+blk                              Common Block, BIND(C), Alignment: double word
+                                 0-39.9$  0-40.9$
+ 
+x                                BIND(C) Common member, Integer(4), Offset: 0, Alignment: full word
+                                 0-37.9$  0-39.14$  0-41.1@
+ 
+y                                BIND(C) Common member, Real(4), Offset: 4, Alignment: full word
+                                 0-38.6$  0-39.17$  0-42.1@
+ 
+** bcunatt1   === End of Compilation 1 ===
+ 
+>>>>> OBJECT SECTION <<<<<

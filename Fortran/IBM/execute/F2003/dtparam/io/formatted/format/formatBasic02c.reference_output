@@ -1,0 +1,35 @@
+ ---test 1---
+ |ab|
+ |123456|
+ |startbegin|
+ |AB|
+ |000111|
+ |STARTBEGIN|
+ ---test 2---
+ |12|
+ |34 56 |
+ |sta  begin|
+ |00|
+ |01 11 |
+ |STA  BEGIN|
+ ---test 3---
+ |a |
+ |b1256s|
+ |tart begi |
+ |A |
+ |B0011S|
+ |TART BEGI |
+ ---test 4---
+ |ir|
+ |se ond|
+ |thir d    |
+ |12|
+ |fo rth|
+ |fift h    |
+ ---test 5---
+ |fi|
+ |fth123|
+ |456  789x |
+ |yz|
+ |abcefg|
+ |hij  klmn |

@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/operator/functional/genericOperatorScalar005.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericOperatorScalar005.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericOperatorScalar005$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericOperatorScalar005$(OBJ)
+#OUTPUT    = genericOperatorScalar005$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericOperatorScalar005$(EXE)
+#STDOUT    = genericOperatorScalar005.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

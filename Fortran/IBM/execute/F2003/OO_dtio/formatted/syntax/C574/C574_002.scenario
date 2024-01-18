@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/syntax/C574/C574_002.scenario
+#FEATURE = OO_dtio
+#CREATOR = Robert Ma
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)C574_002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = C574_002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  C574_002$(OBJ)
+#OUTPUT    = C574_002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = C574_002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

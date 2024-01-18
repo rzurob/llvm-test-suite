@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrFuncnamebound1.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrFuncnamebound1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrFuncnamebound1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrFuncnamebound1$(OBJ)
+#OUTPUT    = dataPtrFuncnamebound1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrFuncnamebound1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

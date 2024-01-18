@@ -1,0 +1,11 @@
+"forall_typespec_d02.f", line 24.27: 1511-089 (S) The mask expression of a FORALL statement or construct must be a scalar of type logical.
+"forall_typespec_d02.f", line 24.34: 1515-022 (S) Syntax Error: Extra token " :: " was found. The token is ignored.
+"forall_typespec_d02.f", line 24.36: 1515-022 (S) Syntax Error: Extra token " j " was found. The token is ignored.
+"forall_typespec_d02.f", line 24.37: 1515-022 (S) Syntax Error: Extra token " = " was found. The token is ignored.
+"forall_typespec_d02.f", line 24.38: 1515-022 (S) Syntax Error: Extra token " 1 " was found. The token is ignored.
+"forall_typespec_d02.f", line 24.39: 1515-022 (S) Syntax Error: Extra token " : " was found. The token is ignored.
+"forall_typespec_d02.f", line 24.40: 1515-022 (S) Syntax Error: Extra token " 10 " was found. The token is ignored.
+"forall_typespec_d02.f", line 24.42: 1515-022 (S) Syntax Error: Extra token " : " was found. The token is ignored.
+"forall_typespec_d02.f", line 24.43: 1515-022 (S) Syntax Error: Extra token " 1 " was found. The token is ignored.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file forall_typespec_d02.f.

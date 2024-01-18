@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/associate/assumedDefered/d354406.scenario
+#FEATURE	= ASSOCIATE Contruct (with Derived Type Parameters) --	\
+				Test Case for Defect: 354406
+#CREATOR	= Glen Mateer
+#DATE		= 20080910
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)d354406.f
+#OUTPUT		= d354406$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= d354406$(OBJ)
+#OUTPUT		= d354406$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= d354406$(EXE)
+#STDOUT		= d354406.stdout
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)d354406$(product)vf) d354406.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

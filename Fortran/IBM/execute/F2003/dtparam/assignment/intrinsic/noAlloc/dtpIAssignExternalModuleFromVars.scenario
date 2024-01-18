@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpIAssignExternalModuleFromVars.scenario
+#FEATURE   = Intrinsic Assignment without Allocation - assign variables to module variables in external subprogram
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAssignExternalModuleFromVars.f
+#OUTPUT    = dtpIAssignExternalModuleFromVars$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAssignExternalModuleFromVars$(OBJ)
+#OUTPUT    = dtpIAssignExternalModuleFromVars$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAssignExternalModuleFromVars$(EXE)
+#STDOUT    = dtpIAssignExternalModuleFromVars.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpIAssignExternalModuleFromVars$(product)vf) dtpIAssignExternalModuleFromVars.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

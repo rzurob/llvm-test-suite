@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/home/robertma/tc/F2003/valueAttrDTwAllocatableComponents/valueDeferredCharAllocatableComponent002.scenario
+#FEATURE = value attribute with DT containing allocatable components test cases
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)valueDeferredCharAllocatableComponent002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = valueDeferredCharAllocatableComponent002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = valueDeferredCharAllocatableComponent002$(OBJ)
+#OUTPUT    = valueDeferredCharAllocatableComponent002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = valueDeferredCharAllocatableComponent002$(EXE)
+#STDOUT    = valueDeferredCharAllocatableComponent002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = valueDeferredCharAllocatableComponent002.out $(tcasedir)valueDeferredCharAllocatableComponent002.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

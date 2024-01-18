@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/typeParamInquiry/functional/intrinsic/typeParamInquiryIntrinsicDefer06.scenario
+#FEATURE= Type Parameter Inquiry(354612)
+#CREATOR=   Nancy Wang
+#DATE= August 4 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)typeParamInquiryIntrinsicDefer06.f
+#OUTPUT= typeParamInquiryIntrinsicDefer06$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  typeParamInquiryIntrinsicDefer06$(OBJ)
+#OUTPUT= typeParamInquiryIntrinsicDefer06$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  typeParamInquiryIntrinsicDefer06$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/crossFeature/final/final002.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/abstract/crossFeature/final/final002.scenario
+#DATE      = 20070612
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)final002.f
+#OUTPUT    = final002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = final002$(OBJ)
+#OUTPUT    = final002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = final002$(EXE)
+#STDOUT    = final002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)final002$(product)vf) final002.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

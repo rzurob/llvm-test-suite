@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/extends/fext039d5.scenario
+#FEATURE   = OO_type tests - regression run bucket
+#CREATOR   = GB copy from OO_type/extends/fext039d5.scenario
+#DATE      = 20070423
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fext039d5.f
+#OPTS      = -qdebug=intmsg:shutup
+#OUTPUT    = fext039d5$(OBJ)
+#STDERR    = fext039d5.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)fext039d5$(product)vf) fext039d5.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

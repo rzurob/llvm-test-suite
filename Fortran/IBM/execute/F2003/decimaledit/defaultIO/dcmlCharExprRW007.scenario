@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/decimaledit/defaultIO/dcmlCharExprRW007.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=bgl
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dcmlCharExprRW007.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dcmlCharExprRW007$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dcmlCharExprRW007$(OBJ)
+#OUTPUT    = dcmlCharExprRW007$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dcmlCharExprRW007$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

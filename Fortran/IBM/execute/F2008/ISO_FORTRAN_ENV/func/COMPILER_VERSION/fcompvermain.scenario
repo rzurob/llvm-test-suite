@@ -1,0 +1,58 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       fcompvermain
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2008_COMPILE
+#INPUT=  $(tcasedir)fcompvermodule.f
+#OUTPUT= fcompvermodule$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_COMPILE
+#INPUT=  $(tcasedir)fcompvermain.f
+#OUTPUT= fcompvermain$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_LINK
+#INPUT=  fcompvermodule$(OBJ) fcompvermain$(OBJ)
+#OUTPUT= fcompvermain$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fcompvermain$(EXE)
+#STDOUT= fcompvermain.out
+#ENDCMD
+
+#CMD=    XLF2008_COMPILE
+#OPTS=   -qversion
+#INPUT=  $(tcasedir)fcompvermodule.f
+#STDOUT= fcompvermodule_qversion.out
+#ENDCMD
+
+#CMD = SED
+#OPTS = -e '$!N;s/\n/ /' -e 's/://g' -e 's/^/ /g'
+#INPUT = fcompvermodule_qversion.out
+#STDOUT = fcompvermodule_qversion.sed
+#ENDCMD
+
+#CMD = SED
+#OPTS = -e 's/(DEV) //g'
+#INPUT = fcompvermain.out
+#STDOUT = fcompvermain.sed
+#ENDCMD
+
+#CMD = DIFF
+#INPUT = fcompvermodule_qversion.sed fcompvermain.sed
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

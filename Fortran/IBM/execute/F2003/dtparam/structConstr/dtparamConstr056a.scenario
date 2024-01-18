@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/structConstr/dtparamConstr056a.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamConstr056a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamConstr056a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtparamConstr056a$(OBJ)
+#OUTPUT    = dtparamConstr056a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamConstr056a$(EXE)
+#STDOUT    = dtparamConstr056a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dtparamConstr056a.out $($(tcasedir)dtparamConstr056a$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

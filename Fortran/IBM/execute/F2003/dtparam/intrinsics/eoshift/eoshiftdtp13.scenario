@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= eoshiftdtp13.scenario
+#FEATURE= eoshift with parameterized derived types
+#CREATOR= dayanand
+#DATE= 20080716
+#TEST_TYPE= functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)eoshiftdtp13.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = eoshiftdtp13$(OBJ)
+#ENDCMD
+
+#CMD       = XLF_LINK
+#INPUT     = eoshiftdtp13$(OBJ)
+#OUTPUT    = eoshiftdtp13$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = eoshiftdtp13$(EXE)
+#STDOUT    = eoshiftdtp13.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = eoshiftdtp13.out $(tcasedir)eoshiftdtp13.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

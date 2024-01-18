@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/intrinsics/null/nullStructConstruct01.scenario
+#FEATURE= 355754
+#CREATOR= Nancy Wang
+#DATE   = Sept. 25 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)nullStructConstruct01.f
+#OUTPUT= nullStructConstruct01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = nullStructConstruct01$(OBJ)
+#OUTPUT= nullStructConstruct01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = nullStructConstruct01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

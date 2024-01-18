@@ -1,0 +1,4 @@
+ 1525-070 A scale factor of -128 is invalid in a format specification.  The program will recover by assuming a default scale factor. 
+                                                                                                                                                                       
+ 1525-070 A scale factor of 129 is invalid in a format specification.  The program will recover by assuming a default scale factor. 
+                                                                                                                                                                        

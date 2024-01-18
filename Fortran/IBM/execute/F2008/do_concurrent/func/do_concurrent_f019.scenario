@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/do_concurrent/func/do_concurrent_f021.scenario
+#FEATURE   = F2008 DO CONCURRENT
+#CREATOR   = Bernard Kan
+#DATE      = 2015-08-31
+#TEST_TYPE = functional
+#KEYWORDS  = F2008 DO CONCURRENT
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+PROCS=3
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)do_concurrent_f019.f
+#OPTS      =  $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = do_concurrent_f019$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#OPTS      =  $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  do_concurrent_f019$(OBJ)
+#OUTPUT    = do_concurrent_f019$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = do_concurrent_f019$(EXE)
+#STDOUT    = do_concurrent_f019.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)do_concurrent_f019$(product)vf) do_concurrent_f019.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

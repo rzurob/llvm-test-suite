@@ -1,0 +1,7 @@
+ in readOuter
+|  eep|co| ana|
+ in readInner
+|  11001000101100|-00321| -1265|
+ back from readOuter
+|  eep|co| ana|
+|  11001000101100|-00321| -1265|

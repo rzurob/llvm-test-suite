@@ -1,0 +1,13 @@
+"dtparamdecl004d.f", line 65.11: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"dtparamdecl004d.f", line 67.13: 1514-056 (S) Length on type specification must be an integer constant expression.
+"dtparamdecl004d.f", line 70.18: 1514-213 (S) A type parameter in this position must be a scalar integer initialization expression.
+"dtparamdecl004d.f", line 70.25: 1514-056 (S) Length on type specification must be an integer constant expression.
+"dtparamdecl004d.f", line 76.28: 1514-693 (S) Derived type object base2 with deferred type parameters requires the POINTER or ALLOCATABLE attribute.
+"dtparamdecl004d.f", line 78.39: 1514-693 (S) Derived type object base2a with deferred type parameters requires the POINTER or ALLOCATABLE attribute.
+"dtparamdecl004d.f", line 84.28: 1514-694 (S) Derived type object base3 with assumed type parameters must be a dummy argument.
+"dtparamdecl004d.f", line 86.39: 1514-694 (S) Derived type object base3a with assumed type parameters must be a dummy argument.
+"dtparamdecl004d.f", line 92.14: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"dtparamdecl004d.f", 1514-199 (S) Array int4 is a deferred-shape array but does not have the POINTER or ALLOCATABLE attributes.
+"dtparamdecl004d.f", 1513-036 (S) Character variable char2 with inherited length appeared in the program unit, but did not appear in a dummy argument list or was not defined with the PARAMETER attribute.
+** dtparamdecl004d   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtparamdecl004d.f.

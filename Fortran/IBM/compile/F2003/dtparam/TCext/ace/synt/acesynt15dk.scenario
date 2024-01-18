@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/synt/acesynt15dk.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement	\
+				-- Syntax Tests)
+#CREATOR	= Glen Mateer (derived from work by David Forster)
+#DATE		= 20071207
+#TEST_TYPE	= Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acesynt15dk.f
+#OUTPUT		= acesynt15dk$(OBJ)
+#STDERR		= acesynt15dk.stderr
+#VALIDRCS	= $(RC_COMP_S)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)acesynt15dk$(product)vf) acesynt15dk.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

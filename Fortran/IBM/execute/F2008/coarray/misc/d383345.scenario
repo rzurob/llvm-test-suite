@@ -1,0 +1,52 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = d383345.scenario
+#FEATURE    = TIF intrinsics inlined by ASTI
+#CREATOR    = Bardia Mahjour
+#DATE       = November 2010
+#TEST_TYPE  = unit test
+#ENDDOC
+
+! Scenario Environment Tags
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_COARRAY_IMAGES<4>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = $(tcasedir)d383345.f
+#OUTPUT    = d383345$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_COARRAY_IMAGES<4>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = d383345$(OBJ)
+#OUTPUT    = d383345$(EXE)
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD       = RUN
+	#ENVAR     = CAF_NUM_IMAGES=4
+	#ENVAR     = MP_PROCS=1
+	#INPUT     = d383345$(EXE)
+	#STDOUT    = d383345.out.unsorted
+	#ENDCMD
+	
+	#CMD       = SORT
+	#INPUT     = d383345.out.unsorted
+	#STDOUT    = d383345.out.sorted
+	#ENDCMD
+	
+	#CMD       = DIFF
+	#INPUT     = d383345.out.sorted $(tcasedir)d383345.vf
+	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

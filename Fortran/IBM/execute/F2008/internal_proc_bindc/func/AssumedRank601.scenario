@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = AssumedRank601.scenario
+#FEATURE   = C Interop, Assumed Rank
+!old#CREATOR = Dorra Bouchiha
+#CREATOR   = Izhak Jakov
+#DATE      = 2013-10-18
+#TEST_TYPE = functional
+#KEYWORDS  = C Interop, Assumed Rank, CFI functions
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)AssumedRank601c.c
+#OPTS      = $(C_COMPILER_OPTS) -I$(xlf_include)
+#OUTPUT    = AssumedRank601c$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AssumedRank601f.f
+#OUTPUT    = AssumedRank601f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = AssumedRank601f$(OBJ) AssumedRank601c$(OBJ)
+#OUTPUT    = AssumedRank601$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = AssumedRank601$(EXE)
+#STDOUT    = AssumedRank601.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

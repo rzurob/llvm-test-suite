@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = initexprUnpack2.f
+#FEATURE   =
+#CREATOR   = Kelvin Li
+#DATE      = March 31, 2006
+#TEST_TYPE = Unit Test
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ  = 60
+#ENDENV
+
+#BEGINCONTROL
+#CMD    = F_COMPILE
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#INPUT  = $(tcasedir)initexprUnpack2.f
+#OUTPUT = initexprUnpack2$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#INPUT  = initexprUnpack2$(OBJ)
+#OUTPUT = initexprUnpack2$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = initexprUnpack2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpSimpleBinaryInterface.scenario
+#FEATURE   = User-Defined Operators - correct binary operator functions are used for given type and kind (single operator, generic interface)
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpSimpleBinaryInterface.f
+#OUTPUT    = dtpUOpSimpleBinaryInterface$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpSimpleBinaryInterface$(OBJ)
+#OUTPUT    = dtpUOpSimpleBinaryInterface$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpSimpleBinaryInterface$(EXE)
+#STDOUT    = dtpUOpSimpleBinaryInterface.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUOpSimpleBinaryInterface$(product)vf) dtpUOpSimpleBinaryInterface.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

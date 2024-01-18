@@ -1,0 +1,53 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/coarray/array_intrinsics/staticImages01.scenario
+#FEATURE   =
+#CREATOR   = Shahid Alam
+#DATE      = 20110120
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#INVALID_XOPTS = $$(F_COMPILE^OPT_COARRAY_IMAGES<.*>) $$(F_COMPILE^OPT_COARRAY_DNODES<.*>)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_COARRAY_IMAGES<4>)
+#INPUT     = $(tcasedir)staticImages01.f
+#OUTPUT    = staticImages01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_COARRAY_IMAGES<4>)
+#INPUT     = staticImages01$(OBJ)
+#OUTPUT    = staticImages01$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+   #CMD       = RUN
+   #ENVAR     = CAF_NUM_IMAGES=4
+   #ENVAR     = MP_PROCS=4
+   #INPUT     = staticImages01$(EXE)
+   #STDOUT    = staticImages01.out
+   #STDERR    = staticImages01.out
+   #ENDCMD
+#ENDFOR
+
+#CMD       = SORT
+#INPUT     = staticImages01.out > staticImages01.sort
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $(tcasedir)staticImages01.vf staticImages01.sort
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

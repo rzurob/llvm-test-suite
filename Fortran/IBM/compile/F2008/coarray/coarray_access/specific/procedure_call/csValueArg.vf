@@ -1,0 +1,12 @@
+"csValueArg.f", line 39.19: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"csValueArg.f", line 41.19: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"csValueArg.f", line 45.23: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"csValueArg.f", line 51.19: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"csValueArg.f", line 53.19: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"csValueArg.f", line 57.23: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"csValueArg.f", line 70.30: 1514-794 (S) a1 was declared as a coarray. a1 must not be declared with the VALUE attribute.
+"csValueArg.f", line 82.30: 1514-794 (S) a1 was declared as a coarray. a1 must not be declared with the VALUE attribute.
+"csValueArg.f", line 95.30: 1514-794 (S) a3 was declared as a coarray. a3 must not be declared with the VALUE attribute.
+"csValueArg.f", line 107.30: 1514-794 (S) a3 was declared as a coarray. a3 must not be declared with the VALUE attribute.
+** csvaluearg   === End of Compilation 1 ===
+1501-511  Compilation failed for file csValueArg.f.

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/submodule/diag/submodule10d.scenario
+#FEATURE   = F2008 Submodule
+#CREATOR   = Bernard Kan
+#DATE      = 20121210
+#TEST_TYPE = Diagnostic
+#KEYWORDS  = F2008, submodule, F2008 submodule
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD          = F_COMPILE
+#INPUT        = $(tcasedir)submodule10d.f
+#OUTPUT       = submodule10d$(OBJ)
+#ENDCMD
+
+#CMD          = F_LINK
+#INPUT        = submodule10d$(OBJ)
+#STDOUT       = submodule10d.out
+#STDERR       = submodule10d.out
+#VALIDRCS     = $(RC_LINK_E) 1
+#ENDCMD
+
+#CMD          = EGREP
+#OPTS         = '[Uu]ndefined.*__m_NMOD_sub|[Uu]nresolved.*__m_NMOD_sub'
+#INPUT        = submodule10d.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

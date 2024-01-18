@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=release/F2003/volatile/volatileC526Intent01.f
+#FEATURE = VOLATILE 255728
+#CREATOR = William Zhang
+#DATE    = 05/30/2006
+#TEST_TYPE= diagnostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)volatileC526Intent01.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_LANG_LEVEL<2003std>)
+#OUTPUT    = volatileC526Intent01$(OBJ)
+#STDERR    = volatileC526Intent01.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#IF in($(F_COMPILE^OPT_OPTIMIZE_FOR_SMP))  ||  in($(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT))
+        #INPUT  = $($(tcasedir)volatileC526Intent01.smp$(product)vf)\
+                                volatileC526Intent01.err
+#ELSE
+        #INPUT  = $($(tcasedir)volatileC526Intent01$(product)vf)   \
+                                volatileC526Intent01.err
+#ENDIF
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

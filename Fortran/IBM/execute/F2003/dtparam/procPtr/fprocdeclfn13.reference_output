@@ -1,0 +1,52 @@
+ 
+ Direct Call
+ 16.62357903
+ SPHERE's Property:
+ SPHERE name: Sphere3
+ SPHERE Position:
+      1.00    201.06
+ SPHERE Radius:
+      6.00
+ SPHERE Mass:
+      5.00
+ SPHERE Volume:
+    678.56
+ SPHERE Surface:
+    452.38
+ SPHERE Time Required to reach position  ~0:
+      6.41
+ SPHERE Speed :
+     31.39
+ SPHERE Velocity :
+     62.77
+ SPHERE Acceleration :
+      9.80
+ SPHERE Force (F=ma) :
+     49.00
+ In order to see the reflection of the sphere must be looking at an angle of 16.62 degrees
+ 
+ Call using procptr
+ 67.97683716
+ SPHERE's Property:
+ SPHERE name: Sphere4
+ SPHERE Position:
+   1357.13      1.00
+ SPHERE Radius:
+      6.00
+ SPHERE Mass:
+      5.00
+ SPHERE Volume:
+    678.56
+ SPHERE Surface:
+    452.38
+ SPHERE Time Required to reach position  ~0:
+      0.45
+ SPHERE Speed :
+      2.21
+ SPHERE Velocity :
+      4.43
+ SPHERE Acceleration :
+      9.80
+ SPHERE Force (F=ma) :
+     49.00
+ In order to see the reflection of the sphere must be looking at an angle of 67.98 degrees

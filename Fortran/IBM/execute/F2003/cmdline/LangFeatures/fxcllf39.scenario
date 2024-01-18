@@ -1,0 +1,43 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cmdline/LangFeatures/fxcllf39.scenario
+#FEATURE   = cmdline tests - regression run bucket
+#CREATOR   = SH Manual conversion
+#DATE      = 20081110
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+	CmdLine="fxcllf39 D\D C\% $E"
+#ENDDEFS
+#ENDENV
+
+!  Defect 297039:  The Environment Variable "$CmdLine" (defined above)
+!  contains non-escaped shell metacharacter(s).  While this TD2 .scenario
+!  file should function correctly, the resulting README.ksh file will
+!  require manual adjustments (escaping the metacharacters) to replicate
+!  the same behavior.
+
+#BEGINCONTROL
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)fxcllf39.f
+#OUTPUT = fxcllf39$(OBJ)
+#OPTS 	= $(OPT_FREE_SOURCE_FORM)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = fxcllf39$(OBJ)
+#OUTPUT = fxcllf39$(EXE)
+#OPTS 	= $(OPT_FREE_SOURCE_FORM)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = fxcllf39$(EXE)
+#OPTS   = D\\D C\\% \$E
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,3 @@
+"impure07d.f", line 29.6: 1513-193 (S) The RECUR option may not be specified for an elemental procedure.
+** accumulate   === End of Compilation 1 ===
+1501-511  Compilation failed for file impure07d.f.

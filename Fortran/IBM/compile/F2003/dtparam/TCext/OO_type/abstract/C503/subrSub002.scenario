@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/C503/subrSub002.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/abstract/C503/subrSub002.scenario
+#DATE      = 20070611
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)subrSub002.f
+#OPTS      = -qdebug=shutup
+#OUTPUT    = subrSub002$(OBJ)
+#STDERR    = subrSub002.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)subrSub002$(product)vf) subrSub002.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

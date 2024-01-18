@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/procPtrComp/dtpPPCLocalNPassDTPModKLFunDTP.scenario
+#FEATURE   = Procedure Pointers as Components - reference to function without passed-object dummy argument (K+L), DTP result(mod)
+#CREATOR   = DF Manual Update
+#DATE      = 20090324
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPPCLocalNPassDTPModKLFunDTP.f
+#OUTPUT    = dtpPPCLocalNPassDTPModKLFunDTP$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPPCLocalNPassDTPModKLFunDTP$(OBJ)
+#OUTPUT    = dtpPPCLocalNPassDTPModKLFunDTP$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPPCLocalNPassDTPModKLFunDTP$(EXE)
+#STDOUT    = dtpPPCLocalNPassDTPModKLFunDTP.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpPPCLocalNPassDTPModKLFunDTP$(product)vf) dtpPPCLocalNPassDTPModKLFunDTP.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

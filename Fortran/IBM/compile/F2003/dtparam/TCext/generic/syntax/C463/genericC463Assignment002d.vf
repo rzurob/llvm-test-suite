@@ -1,0 +1,6 @@
+"genericC463Assignment002d.f", line 42.38: 1514-710 (S) Dummy argument a of procedure or binding myagmt must not be specified with the INTENT(IN) attribute. myagmt will not be included in the ASSIGNMENT(=) generic interface.
+"genericC463Assignment002d.f", line 51.38: 1514-711 (S) Dummy argument b of procedure or binding myagmt must be specified with the INTENT(IN) attribute. myagmt will not be included in the ASSIGNMENT(=) generic interface.
+"genericC463Assignment002d.f", line 51.46: 1514-711 (S) Dummy argument b of procedure or binding myarrayagmt must be specified with the INTENT(IN) attribute. myarrayagmt will not be included in the ASSIGNMENT(=) generic interface.
+** m   === End of Compilation 1 ===
+** genericc463assignment002d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericC463Assignment002d.f.

@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"dtparamConstr001d.f", line 44.10: 1514-090 (S) Wrong number of arguments specified for structure constructor.
+"dtparamConstr001d.f", line 47.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"dtparamConstr001d.f", line 47.26: 1514-090 (S) Wrong number of arguments specified for structure constructor.
+** dtparamconstr001d   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtparamConstr001d.f.

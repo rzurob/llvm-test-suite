@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrLEInt.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrLEInt.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrLEInt$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrLEInt$(OBJ)
+#OUTPUT    = dataPtrLEInt$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrLEInt$(EXE)
+#STDOUT    = dataPtrLEInt.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrLEInt.out $($(tcasedir)dataPtrLEInt$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

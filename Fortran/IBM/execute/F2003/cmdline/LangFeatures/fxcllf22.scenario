@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME	 = cmdline/LangFeatures/fxcllf22.scenario
+#FEATURE = cmdline tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041204
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+CmdLine="fxcllf22 1"
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       =  XLF95_COMPILE
+#INPUT     =  $(tcasedir)fxcllf22.f
+#OPTS      =  $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    =  fxcllf22$(OBJ)
+#ENDCMD
+
+#CMD       =  XLF95_LINK
+#INPUT     =  fxcllf22$(OBJ)
+#OPTS      =  $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    =  fxcllf22$(EXE)
+#ENDCMD
+
+#CMD       =  RUN
+#INPUT     =  fxcllf22$(EXE)
+#OPTS      =  1
+#STDOUT    =  fxcllf22.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

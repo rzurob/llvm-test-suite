@@ -1,0 +1,6 @@
+"C818DupClassDefaults.f", line 54.4: 1511-137 (S) CLASS DEFAULT is already seen in the SELECT TYPE construct.
+"C818DupClassDefaults.f", line 57.6: 1511-137 (S) CLASS DEFAULT is already seen in the SELECT TYPE construct.
+"C818DupClassDefaults.f", line 60.8: 1511-137 (S) CLASS DEFAULT is already seen in the SELECT TYPE construct.
+"C818DupClassDefaults.f", line 63.10: 1511-137 (S) CLASS DEFAULT is already seen in the SELECT TYPE construct.
+** c818dupclassdefaults   === End of Compilation 1 ===
+1501-511  Compilation failed for file C818DupClassDefaults.f.

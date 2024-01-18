@@ -1,0 +1,18 @@
+ int_base_base1:  30
+ int_base1_base:  50
+ int_base_base1:  80
+ int_base_child1:  300
+ int_base_child1:  280
+ int_base1_child:  10
+ 30 50 380 270
+ int_base_base1:  80
+ int_base1_child:  650
+ 740
+ int_base_child1:  300
+ int_base_base1:  430
+ int_base_child1:  730
+ 730 730 730
+ int_base_child1:  30
+ 30
+ int_base1_child:  30
+ 30 30 30

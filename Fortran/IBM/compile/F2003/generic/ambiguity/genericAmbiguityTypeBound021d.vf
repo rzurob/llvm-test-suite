@@ -1,0 +1,8 @@
+"genericAmbiguityTypeBound021d.f", line 43.62: 1514-699 (S) Procedure "twoargs4" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "twoargs1", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** genericname   === End of Compilation 1 ===
+"genericAmbiguityTypeBound021d.f", line 115.36: 1514-699 (S) Procedure "addd" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "adda", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** binoperator   === End of Compilation 2 ===
+"genericAmbiguityTypeBound021d.f", line 195.38: 1514-699 (S) Procedure "assgn4" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "assgn3", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** assignment   === End of Compilation 3 ===
+** genericambiguitytypebound021d   === End of Compilation 4 ===
+1501-511  Compilation failed for file genericAmbiguityTypeBound021d.f.

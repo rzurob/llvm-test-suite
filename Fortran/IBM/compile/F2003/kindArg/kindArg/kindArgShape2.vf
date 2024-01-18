@@ -1,0 +1,6 @@
+"kindArgShape2.f", line 43.24: 1513-145 (S) Argument keyword "kindd" does not match the dummy argument specified in the interface for the intrinsic procedure "shape".
+"kindArgShape2.f", line 44.11: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "shape".
+"kindArgShape2.f", line 45.17: 1513-143 (S) Invalid KIND value.
+"kindArgShape2.f", line 46.11: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "shape".
+** kindargshape2   === End of Compilation 1 ===
+1501-511  Compilation failed for file kindArgShape2.f.

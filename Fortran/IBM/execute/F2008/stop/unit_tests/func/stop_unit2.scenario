@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = stop_unit2.scenario
+#FEATURE    = F2008 extension to stop code
+#CREATOR    = Tarique Islam
+#DATE       = 20100929
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+  #CMD        = XLF2003_COMPILE
+  #INPUT      = $(tcasedir)stop_unit2.f
+  #OPTS       =
+  #OUTPUT     = stop_unit2$(OBJ)
+  #ENDCMD
+
+  #CMD        = XLF_LINK
+  #OPTS       =
+  #INPUT      = stop_unit2$(OBJ)
+  #OUTPUT     = stop_unit2$(EXE)
+  #ENDCMD
+
+  #CMD        = RUN
+  #INPUT      = stop_unit2$(EXE)
+  #STDERR     = stop_unit2.err
+  #VALIDRCS   = 30
+  #ENDCMD
+
+  #CMD        = XLDIFF
+  #INPUT      = stop_unit2.err $(tcasedir)stop_unit2.vf
+  #ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

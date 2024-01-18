@@ -1,0 +1,5 @@
+"purevalue01d.f", line 19.2: 1514-711 (S) Dummy argument a of procedure or binding foo must be specified with the INTENT(IN) attribute. foo will not be included in the OPERATOR(.def_op.) generic interface.
+"purevalue01d.f", line 26.2: 1514-711 (S) Dummy argument a of procedure or binding moo must be specified with the INTENT(IN) attribute. moo will not be included in the OPERATOR(.def_op.) generic interface.
+"purevalue01d.f", line 31.4: 1514-711 (S) Dummy argument a of procedure or binding boo must be specified with the INTENT(IN) attribute. boo will not be included in the OPERATOR(.def_op.) generic interface.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file purevalue01d.f.

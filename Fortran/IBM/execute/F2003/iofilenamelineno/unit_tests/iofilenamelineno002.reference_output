@@ -1,0 +1,1 @@
+"iofilenamelineno002.f", line 43: 1525-020 The formatted I/O statement on unit 2 cannot be completed because the unit is connected to the unformatted file iofilenamelineno002.dat.  The program will recover by ignoring the I/O statement.

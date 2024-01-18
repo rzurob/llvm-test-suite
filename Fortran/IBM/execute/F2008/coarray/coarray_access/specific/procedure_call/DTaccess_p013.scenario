@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_access/specific/procedure_call/DTaccess_p013
+#FEATURE        = CAF coarray access (specific) - procedure call
+#CREATOR        = Francesco Cassullo
+#DATE           = June 2011
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)DTaccess_p013.f
+#OUTPUT = DTaccess_p013$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = DTaccess_p013$(OBJ)
+#OUTPUT = DTaccess_p013$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD    = MPRUN
+	#INPUT  = DTaccess_p013$(EXE)
+	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO
+

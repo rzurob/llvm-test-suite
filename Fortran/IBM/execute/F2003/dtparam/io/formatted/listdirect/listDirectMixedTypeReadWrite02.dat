@@ -1,0 +1,8 @@
+; "a''b" 'A"B'; 'abc' 
+.false.    fall tru .tee ; feel
+10 1*-10  ;     ; -11 /
+"a'b" , 'c""d' 1*, 1*ABC ,
+T  1*.F 1* 1*.T 1*t
+1* , -22 1*33 , , 9, 40*-1 /40*-1 is ignored
+XLF 1*IBM , , G'H
+2*F 3*.true. 2*77 , 1*-2 1*, 33 , ,/

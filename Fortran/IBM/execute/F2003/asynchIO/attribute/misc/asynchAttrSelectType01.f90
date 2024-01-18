@@ -1,0 +1,164 @@
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE TITLE            : asynchAttrSelectType01 - ASYNCHRONOUS
+!*                               Attribute in the SELECT TYPE Construct
+!*
+!*  PROGRAMMER                 : Glen Mateer
+!*  DATE                       : March  2, 2006
+!*  ORIGIN                     : AIX Compiler Development,
+!*                             : IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS Attribute
+!*  SECONDARY FUNCTIONS TESTED : associate-name => selector (where selector
+!*                               implicitly has the ASYNCHRONOUS Attribute)
+!*
+!*  DRIVER STANZA              : xlf2003
+!*  REQUIRED COMPILER OPTIONS  : -qattr=full
+!*
+!*  KEYWORD(S)                 : ASYNCHRONOUS Attribute, SELECT TYPE Construct
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS : 1
+!*
+!*  DESCRIPTION                :
+!*
+!*  8.1.4.3 Attributes of associate names
+!*
+!*  Within a SELECT TYPE or ASSOCIATE construct, ... The associating entity
+!*  has the ASYNCHRONOUS, TARGET, or VOLATILE attribute if and only if the
+!*  selector is a variable and has the attribute.
+!*
+!*  8.1.5.1 Form of the SELECT TYPE construct
+!*
+!*  R821 select-type-construct  is  select-type-stmt
+!*                                      [ type-guard-stmt
+!*                                        block ] ...
+!*                                      end-select-type-stmt
+!*  R822 select-type-stmt       is  [ select-construct-name : ] SELECT TYPE&
+!*                                      &( [ associate-name => ] selector )
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+MODULE mBase
+    TYPE tBase
+        INTEGER :: baseInt1
+    END TYPE tBase
+END MODULE mBase
+
+
+MODULE mDerived1
+    USE mBase
+
+    TYPE, EXTENDS(tBase) :: tDerived1
+        INTEGER :: derivedInt1
+    END TYPE tDerived1
+END MODULE mDerived1
+
+
+PROGRAM asynchAttrSelectType01
+    USE mDerived1
+
+    INTERFACE
+        SUBROUTINE Process( anObj )
+            USE mDerived1
+            CLASS(tBase), INTENT(IN) :: anObj
+        END SUBROUTINE Process
+    END INTERFACE
+
+
+    CHARACTER(LEN = 256) :: oMsg
+
+    TYPE(tBase), ALLOCATABLE, DIMENSION( : ) :: base
+    TYPE(tDerived1), ALLOCATABLE, DIMENSION( : ) :: derived
+
+    OPEN(102, ACCESS='stream', ACTION='write',&
+        &ASYNCHRONOUS='yes', FORM='formatted',IOSTAT=iStat, IOMSG=oMsg)
+    IF (iStat <> 0) THEN
+        WRITE(0, *) "OPEN() <", iStat, "> ", oMsg
+        CALL zzrc( 1 )
+    END IF
+
+
+    ALLOCATE(base( 1000 ), STAT=iStat, ERRMSG=oMsg)
+    IF (iStat <> 0) THEN
+        WRITE(0, *) "ALLOCATE( tBase(1000) ) <", iStat, "> ", oMsg
+        CALL zzrc( 2 )
+    END IF
+
+    DO i = 1, 1000
+        base( i )%baseInt1 = i
+    END DO
+
+
+    ALLOCATE(derived( 1000 ), STAT=iStat, ERRMSG=oMsg)
+
+    IF (iStat == 0) THEN
+        DO i = 1, 1000
+            derived( i )%baseInt1 = i
+            derived( i )%derivedInt1 = 1000 - i
+        END DO
+    END IF
+
+
+    IF (iStat <> 0) THEN
+        WRITE(0, *) "ALLOCATE( tDerived(1000) ) <", iStat, "> ", oMsg
+        CALL zzrc( 3 )
+    END IF
+
+
+    DO i = 1, 1000
+        CALL Process( derived( i ) )
+        CALL Process( base( (1000 - i + 1) ) )
+    END DO
+
+
+    CLOSE(102, IOSTAT=iStat, IOMSG=oMsg)
+    IF (iStat <> 0) THEN
+        WRITE(0, *) "OPEN() <", iStat, "> ", oMsg
+        CALL zzrc( 5 )
+    END IF
+
+END PROGRAM asynchAttrSelectType01
+
+
+SUBROUTINE Process( anObj )
+    USE mDerived1
+
+    CLASS(tBase), INTENT(IN) :: anObj
+
+    INTEGER :: iStat
+    CHARACTER(LEN = 256) :: oMsg
+
+
+    WRITE(102, FMT='(I5)', ASYNCHRONOUS='yes',&
+            &IOSTAT=iStat, IOMSG=oMsg) anObj%baseInt1
+    IF (iStat <> 0) THEN
+        WRITE(0, *) "WRITE(Asynchronous) <", iStat, "> ", oMsg
+        CALL zzrc( 4 )
+    END IF
+
+
+    SELECT TYPE (thisObj => anObj)
+        TYPE IS (tBase)
+            WRITE(102, FMT=100, IOSTAT=iStat, IOMSG=oMsg)&
+                                    &'tBase', thisObj%baseInt1
+            IF (iStat <> 0) THEN
+                WRITE(0, *) "WRITE() <", iStat, "> ", oMsg
+                CALL zzrc( 5 )
+            END IF
+
+        CLASS IS (tBase)
+            WRITE(102, FMT=200, IOSTAT=iStat, IOMSG=oMsg)&
+                                    &'tBase', thisObj%baseInt1
+            IF (iStat <> 0) THEN
+                WRITE(0, *) "WRITE() <", iStat, "> ", oMsg
+                CALL zzrc( 6 )
+            END IF
+    END SELECT
+
+
+100 FORMAT('TYPE(',A9,'):   thisObj%baseInt1    = "',I5,'"')
+200 FORMAT('CLASS(',A9,'):  thisObj%baseInt1    = "',I5,'"')
+
+END SUBROUTINE Process

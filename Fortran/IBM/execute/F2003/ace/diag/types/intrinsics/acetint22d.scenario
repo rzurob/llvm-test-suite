@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint22d.scenario
+#FEATURE	= Array constructor enhancement - intrinsic type specifier with incorrect KIND in assignment
+#CREATOR	= DF Manual Update
+#DATE		= 20061117
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint22d.f
+#OUTPUT		= acetint22d$(OBJ)
+#STDERR		= acetint22d.stderr
+#VALIDRCS       = $(RC_COMP_S)
+#ENDCMD
+
+#CMD            = XLDIFF
+#INPUT          = $($(tcasedir)acetint22d$(product)vf) acetint22d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

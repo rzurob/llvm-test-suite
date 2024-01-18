@@ -1,0 +1,13 @@
+"Misc7.f", line 59.16: 1514-161 (E) Identifier "bindc" appearing as a specific interface procedure/result name was defined elsewhere with conflicting attributes.  This definition is ignored.
+"Misc7.f", line 69.42: 1516-194 (S) A binding label must not be the same as the name of a program unit, common block, external procedure, and another binding label, ignoring differences in case.
+"Misc7.f", line 71.42: 1516-194 (S) A binding label must not be the same as the name of a program unit, common block, external procedure, and another binding label, ignoring differences in case.
+"Misc7.f", line 75.42: 1516-194 (S) A binding label must not be the same as the name of a program unit, common block, external procedure, and another binding label, ignoring differences in case.
+"Misc7.f", line 77.42: 1516-194 (S) A binding label must not be the same as the name of a program unit, common block, external procedure, and another binding label, ignoring differences in case.
+"Misc7.f", line 79.42: 1514-127 (E) Identifier is1 declared with EXTERNAL/INTRINSIC attribute was defined elsewhere with conflicting attributes.  Identifier is ignored.
+"Misc7.f", line 81.51: 1515-116 (S) Procedure pointer procptr must not be declared with the NAME specifier in the BIND attribute.
+"Misc7.f", line 91.15: 1515-128 (S) The procedure pointer was declared with the BIND attribute.  The procedure pointer assignment target must also be declared with the BIND attribute.
+"Misc7.f", line 92.15: 1515-128 (S) The procedure pointer was declared with the BIND attribute.  The procedure pointer assignment target must also be declared with the BIND attribute.
+"Misc7.f", line 93.15: 1515-128 (S) The procedure pointer was declared with the BIND attribute.  The procedure pointer assignment target must also be declared with the BIND attribute.
+"Misc7.f", line 94.15: 1515-129 (S) The procedure pointer was declared without the BIND attribute.  The procedure pointer assignment target must also not be declared with the BIND attribute.
+** misc7   === End of Compilation 1 ===
+1501-511  Compilation failed for file Misc7.f.

@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/scalarExpr/scalarFuncResultExpr03.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071220
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS       = -qdebug=allowrpdt
+#INPUT		= $(tcasedir)scalarFuncResultExpr03.f
+#OUTPUT		= scalarFuncResultExpr03$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= scalarFuncResultExpr03$(OBJ)
+#OUTPUT		= scalarFuncResultExpr03$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= scalarFuncResultExpr03$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

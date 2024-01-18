@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/otherSpec/readSizeSpec01.scenario
+#FEATURE	= Asynchronous I/O -- Other Specifiers
+#CREATOR	= GM Manual Creation
+#DATE		= 20060328
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)readSizeSpec01.dat .
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)readSizeSpec01.f
+#OUTPUT		= readSizeSpec01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= readSizeSpec01$(OBJ)
+#OUTPUT		= readSizeSpec01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= readSizeSpec01$(EXE)
+#STDOUT		= readSizeSpec01.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)readSizeSpec01$(product)vf) readSizeSpec01.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

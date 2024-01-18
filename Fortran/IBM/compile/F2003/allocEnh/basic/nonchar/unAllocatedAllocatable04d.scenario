@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/basic/nonchar/unAllocatedAllocatable04d.scenario
+#FEATURE	= Intrinsic Assignment -- Basic Tests: Non-CHARACTER Intrinsic Types
+#CREATOR	= GM Manual Creation
+#DATE		= 20060803
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)unAllocatedAllocatable04d.f
+#OUTPUT		= unAllocatedAllocatable04d$(OBJ)
+#STDERR		= unAllocatedAllocatable04d.stderr
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)unAllocatedAllocatable04d$(product)vf)	\
+								unAllocatedAllocatable04d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

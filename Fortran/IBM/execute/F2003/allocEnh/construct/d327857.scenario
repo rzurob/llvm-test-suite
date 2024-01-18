@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/allocEnh/construct/d327857.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d327857.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = d327857$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d327857$(OBJ)
+#OUTPUT    = d327857$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d327857$(EXE)
+#STDOUT    = d327857.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = d327857.out $($(tcasedir)d327857$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,8 @@
+ start 99
+ foo1: 99
+ end foo1: 100
+ after foo1 99
+ 99
+ foo2: 99
+ end foo2: 200
+ after foo2 99

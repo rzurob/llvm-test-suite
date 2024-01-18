@@ -1,0 +1,7 @@
+    inside data_sub()  x= 35
+        inside fun1 ()
+    inside proc_sub()    y= 7654
+    inside data_func()  x= 35
+        inside fun1 ()
+    inside proc_func()
+  .... end

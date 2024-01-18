@@ -1,0 +1,4 @@
+"volatileC1232ArraySection05d.f", line 26.31: 1516-272 (S) Dummy argument x of procedure arraysectionvolatile was specified with the VOLATILE attribute. x is not an assumed-shape array.  The corresponding actual argument must not be an array section or an assumed-shape array.
+"volatileC1232ArraySection05d.f", 1518-317 (L) The -qsmp option can cause the compiler to accept code that does not conform to the Fortran 2003 standard.
+** volatilec1232arraysection05d   === End of Compilation 1 ===
+1501-511  Compilation failed for file volatileC1232ArraySection05d.f.

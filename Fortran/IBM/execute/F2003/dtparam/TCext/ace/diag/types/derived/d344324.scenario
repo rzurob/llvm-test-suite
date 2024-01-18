@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/diag/types/derived/d344324.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement)
+#CREATOR	= Glen Mateer
+#DATE		= 20071129
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)d344324.f
+#OUTPUT		= d344324$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= d344324$(OBJ)
+#OUTPUT		= d344324$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= d344324$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

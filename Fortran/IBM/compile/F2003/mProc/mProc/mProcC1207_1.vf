@@ -1,0 +1,9 @@
+"mProcC1207_1.f", line 44.15: 1516-270 (E) Entity sub must be a procedure pointer, external procedure, dummy procedure, or a module procedure, and must have an explicit interface. sub is ignored.
+"mProcC1207_1.f", line 49.15: 1516-270 (E) Entity fun1 must be a procedure pointer, external procedure, dummy procedure, or a module procedure, and must have an explicit interface. fun1 is ignored.
+"mProcC1207_1.f", line 54.15: 1516-270 (E) Entity extsub must be a procedure pointer, external procedure, dummy procedure, or a module procedure, and must have an explicit interface. extsub is ignored.
+"mProcC1207_1.f", line 58.15: 1516-270 (E) Entity extsub1 must be a procedure pointer, external procedure, dummy procedure, or a module procedure, and must have an explicit interface. extsub1 is ignored.
+** mprocc1207_1   === End of Compilation 1 ===
+"mProcC1207_1.f", line 71.17: 1514-266 (S) For entity f to be accessible here as a procedure, it must be declared RECURSIVE and if it is a function it must have RESULT specified.
+** m   === End of Compilation 2 ===
+** extsub   === End of Compilation 3 ===
+1501-511  Compilation failed for file mProcC1207_1.f.

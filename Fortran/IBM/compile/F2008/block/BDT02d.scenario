@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /block/BDT02.scenario
+#FEATURE   = derived type redefinition and structure constructor within block
+#CREATOR   = DF
+#DATE      = 2010-11-15
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = F_COMPILE
+#INPUT    = $(tcasedir)BDT02d.f
+#OUTPUT   = BDT02d$(OBJ)
+#STDERR   = BDT02d.err
+#STDOUT   = BDT02d.err
+#VALIDRCS = $(RC_FAIL)
+#ENDCMD
+
+#CMD      = XLDIFF
+#INPUT    = $($(tcasedir)BDT02d$(product)vf) BDT02d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

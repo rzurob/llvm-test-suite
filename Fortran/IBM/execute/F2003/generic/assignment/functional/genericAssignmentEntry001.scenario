@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/assignment/functional/genericAssignmentEntry001.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericAssignmentEntry001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericAssignmentEntry001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericAssignmentEntry001$(OBJ)
+#OUTPUT    = genericAssignmentEntry001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericAssignmentEntry001$(EXE)
+#STDOUT    = genericAssignmentEntry001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericAssignmentEntry001.out $(tcasedir)genericAssignmentEntry001.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

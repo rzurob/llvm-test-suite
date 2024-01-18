@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE = Initialization Expression Enhancement
+#CREATOR = James Ren
+#DATE    = 20060404
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)ietan.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ietan$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = ietan$(OBJ)
+#OUTPUT    = ietan$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ietan$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

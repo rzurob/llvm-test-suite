@@ -1,0 +1,33 @@
+  16.21   01610192 bind‹
+  16.25   01610192 (‹
+  16.26   01610192 c‹
+  16.27   01610192 )‹
+** s1   === End of Compilation 1 ===
+** s2   === End of Compilation 2 ===
+** s3   === End of Compilation 3 ===
+** s4   === End of Compilation 4 ===
+  34.22   01610192 bind‹
+  34.26   01610192 (‹
+  34.27   01610192 c‹
+  34.28   01610192 ,‹
+  34.30   01610192 name‹
+  34.34   01610192 =‹
+  34.35   01610192 'S1‹
+  34.39   01610192 )‹
+** sn1   === End of Compilation 5 ===
+** sn2   === End of Compilation 6 ===
+** sn3   === End of Compilation 7 ===
+** sn4   === End of Compilation 8 ===
+  52.22   01610192 bind‹
+  52.26   01610192 (‹
+  52.27   01610192 c‹
+  52.28   01610192 ,‹
+  52.30   01610192 name‹
+  52.34   01610192 =‹
+  52.35   01610192 'sd1‹
+  52.40   01610192 )‹
+** sd1   === End of Compilation 9 ===
+** sd2   === End of Compilation 10 ===
+** sd3   === End of Compilation 11 ===
+** sd4   === End of Compilation 12 ===
+1501-511  Compilation failed for file sub.f.

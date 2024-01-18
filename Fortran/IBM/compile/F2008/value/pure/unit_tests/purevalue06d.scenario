@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME      = F2008/value/pure/unit_tests/purevalue06d.scenario
+#FEATURE   = 384867 \
+             F2008: VALUE attribute allowed for dummy args of PURE procedures
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20101201
+#TEST_TYPE = Diagnostic test
+#ENDDOC
+
+#BEGINENV
+#RESOURCES_REQ = VSX
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_GEN_CODE_FOR_NATIVE_ARCHITECTURE) $(OPT_TUNE_CODE_FOR_NATIVE_ARCHITECTURE) $(OPT_ENABLE_VECTOR_INSTRUCTIONS_GENERATION)
+#INPUT     = $(tcasedir)purevalue06d.f
+#STDOUT    = purevalue06d.err
+#STDERR    = purevalue06d.err
+#VALIDRCS  = $(RC_COMP_S)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)purevalue06d$(product)vf) purevalue06d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

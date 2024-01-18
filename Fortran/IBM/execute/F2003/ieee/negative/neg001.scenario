@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = ieee/negative/neg001.scenario
+#FEATURE = ieee tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)ieeeconsts.f
+#OUTPUT = ieeeconsts$(OBJ)
+#OPTS 	= $(OPT_FREE_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION) -qxlf90=signedzero $(OPT_AUTODBL_OFF)
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)neg001.f
+#OUTPUT = neg001$(OBJ)
+#OPTS 	= $(OPT_FREE_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION) -qxlf90=signedzero -I./
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = neg001$(OBJ)
+#OUTPUT = neg001$(EXE)
+#OPTS 	= $(OPT_FREE_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION) -qxlf90=signedzero -I./
+#ENDCMD
+
+#CMD	= RUN
+#INPUT	= neg001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

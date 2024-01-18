@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)bndMapping2.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = bndMapping2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = bndMapping2$(OBJ)
+#OUTPUT    = bndMapping2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = bndMapping2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

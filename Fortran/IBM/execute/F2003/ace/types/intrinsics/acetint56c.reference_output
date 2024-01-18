@@ -1,0 +1,16 @@
+ func(1,0):
+ rfunc(1,0):
+ func(2,1):AA
+ rfunc(2,1):AA
+ func(3,5):EEEDDDCCCBBBAAA
+ rfunc(3,5):EEEDDDCCCBBBAAA
+ compare: T T T
+ abcdefghijkl
+ AAACCCBBBAAA
+ AAACCCBBBAAA
+ test: 0 x 99 (/)
+ test: 0 x 99 (/)
+ test: 6 x 5 (/FFFFF/EEEEE/DDDDD/CCCCC/BBBBB/AAAAA/)
+ test: 6 x 5 (/FFFFF/EEEEE/DDDDD/CCCCC/BBBBB/AAAAA/)
+ test: 12 x 2 (/LL/KK/JJ/II/HH/GG/FF/EE/DD/CC/BB/AA/)
+ test: 12 x 2 (/LL/KK/JJ/II/HH/GG/FF/EE/DD/CC/BB/AA/)

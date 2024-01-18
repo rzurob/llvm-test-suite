@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/block/BExit
+#FEATURE        = F2008 - BLOCK - exit statements exit to named block or nearest DO
+#CREATOR        = DF
+#DATE           = 2010-11-09
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)BExit.f
+#OUTPUT = BExit$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = BExit$(OBJ)
+#OUTPUT = BExit$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = BExit$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

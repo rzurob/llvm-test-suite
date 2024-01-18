@@ -1,0 +1,34 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dtpAttrSpecStmtDim.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       06-11-07
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM) -qdebug=allowrpdt
+#INPUT=  $(tcasedir)dtpAttrSpecStmtDim.f
+#OUTPUT= dtpAttrSpecStmtDim$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  dtpAttrSpecStmtDim$(OBJ)
+#OUTPUT= dtpAttrSpecStmtDim$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dtpAttrSpecStmtDim$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

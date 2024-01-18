@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/basic/char/allocatedScalarCharExpr02.scenario
+#FEATURE	= Intrinsic Assignment -- Basic Tests: CHARACTER Intrinsic Type
+#CREATOR	= GM Manual Creation
+#DATE		= 20060913
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)allocatedScalarCharExpr02.f
+#OUTPUT		= allocatedScalarCharExpr02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= allocatedScalarCharExpr02$(OBJ)
+#OUTPUT		= allocatedScalarCharExpr02$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= allocatedScalarCharExpr02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

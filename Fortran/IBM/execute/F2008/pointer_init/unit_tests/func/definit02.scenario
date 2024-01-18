@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME		= F2008/pointer_init/unit_tests/func/definit02.scenario
+#FEATURE        = RTC 160700 F2008: Pointer initialization
+#CREATOR        = Rafik Zurob
+#DATE           = 20190715
+#TEST_TYPE      = Functional
+#KEYWORDS       = F2008 pointer initialization
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)definit02.f
+#OUTPUT		= definit02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= definit02$(OBJ)
+#OUTPUT		= definit02$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= definit02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

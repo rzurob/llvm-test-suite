@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/allocate/TypeSpec/varInSource.f
+#FEATURE   = DTP - Allocate with type-spec
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20090126
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)varInSource.f
+#OUTPUT    = varInSource$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = varInSource$(OBJ)
+#OUTPUT    = varInSource$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = varInSource$(EXE)
+#STDOUT    = varInSource.out
+#ENDCMD
+
+#CMD       = DIFF
+#OPTS      = -b
+#INPUT     = $($(tcasedir)varInSource$(product)vf) varInSource.out
+#ENDCMD
+#ENDCONTROL
+
+#ENDSCENARIO

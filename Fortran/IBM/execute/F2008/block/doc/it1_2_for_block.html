@@ -1,0 +1,797 @@
+<html><head><title>IT1 for BLOCK</title></head><body><br />
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="background: none repeat scroll 0% 50% rgb(192, 225, 255); width: 100%;" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="padding: 2.5pt; width: 100%;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: navy; font-family: Helvetica;">Document Control Information:</span></strong><span style="font-size: 10pt; color: navy; font-family: Helvetica;"> </span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            <p>The official version of this document is kept in CMVC in the <span style="font-weight: bold; text-decoration: underline;">%CMVC_Family%</span> family, release <span style="font-weight: bold; text-decoration: underline;">%CMVC_Release%</span>, component <span style="font-weight: bold; text-decoration: underline;">%CMVC_Component%</span>, file <span style="font-weight: bold; color: rgb(255, 102, 102); text-decoration: underline;">%CMVC_PathName%</span>. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.<br />
+            <br />
+            CMVC Extraction Information: %W% %H% %I% sccsid<br />
+            </p>
+            <p>CMVC_Family=aix, CMVC_Release=test.dev, CMVC_Component=test.values</p>
+            <p><br />
+            This document is IBM Confidential.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Helvetica;"><u1:p></u1:p></span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<table width="100%" cellspacing="3" cellpadding="0" border="1" style="background: none repeat scroll 0% 50% rgb(204, 204, 255); width: 100%;" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td valign="top" style="padding: 1pt;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">Reviewers</span></strong><span style="font-size: 10pt; font-family: Helvetica;">: </span><span style="font-size: 10pt; font-family: Helvetica;">Please click the 'Reviewed' check-box beside your name to indicate your participation in the review.</span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin-bottom: 6pt;" class="MsoNormal"><span style="font-size: 10pt; font-family: Helvetica;"></span><u1:p></u1:p></p>
+<p style="margin-bottom: 12pt;" class="MsoNormal"><span style="font-size: 10pt; font-family: Helvetica;">%Reviews%</span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="background: none repeat scroll 0% 50% rgb(224, 255, 191); width: 100%;" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="21%" valign="top" style="padding: 2.5pt; width: 21.22%;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p>Document Title<u2:p></u2:p></span></strong><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+            <td width="78%" valign="top" style="padding: 2.5pt; background: none repeat scroll 0% 50% white; width: 78.78%;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%Document_Name%</span></strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%Note{or IT1 for name of the feature you are testing}%</span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="21%" valign="top" style="padding: 2.5pt; width: 21.22%;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">CMVC Feature Number:</span></strong><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+            <td width="78%" valign="top" style="padding: 2.5pt; background: none repeat scroll 0% 50% white; width: 78.78%;"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%CMVC_Feature% <u2:p></u2:p></span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="padding: 2.5pt;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">Feature Title:</span></strong><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="padding: 2.5pt; background: none repeat scroll 0% 50% white;"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%Note{Feature Title (usually contain feature number, editable by Properties Action)}%</span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="padding: 2.5pt;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">Author(s):</span></strong><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="padding: 2.5pt; background: none repeat scroll 0% 50% white;"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%Authors%</span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="padding: 2.5pt;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">Mandatory Reviewers:<u2:p></u2:p></span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">(Approver)</span></strong><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="padding: 2.5pt; background: none repeat scroll 0% 50% white;"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%Note{These reviewers have technical approval authority and MUST approve this IT1. Generally, only list reviewers from the Component Reviewer list whose component is directly affected by this feature. Use Access Control to add or delete a reviewer.}%</span></strong></p>
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%Approvers%<br />
+            </span></strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="padding: 2.5pt;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">Component Reviewers:(optional participation)</span></strong><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+            <td valign="top" style="padding: 2.5pt; background: none repeat scroll 0% 50% white;"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%Note{ These groups must be made aware of the IT1, assign one person representing each. The names are suggested contacts (</span></strong><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">The component leads directly affected by AIX/Linux are in the list by default</span></strong><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">):</span></strong></p>
+            <ul>
+                <li>
+                <div class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;"></span></strong><strong><span style="font-size: 10pt; font-family: Helvetica;"><strong><font face="Arial">C FE and related tools/libraries/driver:</font></strong></span></strong></div>
+                </li>
+            </ul>
+            <blockquote style="margin-right: 0px;" dir="ltr">
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">AIX - Enrique Varillas (<a href="mailto:enriquev@ca.ibm.com">enriquev@ca.ibm.com</a>)</span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">Linux - David Salinas (<a href="mailto:dsalinas@ca.ibm.com">dsalinas@ca.ibm.com</a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">zOS - Jing Chen (<a href="mailto:kendrick@ca.ibm.com">chenjing@ca.ibm.com</a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">CELL - Larry Lindsay (<a href="mailto:llindsay@ca.ibm.com">llindsay@ca.ibm.com</a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>UPC - Kevin Lou</strong> <strong>(<a href="mailto:kendrick@ca.ibm.com">gklou@ca.ibm.com</a></strong><strong>)</strong></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>C++ FE and related tools/libraries/driver:</strong></font></span></strong></div>
+                </li>
+            </ul>
+            <blockquote style="margin-right: 0px;" dir="ltr">
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"></span></strong><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">AIX/</font></span></strong><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">Linux - Sasha Kasapinovic (<a href="mailto:skasapin@ca.ibm.com">skasapin@ca.ibm.com</a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">zOS - Michael Wong (<a href="mailto:michaelw@ca.ibm.com">michaelw@ca.ibm.com</a>) </font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">BG/</font></span>CELL - Yan Liu (<a href="mailto:kevshin@ca.ibm.com">yanliu@ca.ibm.com</a>)</font></span></strong></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>Fortran FE, ASTI, PLIX, and related tools/libraries/driver:</strong></font></span></strong></div>
+                </li>
+            </ul>
+            <blockquote style="margin-right: 0px;" dir="ltr">
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">AIX, PLIX - Rafik Zurob (<a href="mailto:rzurob@ca.ibm.com">rzurob@ca.ibm.com</a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">Linux - Xing Xue (<a href="mailto:xingxue@ca.ibm.com">xingxue@ca.ibm.com</a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">BG/L - Daniel Chen (<a href="mailto:cdchen@ca.ibm.com">cdchen@ca.ibm.com</a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">CELL - Kelvin Li (<a href="mailto:kli@ca.ibm.com">kli@ca.ibm.com</a>) </font></span></strong></p>
+            </blockquote>
+            <ul>
+                <li>
+                <div align="left"><span><font size="1"><font face="Arial">PL/X Development: </font><font face="Arial">Kirk Crane (<a href="mailto:krcrane@ca.ibm.com">krcrane@ca.ibm.com</a>)</font></font></span></div>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                <div align="left"><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>TPO and associated tools/libraries (libxlopt, SMPRT, MASS):</strong></font></span></div>
+                </li>
+            </ul>
+            <blockquote style="margin-right: 0px;" dir="ltr">
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">AIX -&nbsp;<strong>Yan Zhang&nbsp;(<a href="mailto:edwinc@ca.ibm.com)">zhangyan@ca.ibm.com)</a></strong></font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"></span></strong><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">Linux - <strong>Tommy Wong (<a href="mailto:tomwong@ca.ibm.com">tomwong@ca.ibm.com</a>)</strong></font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">zOS - <strong>Chris Miclea (<a href="mailto:cmiclea@ca.ibm.com">cmiclea@ca.ibm.com</a>)</strong></font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>BG - Amy Wang (<a href="mailto:aktwang@ca.ibm.com">aktwang@ca.ibm.com</a>)</strong></font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"></span></strong><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>CELL -&nbsp;Yue Zhao&nbsp;(<a href="mailto:aktwang@ca.ibm.com">aktwang@ca.ibm.com</a>)</strong></font></span></strong></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>TOBEY and associated tools/libraries: (dis, libxl, bolt)</strong></font></span></strong></div>
+                </li>
+            </ul>
+            <blockquote style="margin-right: 0px;" dir="ltr">
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"></span></strong><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">AIX - Christopher Lapkowski</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">Linux - <strong>Irina Rada (<a href="mailto:irinar@ca.ibm.com">irinar@ca.ibm.com</a>)</strong></font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">zOS - Chwan-Hang Lee (<a href="mailto:chwan@ca.ibm.com">chwan@ca.ibm.com</a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>BG - Damien Bonaventure (damien@ca.ibm.com), Leon Ding (Xiaoliang Ding/Piscataway/IBM@IBMUS, <a href="mailto:dingxi@us.ibm.com">dingxi@us.ibm.com</a>)</strong></font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>CELL - Dickson Chau (<a href="mailto:dickchau@ca.ibm.com">dickchau@ca.ibm.com</a>)</strong></font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">dis (AIX/Linux) - Ian McIntosh (<a href="mailto:ianm@ca.ibm.com">ianm@ca.ibm.com</a>)</font></span></strong></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>WCode: </strong></font></span></strong><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">Roland Froese (<a href="mailto:froese@ca.ibm.com">froese@ca.ibm.com</a>) </font></span></strong></div>
+                </li>
+            </ul>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>Information Development:</strong></font></span></strong></div>
+                </li>
+            </ul>
+            <blockquote style="margin-right: 0px;" dir="ltr">
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">C/C++ - Kathleen Dowling (<a href="mailto:dowling@ca.ibm.com">dowling@ca.ibm.com</a>)</font></span></strong></p>
+            <p align="left" class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial">Fortran - Joe Sobura (<a href="mailto:sobura@ca.ibm.com">sobura@ca.ibm.com</a>) </font></span></strong></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><strong><span style="font-size: 10pt; font-family: Helvetica;"><font face="Arial"><strong>Customer Service and Support:</strong></font></span></strong></div>
+                </li>
+            </ul>
+            <blockquote style="margin-right: 0px;" dir="ltr">
+            <p align="left" class="MsoNormal"><span><font face="Arial"><strong>AIX/Linux - </strong></font><font face="Arial"><strong>Cell -</strong> </font></span><span><font face="Arial" color="#ff0000"><font size="1" color="#000000">Youssef Himo <strong>(</strong></font><a href="mailto:himo@ca.ibm.com"><font size="1">himo@ca.ibm.com</font></a><strong><font size="1" color="#000000">)</font></strong></font></span></p>
+            <p align="left" class="MsoNormal">&nbsp;</p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><span><font face="Arial"><strong><font size="2">Compiler Enablement:Dwayne Moore (</font><a href="mailto:dwayne@ca.ibm.com"><font size="2">dwayne@ca.ibm.com</font></a><font size="2">) </font></strong></font></span></div>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                <div align="left"><span><font face="Arial"><font size="2"><strong>Fortran Test:</strong><strong>Kobi Vinayagamoorthy (<a href="mailto:kobiv@ca.ibm.com">kobiv@ca.ibm.com</a>) </strong></font></font></span></div>
+                </li>
+                <li>
+                <div align="left"><font size="2"><span><font face="Arial"><strong>C/C++ Test:</strong></font><font face="Arial" color="#ff0000"><strong> </strong></font></span><span></span><span><font face="Arial"><strong>Lu Yang(system p) (<a href="mailto:gatea@ca.ibm.com">luyang@ca.ibm.com</a>) </strong></font></span></font></div>
+                </li>
+                <li><strong><span><font size="2"><span>zOS C/C++ Test: </span><font color="#000000">Leon L Kiriliuk (z/OS) (</font></font><font face="Times New Roman"><a href="mailto:leonk@ca.ibm.com)"><font size="2">leonk@ca.ibm.com)</font></a></font></span></strong><span></span> </li>
+                <li><font size="2"><span><font face="Arial"><strong>PL/X Test: </strong></font></span><span><font face="Arial"><strong>Anne Wylie (<a href="mailto:wylie@ca.ibm.com">wylie@ca.ibm.com</a>) </strong></font></span></font></li>
+                <li><span><font face="Arial" size="2"><strong>Build and Packaging Team: </strong></font></span></li>
+            </ul>
+            <blockquote style="margin-right: 0px;" dir="ltr">
+            <p align="left" class="MsoNormal"><span><font face="Arial"><strong><font size="2">AIX - Ray Kivisto (<a href="mailto:rkivisto@ca.ibm.com">rkivisto@ca.ibm.com</a></font><font size="2">) </font></strong></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><strong><font size="2">Linux - Viktor Ganich (</font><a href="mailto:vganich@ca.ibm.com"><font size="2">vganich@ca.ibm.com</font></a><font size="2">)</font></strong></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><strong><font size="2">BGL - Steven Chen (</font><a href="mailto:stevchen@ca.ibm.com"><font size="2">stevchen@ca.ibm.com</font></a><font size="2">)</font></strong></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><strong><font size="2">Cell - Kevin Yuen (</font><a href="mailto:kchyuen@ca.ibm.com"><font size="2">kchyuen@ca.ibm.com</font></a><font size="2">)</font></strong></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><strong><font size="2">z/OS - Steve Chen (</font><a href="mailto:schen@ca.ibm.com"><font size="2">schen@ca.ibm.com</font></a><font size="2">)</font></strong></font></span></p>
+            <p align="left" class="MsoNormal"><span><font face="Arial"><strong><font size="2">Dale Soldiuk (</font><a href="mailto:soldiuk@ca.ibm.com"><font size="2">soldiuk@ca.ibm.com</font></a><font size="2">) (Please include Dale as optional on all reviews)</font></strong></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><span><font face="Arial"><font size="2"><strong>Performance Measurement and Analysis Team: </strong><strong>John Tam (<a href="mailto:johntam@ca.ibm.com">johntam@ca.ibm.com</a>)</strong></font></font></span></div>
+                </li>
+            </ul>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><font size="2"><span><font face="Arial"><strong>Planning: </strong></font></span><span><font face="Arial"><strong>Mary Chan (<a href="mailto:marychan@ca.ibm.com">marychan@ca.ibm.com</a>) </strong></font></span></font></div>
+                </li>
+            </ul>
+            <blockquote style="margin-right: 0px;" dir="ltr">
+            <p align="left" class="MsoNormal"><span></span><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">Use Access Control comments to add/delete people from this list.}%<br />
+            %Component_Reviewers%</span></strong></p>
+            </blockquote></td>
+        </tr>
+        <tr>
+            <td valign="top" style="padding: 2.5pt;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">Team Reviewers: (optional participation)</span></strong><u1:p></u1:p><span style="font-family: Helvetica;"></span></p>
+            </td>
+            <td valign="top" style="padding: 2.5pt; background: none repeat scroll 0% 50% white;"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">%Note{List any additional reviewers assigned to the review. These reviewers do not have approval authority. </span></strong><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">Use Access Control to add or delete a reviewer.</span></strong><strong><span style="font-size: 10pt; color: blue; font-family: Helvetica;">}%<br />
+            %Team_Reviewers%<br />
+            </span></strong></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin-bottom: 12pt;" class="MsoNormal"><span style="font-size: 10pt; font-family: Helvetica;"><u2:p></u2:p></span><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="background: none repeat scroll 0% 50% rgb(255, 102, 102); width: 100%;" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="padding: 2.5pt; width: 100%;">
+            <p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;"><u2:p></u2:p>IT1 Status: <!-- Start -->For Approval </span><!-- End --></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="MsoNormal"><u2:p><strong><span style="font-size: 10pt; font-family: Helvetica;">Approvers Only:</span></strong><span style="font-size: 10pt; font-family: Helvetica;"> Click on the 'Approve' checkbox beside your name in the table below if you agree with the technical and user interface content of this document; not checking your 'approve' checkbox signifies you do not approve.<o:p></o:p></span></u2:p></p>
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Helvetica;">%Approvals%<o:p></o:p></span></p>
+<p class="MsoNormal"><strong><span style="font-size: 10pt; font-family: Helvetica;">Approval Comments</span></strong></p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="font-size: 12pt; width: 100%; font-family: Arial; background-color: rgb(224, 255, 191); text-align: left;">
+    <tbody>
+        <tr>
+            <td style="vertical-align: top; font-family: Arial;"><strong>Access Change History</strong> %Note{Authors: Access Change History will list any changes to the access control done to the document draft. These changes would not be visible in a review. In a review, this section would only list the access changes done to the review itself.<br />
+            Please note that changes to the access control of a review are not automatically reflected in the access control of the draft document.}% </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%CollapsedSection{<strong>Access Change History</strong>}{%Access_Change_History%}%
+<p class="MsoNormal"><span style="font-size: 10pt; font-family: Helvetica;"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="background: none repeat scroll 0% 50% rgb(191, 191, 255); width: 100%;" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="padding: 2.5pt; width: 100%;">
+            <p align="center" style="text-align: center;" class="MsoNormal"><strong><span style="font-size: 14pt; font-family: Helvetica;"><u1:p></u1:p><u2:p></u2:p>Overview</span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><!-- Start Overview --><u2:p></u2:p></span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">%Note{Simple description of the feature; In which product it is first implemented, is it common for other platforms, is it common for both C and C++ and so on.}%</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">The <font face="Courier New">BLOCK</font> construct allows executable statements to be grouped in a new scope, and has the form<br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">
+<table width="90%" cellspacing="1" cellpadding="1" border="0" align="" summary="">
+    <tbody>
+        <tr>
+            <td>R807</td>
+            <td><em>block-construct</em></td>
+            <td><strong>is</strong></td>
+            <td><em><span style="font-size: 11pt; font-family: Helvetica;">[  block-construct-name : ] </span></em></td>
+            <td><font face="Courier New">BLOCK</font></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><em><span style="font-size: 11pt; font-family: Helvetica;">&nbsp;&nbsp; [  specification-part ]</span></em></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><em><span style="font-size: 11pt; font-family: Helvetica;">&nbsp;&nbsp; block</span></em></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><span style="font-size: 11pt; font-family: Helvetica;"><font face="Courier New">END BLOCK</font> <em>[  block-construct-name ]</em></span></td>
+        </tr>
+    </tbody>
+</table>
+<br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">where the <em>specification-part</em> can contain zero or more <font face="Courier New">USE</font> statements or declarations (<font face="Courier New">IMPORT</font> and <font face="Courier New">IMPLICIT</font> statements are not allowed in this context, just as <font face="Courier New">COMMON</font>, <font face="Courier New">EQUIVALENCE</font>, <font face="Courier New">INTENT</font>, <font face="Courier New">NAMELIST</font>, <font face="Courier New">OPTIONAL</font>, statement function, and <font face="Courier New">VALUE </font>statements are not allowed).<br />
+and<br />
+where <em>block </em>is zero or more <em>executable-constructs</em>, <em>format-stmts</em>, or <em>data-stmts</em> (<em>entry-stmts</em> are not permitted in this context) - essentially, anything which can appear in a <font face="Courier New">DO</font> block can appear in a <font face="Courier New">BLOCK</font>.<br />
+<br />
+Statements of the form<br />
+<font face="Courier New"> SAVE /blk/</font><br />
+are not permitted.<br />
+<br />
+As is typical for block-like statements, <font face="Courier New">BLOCK </font>may be preceded by a name and a colon. If it is, the corresponding <font face="Courier New">END BLOCK</font> must also specify that name.<br />
+<br />
+Block constructs can appear anywhere an executable construct can appear (i.e., as part of an <em>execution-part</em> or <em>execution-part-construct</em>). Examples of their use include:<br />
+<font face="Courier New"> b: block<br />
+&nbsp; real :: localVar<br />
+&nbsp; localVar = 1.2<br />
+end block b<br />
+</font> and<br />
+<font face="Courier New">if (condition) then<br />
+&nbsp; block<br />
+&nbsp;&nbsp;&nbsp; integer, save :: ivar = 0<br />
+&nbsp;&nbsp;&nbsp; print *, 'last =', ivar<br />
+&nbsp;&nbsp;&nbsp; ivar = newVal<br />
+&nbsp; end block</font></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><font face="Courier New">end if<br />
+</font></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">Types can be defined in the block, and types defined in a containing scope can be redefined.<br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">Variables introduced in the specification part of the block construct are local to that construct, except where the only declaration in the block of the variable is in an <font face="Courier New">ASYNCHRONOUS</font> or <font face="Courier New">VOLATILE</font> statement, in which case it marks a variable external to the block as <font face="Courier New">ASYNCHRONOUS</font> or <font face="Courier New">VOLATILE</font> for the scope of the block only. No </span><span style="font-size: 11pt; font-family: Helvetica;">IMPLICIT </span><span style="font-size: 11pt; font-family: Helvetica;">statement is allowed in the block, so any implicit typing is determined by IMPLICIT statements in the containing scope, including any references to derived types. Variables which are implicitly declared via a permitted attribute statement other than </span><span style="font-size: 11pt; font-family: Helvetica;"><font face="Courier New">ASYNCHRONOUS</font> or <font face="Courier New">VOLATILE</font> have the block as their scope. Variables introduced without any specification have the same scope as the IMPLICIT statement. For example:<br />
+<br />
+<font face="Courier New">type foo<br />
+&nbsp; real :: comp = 1.2<br />
+end type foo<br />
+implicit type(foo) (a)<br />
+block<br />
+&nbsp; type foo<br />
+&nbsp;&nbsp;&nbsp; character :: comp = 'x'<br />
+&nbsp; end type foo<br />
+&nbsp; dimension :: aArr(1) ! aArr is known only within the block, has type foo from the outer scope<br />
+</font></span><span style="font-size: 11pt; font-family: Helvetica;"><font face="Courier New"> &nbsp; print *, aVar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ! </font></span><span style="font-size: 11pt; font-family: Helvetica;"><font face="Courier New">declared implicitly with default init, aVar is known throughout the program</font></span><br />
+<span style="font-size: 11pt; font-family: Helvetica;"><font face="Courier New">&nbsp; aVar%comp = 2.1<br />
+&nbsp; aArr = aVar<br />
+</font></span><span style="font-size: 11pt; font-family: Helvetica;"><font face="Courier New">&nbsp; aVar = foo()&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; ! oddly enough, this is illegal (see below)<br />
+end block<br />
+! we can legally reference aVar here, but not aArr<br />
+end<br />
+</font><br />
+This shows the declaration of a user-defined type and its use in an <font face="Courier New">IMPLICIT</font> statement, as well as the redeclaration of that type <u>name</u> within the block. Note that the type of the variable &quot;<font face="Courier New">aVar</font>&quot; and the array &quot;</span><span style="font-size: 11pt; font-family: Helvetica;"><font face="Courier New">aArr</font></span><span style="font-size: 11pt; font-family: Helvetica;">&quot; is the outer &quot;<font face="Courier New">foo</font>&quot; type, so this block outputs &quot;<font face="Courier New">1.2</font>&quot;, and not &quot;<font face="Courier New">x</font>&quot;. Note also that the structrure constructor </span><span style="font-size: 11pt; font-family: Helvetica;">&quot;<font face="Courier New">foo</font>&quot; above actually refers to the inner type, making the assignment statement illegal due to type incompatibility.</span><br />
+<span style="font-size: 11pt; font-family: Helvetica;"> <br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">More examples can be found in the F2008 language spec.</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><u2:p></u2:p></span><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="background: none repeat scroll 0% 50% rgb(191, 191, 255); width: 100%;" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="padding: 2.5pt; width: 100%;">
+            <p align="center" style="text-align: center;" class="MsoNormal"><strong><span style="font-size: 14pt; font-family: Helvetica;"><!-- End Overview --><u2:p></u2:p>Test Strategy</span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><u2:p></u2:p></span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">%Note{Test strategy used in the test}%</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">Testing interactions with CAF features&nbsp;</span><span style="font-size: 11pt; font-family: Helvetica;"> (e.g., coarrays local to blocks)</span><span style="font-size: 11pt; font-family: Helvetica;">  will be done in a different feature. Also, no testing will be done with  OMP, since the OMP specification does not include Fortran 2003, let  alone Fortran 2008.<br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">Otherwise, s</span><span style="font-size: 11pt; font-family: Helvetica;">everal types of functional tests should be applied, touching on one or more of each of the following issues:<br />
+</span></p>
+<ul>
+    <li><span style="font-size: 11pt; font-family: Helvetica;">blocks in  different contexts (main, nested, internal procedure, module procedure,  external </span><span style="font-size: 11pt; font-family: Helvetica;">procedure,   internal to external, ..., in elemental, in pure, in recursive)</span>
+    <ul>
+        <li><span style="font-size: 11pt; font-family: Helvetica;">&gt;10  tests<br />
+        </span></li>
+    </ul>
+    </li>
+    <li><span style="font-size: 11pt; font-family: Helvetica;">(re)definition  of  variable name, e.g.,<br />
+    </span><span style="font-size: 11pt; font-family: Helvetica;"><font face="Courier New">REAL R<br />
+    R=1.1<br />
+    BLOCK<br />
+    &nbsp; INTEGER R, S ! redefines R and S (implicit declaration first encountered after block)<br />
+    &nbsp; ...<br />
+    END BLOCK<br />
+    S = 2.1</font><br />
+    </span></li>
+    <li><span style="font-size: 11pt; font-family: Helvetica;">check type, allowed operations, value, mixed-mode arithmetic, parameters, host  association, use association</span></li>
+    <li><span style="font-size: 11pt; font-family: Helvetica;">value from block scope does not overwrite outer value</span></li>
+    <li><span style="font-size: 11pt; font-family: Helvetica;">block-to-block: separate entities if defined locally</span>
+    <ul>
+        <li><span style="font-size: 11pt; font-family: Helvetica;">&gt;15 tests (1-2 per context)</span></li>
+    </ul>
+    </li>
+    <li><span style="font-size: 11pt; font-family: Helvetica;">(re)definition of types, without parameters</span>
+    <ul>
+        <li><span style="font-size: 11pt; font-family: Helvetica;">&gt;15 tests (1-2 per context)<br />
+        </span></li>
+    </ul>
+    </li>
+    <li><span style="font-size: 11pt; font-family: Helvetica;">implicit statement not permitted</span><span style="font-size: 11pt; font-family: Helvetica;"><br />
+    </span></li>
+    <li><span style="font-size: 11pt; font-family: Helvetica;">implicit  declarations in containing scope</span><span style="font-size: 11pt; font-family: Helvetica;"> may still have an impact (see example above in the overview)<br />
+    </span><span style="font-size: 11pt; font-family: Helvetica;">2-3 tests<br />
+    </span>     </li>
+    <li><span style="font-size: 11pt; font-family: Helvetica;">&quot;augmentations&quot;</span>
+    <ul>
+        <li><span style="font-size: 11pt; font-family: Helvetica;">within a block, we can add the volatile or the asynchronous attribute to a non-coarray variable declared outside the block, so that the reference is to the same variable, and it functions as asynchronous or volatile only within the block. Note: a functional test of VOLATILE is too unpredictable to attempt, so it is tested elsewhere by examining the listing file for correct variable markings; this is not applicable here, since a variable declared outside the block but marked VOLATILE (or ASYNCHRONOUS) only within the block does not have that property always, and will therefore not be so marked in the listing file. Tests of VOLATILE, if they are performed, will have to be based on examining the WCODE: that they are treated as volatile within the block, but not outside it. Tests of ASYNCHRONOUS will be based on how they are treated by input/output statements (i.e., whether or not they are permitted in an asynchronous I/O statement).</span></li>
+        <li><span style="font-size: 11pt; font-family: Helvetica;">all other attributes introduce an entirely new variable</span></li>
+        <li><span style="font-size: 11pt; font-family: Helvetica;">thus:<br />
+        <pre>INTEGER ::  foo, bar<br />BLOCK<br />  volatile :: foo, bar<br />  dimension :: bar(1)<br />  ! integer &quot;foo&quot; declared outside block is marked as volatile<br />  ! integer &quot;bar&quot; declared outside block is unavailable inside block<br />  ! the name &quot;bar&quot; refers instead to a volatile real array with bounds (1:1)<br /></pre>
+        </span> </li>
+        <li><span style="font-size: 11pt; font-family: Helvetica;">5 tests</span></li>
+    </ul>
+    </li>
+    <li><span style="font-size: 11pt; font-family: Helvetica;">other permitted non-typed declarations (allocatable,  bind, codimension, parameter, pointer,  protected, save, target)</span>
+    <ul>
+        <li><span style="font-size: 11pt; font-family: Helvetica;">(5-10 tests)</span></li>
+    </ul>
+    </li>
+    <li><span style="font-size: 11pt; font-family: Helvetica;"> suggestions appearing in the I0:<br />
+    - default initialization occurs as expected upon entering the construct<br />
+    - pointer association status is as expected upon exiting construct<br />
+    - finalization occurs upon exiting construct<br />
+    - deallocation of unsaved allocatable objects occurs upon exiting  construct<br />
+    - SAVE statements outside the construct do not affect local objects<br />
+    - automatic objects have correct length, bounds, etc. upon entering the  construct<br />
+    - local objects with SAVE attribute retain their values upon exiting  construct<br />
+    - the debugging of variables declared in the BLOCK construct in  totalview, dbx and gdb</span><span style="font-size: 11pt; font-family: Helvetica;"><br />
+    </span></li>
+    <li><span style="font-size: 11pt; font-family: Helvetica;">COMMON, EQUIVALENCE, IMPLICIT, INTENT, NAMELIST, OPTIONAL,  statement function and VALUE statements are not allowed in the specification part of a BLOCK  construct (1 each)</span></li>
+    <li><span style="font-size: 11pt; font-family: Helvetica;">A common block name is not allowed in the saved entity list of a  SAVE statement in a BLOCK construct. (1)</span></li>
+    <li><span style="font-size: 11pt; font-family: Helvetica;">If a block construct name is specified in a BLOCK statement, the  corresponding END BLOCK statement must also specify the same name.&nbsp; If no block construct name is specified in the  BLOCK statement, the corresponding END BLOCK statement must also  not specify a construct name. (2)</span></li>
+    <li><span style="font-size: 11pt; font-family: Helvetica;">Transfer of control to the interior of the BLOCK construct from the outside is not allowed,  except for the return from a procedure call inside the construct. (1)</span></li>
+    <li><span style="font-size: 11pt; font-family: Helvetica;">The VOLATILE attribute cannot be specified inside a BLOCK construct  for a coarray object that is not a construct entity of that construct. (1) </span></li>
+    <li><span style="font-size: 11pt; font-family: Helvetica;">A local variable of a BLOCK construct within a pure subprogram  cannot have the SAVE or STATIC attribute. (1)</span></li>
+</ul>
+<p>&nbsp;</p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="background: none repeat scroll 0% 50% rgb(191, 191, 255); width: 100%;" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="padding: 2.5pt; width: 100%;">
+            <p align="center" style="text-align: center;" class="MsoNormal"><strong><span style="font-size: 14pt; font-family: Helvetica;">Test Procedures/Scenarios</span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><!-- Start Internal Interfaces --><u2:p></u2:p></span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">%Note{List and brief descriptions of the test cases created for the feature}%</span></p>
+<span style="font-size: 11pt; font-family: Helvetica;">33 Unit tests  already exist (23 diagnostic and 10 functional):</span>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"> BVarRedefined
+<table width="100%" cellspacing="1" cellpadding="1" border="1" align="" summary="">
+    <tbody>
+        <tr>
+            <td colspan="2"><strong>Diagnostic unit tests</strong></td>
+        </tr>
+        <tr>
+            <td>comblk_name_in_save_in_block</td>
+            <td>C807 A SAVE statement in a BLOCK construct shall contain a saved-entity-list that does not specify a common-block-name</td>
+        </tr>
+        <tr>
+            <td>common_stmt_in_block</td>
+            <td>COMMON is not allowed in a BLOCK</td>
+        </tr>
+        <tr>
+            <td>equiv_stmt_in_block</td>
+            <td>EQUIVALENCE is not allowed in a BLOCK</td>
+        </tr>
+        <tr>
+            <td>contains_in_block1</td>
+            <td>Cannot have internal-subprogram-part in BLOCK construct</td>
+        </tr>
+        <tr>
+            <td>contains_in_block2</td>
+            <td>Cannot have internal-subprogram-part in BLOCK construct</td>
+        </tr>
+        <tr>
+            <td>goto_into_block</td>
+            <td>Cannot transfer control into a block using goto</td>
+        </tr>
+        <tr>
+            <td>imp_none_stmt_in_block</td>
+            <td>IMPLICIT NONE is not allowed in a BLOCK</td>
+        </tr>
+        <tr>
+            <td>imp_stmt_in_block</td>
+            <td>IMPLICIT with types is not allowed in a BLOCK</td>
+        </tr>
+        <tr>
+            <td>intent_stmt_in_block</td>
+            <td>INTENT is not allowed in a BLOCK</td>
+        </tr>
+        <tr>
+            <td>mismatched_block_constr_name</td>
+            <td>construct names agree (at start and end)</td>
+        </tr>
+        <tr>
+            <td>missing_block_constr_name</td>
+            <td>construct names agree (at start and end - no name at start means no name at end)</td>
+        </tr>
+        <tr>
+            <td>missing_block_stmt</td>
+            <td>can't just have &quot;... end block&quot;</td>
+        </tr>
+        <tr>
+            <td>missing_end_block_constr_name</td>
+            <td>construct names agree (at start and end - end name must also be there)</td>
+        </tr>
+        <tr>
+            <td>missing_end_block_stmt</td>
+            <td>can't just have &quot;block ...&quot; and no &quot;end block&quot;</td>
+        </tr>
+        <tr>
+            <td>namelist_stmt_in_block</td>
+            <td>NAMELIST is not allowed in a BLOCK</td>
+        </tr>
+        <tr>
+            <td>optional_stmt_in_block</td>
+            <td>OPTIONAL is not allowed in a BLOCK</td>
+        </tr>
+        <tr>
+            <td>save_stmt_in_pure_block</td>
+            <td>SAVE is not allowed in a BLOCK in a PURE procedure</td>
+        </tr>
+        <tr>
+            <td>static_stmt_in_pure_block</td>
+            <td>STATIC is not allowed in a BLOCK in a PURE procedure</td>
+        </tr>
+        <tr>
+            <td>stmt_func_in_block</td>
+            <td>statement function is not allowed in a BLOCK</td>
+        </tr>
+        <tr>
+            <td>value_stmt_in_block</td>
+            <td>VALUE is not allowed in a BLOCK</td>
+        </tr>
+        <tr>
+            <td>unnamed_exit_in_block</td>
+            <td>C844: EXIT without name is not allowed in a BLOCK unless within range of a do-construct</td>
+        </tr>
+        <tr>
+            <td>volatile_coarray_in_block</td>
+            <td>volatile coarrays cannot be introduced in a BLOCK (in contrast to coarrays introduced elsewhere and made volatile in the body of the block)</td>
+        </tr>
+        <tr>
+            <td colspan="2"><strong>Functional unit tests</strong></td>
+        </tr>
+        <tr>
+            <td>automatic_var_in_block</td>
+            <td>automatic objects have correct length, bounds, etc. upon entering the construct</td>
+        </tr>
+        <tr>
+            <td>exit_stmt_in_block1</td>
+            <td>exit from named block</td>
+        </tr>
+        <tr>
+            <td>exit_stmt_in_block2</td>
+            <td>exit from named block while in do-loop</td>
+        </tr>
+        <tr>
+            <td>finalization_in_block</td>
+            <td>finalization occurs upon exiting construct</td>
+        </tr>
+        <tr>
+            <td>func_call_in_block</td>
+            <td>call internal subroutine from within block</td>
+        </tr>
+        <tr>
+            <td>goto_stmt_in_block</td>
+            <td>goto statement within block</td>
+        </tr>
+        <tr>
+            <td>goto_out_of_block</td>
+            <td>transfer control out of a block using goto</td>
+        </tr>
+        <tr>
+            <td>implicit_typing_with_block</td>
+            <td>implicitly typed variable introduced in block</td>
+        </tr>
+        <tr>
+            <td>local_var_in_block</td>
+            <td>integer variable local to block</td>
+        </tr>
+        <tr>
+            <td>nested_blocks</td>
+            <td>two blocks, nested</td>
+        </tr>
+        <tr>
+            <td>saved_var_in_block</td>
+            <td>save var in block retains value</td>
+        </tr>
+    </tbody>
+</table>
+</span></p>
+<span style="font-size: 11pt; font-family: Helvetica;">Additional test cases will include (others to be detailed in IT2): </span>
+<p>&nbsp;</p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">
+<table width="100%" cellspacing="1" cellpadding="1" border="1" align="" summary="">
+    <tbody>
+        <tr>
+            <td colspan="2"><strong>Additional diagnostic tests</strong></td>
+        </tr>
+        <tr>
+            <td>BNoImportd</td>
+            <td>IMPORT is not allowed in a BLOCK</td>
+        </tr>
+        <tr>
+            <td>BNoCycled</td>
+            <td>although we can EXIT a block, we cannot CYCLE</td>
+        </tr>
+        <tr>
+            <td>BHost01d</td>
+            <td>attempt to access block-local variable from inner subroutine<br />
+            </td>
+        </tr>
+        <tr>
+            <td>BDT01d</td>
+            <td>derived type definition within block used outside</td>
+        </tr>
+        <tr>
+            <td>BDT02d</td>
+            <td>derived type redefinition and structure constructor within block</td>
+        </tr>
+        <tr>
+            <td colspan="2"><strong>Functional unit tests</strong></td>
+        </tr>
+        <tr>
+            <td>BASync</td>
+            <td>var declared in containing scope marked as async in block</td>
+        </tr>
+        <tr>
+            <td>BAllowedOps</td>
+            <td>allowed operations</td>
+        </tr>
+        <tr>
+            <td>BBlockToBlock01</td>
+            <td>vars declared in two blocks do not interfere</td>
+        </tr>
+        <tr>
+            <td>BBlockToBlock02</td>
+            <td>var declared in first and simply used in second are not the same</td>
+        </tr>
+        <tr>
+            <td>BBlockToBlock03</td>
+            <td>var simply used (implicit declaration) in first and then in second are the same</td>
+        </tr>
+        <tr>
+            <td>BDT01</td>
+            <td>derived type definition within block</td>
+        </tr>
+        <tr>
+            <td>BDT02</td>
+            <td>derived type redefinition within block</td>
+        </tr>
+        <tr>
+            <td>BElemental01</td>
+            <td>block in elemental procedure</td>
+        </tr>
+        <tr>
+            <td>BElemental02</td>
+            <td>block in elemental procedure</td>
+        </tr>
+        <tr>
+            <td>BExit</td>
+            <td>exit statements exit to named block or nearest DO</td>
+        </tr>
+        <tr>
+            <td>BExternal</td>
+            <td>block in external procedure</td>
+        </tr>
+        <tr>
+            <td>BHost01</td>
+            <td>host association</td>
+        </tr>
+        <tr>
+            <td>BImplType</td>
+            <td>implicit typing rules (var is &quot;declared&quot; via a spec. statement which is not a type)</td>
+        </tr>
+        <tr>
+            <td>BImplTypeAlloc</td>
+            <td>implicit typing (var appears in ALLOCATABLE statement)</td>
+        </tr>
+        <tr>
+            <td>BImplTypeBind</td>
+            <td>implicit typing (var appears in BIND statement)</td>
+        </tr>
+        <tr>
+            <td>BImplTypeCodim</td>
+            <td>implicit typing (var appears in CODIMENSION statement)</td>
+        </tr>
+        <tr>
+            <td>BImplTypeParam</td>
+            <td>implicit typing (var appears in PARAMETER statement)</td>
+        </tr>
+        <tr>
+            <td>BImplTypeProt</td>
+            <td>implicit typing (var appears in PROTECTED statement)</td>
+        </tr>
+        <tr>
+            <td>BImplTypePtr</td>
+            <td>implicit typing (var appears in POINTER statement)</td>
+        </tr>
+        <tr>
+            <td>BImplTypeSave</td>
+            <td>implicit typing (var appears in SAVE statement)</td>
+        </tr>
+        <tr>
+            <td>BImplTypeTgt</td>
+            <td>implicit typing (var appears in TARGET statement)</td>
+        </tr>
+        <tr>
+            <td>BInInt2ExtProc</td>
+            <td>block in different contexts (external's internal)</td>
+        </tr>
+        <tr>
+            <td>BInInt2ModProc</td>
+            <td>block in different contexts (module's internal)</td>
+        </tr>
+        <tr>
+            <td>BInIntProc</td>
+            <td>block in different contexts (internal procedure)</td>
+        </tr>
+        <tr>
+            <td>BInModProc</td>
+            <td>block in different contexts (module procedure)</td>
+        </tr>
+        <tr>
+            <td>BInRecurProc</td>
+            <td>block in different contexts (recursive)</td>
+        </tr>
+        <tr>
+            <td>BMMArithmetic</td>
+            <td>mixed-mode arithmetic</td>
+        </tr>
+        <tr>
+            <td>BMain</td>
+            <td>in main program</td>
+        </tr>
+        <tr>
+            <td>BMainNested</td>
+            <td>nested blocks in main program</td>
+        </tr>
+        <tr>
+            <td>BParamRedef</td>
+            <td>parameters redefined in block</td>
+        </tr>
+        <tr>
+            <td>BPure01</td>
+            <td>block in pure procedure</td>
+        </tr>
+        <tr>
+            <td>BPure02</td>
+            <td>temporary in block in pure procedure</td>
+        </tr>
+        <tr>
+            <td>BUse01</td>
+            <td>&gt;= 0 use statements</td>
+        </tr>
+        <tr>
+            <td>BUse02</td>
+            <td>USE: definitions available to block</td>
+        </tr>
+        <tr>
+            <td>BVarRedefined</td>
+            <td>(re)definition of variable name</td>
+        </tr>
+        <tr>
+            <td>BVolatile</td>
+            <td>var declared in containing scope marked as volatile in block</td>
+        </tr>
+    </tbody>
+</table>
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><u2:p></u2:p></span><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="background: none repeat scroll 0% 50% rgb(191, 191, 255); width: 100%;" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="padding: 2.5pt; width: 100%;">
+            <p align="center" style="text-align: center;" class="MsoNormal"><strong><span style="font-size: 14pt; font-family: Helvetica;"><!-- End Internal Interfaces --><u2:p></u2:p>IT2 Information</span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><!-- Start Inter-Component Communication/Interfaces --><u2:p></u2:p></span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">%Note{IT2 Location and other IT2 related information}%</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">Pathname:</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">F2008/block</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">F2008/block/unit_tests/diag</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">F2008/block/unit_tests/func</span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><br />
+</span></p>
+<p style="margin: 2pt 0in;"><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><u2:p></u2:p></span><u1:p></u1:p><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" style="background: none repeat scroll 0% 50% rgb(191, 191, 255); width: 100%;" class="MsoNormalTable">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" style="padding: 2.5pt; width: 100%;">
+            <p align="center" style="text-align: center;" class="MsoNormal"><strong><span style="font-size: 14pt; font-family: Helvetica;"><!-- End Inter-Component Communication/Interfaces --><u2:p></u2:p>Appendices/References</span></strong><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;"><u2:p></u2:p></span><span style="font-family: Helvetica;"><o:p></o:p></span></p>
+<p style="margin: 2pt 0in;"><span style="font-size: 11pt; font-family: Helvetica;">%Note{I0 Location and any references may help understand the IT1}%</span><span style="font-family: Helvetica;"><o:p></o:p></span></p><!--HTML Wrapper--></body></html>

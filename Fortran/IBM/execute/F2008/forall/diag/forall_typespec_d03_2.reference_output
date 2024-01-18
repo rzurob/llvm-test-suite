@@ -1,0 +1,5 @@
+"forall_typespec_d03.f", line 29.7: 1518-386 (L) The type specifier in the FORALL construct is not permitted by the Fortran 95 standard.
+"forall_typespec_d03.f", 1518-318 (L) The XLF2003(NOOLDNANINF) option can cause the program to behave in a way that is different from that specified by the Fortran 95 standard.
+"forall_typespec_d03.f", 1518-318 (L) The STOPEXCEPT option can cause the program to behave in a way that is different from that specified by the Fortran 95 standard.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file forall_typespec_d03.f.

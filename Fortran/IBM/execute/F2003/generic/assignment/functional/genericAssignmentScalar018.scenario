@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/assignment/functional/genericAssignmentScalar018.scenario
+#FEATURE = generic tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericAssignmentScalar018.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericAssignmentScalar018$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericAssignmentScalar018$(OBJ)
+#OUTPUT    = genericAssignmentScalar018$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericAssignmentScalar018$(EXE)
+#STDOUT    = genericAssignmentScalar018.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericAssignmentScalar018.out $(tcasedir)genericAssignmentScalar018.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/selectType/Select_Type03c.scenario
+#FEATURE   = DTP - Select Type
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20080826
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)Select_Type03c.f
+#OPTS = -qxlf2003=dynamicacval
+#OUTPUT    = Select_Type03c$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = Select_Type03c$(OBJ)
+#OUTPUT    = Select_Type03c$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = Select_Type03c$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

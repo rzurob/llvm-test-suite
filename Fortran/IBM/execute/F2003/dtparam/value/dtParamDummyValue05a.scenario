@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = dtParamDummyValue05a.scenario
+#FEATURE        = Derived Type Parameter - VALUE Attribute
+#CREATOR        = Andy Sheung
+#DATE           = July 2008
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD            = F_COMPILE
+#OPTS           = -qdebug=allowrpdt
+#INPUT          = $(tcasedir)dtParamDummyValue05a.f
+#OUTPUT         = dtParamDummyValue05a$(OBJ)
+#ENDCMD
+
+#CMD            = F_LINK
+#INPUT          = dtParamDummyValue05a$(OBJ)
+#OUTPUT         = dtParamDummyValue05a$(EXE)
+#ENDCMD
+
+
+#CMD            = RUN
+#INPUT          = dtParamDummyValue05a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

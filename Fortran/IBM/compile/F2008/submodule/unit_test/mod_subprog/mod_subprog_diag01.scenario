@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = submodule/unit_test/mod_subprog/mod_subprog_diag01.scenario
+#FEATURE   = F2008 Submodule
+#CREATOR   = Daniel Chen
+#DATE      = 20131120
+#TEST_TYPE = Diagnostic
+#KEYWORDS  = F2008, submodule, F2008 submodule
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD          = F_COMPILE
+#INPUT        = $(tcasedir)mod_subprog_diag01.f
+#OUTPUT       = mod_subprog_diag01$(OBJ)
+#STDOUT       = mod_subprog_diag01.out
+#STDERR       = mod_subprog_diag01.out
+#VALIDRCS     = $(RC_COMP_E)
+#ENDCMD
+
+#CMD          = XLDIFF
+#INPUT        = mod_subprog_diag01.out $(tcasedir)mod_subprog_diag01.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

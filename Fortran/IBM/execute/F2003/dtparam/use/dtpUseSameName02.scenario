@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/use/dtpUseSameName02.scenario
+#FEATURE   = DTP and USE - type specifier in ACE
+#CREATOR   = DF Manual Update
+#DATE      = 20080903
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $OMP_OPTS
+#INPUT     = $(tcasedir)dtpUseSameName02.f
+#OUTPUT    = dtpUseSameName02$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $OMP_OPTS
+#INPUT     = dtpUseSameName02$(OBJ)
+#OUTPUT    = dtpUseSameName02$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUseSameName02$(EXE)
+#STDOUT    = dtpUseSameName02.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUseSameName02$(product)vf) dtpUseSameName02.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

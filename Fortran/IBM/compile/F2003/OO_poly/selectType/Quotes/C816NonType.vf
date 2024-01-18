@@ -1,0 +1,7 @@
+"C816NonType.f", line 64.18: 1514-065 (E) Length specified is not valid for the specified type.  Default length assumed.
+"C816NonType.f", line 66.14: 1511-110 (S) Identifier cn specified in the type guard statement has not been defined in a derived type definition.
+"C816NonType.f", line 68.14: 1511-110 (S) Identifier any specified in the type guard statement has not been defined in a derived type definition.
+"C816NonType.f", line 70.14: 1511-110 (S) Identifier sub specified in the type guard statement has not been defined in a derived type definition.
+"C816NonType.f", line 72.14: 1511-110 (S) Identifier iface specified in the type guard statement has not been defined in a derived type definition.
+** c816nontype   === End of Compilation 1 ===
+1501-511  Compilation failed for file C816NonType.f.

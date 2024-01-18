@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/typCompatible/deferchar2.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071128
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)deferchar2.f
+#OUTPUT= deferchar2$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  deferchar2$(OBJ)
+#OUTPUT= deferchar2$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  deferchar2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

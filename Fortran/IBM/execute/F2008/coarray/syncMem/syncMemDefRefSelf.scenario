@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/syncMemDefRefSelf
+#FEATURE        = CAF SYNC MEMORY - each image storing into its own coarray slice
+#CREATOR        = DF
+#DATE           = 2010-09-17
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)syncMemDefRefSelf.f
+#OUTPUT = syncMemDefRefSelf$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = syncMemDefRefSelf$(OBJ)
+#OUTPUT = syncMemDefRefSelf$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = syncMemDefRefSelf$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

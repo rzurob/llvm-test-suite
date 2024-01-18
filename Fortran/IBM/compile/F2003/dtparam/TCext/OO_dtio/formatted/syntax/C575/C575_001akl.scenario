@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/formatted/syntax/C575/C575_001a.scenario
+#FEATURE = OO_dtio + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070723
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)C575_001akl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=shutup
+#OUTPUT    = C575_001akl$(OBJ)
+#STDERR    = C575_001akl.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)C575_001akl$(product)vf) C575_001akl.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,5 @@
+"genericC459GenericName001d.f", line 46.9: 1514-703 (S) All generic bindings with generic specification set in type base must have the same accessibility.
+"genericC459GenericName001d.f", line 59.9: 1514-703 (S) All generic bindings with generic specification set in type base2 must have the same accessibility.
+** m   === End of Compilation 1 ===
+** genericc459assignment001d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericC459GenericName001d.f.

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       intproc_arg_12.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       11-04-27
+#TEST_TYPE=  FUNCTIONAL
+#KEYWORDS=  F2008, internal procedure, dummy, procedure pointer target
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)intproc_arg_12.f
+#OUTPUT= intproc_arg_12$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  intproc_arg_12$(OBJ)
+#OUTPUT= intproc_arg_12$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  intproc_arg_12$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

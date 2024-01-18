@@ -1,0 +1,45 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/asynchIO/attribute/misc/implicitDerived01.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of asynchIO/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=bgq
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)implicitDerived01.f
+#OUTPUT		= implicitDerived01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= implicitDerived01$(OBJ)
+#OUTPUT		= implicitDerived01$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= implicitDerived01$(EXE)
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i '^implicitAsynchPoint[ 	]'
+#INPUT		= implicitDerived01$(LST)
+#STDOUT		= implicitDerived01.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= implicitDerived01.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

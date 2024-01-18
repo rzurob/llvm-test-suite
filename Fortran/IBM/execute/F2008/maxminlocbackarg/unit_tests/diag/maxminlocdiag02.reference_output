@@ -1,0 +1,4 @@
+"maxminlocdiag02.f", line 3.51: 1513-040 (S) The argument BACK must be a scalar.
+"maxminlocdiag02.f", line 6.37: 1513-040 (S) The argument BACK must be a scalar.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file maxminlocdiag02.f.

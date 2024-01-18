@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=ArrayConstructor/ArrayConstructorBrackets04
+#FEATURE = Array constructor enhancements
+#CREATOR = Rob James
+#DATE    = 20060915
+#TEST_TYPE=Unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ArrayConstructorBrackets04.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#OUTPUT    = ArrayConstructorBrackets04$(OBJ)
+#STDERR    = ArrayConstructorBrackets04.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)ArrayConstructorBrackets04$(product)vf) ArrayConstructorBrackets04.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

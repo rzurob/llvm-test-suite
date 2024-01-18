@@ -1,0 +1,49 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/attribute/args/C1233pointerArray08.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Attribute
+#CREATOR	= GM Manual Creation
+#DATE		= 20060410
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#IF on (linuxle)
+    XLFRTEOPTS=$(CONVERT_UFMT_IO_ENDIANESS<304007>)
+#ENDIF
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)C1233pointerArray08.dat .
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)C1233pointerArray08.f
+#OUTPUT		= C1233pointerArray08$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= C1233pointerArray08$(OBJ)
+#OUTPUT		= C1233pointerArray08$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= C1233pointerArray08$(EXE)
+#STDOUT		= C1233pointerArray08.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)C1233pointerArray08$(product)vf)	\
+				C1233pointerArray08.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

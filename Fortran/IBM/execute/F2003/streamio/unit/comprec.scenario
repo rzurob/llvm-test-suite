@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/streamio/unit/comprec.scenario
+#FEATURE = streamio tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)comprec.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = comprec$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  comprec$(OBJ)
+#OUTPUT    = comprec$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = comprec$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

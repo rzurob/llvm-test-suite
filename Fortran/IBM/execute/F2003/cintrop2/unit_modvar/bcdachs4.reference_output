@@ -1,0 +1,6 @@
+         36 |character*1, bind(c ::
+            ..............a.......b
+a - "bcdachs4.f", line 36.14: 1514-239 (S) Arrays with non-constant bounds are not permitted in the scope of a module.
+b - "bcdachs4.f", line 36.22: 1515-023 (S) Syntax Error: Illegal token " :: " is replaced by token " ) ".
+** mod   === End of Compilation 1 ===
+1501-511  Compilation failed for file bcdachs4.f.

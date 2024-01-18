@@ -1,0 +1,2 @@
+ 1525-042 The READ statement cannot be completed because the input data in the internal file did not specify a valid logical value.  The program will recover by ignoring the item in the READ statement.
+                                                                                                   

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpPtrAssignMainFixed.scenario
+#FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - assign via pointers with fixed length in main program
+#CREATOR   = DF Manual Update
+#DATE      = 20090112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPtrAssignMainFixed.f
+#OUTPUT    = dtpPtrAssignMainFixed$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPtrAssignMainFixed$(OBJ)
+#OUTPUT    = dtpPtrAssignMainFixed$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPtrAssignMainFixed$(EXE)
+#STDOUT    = dtpPtrAssignMainFixed.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpPtrAssignMainFixed$(product)vf) dtpPtrAssignMainFixed.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

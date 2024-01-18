@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/scalarExpr/allocArrVarScalarExpr01.scenario
+#FEATURE	= Intrinsic Assignment -- expr is a Scalar and variable is an Array
+#CREATOR	= GM Manual Creation
+#DATE		= 20061025
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)allocArrVarScalarExpr01.f
+#OUTPUT		= allocArrVarScalarExpr01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= allocArrVarScalarExpr01$(OBJ)
+#OUTPUT		= allocArrVarScalarExpr01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= allocArrVarScalarExpr01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

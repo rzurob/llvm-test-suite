@@ -1,0 +1,20 @@
+status 0
+call display(l2In)
+(mod)displayl2 (x=()) at submodule24f.f:71
+print *, "    i",x%i
+type = Type dtl2
+INTEGER :: i
+Type dtl3
+PTR TO -> ( INTEGER :: i)
+PTR TO -> ( BYTE :: b)
+REAL :: r
+End Type dtl3 :: l3
+PTR TO -> (     Type dtl3
+PTR TO -> ( INTEGER :: i)
+PTR TO -> ( BYTE :: b)
+REAL :: r
+End Type dtl3 :: l3alloc)
+End Type dtl2
+$1 = -2
+$2 = 2
+i -2

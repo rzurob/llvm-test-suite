@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/deferlen/functional/misc/deferLenArrayConstructor001d.scenario
+#FEATURE = deferlen tests
+#CREATOR = Robert Ma
+#DATE    = 20060501
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)deferLenArrayConstructor001d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = deferLenArrayConstructor001d$(OBJ)
+#STDERR    = deferLenArrayConstructor001d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = deferLenArrayConstructor001d.err $($(tcasedir)deferLenArrayConstructor001d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

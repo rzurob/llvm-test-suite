@@ -1,0 +1,6 @@
+ &NML1
+ B2=i=   3 c=ABC , i=   4 c=DEF , i=   5 c=GHI , i=   6 c=JKL
+ /
+ &NML2
+ B1=i=   1 c=abc , i=   2 c=def , B3=i=   7 c=ghi , i=   8 c=jkl , i=   9 c=mno , i=  10 c=pqr , B4=i=   3 c=ABC , i=   4 c=DEF , i=   5 c=GHI , i=   6 c=JKL
+ /

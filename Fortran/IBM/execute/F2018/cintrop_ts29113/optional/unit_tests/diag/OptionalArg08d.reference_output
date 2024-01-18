@@ -1,0 +1,13 @@
+"OptionalArg08d.f", line 32.13: 1513-265 (S) The ENTRY statement is obsolescent in the Fortran 2008 standard.  The ENTRY statement must not be used in conjunction with language features introduced in the Fortran 2008 or newer standards.
+** foo   === End of Compilation 1 ===
+"OptionalArg08d.f", line 42.13: 1513-265 (S) The ENTRY statement is obsolescent in the Fortran 2008 standard.  The ENTRY statement must not be used in conjunction with language features introduced in the Fortran 2008 or newer standards.
+"OptionalArg08d.f", line 44.13: 1513-265 (S) The ENTRY statement is obsolescent in the Fortran 2008 standard.  The ENTRY statement must not be used in conjunction with language features introduced in the Fortran 2008 or newer standards.
+"OptionalArg08d.f", line 46.13: 1513-265 (S) The ENTRY statement is obsolescent in the Fortran 2008 standard.  The ENTRY statement must not be used in conjunction with language features introduced in the Fortran 2008 or newer standards.
+** bar   === End of Compilation 2 ===
+"OptionalArg08d.f", line 59.13: 1513-265 (S) The ENTRY statement is obsolescent in the Fortran 2008 standard.  The ENTRY statement must not be used in conjunction with language features introduced in the Fortran 2008 or newer standards.
+"OptionalArg08d.f", line 65.13: 1513-265 (S) The ENTRY statement is obsolescent in the Fortran 2008 standard.  The ENTRY statement must not be used in conjunction with language features introduced in the Fortran 2008 or newer standards.
+"OptionalArg08d.f", line 69.13: 1513-265 (S) The ENTRY statement is obsolescent in the Fortran 2008 standard.  The ENTRY statement must not be used in conjunction with language features introduced in the Fortran 2008 or newer standards.
+"OptionalArg08d.f", line 71.13: 1513-265 (S) The ENTRY statement is obsolescent in the Fortran 2008 standard.  The ENTRY statement must not be used in conjunction with language features introduced in the Fortran 2008 or newer standards.
+** func1   === End of Compilation 3 ===
+** zap   === End of Compilation 4 ===
+1501-511  Compilation failed for file OptionalArg08d.f.

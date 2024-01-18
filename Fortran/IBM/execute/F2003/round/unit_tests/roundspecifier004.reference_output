@@ -1,0 +1,6 @@
+1525-222 The ROUND= specifier in the OPEN statement for unit 2 is not allowed because the FORM= specifier is set to UNFORMATTED.  The program will recover by ignoring the ROUND= specifier. 
+1525-020 The formatted I/O statement on unit 2 cannot be completed because the unit is connected to the unformatted file real4.dat.  The program will recover by ignoring the I/O statement.
+1525-020 The formatted I/O statement on unit 2 cannot be completed because the unit is connected to the unformatted file real4.dat.  The program will recover by ignoring the I/O statement.
+1525-222 The ROUND= specifier in the OPEN statement for unit 2 is not allowed because the FORM= specifier is set to UNFORMATTED.  The program will recover by ignoring the ROUND= specifier. 
+1525-020 The formatted I/O statement on unit 2 cannot be completed because the unit is connected to the unformatted file real4.dat.  The program will recover by ignoring the I/O statement.
+1525-020 The formatted I/O statement on unit 2 cannot be completed because the unit is connected to the unformatted file real4.dat.  The program will recover by ignoring the I/O statement.

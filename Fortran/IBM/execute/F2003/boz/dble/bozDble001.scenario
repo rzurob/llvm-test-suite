@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/F2003/boz/cmplx/bozDble001.scenario
+#FEATURE = boz-literal-constant in DBLE intrinsic
+#CREATOR = Vicram Uppal
+#DATE    = 20060206
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)bozDble001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = bozDble001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = bozDble001$(OBJ)
+#OUTPUT    = bozDble001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = bozDble001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

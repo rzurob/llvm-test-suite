@@ -1,0 +1,6 @@
+"diagC448.f", line 49.47: 1514-788 (S) all was declared with the CONTIGUOUS attribute. all must be an array pointer, an array pointer component, an assumed-shape array, or an assumed-rank object.
+"diagC448.f", line 56.34: 1514-788 (S) arr was declared with the CONTIGUOUS attribute. arr must be an array pointer, an array pointer component, an assumed-shape array, or an assumed-rank object.
+"diagC448.f", line 63.34: 1514-788 (S) cmp was declared with the CONTIGUOUS attribute. cmp must be an array pointer, an array pointer component, an assumed-shape array, or an assumed-rank object.
+** mod1   === End of Compilation 1 ===
+"diagC448.f", line 95.11: 1514-219 (S) Unable to access module symbol file for module mod1. Check path and file permissions of file. Use association not done for this module.
+1501-511  Compilation failed for file diagC448.f.

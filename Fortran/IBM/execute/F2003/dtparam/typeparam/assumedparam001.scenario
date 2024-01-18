@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/typeparam/assumedparam001.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)assumedparam001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = assumedparam001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = assumedparam001$(OBJ)
+#OUTPUT    = assumedparam001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = assumedparam001$(EXE)
+#STDOUT    = assumedparam001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = assumedparam001.out $($(tcasedir)assumedparam001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

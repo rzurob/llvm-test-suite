@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = cobound_d001.scenario
+#FEATURE  = CAF Intrinsics
+#CREATOR  = Francesco Cassullo
+#DATE     = September 2010
+#TEST_TYPE= DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_NOCOARRAY)
+#INPUT     = $(tcasedir)cobound_d001.f
+#OUTPUT    = cobound_d001$(OBJ)
+#STDOUT    = cobound_d001.out
+#STDERR    = cobound_d001.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)cobound_d001$(product)vf) cobound_d001.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

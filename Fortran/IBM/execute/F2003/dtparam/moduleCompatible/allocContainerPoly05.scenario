@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= allocContainerPoly05.scenario
+#FEATURE	=
+#CREATOR	= MZ adapted from F2003/dtparam/allocate/allocContainerPoly05.f
+#DATE		= 20100504
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_ALT_COMPILE
+#INPUT		= $(tcasedir)allocContainerPoly05_mod.f
+#OUTPUT		= allocContainerPoly05_mod$(OBJ)
+#ENDCMD
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)allocContainerPoly05_main.f
+#OUTPUT		= allocContainerPoly05_main$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= allocContainerPoly05_mod$(OBJ) allocContainerPoly05_main$(OBJ)
+#OUTPUT		= allocContainerPoly05$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= allocContainerPoly05$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

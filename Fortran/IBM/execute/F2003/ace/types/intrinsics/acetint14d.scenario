@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint14d.scenario
+#FEATURE	= Array constructor enhancement intrinsic type specifier tests
+#CREATOR	= DF Manual Update
+#DATE		= 20060620
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint14d.f
+#OUTPUT		= acetint14d$(OBJ)
+#STDERR		= acetint14d.stderr
+#VALIDRCS	= $(RC_ANY)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $(tcasedir)acetint14d.vf acetint14d.stderr
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint14d$(OBJ)
+#OUTPUT		= acetint14d$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint14d$(EXE)
+#STDOUT		= acetint14d.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

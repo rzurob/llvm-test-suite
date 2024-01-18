@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/DT/syntax/fdtedit005ad.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fdtedit005ad.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=intmsg -qdebug=shutup
+#OUTPUT    = fdtedit005ad$(OBJ)
+#STDERR    = fdtedit005ad.err
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)fdtedit005ad$(product)vf) fdtedit005ad.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

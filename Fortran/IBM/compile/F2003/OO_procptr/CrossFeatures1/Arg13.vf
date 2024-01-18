@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"Arg13.f", line 61.15: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+** arg13   === End of Compilation 2 ===
+** extf   === End of Compilation 3 ===
+1501-511  Compilation failed for file Arg13.f.

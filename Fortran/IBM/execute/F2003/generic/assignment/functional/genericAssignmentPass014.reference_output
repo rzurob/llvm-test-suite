@@ -1,0 +1,18 @@
+ int_base
+ 1
+ int_base
+ 1
+ int_base
+ 1
+ base_base
+ base_base
+ base_base
+ 1 1 1
+ base_child
+ base_child
+ base_child
+ 10 10 20 10 20
+ base_gen3
+ base_gen3
+ base_gen3
+ 100 100 200 100 200 300

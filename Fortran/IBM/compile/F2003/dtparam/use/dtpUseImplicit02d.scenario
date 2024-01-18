@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/use/dtpUseImplicit02d.scenario
+#FEATURE	= USEd type in implicit statement
+#CREATOR	= DF Manual Update
+#DATE		= 20070109
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)dtpUseImplicit02d.f
+#OUTPUT		= dtpUseImplicit02d$(OBJ)
+#STDERR		= dtpUseImplicit02d.stderr
+#VALIDRCS       = $(RC_COMP_S)
+#ENDCMD
+
+#CMD            = XLDIFF
+#INPUT          = $($(tcasedir)dtpUseImplicit02d$(product)vf) dtpUseImplicit02d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

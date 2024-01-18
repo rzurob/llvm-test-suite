@@ -1,0 +1,51 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/allocate/falloc506.scenario
+#FEATURE = OO_poly tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(F_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) $(F_COMPILE^OPT_FREE_SOURCE_FORM) $(F_COMPILE^OPT_SET_INFO_INFO_MSGS)  $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+! This chunk was DCOMP
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)falloc506.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_INFO_INFO_MSGS) -qdebug=intmsg:shutup
+#OUTPUT    = falloc506$(OBJ)
+#STDERR    = falloc506.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)falloc506$(product)vf) falloc506.err
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)falloc506.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_INFO_INFO_MSGS)
+#OUTPUT    = falloc506$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_INFO_INFO_MSGS)
+#INPUT     =  falloc506$(OBJ)
+#OUTPUT    = falloc506$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = falloc506$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

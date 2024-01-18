@@ -1,0 +1,22 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop1/isocbindm/fxisom20a.scenario
+#FEATURE = cintrop1 tests - regression run bucket
+#CREATOR = Manual conversion CPR
+#DATE    = 20060613
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+FTCARG="fxisom20a"
+CTCARG="cxisom20a"
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#INCLUDE   = scrisoa00.preshinclude
+
+#ENDCONTROL
+#ENDSCENARIO

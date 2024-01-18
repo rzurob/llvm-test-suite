@@ -1,0 +1,10 @@
+! automatically generated
+associate001.scenario
+associate001a.scenario
+associate002.scenario
+associate003.scenario
+associate004.scenario
+associate101.scenario
+associate102.scenario
+associate103.scenario
+associate104.scenario

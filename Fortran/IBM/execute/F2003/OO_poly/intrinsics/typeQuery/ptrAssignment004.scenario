@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/intrinsics/typeQuery/ptrAssignment004.scenario
+#FEATURE = OO_poly/intrinsics tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ptrAssignment004.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ptrAssignment004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  ptrAssignment004$(OBJ)
+#OUTPUT    = ptrAssignment004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ptrAssignment004$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

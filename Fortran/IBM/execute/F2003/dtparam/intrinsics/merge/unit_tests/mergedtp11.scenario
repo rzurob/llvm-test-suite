@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= mergedtp11.scenario
+#FEATURE= merge with parameterized derived types
+#CREATOR= dayanand
+#DATE= 20080906
+#TEST_TYPE= functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)mergedtp11.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = mergedtp11$(OBJ)
+#ENDCMD
+
+#CMD       = XLF_LINK
+#INPUT     = mergedtp11$(OBJ)
+#OUTPUT    = mergedtp11$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mergedtp11$(EXE)
+#STDOUT    = mergedtp11.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = mergedtp11.out $($(tcasedir)mergedtp11$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

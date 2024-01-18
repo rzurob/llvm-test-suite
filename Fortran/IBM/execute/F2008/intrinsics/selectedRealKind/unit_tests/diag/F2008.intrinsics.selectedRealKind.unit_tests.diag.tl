@@ -1,0 +1,2 @@
+SelRKindDiag1.scenario
+SelRKindDiag2.scenario

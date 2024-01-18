@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2040/generic/assignment/functional/genericAssignmentDtIntrinAssgn040.scenario
+#FEATURE = generic tests
+#CREATOR = Robert Ma
+#DATE    = 20401215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericAssignmentDtIntrinAssgn040.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericAssignmentDtIntrinAssgn040$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericAssignmentDtIntrinAssgn040$(OBJ)
+#OUTPUT    = genericAssignmentDtIntrinAssgn040$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericAssignmentDtIntrinAssgn040$(EXE)
+#STDOUT    = genericAssignmentDtIntrinAssgn040.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericAssignmentDtIntrinAssgn040.out $(tcasedir)genericAssignmentDtIntrinAssgn040.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

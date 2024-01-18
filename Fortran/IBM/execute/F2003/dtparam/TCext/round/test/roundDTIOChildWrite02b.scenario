@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/round/test/roundDTIOChildWrite02b.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of round/*
+#DATE      = 20071102
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)roundDTIOChildWrite02b.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = roundDTIOChildWrite02b$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = roundDTIOChildWrite02b$(OBJ)
+#OUTPUT    = roundDTIOChildWrite02b$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = roundDTIOChildWrite02b$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = roundDTIOChildWrite02b.out $($(tcasedir)roundDTIOChildWrite02b$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

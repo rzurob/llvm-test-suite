@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"implicit009.f", 1514-645 (S) base is an abstract type. base is not permitted in this context.
+"implicit009.f", 1514-645 (S) base is an abstract type. base is not permitted in this context.
+** implicit009   === End of Compilation 2 ===
+1501-511  Compilation failed for file implicit009.f.

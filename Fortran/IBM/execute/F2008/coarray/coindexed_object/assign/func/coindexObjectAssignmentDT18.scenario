@@ -1,0 +1,50 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2008/coarray/coindexed_object/assign/func/coindexObjectAssignmentDT18.scenario
+#FEATURE   =
+#CREATOR   = Shahid Alam
+#DATE      = 20110307
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)coindexObjectAssignmentDT18.f
+#OUTPUT    = coindexObjectAssignmentDT18$(OBJ)
+#STDOUT    = coindexObjectAssignmentDT18.out
+#STDERR    = coindexObjectAssignmentDT18.out
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = coindexObjectAssignmentDT18$(OBJ)
+#OUTPUT    = coindexObjectAssignmentDT18$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+   #CMD       = MPRUN
+   #INPUT     = coindexObjectAssignmentDT18$(EXE)
+   #STDOUT    = coindexObjectAssignmentDT18$(i).out
+   #STDERR    = coindexObjectAssignmentDT18$(i).out
+   #ENDCMD
+#ENDFOR
+
+#CMD       = GREP
+#INPUT     = 'Image: 1 :' coindexObjectAssignmentDT181.out > coindexObjectAssignmentDT18.grep
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = coindexObjectAssignmentDT18.grep $(tcasedir)coindexObjectAssignmentDT18.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

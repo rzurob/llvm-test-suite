@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/allocate/allocBaseVariable01.scenario
+#FEATURE	= ALLOCATE() Statement with DTP
+#CREATOR	= Glen Mateer
+#DATE		= 20081204
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)allocBaseVariable01.f
+#OUTPUT		= allocBaseVariable01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= allocBaseVariable01$(OBJ)
+#OUTPUT		= allocBaseVariable01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= allocBaseVariable01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

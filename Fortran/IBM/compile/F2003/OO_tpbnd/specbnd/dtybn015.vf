@@ -1,0 +1,4 @@
+"dtybn015.f", line 42.18: 1515-020 (S) Syntax Error: Token " :: " is missing. A token is supplied.
+** mod1   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtybn015.f.

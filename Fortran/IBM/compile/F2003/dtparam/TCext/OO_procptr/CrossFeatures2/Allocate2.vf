@@ -1,0 +1,12 @@
+** m   === End of Compilation 1 ===
+"Allocate2.f", line 81.12: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"Allocate2.f", line 82.12: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"Allocate2.f", line 83.12: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"Allocate2.f", line 84.12: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"Allocate2.f", line 86.14: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"Allocate2.f", line 87.14: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"Allocate2.f", line 88.14: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"Allocate2.f", line 90.14: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"Allocate2.f", line 91.14: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+** allocate2   === End of Compilation 2 ===
+1501-511  Compilation failed for file Allocate2.f.

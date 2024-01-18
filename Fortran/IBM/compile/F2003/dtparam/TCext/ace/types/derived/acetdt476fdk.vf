@@ -1,0 +1,39 @@
+** mod   === End of Compilation 1 ===
+"acetdt476fdk.f", line 91.16: 1514-718 (S) Identifier notused appearing as a type name has not been defined in a derived type definition.
+"acetdt476fdk.f", line 92.16: 1514-718 (S) Identifier notused appearing as a type name has not been defined in a derived type definition.
+"acetdt476fdk.f", line 92.31: 1516-044 (S) A conversion from type notused is not permitted.
+"acetdt476fdk.f", line 93.16: 1514-718 (S) Identifier notused appearing as a type name has not been defined in a derived type definition.
+"acetdt476fdk.f", line 94.16: 1514-718 (S) Identifier notused appearing as a type name has not been defined in a derived type definition.
+"acetdt476fdk.f", line 94.31: 1516-044 (S) A conversion from type notused is not permitted.
+"acetdt476fdk.f", line 95.16: 1514-718 (S) Identifier notused appearing as a type name has not been defined in a derived type definition.
+"acetdt476fdk.f", line 95.31: 1516-044 (S) A conversion from type notused is not permitted.
+"acetdt476fdk.f", line 96.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476fdk.f", line 96.28: 1514-718 (S) Identifier notused appearing as a type name has not been defined in a derived type definition.
+"acetdt476fdk.f", line 98.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476fdk.f", line 98.28: 1514-718 (S) Identifier notused appearing as a type name has not been defined in a derived type definition.
+"acetdt476fdk.f", line 98.43: 1516-044 (S) A conversion from type notused is not permitted.
+"acetdt476fdk.f", line 100.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476fdk.f", line 100.28: 1514-718 (S) Identifier notused appearing as a type name has not been defined in a derived type definition.
+"acetdt476fdk.f", line 100.43: 1516-044 (S) A conversion from type notused is not permitted.
+"acetdt476fdk.f", line 104.15: 1514-718 (S) Identifier notused appearing as a type name has not been defined in a derived type definition.
+"acetdt476fdk.f", line 105.15: 1514-718 (S) Identifier notused appearing as a type name has not been defined in a derived type definition.
+"acetdt476fdk.f", line 105.30: 1516-044 (S) A conversion from type notused is not permitted.
+"acetdt476fdk.f", line 106.15: 1514-718 (S) Identifier notused appearing as a type name has not been defined in a derived type definition.
+"acetdt476fdk.f", line 106.30: 1516-044 (S) A conversion from type notused is not permitted.
+"acetdt476fdk.f", line 107.15: 1514-718 (S) Identifier notused appearing as a type name has not been defined in a derived type definition.
+"acetdt476fdk.f", line 108.15: 1514-718 (S) Identifier notused appearing as a type name has not been defined in a derived type definition.
+"acetdt476fdk.f", line 108.30: 1516-044 (S) A conversion from type notused is not permitted.
+"acetdt476fdk.f", line 109.15: 1514-718 (S) Identifier notused appearing as a type name has not been defined in a derived type definition.
+"acetdt476fdk.f", line 109.30: 1516-044 (S) A conversion from type notused is not permitted.
+"acetdt476fdk.f", line 110.15: 1514-718 (S) Identifier notused appearing as a type name has not been defined in a derived type definition.
+"acetdt476fdk.f", line 110.30: 1516-044 (S) A conversion from type notused is not permitted.
+"acetdt476fdk.f", line 111.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476fdk.f", line 111.27: 1514-718 (S) Identifier notused appearing as a type name has not been defined in a derived type definition.
+"acetdt476fdk.f", line 113.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476fdk.f", line 113.27: 1514-718 (S) Identifier notused appearing as a type name has not been defined in a derived type definition.
+"acetdt476fdk.f", line 113.42: 1516-044 (S) A conversion from type notused is not permitted.
+"acetdt476fdk.f", line 115.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476fdk.f", line 115.27: 1514-718 (S) Identifier notused appearing as a type name has not been defined in a derived type definition.
+"acetdt476fdk.f", line 115.42: 1516-044 (S) A conversion from type notused is not permitted.
+** acetdt476fdk   === End of Compilation 2 ===
+1501-511  Compilation failed for file acetdt476fdk.f.

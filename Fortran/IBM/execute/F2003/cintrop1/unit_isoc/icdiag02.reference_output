@@ -1,0 +1,14 @@
+  56.14   016100C8 c_f_pointer‹
+  57.14   016100C8 c_f_pointer‹
+  58.14   016100C8 c_f_pointer‹
+  59.26   016100C9 C_F_POINTER‹
+  60.26   016100C9 C_F_POINTER‹
+  61.26   016100C9 C_F_POINTER‹
+  62.29   016103A9 POINTER‹
+  63.32   010103A4 
+  64.29   0161067D 
+  65.32   0161067E 
+  66.32   010103A5 
+  67.32   016100C9 c_f_pointer‹
+** icdiag02   === End of Compilation 1 ===
+1501-511  Compilation failed for file icdiag02.f.

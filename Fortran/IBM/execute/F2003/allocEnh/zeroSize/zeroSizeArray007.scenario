@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/allocEnh/seroSize/zeroSizeArray007.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)zeroSizeArray007.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = zeroSizeArray007$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = zeroSizeArray007$(OBJ)
+#OUTPUT    = zeroSizeArray007$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = zeroSizeArray007$(EXE)
+#STDOUT    = zeroSizeArray007.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = zeroSizeArray007.out $($(tcasedir)zeroSizeArray007$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

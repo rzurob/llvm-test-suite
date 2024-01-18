@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dtp_arg31.f
+#FEATURE=    DTP for argument association
+#CREATOR=    Huiwen Li
+#DATE=       06-06-19
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dtp_arg31.f
+#OUTPUT= dtp_arg31$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  dtp_arg31$(OBJ)
+#OUTPUT= dtp_arg31$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dtp_arg31$(EXE)
+#STDOUT= dtp_arg31.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtp_arg31$(product)vf) dtp_arg31.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

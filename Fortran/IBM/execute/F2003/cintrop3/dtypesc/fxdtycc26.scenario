@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop3/dtypesc/fxdtycc26.scenario
+#FEATURE = cintrop3 tests - regression run bucket
+#CREATOR = Manual conversion CPR
+#DATE    = 20060725
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#BEGINDEFS
+FTCARG="fxdtycc26"
+CTCARG="cxdtycc26"
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#INCLUDE   = scrdtyc00.preshinclude
+
+#ENDCONTROL
+#ENDSCENARIO

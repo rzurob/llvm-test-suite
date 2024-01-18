@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/ArraySections/arrsec2_assumed_shape.scenario
+#FEATURE   = 353925
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20081013
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)arrsec2_assumed_shape.f
+#OUTPUT    = arrsec2_assumed_shape$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = arrsec2_assumed_shape$(OBJ)
+#OUTPUT    = arrsec2_assumed_shape$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = arrsec2_assumed_shape$(EXE)
+#STDOUT    = arrsec2_assumed_shape.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)arrsec2_assumed_shape$(product)vf) arrsec2_assumed_shape.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

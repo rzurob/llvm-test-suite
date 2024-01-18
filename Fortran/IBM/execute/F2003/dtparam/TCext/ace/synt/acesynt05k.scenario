@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/synt/acesynt05k.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement	\
+			   Syntax Tests)
+#CREATOR	= Glen Mateer (based on work by David Forster)
+#DATE		= 20071206
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acesynt05k.f
+#OUTPUT		= acesynt05k$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acesynt05k$(OBJ)
+#OUTPUT		= acesynt05k$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acesynt05k$(EXE)
+#STDOUT		= acesynt05k.stdout
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acesynt05k$(product)vf) acesynt05k.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

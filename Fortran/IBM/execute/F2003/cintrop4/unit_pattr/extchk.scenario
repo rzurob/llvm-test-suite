@@ -1,0 +1,74 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop4/unit_pattr/extchk.scenario
+#FEATURE = cintrop4 tests - regression run bucket
+#CREATOR = CPR Manual update
+#DATE    = 20060810
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+!OPTIONS=$(? XOPTS) -qdebug=intmsg  $(COMP_LIBS)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS)
+#INPUT     = $(tcasedir)extchk-c.c
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)extchk.f
+#STDERR    = extchk.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = extchk.out $(tcasedir)extchk.vf
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = extchk-c$(OBJ) extchk$(OBJ)
+#OUTPUT    = extchk$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = extchk$(EXE)
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -qdebug=intmsg $(OPT_CHECK_TYPES_AT_BIND_TIME)
+#INPUT     = $(tcasedir)extchk.f
+#STDOUT    = extchk.out1
+#STDERR    = extchk.out1
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = extchk-c$(OBJ) extchk$(OBJ)
+#OUTPUT    = extchk$(EXE)
+#STDOUT    = extchk.out2
+#STDERR    = extchk.out2
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = extchk.out1 extchk.out2
+#STDOUT    = extchk.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#IF on(aix) && (in($(F_COMPILE^OPT_OPTIMIZE_LEVEL4)) || in($(F_COMPILE^OPT_OPTIMIZE_LEVEL5)))
+  #INPUT     = extchk.out $($(tcasedir)extchk$(product).$(OPT_CHECK_TYPES_AT_BIND_TIME).ipa.vf)
+#ELSE
+  #INPUT     = extchk.out $($(tcasedir)extchk$(product).$(OPT_CHECK_TYPES_AT_BIND_TIME).vf)
+#ENDIF
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = extchk$(EXE)
+#ENDCMD
+
+
+
+#ENDCONTROL
+#ENDSCENARIO

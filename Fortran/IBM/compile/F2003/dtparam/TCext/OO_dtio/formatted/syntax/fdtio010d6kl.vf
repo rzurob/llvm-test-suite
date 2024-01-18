@@ -1,0 +1,9 @@
+** m   === End of Compilation 1 ===
+"fdtio010d6kl.f", line 42.8: 1514-603 (S) Dummy argument iotype of the derived-type I/O procedure writepointformatted must not be specified with the OPTIONAL attribute.
+"fdtio010d6kl.f", line 42.8: 1514-603 (S) Dummy argument v_list of the derived-type I/O procedure writepointformatted must not be specified with the TARGET attribute.
+"fdtio010d6kl.f", line 42.8: 1514-603 (S) Dummy argument iostat of the derived-type I/O procedure writepointformatted must not be specified with the POINTER attribute.
+"fdtio010d6kl.f", line 42.8: 1514-603 (S) Dummy argument dtv of the derived-type I/O procedure writepointformatted must not be specified with the VALUE attribute.
+"fdtio010d6kl.f", line 42.8: 1514-603 (S) Dummy argument unit of the derived-type I/O procedure writepointformatted must not be specified with the VOLATILE attribute.
+"fdtio010d6kl.f", line 49.50: 1514-018 (E) Identifier "iomsg" may not have the SAVE attribute specified.  SAVE attribute is ignored for this variable.
+** fdtio010d6kl   === End of Compilation 2 ===
+1501-511  Compilation failed for file fdtio010d6kl.f.

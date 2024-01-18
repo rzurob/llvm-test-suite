@@ -1,0 +1,4 @@
+fkindcharacter.scenario
+fkindint.scenario
+fkindreal.scenario
+fkindlogical.scenario

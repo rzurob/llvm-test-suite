@@ -1,0 +1,4 @@
+"execute_command_line03d.f", line 39.53: 1513-067 (S) Argument keyword "command" was already specified for an actual argument.
+"execute_command_line03d.f", line 40.45: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "execute_command_line".
+** execute_command_line02d   === End of Compilation 1 ===
+1501-511  Compilation failed for file execute_command_line03d.f.

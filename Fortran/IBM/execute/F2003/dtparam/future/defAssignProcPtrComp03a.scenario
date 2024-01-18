@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/defAssignn/defAssignProcPtrComp03a.scenario
+#FEATURE   = 361704
+#CREATOR   = Nancy Wang
+#DATE      = Feb. 18 2009
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)defAssignProcPtrComp03a.f
+#OUTPUT= defAssignProcPtrComp03a$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = defAssignProcPtrComp03a$(OBJ)
+#OUTPUT= defAssignProcPtrComp03a$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = defAssignProcPtrComp03a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

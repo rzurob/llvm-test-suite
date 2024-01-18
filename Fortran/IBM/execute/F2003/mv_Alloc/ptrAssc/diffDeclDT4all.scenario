@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       diffDeclDT4all.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)diffDeclDT4all.f
+#OUTPUT= diffDeclDT4all$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  diffDeclDT4all$(OBJ)
+#OUTPUT= diffDeclDT4all$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  diffDeclDT4all$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

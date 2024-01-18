@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"d354657.f", line 43.27: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+** d354657   === End of Compilation 2 ===
+1501-511  Compilation failed for file d354657.f.

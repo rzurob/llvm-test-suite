@@ -1,0 +1,31 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      Save.f
+#FEATURE= PROCEDURE POINTER
+#CREATOR=   Feng Ye
+#DATE=      06-06-05
+#TEST_TYPE= DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=      F_COMPILE
+#OPTS=     $(OPT_FREE_SOURCE_FORM)
+#INPUT=    $(tcasedir)Save.f
+#STDERR=   Save.err
+#VALIDRCS= 0
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    Save.err $($(tcasedir)Save$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

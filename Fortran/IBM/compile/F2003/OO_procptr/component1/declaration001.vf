@@ -1,0 +1,5 @@
+"declaration001.f", line 30.39: 1515-113 (E) The declaration of pp1 as a procedure pointer component requires the POINTER attribute.  The POINTER attribute is assumed.
+"declaration001.f", line 31.42: 1515-113 (E) The declaration of pp2 as a procedure pointer component requires the POINTER attribute.  The POINTER attribute is assumed.
+** m   === End of Compilation 1 ===
+** declaration001   === End of Compilation 2 ===
+1501-510  Compilation successful for file declaration001.f.

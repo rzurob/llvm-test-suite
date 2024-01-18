@@ -1,0 +1,47 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2008/value/pure/unit_tests/hpf_pure/fxpure06a.scenario
+#FEATURE = 384867 \
+           F2008: VALUE attribute allowed for dummy args of PURE procedures
+#CREATOR = Gaby Baghdadi (copy of /tstdev/hpf_pure/fxpure06a.scenario)
+#DATE    = 20101201
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+PROCS=4
+COMPILER=$(tproddir)$(XLF90_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) $(F_COMPILE^OPT_FIXED_SOURCE_FORM) $(F_COMPILE^OPT_GEN_CODE_FOR_GENERIC_ARCHITECTURE<com>)  $(COMP_LIBS)
+#ENDDEFS
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)fxpure06a.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM) $(OPT_GEN_CODE_FOR_GENERIC_ARCHITECTURE<com>)
+#OUTPUT    = fxpure06a$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#OPTS      = $(OPT_FIXED_SOURCE_FORM) $(OPT_GEN_CODE_FOR_GENERIC_ARCHITECTURE<com>)
+#INPUT     =  fxpure06a$(OBJ)
+#OUTPUT    = fxpure06a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxpure06a$(EXE)
+#STDOUT    = fxpure06a.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r
+#INPUT     = 0.0001 fxpure06a.out $($(tcasedir)fxpure06a$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

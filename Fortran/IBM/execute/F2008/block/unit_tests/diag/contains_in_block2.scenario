@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=contains_in_block2.scenario
+#FEATURE = F2008 BLOCK construct
+#CREATOR = Pooja Dayanand
+#DATE    = 20101021
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)contains_in_block2.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#STDERR    = contains_in_block2.out
+#VALIDRCS  = $(RC_COMP_E)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = contains_in_block2.out $(tcasedir)contains_in_block2.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

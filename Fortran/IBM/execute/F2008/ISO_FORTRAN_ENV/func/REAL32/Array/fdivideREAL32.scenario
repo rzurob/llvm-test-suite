@@ -1,0 +1,62 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       fdivideREAL32
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2008_COMPILE
+#INPUT=  $(tcasedir)fdivideREAL32.f
+#OUTPUT= fdivideREAL32$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_LINK
+#INPUT=  fdivideREAL32$(OBJ)
+#OUTPUT= fdivideREAL32$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fdivideREAL32$(EXE)
+#ENDCMD
+
+#CMD=    XLF2008_COMPILE
+#OPTS=   $(OPT_REALSIZE_8)
+#INPUT=  $(tcasedir)fdivideREAL32.f
+#OUTPUT= fdivideREAL32_1$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_LINK
+#OPTS=   $(OPT_REALSIZE_8)
+#INPUT=  fdivideREAL32_1$(OBJ)
+#OUTPUT= fdivideREAL32_1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fdivideREAL32_1$(EXE)
+#ENDCMD
+
+#CMD=    XLF2008_COMPILE
+#OPTS=   -qautodbl=dbl
+#INPUT=  $(tcasedir)fdivideREAL32.f
+#OUTPUT= fdivideREAL32_2$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_LINK
+#OPTS=   -qautodbl=dbl
+#INPUT=  fdivideREAL32_2$(OBJ)
+#OUTPUT= fdivideREAL32_2$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fdivideREAL32_2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

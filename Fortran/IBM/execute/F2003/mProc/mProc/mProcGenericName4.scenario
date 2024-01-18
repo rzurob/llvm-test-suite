@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       mProcGenericName4.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       03-03-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)mProcGenericName4.f
+#OUTPUT= mProcGenericName4$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  mProcGenericName4$(OBJ)
+#OUTPUT= mProcGenericName4$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  mProcGenericName4$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

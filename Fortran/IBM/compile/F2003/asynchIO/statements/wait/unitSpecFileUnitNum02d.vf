@@ -1,0 +1,6 @@
+"unitSpecFileUnitNum02d.f", line 63.10: 1515-019 (S) Syntax is incorrect.
+"unitSpecFileUnitNum02d.f", line 66.20: 1512-084 (S) An asterisk for the UNIT= specifier is only permitted for READ, WRITE and PRINT statements.  The statement is ignored.
+"unitSpecFileUnitNum02d.f", line 70.10: 1512-018 (S) The UNIT specifier must be an integer expression.
+"unitSpecFileUnitNum02d.f", line 73.37: 1512-018 (S) The UNIT specifier must be an integer expression.
+** unitspecfileunitnum02d   === End of Compilation 1 ===
+1501-511  Compilation failed for file unitSpecFileUnitNum02d.f.

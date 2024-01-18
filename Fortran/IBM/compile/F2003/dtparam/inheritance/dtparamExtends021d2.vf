@@ -1,0 +1,5 @@
+"dtparamExtends021d2.f", line 41.8: 1514-595 (S) Type childseq, specified with the EXTENDS attribute, must not contain the SEQUENCE statement.
+"dtparamExtends021d2.f", line 48.4: 1514-529 (S) Type childbind was declared with the BIND attribute. childbind must not be declared with the EXTENDS attribute.
+"dtparamExtends021d2.f", line 48.37: 1514-730 (S) Derived type childbind with the BIND attribute must not have type parameters.
+** dtparamextends021d2   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtparamExtends021d2.f.

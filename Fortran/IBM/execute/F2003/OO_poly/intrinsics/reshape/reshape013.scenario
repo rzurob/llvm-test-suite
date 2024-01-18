@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/intrinsics/reshape/reshape013.scenario
+#FEATURE = OO_poly/intrinsics tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)reshape013.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = reshape013$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  reshape013$(OBJ)
+#OUTPUT    = reshape013$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = reshape013$(EXE)
+#STDOUT    = reshape013.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)reshape013$(product)vf) reshape013.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

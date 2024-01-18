@@ -1,0 +1,8 @@
+1501-510  Compilation successful for file icdiag05.f.
+"icdiag05.f", line 48.19: 1518-395 (L) Argument a to the intrinsic procedure C_LOC does not have interoperable type and type parameters. a must be a scalar nonpolymorphic variable with no length type parameters by the Fortran 2003 standard.
+"icdiag05.f", line 48.19: 1518-407 (L) The actual argument to the C_LOC intrinsic procedure is of type character.  The length type parameter of the argument is required to be interoperable with a C type by the Fortran 2003 standard.
+"icdiag05.f", line 49.19: 1518-407 (L) The actual argument to the C_LOC intrinsic procedure is of type character.  The length type parameter of the argument is required to be interoperable with a C type by the Fortran 2003 standard.
+"icdiag05.f", line 50.19: 1518-395 (L) Argument b to the intrinsic procedure C_LOC does not have interoperable type and type parameters. b must be a scalar nonpolymorphic variable with no length type parameters by the Fortran 2003 standard.
+"icdiag05.f", line 50.19: 1518-407 (L) The actual argument to the C_LOC intrinsic procedure is of type character.  The length type parameter of the argument is required to be interoperable with a C type by the Fortran 2003 standard.
+"icdiag05.f", line 51.19: 1518-407 (L) The actual argument to the C_LOC intrinsic procedure is of type character.  The length type parameter of the argument is required to be interoperable with a C type by the Fortran 2003 standard.
+** sub   === End of Compilation 1 ===

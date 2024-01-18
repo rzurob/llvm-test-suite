@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/typeQuery/structureConstructor009.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071001
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)structureConstructor009.f
+#OUTPUT    = structureConstructor009$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = structureConstructor009$(OBJ)
+#OUTPUT    = structureConstructor009$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = structureConstructor009$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

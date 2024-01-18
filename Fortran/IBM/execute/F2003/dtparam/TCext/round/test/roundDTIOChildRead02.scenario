@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/round/test/roundDTIOChildRead02.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of round/*
+#DATE      = 20071102
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)roundDTIOChildRead02.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = roundDTIOChildRead02$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = roundDTIOChildRead02$(OBJ)
+#OUTPUT    = roundDTIOChildRead02$(EXE)
+#ENDCMD
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)roundDTIOChildRead02.dat
+#OUTPUT   = ./
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = roundDTIOChildRead02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

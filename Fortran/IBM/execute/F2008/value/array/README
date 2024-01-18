@@ -1,0 +1,24 @@
+!*******************************************************************************
+!* Bucket brief description.
+!*
+!* DESCRIPTION: VALUE(F2008 extension) - dummy argument arrays allowed with value
+!*
+!*******************************************************************************
+!
+!
+Feature XLF V15.1.3
+
+   RTC Master Story : 72283: F2008:  Extensions to the VALUE attribute
+   https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/72283
+      
+   No I0  document
+   
+   IT1:
+      family: aix,  release: des.dev, component: design.it1,
+      file:   designs/it1/it1___f2008__extensions_to_the_value_attribute/it1___f2008__extensions_to_the_value_attribute.html
+      FF:     https://featureflow.torolab.ibm.com/featureflow/show/8036
+	  
+   IT2:
+      family: aix,  release: des.dev, component: design.it2,
+      file:   designs/it2/it2___f2008__extensions_to_the_value_attribute/it2___f2008__extensions_to_the_value_attribute.html
+      FF:     https://featureflow.torolab.ibm.com/featureflow/show/8069

@@ -1,0 +1,6 @@
+** type   === End of Compilation 1 ===
+** m   === End of Compilation 2 ===
+** n   === End of Compilation 3 ===
+"genericAmbiguityInterface001d.f", line 86.8: 1514-699 (S) Procedure "add2" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "add1", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** genericambiguityinterface001d   === End of Compilation 4 ===
+1501-511  Compilation failed for file genericAmbiguityInterface001d.f.

@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/reshape/diagnose001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070928
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)diagnose001.f
+#OPTS      = -qdebug=intmsg:shutup
+#OUTPUT    = diagnose001$(OBJ)
+#STDERR    = diagnose001.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)diagnose001$(product)vf) diagnose001.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

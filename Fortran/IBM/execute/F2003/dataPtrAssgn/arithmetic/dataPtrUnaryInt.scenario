@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrUnaryInt.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrUnaryInt.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrUnaryInt$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrUnaryInt$(OBJ)
+#OUTPUT    = dataPtrUnaryInt$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrUnaryInt$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

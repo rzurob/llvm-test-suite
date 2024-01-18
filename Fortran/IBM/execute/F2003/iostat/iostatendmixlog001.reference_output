@@ -1,0 +1,26 @@
+  I =  1  A(I) =  123
+  I =  2  A(I) =  234
+  I =  3  A(I) =  345
+  I =  4  A(I) =  456
+  I =  5  A(I) =  567
+  I =  6  A(I) =  678
+  I =  7  A(I) =  789
+  I =  8  A(I) =  890
+  I =  9  A(I) =  901
+  I =  10  A(I) =  112
+ ios =  0
+ four letter word = boat
+ ios =  0
+ four letter word = moat
+ ios =  0
+ four letter word = rake
+ ios =  0
+ four letter word = take
+ ios =  0
+ four letter word = plan
+ case 1 
+ good
+ case 2 
+ good
+ case 3 
+ good

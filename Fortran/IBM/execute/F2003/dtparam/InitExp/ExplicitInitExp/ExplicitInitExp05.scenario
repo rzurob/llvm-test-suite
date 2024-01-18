@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/InitExp/ExplicitInitExp/ExplicitInitExp05.scenario
+#FEATURE   = DTP - Explicit Init. Expression
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20090414
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ExplicitInitExp05.f
+#OUTPUT    = ExplicitInitExp05$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = ExplicitInitExp05$(OBJ)
+#OUTPUT    = ExplicitInitExp05$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ExplicitInitExp05$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

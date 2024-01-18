@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/typCompatible/mixunlmtpolyDT.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071105
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)mixunlmtpolyDT.f
+#OUTPUT= mixunlmtpolyDT$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  mixunlmtpolyDT$(OBJ)
+#OUTPUT= mixunlmtpolyDT$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  mixunlmtpolyDT$(EXE)
+#STDOUT= mixunlmtpolyDT.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = mixunlmtpolyDT.out $(tcasedir)mixunlmtpolyDT.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

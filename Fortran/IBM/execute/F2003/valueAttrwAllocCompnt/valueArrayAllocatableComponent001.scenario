@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/home/robertma/tc/F2003/valueAttrDTwAllocatableComponents/valueArrayAllocatableComponent001.scenario
+#FEATURE = value attribute with DT containing allocatable components test cases
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)valueArrayAllocatableComponent001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = valueArrayAllocatableComponent001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = valueArrayAllocatableComponent001$(OBJ)
+#OUTPUT    = valueArrayAllocatableComponent001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = valueArrayAllocatableComponent001$(EXE)
+#STDOUT    = valueArrayAllocatableComponent001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = valueArrayAllocatableComponent001.out $(tcasedir)valueArrayAllocatableComponent001.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,8 @@
+"mxminlocConform01d.f", line 40.26: 1513-040 (S) The argument DIM must be a scalar.
+"mxminlocConform01d.f", line 42.26: 1513-040 (S) The argument DIM must be a scalar.
+"mxminlocConform01d.f", line 44.22: 1513-134 (S) Array argument required.
+"mxminlocConform01d.f", line 46.22: 1513-134 (S) Array argument required.
+"mxminlocConform01d.f", line 48.33: 1513-132 (S) Conformable argument required.
+"mxminlocConform01d.f", line 50.9: 1516-082 (S) Array object or expression is invalid in this context.
+** mxminlocconform01d   === End of Compilation 1 ===
+1501-511  Compilation failed for file mxminlocConform01d.f.

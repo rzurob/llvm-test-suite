@@ -1,0 +1,55 @@
+ xk4d  = xk4a+xk4b*xk4c
+ binaryStarK: 2 3 -> 6
+ binaryPlusK: 12 6 -> 18
+ xk4d  = xk4a+(xk4b*xk4c)
+ binaryStarK: 2 3 -> 6
+ binaryPlusK: 12 6 -> 18
+ xk4d  = xk4a*xk4b+xk4c
+ binaryStarK: 12 2 -> 24
+ binaryPlusK: 24 3 -> 27
+ xk4d  = (xk4a*xk4b)+xk4c
+ binaryStarK: 12 2 -> 24
+ binaryPlusK: 24 3 -> 27
+ xk4d  = (xk4a+xk4b)*xk4c
+ binaryPlusK: 12 2 -> 14
+ binaryStarK: 14 3 -> 42
+ xk4d  = (xk4a-xk4b)*xk4c
+ binaryMinusK: 12 2 -> 10
+ binaryStarK: 10 3 -> 30
+ xk4d  = xk4a*xk4b+xk4b*xk4c
+ binaryStarK: 12 2 -> 24
+ binaryStarK: 2 3 -> 6
+ binaryPlusK: 24 6 -> 30
+ xk4d  = xk4a/xk4b*xk4b**xk4c-xk4c
+ binarySlashK: 12 2 -> 6
+ binaryPowerK: 2 3 -> 8
+ binaryStarK: 6 8 -> 48
+ binaryMinusK: 48 3 -> 45
+ x2l4d  = x2l4a + x2l4b*x2l4c
+ binaryStar2L: 5 btwlo 7 5 csxkp 4 -> 7 &|hDPXW 0
+ binaryPlus2L: 7 auvmnwx 13 7 &|hDPXW 0 -> 8 GQ>q~//Y 13
+ x2l4d  = x2l4a + (x2l4b*x2l4c)
+ binaryStar2L: 5 btwlo 7 5 csxkp 4 -> 7 &|hDPXW 0
+ binaryPlus2L: 7 auvmnwx 13 7 &|hDPXW 0 -> 8 GQ>q~//Y 13
+ x2l4d  = x2l4b*x2l4c + x2l4a
+ binaryStar2L: 5 btwlo 7 5 csxkp 4 -> 7 &|hDPXW 0
+ binaryPlus2L: 7 &|hDPXW 0 7 auvmnwx 13 -> 8 GQ>q~//Y 13
+ x2l4d  = (x2l4c*x2l4b) + x2l4a
+ binaryStar2L: 5 csxkp 4 5 btwlo 7 -> 7 &|hDPXW 0
+ binaryPlus2L: 7 &|hDPXW 0 7 auvmnwx 13 -> 8 GQ>q~//Y 13
+ x2l4d  = (x2l4b+x2l4c) * x2l4e
+ binaryPlus2L: 5 btwlo 7 5 csxkp 4 -> 6 %GO7?Y 0
+ binaryStar2L: 6 %GO7?Y 0 6 dryjqv 9 -> 8 T>Wf/FXW 0
+ x2l4d  = (x2l4b-x2l4c) * x2l4e
+ binaryMinus2L: 5 btwlo 7 5 csxkp 4 -> 4 Q!!! 3
+ binaryStar2L: 4 Q!!! 3 6 dryjqv 9 -> 6 D2YJXW 0
+ x2l4d  = x2l4b*x2l4c + x2l4c*x2l4b
+ binaryStar2L: 5 btwlo 7 5 csxkp 4 -> 7 &|hDPXW 0
+ binaryStar2L: 5 csxkp 4 5 btwlo 7 -> 7 &|hDPXW 0
+ binaryPlus2L: 7 &|hDPXW 0 7 &|hDPXW 0 -> 8 lX0H`pnY 0
+ x2l4k  = x2l4h/x2l4i*x2l4f**x2l4g - x2l4j
+ binarySlash2L: 4 gnbi 69 4 hmch 23 -> 2 P' 0
+ binaryPower2L: 3 eqz 2 3 foa 5 -> 6 !!:VUT 0
+ binaryStar2L: 2 P' 0 6 !!:VUT 0 -> 4 PGXW 0
+ binaryMinus2L: 4 PGXW 0 8 ildgruya 122 -> 3 Q9E -256
+ end

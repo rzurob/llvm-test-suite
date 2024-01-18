@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=len_k8_f1.scenario
+#FEATURE = Support new Kind Parameter for Several Intrinsics
+#CREATOR = Vince Yuen
+#DATE    = 20060414
+#TEST_TYPE=functional ut
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)len_k8_f1.f
+#OPTS      = $(OPT_INTSIZE_2)
+#OUTPUT    = len_k8_f1$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = len_k8_f1$(OBJ)
+#OUTPUT    = len_k8_f1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = len_k8_f1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

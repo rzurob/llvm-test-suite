@@ -1,0 +1,64 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       fmultiplyINT8
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)fmultiplyINT8.f
+#OUTPUT= fmultiplyINT8$(OBJ)
+#ENDCMD
+
+#CMD=    XLF_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  fmultiplyINT8$(OBJ)
+#OUTPUT= fmultiplyINT8$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fmultiplyINT8$(EXE)
+#ENDCMD
+
+#CMD=    XLF_COMPILE
+#OPTS=   $(OPT_INTSIZE_8) $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)fmultiplyINT8.f
+#OUTPUT= fmultiplyINT8_1$(OBJ)
+#ENDCMD
+
+#CMD=    XLF_LINK
+#OPTS=   $(OPT_INTSIZE_8) $(OPT_FREE_SOURCE_FORM)
+#INPUT=  fmultiplyINT8_1$(OBJ)
+#OUTPUT= fmultiplyINT8_1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fmultiplyINT8_1$(EXE)
+#ENDCMD
+
+#CMD=    XLF_COMPILE
+#OPTS=   $(OPT_INTSIZE_4) $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)fmultiplyINT8.f
+#OUTPUT= fmultiplyINT8_2$(OBJ)
+#ENDCMD
+
+#CMD=    XLF_LINK
+#OPTS=   $(OPT_INTSIZE_4) $(OPT_FREE_SOURCE_FORM)
+#INPUT=  fmultiplyINT8_2$(OBJ)
+#OUTPUT= fmultiplyINT8_2$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fmultiplyINT8_2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

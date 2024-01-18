@@ -1,0 +1,28 @@
+"AssumedType07d.f", line 32.6: 1514-095 (S) Invalid statement within derived type definition.
+"AssumedType07d.f", line 36.6: 1514-095 (S) Invalid statement within derived type definition.
+** type_mod   === End of Compilation 1 ===
+"AssumedType07d.f", line 42.28: 1514-807 (S) Entity mod_wrong1 has assumed type. mod_wrong1 must be a dummy argument.
+"AssumedType07d.f", line 43.28: 1514-807 (S) Entity mod_wrong2 has assumed type. mod_wrong2 must be a dummy argument.
+"AssumedType07d.f", line 44.28: 1514-807 (S) Entity mod_wrong3 has assumed type. mod_wrong3 must be a dummy argument.
+"AssumedType07d.f", line 45.28: 1514-807 (S) Entity mod_wrong4 has assumed type. mod_wrong4 must be a dummy argument.
+"AssumedType07d.f", line 46.28: 1514-807 (S) Entity mod_wrong5 has assumed type. mod_wrong5 must be a dummy argument.
+"AssumedType07d.f", line 47.28: 1514-807 (S) Entity mod_wrong6 has assumed type. mod_wrong6 must be a dummy argument.
+"AssumedType07d.f", line 48.28: 1514-807 (S) Entity mod_wrong7 has assumed type. mod_wrong7 must be a dummy argument.
+"AssumedType07d.f", line 51.31: 1516-188 (S) Variables with the BIND(C) attribute must only appear in the specification part of a module.
+"AssumedType07d.f", line 52.31: 1514-809 (S) Entity b has assumed type. b must not have the VALUE attribute.
+"AssumedType07d.f", line 53.31: 1514-809 (S) Entity c has assumed type. c must not have the INTENT(OUT) attribute.
+"AssumedType07d.f", line 54.31: 1514-809 (S) Entity d has assumed type. d must not have the POINTER attribute.
+"AssumedType07d.f", line 55.31: 1514-809 (S) Entity e has assumed type. e must not have the ALLOCATABLE attribute.
+"AssumedType07d.f", line 58.31: 1514-808 (S) Entity h has assumed type. h must not be an explicit-shape array.
+"AssumedType07d.f", line 59.31: 1514-808 (S) Entity i has assumed type. i must not be an explicit-shape array.
+** mod   === End of Compilation 2 ===
+"AssumedType07d.f", line 64.26: 1514-807 (S) Entity wrong1 has assumed type. wrong1 must be a dummy argument.
+"AssumedType07d.f", line 65.26: 1516-188 (S) Variables with the BIND(C) attribute must only appear in the specification part of a module.
+"AssumedType07d.f", line 65.26: 1514-807 (S) Entity wrong2 has assumed type. wrong2 must be a dummy argument.
+"AssumedType07d.f", line 66.26: 1514-807 (S) Entity wrong3 has assumed type. wrong3 must be a dummy argument.
+"AssumedType07d.f", line 67.26: 1514-807 (S) Entity wrong4 has assumed type. wrong4 must be a dummy argument.
+"AssumedType07d.f", line 68.26: 1514-807 (S) Entity wrong5 has assumed type. wrong5 must be a dummy argument.
+"AssumedType07d.f", line 69.26: 1514-807 (S) Entity wrong6 has assumed type. wrong6 must be a dummy argument.
+"AssumedType07d.f", line 70.26: 1514-807 (S) Entity wrong7 has assumed type. wrong7 must be a dummy argument.
+** assumedtype07d   === End of Compilation 3 ===
+1501-511  Compilation failed for file AssumedType07d.f.

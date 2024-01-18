@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpIAssignFunctionResultFromModule.scenario
+#FEATURE   = Intrinsic Assignment without Allocation - assign to function result in module procedure
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAssignFunctionResultFromModule.f
+#OUTPUT    = dtpIAssignFunctionResultFromModule$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAssignFunctionResultFromModule$(OBJ)
+#OUTPUT    = dtpIAssignFunctionResultFromModule$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAssignFunctionResultFromModule$(EXE)
+#STDOUT    = dtpIAssignFunctionResultFromModule.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpIAssignFunctionResultFromModule$(product)vf) dtpIAssignFunctionResultFromModule.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

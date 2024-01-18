@@ -1,0 +1,68 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)../util/timers.F
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = timers$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)../util/mtfort90.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = mtfort90$(OBJ)
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)reduce.c
+#OPTS      = $(OPT_GEN_64BIT_COMPILER_MODE)
+#OUTPUT    = reduce$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)kmeans_classify.F
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = kmeans_classify$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)kmeans.F
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = kmeans$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)main.F
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = main$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = mtfort90$(OBJ) timers$(OBJ) reduce$(OBJ) kmeans_classify$(OBJ) kmeans$(OBJ) main$(OBJ)
+#OUTPUT    = kmeans$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#OPTS      = 50000 8 1 100
+#INPUT     = kmeans$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

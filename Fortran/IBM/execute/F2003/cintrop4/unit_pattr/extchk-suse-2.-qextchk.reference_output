@@ -1,0 +1,17 @@
+*** testcase variant:  <-O4 and above> -qextchk\n
+1506-503 (W) Option "extchk" is not supported for LINUX for Power.
+COMMAND LINE  01210142 EXTCHKÜ
+** extchk   === End of Compilation 1 ===
+** f1c_via_f   === End of Compilation 2 ===
+** f2f_via_f   === End of Compilation 3 ===
+1501-510  Compilation successful for file extchk.f.
+1586-241 (I) IPA object files "extchk.o" and "extchk-c.o" have been compiled with differing settings for the "-qtls" option.
+1586-242 (I) The "-qtls" option will be used.
+1586-241 (I) IPA object files "extchk.o" and "extchk-c.o" have been compiled with differing settings for the "-qtls" option.
+1586-242 (I) The "-qtls" option will be used.
+1586-241 (I) IPA object files "extchk.o" and "extchk-c.o" have been compiled with differing settings for the "-qtls" option.
+1586-242 (I) The "-qtls" option will be used.
+1586-241 (I) IPA object files "extchk.o" and "extchk-c.o" have been compiled with differing settings for the "-qtls" option.
+1586-242 (I) The "-qtls" option will be used.
+1586-241 (I) IPA object files "extchk.o" and "extchk-c.o" have been compiled with differing settings for the "-qtls" option.
+1586-242 (I) The "-qtls" option will be used.

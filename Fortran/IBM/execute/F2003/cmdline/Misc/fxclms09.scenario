@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/cmdline/Misc/fxclms09.scenario
+#FEATURE = cmdline tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041204
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+CmdLine="fxclms09 ..... :::: ====="
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)fxclms09.f
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT = fxclms09$(OBJ)
+#ENDCMD
+
+
+#CMD    = XLF95_LINK
+#INPUT  = fxclms09$(OBJ)
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT = fxclms09$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = fxclms09$(EXE)
+#OPTS   = ..... :::: =====
+#STDOUT = fxclms09.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

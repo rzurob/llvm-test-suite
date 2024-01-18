@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=achar_nk_f4.scenario
+#FEATURE = Support new Kind Parameter for Several Intrinsics
+#CREATOR = Vince Yuen
+#DATE    = 20060414
+#TEST_TYPE=functional ut
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)achar_nk_f4.f
+#OPTS      = $(OPT_INTSIZE_8)
+#OUTPUT    = achar_nk_f4$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = achar_nk_f4$(OBJ)
+#OUTPUT    = achar_nk_f4$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = achar_nk_f4$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

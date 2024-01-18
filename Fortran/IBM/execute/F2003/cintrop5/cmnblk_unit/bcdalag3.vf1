@@ -1,0 +1,11 @@
+"bcdalag3.f", 1518-264 (L) Lowercase characters have been detected in the source.  Lowercase characters are not permitted by the FORTRAN 77 standard.
+"bcdalag3.f", 1518-317 (L) The ZEROSIZE option can cause the compiler to accept code that does not conform to the FORTRAN 77 standard.
+"bcdalag3.f", 1518-318 (L) The SIGNEDZERO option can cause the program to behave in a way that is different from that specified by the FORTRAN 77 standard.
+"bcdalag3.f", line 34.9: 1518-253 (L) The length of an identifier must not exceed 6 characters in the FORTRAN 77 standard.
+"bcdalag3.f", line 35.1: 1518-285 (L) The IMPLICIT NONE statement is not permitted by the FORTRAN 77 standard.
+"bcdalag3.f", line 37.12: 1518-215 (L) The use of the "_" character in an identifier is not permitted by the FORTRAN 77 standard.
+"bcdalag3.f", line 37.12: 1518-253 (L) The length of an identifier must not exceed 6 characters in the FORTRAN 77 standard.
+"bcdalag3.f", line 37.1: 1518-207 (L) The BIND attribute is not permitted by the FORTRAN 77 standard.
+"bcdalag3.f", line 39.1: 1518-285 (L) The END PROGRAM statement is not permitted by the FORTRAN 77 standard.
+** bcdalag3   === End of Compilation 1 ===
+1501-510  Compilation successful for file bcdalag3.f.

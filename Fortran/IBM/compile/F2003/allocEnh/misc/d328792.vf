@@ -1,0 +1,4 @@
+"d328792.f", line 32.9: 1516-096 (S) In a pure subprogram, any object which is host-associated, is use-associated, is in a common block, is a dummy argument with INTENT(IN), is a pointer dummy argument of a pure function, or is a subobject of any of these, must not become defined, undefined or redefined.
+** xyz   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file d328792.f.

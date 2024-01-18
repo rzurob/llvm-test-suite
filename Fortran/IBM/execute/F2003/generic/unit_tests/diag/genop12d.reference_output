@@ -1,0 +1,5 @@
+"genop12d.f", line 7.16: 1514-682 (S) Identifier foo appearing as a binding of derived type dt has already been defined as a component, binding, or type parameter of the same derived type.
+"genop12d.f", line 11.30: 1514-084 (S) Identifier a is being declared with type name dt which has not been defined in a derived type definition.
+"genop12d.f", line 17.30: 1514-084 (S) Identifier a is being declared with type name dt which has not been defined in a derived type definition.
+** m   === End of Compilation 1 ===
+1501-511  Compilation failed for file genop12d.f.

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = initexprEoshift4.f
+#FEATURE   =
+#CREATOR   = Kelvin Li
+#DATE      = March 31, 2006
+#TEST_TYPE = Unit Test
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ  = 60
+#ENDENV
+
+#BEGINCONTROL
+#CMD    = F_COMPILE
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#INPUT  = $(tcasedir)initexprEoshift4.f
+#OUTPUT = initexprEoshift4$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#INPUT  = initexprEoshift4$(OBJ)
+#OUTPUT = initexprEoshift4$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = initexprEoshift4$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

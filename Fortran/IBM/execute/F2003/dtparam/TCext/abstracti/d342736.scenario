@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/abstracti/d342736.scenario
+#FEATURE	= Derived Type Parameters + Abstract Interface Tests
+#CREATOR	= Glen Mateer
+#DATE		= 20071016
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)d342736.f
+#OPTS = -qxlf2003=dynamicacval
+#OUTPUT		= d342736$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= d342736$(OBJ)
+#OUTPUT		= d342736$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= d342736$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

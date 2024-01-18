@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/selectType/Quotes/C819Labels.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071004
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)C819Labels.f
+#OUTPUT= C819Labels$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  C819Labels$(OBJ)
+#OUTPUT= C819Labels$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  C819Labels$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

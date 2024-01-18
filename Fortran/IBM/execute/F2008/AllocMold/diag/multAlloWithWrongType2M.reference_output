@@ -1,0 +1,3 @@
+"multAlloWithWrongType2M.f", line 8.23: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the MOLD= specifier.  The type parameter values must also be the same.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file multAlloWithWrongType2M.f.

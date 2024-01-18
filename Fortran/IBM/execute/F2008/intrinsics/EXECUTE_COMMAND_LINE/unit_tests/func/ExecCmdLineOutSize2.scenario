@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = $(tcasedir)ExecCmdLineOutSize2.scenario
+#FEATURE   = 381472
+#CREATOR   = Ren Jian Gang
+#DATE      = December 05, 2010
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)ExecCmdLineOutSize2.f
+#OPTS     =  $(OPT_INTSIZE_2)
+#OUTPUT   =  ExecCmdLineOutSize2$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  ExecCmdLineOutSize2$(OBJ)
+#OUTPUT   =  ExecCmdLineOutSize2$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  ExecCmdLineOutSize2$(EXE)
+#STDOUT   =  ExecCmdLineOutSize2.out
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = ExecCmdLineOutSize2.out $(tcasedir)ExecCmdLineOutSize2.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/formatted/syntax/C573/C573_001.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070723
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+! This chunk was DCOMP
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)C573_001kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=intmsg:shutup
+#OUTPUT    = C573_001kl$(OBJ)
+#STDERR    = C573_001kl.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)C573_001kl$(product)vf) C573_001kl.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

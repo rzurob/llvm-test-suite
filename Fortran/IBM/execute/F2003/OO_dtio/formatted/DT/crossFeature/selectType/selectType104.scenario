@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/DT/crossFeature/selectType/selectType104.scenario
+#FEATURE = OO_dtio
+#CREATOR = Robert Ma
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)selectType104.1 .
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)selectType104.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = selectType104$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = selectType104$(OBJ)
+#OUTPUT    = selectType104$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = selectType104$(EXE)
+#STDOUT    = selectType104.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)selectType104$(product)vf) selectType104.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

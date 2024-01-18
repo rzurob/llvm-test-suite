@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/deferred/deferred004.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/*
+#DATE      = 20070613
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)deferred004.f
+#OUTPUT    = deferred004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = deferred004$(OBJ)
+#OUTPUT    = deferred004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = deferred004$(EXE)
+#STDOUT    = deferred004.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = deferred004.out $(tcasedir)deferred004.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

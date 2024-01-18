@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/procPtrComp/dtpPPCBasicPassKindSubMixedArgs.scenario
+#FEATURE   = Procedure Pointers as Components - pointer to PASS functions from DTP with kind param with other args of mixed types
+#CREATOR   = DF Manual Update
+#DATE      = 20090323
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPPCBasicPassKindSubMixedArgs.f
+#OUTPUT    = dtpPPCBasicPassKindSubMixedArgs$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPPCBasicPassKindSubMixedArgs$(OBJ)
+#OUTPUT    = dtpPPCBasicPassKindSubMixedArgs$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPPCBasicPassKindSubMixedArgs$(EXE)
+#STDOUT    = dtpPPCBasicPassKindSubMixedArgs.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpPPCBasicPassKindSubMixedArgs$(product)vf) dtpPPCBasicPassKindSubMixedArgs.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

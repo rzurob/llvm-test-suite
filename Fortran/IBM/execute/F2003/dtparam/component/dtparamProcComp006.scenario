@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/component/dtparamProcComp006.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamProcComp006.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamProcComp006$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dtparamProcComp006$(OBJ)
+#OUTPUT    = dtparamProcComp006$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamProcComp006$(EXE)
+#STDOUT    = dtparamProcComp006.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dtparamProcComp006.out $($(tcasedir)dtparamProcComp006$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,57 @@
+#!/bin/sh
+# Repeat this file against:
+# ----------------------------------------
+# result-0.vf: illegal: missing function parentheses
+# result-1.vf: ok: empty function parentheses
+# result.vf:  ok: 1 function argument
+#                (unnumbered filename contains the default: '(a)')
+# result-3.vf: ok: 2 function arguments
+
+case $1 in
+  -tc) tcname=$2; shift; shift ;;  # Test Case name
+  '') tcname=`basename $0 .sh` ;;
+  *) tcname=$1; shift ;;  # TRUN
+esac
+
+for j in $OPTIONS; do
+  case $j in
+    -O4|-O5) ipaLinker=1 ;;
+
+    # -qsmp=noopt overrides any -O anywhere on the command line;
+    # last -qsmp overrides all previous ones.
+    #
+    -q[Ss][Mm][Pp]=[Nn][Oo][Oo][Pp][Tt]) optIneffective=1 ;;
+    -q[Ss][Mm][Pp]*)                     optIneffective=  ;;
+  esac
+done
+
+## Pick compilation options for common source file, depending on test case.
+#
+# but don't supply an -O4 if an ipaLinker option was
+# already supplied by user in $OPTIONS.
+
+case $ipaLinker.$tcname in
+  1.*-2*) fF=    headerMsg=' <-O4 and above>' skip=  ;;  # -O4 already present
+  1.*)    fF=    headerMsg=' <below -O4>'     skip=1 ;;
+  .*-2*)  fF=-O4 headerMsg=' <-O4 and above>' skip=  ;;
+  .*)     fF=    headerMsg=' <below -O4>'     skip=  ;;
+esac
+
+case $optIneffective.$tcname in 1.*-2*)
+  skip=1
+esac
+
+
+#
+#  Defect 292640 - The Option "-qextchk" isn't implemented for either:
+#    Linux or MAC.  Thus, skip the "-qextchk" Test Variants on these
+#    platforms.
+#
+case "`isAIX`.$tcname" in
+	[12].*.-qextchk*)
+		skip=1
+		;;
+esac
+
+
+echo "skip=$skip headerMsg=\"$headerMsg\" fF=$fF"

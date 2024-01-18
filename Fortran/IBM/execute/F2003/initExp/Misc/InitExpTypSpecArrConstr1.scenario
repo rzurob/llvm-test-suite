@@ -1,0 +1,33 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       InitExpTypSpecArrConstr1.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       08-29-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)InitExpTypSpecArrConstr1.f
+#OUTPUT= InitExpTypSpecArrConstr1$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  InitExpTypSpecArrConstr1$(OBJ)
+#OUTPUT= InitExpTypSpecArrConstr1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  InitExpTypSpecArrConstr1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

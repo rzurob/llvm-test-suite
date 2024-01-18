@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpPointerInterface.scenario
+#FEATURE   = User-Defined Operators - pointers to derived types
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpPointerInterface.f
+#OUTPUT    = dtpUOpPointerInterface$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpPointerInterface$(OBJ)
+#OUTPUT    = dtpUOpPointerInterface$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpPointerInterface$(EXE)
+#STDOUT    = dtpUOpPointerInterface.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUOpPointerInterface$(product)vf) dtpUOpPointerInterface.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

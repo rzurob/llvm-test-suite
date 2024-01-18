@@ -1,0 +1,8 @@
+"fxdmodprocstmt021.f", line 44.17: 1514-258 (E) A procedure must not be given the EXTERNAL attribute if it appears within an interface block. EXTERNAL attribute is ignored.
+"fxdmodprocstmt021.f", line 45.19: 1516-270 (E) Entity xx must be a procedure pointer, external procedure, dummy procedure, or a module procedure, and must have an explicit interface. xx is ignored.
+"fxdmodprocstmt021.f", line 50.17: 1514-258 (E) A procedure must not be given the EXTERNAL attribute if it appears within an interface block. EXTERNAL attribute is ignored.
+"fxdmodprocstmt021.f", line 51.19: 1516-270 (E) Entity yy must be a procedure pointer, external procedure, dummy procedure, or a module procedure, and must have an explicit interface. yy is ignored.
+"fxdmodprocstmt021.f", line 56.17: 1514-258 (E) A procedure must not be given the EXTERNAL attribute if it appears within an interface block. EXTERNAL attribute is ignored.
+"fxdmodprocstmt021.f", line 57.19: 1516-270 (E) Entity zz must be a procedure pointer, external procedure, dummy procedure, or a module procedure, and must have an explicit interface. zz is ignored.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file fxdmodprocstmt021.f.

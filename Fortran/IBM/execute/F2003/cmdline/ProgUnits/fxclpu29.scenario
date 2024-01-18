@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = cmdline/ProgUnits/fxclpu29.scenario
+#FEATURE = cmdline tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041204
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT = cbe_spu
+#BEGINDEFS
+CmdLine="fxclpu29 ----- ===== \\{\\}"
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD	 	= XLF95_COMPILE
+#INPUT 		= $(tcasedir)fxclpu29.f
+#OUTPUT 	= fxclpu29$(OBJ)
+#OPTS 		= $(OPT_FREE_SOURCE_FORM)
+#ENDCMD
+
+#CMD	 	= XLF95_LINK
+#INPUT		= fxclpu29$(OBJ)
+#OUTPUT		= fxclpu29$(EXE)
+#OPTS		= $(OPT_FREE_SOURCE_FORM)
+#ENDCMD
+
+#CMD 		= RUN
+#INPUT 		= fxclpu29$(EXE)
+#OPTS 		=  ----- ===== \\{\\}
+#ENDCMD
+#ENDCONTROL
+#ENDSCENARIO

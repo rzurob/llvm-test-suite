@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = cmdline/Parallel/fxclpl22.scenario
+#FEATURE = cmdline tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041204
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+	CmdLine="fxclpl22 \^--------------123 --123 \^"
+#ENDDEFS
+#INVALID_PRODUCT= bgl_system,bgl,mac
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = XLF95_R_COMPILE
+#INPUT  = $(tcasedir)fxclpl22.f
+#OUTPUT = fxclpl22$(OBJ)
+#OPTS 	= $(OPT_FREE_SOURCE_FORM)  $(OPT_STORAGE_CLASS_AUTO)
+#ENDCMD
+
+#CMD    = XLF95_R_LINK
+#INPUT  = fxclpl22$(OBJ)
+#OUTPUT = fxclpl22$(EXE)
+#OPTS 	= $(OPT_FREE_SOURCE_FORM)  $(OPT_STORAGE_CLASS_AUTO)
+#ENDCMD
+
+#CMD	= RUN
+#INPUT	= fxclpl22$(EXE)
+#OPTS	= \\^--------------123 --123 \\^
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

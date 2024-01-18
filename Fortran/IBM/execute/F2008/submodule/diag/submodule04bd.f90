@@ -1,0 +1,41 @@
+!*********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : submodule04d
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Bernard Kan
+!*  DATE                       : 6 December, 2012
+!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : submodule
+!*  SECONDARY FUNCTIONS TESTED :
+!*
+!*  DRIVER STANZA              : xlf2008
+!*  REQUIRED COMPILER OPTIONS  : 
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*
+!*  Set up naming conflict between the host module and a submodule
+!*   expecting a  severe message at compile.
+!*
+!*  SUBMODULE (m:b) m
+!*  END SUBMODULE m
+!*  
+!*
+!* ===================================================================
+!*
+!*  REVISION HISTORY
+!*
+!*  MM/DD/YY:  Init:  Comments:
+!* ===================================================================
+!234567890423456789042345678904234567890423456789042345678904234567890
+
+SUBMODULE (m) b
+END SUBMODULE b

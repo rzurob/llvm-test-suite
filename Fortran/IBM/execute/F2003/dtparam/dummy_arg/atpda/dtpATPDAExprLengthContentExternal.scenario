@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/dummy_arg/atpda/dtpATPDAExprLengthContentExternal.scenario
+#FEATURE   = Assumed type parameters and dummy arguments - test the contents
+#CREATOR   = DF Manual Update
+#DATE      = 20081015
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpATPDAExprLengthContentExternal.f
+#OUTPUT    = dtpATPDAExprLengthContentExternal$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpATPDAExprLengthContentExternal$(OBJ)
+#OUTPUT    = dtpATPDAExprLengthContentExternal$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpATPDAExprLengthContentExternal$(EXE)
+#STDOUT    = dtpATPDAExprLengthContentExternal.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpATPDAExprLengthContentExternal$(product)vf) dtpATPDAExprLengthContentExternal.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

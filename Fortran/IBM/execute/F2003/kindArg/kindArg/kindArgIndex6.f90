@@ -1,0 +1,199 @@
+!*********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : kindArgIndex6
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Jun. 16, 2006
+!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*
+!*  SECONDARY FUNCTIONS TESTED : INDEX 
+!*
+!*  REFERENCE                  : Feature Number 289083 
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  : -qfree=f90
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*
+!*   
+!*   
+!*  Result Value.
+!*  Case (i): If BACK is absent or has the value false, the result is the minimum positive value
+!*  of I such that STRING (I : I + LEN (SUBSTRING) . 1) = SUBSTRING or zero if
+!*  there is no such value. 
+!*  Zero is returned if LEN (STRING) < LEN (SUBSTRING) 
+!*  and one is returned if LEN (SUBSTRING) = 0. 
+!*    
+!*  () 
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+
+  PROGRAM kindArgIndex6
+  IMPLICIT NONE
+
+  TYPE :: DT
+    INTEGER(1),   ALLOCATABLE :: K1
+    INTEGER(2),   POINTER     :: K2
+    INTEGER(4),   ALLOCATABLE :: K4
+    INTEGER(8),   POINTER     :: K8
+    CHARACTER(:), ALLOCATABLE :: CC(:)
+  END TYPE
+
+  INTEGER(1) :: I1
+  INTEGER(2) :: I2
+  INTEGER(4) :: I4, I
+  INTEGER(8) :: I8
+
+  INTEGER                     :: II(128)=(/(I,I=0,127)/)
+
+  TYPE(DT), POINTER :: T
+
+  ALLOCATE(T)
+
+  ALLOCATE(T%K1, SOURCE=1_1)
+  ALLOCATE(T%K2, SOURCE=2_2)
+  ALLOCATE(T%K4, SOURCE=4_4)
+  ALLOCATE(T%K8, SOURCE=8_8)
+
+  ALLOCATE(T%CC(128), SOURCE=(/(CHAR(I=I, KIND=1)//CHAR(I)//CHAR(I=I), I=0, 127)/))
+
+  DO I1 = 1, 127
+    IF (     INDEX(STRING=T%CC(I1), SUBSTRING=T%CC(I1)(1:1), KIND=KIND(T%K8))   .NE. 1)               STOP 11
+    IF (KIND(INDEX(STRING=T%CC(I1), SUBSTRING=T%CC(I1)(1:1), KIND=KIND(T%K8)))  .NE. 8)               STOP 12
+    IF (     INDEX(STRING=T%CC(I1), SUBSTRING=T%CC(I1)(1:1), KIND=KIND(T%K4))   .NE. 1)               STOP 13
+    IF (KIND(INDEX(STRING=T%CC(I1), SUBSTRING=T%CC(I1)(1:1), KIND=KIND(T%K4)))  .NE. 4)               STOP 14
+    IF (     INDEX(STRING=T%CC(I1), SUBSTRING=T%CC(I1)(1:1), KIND=KIND(T%K2))   .NE. 1)               STOP 15
+    IF (KIND(INDEX(STRING=T%CC(I1), SUBSTRING=T%CC(I1)(1:1), KIND=KIND(T%K2)))  .NE. 2)               STOP 16
+    IF (     INDEX(STRING=T%CC(I1), SUBSTRING=T%CC(I1)(1:1), KIND=KIND(T%K1))   .NE. 1)               STOP 17
+    IF (KIND(INDEX(STRING=T%CC(I1), SUBSTRING=T%CC(I1)(1:1), KIND=KIND(T%K1)))  .NE. 1)               STOP 18
+  END DO
+
+  DO I2 = 1, 128
+    IF (     INDEX(STRING=T%CC(I2)(2:), SUBSTRING=T%CC(I2)(1:1), KIND=KIND(T%K8))   .NE. 1)           STOP 21
+    IF (KIND(INDEX(STRING=T%CC(I2)(2:), SUBSTRING=T%CC(I2)(1:1), KIND=KIND(T%K8)))  .NE. 8)           STOP 22
+    IF (     INDEX(STRING=T%CC(I2)(2:), SUBSTRING=T%CC(I2)(1:1), KIND=KIND(T%K4))   .NE. 1)           STOP 23
+    IF (KIND(INDEX(STRING=T%CC(I2)(2:), SUBSTRING=T%CC(I2)(1:1), KIND=KIND(T%K4)))  .NE. 4)           STOP 24
+    IF (     INDEX(STRING=T%CC(I2)(2:), SUBSTRING=T%CC(I2)(1:1), KIND=KIND(T%K2))   .NE. 1)           STOP 25
+    IF (KIND(INDEX(STRING=T%CC(I2)(2:), SUBSTRING=T%CC(I2)(1:1), KIND=KIND(T%K2)))  .NE. 2)           STOP 26
+    IF (     INDEX(STRING=T%CC(I2)(2:), SUBSTRING=T%CC(I2)(1:1), KIND=KIND(T%K1))   .NE. 1)           STOP 27
+    IF (KIND(INDEX(STRING=T%CC(I2)(2:), SUBSTRING=T%CC(I2)(1:1), KIND=KIND(T%K1)))  .NE. 1)           STOP 28
+  END DO
+
+  DO I4 = 1, 128
+    IF (     INDEX(STRING=T%CC(I4)(3:3), SUBSTRING=T%CC(I4)(1:1), KIND=KIND(T%K8))   .NE. 1)          STOP 31
+    IF (KIND(INDEX(STRING=T%CC(I4)(3:3), SUBSTRING=T%CC(I4)(1:1), KIND=KIND(T%K8)))  .NE. 8)          STOP 32
+    IF (     INDEX(STRING=T%CC(I4)(3:3), SUBSTRING=T%CC(I4)(1:1), KIND=KIND(T%K4))   .NE. 1)          STOP 33
+    IF (KIND(INDEX(STRING=T%CC(I4)(3:3), SUBSTRING=T%CC(I4)(1:1), KIND=KIND(T%K4)))  .NE. 4)          STOP 34
+    IF (     INDEX(STRING=T%CC(I4)(3:3), SUBSTRING=T%CC(I4)(1:1), KIND=KIND(T%K2))   .NE. 1)          STOP 35
+    IF (KIND(INDEX(STRING=T%CC(I4)(3:3), SUBSTRING=T%CC(I4)(1:1), KIND=KIND(T%K2)))  .NE. 2)          STOP 36
+    IF (     INDEX(STRING=T%CC(I4)(3:3), SUBSTRING=T%CC(I4)(1:1), KIND=KIND(T%K1))   .NE. 1)          STOP 37
+    IF (KIND(INDEX(STRING=T%CC(I4)(3:3), SUBSTRING=T%CC(I4)(1:1), KIND=KIND(T%K1)))  .NE. 1)          STOP 38
+  END DO
+
+  DO I8 = 1, 128
+    IF (     INDEX(STRING=T%CC(I8)(1:3), SUBSTRING=T%CC(I8)(1:1), KIND=KIND(T%K8))   .NE. 1)          STOP 43
+    IF (KIND(INDEX(STRING=T%CC(I8)(1:3), SUBSTRING=T%CC(I8)(1:1), KIND=KIND(T%K8)))  .NE. 8)          STOP 42
+    IF (     INDEX(STRING=T%CC(I8)(1:3), SUBSTRING=T%CC(I8)(1:1), KIND=KIND(T%K4))   .NE. 1)          STOP 43
+    IF (KIND(INDEX(STRING=T%CC(I8)(1:3), SUBSTRING=T%CC(I8)(1:1), KIND=KIND(T%K4)))  .NE. 4)          STOP 44
+    IF (     INDEX(STRING=T%CC(I8)(1:3), SUBSTRING=T%CC(I8)(1:1), KIND=KIND(T%K2))   .NE. 1)          STOP 45
+    IF (KIND(INDEX(STRING=T%CC(I8)(1:3), SUBSTRING=T%CC(I8)(1:1), KIND=KIND(T%K2)))  .NE. 2)          STOP 46
+    IF (     INDEX(STRING=T%CC(I8)(1:3), SUBSTRING=T%CC(I8)(1:1), KIND=KIND(T%K1))   .NE. 1)          STOP 47
+    IF (KIND(INDEX(STRING=T%CC(I8)(1:3), SUBSTRING=T%CC(I8)(1:1), KIND=KIND(T%K1)))  .NE. 1)          STOP 48
+  END DO
+
+
+  DO I1 = 1, 128
+    IF (     INDEX(STRING=T%CC(I1), SUBSTRING=T%CC(I1)(1:1), BACK=.FALSE., KIND=KIND(T%K8))   .NE. 1)               STOP 51
+    IF (KIND(INDEX(STRING=T%CC(I1), SUBSTRING=T%CC(I1)(1:1), BACK=.FALSE., KIND=KIND(T%K8)))  .NE. 8)               STOP 52
+    IF (     INDEX(STRING=T%CC(I1), SUBSTRING=T%CC(I1)(1:1), BACK=.FALSE., KIND=KIND(T%K4))   .NE. 1)               STOP 53
+    IF (KIND(INDEX(STRING=T%CC(I1), SUBSTRING=T%CC(I1)(1:1), BACK=.FALSE., KIND=KIND(T%K4)))  .NE. 4)               STOP 54
+    IF (     INDEX(STRING=T%CC(I1), SUBSTRING=T%CC(I1)(1:1), BACK=.FALSE., KIND=KIND(T%K2))   .NE. 1)               STOP 55
+    IF (KIND(INDEX(STRING=T%CC(I1), SUBSTRING=T%CC(I1)(1:1), BACK=.FALSE., KIND=KIND(T%K2)))  .NE. 2)               STOP 56
+    IF (     INDEX(STRING=T%CC(I1), SUBSTRING=T%CC(I1)(1:1), BACK=.FALSE., KIND=KIND(T%K1))   .NE. 1)               STOP 57
+    IF (KIND(INDEX(STRING=T%CC(I1), SUBSTRING=T%CC(I1)(1:1), BACK=.FALSE., KIND=KIND(T%K1)))  .NE. 1)               STOP 58
+  END DO
+
+  DO I2 = 1, 128
+    IF (     INDEX(STRING=T%CC(I2)(2:), SUBSTRING=T%CC(I2)(1:1), BACK=.FALSE._1, KIND=KIND(T%K8))   .NE. 1)         STOP 61
+    IF (KIND(INDEX(STRING=T%CC(I2)(2:), SUBSTRING=T%CC(I2)(1:1), BACK=.FALSE._1, KIND=KIND(T%K8)))  .NE. 8)         STOP 62
+    IF (     INDEX(STRING=T%CC(I2)(2:), SUBSTRING=T%CC(I2)(1:1), BACK=.FALSE._1, KIND=KIND(T%K4))   .NE. 1)         STOP 63
+    IF (KIND(INDEX(STRING=T%CC(I2)(2:), SUBSTRING=T%CC(I2)(1:1), BACK=.FALSE._1, KIND=KIND(T%K4)))  .NE. 4)         STOP 64
+    IF (     INDEX(STRING=T%CC(I2)(2:), SUBSTRING=T%CC(I2)(1:1), BACK=.FALSE._1, KIND=KIND(T%K2))   .NE. 1)         STOP 65
+    IF (KIND(INDEX(STRING=T%CC(I2)(2:), SUBSTRING=T%CC(I2)(1:1), BACK=.FALSE._1, KIND=KIND(T%K2)))  .NE. 2)         STOP 66
+    IF (     INDEX(STRING=T%CC(I2)(2:), SUBSTRING=T%CC(I2)(1:1), BACK=.FALSE._1, KIND=KIND(T%K1))   .NE. 1)         STOP 67
+    IF (KIND(INDEX(STRING=T%CC(I2)(2:), SUBSTRING=T%CC(I2)(1:1), BACK=.FALSE._1, KIND=KIND(T%K1)))  .NE. 1)         STOP 68
+  END DO
+
+  DO I4 = 1, 128
+    IF (     INDEX(STRING=T%CC(I4)(3:3), SUBSTRING=T%CC(I4)(1:1), BACK=.FALSE._2, KIND=KIND(T%K8))   .NE. 1)        STOP 71
+    IF (KIND(INDEX(STRING=T%CC(I4)(3:3), SUBSTRING=T%CC(I4)(1:1), BACK=.FALSE._2, KIND=KIND(T%K8)))  .NE. 8)        STOP 72
+    IF (     INDEX(STRING=T%CC(I4)(3:3), SUBSTRING=T%CC(I4)(1:1), BACK=.FALSE._2, KIND=KIND(T%K4))   .NE. 1)        STOP 73
+    IF (KIND(INDEX(STRING=T%CC(I4)(3:3), SUBSTRING=T%CC(I4)(1:1), BACK=.FALSE._2, KIND=KIND(T%K4)))  .NE. 4)        STOP 74
+    IF (     INDEX(STRING=T%CC(I4)(3:3), SUBSTRING=T%CC(I4)(1:1), BACK=.FALSE._2, KIND=KIND(T%K2))   .NE. 1)        STOP 75
+    IF (KIND(INDEX(STRING=T%CC(I4)(3:3), SUBSTRING=T%CC(I4)(1:1), BACK=.FALSE._2, KIND=KIND(T%K2)))  .NE. 2)        STOP 76
+    IF (     INDEX(STRING=T%CC(I4)(3:3), SUBSTRING=T%CC(I4)(1:1), BACK=.FALSE._2, KIND=KIND(T%K1))   .NE. 1)        STOP 77
+    IF (KIND(INDEX(STRING=T%CC(I4)(3:3), SUBSTRING=T%CC(I4)(1:1), BACK=.FALSE._2, KIND=KIND(T%K1)))  .NE. 1)        STOP 78
+  END DO
+
+  DO I8 = 1, 128
+    IF (     INDEX(STRING=T%CC(I8)(1:3), SUBSTRING=T%CC(I8)(1:1), BACK=.FALSE._8, KIND=KIND(T%K8))   .NE. 1)        STOP 83
+    IF (KIND(INDEX(STRING=T%CC(I8)(1:3), SUBSTRING=T%CC(I8)(1:1), BACK=.FALSE._8, KIND=KIND(T%K8)))  .NE. 8)        STOP 82
+    IF (     INDEX(STRING=T%CC(I8)(1:3), SUBSTRING=T%CC(I8)(1:1), BACK=.FALSE._8, KIND=KIND(T%K4))   .NE. 1)        STOP 83
+    IF (KIND(INDEX(STRING=T%CC(I8)(1:3), SUBSTRING=T%CC(I8)(1:1), BACK=.FALSE._8, KIND=KIND(T%K4)))  .NE. 4)        STOP 84
+    IF (     INDEX(STRING=T%CC(I8)(1:3), SUBSTRING=T%CC(I8)(1:1), BACK=.FALSE._8, KIND=KIND(T%K2))   .NE. 1)        STOP 85
+    IF (KIND(INDEX(STRING=T%CC(I8)(1:3), SUBSTRING=T%CC(I8)(1:1), BACK=.FALSE._8, KIND=KIND(T%K2)))  .NE. 2)        STOP 86
+    IF (     INDEX(STRING=T%CC(I8)(1:3), SUBSTRING=T%CC(I8)(1:1), BACK=.FALSE._8, KIND=KIND(T%K1))   .NE. 1)        STOP 87
+    IF (KIND(INDEX(STRING=T%CC(I8)(1:3), SUBSTRING=T%CC(I8)(1:1), BACK=.FALSE._8, KIND=KIND(T%K1)))  .NE. 1)        STOP 88
+  END DO
+
+
+  DEALLOCATE(T%CC)
+  ALLOCATE(T%CC(128), SOURCE=(/("IBM", I=0, 127)/))
+
+  IF (ANY( INDEX(STRING=T%CC, SUBSTRING="MBI", KIND=KIND(T%K8))   .NE. 0))           STOP 111
+  IF (KIND(INDEX(STRING=T%CC, SUBSTRING="MBI", KIND=KIND(T%K8)))  .NE. 8)            STOP 112
+  IF (ANY( INDEX(STRING=T%CC, SUBSTRING="MBI", KIND=KIND(T%K4))   .NE. 0))           STOP 113
+  IF (KIND(INDEX(STRING=T%CC, SUBSTRING="MBI", KIND=KIND(T%K4)))  .NE. 4)            STOP 114
+  IF (ANY( INDEX(STRING=T%CC, SUBSTRING="MBI", KIND=KIND(T%K2))   .NE. 0))           STOP 115
+  IF (KIND(INDEX(STRING=T%CC, SUBSTRING="MBI", KIND=KIND(T%K2)))  .NE. 2)            STOP 116
+  IF (ANY( INDEX(STRING=T%CC, SUBSTRING="MBI", KIND=KIND(T%K1))   .NE. 0))           STOP 117
+  IF (KIND(INDEX(STRING=T%CC, SUBSTRING="MBI", KIND=KIND(T%K1)))  .NE. 1)            STOP 118
+
+  DEALLOCATE(T%CC)
+  ALLOCATE(T%CC(128), SOURCE=(/("IB", I=0, 127)/))
+
+  IF (ANY( INDEX(STRING=T%CC, SUBSTRING="MBI", KIND=KIND(T%K8))   .NE. 0))           STOP 121
+  IF (KIND(INDEX(STRING=T%CC, SUBSTRING="MBI", KIND=KIND(T%K8)))  .NE. 8)            STOP 122
+  IF (ANY( INDEX(STRING=T%CC, SUBSTRING="MBI", KIND=KIND(T%K4))   .NE. 0))           STOP 123
+  IF (KIND(INDEX(STRING=T%CC, SUBSTRING="MBI", KIND=KIND(T%K4)))  .NE. 4)            STOP 124
+  IF (ANY( INDEX(STRING=T%CC, SUBSTRING="MBI", KIND=KIND(T%K2))   .NE. 0))           STOP 125
+  IF (KIND(INDEX(STRING=T%CC, SUBSTRING="MBI", KIND=KIND(T%K2)))  .NE. 2)            STOP 126
+  IF (ANY( INDEX(STRING=T%CC, SUBSTRING="MBI", KIND=KIND(T%K1))   .NE. 0))           STOP 127
+  IF (KIND(INDEX(STRING=T%CC, SUBSTRING="MBI", KIND=KIND(T%K1)))  .NE. 1)            STOP 128
+
+  DEALLOCATE(T%CC)
+  ALLOCATE(T%CC(128), SOURCE=(/("", I=0, 127)/))
+
+  IF (ANY( INDEX(STRING=T%CC, SUBSTRING="", KIND=KIND(T%K8))   .NE. 1))           STOP 131
+  IF (KIND(INDEX(STRING=T%CC, SUBSTRING="", KIND=KIND(T%K8)))  .NE. 8)            STOP 132
+  IF (ANY( INDEX(STRING=T%CC, SUBSTRING="", KIND=KIND(T%K4))   .NE. 1))           STOP 133
+  IF (KIND(INDEX(STRING=T%CC, SUBSTRING="", KIND=KIND(T%K4)))  .NE. 4)            STOP 134
+  IF (ANY( INDEX(STRING=T%CC, SUBSTRING="", KIND=KIND(T%K2))   .NE. 1))           STOP 135
+  IF (KIND(INDEX(STRING=T%CC, SUBSTRING="", KIND=KIND(T%K2)))  .NE. 2)            STOP 136
+  IF (ANY( INDEX(STRING=T%CC, SUBSTRING="", KIND=KIND(T%K1))   .NE. 1))           STOP 137
+  IF (KIND(INDEX(STRING=T%CC, SUBSTRING="", KIND=KIND(T%K1)))  .NE. 1)            STOP 138
+
+  END
+
+

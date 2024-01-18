@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/operator/functional/genericOperatorPrecedence007.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericOperatorPrecedence007.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericOperatorPrecedence007$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericOperatorPrecedence007$(OBJ)
+#OUTPUT    = genericOperatorPrecedence007$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericOperatorPrecedence007$(EXE)
+#STDOUT    = genericOperatorPrecedence007.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericOperatorPrecedence007.out $(tcasedir)genericOperatorPrecedence007.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

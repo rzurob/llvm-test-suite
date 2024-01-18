@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/selectType/Quotes/SltVarDummyUL.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071004
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)SltVarDummyUL.f
+#OUTPUT= SltVarDummyUL$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  SltVarDummyUL$(OBJ)
+#OUTPUT= SltVarDummyUL$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  SltVarDummyUL$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=func_call_in_block.scenario
+#FEATURE = F2008 BLOCK construct
+#CREATOR = Pooja Dayanand
+#DATE    = 20101021
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)func_call_in_block.f
+#OUTPUT    = func_call_in_block$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#INPUT     = func_call_in_block$(OBJ)
+#OUTPUT    = func_call_in_block$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = func_call_in_block$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

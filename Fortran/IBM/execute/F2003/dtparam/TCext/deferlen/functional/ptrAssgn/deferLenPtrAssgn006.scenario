@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/deferlen/functional/ptrAssgn/deferLenPtrAssgn006.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of deferlen/*
+#DATE      = 20071213
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)deferLenPtrAssgn006.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = deferLenPtrAssgn006$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = deferLenPtrAssgn006$(OBJ)
+#OUTPUT    = deferLenPtrAssgn006$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = deferLenPtrAssgn006$(EXE)
+#STDOUT    = deferLenPtrAssgn006.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = deferLenPtrAssgn006.out $(tcasedir)deferLenPtrAssgn006.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

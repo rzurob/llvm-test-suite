@@ -1,0 +1,44 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/filePos/pendingRewind03d.scenario
+#FEATURE	= Asynchronous I/O -- REWIND Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060329
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)pendingRewind03d.dat .
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)pendingRewind03d.f
+#OUTPUT		= pendingRewind03d$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= pendingRewind03d$(OBJ)
+#OUTPUT		= pendingRewind03d$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= pendingRewind03d$(EXE)
+#STDERR		= pendingRewind03d.stderr
+#VALIDRCS	= $(RC_FAIL)
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)pendingRewind03d$(product)vf) pendingRewind03d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

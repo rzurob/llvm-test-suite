@@ -1,0 +1,11 @@
+"genericC703OpName002.f", line 36.30: 1516-091 (S) A defined operator must contain only letters.
+"genericC703OpName002.f", line 39.19: 1515-019 (S) Syntax is incorrect.
+"genericC703OpName002.f", line 39.60: 1515-018 (S) Incorrect character found in source at line 39 in column 60.  Hexadecimal value of character is 40.
+"genericC703OpName002.f", line 39.109: 1514-095 (S) Invalid statement within derived type definition.
+"genericC703OpName002.f", line 44.27: 1514-084 (S) Identifier myunaryop is being declared with type name base which has not been defined in a derived type definition.
+"genericC703OpName002.f", line 45.37: 1514-084 (S) Identifier b is being declared with type name base which has not been defined in a derived type definition.
+"genericC703OpName002.f", line 50.27: 1514-084 (S) Identifier myunaryop2 is being declared with type name base which has not been defined in a derived type definition.
+"genericC703OpName002.f", line 51.37: 1514-084 (S) Identifier b is being declared with type name base which has not been defined in a derived type definition.
+** m   === End of Compilation 1 ===
+** genericc703opname002   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericC703OpName002.f.

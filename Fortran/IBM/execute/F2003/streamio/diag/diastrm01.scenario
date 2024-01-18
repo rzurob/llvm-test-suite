@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/streamio/diag/diastrm01.scenario
+#FEATURE = streamio tests - regression run bucket
+#CREATOR = CPR Manual conversion
+#DATE    = 20040819
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = XLF95_COMPLINK
+#INPUT     = $(tcasedir)diastrm01.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = diastrm01$(EXE)
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ./diastrm01
+#STDERR    = diastrm01.err
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = diastrm01.err $($(tcasedir)diastrm01$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

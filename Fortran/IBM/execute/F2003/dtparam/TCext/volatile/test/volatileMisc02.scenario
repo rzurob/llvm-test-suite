@@ -1,0 +1,70 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/volatile/test/volatileMisc02.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of volatile/*
+#DATE      = 20071101
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)volatileMisc02.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_LANG_LEVEL<2003std>) -qxlf2003=volatile $(OPT_ENABLE_MSG_NUM<1518-317>) -qhalt=l
+#OUTPUT    = volatileMisc02$(OBJ)
+#STDERR    = volatileMisc02.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)volatileMisc02$(product)vf)   volatileMisc02.err
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)volatileMisc02.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = volatileMisc02a$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = volatileMisc02a$(OBJ)
+#OUTPUT    = volatileMisc02a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = volatileMisc02a$(EXE)
+#ENDCMD
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)volatileMisc02.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = volatileMisc02b$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#INPUT     = volatileMisc02b$(OBJ)
+#OUTPUT    = volatileMisc02b$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = volatileMisc02b$(EXE)
+#ENDCMD
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)volatileMisc02.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = volatileMisc02c$(OBJ)
+#ENDCMD
+
+#CMD       = XLF_LINK
+#INPUT     = volatileMisc02c$(OBJ)
+#OUTPUT    = volatileMisc02c$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = volatileMisc02c$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

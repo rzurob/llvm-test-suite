@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/syncMemDefRefPickup
+#FEATURE        = CAF SYNC MEMORY - many-to-one access
+#CREATOR        = DF
+#DATE           = 2010-09-20
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)syncMemDefRefPickup.f
+#OUTPUT = syncMemDefRefPickup$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = syncMemDefRefPickup$(OBJ)
+#OUTPUT = syncMemDefRefPickup$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = syncMemDefRefPickup$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

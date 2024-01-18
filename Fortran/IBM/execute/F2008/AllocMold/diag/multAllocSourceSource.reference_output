@@ -1,0 +1,3 @@
+"multAllocSourceSource.f", line 7.30: 1516-266 (S) The SOURCE= specifier must not be specified more than once in the ALLOCATE statement.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file multAllocSourceSource.f.

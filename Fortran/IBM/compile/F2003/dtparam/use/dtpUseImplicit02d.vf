@@ -1,0 +1,4 @@
+** dtpusemodule   === End of Compilation 1 ===
+"dtpUseImplicit02d.f", line 51.12: 1514-693 (S) Derived type object s1 with deferred type parameters requires the POINTER or ALLOCATABLE attribute.
+** dtpuseimplicit02d   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtpUseImplicit02d.f.

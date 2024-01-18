@@ -1,0 +1,33 @@
+ &MYNML ! input # 1
+ I1=10, RL1=NaN(S), RL2=-Inf, C1='xlf', RL3=NaN(Q), I2=11, RL4=Inf, C2='ibm', RL5=-NaN(S), RL6=-NaN(Q), RL7=3.14
+ /
+ &MYNML ! input # 2
+ I1=10, RL1=+NaN(S), RL2=-Infinity, C1='xlf', RL3=+NaN(Q), I2=11, RL4=Infinity, C2='ibm', RL5=-NaN(s), RL6=-NaN(q), RL7=3.14
+ /
+ &MYNML ! input # 3
+ I1=10, RL1=+Nan(s), RL2=-InfinitY, C1='xlf', RL3=NaN(), I2=11, RL4=iNF, C2='ibm', RL5=-NaN(s), RL6=-NaN(), RL7=3.14
+ /
+ &MYNML ! input # 4
+ I1=10, RL1=naN(S), RL2=-iNF, C1='xlf', RL3=+NaN(abcd), I2=11, RL4=InfiNity, C2='ibm', RL5=-NaN(s) , RL6=-NaN(abcd), RL7=3.14
+ /
+ &MYNML ! input # 5
+ I1=10, RL1=naN(S), RL2=-inf, C1='xlf', RL3=+NaN(1234), I2=11, RL4=+InfiNity, C2='ibm', RL5=-NaN(s) , RL6=-NaN(123), RL7=3.14
+ /
+ &MYNML ! input # 6
+ I1=10, RL1=naN(S), RL2=-inf, C1='xlf', RL3=NaN(1234abcd), I2=11, RL4=InfiNity, C2='ibm', RL5=-NaN(s) , RL6=-NaN(abcd123), RL7=3.14
+ /
+ &MYNML ! input # 7
+ I1=10, RL1=naN(S), RL2=-inf, C1='xlf', RL3=+NaN(1234abc_), I2=11, RL4=+InfiNity, C2='ibm', RL5=-NaN(s) , RL6=-NaN(123abc_), RL7=3.14
+ /
+ &MYNML ! input # 8
+ I1=10, RL1=naN(S), RL2=-inf, C1='xlf', RL3=+NaN(_), I2=11, RL4=InfiNity, C2='ibm', RL5=-NaN(s) , RL6=-NaN(_), RL7=3.14
+ /
+ &MYNML ! input # 9
+ I1=10, RL1=naN(S), RL2=-inf, C1='xlf', RL3=+NaN(_abc123), I2=11, RL4=InfiNity, C2='ibm', RL5=-NaN(s) , RL6=-NaN(_123abc), RL7=3.14
+ /
+ &MYNML ! input # 10
+ I1=10, RL1=naN(S), RL2=-inf, C1='xlf', RL3=NaN(__), I2=11, RL4=+InfiNity, C2='ibm', RL5=-NaN(s) , RL6=-NaN(__), RL7=3.14
+ /
+ &MYNML ! input # 11
+ I1=10, RL1=naN(S), RL2=-inf, C1='xlf', RL3=NaN, I2=11, RL4=+InfiNity, C2='ibm', RL5=-NaN(s) , RL6=-NaN, RL7=3.14
+ /

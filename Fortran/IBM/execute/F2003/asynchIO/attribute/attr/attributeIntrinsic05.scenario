@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/attribute/attr/attributeIntrinsic05.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Attribute
+#CREATOR	= GM Manual Creation
+#DATE		= 20060116
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)attributeIntrinsic05.f
+#OUTPUT		= attributeIntrinsic05$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= attributeIntrinsic05$(OBJ)
+#OUTPUT		= attributeIntrinsic05$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= attributeIntrinsic05$(EXE)
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i '^asynchLogical'
+#INPUT		= attributeIntrinsic05$(LST)
+#STDOUT		= attributeIntrinsic05.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= attributeIntrinsic05.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,4 @@
+"328011_3.f", line 43.19: 1516-078 (S) Operands must be conformable.
+"328011_3.f", line 44.19: 1516-078 (S) Operands must be conformable.
+** defect_328011_1   === End of Compilation 1 ===
+1501-511  Compilation failed for file 328011_3.f.

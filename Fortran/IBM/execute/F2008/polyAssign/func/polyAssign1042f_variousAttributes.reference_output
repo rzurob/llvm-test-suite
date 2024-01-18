@@ -1,0 +1,24 @@
+ after 'arr(i)%x = t2(i)', allocated (arr(i)%x)== T
+ after 'x1 = arr(i)%x' ,storage_size(x1)== 64
+ after p=>x1, same_type_as(arr(i)%x, x1)== T
+ type of p is t2, p%j== 1  p%k== 2
+ **************end of loop for i= 1 *************
+ 
+ after 'arr(i)%x = t2(i)', allocated (arr(i)%x)== T
+ after 'x1 = arr(i)%x' ,storage_size(x1)== 64
+ after p=>x1, same_type_as(arr(i)%x, x1)== T
+ type of p is t2, p%j== 2  p%k== 3
+ **************end of loop for i= 2 *************
+ 
+ after 'arr(i)%x = t2(i)', allocated (arr(i)%x)== T
+ after 'x1 = arr(i)%x' ,storage_size(x1)== 64
+ after p=>x1, same_type_as(arr(i)%x, x1)== T
+ type of p is t2, p%j== 3  p%k== 4
+ **************end of loop for i= 3 *************
+ 
+ after 'arr(i)%x = t2(i)', allocated (arr(i)%x)== T
+ after 'x1 = arr(i)%x' ,storage_size(x1)== 64
+ after p=>x1, same_type_as(arr(i)%x, x1)== T
+ type of p is t2, p%j== 4  p%k== 5
+ **************end of loop for i= 4 *************
+ 

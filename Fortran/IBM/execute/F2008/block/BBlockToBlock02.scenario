@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BBlockToBlock02.f
+#FEATURE   = var declared in first and simply used in second are not the same
+#CREATOR   = DF
+#DATE      = 2010-12-06
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = F_COMPILE
+#INPUT    = $(tcasedir)BBlockToBlock02.f
+#OUTPUT   = BBlockToBlock02$(OBJ)
+#ENDCMD
+
+#CMD      = F_LINK
+#INPUT    = BBlockToBlock02$(OBJ)
+#OUTPUT   = BBlockToBlock02$(EXE)
+#ENDCMD
+
+#CMD      = RUN
+#INPUT    = BBlockToBlock02$(EXE)
+#STDOUT   = BBlockToBlock02.out
+#ENDCMD
+
+#CMD      = SPIFF
+#OPTS     = -r1e-5
+#INPUT    = $($(tcasedir)BBlockToBlock02$(product)vf) BBlockToBlock02.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,3 @@
+"C819EndMissed.f", line 65.2: 1511-117 (E) Construct name a does not appear on the END SELECT statement.  Statement will be matched with the corresponding SELECT CASE or SELECT TYPE statement.
+** c819endmissed   === End of Compilation 1 ===
+1501-510  Compilation successful for file C819EndMissed.f.

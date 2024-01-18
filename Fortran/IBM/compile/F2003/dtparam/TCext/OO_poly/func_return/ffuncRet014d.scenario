@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/func_return/ffuncRet014d.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070920
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ffuncRet014d.f
+#OUTPUT    = ffuncRet014d$(OBJ)
+#STDERR    = ffuncRet014d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = ffuncRet014d.err $($(tcasedir)ffuncRet014d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

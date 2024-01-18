@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/mix/C931/fdtio001kl.scenario
+#FEATURE = OO_dtio/mix tests - regression run bucket + derived type parameters
+#CREATOR = automated conversion script
+#DATE    = 20070723
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fdtio001kl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fdtio001kl$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  fdtio001kl$(OBJ)
+#OUTPUT    = fdtio001kl$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fdtio001kl$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

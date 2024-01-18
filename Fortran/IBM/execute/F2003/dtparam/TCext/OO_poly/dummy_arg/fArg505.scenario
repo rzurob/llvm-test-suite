@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/dummy_arg/fArg505.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070919
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fArg505.f
+#OUTPUT    = fArg505$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fArg505$(OBJ)
+#OUTPUT    = fArg505$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fArg505$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

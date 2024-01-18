@@ -1,0 +1,7 @@
+** mod   === End of Compilation 1 ===
+"BNoImportd.f", line 47.4: 1515-019 (S) Syntax is incorrect.
+** bnoimportd   === End of Compilation 2 ===
+"BNoImportd.f", line 57.4: 1515-019 (S) Syntax is incorrect.
+** ext   === End of Compilation 3 ===
+** carrot   === End of Compilation 4 ===
+1501-511  Compilation failed for file BNoImportd.f.

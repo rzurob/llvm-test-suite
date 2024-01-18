@@ -1,0 +1,6 @@
+NaN Inf NaN() NaN(S) (3,14;-Infinity) (-NaN(Q) ; inf) -inF
+-NaN +Inf NaN(abcdefghijklmnopqrstuvwxzy) NaN(S) (-inf;-Infinity) (+NaN(Q);inf) -inFinity
++NaN +InfinitY NaN(S) NaN(Q) (-Infinity;NaN()) (NaN(S);+infinity) -inF
+NaN -Inf +NaN() -NaN(S) (3,14; +NaN(Q)) (+NaN(S); inf) -nan(1)
+NaN Inf NaN() NaN(S) (3,14;nan(_abcd123)) (-NaN(_) ; inf) nan(_)
+nAn(s) -Infinity NaN(Q) NaN(_S_) (nan;3,14) (-NaN(); nan) +nan()

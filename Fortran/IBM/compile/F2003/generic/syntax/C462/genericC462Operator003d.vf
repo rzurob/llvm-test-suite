@@ -1,0 +1,4 @@
+"genericC462Operator003d.f", line 39.37: 1514-705 (S) mypower must not be a subroutine. mypower will not be included in the generic interface for the ** operator.
+** m   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericC462Operator003d.f.

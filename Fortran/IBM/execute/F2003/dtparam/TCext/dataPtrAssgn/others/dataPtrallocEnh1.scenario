@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/others/dataPtrallocEnh1.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071217
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrallocEnh1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrallocEnh1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrallocEnh1$(OBJ)
+#OUTPUT    = dataPtrallocEnh1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrallocEnh1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

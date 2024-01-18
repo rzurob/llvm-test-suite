@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/coarray/defAssgn/daExternCCRank1Rank2.scenario
+#FEATURE   = F2008 CAF coarray defined assignment - External routine with both args coarrays of matching type, but mismatched rank
+#CREATOR   = DF
+#DATE      = 20101220
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)daExternCCRank1Rank2.f
+#OUTPUT    = daExternCCRank1Rank2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = daExternCCRank1Rank2$(OBJ)
+#OUTPUT    = daExternCCRank1Rank2$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD       = MPRUN
+	#INPUT     = daExternCCRank1Rank2$(EXE)
+	#STDOUT    = daExternCCRank1Rank2$(i).out
+	#ENDCMD
+
+	#CMD       = DIFF
+	#INPUT     = $($(tcasedir)daExternCCRank1Rank2$(product)vf) daExternCCRank1Rank2$(i).out
+	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

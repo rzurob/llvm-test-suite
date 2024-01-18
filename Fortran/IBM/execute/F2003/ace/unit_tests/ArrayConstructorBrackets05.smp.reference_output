@@ -1,0 +1,4 @@
+"ArrayConstructorBrackets05.f", line 26.16: 1518-352 (L) The "[" and "]" characters are not permitted to delimit an array constructor by the Fortran 95 standard.
+"ArrayConstructorBrackets05.f", 1518-317 (L) The -qsmp option can cause the compiler to accept code that does not conform to the Fortran 95 standard.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file ArrayConstructorBrackets05.f.

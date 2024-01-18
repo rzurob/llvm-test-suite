@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = cmdline/UnitTests/fcmd_arg_cnt02.scenario
+#FEATURE = cmdline tests - regression run bucket
+#CREATOR = automated conversion script - fixed CPR 20090121
+#DATE    = 20041204
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)fcmd_arg_cnt02.f
+#OPTS      = $(OPT_INTSIZE_2)
+#OUTPUT    = fcmd_arg_cnt02$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_INTSIZE_2)
+#INPUT     = fcmd_arg_cnt02$(OBJ)
+#OUTPUT    = fcmd_arg_cnt02$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fcmd_arg_cnt02$(EXE)
+#OPTS      = aa bb
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

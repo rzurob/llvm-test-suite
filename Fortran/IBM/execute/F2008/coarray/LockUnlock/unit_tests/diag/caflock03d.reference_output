@@ -1,0 +1,6 @@
+"caflock03d.f", line 51.12: 1511-161 (S) The lock variable in the LOCK statement must be a scalar of type LOCK_TYPE.
+"caflock03d.f", line 53.15: 1511-161 (S) The lock variable in the UNLOCK statement must be a scalar of type LOCK_TYPE.
+"caflock03d.f", line 59.12: 1511-161 (S) The lock variable in the LOCK statement must be a scalar of type LOCK_TYPE.
+"caflock03d.f", line 61.15: 1511-161 (S) The lock variable in the UNLOCK statement must be a scalar of type LOCK_TYPE.
+** caflock03d   === End of Compilation 1 ===
+1501-511  Compilation failed for file caflock03d.f.

@@ -1,0 +1,46 @@
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE TITLE            : Deferred Character Length
+!*
+!*  PROGRAMMER                 : James Ren
+!*  ORIGIN                     : AIX Compiler Development,
+!*                             : IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Diagnostic test
+!*
+!*  DRIVER STANZA              : xlf90/95
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  DESCRIPTION                : Testing the function result which is
+!*                               a character with deferred length and
+!*                               allocatable attribute.
+!*
+!* ===================================================================
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+ implicit none
+
+ character(:), allocatable :: char
+ character(4) dd
+
+ allocate (character(4)::char)
+ char = '1234'
+
+ associate (item =>fun(char))
+ if (item /= '1234') error stop 1
+ end associate
+
+ associate (item =>fun(char)//'5678')
+ if (item /= '12345678') error stop 2
+ end associate
+
+ contains
+ function fun(ch)
+    character(:), allocatable :: ch
+    character(:), allocatable ::fun
+    allocate(fun, source=ch)
+    fun = ch
+ end function
+ end

@@ -1,0 +1,68 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/coarray/array_intrinsics/staticImages07.scenario
+#FEATURE   =
+#CREATOR   = Shahid Alam
+#DATE      = 20110120
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#INVALID_XOPTS = $$(F_COMPILE^OPT_COARRAY_IMAGES<.*>) $$(F_COMPILE^OPT_COARRAY_DNODES<.*>)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_COARRAY_IMAGES<4>)
+#INPUT     = $(tcasedir)staticImages03a.f
+#OUTPUT    = staticImages07a$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_COARRAY_IMAGES<4>)
+#INPUT     = $(tcasedir)staticImages03b.f
+#OUTPUT    = staticImages07b$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_COARRAY_IMAGES<8>)
+#INPUT     = $(tcasedir)staticImages03c.f
+#OUTPUT    = staticImages07c$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_COARRAY_IMAGES<4>)
+#INPUT     = $(tcasedir)staticImages03d.f
+#OUTPUT    = staticImages07d$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_COARRAY_IMAGES<4>)
+#INPUT     = staticImages07a$(OBJ) staticImages07b$(OBJ) staticImages07c$(OBJ) staticImages07d$(OBJ)
+#OUTPUT    = staticImages07$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#FOR i = 1 TO 1
+   #CMD       = RUN
+   #ENVAR     = CAF_NUM_IMAGES=4
+   #ENVAR     = MP_PROCS=4
+   #INPUT     = staticImages07$(EXE)
+   #STDOUT    = staticImages07.out
+   #STDERR    = staticImages07.out
+   #VALIDRCS  = 1
+   #ENDCMD
+#ENDFOR
+
+#CMD       = GREP
+#INPUT     = 'PGAS Runtime Error.*attempt to set threads twice' staticImages07.out > staticImages07.grep
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

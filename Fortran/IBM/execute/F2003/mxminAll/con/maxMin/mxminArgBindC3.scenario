@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/mxminAll/con/maxMin/mxminArgBindC3.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)mxminBindC3.c
+#OPTS      = $(C_COMPILER_OPTS)
+#OUTPUT    = mxminBindC3$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mxminArgBindC3.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = mxminArgBindC3$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = mxminArgBindC3$(OBJ) mxminBindC3$(OBJ)
+#OUTPUT    = mxminArgBindC3$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminArgBindC3$(EXE)
+#STDOUT    = mxminArgBindC3.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

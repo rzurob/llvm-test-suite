@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrGTChar1.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrGTChar1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrGTChar1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrGTChar1$(OBJ)
+#OUTPUT    = dataPtrGTChar1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrGTChar1$(EXE)
+#STDOUT    = dataPtrGTChar1.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrGTChar1.out $($(tcasedir)dataPtrGTChar1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

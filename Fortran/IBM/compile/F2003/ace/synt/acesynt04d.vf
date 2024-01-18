@@ -1,0 +1,10 @@
+"acesynt04d.f", line 45.15: 1515-019 (S) Syntax is incorrect.
+"acesynt04d.f", line 46.17: 1515-019 (S) Syntax is incorrect.
+"acesynt04d.f", line 47.19: 1515-019 (S) Syntax is incorrect.
+"acesynt04d.f", line 48.14: 1512-053 (E) Edit descriptor in component number 1 of FORMAT statement is invalid and will be ignored.
+"acesynt04d.f", line 48.19: 1512-050 (W) Field separator is missing, in component number 2 of FORMAT statement, after edit descriptor I.  A comma is assumed.
+"acesynt04d.f", line 48.21: 1512-053 (E) Edit descriptor in component number 2 of FORMAT statement is invalid and will be ignored.
+"acesynt04d.f", line 48.25: 1512-040 (W) Repeat specification 1, in component number 3 of FORMAT statement, for ) edit descriptor is not allowed.  Repeat specification is ignored.
+"acesynt04d.f", line 48.27: 1512-033 (W) Extra characters in FORMAT statement at end of FORMAT specifier are ignored.
+** acesynt04d   === End of Compilation 1 ===
+1501-511  Compilation failed for file acesynt04d.f.

@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/operator/functional/genericOperatorScalar002.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20051122
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericOperatorScalar002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericOperatorScalar002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericOperatorScalar002$(OBJ)
+#OUTPUT    = genericOperatorScalar002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericOperatorScalar002$(EXE)
+#STDOUT    = genericOperatorScalar002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericOperatorScalar002.out $(tcasedir)genericOperatorScalar002.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

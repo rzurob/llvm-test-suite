@@ -1,0 +1,17 @@
+ dcSub: want: 5 5
+ dcSub:   is: 5 5
+ dcSub:  arg:zyxwv
+ dcSub: want: 1 1
+ dcSub:   is: 1 1
+ dcSub:  arg:l
+ diaSub: want: 9 9
+ diaSub:   is: 9 9
+ diaSub:  arg: 124683553 124683551 124683547 124683539 124683523 124683511 124683473 124683439 124683379
+ diaSub: want: 2 2
+ diaSub:   is: 2 2
+ diaSub:  arg: 123456791 123456761
+ dcFun(dc5):.zyxwv.
+ dcFun(dc1):.l.
+ diaFun(dia9): -1 124683553 124683551 124683547 124683539 124683523 124683511 124683473 124683439 124683379 -1
+ diaFun(dia2): -1 123456791 123456761 -1
+ end

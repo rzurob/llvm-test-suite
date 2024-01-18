@@ -1,0 +1,30 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dtParamTypeDecUseOfSpecExpr_d.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       05-11-07
+#TEST_TYPE=  Diagnostic
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=      F_COMPILE
+#INPUT=    $(tcasedir)dtParamTypeDecUseOfSpecExpr_d.f
+#STDERR=   dtParamTypeDecUseOfSpecExpr_d.err
+#VALIDRCS= $(RC_COMP_E)
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    dtParamTypeDecUseOfSpecExpr_d.err $($(tcasedir)dtParamTypeDecUseOfSpecExpr_d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

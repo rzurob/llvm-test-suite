@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/move_alloc/move_allocDiagFromToAreRes01.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Oct. 6 2008
+#TEST_TYPE = Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)move_allocDiagFromToAreRes01.f
+#STDERR = move_allocDiagFromToAreRes01.err
+#VALIDRCS = $(RC_COMP_E)
+#ENDCMD
+
+#CMD    = XLDIFF
+#INPUT  = move_allocDiagFromToAreRes01.err $($(tcasedir)move_allocDiagFromToAreRes01$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

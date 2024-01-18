@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/namelist/protected101d.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+! This chunk was DCOMP
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)protected101d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=intmsg -qdebug=shutup
+#OUTPUT    = protected101d$(OBJ)
+#STDERR    = protected101d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)protected101d$(product)vf) protected101d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

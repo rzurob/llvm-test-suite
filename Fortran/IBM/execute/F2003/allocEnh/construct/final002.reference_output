@@ -1,0 +1,10 @@
+ 1
+ finalizeBase
+ deallocating b1%data; shape: 100
+ 2
+ finalizeBase
+ deallocating b1%data; shape: 3
+ 3
+ 4
+ finalizeBase
+ deallocating b1%data; shape: 0

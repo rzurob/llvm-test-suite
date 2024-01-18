@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint53.scenario
+#FEATURE	= Array constructor enhancement - ac-do-variable name choice
+#CREATOR	= DF Manual Update
+#DATE		= 20061117
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint53.f
+#OUTPUT		= acetint53$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint53$(OBJ)
+#OUTPUT		= acetint53$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint53$(EXE)
+#STDOUT		= acetint53.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -a1-e6
+#INPUT		= $($(tcasedir)acetint53$(product)vf) acetint53.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

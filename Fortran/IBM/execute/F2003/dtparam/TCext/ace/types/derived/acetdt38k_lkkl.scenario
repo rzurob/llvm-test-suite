@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/derived/acetdt38k_lkkl.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement -- \
+				AC in I/O, as output-item, using DTIO, incl. polymorphism)
+#CREATOR	= Glen Mateer (based on work by David Forster)
+#DATE		= 20080117
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt38k_lkkl.f
+#OPTS = -qxlf2003=dynamicacval
+#OUTPUT		= acetdt38k_lkkl$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt38k_lkkl$(OBJ)
+#OUTPUT		= acetdt38k_lkkl$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt38k_lkkl$(EXE)
+#STDOUT		= acetdt38k_lkkl.stdout
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetdt38k_lkkl$(product)vf) acetdt38k_lkkl.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

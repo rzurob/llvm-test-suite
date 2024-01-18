@@ -1,0 +1,4 @@
+"genericGenericNameOptional003d.f", line 43.41: 1514-699 (S) Procedure "optional2" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "optional1", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** m   === End of Compilation 1 ===
+** genericgenericnameoptional003d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericGenericNameOptional003d.f.

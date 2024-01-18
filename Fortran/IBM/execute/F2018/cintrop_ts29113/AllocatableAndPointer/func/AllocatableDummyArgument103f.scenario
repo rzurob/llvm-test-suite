@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/AllocatableAndPointer/func/AllocatableDummyArgument103f.scenario
+#FEATURE   = C Interop, Allocatable, Pointer
+#CREATOR   = Dorra Bouchiha
+#DATE      = 2013-01-22
+#TEST_TYPE = functional
+#KEYWORDS  = C Interop, Allocatable, Pointer
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AllocatableDummyArgument103f.f
+#OUTPUT    = AllocatableDummyArgument103f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = AllocatableDummyArgument103f$(OBJ)
+#OUTPUT    = AllocatableDummyArgument103f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = AllocatableDummyArgument103f$(EXE)
+#STDOUT    = AllocatableDummyArgument103f.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

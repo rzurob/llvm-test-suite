@@ -1,0 +1,484 @@
+<html><head><title>IT1 - F2008: Extensions to the VALUE attribute</title></head><body><table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#c0e1ff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="left" style="font-family: Arial; color: rgb(0, 0, 128); font-size: 12pt;"><strong>Document Control Information:</strong>
+            <p style="color: rgb(0, 0, 0);">The official version of this document is kept in CMVC in the <span style="font-weight: bold; text-decoration: underline;">%CMVC_Family%</span> family, release <span style="font-weight: bold; text-decoration: underline;">%CMVC_Release%</span>, component <span style="font-weight: bold; text-decoration: underline;">%CMVC_Component%</span>, file <span style="color: rgb(255, 102, 102); font-weight: bold; text-decoration: underline;">%CMVC_PathName%</span>. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.<br />
+            <br />
+            CMVC Extraction Information: %W% %H% %I% sccsid<br />
+            <br />
+            This document is IBM Confidential.<br />
+            </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table cellspacing="0" cellpadding="5" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td width="20%" valign="top" align="left"><strong>CMVC Feature Number</strong> </td>
+            <td width="80%" valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%CMVC_Feature%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Feature Title</strong> </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Document_Name% %Note{By default the feature title and document name are the same. You can either change the document name (through Properties), or replace the tag with the title of the feature}%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Author(s)</strong> </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Authors%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Applicable Product Releases</strong>       </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Note{ List all the products and their release numbers for which the information in this document is/will be correct. For example:<br />
+            XL C/C++ v7.0 and 8.0 on Linux and AIX<br />
+            XL Fortran v9.1 and 10.1 on Linux and AIX.<br />
+            <br />
+            If you are updating this IT1, remove old products from the list if they will not support this updated I0's behaviour. For example, if this IT1 was first written for XL Fortran v9.1 and a change is being made in XL Fortran v10.1 that will not be ported back to v9.1, then v9.1 should not appear in the list.<br />
+            <br />
+            For prototype or experimental code that isn't scheduled to ship in any release yet, note possible future targets like this: &quot;Experimental code, may ship in future XL Fortran and XL C/C++ AIX releases&quot; }%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Keyword(s)</strong>       </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Note{ Define KEYWORDS to be used to identify/classify this feature }%</td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#ff6666">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="text-align: left; font-family: Arial; font-size: 12pt;"><strong>IT1 Status</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<p>
+<table cellspacing="0" cellpadding="5" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td valign="top" align="left"><strong>Approvers</strong> (mandatory participation) </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Note{Insert the names of people who will have approval authority for this review. These people, in aggregate, are responsible for approving the technical and user interface content of the document. Generally, this list should include people who represent compiler components that will need to change if this review is approved.<br />
+            The I0 Process document provides detailed guidance on choosing your list of approvers.<br />
+            A member of the Option Review Board must approve any i0 that adds an option or pragma.<br />
+            Use Access Control to add/delete people from this list. The initial access control list is populated with the people from the Component Reviewers section below. You can use Access Control to change their role to Approver, or add additional approvers.}%<br />
+            %Approvers%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Reviewers</strong> (optional participation) </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Note{List any additional people you feel need to participate in the review. These people do not have approval authority. Use Access Control to add/delete people from this list.}%<br />
+            %Release_Management_Contact%<br />
+            %Team_Reviewers%<br />
+            %Component_Reviewers%</td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p><br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td style="font-family: Arial; vertical-align: top;"><strong>Approvers</strong>: Please click the 'Approved' check-box beside your name in the table below if you agree with the technical content of this document; not checking your 'approve' check-box signifies you do not approve.</td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%Approvals%
+<p>Approval Comments</p>
+<p><br />
+<br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td style="font-family: Arial; vertical-align: top;"><strong>Reviewers</strong>: Please click the 'Reviewed' checkbox beside your name to indicate your participation in the review. </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%Reviews%</p>
+<p>Review Comments</p>
+<p><br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td style="font-family: Arial; vertical-align: top;"><strong>Access Change History</strong> %Note{Authors: Access Change History will list any changes to the access control done to the document draft. These changes would not be visible in a review. In a review, this section would only list the access changes done to the review itself.<br />
+            Please note that changes to the access control of a review are not automatically reflected in the access control of the draft document.}% </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%CollapsedSection{<strong>Access Change History</strong>}{%Access_Change_History%}%<br />
+</p>
+<p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Overview</strong> </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%Note{A brief description of the feature, its application(s) and limitation(s).<br />
+<br />
+Feature syntax may also be mentioned here.  Since it is in the I0 document, it is optional.}%<br />
+</p>
+F2008 introduced extensions to the VALUE attribute:<br />
+&quot;The value attribute is permitted for an array, and for an object with a nonconstant length type parameter.&quot;<br />
+<br />
+This IT1 is to test support for assigning the VALUE attribute to dummy arguments for <br />
+- Explicit shape arrays of various type, kind &amp; rank<br />
+- Assumed shape arrays of various type, kind &amp; rank <br />
+<br />
+<u>This IT1 will <strong>NOT</strong> be considering objects with a nonconstant length type parameter.</u><br />
+<br />
+A comparison to F2003 follows in regards to the new extension:<br />
+<br />
+<table width="500" cellspacing="1" cellpadding="1" border="1" align="" summary="">
+    <tbody>
+        <tr>
+            <td><strong><a class="review" title="Click on the text to add a comment"><span id="line__45">F2008 does NOT allow VALUE with    </span></a></strong></td>
+            <td><strong><a class="review" title="Click on the text to add a comment"><span id="line__45">F2008 does NOT allow VALUE with    </span></a></strong></td>
+        </tr>
+        <tr>
+            <td>POINTER</td>
+            <td>&nbsp;POINTER</td>
+        </tr>
+        <tr>
+            <td>ALLOCATABLE</td>
+            <td>&nbsp;ALLOCATABLE</td>
+        </tr>
+        <tr>
+            <td>VOLATILE</td>
+            <td>&nbsp;VOLATILE</td>
+        </tr>
+        <tr>
+            <td>INTENT(INOUT)</td>
+            <td>&nbsp;INTENT(INOUT)</td>
+        </tr>
+        <tr>
+            <td>INTENT(OUT)</td>
+            <td>&nbsp;INTENT(OUT)</td>
+        </tr>
+        <tr>
+            <td>PARAMETER</td>
+            <td>&nbsp;PARAMETER</td>
+        </tr>
+        <tr>
+            <td>EXTERNAL</td>
+            <td>&nbsp;EXTERNAL</td>
+        </tr>
+        <tr>
+            <td>dummy procedures</td>
+            <td>&nbsp;dummy procedures</td>
+        </tr>
+        <tr>
+            <td>DIMENSION</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>len type specified</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>deffered-size array</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>assumed-size array</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>assumed-rank array</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>implied-shape array</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>coarray</td>
+        </tr>
+    </tbody>
+</table>
+<p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Test Strategy</strong></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%Note{This is the most important section of the document.  <br />
+<br />
+Detail the test methodology and coverage for the feature to be tested.<br />
+<br />
+Test strategy is not to identify all possible defects under all conditions with the feature.  In most cases, this is unrealistic.<br />
+It is to identify and report defects with the feature under specific conditions likely to be used by the customer.  <br />
+As a tester, you are the first customer of the feature.  So you, the tester, need to understand how a certain feature would be used in the real world and come up with a Test strategy to validate those use cases.  <br />
+<br />
+Use cases to be validated should be documented here.<br />
+<br />
+Provide examples if they are needed to explain the test method or coverage. <br />
+<br />
+If applicable, organize the coverage into diagnostic and functional sections.  <br />
+<br />
+Diagnostic test cases verify error handling of the feature and the corresponding messages that are produced.  This would also include verifying that valid syntax does not produce any unexpected messages.<br />
+This type of testing usually fall under the umbrella of unit tests. The developer of the feature is expected to write fully automated unit tests, but this can be negotiated if it is unfeasible for the developer to do so.<br />
+<br />
+Test cases that verify values are referred to as functional test cases. <br />
+<br />
+For large features, there may not be resource/time to completely test the feature. Certain parts of the feature will be more important than others.  <br />
+Prioritize the test coverage and clearly document what will be covered in testing and what will be omitted.  Risk assessment on the parts omitted should also be documented.  This needs to be reviewed and agreed to by the requirements owner(s).<br />
+<br />
+If there is already coverage in existing test suites, explicitly document it here.<br />
+<br />
+Often, a feature by itself will work fine, but when combined with existing functionality or other new features, it may not work correctly.  So ensure this type of testing is covered in the test coverage.  This implies that other new features being developed for the release should also be understood.   <br />
+<br />
+Backward compatibility, portability, and any other migration Issues should be considered.  One of the main complaints from customers is migrating from release to release (or from one platform to another).  <br />
+<br />
+Document any dependancies or open issues with the feature, so these are not over-looked.<br />
+=============================================================================================<br />
+}%<br />
+<br />
+<font size="4"><u><strong>Functional Tests</strong></u></font><br />
+<br />
+The general test strategy for the feature will involve arrays being passed to procedures. Within the procedures, the dummy arguments for the arrays will have the VALUE attribute. Testing will check that the dummy arguments match the actual arguments, and that no changes done to the dummy arguments will affect the actual argument.<br />
+<br />
+The actual arguments can be:<br />
+<ul>
+    <li>&nbsp;&nbsp;&nbsp; array constructors</li>
+    <li> &nbsp;&nbsp;&nbsp; array variable</li>
+    <li> &nbsp;&nbsp;&nbsp; array section</li>
+    <li> &nbsp;&nbsp;&nbsp; array constants</li>
+    <li>&nbsp;&nbsp;&nbsp; both contiguous and noncontiguous arrays</li>
+</ul>
+The dummy argument can be:<br />
+<ul>
+    <li> &nbsp;&nbsp; explicit shape array</li>
+    <li> &nbsp;&nbsp; assumed shape array</li>
+</ul>
+<em>Dummy arguments must also be considered using argument keywords</em><br />
+<br />
+The scopes to consider are:<br />
+<ul>
+    <li> &nbsp;&nbsp;&nbsp; external procedure</li>
+    <li> &nbsp;&nbsp;&nbsp; module procedure</li>
+    <li> &nbsp;&nbsp;&nbsp; internal procedure</li>
+</ul>
+Procedures for arrays can be:<br />
+<ul>
+    <li> &nbsp;&nbsp;&nbsp; either a subroutine or function</li>
+    <li> &nbsp;&nbsp;&nbsp; nested</li>
+    <li> &nbsp;&nbsp;&nbsp; pure</li>
+</ul>
+<p>Arrays can have the following attributes:<br />
+</p>
+<ul>
+    <li>CONTIGUOUS</li>
+    <li> DIMENSION</li>
+    <li> OPTIONAL</li>
+</ul>
+Arrays can be declared using the dimension attribute or by explicitly specifying its rank and shape. <br />
+Testing will involve arrays of the following types and kinds:<br />
+&nbsp;&nbsp;&nbsp; <br />
+<table width="200" cellspacing="1" cellpadding="1" border="1" align="" summary="">
+    <tbody>
+        <tr>
+            <td><strong>Type</strong></td>
+            <td><strong>Kind</strong></td>
+        </tr>
+        <tr>
+            <td>integer</td>
+            <td>1,2,4(default),8</td>
+        </tr>
+        <tr>
+            <td>logical<br />
+            </td>
+            <td>1,2,4(default),8</td>
+        </tr>
+        <tr>
+            <td>real</td>
+            <td>4(default),8,16</td>
+        </tr>
+        <tr>
+            <td>complex</td>
+            <td>4(default),8,16</td>
+        </tr>
+        <tr>
+            <td>character</td>
+            <td>1</td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<strong>Arrays of Derived Types:</strong><br />
+<ul>
+    <li>components of intrinsic data types</li>
+    <li>components of other allowed derived types</li>
+    <li>ALLOCATABLE component</li>
+    <li>POINTER component</li>
+    <li>derived types including the sequence type</li>
+</ul>
+<font size="4"><u><strong>Diagnostic Tests:</strong></u></font><br />
+<br />
+The following tests are expected to have an error returned by the compiler.<br />
+<br />
+1) The array definitions definitions listed are not allowed with a dummy array using the VALUE attribute:<br />
+<ul>
+    <li> Assumed size array</li>
+    <li> Assumed rank array</li>
+    <li>Deferred shape array (allocatable/pointer)</li>
+</ul>
+2). The attributes listed are not allowed on a dummy array using the VALUE attribute:<br />
+<ul>
+    <li> POINTER&nbsp;&nbsp; </li>
+    <li> ALLOCATABLE</li>
+    <li> VOLATILE&nbsp;&nbsp; </li>
+    <li> INTENT(INOUT)</li>
+    <li> INTENT(OUT) </li>
+</ul>
+3) An array dummy argument with the VALUE attribute is not interoperable. The following cases testing interopability with C should also return an error:<br />
+<ul>
+    <li>Dummy array with the VALUE of a BIND(C) routine</li>
+</ul>
+<p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Test Procedure and Scenario</strong></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%Note{A Test procedure provides detailed instructions for the execution of one or more test cases.  <br />
+<br />
+Most good software development models call for both a Test Plan and a Test Procedure document. <br />
+Although in principle this sounds good, test procedures are costly to develop and maintain.  When writing test cases, Test procedures often require updating, requiring IT1 [test plan] to be re-opened.<br />
+<br />
+Currently, development teams review this section, and not necessarily the test cases themselves.  So there is definitely value in having this information available.  If it is not provided in the IT1 document, it needs to be provided during test case review, and reviewed by developer.  <br />
+.}%<br />
+<br />
+Refer to IT2 for detail information about the TCs.<br />
+<br />
+<p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Test cases Information</strong></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%Note{This section details the test case location and other test case related information<br />
+<br />
+Technically, this is not part of a &quot;Test plan&quot;.  <br />
+<br />
+Following information may not be known during IT1 time-frame.  If it's known, it should be documented:<br />
+Document information about release name. component name. cmvc location and test cases shadow location<br />
+<br />
+Document information about the feature bucket structure.  If the feature is big enough, sub-buckets will be necessary to maintain some organization. <br />
+<br />
+Document  information about the feature test case naming convention.  <br />
+Example: <br />
+xxx_001f.scenario (functional) <br />
+xxx_001d.scenario (diagnostic) <br />
+where xxx can be the feature name or function name that the test case is testing. <br />
+<br />
+<br />
+If you plan to have a combined IT1 and test case review, further test case information needs to be added to this section:<br />
+Following statement needs to be added::<br />
+&quot;Test case approval will also be done through this document, so no formal test case review document will be published.<br />
+Please review the test cases from the location provided below, and only approve this document if you are satisfied with <br />
+the IT1 (test plan) and the test cases.&quot; <br />
+List of test case names, so that comments can be added per test case; if there are too many test cases, list groups of test cases, or test lists.}%<br />
+<br />
+<style type="text/css">
+body { margin: 0 0 0 0; padding:0 0 0 0 }
+td,div { font-family:Arial;font-size:10pt;vertical-align:top }
+/* Copyright IBM Corp. 2015  All Rights Reserved.                    */
+body { margin: 0 0 0 0; padding:0 0 0 0; overflow:hidden; background-color:#fafafa; }
+.grayBackground { background-color:#f6f6f6; }
+.transcript { background-color:#d2d2d2;}
+.messageBlock {padding-left:10px; padding-right:10px;padding-top:0}
+.expansion{height:10px;width:100%;overflow:hidden;}
+.expansionx{height:10px;overflow:hidden;}
+.line{height:1px;background-color:#cccccc;overflow:hidden;}
+.message { padding-left:0px; padding-right:65px;margin-left:0px; word-wrap:break-word; white-space:-moz-pre-wrap; _white-space:pre; white-space:pre-wrap;}
+.messageCont { padding-left:20px; margin-left:95px; word-wrap:break-word; white-space:-moz-pre-wrap; _white-space:pre;white-space:pre-wrap;}
+.other { font-size:11px;color:#1970b0;vertical-align:top;font-weight:bold;font-style:normal;float:left; width:95px; white-space:nowrap; }
+.myself { font-size:11px;color:#222222;font-style:normal;font-weight:bold;font-style:normal;float:left; width:95px; white-space:nowrap; }
+.otherCont { font-size:8px;text-align:right; color:#1970b0;font-family:Arial,Lucida Grande;font-style:normal;vertical-align:top;font-weight:bold;float:left; width:95px; }
+.myselfCont { font-size:8px;text-align:right; color:#222222;font-family:Arial,Lucida Grande;font-style:normal;vertical-align:top;font-weight:bold;float:left; width:95px; }
+.system { font-size:11px; word-wrap:break-word;color:#d13f08;font-style:normal;font-weight:normal; white-space:-moz-pre-wrap; _white-space:pre;white-space:pre-wrap; }
+.showTimestamp { padding-left:20px;font-size:11px; float:right; color:#999999;font-style:normal;font-weight:normal; }
+.other1 { font-size:11px; color:#ba006e;vertical-align:top;font-weight:bold;font-style:normal;float:left; width:95px; }
+.otherCont1 { font-size:8px;text-align:right; color:#ba006e;font-family:Arial,Lucida Grande;font-style:normal;vertical-align:top;font-weight:bold;float:left; width:95px; }
+.other2 { font-size:11px; color:#007670;vertical-align:top;font-weight:bold;font-style:normal;float:left; width:95px; }
+.otherCont2 { font-size:8px;text-align:right; color:#007670;font-family:Arial,Lucida Grande;font-style:normal;vertical-align:top;font-weight:bold;float:left; width:95px; }
+.other3 { font-size:11px; color:#3b0256;vertical-align:top;font-weight:bold;font-style:normal;float:left; width:95px; }
+.otherCont3 { font-size:8px;text-align:right; color:#3b0256;font-family:Arial,Lucida Grande;font-style:normal;vertical-align:top;font-weight:bold;float:left; width:95px; }
+.other4 { font-size:11px; color:#00512b;vertical-align:top;font-weight:bold;font-style:normal;float:left; width:95px; }
+.otherCont4 { font-size:8px;text-align:right; color:#00512b;font-family:Arial,Lucida Grande;font-style:normal;vertical-align:top;font-weight:bold;float:left; width:95px; }
+.other5 { font-size:11px; color:#a91024;vertical-align:top;font-weight:bold;font-style:normal;float:left; width:95px; }
+.otherCont5 { font-size:8px;text-align:right; color:#a91024;font-family:Arial,Lucida Grande;font-style:normal;vertical-align:top;font-weight:bold;float:left; width:95px; }
+.other6 { font-size:11px; color:#b8471b;vertical-align:top;font-weight:bold;font-style:normal;float:left; width:95px; }
+.otherCont6 { font-size:8px;text-align:right; color:#b8471b;font-family:Arial,Lucida Grande;font-style:normal;vertical-align:top;font-weight:bold;float:left; width:95px; }
+.other7 { font-size:11px; color:#7f1c7d;vertical-align:top;font-weight:bold;font-style:normal;float:left; width:95px; }
+.otherCont7 { font-size:8px;text-align:right; color:#7f1c7d;font-family:Arial,Lucida Grande;font-style:normal;vertical-align:top;font-weight:bold;float:left; width:95px; }
+.highlight { background-color:#bed6f8; }
+.datestamp { padding-right:0px; font-size:11px; cursor:default;padding-top:1px;padding-bottom:1px; background-color:#a7a7a7; width:100%; float:left; text-align:right; color:#333333; font-weight:bold; font-style:italic; }
+#chatAlert { float:left; border-bottom:1px solid #E8D091; padding:6px; width:100%; color:#A5754C; }
+#chatAlertImage { float:left; }
+#chatAlertText { float:left; margin-left:6px; margin-right:10px;}
+#chatAlertClose { float:right; margin-right:10px; padding-right:6px; margin-top:0px; }
+#chatAlertText a { color:#A5754C; }
+#chatAlertText a:hover { color:#A5754C; text-decoration:none; }
+
+.tsDisplay { display:block }.dsDisplay { display:none }</style>
+<table>
+</table>
+CMVC Family: xlftest<br />
+CMVC Component:  	xlftest.F2008<br />
+CMVC Release: tst151 and tstdev<br />
+CMVC path: <br />
+F2008/value/array<br />
+<p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Build Sanity Candidate(s)</strong></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%Note{List one or more test cases that are to be added to the BDS test list.  <br />
+<br />
+If the test cases are already identified during IT1 time-frame, it should be documented here.<br />
+<br />
+BDS test candidates may not be known until test case review time-frame.&nbsp; Thus not identifying the candidate during IT1 time-frame does not prevent it from being approved.  For this case, a URL  link to RTC task must exist.<br />
+<br />
+Not all features require test cases to be added to BDS.  This must be explicitly stated here (or in RTC task if not known during IT1 time-frame).<br />
+}%<br />
+<br />
+<br />
+<p>
+<table width="100%" cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Reference</strong></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%Note{I0 Location and any references (including standards) that may help understand the IT1.}%<strong style="color: rgb(0, 128, 0); font-size: 20px;"><br />
+</strong><br />
+<a itemid="_6yJugKuBEeOsfvr2Uke-kw" href="https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/72283">F2008:&nbsp; Extensions to the VALUE attribute (master story) (72283)</a><a itemid="_6yJugKuBEeOsfvr2Uke-kw" href="https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/72283"> </a><!--HTML Wrapper--></body></html>

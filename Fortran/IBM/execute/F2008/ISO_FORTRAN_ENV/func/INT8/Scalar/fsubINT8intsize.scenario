@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       fsubINT8intsize
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2008_COMPILE
+#OPTS=   $(OPT_INTSIZE_4)
+#INPUT=  $(tcasedir)fsubINT8.f
+#OUTPUT= fsubINT8$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_LINK
+#OPTS=   $(OPT_INTSIZE_4)
+#INPUT=  fsubINT8$(OBJ)
+#OUTPUT= fsubINT8$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fsubINT8$(EXE)
+#STDOUT=  fsubINT8.out
+#ENDCMD
+
+#CMD = DIFF
+#INPUT = fsubINT8.out $($(tcasedir)fsubINT8$(product)vf)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

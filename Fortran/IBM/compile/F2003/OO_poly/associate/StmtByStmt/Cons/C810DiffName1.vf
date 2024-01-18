@@ -1,0 +1,4 @@
+"C810DiffName1.f", line 55.27: 1511-133 (E) Construct name test2 on the END ASSOCIATE statement does not match the one specified on the corresponding ASSOCIATE statement.  Construct name test2 will be ignored.
+"C810DiffName1.f", 1516-036 (S) Entity test2 has undefined type.
+** c810diffname1   === End of Compilation 1 ===
+1501-511  Compilation failed for file C810DiffName1.f.

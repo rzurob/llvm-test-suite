@@ -1,0 +1,12 @@
++Inf*+Inf**  +Inf +Inf***   +Inf    +Inf     +Inf           +Inf
++Inf*+Inf**  +Inf +Inf***   +Inf    +Inf     +Inf           +Inf
+-Inf*-Inf**  -Inf -Inf***   -Inf    -Inf     -Inf           -Inf
+-Inf*-Inf**  -Inf -Inf***   -Inf    -Inf     -Inf           -Inf
+NaN(Q)* NaN**NaN(Q)  NaNNaN NaN(Q)  NaN(Q)   NaN(Q)         NaN(Q)
+NaN(Q)* NaN**NaN(Q)  NaNNaN NaN(Q)  NaN(Q)   NaN(Q)         NaN(Q)
+NaN(S)* NaN**NaN(S)  NaNNaN NaN(S)  NaN(S)   NaN(S)         NaN(S)
+NaN(S)* NaN**NaN(S)  NaNNaN NaN(S)  NaN(S)   NaN(S)         NaN(S)
+NaN(Q)* NaN**NaN(Q)  NaNNaN NaN(Q)  NaN(Q)   NaN(Q)         NaN(Q)
+NaN(Q)* NaN**NaN(Q)  NaNNaN NaN(Q)  NaN(Q)   NaN(Q)         NaN(Q)
+NaN(S)* NaN**NaN(S)  NaNNaN NaN(S)  NaN(S)   NaN(S)         NaN(S)
+NaN(S)* NaN**NaN(S)  NaNNaN NaN(S)  NaN(S)   NaN(S)         NaN(S)

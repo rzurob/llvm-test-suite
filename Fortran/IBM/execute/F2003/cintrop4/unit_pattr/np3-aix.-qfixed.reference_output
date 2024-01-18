@@ -1,0 +1,9 @@
+*** testcase variant:  -qfixed
+
+** s1   === End of Compilation 1 ===
+** sn1   === End of Compilation 2 ===
+** s2bind   === End of Compilation 3 ===
+  30.34   01610192 =Ü
+  30.35   01610192 'S2Ü
+** sn2bind   === End of Compilation 4 ===
+1501-511  Compilation failed for file np3.f.

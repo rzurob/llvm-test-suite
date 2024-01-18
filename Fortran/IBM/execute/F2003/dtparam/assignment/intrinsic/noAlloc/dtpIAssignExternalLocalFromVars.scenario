@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpIAssignExternalLocalFromVars.scenario
+#FEATURE   = Intrinsic Assignment without Allocation - assign variables to local variables in external subprogram
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAssignExternalLocalFromVars.f
+#OUTPUT    = dtpIAssignExternalLocalFromVars$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAssignExternalLocalFromVars$(OBJ)
+#OUTPUT    = dtpIAssignExternalLocalFromVars$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAssignExternalLocalFromVars$(EXE)
+#STDOUT    = dtpIAssignExternalLocalFromVars.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpIAssignExternalLocalFromVars$(product)vf) dtpIAssignExternalLocalFromVars.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

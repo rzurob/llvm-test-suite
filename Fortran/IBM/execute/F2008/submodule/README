@@ -1,0 +1,22 @@
+This directory contains both submodule and module subprogram test cases.
+
+It is structured such that the func, diag, and unit_test folders in this
+directory contain the submodule test cases.
+
+Module subprogram test cases were checked in as a subfolder in this directory
+and were mostly produced by porting the submodule test cases.  The directory
+structure mirrors the submodule directory structure. 
+
+Some diagnostic tests were not ported as they would not be unique to module
+subprograms.  Only the test cases added for module subprogram are listed
+in its IT2.  Other test cases are similar to those listed in the submodule
+IT2.
+
+
+While fixing defect RTC defect 58891, Daniel discovered some severe limitations
+to the design and created more unit test cases, which are checked into the
+unit_tests directory in the submodule folder.
+
+This also prompted a second phase to develop new module subprogram test cases
+to enhance coverage.  These test cases are to be listed in the IT1/2 documents,
+but no new review was created.

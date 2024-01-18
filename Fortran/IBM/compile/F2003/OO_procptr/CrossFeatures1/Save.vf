@@ -1,0 +1,6 @@
+"Save.f", line 56.20: 1514-018 (E) Identifier "proc" may not have the SAVE attribute specified.  SAVE attribute is ignored for this variable.
+"Save.f", line 61.20: 1514-018 (E) Identifier "proc" may not have the SAVE attribute specified.  SAVE attribute is ignored for this variable.
+"Save.f", line 66.30: 1514-018 (E) Identifier "proc" may not have the SAVE attribute specified.  SAVE attribute is ignored for this variable.
+"Save.f", line 72.20: 1514-018 (E) Identifier "proc" may not have the SAVE attribute specified.  SAVE attribute is ignored for this variable.
+** save   === End of Compilation 1 ===
+1501-510  Compilation successful for file Save.f.

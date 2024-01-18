@@ -1,0 +1,25 @@
+! Replacing scrisop00.presh
+
+#CMD    = XLC_COMPILE
+#IF on(aix)
+  #OPTS   = $(C_COMPILER_OPTS) $(OPT_BIGGER_LONG_DOUBLE)
+#ELSE
+  #OPTS   = $(C_COMPILER_OPTS) -qdebug=aixldbl128
+#ENDIF
+#INPUT  = $(tcasedir)$CTCARG.c
+#OUTPUT = $CTCARG$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)$FTCARG.f
+#OUTPUT = $FTCARG$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = $CTCARG$(OBJ) $FTCARG$(OBJ)
+#OUTPUT = $FTCARG$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = $FTCARG$(EXE)
+#ENDCMD

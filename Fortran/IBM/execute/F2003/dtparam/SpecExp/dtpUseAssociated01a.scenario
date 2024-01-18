@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/InitExp/StructConstr/dtpUseAssociated01a.scenario
+#FEATURE	= specification-exprs with MODULE Entities
+#CREATOR	= Glen Mateer
+#DATE		= 20090710
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)dtpUseAssociated01a.f
+#OUTPUT		= dtpUseAssociated01a$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= dtpUseAssociated01a$(OBJ)
+#OUTPUT		= dtpUseAssociated01a$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= dtpUseAssociated01a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

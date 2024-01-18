@@ -1,0 +1,40 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = F2008/do_concurrent/func/do_concurrent_omp_f003.scenario
+#FEATURE  = RTC 17293 - F2008: DO CONCURRENT Construct
+#CREATOR  = Nicole Negherbon
+#DATE     = August 12, 2015
+#REFERENCE = omp30/loopCollapse/loopCollapse/loop_collapse_threadprivate_3.scenario
+#TEST_TYPE= FUNCTIONAL
+#KEYWORDS = DO CONCURRENT, OMP THREADPRIVATE, OMP PARALLEL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = XLF2008_R_COMPILE
+#OPTS   = $(OPT_OPTIMIZE_FOR_SMP)
+#INPUT  = $(tcasedir)do_concurrent_omp_f003.f
+#OUTPUT = do_concurrent_omp_f003$(OBJ)
+#ENDCMD
+
+#CMD    = XLF2008_R_LINK
+#OPTS   = $(OPT_OPTIMIZE_FOR_SMP)
+#INPUT  = do_concurrent_omp_f003$(OBJ)
+#OUTPUT = do_concurrent_omp_f003$(EXE)
+#ENDCMD
+
+#FOR i=1 TO 30 STEP 1
+#CMD    = RUN
+#ENVAR  = $(OMP_THREAD_LIMIT_32)
+#INPUT  = do_concurrent_omp_f003$(EXE)
+#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

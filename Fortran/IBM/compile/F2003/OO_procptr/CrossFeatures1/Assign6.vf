@@ -1,0 +1,19 @@
+** m   === End of Compilation 1 ===
+"Assign6.f", line 94.23: 1516-275 (S) Operands of a defined operator must not be procedure pointers.
+"Assign6.f", line 100.26: 1516-064 (S) Operands to the + operator must be compatible with the intrinsic uses of the operator, or with a specific interface within an accessible defined operator generic interface.
+"Assign6.f", line 103.28: 1516-064 (S) Operands to the + operator must be compatible with the intrinsic uses of the operator, or with a specific interface within an accessible defined operator generic interface.
+"Assign6.f", line 106.26: 1516-064 (S) Operands to the + operator must be compatible with the intrinsic uses of the operator, or with a specific interface within an accessible defined operator generic interface.
+"Assign6.f", line 109.21: 1516-263 (S) The MOLD argument of the NULL intrinsic must have the POINTER or ALLOCATABLE attribute.
+"Assign6.f", line 112.28: 1516-064 (S) Operands to the + operator must be compatible with the intrinsic uses of the operator, or with a specific interface within an accessible defined operator generic interface.
+"Assign6.f", line 115.34: 1516-064 (S) Operands to the + operator must be compatible with the intrinsic uses of the operator, or with a specific interface within an accessible defined operator generic interface.
+"Assign6.f", line 118.36: 1516-064 (S) Operands to the + operator must be compatible with the intrinsic uses of the operator, or with a specific interface within an accessible defined operator generic interface.
+"Assign6.f", line 121.34: 1516-064 (S) Operands to the + operator must be compatible with the intrinsic uses of the operator, or with a specific interface within an accessible defined operator generic interface.
+"Assign6.f", line 124.44: 1516-064 (S) Operands to the + operator must be compatible with the intrinsic uses of the operator, or with a specific interface within an accessible defined operator generic interface.
+"Assign6.f", line 127.36: 1516-064 (S) Operands to the + operator must be compatible with the intrinsic uses of the operator, or with a specific interface within an accessible defined operator generic interface.
+"Assign6.f", line 130.34: 1516-064 (S) Operands to the + operator must be compatible with the intrinsic uses of the operator, or with a specific interface within an accessible defined operator generic interface.
+"Assign6.f", line 133.36: 1516-064 (S) Operands to the + operator must be compatible with the intrinsic uses of the operator, or with a specific interface within an accessible defined operator generic interface.
+"Assign6.f", line 136.34: 1516-064 (S) Operands to the + operator must be compatible with the intrinsic uses of the operator, or with a specific interface within an accessible defined operator generic interface.
+"Assign6.f", line 139.44: 1516-064 (S) Operands to the + operator must be compatible with the intrinsic uses of the operator, or with a specific interface within an accessible defined operator generic interface.
+"Assign6.f", line 142.36: 1516-064 (S) Operands to the + operator must be compatible with the intrinsic uses of the operator, or with a specific interface within an accessible defined operator generic interface.
+** assign6   === End of Compilation 2 ===
+1501-511  Compilation failed for file Assign6.f.

@@ -1,0 +1,182 @@
+
+
+Document Control Information:
+
+The official version of this document is kept in CMVC in the aix family, release des.dev, component design.it1, file designs/it1/it1_2_for_caf_coarray_dummy_arguments___assumed_size/it1_2_for_caf_coarray_dummy_arguments___assumed_size.html. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.
+
+CMVC Extraction Information: %W% %H% %I% sccsid
+
+CMVC_Family=aix, CMVC_Release=test.dev, CMVC_Component=test.values
+
+
+This document is IBM Confidential.
+
+Reviewers: Please click the 'Reviewed' check-box beside your name to indicate your participation in the review.
+
+Reviewer	Reviewed
+Almon Ng	
+Bardia Mahjour	
+Barnaby Dalton	
+Bernard Kan	
+Chris Lord	
+Claudio Rossi	
+Dale Soldiuk	
+Daniel C Chen	
+David Forster	
+David Nichols	
+Dorra Bouchiha	
+Dwayne Moore	
+Feng Ye	
+Francesco Cassullo	
+	
+Reviewer	Reviewed
+Gaby Baghdadi	
+Grigor Nikolov	
+Jim Xia	
+Jin L Li	
+Joel Boulet	
+Kathleen Dowling	
+Kelvin Li	
+Kobi Vinayagamoorthy	
+Leon L Kiriliuk	
+Liang Chang Guo	
+Mary Chan	
+Michelle Zhang	
+Morteza Ershad-Manesh	
+Murtadha Al-Tameemi	
+	
+Reviewer	Reviewed
+Pooja Dayanand	
+Rafik Zurob	
+Rosanne Jolin	
+Sa Kouchaki-Ramezan	
+Shahid Alam	
+Xing Xue	
+Ying Zhang	
+aferan@ca.ibm.com	
+andychen@ca.ibm.com	
+denisna@ca.ibm.com	
+justinds@ca.ibm.com	
+nemanjai@ca.ibm.com	
+
+Document Title
+	
+
+IT1/2 for CAF Coarray dummy arguments - assumed-size
+
+CMVC Feature Number:
+	
+
+381708
+
+Feature Title:
+	
+
+Author(s):
+	
+
+David Forster
+
+Mandatory Reviewers:
+
+(Approver)
+	
+
+Xing Xue, Jim Xia
+
+Component Reviewers:(optional participation)
+	
+
+Bardia Mahjour, Barnaby Dalton, Chris Lord, Dale Soldiuk, Daniel C Chen, David Nichols, Dwayne Moore, Feng Ye, Kathleen Dowling, Kelvin Li, Kobi Vinayagamoorthy, Leon L Kiriliuk, Mary Chan, Pooja Dayanand, Rafik Zurob
+
+Team Reviewers: (optional participation)
+	
+
+Almon Ng, Bernard Kan, Claudio Rossi, Dorra Bouchiha, Francesco Cassullo, Gaby Baghdadi, Grigor Nikolov, Jin L Li, Joel Boulet, Liang Chang Guo, Michelle Zhang, Morteza Ershad-Manesh, Murtadha Al-Tameemi, Rosanne Jolin, Sa Kouchaki-Ramezan, Shahid Alam, Vicky Chin, Ying Zhang, aferan@ca.ibm.com, andychen@ca.ibm.com, denisna@ca.ibm.com, justinds@ca.ibm.com, nemanjai@ca.ibm.com
+
+IT1 Status: For Approval
+
+Approvers Only: Click on the 'Approve' checkbox beside your name in the table below if you agree with the technical and user interface content of this document; not checking your 'approve' checkbox signifies you do not approve.
+
+Approver	Approved
+Jim Xia	
+Xing Xue	
+
+Approval Comments
+Access Change History
+Access Change History
+
+Overview
+
+Here we are testing assumed-size arrays of intrinsic type which are coarrays.
+
+Assumed-size arrays are dummy arguments marked with an upper bound of "*" in the final dimension, which indicates that the ultimate size of the array must be "assumed" (which is to say that the caller does not provide any information on bounds to the callee, and the programmer must be responsible for staying within the proper bounds of the array). Moreover, there is no requirement that the rank or any bounds (lower or upper) correspond between the actual argument and the dummy argument. A consequence of this paucity of information is that arrays passed in this way cannot be used as whole arrays in many situations, including primary expressions, namelist, I/O list and other I/O, pointer assignment and use as a target. If the bounds information can be reintroduced by means of an indexing expression, the problem can be removed. Thus, the statements below on the left are illegal if "A" is an assumed-size array, but those on the right are fine (assuming it is declared as, say "A(2,*)"):
+
+Illegal 	Permissible
+print *, A ! no I/O
+	print *, A(:,:3)
+B = A ! no primary expression
+	B = A(:,:3) ! assumes B has dimension (2,3)
+	call sub(A) ! use as actual argument is fine
+
+There are additional restrictions on assumed-size arrays with the intent(out) attribute, but they do not apply to intrinsic types and are therefore not relevant to our tests.
+
+Array elements can also be passed in where an array is expected (by virtue of sequence association), with the interpretation that the dummy argument array starts at that point in the actual array, thus:
+
+ integer :: A(9)
+ A = [(i,i=1,9)]
+ call sub(A(3)
+ ...
+ subroutine sub(Arg)
+   integer :: Arg(2,2,*)
+   ...
+ end subroutine sub 
+
+allows subroutine "sub" to access A(3) as Arg(1,1,1), A(4) as Arg(2,1,1), ..., A(8) as Arg(2,1,2) and A(9) as Arg(1,2,2). Arg(2,2,2) has no corresponding actual argument, and accessing it would be a violation of the standard. By the same token, elements before A(3) cannot be accessed within "sub".
+
+The fact that we are dealing with coarrays does not imply great restrictions, but does add one extra dimension of testing, in that the corank and the codimensions may be different between actual arguments and dummy arguments, at least for the objects we are testing.
+
+
+Test Strategy
+
+We will ignore derived types and limitations on the rank of an array (i.e., that the sum of the corank and the rank must be less than a certain limit). Also, because we are dealing with coarrays, we do not need to consider interoperability. Since we are dealing with the coarrays themselves and not with coindexed objects, we can also ignore the many conditions placed on conindexed arguments. We will also ignore the contiguous attribute, which is tested in another feature.
+
+The overall strategy will be to verify that coarray intrinsic arrays can be passed in to assumed-size array coarray dummy arguments and examined, set, and updated (i.e., get+set) correctly, and that the rank, dimensions (i.e., lower and upper bounds), corank, and codimensions can be varied with appropriate effects. We will also consider passing arguments through several layers of routines (i.e., dummy arguments passed in as actual arguments to other routines, etc.). Many tests will involve arrays declared in the main program, but there should also be tests of arrays declared in modules.
+
+Basic tests will involve images accessing only coarray variables on their own image, but other tests will involve one image updating or accessing another's variables. One or two should involve images accessing and updating variables on multiple images.
+
+Tests should properly use barriers to ensure tasks are correctly completed and synchronized.
+
+No diagnostic tests will be included.
+
+Test Procedures/Scenarios
+
+See table:
+
+
+Name 	Description
+cdaasBasic 	access only, same bounds in actual and dummy
+cdaasBasicSet 	set only, same bounds in actual and dummy
+cdaasBasicCopy 	copy data from specific image (Q) to "this" (P)
+cdaasBasicNewBounds 	everything but the bounds are the same
+cdaasAdjustable 	dimensions and codimensions subject to other dummy arguments (adjustable)
+cdaasCorankChg 	corank is different
+cdaasEffective 	arguments passed in as arguments, also invokes functions expecting assumed-size dummy array coarrays
+cdaasModule 	coarray variables from a module, passed to external, internal, and external subroutines
+cdaasMultiple 	multiple images, copied from one image to the next for all images
+cdaasRankChg 	different rank (and dimensions) - actual vs. dummy
+cdaasRankCorankChg 	both corank and rank (and dimensions) are different
+cdaasShapeChg 	copy with changed shape
+cdaasShapeCorankChg 	both corank and dimensions are different
+
+IT2 Information
+
+Test cases are located in
+F2008/coarray/coarray_dummy/assumed_size/
+
+Appendices/References
+
+
+Terms of use
+
+NB (subsequent to approval): Sequence association was not tested, pending the outcome of an interp, despite its discussion above; a new feature should be added to test this.

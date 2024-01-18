@@ -1,0 +1,82 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/intrinsics/math/intrinsic02D.scenario
+#FEATURE   = Math intrinsic functions
+#CREATOR   = Shahid Alam
+#DATE      = 20101116
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#OPTS      = $(OPT_SET_LANG_LEVEL<77std>)
+#INPUT     = $(tcasedir)intrinsic02D.f
+#OUTPUT    = intrinsic02D$(OBJ)
+#STDOUT    = intrinsic02D_77.out
+#STDERR    = intrinsic02D_77.out
+#ENDCMD
+
+#CMD       = XLF90_COMPILE
+#OPTS      = $(OPT_SET_LANG_LEVEL<90std>)
+#INPUT     = $(tcasedir)intrinsic02D.f
+#OUTPUT    = intrinsic02D$(OBJ)
+#STDOUT    = intrinsic02D_90.out
+#STDERR    = intrinsic02D_90.out
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = $(OPT_SET_LANG_LEVEL<95std>)
+#INPUT     = $(tcasedir)intrinsic02D.f
+#OUTPUT    = intrinsic02D$(OBJ)
+#STDOUT    = intrinsic02D_95.out
+#STDERR    = intrinsic02D_95.out
+#ENDCMD
+
+#CMD       = XLF2003_COMPILE
+#OPTS      = $(OPT_SET_LANG_LEVEL<2003std>)
+#INPUT     = $(tcasedir)intrinsic02D.f
+#OUTPUT    = intrinsic02D$(OBJ)
+#STDOUT    = intrinsic02D_2003.out
+#STDERR    = intrinsic02D_2003.out
+#ENDCMD
+
+#CMD       = XLF2003_COMPILE
+#OPTS      = $(OPT_SET_LANG_LEVEL<2008std>)
+#INPUT     = $(tcasedir)intrinsic02D.f
+#OUTPUT    = intrinsic02D$(OBJ)
+#STDOUT    = intrinsic02D_2008.out
+#STDERR    = intrinsic02D_2008.out
+#ENDCMD
+
+#CMD       = CAT
+#INPUT     = intrinsic02D_77.out \
+             intrinsic02D_90.out \
+             intrinsic02D_95.out \
+             intrinsic02D_2003.out \
+             intrinsic02D_2008.out
+#STDOUT    = intrinsic02D.cat.out
+#ENDCMD
+
+#CMD       = GREP
+#OPTS      = '1518-256 (L)'
+#INPUT     = intrinsic02D.cat.out
+#STDOUT    = intrinsic02D.grep.out
+#ENDCMD
+
+#CMD       = AWK
+#OPTS      = '{ gsub("$(tcasedir)", ""); print; }'
+#INPUT     = intrinsic02D.grep.out
+#STDOUT    = intrinsic02D.awk.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = intrinsic02D.awk.out $(tcasedir)intrinsic02D.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

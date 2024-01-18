@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"InTypeIs1.f", line 78.20: 1511-101 (S) The selector in the SELECT TYPE statement is not polymorphic.
+"InTypeIs1.f", line 86.20: 1511-101 (S) The selector in the SELECT TYPE statement is not polymorphic.
+** intypeis1   === End of Compilation 2 ===
+1501-511  Compilation failed for file InTypeIs1.f.

@@ -1,0 +1,4 @@
+"procptr_intrin_008.f", line 11.8: 1515-137 (S) Dummy argument a of the procedure pointer and the corresponding dummy argument of the procedure pointer assignment target must have the same type and type parameters.
+"procptr_intrin_008.f", line 11.8: 1515-123 (S) The procedure pointer assignment statement target must be declared with the same type and type parameters as the procedure pointer.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file procptr_intrin_008.f.

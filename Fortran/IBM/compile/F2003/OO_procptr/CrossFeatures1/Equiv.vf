@@ -1,0 +1,6 @@
+"Equiv.f", line 54.17: 1516-006 (S) Identifier was defined elsewhere as a PROGRAM, subprogram, INTRINSIC function, ENTRY name or RESULT name.  Identifier is not included in EQUIVALENCE group.
+"Equiv.f", line 54.27: 1516-006 (S) Identifier was defined elsewhere as a PROGRAM, subprogram, INTRINSIC function, ENTRY name or RESULT name.  Identifier is not included in EQUIVALENCE group.
+"Equiv.f", line 55.17: 1516-006 (S) Identifier was defined elsewhere as a PROGRAM, subprogram, INTRINSIC function, ENTRY name or RESULT name.  Identifier is not included in EQUIVALENCE group.
+"Equiv.f", line 55.27: 1516-006 (S) Identifier was defined elsewhere as a PROGRAM, subprogram, INTRINSIC function, ENTRY name or RESULT name.  Identifier is not included in EQUIVALENCE group.
+** equiv   === End of Compilation 1 ===
+1501-511  Compilation failed for file Equiv.f.

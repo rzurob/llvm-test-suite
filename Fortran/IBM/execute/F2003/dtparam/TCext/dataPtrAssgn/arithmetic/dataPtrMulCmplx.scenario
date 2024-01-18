@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/arithmetic/dataPtrMulCmplx.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071216
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrMulCmplx.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrMulCmplx$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrMulCmplx$(OBJ)
+#OUTPUT    = dataPtrMulCmplx$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrMulCmplx$(EXE)
+#STDOUT    = dataPtrMulCmplx.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrMulCmplx.out $($(tcasedir)dataPtrMulCmplx$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

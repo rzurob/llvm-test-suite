@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/intrimod/reuse/intrimod72.scenario
+#FEATURE = intrimod tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+    #IF on (aix)
+       OMP_STACKSIZE=1M
+    #ENDIF
+#ENDDEFS
+#INVALID_PRODUCT= bgl_system,bgl,mac
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)intrimod72.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_OPTIMIZE_FOR_SMP) -F:xlf95_r
+#OUTPUT    = intrimod72$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_OPTIMIZE_FOR_SMP) -F:xlf95_r
+#INPUT     =  intrimod72$(OBJ)
+#OUTPUT    = intrimod72$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = intrimod72$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

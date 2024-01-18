@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mxminAll/var/mxminVal/mxminvalVarArgSub3.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mxminAll/*
+#DATE      = 20071105
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mxminvalVarArgSub3.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = mxminvalVarArgSub3$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = mxminvalVarArgSub3$(OBJ)
+#OUTPUT    = mxminvalVarArgSub3$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminvalVarArgSub3$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

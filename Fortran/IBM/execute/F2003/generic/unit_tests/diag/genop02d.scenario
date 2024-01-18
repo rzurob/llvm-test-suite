@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/unit_tests/diag/genop02d.scenario
+#FEATURE = Generic Bindings
+#CREATOR = Rafik Zurob
+#DATE    = 20051118
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+! This chunk was DCOMP
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)genop02d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=intmsg:shutup
+#OUTPUT    = genop02d$(OBJ)
+#STDERR    = genop02d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)genop02d$(product)vf) genop02d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

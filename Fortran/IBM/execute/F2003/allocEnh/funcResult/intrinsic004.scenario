@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/allocEnh/funcResult/intrinsic004.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)intrinsic004.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = intrinsic004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = intrinsic004$(OBJ)
+#OUTPUT    = intrinsic004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = intrinsic004$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

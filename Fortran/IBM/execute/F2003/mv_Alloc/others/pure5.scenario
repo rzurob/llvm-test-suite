@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       pure5.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)pure5.f
+#OUTPUT= pure5$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  pure5$(OBJ)
+#OUTPUT= pure5$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  pure5$(EXE)
+#STDOUT= pure5.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = pure5.out $(tcasedir)pure5.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

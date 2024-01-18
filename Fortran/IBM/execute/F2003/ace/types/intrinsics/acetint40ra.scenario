@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2004/ace/types/intrinsics/acetint40ra.scenario
+#FEATURE	= Array constructor enhancement - assign AC with real constants of different kinds
+#CREATOR	= DF Manual Update
+#DATE		= 20060614
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint40ra.f
+#OUTPUT		= acetint40ra$(OBJ)
+#STDERR		= acetint40ra.err
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= acetint40ra.err $(tcasedir)acetint40ra.vf
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint40ra$(OBJ)
+#OUTPUT		= acetint40ra$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint40ra$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

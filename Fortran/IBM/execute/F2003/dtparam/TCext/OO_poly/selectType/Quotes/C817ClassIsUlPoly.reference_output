@@ -1,0 +1,8 @@
+** m   === End of Compilation 1 ===
+"C817ClassIsUlPoly.f", line 90.15: 1511-135 (E) Type level4 is specified in another CLASS IS statement.  The same type must not be specified in more than one CLASS IS statement within the same SELECT TYPE construct.  The statement is ignored.
+"C817ClassIsUlPoly.f", line 92.15: 1511-135 (E) Type level1 is specified in another CLASS IS statement.  The same type must not be specified in more than one CLASS IS statement within the same SELECT TYPE construct.  The statement is ignored.
+"C817ClassIsUlPoly.f", line 103.13: 1511-136 (E) Type INTEGER is specified in another TYPE IS statement.  The same type and kind type parameter values must not be specified in more than one TYPE IS statement within the same SELECT TYPE construct.  The statement is ignored.
+"C817ClassIsUlPoly.f", line 110.13: 1511-136 (E) Type REAL is specified in another TYPE IS statement.  The same type and kind type parameter values must not be specified in more than one TYPE IS statement within the same SELECT TYPE construct.  The statement is ignored.
+"C817ClassIsUlPoly.f", line 117.13: 1511-136 (E) Type LOGICAL is specified in another TYPE IS statement.  The same type and kind type parameter values must not be specified in more than one TYPE IS statement within the same SELECT TYPE construct.  The statement is ignored.
+** c817classispoly   === End of Compilation 2 ===
+1501-510  Compilation successful for file C817ClassIsUlPoly.f.

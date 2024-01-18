@@ -1,0 +1,3 @@
+"bcdaac02.f", line 37.16: 1516-199 (S) Allocatable objects must not be declared with the EXTERNAL, INTRINSIC, POINTER, VALUE, or BIND(C) attributes.  Allocatable objects must not appear as integer pointers, pointees, statement functions, program units, or members of BIND(C) common block.
+** mod   === End of Compilation 1 ===
+1501-511  Compilation failed for file bcdaac02.f.

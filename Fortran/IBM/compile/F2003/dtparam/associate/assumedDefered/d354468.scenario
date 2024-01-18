@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/associate/assumedDefered1/d354468.scenario
+#FEATURE	= ASSOCIATE Contruct (with Derived Type Parameters) --	\
+				Test Case for Defect: 354468
+#CREATOR	= Glen Mateer
+#DATE		= 20080729
+#TEST_TYPE	= Defect
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)d354468.f
+#OUTPUT		= d354468$(OBJ)
+#STDOUT		= d354468.out
+#STDERR		= d354468.out
+#VALIDRCS	= $(RC_COMP_S)
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)d354468$(product)vf) d354468.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

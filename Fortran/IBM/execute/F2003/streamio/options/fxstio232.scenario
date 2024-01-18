@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/streamio/options/fxstio232.scenario
+#FEATURE = streamio tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+XLFRTEOPTS=multconn=yes
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)fxstio232.f
+#OUTPUT    = fxstio232$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     =  fxstio232$(OBJ)
+#OUTPUT    = fxstio232$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#ENVAR     = XLFRTEOPTS=multconn=yes
+#INPUT     = fxstio232$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

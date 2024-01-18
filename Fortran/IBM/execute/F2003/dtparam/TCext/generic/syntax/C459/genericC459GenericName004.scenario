@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/syntax/C459/genericC459GenericName004.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericC459GenericName004.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericC459GenericName004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericC459GenericName004$(OBJ)
+#OUTPUT    = genericC459GenericName004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericC459GenericName004$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

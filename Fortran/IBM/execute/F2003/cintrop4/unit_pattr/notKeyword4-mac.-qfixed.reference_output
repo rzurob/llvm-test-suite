@@ -1,0 +1,7 @@
+*** testcase variant:  -qfixed\n
+** s0   === End of Compilation 1 ===
+** s1   === End of Compilation 2 ===
+  31.13   016100CD 
+  32.15   016100CD 
+** p1   === End of Compilation 3 ===
+1501-511  Compilation failed for file notKeyword4.f.

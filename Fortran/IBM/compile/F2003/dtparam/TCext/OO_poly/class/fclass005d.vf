@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+** fclass005d   === End of Compilation 2 ===
+"fclass005d.f", line 90.15: 1516-157 (S) Module entity b_ptr with the PROTECTED attribute is not definable when it is accessed by use association.
+"fclass005d.f", line 92.5: 1516-157 (S) Module entity b_ptr with the PROTECTED attribute is not definable when it is accessed by use association.
+** abc   === End of Compilation 3 ===
+1501-511  Compilation failed for file fclass005d.f.

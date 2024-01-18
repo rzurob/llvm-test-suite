@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/exprEval/order/deferredArrExprVectIdx01.scenario
+#FEATURE	= Intrinsic Assignment -- Order of Expression Evaluation
+#CREATOR	= GM Manual Creation
+#DATE		= 20061006
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)deferredArrExprVectIdx01.f
+#OUTPUT		= deferredArrExprVectIdx01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= deferredArrExprVectIdx01$(OBJ)
+#OUTPUT		= deferredArrExprVectIdx01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= deferredArrExprVectIdx01$(EXE)
+#STDOUT		= deferredArrExprVectIdx01.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)deferredArrExprVectIdx01$(product)vf)	\
+				deferredArrExprVectIdx01.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

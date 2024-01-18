@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/intrinsics/math/tanIntrinsicF2.scenario
+#FEATURE   = Math intrinsic functions
+#CREATOR   = Shahid Alam
+#DATE      = 20101116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPILE
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     = $(tcasedir)tanIntrinsicF2.f
+#OUTPUT    = tanIntrinsicF2$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     = tanIntrinsicF2$(OBJ)
+#OUTPUT    = tanIntrinsicF2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = tanIntrinsicF2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

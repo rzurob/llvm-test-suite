@@ -1,0 +1,13 @@
+ &NML1
+ B2=c= def
+ /
+ &NML2
+ B1=c= abc
+ /
+ &NML3
+ B3=c= ghi , &NML
+ B=i=  555
+ /, B4=c= jkl , &NML
+ B=i=  555
+ /
+ /

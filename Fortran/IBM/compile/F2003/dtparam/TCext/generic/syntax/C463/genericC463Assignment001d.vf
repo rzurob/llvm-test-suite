@@ -1,0 +1,6 @@
+"genericC463Assignment001d.f", line 42.38: 1514-706 (S) mybassgn must not be a function. mybassgn will not be included in the defined assignment generic interface.
+"genericC463Assignment001d.f", line 60.38: 1514-706 (S) b2b2 must not be a function. b2b2 will not be included in the defined assignment generic interface.
+** m   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+"genericC463Assignment001d.f", line 80.8: 1514-219 (S) Unable to access module symbol file for module m. Check path and file permissions of file. Use association not done for this module.
+1501-511  Compilation failed for file genericC463Assignment001d.f.

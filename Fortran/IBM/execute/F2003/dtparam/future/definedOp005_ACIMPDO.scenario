@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/funcResult/definedOp005_ACIMPDO.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071221
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)definedOp005_ACIMPDO.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = definedOp005_ACIMPDO$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = definedOp005_ACIMPDO$(OBJ)
+#OUTPUT    = definedOp005_ACIMPDO$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = definedOp005_ACIMPDO$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

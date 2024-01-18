@@ -1,0 +1,52 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = d366393.scenario
+#FEATURE    = assumed shape dummy coarray
+#CREATOR    = Bardia Mahjour
+#DATE       = September 2010
+#TEST_TYPE  = unit test
+#ENDDOC
+
+! Scenario Environment Tags
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_COARRAY_IMAGES<5>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = $(tcasedir)d366393.f
+#OUTPUT    = d366393$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_COARRAY_IMAGES<5>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = d366393$(OBJ)
+#OUTPUT    = d366393$(EXE)
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD       = RUN
+	#ENVAR     = CAF_NUM_IMAGES=5
+	#ENVAR     = MP_PROCS=1
+	#INPUT     = d366393$(EXE)
+	#STDOUT    = d366393.out
+	#ENDCMD
+	
+	#CMD       = SORT
+	#INPUT     = d366393.out
+	#STDOUT    = d366393.out.sorted
+	#ENDCMD
+	
+	#CMD       = DIFF
+	#INPUT     = d366393.out.sorted $($(tcasedir)d366393$(product)vf)
+	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO

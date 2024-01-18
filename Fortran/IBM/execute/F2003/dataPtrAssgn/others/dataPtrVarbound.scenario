@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrVarbound.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrVarbound.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrVarbound$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrVarbound$(OBJ)
+#OUTPUT    = dataPtrVarbound$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrVarbound$(EXE)
+#STDOUT    = dataPtrVarbound.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrVarbound.out $($(tcasedir)dataPtrVarbound$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

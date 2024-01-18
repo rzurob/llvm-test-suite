@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/ieee_underflow/diag/underflowCtrlDiag1.f
+#FEATURE = 289080
+#CREATOR = Nancy Wang
+#DATE    = Nov. 15 2007
+#TEST_TYPE = Diagnostic
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT=cbe_spu
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)underflowCtrlDiag1.f
+#OUTPUT    = underflowCtrlDiag1$(OBJ)
+#STDERR    = underflowCtrlDiag1.err
+#VALIDRCS  = $(RC_COMP_E)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)underflowCtrlDiag1$(product)vf) underflowCtrlDiag1.err
+#ENDCMD
+#ENDCONTROL
+
+#ENDSCENARIO

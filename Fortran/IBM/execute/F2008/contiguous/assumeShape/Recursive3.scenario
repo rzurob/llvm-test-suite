@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/contiguous/other/Recursive3.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20101020
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)Recursive3.f
+#OUTPUT    = Recursive3$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = Recursive3$(OBJ)
+#OUTPUT    = Recursive3$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = Recursive3$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

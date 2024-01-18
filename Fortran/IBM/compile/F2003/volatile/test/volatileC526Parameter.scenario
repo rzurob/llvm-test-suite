@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=release/F2003/volatile/volatileC526Parameter.f
+#FEATURE = VOLATILE 255728
+#CREATOR = William Zhang
+#DATE    = 05/30/2006
+#TEST_TYPE= diagnostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)volatileC526Parameter.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = volatileC526Parameter$(OBJ)
+#STDERR    = volatileC526Parameter.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)volatileC526Parameter$(product)vf) volatileC526Parameter.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

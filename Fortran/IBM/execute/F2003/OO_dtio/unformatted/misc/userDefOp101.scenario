@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/unformatted/misc/userDefOp101.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)userDefOp101.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = userDefOp101$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = userDefOp101$(OBJ)
+#OUTPUT    = userDefOp101$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = userDefOp101$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

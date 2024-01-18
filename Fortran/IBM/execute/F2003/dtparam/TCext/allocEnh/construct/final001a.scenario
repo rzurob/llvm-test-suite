@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/construct/final001a.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071219
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)final001a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = final001a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = final001a$(OBJ)
+#OUTPUT    = final001a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = final001a$(EXE)
+#STDOUT    = final001a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = final001a.out $($(tcasedir)final001a$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

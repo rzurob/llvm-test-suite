@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/intrinsics/math/acosIntrinsicF2.scenario
+#FEATURE   = Math intrinsic functions
+#CREATOR   = Shahid Alam
+#DATE      = 20101116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPILE
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     = $(tcasedir)acosIntrinsicF2.f
+#OUTPUT    = acosIntrinsicF2$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     = acosIntrinsicF2$(OBJ)
+#OUTPUT    = acosIntrinsicF2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = acosIntrinsicF2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,12 @@
+ 
+Test 1
+
+ Inf=  +Inf
+NANQ=   NaN
+NANS=   NaN
+ 
+Test 2
+
+ Inf= +Inf
+ NANQ= NaN(Q)
+ NANS= NaN(S)

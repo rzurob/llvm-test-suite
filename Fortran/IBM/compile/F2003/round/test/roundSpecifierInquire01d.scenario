@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=roundSpecifierInquire01d.scenario
+#FEATURE = 289037
+#CREATOR = William Zhang
+#DATE    = 07/24/2006
+#TEST_TYPE= dignostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)roundSpecifierInquire01d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = roundSpecifierInquire01d$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = roundSpecifierInquire01d.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = roundSpecifierInquire01d.err $($(tcasedir)roundSpecifierInquire01d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

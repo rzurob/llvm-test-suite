@@ -1,0 +1,4 @@
+"d356494.f", line 28.23: 1514-767 (S) The upper cobound of the last codimension must be *.
+** m   === End of Compilation 1 ===
+"d356494.f", line 33.8: 1514-219 (S) Unable to access module symbol file for module m. Check path and file permissions of file. Use association not done for this module.
+1501-511  Compilation failed for file d356494.f.

@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=release/F2003/volatile/volatileMisc01.scenario
+#FEATURE = VOLATILE 255728
+#CREATOR = William Zhang
+#DATE    = 05/30/2006
+#TEST_TYPE= functional
+#ENDDOC
+
+#BEGINENV
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_OPTIMIZE_FOR_SMP) $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT)
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#IF on(bg4thd)
+  #OPTS    = $(OPT_DEFINE_MACRO<bg4thd>)
+#ENDIF
+#INPUT     = $(tcasedir)volatileMisc01.F
+#OUTPUT    = volatileMisc01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = volatileMisc01$(OBJ)
+#OUTPUT    = volatileMisc01$(EXE)
+#ENDCMD
+
+
+#CMD       = RUN
+#INPUT     = volatileMisc01$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

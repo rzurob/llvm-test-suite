@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2003/dtparam/TCext/OO_dtio/unformatted/section9.5.2/write/array001all.scenario
+#FEATURE = OO_dtio/unformatted/section9.5.2 tests - regression run bucket + derived type parameters
+#CREATOR = automated conversion script
+#DATE    = 20071003
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)array001all.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = array001all$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  array001all$(OBJ)
+#OUTPUT    = array001all$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = array001all$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

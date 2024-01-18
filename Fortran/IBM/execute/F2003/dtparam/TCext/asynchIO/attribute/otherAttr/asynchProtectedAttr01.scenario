@@ -1,0 +1,99 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/asynchIO/attribute/otherAttr/asynchProtectedAttr01.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of asynchIO/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=bgq
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)asynchProtectedAttr01.f
+#OUTPUT		= asynchProtectedAttr01$(OBJ)
+#ENDCMD
+
+
+#CMD		= F_LINK
+#INPUT		= asynchProtectedAttr01$(OBJ)
+#OUTPUT		= asynchProtectedAttr01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= asynchProtectedAttr01$(EXE)
+#ENDCMD
+
+
+#CMD		= CMP
+#INPUT		= $($(tcasedir)asynchProtectedAttr01$(product)vf)	\
+				asynchProtectedAttr01.dat
+#ENDCMD
+
+
+#CMD		= SED
+#OPTS		= -e '1,/^\*\* mcontroldata   === End of Compilation 1 ===$/d'
+#INPUT		= asynchProtectedAttr01$(LST)
+#STDOUT		= asynchProtectedAttr01.main-start.stdout
+#ENDCMD
+
+#CMD		= SED
+#OPTS		= -e '/^\*\* asynchprotectedattr01   === End of Compilation 2 ===$/,$d'
+#INPUT		= asynchProtectedAttr01.main-start.stdout
+#STDOUT		= asynchProtectedAttr01.main-end.stdout
+#ENDCMD
+
+
+#CMD		= SED
+#OPTS		= -e '1,/^\*\* asynchprotectedattr01   === End of Compilation 2 ===$/d'
+#INPUT		= asynchProtectedAttr01$(LST)
+#STDOUT		= asynchProtectedAttr01.ReportCounter.stdout
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= -i '^controlData[ 	]'
+#INPUT		= asynchProtectedAttr01.main-end.stdout
+#STDOUT		= asynchProtectedAttr01.main-controlData.stdout
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= -i '^controlData[ 	]'
+#INPUT		= asynchProtectedAttr01.ReportCounter.stdout
+#STDOUT		= asynchProtectedAttr01.ReportCounter-controlData.stdout
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= 'Protected'
+#INPUT		= asynchProtectedAttr01.main-controlData.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= asynchProtectedAttr01.main-controlData.stdout
+#VALIDRCS	= $(GREP_FAIL)
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= 'Protected'
+#INPUT		= asynchProtectedAttr01.ReportCounter-controlData.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= asynchProtectedAttr01.ReportCounter-controlData.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,26 @@
+! Test Cases for:
+! Bucket:	F2003/allocEnh
+! Sub-Bucket:	scalarExpr
+allocArrVarScalarExpr01.scenario
+allocArrVarScalarExpr02.scenario
+allocArrVarScalarExpr03.scenario
+
+dummyArgsVarScalarExpr01.scenario
+dummyArgsVarScalarExpr02.scenario
+
+scalarFuncResultExpr01.scenario
+scalarFuncResultExpr02.scenario
+scalarFuncResultExpr03.scenario
+
+varIsArrSectExprIsScalar01.scenario
+varIsArrSectExprIsScalar02.scenario
+varIsArrSectExprIsScalar03.scenario
+varIsArrSectExprIsScalar04.scenario
+varIsArrSectExprIsScalar05.scenario
+varIsArrSectExprIsScalar06.scenario
+
+d327223.scenario
+d327313.scenario
+d327372.scenario
+d327545.scenario
+d327618.scenario

@@ -1,0 +1,34 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dtpImplicit9.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       06-27-07
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM) -qdebug=allowrpdt
+#INPUT=  $(tcasedir)dtpImplicit9.f
+#OUTPUT= dtpImplicit9$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  dtpImplicit9$(OBJ)
+#OUTPUT= dtpImplicit9$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dtpImplicit9$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

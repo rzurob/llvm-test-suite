@@ -1,0 +1,12 @@
+"genericC704OpName002.f", line 36.30: 1516-091 (S) A defined operator must contain only letters.
+"genericC704OpName002.f", line 39.19: 1515-019 (S) Syntax is incorrect.
+"genericC704OpName002.f", line 39.60: 1515-018 (S) Incorrect character found in source at line 39 in column 60.  Hexadecimal value of character is 23.
+"genericC704OpName002.f", line 39.110: 1514-095 (S) Invalid statement within derived type definition.
+"genericC704OpName002.f", line 44.27: 1514-084 (S) Identifier mybinaryop is being declared with type name base which has not been defined in a derived type definition.
+"genericC704OpName002.f", line 45.37: 1514-084 (S) Identifier a is being declared with type name base which has not been defined in a derived type definition.
+"genericC704OpName002.f", line 50.27: 1514-084 (S) Identifier mybinaryop2 is being declared with type name base which has not been defined in a derived type definition.
+"genericC704OpName002.f", line 51.37: 1514-084 (S) Identifier a is being declared with type name base which has not been defined in a derived type definition.
+"genericC704OpName002.f", line 51.37: 1514-181 (E) The INTENT and OPTIONAL attributes may be specified only for dummy arguments. Attribute is ignored.
+** m   === End of Compilation 1 ===
+** genericc704opname002   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericC704OpName002.f.

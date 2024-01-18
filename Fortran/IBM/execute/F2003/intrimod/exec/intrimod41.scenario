@@ -1,0 +1,67 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME	 = intrimod/exec/intrimod41.scenario
+#FEATURE = intrimod tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+        #IF in($(F_COMPILE^OPT_GEN_64BIT_COMPILER_MODE))
+                OPT="_64"
+        #ELSE
+                OPT=""
+        #ENDIF
+
+	#IF on(aix)
+                OS="AIX"
+		CELL=""
+	#ELSE IF on(cbe_ssc)
+                OS=""
+		OPT=""
+		CELL="cbe_ssc"
+        #ELSE
+                OS="LX"
+		CELL=""
+        #ENDIF
+#ENDDEFS
+#INVALID_PRODUCT=bgq
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD	= COPY
+#INPUT	= $(tcasedir)my_main$CELL.o.$OS$OPT.81 my_main.o
+#ENDCMD
+
+#CMD    = COPY
+#INPUT  = $(tcasedir)my_mod$CELL.o.$OS$OPT.81 my_mod.o
+#ENDCMD
+
+#CMD    = COPY
+#INPUT  = $(tcasedir)my_mod$CELL.mod.$OS$OPT.81 my_mod.mod
+#ENDCMD
+
+#CMD    = COPY
+#INPUT  = $(tcasedir)constants$CELL.mod.$OS$OPT.81 constants.mod
+#ENDCMD
+
+#CMD	= XLF95_LINK
+#INPUT	= my_main.o my_mod.o
+#OUTPUT	= intrimod41$(EXE)
+#OPTS	= $(OPT_HALT_ON_WARNING)
+#ENDCMD
+
+#CMD	= RUN
+#INPUT	= intrimod41$(EXE)
+#STDOUT	= intrimod41.out
+#ENDCMD
+
+#CMD	= DIFF
+#INPUT	= intrimod41.out $($(tcasedir)/../emptyout$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,12 @@
+"critical02d.f", line 32.3: 1516-341 (S) An image control statement must not appear within the CRITICAL construct.
+"critical02d.f", line 33.10: 1516-246 (E) The construct name for the END CRITICAL statement is missing.  The statement will be matched with the previous CRITICAL statement.
+"critical02d.f", line 34.8: 1511-160 (S) The END CRITICAL statement appears outside of a CRITICAL construct.
+** m   === End of Compilation 1 ===
+"critical02d.f", line 51.6: 1511-160 (S) The END CRITICAL statement appears outside of a CRITICAL construct.
+"critical02d.f", line 52.6: 1511-160 (S) The END CRITICAL statement appears outside of a CRITICAL construct.
+"critical02d.f", line 55.6: 1516-256 (S) The CRITICAL construct is missing the corresponding END CRITICAL statement.
+"critical02d.f", line 60.8: 1516-256 (S) The CRITICAL construct is missing the corresponding END CRITICAL statement.
+"critical02d.f", line 64.8: 1511-160 (S) The END CRITICAL statement appears outside of a CRITICAL construct.
+"critical02d.f", line 65.8: 1511-160 (S) The END CRITICAL statement appears outside of a CRITICAL construct.
+** critical02d   === End of Compilation 2 ===
+1501-511  Compilation failed for file critical02d.f.

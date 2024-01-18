@@ -1,0 +1,11 @@
+** m   === End of Compilation 1 ===
+"C915_001.f", line 107.52: 1512-021 (W) NAMELIST I/O statement must not have I/O list present.
+"C915_001.f", line 108.52: 1512-021 (W) NAMELIST I/O statement must not have I/O list present.
+"C915_001.f", line 110.52: 1512-021 (W) NAMELIST I/O statement must not have I/O list present.
+"C915_001.f", line 111.52: 1512-021 (W) NAMELIST I/O statement must not have I/O list present.
+** c915_001   === End of Compilation 2 ===
+"C915_001.f", line 132.41: 1512-021 (W) NAMELIST I/O statement must not have I/O list present.
+** readformatted   === End of Compilation 3 ===
+"C915_001.f", line 155.38: 1512-021 (W) NAMELIST I/O statement must not have I/O list present.
+** writeformatted   === End of Compilation 4 ===
+1501-510  Compilation successful for file C915_001.f.

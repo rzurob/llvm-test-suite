@@ -1,0 +1,5 @@
+"C811NonDataCommon.f", line 51.23: 1511-101 (S) The selector in the SELECT TYPE statement is not polymorphic.
+"C811NonDataCommon.f", line 52.13: 1511-112 (S) The selector in the SELECT TYPE statement is not unlimited polymorphic.  Intrinsic type INTEGER must not appear in the TYPE IS statement.
+"C811NonDataCommon.f", 1516-036 (S) Entity block has undefined type.
+** c811nondatainterface   === End of Compilation 1 ===
+1501-511  Compilation failed for file C811NonDataCommon.f.

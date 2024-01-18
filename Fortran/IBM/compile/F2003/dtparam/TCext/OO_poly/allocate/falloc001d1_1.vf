@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"falloc001d1_1.f", line 74.32: 1511-129 (S) The declared type of the object to be allocated must be compatible with the type specified in the ALLOCATE statement.
+"falloc001d1_1.f", line 75.34: 1511-129 (S) The declared type of the object to be allocated must be compatible with the type specified in the ALLOCATE statement.
+** falloca001d1_1   === End of Compilation 2 ===
+1501-511  Compilation failed for file falloc001d1_1.f.

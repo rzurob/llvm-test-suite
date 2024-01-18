@@ -1,0 +1,5 @@
+"this_image_d001b.f", line 31.11: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "this_image".
+"this_image_d001b.f", line 34.11: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "this_image".
+"this_image_d001b.f", line 37.11: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "this_image".
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file this_image_d001b.f.

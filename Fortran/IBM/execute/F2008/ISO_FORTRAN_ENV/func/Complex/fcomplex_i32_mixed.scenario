@@ -1,0 +1,117 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       complex_i32
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2008_COMPILE
+#INPUT=  $(tcasedir)complex_i32.f
+#OUTPUT= complex_i32$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_LINK
+#INPUT=  complex_i32$(OBJ)
+#OUTPUT= complex_i32$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  complex_i32$(EXE)
+#STDOUT=  complex_i32_F2008.out
+#ENDCMD
+
+#CMD=    XLF2003_COMPILE
+#INPUT=  $(tcasedir)complex_i32.f
+#OUTPUT= complex_i32$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2003_LINK
+#INPUT=  complex_i32$(OBJ)
+#OUTPUT= complex_i32$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  complex_i32$(EXE)
+#STDOUT=  complex_i32_F2003.out
+#ENDCMD
+
+#CMD=    XLF_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)complex_i32.f
+#OUTPUT= complex_i32$(OBJ)
+#ENDCMD
+
+#CMD=    XLF_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  complex_i32$(OBJ)
+#OUTPUT= complex_i32$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  complex_i32$(EXE)
+#STDOUT=  complex_i32_XLF.out
+#ENDCMD
+
+
+! Due to precision issue we will use two different files to verify
+! the results:
+! complex_i32.vf is for noopt runs
+! complex_i32_highopts.vf is for -O2 or higher
+
+#IF in($(F_COMPILE^OPT_OPTIMIZE_LEVEL3)) || in($(F_COMPILE^OPT_OPTIMIZE_LEVEL4)) || in($(F_COMPILE^OPT_OPTIMIZE_LEVEL5))
+
+ #CMD = SPIFF
+ #OPTS= -r0.0001
+ #INPUT = complex_i32_F2008.out $($(tcasedir)complex_i32_highopts$(product)vf)
+ #ENDCMD
+
+ #CMD = SPIFF
+ #OPTS= -r0.0001
+ #INPUT = complex_i32_F2003.out $($(tcasedir)complex_i32_highopts$(product)vf)
+ #ENDCMD
+
+ #CMD = SPIFF
+ #OPTS= -r0.0001
+ #INPUT = complex_i32_XLF.out $($(tcasedir)complex_i32_highopts$(product)vf)
+ #ENDCMD
+
+#ELSE
+
+ #CMD = SPIFF
+ #OPTS= -r0.0001
+ #INPUT = complex_i32_F2008.out $($(tcasedir)complex_i32$(product)vf)
+ #ENDCMD
+
+ #CMD = SPIFF
+ #OPTS= -r0.0001
+ #INPUT = complex_i32_F2003.out $($(tcasedir)complex_i32$(product)vf)
+ #ENDCMD
+
+ #CMD = SPIFF
+ #OPTS= -r0.0001
+ #INPUT = complex_i32_XLF.out $($(tcasedir)complex_i32$(product)vf)
+ #ENDCMD
+
+#ENDIF
+
+#CMD = DIFF
+#INPUT = complex_i32_F2008.out complex_i32_F2003.out
+#ENDCMD
+
+#CMD = DIFF
+#INPUT = complex_i32_F2008.out complex_i32_XLF.out
+#ENDCMD
+
+#CMD = DIFF
+#INPUT = complex_i32_F2003.out complex_i32_XLF.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

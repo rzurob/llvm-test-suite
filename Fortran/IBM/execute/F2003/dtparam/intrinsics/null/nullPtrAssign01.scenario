@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/intrinsics/null/nullPtrAssign01.scenario
+#FEATURE= 355754
+#CREATOR= Nancy Wang
+#DATE   = Sept. 24 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)nullPtrAssign01.f
+#OUTPUT= nullPtrAssign01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = nullPtrAssign01$(OBJ)
+#OUTPUT= nullPtrAssign01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = nullPtrAssign01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

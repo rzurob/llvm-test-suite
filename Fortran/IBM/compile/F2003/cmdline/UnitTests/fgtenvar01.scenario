@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/cmdline/UnitTests/fgtenvar01.scenario
+#FEATURE = cmdline tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041204
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF95_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) -qdebug=intmsg  $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+! This chunk was DCOMP
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)fgtenvar01.f
+#OPTS      = -qdebug=intmsg -qdebug=intmsg:shutup
+#OUTPUT    = fgtenvar01$(OBJ)
+#STDERR    = fgtenvar01.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)fgtenvar01$(product)vf) fgtenvar01.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

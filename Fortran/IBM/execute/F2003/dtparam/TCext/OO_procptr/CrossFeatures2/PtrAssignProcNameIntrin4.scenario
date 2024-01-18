@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_procptr/CrossFeatures2/PtrAssignProcNameIntrin4.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_procptr/*
+#DATE      = 20071011
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)PtrAssignProcNameIntrin4.f
+#OUTPUT= PtrAssignProcNameIntrin4$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  PtrAssignProcNameIntrin4$(OBJ)
+#OUTPUT= PtrAssignProcNameIntrin4$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  PtrAssignProcNameIntrin4$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

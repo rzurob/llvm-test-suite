@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/associate/basic/deferedVariableSelector02.scenario
+#FEATURE	= ASSOCIATE Contruct (with Derived Type Parameters) --	\
+				selector is a Variable with Defered Length Type Parameter(s)
+#CREATOR	= Glen Mateer
+#DATE		= 20080723
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)deferedVariableSelector02.f
+#OUTPUT		= deferedVariableSelector02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= deferedVariableSelector02$(OBJ)
+#OUTPUT		= deferedVariableSelector02$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= deferedVariableSelector02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

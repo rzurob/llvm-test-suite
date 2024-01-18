@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/none/acetnone09lll.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
+			   No Type Specifier Polymorphism Tests)
+#CREATOR	= Glen Mateer (derived from work by David Forster)
+#DATE		= 20080129
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetnone09lll.f
+#OPTS = -qxlf2003=dynamicacval
+#OUTPUT		= acetnone09lll$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetnone09lll$(OBJ)
+#OUTPUT		= acetnone09lll$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetnone09lll$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

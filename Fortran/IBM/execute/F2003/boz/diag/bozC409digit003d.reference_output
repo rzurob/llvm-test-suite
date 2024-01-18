@@ -1,0 +1,10 @@
+"bozC409digit003d.f", line 37.16: 1518-347 (L) The Fortran 2003 standard requires that binary, octal, and hexadecimal constants contain at least one digit.
+"bozC409digit003d.f", line 38.10: 1514-030 (W) Variable i1 is initialized more than once.
+"bozC409digit003d.f", line 38.16: 1518-347 (L) The Fortran 2003 standard requires that binary, octal, and hexadecimal constants contain at least one digit.
+"bozC409digit003d.f", line 40.20: 1518-347 (L) The Fortran 2003 standard requires that binary, octal, and hexadecimal constants contain at least one digit.
+"bozC409digit003d.f", line 42.21: 1518-347 (L) The Fortran 2003 standard requires that binary, octal, and hexadecimal constants contain at least one digit.
+"bozC409digit003d.f", line 44.21: 1518-347 (L) The Fortran 2003 standard requires that binary, octal, and hexadecimal constants contain at least one digit.
+"bozC409digit003d.f", line 46.22: 1518-347 (L) The Fortran 2003 standard requires that binary, octal, and hexadecimal constants contain at least one digit.
+"bozC409digit003d.f", line 46.26: 1518-347 (L) The Fortran 2003 standard requires that binary, octal, and hexadecimal constants contain at least one digit.
+** bozc409digit003d   === End of Compilation 1 ===
+1501-510  Compilation successful for file bozC409digit003d.f.

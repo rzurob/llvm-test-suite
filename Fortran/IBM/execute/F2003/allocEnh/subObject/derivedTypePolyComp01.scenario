@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/subObject/derivedTypePolyComp01.scenario
+#FEATURE	= Intrinsic Assignment -- variable is a Subobject
+#CREATOR	= GM Manual Creation
+#DATE		= 20061110
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)derivedTypePolyComp01.f
+#OUTPUT		= derivedTypePolyComp01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= derivedTypePolyComp01$(OBJ)
+#OUTPUT		= derivedTypePolyComp01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= derivedTypePolyComp01$(EXE)
+#STDOUT		= derivedTypePolyComp01.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)derivedTypePolyComp01$(product)vf)	\
+				derivedTypePolyComp01.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

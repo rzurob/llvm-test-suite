@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = extNaNInfIO007.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = July 18, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)extNaNInfIO007.dat
+#OUTPUT   = extNaNInfIO007.dat
+#ENDCMD
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)extNaNInfIO007.f
+#OUTPUT   =  extNaNInfIO007$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  extNaNInfIO007$(OBJ)
+#OUTPUT   =  extNaNInfIO007$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  extNaNInfIO007$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

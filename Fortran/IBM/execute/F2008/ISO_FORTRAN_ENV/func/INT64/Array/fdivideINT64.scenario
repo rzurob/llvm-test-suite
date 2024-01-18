@@ -1,0 +1,53 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       fdivideINT64
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2008_COMPILE
+#INPUT=  $(tcasedir)fdivideINT64.f
+#OUTPUT= fdivideINT64$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2008_LINK
+#INPUT=  fdivideINT64$(OBJ)
+#OUTPUT= fdivideINT64$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fdivideINT64$(EXE)
+#ENDCMD
+
+#CMD=    XLF2008_COMPILE
+#OPTS=   $(OPT_INTSIZE_2)
+#INPUT=  $(tcasedir)fdivideINT64.f
+#OUTPUT= fdivideINT64_1$(OBJ)
+#STDERR= fdivideINT64_1.stderr
+#ENDCMD
+
+#CMD=    XLF2008_LINK
+#OPTS=   $(OPT_INTSIZE_2)
+#INPUT=  fdivideINT64_1$(OBJ)
+#OUTPUT= fdivideINT64_1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fdivideINT64_1$(EXE)
+#ENDCMD
+
+#CMD = GREP
+#OPTS = "This value is out of the range allowed for the default kind of integer.  Assuming a larger type kind."
+#INPUT =  fdivideINT64_1.stderr
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

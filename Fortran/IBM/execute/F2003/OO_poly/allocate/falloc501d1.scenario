@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/allocate/falloc501d1.scenario
+#FEATURE = OO_poly tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=bgl_system
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPLINK
+#INPUT     = $(tcasedir)falloc501d1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -C -qsigtrap=xl__trce
+#OUTPUT    = falloc501d1$(EXE)
+#ENDCMD
+
+! Deconstructing a POSTCMD SCRIPT : POSTdeconSCRIPT
+! Valid line : ./falloc501d1 2>falloc501d1.out
+
+#CMD       = RUN
+#INPUT     = ./falloc501d1
+#STDERR    = falloc501d1.out
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+! Deconstructing a POSTCMD SCRIPT : POSTdeconSCRIPT
+! Valid line : grep SIGTRAP falloc501d1.out
+
+#CMD       = GREP
+#INPUT     = SIGTRAP falloc501d1.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

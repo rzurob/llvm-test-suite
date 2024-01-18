@@ -1,0 +1,6 @@
+"forall_typespec_d04.f", line 30.8: 1511-081 (S) The index name must be a scalar integer variable.
+"forall_typespec_d04.f", line 30.8: 1516-036 (S) Entity i has undefined type.
+"forall_typespec_d04.f", line 41.13: 1516-036 (S) Entity i has undefined type.
+"forall_typespec_d04.f", line 42.13: 1516-036 (S) Entity j has undefined type.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file forall_typespec_d04.f.

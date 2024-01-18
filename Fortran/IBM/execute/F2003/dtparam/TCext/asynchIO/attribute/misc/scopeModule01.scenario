@@ -1,0 +1,75 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/asynchIO/attribute/misc/scopeModule01.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of asynchIO/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=bgq
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)scopeModule01.f
+#OUTPUT		= scopeModule01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= scopeModule01$(OBJ)
+#OUTPUT		= scopeModule01$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= scopeModule01$(EXE)
+#ENDCMD
+
+#CMD		= SED
+#OPTS		= -e '1,/^\*\* mpoint   === End of Compilation 1 ===$/d'
+#INPUT		= scopeModule01$(LST)
+#STDOUT		= scopeModule01.sed-main-start.stdout
+#ENDCMD
+
+#CMD		= SED
+#OPTS		= -e '/^\*\* scopemodule01   === End of Compilation 2 ===$/,$d'
+#INPUT		= scopeModule01.sed-main-start.stdout
+#STDOUT		= scopeModule01.sed-main.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i '^aPtr[ 	]'
+#INPUT		= scopeModule01.sed-main.stdout
+#STDOUT		= scopeModule01.main.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= scopeModule01.main.stdout
+#VALIDRCS	= $(GREP_FAIL)
+#ENDCMD
+
+#CMD		= SED
+#OPTS		= -e '1,/^\*\* scopemodule01   === End of Compilation 2 ===$/d'
+#INPUT		= scopeModule01$(LST)
+#STDOUT		= scopeModule01.sed-sub.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i '^aPtr[ 	]'
+#INPUT		= scopeModule01.sed-sub.stdout
+#STDOUT		= scopeModule01.sub.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= scopeModule01.sub.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

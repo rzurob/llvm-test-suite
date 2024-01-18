@@ -1,0 +1,21 @@
+!
+!  Automatically Generated .tl file
+!  Bucket:      F2003/dtparam
+!  Sub-Bucket:  TCext/generic/operator/resolve
+!
+genericOperatorResolve001d.scenario
+genericOperatorResolve001d1.scenario
+genericOperatorResolve001d2.scenario
+genericOperatorResolve002d.scenario
+genericOperatorResolve002d1.scenario
+genericOperatorResolve002d2.scenario
+genericOperatorResolve003.scenario
+genericOperatorResolve003a.scenario
+genericOperatorResolve004.scenario
+genericOperatorResolve004a.scenario
+genericOperatorResolve005.scenario
+genericOperatorResolve005a.scenario
+genericOperatorResolve006.scenario
+genericOperatorResolve006a.scenario
+genericOperatorResolve007.scenario
+genericOperatorResolve007a.scenario

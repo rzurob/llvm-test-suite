@@ -1,0 +1,9 @@
+"Intent1.f", line 65.20: 1516-056 (S) An accessible explicit interface has a dummy argument with the INTENT(OUT) or INTENT(INOUT) attribute specified. Corresponding actual argument which is not definable is not permitted in this context.
+"Intent1.f", line 66.20: 1516-056 (S) An accessible explicit interface has a dummy argument with the INTENT(OUT) or INTENT(INOUT) attribute specified. Corresponding actual argument which is not definable is not permitted in this context.
+"Intent1.f", line 71.20: 1516-056 (S) An accessible explicit interface has a dummy argument with the INTENT(OUT) or INTENT(INOUT) attribute specified. Corresponding actual argument which is not definable is not permitted in this context.
+"Intent1.f", line 72.20: 1516-056 (S) An accessible explicit interface has a dummy argument with the INTENT(OUT) or INTENT(INOUT) attribute specified. Corresponding actual argument which is not definable is not permitted in this context.
+"Intent1.f", line 78.20: 1516-056 (S) An accessible explicit interface has a dummy argument with the INTENT(OUT) or INTENT(INOUT) attribute specified. Corresponding actual argument which is not definable is not permitted in this context.
+"Intent1.f", line 79.20: 1516-056 (S) An accessible explicit interface has a dummy argument with the INTENT(OUT) or INTENT(INOUT) attribute specified. Corresponding actual argument which is not definable is not permitted in this context.
+** m   === End of Compilation 1 ===
+** intent1   === End of Compilation 2 ===
+1501-511  Compilation failed for file Intent1.f.

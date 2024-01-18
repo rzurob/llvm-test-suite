@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/argpresence/unit_tests/func/argpresence15f.f
+#FEATURE    = F386700
+#CREATOR    = Bardia Mahjour
+#DATE       = 20110825
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#OPTS       = -qxlf2008=checkpresence
+#INPUT      = $(tcasedir)argpresence15f.f
+#OUTPUT     = argpresence15f$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#INPUT      = argpresence15f$(OBJ)
+#OUTPUT     = argpresence15f$(EXE)
+#ENDCMD
+
+#CMD        = RUN
+#INPUT      = argpresence15f$(EXE)
+#STDOUT     = argpresence15f.out
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = argpresence15f.out $($(tcasedir)argpresence15f$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

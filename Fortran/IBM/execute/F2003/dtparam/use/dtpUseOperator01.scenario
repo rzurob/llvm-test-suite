@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/use/dtpUseOperator01.scenario
+#FEATURE   = DTP and USE - user-defined operators
+#CREATOR   = DF
+#DATE      = 20080825
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUseOperator01.f
+#OUTPUT    = dtpUseOperator01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUseOperator01$(OBJ)
+#OUTPUT    = dtpUseOperator01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUseOperator01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

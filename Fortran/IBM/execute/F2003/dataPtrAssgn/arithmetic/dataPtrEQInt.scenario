@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrEQInt.scenario
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)dataPtrEQInt_c.c
+#OPTS      = $(C_COMPILER_OPTS)
+#OUTPUT    = dataPtrEQInt_c$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrEQInt.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrEQInt$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrEQInt$(OBJ) dataPtrEQInt_c$(OBJ)
+#OUTPUT    = dataPtrEQInt$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrEQInt$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

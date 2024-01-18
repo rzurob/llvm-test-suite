@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/decimaledit/defaultIO/dcmlCharExprRW004.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dcmlCharExprRW004.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dcmlCharExprRW004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dcmlCharExprRW004$(OBJ)
+#OUTPUT    = dcmlCharExprRW004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dcmlCharExprRW004$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dcmlCharExprRW004.out1 $(tcasedir)dcmlCharExprRW004.vf1
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dcmlCharExprRW004.out2 $(tcasedir)dcmlCharExprRW004.vf2
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

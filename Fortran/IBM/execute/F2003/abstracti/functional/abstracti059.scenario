@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/intrin/schedtype/abstracti059.scenario
+#FEATURE = intrin tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_OPTIMIZE_FOR_SMP) $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT)
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)abstracti059.f
+#OPTS      =  -qsmp=schedule=guided=5 $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = abstracti059$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      =  -qsmp=schedule=guided=5 $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  abstracti059$(OBJ)
+#OUTPUT    = abstracti059$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = abstracti059$(EXE)
+#STDOUT    = abstracti059.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)abstracti059$(product)vf) abstracti059.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

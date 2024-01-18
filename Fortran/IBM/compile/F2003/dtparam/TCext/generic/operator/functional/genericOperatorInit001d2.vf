@@ -1,0 +1,4 @@
+"genericOperatorInit001d2.f", line 46.28: 1516-037 (S) Type of operand is not permitted for arithmetic.
+** m   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericOperatorInit001d2.f.

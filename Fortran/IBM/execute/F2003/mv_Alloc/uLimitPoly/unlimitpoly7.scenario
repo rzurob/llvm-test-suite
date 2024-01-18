@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       unlimitpoly7.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)unlimitpoly7.f
+#OUTPUT= unlimitpoly7$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  unlimitpoly7$(OBJ)
+#OUTPUT= unlimitpoly7$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  unlimitpoly7$(EXE)
+#STDOUT= unlimitpoly7.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = unlimitpoly7.out $($(tcasedir)unlimitpoly7$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

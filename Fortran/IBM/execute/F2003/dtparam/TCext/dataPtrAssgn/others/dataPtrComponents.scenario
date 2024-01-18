@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/others/dataPtrComponents.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071217
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrComponents.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrComponents$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrComponents$(OBJ)
+#OUTPUT    = dataPtrComponents$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrComponents$(EXE)
+#STDOUT    = dataPtrComponents.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrComponents.out $($(tcasedir)dataPtrComponents$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

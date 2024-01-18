@@ -1,0 +1,3 @@
+"asynchSpecDataXfer09d.f", line 62.29: 1516-285 (S) The expression specified for the ASYNCHRONOUS= specifier must be a scalar character initialization expression.
+** asynchspecdataxfer09d   === End of Compilation 1 ===
+1501-511  Compilation failed for file asynchSpecDataXfer09d.f.

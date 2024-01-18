@@ -1,0 +1,45 @@
+#BEGINSCENARIO
+
+! Scenario Documentation
+#BEGINDOC
+#NAME      = F2008/do_concurrent/func/do_concurrent_f016.scenario
+#FEATURE   = RTC STORY 17293 - F2008: DO CONCURRENT construct
+#PURPOSE   = Test the DO CONCURRENT construct
+#CREATOR   = Nicole Negherbon
+#DATE      = June 30, 2015
+#TEST_TYPE = FUNCTIONAL
+#KEYWORD   = DO CONCURRENT
+#ENDDOC
+
+! DO CONCURRENT loops inside external subroutines and functions from external files
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      = F_COMPILE
+#INPUT    = $(tcasedir)do_concurrent_f016_functions.f
+#OUTPUT   = do_concurrent_f016_functions$(OBJ)
+#ENDCMD
+
+#CMD      = F_COMPILE
+#INPUT    = $(tcasedir)do_concurrent_f016.f
+#OUTPUT   = do_concurrent_f016$(OBJ)
+#ENDCMD
+
+#CMD      = F_LINK
+#INPUT    = do_concurrent_f016_functions$(OBJ) do_concurrent_f016$(OBJ)
+#OUTPUT   = do_concurrent_f016$(EXE)
+#ENDCMD
+
+#CMD      = RUN
+#INPUT    = do_concurrent_f016$(EXE)
+#STDOUT   = do_concurrent_f016.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

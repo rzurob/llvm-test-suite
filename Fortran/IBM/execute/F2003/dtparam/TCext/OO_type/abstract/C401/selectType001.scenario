@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/C401/selectType001.scenario
+#FEATURE   = OO_type tests - regression run bucket
+#CREATOR   = GB copy from OO_type/abstract/C401/selectType001.scenario
+#DATE      = 20070426
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)selectType001.f
+#OUTPUT    = selectType001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = selectType001$(OBJ)
+#OUTPUT    = selectType001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = selectType001$(EXE)
+#STDOUT    = selectType001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = selectType001.out $(tcasedir)selectType001.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

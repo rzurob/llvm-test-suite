@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/associate/components/allocatableComponent01.scenario
+#FEATURE	= ASSOCIATE Contruct (with Derived Type Parameters) --	\
+				Component Attributes
+#CREATOR	= Glen Mateer
+#DATE		= 20080818
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)allocatableComponent01.f
+#OUTPUT		= allocatableComponent01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= allocatableComponent01$(OBJ)
+#OUTPUT		= allocatableComponent01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= allocatableComponent01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

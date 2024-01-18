@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = modeDecimalNaNInfIO002.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 28, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)modeDecimalNaNInfIO002.dat
+#OUTPUT   = modeDecimalNaNInfIO002.dat
+#ENDCMD
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)modeDecimalNaNInfIO002.f
+#OUTPUT   =  modeDecimalNaNInfIO002$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  modeDecimalNaNInfIO002$(OBJ)
+#OUTPUT   =  modeDecimalNaNInfIO002$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  modeDecimalNaNInfIO002$(EXE)
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = modeDecimalNaNInfIO002.out $(tcasedir)modeDecimalNaNInfIO002.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

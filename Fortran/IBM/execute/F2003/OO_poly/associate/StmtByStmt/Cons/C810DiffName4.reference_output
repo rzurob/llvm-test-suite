@@ -1,0 +1,4 @@
+"C810DiffName4.f", line 54.24: 1511-116 (E) The END ASSOCIATE statement must not contain a construct name.  Construct name cn is ignored.
+"C810DiffName4.f", 1516-246 (E) The construct name for the END ASSOCIATE statement is missing.  The statement will be matched with the previous ASSOCIATE statement.
+** c810diffname4   === End of Compilation 1 ===
+1501-510  Compilation successful for file C810DiffName4.f.

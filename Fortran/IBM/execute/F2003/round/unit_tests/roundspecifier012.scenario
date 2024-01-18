@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=roundspecifier012.scenario
+#FEATURE = Round Specifier
+#CREATOR = Michael Selvanayagam
+#DATE    = 20060501
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+
+#CMD       = F_COMPLINK
+#INPUT     = $(tcasedir)roundspecifier012.f
+#OUTPUT    = roundspecifier012$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = roundspecifier012$(EXE)
+#STDERR    = roundspecifier012.err
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

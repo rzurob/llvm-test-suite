@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BImplTypeSave.scenario
+#FEATURE   = F2008 BLOCK - implicit typing (var appears in SAVE statement)
+#CREATOR   = DF Manual Update
+#DATE      = 20101214
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)BImplTypeSave.f
+#OUTPUT    = BImplTypeSave$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = BImplTypeSave$(OBJ)
+#OUTPUT    = BImplTypeSave$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = BImplTypeSave$(EXE)
+#STDOUT    = BImplTypeSave.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)BImplTypeSave$(product)vf) BImplTypeSave.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       polyPntToDTfrm.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)polyPntToDTfrm.f
+#OUTPUT= polyPntToDTfrm$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  polyPntToDTfrm$(OBJ)
+#OUTPUT= polyPntToDTfrm$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  polyPntToDTfrm$(EXE)
+#STDOUT= polyPntToDTfrm.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = polyPntToDTfrm.out $(tcasedir)polyPntToDTfrm.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

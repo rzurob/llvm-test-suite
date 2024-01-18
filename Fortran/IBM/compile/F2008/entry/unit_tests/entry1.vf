@@ -1,0 +1,3 @@
+"entry.f", line 15.8: 1518-314 (L) The ENTRY statement is obsolescent in the Fortran 2008 standard.
+** sub   === End of Compilation 1 ===
+1501-510  Compilation successful for file entry.f.

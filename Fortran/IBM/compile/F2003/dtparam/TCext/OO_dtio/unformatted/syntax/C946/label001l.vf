@@ -1,0 +1,8 @@
+** m1   === End of Compilation 1 ===
+  109.36   01610213 800Ü
+** label001l   === End of Compilation 2 ===
+  136.24   01610213 100Ü
+** readunformatted   === End of Compilation 3 ===
+  152.24   01610213 400Ü
+** writeunformatted   === End of Compilation 4 ===
+1501-511  Compilation failed for file label001l.f.

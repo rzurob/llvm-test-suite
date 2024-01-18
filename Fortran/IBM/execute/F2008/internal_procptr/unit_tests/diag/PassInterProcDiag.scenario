@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME       = F2008/internal_procptr/PassInterProcDiag.scenario
+#FEATURE    = 303977
+#CREATOR    = Ren Jian Gang
+#DATE       = 20110306
+#TEST_TYPE  = Diagnostic
+#ENDDOC
+
+#BEGINENV
+#INVALID_XOPTS  = $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP) $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT)
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD        = F2003_COMPILE
+#INPUT      = $(tcasedir)PassInterProcDiag.f
+#OPTS       = $(OPT_SET_LANG_LEVEL<2003std>)
+#STDERR     = PassInterProcDiag.err
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = $($(tcasedir)PassInterProcDiag$(product)vf) PassInterProcDiag.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

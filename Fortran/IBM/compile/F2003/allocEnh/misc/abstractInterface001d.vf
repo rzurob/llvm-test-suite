@@ -1,0 +1,4 @@
+"abstractInterface001d.f", line 34.22: 1513-239 (S) Identifier printbase was declared inside an abstract interface. printbase must not be used in this context.
+** m   === End of Compilation 1 ===
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file abstractInterface001d.f.

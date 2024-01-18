@@ -1,0 +1,10 @@
+ Child type:
+ shape of ids: 1 2 ; lbound: 1 1 ; ubound: 1 2
+ values of ids: 1000 1001
+ shape of names: 1 2 ; lbound: 0 2 ; ubound: 0 3
+ values of names:xlf              test             
+ Child type:
+ shape of ids: 2 1 ; lbound: 2 0 ; ubound: 3 0
+ values of ids: 10000 20000
+ shape of names: 2 1 ; lbound: 1 1 ; ubound: 2 1
+ values of names:xlftest          testxlf          

@@ -1,0 +1,15 @@
+ 1 abcde
+ -999 xxxxx
+ 1 abcde
+ 2 ABCDE 10.00000000
+ -999 xxxxx -1.000000000
+ 2 ABCDE 10.00000000
+ 3 fghij
+ -999 xxxxx
+ 3 fghij
+ 4 FGHIJ 20.00000000
+ -999 xxxxx -1.000000000
+ 4 FGHIJ 20.00000000
+ 5 house
+ -999 xxxxx
+ 5 house 30.00000000

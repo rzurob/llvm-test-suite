@@ -1,0 +1,1 @@
+c_ptrdiff_t01.scenario

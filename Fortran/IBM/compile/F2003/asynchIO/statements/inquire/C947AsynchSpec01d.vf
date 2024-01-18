@@ -1,0 +1,5 @@
+"C947AsynchSpec01d.f", line 77.19: 1512-017 (E) The ASYNCHRONOUS keyword has already been specified on this I/O statement.  Keyword is ignored.
+"C947AsynchSpec01d.f", line 88.43: 1512-017 (E) The ID keyword has already been specified on this I/O statement.  Keyword is ignored.
+"C947AsynchSpec01d.f", line 99.44: 1512-017 (E) The PENDING keyword has already been specified on this I/O statement.  Keyword is ignored.
+** c947asynchspec01d   === End of Compilation 1 ===
+1501-510  Compilation successful for file C947AsynchSpec01d.f.

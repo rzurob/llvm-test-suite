@@ -1,0 +1,83 @@
+! *********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD: 
+! %COMPOPTS: -qfree=f90 
+! %GROUP:  redherring.f  
+! %VERIFY:  
+! %STDIN:
+! %STDOUT: 
+! %EXECARGS:
+! %POSTCMD: tcomp C813Assoc.f 
+! %END
+! *********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : C813Assoc
+!*  TEST CASE TITLE            : 
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Dec. 3, 2004
+!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*
+!*  SECONDARY FUNCTIONS TESTED : Constraint C813 
+!*
+!*  REFERENCE                  : Feature 219934.OO_poly
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*    The selector is an associating entity of poly with an  extension type
+!*    to thst of "TYPE IS"   
+!*    ()
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+  MODULE M
+
+    TYPE, ABSTRACT :: Ground
+    END TYPE
+
+    TYPE, EXTENDS(Ground) :: Base
+      INTEGER :: BaseId = 1
+    END TYPE
+
+    TYPE, EXTENDS(Base) :: Child
+      INTEGER  :: ChildId = 2
+    END TYPE
+
+  END MODULE
+
+  PROGRAM C813Assoc
+  USE M
+  IMPLICIT NONE
+ 
+  CONTAINS
+ 
+  SUBROUTINE Sub(Arg)
+  CLASS(*) :: ARg
+  
+
+  SELECT TYPE (Arg)
+  TYPE IS (child)
+    ASSOCIATE ( As =>Arg )
+    SELECT TYPE ( As ) 
+      TYPE IS (Child)
+      CLASS DEFAULT
+    END SELECT 
+    END ASSOCIATE
+  END SELECT 
+  
+  END SUBROUTINE
+
+  END
+

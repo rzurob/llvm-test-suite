@@ -1,0 +1,6 @@
+ main: flags  T F F F F
+    P: flags on entry:  F F F F F
+    P: rounding mode on exit: ieee_to_zero
+    P: flags on exit:  F F F T F
+ main: flags  T F F T F
+ main: rounding mode: ieee_nearest

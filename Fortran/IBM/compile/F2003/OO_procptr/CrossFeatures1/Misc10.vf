@@ -1,0 +1,6 @@
+"Misc10.f", line 56.11: 1516-009 (S) NAMELIST, ENTRY, PROGRAM, SUBROUTINE, and statement function names are not permitted in this context.
+"Misc10.f", line 57.11: 1516-009 (S) NAMELIST, ENTRY, PROGRAM, SUBROUTINE, and statement function names are not permitted in this context.
+"Misc10.f", line 59.11: 1516-009 (S) NAMELIST, ENTRY, PROGRAM, SUBROUTINE, and statement function names are not permitted in this context.
+"Misc10.f", line 60.11: 1516-009 (S) NAMELIST, ENTRY, PROGRAM, SUBROUTINE, and statement function names are not permitted in this context.
+** misc10   === End of Compilation 1 ===
+1501-511  Compilation failed for file Misc10.f.

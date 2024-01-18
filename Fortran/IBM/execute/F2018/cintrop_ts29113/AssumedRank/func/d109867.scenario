@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/AssumedRank/func/d109867.scenario
+#FEATURE   = C Interop, Assumed Rank
+#FEATURE   = RTC 109867: ASSUMED_RANK : Wrong Rank value or ICE  found if the Fortran callee dummy contains CONTIGUOUS attribute
+#CREATOR   = Wei Li from Daniel Chen's TC
+#DATE      = 201504
+#TEST_TYPE = defect
+#KEYWORDS  = C Interop, Assumed Rank
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)d109867c.c
+#OPTS      = $(C_COMPILER_OPTS) -I$(xlf_include)
+#OUTPUT    = d109867c$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d109867.f
+#OUTPUT    = d109867$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d109867c$(OBJ) d109867$(OBJ)
+#OUTPUT    = d109867$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d109867$(EXE)
+#STDOUT    = d109867.out
+#STDERR    = d109867.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = cmdline/UnitTests/fgcmdarg07.scenario
+#FEATURE = cmdline tests - regression run bucket
+#CREATOR = automated conversion script - fixed CPR 20090121
+#DATE    = 20041204
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)fgcmdarg07.f
+#OPTS      = $(OPT_INTSIZE_8) $(OPT_FIXED_SOURCE_FORM)
+#OUTPUT    = fgcmdarg07$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_INTSIZE_8) $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = fgcmdarg07$(OBJ)
+#OUTPUT    = fgcmdarg07$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fgcmdarg07$(EXE)
+#OPTS      = aa bbb cccc
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

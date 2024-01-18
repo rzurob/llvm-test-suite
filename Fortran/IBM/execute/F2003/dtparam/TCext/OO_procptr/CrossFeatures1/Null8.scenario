@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_procptr/CrossFeatures1/Null8.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_procptr/*
+#DATE      = 20071011
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)Null8.f
+#OUTPUT= Null8$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  Null8$(OBJ)
+#OUTPUT= Null8$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  Null8$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

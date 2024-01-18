@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/allocEnh/construct/definedAssgn004.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)definedAssgn004.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = definedAssgn004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = definedAssgn004$(OBJ)
+#OUTPUT    = definedAssgn004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = definedAssgn004$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

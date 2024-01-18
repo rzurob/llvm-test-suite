@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       assumedTP4To.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)assumedTP4To.f
+#OUTPUT= assumedTP4To$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  assumedTP4To$(OBJ)
+#OUTPUT= assumedTP4To$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  assumedTP4To$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

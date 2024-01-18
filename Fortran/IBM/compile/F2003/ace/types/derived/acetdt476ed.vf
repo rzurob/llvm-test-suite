@@ -1,0 +1,27 @@
+** mod   === End of Compilation 1 ===
+"acetdt476ed.f", line 111.16: 1511-142 (S) Identifier ext specified in the array constructor has not been defined in a derived type definition.
+"acetdt476ed.f", line 112.16: 1511-142 (S) Identifier ext specified in the array constructor has not been defined in a derived type definition.
+"acetdt476ed.f", line 113.16: 1511-142 (S) Identifier ext specified in the array constructor has not been defined in a derived type definition.
+"acetdt476ed.f", line 114.16: 1511-142 (S) Identifier ext specified in the array constructor has not been defined in a derived type definition.
+"acetdt476ed.f", line 115.16: 1511-142 (S) Identifier ext specified in the array constructor has not been defined in a derived type definition.
+"acetdt476ed.f", line 116.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476ed.f", line 116.28: 1511-142 (S) Identifier ext specified in the array constructor has not been defined in a derived type definition.
+"acetdt476ed.f", line 119.16: 1511-142 (S) Identifier priv specified in the array constructor has not been defined in a derived type definition.
+"acetdt476ed.f", line 120.16: 1511-142 (S) Identifier priv specified in the array constructor has not been defined in a derived type definition.
+"acetdt476ed.f", line 121.16: 1511-142 (S) Identifier priv specified in the array constructor has not been defined in a derived type definition.
+"acetdt476ed.f", line 122.16: 1511-142 (S) Identifier priv specified in the array constructor has not been defined in a derived type definition.
+"acetdt476ed.f", line 123.16: 1511-142 (S) Identifier priv specified in the array constructor has not been defined in a derived type definition.
+"acetdt476ed.f", line 124.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476ed.f", line 124.28: 1511-142 (S) Identifier priv specified in the array constructor has not been defined in a derived type definition.
+"acetdt476ed.f", line 128.15: 1511-142 (S) Identifier ext specified in the array constructor has not been defined in a derived type definition.
+"acetdt476ed.f", line 129.15: 1511-142 (S) Identifier priv specified in the array constructor has not been defined in a derived type definition.
+"acetdt476ed.f", line 130.15: 1511-142 (S) Identifier ext specified in the array constructor has not been defined in a derived type definition.
+"acetdt476ed.f", line 131.15: 1511-142 (S) Identifier priv specified in the array constructor has not been defined in a derived type definition.
+"acetdt476ed.f", line 132.15: 1511-142 (S) Identifier priv specified in the array constructor has not been defined in a derived type definition.
+"acetdt476ed.f", line 133.15: 1511-142 (S) Identifier ext specified in the array constructor has not been defined in a derived type definition.
+"acetdt476ed.f", line 134.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476ed.f", line 134.27: 1511-142 (S) Identifier priv specified in the array constructor has not been defined in a derived type definition.
+"acetdt476ed.f", line 136.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476ed.f", line 136.27: 1511-142 (S) Identifier ext specified in the array constructor has not been defined in a derived type definition.
+** acetdt476ed   === End of Compilation 2 ===
+1501-511  Compilation failed for file acetdt476ed.f.

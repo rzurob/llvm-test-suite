@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/cshift/typeBound001.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050202
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)typeBound001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = typeBound001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = typeBound001$(OBJ)
+#OUTPUT    = typeBound001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = typeBound001$(EXE)
+#STDOUT    = typeBound001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)typeBound001$(product)vf) typeBound001.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/complexPartDesignator/diag/complexPartDesignatorD4.scenario
+#FEATURE   = Complex Part Designator
+#CREATOR   = Shahid Alam
+#DATE      = 20110117
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)complexPartDesignatorD4.f
+#OUTPUT    = complexPartDesignatorD4$(OBJ)
+#STDOUT    = complexPartDesignatorD4.out
+#STDERR    = complexPartDesignatorD4.out
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $(tcasedir)complexPartDesignatorD4.vf complexPartDesignatorD4.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

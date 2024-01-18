@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/format/formatTypeBndSeqWrite01.scenario
+#FEATURE   = 359704
+#CREATOR   = Nancy Wang
+#DATE      = Dec. 9 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)formatTypeBndSeqWrite01.f
+#OUTPUT= formatTypeBndSeqWrite01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = formatTypeBndSeqWrite01$(OBJ)
+#OUTPUT= formatTypeBndSeqWrite01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = formatTypeBndSeqWrite01$(EXE)
+#STDOUT= formatTypeBndSeqWrite01.out
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT  = $($(tcasedir)formatTypeBndSeqWrite01$(product)vf) formatTypeBndSeqWrite01.out
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

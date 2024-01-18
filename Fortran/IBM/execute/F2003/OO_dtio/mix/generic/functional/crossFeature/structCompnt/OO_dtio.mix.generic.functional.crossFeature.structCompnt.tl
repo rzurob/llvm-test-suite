@@ -1,0 +1,11 @@
+! automatically generated
+structCompnt001.scenario
+structCompnt001a.scenario
+structCompnt002.scenario
+structCompnt002a.scenario
+structCompnt003.scenario
+structCompnt003a.scenario
+structCompnt004.scenario
+structCompnt004a.scenario
+structCompnt005.scenario
+structCompnt005a.scenario

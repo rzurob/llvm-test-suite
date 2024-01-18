@@ -1,0 +1,4 @@
+"C811SubStr.f", line 50.18: 1511-101 (S) The selector in the SELECT TYPE statement is not polymorphic.
+"C811SubStr.f", line 51.13: 1511-112 (S) The selector in the SELECT TYPE statement is not unlimited polymorphic.  Intrinsic type CHARACTER must not appear in the TYPE IS statement.
+** c811substr   === End of Compilation 1 ===
+1501-511  Compilation failed for file C811SubStr.f.

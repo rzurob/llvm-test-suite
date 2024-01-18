@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/crossFeature/allocate/alloc005.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/abstract/crossFeature/allocate/alloc005.scenario
+#DATE      = 20070612
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)alloc005.f
+#OPTS      = -qdebug=intmsg:shutup
+#OUTPUT    = alloc005$(OBJ)
+#STDERR    = alloc005.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)alloc005$(product)vf) alloc005.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

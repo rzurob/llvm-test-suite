@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/allocate/falloc006a16.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_poly/*
+#DATE      = 20070817
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)falloc006a16.f
+#OUTPUT    = falloc006a16$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = falloc006a16$(OBJ)
+#OUTPUT    = falloc006a16$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = falloc006a16$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

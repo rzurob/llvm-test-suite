@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       ulmt4allAssocname.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)ulmt4allAssocname.f
+#OUTPUT= ulmt4allAssocname$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  ulmt4allAssocname$(OBJ)
+#OUTPUT= ulmt4allAssocname$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  ulmt4allAssocname$(EXE)
+#STDOUT= ulmt4allAssocname.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

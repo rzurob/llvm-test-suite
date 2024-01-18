@@ -1,0 +1,6 @@
+*** testcase variant:  <below -O4>
+
+** extchk   === End of Compilation 1 ===
+** f1c_via_f   === End of Compilation 2 ===
+** f2f_via_f   === End of Compilation 3 ===
+1501-510  Compilation successful for file extchk.f.

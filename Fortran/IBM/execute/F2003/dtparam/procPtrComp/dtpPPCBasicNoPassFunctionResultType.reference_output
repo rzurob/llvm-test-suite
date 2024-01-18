@@ -1,0 +1,41 @@
+ t1a % p1(t1a): character, l= 5 >horse<
+ t1a % p1(t1b): character, l= 5 >equus<
+ t1a % p2(t2a): i*2= 32000
+ t1a % p2(t2b): i*2= -12345
+ 
+ t1b % p1(t1a): character, l= 5 >esroh<
+ t1b % p1(t1b): character, l= 5 >suuqe<
+ t1b % p2(t2a): i*2= -32000
+ t1b % p2(t2b): i*2= 12345
+ 
+ t2a % p1(t1a): character, l= 5 >horse<
+ t2a % p1(t1b): character, l= 5 >equus<
+ t2a % p2(t2a): i*2= 32000
+ t2a % p2(t2b): i*2= -12345
+ 
+ t2b % p1(t1a): character, l= 5 >esroh<
+ t2b % p1(t1b): character, l= 5 >suuqe<
+ t2b % p2(t2a): i*2= -32000
+ t2b % p2(t2b): i*2= 12345
+ 
+ t1a % p1(t1a): character, l= 5 >esroh<
+ t1a % p1(t1b): character, l= 5 >suuqe<
+ t1a % p2(t2a): i*2= -32000
+ t1a % p2(t2b): i*2= 12345
+ 
+ t1b % p1(t1a): character, l= 5 >horse<
+ t1b % p1(t1b): character, l= 5 >equus<
+ t1b % p2(t2a): i*2= 32000
+ t1b % p2(t2b): i*2= -12345
+ 
+ t2a % p1(t1a): character, l= 5 >esroh<
+ t2a % p1(t1b): character, l= 5 >suuqe<
+ t2a % p2(t2a): i*2= -32000
+ t2a % p2(t2b): i*2= 12345
+ 
+ t2b % p1(t1a): character, l= 5 >horse<
+ t2b % p1(t1b): character, l= 5 >equus<
+ t2b % p2(t2a): i*2= 32000
+ t2b % p2(t2b): i*2= -12345
+ 
+ done

@@ -1,0 +1,10 @@
+********FUNCTIONAL*******
+
+001-  return values and inline testing
+004-  subroutine calling
+
+********DIAGNOSTIC*******
+
+002 - compile time langlvl messages
+
+003 - compile time wrong argument number and type error message

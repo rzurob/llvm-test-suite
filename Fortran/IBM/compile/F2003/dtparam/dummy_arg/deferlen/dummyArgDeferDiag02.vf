@@ -1,0 +1,13 @@
+** m   === End of Compilation 1 ===
+"dummyArgDeferDiag02.f", line 63.13: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"dummyArgDeferDiag02.f", line 64.13: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"dummyArgDeferDiag02.f", line 65.13: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"dummyArgDeferDiag02.f", line 66.13: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"dummyArgDeferDiag02.f", line 67.13: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"dummyArgDeferDiag02.f", line 68.13: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"dummyArgDeferDiag02.f", line 69.13: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"dummyArgDeferDiag02.f", line 70.13: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+** dummyargdeferdiag02   === End of Compilation 2 ===
+** sub3   === End of Compilation 3 ===
+** sub4   === End of Compilation 4 ===
+1501-511  Compilation failed for file dummyArgDeferDiag02.f.

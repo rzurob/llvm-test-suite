@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/unformatted/section9.1.2/zerosized002.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)zerosized002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = zerosized002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = zerosized002$(OBJ)
+#OUTPUT    = zerosized002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = zerosized002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

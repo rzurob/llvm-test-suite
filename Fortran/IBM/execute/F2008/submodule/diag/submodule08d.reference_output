@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+** n   === End of Compilation 2 ===
+"submodule08d.f", line 45.1: 1515-019 (S) Syntax is incorrect.
+"submodule08d.f", line 46.16: 1516-036 (S) Entity a has undefined type.
+** submodule08d   === End of Compilation 3 ===
+1501-511  Compilation failed for file submodule08d.f.

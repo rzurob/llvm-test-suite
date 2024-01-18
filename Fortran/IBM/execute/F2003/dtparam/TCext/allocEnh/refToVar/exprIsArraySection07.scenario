@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/refToVar/exprIsArraySection07.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071220
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)exprIsArraySection07.f
+#OUTPUT		= exprIsArraySection07$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= exprIsArraySection07$(OBJ)
+#OUTPUT		= exprIsArraySection07$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= exprIsArraySection07$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

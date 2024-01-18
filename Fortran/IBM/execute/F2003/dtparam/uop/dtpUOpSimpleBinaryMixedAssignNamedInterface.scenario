@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpSimpleBinaryMixedAssignNamedInterface.scenario
+#FEATURE   = User-Defined Operators - mixed result types, binary ops in assignment statements (generic interface) (named)
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpSimpleBinaryMixedAssignNamedInterface.f
+#OUTPUT    = dtpUOpSimpleBinaryMixedAssignNamedInterface$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpSimpleBinaryMixedAssignNamedInterface$(OBJ)
+#OUTPUT    = dtpUOpSimpleBinaryMixedAssignNamedInterface$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpSimpleBinaryMixedAssignNamedInterface$(EXE)
+#STDOUT    = dtpUOpSimpleBinaryMixedAssignNamedInterface.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUOpSimpleBinaryMixedAssignNamedInterface$(product)vf) dtpUOpSimpleBinaryMixedAssignNamedInterface.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/derived/acetdt37.scenario
+#FEATURE	= Array constructor enhancement AC in I/O, as output-item, no DTIO
+#CREATOR	= DF Manual Update
+#DATE		= 20061116
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt37.f
+#OUTPUT		= acetdt37$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt37$(OBJ)
+#OUTPUT		= acetdt37$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt37$(EXE)
+#STDOUT		= acetdt37.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -r1e-6
+#INPUT		= $(tcasedir)acetdt37.vf acetdt37.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

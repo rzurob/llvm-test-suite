@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/unformatted/section9.5.2/read/structureComp003a.scenario
+#FEATURE = OO_dtio/unformatted/section9.5.2 tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)structureComp003a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = structureComp003a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  structureComp003a$(OBJ)
+#OUTPUT    = structureComp003a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = structureComp003a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

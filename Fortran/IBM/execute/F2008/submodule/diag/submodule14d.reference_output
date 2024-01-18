@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+** n   === End of Compilation 2 ===
+"submodule14d.f", line 73.1: 1516-157 (S) Module entity a with the PROTECTED attribute is not definable when it is accessed by use association.
+** submodule14d   === End of Compilation 3 ===
+1501-511  Compilation failed for file submodule14d.f.

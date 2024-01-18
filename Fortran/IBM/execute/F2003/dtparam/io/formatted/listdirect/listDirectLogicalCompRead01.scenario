@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/listdirect/listDirectLogicalCompRead01.scenario
+#FEATURE   = 360757
+#CREATOR   = Nancy Wang
+#DATE      = Jan. 14 2009
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = COPY
+#INPUT = $(tcasedir)listDirectLogicalCompRead01.dat .
+#ENDCMD
+
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)listDirectLogicalCompRead01.f
+#OUTPUT= listDirectLogicalCompRead01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = listDirectLogicalCompRead01$(OBJ)
+#OUTPUT= listDirectLogicalCompRead01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = listDirectLogicalCompRead01$(EXE)
+#STDOUT= listDirectLogicalCompRead01.out
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT  = $($(tcasedir)listDirectLogicalCompRead01$(product)vf) listDirectLogicalCompRead01.out
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

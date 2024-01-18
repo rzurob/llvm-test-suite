@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      =
+#FEATURE   =
+#CREATOR   = Maryam Moghadas
+#DATE      = 20130212
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)dshiftl_dshiftr01f.f
+#OUTPUT   =  dshiftl_dshiftr01f$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  dshiftl_dshiftr01f$(OBJ)
+#OUTPUT   =  dshiftl_dshiftr01f$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  dshiftl_dshiftr01f$(EXE)
+#STDOUT   =  dshiftl_dshiftr01f.out
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

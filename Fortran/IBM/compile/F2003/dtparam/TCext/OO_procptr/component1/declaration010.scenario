@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_procptr/component1/declaration010.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_procptr/*
+#DATE      = 20071009
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)declaration010.f
+#OPTS      = -qdebug=allowrpdt
+#OUTPUT    = declaration010$(OBJ)
+#STDERR    = declaration010.err
+#VALIDRCS  = 0
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)declaration010$(product)vf) declaration010.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrSMP1.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrSMP1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrSMP1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrSMP1$(OBJ)
+#OUTPUT    = dataPtrSMP1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrSMP1$(EXE)
+#STDOUT    = dataPtrSMP1.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrSMP1.out $($(tcasedir)dataPtrSMP1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,30 @@
+"acetint10cd.f", line 42.23: 1514-214 (E) Invalid KIND number for CHARACTER. Assuming default KIND.  Acceptable value(s): 1
+"acetint10cd.f", line 43.23: 1514-214 (E) Invalid KIND number for CHARACTER. Assuming default KIND.  Acceptable value(s): 1
+"acetint10cd.f", line 44.28: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint10cd.f", line 45.28: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint10cd.f", line 46.28: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint10cd.f", line 47.28: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint10cd.f", line 48.28: 1514-213 (E) A type parameter in this position must be a scalar integer initialization expression.
+"acetint10cd.f", line 49.28: 1515-019 (S) Syntax is incorrect.
+"acetint10cd.f", line 51.27: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint10cd.f", line 52.27: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint10cd.f", line 53.27: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint10cd.f", line 54.27: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint10cd.f", line 55.27: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint10cd.f", line 56.27: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint10cd.f", line 57.27: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint10cd.f", line 59.23: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint10cd.f", line 60.23: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint10cd.f", line 61.23: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint10cd.f", line 62.23: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint10cd.f", line 63.23: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint10cd.f", line 64.23: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint10cd.f", line 65.23: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint10cd.f", line 67.27: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint10cd.f", line 68.27: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint10cd.f", line 69.34: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint10cd.f", line 70.34: 1516-294 (S) The character length appearing in an array constructor type specification must be a scalar integer expression.
+"acetint10cd.f", line 72.23: 1514-214 (E) Invalid KIND number for CHARACTER. Assuming default KIND.  Acceptable value(s): 1
+"acetint10cd.f", line 73.23: 1514-214 (E) Invalid KIND number for CHARACTER. Assuming default KIND.  Acceptable value(s): 1
+** acetint10cd   === End of Compilation 1 ===
+1501-511  Compilation failed for file acetint10cd.f.

@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/allocate/falloc501d2.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_poly/*
+#DATE      = 20070817
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPLINK
+#INPUT     = $(tcasedir)falloc501d2.f
+#OPTS      = -C -qsigtrap=xl__trce
+#OUTPUT    = falloc501d2$(EXE)
+#ENDCMD
+
+! Deconstructing a POSTCMD SCRIPT : POSTdeconSCRIPT
+! Valid line : ./falloc501d2 2> falloc501d2.out
+
+#CMD       = RUN
+#INPUT     = ./falloc501d2
+#STDERR    = falloc501d2.out
+#VALIDRCS  = 1
+#ENDCMD
+
+! Deconstructing a POSTCMD SCRIPT : POSTdeconSCRIPT
+! Valid line : grep SIGTRAP falloc501d2.out
+
+#CMD       = GREP
+#INPUT     = SIGTRAP falloc501d2.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,42 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = iomsg/basic/fxiomsgb009.scenario
+#FEATURE = iomsg tests - regression run bucket
+#CREATOR = CPR Manual conversion
+#DATE    = 20041200
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT=bgl
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)fxiomsgb009.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fxiomsgb009$(OBJ)
+#ENDCMD
+
+#CMD       = XLF_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fxiomsgb009$(OBJ)
+#OUTPUT    = fxiomsgb009$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxiomsgb009$(EXE)
+#ENDCMD
+
+#CMD       = SED
+#OPTS      = -e "s/^[ \t][ \t]*//" -e "s/[ \t][ \t]*$//" -e "/^$/d"
+#INPUT     = fort.18
+#STDOUT    = fxiomsgb009.SEDed
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)fxiomsgb009$(product)vf) fxiomsgb009.SEDed
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

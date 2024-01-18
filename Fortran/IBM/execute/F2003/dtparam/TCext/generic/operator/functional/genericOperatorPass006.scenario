@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/operator/functional/genericOperatorPass006.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericOperatorPass006.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericOperatorPass006$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericOperatorPass006$(OBJ)
+#OUTPUT    = genericOperatorPass006$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericOperatorPass006$(EXE)
+#STDOUT    = genericOperatorPass006.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericOperatorPass006.out $(tcasedir)genericOperatorPass006.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

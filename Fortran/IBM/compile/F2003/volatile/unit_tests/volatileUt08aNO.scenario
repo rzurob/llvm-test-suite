@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= volatileUt08aNO.scenario
+#FEATURE = Supporting VOLATILE for F2003
+#CREATOR = Vince Yuen
+#DATE    = 20060606
+#TEST_TYPE= ut
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      =
+#INPUT     = $(tcasedir)volatileUt08a.f
+#OUTPUT    = volatileUt08a$(OBJ)
+#STDERR    = volatileUt08a.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = volatileUt08a.out $(tcasedir)volatileUt08a.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

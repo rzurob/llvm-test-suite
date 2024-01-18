@@ -1,0 +1,8 @@
+"kindparamDTSpec001d.f", line 38.16: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"kindparamDTSpec001d.f", line 38.16: 1514-213 (S) A type parameter in this position must be a scalar integer initialization expression.
+"kindparamDTSpec001d.f", line 39.17: 1514-213 (S) A type parameter in this position must be a scalar integer initialization expression.
+"kindparamDTSpec001d.f", line 45.22: 1514-213 (S) A type parameter in this position must be a scalar integer initialization expression.
+"kindparamDTSpec001d.f", line 55.40: 1514-084 (S) Identifier p2 is being declared with type name base1 which has not been defined in a derived type definition.
+"kindparamDTSpec001d.f", line 65.29: 1514-213 (S) A type parameter in this position must be a scalar integer initialization expression.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file kindparamDTSpec001d.f.

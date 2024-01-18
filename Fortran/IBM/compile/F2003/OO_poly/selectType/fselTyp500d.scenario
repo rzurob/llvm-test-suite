@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/selectType/fselTyp500d.f
+#FEATURE = OO_poly
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fselTyp500d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fselTyp500d$(OBJ)
+#STDERR    = fselTyp500d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = fselTyp500d.err $($(tcasedir)fselTyp500d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

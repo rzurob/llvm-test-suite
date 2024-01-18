@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/use/dtpUseChain02a.scenario
+#FEATURE   = DTP and USE - module procedure
+#CREATOR   = DF Manual Update
+#DATE      = 20080903
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUseChain02a.f
+#OUTPUT    = dtpUseChain02a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUseChain02a$(OBJ)
+#OUTPUT    = dtpUseChain02a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUseChain02a$(EXE)
+#STDOUT    = dtpUseChain02a.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUseChain02a$(product)vf) dtpUseChain02a.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

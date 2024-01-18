@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/volatile/test/volatileC1232ArraySection04.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of volatile/*
+#DATE      = 20071101
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)volatileC1232ArraySection04d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qxlf2003=novolatile
+#OUTPUT    = volatileC1232ArraySection04d$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = volatileC1232ArraySection04d$(OBJ)
+#OUTPUT    = volatileC1232ArraySection04d$(EXE)
+#ENDCMD
+
+
+#CMD       = RUN
+#ULIMIT    = STACK=UNLIMITED
+#INPUT     = volatileC1232ArraySection04d$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

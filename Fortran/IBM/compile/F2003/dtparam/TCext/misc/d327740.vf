@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"d327740.f", line 46.17: 1514-540 (S) The entity func1 declared with the CLASS keyword must be a dummy argument, or have the ALLOCATABLE or POINTER attribute.
+"d327740.f", line 46.17: 1516-286 (S) A function with a polymorphic result must have an explicit interface.
+"d327740.f", line 46.24: 1514-540 (S) The entity func2 declared with the CLASS keyword must be a dummy argument, or have the ALLOCATABLE or POINTER attribute.
+"d327740.f", line 46.24: 1516-286 (S) A function with a polymorphic result must have an explicit interface.
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file d327740.f.

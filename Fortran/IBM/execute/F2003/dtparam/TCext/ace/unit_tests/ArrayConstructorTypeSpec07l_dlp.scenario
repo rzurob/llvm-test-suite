@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/unit_tests/ArrayConstructorTypeSpec07l_dlp.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancements)
+#CREATOR	= Glen Mateer (derived from work by Rob James)
+#DATE		= 20080129
+#TEST_TYPE	= Unit Test
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_FIXED_SOURCE_FORM)
+#INPUT		= $(tcasedir)ArrayConstructorTypeSpec07l_dlp.f
+#OUTPUT		= ArrayConstructorTypeSpec07l_dlp$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= ArrayConstructorTypeSpec07l_dlp$(OBJ)
+#OUTPUT		= ArrayConstructorTypeSpec07l_dlp$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= ArrayConstructorTypeSpec07l_dlp$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,6 @@
+"OptionalArg06d.f", line 6.38: 1513-264 (S) Procedure foo is declared with the BIND(C) attribute.  Dummy argument a of foo must not have both the OPTIONAL and the VALUE attributes.
+"OptionalArg06d.f", line 7.38: 1513-264 (S) Procedure foo is declared with the BIND(C) attribute.  Dummy argument b of foo must not have both the OPTIONAL and the VALUE attributes.
+"OptionalArg06d.f", line 10.12: 1513-264 (S) Procedure foo is declared with the BIND(C) attribute.  Dummy argument c of foo must not have both the OPTIONAL and the VALUE attributes.
+"OptionalArg06d.f", line 13.15: 1513-264 (S) Procedure foo is declared with the BIND(C) attribute.  Dummy argument d of foo must not have both the OPTIONAL and the VALUE attributes.
+** foo   === End of Compilation 1 ===
+1501-511  Compilation failed for file OptionalArg06d.f.

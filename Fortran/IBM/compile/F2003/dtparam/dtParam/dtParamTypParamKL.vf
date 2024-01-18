@@ -1,0 +1,7 @@
+"dtParamTypParamKL.f", line 47.18: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"dtParamTypParamKL.f", line 54.27: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"dtParamTypParamKL.f", line 63.13: 1514-213 (S) A type parameter in this position must be a scalar integer initialization expression.
+"dtParamTypParamKL.f", line 68.12: 1514-213 (S) A type parameter in this position must be a scalar integer initialization expression.
+"dtParamTypParamKL.f", line 69.12: 1514-213 (S) A type parameter in this position must be a scalar integer initialization expression.
+** dtparamtypparamkl   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtParamTypParamKL.f.

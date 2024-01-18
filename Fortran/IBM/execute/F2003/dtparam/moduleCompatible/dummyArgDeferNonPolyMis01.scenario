@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = dummyArgDeferNonPolyMis01.scenario
+#FEATURE   =
+#CREATOR   = MZ adapted from dtparam/dummy_arg/deferlen/dummyArgDeferNonPolyMis01.f
+#DATE      = 20100504
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_ALT_COMPILE
+#INPUT = $(tcasedir)dummyArgDeferNonPolyMis01_mod.f
+#OUTPUT= dummyArgDeferNonPolyMis01_mod$(OBJ)
+#ENDCMD
+
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)dummyArgDeferNonPolyMis01_main.f
+#OUTPUT= dummyArgDeferNonPolyMis01_main$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = dummyArgDeferNonPolyMis01_mod$(OBJ) dummyArgDeferNonPolyMis01_main$(OBJ)
+#OUTPUT= dummyArgDeferNonPolyMis01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = dummyArgDeferNonPolyMis01$(EXE)
+#STDOUT= dummyArgDeferNonPolyMis01.out
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT  = $($(tcasedir)dummyArgDeferNonPolyMis01$(product)vf) dummyArgDeferNonPolyMis01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

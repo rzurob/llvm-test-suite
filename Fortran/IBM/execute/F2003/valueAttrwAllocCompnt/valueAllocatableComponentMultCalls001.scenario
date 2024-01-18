@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/home/robertma/tc/F2010/valueAttrDTwAllocatableComponents/valueAllocatableComponentMultCalls001.scenario
+#FEATURE = value attribute with DT containing allocatable components test cases
+#CREATOR = Robert Ma
+#DATE    = 20101215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)valueAllocatableComponentMultCalls001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = valueAllocatableComponentMultCalls001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = valueAllocatableComponentMultCalls001$(OBJ)
+#OUTPUT    = valueAllocatableComponentMultCalls001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = valueAllocatableComponentMultCalls001$(EXE)
+#STDOUT    = valueAllocatableComponentMultCalls001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = valueAllocatableComponentMultCalls001.out $(tcasedir)valueAllocatableComponentMultCalls001.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

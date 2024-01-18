@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/procPtrComp/dtpPPCBasicNoPassFunctionResultType.scenario
+#FEATURE   = Procedure Pointers as Components - reference to function without passed-object dummy argument - test type of result
+#CREATOR   = DF Manual Update
+#DATE      = 20090323
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPPCBasicNoPassFunctionResultType.f
+#OUTPUT    = dtpPPCBasicNoPassFunctionResultType$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPPCBasicNoPassFunctionResultType$(OBJ)
+#OUTPUT    = dtpPPCBasicNoPassFunctionResultType$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPPCBasicNoPassFunctionResultType$(EXE)
+#STDOUT    = dtpPPCBasicNoPassFunctionResultType.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpPPCBasicNoPassFunctionResultType$(product)vf) dtpPPCBasicNoPassFunctionResultType.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

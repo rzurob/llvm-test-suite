@@ -1,0 +1,9 @@
+** m   === End of Compilation 1 ===
+"PtrAssignTarExpr1.f", line 98.13: 1515-118 (S) The target of the procedure pointer assignment statement must be: an external procedure, a module procedure, an internal procedure, a dummy procedure, a function reference that returns a procedure pointer or another procedure pointer.
+"PtrAssignTarExpr1.f", line 100.13: 1515-118 (S) The target of the procedure pointer assignment statement must be: an external procedure, a module procedure, an internal procedure, a dummy procedure, a function reference that returns a procedure pointer or another procedure pointer.
+"PtrAssignTarExpr1.f", line 102.13: 1515-118 (S) The target of the procedure pointer assignment statement must be: an external procedure, a module procedure, an internal procedure, a dummy procedure, a function reference that returns a procedure pointer or another procedure pointer.
+"PtrAssignTarExpr1.f", line 104.13: 1515-118 (S) The target of the procedure pointer assignment statement must be: an external procedure, a module procedure, an internal procedure, a dummy procedure, a function reference that returns a procedure pointer or another procedure pointer.
+"PtrAssignTarExpr1.f", line 106.13: 1515-118 (S) The target of the procedure pointer assignment statement must be: an external procedure, a module procedure, an internal procedure, a dummy procedure, a function reference that returns a procedure pointer or another procedure pointer.
+"PtrAssignTarExpr1.f", line 108.13: 1515-118 (S) The target of the procedure pointer assignment statement must be: an external procedure, a module procedure, an internal procedure, a dummy procedure, a function reference that returns a procedure pointer or another procedure pointer.
+** prtassigntarexpr1   === End of Compilation 2 ===
+1501-511  Compilation failed for file PtrAssignTarExpr1.f.

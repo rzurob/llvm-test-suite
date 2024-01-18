@@ -1,0 +1,3 @@
+"Misc25.f", line 56.5: 1511-139 (S) Associate name v is not associated with an entity that can be defined. v must not be redefined or become undefined.
+** misc25   === End of Compilation 1 ===
+1501-511  Compilation failed for file Misc25.f.

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpIAssignHostAssociatedInternal.scenario
+#FEATURE   = Intrinsic Assignment without Allocation - assign to host associated variables in internal subprogram
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpIAssignHostAssociatedInternal.f
+#OUTPUT    = dtpIAssignHostAssociatedInternal$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpIAssignHostAssociatedInternal$(OBJ)
+#OUTPUT    = dtpIAssignHostAssociatedInternal$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpIAssignHostAssociatedInternal$(EXE)
+#STDOUT    = dtpIAssignHostAssociatedInternal.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpIAssignHostAssociatedInternal$(product)vf) dtpIAssignHostAssociatedInternal.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/misc/fmisc032.f
+#FEATURE = OO_poly
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT=bgl_system
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fmisc032.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fmisc032$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fmisc032$(OBJ)
+#OUTPUT    = fmisc032$(EXE)
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS)
+#INPUT     = $(tcasedir)fmisc032_c.c
+#OUTPUT    = fmisc032_c$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fmisc032_c$(OBJ)
+#OUTPUT    = fmisc032_c$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fmisc032_c$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

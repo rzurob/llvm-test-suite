@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/FuncResult/FunctionResult10_ASSOCIATE.scenario
+#FEATURE   = DTP - Function Result
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20090326
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)FunctionResult10_ASSOCIATE.f
+#OUTPUT    = FunctionResult10_ASSOCIATE$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = FunctionResult10_ASSOCIATE$(OBJ)
+#OUTPUT    = FunctionResult10_ASSOCIATE$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = FunctionResult10_ASSOCIATE$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

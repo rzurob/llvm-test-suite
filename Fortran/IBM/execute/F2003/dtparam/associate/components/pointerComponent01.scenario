@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/associate/components/pointerComponent01.scenario
+#FEATURE	= ASSOCIATE Contruct (with Derived Type Parameters) --	\
+				Component Attributes
+#CREATOR	= Glen Mateer
+#DATE		= 20080820
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)pointerComponent01.f
+#OUTPUT		= pointerComponent01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= pointerComponent01$(OBJ)
+#OUTPUT		= pointerComponent01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= pointerComponent01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

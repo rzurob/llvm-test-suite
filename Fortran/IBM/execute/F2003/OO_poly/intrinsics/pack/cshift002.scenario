@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/pack/cshift002.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050220
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)cshift002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = cshift002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = cshift002$(OBJ)
+#OUTPUT    = cshift002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = cshift002$(EXE)
+#STDOUT    = cshift002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)cshift002$(product)vf) cshift002.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

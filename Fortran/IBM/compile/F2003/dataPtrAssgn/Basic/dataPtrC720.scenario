@@ -1,0 +1,32 @@
+
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      dataPtrC720.f
+#FEATURE=
+#CREATOR=   Feng Ye
+#DATE=      02-02-06
+#TEST_TYPE= DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=      F_COMPILE
+#OPTS=     $(OPT_FREE_SOURCE_FORM)
+#INPUT=    $(tcasedir)dataPtrC720.f
+#STDERR=   dataPtrC720.err
+#VALIDRCS= $(RC_COMP_E)
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    dataPtrC720.err $($(tcasedir)dataPtrC720$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

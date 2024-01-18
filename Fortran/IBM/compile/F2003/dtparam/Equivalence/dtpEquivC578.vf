@@ -1,0 +1,3 @@
+"dtpEquivC578.f", line 50.15: 1514-263 (E) Variables which are targets are not permitted in EQUIVALENCE statements.
+** dtpequivc578   === End of Compilation 1 ===
+1501-510  Compilation successful for file dtpEquivC578.f.

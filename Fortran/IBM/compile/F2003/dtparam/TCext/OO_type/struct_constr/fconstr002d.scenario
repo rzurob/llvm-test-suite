@@ -1,0 +1,21 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/struct_constr/fconstr002d.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/*
+#DATE      = 20070623
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fconstr002d.f
+#OPTS      = -qdebug=intmsg:shutup
+#OUTPUT    = fconstr002d$(OBJ)
+#STDERR    = fconstr002d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

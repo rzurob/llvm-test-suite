@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/basic/nonchar/allocatedLBoundDerived04.scenario
+#FEATURE	= Intrinsic Assignment -- Basic Tests: Non-CHARACTER Derived Type
+#CREATOR	= GM Manual Creation
+#DATE		= 20060828
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)allocatedLBoundDerived04.f
+#OUTPUT		= allocatedLBoundDerived04$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= allocatedLBoundDerived04$(OBJ)
+#OUTPUT		= allocatedLBoundDerived04$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= allocatedLBoundDerived04$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

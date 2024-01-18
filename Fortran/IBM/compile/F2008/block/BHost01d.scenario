@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /block/BHost01d.scenario
+#FEATURE   = host association diagnostic
+#CREATOR   = DF
+#DATE      = 2010-11-15
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = F_COMPILE
+#INPUT    = $(tcasedir)BHost01d.f
+#OUTPUT   = BHost01d$(OBJ)
+#STDOUT   = BHost01d.err
+#STDERR   = BHost01d.err
+#VALIDRCS = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = BHost01d.err $($(tcasedir)BHost01d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

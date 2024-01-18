@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/assignment/functional/genericAssignmentRecursive003.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071114
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericAssignmentRecursive003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=allowrpdt
+#OUTPUT    = genericAssignmentRecursive003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericAssignmentRecursive003$(OBJ)
+#OUTPUT    = genericAssignmentRecursive003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericAssignmentRecursive003$(EXE)
+#STDOUT    = genericAssignmentRecursive003.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericAssignmentRecursive003.out $(tcasedir)genericAssignmentRecursive003.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/argAssociation/dummyArg007a.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071219
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dummyArg007a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dummyArg007a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dummyArg007a$(OBJ)
+#OUTPUT    = dummyArg007a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dummyArg007a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

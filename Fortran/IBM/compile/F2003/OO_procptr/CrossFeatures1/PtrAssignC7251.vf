@@ -1,0 +1,12 @@
+** m   === End of Compilation 1 ===
+"PtrAssignC7251.f", line 79.5: 1515-039 (S) The target in the pointer assignment must have the TARGET or POINTER attribute.
+"PtrAssignC7251.f", line 80.5: 1515-039 (S) The target in the pointer assignment must have the TARGET or POINTER attribute.
+"PtrAssignC7251.f", line 81.19: 1515-124 (S) The procedure pointer was declared with an explicit interface.  The procedure pointer assignment target must also be declared with an explicit interface.
+"PtrAssignC7251.f", line 83.5: 1515-039 (S) The target in the pointer assignment must have the TARGET or POINTER attribute.
+"PtrAssignC7251.f", line 84.5: 1515-039 (S) The target in the pointer assignment must have the TARGET or POINTER attribute.
+"PtrAssignC7251.f", line 85.24: 1515-118 (S) The target of the procedure pointer assignment statement must be: an external procedure, a module procedure, an internal procedure, a dummy procedure, a function reference that returns a procedure pointer or another procedure pointer.
+"PtrAssignC7251.f", line 88.19: 1515-118 (S) The target of the procedure pointer assignment statement must be: an external procedure, a module procedure, an internal procedure, a dummy procedure, a function reference that returns a procedure pointer or another procedure pointer.
+"PtrAssignC7251.f", line 91.5: 1515-039 (S) The target in the pointer assignment must have the TARGET or POINTER attribute.
+** ptrassignc7251   === End of Compilation 2 ===
+** extfun   === End of Compilation 3 ===
+1501-511  Compilation failed for file PtrAssignC7251.f.

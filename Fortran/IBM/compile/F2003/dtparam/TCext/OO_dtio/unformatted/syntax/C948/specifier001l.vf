@@ -1,0 +1,9 @@
+** m1   === End of Compilation 1 ===
+  80.17   01510060 
+** specifier001l   === End of Compilation 2 ===
+  106.4   0161005F 
+** readunformatted   === End of Compilation 3 ===
+  128.21   01510060 
+  130.4   0161005F 
+** writeunformatted   === End of Compilation 4 ===
+1501-511  Compilation failed for file specifier001l.f.

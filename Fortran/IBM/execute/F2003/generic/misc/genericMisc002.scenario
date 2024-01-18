@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/operator/misc/genericMisc002.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericMisc002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericMisc002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericMisc002$(OBJ)
+#OUTPUT    = genericMisc002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericMisc002$(EXE)
+#STDOUT    = genericMisc002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericMisc002.out $(tcasedir)genericMisc002.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

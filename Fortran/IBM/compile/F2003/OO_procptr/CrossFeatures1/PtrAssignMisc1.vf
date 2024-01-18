@@ -1,0 +1,8 @@
+** extfun   === End of Compilation 1 ===
+"PtrAssignMisc1.f", line 77.15: 1515-118 (S) The target of the procedure pointer assignment statement must be: an external procedure, a module procedure, an internal procedure, a dummy procedure, a function reference that returns a procedure pointer or another procedure pointer.
+"PtrAssignMisc1.f", line 79.15: 1515-118 (S) The target of the procedure pointer assignment statement must be: an external procedure, a module procedure, an internal procedure, a dummy procedure, a function reference that returns a procedure pointer or another procedure pointer.
+"PtrAssignMisc1.f", line 81.15: 1515-118 (S) The target of the procedure pointer assignment statement must be: an external procedure, a module procedure, an internal procedure, a dummy procedure, a function reference that returns a procedure pointer or another procedure pointer.
+"PtrAssignMisc1.f", line 83.15: 1515-118 (S) The target of the procedure pointer assignment statement must be: an external procedure, a module procedure, an internal procedure, a dummy procedure, a function reference that returns a procedure pointer or another procedure pointer.
+"PtrAssignMisc1.f", line 85.15: 1515-118 (S) The target of the procedure pointer assignment statement must be: an external procedure, a module procedure, an internal procedure, a dummy procedure, a function reference that returns a procedure pointer or another procedure pointer.
+** ptrassignmisc1   === End of Compilation 2 ===
+1501-511  Compilation failed for file PtrAssignMisc1.f.

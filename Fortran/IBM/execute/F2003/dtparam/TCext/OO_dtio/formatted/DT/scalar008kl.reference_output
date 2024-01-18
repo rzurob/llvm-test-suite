@@ -1,0 +1,13 @@
+ iotype: DT_u1 v_list: 1
+     abc
+ iotype: DT_u2 v_list: 2 3
+     def
+     123
+ iotype: DT_u3 v_list: 4 5 6
+     ghi
+     456
+     789
+ iotype: DT_u4 v_list: 7
+     abc
+ iotype: DT_u4 v_list: 8 9 10
+     ghi

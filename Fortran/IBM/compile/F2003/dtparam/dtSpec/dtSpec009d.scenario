@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/dtSpec/dtSpec009d.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtSpec009d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtSpec009d$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = dtSpec009d.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = dtSpec009d.err $($(tcasedir)dtSpec009d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

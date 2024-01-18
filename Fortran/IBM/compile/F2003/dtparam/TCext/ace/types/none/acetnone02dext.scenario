@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/none/acetnone02dext.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
+				No Type Specifier Tests)
+#CREATOR	= Glen Mateer (derived from work by David Forster)
+#DATE		= 20080125
+#TEST_TYPE	= Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetnone02dext.f
+#OUTPUT		= acetnone02dext$(OBJ)
+#STDERR		= acetnone02dext.stderr
+#VALIDRCS	= $(RC_COMP_S)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)acetnone02dext$(product)vf) acetnone02dext.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

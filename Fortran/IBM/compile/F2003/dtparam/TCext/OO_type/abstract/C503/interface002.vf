@@ -1,0 +1,8 @@
+** m   === End of Compilation 1 ===
+"interface002.f", line 61.6: 1514-645 (S) base is an abstract type. base is not permitted in this context.
+"interface002.f", line 63.9: 1514-645 (S) base is an abstract type. base is not permitted in this context.
+** foo   === End of Compilation 2 ===
+"interface002.f", line 70.12: 1514-645 (S) newbase is an abstract type. newbase is not permitted in this context.
+"interface002.f", line 72.15: 1514-645 (S) newbase is an abstract type. newbase is not permitted in this context.
+** interface002   === End of Compilation 3 ===
+1501-511  Compilation failed for file interface002.f.

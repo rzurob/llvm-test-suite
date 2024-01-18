@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/use/d356969.scenario
+#FEATURE   = DTP and USE (actually, internal function prefix)
+#CREATOR   = DF
+#DATE      = 20080825
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d356969.f
+#OUTPUT    = d356969$(OBJ)
+#STDERR    = d356969.err
+#STDOUT    = d356969.err
+#VALIDRCS  = $(RC_COMP_S)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)d356969$(product)vf) d356969.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/cintrop_ts29113/misc/c_ptrdiff_t01.scenario
+#FEATURE = TS29113 C_PTRDIFF_T constant
+#CREATOR = Rafik Zurob
+#DATE    = 20150313
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)c_ptrdiff_t01.f
+#OPTS      = $(OPT_HALT_ON_WARNING)
+#OUTPUT    = c_ptrdiff_t01$(OBJ)
+#ENDCMD
+
+#CMD       = XLF_LINK
+#INPUT     = c_ptrdiff_t01$(OBJ)
+#OUTPUT    = c_ptrdiff_t01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = c_ptrdiff_t01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

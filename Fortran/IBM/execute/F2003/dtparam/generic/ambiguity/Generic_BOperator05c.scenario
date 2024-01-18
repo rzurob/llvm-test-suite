@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/F2003/dtparam/generic/ambiguity/Generic_BOperator05c.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20081026
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)Generic_BOperator05c.f
+#OUTPUT= Generic_BOperator05c$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  Generic_BOperator05c$(OBJ)
+#OUTPUT= Generic_BOperator05c$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  Generic_BOperator05c$(EXE)
+#STDOUT= Generic_BOperator05c.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

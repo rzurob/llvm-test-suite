@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"ExecSeq1.f", line 84.4: 1511-093 (S) SELECT TYPE is nested incorrectly within associate construct.
+"ExecSeq1.f", line 88.4: 1511-114 (S) The END SELECT statement appears outside of a SELECT CASE or SELECT TYPE construct.
+** execseq1   === End of Compilation 2 ===
+1501-511  Compilation failed for file ExecSeq1.f.

@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/polyAssign/polyUnitTests/fail1.scenario
+#FEATURE   = LHS of intrinsic assignment is allowed to be polymorphic
+#CREATOR   = Aaron Liu
+#DATE      = 20150707
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fail1.f
+#OUTPUT    = fail1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fail1$(OBJ)
+#OUTPUT    = fail1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fail1$(EXE)
+#STDOUT    = fail1.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

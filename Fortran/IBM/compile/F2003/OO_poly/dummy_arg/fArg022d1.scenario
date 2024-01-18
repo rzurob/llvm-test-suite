@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/dummy_arg/fArg022d1.f
+#FEATURE = OO_poly
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fArg022d1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fArg022d1$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = fArg022d1.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = fArg022d1.err $($(tcasedir)fArg022d1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

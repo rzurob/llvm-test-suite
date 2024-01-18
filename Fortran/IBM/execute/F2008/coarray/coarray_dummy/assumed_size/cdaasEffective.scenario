@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_dummy/assumed_size/cdaasEffective
+#FEATURE        = CAF dummy arguments - assumed size - arguments passed in as arguments
+#CREATOR        = DF
+#DATE           = 2010-09-29
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)cdaasEffective.f
+#OUTPUT = cdaasEffective$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = cdaasEffective$(OBJ)
+#OUTPUT = cdaasEffective$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = cdaasEffective$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

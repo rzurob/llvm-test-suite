@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dtParamTypeDefSyntax2.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       11-23-05
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dtParamTypeDefSyntax2.f
+#OUTPUT= dtParamTypeDefSyntax2$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  dtParamTypeDefSyntax2$(OBJ)
+#OUTPUT= dtParamTypeDefSyntax2$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dtParamTypeDefSyntax2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

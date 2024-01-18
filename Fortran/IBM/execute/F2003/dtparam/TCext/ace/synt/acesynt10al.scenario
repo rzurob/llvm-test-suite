@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/synt/acesynt10al.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement	\
+				-- Type	Specifier Syntax (CHARACTER, DOUBLEs, Derived))
+#CREATOR	= Glen Mateer (based on work by David Forster)
+#DATE		= 20071206
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acesynt10al.f
+#OUTPUT		= acesynt10al$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acesynt10al$(OBJ)
+#OUTPUT		= acesynt10al$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acesynt10al$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

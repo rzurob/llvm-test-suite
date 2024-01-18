@@ -1,0 +1,5 @@
+ &NML
+ B1=2, B2=5, B3=ibmftn, B4= &DTIO
+ DUMMY=123
+ /, B5=4
+ /

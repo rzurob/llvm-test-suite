@@ -1,0 +1,899 @@
+
+
+<script language="JavaScript1.2" type="text/javaScript" src="/scripts/scripts.js"></script>
+<link rel="stylesheet" type="text/css" href="/stylesheets/v4-screen.css" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/featureflow.css" />
+<style type="text/css" media="all">
+<!--
+@import url("/stylesheets/screen.css");
+@import url("/stylesheets/interior.css");
+@import url("/stylesheets/icons.css");
+@import url("/stylesheets/tables.css");
+-->
+</style>
+<!-- print stylesheet MUST follow imported stylesheets -->
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/print.css" />
+	<script type="text/javascript" language="JavaScript1.2">
+	var pageExitWarn = false;
+
+	<!-- 
+	function msover(image) { // Mouse Over 
+		if (document.images) { 
+			document[image].src = eval(image + "on.src") 
+		} 
+	} 
+	function msout(image) { // Mouse Out 
+		if (document.images) { 
+			document[image].src = eval(image + ".src") 
+		} 
+	} 
+	/* ----------------------------------------- */ 
+	function popup(hp, f3) { 
+		if (document.layers) { 
+			document[hp].visibility = "visible" 
+			document[hp].top = 0 
+			document[hp].left = f3.x + 23 
+			//document[hp].top = f3.pageY + 10 
+		} else { 
+			if (document.all) { 
+				document.all[hp].style.visibility = "visible" 
+				document.all[hp].style.left = f3.x + 23 
+				//document.all[hp].style.top = f3.y + 10 
+				document.all[hp].style.top = 0 
+			} 
+		} 
+	} 
+	function cpopup(hp) { 
+		if (document.layers) { 
+			document[hp].visibility = "hidden" 
+		} else { 
+			if (document.all) { 
+				document.all[hp].style.visibility = "hidden" 
+			} 
+		} 
+	} 
+	function lpopup(lyr) { 
+		if (document.layers) { 
+			if (document[lyr].visibility == "show") { 
+				document[lyr].visibility = "hidden" 
+			} else { 
+				document[lyr].visibility = "visible" 
+			} 
+		} else { 
+			if (document.all) { 
+				if (document.all[lyr].style.visibility == "visible") { 
+					document.all[lyr].style.visibility = "hidden" 
+				} else { 
+					document.all[lyr].style.visibility = "visible" 
+				} 
+			} 
+		} 
+	} 
+function selectAll() { for(var i=0;i<document.theform.elements.length;i++) {if(document.theform.elements[i].type == "checkbox"){document.theform.elements[i].checked = true;};};}
+function DeselectAll() { for(var i=0;i<document.theform.elements.length;i++) {if(document.theform.elements[i].type == "checkbox"){document.theform.elements[i].checked = false;};};}
+function goback() { 
+    if (true) 
+         history.back() 
+} 
+function fixdays(d_obj, m_obj) {
+   var numdays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+   for (var i = (eval(d_obj).length-1); i>=0; i--) {
+      eval(d_obj).options[i] = null;
+   }
+
+   for (var i = 1; i<=numdays[eval(m_obj).value]; i++) {
+      var optionadd = new Option(i, i);
+      eval(d_obj).options[eval(d_obj).length] = optionadd;
+   }
+}
+	//--> 
+
+function jsPageExitEnable() {
+    pageExitWarn = true;
+}
+
+function jsPageExitDisable() {
+    pageExitWarn = false;
+}
+    
+function pageExitWarning(){
+    if (pageExitWarn) {
+	return "All changes will be lost by leaving this page.";
+    }
+}
+
+
+
+</script><noscript> <!--  //--> </noscript>
+<TITLE> 400906 Support typespec on FORALL IT1 -  F E A T U R E - F L O W</TITLE>
+<script src="/javascripts/prototype.js?1321281883" type="text/javascript"></script>
+<script src="/javascripts/effects.js?1321281883" type="text/javascript"></script>
+<script src="/javascripts/dragdrop.js?1321281883" type="text/javascript"></script>
+<script src="/javascripts/controls.js?1321281883" type="text/javascript"></script>
+</head>
+<body  id="w3-ibm-com" class="article" onbeforeunload="return pageExitWarning();">
+<!-- start accessibility prolog -->
+<div class="skip"><a href="#content-main" accesskey="2">Skip to main content</a></div>
+<div class="skip"><a href="#left-nav" accesskey="n">Skip to navigation</a></div>
+<div id="access-info">
+	<p class="access">The access keys for this page are:</p>
+	<ul class="access">
+		<li>ALT plus 0 links to this site's <a href="https://w3.ibm.com/w3/access-stmt.html" accesskey="0">Accessibility Statement.</a></li>
+		<li>ALT plus 1 links to the w3.ibm.com home page.</li>
+		<li>ALT plus 2 skips to main content.</li>
+		<li>ALT plus 4 skips to the search form.</li>
+		<li>ALT plus 9 links to the feedback page.</li>
+		<li>ALT plus N skips to navigation.</li>
+	</ul>
+	<p class="access">Additional accessibility information for w3.ibm.com can be found <a href="https://w3.ibm.com/w3/access-stmt.html">on the w3 Accessibility Statement page.</a></p>
+</div>
+<!-- end accessibility prolog -->
+<!-- start masthead -->
+<div id="masthead">
+	<h2 class="access">Start of masthead</h2>
+	<div id="prt-w3-sitemark"><img src="/stylesheets/images/id-w3-sitemark-simple.gif" alt="" width="54" height="33" /></div>
+	<div id="prt-ibm-logo"><img src="/stylesheets/images/id-ibm-logo-black.gif" alt="IBM Logo" width="44" height="15" /></div>
+	<div id="w3-sitemark"><img src="/stylesheets/images/id-w3-sitemark-large.gif" alt="" width="266" height="70" usemap="#sitemark_map" /><map id="sitemark_map" name="sitemark_map"><area shape="rect" alt="Link to W3 Home Page" coords="0,0,130,70" href="http://w3.ibm.com/"  accesskey="1" /></map></div>
+   
+   <div id="personalization-links">
+      Logged on as bkan@ca.ibm.com |
+      <a class="wpsToolbarLink" href="/featureflow/user_profile">User Profile</a> |
+
+      <a class="wpsToolbarLink" href="/login/logout">Sign Out</a>
+   </div>
+   
+	<div id="site-title-only">F E A T U R E - F L O W</div>
+	<div id="ibm-logo"><img src="/stylesheets/images/id-ibm-logo.gif" alt="IBM Logo" width="44" height="15" /></div>
+	<div id="persistent-nav"><a id="w3home" href="http://w3.canlab.ibm.com/"> w3 home </a><a id="bluepages" href="http://w3.ibm.com/bluepages/"> BluePages </a><a id="helpnow" href="/featureflow/help"> Help </a><a id="feedback" href="mailto:kwongray@ca.ibm.com,cntaylor@ca.ibm.com" accesskey="9"> Feedback </a></div>
+	<div id="header-search">
+		<form action="http://w3.ibm.com/search/w3results.jsp" method="get" id="search">
+		<table cellspacing="0" cellpadding="0" class="header-search">
+		<tr><td class="label"><label for="header-search-field">Search w3</label></td><td class="field"><input id="header-search-field" name="qt" type="text" accesskey="4" /></td><td class="submit"><input id="header-search-btn" type="image" alt="Go" src="/stylesheets/images/btn-go-dark.gif" /></td></tr>
+		</table>
+		</form>
+	</div>
+	<div id="browser-warning"><img src="/stylesheets/images/icon-system-status-alert.gif" alt="Error" width="12" height="10" /> This Web page is best used in a modern browser. Since your browser is no longer supported by IBM, please upgrade your web browser at the <a href="http://w3.ibm.com/download/">ISSI site</a>.</div>
+</div>
+<!-- stop masthead -->
+<!-- start navigation -->
+<div id="navigation">
+	<h2 class="access">Start of left navigation</h2>
+	<!-- left nav -->
+	<div id="left-nav">
+		<div class="top-level">
+			<a href="http://w3.ibm.com/">w3 Home</a>
+			<a  href="https://bluepages.ibm.com/tools/groups/protect/groupsgui.wss">BlueGroups</a>
+         
+         <a href="/featureflow">Feature Flow</a>
+         <div class="second-level">
+            <a href="/featureflow/documents">Documents</a>
+            <a href="/featureflow/reviews">Reviews</a>
+            <a href="/featureflow/search">Search (Beta)</a>
+        </div>
+         
+		</div>
+      <div name="document_control" id="document_control" style="border-bottom:1px solid #fff;">
+      
+<p>&nbsp;</p>
+<span style="width: 140px; overflow:hidden;">
+<table style="width: 140px; overflow:hidden;" border=1 width="100%" cellpadding=0 cellspacing=0 bgcolor="#CCE5FF">
+
+<tr><td align=center><b>Document Actions</b></td></tr>
+<tr><td>
+<table style="width: 148px; overflow:hidden;">
+<tr><td>
+<a href="/featureflow/show/6270">Show</a>
+<a href="/featureflow/show/6270?fullscreen=true"><font size=-2>(print/!frame)</font></a>
+</tr></td>
+<tr><td>
+
+
+<div style='padding-left: 1em'><a href="/featureflow/show/6286">Most Recent Review...</a></span>
+
+</tr></td>
+<tr><td>
+
+<a href="/featureflow/edit/6270">Edit</a>
+
+</tr></td>
+<tr><td>
+
+<a href="/featureflow/delete/6270" onclick="return confirm('Really delete 400906 Support typespec on FORALL IT1');">Delete...</a>
+
+</td></tr>
+<tr><td>
+<a href="/featureflow/properties/6270">Properties...</a>
+</td></tr>
+<tr><td>
+<a href="/featureflow/access_control/6270">Access Control...</a>
+</td></tr>
+<tr><td>
+
+
+<a href="/featureflow/review_close/6286">Close Existing Review...</a>
+
+</td></tr>
+</table>
+
+<tr><td><table style="width: 148px; overflow:hidden;"><tr><td>Compare To:</td></tr><tr><td align='center'><form action="/featureflow/show"><select id="compare_to" style="width: 120px; overflow:hidden;" name="compare_to" onchange="var s=document.getElementById('compare_to'); var v=s.options[s.selectedIndex].value; location.href='/featureflow/show/6270'+ ((v != 0) ? '?compare_to='+v : '');"><option value=0>None</option><option value=6280>rev. 1</option><option value=6286>rev. 2</option></select></form></td></tr></table></td></tr>
+<tr><td><font color="red"></font></td></tr>
+</table>
+</span>
+
+      </div>
+      <div name="document_info" id="document_info" style="border-bottom:1px solid #fff;">
+      
+      </div>
+	</div>
+	<!-- start related links -->
+	<!-- ** If there's related links, html goes here.  Otherwise, remove this line ** -->
+	<!-- stop related links -->
+</div>
+<!-- stop navigation -->
+<!-- start content -->
+<div id="content">
+	<h1 class="access">Start of main content</h1>
+	<!-- start content head -->
+	<div id="content-head">
+	<!-- <p id="breadcrumbs"></p> -->
+	</div>
+	<!-- stop content head -->
+	<!-- start main content -->
+	<div id="content-main">
+		<!--BEGIN MAIN BODY CONTENT-->
+      <head>
+  <script src="/javascripts/prototype.js?1321281883" type="text/javascript"></script>
+<script src="/javascripts/effects.js?1321281883" type="text/javascript"></script>
+<script src="/javascripts/dragdrop.js?1321281883" type="text/javascript"></script>
+<script src="/javascripts/controls.js?1321281883" type="text/javascript"></script>
+  <script src="/javascripts/fckeditor.js?1321281883" type="text/javascript"></script>
+  <script src="/javascripts/effects.js?1321281883" type="text/javascript"></script>
+
+</head>
+<span id="dummy" style="position: absolute; overflow:hidden; width:0; height:0">
+<form>
+<textarea id="dummytext">
+</textarea>
+</form>
+</span>
+<script>
+   var oFCKeditor = new FCKeditor( 'dummytext' ) ;
+   oFCKeditor.Config['LinkBrowser'] = false ; 
+   oFCKeditor.Config['ImageBrowser'] = true ;
+   oFCKeditor.Config["CustomConfigurationsPath"] =
+          '/javascripts/railsfck_comments.js?1321281883';
+/*   oFCKeditor.Config["SkinPath"] = 'skins/SilverNarrow/' ; */
+   oFCKeditor.ReplaceTextarea() ;   
+function edit(comment_id, id)
+{
+   var ac ;
+   var entry='' ;
+   var ref=comment_id ;
+   if (!id) {
+      entry='_entry' ;
+   } else {
+      ref = id ;
+   }
+   var parent_id=null;
+   var match=comment_id.match(/(\d+)_(\d+)/) ;
+   if (match) {
+      parent_id = match[1] ;
+   }
+
+   var old_comment_type		= null;
+   var comment_type_element	= document.getElementById('ctype'+id+'_'+comment_id);
+   if (comment_type_element != null) {
+	   old_comment_type	= comment_type_element.selectedIndex;
+   }
+
+   ac = document.getElementById('comments'+entry+ref) ;
+   if (!id && ac.innerHTML!='') {
+      var myb=document.getElementById('mycancelbutton'+ref) ;
+      myb.scrollIntoView(false) ;
+      return ;
+   }
+   var con = document.getElementById('comments_content'+id) ;
+   var content = '' ;
+   if (con) {
+      content = unlinkfy(con.innerHTML) ;
+      /* remove response */
+      content = content.replace(/<p><font size=\"?-1\"?>\(reply\)<\/font><\/p>\s*$/i,'');
+
+      /* Defect 336615: escape &lt and &gt so that the FCK editor does not treat these as HTML tags */
+      content = content.replace(/&lt;/g, '&amp;lt;');
+      content = content.replace(/&gt;/g, '&amp;gt;');
+   }
+   ac.originalInnerHTML = ac.innerHTML ;
+   ac.innerHTML='<table border=0 style="text-decoration:none;font-size:13px;">'+
+'<tr><td width="100%">'+
+'<form id="text_comments_form'+comment_id+'"'+
+' method="post" '+
+' onsubmit="myCommentEditorSubmit(\''+comment_id+'\', \''+id+'\'); return false ;">'+
+'<input id="id" name="id" size="30" type="hidden" value="'+id+'">'+
+'<input id="commentid" name="commentid" size="30" type="hidden" value="'+comment_id+'">'+
+'<input id="document_id" name="document_id" size="30" type="hidden" value="'+6270+'">'+
+'<table bgcolor="FFFF00" width="600" border=1 cellpadding=0 cellspacing=0>'+
+'<tr><td>'+
+'<font color=blue>User:</font> Bernard Kan '+
+((parent_id == null) ?  '<font color=blue>Type:</font> <select id="ctype_edit' + id + '_' + comment_id + '" name="ctype">'+
+   '<option value="Typo">Typo</option>'+
+   '<option value="Comment" selected>Comment</option>'+
+   '<option value="Problem">Problem</option>'+
+   '<option value="Issue">Issue</option>'+
+   '</select>'+
+   ' <font color=blue>Disposition:</font>'+ 
+   '<input id="disposition" name="disposition" value="Unassigned" type="hidden"/>'+
+   'Unassigned'
+: '') +
+'</td></tr>'+
+'<tr><td width="100%">'+
+'<table border=0 cellpadding=1 width="100%">'+
+'<tr><td td width="100%">'+
+'<textarea id="text_comment'+comment_id+'" name="text_comment'+comment_id+'" cols=76 rows=12 style="font-family:courier; background:#FFFF00">'+
+content+
+'</textarea></td></tr>'+
+'</td></tr>'+
+'</table>'+
+'<tr><td>'+
+'<input type="button" value="Clear" onclick="var oEditor=FCKeditorAPI.GetInstance(\'text_comment'+comment_id+'\'); oEditor.SetHTML(\'\') ; return false;">'+
+'<input type="submit" value="Submit">'+
+'<input type="submit" value="Submit+Notify" onclick="myCommentEditorSubmit(\''+comment_id+'\', \''+id+'\', true); return false ;">'+
+'<input id="mycancelbutton'+ref+'" type="button" value="Cancel" onclick="hideEditor(\''+entry+ref+'\'); return false;">'+
+'</td></tr>'+
+'</table>'+
+'</form>'+
+'</td></tr></table>';
+
+   if (old_comment_type != null) {
+	   document.getElementById('ctype_edit' + id + '_' + comment_id).selectedIndex	= old_comment_type;
+   }
+
+   var part='text_comment' + comment_id ;
+   var oFCKeditor = new FCKeditor( part ) ;
+   oFCKeditor.Height=200;
+/* work around an IE bug here that temporarily blanks the screen */
+   if ( navigator.userAgent.toLowerCase().indexOf("msie") == -1) {
+     oFCKeditor.Config['StartupFocus'] = true ; 
+   } 
+   oFCKeditor.Config['LinkBrowser'] = false ; 
+   oFCKeditor.Config['ImageBrowser'] = true ;
+   oFCKeditor.Config["CustomConfigurationsPath"] =
+          '/javascripts/railsfck_comments.js?1321281883';
+/*   oFCKeditor.Config["SkinPath"] = 'skins/SilverNarrow/' ; */
+   var ta=document.getElementById(part) ;
+   ta.style.height='0px';
+   oFCKeditor.ReplaceTextarea() ; 
+   var myb=document.getElementById('mycancelbutton'+ref) ;
+   myb.scrollIntoView(false) ;
+}
+function hideEditor(where)
+{
+   var ac = document.getElementById('comments'+where) ;
+   ac.innerHTML=ac.originalInnerHTML; 
+}
+
+function myCommentEditorSubmit(comment_id, id, notify)
+{
+   var entry='' ;
+   var ref=comment_id ;
+   if (!id || id == 'undefined') {
+      entry='_entry' ;
+   } else {
+      ref = id ;
+   }
+  var submit_notify=0
+  var parent_id=null;
+  var match=comment_id.match(/(\d+)_(\d+)/) ;
+  if (match) {
+     parent_id = match[1];
+  }
+  if (notify) {
+     if (parent_id) {
+        if (confirm("Send a notification to the participants in this comment thread (and the author) about this reply ?")) {
+           submit_notify=1;
+        }
+     } else if (confirm("Send a notification to the author about this comment?")) {
+        submit_notify=1;
+     }
+  }
+
+  var frm = document.getElementById('text_comments_form'+comment_id) ; 
+  var oEditor=FCKeditorAPI.GetInstance('text_comment'+comment_id); 
+  var textArea = document.getElementById('text_comment'+comment_id) ; 
+  textArea.value = oEditor.GetXHTML() +  '<p><font size=\"-1\">(reply)</font></p>' ;
+  var params = Form.serialize(frm) ;
+  params = params + '&notify='+submit_notify
+  var ac=document.getElementById('comments'+entry+ref) ;
+  var editSave = ac.innerHTML ;
+  var errFunc = function(t) {
+       alert('Error ' + t.status + ' -- ' + t.statusText +'  - try re-submitting ');
+  }
+  var succFunc = function(t) {
+       hideEditor(entry+ref) ;
+  }
+  if (ref != id) {
+    new Ajax.Updater('comments'+comment_id,'/featureflow/update_comment', {method:'post', 
+          parameters: params, asynchronous:true, evalScripts:true, insertion:Insertion.Bottom, 
+          onFailure:errFunc, onSuccess:succFunc});
+  } else {
+    new Ajax.Updater('comments'+id,'/featureflow/update_comment', {method:'post', 
+          parameters: params, asynchronous:true, evalScripts:true, 
+          onFailure:errFunc, onSuccess:succFunc});
+  }
+  return false;
+}
+function changeCommentAttribute(document_id, inp, param, currentValue, last_comment_id)
+{
+  var s=document.getElementById(inp) ;
+  var v=s.options[s.selectedIndex].value; 
+  var errFunc = function(t) {
+       alert('Error ' + t.status + ' -- ' + t.statusText +'  - try re-submitting ');
+  }
+  new Ajax.Updater('comments'+last_comment_id, '/featureflow/update_comment', 
+        {method:'post', 
+        parameters:'id=undefined'+
+           '&commentid='+last_comment_id+
+           '&document_id='+document_id+
+           '&'+param+'='+encodeURIComponent(v),
+        asynchronous:true, evalScripts:true, insertion:Insertion.Bottom,
+        onFailure:errFunc});
+}
+function unlinkfy(str)
+{
+   var s1=str.replace(/<a class=\"?review\"? .*?><span id=\"?line_(.*?)\"?>/ig, "") ;
+   var s2=s1.replace(/<\/span><\/a><span id=\"?comments(.*?)>/ig, "") ;
+   var s3 = s2.replace(/<\/span><span id=\"?comments_entry(.*?)\"?><\/span>/ig, "") ;
+   // Adam D'Andrea: February 19, 2007: remove (reply) when it goes into editor
+   var s4 = s3.replace(/<font size=\"?-1\"?>\(reply\)<\/font>/ig, "");
+   return s4;
+}
+
+function collapse(expander, lineBreak)
+{
+   var ac=document.getElementById('expander'+expander) ;
+   ac.innerHTML='<a href="javascript:expand(\''+expander+'\');"><img src="/images/expand_small.gif" alt="Expand"></a>' ;
+   var expanded=document.getElementById('expanded'+expander) ;
+   expanded.saveHTML = expanded.innerHTML ;
+   expanded.innerHTML = (lineBreak) ? '<br>' : '' ;
+}
+function expand(expander)
+{
+   var ac=document.getElementById('expander'+expander) ;
+   ac.innerHTML='<a href="javascript:collapse(\''+expander+'\');"><img src="/images/collapse_small.gif" alt="Collapse"></a>'
+   var expanded=document.getElementById('expanded'+expander) ;
+   if (typeof expanded.saveHTML == 'undefined')
+      expanded.innerHTML = document.sections['expanded'+expander]
+   else
+      expanded.innerHTML = expanded.saveHTML ;
+}
+</script>
+
+
+<table border=1 cellspacing=0 cellpadding=2 frame=sunken><tr><td>
+<div id="show_scroller" style="width:100%; height:400px; overflow:scroll;">
+<script type="text/javascript">
+function resizeScroller() 
+{
+  var e=document.getElementById('show_scroller') ;
+  e.style.height = document.body.clientHeight-120 ; 
+  e.style.width = document.body.clientWidth-180 ;
+}
+resizeScroller() ;
+window.onresize = resizeScroller ;
+</script>
+
+<table cellspacing="0" cellpadding="5" border="1" bgcolor="#c0e1ff" width="100%">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="left" style="font-family: Arial; color: rgb(0, 0, 128); font-size: 12pt;"><strong>Document Control Information:</strong>
+            <p style="color: rgb(0, 0, 0);">The official version of this document is kept in CMVC in the <span style="font-weight: bold; text-decoration: underline;">aix</span> family, release <span style="font-weight: bold; text-decoration: underline;">des.dev</span>, component <span style="font-weight: bold; text-decoration: underline;">design.it1</span>, file <span style="color: rgb(255, 102, 102); font-weight: bold; text-decoration: underline;">designs/it1/400906_support_typespec_on_forall_it1/400906_support_typespec_on_forall_it1.html</span>. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.<br />
+            <br />
+            CMVC Extraction Information: %W% %H% %I% sccsid<br />
+            <br />
+            This document is IBM Confidential.<br />
+            </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table cellspacing="0" cellpadding="5" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td width="20%" valign="top" align="left"><strong>CMVC Feature Number</strong> </td>
+            <td width="80%" valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">400906</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Feature Title</strong> </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">400906 Support typespec on FORALL IT1 </td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Author(s)</strong> </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;"> Bernard Kan</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Applicable Product Releases</strong>       </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;"></td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Keyword(s)</strong>       </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;"></td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table cellspacing="0" cellpadding="5" border="1" bgcolor="#ff6666" width="100%">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="text-align: left; font-family: Arial; font-size: 12pt;"><strong>IT1 Status</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<p>
+<table cellspacing="0" cellpadding="5" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td valign="top" align="left"><strong>Approvers</strong> (mandatory participation) </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">
+            Tarique Islam, Dorra Bouchiha</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Reviewers</strong> (optional participation) </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">
+            Dave Paulmark, Jeff Heath, Larry Lindsay, Rene Matteau, Sarah McNamara, Si Yuan Zhang, Wang Chen, shereen@ca.ibm.com
+            Grigor Nikolov, Ying Zhang
+            </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p><br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td style="font-family: Arial; vertical-align: top;"><strong>Approvers</strong>: Please click the 'Approved' check-box beside your name in the table below if you agree with the technical content of this document; not checking your 'approve' check-box signifies you do not approve.</td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<table border=0 cellpadding=0 cellspacing=20><tr><td><table border=3 cellpadding=0 cellspacing=0><tr><th>Approver</th><th>Approved</th></tr><tr><td>Dorra Bouchiha</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="approval_1662" disabled></form></td></tr><tr><td>Tarique Islam</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="approval_1622" disabled></form></td></tr></table></td></tr></table>
+<p>Approval Comments</p>
+<p><br />
+<br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td style="font-family: Arial; vertical-align: top;"><strong>Reviewers</strong>: Please click the 'Reviewed' checkbox beside your name to indicate your participation in the review. </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p><table border=0 cellpadding=0 cellspacing=20><tr><td><table border=3 cellpadding=0 cellspacing=0><tr><th>Reviewer</th><th>Reviewed</th></tr><tr><td>Dave Paulmark</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1371" disabled></form></td></tr><tr><td>Dorra Bouchiha</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1662" disabled></form></td></tr><tr><td>Grigor Nikolov</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1360" disabled></form></td></tr><tr><td>Jeff Heath</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1284" disabled></form></td></tr><tr><td>Larry Lindsay</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1357" disabled></form></td></tr><tr><td>Rene Matteau</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1435" disabled></form></td></tr></table></td><td><table border=3 cellpadding=0 cellspacing=0><tr><th>Reviewer</th><th>Reviewed</th></tr><tr><td>Sarah McNamara</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1518" disabled></form></td></tr><tr><td>Si Yuan Zhang</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1948" disabled></form></td></tr><tr><td>Tarique Islam</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1622" disabled></form></td></tr><tr><td>Wang Chen</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1366" disabled></form></td></tr><tr><td>Ying Zhang</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_1401" disabled></form></td></tr><tr><td>shereen@ca.ibm.com</td><td align=center><form method="post" style="display: inline; margin: 0;">  <input type="checkbox" id="review_2168" disabled></form></td></tr></table></td></tr></table></p>
+<p>Review Comments</p>
+<p><br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td style="font-family: Arial; vertical-align: top;"><strong>Access Change History</strong>  </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p><span id="expander_sec1"><a href="javascript:expand('_sec1');"><img src="/images/expand_small.gif" alt="Expand"></a></span>&nbsp;<strong>Access Change History</strong><div id="expanded_sec1"></div>
+</p>
+<p>
+<table cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff" width="100%">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Overview</strong> </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p></p>
+<p>The Fortran 2008 standard allows optional type specifications for index variables in a FORALL statement/construct, for which this feature will add support.<br />
+</p>
+<p>With this extension, users can include a type specification in the FORALL header for the corresponding index variables. The type specification must be an integer type and applies to all indices in the FORALL header.<br />
+</p>
+<p>This feature is a Fortran 2008 specific extension to FORALL. The type specifier in the FORALL header will be flagged by a language level message when language level F2003 or lower is in effect. <br />
+</p>
+<span id="comments_entry_45">Following is the FORALL syntax, including the optional type-spec:<br />
+<br />
+&nbsp; FORALL<em> </em>( [<em> type_spec</em> :: ] <em>forall_triplet_spec_list</em> [, <em>scalar_mask_expr </em>] )<br />
+<br />
+Here is an example of its use:<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; implicit none <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; integer, parameter :: LIMIT = 255<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; integer(1) :: flag(LIMIT) <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flag = 0 <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FORALL ( integer(2) ::&nbsp; i = 2 : LIMIT : 2)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flag(i) = 1<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END FORALL <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print *, flag(LIMIT) <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END</span>
+<p>
+<table cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff" width="100%">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Test Strategy</strong></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+
+<br />
+The testing will be split into two groups, diagnostic and functional.<br />
+<br />
+Diagnostic tests will verify that appropriate error messages are emitted when forall is given an invalid type specifier, such as a non-integer type. Various other invalid uses are expected to generate suitable error messages. A language level message is expected when a forall declaration is correctly used but with an invalid language level in effect.<br />
+<br />
+Functional tests will include basic valid use cases as well as nesting of the forall construct. It can be nested within itself, with do, omp, SE, TM, or in other constructs. If general, where a forall loop was valid before the extension, it should be verified that the forall loop is still valid using the extension and an appropriate type specifier. <br />
+<br />
+<p>
+<table cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff" width="100%">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Test Procedure and Scenario</strong></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+
+<br />
+There will be diagnostic test cases to verify that error messages are emitted in the following situations:<br />
+<br />
+- a non-integer type specifier is used in the forall header<br />
+- multiple type specifiers are used in the forall header<br />
+- a language level message is emitted, with a valid use case, when the specified language level is not 2008STD.<br />
+<br />
+There will be one or more test cases to check the following:<br />
+<br />
+- nesting of the forall construct in other constructs, such as do loops, omp do, SE or TM regions, smp, blocks, etc<br />
+- validate basic use of the forall extension where forall was used before.&nbsp; A subset of existing test cases in the hpf_forall bucket will be ported in addition to the new test case material generated.<br />
+- that external scope variable names reused in the forall header do not result in those variables being modified<br />
+<br />
+Test coverage of the following is also scattered among the test cases:<br />
+- both forms of integer declarations in the type specifier: integer*n and integer(n), with n = 1, 2, 4, 8<br />
+- nesting FORALL constructs/statements with different type specifiers in their headers<br />
+- using FORALL constructs/statements with different lettering case<br />
+<br />
+The hpf_forall bucket provides much of this coverage with the forall construct and assignment before the extension.&nbsp; A selected subset of these test cases will be ported for functional testing of this feature.<br />
+<br />
+<br />
+<p>
+<table cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff" width="100%">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Test cases Information</strong></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+
+<br />
+Test case approval will also be done through this document, so no formal test case review document will be published.<br />
+Please review the test cases from the location provided below, and only approve this document if you are satisfied with <br />
+the IT1 (test plan) and the test cases.<br />
+<br />
+Test Cases will be checked in here:<br />
+<br />
+<strong>Release:</strong> tstdev<br />
+<strong>Location:</strong> F2008/forall/func, F2008/forall/diag<br />
+<br />
+<br />
+<strong>Diagnostic</strong><br />
+<br />
+<table cellspacing="1" cellpadding="1" border="1" width="785" height="203" align="" summary="">
+    <tbody>
+        <tr>
+            <td><strong>Scenario</strong></td>
+            <td><strong>Description</strong></td>
+        </tr>
+        <tr>
+            <td>forall_typespec_d01.scenario</td>
+            <td>Use real*4, real*8, ... , and complex*8, complex*16, ..., in the type specifier --&gt; Error message</td>
+        </tr>
+        <tr>
+            <td>forall_typespec_d02.scenario</td>
+            <td>Use multiple type specifiers, forall(integer::i=1:10:1, integer::j=1:10:1) --&gt; Error message</td>
+        </tr>
+        <tr>
+            <td>forall_typespec_d03_1.scenario</td>
+            <td>Use type-specifier with -qlanglvl=2003STD --&gt; Language level message</td>
+        </tr>
+        <tr>
+            <td>forall_typespec_d03_2.scenario</td>
+            <td>Use type-specifier with -qlanglvl=95STD --&gt; Language level message</td>
+        </tr>
+        <tr>
+            <td>forall_typespec_d03_3.scenario</td>
+            <td>Use type-specifier with -qlanglvl=90STD --&gt; Language level message</td>
+        </tr>
+        <tr>
+            <td>forall_typespec_d03_4.scenario</td>
+            <td>Use type-specifier with -qlanglvl=77STD --&gt; Language level message</td>
+        </tr>
+        <tr>
+            <td>forall_typespec_d04.scenario</td>
+            <td>With implicit none, the index variable must be declared.&nbsp; The declaration can be in the header with a type spec, or outside the loop.&nbsp; Verify that there is an error message with an undeclared index and no error message with a declared index.<br />
+            </td>
+        </tr>
+        <tr>
+            <td><strike>forall_typespec_d05.scenario</strike></td>
+            <td><strike>For each integer type, declare an out-of-bounds value in the forall-triplet-spec list --&gt; Error message.<br />
+            <br />
+            Example: forall(integer(1)::i=1:16384:1)</strike>             <strike><br />
+            <br />
+            Note: Also verifies the error message is the same in a forall loop without a type specifier.</strike>             <strike><br />
+            Note: It is found that there is an existing issue where with integer(1) and integer(2) types there is no error message with forall in general.&nbsp; The front end will default the literal to the maximum value allowed for the type specified, but the loop will be set to iterate 0 times.<br />
+            </strike>Note: This is generally considered to be a user error and an error message is not issued.&nbsp; The test case is removed.<br />
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<strong>Functional</strong><br />
+<table cellspacing="1" cellpadding="1" border="1" width="783" height="203" align="" summary="">
+    <tbody>
+        <tr>
+            <td><strong>Scenario</strong></td>
+            <td><strong>Description</strong></td>
+        </tr>
+        <tr>
+            <td>forall_typespec_f01.scenario</td>
+            <td>Reuse an external variable as a FORALL index variable --&gt; FORALL should not alter its value<br />
+            <br />
+            Also verify the same is true when FORALL is in the scope of another block.&nbsp; The only blocks valid in FORALL are WHERE and FORALL, which are covered in test cases below.</td>
+        </tr>
+        <tr>
+            <td>forall_typespec_f02.scenario</td>
+            <td>Nest FORALL in FORALL with reused variable names in the type specifier and verify the result of the computation.&nbsp; Forall should not alter external variable values</td>
+        </tr>
+        <tr>
+            <td>forall_typespec_f03.scenario</td>
+            <td>Nest FORALL in an OMP parallel do loop and verify the result of the computation.&nbsp; FORALL should not alter external variable values.</td>
+        </tr>
+        <tr>
+            <td>forall_typespec_f04.scenario</td>
+            <td>Test simple FORALL construct with a scalar_mask_expr.&nbsp; Test forall pointer assignment in forall_stmt_body.<br />
+            <br />
+            Note: adapted from hpf_forall/construct/fxfc009.scenario<br />
+            Note: This test case will confirm also that the !HPF$ Processor tag works with the extension</td>
+        </tr>
+        <tr>
+            <td>forall_typespec_f05.scenario</td>
+            <td>Test multiple nesting of forall constructs, nesting the forall constructs with header dependencies, headers with different type specifiers.<br />
+            <br />
+            Note: adapted from hpf_forall/construct/fxfc006.scenario</td>
+        </tr>
+        <tr>
+            <td>forall_typespec_f06.scenario</td>
+            <td>Test simple FORALL construct with a scalar_mask_expr.&nbsp; Test forall assignment as the forall_body_stmt.<br />
+            <br />
+            Note: adapted from hpf_forall/construct/fxfc007.scenario<br />
+            Note: this will also verify that the !HPF$ align and distribute tags still work</td>
+        </tr>
+        <tr>
+            <td>forall_typespec_f07.scenario</td>
+            <td>Test a PURE function as the scalar_mask_expr in a FORALL construct.&nbsp; It also contains coverage with the WHERE construct.<br />
+            <br />
+            Note: adapted from hpf_forall/construct/fxfc015b.scenario.&nbsp; Test 7 verifies that the compiler can declare the index for the innermost forall loop.</td>
+        </tr>
+        <tr>
+            <td>forall_typespec_f08.scenario</td>
+            <td>Test that statements in the FORALL assignment evaluate the expression for all active combinations and then these values are assigned to the corresponding locations.<br />
+            <br />
+            Note: this test also validates using the FORALL with multiple index variables.<br />
+            Note: adapted from hpf_forall/construct/fxfc027.scenario</td>
+        </tr>
+        <tr>
+            <td>forall_typespec_f09.scenario</td>
+            <td>Test that the scalar_mask_expr is evaluated only for the valid combinations of index-names.<br />
+            <br />
+            Note: adapted from hpf_forall/construct/fxfc024.scenario</td>
+        </tr>
+        <tr>
+            <td>forall_typespec_f10.scenario</td>
+            <td>Test that execution of the forall-body statements occur only for active combinations of index-name values.<br />
+            <br />
+            Note: adapted from hpf_forall/construct/fxfc026.scenario</td>
+        </tr>
+        <tr>
+            <td>forall_typespec_f11.scenario</td>
+            <td>OMP Parallel Workshare with where and forall<br />
+            <br />
+            Note: adapted from wkshare/test/fxws12h.scenario</td>
+        </tr>
+        <tr>
+            <td>forall_typespec_f12.scenario</td>
+            <td>SE speculative do with FORALL construct/statement nested.<br />
+            <br />
+            Note: this is BGQ-specific</td>
+        </tr>
+        <tr>
+            <td>forall_typespec_f13.scenario</td>
+            <td>TM atomic region with FORALL construct/statement nested and vice versa.&nbsp; Also contains an TM nested in an SMP section with a forall construct nested in the TM section.<br />
+            <br />
+            Note: this is BGQ-specific</td>
+        </tr>
+        <tr>
+            <td>forall_typespec_f14.scenario</td>
+            <td>Test forall-header with various primarys in scalar-mask-expr that are dependent on index-name values.&nbsp; Use simple forall-assignment.<br />
+            <br />
+            Note: adapted from hpf_forall/statement/fxfs0003b.scenario</td>
+        </tr>
+        <tr>
+            <td>forall_typespec_f15.scenario</td>
+            <td>Test the FORALL construct with assignments to adjustable-shape arrays.&nbsp; Test with local dummy arrays distributed onto local processor arrangements.<br />
+            This tests the use of for all constructs/statements in subroutines.<br />
+            <br />
+            Note: adapted from hpf_forall/construct/fxfc034b.scenario</td>
+        </tr>
+        <tr>
+            <td>forall_typespec_f16.scenario</td>
+            <td>Test PURE functions in the forall_body of the FORALL construct.&nbsp; Also test FORALL in a PURE function.<br />
+            <br />
+            Note: adapted from hpf_forall/construct/fxfc016.scenario</td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<strong>Defects:<br />
+</strong><br />
+401515 - F2008:FORALL:omp workshare does not accept the type-specifier<br />
+<br />
+<br />
+<p>
+<table cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff" width="100%">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Build Sanity Candidate(s)</strong></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+
+<br />
+forall_typespec_f01.scenario<br />
+forall_typespec_f05.scenario<br />
+<br />
+<p>
+<table cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff" width="100%">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Reference</strong></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+
+<br />
+<strong>I0 for Support typespec on FORALL:</strong><br />
+<br />
+<strong>Most recent: </strong>https://featureflow.torolab.ibm.com/featureflow/show/6258<strong style="color: rgb(0, 128, 0); font-size: 20px;"><br />
+<strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"></strong></strong></strong> </strong><script>document.sections={};</script><script>document.sections['expanded_sec1']='<p><table border=1 cellspacing=0 cellpadding=0><tr><th>Change Date</th><th>Updater</th><th>Access Change</th></tr><tr><td><p>19-Jun-12 13:57</p></td><td><p>Bernard Kan</p></td><td><p>Added Rene Matteau (matteau@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Sarah McNamara (mcnamara@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Si Yuan Zhang (siyuan.zhang@cn.ibm.com) as <b>Release Management Contact</b></p><p>Added shereen@ca.ibm.com (shereen@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Dave Paulmark (dvp@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Wang Chen (wdchen@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Jeff Heath (jrheath@ca.ibm.com) as <b>Release Management Contact</b></p><p>Added Larry Lindsay (llindsay@ca.ibm.com) as <b>Release Management Contact</b></p></td></tr><tr><td><p>19-Jun-12 14:00</p></td><td><p>Bernard Kan</p></td><td><p>Added Tarique Islam (tislam@ca.ibm.com) as <b>Approver</b></p><p>Added Dorra Bouchiha (dorrab@ca.ibm.com) as <b>Team Reviewer</b></p><p>Added Grigor Nikolov (gnikolov@ca.ibm.com) as <b>Team Reviewer</b></p><p>Added Ying Zhang (zhangy@ca.ibm.com) as <b>Team Reviewer</b></p></td></tr><tr><td><p>19-Jun-12 16:44</p></td><td><p>Bernard Kan</p></td><td><p>Modified Ying Zhang (zhangy@ca.ibm.com) role from Team Reviewer to <b>Approver</b></p></td></tr><tr><td><p>20-Jun-12 14:39</p></td><td><p>Bernard Kan</p></td><td><p>Modified Dorra Bouchiha (dorrab@ca.ibm.com) role from Team Reviewer to <b>Approver</b></p><p>Modified Ying Zhang (zhangy@ca.ibm.com) role from Approver to <b>Team Reviewer</b></p></td></tr></table></p>';</script><br>
+
+
+</div></td></tr></table>
+
+
+		<!--END MAIN BODY CONTENT-->
+		<a href="http://w3.ibm.com/w3/info_terms_of_use.html" class="terms">Terms of use</a><br />
+	</div>
+	<!-- stop main content -->
+</div>
+<!-- stop content -->
+</body>
+</html>
+

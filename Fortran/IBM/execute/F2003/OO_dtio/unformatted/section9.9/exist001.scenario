@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/unformatted/section9.9/exist001.scenario
+#FEATURE = OO_dtio/unformatted tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)exist001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = exist001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  exist001$(OBJ)
+#OUTPUT    = exist001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = exist001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

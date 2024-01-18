@@ -1,0 +1,32 @@
+** mod   === End of Compilation 1 ===
+"acetdt476gdkl.f", line 93.16: 1514-718 (S) Identifier oldname appearing as a type name has not been defined in a derived type definition.
+"acetdt476gdkl.f", line 94.16: 1514-718 (S) Identifier oldname appearing as a type name has not been defined in a derived type definition.
+"acetdt476gdkl.f", line 94.32: 1516-044 (S) A conversion from type oldname is not permitted.
+"acetdt476gdkl.f", line 95.16: 1514-718 (S) Identifier oldname appearing as a type name has not been defined in a derived type definition.
+"acetdt476gdkl.f", line 95.32: 1516-044 (S) A conversion from type oldname is not permitted.
+"acetdt476gdkl.f", line 96.16: 1514-718 (S) Identifier oldname appearing as a type name has not been defined in a derived type definition.
+"acetdt476gdkl.f", line 97.16: 1514-718 (S) Identifier oldname appearing as a type name has not been defined in a derived type definition.
+"acetdt476gdkl.f", line 97.32: 1516-044 (S) A conversion from type oldname is not permitted.
+"acetdt476gdkl.f", line 98.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476gdkl.f", line 98.28: 1514-718 (S) Identifier oldname appearing as a type name has not been defined in a derived type definition.
+"acetdt476gdkl.f", line 98.44: 1516-044 (S) A conversion from type oldname is not permitted.
+"acetdt476gdkl.f", line 100.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476gdkl.f", line 100.28: 1514-718 (S) Identifier oldname appearing as a type name has not been defined in a derived type definition.
+"acetdt476gdkl.f", line 102.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476gdkl.f", line 102.28: 1514-718 (S) Identifier oldname appearing as a type name has not been defined in a derived type definition.
+"acetdt476gdkl.f", line 102.44: 1516-044 (S) A conversion from type oldname is not permitted.
+"acetdt476gdkl.f", line 106.15: 1514-718 (S) Identifier oldname appearing as a type name has not been defined in a derived type definition.
+"acetdt476gdkl.f", line 107.15: 1514-718 (S) Identifier oldname appearing as a type name has not been defined in a derived type definition.
+"acetdt476gdkl.f", line 107.31: 1516-044 (S) A conversion from type oldname is not permitted.
+"acetdt476gdkl.f", line 108.15: 1514-718 (S) Identifier oldname appearing as a type name has not been defined in a derived type definition.
+"acetdt476gdkl.f", line 108.31: 1516-044 (S) A conversion from type oldname is not permitted.
+"acetdt476gdkl.f", line 109.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476gdkl.f", line 109.27: 1514-718 (S) Identifier oldname appearing as a type name has not been defined in a derived type definition.
+"acetdt476gdkl.f", line 109.43: 1516-044 (S) A conversion from type oldname is not permitted.
+"acetdt476gdkl.f", line 111.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476gdkl.f", line 111.27: 1514-718 (S) Identifier oldname appearing as a type name has not been defined in a derived type definition.
+"acetdt476gdkl.f", line 113.26: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt476gdkl.f", line 113.27: 1514-718 (S) Identifier oldname appearing as a type name has not been defined in a derived type definition.
+"acetdt476gdkl.f", line 113.43: 1516-044 (S) A conversion from type oldname is not permitted.
+** acetdt476gdkl   === End of Compilation 2 ===
+1501-511  Compilation failed for file acetdt476gdkl.f.

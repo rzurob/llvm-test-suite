@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/ace/aceCompPtrAllocSourceSpec01.scenario
+#FEATURE	= Basic (non-Polymorphic) Array Constructors with DTP
+#CREATOR	= Glen Mateer
+#DATE		= 20081125
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)aceCompPtrAllocSourceSpec01.f
+#OUTPUT		= aceCompPtrAllocSourceSpec01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= aceCompPtrAllocSourceSpec01$(OBJ)
+#OUTPUT		= aceCompPtrAllocSourceSpec01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= aceCompPtrAllocSourceSpec01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,3 @@
+"save_stmt_in_pure_block.f", 1514-286 (S) The variable, i, has the SAVE or STATIC attribute.  A variable declared in a pure subprogram must not have the SAVE or STATIC attribute.  You may have specified the SAVE option explicitly or by default.
+** sub   === End of Compilation 1 ===
+1501-511  Compilation failed for file save_stmt_in_pure_block.f.

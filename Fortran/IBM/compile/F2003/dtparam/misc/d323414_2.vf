@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"d323414_2.f", line 47.25: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "allocated".
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file d323414_2.f.

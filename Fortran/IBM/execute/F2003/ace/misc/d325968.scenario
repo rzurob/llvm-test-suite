@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/misc/d325968.scenario
+#FEATURE	= ieee_value using real part of complex variable
+#CREATOR	= DF Manual Update
+#DATE		= 20061108
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)d325968.f
+#OUTPUT		= d325968$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= d325968$(OBJ)
+#OUTPUT		= d325968$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= d325968$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,5 @@
+"dtParamTypeCompatNameSeqd.f", line 43.10: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"dtParamTypeCompatNameSeqd.f", 1514-008 (W) Variable d2 is misaligned.  This may affect the efficiency of the code.
+"dtParamTypeCompatNameSeqd.f", 1514-008 (W) Variable d2 is misaligned.  This may affect the efficiency of the code.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtParamTypeCompatNameSeqd.f.

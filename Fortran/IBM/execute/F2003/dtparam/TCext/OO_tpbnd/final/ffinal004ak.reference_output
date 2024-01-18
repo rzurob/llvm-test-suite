@@ -1,0 +1,8 @@
+ finalizeBase
+ finalizer for rank 1 array of base type
+ size of the finalized array is: 3
+ finalizer for rank 2 array of base type
+ shape of array:  2 2
+ finalizer for rank 3 array of base type
+ shape of array:  1 1 1
+ end

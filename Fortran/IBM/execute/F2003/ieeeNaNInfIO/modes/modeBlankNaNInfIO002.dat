@@ -1,0 +1,4 @@
+ -NaN(Q)   -NaN(S)   (  +Inf  ,+3.14  ) (Infinity   ,  NaN(_abcd123)   )  
+ -NaN(Q)   -NaN(S)   (  +Inf  ,+3.14  ) (Infinity   ,  NaN(_abcd123)   )  
+  +NaN(S)   +NaN(Q)   (  -3.14  ,  -NaN()  ) (  -Infinity , nan )  
+  +NaN(S)   +NaN(Q)   (  -3.14  ,  -NaN()  ) (  -Infinity , nan )  

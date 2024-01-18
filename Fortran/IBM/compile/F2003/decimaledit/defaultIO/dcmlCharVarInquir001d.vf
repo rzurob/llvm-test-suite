@@ -1,0 +1,7 @@
+"dcmlCharVarInquir001d.f", line 34.24: 1512-019 (S) INQUIRE statement specifier must be a simple variable or array element.  Statement is ignored.
+"dcmlCharVarInquir001d.f", line 36.25: 1512-019 (S) INQUIRE statement specifier must be a simple variable or array element.  Statement is ignored.
+"dcmlCharVarInquir001d.f", line 38.25: 1512-019 (S) INQUIRE statement specifier must be a simple variable or array element.  Statement is ignored.
+"dcmlCharVarInquir001d.f", line 40.25: 1512-019 (S) INQUIRE statement specifier must be a simple variable or array element.  Statement is ignored.
+"dcmlCharVarInquir001d.f", line 55.37: 1511-139 (S) Associate name x is not associated with an entity that can be defined. x must not be redefined or become undefined.
+** dcmlcharvarinquir001d   === End of Compilation 1 ===
+1501-511  Compilation failed for file dcmlCharVarInquir001d.f.

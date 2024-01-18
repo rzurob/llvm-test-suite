@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"Nullify2.f", line 82.11: 1513-088 (S) Procedure names must not be specified in this context.
+"Nullify2.f", line 93.13: 1516-147 (S) arg1 has the attribute INTENT(IN).  It may not appear as the pointer object in a pointer assignment statement, or in an ALLOCATE, DEALLOCATE, or NULLIFY statement.
+"Nullify2.f", line 94.13: 1513-088 (S) Procedure names must not be specified in this context.
+** nullify2   === End of Compilation 2 ===
+1501-511  Compilation failed for file Nullify2.f.

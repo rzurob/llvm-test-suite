@@ -1,0 +1,28 @@
+ assumedsize
+ ab
+ 200 300 400 500
+ assumedsize
+ ab
+ 300 500 700 900
+ assumedsize2d
+ ab
+ ab
+ 400 500 200 300
+ assumedsize2d
+ ab
+ ab
+ 700 900 300 500
+ assumedsize
+ c
+ 300 400 500 600
+ assumedsize
+ c
+ 100 -100 -300 -500
+ assumedsize2d
+ c
+ c
+ 500 600 300 400
+ assumedsize2d
+ c
+ c
+ -300 -500 100 -100

@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/TCext/OO_dtio/formatted/DT/syntax/fdtedit001dkl.scenario
+#FEATURE = OO_dtio and derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070618
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fdtedit001dkl.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=intmsg -qdebug=shutup
+#OUTPUT    = fdtedit001dkl$(OBJ)
+#STDERR    = fdtedit001dkl.err
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)fdtedit001dkl$(product)vf) fdtedit001dkl.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

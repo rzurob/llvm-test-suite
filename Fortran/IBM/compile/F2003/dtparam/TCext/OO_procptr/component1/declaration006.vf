@@ -1,0 +1,4 @@
+"declaration006.f", line 28.44: 1514-180 (W) An entity must not be given explicitly any attribute more than once in a scoping unit.
+"declaration006.f", line 29.37: 1514-180 (W) An entity must not be given explicitly any attribute more than once in a scoping unit.
+** declaration006   === End of Compilation 1 ===
+1501-510  Compilation successful for file declaration006.f.

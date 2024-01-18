@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/scalarExpr/d327223.scenario
+#FEATURE	= Intrinsic Assignment -- expr is a Scalar and variable is an Array
+#CREATOR	= GM Manual Creation
+#DATE		= 20061026
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)d327223.f
+#OUTPUT		= d327223$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= d327223$(OBJ)
+#OUTPUT		= d327223$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= d327223$(EXE)
+#STDOUT		= d327223.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)d327223$(product)vf) d327223.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

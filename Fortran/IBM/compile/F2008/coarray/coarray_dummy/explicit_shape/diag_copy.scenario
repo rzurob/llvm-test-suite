@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)diag_copy.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = diag_copy$(OBJ)
+#VALIDRCS  = $(RC_FAIL)
+#STDERR    = diag_copy.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = diag_copy.err $($(tcasedir)diag_copy$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /syncAll/saMainNModule.scenario
+#FEATURE   = CAF SYNC ALL - synchronisation from main program and module procedures
+#CREATOR   = DF
+#DATE      = 20100727
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)saMainNModule.f
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = saMainNModule$(OBJ)
+#OUTPUT    = saMainNModule$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = saMainNModule$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

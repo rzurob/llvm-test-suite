@@ -1,0 +1,8 @@
+ 1525-088 The NAMELIST READ statement cannot be completed because item VARCHAR is not a member of the NAMELIST group naml1.  The program will recover by discontinuing further processing of the READ statement.
+                                                                                            
+ 1525-088 The NAMELIST READ statement cannot be completed because item ARYCHAR is not a member of the NAMELIST group naml2.  The program will recover by discontinuing further processing of the READ statement.
+                                                                                            
+ 1525-088 The NAMELIST READ statement cannot be completed because item VARCHAR is not a member of the NAMELIST group naml1.  The program will recover by discontinuing further processing of the READ statement.
+                                                                                            
+ 1525-088 The NAMELIST READ statement cannot be completed because item ARYCHAR is not a member of the NAMELIST group naml2.  The program will recover by discontinuing further processing of the READ statement.
+                                                                                            

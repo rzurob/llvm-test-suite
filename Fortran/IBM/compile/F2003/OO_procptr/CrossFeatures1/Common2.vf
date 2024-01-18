@@ -1,0 +1,9 @@
+** m   === End of Compilation 1 ===
+"Common2.f", line 59.10: 1514-245 (E) Identifier procptr is accessed by use association. It must not be redeclared or initialized.
+** common2   === End of Compilation 2 ===
+"Common2.f", line 72.10: 1514-245 (E) Identifier procptr is accessed by use association. It must not be redeclared or initialized.
+** extsub   === End of Compilation 3 ===
+"Common2.f", line 83.12: 1514-245 (E) Identifier procptr is accessed by use association. It must not be redeclared or initialized.
+"Common2.f", line 85.5: 1515-019 (S) Syntax is incorrect.
+** m1   === End of Compilation 4 ===
+1501-511  Compilation failed for file Common2.f.

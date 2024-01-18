@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignLocalFromExternalFixed.scenario
+#FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - via fixed-length pointers, assign to local variables in external subprogram
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPtrAssignLocalFromExternalFixed.f
+#OUTPUT    = dtpPtrAssignLocalFromExternalFixed$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPtrAssignLocalFromExternalFixed$(OBJ)
+#OUTPUT    = dtpPtrAssignLocalFromExternalFixed$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPtrAssignLocalFromExternalFixed$(EXE)
+#STDOUT    = dtpPtrAssignLocalFromExternalFixed.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r1e-6
+#INPUT     = $($(tcasedir)dtpPtrAssignLocalFromExternalFixed$(product)vf) dtpPtrAssignLocalFromExternalFixed.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

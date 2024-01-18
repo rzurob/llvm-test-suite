@@ -1,0 +1,9 @@
+DTu1-1   5 1001DTdata   6   7   101    111
+DTu1-2   5 1002DTdata   9      102
+DTu1-1   5 1003DTdata   6   7   103    113
+
+DTu2-1   5 1004DTdata   9      104
+DTu2-2   5 1003DTdata   5  10  103       113
+DTu2-1   5 1002DTdata   9      102
+DTu2-2   5 1001DTdata   5  10  101       111
+

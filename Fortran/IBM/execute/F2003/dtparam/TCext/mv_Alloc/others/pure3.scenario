@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/others/pure3.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071105
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)pure3.f
+#OUTPUT= pure3$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  pure3$(OBJ)
+#OUTPUT= pure3$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  pure3$(EXE)
+#STDOUT= pure3.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = pure3.out $($(tcasedir)pure3$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

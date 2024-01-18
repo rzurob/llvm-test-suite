@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/allocEnh/construct/doloop003.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)doloop003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = doloop003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = doloop003$(OBJ)
+#OUTPUT    = doloop003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = doloop003$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

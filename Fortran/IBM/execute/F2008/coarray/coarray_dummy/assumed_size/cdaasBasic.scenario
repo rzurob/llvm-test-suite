@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_dummy/assumed_size/cdaasBasic
+#FEATURE        = CAF dummy arguments - assumed size - access only, same bounds in actual and dummy
+#CREATOR        = DF
+#DATE           = 2010-09-24
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)cdaasBasic.f
+#OUTPUT = cdaasBasic$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = cdaasBasic$(OBJ)
+#OUTPUT = cdaasBasic$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = cdaasBasic$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

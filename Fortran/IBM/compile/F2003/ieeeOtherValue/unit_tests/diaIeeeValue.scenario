@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/ieeeOtherValue/unit_tests/diaIeeeValue.scenario
+#FEATURE   = 338353
+#CREATOR   = Zheming Gu
+#DATE      = July 8,2007
+#TEST_TYPE = diagnostic test
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT = cbe_spu
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      =  XLF2003_COMPILE
+#INPUT    =  $(tcasedir)diaIeeeValue.f
+#STDERR   =  diaIeeeValue.out
+#VALIDRCS =  $(RC_COMP_S)
+#ENDCMD
+
+#CMD      = XLDIFF
+#INPUT    = diaIeeeValue.out $($(tcasedir)diaIeeeValue$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

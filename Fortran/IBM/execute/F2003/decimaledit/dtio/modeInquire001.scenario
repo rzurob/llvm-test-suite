@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/decimaledit/dtio/modeInquire001.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)modeInquire001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = modeInquire001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = modeInquire001$(OBJ)
+#OUTPUT    = modeInquire001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = modeInquire001$(EXE)
+#STDOUT    = modeInquire001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = modeInquire001.out $($(tcasedir)modeInquire001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

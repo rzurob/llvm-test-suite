@@ -1,0 +1,21 @@
+ 10 10 2 2
+( ab cd ef gh ij kl mn op qr st )
+ 14 14 2 2
+( qr st ab cd ef gh ij kl mn op qr st ab cd )
+ 18 18 2 2
+( ab cd qr st ab cd ef gh ij kl mn op qr st ab cd qr st )
+ 22 22 2 2
+( qr st ab cd qr st ab cd ef gh ij kl mn op qr st ab cd qr st ab cd )
+ 26 26 2 2
+( ab cd qr st ab cd qr st ab cd ef gh ij kl mn op qr st ab cd qr st ab cd qr st )
+ 
+ 26 26 2 2
+( ab cd qr st ab cd qr st ab cd ef gh ij kl mn op qr st ab cd qr st ab cd qr st )
+ 22 22 2 2
+( rq ts ba dc rq ts ba dc fe hg ji lk nm po rq ts ba dc rq ts ba dc )
+ 18 18 2 2
+( ab cd qr st ab cd ef gh ij kl mn op qr st ab cd qr st )
+ 14 14 2 2
+( rq ts ba dc fe hg ji lk nm po rq ts ba dc )
+ 10 10 2 2
+( ab cd ef gh ij kl mn op qr st )

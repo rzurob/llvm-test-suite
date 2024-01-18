@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_procptr/CrossFeatures2/Allocate.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_procptr/*
+#DATE      = 20071011
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)Allocate.f
+#OUTPUT= Allocate$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  Allocate$(OBJ)
+#OUTPUT= Allocate$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  Allocate$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

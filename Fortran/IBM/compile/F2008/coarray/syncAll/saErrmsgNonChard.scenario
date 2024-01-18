@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /syncAll/saErrmsgNonChard.scenario
+#FEATURE   = sync all - diagnostic message on non-character or array errmsg-variable
+#CREATOR   = DF
+#DATE      = 20100727
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINENV
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)saErrmsgNonChard.f
+#STDOUT    = saErrmsgNonChard.err
+#STDERR    = saErrmsgNonChard.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = saErrmsgNonChard.err $($(tcasedir)saErrmsgNonChard$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

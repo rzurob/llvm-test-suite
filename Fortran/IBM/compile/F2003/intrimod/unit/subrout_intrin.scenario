@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/intrimod/unit/subrout_intrin.scenario
+#FEATURE = intrimod tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF95_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) -qdebug=intmsg -c  $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+! This chunk was DCOMP
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)subrout_intrin.f
+#OPTS      = -qdebug=intmsg -c -qdebug=intmsg:shutup
+#OUTPUT    = subrout_intrin$(OBJ)
+#STDERR    = subrout_intrin.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)subrout_intrin$(product)vf) subrout_intrin.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

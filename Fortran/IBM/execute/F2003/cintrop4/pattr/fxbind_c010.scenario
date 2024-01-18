@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= cintrop4/pattr/fxbind_c010.scenario
+#REFERENCE	= fdpr/cinterop/fxbind_c010.scenario
+#REF_TYPE	= FDPR -- XL FORTRAN/C Interoperability Tests
+#FEATURE = cintrop4 tests - regression run bucket
+#CREATOR	= GM Manual Update
+#DATE		= 20050429
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+FTCARG="fxbind_c010"
+CTCARG="bind_c010"
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#INCLUDE   = fxbindc.shinclude
+
+
+#ENDCONTROL
+#ENDSCENARIO

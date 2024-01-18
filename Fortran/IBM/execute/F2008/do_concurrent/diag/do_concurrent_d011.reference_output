@@ -1,0 +1,6 @@
+"do_concurrent_d011.f", line 29.8: 1515-019 (S) Syntax is incorrect.
+"do_concurrent_d011.f", line 30.9: 1515-019 (S) Syntax is incorrect.
+"do_concurrent_d011.f", line 34.8: 1515-019 (S) Syntax is incorrect.
+"do_concurrent_d011.f", line 35.9: 1515-019 (S) Syntax is incorrect.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file do_concurrent_d011.f.

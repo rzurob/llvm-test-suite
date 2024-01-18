@@ -1,0 +1,6 @@
+         36 |character*1, bind(c :
+            ..............a......b
+a - "bcdachs5.f", line 36.14: 1514-239 (S) Arrays with non-constant bounds are not permitted in the scope of a module.
+b - "bcdachs5.f", line 36.21: 1515-020 (S) Syntax Error: Token " ) " is missing. A token is supplied.
+** mod   === End of Compilation 1 ===
+1501-511  Compilation failed for file bcdachs5.f.

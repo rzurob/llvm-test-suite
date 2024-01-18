@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/allocate/allocExtVariable02.scenario
+#FEATURE	= ALLOCATE() Statement with DTP
+#CREATOR	= Glen Mateer
+#DATE		= 20081215
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS       = -qdebug=allowrpdt
+#INPUT		= $(tcasedir)allocExtVariable02.f
+#OUTPUT		= allocExtVariable02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= allocExtVariable02$(OBJ)
+#OUTPUT		= allocExtVariable02$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= allocExtVariable02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

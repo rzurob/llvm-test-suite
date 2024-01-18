@@ -1,0 +1,47 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=fxrtemsgalloc09.scenario
+#FEATURE = diagnostic for providing file name and line # when allocate/deallocate stmt fails at runtime.
+#CREATOR = Bardia Mahjour
+#DATE    = 20051031
+#TEST_TYPE=diag test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)fxrtemsgalloc09.f
+#OPTS      = -g
+#STDERR    = fxrtemsgalloc09.out
+#STDOUT    = fxrtemsgalloc09.out
+#OUTPUT    = fxrtemsgalloc09$(OBJ)
+#VALIDRCS  = 0
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#INPUT     = fxrtemsgalloc09$(OBJ)
+#OUTPUT    = fxrtemsgalloc09$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxrtemsgalloc09$(EXE)
+#STDOUT    = fxrtemsgalloc09.out
+#STDERR    = fxrtemsgalloc09.out
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fxrtemsgalloc09.out $($(tcasedir)fxrtemsgalloc09$(product)err)
+#OPTS      = -b
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

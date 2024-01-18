@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/intrinsics/d346419.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement)
+#CREATOR	= Glen Mateer
+#DATE		= 20080128
+#TEST_TYPE	= Diagnostic
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)d346419.f
+#OUTPUT		= d346419$(OBJ)
+#STDERR		= d346419.out
+#STDOUT		= d346419.out
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)d346419$(product)vf) d346419.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_dummy/assumed_size/cdaasRankCorankChg
+#FEATURE        = CAF dummy arguments - assumed size - both corank and rank (and dimensions) are different
+#CREATOR        = DF
+#DATE           = 2010-09-29
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)cdaasRankCorankChg.f
+#OUTPUT = cdaasRankCorankChg$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = cdaasRankCorankChg$(OBJ)
+#OUTPUT = cdaasRankCorankChg$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = cdaasRankCorankChg$(EXE)
+#STDOUT = cdaasRankCorankChg.out
+#ENDCMD
+
+#CMD    = SPIFF
+#OPTS   = -r1e-5
+#INPUT  = $($(tcasedir)cdaasRankCorankChg$(product)vf) cdaasRankCorankChg.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/encoding/unit_tests/encodingspecifier007.scenario
+#FEATURE	= Encoding Specifier
+#CREATOR	= Thomas Tewoldemedhin
+#DATE		= 20070430
+#TEST_TYPE	= unit test
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)encodingspecifier007.f
+#OUTPUT		= encodingspecifier007$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= encodingspecifier007$(OBJ)
+#OUTPUT		= encodingspecifier007$(EXE)
+#ENDCMD
+
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)real4.dat
+#OUTPUT		= .
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= encodingspecifier007$(EXE)
+#STDERR		= encodingspecifier007.err
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= encodingspecifier007.err $($(tcasedir)encodingspecifier007$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

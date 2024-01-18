@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"PtrAssignCharacteristics2.f", line 109.15: 1515-125 (S) Procedure pointer procptr1 was not declared as a subroutine, and is not referenced as a subroutine.  The procedure pointer assignment target intsub must not be declared as a subroutine.
+???- missing one
+"PtrAssignCharacteristics2.f", line 113.3: 1515-123 (S) Procedure pointer assignment statement target intfun must be declared with the same type and type parameters as procedure pointer procptr3.
+** ptrassigncharacteristics2   === End of Compilation 2 ===
+1501-511  Compilation failed for file PtrAssignCharacteristics2.f.

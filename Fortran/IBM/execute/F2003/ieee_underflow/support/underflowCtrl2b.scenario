@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/ieee_underflow/support/underflowCtrl2.f
+#FEATURE = 289080
+#CREATOR = Nancy Wang
+#DATE    = Nov. 15 2007
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT=cbe_spu
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_REALSIZE_8)
+#INPUT     = $(tcasedir)underflowCtrl2.f
+#OUTPUT    = underflowCtrl2b$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_REALSIZE_8)
+#INPUT     = underflowCtrl2b$(OBJ)
+#OUTPUT    = underflowCtrl2b$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = underflowCtrl2b$(EXE)
+#ENDCMD
+#ENDCONTROL
+
+#ENDSCENARIO

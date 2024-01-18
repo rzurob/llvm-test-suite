@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=ArrayConstructor/ArrayConstructorEmpty10
+#FEATURE = Array constructor enhancements
+#CREATOR = Rob James
+#DATE    = 20060915
+#TEST_TYPE=Unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ArrayConstructorEmpty10.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM)
+#OUTPUT    = ArrayConstructorEmpty10$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = ArrayConstructorEmpty10$(OBJ)
+#OUTPUT    = ArrayConstructorEmpty10$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ArrayConstructorEmpty10$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,4 @@
+"polyAssign1026d_lvl2declInverse.f", line 72.10: 1516-044 (S) A conversion from type t is not permitted.
+"polyAssign1026d_lvl2declInverse.f", line 73.10: 1516-044 (S) A conversion from type t2 is not permitted.
+** polyassign1026d   === End of Compilation 1 ===
+1501-511  Compilation failed for file polyAssign1026d_lvl2declInverse.f.

@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/misc/d312513.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d312513.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = d312513$(OBJ)
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)d312513.c
+#OPTS      = $(C_COMPILER_OPTS)
+#OUTPUT    = d312513_c$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d312513$(OBJ) d312513_c$(OBJ)
+#OUTPUT    = d312513$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d312513$(EXE)
+#STDOUT    = d312513.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = d312513.out $($(tcasedir)d312513$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

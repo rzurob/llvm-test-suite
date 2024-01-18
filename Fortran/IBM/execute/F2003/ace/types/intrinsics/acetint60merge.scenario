@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint60merge.scenario
+#FEATURE	= Array constructor enhancement - array construction intrinsics
+#CREATOR	= DF Manual Update
+#DATE		= 20061124
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint60merge.f
+#OUTPUT		= acetint60merge$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint60merge$(OBJ)
+#OUTPUT		= acetint60merge$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint60merge$(EXE)
+#STDOUT		= acetint60merge.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -r1e-5
+#INPUT		= $($(tcasedir)acetint60merge$(product)vf) acetint60merge.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

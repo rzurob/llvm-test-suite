@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/DT/recursive004.scenario
+#FEATURE = OO_dtio
+#CREATOR = Robert Ma
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)recursive004.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = recursive004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = recursive004$(OBJ)
+#OUTPUT    = recursive004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = recursive004$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)recursive004$(product)vf) recursive004.1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

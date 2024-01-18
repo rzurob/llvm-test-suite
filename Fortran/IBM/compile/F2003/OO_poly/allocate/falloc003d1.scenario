@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/allocate/falloc003d1.f
+#FEATURE = OO_poly
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#INVALID_XOPTS = $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP) $$(F_COMPILE^OPT_OPTIMIZE_FOR_SMP<.*>)
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)falloc003d1.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<2003std>) $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = falloc003d1$(OBJ)
+#STDERR    = falloc003d1.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = falloc003d1.err $($(tcasedir)falloc003d1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

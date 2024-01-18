@@ -1,0 +1,6 @@
+ &NML1
+ C1=,base1, ,base1, ,base1, B2=child, child, child, child, child
+ /
+ &NML2
+ B1=child, child, child, C2=,base1, ,base1, ,base1, ,base1, ,base1, ,base1, ,base1, ,base1
+ /

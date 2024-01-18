@@ -1,0 +1,3 @@
+"Assumed_Length02df.f", line 25.36: 1516-181 (S) Objects of type CHARACTER with run time length, or with assumed length must not be declared with the VALUE attribute.
+** assumed_lenght001   === End of Compilation 1 ===
+1501-511  Compilation failed for file Assumed_Length02df.f.

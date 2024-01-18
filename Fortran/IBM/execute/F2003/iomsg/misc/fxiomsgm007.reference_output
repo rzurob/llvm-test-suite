@@ -1,0 +1,2 @@
+ 1525-006 The STATUS= specifier in the OPEN statement for unit 9 cannot be set to OLD because the file fort.9 does not exist.  The program will stop.
+

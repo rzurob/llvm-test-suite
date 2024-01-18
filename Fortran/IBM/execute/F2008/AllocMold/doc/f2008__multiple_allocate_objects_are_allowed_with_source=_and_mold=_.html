@@ -1,0 +1,466 @@
+<html><head><title>IT1/IT2 - F2008: Multiple allocate-objects are allowed with SOURCE= and MOLD=</title></head><body><table width="100%" bgcolor="#c0e1ff" cellspacing="0" cellpadding="5" border="1">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="left" style="font-family: Arial; color: rgb(0, 0, 128); font-size: 12pt;"><strong>Document Control Information:</strong>
+            <p style="color: rgb(0, 0, 0);">The official version of this document is kept in CMVC in the <span style="font-weight: bold; text-decoration: underline;">%CMVC_Family%</span> family, release <span style="font-weight: bold; text-decoration: underline;">%CMVC_Release%</span>, component <span style="font-weight: bold; text-decoration: underline;">%CMVC_Component%</span>, file <span style="color: rgb(255, 102, 102); font-weight: bold; text-decoration: underline;">%CMVC_PathName%</span>. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.<br />
+            <br />
+            CMVC Extraction Information: %W% %H% %I% sccsid<br />
+            <br />
+            This document is IBM Confidential.<br />
+            </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table cellspacing="0" cellpadding="5" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td width="20%" valign="top" align="left"><strong>CMVC Feature Number</strong> </td>
+            <td width="80%" valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%CMVC_Feature%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Feature Title</strong> </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Document_Name% %Note{By default the feature title and document name are the same. You can either change the document name (through Properties), or replace the tag with the title of the feature}%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Author(s)</strong> </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Authors%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Applicable Product Releases</strong>       </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Note{ List all the products and their release numbers for which the information in this document is/will be correct. For example:<br />
+            XL C/C++ v7.0 and 8.0 on Linux and AIX<br />
+            XL Fortran v9.1 and 10.1 on Linux and AIX.<br />
+            <br />
+            If you are updating this IT1, remove old products from the list if they will not support this updated I0's behaviour. For example, if this IT1 was first written for XL Fortran v9.1 and a change is being made in XL Fortran v10.1 that will not be ported back to v9.1, then v9.1 should not appear in the list.<br />
+            <br />
+            For prototype or experimental code that isn't scheduled to ship in any release yet, note possible future targets like this: &quot;Experimental code, may ship in future XL Fortran and XL C/C++ AIX releases&quot; }%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Keyword(s)</strong>       </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Note{ Define KEYWORDS to be used to identify/classify this feature }%</td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table width="100%" bgcolor="#ff6666" cellspacing="0" cellpadding="5" border="1">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="text-align: left; font-family: Arial; font-size: 12pt;"><strong>IT1 Status</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<p>
+<table cellspacing="0" cellpadding="5" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td valign="top" align="left"><strong>Approvers</strong> (mandatory participation) </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Note{Insert the names of people who will have approval authority for this review. These people, in aggregate, are responsible for approving the technical and user interface content of the document. Generally, this list should include people who represent compiler components that will need to change if this review is approved.<br />
+            The I0 Process document provides detailed guidance on choosing your list of approvers.<br />
+            A member of the Option Review Board must approve any i0 that adds an option or pragma.<br />
+            Use Access Control to add/delete people from this list. The initial access control list is populated with the people from the Component Reviewers section below. You can use Access Control to change their role to Approver, or add additional approvers.}%<br />
+            %Approvers%</td>
+        </tr>
+        <tr>
+            <td valign="top" align="left"><strong>Reviewers</strong> (optional participation) </td>
+            <td valign="top" align="left" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Note{List any additional people you feel need to participate in the review. These people do not have approval authority. Use Access Control to add/delete people from this list.}%<br />
+            %Release_Management_Contact%<br />
+            %Team_Reviewers%<br />
+            %Component_Reviewers%</td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p><br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td style="font-family: Arial; vertical-align: top;"><strong>Approvers</strong>: Please click the 'Approved' check-box beside your name in the table below if you agree with the technical content of this document; not checking your 'approve' check-box signifies you do not approve.</td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%Approvals%
+<p>Approval Comments</p>
+<p><br />
+<br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td style="font-family: Arial; vertical-align: top;"><strong>Reviewers</strong>: Please click the 'Reviewed' checkbox beside your name to indicate your participation in the review. </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%Reviews%</p>
+<p>Review Comments</p>
+<p><br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td style="font-family: Arial; vertical-align: top;"><strong>Access Change History</strong> %Note{Authors: Access Change History will list any changes to the access control done to the document draft. These changes would not be visible in a review. In a review, this section would only list the access changes done to the review itself.<br />
+            Please note that changes to the access control of a review are not automatically reflected in the access control of the draft document.}% </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%CollapsedSection{<strong>Access Change History</strong>}{%Access_Change_History%}%<br />
+</p>
+<p>
+<table width="100%" bgcolor="#bfbfff" cellspacing="0" cellpadding="5" border="1">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Overview</strong> </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%Note{A brief description of the feature, its application(s) and limitation(s).<br />
+<br />
+Feature syntax may also be mentioned here.  Since it is in the I0 document, it is optional.}%<br />
+</p>
+<br />
+<p style="margin-bottom: 0in"><strong>Description</strong>:<br />
+Constraint 631 from Fortran 2003:<br />
+</p>
+<p style="margin-bottom: 0in">C631 (R623) If SOURCE= appears, type-spec shall not appear and allocation-list shall contain only one allocate-object, which shall be type compatible (5.1.1.2) with source-expr .<br />
+<br />
+has been replaced by the following constraint in Fortran 2008:<br />
+<br />
+C638 (R626) Each allocate-object shall be type compatible (4.3.1.3) with source-expr . If SOURCE= appears, source-expr shall be a scalar or have the same rank as each allocate-object.<br />
+<br />
+</p>
+<p style="margin-bottom: 0in"><strong>Requirements:</strong><br />
+Add support for multiple allocate-objects with SOURCE= and MOLD=, as described in Fortran 2008.<br />
+Emit a langlvl message with -qlanglvl=2003std/2003pure when more than one allocate-object is specified with SOURCE=.</p>
+<p><strong><br />
+</strong></p>
+<p><strong>Applicable Architecture and </strong><br />
+This feature has no dependency on any architecture/OS.<br />
+<br />
+</p>
+<p style="margin-bottom: 0in"><strong>Objectives of the Test</strong></p>
+Please see the test strategy section.
+<p> </p>
+&nbsp;<br />
+<p>
+<table width="100%" bgcolor="#bfbfff" cellspacing="0" cellpadding="5" border="1">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Test Strategy</strong></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%Note{This is the most important section of the document.  <br />
+<br />
+Detail the test methodology and coverage for the feature to be tested.<br />
+<br />
+Test strategy is not to identify all possible defects under all conditions with the feature.  In most cases, this is unrealistic.<br />
+It is to identify and report defects with the feature under specific conditions likely to be used by the customer.  <br />
+As a tester, you are the first customer of the feature.  So you, the tester, need to understand how a certain feature would be used in the real world and come up with a Test strategy to validate those use cases.  <br />
+<br />
+Use cases to be validated should be documented here.<br />
+<br />
+Provide examples if they are needed to explain the test method or coverage. <br />
+<br />
+If applicable, organize the coverage into diagnostic and functional sections.  <br />
+<br />
+Diagnostic test cases verify error handling of the feature and the corresponding messages that are produced.  This would also include verifying that valid syntax does not produce any unexpected messages.<br />
+This type of testing usually fall under the umbrella of unit tests. The developer of the feature is expected to write fully automated unit tests, but this can be negotiated if it is unfeasible for the developer to do so.<br />
+<br />
+Test cases that verify values are referred to as functional test cases. <br />
+<br />
+For large features, there may not be resource/time to completely test the feature. Certain parts of the feature will be more important than others.  <br />
+Prioritize the test coverage and clearly document what will be covered in testing and what will be omitted.  Risk assessment on the parts omitted should also be documented.  This needs to be reviewed and agreed to by the requirements owner(s).<br />
+<br />
+If there is already coverage in existing test suites, explicitly document it here.<br />
+<br />
+Often, a feature by itself will work fine, but when combined with existing functionality or other new features, it may not work correctly.  So ensure this type of testing is covered in the test coverage.  This implies that other new features being developed for the release should also be understood.   <br />
+<br />
+Backward compatibility, portability, and any other migration Issues should be considered.  One of the main complaints from customers is migrating from release to release (or from one platform to another).  <br />
+<br />
+Document any dependancies or open issues with the feature, so these are not over-looked.}%<br />
+<br />
+<strong>Functional Tests:</strong><br />
+Take old test cases that use single allocate statements using source and mold<br />
+Improved them to:<br />
+1. Allocate various primitive types<br />
+2. Allocate array of various type<br />
+3. Allocate more than 2<br />
+4. Allocate pointers<br />
+5. Allocate array of pointers<br />
+6. Allocate polymorphic objects<br />
+7. Allocate return of a function call.<br />
+<br />
+<p>
+<table width="100%" bgcolor="#bfbfff" cellspacing="0" cellpadding="5" border="1">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Test Procedure and Scenario</strong></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%Note{A Test procedure provides detailed instructions for the execution of one or more test cases.  <br />
+<br />
+Most good software development models call for both a Test Plan and a Test Procedure document. <br />
+Although in principle this sounds good, test procedures are costly to develop and maintain.  When writing test cases, Test procedures often require updating, requiring IT1 [test plan] to be re-opened.<br />
+<br />
+Currently, development teams review this section, and not necessarily the test cases themselves.  So there is definitely value in having this information available.  If it is not provided in the IT1 document, it needs to be provided during test case review, and reviewed by developer.  <br />
+.}%<br />
+<font size="4"><br />
+</font><strong><u><font size="4">Functional Test Cases:</font><br />
+<br />
+</u></strong> <strong><u>1. multAllocSourceMold01.scenario</u></strong><br />
+<br />
+Abstract: Multiple allocate of intrinsic types from source<br />
+<br />
+For every intrinsic type this test case tries allocating multiple pointers to the same source.<br />
+&nbsp; 1. For numbers the value of the source varies from infinite negative  to infinite positive where there is at least one test case for zero,  negative or positive number.<br />
+&nbsp; 2. For characters the empty string, number string, character string and special character string<br />
+&nbsp; 3. For logical type only the possible TRUE and FALSE values.<br />
+<br />
+Afterwards, checking the intrinsic type attributes of a costumed user defined data type.<br />
+<br />
+The test case is also testing if mold is successful -- This part is limited due to defect 112628<br />
+<br />
+<br />
+<strong><u>2. multAllocSourceMold02.scenario</u></strong><br />
+Abstract: Multiple allocate arrays of intrinsic types from source<br />
+<br />
+This test case is similar to multAllocateWithSource01 except that it allocate an multiple arrays of every intrinsic type.<br />
+<br />
+The test case is also testing if an array of a costumed user defined  data type with intrinsic type attributes with 3 element where the first  element is the default value, has the right values after multiple  allocation<br />
+<br />
+Checking allocation of sub-arrays using mold or source and checking the expected values after allocation.<br />
+<br />
+<br />
+<strong><u>3. multAllocSourceMold03.scenario</u></strong><br />
+Abstract: Multiple allocate polymorphic types<br />
+<br />
+This test case Multiple allocate polymorphic objects from a chain of  inheritance where ZERO (the root super class) contains only an integer  and the every descendant add another intrinsic type as attributes<br />
+For the object attributes of every intrinsic type the test case assigns the following:<br />
+&nbsp; 1. For numbers the value of the varies from negative infinity to  positive infinity where there is at least one test case for zero,  negative or positive number.<br />
+&nbsp; 2. For characters the empty string, number string, character string  and special character string -- This part is not complete due to defect  112510.<br />
+&nbsp; 3. For logical type only the possible TRUE and FALSE values.<br />
+<br />
+FIVE (the last user defined data type) has an attribute of FOUR (the last descendant in the inheritance chain).<br />
+<br />
+<br />
+<strong><u>4. allocateTests01.scenario</u></strong><br />
+Abstract: Multiple allocating polymorphic objects<br />
+<br />
+Trying to multiple allocate, allocatable target, class pointers and type  pointers as well as allocatable arrays of 1d, 2d and 3d. Using source  and mold.<br />
+<br />
+The mold part might be wrong due to defect 112510. The verification file probably needs to be updated ones the defect is fixed.<br />
+<br />
+All the AllocateWithSourceExpXX-08 test cases are a modified version of  test cases from  $(tsrcdir)/F2003/dtparam/allocate/SourceExp/AllocateWithSourceExpXX<br />
+<br />
+<br />
+<strong><u>5. AllocateWithSourceExp01-08.scenario</u></strong><br />
+Test multiple allocation of arrays of the last polymorphic allocatable  object of a chain of inheritance of user defined types containing  arrays.<br />
+<br />
+This is done directly as well as by calling a subroutine.<br />
+<br />
+Also multiple allocate a pointer of the BASE class.<br />
+<br />
+<br />
+<strong><u>6. AllocateWithSourceExp02-08.scenario</u></strong><br />
+Calling a subroutine to multiple allocate pointers of polymorphic type that has a pointer to type of its parent as an attribute.<br />
+<br />
+** Where the source is one of the objects that are passed as arguments to the subroutine<br />
+<br />
+<br />
+<strong><u>7. AllocateWithSourceExp03-08.scenario</u></strong><br />
+Multiple allocating a pointer of polymorphic type where the source is another pointer returned from a function<br />
+<br />
+<br />
+<strong><u>8. AllocateWithSourceExp04-08.scenario</u></strong><br />
+Calling a subroutine to multiple allocate a polymorphic object that has a pointer to type of its parent as an attribute. <br />
+<br />
+** The objects are local to the subroutine but the source is an allocated pointer passed as an argument<br />
+<br />
+<br />
+<strong><u>9. AllocateWithSourceExp05-08.scenario</u></strong><br />
+&nbsp; 1. Calling a subroutine to multiple allocate pointers of the BASE type from a constructor.<br />
+<br />
+&nbsp; 2. Calling a subroutine to multiple allocate the CHILD type using a constructed and a pointers as arguments to the constructor<br />
+&nbsp; <br />
+<br />
+<strong><u>10. AllocateWithSourceExp06-08.scenario</u></strong><br />
+Multiple allocate pointers and objects of polymorphic types using a  constructor then sending to a subroutine as argument that the subroutine  uses as source to allocate again.<br />
+<br />
+The CHILD type has 2 pointers of type BASE (its parent)<br />
+<br />
+<strong><u>11. AllocateWithSourceExp06b-08.scenario</u></strong><br />
+Similar to AllocateWithSourceExp06-08 but allocations in the subroutine are for multiple objects as well.<br />
+<br />
+<strong><u>12. AllocateWithSourceExp07-08.scenario</u></strong><br />
+Similar to but AllocateWithSourceExp06-08 this time the CHILD type has 2 allocatable objects of type BASE (its parent)<br />
+<br />
+<br />
+<strong><u>13. AllocateWithSourceExp08-08.scenario</u></strong><br />
+&nbsp; 1. Multiple allocate pointers of CLASS(*) where the source is allocatable object BASE returned from a function.<br />
+<br />
+&nbsp; 2. Multiple allocate pointers to array of CLASS(*) where the source is allocatable object BASE returned from a function.<br />
+&nbsp;<br />
+&nbsp;<br />
+<strong><u>14. AllocateWithSourceExp09-08.scenario</u></strong><br />
+&nbsp; 1. Multiple allocating pointers of CLASS(*) with constructor of CHILD and pointer to parent as an attribute.<br />
+&nbsp; <br />
+&nbsp; 2. Multiple allocating pointers of the CLASS(*) that are already  allocated without deallocating where the source is another CLASS(*)  pointer to CHILD object.<br />
+<br />
+<br />
+<strong><u>15. AllocateWithSourceExp10-08.scenario</u></strong><br />
+&nbsp; 1. Multiple allocating pointers of defined BASE type from BASE constructor<br />
+&nbsp; <br />
+&nbsp; 2. Taking one of the pointers (b1) and, without deallocating, assigning it the return of a function called SHUFFLE.<br />
+&nbsp; <br />
+&nbsp; SHUFFLE takes the other pointer (c1) as an argument and allocating it to the return.<br />
+&nbsp; The function also take another argument of allocatable BASE object and  multiple allocate it and a local allocatable BASE object using the BASE  constructor.<br />
+&nbsp; <br />
+&nbsp; 3. Taking the other pointer (c1) and associating with the return of a function.<br />
+&nbsp; SHUFFLE takes the first pointer (b1) as an argument and allocating it to the return.<br />
+&nbsp; The function also take another argument of allocatable BASE object and  multiple allocate it and a local allocatable BASE object using the BASE  constructor.<br />
+&nbsp; <br />
+&nbsp; 4. Allocating allocating pointers of undefined BASE where the source is the function SHUFFLE.<br />
+&nbsp; <br />
+&nbsp; 5. Allocating pointers of CLASS(*) where the source is the function SHUFFLE.<br />
+<br />
+<br />
+<strong><u>16. d339326.scenario</u></strong><br />
+Calling a subroutine from a module with 3 arguments,<br />
+1 is N which size of the array and 2 are arrays of size N.<br />
+The subroutine multiple allocate the arrays using source=A(n)([(i, i=1, n)]))<br />
+<br />
+<u><strong>17. AllocateWithMoldExp02-08.scenario</strong></u><br />
+This AllocateWithSourceExp02-08.scenario converted to allocate with mold instead of source<br />
+Calling a function, sub2, check the type of the object and if it as expected it allocates the object with mold.<br />
+Checking the attributes of the allocated objects including the shape, size bounds of its arrays.<strong><u><br />
+<br />
+<br />
+<font size="4">Diagnostic Test Cases:</font><br />
+</u></strong><br />
+* In the following test cases the postfix M stands for Mold and S stands for Source<br />
+<strong><u>1. multAlloWithWrongRank(1/2/3)(M/S).scenario</u></strong><br />
+This scenario test the error message when compiling code with multiple allocate where at least one of the arguments has a different rank then the source<br />
+<br />
+<strong><u>2. multAlloWithWrongType(1/2/3)(M/S).scenario</u></strong><br />
+This scenario test the error message when compiling code with multiple  allocate where at least one of the arguments has is of a different type then  the source<br />
+<br />
+<strong><u>3. multAllocSameVar(M/S).scenario</u></strong><br />
+This scenario test the error message when trying to compile code with multiple allocate of the same variable in the same allocate statement.<br />
+<br />
+<strong><u>4. </u></strong><strong><u>multAllocSourceSource.scenario<strong><u><br />
+</u></strong></u></strong>These scenarios:<br />
+multAllocMoldMold.scenario<br />
+multAllocMoldSource.scenario<br />
+multAllocSourceMold.scenario<br />
+multAllocSourceSource.scenario<br />
+<br />
+Checking the error message when trying to compile allocate statement with more than one MOLD=/SOURCE=.<strong><u><br />
+<br />
+<br />
+</u></strong>
+<p>
+<table width="100%" bgcolor="#bfbfff" cellspacing="0" cellpadding="5" border="1">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Test cases Information</strong></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%Note{This section details the test case location and other test case related information<br />
+<br />
+Technically, this is not part of a &quot;Test plan&quot;.  <br />
+<br />
+Following information may not be known during IT1 time-frame.  If it's known, it should be documented:<br />
+Document information about release name. component name. cmvc location and test cases shadow location<br />
+<br />
+Document information about the feature bucket structure.  If the feature is big enough, sub-buckets will be necessary to maintain some organization. <br />
+<br />
+Document  information about the feature test case naming convention.  <br />
+Example: <br />
+xxx_001f.scenario (functional) <br />
+xxx_001d.scenario (diagnostic) <br />
+where xxx can be the feature name or function name that the test case is testing. <br />
+<br />
+<br />
+If you plan to have a combined IT1 and test case review, further test case information needs to be added to this section:<br />
+Following statement needs to be added::<br />
+&quot;Test case approval will also be done through this document, so no formal test case review document will be published.<br />
+Please review the test cases from the location provided below, and only approve this document if you are satisfied with <br />
+the IT1 (test plan) and the test cases.&quot; <br />
+List of test case names, so that comments can be added per test case; if there are too many test cases, list groups of test cases, or test lists.}%<br />
+<br />
+<strong>Location of new test cases:<br />
+<br />
+</strong>
+<table width="800" height="79" align="" cellspacing="1" cellpadding="1" border="0" summary="">
+    <tbody>
+        <tr>
+            <td>CMVC Family:</td>
+            <td>aix@aix.torolab.ibm.com@1500<br />
+            </td>
+        </tr>
+        <tr>
+            <td>CMVC Component:</td>
+            <td>xlftest.F2008<br />
+            </td>
+        </tr>
+        <tr>
+            <td>CMVC Release:</td>
+            <td>tstdev, tst151<br />
+            </td>
+        </tr>
+        <tr>
+            <td>CMVC path:</td>
+            <td>F2008/AllocMold/func<br />
+            F2008/AllocMold/diag</td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<p>
+<table width="100%" bgcolor="#bfbfff" cellspacing="0" cellpadding="5" border="1">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Build Sanity Candidate(s)</strong></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%Note{List one or more test cases that are to be added to the BDS test list.  <br />
+<br />
+If the test cases are already identified during IT1 time-frame, it should be documented here.<br />
+<br />
+BDS test candidates may not be known until test case review time-frame.&nbsp; Thus not identifying the candidate during IT1 time-frame does not prevent it from being approved.  For this case, a URL  link to RTC task must exist.<br />
+<br />
+Not all features require test cases to be added to BDS.  This must be explicitly stated here (or in RTC task if not known during IT1 time-frame).<br />
+}%<br />
+<br />
+BDS test candidates will be recommended by the Feature Team. <br />
+<p>
+<table width="100%" bgcolor="#bfbfff" cellspacing="0" cellpadding="5" border="1">
+    <tbody>
+        <tr>
+            <td width="100%" valign="top" align="center" style="font-family: Arial; font-size: 12pt;"><strong>Reference</strong></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%Note{I0 Location and any references (including standards) that may help understand the IT1.}%<strong style="color: rgb(0, 128, 0); font-size: 20px;"><br />
+<strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"></strong></strong></strong> </strong><!--HTML Wrapper--></body></html>

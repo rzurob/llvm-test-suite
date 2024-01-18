@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/use/dtpUseInvokeModuleFunction02.scenario
+#FEATURE   = DTP and USE - module procedure
+#CREATOR   = DF Manual Update
+#DATE      = 20080903
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUseInvokeModuleFunction02.f
+#OUTPUT    = dtpUseInvokeModuleFunction02$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUseInvokeModuleFunction02$(OBJ)
+#OUTPUT    = dtpUseInvokeModuleFunction02$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUseInvokeModuleFunction02$(EXE)
+#STDOUT    = dtpUseInvokeModuleFunction02.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUseInvokeModuleFunction02$(product)vf) dtpUseInvokeModuleFunction02.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

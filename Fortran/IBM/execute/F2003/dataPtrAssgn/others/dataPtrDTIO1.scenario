@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrDTIO1.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrDTIO1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrDTIO1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrDTIO1$(OBJ)
+#OUTPUT    = dataPtrDTIO1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrDTIO1$(EXE)
+#STDOUT    = dataPtrDTIO1.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrDTIO1.out $($(tcasedir)dataPtrDTIO1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

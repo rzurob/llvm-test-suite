@@ -1,0 +1,62 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/wait/noIDSpecPending05.scenario
+#FEATURE	= Asynchronous I/O -- WAIT() Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060314
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#IF on (linuxle)
+    XLFRTEOPTS=$(CONVERT_UFMT_IO_ENDIANESS<13,14>)
+#ENDIF
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)noIDSpecPending05.dat.11 fort.11
+#ENDCMD
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)noIDSpecPending05.dat.13 fort.13
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)noIDSpecPending05.f
+#OUTPUT		= noIDSpecPending05$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= noIDSpecPending05$(OBJ)
+#OUTPUT		= noIDSpecPending05$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= noIDSpecPending05$(EXE)
+#STDOUT		= noIDSpecPending05.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)noIDSpecPending05$(product)vf)	\
+				noIDSpecPending05.stdout
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $(tcasedir)noIDSpecPending05.dat.13 fort.14
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= noIDSpecPending05.stdout fort.12
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

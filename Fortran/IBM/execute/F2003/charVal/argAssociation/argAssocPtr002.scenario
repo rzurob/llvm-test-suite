@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/F2003/charVal/argAssociation/argAssocPtr002.scenario
+#FEATURE = Value Attribute with characters > 1
+#CREATOR = Vicram Uppal
+#DATE    = 20060403
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)argAssocPtr002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = argAssocPtr002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = argAssocPtr002$(OBJ)
+#OUTPUT    = argAssocPtr002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = argAssocPtr002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

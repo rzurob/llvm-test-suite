@@ -1,0 +1,5 @@
+"dataPtrC716.f", line 63.3: 1515-104 (S) The target in the pointer assignment statement is not unlimited polymorphic.  The pointer must be type compatible with the target, and the corresponding nondeferred type parameters must be equal.
+"dataPtrC716.f", line 65.3: 1515-104 (S) The target in the pointer assignment statement is not unlimited polymorphic.  The pointer must be type compatible with the target, and the corresponding nondeferred type parameters must be equal.
+"dataPtrC716.f", line 67.3: 1515-104 (S) The target in the pointer assignment statement is not unlimited polymorphic.  The pointer must be type compatible with the target, and the corresponding nondeferred type parameters must be equal.
+** dataptrc716   === End of Compilation 1 ===
+1501-511  Compilation failed for file dataPtrC716.f.

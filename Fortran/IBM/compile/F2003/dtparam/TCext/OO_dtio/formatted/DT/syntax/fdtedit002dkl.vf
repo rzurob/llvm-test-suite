@@ -1,0 +1,12 @@
+** m   === End of Compilation 1 ===
+  79.17   01210089 DT‹in literal FMT specifier‹
+  80.17   01210089 DT‹in literal FMT specifier‹
+  80.19   0151016B in literal FMT specifier‹
+  82.17   01210089 DT‹in literal FMT specifier‹
+  82.19   0151016B in literal FMT specifier‹
+  83.17   01210089 DT‹in literal FMT specifier‹
+  83.24   0121009C 12345‹)‹in literal FMT specifier‹
+** fdtedit002dkl   === End of Compilation 2 ===
+** readformatted   === End of Compilation 3 ===
+** writeformatted   === End of Compilation 4 ===
+1501-510  Compilation successful for file fdtedit002dkl.f.

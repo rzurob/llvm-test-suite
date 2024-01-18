@@ -1,0 +1,4 @@
+ WRITE() < 202 > 1525-202 The ID= specifier is not allowed in a child WRITE statement. The program will recover by ignoring the child WRITE statement.
+                                                                                                                          
+ READ() < 202 > 1525-202 The ASYNCHRONOUS= specifier is not allowed in a child READ statement. The program will recover by ignoring the child READ statement.
+                                                                                                                  

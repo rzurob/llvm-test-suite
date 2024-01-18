@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BImplTypeProt.scenario
+#FEATURE   = F2008 BLOCK - implicit typing (var appears in PROTECTED statement)
+#CREATOR   = DF Manual Update
+#DATE      = 20101214
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)BImplTypeProt.f
+#OUTPUT    = BImplTypeProt$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = BImplTypeProt$(OBJ)
+#OUTPUT    = BImplTypeProt$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = BImplTypeProt$(EXE)
+#STDOUT    = BImplTypeProt.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)BImplTypeProt$(product)vf) BImplTypeProt.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/section10.6/integer001a.scenario
+#FEATURE = OO_dtio/formatted tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)integer001a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = integer001a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  integer001a$(OBJ)
+#OUTPUT    = integer001a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = integer001a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

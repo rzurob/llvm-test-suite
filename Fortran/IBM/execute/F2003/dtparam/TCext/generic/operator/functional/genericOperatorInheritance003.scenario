@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/operator/functional/genericOperatorInheritance003.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericOperatorInheritance003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericOperatorInheritance003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericOperatorInheritance003$(OBJ)
+#OUTPUT    = genericOperatorInheritance003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericOperatorInheritance003$(EXE)
+#STDOUT    = genericOperatorInheritance003.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericOperatorInheritance003.out $(tcasedir)genericOperatorInheritance003.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

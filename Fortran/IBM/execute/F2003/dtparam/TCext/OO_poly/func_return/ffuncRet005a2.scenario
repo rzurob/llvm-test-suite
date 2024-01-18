@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/func_return/ffuncRet005a2.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071006
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ffuncRet005a2.f
+#OPTS = -qxlf2003=dynamicacval
+#OUTPUT    = ffuncRet005a2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = ffuncRet005a2$(OBJ)
+#OUTPUT    = ffuncRet005a2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ffuncRet005a2$(EXE)
+#STDOUT    = ffuncRet005a2.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = ffuncRet005a2.out $($(tcasedir)ffuncRet005a2$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

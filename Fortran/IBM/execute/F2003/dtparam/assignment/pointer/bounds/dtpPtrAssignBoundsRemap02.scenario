@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/assignment/pointer/bounds/dtpPtrAssignBoundsRemap02.scenario
+#FEATURE	= POINTER Assignment (with Bounds Specification/Remapping)
+#CREATOR	= Glen Mateer
+#DATE		= 20090310
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)dtpPtrAssignBoundsRemap02.f
+#OUTPUT		= dtpPtrAssignBoundsRemap02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= dtpPtrAssignBoundsRemap02$(OBJ)
+#OUTPUT		= dtpPtrAssignBoundsRemap02$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= dtpPtrAssignBoundsRemap02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

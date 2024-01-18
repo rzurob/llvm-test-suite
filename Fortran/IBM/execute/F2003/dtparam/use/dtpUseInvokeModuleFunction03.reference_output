@@ -1,0 +1,12 @@
+ A: start
+ B: tinker(4,*) k= 4 4 l= 5 5 data= 20 20 20 20 20
+ C: tink(4) k= 4 4 data= 21
+ D: tilk, l= 5 data= 22 22 22 22 22
+ E: tinker(2,*) k= 2 2 l= 3 3 data= 23 23 23
+ F: tink(2) k= 2 2 data= 24
+ G: tinker(4,*) k= 4 4 l= 5 5 data= 20 20 20 20 20 223 223
+ H: tink(4) k= 4 4 data= 21 -102
+ I: tilk, l= 5 data= 22 22 22 22 22 13530 110
+ J: tinker(2,*) k= 2 2 l= 3 3 data= 23 23 23 12167
+ K: tink(2) k= 2 2 data= 24 576
+ L: end

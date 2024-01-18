@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       assumchar.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)assumchar.f
+#OUTPUT= assumchar$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  assumchar$(OBJ)
+#OUTPUT= assumchar$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  assumchar$(EXE)
+#STDOUT= assumchar.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = assumchar.out $(tcasedir)assumchar.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

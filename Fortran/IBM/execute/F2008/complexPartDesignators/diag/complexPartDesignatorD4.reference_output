@@ -1,0 +1,18 @@
+"complexPartDesignatorD4.f", line 54.25: 1515-022 (S) Syntax Error: Extra token " % " was found. The token is ignored.
+"complexPartDesignatorD4.f", line 54.26: 1515-022 (S) Syntax Error: Extra token " re " was found. The token is ignored.
+"complexPartDesignatorD4.f", line 55.25: 1515-022 (S) Syntax Error: Extra token " % " was found. The token is ignored.
+"complexPartDesignatorD4.f", line 55.26: 1515-022 (S) Syntax Error: Extra token " im " was found. The token is ignored.
+"complexPartDesignatorD4.f", line 66.13: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"complexPartDesignatorD4.f", line 67.13: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"complexPartDesignatorD4.f", line 68.4: 1515-038 (S) Only an object with the POINTER attribute is permitted on the left hand side of a pointer assignment.
+"complexPartDesignatorD4.f", line 69.4: 1515-038 (S) Only an object with the POINTER attribute is permitted on the left hand side of a pointer assignment.
+"complexPartDesignatorD4.f", line 70.15: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"complexPartDesignatorD4.f", line 71.15: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"complexPartDesignatorD4.f", line 84.13: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"complexPartDesignatorD4.f", line 85.13: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"complexPartDesignatorD4.f", line 87.7: 1515-038 (S) Only an object with the POINTER attribute is permitted on the left hand side of a pointer assignment.
+"complexPartDesignatorD4.f", line 88.7: 1515-038 (S) Only an object with the POINTER attribute is permitted on the left hand side of a pointer assignment.
+"complexPartDesignatorD4.f", line 90.15: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"complexPartDesignatorD4.f", line 91.15: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file complexPartDesignatorD4.f.

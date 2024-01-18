@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       InitExpDefArrConstr1.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       03-20-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)InitExpDefArrConstr1.f
+#OUTPUT= InitExpDefArrConstr1$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  InitExpDefArrConstr1$(OBJ)
+#OUTPUT= InitExpDefArrConstr1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  InitExpDefArrConstr1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

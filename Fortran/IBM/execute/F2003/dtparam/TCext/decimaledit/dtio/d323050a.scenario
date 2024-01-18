@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/decimaledit/dtio/d323050a.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of decimaledit/*
+#DATE      = 20071213
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d323050a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = d323050a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d323050a$(OBJ)
+#OUTPUT    = d323050a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d323050a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

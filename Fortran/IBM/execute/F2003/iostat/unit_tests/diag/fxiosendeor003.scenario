@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=fxiosendeor003.scenario
+#FEATURE = diagnostic test for is_iostat_end and is_iostat_eor
+#CREATOR = Bardia Mahjour
+#DATE    = 20050817
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+! Deconstructing a POSTCMD SCRIPT : POSTdeconSCRIPT
+! Valid line : $COMPILER $(OPT_FIXED_SOURCE_FORM) -qdebug=intmsg -c -Q -O $OPTIONS $TR_SRC/$1.f -lxlfzz2  -c > $1.out 2>&1
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)fxiosendeor003.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM) -qdebug=intmsg -Q -O -lxlfzz2
+#STDOUT    = fxiosendeor003.out
+#STDERR    = fxiosendeor003.out
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+! Valid line : diff $1.out $TR_SRC/$1.vf
+
+#CMD       = DIFF
+#INPUT     = fxiosendeor003.out $($(tcasedir)fxiosendeor003$(product)vf)
+#OPTS      = -b
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

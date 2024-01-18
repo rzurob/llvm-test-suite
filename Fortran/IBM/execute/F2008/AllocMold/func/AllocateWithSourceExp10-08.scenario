@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/allocate/SourceExp/AllocateWithSourceExp10-08.f
+#FEATURE   = DTP - Allocate with source expression
+#CREATOR   = Izhak Jakov
+#DATE      = 20090126
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AllocateWithSourceExp10-08.f
+#OUTPUT    = AllocateWithSourceExp10-08$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = AllocateWithSourceExp10-08$(OBJ)
+#OUTPUT    = AllocateWithSourceExp10-08$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = AllocateWithSourceExp10-08$(EXE)
+#STDOUT    = AllocateWithSourceExp10-08.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

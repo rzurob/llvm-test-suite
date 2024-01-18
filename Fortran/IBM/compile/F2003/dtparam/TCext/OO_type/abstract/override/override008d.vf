@@ -1,0 +1,4 @@
+"override008d.f", line 46.38: 1514-586 (S) Overridden binding setid, defined in type base, does not have the PRIVATE attribute.  The overriding binding must not have the PRIVATE attribute.
+** n   === End of Compilation 1 ===
+** override008d   === End of Compilation 2 ===
+1501-511  Compilation failed for file override008d.f.

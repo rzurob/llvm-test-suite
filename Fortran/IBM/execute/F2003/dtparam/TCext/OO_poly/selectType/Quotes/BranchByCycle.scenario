@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/selectType/Quotes/BranchByCycle.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071004
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)BranchByCycle.f
+#OUTPUT= BranchByCycle$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  BranchByCycle$(OBJ)
+#OUTPUT= BranchByCycle$(EXE)
+#ENDCMD
+
+#CMD = RUN
+#INPUT=  BranchByCycle$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

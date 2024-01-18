@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/typebnd/specific/dtpOverride003d.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpOverride003d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtpOverride003d$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = dtpOverride003d.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = dtpOverride003d.err $($(tcasedir)dtpOverride003d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

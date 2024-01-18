@@ -1,0 +1,9 @@
+ finalized : 0
+ finalized : 10
+ finalized : 20
+ inside neg
+ finalized : 10
+ finalized : -20
+ inside neg
+ finalized : 20
+ finalized : 20

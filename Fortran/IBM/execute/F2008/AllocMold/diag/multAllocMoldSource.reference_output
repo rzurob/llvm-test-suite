@@ -1,0 +1,3 @@
+"multAllocMoldSource.f", line 7.28: 1516-353 (S) The SOURCE= and MOLD= specifiers must not both appear in the same ALLOCATE statement.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file multAllocMoldSource.f.

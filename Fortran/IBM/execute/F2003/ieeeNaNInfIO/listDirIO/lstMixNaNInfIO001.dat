@@ -1,0 +1,8 @@
+(nan,nan) inf (-inf,nan) nan (nan, inf) -inf
+(nan(q), nan(s)) nan() (-nan(q),+nan(q)) +nan(s) (+infinity,-infinity) +inf
+(infinity, -infinity) +infinity (nan(), nan()) -INF (infinity,nan) -nan(s)
+(nan(q),nan(ss)) nan(qq) (-nan(ss),nan(abcd)) inf (inf,inf) -nan()
+(nan(s),NaN(S)) nan(qq) (-nan(s),nan(s)) inf (+nan(s),inf) -nan()
+(-nan, +nan()) infinity (infinity,infinity) nan(1) (infinity,inf) nan(23)
+(nan(abcd123), nan(123abcd)) -inf (inf,infinity) nan(a_1_b_2) (nan(a_1_b_2), nan(s)) +nan(S)
+(nan(1_a_2_b), -nan(1_a_2_b)) inf (-nan(_), nan(__)) nan(_abc) (inf, nan(_12abc)) -nan(_s_)

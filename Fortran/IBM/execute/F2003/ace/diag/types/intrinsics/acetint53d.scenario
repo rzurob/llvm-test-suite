@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint53d.scenario
+#FEATURE	= Array constructor enhancement - ac-do-variable name choice
+#CREATOR	= DF Manual Update
+#DATE		= 20061117
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint53d.f
+#OUTPUT		= acetint53d$(OBJ)
+#STDERR		= acetint53d.stderr
+#VALIDRCS       = $(RC_COMP_S)
+#ENDCMD
+
+#CMD            = XLDIFF
+#INPUT          = $($(tcasedir)acetint53d$(product)vf) acetint53d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,6 @@
+"kindArgCount1.f", line 47.28: 1513-143 (S) Invalid KIND value.
+"kindArgCount1.f", line 48.28: 1513-143 (S) Invalid KIND value.
+"kindArgCount1.f", line 49.17: 1513-143 (S) Invalid KIND value.
+"kindArgCount1.f", line 51.35: 1513-143 (S) Invalid KIND value.
+** kindargcount1   === End of Compilation 1 ===
+1501-511  Compilation failed for file kindArgCount1.f.

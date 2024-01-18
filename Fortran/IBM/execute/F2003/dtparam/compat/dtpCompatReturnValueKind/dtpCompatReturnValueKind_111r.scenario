@@ -1,0 +1,50 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/compat/dtpCompatReturnValueKind/dtpCompatReturnValueKind_111.scenario
+#FEATURE   = Broken Compatability Warning - DTP code returns pointer to extended type with KIND type parameter
+! - latest PTF, v. 11.1
+#CREATOR   = DF Manual Update
+#DATE      = 20090613
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+#REQUIRED_PRODUCT = rhel
+#REQUIRED_RESOURCES = RHEL5UP
+#INVALID_PRODUCT=linuxle
+#ENDENV
+
+#BEGINCONTROL
+
+! Compile "pre-DTP" files with the latest 11.1 PTF compiler,
+! compile "post-DTP" files with the latest version of the latest compiler for RHEL,
+! link with the latest version of the latest compiler,
+! run:  DTP with KIND parameters alone generates no error message
+
+#CMD       = V111_XLF2003_COMPILE_RHEL
+#INPUT     = $(tcasedir)dtpCompatReturnValueKindPreDTP.f
+#OUTPUT    = dtpCompatReturnValueKindPreDTP$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)dtpCompatReturnValueKindPostDTP.f
+#OUTPUT    = dtpCompatReturnValueKindPostDTP$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = dtpCompatReturnValueKindPostDTP$(OBJ) dtpCompatReturnValueKindPreDTP$(OBJ)
+#OUTPUT    = dtpCompatReturnValueKind$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpCompatReturnValueKind$(EXE)
+#STDOUT    = dtpCompatReturnValueKind.out
+#STDERR    = dtpCompatReturnValueKind.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpCompatReturnValueKind$(product)vf) dtpCompatReturnValueKind.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

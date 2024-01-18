@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/dummy_arg/deferlen/dummyArgDeferNonPolyMis02.scenario
+#FEATURE   = 358458
+#CREATOR   = Nancy Wang
+#DATE      = Nov. 12 2008
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)dummyArgDeferNonPolyMis02.f
+#OUTPUT= dummyArgDeferNonPolyMis02$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = dummyArgDeferNonPolyMis02$(OBJ)
+#OUTPUT= dummyArgDeferNonPolyMis02$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = dummyArgDeferNonPolyMis02$(EXE)
+#STDOUT= dummyArgDeferNonPolyMis02.out
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT  = $($(tcasedir)dummyArgDeferNonPolyMis02$(product)vf) dummyArgDeferNonPolyMis02.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/iomsg/misc/fxiomsgm004.scenario
+#FEATURE = iomsg tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#INVALID_PRODUCT= bgl
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)fxiomsgm004.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fxiomsgm004$(OBJ)
+#ENDCMD
+
+#CMD       = XLF_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  fxiomsgm004$(OBJ)
+#OUTPUT    = fxiomsgm004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxiomsgm004$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)fxiomsgm004$(product)vf) fort.18
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

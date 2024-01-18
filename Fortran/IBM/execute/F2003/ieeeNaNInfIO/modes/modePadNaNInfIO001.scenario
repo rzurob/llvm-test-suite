@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = modePadNaNInfIO001.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = July 4, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)modePadNaNInfIO001.dat
+#OUTPUT   = modePadNaNInfIO001.dat
+#ENDCMD
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)modePadNaNInfIO001.f
+#OUTPUT   =  modePadNaNInfIO001$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  modePadNaNInfIO001$(OBJ)
+#OUTPUT   =  modePadNaNInfIO001$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  modePadNaNInfIO001$(EXE)
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = modePadNaNInfIO001.out $(tcasedir)modePadNaNInfIO001.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

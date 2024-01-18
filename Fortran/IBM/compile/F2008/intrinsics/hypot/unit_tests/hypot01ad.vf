@@ -1,0 +1,8 @@
+"hypot01a.f", line 3.23: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"hypot01a.f", line 5.23: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"hypot01a.f", line 7.23: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"hypot01a.f", line 7.30: 1518-256 (L) The intrinsic procedure hypot (with these arguments) is not permitted by the Fortran 2003 standard.
+"hypot01a.f", line 8.23: 1518-377 (L) Implied-shape arrays are not permitted by the Fortran 2003 standard.
+"hypot01a.f", line 21.14: 1518-256 (L) The intrinsic procedure hypot (with these arguments) is not permitted by the Fortran 2003 standard.
+** _main   === End of Compilation 1 ===
+1501-510  Compilation successful for file hypot01a.f.

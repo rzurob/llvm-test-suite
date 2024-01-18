@@ -1,0 +1,30 @@
+ D1: ABCDabcdefghijklmnopqrstuvwx
+ D2: ABCDabcdefghijklmnopqrstuvwx
+ D3: 2 4 2 uvwxqrstuvwx
+ D4: 6 ijklmnopqrstuvwxabcdefgh
+ D5: ABCDabcdefghefghijklmnopqrstuvwxuvwx
+ D6: ijkl
+ D7: BCDEfghifghivwxy
+ D8: bcdefghijklmnopqrstuvwxy
+ D9: jklmnopqrstuvwxy
+ A1: ABCDefghuvwxmnop
+ A2: ABCDefghuvwxmnop
+ A3: uvwx
+ A4: 4 ABCDefghuvwxmnop
+ A5: uvwx
+ A6: BCDEfghivwxynopq
+ D1: ABCDEFGHIJKLMNOPQRSTUabcdefghijklmnopqrstuvwxy123
+ D2: ABCDEFGHIJKLMNOPQRSTUabcdefghijklmnopqrstuvwxy123
+ D3: 2 4 2 vwxy123opqrstuvwxy123
+ D4: 6 abcdefghijklmnopqrstuvwxy123HIJKLMNOPQRSTU
+ D5: ABCDEFGHIJKLMNOPQRSTUOPQRSTUabcdefghijklmnopqrstuvwxy123vwxy123
+ D6: abcdefg
+ D7: BCDEFGHPQRSTUVPQRSTUVwxyz234
+ D8: IJKLMNOPQRSTUVbcdefghijklmnopqrstuvwxyz234
+ D9: bcdefghijklmnopqrstuvwxyz234
+ A1: ABCDEFGOPQRSTUvwxy123hijklmn
+ A2: ABCDEFGOPQRSTUvwxy123hijklmn
+ A3: vwxy123
+ A4: 4 ABCDEFGOPQRSTUvwxy123hijklmn
+ A5: vwxy123
+ A6: BCDEFGHPQRSTUVwxyz234ijklmno

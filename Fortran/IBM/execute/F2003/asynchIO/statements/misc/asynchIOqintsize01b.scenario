@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/misc/asynchIOqintsize01b.scenario
+#FEATURE	= Asynchronous I/O -- Miscellaneous
+#CREATOR	= GM Manual Creation
+#DATE		= 20060412
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#IF on (linuxle)
+    XLFRTEOPTS=$(CONVERT_UFMT_IO_ENDIANESS<204>)
+#ENDIF
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_INTSIZE_4)
+#INPUT		= $(tcasedir)asynchIOqintsize01.f
+#OUTPUT		= asynchIOqintsize01b$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= asynchIOqintsize01b$(OBJ)
+#OUTPUT		= asynchIOqintsize01b$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= asynchIOqintsize01b$(EXE)
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)asynchIOqintsize01$(product)vf) fort.204
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

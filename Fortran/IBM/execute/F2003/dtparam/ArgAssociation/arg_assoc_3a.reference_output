@@ -1,0 +1,5 @@
+ in sub1:
+ this%n= 4
+ dt%n= 4
+ this%arr= 1 2 3 4
+ dt%arr= 1 2 3 4

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/derived/acetdt55.scenario
+#FEATURE	= Array constructor enhancement ALLOCATE of polymorphic entity with AC SOURCE
+#CREATOR	= DF Manual Update
+#DATE		= 20061123
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt55.f
+#OUTPUT		= acetdt55$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt55$(OBJ)
+#OUTPUT		= acetdt55$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt55$(EXE)
+#STDOUT		= acetdt55.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetdt55$(product)vf) acetdt55.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

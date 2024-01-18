@@ -1,0 +1,20 @@
+"contiguous06d.f", line 41.17: 1515-173 (S) A pointer declared with the CONTIGUOUS attribute must only be pointer-associated with a contiguous target.
+"contiguous06d.f", line 48.17: 1515-173 (S) A pointer declared with the CONTIGUOUS attribute must only be pointer-associated with a contiguous target.
+"contiguous06d.f", line 53.17: 1515-173 (S) A pointer declared with the CONTIGUOUS attribute must only be pointer-associated with a contiguous target.
+"contiguous06d.f", line 54.17: 1515-173 (S) A pointer declared with the CONTIGUOUS attribute must only be pointer-associated with a contiguous target.
+"contiguous06d.f", line 55.17: 1515-173 (S) A pointer declared with the CONTIGUOUS attribute must only be pointer-associated with a contiguous target.
+"contiguous06d.f", line 56.17: 1515-173 (S) A pointer declared with the CONTIGUOUS attribute must only be pointer-associated with a contiguous target.
+"contiguous06d.f", line 57.17: 1515-173 (S) A pointer declared with the CONTIGUOUS attribute must only be pointer-associated with a contiguous target.
+"contiguous06d.f", line 62.17: 1515-173 (S) A pointer declared with the CONTIGUOUS attribute must only be pointer-associated with a contiguous target.
+"contiguous06d.f", line 70.17: 1515-173 (S) A pointer declared with the CONTIGUOUS attribute must only be pointer-associated with a contiguous target.
+"contiguous06d.f", line 71.17: 1515-173 (S) A pointer declared with the CONTIGUOUS attribute must only be pointer-associated with a contiguous target.
+"contiguous06d.f", line 72.17: 1515-173 (S) A pointer declared with the CONTIGUOUS attribute must only be pointer-associated with a contiguous target.
+"contiguous06d.f", line 73.17: 1515-173 (S) A pointer declared with the CONTIGUOUS attribute must only be pointer-associated with a contiguous target.
+"contiguous06d.f", line 74.17: 1515-173 (S) A pointer declared with the CONTIGUOUS attribute must only be pointer-associated with a contiguous target.
+"contiguous06d.f", line 77.17: 1515-173 (S) A pointer declared with the CONTIGUOUS attribute must only be pointer-associated with a contiguous target.
+"contiguous06d.f", line 78.17: 1515-173 (S) A pointer declared with the CONTIGUOUS attribute must only be pointer-associated with a contiguous target.
+"contiguous06d.f", line 79.17: 1515-173 (S) A pointer declared with the CONTIGUOUS attribute must only be pointer-associated with a contiguous target.
+"contiguous06d.f", line 80.17: 1515-173 (S) A pointer declared with the CONTIGUOUS attribute must only be pointer-associated with a contiguous target.
+"contiguous06d.f", line 81.17: 1515-173 (S) A pointer declared with the CONTIGUOUS attribute must only be pointer-associated with a contiguous target.
+** contiguous06d   === End of Compilation 1 ===
+1501-511  Compilation failed for file contiguous06d.f.

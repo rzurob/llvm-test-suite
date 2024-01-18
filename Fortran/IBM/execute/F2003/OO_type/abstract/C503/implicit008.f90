@@ -1,0 +1,99 @@
+!#######################################################################
+! SCCS ID Information
+! %W%, %I%
+! Extract Date/Time: %D% %T%
+! Checkin Date/Time: %E% %U%
+!#######################################################################
+! *********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: implicit008.f
+! %VERIFY: 
+! %STDIN:
+! %STDOUT: 
+! %EXECARGS:
+! %POSTCMD: 
+! %END
+! *********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*  ===================================================================
+!*
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Robert Ma
+!*  DATE                       : 09/28/2004
+!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
+!*                             :
+!*
+!*  PRIMARY FUNCTIONS TESTED   :
+!*                             :
+!*  SECONDARY FUNCTIONS TESTED :
+!*
+!*  DRIVER STANZA              : xlf95
+!*
+!*  DESCRIPTION                : Testing: Implicit statement
+!*                                        Implicit polymorphic abstract type array with allocate statement and pointer assignment
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!* ===================================================================
+!*
+!*  REVISION HISTORY
+!*
+!*  MM/DD/YY:  Init:  Comments:
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+module m
+   
+   type, abstract :: base
+      integer :: id
+      contains
+         procedure(getif), pass, deferred :: getid
+   end type
+   
+   type, extends(base) :: child
+      integer :: rid
+      contains
+         procedure, pass :: getid
+   end type
+   
+   interface
+      integer function getif(a)
+         import base
+         class(base), intent(in) :: a
+      end function
+   end interface
+
+contains
+   integer function getid(a)
+      class(child), intent(in) :: a
+      getid = a%rid
+   end function
+end module
+
+program implicit008
+   use m
+   implicit class(base) (B)
+   
+   allocatable :: b1, b2(:)
+   pointer :: b3(:)
+   target :: b2
+   allocate(child:: b1,b2(5),b3(0))
+   
+   deallocate (b1, b2, b3)
+   
+   allocate(b1, source = child(2,3) )
+   allocate(b2(2), source = (/child(2,3),child(3,4)/) )
+   b3 => b2
+   
+   if ((b1%id .ne. 2) .or. (b1%getid()) .ne. 3) error stop 1_4
+   if ((b3(1)%id .ne. 2) .or. (b3(1)%getid()) .ne. 3) error stop 2_4
+   if ((b2(1)%id .ne. 2) .or. (b2(1)%getid()) .ne. 3) error stop 3_4
+   if ((b3(2)%id .ne. 3) .or. (b3(2)%getid()) .ne. 4) error stop 4_4
+   if ((b2(2)%id .ne. 3) .or. (b2(2)%getid()) .ne. 4) error stop 5_4 
+   
+end program

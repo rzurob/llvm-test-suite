@@ -1,0 +1,65 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/coarray/error_stop/func/error_stop_042f.scenario
+#FEATURE    = CAF: ERROR STOP statement (feature #351605.31)
+#CREATOR    = Grigor Nikolov
+#DATE       = 20100828
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)error_stop_042f.f
+#OUTPUT     = error_stop_042f$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#INPUT      = error_stop_042f$(OBJ)
+#OUTPUT     = error_stop_042f$(EXE)
+#ENDCMD
+
+#CMD        = MPRUN
+#INPUT      = error_stop_042f$(EXE)
+#STDOUT     = error_stop_042f.out
+#STDERR     = error_stop_042f.out
+#VALIDRCS   = 1
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "ERROR STOP Correct end"
+#INPUT      = error_stop_042f.out
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -c "Begin of image #"
+#INPUT      = error_stop_042f.out
+#STDOUT     = error_stop_042f_begin
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -c "End of image #"
+#INPUT      = error_stop_042f.out
+#STDOUT     = error_stop_042f_end
+#ENDCMD
+
+#CMD        = DIFF
+#INPUT      = error_stop_042f_begin error_stop_042f_end
+#VALIDRCS   = 1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

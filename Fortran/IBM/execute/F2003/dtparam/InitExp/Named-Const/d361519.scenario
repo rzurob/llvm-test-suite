@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/allocate/TypeSpec/d361519.f
+#FEATURE   = DTP
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20090426
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d361519.f
+#OUTPUT    = d361519$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d361519$(OBJ)
+#OUTPUT    = d361519$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d361519$(EXE)
+#STDOUT    = d361519.out
+#ENDCMD
+
+#CMD       = DIFF
+#OPTS      = -b
+#INPUT     = d361519.out $(tcasedir)d361519.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

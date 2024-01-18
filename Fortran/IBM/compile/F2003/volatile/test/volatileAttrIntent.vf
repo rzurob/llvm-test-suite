@@ -1,0 +1,6 @@
+"volatileAttrIntent.f", line 27.19: 1518-208 (L) The entity x is not permitted to have both the INTENT(IN) attribute and the VOLATILE attribute by the Fortran 2003 standard.
+"volatileAttrIntent.f", line 34.31: 1516-271 (S) Dummy argument x of procedure arraysectionvolatile was specified with the VOLATILE attribute.  The corresponding actual argument must be definable.
+** volatileattrintent   === End of Compilation 1 ===
+"volatileAttrIntent.f", line 41.17: 1518-208 (L) The entity x is not permitted to have both the INTENT(IN) attribute and the VOLATILE attribute by the Fortran 2003 standard.
+** arraysectionvolatile   === End of Compilation 2 ===
+1501-511  Compilation failed for file volatileAttrIntent.f.

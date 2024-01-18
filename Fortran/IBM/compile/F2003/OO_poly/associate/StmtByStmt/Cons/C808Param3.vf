@@ -1,0 +1,3 @@
+"C808Param3.f", line 49.9: 1511-139 (S) Associate name as1 is not associated with an entity that can be defined. as1 must not be redefined or become undefined.
+** c808param3   === End of Compilation 1 ===
+1501-511  Compilation failed for file C808Param3.f.

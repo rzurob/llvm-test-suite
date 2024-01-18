@@ -1,0 +1,9 @@
+"AllocPtr04d.f", line 36.52: 1514-788 (S) p1 was declared with the CONTIGUOUS attribute. p1 must be an array pointer, an array pointer component, an assumed-shape array, or an assumed-rank object.
+"AllocPtr04d.f", line 37.52: 1513-264 (S) Procedure mysubroutine is declared with the BIND(C) attribute.  Dummy argument p2 of mysubroutine must not have both the CONTIGUOUS and the POINTER attributes.
+"AllocPtr04d.f", line 39.27: 1513-264 (S) Procedure mysubroutine is declared with the BIND(C) attribute.  Dummy argument p3 of mysubroutine must not have both the CONTIGUOUS and the POINTER attributes.
+** _main   === End of Compilation 1 ===
+"AllocPtr04d.f", line 51.48: 1514-788 (S) p1 was declared with the CONTIGUOUS attribute. p1 must be an array pointer, an array pointer component, an assumed-shape array, or an assumed-rank object.
+"AllocPtr04d.f", line 53.20: 1513-264 (S) Procedure mysubroutine is declared with the BIND(C) attribute.  Dummy argument p2 of mysubroutine must not have both the CONTIGUOUS and the POINTER attributes.
+"AllocPtr04d.f", line 55.23: 1513-264 (S) Procedure mysubroutine is declared with the BIND(C) attribute.  Dummy argument p3 of mysubroutine must not have both the CONTIGUOUS and the POINTER attributes.
+** mysubroutine   === End of Compilation 2 ===
+1501-511  Compilation failed for file AllocPtr04d.f.

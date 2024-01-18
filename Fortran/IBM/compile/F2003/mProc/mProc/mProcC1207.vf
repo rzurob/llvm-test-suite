@@ -1,0 +1,9 @@
+"mProcC1207.f", line 51.17: 1516-270 (E) Entity intsub must be a procedure pointer, external procedure, dummy procedure, or a module procedure, and must have an explicit interface. intsub is ignored.
+** m   === End of Compilation 1 ===
+"mProcC1207.f", line 67.16: 1514-146 (E) Invalid statement found within an interface block. Executable statement, statement function or syntax error encountered.
+"mProcC1207.f", line 68.16: 1514-146 (E) Invalid statement found within an interface block. Executable statement, statement function or syntax error encountered.
+"mProcC1207.f", line 73.15: 1516-270 (E) Entity sfun must be a procedure pointer, external procedure, dummy procedure, or a module procedure, and must have an explicit interface. sfun is ignored.
+"mProcC1207.f", line 78.15: 1516-270 (E) Entity impproc must be a procedure pointer, external procedure, dummy procedure, or a module procedure, and must have an explicit interface. impproc is ignored.
+"mProcC1207.f", line 83.15: 1516-270 (E) Entity sin must be a procedure pointer, external procedure, dummy procedure, or a module procedure, and must have an explicit interface. sin is ignored.
+** mprocc1207   === End of Compilation 2 ===
+1501-510  Compilation successful for file mProcC1207.f.

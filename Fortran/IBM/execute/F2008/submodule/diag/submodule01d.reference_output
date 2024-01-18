@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+** m2   === End of Compilation 2 ===
+"submodule01d.f", line 57.21: 1514-245 (S) Identifier sub is accessed by use association. It must not be redeclared or initialized.
+"submodule01d.f", line 57.21: 1513-269 (S) Separate module procedure sub must be declared in a separate interface body in the containing program unit or an ancestor of that program unit.
+** b   === End of Compilation 3 ===
+** submodule01d   === End of Compilation 4 ===
+1501-511  Compilation failed for file submodule01d.f.

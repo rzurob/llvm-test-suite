@@ -1,0 +1,29 @@
+** mod   === End of Compilation 1 ===
+"acesynt12dl.f", line 68.30: 1515-019 (S) Syntax is incorrect.
+"acesynt12dl.f", line 69.33: 1515-019 (S) Syntax is incorrect.
+"acesynt12dl.f", line 70.36: 1515-019 (S) Syntax is incorrect.
+"acesynt12dl.f", line 71.32: 1515-022 (S) Syntax Error: Extra token " integer " was found. The token is ignored.
+"acesynt12dl.f", line 71.39: 1515-022 (S) Syntax Error: Extra token " :: " was found. The token is ignored.
+"acesynt12dl.f", line 72.15: 1515-019 (S) Syntax is incorrect.
+"acesynt12dl.f", line 73.25: 1516-036 (S) Entity integer has undefined type.
+"acesynt12dl.f", line 73.32: 1515-022 (S) Syntax Error: Extra token " :: " was found. The token is ignored.
+"acesynt12dl.f", line 77.30: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt12dl.f", line 77.54: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt12dl.f", line 77.71: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt12dl.f", line 78.30: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt12dl.f", line 78.54: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt12dl.f", line 78.71: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt12dl.f", line 79.30: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt12dl.f", line 79.54: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt12dl.f", line 79.71: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt12dl.f", line 80.30: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt12dl.f", line 80.54: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt12dl.f", line 80.71: 1516-069 (E) All elements in an array constructor must have the same type and type parameters. The most appropriate type will be used.
+"acesynt12dl.f", line 81.30: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt12dl.f", line 82.30: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt12dl.f", line 83.30: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt12dl.f", line 89.40: 1516-044 (S) A conversion from type LOGICAL is not permitted.
+"acesynt12dl.f", line 90.40: 1516-044 (S) A conversion from type CHARACTER is not permitted.
+"acesynt12dl.f", line 91.40: 1516-044 (S) A conversion from type derived is not permitted.
+** acesynt12dl   === End of Compilation 2 ===
+1501-511  Compilation failed for file acesynt12dl.f.

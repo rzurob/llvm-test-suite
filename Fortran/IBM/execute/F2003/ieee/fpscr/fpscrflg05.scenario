@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/ieee/fpscr/fpscrflg05.scenario
+#FEATURE = ieee tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)fpscrflg05.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION)
+#OUTPUT    = fpscrflg05$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     =  fpscrflg05$(OBJ)
+#OUTPUT    = fpscrflg05$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fpscrflg05$(EXE)
+#STDOUT    = fpscrflg05.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

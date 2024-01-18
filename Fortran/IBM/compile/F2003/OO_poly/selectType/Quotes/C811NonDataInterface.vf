@@ -1,0 +1,5 @@
+"C811NonDataInterface.f", line 53.23: 1516-001 (S) Identifier nondata was elsewhere defined or used as a subroutine.
+"C811NonDataInterface.f", line 54.13: 1511-112 (S) The selector in the SELECT TYPE statement is not unlimited polymorphic.  Intrinsic type CHARACTER must not appear in the TYPE IS statement.
+"C811NonDataInterface.f", line 56.13: 1511-112 (S) The selector in the SELECT TYPE statement is not unlimited polymorphic.  Intrinsic type INTEGER must not appear in the TYPE IS statement.
+** c811nondatainterface   === End of Compilation 1 ===
+1501-511  Compilation failed for file C811NonDataInterface.f.

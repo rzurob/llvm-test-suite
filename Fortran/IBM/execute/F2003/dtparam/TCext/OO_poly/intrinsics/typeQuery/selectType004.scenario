@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/typeQuery/selectType004.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071001
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)selectType004.f
+#OUTPUT    = selectType004$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = selectType004$(OBJ)
+#OUTPUT    = selectType004$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = selectType004$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,9 @@
+"dtParamTypeDefC425.f", line 41.24: 1514-180 (W) An entity must not be given explicitly any attribute more than once in a scoping unit.
+"dtParamTypeDefC425.f", line 41.38: 1514-730 (S) Derived type dt1 with the BIND attribute must not have type parameters.
+"dtParamTypeDefC425.f", line 45.30: 1514-180 (W) An entity must not be given explicitly any attribute more than once in a scoping unit.
+"dtParamTypeDefC425.f", line 49.30: 1514-180 (W) An entity must not be given explicitly any attribute more than once in a scoping unit.
+"dtParamTypeDefC425.f", line 53.28: 1514-180 (W) An entity must not be given explicitly any attribute more than once in a scoping unit.
+"dtParamTypeDefC425.f", line 57.16: 1514-234 (E) A PUBLIC or PRIVATE attribute has already been specified for this identifier.
+** m   === End of Compilation 1 ===
+** dtparamtypedefc425   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtParamTypeDefC425.f.

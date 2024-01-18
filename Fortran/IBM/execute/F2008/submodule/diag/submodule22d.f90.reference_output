@@ -1,0 +1,24 @@
+"submodule22d.f", line 37.1: 1518-287 (L) IMPLICIT statements must precede declarations in the Fortran 90 standard.
+"submodule22d.f", line 39.4: 1518-260 (L) The MODULE keyword is not permitted by the Fortran 90 standard.
+"submodule22d.f", line 42.4: 1518-260 (L) The MODULE keyword is not permitted by the Fortran 90 standard.
+"submodule22d.f", 1518-318 (L) The XLF2003(NOOLDNANINF) option can cause the program to behave in a way that is different from that specified by the Fortran 90 standard.
+"submodule22d.f", 1518-318 (L) The SIGNEDZERO option can cause the program to behave in a way that is different from that specified by the Fortran 90 standard.
+"submodule22d.f", 1518-318 (L) The NOOLDPAD option can cause the program to behave in a way that is different from that specified by the Fortran 90 standard.
+"submodule22d.f", 1518-318 (L) The STOPEXCEPT option can cause the program to behave in a way that is different from that specified by the Fortran 90 standard.
+** m   === End of Compilation 1 ===
+"submodule22d.f", line 48.1: 1518-260 (L) The SUBMODULE keyword is not permitted by the Fortran 90 standard.
+"submodule22d.f", line 50.2: 1518-260 (L) The MODULE keyword is not permitted by the Fortran 90 standard.
+"submodule22d.f", line 55.2: 1518-260 (L) The MODULE keyword is not permitted by the Fortran 90 standard.
+"submodule22d.f", 1518-318 (L) The XLF2003(NOOLDNANINF) option can cause the program to behave in a way that is different from that specified by the Fortran 90 standard.
+"submodule22d.f", 1518-318 (L) The SIGNEDZERO option can cause the program to behave in a way that is different from that specified by the Fortran 90 standard.
+"submodule22d.f", 1518-318 (L) The NOOLDPAD option can cause the program to behave in a way that is different from that specified by the Fortran 90 standard.
+"submodule22d.f", 1518-318 (L) The STOPEXCEPT option can cause the program to behave in a way that is different from that specified by the Fortran 90 standard.
+** n   === End of Compilation 2 ===
+"submodule22d.f", line 59.7: 1515-019 (S) Syntax is incorrect.
+"submodule22d.f", line 60.1: 1515-019 (S) Syntax is incorrect.
+"submodule22d.f", 1518-318 (L) The XLF2003(NOOLDNANINF) option can cause the program to behave in a way that is different from that specified by the Fortran 90 standard.
+"submodule22d.f", 1518-318 (L) The SIGNEDZERO option can cause the program to behave in a way that is different from that specified by the Fortran 90 standard.
+"submodule22d.f", 1518-318 (L) The NOOLDPAD option can cause the program to behave in a way that is different from that specified by the Fortran 90 standard.
+"submodule22d.f", 1518-318 (L) The STOPEXCEPT option can cause the program to behave in a way that is different from that specified by the Fortran 90 standard.
+** _main   === End of Compilation 3 ===
+1501-511  Compilation failed for file submodule22d.f.

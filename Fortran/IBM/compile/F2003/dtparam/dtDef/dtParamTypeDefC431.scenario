@@ -1,0 +1,32 @@
+
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      dtParamTypeDefC431.f
+#FEATURE=
+#CREATOR=   Feng Ye
+#DATE=      11-30-05
+#TEST_TYPE= DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=      F_COMPILE
+#OPTS=     $(OPT_FREE_SOURCE_FORM)
+#INPUT=    $(tcasedir)dtParamTypeDefC431.f
+#STDERR=   dtParamTypeDefC431.err
+#VALIDRCS= 1
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    dtParamTypeDefC431.err $($(tcasedir)dtParamTypeDefC431$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

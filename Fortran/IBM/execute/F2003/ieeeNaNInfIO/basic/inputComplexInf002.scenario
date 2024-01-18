@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = inputComplexInf002.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 8, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)inputComplexInf002.f
+#OUTPUT   =  inputComplexInf002$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  inputComplexInf002$(OBJ)
+#OUTPUT   =  inputComplexInf002$(EXE)
+#ENDCMD
+
+#CMD      = COPY
+#INPUT    = $(tcasedir)cpx_inf_pos.dat $(tcasedir)cpx_inf_neg.dat
+#OUTPUT   = ./
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  inputComplexInf002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

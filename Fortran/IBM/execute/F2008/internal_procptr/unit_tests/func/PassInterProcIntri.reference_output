@@ -1,0 +1,9 @@
+ print1: hello world
+ print2: 9999
+ print3: arg = 345
+ print4: 10.0
+ print5: integer = 3
+ print5: real = 6.0
+ print5: complex = 2.03.0
+ print5: characters = hello world
+ print5: logical = T

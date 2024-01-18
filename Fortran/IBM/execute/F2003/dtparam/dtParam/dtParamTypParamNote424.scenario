@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dtParamTypParamNote424.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       1-30-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dtParamTypParamNote424.f
+#OUTPUT= dtParamTypParamNote424$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  dtParamTypParamNote424$(OBJ)
+#OUTPUT= dtParamTypParamNote424$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dtParamTypParamNote424$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

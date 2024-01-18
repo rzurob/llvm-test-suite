@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"338155.f", line 50.2: 1513-237 (E) Namelist group nl containing private namelist item t must not have public accessibility. nl is assumed to have private accessibility.
+** m1   === End of Compilation 2 ===
+** d338155   === End of Compilation 3 ===
+1501-510  Compilation successful for file 338155.f.

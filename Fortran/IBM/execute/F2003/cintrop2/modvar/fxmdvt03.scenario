@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop2/modvar/fxmdvt03.scenario
+#FEATURE = cintrop2 tests - regression run bucket
+#CREATOR = CPR Manual conversion
+#DATE    = 20060712
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT=mac
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = XLC_COMPILE
+#OPTS   = $(C_COMPILER_OPTS) $(OPT_CHECK_TYPES_AT_BIND_TIME)
+#INPUT  = $(tcasedir)cxmdvn15.c
+#OUTPUT = cxmdvn15$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#OPTS   = $(OPT_FREE_SOURCE_FORM) -qmixed $(OPT_CHECK_TYPES_AT_BIND_TIME)
+#INPUT  = $(tcasedir)fxmdvt03.f
+#OUTPUT = fxmdvt03$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#OPTS   = $(OPT_FREE_SOURCE_FORM) -qmixed $(OPT_CHECK_TYPES_AT_BIND_TIME)
+#INPUT  = cxmdvn15$(OBJ) fxmdvt03$(OBJ)
+#OUTPUT = fxmdvt03$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = fxmdvt03$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

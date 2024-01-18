@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/unit_tests/func/funcfunc02.scenario
+#FEATURE = Generic extensions
+#CREATOR = Rafik Zurob
+#DATE    = 20120620
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)funcfunc02.f
+#OUTPUT    = funcfunc02$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = funcfunc02$(OBJ)
+#OUTPUT    = funcfunc02$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = funcfunc02$(EXE)
+#STDOUT    = funcfunc02.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)funcfunc02$(product)vf) funcfunc02.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

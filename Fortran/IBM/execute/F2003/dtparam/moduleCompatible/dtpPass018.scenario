@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = dtpPass018.scenario
+#FEATURE   =
+#CREATOR   = MZ adapted from F2003/dtparam/typebnd/specific/dtpPass018.f
+#DATE      = 20100504
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_ALT_COMPILE
+#INPUT     = $(tcasedir)dtpPass018_mod.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtpPass018_mod$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPass018_main.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtpPass018_main$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPass018_mod$(OBJ) dtpPass018_main$(OBJ)
+#OUTPUT    = dtpPass018$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPass018$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

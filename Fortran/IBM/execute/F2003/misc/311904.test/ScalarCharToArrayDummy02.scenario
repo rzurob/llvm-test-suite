@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=ScalarCharToArrayDummy02
+#FEATURE = Passing a scalar character to an array dummy
+#CREATOR = Rob James
+#DATE    = 20060427
+#TEST_TYPE=Functional unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ScalarCharToArrayDummy02.f
+#OUTPUT    = ScalarCharToArrayDummy02$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = ScalarCharToArrayDummy02$(OBJ)
+#OUTPUT    = ScalarCharToArrayDummy02$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ScalarCharToArrayDummy02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

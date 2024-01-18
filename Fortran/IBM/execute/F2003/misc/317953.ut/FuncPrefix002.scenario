@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = FuncPrefix.f
+#DEFECT    = 317953
+#CREATOR   = Zheming Gu
+#DATE      = Feb 09, 2007
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)FuncPrefix002.f
+#OPTS     =  -qdebug=fprefixfwdref:shutup
+#OUTPUT   =  FuncPrefix002$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  FuncPrefix002$(OBJ)
+#OUTPUT   =  FuncPrefix002$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  FuncPrefix002$(EXE)
+#STDOUT   =  FuncPrefix002.out
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = FuncPrefix002.out $(tcasedir)FuncPrefix002.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

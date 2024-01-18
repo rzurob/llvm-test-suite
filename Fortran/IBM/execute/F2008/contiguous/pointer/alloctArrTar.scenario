@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/contiguous/pointer/alloctArrTar.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20101025
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#RESOURCES_REQ = TOTALMEM14G
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)alloctArrTar.f
+#OUTPUT    = alloctArrTar$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = alloctArrTar$(OBJ)
+#OUTPUT    = alloctArrTar$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = alloctArrTar$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

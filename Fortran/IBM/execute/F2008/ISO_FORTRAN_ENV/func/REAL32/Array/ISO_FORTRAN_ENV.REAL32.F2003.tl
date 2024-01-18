@@ -1,0 +1,5 @@
+faddREAL32_F2003.scenario
+fdivideREAL32_F2003.scenario
+fgeneralREAL32_F2003.scenario
+fmultiplyREAL32_F2003.scenario
+fsubtractREAL32_F2003.scenario

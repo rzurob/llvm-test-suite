@@ -1,0 +1,30 @@
+#!/usr/bin/ksh
+
+echo "Compiling constants_for_ieee"
+$KILL $COMPILER -c $TR_SRC/ieeeconsts.f $OPTIONS
+
+echo "Compiling the program"
+$KILL $COMPILER -I./ $TR_SRC/$1.f -o $1 $OPTIONS
+rc=$?
+if [ $rc -ne 0 ]; then
+    echo "Compilation failed"
+    exit $rc
+else
+    echo "Compilation Successful"
+fi
+
+echo "Executing $1"
+$1 
+ 
+rc=$?
+echo $rc
+if [ $rc -ne 0 ]; then
+  echo "Execution failed"
+  rm -f $1 $1.out
+  exit $rc
+else
+  echo "Execution Successful"
+fi
+
+rm -f $1 $1.out
+rm -f constants_for_ieee.mod ieeeconsts.o

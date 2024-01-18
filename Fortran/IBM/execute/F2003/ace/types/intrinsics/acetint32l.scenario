@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint32l.scenario
+#FEATURE	= Array constructor enhancement - procedure pointers can be invoked in implied-do for data (logical)
+#CREATOR	= DF Manual Update
+#DATE		= 20060830
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint32l.f
+#OUTPUT		= acetint32l$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint32l$(OBJ)
+#OUTPUT		= acetint32l$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint32l$(EXE)
+#STDOUT		= acetint32l.out
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $(tcasedir)acetint32l.vf acetint32l.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

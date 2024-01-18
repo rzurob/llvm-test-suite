@@ -1,0 +1,15 @@
+** m   === End of Compilation 1 ===
+"structConstr002.f", line 75.23: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"structConstr002.f", line 75.23: 1514-645 (S) base is an abstract type. base is not permitted in this context.
+"structConstr002.f", line 76.23: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"structConstr002.f", line 76.23: 1514-645 (S) base is an abstract type. base is not permitted in this context.
+"structConstr002.f", line 77.23: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"structConstr002.f", line 77.39: 1514-645 (S) base is an abstract type. base is not permitted in this context.
+"structConstr002.f", line 78.23: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"structConstr002.f", line 78.39: 1514-645 (S) base is an abstract type. base is not permitted in this context.
+"structConstr002.f", line 79.23: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"structConstr002.f", line 79.39: 1514-645 (S) base is an abstract type. base is not permitted in this context.
+"structConstr002.f", line 80.23: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"structConstr002.f", line 80.39: 1514-645 (S) base is an abstract type. base is not permitted in this context.
+** structconstr002   === End of Compilation 2 ===
+1501-511  Compilation failed for file structConstr002.f.

@@ -1,0 +1,3 @@
+"C938IDSpec01d.f", line 47.29: 1512-017 (E) The ID keyword has already been specified on this I/O statement.  Keyword is ignored.
+** c938idspec01d   === End of Compilation 1 ===
+1501-510  Compilation successful for file C938IDSpec01d.f.

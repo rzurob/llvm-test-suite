@@ -1,0 +1,777 @@
+<html><head><title>CAF: ERROR STOP statement</title></head><body><table style="WIDTH: 100%; BACKGROUND: rgb(192,225,255) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 100%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt" valign="top" width="100%">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: navy; FONT-SIZE: 10pt">Document Control Information:</span></strong><span style="FONT-FAMILY: Helvetica; COLOR: navy; FONT-SIZE: 10pt"> </span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            <p>The official version of this document is kept in CMVC in the <span style="FONT-WEIGHT: bold; TEXT-DECORATION: underline">%CMVC_Family%</span> family, release <span style="FONT-WEIGHT: bold; TEXT-DECORATION: underline">%CMVC_Release%</span>, component <span style="FONT-WEIGHT: bold; TEXT-DECORATION: underline">%CMVC_Component%</span>, file <span style="COLOR: rgb(255,102,102); FONT-WEIGHT: bold; TEXT-DECORATION: underline">%CMVC_PathName%</span>. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.<br />
+            <br />
+            CMVC Extraction Information: %W% %H% %I% sccsid<br />
+            </p>
+            <p>CMVC_Family=aix, CMVC_Release=test.dev, CMVC_Component=test.values</p>
+            <p><br />
+            This document is IBM Confidential.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="MsoNormal"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><u1:p></u1:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<table style="WIDTH: 100%; BACKGROUND: rgb(204,204,255) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable" border="1" cellspacing="3" cellpadding="0" width="100%">
+    <tbody>
+        <tr>
+            <td style="PADDING-BOTTOM: 1pt; PADDING-LEFT: 1pt; PADDING-RIGHT: 1pt; PADDING-TOP: 1pt" valign="top">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Reviewers</span></strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">: </span><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Please click the 'Reviewed' check-box beside your name to indicate your participation in the review.</span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN-BOTTOM: 6pt" class="MsoNormal"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"></span><u1:p></u1:p></p>
+<p style="MARGIN-BOTTOM: 12pt" class="MsoNormal"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">%Reviews%</span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<table style="WIDTH: 100%; BACKGROUND: rgb(224,255,191) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 21.22%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt" valign="top" width="21%">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p>Document Title<u2:p></u2:p></span></strong><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 78.78%; PADDING-RIGHT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" valign="top" width="78%">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">%Document_Name%</span></strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">%Note{or IT1 for name of the feature you are testing}%</span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 21.22%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt" valign="top" width="21%">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">CMVC Feature Number:</span></strong><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 78.78%; PADDING-RIGHT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" valign="top" width="78%"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">%CMVC_Feature% <u2:p></u2:p></span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt" valign="top">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Feature Title:</span></strong><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" valign="top"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">%Note{Feature Title (usually contain feature number, editable by Properties Action)}%</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt" valign="top">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Author(s):</span></strong><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" valign="top"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">%Authors%</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt" valign="top">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Mandatory Reviewers:<u2:p></u2:p></span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">(Approver)</span></strong><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" valign="top"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">%Note{These reviewers have technical approval authority and MUST approve this IT1. Generally, only list reviewers from the Component Reviewer list whose component is directly affected by this feature. Use Access Control to add or delete a reviewer.}%</span></strong></p>
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">%Approvers%<br />
+            </span></strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt" valign="top">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Component Reviewers:(optional participation)</span></strong><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" valign="top"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">%Note{ These groups must be made aware of the IT1, assign one person representing each. The names are suggested contacts (</span></strong><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">The component leads directly affected by AIX/Linux are in the list by default</span></strong><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">):</span></strong></p>
+            <ul>
+                <li>
+                <div class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt"></span></strong><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><strong><font face="Arial">C FE and related tools/libraries/driver:</font></strong></span></strong></div>
+                </li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><strong><font face="Arial"></font></strong>AIX - Enrique Varillas (<a href="mailto:enriquev@ca.ibm.com">enriquev@ca.ibm.com</a><a href="mailto:philipl@ca.ibm.com"></a>)</span></strong></p>
+            <p class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial">Linux - David Salinas (<a href="mailto:dsalinas@ca.ibm.com">dsalinas@ca.ibm.com</a><a href="mailto:philipl@ca.ibm.com"></a>)</font></span></strong></p>
+            <p class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial">zOS - Jing Chen (<a href="mailto:kendrick@ca.ibm.com">chenjing@ca.ibm.com</a>)</font></span></strong></p>
+            <p class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial">CELL - Larry Lindsay (<a href="mailto:llindsay@ca.ibm.com">llindsay@ca.ibm.com</a>)</font></span></strong></p>
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><strong>UPC - Kevin Lou</strong> <strong>(<a href="mailto:kendrick@ca.ibm.com">gklou@ca.ibm.com</a></strong><strong>)</strong></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><strong>C++ FE and related tools/libraries/driver:</strong></font></span></strong></div>
+                </li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"></span></strong><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial">AIX/</font></span></strong><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial">Linux - Sasha Kasapinovic (<a href="mailto:skasapin@ca.ibm.com">skasapin@ca.ibm.com</a>)</font></span></strong></p>
+            <p class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial">zOS - Michael Wong (<a href="mailto:michaelw@ca.ibm.com">michaelw@ca.ibm.com</a>) </font></span></strong></p>
+            <p class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial">BG/</font></span>CELL - Yan Liu (<a href="mailto:kevshin@ca.ibm.com">yanliu@ca.ibm.com</a>)</font></span></strong></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><strong>Fortran FE, ASTI, PLIX, and related tools/libraries/driver:</strong></font></span></strong></div>
+                </li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial">AIX, PLIX - Rafik Zurob (<a href="mailto:rzurob@ca.ibm.com">rzurob@ca.ibm.com</a>)</font></span></strong></p>
+            <p class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial">Linux - Xing Xue (<a href="mailto:xingxue@ca.ibm.com">xingxue@ca.ibm.com</a>)</font></span></strong></p>
+            <p class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial">BG/L - Daniel Chen (<a href="mailto:cdchen@ca.ibm.com">cdchen@ca.ibm.com</a>)</font></span></strong></p>
+            <p class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial">CELL - Kelvin Li (<a href="mailto:kli@ca.ibm.com">kli@ca.ibm.com</a>) </font></span></strong></p>
+            </blockquote>
+            <ul>
+                <li>
+                <div align="left"><span><font size="1"><font face="Arial">PL/X Development: </font><font face="Arial">Kirk Crane (<a href="mailto:krcrane@ca.ibm.com">krcrane@ca.ibm.com</a>)</font></font></span></div>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                <div align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><strong>TPO and associated tools/libraries (libxlopt, SMPRT, MASS):</strong></font></span></div>
+                </li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial">AIX -&nbsp;<strong>Yan Zhang&nbsp;(<a href="mailto:edwinc@ca.ibm.com)">zhangyan@ca.ibm.com)</a></strong></font></span></strong></p>
+            <p class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"></span></strong><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial">Linux - <strong>Tommy Wong (<a href="mailto:tomwong@ca.ibm.com">tomwong@ca.ibm.com</a>)</strong></font></span></strong></p>
+            <p class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial">zOS - <strong>Chris Miclea (<a href="mailto:cmiclea@ca.ibm.com">cmiclea@ca.ibm.com</a>)</strong></font></span></strong></p>
+            <p class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><strong>BG - Amy Wang (<a href="mailto:aktwang@ca.ibm.com">aktwang@ca.ibm.com</a>)</strong></font></span></strong></p>
+            <p class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"></span></strong><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><strong>CELL -&nbsp;Yue Zhao&nbsp;(<a href="mailto:aktwang@ca.ibm.com">aktwang@ca.ibm.com</a>)</strong></font></span></strong></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><strong>TOBEY and associated tools/libraries: (dis, libxl, bolt)</strong></font></span></strong></div>
+                </li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"></span></strong><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial">AIX - Christopher Lapkowski</font></span></strong></p>
+            <p class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial">Linux - <strong>Irina Rada (<a href="mailto:irinar@ca.ibm.com">irinar@ca.ibm.com</a>)</strong></font></span></strong></p>
+            <p class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial">zOS - Chwan-Hang Lee (<a href="mailto:chwan@ca.ibm.com">chwan@ca.ibm.com</a>)</font></span></strong></p>
+            <p class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><strong>BG - Damien Bonaventure (damien@ca.ibm.com), Leon Ding (Xiaoliang Ding/Piscataway/IBM@IBMUS, <a href="mailto:dingxi@us.ibm.com">dingxi@us.ibm.com</a>)</strong></font></span></strong></p>
+            <p class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><strong>CELL - Dickson Chau (<a href="mailto:dickchau@ca.ibm.com">dickchau@ca.ibm.com</a>)</strong></font></span></strong></p>
+            <p class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial">dis (AIX/Linux) - Ian McIntosh (<a href="mailto:ianm@ca.ibm.com">ianm@ca.ibm.com</a>)</font></span></strong></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><strong>WCode: </strong></font></span></strong><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial">Roland Froese (<a href="mailto:froese@ca.ibm.com">froese@ca.ibm.com</a>) </font></span></strong></div>
+                </li>
+            </ul>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><strong>Information Development:</strong></font></span></strong></div>
+                </li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial">C/C++ - Kathleen Dowling (<a href="mailto:dowling@ca.ibm.com">dowling@ca.ibm.com</a>)</font></span></strong></p>
+            <p class="MsoNormal" align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial">Fortran - Joe Sobura (<a href="mailto:sobura@ca.ibm.com">sobura@ca.ibm.com</a>) </font></span></strong></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><strong>Customer Service and Support:</strong></font></span></strong></div>
+                </li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p class="MsoNormal" align="left"><span><font face="Arial"><strong>AIX/Linux - </strong></font><font face="Arial"><strong>Cell -</strong> </font></span><span><font color="#ff0000" face="Arial"><font color="#000000" size="1">Youssef Himo <strong>(</strong></font><a href="mailto:himo@ca.ibm.com"><font size="1">himo@ca.ibm.com</font></a><strong><font color="#000000" size="1">)</font></strong></font></span></p>
+            <p class="MsoNormal" align="left">&nbsp;</p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><span><font face="Arial"><strong><font size="2">Compiler Enablement:Dwayne Moore (</font><a href="mailto:dwayne@ca.ibm.com"><font size="2">dwayne@ca.ibm.com</font></a><font size="2">) </font></strong></font></span></div>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                <div align="left"><span><font face="Arial"><font size="2"><strong>Fortran Test:</strong><strong>Kobi Vinayagamoorthy (<a href="mailto:kobiv@ca.ibm.com">kobiv@ca.ibm.com</a>) </strong></font></font></span></div>
+                </li>
+                <li>
+                <div align="left"><font size="2"><span><font face="Arial"><strong>C/C++ Test:</strong></font><font color="#ff0000" face="Arial"><strong> </strong></font></span><span></span><span><font face="Arial"><strong>Lu Yang(system p) (<a href="mailto:gatea@ca.ibm.com">luyang@ca.ibm.com</a>) </strong></font></span></font></div>
+                </li>
+                <li><strong><span><font size="2"><span>zOS C/C++ Test: </span><font color="#000000">Leon L Kiriliuk (z/OS) (</font></font><a href="mailto:leonk@ca.ibm.com)"><font face="Times New Roman"></font></a><font face="Times New Roman"><a href="mailto:leonk@ca.ibm.com)"><font size="2">leonk@ca.ibm.com)</font></a></font></span></strong><span><font face="Arial"><strong></strong></font></span> </li>
+                <li><font size="2"><span><font face="Arial"><strong>PL/X Test: </strong></font></span><span><font face="Arial"><strong>Anne Wylie (<a href="mailto:wylie@ca.ibm.com">wylie@ca.ibm.com</a>) </strong></font></span></font></li>
+                <li><span><font size="2" face="Arial"><strong>Build and Packaging Team: </strong></font></span></li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p class="MsoNormal" align="left"><span><font face="Arial"><strong><font size="2">AIX - Ray Kivisto (<a href="mailto:rkivisto@ca.ibm.com">rkivisto@ca.ibm.com</a></font><font size="2">) </font></strong></font></span></p>
+            <p class="MsoNormal" align="left"><span><font face="Arial"><strong><font size="2">Linux - Viktor Ganich (</font><a href="mailto:vganich@ca.ibm.com"><font size="2">vganich@ca.ibm.com</font></a><font size="2">)</font></strong></font></span></p>
+            <p class="MsoNormal" align="left"><span><font face="Arial"><strong><font size="2">BGL - Steven Chen (</font><a href="mailto:stevchen@ca.ibm.com"><font size="2">stevchen@ca.ibm.com</font></a><font size="2">)</font></strong></font></span></p>
+            <p class="MsoNormal" align="left"><span><font face="Arial"><strong><font size="2">Cell - Kevin Yuen (</font><a href="mailto:kchyuen@ca.ibm.com"><font size="2">kchyuen@ca.ibm.com</font></a><font size="2">)</font></strong></font></span></p>
+            <p class="MsoNormal" align="left"><span><font face="Arial"><strong><font size="2">z/OS - Steve Chen (</font><a href="mailto:schen@ca.ibm.com"><font size="2">schen@ca.ibm.com</font></a><font size="2">)</font></strong></font></span></p>
+            <p class="MsoNormal" align="left"><span><font face="Arial"><strong><font size="2">Dale Soldiuk (</font><a href="mailto:soldiuk@ca.ibm.com"><font size="2">soldiuk@ca.ibm.com</font></a><font size="2">) (Please include Dale as optional on all reviews)</font></strong></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><span><font face="Arial"><font size="2"><strong>Performance Measurement and Analysis Team: </strong><strong>John Tam (<a href="mailto:johntam@ca.ibm.com">johntam@ca.ibm.com</a>)</strong></font></font></span></div>
+                </li>
+            </ul>
+            <ul dir="ltr">
+                <li>
+                <div align="left"><font size="2"><span><font face="Arial"><strong>Planning: </strong></font></span><span><font face="Arial"><strong>Mary Chan (<a href="mailto:marychan@ca.ibm.com">marychan@ca.ibm.com</a>) </strong></font></span></font></div>
+                </li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p class="MsoNormal" align="left"><span></span><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">Use Access Control comments to add/delete people from this list.}%<br />
+            %Component_Reviewers%</span></strong></p>
+            </blockquote></td>
+        </tr>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt" valign="top">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Team Reviewers: (optional participation)</span></strong><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"></span></p>
+            </td>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" valign="top"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">%Note{List any additional reviewers assigned to the review. These reviewers do not have approval authority. </span></strong><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">Use Access Control to add or delete a reviewer.</span></strong><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">}%<br />
+            %Team_Reviewers%<br />
+            </span></strong></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN-BOTTOM: 12pt" class="MsoNormal"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><u2:p></u2:p></span><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<table style="WIDTH: 100%; BACKGROUND: rgb(255,102,102) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 100%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt" valign="top" width="100%">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><u2:p></u2:p>IT1 Status: <!-- Start -->For Approval </span><!-- End --></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="MsoNormal"><u2:p><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Approvers Only:</span></strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"> Click on the 'Approve' checkbox beside your name in the table below if you agree with the technical and user interface content of this document; not checking your 'approve' checkbox signifies you do not approve.<o:p></o:p></span></u2:p></p>
+<p class="MsoNormal"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">%Approvals%<o:p></o:p></span></p>
+<p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Approval Comments</span></strong></p>
+<p>
+<table style="TEXT-ALIGN: left; BACKGROUND-COLOR: rgb(224,255,191); WIDTH: 100%; FONT-FAMILY: Arial; FONT-SIZE: 12pt" border="1" cellspacing="2" cellpadding="2">
+    <tbody>
+        <tr>
+            <td style="FONT-FAMILY: Arial; VERTICAL-ALIGN: top"><strong>Access Change History</strong> %Note{Authors: Access Change History will list any changes to the access control done to the document draft. These changes would not be visible in a review. In a review, this section would only list the access changes done to the review itself.<br />
+            Please note that changes to the access control of a review are not automatically reflected in the access control of the draft document.}% </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%CollapsedSection{<strong>Access Change History</strong>}{%Access_Change_History%}%
+<p class="MsoNormal"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<table style="WIDTH: 100%; BACKGROUND: rgb(191,191,255) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 100%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt" valign="top" width="100%">
+            <p style="TEXT-ALIGN: center" class="MsoNormal" align="center"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 14pt"><u1:p></u1:p><u2:p></u2:p>Overview</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><!-- Start Overview --><u2:p></u2:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt">%Note{Simple description of the feature; In which product it is first implemented, is it common for other platforms, is it common for both C and C++ and so on.}%</span></p>
+<span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt">
+<p style="MARGIN: 2pt 0in"><br />
+<font size="2" face="Times New Roman">FORTRAN F2008 standard introduces a new statement, <strong>ERROR STOP</strong>, the execution of which initiates an error termination of execution of all images.</font></p>
+<p style="MARGIN: 2pt 0in"><font size="2" face="Times New Roman"><strong></strong></font></p>
+<p style="MARGIN: 2pt 0in"><font face="Times New Roman"><font size="2"><strong>Syntax:</strong><br />
+&nbsp; R856 &nbsp;<em>error-stop-stmt</em> &nbsp;<strong>is</strong> &nbsp;ERROR STOP [ <em>stop-code</em> ]<br />
+&nbsp; R857 &nbsp;<em>stop-code</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>is</strong> &nbsp;<em>scalar-default-char-constant-expr</em><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>or</strong> &nbsp;<em>scalar-int-constant-expr</em><br />
+C850 &nbsp;(R857) The <em>scalar-int-constant-expr</em> shall be of default kind.</font></font></p>
+<p style="MARGIN: 2pt 0in"><font size="2" face="Times New Roman"></font></p>
+<p style="MARGIN: 2pt 0in"><font size="2" face="Times New Roman">For the feature&rsquo;s implementation details, see the I0 document.</font> <br />
+</p>
+</span>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><u2:p></u2:p></span><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<table style="WIDTH: 100%; BACKGROUND: rgb(191,191,255) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 100%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt" valign="top" width="100%">
+            <p style="TEXT-ALIGN: center" class="MsoNormal" align="center"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 14pt"><!-- End Overview --><u2:p></u2:p>Test Strategy</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><u2:p></u2:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt">%Note{Test strategy used in the test}%</span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><font size="2" face="Times New Roman">&nbsp;&nbsp; The related STOP statement behavior with coarray will be tested separately. Anyway, STOP statement could be also included in some of this feature test cases.<br />
+&nbsp;&nbsp; Tested here coverage will be only ERROR STOP statement use for coarrays. The extended test for non-CAF use will be added in the next deliverable.</font></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><font size="2" face="Times New Roman"></font></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><font size="2" face="Times New Roman">&nbsp;&nbsp; In general the testing will be divided into two parts: Diagnostic and Functional Testing.<br />
+<strong><em>&nbsp;&nbsp; Diagnostic:</em></strong><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Positive:&nbsp; looks for the expected run-time messages produced by STOP RUN, change in the program exit status, with and without errimagenum use.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Negative: compile-time error message issued when ERROR STOP with incorrect stop-code or in incorrect place<br />
+</font><font face="Times New Roman"><font size="2"><strong><em>&nbsp;&nbsp; Functional:<br />
+</em></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Test that ERROR STOP correctly terminates the work on the program.</font></font><br />
+</span><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt">
+<p style="MARGIN: 2pt 0in"><br />
+</p>
+</span>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><u2:p></u2:p></span><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<table style="WIDTH: 100%; BACKGROUND: rgb(191,191,255) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 100%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt" valign="top" width="100%">
+            <p style="TEXT-ALIGN: center" class="MsoNormal" align="center"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 14pt"><!-- End Multi-Platform Considerations --><u2:p></u2:p>Test Procedures/Scenarios</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><!-- Start Internal Interfaces --><u2:p></u2:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt">%Note{List and brief descriptions of the test cases created for the feature}%</span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"></span></p>
+<span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt">
+<h2 style="MARGIN: 0cm 0cm 0pt 26.95pt"><span style="FONT-STYLE: normal; FONT-FAMILY: &quot;Times New Roman&quot;">Diagnostic Tests:</span></h2>
+</span><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt">
+<div>&nbsp;</div>
+<p style="MARGIN: 2pt 0in">
+<table style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-COLLAPSE: collapse; BORDER-TOP: medium none; BORDER-RIGHT: medium none" border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt">&nbsp;<font size="2" face="Courier New"><strong>Scenario name</strong></font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><font size="2" face="Courier New"><strong>&nbsp;</strong></font></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New"><strong>&nbsp;Type of test / Comments</strong></font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_001d.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qcaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Test that the error message from the ERROR STOP statement will be printed out on stderr (not stdout) and will be prefixed with &quot;ERROR STOP&quot;.</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_002d.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qnocaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Same as above</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_011d.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qcaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Test that when errimagenum=yes is in effect, the image number of the executing image precedes ERROR STOP message.</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_012d.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qcaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Test that when errimagenum=no is in effect, the image number of the executing image does not precedes ERROR STOP message.</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_013d.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qcaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Test that when errimagenum is not specified (default to &lsquo;no&rsquo;), the image number of the executing image does not precedes ERROR STOP message.</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_015d.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qnocaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Test that errimagenum=yes has no effect on sequential (non-CAF) mode.</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_016d.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qnocaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Test that errimagenum=no has no effect on sequential (non-CAF) mode.</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_017d.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qnocaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Test that default errimagenum value has no effect on sequential (non-CAF) mode.</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_021d.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qcaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Test that when stop-code specified for the ERROR STOP statement is not 1, the runtime will replace it with one as the program exit status and issue warning message:</font></span></div>
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">1525-705 The %C1 statement with stop code %I1 will terminate the program with return code %I2.</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_022d.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qcaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Similar as above</font></span></div>
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">With &ldquo;errimagenum=yes&rdquo;</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_025d.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qcaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Test that a pure subprogram must not contain an ERROR STOP statement. Error message is issued:</font></span></div>
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">1516-333 (S) A pure subprogram must not contain the ERROR STOP statement.</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_026d.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qnocaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Similar as above</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_031d.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qcaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">If a statement label is specified in a DO statement, ERROR STOP must not be used to terminate that DO construct.</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_032d.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qnocaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Similar as above</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_041d.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qcaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Test that the error messages that are issued when the ERROR STOP stop-code is not scalar constant expression of character or integer type.</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_042d.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qnocaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Similar as above</font></span></div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<div><font size="2" face="Courier New">&nbsp;</font></div>
+<div><font size="2" face="Courier New"></font></div>
+<div>
+<h2 style="MARGIN: 0cm 0cm 0pt 26.95pt"><span style="FONT-STYLE: normal; FONT-FAMILY: &quot;Times New Roman&quot;"><font size="2" face="Courier New">Functional Tests:</font></span></h2>
+</div>
+</span>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt">
+<table style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-COLLAPSE: collapse; BORDER-TOP: medium none; BORDER-RIGHT: medium none" border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><strong><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">&nbsp;Scenario name</font></span></strong></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><strong><font size="2" face="Courier New">&nbsp;</font></strong></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><strong><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">&nbsp;Type of test / Comments</font></span></strong></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_001f.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qcaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Test that due to the limitation of POE, whatever the stop-code is, the value 1 is always supplied as the process exit status for the ERROR STOP statement.</font></span></div>
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">ES values: 0, 2-127</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_002f.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qcaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Same as above</font></span></div>
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">ES values: 1, 128-255</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_003f.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qnocaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Test that on sequential (non-CAF) mode, program exit status is the same as the supplied stop-code value in the ERROR STOP statement.</font></span></div>
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">ES values: 0, 2-127</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_004f.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qnocaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Same as above</font></span></div>
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">ES values: 1, 128-255</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_005f.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qcaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Test that when user does not explicitly specify any stop-code for ERROR STOP (i.e. default one), then the program exit status is 1</font></span></div>
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Also looks for &quot;ERROR STOP&quot; prefix in the output.</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_006f.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qnocaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Similar as above</font></span></div>
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Since a character constant or digit string is not specified, the keyword ERROR STOP is not printed.</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_007f.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qcaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Test that user explicitly specify string (non integer) value for ERROR STOP, then the program exit status is 1</font></span></div>
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Also looks for &quot;ERROR STOP&quot; prefix in the output</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_008f.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qnocaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Same as above</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_020f.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qcaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Testing the ERROR STOP statement interrupting the work - main program</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_021f.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qcaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Similar as above&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internal subroutine</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_022f.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qcaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Similar as above&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internal function</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_023f.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qcaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Similar as above&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; external subroutine</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_024f.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qcaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Similar as above&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; external function</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_025f.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qcaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Similar as above&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; module subroutine</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_026f.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qcaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">Similar as above&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; module function</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_040f.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qcaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">ERROR STOP interrupting ordered image work</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_041f.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qcaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">ERROR STOP interrupts circular shift</font></span></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 155pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="207">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">error_stop_042f.scenario</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 65.45pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="87">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">-qcaf</font></span></div>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 317.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="423">
+            <div><span style="FONT-SIZE: 9pt"><font size="2" face="Courier New">ERROR STOP interrupting others images work in the middle</font></span></div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><u2:p></u2:p></span><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<table style="WIDTH: 100%; BACKGROUND: rgb(191,191,255) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 100%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt" valign="top" width="100%">
+            <p style="TEXT-ALIGN: center" class="MsoNormal" align="center"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 14pt"><!-- End Internal Interfaces --><u2:p></u2:p>IT2 Information</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><!-- Start Inter-Component Communication/Interfaces --><u2:p></u2:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt">%Note{IT2 Location and other IT2 related information}%</span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><font size="2" face="Courier New">&nbsp;<br />
+&nbsp;&nbsp;&nbsp; The scenarios and sources can be found on:<br />
+&nbsp;&nbsp;&nbsp; &lt;release&gt;/F2008/coarray/error_stop<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Diagnostic TCs:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;release&gt;/F2008/coarray/error_stop/diag<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Functional TCs:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;release&gt;/F2008/coarray/error_stop/func<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unit TCs:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;release&gt;/F2008/coarray/error_stop/unit<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For I0, IT1, IT2 docs etc.:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;release&gt;/F2008/coarray/error_stop/doc<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp; Component:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xlftest.F2008<br />
+&nbsp;&nbsp;&nbsp; Release(s):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tstdev</font><br />
+</span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><u2:p></u2:p></span><u1:p></u1:p><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<table style="WIDTH: 100%; BACKGROUND: rgb(191,191,255) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 100%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt" valign="top" width="100%">
+            <p style="TEXT-ALIGN: center" class="MsoNormal" align="center"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 14pt"><!-- End Inter-Component Communication/Interfaces --><u2:p></u2:p>Appendices/References</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><u2:p></u2:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt">%Note{I0 Location and any references may help understand the IT1}%</span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;I0 on CMVC -&nbsp; family: aix;&nbsp; release: des.dev;&nbsp; component: design.i0;&nbsp; file: designs/i0/caf__error_stop_statement/caf__error_stop_statement.html<br />
+&nbsp; &nbsp;&nbsp;&nbsp; I0 on Feature Flow - </font><a href="https://featureflow.torolab.ibm.com/featureflow/show/4126"><font size="2">https://featureflow.torolab.ibm.com/featureflow/show/4126</font></a></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><font size="2">&nbsp;&nbsp;&nbsp; &nbsp; Fortran 2008 Standard - WD 1539-1, J3/10-007 (_ WG5/N1826)</font><br />
+</span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+</p><!--HTML Wrapper--></body></html>

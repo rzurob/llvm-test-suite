@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/mxminAll/con/mxminVal/mxminvalArgSub1.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mxminvalArgSub1.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = mxminvalArgSub1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = mxminvalArgSub1$(OBJ)
+#OUTPUT    = mxminvalArgSub1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminvalArgSub1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

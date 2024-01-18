@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/intrinsics/typeQuery/useAssociation001.scenario
+#FEATURE = OO_poly/intrinsics tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)useAssociation001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = useAssociation001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  useAssociation001$(OBJ)
+#OUTPUT    = useAssociation001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = useAssociation001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

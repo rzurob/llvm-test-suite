@@ -1,0 +1,63 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       fmultiplyREAL128
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2003_COMPILE
+#INPUT=  $(tcasedir)fmultiplyREAL128.f
+#OUTPUT= fmultiplyREAL128$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2003_LINK
+#INPUT=  fmultiplyREAL128$(OBJ)
+#OUTPUT= fmultiplyREAL128$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fmultiplyREAL128$(EXE)
+#ENDCMD
+
+#CMD=    XLF2003_COMPILE
+#OPTS=   $(OPT_REALSIZE_4)
+#INPUT=  $(tcasedir)fmultiplyREAL128.f
+#OUTPUT= fmultiplyREAL128_1$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2003_LINK
+#OPTS=   $(OPT_REALSIZE_4)
+#INPUT=  fmultiplyREAL128_1$(OBJ)
+#OUTPUT= fmultiplyREAL128_1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fmultiplyREAL128_1$(EXE)
+#ENDCMD
+
+#CMD=    XLF2003_COMPILE
+#OPTS=   -qautodbl=dbl
+#INPUT=  $(tcasedir)fmultiplyREAL128.f
+#OUTPUT= fmultiplyREAL128_2$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2003_LINK
+#OPTS=   -qautodbl=dbl
+#INPUT=  fmultiplyREAL128_2$(OBJ)
+#OUTPUT= fmultiplyREAL128_2$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fmultiplyREAL128_2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

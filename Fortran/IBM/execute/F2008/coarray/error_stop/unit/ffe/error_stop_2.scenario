@@ -1,0 +1,45 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = error_stop_2.scenario
+#FEATURE    = ERROR STOP
+#CREATOR    = Feng Ye
+#DATE       = 2010-07-30
+#TEST_TYPE  = unit test
+#ENDDOC
+
+! Scenario Environment Tags
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_NOCOARRAY)
+#INPUT     = $(tcasedir)error_stop_2.f
+#OUTPUT    = error_stop_2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_NOCOARRAY)
+#INPUT     = error_stop_2$(OBJ)
+#OUTPUT    = error_stop_2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = error_stop_2$(EXE)
+#STDERR    = error_stop_2.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = error_stop_2.err  $($(tcasedir)error_stop_2$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

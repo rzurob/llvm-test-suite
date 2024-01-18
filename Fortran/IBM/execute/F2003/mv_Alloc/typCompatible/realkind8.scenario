@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       realkind8.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)realkind8.f
+#OUTPUT= realkind8$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  realkind8$(OBJ)
+#OUTPUT= realkind8$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  realkind8$(EXE)
+#STDOUT= realkind8.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = realkind8.out $(tcasedir)realkind8.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

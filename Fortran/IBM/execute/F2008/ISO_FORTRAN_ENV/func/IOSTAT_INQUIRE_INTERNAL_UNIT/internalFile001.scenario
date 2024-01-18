@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  internalFile001.scenario
+#FEATURE = ISO_FORTRAN_ENV ( test case adopted from OO_dtio/unformatted/section9.8)
+#CREATOR = Morteza Ershad-Manesh
+#DATE    = 20100818
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)internalFile001.f
+#OUTPUT    = internalFile001$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2008_LINK
+#INPUT     =  internalFile001$(OBJ)
+#OUTPUT    = internalFile001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = internalFile001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

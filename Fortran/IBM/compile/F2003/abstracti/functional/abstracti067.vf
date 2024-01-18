@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"abstracti067.f", line 51.16: 1514-161 (S) Identifier "t" appearing as a specific interface procedure/result name was defined elsewhere with conflicting attributes.  This definition is ignored.
+"abstracti067.f", line 55.8: 1513-239 (S) Identifier t was declared inside an abstract interface. t must not be used in this context.
+** abstracti067   === End of Compilation 2 ===
+1501-511  Compilation failed for file abstracti067.f.

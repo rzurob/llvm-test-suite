@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mxminAll/con/mxminLoc/mxminlocArgObj2.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mxminAll/*
+#DATE      = 20071105
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mxminlocArgObj2.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = mxminlocArgObj2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = mxminlocArgObj2$(OBJ)
+#OUTPUT    = mxminlocArgObj2$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminlocArgObj2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

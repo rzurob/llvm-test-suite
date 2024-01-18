@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/F2003/dtparam/generic/ambiguity/Generic_Interface05.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20081015
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)Generic_Interface05.f
+#OUTPUT= Generic_Interface05$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  Generic_Interface05$(OBJ)
+#OUTPUT= Generic_Interface05$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  Generic_Interface05$(EXE)
+#STDOUT= Generic_Interface05.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

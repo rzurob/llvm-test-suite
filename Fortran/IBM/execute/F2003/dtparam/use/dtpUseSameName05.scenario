@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/use/dtpUseSameName05.scenario
+#FEATURE   = DTP and USE - USE in contained context
+#CREATOR   = DF Manual Update
+#DATE      = 20080908
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUseSameName05.f
+#OUTPUT    = dtpUseSameName05$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUseSameName05$(OBJ)
+#OUTPUT    = dtpUseSameName05$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUseSameName05$(EXE)
+#STDOUT    = dtpUseSameName05.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUseSameName05$(product)vf) dtpUseSameName05.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

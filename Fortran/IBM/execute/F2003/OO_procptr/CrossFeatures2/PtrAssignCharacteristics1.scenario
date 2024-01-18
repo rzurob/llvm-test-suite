@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       PtrAssignCharacteristics1.f
+#FEATURE= PROCEDURE POINTER
+#CREATOR=    Feng Ye
+#DATE=       06-06-05
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)PtrAssignCharacteristics1.f
+#OUTPUT= PtrAssignCharacteristics1$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  PtrAssignCharacteristics1$(OBJ)
+#OUTPUT= PtrAssignCharacteristics1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  PtrAssignCharacteristics1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

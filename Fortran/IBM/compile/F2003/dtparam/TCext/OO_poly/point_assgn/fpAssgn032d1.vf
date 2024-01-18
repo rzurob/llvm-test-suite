@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"fpAssgn032d1.f", line 58.5: 1515-025 (S) Only a name of a variable, array element, or character substring is permitted on the left hand side of an assignment statement.
+** fpassgn032d1   === End of Compilation 2 ===
+1501-511  Compilation failed for file fpAssgn032d1.f.

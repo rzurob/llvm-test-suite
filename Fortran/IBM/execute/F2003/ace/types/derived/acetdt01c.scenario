@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/derived/acetdt01c.scenario
+#FEATURE	= Array constructor enhancement - no-parameter derived TS allocatable component with defined assignment via elementals
+#CREATOR	= DF Manual Update
+#DATE		= 20060918
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt01c.f
+#OUTPUT		= acetdt01c$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt01c$(OBJ)
+#OUTPUT		= acetdt01c$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt01c$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

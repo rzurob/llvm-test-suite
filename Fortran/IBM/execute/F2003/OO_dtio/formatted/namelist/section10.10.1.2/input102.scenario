@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/namelist/namelist.1.2/input102.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)input102.1 .
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)input102.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = input102$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = input102$(OBJ)
+#OUTPUT    = input102$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = input102$(EXE)
+#STDOUT    = input102.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

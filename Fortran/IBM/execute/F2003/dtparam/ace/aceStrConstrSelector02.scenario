@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/ace/aceStrConstrSelector02.scenario
+#FEATURE	= Basic (non-Polymorphic) Array Constructors with DTP
+#CREATOR	= Glen Mateer
+#DATE		= 20081113
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)aceStrConstrSelector02.f
+#OUTPUT		= aceStrConstrSelector02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= aceStrConstrSelector02$(OBJ)
+#OUTPUT		= aceStrConstrSelector02$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= aceStrConstrSelector02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BInInt2ExtProc.scenario
+#FEATURE   = F2008 BLOCK - block in different contexts (internal of external)
+#CREATOR   = DF Manual Update
+#DATE      = 20101214
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)BInInt2ExtProc.f
+#OUTPUT    = BInInt2ExtProc$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = BInInt2ExtProc$(OBJ)
+#OUTPUT    = BInInt2ExtProc$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = BInInt2ExtProc$(EXE)
+#STDOUT    = BInInt2ExtProc.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)BInInt2ExtProc$(product)vf) BInInt2ExtProc.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

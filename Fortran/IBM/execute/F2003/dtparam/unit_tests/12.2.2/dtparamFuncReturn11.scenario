@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = dtparamFuncReturn11.scenario
+#CREATOR  = James Ren
+#DATE     = June 15, 2007
+#TEST_TYPE= Unit Test
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ = 60
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#INPUT  = $(tcasedir)dtparamFuncReturn11.f
+#OUTPUT = dtparamFuncReturn11$(OBJ)
+#ENDCMD
+
+
+#CMD    = F_LINK
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#INPUT = dtparamFuncReturn11$(OBJ)
+#OUTPUT = dtparamFuncReturn11$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT = dtparamFuncReturn11$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

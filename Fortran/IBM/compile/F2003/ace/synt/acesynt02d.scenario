@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/synt/acesynt02d.scenario
+#FEATURE	= Array constructor enhancement syntax tests
+#CREATOR	= DF Manual Update
+#DATE		= 20060704
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acesynt02d.f
+#OPTS       = -qdebug=noline070112:shutup
+#OUTPUT		= acesynt02d$(OBJ)
+#STDERR		= acesynt02d.stderr
+#VALIDRCS	= $(RC_COMP_S)
+#ENDCMD
+
+
+!         FIXME   The .vf file is only an approximation.
+
+#CMD		= XLDIFF
+#INPUT		= $(tcasedir)acesynt02d.vf acesynt02d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

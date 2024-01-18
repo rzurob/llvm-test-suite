@@ -1,0 +1,3 @@
+1525-223  The ROUND= specifier in the I/O statement has an illegal value. The value of the ROUND= specifier must evaluate to either UP, DOWN, ZERO, NEAREST, COMPATIBLE, or PROCESSOR_DEFINED.  The program will recover by ignoring the ROUND= specifier. 
+1525-223  The ROUND= specifier in the I/O statement has an illegal value. The value of the ROUND= specifier must evaluate to either UP, DOWN, ZERO, NEAREST, COMPATIBLE, or PROCESSOR_DEFINED.  The program will recover by ignoring the ROUND= specifier. 
+1525-223  The ROUND= specifier in the I/O statement has an illegal value. The value of the ROUND= specifier must evaluate to either UP, DOWN, ZERO, NEAREST, COMPATIBLE, or PROCESSOR_DEFINED.  The program will recover by ignoring the ROUND= specifier. 

@@ -1,0 +1,1 @@
+1525-197 The stream I/O statement on unit 11 contains a POS= specifier even though the unit is connected to a file that cannot be positioned.  The program will recover by ignoring the I/O statement.

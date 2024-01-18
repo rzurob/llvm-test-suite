@@ -1,0 +1,4 @@
+"genericAmbiguityTypeBound041d.f", line 45.34: 1514-700 (S) Procedure "threeargs2" must have a nonoptional dummy argument that corresponds by argument keyword to a dummy argument not present in procedure "threeargs1", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** genericname   === End of Compilation 1 ===
+** genericambiguitytypebound041d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericAmbiguityTypeBound041d.f.

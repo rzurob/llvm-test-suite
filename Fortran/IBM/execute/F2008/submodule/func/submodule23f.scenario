@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/optional/func/submodule23f.scenario
+#FEATURE   = 399982 - C Interop: Optional Argument
+#CREATOR   = Ying Zhang
+#DATE      = 2012-05-01
+#TEST_TYPE = functional
+#KEYWORDS  = C Interop, Optional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)submodule23f.c
+#OPTS      = $(C_COMPILER_OPTS) $(OPT_SET_LANG_LEVEL_EXTENDED)
+#OUTPUT    = submodule23f_c$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)submodule23f.f
+#OUTPUT    = submodule23f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = submodule23f_c$(OBJ) submodule23f$(OBJ)
+#OUTPUT    = submodule23f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = submodule23f$(EXE)
+#STDOUT    = submodule23f.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

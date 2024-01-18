@@ -1,0 +1,4 @@
+"POPCNT_006d.f", line 35.17: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"POPCNT_006d.f", line 37.17: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+** popcnt_006d   === End of Compilation 1 ===
+1501-511  Compilation failed for file POPCNT_006d.f.

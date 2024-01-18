@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/typeparam/kindparamDTSpec001d.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)kindparamDTSpec001d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_HALT_ON_ERROR)
+#OUTPUT    = kindparamDTSpec001d$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = kindparamDTSpec001d.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = kindparamDTSpec001d.err $($(tcasedir)kindparamDTSpec001d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

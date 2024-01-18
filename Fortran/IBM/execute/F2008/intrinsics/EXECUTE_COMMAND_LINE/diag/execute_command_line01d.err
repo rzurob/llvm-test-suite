@@ -1,0 +1,3 @@
+"execute_command_line01d.f", line 39.12: 1513-039 (S) Number of arguments is not permitted for the INTRINSIC procedure "execute_command_line".
+** execute_command_line01d   === End of Compilation 1 ===
+1501-511  Compilation failed for file execute_command_line01d.f.

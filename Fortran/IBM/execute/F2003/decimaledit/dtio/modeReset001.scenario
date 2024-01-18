@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/decimaledit/dtio/modeReset001.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)modeReset001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = modeReset001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = modeReset001$(OBJ)
+#OUTPUT    = modeReset001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = modeReset001$(EXE)
+#STDOUT    = modeReset001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = modeReset001.out $($(tcasedir)modeReset001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

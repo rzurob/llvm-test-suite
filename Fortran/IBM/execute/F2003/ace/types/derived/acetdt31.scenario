@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/derived/acetdt31.scenario
+#FEATURE	= Array constructor enhancement - procedure pointers can be invoked for data (derived type)
+#CREATOR	= DF Manual Update
+#DATE		= 20060830
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt31.f
+#OUTPUT		= acetdt31$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt31$(OBJ)
+#OUTPUT		= acetdt31$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt31$(EXE)
+#STDOUT		= acetdt31.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -a1e-6
+#INPUT		= $(tcasedir)acetdt31.vf acetdt31.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

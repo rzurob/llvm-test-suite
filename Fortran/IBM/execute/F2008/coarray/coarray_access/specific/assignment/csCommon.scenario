@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_access/specific/assignment/csCommon
+#FEATURE        = CAF coarray access (specific) - assignment - assign values in variables in common to coarray variables and vice-versa
+#CREATOR        = DF
+#DATE           = 2010-10-04
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)csCommon.f
+#OUTPUT = csCommon$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = csCommon$(OBJ)
+#OUTPUT = csCommon$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = csCommon$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

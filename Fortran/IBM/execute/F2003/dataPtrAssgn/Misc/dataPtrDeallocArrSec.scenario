@@ -1,0 +1,43 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      dataPtrDeallocArrSec.f
+#FEATURE=
+#CREATOR=   Feng Ye
+#DATE=      Jul-17-06
+#TEST_TYPE= DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=      F_COMPILE
+#OPTS=     $(OPT_FREE_SOURCE_FORM)
+#INPUT=    $(tcasedir)dataPtrDeallocArrSec.f
+#ENDCMD
+
+#CMD=      F_LINK
+#OPTS=     $(OPT_FREE_SOURCE_FORM)
+#INPUT=    dataPtrDeallocArrSec$(OBJ)
+#OUTPUT=   dataPtrDeallocArrSec$(EXE)
+#ENDCMD
+
+#CMD =     RUN
+#ENVAR=    XLFRTEOPTS=$(XLFRTEOPTS):ERRLOC=yes
+#INPUT=    dataPtrDeallocArrSec$(EXE)
+#STDOUT=   dataPtrDeallocArrSec.err
+#STDERR=   dataPtrDeallocArrSec.err
+#VALIDRCS= $(RC_FAIL)
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    dataPtrDeallocArrSec.err $($(tcasedir)dataPtrDeallocArrSec$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

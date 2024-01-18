@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       pure4.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)pure4.f
+#OUTPUT= pure4$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  pure4$(OBJ)
+#OUTPUT= pure4$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  pure4$(EXE)
+#STDOUT= pure4.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

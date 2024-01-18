@@ -1,0 +1,101 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           =  /tst141/F2008/newunit/func/fxopen-newunit21.scenario
+#FEATURE        =  FEATURE 377344 (NEWUNIT) - regression run bucket
+#CREATOR        =  Sarah Kouchanki Ramezan
+#DATE           =  Oct. 2010
+#TEST_TYPE      = sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)fxopen-newunit21.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qintsize=1
+#OUTPUT    = fxopen-newunit21$(OBJ)
+#ENDCMD
+
+#CMD       = XLF_LINK
+#INPUT     = fxopen-newunit21$(OBJ)
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qintsize=1
+#OUTPUT    = fxopen-newunit21$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxopen-newunit21$(EXE)
+#STDOUT    = fxopen-newunit21.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)fxopen-newunit01$(product)vf) fxopen-newunit21.out
+#ENDCMD
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)fxopen-newunit21.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_INTSIZE_2)
+#OUTPUT    = fxopen-newunit21$(OBJ)
+#ENDCMD
+
+#CMD       = XLF_LINK
+#INPUT     = fxopen-newunit21$(OBJ)
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_INTSIZE_2)
+#OUTPUT    = fxopen-newunit21$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxopen-newunit21$(EXE)
+#STDOUT    = fxopen-newunit21.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)fxopen-newunit01$(product)vf) fxopen-newunit21.out
+#ENDCMD
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)fxopen-newunit21.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_INTSIZE_4)
+#OUTPUT    = fxopen-newunit21$(OBJ)
+#ENDCMD
+
+#CMD       = XLF_LINK
+#INPUT     = fxopen-newunit21$(OBJ)
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_INTSIZE_4)
+#OUTPUT    = fxopen-newunit21$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxopen-newunit21$(EXE)
+#STDOUT    = fxopen-newunit21.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)fxopen-newunit01$(product)vf) fxopen-newunit21.out
+#ENDCMD
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)fxopen-newunit21.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_INTSIZE_8)
+#OUTPUT    = fxopen-newunit21$(OBJ)
+#ENDCMD
+
+#CMD       = XLF_LINK
+#INPUT     = fxopen-newunit21$(OBJ)
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_INTSIZE_4)
+#OUTPUT    = fxopen-newunit21$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fxopen-newunit21$(EXE)
+#STDOUT    = fxopen-newunit21.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)fxopen-newunit01$(product)vf) fxopen-newunit21.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

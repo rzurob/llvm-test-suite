@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint11.scenario
+#FEATURE	= Array constructor enhancement intrinsic type specifier tests
+#CREATOR	= DF Manual Update
+#DATE		= 20060620
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint11.f
+#OUTPUT		= acetint11$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint11$(OBJ)
+#OUTPUT		= acetint11$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint11$(EXE)
+#STDOUT		= acetint11.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -a1e-6
+#INPUT		= $(tcasedir)acetint11.vf acetint11.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

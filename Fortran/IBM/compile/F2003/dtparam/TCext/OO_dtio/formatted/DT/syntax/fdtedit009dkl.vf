@@ -1,0 +1,7 @@
+** m   === End of Compilation 1 ===
+"fdtedit009dkl.f", line 78.49: 1512-138 (S) A polymorphic entity must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+"fdtedit009dkl.f", line 80.49: 1512-138 (S) A polymorphic entity must not appear in a data transfer statement unless it is processed by a user-defined derived-type I/O procedure.
+** fdtedit009dkl   === End of Compilation 2 ===
+** readformatted   === End of Compilation 3 ===
+** writeformatted   === End of Compilation 4 ===
+1501-511  Compilation failed for file fdtedit009dkl.f.

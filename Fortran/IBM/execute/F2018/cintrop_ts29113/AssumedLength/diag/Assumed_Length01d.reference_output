@@ -1,0 +1,4 @@
+** assumed_lenght001   === End of Compilation 1 ===
+"Assumed_Length01df.f", line 40.9: 1516-055 (S) The INTENT(IN) attribute specifies that a dummy argument, or a subobject of a dummy argument, must not be redefined or become undefined during the execution of the procedure.
+** check_f_to_f_in   === End of Compilation 2 ===
+1501-511  Compilation failed for file Assumed_Length01df.f.

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_access/specific/assignment/csMainHost
+#FEATURE        = CAF coarray access (specific) - assignment - in procedures internal to main program, assign host-associated constants and variables of various intrinsic types to host-associated coarray variables and assign coarray variables to host-associated variables
+#CREATOR        = DF
+#DATE           = 2010-10-04
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)csMainHost.f
+#OUTPUT = csMainHost$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = csMainHost$(OBJ)
+#OUTPUT = csMainHost$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = csMainHost$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

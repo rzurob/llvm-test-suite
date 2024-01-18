@@ -1,0 +1,9 @@
+"roundspecifier006.f", line 43.35: 1512-014 (S) The value given for the ROUND specifier is incorrect.
+"roundspecifier006.f", line 47.30: 1512-014 (S) The value given for the ROUND specifier is incorrect.
+"roundspecifier006.f", line 49.32: 1512-014 (S) The value given for the ROUND specifier is incorrect.
+"roundspecifier006.f", line 51.10: 1512-016 (E) The specifier round is not permitted for the WAIT statement.  Specifier is ignored.
+"roundspecifier006.f", line 53.15: 1512-016 (E) The specifier round is not permitted for the BACKSPACE statement.  Specifier is ignored.
+"roundspecifier006.f", line 55.11: 1512-016 (E) The specifier round is not permitted for the FLUSH statement.  Specifier is ignored.
+"roundspecifier006.f", line 57.11: 1512-016 (E) The specifier round is not permitted for the CLOSE statement.  Specifier is ignored.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file roundspecifier006.f.

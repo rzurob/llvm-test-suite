@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"genericC1112Assignment001d.f", line 68.8: 1513-119 (S) Identifier (=) appeared in a USE statement but is not publicly accessible from this module.
+** genericc1112assignment001d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericC1112Assignment001d.f.

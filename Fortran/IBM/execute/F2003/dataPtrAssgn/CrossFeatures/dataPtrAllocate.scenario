@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dataPtrAllocate.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       02-14-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dataPtrAllocate.f
+#OUTPUT= dataPtrAllocate$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  dataPtrAllocate$(OBJ)
+#OUTPUT= dataPtrAllocate$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dataPtrAllocate$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

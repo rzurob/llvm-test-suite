@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/intrinsics/math/unit_tests/func/atan02.scenario
+#FEATURE   = Math intrinsic functions
+#CREATOR   = Rafik Zurob
+#DATE      = 20110105
+#TEST_TYPE = unit tests
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     = $(tcasedir)atan02.f
+#OUTPUT    = atan02$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_SET_STRICT_OPTIMIZATION)
+#INPUT     = atan02$(OBJ)
+#OUTPUT    = atan02$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = atan02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

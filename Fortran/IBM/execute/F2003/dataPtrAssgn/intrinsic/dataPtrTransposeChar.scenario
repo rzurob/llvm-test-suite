@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrTransposeChar.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrTransposeChar.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrTransposeChar$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrTransposeChar$(OBJ)
+#OUTPUT    = dataPtrTransposeChar$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrTransposeChar$(EXE)
+#STDOUT    = dataPtrTransposeChar.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrTransposeChar.out $($(tcasedir)dataPtrTransposeChar$(product)vf)
+#ENDCMD
+
+
+
+#ENDCONTROL
+#ENDSCENARIO

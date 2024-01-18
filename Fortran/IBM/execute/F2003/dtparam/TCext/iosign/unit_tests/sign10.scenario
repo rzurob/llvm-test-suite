@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/iosign/unit_tests/sign10.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of F2003/iosign/*
+#DATE      = 20071107
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)sign10.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = sign10$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = sign10$(OBJ)
+#OUTPUT    = sign10$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = sign10$(EXE)
+#STDOUT    = sign10.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)sign10$(product)vf) sign10.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

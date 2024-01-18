@@ -1,0 +1,73 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/asynchIO/attribute/otherAttr/asynchPointerAttr01.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of asynchIO/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)asynchPointerAttr01.f
+#OUTPUT		= asynchPointerAttr01$(OBJ)
+#ENDCMD
+
+
+#CMD		= F_LINK
+#INPUT		= asynchPointerAttr01$(OBJ)
+#OUTPUT		= asynchPointerAttr01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= asynchPointerAttr01$(EXE)
+#STDOUT		= asynchPointerAttr01.stdout
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)asynchPointerAttr01$(product)vf)	\
+				asynchPointerAttr01.stdout
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= -i '^ptX[ 	]'
+#INPUT		= asynchPointerAttr01$(LST)
+#STDOUT		= asynchPointerAttr01.ptX.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i '^ptY[ 	]'
+#INPUT		= asynchPointerAttr01$(LST)
+#STDOUT		= asynchPointerAttr01.ptY.stdout
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= 'Pointer'
+#INPUT		= asynchPointerAttr01.ptX.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= asynchPointerAttr01.ptX.stdout
+#VALIDRCS	= $(GREP_FAIL)
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= 'Pointer'
+#INPUT		= asynchPointerAttr01.ptY.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= asynchPointerAttr01.ptY.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/uop/dtpUOpIntrinsicTypesNamedInterface.scenario
+#FEATURE   = User-Defined Operators - involvement of intrinsic types and named operators (generic interface)
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpIntrinsicTypesNamedInterface.f
+#OUTPUT    = dtpUOpIntrinsicTypesNamedInterface$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpIntrinsicTypesNamedInterface$(OBJ)
+#OUTPUT    = dtpUOpIntrinsicTypesNamedInterface$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpIntrinsicTypesNamedInterface$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

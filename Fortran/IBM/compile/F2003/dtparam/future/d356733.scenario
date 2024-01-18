@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/null/d356733.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Sept. 25 2008
+#TEST_TYPE = Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)d356733.f
+#STDERR = d356733.err
+#VALIDRCS = $(RC_COMP_E)
+#ENDCMD
+
+#CMD    = XLDIFF
+#INPUT  = d356733.err $($(tcasedir)d356733$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

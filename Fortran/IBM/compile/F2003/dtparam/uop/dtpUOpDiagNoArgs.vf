@@ -1,0 +1,6 @@
+"dtpUOpDiagNoArgs.f", line 41.38: 1514-707 (S) noargproc must have one or two dummy arguments. noargproc will not be included in the OPERATOR(.noarg.) generic interface.
+"dtpUOpDiagNoArgs.f", line 41.38: 1514-672 (S) Specific binding noargproc with the NOPASS attribute must not be specified for the generic binding with the generic specification OPERATOR(.noarg.).
+"dtpUOpDiagNoArgs.f", line 48.38: 1514-707 (S) noargproc must have one or two dummy arguments. noargproc will not be included in the OPERATOR(.noarg.) generic interface.
+"dtpUOpDiagNoArgs.f", line 48.38: 1514-672 (S) Specific binding noargproc with the NOPASS attribute must not be specified for the generic binding with the generic specification OPERATOR(.noarg.).
+** dtpuopdiagnoargsmod   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtpUOpDiagNoArgs.f.

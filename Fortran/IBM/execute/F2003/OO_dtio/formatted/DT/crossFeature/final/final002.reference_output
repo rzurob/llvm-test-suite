@@ -1,0 +1,35 @@
+b1:
+inside finalbasearray =>  iotype:DTfinalizebasearray v_list: 5    0  iotype:DTfinalizebasearray v_list: 5    0  iotype:DTfinalizebasearray v_list: 5    0
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6  1234
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6  1235
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6  1236
+c1:
+inside finalchildarray =>  iotype:DT_finalizingchild v_list: 6 8     0     xxx
+  iotype:DT_finalizingchild v_list: 6 8     0     xxx
+  iotype:DT_finalizingchild v_list: 6 8     0     xxx
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6     0
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6     0
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6     0
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6  2234
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6  2235
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6  2236
+b2:
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6     1
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6     2
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6     3
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6     4
+b3:
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6     5
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6     6
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6     7
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6     8
+deallocate:
+inside finalbasearray =>  iotype:DTfinalizebasearray v_list: 5    1  iotype:DTfinalizebasearray v_list: 5    2  iotype:DTfinalizebasearray v_list: 5    3  iotype:DTfinalizebasearray v_list: 5    4
+inside finalchildarray =>  iotype:DT_finalizingchild v_list: 6 8     5     ABC
+  iotype:DT_finalizingchild v_list: 6 8     6     DEF
+  iotype:DT_finalizingchild v_list: 6 8     7     GHI
+  iotype:DT_finalizingchild v_list: 6 8     8     JKL
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6     5
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6     6
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6     7
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6     8

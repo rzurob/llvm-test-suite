@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/mxminAll/var/maxMin/mxminVarIO.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mxminVarIO.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = mxminVarIO$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = mxminVarIO$(OBJ)
+#OUTPUT    = mxminVarIO$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminVarIO$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fort.4 $($(tcasedir)mxminVarIO$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

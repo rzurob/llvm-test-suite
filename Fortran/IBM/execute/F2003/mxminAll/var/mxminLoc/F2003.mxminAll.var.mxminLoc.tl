@@ -1,0 +1,15 @@
+mxminLocVarArgSub.scenario
+mxminLocVarArrArgSub1.scenario
+mxminLocVarArrArgSub2.scenario
+mxminlocVarArgObj1.scenario
+mxminlocVarArgObj2.scenario
+mxminlocVarArgObj3.scenario
+mxminlocVarBindC.scenario
+mxminlocVarConform01.scenario
+mxminlocVarConform01d.scenario
+mxminlocVarConform02.scenario
+mxminlocVarConform03.scenario
+mxminlocVarDefAssign.scenario
+mxminlocVarForallWhere.scenario
+mxminlocVarGenInterface.scenario
+mxminlocVarIO.scenario

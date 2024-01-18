@@ -1,0 +1,4 @@
+"acetint33d.f", line 61.41: 1511-139 (S) Associate name logical is not associated with an entity that can be defined. logical must not be redefined or become undefined.
+"acetint33d.f", line 66.43: 1511-139 (S) Associate name logical is not associated with an entity that can be defined. logical must not be redefined or become undefined.
+** acetint33d   === End of Compilation 1 ===
+1501-511  Compilation failed for file acetint33d.f.

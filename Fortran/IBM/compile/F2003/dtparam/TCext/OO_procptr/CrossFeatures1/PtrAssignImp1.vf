@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+** extsub   === End of Compilation 2 ===
+"PtrAssignImp1.f", line 86.14: 1515-121 (S) The procedure pointer was declared as a function, or is referenced as a function.  The procedure pointer assignment target must be declared as a function.
+"PtrAssignImp1.f", line 87.15: 1515-121 (S) The procedure pointer was declared as a function, or is referenced as a function.  The procedure pointer assignment target must be declared as a function.
+** ptrassignimp1   === End of Compilation 3 ===
+1501-511  Compilation failed for file PtrAssignImp1.f.

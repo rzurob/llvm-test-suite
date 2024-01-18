@@ -1,0 +1,49 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/io/decimaledit/dtparamDecMode001.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamDecMode001a.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamDecMode001a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtparamDecMode001a$(OBJ)
+#OUTPUT    = dtparamDecMode001a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamDecMode001a$(EXE)
+#STDOUT    = dtparamDecMode001.out
+#ENDCMD
+
+#CMD       = SED
+#OPTS      = -e 's/,/\./g'
+#INPUT     = dtparamDecMode001.out
+#STDOUT    = dtparamDecMode001a.out
+#ENDCMD
+
+#CMD       = SED
+#OPTS      = -e 's/,/\./g'
+#INPUT     = $($(tcasedir)dtparamDecMode001$(product)vf)
+#STDOUT    = dtparamDecMode001a.vf
+#ENDCMD
+
+#CMD       = SPIFF
+#INPUT     = dtparamDecMode001a.out dtparamDecMode001a.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

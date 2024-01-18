@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/d358986.scenario
+#FEATURE   = Intrinsic Assignment without Allocation - assigning values to component of array of derived type
+#CREATOR   = DF Manual Update
+#DATE      = 20081112
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d358986.f
+#STDERR	   = d358986.stderr
+#VALIDRCS  = $(RC_COMP_S)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)d358986$(product)vf) d358986.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

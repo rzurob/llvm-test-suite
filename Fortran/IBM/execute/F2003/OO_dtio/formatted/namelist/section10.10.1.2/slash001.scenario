@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/namelist/namelist.1.2/slash001.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)slash001.1 .
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)slash001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = slash001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = slash001$(OBJ)
+#OUTPUT    = slash001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = slash001$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

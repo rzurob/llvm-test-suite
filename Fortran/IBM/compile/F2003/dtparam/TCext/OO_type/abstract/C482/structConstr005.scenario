@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/C482/structConstr005.scenario
+#FEATURE   = OO_type/abstract tests - regression run bucket
+#CREATOR   = GB copy from OO_type/abstract/C482/structConstr005.scenario
+#DATE      = 20070426
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)structConstr005.f
+#OPTS      = -qdebug=shutup
+#OUTPUT    = structConstr005$(OBJ)
+#STDERR    = structConstr005.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)structConstr005$(product)vf) structConstr005.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

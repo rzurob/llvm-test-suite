@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/selectType/fselTyp501.scenario
+#FEATURE = OO_poly
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fselTyp501.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fselTyp501$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fselTyp501$(OBJ)
+#OUTPUT    = fselTyp501$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fselTyp501$(EXE)
+#STDOUT    = fselTyp501.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fselTyp501.out $($(tcasedir)fselTyp501$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,10 @@
+"Misc5.f", line 52.41: 1514-599 (S) Passed-object dummy argument arg of binding procptr must not be an array.
+** m   === End of Compilation 1 ===
+"Misc5.f", line 67.42: 1514-599 (S) Passed-object dummy argument arg of binding procptr must not be an array.
+** m1   === End of Compilation 2 ===
+"Misc5.f", line 81.42: 1514-567 (S) The passed-object dummy argument of the binding procptr for an extensible type must be polymorphic.
+** m2   === End of Compilation 3 ===
+"Misc5.f", line 100.42: 1514-565 (S) The passed-object dummy argument arg of binding procptr must be of type dt3.
+** m3   === End of Compilation 4 ===
+** misc5   === End of Compilation 5 ===
+1501-511  Compilation failed for file Misc5.f.

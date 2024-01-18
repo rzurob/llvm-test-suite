@@ -1,0 +1,4 @@
+"C808Str2.f", line 59.7: 1511-139 (S) Associate name as%base%id is not associated with an entity that can be defined. as%base%id must not be redefined or become undefined.
+"C808Str2.f", line 61.25: 1514-648 (S) A structure component reference must be polymorphic if the rightmost component name is of abstract type.
+** c808arr2   === End of Compilation 1 ===
+1501-511  Compilation failed for file C808Str2.f.

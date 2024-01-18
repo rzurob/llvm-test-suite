@@ -1,0 +1,151 @@
+#define TARGET_NAME a
+#define C_PTR_NAME cp
+#define F_PTR_NAME fp
+#define C_F_POINTER_SHAPE_ARG_NAME shape
+#define STATIC_INIT_TEST_VAR_NAME init_test_var
+
+#if defined(POINTER_TARGET)
+#define TARGET_ATTRIBUTES , pointer
+#elif defined(ALLOC_TARGET)
+#define TARGET_ATTRIBUTES , allocatable, target
+#else
+#define TARGET_ATTRIBUTES , target
+#endif
+
+#if (defined(WHOLE_ARRAY_TARGET) || defined(ARRAY_SECTION_TARGET) || defined(ARRAY_ELEMENT_TARGET))
+#define TARGET_SIZE_DIM1 5
+#define TARGET_RANK 1
+#if (defined(ALLOC_TARGET) || defined(POINTER_TARGET))
+#define TARGET_DIMENSIONS , dimension(:)
+#else
+#define TARGET_DIMENSIONS , dimension(TARGET_SIZE_DIM1)
+#endif
+#if (!defined(ARRAY_ELEMENT_TARGET))
+#define F_PTR_DIMENSIONS , dimension(:)
+#else
+#define F_PTR_DIMENSIONS
+#endif
+#if (defined(ARRAY_ELEMENT_TARGET))
+#define C_F_POINTER_SHAPE_ARG_DECL
+#define C_F_POINTER_SHAPE_ARG_ASSIGN
+#define C_F_POINTER_SHAPE_ARG 
+#elif (defined(VAR_SHAPE_ARG) || defined(PARAM_SHAPE_ARG))
+#define C_F_POINTER_SHAPE_ARG_DECL integer, dimension(TARGET_RANK) :: C_F_POINTER_SHAPE_ARG_NAME
+#define C_F_POINTER_SHAPE_ARG , C_F_POINTER_SHAPE_ARG_NAME
+#if (defined(ARRAY_SECTION_TARGET))
+#define C_F_POINTER_SHAPE_ARG_ASSIGN C_F_POINTER_SHAPE_ARG_NAME = 4
+#else
+#define C_F_POINTER_SHAPE_ARG_ASSIGN C_F_POINTER_SHAPE_ARG_NAME = TARGET_SIZE_DIM1
+#endif
+#else
+#define C_F_POINTER_SHAPE_ARG_DECL
+#define C_F_POINTER_SHAPE_ARG_ASSIGN
+#if (defined(ARRAY_SECTION_TARGET))
+#define C_F_POINTER_SHAPE_ARG , (/ 4 /)
+#else
+#define C_F_POINTER_SHAPE_ARG , (/ TARGET_SIZE_DIM1 /)
+#endif
+#endif
+#else
+#define TARGET_DIMENSIONS
+#define F_PTR_DIMENSIONS
+#define C_F_POINTER_SHAPE_ARG_DECL
+#define C_F_POINTER_SHAPE_ARG_ASSIGN
+#define C_F_POINTER_SHAPE_ARG
+#endif
+
+#if (defined(ARRAY_SECTION_TARGET))
+#define TARGET_REF TARGET_NAME(2:5)
+#elif (defined(ARRAY_ELEMENT_TARGET))
+#define TARGET_REF TARGET_NAME(3)
+#else
+#define TARGET_REF TARGET_NAME
+#endif
+
+#define C_LOC_CALL c_loc(TARGET_REF)
+
+#if (defined(C_PTR_ARRAY))
+#define C_PTR_ARRAY_SIZE_DIM1 5
+#define C_PTR_DIMENSIONS , dimension(C_PTR_ARRAY_SIZE_DIM1)
+#define C_PTR_REF C_PTR_NAME(1)
+#else
+#define C_PTR_DIMENSIONS
+#define C_PTR_REF C_PTR_NAME
+#endif
+
+#if (defined(C_PTR_STATIC_INIT))
+#define STATIC_INIT_TEST_VAR_DECL logical C_PTR_DIMENSIONS :: STATIC_INIT_TEST_VAR_NAME
+#if (defined(C_PTR_ARRAY))
+#define DATA_STATEMENT data C_PTR_NAME / C_PTR_ARRAY_SIZE_DIM1 * c_null_ptr /
+#define STATIC_INIT_TEST_VAR_ASSIGN do i = 1, 5; STATIC_INIT_TEST_VAR_NAME(i) = c_associated(C_PTR_NAME(i)); end do
+#define STATIC_INIT_TEST if (any(STATIC_INIT_TEST_VAR_NAME)) error stop 1
+#else
+#define DATA_STATEMENT data C_PTR_NAME / c_null_ptr /
+#define STATIC_INIT_TEST_VAR_ASSIGN STATIC_INIT_TEST_VAR_NAME = c_associated(C_PTR_NAME)
+#define STATIC_INIT_TEST if (STATIC_INIT_TEST_VAR_NAME) error stop 1
+#endif
+#else
+#define STATIC_INIT_TEST_VAR_DECL
+#define DATA_STATEMENT
+#define STATIC_INIT_TEST_VAR_ASSIGN
+#define STATIC_INIT_TEST
+#endif
+
+#define C_F_POINTER_CALL call c_f_pointer(C_PTR_REF, F_PTR_NAME C_F_POINTER_SHAPE_ARG)
+
+#define C_PTR_RUNTIME_NULL_ASSIGN C_PTR_NAME = c_null_ptr
+#define C_PTR_RUNTIME_NULL_TEST_VAR null_test_var
+
+#if (defined(C_PTR_ARRAY))
+#define C_PTR_RUNTIME_NULL_TEST_VAR_ASSIGN do i = 1, 5; C_PTR_RUNTIME_NULL_TEST_VAR = c_associated(C_PTR_NAME(i)); end do
+#define C_PTR_RUNTIME_NULL_TEST if (any(C_PTR_RUNTIME_NULL_TEST_VAR)) error stop 2
+#else
+#define C_PTR_RUNTIME_NULL_TEST_VAR_ASSIGN C_PTR_RUNTIME_NULL_TEST_VAR = c_associated(C_PTR_NAME)
+#define C_PTR_RUNTIME_NULL_TEST if (C_PTR_RUNTIME_NULL_TEST_VAR) error stop 2
+#endif
+
+#if (defined(ALLOC_TARGET) || defined(POINTER_TARGET))
+#if (defined(SCALAR_TARGET))
+#define ALLOCATE_STATEMENT allocate(TARGET_NAME)
+#else
+#define ALLOCATE_STATEMENT allocate(TARGET_NAME(TARGET_SIZE_DIM1))
+#endif
+#else
+#define ALLOCATE_STATEMENT
+#endif
+
+      @PROCESS FREE(F90)
+
+      program PROGRAM_NAME
+        use iso_c_binding
+        implicit none
+        integer :: i
+        integer TARGET_ATTRIBUTES TARGET_DIMENSIONS :: TARGET_NAME
+        integer, pointer F_PTR_DIMENSIONS :: F_PTR_NAME
+        type(c_ptr) C_PTR_DIMENSIONS :: C_PTR_NAME
+        logical C_PTR_DIMENSIONS :: C_PTR_RUNTIME_NULL_TEST_VAR
+        C_F_POINTER_SHAPE_ARG_DECL
+        STATIC_INIT_TEST_VAR_DECL
+        DATA_STATEMENT
+        STATIC_INIT_TEST_VAR_ASSIGN
+        STATIC_INIT_TEST
+        C_PTR_RUNTIME_NULL_ASSIGN
+        C_PTR_RUNTIME_NULL_TEST_VAR_ASSIGN
+        C_PTR_RUNTIME_NULL_TEST
+        ALLOCATE_STATEMENT
+        C_PTR_NAME = C_LOC_CALL
+        C_F_POINTER_SHAPE_ARG_ASSIGN
+        C_F_POINTER_CALL
+        if (.not. c_associated(C_LOC_CALL)) ERROR STOP 3
+        if (.not. c_associated(C_LOC_CALL, C_LOC_CALL)) ERROR STOP 4
+        if (.not. c_associated(C_PTR_REF, C_LOC_CALL)) ERROR STOP 5
+        if (.not. c_associated(C_LOC_CALL, C_PTR_REF)) ERROR STOP 6
+        if (.not. c_associated(C_PTR_REF, C_PTR_REF)) error stop 7
+        if (.not. c_associated(C_PTR_REF)) error stop 8
+        if (c_associated(C_PTR_REF, c_null_ptr)) error stop 9
+        if (c_associated(c_null_ptr, C_PTR_REF)) error stop 10
+        if (c_associated(C_LOC_CALL, c_null_ptr)) ERROR STOP 11
+        if (c_associated(c_null_ptr, C_LOC_CALL)) ERROR STOP 12
+        if (.not. associated(F_PTR_NAME)) error stop 13
+        if (.not. associated(F_PTR_NAME, TARGET_REF)) error stop 14
+      end program PROGRAM_NAME

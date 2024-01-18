@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/block/BNoImportd
+#FEATURE        = F2008 - BLOCK - IMPORT statements are not allowed
+#CREATOR        = DF
+#DATE           = 2010-11-05
+#TEST_TYPE      = diagnostic
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)BNoImportd.f
+#OUTPUT = BNoImportd$(OBJ)
+#STDERR = BNoImportd.err
+#STDOUT = BNoImportd.err
+#VALIDRCS = $(RC_FAIL)
+#ENDCMD
+
+#CMD    = XLDIFF
+#INPUT  = $($(tcasedir)BNoImportd$(product)vf) BNoImportd.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

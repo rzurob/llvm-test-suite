@@ -1,0 +1,47 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/stmt/openDecimalSpec01.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS= Specifier in I/O Statements
+#CREATOR	= GM Manual Creation
+#DATE		= 20060222
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)openDecimalSpec01.dat .
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)openDecimalSpec01.f
+#OUTPUT		= openDecimalSpec01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= openDecimalSpec01$(OBJ)
+#OUTPUT		= openDecimalSpec01$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= openDecimalSpec01$(EXE)
+#ENDCMD
+
+
+#CMD		= CUT
+#OPTS		= -c 8-14
+#INPUT		= $(tcasedir)openDecimalSpec01.dat
+#STDOUT		= openDecimalSpec01.vf
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= openDecimalSpec01.vf fort.2048
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

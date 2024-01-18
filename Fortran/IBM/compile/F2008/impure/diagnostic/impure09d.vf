@@ -1,0 +1,4 @@
+"impure09d.f", line 30.30: 1513-163 (S) All internal subprograms of a pure subprogram must be pure.
+** final   === End of Compilation 1 ===
+** main   === End of Compilation 2 ===
+1501-511  Compilation failed for file impure09d.f.

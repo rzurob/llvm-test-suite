@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/iostat/iostatdiag001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of iostat/*
+#DATE      = 20071107
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)iostatdiag001.f
+#OPTS      = $(OPT_FIXED_SOURCE_FORM) -qdebug=intmsg
+#OUTPUT    = iostatdiag001$(OBJ)
+#STDOUT    = iostatdiag001.out
+#STDERR    = iostatdiag001.out
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD	   = DIFF
+#OPTS	   = -b
+#INPUT     = iostatdiag001.out $($(tcasedir)iostatdiag001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

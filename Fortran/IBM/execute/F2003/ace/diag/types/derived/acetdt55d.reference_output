@@ -1,0 +1,23 @@
+** acetdt55dmod   === End of Compilation 1 ===
+"acetdt55d.f", line 80.28: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt55d.f", line 80.38: 1516-044 (S) A conversion from type child1 is not permitted.
+"acetdt55d.f", line 83.28: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt55d.f", line 83.38: 1516-044 (S) A conversion from type child2 is not permitted.
+"acetdt55d.f", line 87.28: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt55d.f", line 87.38: 1516-044 (S) A conversion from type child1 is not permitted.
+"acetdt55d.f", line 90.28: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt55d.f", line 90.38: 1516-044 (S) A conversion from type child2 is not permitted.
+"acetdt55d.f", line 94.28: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt55d.f", line 94.38: 1516-044 (S) A conversion from type child1 is not permitted.
+"acetdt55d.f", line 97.28: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt55d.f", line 97.38: 1516-044 (S) A conversion from type child2 is not permitted.
+"acetdt55d.f", line 100.28: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt55d.f", line 100.38: 1516-044 (S) A conversion from type child1 is not permitted.
+"acetdt55d.f", line 104.28: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt55d.f", line 104.38: 1516-044 (S) A conversion from type child1 is not permitted.
+"acetdt55d.f", line 107.28: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt55d.f", line 107.38: 1516-044 (S) A conversion from type child2 is not permitted.
+"acetdt55d.f", line 110.28: 1511-131 (S) The declared type of the object to be allocated must be type compatible with the expression specified in the SOURCE= specifier.  The type parameter values must also be the same.
+"acetdt55d.f", line 110.38: 1516-044 (S) A conversion from type child1 is not permitted.
+** acetdt55d   === End of Compilation 2 ===
+1501-511  Compilation failed for file acetdt55d.f.

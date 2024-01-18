@@ -1,0 +1,4 @@
+"bcdabl26.f", line 51.22: 1516-196 (S) Entity blk must not have multiple binding labels.
+** mod   === End of Compilation 1 ===
+** bcdabl26   === End of Compilation 2 ===
+1501-511  Compilation failed for file bcdabl26.f.

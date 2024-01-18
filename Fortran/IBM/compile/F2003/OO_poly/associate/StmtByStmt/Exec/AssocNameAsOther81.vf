@@ -1,0 +1,3 @@
+"AssocNameAsOther81.f", line 48.24: 1514-188 (S) Identifier a1 was defined elsewhere with conflicting attributes. Identifier is ignored in this context.
+** assocnameasother81   === End of Compilation 1 ===
+1501-511  Compilation failed for file AssocNameAsOther81.f.

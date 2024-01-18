@@ -1,0 +1,426 @@
+! *********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD: 
+! %COMPOPTS: -qfree=f90 
+! %GROUP: Misc29.f 
+! %VERIFY:  
+! %STDIN:
+! %STDOUT: 
+! %EXECARGS:
+! %POSTCMD:  
+! %END
+! *********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : Misc29
+!*  TEST CASE TITLE            : 
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Mar. 17, 2005
+!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*
+!*  SECONDARY FUNCTIONS TESTED : 
+!*
+!*  REFERENCE                  : Feature 219934.OO_poly
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*  
+!*  Limits on TYPE IS/CLASS IS 
+!*  ()
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+
+  PROGRAM Misc29
+
+  TYPE :: DT0 
+  END TYPE
+
+  TYPE, EXTENDS(DT0) :: DT1
+  END TYPE
+
+  TYPE, EXTENDS(DT1) :: DT2
+  END TYPE
+
+  TYPE, EXTENDS(DT2) :: DT3
+  END TYPE
+
+  TYPE, EXTENDS(DT3) :: DT4
+  END TYPE
+
+  TYPE, EXTENDS(DT4) :: DT5
+  END TYPE
+
+  TYPE, EXTENDS(DT5) :: DT6
+  END TYPE
+
+  TYPE, EXTENDS(DT6) :: DT7
+  END TYPE
+
+  TYPE, EXTENDS(DT7) :: DT8
+  END TYPE
+
+  TYPE, EXTENDS(DT8) :: DT9
+  END TYPE
+
+  TYPE, EXTENDS(DT9) :: DT10
+  END TYPE
+
+  TYPE, EXTENDS(DT10) :: DT11
+  END TYPE
+
+  TYPE, EXTENDS(DT11) :: DT12
+  END TYPE
+
+  TYPE, EXTENDS(DT12) :: DT13
+  END TYPE
+
+  TYPE, EXTENDS(DT13) :: DT14
+  END TYPE
+
+  TYPE, EXTENDS(DT14) :: DT15
+  END TYPE
+
+  TYPE, EXTENDS(DT15) :: DT16
+  END TYPE
+
+  TYPE, EXTENDS(DT16) :: DT17
+  END TYPE
+
+  TYPE, EXTENDS(DT17) :: DT18
+  END TYPE
+
+  TYPE, EXTENDS(DT18) :: DT19
+  END TYPE
+
+  TYPE, EXTENDS(DT19) :: DT20
+  END TYPE
+
+  TYPE, EXTENDS(DT20) :: DT21
+  END TYPE
+
+  TYPE, EXTENDS(DT21) :: DT22
+  END TYPE
+
+  TYPE, EXTENDS(DT22) :: DT23
+  END TYPE
+
+  TYPE, EXTENDS(DT23) :: DT24
+  END TYPE
+
+  TYPE, EXTENDS(DT24) :: DT25
+  END TYPE
+
+  TYPE, EXTENDS(DT25) :: DT26
+  END TYPE
+
+  TYPE, EXTENDS(DT26) :: DT27
+  END TYPE
+
+  TYPE, EXTENDS(DT27) :: DT28
+  END TYPE
+
+  TYPE, EXTENDS(DT28) :: DT29
+  END TYPE
+
+  TYPE, EXTENDS(DT29) :: DT30
+  END TYPE
+
+
+  TYPE, EXTENDS(DT30) :: DT31
+  END TYPE
+
+  TYPE, EXTENDS(DT31) :: DT32
+  END TYPE
+
+  TYPE, EXTENDS(DT32) :: DT33
+  END TYPE
+
+  TYPE, EXTENDS(DT33) :: DT34
+  END TYPE
+
+  TYPE, EXTENDS(DT34) :: DT35
+  END TYPE
+
+  TYPE, EXTENDS(DT35) :: DT36
+  END TYPE
+
+  TYPE, EXTENDS(DT36) :: DT37
+  END TYPE
+
+  TYPE, EXTENDS(DT37) :: DT38
+  END TYPE
+
+  TYPE, EXTENDS(DT38) :: DT39
+  END TYPE
+
+  TYPE, EXTENDS(DT39) :: DT40
+  END TYPE
+
+
+  TYPE, EXTENDS(DT40) :: DT41
+  END TYPE
+
+  TYPE, EXTENDS(DT41) :: DT42
+  END TYPE
+
+  TYPE, EXTENDS(DT42) :: DT43
+  END TYPE
+
+  TYPE, EXTENDS(DT43) :: DT44
+  END TYPE
+
+  TYPE, EXTENDS(DT44) :: DT45
+  END TYPE
+
+  TYPE, EXTENDS(DT45) :: DT46
+  END TYPE
+
+  TYPE, EXTENDS(DT46) :: DT47
+  END TYPE
+
+  TYPE, EXTENDS(DT47) :: DT48
+  END TYPE
+
+  TYPE, EXTENDS(DT48) :: DT49
+  END TYPE
+
+  TYPE, EXTENDS(DT49) :: DT50
+  END TYPE
+
+  ! When the DT?? goes further,
+  ! 1517-006 (U) Parse stack overflow.  Expression is too long. 
+  !  Reduce program size or nested references
+
+  CLASS(*), ALLOCATABLE :: V
+
+  ALLOCATE(DT50::V)
+
+  SELECT TYPE (V)
+
+    CLASS DEFAULT
+      STOP 99
+
+    TYPE IS  (DT1)
+      STOP 1
+    CLASS IS (DT1)
+      STOP 1
+    TYPE IS  (DT2)
+      STOP 2
+    CLASS IS (DT2)
+      STOP 2
+    TYPE IS  (DT3)
+      STOP 3
+    CLASS IS (DT3)
+      STOP 3
+    TYPE IS  (DT4)
+      STOP 4
+    CLASS IS (DT4)
+      STOP 4
+    TYPE IS  (DT5)
+      STOP 5
+    CLASS IS (DT5)
+      STOP 5
+    TYPE IS  (DT6)
+      STOP 6
+    CLASS IS (DT6)
+      STOP 6
+    TYPE IS  (DT7)
+      STOP 7
+    CLASS IS (DT7)
+      STOP 7
+    TYPE IS  (DT8)
+      STOP 8
+    CLASS IS (DT8)
+      STOP 8
+    TYPE IS  (DT9)
+      STOP 9
+    CLASS IS (DT9)
+      STOP 9
+    TYPE IS  (DT10)
+      STOP 10
+    CLASS IS (DT10)
+      STOP 10
+
+    TYPE IS  (DT11)
+      STOP 11
+    CLASS IS (DT11)
+      STOP 11
+    TYPE IS  (DT12)
+      STOP 12
+    CLASS IS (DT12)
+      STOP 12
+    TYPE IS  (DT13)
+      STOP 13
+    CLASS IS (DT13)
+      STOP 13
+    TYPE IS  (DT14)
+      STOP 14
+    CLASS IS (DT14)
+      STOP 14
+    TYPE IS  (DT15)
+      STOP 15
+    CLASS IS (DT15)
+      STOP 15
+    TYPE IS  (DT16)
+      STOP 16
+    CLASS IS (DT16)
+      STOP 16
+    TYPE IS  (DT17)
+      STOP 17
+    CLASS IS (DT17)
+      STOP 17
+    TYPE IS  (DT18)
+      STOP 18
+    CLASS IS (DT18)
+      STOP 18
+    TYPE IS  (DT19)
+      STOP 19
+    CLASS IS (DT19)
+      STOP 19
+    TYPE IS  (DT20)
+      STOP 20
+    CLASS IS (DT20)
+      STOP 20
+
+    TYPE IS  (DT21)
+      STOP 21
+    CLASS IS (DT21)
+      STOP 21
+    TYPE IS  (DT22)
+      STOP 22
+    CLASS IS (DT22)
+      STOP 22
+    TYPE IS  (DT23)
+      STOP 23
+    CLASS IS (DT23)
+      STOP 23
+    TYPE IS  (DT24)
+      STOP 24
+    CLASS IS (DT24)
+      STOP 24
+    TYPE IS  (DT25)
+      STOP 25
+    CLASS IS (DT25)
+      STOP 25
+    TYPE IS  (DT26)
+      STOP 26
+    CLASS IS (DT26)
+      STOP 26
+    TYPE IS  (DT27)
+      STOP 27
+    CLASS IS (DT27)
+      STOP 27
+    TYPE IS  (DT28)
+      STOP 28
+    CLASS IS (DT28)
+      STOP 28
+    TYPE IS  (DT29)
+      STOP 29
+    CLASS IS (DT29)
+      STOP 29
+    TYPE IS  (DT30)
+      STOP 30
+    CLASS IS (DT30)
+      STOP 30
+
+    TYPE IS  (DT31)
+      STOP 31
+    CLASS IS (DT31)
+      STOP 31
+    TYPE IS  (DT32)
+      STOP 32
+    CLASS IS (DT32)
+      STOP 32
+    TYPE IS  (DT33)
+      STOP 33
+    CLASS IS (DT33)
+      STOP 33
+    TYPE IS  (DT34)
+      STOP 34
+    CLASS IS (DT34)
+      STOP 34
+    TYPE IS  (DT35)
+      STOP 35
+    CLASS IS (DT35)
+      STOP 35
+    TYPE IS  (DT36)
+      STOP 36
+    CLASS IS (DT36)
+      STOP 36
+    TYPE IS  (DT37)
+      STOP 37
+    CLASS IS (DT37)
+      STOP 37
+    TYPE IS  (DT38)
+      STOP 38
+    CLASS IS (DT38)
+      STOP 38
+    TYPE IS  (DT39)
+      STOP 39
+    CLASS IS (DT39)
+      STOP 39
+    TYPE IS  (DT40)
+      STOP 40
+    CLASS IS (DT40)
+      STOP 40
+
+    TYPE IS  (DT41)
+      STOP 41
+    CLASS IS (DT41)
+      STOP 41
+    TYPE IS  (DT42)
+      STOP 42
+    CLASS IS (DT42)
+      STOP 42
+    TYPE IS  (DT43)
+      STOP 43
+    CLASS IS (DT43)
+      STOP 43
+    TYPE IS  (DT44)
+      STOP 44
+    CLASS IS (DT44)
+      STOP 44
+    TYPE IS  (DT45)
+      STOP 45
+    CLASS IS (DT45)
+      STOP 45
+    TYPE IS  (DT46)
+      STOP 46
+    CLASS IS (DT46)
+      STOP 46
+    TYPE IS  (DT47)
+      STOP 47
+    CLASS IS (DT47)
+      STOP 47
+    TYPE IS  (DT48)
+      STOP 48
+    CLASS IS (DT48)
+      STOP 48
+    TYPE IS  (DT49)
+      STOP 49
+    CLASS IS (DT49)
+      STOP 49
+    TYPE IS  (DT50)
+      PRINT *,  "OK!" 
+    CLASS IS (DT50)
+      STOP 50
+
+  END SELECT
+
+
+  END
+
+

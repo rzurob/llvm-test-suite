@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/dummy_arg/fArg517_1.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20070919
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fArg517_1.f
+#OUTPUT    = fArg517_1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fArg517_1$(OBJ)
+#OUTPUT    = fArg517_1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fArg517_1$(EXE)
+#STDOUT    = fArg517_1.out
+#ENDCMD
+
+#CMD       = SPIFF
+#OPTS      = -r.000001
+#INPUT     = fArg517_1.out $($(tcasedir)fArg517_1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

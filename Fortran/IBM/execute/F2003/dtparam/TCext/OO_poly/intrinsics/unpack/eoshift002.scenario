@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/unpack/eoshift002.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071002
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)eoshift002.f
+#OUTPUT    = eoshift002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = eoshift002$(OBJ)
+#OUTPUT    = eoshift002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = eoshift002$(EXE)
+#STDOUT    = eoshift002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)eoshift002$(product)vf) eoshift002.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

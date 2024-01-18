@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = dummyArg007a.scenario
+#FEATURE   =
+#CREATOR   = MZ adapted from dtparam/TCext/allocEnh/argAssociation/dummyArg007a.f
+#DATE      = 20100504
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_ALT_COMPILE
+#INPUT     = $(tcasedir)dummyArg007a_mod.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dummyArg007a_mod$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dummyArg007a_main.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dummyArg007a_main$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dummyArg007a_mod$(OBJ) dummyArg007a_main$(OBJ)
+#OUTPUT    = dummyArg007a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dummyArg007a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,12 @@
+ &NMLB
+ B1=-1
+ /
+ &NMLC
+ C2=-2, ABCD, C3=-3, GHIJ
+ /
+ &NMLN
+ N1=99, Erwin Ru, -2, ABCD, -3, GHIJ, 99, Erwin Ru, -2, ABCD, -3, GHIJ
+ /
+ &NMLT
+ N1=99, Henrik D, -2, ABCD, -3, GHIJ, 99, Henrik D, -2, ABCD, -3, GHIJ, C2=-2, ABCD, C3=-3, GHIJ, B1=-1
+ /

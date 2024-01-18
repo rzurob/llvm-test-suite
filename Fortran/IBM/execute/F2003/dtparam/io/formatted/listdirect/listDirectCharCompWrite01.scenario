@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/listdirect/listDirectCharCompWrite01.scenario
+#FEATURE   = 360757
+#CREATOR   = Nancy Wang
+#DATE      = Jan. 7 2009
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)listDirectCharCompWrite01.f
+#OUTPUT= listDirectCharCompWrite01$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = listDirectCharCompWrite01$(OBJ)
+#OUTPUT= listDirectCharCompWrite01$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = listDirectCharCompWrite01$(EXE)
+#STDOUT= listDirectCharCompWrite01.out
+#ENDCMD
+
+#CMD   = DIFF
+#INPUT  = $($(tcasedir)listDirectCharCompWrite01$(product)vf) listDirectCharCompWrite01.out
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

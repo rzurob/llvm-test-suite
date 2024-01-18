@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/mxminAll/var/mxminVal/mxminvalVarConform01.f
+#FEATURE =
+#CREATOR = William Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mxminvalVarConform01.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_INTLOG)
+#OUTPUT    = mxminvalVarConform01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_INTLOG)
+#INPUT     = mxminvalVarConform01$(OBJ)
+#OUTPUT    = mxminvalVarConform01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = mxminvalVarConform01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,2 @@
+--- TODO ---
+"coindexObjectAssignmentDT16.f", line 60.9: <some number> (S) A co-indexed entity containing an ultimate allocatable component must not appear on L.H.S in a data transfer statement unless it is processed by a user-defined I/O procedure.

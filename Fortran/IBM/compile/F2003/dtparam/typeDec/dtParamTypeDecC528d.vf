@@ -1,0 +1,4 @@
+"dtParamTypeDecC528d.f", line 54.29: 1514-735 (S) Dummy argument t1 was specified with the VALUE attribute.  Type parameter values of t1 must be evaluated at compile time.
+"dtParamTypeDecC528d.f", line 55.29: 1514-734 (S) Dummy argument t2 was specified with the VALUE attribute. t2 must not have assumed or deferred length type parameters.
+** dtparamtypedecc528d   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtParamTypeDecC528d.f.

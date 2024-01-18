@@ -1,0 +1,34 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       autoobj24.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       11-30-08
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)autoobj24.f
+#OUTPUT= autoobj24$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  autoobj24$(OBJ)
+#OUTPUT= autoobj24$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  autoobj24$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

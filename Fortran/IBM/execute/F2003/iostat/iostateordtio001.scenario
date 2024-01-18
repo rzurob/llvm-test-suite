@@ -1,0 +1,45 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=iostateordtio001.scenario
+#FEATURE = 299314
+#CREATOR = Rob Wheeler
+#DATE    = 20060109
+#TEST_TYPE=fvt
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)iostatdtio.dat .
+#ENDCMD
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)iostateordtio001.f
+#OPTS      =
+#OUTPUT    = iostateordtio001$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#OPTS      =
+#INPUT     = iostateordtio001$(OBJ)
+#OUTPUT    = iostateordtio001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = iostateordtio001$(EXE)
+#STDOUT    = iostateordtio001.out
+#STDERR    = iostateordtio001.out
+#ENDCMD
+
+#CMD	   = DIFF
+#OPTS	   = -b
+#INPUT     = iostateordtio001.out $($(tcasedir)iostateordtio001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

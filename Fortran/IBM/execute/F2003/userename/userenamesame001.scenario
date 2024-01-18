@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=userenamesame001.scenario
+#FEATURE = Renaming the operator in a use statement
+#CREATOR = Rob Wheeler
+#DATE    = 20060330
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)userenamesame001.f
+#OUTPUT    = userenamesame001$(OBJ)
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = userenamesame001$(OBJ)
+#OUTPUT    = userenamesame001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = userenamesame001$(EXE)
+#STDOUT    = userenamesame001.out
+#STDERR    = userenamesame001.out
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = userenamesame001.out $($(tcasedir)userenamesame001$(product)vf)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

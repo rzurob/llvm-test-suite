@@ -1,0 +1,17 @@
+ Subroutine sub
+ pf pointer assoc. = F
+ i = 3
+ Subroutine sub
+ pf pointer assoc. = T
+ pf associated, i = 9
+ i = 3
+ optional arg. is present, i = 6
+ Subroutine sub1
+ pf pointer assoc. = F
+ i = 3
+ optional arg. is present, i = 6
+ Subroutine sub1
+ pf pointer assoc. = T
+ pf associated, i = 9
+ i = 3
+ optional arg. is present, i = 6

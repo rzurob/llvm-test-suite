@@ -1,0 +1,7 @@
+"implied05d.f", line 5.38: 1516-077 (S) Conformable array is required in this context.
+"implied05d.f", line 5.38: 1514-130 (S) Variable a was declared as array of type ASSUMED_SIZE.  This type of array is not permitted in a main program.
+"implied05d.f", line 8.29: 1514-496 (S) Variables which are allocatable objects, or are structures containing allocatable objects must not have the PARAMETER attribute, appear in DATA statements, or be initially defined in a type declaration statement.
+"implied05d.f", line 8.29: 1514-004 (S) Name given for constant with PARAMETER attribute was defined elsewhere with conflicting attributes. Name is ignored.
+"implied05d.f", line 8.29: 1514-192 (S) Array b is declared with the ALLOCATABLE attribute. b must also be declared with an assumed-rank spec or a deferred-shape spec list.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file implied05d.f.

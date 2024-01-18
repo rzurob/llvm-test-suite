@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= reshapedtp42.scenario
+#FEATURE= reshape with parameterized derived types
+#CREATOR= Andy Sheung
+#DATE= 200807
+#TEST_TYPE= diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)reshapedtp42.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = reshapedtp42$(OBJ)
+#STDERR    = reshapedtp42.out
+#STDOUT    = reshapedtp42.out
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = reshapedtp42.out $(tcasedir)reshapedtp42.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

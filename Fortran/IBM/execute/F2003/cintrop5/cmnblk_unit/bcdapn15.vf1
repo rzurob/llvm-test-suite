@@ -1,0 +1,4 @@
+"bcdapn15.f", line 48.9: 1514-005 (S) COMMON block identifier prg was defined elsewhere with conflicting attributes. This identifier and any element names are ignored.
+"bcdapn15.f", line 49.10: 1514-005 (S) COMMON block identifier prg was defined elsewhere with conflicting attributes. This identifier and any element names are ignored.
+** prg   === End of Compilation 1 ===
+1501-511  Compilation failed for file bcdapn15.f.

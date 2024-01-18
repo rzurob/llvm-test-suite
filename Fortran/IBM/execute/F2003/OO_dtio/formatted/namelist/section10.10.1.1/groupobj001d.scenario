@@ -1,0 +1,47 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/namelist/namelist.1.1/groupobj001d.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)groupobj001d.1 .
+#ENDCMD
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)groupobj001d.2 .
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)groupobj001d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = groupobj001d$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = groupobj001d$(OBJ)
+#OUTPUT    = groupobj001d$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = groupobj001d$(EXE)
+#STDOUT    = groupobj001d.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)groupobj001d$(product)vf) groupobj001d.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

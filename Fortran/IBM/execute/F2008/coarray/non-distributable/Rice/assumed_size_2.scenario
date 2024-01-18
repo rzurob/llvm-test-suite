@@ -1,0 +1,45 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = assumed_size_2.scenario
+#FEATURE    =
+#CREATOR    = Jin Li
+#DATE       = 2010-10-27
+#TEST_TYPE  = unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)assumed_size_2.f
+#OUTPUT    = assumed_size_2$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = assumed_size_2$(OBJ)
+#OUTPUT    = assumed_size_2$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = assumed_size_2$(EXE)
+#STDOUT    = assumed_size_2.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = assumed_size_2.out $(tcasedir)assumed_size_2.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

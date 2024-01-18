@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2008/submodule/unit_tests/diag/acc_private15.f
+#FEATURE =
+#CREATOR = Daniel Chen
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)acc_private15.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#STDERR    = acc_private15.err
+#OUTPUT    = acc_private15$(OBJ)
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)acc_private15$(product)vf) acc_private15.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/initExp/Def/d326436.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of F2003/initExp/*
+#DATE      = 20071107
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)d326436.f
+#OUTPUT= d326436$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  d326436$(OBJ)
+#OUTPUT= d326436$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  d326436$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

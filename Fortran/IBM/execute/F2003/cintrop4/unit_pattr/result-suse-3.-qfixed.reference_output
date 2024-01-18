@@ -1,0 +1,79 @@
+*** testcase variant: -WF,-DARG=3 -qfixed\n
+** f1   === End of Compilation 1 ===
+** f2   === End of Compilation 2 ===
+  30.32   01610389 
+** f3   === End of Compilation 3 ===
+  34.34   016107E7 f4‹RESULT‹
+** f4   === End of Compilation 4 ===
+  37.34   016107E7 f5‹RESULT‹
+** f5   === End of Compilation 5 ===
+** f6   === End of Compilation 6 ===
+  47.31   0161074A f7‹BIND(C)‹
+** f7   === End of Compilation 7 ===
+** f8   === End of Compilation 8 ===
+  57.42   0161074A f9‹BIND(C)‹
+** f9   === End of Compilation 9 ===
+  60.42   0161074A fa‹BIND(C)‹
+** fa   === End of Compilation 10 ===
+** fb   === End of Compilation 11 ===
+** fc   === End of Compilation 12 ===
+** fd   === End of Compilation 13 ===
+** fe   === End of Compilation 14 ===
+  84.34   016107E7 ff‹RESULT‹
+  84.53   0161074A ff‹BIND(C)‹
+** ff   === End of Compilation 15 ===
+  87.31   0161074A fg‹BIND(C)‹
+  87.50   016107E7 fg‹RESULT‹
+** fg   === End of Compilation 16 ===
+  91.42   016107E7 fh‹RESULT‹
+  91.53   0161074A fh‹BIND(C)‹
+** fh   === End of Compilation 17 ===
+  94.42   0161074A fi‹BIND(C)‹
+  94.50   016107E7 fi‹RESULT‹
+** fi   === End of Compilation 18 ===
+  98.42   016107E7 fj‹RESULT‹
+  98.53   016107E7 fj‹RESULT‹
+** fj   === End of Compilation 19 ===
+  101.42   0161074A fk‹BIND(C)‹
+  101.50   0161074A fk‹BIND(C)‹
+** fk   === End of Compilation 20 ===
+  108.34   016107E7 fl‹RESULT‹
+  108.64   0161074A fl‹BIND(C)‹
+** fl   === End of Compilation 21 ===
+  112.34   016107E7 fm‹RESULT‹
+  112.64   0161074A fm‹BIND(C)‹
+** fm   === End of Compilation 22 ===
+  117.42   0161074A fn‹BIND(C)‹
+  117.72   016107E7 fn‹RESULT‹
+** fn   === End of Compilation 23 ===
+  121.42   0161074A fo‹BIND(C)‹
+  121.72   016107E7 fo‹RESULT‹
+** fo   === End of Compilation 24 ===
+  126.53   016107E7 fp‹RESULT‹
+  126.64   0161074A fp‹BIND(C)‹
+** fp   === End of Compilation 25 ===
+  130.53   016107E7 fq‹RESULT‹
+  130.64   0161074A fq‹BIND(C)‹
+** fq   === End of Compilation 26 ===
+  135.53   0161074A fr‹BIND(C)‹
+  135.72   016107E7 fr‹RESULT‹
+** fr   === End of Compilation 27 ===
+  139.53   0161074A fs‹BIND(C)‹
+  139.72   016107E7 fs‹RESULT‹
+** fs   === End of Compilation 28 ===
+  152.53   016107E7 ft‹RESULT‹
+  152.64   016107E7 ft‹RESULT‹
+** ft   === End of Compilation 29 ===
+  157.53   0161074A fu‹BIND(C)‹
+  157.72   0161074A fu‹BIND(C)‹
+** fu   === End of Compilation 30 ===
+  161.53   0161074A fv‹BIND(C)‹
+  161.72   0161074A fv‹BIND(C)‹
+** fv   === End of Compilation 31 ===
+  165.53   0161074A fw‹BIND(C)‹
+  165.72   0161074A fw‹BIND(C)‹
+** fw   === End of Compilation 32 ===
+  169.53   0161074A fx‹BIND(C)‹
+  169.72   0161074A fx‹BIND(C)‹
+** fx   === End of Compilation 33 ===
+1501-511  Compilation failed for file result.F.

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/contiguous/assumeShape/dummyAssume3.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20101025
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dummyAssume3.f
+#OUTPUT    = dummyAssume3$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dummyAssume3$(OBJ)
+#OUTPUT    = dummyAssume3$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dummyAssume3$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

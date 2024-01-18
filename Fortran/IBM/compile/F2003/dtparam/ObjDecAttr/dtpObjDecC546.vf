@@ -1,0 +1,6 @@
+"dtpObjDecC546.f", line 58.11: 1516-147 (S) arg has the attribute INTENT(IN).  It may not appear as the pointer object in a pointer assignment statement, or in an ALLOCATE, DEALLOCATE, or NULLIFY statement.
+"dtpObjDecC546.f", line 59.3: 1516-147 (S) arg has the attribute INTENT(IN).  It may not appear as the pointer object in a pointer assignment statement, or in an ALLOCATE, DEALLOCATE, or NULLIFY statement.
+"dtpObjDecC546.f", line 60.23: 1516-147 (S) arg has the attribute INTENT(IN).  It may not appear as the pointer object in a pointer assignment statement, or in an ALLOCATE, DEALLOCATE, or NULLIFY statement.
+"dtpObjDecC546.f", line 61.16: 1516-056 (S) An accessible explicit interface has a dummy argument with the INTENT(OUT) or INTENT(INOUT) attribute specified. Corresponding actual argument which is not definable is not permitted in this context.
+** dtpobjdecc546   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtpObjDecC546.f.

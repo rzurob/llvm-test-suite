@@ -1,0 +1,52 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/coarray/stop/func/stop_f041.scenario
+#FEATURE    = CAF: STOP statement (feature #351605.31)
+#CREATOR    = Grigor Nikolov
+#DATE       = 20101019
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)stop_f041.f
+#OUTPUT     = stop_f041$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#INPUT      = stop_f041$(OBJ)
+#OUTPUT     = stop_f041$(EXE)
+#ENDCMD
+
+#CMD        = MPRUN
+#INPUT      = stop_f041$(EXE)
+#STDOUT     = stop_f041.out
+#STDERR     = stop_f041.out
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "STOP Correct end, NOT"
+#INPUT      = stop_f041.out
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "All good in image # .* in not Stop"
+#INPUT      = stop_f041.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

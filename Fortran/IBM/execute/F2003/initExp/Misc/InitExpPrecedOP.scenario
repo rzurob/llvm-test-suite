@@ -1,0 +1,33 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       InitExpPrecedOP.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       09-07-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)InitExpPrecedOP.f
+#OUTPUT= InitExpPrecedOP$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  InitExpPrecedOP$(OBJ)
+#OUTPUT= InitExpPrecedOP$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  InitExpPrecedOP$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

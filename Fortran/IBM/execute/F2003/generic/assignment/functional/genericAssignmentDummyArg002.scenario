@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/assignment/functional/genericAssignmentDummyArg002.scenario
+#FEATURE = generic tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericAssignmentDummyArg002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericAssignmentDummyArg002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericAssignmentDummyArg002$(OBJ)
+#OUTPUT    = genericAssignmentDummyArg002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericAssignmentDummyArg002$(EXE)
+#STDOUT    = genericAssignmentDummyArg002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericAssignmentDummyArg002.out $(tcasedir)genericAssignmentDummyArg002.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

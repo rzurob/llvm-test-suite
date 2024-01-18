@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/scalarExpr/d327372.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071220
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)d327372.f
+#OUTPUT		= d327372$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= d327372$(OBJ)
+#OUTPUT		= d327372$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= d327372$(EXE)
+#STDOUT		= d327372.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)d327372$(product)vf) d327372.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

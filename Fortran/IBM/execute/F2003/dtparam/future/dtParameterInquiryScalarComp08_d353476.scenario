@@ -1,0 +1,37 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/typeParamInquiry/functional/dtparam/dtParameterInquiryScalarComp08_d353476.scenario
+#FEATURE= Type Parameter Inquiry(353612)
+#CREATOR= Nancy Wang
+#DATE   = July 8 2008
+#TEST_TYPE= Functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)dtParameterInquiryScalarComp08_d353476.f
+#OUTPUT= dtParameterInquiryScalarComp08_d353476$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = dtParameterInquiryScalarComp08_d353476$(OBJ)
+#OUTPUT= dtParameterInquiryScalarComp08_d353476$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = dtParameterInquiryScalarComp08_d353476$(EXE)
+#STDOUT = dtParameterInquiryScalarComp08_d353476.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtParameterInquiryScalarComp08_d353476$(product)vf) dtParameterInquiryScalarComp08_d353476.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

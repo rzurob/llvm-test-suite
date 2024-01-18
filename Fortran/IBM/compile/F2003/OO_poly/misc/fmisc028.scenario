@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/misc/fmisc028.f
+#FEATURE = OO_poly
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fmisc028.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fmisc028$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = fmisc028.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = fmisc028.err $($(tcasedir)fmisc028$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

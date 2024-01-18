@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/assignment/defAssignn/defAssignDataPtrComp02a.scenario
+#FEATURE   = 361704
+#CREATOR   = Nancy Wang
+#DATE      = Feb. 9 2009
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)defAssignDataPtrComp02a.f
+#OUTPUT= defAssignDataPtrComp02a$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = defAssignDataPtrComp02a$(OBJ)
+#OUTPUT= defAssignDataPtrComp02a$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = defAssignDataPtrComp02a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

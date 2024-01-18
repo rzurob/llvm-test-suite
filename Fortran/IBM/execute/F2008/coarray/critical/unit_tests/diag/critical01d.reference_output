@@ -1,0 +1,5 @@
+"critical01d.f", line 48.6: 1516-246 (E) The construct name for the END CRITICAL statement is missing.  The statement will be matched with the previous CRITICAL statement.
+"critical01d.f", line 51.20: 1511-116 (E) The END CRITICAL statement must not contain a construct name.  Construct name missing_name is ignored.
+"critical01d.f", line 54.20: 1511-133 (E) Construct name mismatch on the END CRITICAL statement does not match the one specified on the corresponding CRITICAL statement.  Construct name mismatch will be ignored.
+** critical01d   === End of Compilation 1 ===
+1501-510  Compilation successful for file critical01d.f.

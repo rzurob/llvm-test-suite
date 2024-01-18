@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/io/unformatted/stream/streamReadWrite01.scenario
+#FEATURE	= Unformatted Intrinsic I/O (with Derived Type Parameters)
+#CREATOR	= Glen Mateer
+#DATE		= 20081003
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)streamReadWrite01.f
+#OUTPUT		= streamReadWrite01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= streamReadWrite01$(OBJ)
+#OUTPUT		= streamReadWrite01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= streamReadWrite01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

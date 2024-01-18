@@ -1,0 +1,20 @@
+ &MYNML
+ NANQ_POS=+NaN(Q), XLF='xlf', NANQ_NEG=-NaN(Q) , IBM='ibm', NANS_POS=+NaN(S), NANS_NEG=-NaN(S), FORTRAN='Fortran', INF_POS=+Inf, INF_NEG=-Inf 
+ /
++NaN(Q), xlf, -NaN(Q), ibm, +NaN(S), -NaN(S), Fortran, +Inf, -Inf
+ &MYNML
+ NANQ_POS=NaN(Q), XLF='xlf', NANQ_NEG=-NaN(Q) , IBM='ibm', NANS_POS=NaN(S), NANS_NEG=-NaN(S), FORTRAN='Fortran', INF_POS=Inf, INF_NEG=-Infinity 
+ /
+NaN, xlf, -NaN(Q), ibm, NaN(S), -NaN(S), Fortran, +Infinity, -Inf
+ &MYNML
+ NANQ_POS=NaN(), XLF='xlf', NANQ_NEG=-NaN , IBM='ibm', NANS_POS=nan(s), NANS_NEG=-naN(S), FORTRAN='Fortran', INF_POS=infinity, INF_NEG=-iNF
+ /
+NaN(1), xlf, -NaN(), ibm, NaN(S), -NaN(S), Fortran, +inf, -Inf
+ &MYNML
+ NANQ_POS=NaN(abcd), XLF='xlf', NANQ_NEG=-NaN(abcd) , IBM='ibm', NANS_POS=NaN(S), NANS_NEG=-NaN(S), FORTRAN='Fortran', INF_POS=Inf, INF_NEG=-Infinity 
+ /
+NaN(1234), xlf, -NaN(abcd1234), ibm, NaN(S), -NaN(S), Fortran, +Infinity, -Inf
+ &MYNML
+ NANQ_POS=NaN(_), XLF='xlf', NANQ_NEG=-NaN(_abc123) , IBM='ibm', NANS_POS=NaN(S), NANS_NEG=-NaN(S), FORTRAN='Fortran', INF_POS=Inf, INF_NEG=-Infinity 
+ /
++NaN(_123abcd), xlf, -NaN(__), ibm, NaN(S), -NaN(S), Fortran, +Infinity, -Inf

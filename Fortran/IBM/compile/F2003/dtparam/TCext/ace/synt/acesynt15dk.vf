@@ -1,0 +1,25 @@
+** mod   === End of Compilation 1 ===
+"acesynt15dk.f", line 71.34: 1515-019 (S) Syntax is incorrect.
+"acesynt15dk.f", line 72.39: 1515-019 (S) Syntax is incorrect.
+"acesynt15dk.f", line 73.44: 1515-019 (S) Syntax is incorrect.
+"acesynt15dk.f", line 74.39: 1515-022 (S) Syntax Error: Extra token " character " was found. The token is ignored.
+"acesynt15dk.f", line 74.48: 1515-022 (S) Syntax Error: Extra token " :: " was found. The token is ignored.
+"acesynt15dk.f", line 75.15: 1515-019 (S) Syntax is incorrect.
+"acesynt15dk.f", line 76.27: 1516-036 (S) Entity character has undefined type.
+"acesynt15dk.f", line 76.36: 1515-022 (S) Syntax Error: Extra token " :: " was found. The token is ignored.
+"acesynt15dk.f", line 80.34: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt15dk.f", line 81.34: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt15dk.f", line 82.34: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt15dk.f", line 83.34: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt15dk.f", line 84.34: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt15dk.f", line 85.34: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt15dk.f", line 86.34: 1516-083 (S) All elements in an array constructor must have the same type and type parameters.
+"acesynt15dk.f", line 88.46: 1516-044 (S) A conversion from type REAL*4 is not permitted.
+"acesynt15dk.f", line 89.46: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"acesynt15dk.f", line 90.46: 1516-044 (S) A conversion from type COMPLEX*16 is not permitted.
+"acesynt15dk.f", line 91.46: 1516-044 (S) A conversion from type REAL*8 is not permitted.
+"acesynt15dk.f", line 92.46: 1516-044 (S) A conversion from type COMPLEX*8 is not permitted.
+"acesynt15dk.f", line 93.46: 1516-044 (S) A conversion from type LOGICAL is not permitted.
+"acesynt15dk.f", line 94.46: 1516-044 (S) A conversion from type derived is not permitted.
+** acesynt15dk   === End of Compilation 2 ===
+1501-511  Compilation failed for file acesynt15dk.f.

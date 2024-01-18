@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = outputRealNaN004.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 9, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)outputRealNaN004.f
+#OUTPUT   =  outputRealNaN004$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  outputRealNaN004$(OBJ)
+#OUTPUT   =  outputRealNaN004$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  outputRealNaN004$(EXE)
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = outputRealNaN004.out $(tcasedir)outputRealNaN004.vf
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

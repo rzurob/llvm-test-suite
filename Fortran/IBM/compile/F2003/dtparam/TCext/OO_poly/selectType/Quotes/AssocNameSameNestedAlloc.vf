@@ -1,0 +1,5 @@
+"AssocNameSameNestedAlloc.f", line 68.18: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"AssocNameSameNestedAlloc.f", line 75.14: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+"AssocNameSameNestedAlloc.f", line 80.18: 1511-099 (S) Objects appearing in ALLOCATE and DEALLOCATE statements must be allocatable objects or pointers.
+** assocnamesamenestedalloc   === End of Compilation 1 ===
+1501-511  Compilation failed for file AssocNameSameNestedAlloc.f.

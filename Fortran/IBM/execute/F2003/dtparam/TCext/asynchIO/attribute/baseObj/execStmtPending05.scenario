@@ -1,0 +1,45 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/asynchIO/attribute/baseObj/execStmtPending05.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of asynchIO/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=bgq
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)execStmtPending05.f
+#OUTPUT		= execStmtPending05$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= execStmtPending05$(OBJ)
+#OUTPUT		= execStmtPending05$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= execStmtPending05$(EXE)
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i '^asynchPtr[ 	]'
+#INPUT		= execStmtPending05$(LST)
+#STDOUT		= execStmtPending05.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= execStmtPending05.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

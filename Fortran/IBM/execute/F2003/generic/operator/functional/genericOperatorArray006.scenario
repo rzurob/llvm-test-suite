@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/operator/functional/genericOperatorArray006.scenario
+#FEATURE = OO_dtio tests
+#CREATOR = Robert Ma
+#DATE    = 20051122
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericOperatorArray006.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericOperatorArray006$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericOperatorArray006$(OBJ)
+#OUTPUT    = genericOperatorArray006$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericOperatorArray006$(EXE)
+#STDOUT    = genericOperatorArray006.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericOperatorArray006.out $(tcasedir)genericOperatorArray006.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

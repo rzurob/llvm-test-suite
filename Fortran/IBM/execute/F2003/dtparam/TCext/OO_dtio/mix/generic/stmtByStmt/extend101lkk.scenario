@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/mix/generic/stmtByStmt/extend101lkk.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070813
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = COPY
+#INPUT     = $(tcasedir)extend101lkk.1 .
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)extend101lkk.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = extend101lkk$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = extend101lkk$(OBJ)
+#OUTPUT    = extend101lkk$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = extend101lkk$(EXE)
+#STDOUT    = extend101lkk.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = extend101lkk.out $(tcasedir)extend101lkk.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

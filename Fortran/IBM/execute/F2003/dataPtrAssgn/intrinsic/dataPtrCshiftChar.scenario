@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/intrinsic/dataPtrCshiftChar.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrCshiftChar.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrCshiftChar$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrCshiftChar$(OBJ)
+#OUTPUT    = dataPtrCshiftChar$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrCshiftChar$(EXE)
+#STDOUT    = dataPtrCshiftChar.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrCshiftChar.out $($(tcasedir)dataPtrCshiftChar$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

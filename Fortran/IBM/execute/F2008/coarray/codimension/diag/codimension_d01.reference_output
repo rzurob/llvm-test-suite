@@ -1,0 +1,10 @@
+"codimension_d01.f", line 27.29: 1515-019 (S) Syntax is incorrect.
+"codimension_d01.f", line 28.15: 1515-019 (S) Syntax is incorrect.
+"codimension_d01.f", line 29.15: 1515-019 (S) Syntax is incorrect.
+"codimension_d01.f", line 31.13: 1515-019 (S) Syntax is incorrect.
+"codimension_d01.f", line 32.8: 1515-019 (S) Syntax is incorrect.
+** main   === End of Compilation 1 ===
+"codimension_d01.f", line 40.14: 1514-792 (S) Codimensions were previously specified for this coarray.  This set of codimensions will be ignored.
+"codimension_d01.f", line 41.14: 1514-792 (S) Codimensions were previously specified for this coarray.  This set of codimensions will be ignored.
+** sub1   === End of Compilation 2 ===
+1501-511  Compilation failed for file codimension_d01.f.

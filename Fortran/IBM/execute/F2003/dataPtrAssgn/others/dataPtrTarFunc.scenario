@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=  F2003/dataPtrAssgn/others/dataPtrTarFunc.f
+#FEATURE =
+#CREATOR = Michelle Zhang
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrTarFunc.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrTarFunc$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrTarFunc$(OBJ)
+#OUTPUT    = dataPtrTarFunc$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrTarFunc$(EXE)
+#STDOUT    = dataPtrTarFunc.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrTarFunc.out $($(tcasedir)dataPtrTarFunc$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

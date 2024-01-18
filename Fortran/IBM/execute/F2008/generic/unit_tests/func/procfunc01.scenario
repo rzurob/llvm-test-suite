@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/unit_tests/func/procfunc01.scenario
+#FEATURE = Generic extensions
+#CREATOR = Rafik Zurob
+#DATE    = 20120620
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)procfunc01.f
+#OUTPUT    = procfunc01$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = procfunc01$(OBJ)
+#OUTPUT    = procfunc01$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = procfunc01$(EXE)
+#STDOUT    = procfunc01.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)procfunc01$(product)vf) procfunc01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/none/acetnone10a.scenario
+#FEATURE	= Array constructor enhancement arrays and array sections (real)
+#CREATOR	= DF Manual Update
+#DATE		= 20060811
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetnone10a.f
+#OUTPUT		= acetnone10a$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetnone10a$(OBJ)
+#OUTPUT		= acetnone10a$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetnone10a$(EXE)
+#STDOUT		= acetnone10a.out
+#ENDCMD
+
+#CMD		= SPIFF
+#OPTS		= -a1-e6
+#INPUT		= $(tcasedir)acetnone10a.vf acetnone10a.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

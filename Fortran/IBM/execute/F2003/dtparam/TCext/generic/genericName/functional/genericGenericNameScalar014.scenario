@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/genericName/functional/genericGenericNameScalar014.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericGenericNameScalar014.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericGenericNameScalar014$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericGenericNameScalar014$(OBJ)
+#OUTPUT    = genericGenericNameScalar014$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericGenericNameScalar014$(EXE)
+#STDOUT    = genericGenericNameScalar014.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericGenericNameScalar014.out $(tcasedir)genericGenericNameScalar014.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

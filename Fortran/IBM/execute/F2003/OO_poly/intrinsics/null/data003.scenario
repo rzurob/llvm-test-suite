@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/null/data003.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050301
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)data003.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = data003$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = data003$(OBJ)
+#OUTPUT    = data003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = data003$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

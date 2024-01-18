@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/future/d341784.scenario
+#FEATURE   = defect 370244 to track 341784
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20091001
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_SHOW_SOURCE_CODE)
+#INPUT     = $(tcasedir)d341784.f
+#OUTPUT    = d341784$(OBJ)
+#STDERR    = d341784.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)d341784$(product)vf) d341784.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

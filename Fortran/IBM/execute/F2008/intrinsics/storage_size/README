@@ -1,0 +1,22 @@
+!*******************************************************************************
+!* Bucket brief description.
+!*
+!* DESCRIPTION: F2008: Intrinsic function STORAGE_SIZE
+!*
+!*
+!*******************************************************************************
+Feature XLC/XLF V13/V15 (PTF2)
+
+   RTC Master Story 92996: F2008: Intrinsic function STORAGE_SIZE
+       https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/92996
+
+   I0  document is kept in CMVC
+     family: aix, release: des.dev, component: design.i0,
+     file:   designs/i0/storage_size_intrinsic/storage_size_intrinsic.html
+         FF: https://featureflow.torolab.ibm.com/featureflow/show/7627
+
+   Unit test cases only feature ==> no IT1 and IT2 documents
+
+
+  See the ./doc subdirectory for details
+

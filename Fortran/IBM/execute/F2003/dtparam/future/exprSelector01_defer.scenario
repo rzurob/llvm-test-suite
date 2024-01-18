@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/associate/basic/exprSelector01_defer.scenario
+#FEATURE	= ASSOCIATE Contruct (with Derived Type Parameters)
+#CREATOR	= Glen Mateer
+#DATE		= 20080708
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)exprSelector01_defer.f
+#OUTPUT		= exprSelector01_defer$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= exprSelector01_defer$(OBJ)
+#OUTPUT		= exprSelector01_defer$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= exprSelector01_defer$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

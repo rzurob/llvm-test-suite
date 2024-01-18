@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/C503/localVar002.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/abstract/C503/localVar002.scenario
+#DATE      = 20070610
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)localVar002.f
+#OPTS      = -qdebug=intmsg:shutup
+#OUTPUT    = localVar002$(OBJ)
+#STDERR    = localVar002.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)localVar002$(product)vf) localVar002.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

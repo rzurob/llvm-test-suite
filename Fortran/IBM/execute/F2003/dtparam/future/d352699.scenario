@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/io/defaultIO/d352699.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d352699.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = d352699$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d352699$(OBJ)
+#OUTPUT    = d352699$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d352699$(EXE)
+#STDOUT    = d352699.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = d352699.out $($(tcasedir)d352699$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

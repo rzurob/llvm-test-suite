@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      =
+#FEATURE   =
+#CREATOR   = Maryam Moghadas
+#DATE      = 20130212
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)shiftl_shiftr01f.f
+#OUTPUT   =  shiftl_shiftr01f$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  shiftl_shiftr01f$(OBJ)
+#OUTPUT   =  shiftl_shiftr01f$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  shiftl_shiftr01f$(EXE)
+#STDOUT   =  shiftl_shiftr01f.out
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME		= F2008/recursive_alloc/unit_tests/func/recuralloc02.scenario
+#FEATURE        = RTC 28056 F2008: Recursive allocatable types
+#CREATOR        = Rafik Zurob
+#DATE           = 20190725
+#TEST_TYPE      = Functional
+#KEYWORDS       = F2008 recursive allocatable component
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)recuralloc02.f
+#OUTPUT		= recuralloc02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= recuralloc02$(OBJ)
+#OUTPUT		= recuralloc02$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= recuralloc02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

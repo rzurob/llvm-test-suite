@@ -1,0 +1,24 @@
+  1)   Integer  9 9
+    polyBase(2) => (1, 2, 3, 4, 5, 6, 7, 8, 9)
+ 
+  2)      Real  9 9
+    polyBase(16) => (1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0)
+ 
+  3)   Complex  9 9
+    polyBase(8) => ((1.0,1.0), (2.0,2.0), (3.0,3.0), (4.0,4.0), (5.0,5.0), (6.0,6.0), (7.0,7.0), (8.0,8.0), (9.0,9.0))
+ 
+  4)   Logical  9 9
+    polyBase(4) => (F, T, F, T, F, T, F, T, F)
+ 
+  5) Character  9 9
+    polyBase(1,1) => (A, B, C, D, E, F, G, H, I)
+ 
+  6) Derived  7 2 T
+ 
+  7)   Integer  9 9
+    polyBase(2) => (1, 2, 3, 4, 5, 6, 7, 8, 9)
+ 
+  8) Character  9 9
+    polyBase(1,1) => (A, B, C, D, E, F, G, H, I)
+ 
+ 

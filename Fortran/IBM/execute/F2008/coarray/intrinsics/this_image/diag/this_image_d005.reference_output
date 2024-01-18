@@ -1,0 +1,7 @@
+"this_image_d005.f", line 59.7: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"this_image_d005.f", line 60.7: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"this_image_d005.f", line 61.7: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"this_image_d005.f", line 62.7: 1516-044 (S) A conversion from type INTEGER is not permitted.
+"this_image_d005.f", line 63.7: 1516-044 (S) A conversion from type INTEGER is not permitted.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file this_image_d005.f.

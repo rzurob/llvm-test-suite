@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/allocate/allocContainerVariable06.scenario
+#FEATURE	= ALLOCATE() Statement with DTP
+#CREATOR	= Glen Mateer
+#DATE		= 20090113
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)allocContainerVariable06.f
+#OUTPUT		= allocContainerVariable06$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= allocContainerVariable06$(OBJ)
+#OUTPUT		= allocContainerVariable06$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= allocContainerVariable06$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,4 @@
+** _main   === End of Compilation 1 ===
+"AssumedLen04d.f", line 47.14: 1516-368 (S) Entity arg is an assumed-rank object. arg must not be used in this context.
+** sub_int   === End of Compilation 2 ===
+1501-511  Compilation failed for file AssumedLen04d.f.

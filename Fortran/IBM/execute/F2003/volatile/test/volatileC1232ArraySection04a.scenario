@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2003/volatile/test/volatileC1232ArraySection04a.scenario
+#FEATURE = VOLATILE 255728
+#CREATOR = William Zhang
+#DATE    = 05/30/2006
+#TEST_TYPE= functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)volatileC1232ArraySection04.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = volatileC1232ArraySection04$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = volatileC1232ArraySection04$(OBJ)
+#OUTPUT    = volatileC1232ArraySection04$(EXE)
+#ENDCMD
+
+
+#CMD       = RUN
+#ULIMIT    = STACK=UNLIMITED
+#INPUT     = volatileC1232ArraySection04$(EXE)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

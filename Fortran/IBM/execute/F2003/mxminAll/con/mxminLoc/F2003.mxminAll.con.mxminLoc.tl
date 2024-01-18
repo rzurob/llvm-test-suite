@@ -1,0 +1,15 @@
+mxminLocArrArgSub1.scenario
+mxminLocArrArgSub2.scenario
+mxminlocArgObj1.scenario
+mxminlocArgObj2.scenario
+mxminlocArgObj3.scenario
+mxminlocBindC.scenario
+mxminlocConform01.scenario
+mxminlocConform01d.scenario
+mxminlocConform02.scenario
+mxminlocConform03.scenario
+mxminlocDefAssign.scenario
+mxminlocGenInterface.scenario
+mxminlocHollerith.scenario
+mxminlocIO.scenario
+mxminlocLiteralArrArgSub.scenario

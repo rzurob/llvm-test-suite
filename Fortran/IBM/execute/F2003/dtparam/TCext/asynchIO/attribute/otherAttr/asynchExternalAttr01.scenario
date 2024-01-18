@@ -1,0 +1,72 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/asynchIO/attribute/otherAttr/asynchExternalAttr01.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of asynchIO/*
+#DATE      = 20071221
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_PRODUCT=bgq
+#ENDENV
+
+#BEGINCONTROL
+
+!
+!  asynchExternalAttr01m.f -- Module File
+!
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)asynchExternalAttr01m.f
+#OUTPUT		= asynchExternalAttr01m$(OBJ)
+#ENDCMD
+
+!
+!  asynchExternalAttr01b.f -- Block Data File
+!
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)asynchExternalAttr01b.f
+#OUTPUT		= asynchExternalAttr01b$(OBJ)
+#ENDCMD
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)asynchExternalAttr01.f
+#OUTPUT		= asynchExternalAttr01$(OBJ)
+#ENDCMD
+
+
+#CMD		= F_LINK
+#INPUT		= asynchExternalAttr01m$(OBJ) asynchExternalAttr01b$(OBJ)	\
+				asynchExternalAttr01$(OBJ)
+#OUTPUT		= asynchExternalAttr01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= asynchExternalAttr01$(EXE)
+#ENDCMD
+
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)asynchExternalAttr01$(product)vf)	\
+				asynchExternalAttr01.dat
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= -i '^thePt[ 	]'
+#INPUT		= asynchExternalAttr01b$(LST)
+#STDOUT		= asynchExternalAttr01b.stdout
+#ENDCMD
+
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= asynchExternalAttr01b.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

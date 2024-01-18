@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dtParamAllocate03.f
+#FEATURE= DTP for ALLOCATE statement
+#CREATOR=    Huiwen Li
+#DATE=       07-04-20
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dtParamAllocate03.f
+#OUTPUT= dtParamAllocate03$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  dtParamAllocate03$(OBJ)
+#OUTPUT= dtParamAllocate03$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dtParamAllocate03$(EXE)
+#ENDCMD
+#ENDCONTROL
+
+#ENDSCENARIO

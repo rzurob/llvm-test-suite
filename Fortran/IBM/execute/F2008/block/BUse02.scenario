@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /block/BUse02.scenario
+#FEATURE   = F2008 - BLOCK - USE: definitions available to block
+#CREATOR   = DF
+#DATE      = 2010-11-15
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      = F_COMPILE
+#INPUT    = $(tcasedir)BUse02.f
+#OUTPUT   = BUse02$(OBJ)
+#ENDCMD
+
+#CMD      = F_LINK
+#INPUT    = BUse02$(OBJ)
+#OUTPUT   = BUse02$(EXE)
+#ENDCMD
+
+#CMD      = RUN
+#INPUT    = BUse02$(EXE)
+#STDOUT   = BUse02.out
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = $($(tcasedir)BUse02$(product)vf) BUse02.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

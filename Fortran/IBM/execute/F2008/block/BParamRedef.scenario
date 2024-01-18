@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/block/BParamRedef.scenario
+#FEATURE   = F2008 BLOCK - parameters redefined in block
+#CREATOR   = DF Manual Update
+#DATE      = 20101214
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)BParamRedef.f
+#OUTPUT    = BParamRedef$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = BParamRedef$(OBJ)
+#OUTPUT    = BParamRedef$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = BParamRedef$(EXE)
+#STDOUT    = BParamRedef.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)BParamRedef$(product)vf) BParamRedef.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

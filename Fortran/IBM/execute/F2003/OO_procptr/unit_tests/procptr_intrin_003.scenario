@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)procptr_intrin_003.f
+#OUTPUT    = procptr_intrin_003$(OBJ)
+#ENDCMD
+
+#CMD       = XLF90_LINK
+#INPUT     = procptr_intrin_003$(OBJ)
+#OUTPUT    = procptr_intrin_003$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = procptr_intrin_003$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

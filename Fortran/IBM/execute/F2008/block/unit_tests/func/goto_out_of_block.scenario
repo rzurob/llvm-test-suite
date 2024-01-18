@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=goto_out_of_block.scenario
+#FEATURE = F2008 BLOCK construct
+#CREATOR = Pooja Dayanand
+#DATE    = 20101021
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)goto_out_of_block.f
+#OUTPUT    = goto_out_of_block$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = goto_out_of_block$(OBJ)
+#OUTPUT    = goto_out_of_block$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = goto_out_of_block$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

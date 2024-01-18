@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/typCompatible/poly4ToFmfinal.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071105
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)poly4ToFmfinal.f
+#OUTPUT= poly4ToFmfinal$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  poly4ToFmfinal$(OBJ)
+#OUTPUT= poly4ToFmfinal$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  poly4ToFmfinal$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

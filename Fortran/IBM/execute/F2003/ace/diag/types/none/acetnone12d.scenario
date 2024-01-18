@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/none/acetnone12d.scenario
+#FEATURE	= Array constructor enhancement - no TS, all ac_values of different numeric types
+#CREATOR	= DF Manual Update
+#DATE		= 20061120
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetnone12d.f
+#OUTPUT		= acetnone12d$(OBJ)
+#STDERR		= acetnone12d.stderr
+#VALIDRCS       = $(RC_COMP_S)
+#ENDCMD
+
+#CMD            = XLDIFF
+#INPUT          = $($(tcasedir)acetnone12d$(product)vf) acetnone12d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

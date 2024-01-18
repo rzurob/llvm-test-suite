@@ -1,0 +1,3 @@
+"diagAssumeSize.f", line 38.32: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "C_SIZEOF".
+** get_arraysize   === End of Compilation 1 ===
+1501-511  Compilation failed for file diagAssumeSize.f.

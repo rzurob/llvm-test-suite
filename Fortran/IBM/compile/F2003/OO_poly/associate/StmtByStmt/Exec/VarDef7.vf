@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"VarDef7.f", line 61.10: 1511-139 (S) Associate name as is not associated with an entity that can be defined. as must not be redefined or become undefined.
+"VarDef7.f", line 65.12: 1511-139 (S) Associate name as is not associated with an entity that can be defined. as must not be redefined or become undefined.
+** vardef7   === End of Compilation 2 ===
+1501-511  Compilation failed for file VarDef7.f.

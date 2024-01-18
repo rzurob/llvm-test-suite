@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/others/dataPtrSeqptr.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071217
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrSeqptr.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrSeqptr$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrSeqptr$(OBJ)
+#OUTPUT    = dataPtrSeqptr$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrSeqptr$(EXE)
+#STDOUT    = dataPtrSeqptr.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrSeqptr.out $($(tcasedir)dataPtrSeqptr$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

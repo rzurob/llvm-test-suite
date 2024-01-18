@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/typeparam/lenparamSpecexpr005.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)lenparamSpecexpr005.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = lenparamSpecexpr005$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = lenparamSpecexpr005$(OBJ)
+#OUTPUT    = lenparamSpecexpr005$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = lenparamSpecexpr005$(EXE)
+#STDOUT    = lenparamSpecexpr005.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = lenparamSpecexpr005.out $($(tcasedir)lenparamSpecexpr005$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

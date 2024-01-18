@@ -1,0 +1,53 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/cintrop5/cmnblk_unit/bcuncm01.scenario
+#FEATURE = cintrop5 tests - regression run bucket
+#CREATOR = ST Manual convertion
+#DATE    = 20050223
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLC_COMPILE
+#OPTS      = $(C_COMPILER_OPTS)
+#INPUT     = $(tcasedir)comc1.c
+#ENDCMD
+
+#CMD       = XLF95_COMPLINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = $(tcasedir)bcuncm01.f comc1$(OBJ)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ./a.out
+#STDOUT    = bcuncm01.outs
+#ENDCMD
+
+#IF on(bgl)
+  #CMD     = SORT
+  #INPUT   = bcuncm01.outs
+  #STDOUT  = file1
+  #ENDCMD
+
+  #CMD     = SORT
+  #INPUT   = $(tcasedir)bcuncm01.vf
+  #STDOUT  = file2
+  #ENDCMD
+
+  #CMD     = XLDIFF
+  #INPUT   = file1 file2
+  #ENDCMD
+#ELSE
+  #CMD     = XLDIFF
+  #INPUT   = bcuncm01.outs $(tcasedir)bcuncm01.vf
+  #ENDCMD
+#ENDIF
+
+#ENDCONTROL
+#ENDSCENARIO

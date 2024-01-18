@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = streamio/diag/iolang03.scenario
+#FEATURE   = streamio tests - regression run bucket
+#CREATOR   = automated conversion script
+#DATE      = 20081130
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)iolang03.f
+#OUTPUT = iolang03$(OBJ)
+#OPTS 	= $(OPT_FREE_SOURCE_FORM) -qdebug=intmsg $(OPT_SET_LANG_LEVEL<77std>)
+#STDERR = iolang03.out
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = iolang03$(OBJ)
+#OUTPUT = iolang03$(EXE)
+#OPTS 	= $(OPT_FREE_SOURCE_FORM) -qdebug=intmsg $(OPT_SET_LANG_LEVEL<77std>)
+#ENDCMD
+
+#CMD 	= XLDIFF
+#IF in($(F_COMPILE^OPT_OPTIMIZE_FOR_SMP)) || in($(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT))
+	#INPUT 	= iolang03.out $($(tcasedir)iolang03$(product)vf1)
+#ELSE
+	#INPUT  = iolang03.out $($(tcasedir)iolang03$(product)vf2)
+#ENDIF
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

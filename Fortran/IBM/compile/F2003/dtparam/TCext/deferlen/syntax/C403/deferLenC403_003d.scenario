@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/deferlen/syntax/C403/deferLenC403_003d.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of deferlen/*
+#DATE      = 20071221
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)deferLenC403_003d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = deferLenC403_003d$(OBJ)
+#STDERR    = deferLenC403_003d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = deferLenC403_003d.err $($(tcasedir)deferLenC403_003d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

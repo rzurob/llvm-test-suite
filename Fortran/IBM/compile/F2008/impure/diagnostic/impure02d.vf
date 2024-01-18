@@ -1,0 +1,4 @@
+"impure02d.f", line 30.15: 1513-061 (S) Actual argument attributes do not match those specified by an accessible explicit interface.
+"impure02d.f", line 34.41: 1513-263 (S) The prefix of procedure foo must not specify both ELEMENTAL and RECURSIVE.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file impure02d.f.

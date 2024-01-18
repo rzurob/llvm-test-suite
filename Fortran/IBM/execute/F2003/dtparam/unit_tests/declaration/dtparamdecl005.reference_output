@@ -1,0 +1,22 @@
+  bounds base1%person1a ok
+  base1%person1a= 51 1 52 2 53 3 54 4
+  base1%person1b= 60 2
+  base1%old2%b kind ok
+  base1%old3%b kind ok
+  base1a%person1a= 51 1 52 2 53 3 54 4
+  base1a%person1b= 60 2
+  base1a%old2%b kind ok
+  base1a%old2%b= 70
+  base1a%old3%b kind ok
+  base1a%old3%b= 80
+  bounds base2%person1a ok
+  base2%person1a= 51 1 52 2 53 3 54 4
+  base2%person1b= 60 2
+  base2%old2%b kind ok
+  base2%old3%b kind ok
+  base2a%person1a= 51 1 52 2 53 3 54 4
+  base2a%person1b= 60 2
+  base2a%old2%b kind ok
+  base2a%old2%b= 70
+  base2a%old3%b kind ok
+  base2a%old3%b= 80

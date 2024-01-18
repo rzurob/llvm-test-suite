@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /syncAll/saBasicSync.scenario
+#FEATURE   = CAF SYNC ALL - basic test of synchronisation
+#CREATOR   = DF
+#DATE      = 20100727
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)saBasicSync.f
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = saBasicSync$(OBJ)
+#OUTPUT    = saBasicSync$(EXE)
+#ENDCMD
+
+#CMD       = SET_DYN_ENV
+#ENDCMD
+
+#CMD       = MPRUN
+#INPUT     = saBasicSync$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

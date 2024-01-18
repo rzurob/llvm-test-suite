@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/derived/acetdt01bkkl.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
+			   No-Parameter Derived TS Pointer Component with Defined		\
+			   Assignment via Elementals)
+#CREATOR	= Glen Mateer (based on work by David Forster)
+#DATE		= 20071211
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt01bkkl.f
+#OUTPUT		= acetdt01bkkl$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt01bkkl$(OBJ)
+#OUTPUT		= acetdt01bkkl$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt01bkkl$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

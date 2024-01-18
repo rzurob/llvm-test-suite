@@ -1,0 +1,5 @@
+faddREAL128_F2003.scenario
+fdivideREAL128_F2003.scenario
+fgeneralREAL128_F2003.scenario
+fmultiplyREAL128_F2003.scenario
+fsubtractREAL128_F2003.scenario

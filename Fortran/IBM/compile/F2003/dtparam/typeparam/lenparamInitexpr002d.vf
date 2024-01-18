@@ -1,0 +1,4 @@
+"lenparamInitexpr002d.f", line 43.21: 1514-213 (S) A type parameter in this position must be a scalar integer initialization expression.
+"lenparamInitexpr002d.f", line 47.33: 1514-084 (S) Identifier a1 is being declared with type name a which has not been defined in a derived type definition.
+** lenparaminitexpr002d   === End of Compilation 1 ===
+1501-511  Compilation failed for file lenparamInitexpr002d.f.

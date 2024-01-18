@@ -1,0 +1,4 @@
+** mod   === End of Compilation 1 ===
+"bcdarn13.f", line 49.16: 1514-406 (S) The lock name lock on the CRITICAL directive has been used or defined elsewhere.
+** bcdarn13   === End of Compilation 2 ===
+1501-511  Compilation failed for file bcdarn13.f.

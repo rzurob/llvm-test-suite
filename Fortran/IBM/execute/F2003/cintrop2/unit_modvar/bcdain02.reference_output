@@ -1,0 +1,3 @@
+"bcdain02.f", line 41.33: 1516-194 (S) A binding label must not be the same as the name of a program unit, common block, external procedure, and another binding label, ignoring differences in case.
+** mod   === End of Compilation 1 ===
+1501-511  Compilation failed for file bcdain02.f.

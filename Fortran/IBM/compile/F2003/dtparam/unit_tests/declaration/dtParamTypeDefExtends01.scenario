@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      dtParamTypeDefExtends01.scenario
+#FEATURE=   Derived Type Parameters - declarations
+#CREATOR=   Rafik Zurob
+#DATE=      20060519
+#TEST_TYPE= unit
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=      F_COMPLINK
+#INPUT=    $(tcasedir)dtParamTypeDefExtends01.f
+#OPTS=     $(OPT_FREE_SOURCE_FORM) -qdebug=intmsg:shutup
+#STDERR=   dtParamTypeDefExtends01.err
+#VALIDRCS= 1
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    $($(tcasedir)dtParamTypeDefExtends01$(product)vf) dtParamTypeDefExtends01.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

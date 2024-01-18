@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/use/d357014d.scenario
+#FEATURE	= IMPORT statement must appear in an interface
+#CREATOR	= DF Manual Update
+#DATE		= 20070109
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)d357014d.f
+#OUTPUT		= d357014d$(OBJ)
+#STDERR		= d357014d.stderr
+#VALIDRCS       = $(RC_COMP_S)
+#ENDCMD
+
+#CMD            = XLDIFF
+#INPUT          = $($(tcasedir)d357014d$(product)vf) d357014d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/C611/structComp003.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_type/*
+#DATE      = 20071006
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)structComp003.f
+#OPTS      = -qdebug=shutup
+#OUTPUT    = structComp003$(OBJ)
+#STDERR    = structComp003.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)structComp003$(product)vf) structComp003.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

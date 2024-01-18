@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/allocEnh/basic/nonchar/allocatedArrayDerived01.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of allocEnh/*
+#DATE      = 20071219
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)allocatedArrayDerived01.f
+#OUTPUT		= allocatedArrayDerived01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= allocatedArrayDerived01$(OBJ)
+#OUTPUT		= allocatedArrayDerived01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= allocatedArrayDerived01$(EXE)
+#STDOUT		= allocatedArrayDerived01.out
+#STDERR		= allocatedArrayDerived01.out
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)allocatedArrayDerived01$(product)vf)	\
+				allocatedArrayDerived01.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

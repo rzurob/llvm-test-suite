@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/genericName/functional/genericGenericNameOptional001.scenario
+#FEATURE = generic tests
+#CREATOR = Robert Ma
+#DATE    = 20041215
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericGenericNameOptional001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericGenericNameOptional001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericGenericNameOptional001$(OBJ)
+#OUTPUT    = genericGenericNameOptional001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericGenericNameOptional001$(EXE)
+#STDOUT    = genericGenericNameOptional001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericGenericNameOptional001.out $(tcasedir)genericGenericNameOptional001.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

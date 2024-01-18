@@ -1,0 +1,407 @@
+<html><head><title>917294_F2008_Submodule_IT1</title></head><body><table cellspacing="0" cellpadding="5" border="1" bgcolor="#c0e1ff" width="100%">
+    <tbody>
+        <tr>
+            <td align="left" width="100%" valign="top" style="font-family: Arial; color: rgb(0, 0, 128); font-size: 12pt;"><strong>Document Control Information:</strong>
+            <p style="color: rgb(0, 0, 0);">The official version of this document is kept in CMVC in the <span style="font-weight: bold; text-decoration: underline;">%CMVC_Family%</span> family, release <span style="font-weight: bold; text-decoration: underline;">%CMVC_Release%</span>, component <span style="font-weight: bold; text-decoration: underline;">%CMVC_Component%</span>, file <span style="color: rgb(255, 102, 102); font-weight: bold; text-decoration: underline;">%CMVC_PathName%</span>. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.<br />
+            <br />
+            CMVC Extraction Information: %W% %H% %I% sccsid<br />
+            <br />
+            This document is IBM Confidential.<br />
+            </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table cellspacing="0" cellpadding="5" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td align="left" width="20%" valign="top"><strong>CMVC Feature Number</strong> </td>
+            <td align="left" width="80%" valign="top" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%CMVC_Feature%</td>
+        </tr>
+        <tr>
+            <td align="left" valign="top"><strong>Feature Title</strong> </td>
+            <td align="left" valign="top" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Document_Name% %Note{By default the feature title and document name are the same. You can either change the document name (through Properties), or replace the tag with the title of the feature}%</td>
+        </tr>
+        <tr>
+            <td align="left" valign="top"><strong>Author(s)</strong> </td>
+            <td align="left" valign="top" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Authors%</td>
+        </tr>
+        <tr>
+            <td align="left" valign="top"><strong>Applicable Product Releases</strong>       </td>
+            <td align="left" valign="top" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Note{ List all the products and their release numbers for which the information in this document is/will be correct. For example:<br />
+            XL C/C++ v7.0 and 8.0 on Linux and AIX<br />
+            XL Fortran v9.1 and 10.1 on Linux and AIX.<br />
+            <br />
+            If you are updating this IT1, remove old products from the list if they will not support this updated I0's behaviour. For example, if this IT1 was first written for XL Fortran v9.1 and a change is being made in XL Fortran v10.1 that will not be ported back to v9.1, then v9.1 should not appear in the list.<br />
+            <br />
+            For prototype or experimental code that isn't scheduled to ship in any release yet, note possible future targets like this: &quot;Experimental code, may ship in future XL Fortran and XL C/C++ AIX releases&quot; }%</td>
+        </tr>
+        <tr>
+            <td align="left" valign="top"><strong>Keyword(s)</strong>       </td>
+            <td align="left" valign="top" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Note{ Define KEYWORDS to be used to identify/classify this feature }%</td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<table cellspacing="0" cellpadding="5" border="1" bgcolor="#ff6666" width="100%">
+    <tbody>
+        <tr>
+            <td align="center" width="100%" valign="top" style="text-align: left; font-family: Arial; font-size: 12pt;"><strong>IT1 Status</strong> </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<p>
+<table cellspacing="0" cellpadding="5" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td align="left" valign="top"><strong>Approvers</strong> (mandatory participation) </td>
+            <td align="left" valign="top" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Note{Insert the names of people who will have approval authority for this review. These people, in aggregate, are responsible for approving the technical and user interface content of the document. Generally, this list should include people who represent compiler components that will need to change if this review is approved.<br />
+            The I0 Process document provides detailed guidance on choosing your list of approvers.<br />
+            A member of the Option Review Board must approve any i0 that adds an option or pragma.<br />
+            Use Access Control to add/delete people from this list. The initial access control list is populated with the people from the Component Reviewers section below. You can use Access Control to change their role to Approver, or add additional approvers.}%<br />
+            %Approvers%</td>
+        </tr>
+        <tr>
+            <td align="left" valign="top"><strong>Reviewers</strong> (optional participation) </td>
+            <td align="left" valign="top" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 255); font-weight: bold;">%Note{List any additional people you feel need to participate in the review. These people do not have approval authority. Use Access Control to add/delete people from this list.}%<br />
+            %Release_Management_Contact%<br />
+            %Team_Reviewers%<br />
+            %Component_Reviewers%</td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p><br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td style="font-family: Arial; vertical-align: top;"><strong>Approvers</strong>: Please click the 'Approved' check-box beside your name in the table below if you agree with the technical content of this document; not checking your 'approve' check-box signifies you do not approve.</td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%Approvals%
+<p>Approval Comments</p>
+<p><br />
+<br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td style="font-family: Arial; vertical-align: top;"><strong>Reviewers</strong>: Please click the 'Reviewed' checkbox beside your name to indicate your participation in the review. </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%Reviews%</p>
+<p>Review Comments</p>
+<p><br />
+</p>
+<p>
+<table cellspacing="2" cellpadding="2" border="1" style="text-align: left; background-color: rgb(224, 255, 191); width: 100%; font-family: Arial; font-size: 12pt;">
+    <tbody>
+        <tr>
+            <td style="font-family: Arial; vertical-align: top;"><strong>Access Change History</strong> %Note{Authors: Access Change History will list any changes to the access control done to the document draft. These changes would not be visible in a review. In a review, this section would only list the access changes done to the review itself.<br />
+            Please note that changes to the access control of a review are not automatically reflected in the access control of the draft document.}% </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%CollapsedSection{<strong>Access Change History</strong>}{%Access_Change_History%}%<br />
+</p>
+<p>
+<table cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff" width="100%">
+    <tbody>
+        <tr>
+            <td align="center" width="100%" valign="top" style="font-family: Arial; font-size: 12pt;"><strong>Overview</strong> </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p>%Note{A brief description of the feature, its application(s) and limitation(s).<br />
+<br />
+Feature syntax may also be mentioned here.  Since it is in the I0 document, it is optional.}%</p>
+<p>&nbsp;</p>
+<p><font size="2">Submodule is introduced in Fortran 2008 standard. It  provides additional structuring facilities for modules. A submodule is a  program unit that extends a module or another submodule. A submodule  may provide definitions for procedures whose interfaces are  declared in  an ancestor module or submodule. It may also contain  declarations and  definitions of other entities, which are accessible in  its descendants.&nbsp; <font size="2">The declarations and the definitions of entities in a module or  submodule are accessible by host association in its descendants.&nbsp;&nbsp;<font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><font size="2"></font></font></font></font></font></font></font></font></p>
+<p><br />
+<font size="2"><font size="2"><font size="2"><strong><font size="2">S</font>yntax:</strong><br />
+</font></font></font></p>
+<blockquote><font size="2">Submodule is:<br />
+</font> <blockquote><font size="2">submodule-stmt<br />
+</font> </blockquote><blockquote><blockquote><font size="2">[ speci<font size="2">fi</font>ation-part ]<br />
+</font> </blockquote></blockquote><blockquote><blockquote><font size="2">[ module-subprogram-part ]<br />
+</font> </blockquote></blockquote><blockquote><font size="2">end-submodule-stmt<br />
+</font> </blockquote><font size="2">submodule-stmt is:<br />
+</font> <blockquote><font size="2">SUBMODULE (parent-identifier) submodule-name<br />
+</font> </blockquote><font size="2">parent-identifier is:<br />
+</font> <blockquote><font size="2">ancestor-module-name [: parent-submodule-name]<br />
+</font> </blockquote><font size="2">end-submodule-stmt is:<br />
+</font> <blockquote><font size="2">END [ SUBMODULE [ submodule-name ] ]<br />
+</font> </blockquote></blockquote><font size="2"></font>
+<p><strong>Constraints:</strong>&nbsp;<strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"> </strong></strong></strong></strong><font size="2"><br />
+</font></p>
+<p><font size="2">T<font size="2">he <font size="2">following constraints are <font size="2">straightly copied from the standard.</font></font></font><br />
+</font><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;">
+<p><font size="2">C1112: A submodule specification-part shall not  contain a format-stmt , entry-stmt , or stmt-function-stmt. (same  constraint as module)</font></p>
+<p><font size="2">C1113: The ancestor-module-name shall be the name of a  nonintrinsic module; the parent-submodule-name shall be the name of a  descendant of that module.<br />
+<br />
+C1114: If a submodule-name appears in the end-submodule-stmt , it shall be identical to the one in the submodule-stmt.</font></p>
+<p><font size="2">C1506: A procedure defined in a submodule shall not  have a binding label unless its interface is declared in the ancestor  module.</font></p>
+<p><font size="2">C1247: MODULE shall appear only in the function-stmt  or subroutine-stmt of a module subprogram or of a nonabstract interface  body that is declared in the scoping unit of a module or submodule.</font></p>
+<p><font size="2">C517: An access-spec shall appear only in the specification-part of a module. (it is not valid in submodules).<br />
+</font></p>
+</span></span></span><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"> <strong style="color: rgb(0, 128, 0); font-size: 20px;">  </strong> </strong></strong></strong> </p>
+<p><strong>Rules:</strong><br />
+</p>
+<p>1. A submodule is a program unit.</p>
+<p>2. A submodule may contain module subprograms. It is the host scoping unit of the module subprograms.</p>
+<p>3. A submodule may provide definitions for procedures whose  interfaces are declared in an ancestor module or submodule. It may also  contain declarations and definitions of other entities, which are  accessible in its descendants. An entity declared in a submodule is not  accessible by use association unless it is a module procedure whose  interface is declared in the ancestor module.</p>
+<p>4. A submodule has access to entities in its parent module of submodule by host association.<br />
+</p>
+<p>5. The end-submodule-stmt is nonexecutable. <br />
+</p>
+<p><font size="2">6. </font>A local variable of a submodule is accessible only in that submodule scoping unit and in any contained scoping units.</p>
+<p>7. A variable, common block, or procedure pointer declared in the  scoping unit of a submodule implicitly has the SAVE attribute, which may  be confirmed by explicit specification.</p>
+<p>8. If a specification expression in the specification-part of a  submodule includes a reference to a generic entity, that generic entity  shall have no specific procedures defined in the submodule subsequent to  the specification expression.</p>
+<p>9. If a constant expression in the specification-part of a submodule  includes a reference to a generic entity, that generic entity shall have  no specific procedures defined in the submodule subsequent to the  constant expression.</p>
+<p>10. A submodule has exactly one ancestor module and may optionally have one or more ancestor submodules.</p>
+<p>11. The submodule identifier of a submodule is a global identifier.</p>
+<p>12. Submodule identifiers are global identifiers, but because they  consist of a module name and a descendant submodule name, the name of a  submodule can be the same as the name of another submodule so long as  they do not have the same ancestor module.</p>
+<p><font size="2">13. A separate module procedure shall not be <font size="2">defined</font> more than once.</font></p>
+<p><font size="2"><font size="2"><font size="2"><font size="2"><strong>Other notes:</strong><br />
+</font></font></font></font></p>
+<p><font size="2"><font size="2"><font size="2"><font size="2"></font>In addition to the usual mod file generated at compile time, there will be smod files named ancestor-module-name_submodule-name.smod for each submodule.&nbsp; This is the submodule symbol file. It is used by its descendant submodules. The name of the file is the conjunction of the ancestor module name and the submodule name. The suffix of the file is &quot;.smod&quot; to allow users filtering them out easily. Unlike module symbol files (.mod files), the .smod files don't need to be shipped to the end users.</font></font><font size="2"><br />
+</font></font> </p>
+&nbsp;<br />
+<p>
+<table cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff" width="100%">
+    <tbody>
+        <tr>
+            <td align="center" width="100%" valign="top" style="font-family: Arial; font-size: 12pt;"><strong>Test Strategy</strong></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%Note{This is the most important section of the document.  <br />
+<br />
+Detail the test methodology and coverage for the feature to be tested.<br />
+<br />
+Test strategy is not to identify all possible defects under all conditions with the feature.  In most cases, this is unrealistic.<br />
+It is to identify and report defects with the feature under specific conditions likely to be used by the customer.  <br />
+As a tester, you are the first customer of the feature.  So you, the tester, need to understand how a certain feature would be used in the real world and come up with a Test strategy to validate those use cases.  <br />
+<br />
+Use cases to be validated should be documented here.<br />
+<br />
+Provide examples if they are needed to explain the test method or coverage. <br />
+<br />
+If applicable, organize the coverage into diagnostic and functional sections.  <br />
+<br />
+Diagnostic test cases verify error handling of the feature and the corresponding messages that are produced.  This would also include verifying that valid syntax does not produce any unexpected messages.<br />
+This type of testing usually fall under the umbrella of unit tests. The developer of the feature is expected to write fully automated unit tests, but this can be negotiated if it is unfeasible for the developer to do so.<br />
+<br />
+Test cases that verify values are referred to as functional test cases. <br />
+<br />
+For large features, there may not be resource/time to completely test the feature. Certain parts of the feature will be more important than others.  <br />
+Prioritize the test coverage and clearly document what will be covered in testing and what will be omitted.  Risk assessment on the parts omitted should also be documented.  This needs to be reviewed and agreed to by the requirements owner(s).<br />
+<br />
+If there is already coverage in existing test suites, explicitly document it here.<br />
+<br />
+Often, a feature by itself will work fine, but when combined with existing functionality or other new features, it may not work correctly.  So ensure this type of testing is covered in the test coverage.  This implies that other new features being developed for the release should also be understood.   <br />
+<br />
+Backward compatibility, portability, and any other migration Issues should be considered.  One of the main complaints from customers is migrating from release to release (or from one platform to another).  <br />
+<br />
+Document any dependancies or open issues with the feature, so these are not over-looked.}%<br />
+<br />
+<br />
+<br />
+<br />
+<font size="2"><font size="2">Most functional testing will verify that <font size="2">the<font size="2"> behaviour of various constructs in a module is similar to the same constructs in a submodule.&nbsp; <font size="2">Likewise<font size="2"> for</font> </font></font></font></font>declarations <font size="2">and definitions, which may also have access <font size="2">or storage </font>mod<font size="2">ifiers as they would in a module, such as private, <font size="2">protected, public, <font size="2">allocatable</font>.&nbsp; These are expected to behav<font size="2">e sim<font size="2">ilarly<font size="2"> in a submodule scope, when declared in the hos<font size="2">t</font>.</font></font></font></font></font></font></font><br />
+<br />
+<font size="2">There will be diagnostic and functional test cases covering the general use of submodule.<br />
+<br />
+<strong>Positive diagnostic:</strong><br />
+these will be scattered among functional test cases but involve:<br />
+- changing the lettering case of keywords such as 'subModuLe'<br />
+- changing the ordering of keywords such as 'module integer function f()' vs 'integer module function f()'<br />
+<font size="2">- confirm that smod and mod files are generated with the expected naming conventions<br />
+<font size="2">- confirm that a chain of submodule definitions <font size="2">are valid<font size="2"> (<font size="2"><font size="2">covers <font size="2">different levels of depth and breadth</font></font>)</font></font></font></font><br />
+</font> <br />
+<strong>Negative diagnostic:<br />
+- </strong><font size="2">the use of</font><strong> </strong>a <em>submodule-name</em> that appears in the <em>end-submodule-stmt</em><font size="2"> <font size="2">and is different than</font></font> the one in the <em>submodule-stmt<br />
+<font size="2">- </font></em><font size="2">the </font></font><font size="2"><font size="2"><font size="2"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><font size="2"><em>parent-submodule-name</em> <font size="2">is not the name of the parent submodule<br />
+</font></font></span></span></span></font></font><em><font size="2">- </font></em><font size="2">the</font><em><font size="2"> </font></em></font><font size="2"><em><font size="2"><font size="2"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><font size="2">ancestor-module-name</font></span></span></span></font></font> </em><font size="2">is an intrin<font size="2">sic <font size="2">module</font></font></font></font><br />
+<font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><font size="2"><font size="2">- the <em>specification</em><font size="2"><em>-part</em> contains a </font></font><em>format-stmt</em>, <em>entry-stmt</em>, or <em>stmt-function-stmt<br />
+</em></font></span></span></span></font></font></font></font></font><font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><font size="2"><em><font size="2"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><font size="2"><font size="2">- </font>MODULE </font></span></span></span></font></em><font size="2"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><font size="2">appears in the </font></span></span></span></font><em><font size="2"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><font size="2">function-stmt </font></span></span></span></font></em><font size="2"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><font size="2">or</font></span></span></span></font><em><font size="2"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><font size="2"> subroutine-stmt </font></span></span></span></font></em><font size="2"><span style="font-size: 20px;"><span style="font-size: 20px;"><span style="font-size: 20px;"><font size="2">of a module  subprogram or a nonabstract interface body that is declared in the  scoping unit of a module or submodule</font></span></span></span></font><br />
+</font></span></span></span></font></font></font></font><strong><font size="2">- </font></strong><font size="2"><font size="2">the <font size="2">pre<font size="2">sence of a </font></font>naming c<font size="2">onflict between the <font size="2">h<font size="2">ost module and a USE associated module<br />
+<font size="2">- <font size="2">use<font size="2">-association of a submodule<br />
+<font size="2">- reusing the name <font size="2">of the host module or a submodule in another descendant submodule</font></font><br />
+</font></font></font></font></font></font></font></font><strong> </strong> - the use of access modifiers for attributes in module functions<br />
+- function or subroutine defined in a submodule but not declared in any parent module<br />
+<font size="2">- function or subroutine defined in different way in a submodule and its parent module </font><br />
+- function or subroutine defined in a submodule but declared in a parent module and a USE associated module<br />
+- other invalid uses of variables, procedures in scoping units<br />
+<br />
+<strong>Functional:<br />
+</strong> - simple use declaring a submodule should pass<br />
+<font size="2">- use association of a module and its descendant<font size="2"> submodules</font> in a module with descendant submodules</font>, which in turn may be use associated in another con<font size="2">struct</font><br />
+<font size="2">- <font size="2">declaring submodules in different files<br />
+<font size="2">- </font></font></font></font>define a module m, which uses module n, and a submodule nsub which  extends n and uses m.&nbsp; This should not cause a circular reference.<font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><font size="2"> </font></font><br />
+- submodule implementation decided on link time - <font size="2">i.e. only recompile a submodule without recompiling the rest of the so<font size="2">urce code.&nbsp; This mimics the <font size="2">abstraction of library imple<font size="2">mentations, the main use of submodules.</font></font></font></font><br />
+<font size="2">- use of DTIO and procedure pointer. i.e. declaring in module and access it in different level of descendant submodules. </font><br />
+</font></font> - checking public, protected, private<font size="2"> </font>variable accessibility in different scoping units <font size="2">(as well as parameter, allocatable, target, poi<font size="2">nter<font size="2">, etc)</font></font></font><br />
+<font size="2"></font><br />
+However, given that the code involving scoping units is higher risk,  testing will be more heavily weighted towards scoping.&nbsp; Unit testing will cover the private<font size="2"> and protected variable <font size="2"><font size="2">scoping<font size="2">.<br />
+<br />
+</font></font></font></font>There are two  ways scoping will be covered:<br />
+<br />
+1.&nbsp; Host association when extending a module with a submodule, which by  default allows access to the host variables, type definitions,  subroutine and function definitions (including those declared private<font size="2">, protected)</font><br />
+<br />
+&nbsp;&nbsp;&nbsp; The effect of access modifiers on variables, type definitions,  functions and subroutines will be considered.&nbsp; Test cases will consider  the use of interfaces and also examine the name mangling of these  functions and subroutines to verify the correct routine is called.<br />
+<br />
+2.&nbsp; Constructs that create a new scoping unit such as blocks, loops, USE association on a different module than the host, etc.<br />
+<br />
+&nbsp;&nbsp;&nbsp; These test cases consider the following:<br />
+&nbsp;&nbsp;&nbsp; - scopes created by blocks, loops, etc are local to those blocks but can access host-associated items<br />
+&nbsp;&nbsp;&nbsp; - with USE association on modules with conflicting attributes, which attribute is accessed and in which situation?<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - USE association can be set up within a local scoping unit or in the submodule<br />
+<br />
+</font></font><br />
+<font size="2"><font size="2">Examples of constructs considered:<br />
+<br />
+- functions and subroutines</font></font><br />
+&nbsp;&nbsp; - as a local scoping unit in a submodule, if not declared in the host interface interface<br />
+<font size="2"><font size="2"><font size="2"><font size="2">&nbsp; - in an interface</font></font></font></font> <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - use associate an external module in the interface in the host module vs the module subroutine<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - interface specified in a descendant submodule as a local scoping (unit only accessible and defined in its descendant submodules)<br />
+<br />
+<font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><font size="2">- derived type</font></font></font></font></font></font><br />
+&nbsp;&nbsp; - as private type (should be accessible in descendant submodule, covered in UT)<br />
+&nbsp;&nbsp; - as public type, but with private variables (same)<br />
+&nbsp;&nbsp; - as private type with private variables (same)<br />
+<font size="2"><font size="2">&nbsp; - pointer</font></font><br />
+&nbsp; &nbsp; &nbsp; - procedure pointer in a derived type to a procedure in a host module or descendant submodule<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - to target types defined in or allocated in different scopes<font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><font size="2"><br />
+<font size="2">&nbsp;&nbsp;&nbsp; - <font size="2"><font size="2">gen<font size="2">eric pointer to<font size="2"> a</font></font></font> <font size="2">module <font size="2">procedure (<font size="2">candidate<font size="2"> <font size="2">procedure</font></font></font> may be defined in <font size="2">d<font size="2">iffere<font size="2">nt</font></font></font> submodules)</font></font></font></font><br />
+</font></font></font></font><br />
+- do loop, OMP parallel<br />
+<font size="2">&nbsp;<font size="2"> - <font size="2">effects of shared, private variables</font></font></font><br />
+<font size="2">&nbsp; - in local <font size="2">procedures, module procedures</font></font><br />
+<br />
+- enumerator defined in the host<font size="2"> module, a<font size="2">ccessible in descendant submodules<br />
+</font></font></font></font><font size="2"><font size="2">- bloc<font size="2">k</font> as a <font size="2">local scoping unit in a <font size="2">submodule, module procedure, nested procedure, etc.</font></font></font></font><font size="2"><font size="2"><font size="2"><font size="2"><br />
+</font></font></font><br />
+The use of access modifiers will be covered primarily by unit testing.<br />
+<br />
+<p>
+<table cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff" width="100%">
+    <tbody>
+        <tr>
+            <td align="center" width="100%" valign="top" style="font-family: Arial; font-size: 12pt;"><strong>Test Procedure and Scenario</strong></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%Note{A Test procedure provides detailed instructions for the execution of one or more test cases.  <br />
+<br />
+Most good software development models call for both a Test Plan and a Test Procedure document. <br />
+Although in principle this sounds good, test procedures are costly to develop and maintain.  When writing test cases, Test procedures often require updating, requiring IT1 [test plan] to be re-opened.<br />
+<br />
+Currently, development teams review this section, and not necessarily the test cases themselves.  So there is definitely value in having this information available.  If it is not provided in the IT1 document, it needs to be provided during test case review, and reviewed by developer.  <br />
+.}%<br />
+To be documented in the IT2<br />
+<br />
+<p>
+<table cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff" width="100%">
+    <tbody>
+        <tr>
+            <td align="center" width="100%" valign="top" style="font-family: Arial; font-size: 12pt;"><strong>Test cases Information</strong></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%Note{This section details the test case location and other test case related information<br />
+<br />
+Technically, this is not part of a &quot;Test plan&quot;.  <br />
+<br />
+Following information may not be known during IT1 time-frame.  If it's known, it should be documented:<br />
+Document information about release name. component name. cmvc location and test cases shadow location<br />
+<br />
+Document information about the feature bucket structure.  If the feature is big enough, sub-buckets will be necessary to maintain some organization. <br />
+<br />
+Document  information about the feature test case naming convention.  <br />
+Example: <br />
+xxx_001f.scenario (functional) <br />
+xxx_001d.scenario (diagnostic) <br />
+where xxx can be the feature name or function name that the test case is testing. <br />
+<br />
+<br />
+If you plan to have a combined IT1 and test case review, further test case information needs to be added to this section:<br />
+Following statement needs to be added::<br />
+&quot;Test case approval will also be done through this document, so no formal test case review document will be published.<br />
+Please review the test cases from the location provided below, and only approve this document if you are satisfied with <br />
+the IT1 (test plan) and the test cases.&quot; <br />
+List of test case names, so that comments can be added per test case; if there are too many test cases, list groups of test cases, or test lists.}%<br />
+<br />
+<font size="2">Test cases will be name according to the type<font size="2">:<br />
+<br />
+<font size="2"><font size="2">Functional test case names will have the form:</font></font><br />
+</font><font size="2">submodule01f.scenario<br />
+<br />
+while diagnostic <font size="2">test cas<font size="2">es<font size="2">:<br />
+<font size="2">submodule<font size="2">01d.scenario<br />
+<br />
+<font size="2">And will be stored in<font size="2">:<br />
+<br />
+<font size="2"><font size="2">F2008/submodule/func<br />
+<font size="2">F2008/submodule/diag<br />
+<br />
+<font size="2">respectively.<br />
+<br />
+<font size="2">Unit test cases <font size="2">will be stored in F2008/submodule/ut</font></font><br />
+</font></font></font></font></font></font></font></font></font></font></font></font></font>
+<p>
+<table cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff" width="100%">
+    <tbody>
+        <tr>
+            <td align="center" width="100%" valign="top" style="font-family: Arial; font-size: 12pt;"><strong>Build Sanity Candidate(s)</strong></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%Note{List one or more test cases that are to be added to the BDS test list.  <br />
+<br />
+If the test cases are already identified during IT1 time-frame, it should be documented here.<br />
+<br />
+BDS test candidates may not be known until test case review time-frame.&nbsp; Thus not identifying the candidate during IT1 time-frame does not prevent it from being approved.  For this case, a URL  link to RTC task must exist.<br />
+<br />
+Not all features require test cases to be added to BDS.  This must be explicitly stated here (or in RTC task if not known during IT1 time-frame).<br />
+}%<br />
+</font><br />
+The following are suitable candidates for the BDS test list:<br />
+<br />
+submodule02f.scenario<br />
+submodule04f.scenario<br />
+submodule21f.scenario<br />
+<br />
+Please refer to the IT2 for details.<font size="2">
+<p>
+<table cellspacing="0" cellpadding="5" border="1" bgcolor="#bfbfff" width="100%">
+    <tbody>
+        <tr>
+            <td align="center" width="100%" valign="top" style="font-family: Arial; font-size: 12pt;"><strong>Reference</strong></td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<br />
+<strong>I0: </strong>https://featureflow.torolab.ibm.com/featureflow/show/6394<br />
+<strong>IT2:</strong> https://featureflow.torolab.ibm.com/featureflow/show/6855<br />
+%Note{I0 Location and any references (including standards) that may help understand the IT1.}%<strong style="color: rgb(0, 128, 0); font-size: 20px;"><br />
+<strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"><strong style="color: rgb(0, 128, 0); font-size: 20px;"></strong></strong></strong> </strong> </font><!--HTML Wrapper--></body></html>

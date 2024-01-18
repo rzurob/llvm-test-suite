@@ -1,0 +1,7 @@
+ in main:
+ x%dta1= 1 2 3 4
+ x%dta2= 11 12 13 14
+ in sub:
+ d%dta1= 1 2 3 4
+ d%dta2  = 11 12 13 14
+ d%dta2%a= 11 12 13 14

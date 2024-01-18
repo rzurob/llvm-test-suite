@@ -1,0 +1,13 @@
+      program PROGNAME
+        use iso_c_binding
+        DT_DECL
+        TYPENAME, target :: a
+        TYPENAME, pointer :: b
+        TYPENAME, target :: c(5)
+        TYPENAME, pointer :: d(:)
+        type(c_ptr) :: e
+        e = c_loc(a)
+        e = c_loc(b)
+        e = c_loc(c)
+        e = c_loc(d)
+      end program PROGNAME

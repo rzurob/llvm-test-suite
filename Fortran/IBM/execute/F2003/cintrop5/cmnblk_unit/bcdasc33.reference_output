@@ -1,0 +1,4 @@
+"bcdasc33.f", line 37.10: 1516-207 (S) This COMMON block appears in a BIND statement, but did not appear in a COMMON statement in the same scoping unit.
+** mod   === End of Compilation 1 ===
+"bcdasc33.f", line 40.5: 1514-219 (S) Unable to access module symbol file for module mod. Check path and file permissions of file. Use association not done for this module.
+1501-511  Compilation failed for file bcdasc33.f.

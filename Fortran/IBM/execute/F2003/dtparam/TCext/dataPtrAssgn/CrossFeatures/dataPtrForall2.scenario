@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/CrossFeatures/dataPtrForall2.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071216
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM) -qdebug=allowrpdt
+#INPUT=  $(tcasedir)dataPtrForall2.f
+#OUTPUT= dataPtrForall2$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  dataPtrForall2$(OBJ)
+#OUTPUT= dataPtrForall2$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dataPtrForall2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

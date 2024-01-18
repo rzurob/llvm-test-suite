@@ -1,0 +1,56 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/coarray/stop/func/stop_f008.scenario
+#FEATURE    = CAF: STOP statement (feature #351605.31)
+#CREATOR    = Grigor Nikolov
+#DATE       = 20101019
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#OPTS       = $(OPT_NOCOARRAY)
+#INPUT      = $(tcasedir)stop_stringvalue_nocaf.f
+#OUTPUT     = stop_stringvalue_nocaf$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#OPTS       = $(OPT_NOCOARRAY)
+#INPUT      = stop_stringvalue_nocaf$(OBJ)
+#OUTPUT     = stop_stringvalue_nocaf$(EXE)
+#ENDCMD
+
+#CMD        = RUN
+#INPUT      = stop_stringvalue_nocaf$(EXE)
+#STDOUT     = stop_stringvalue_nocaf.out
+#STDERR     = stop_stringvalue_nocaf.out
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "Stop with string value set"
+#INPUT      = stop_stringvalue_nocaf.out
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "STOP ES_String message!"
+#INPUT      = stop_stringvalue_nocaf.out
+#ENDCMD
+
+#CMD        = GREP
+#OPTS       = -e "FAILURE if this message"
+#INPUT      = stop_stringvalue_nocaf.out
+#VALIDRCS   = 1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

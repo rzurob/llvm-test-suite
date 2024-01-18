@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/dummy_arg/atpda/dtpATPDAModuleProcedurePointer.scenario
+#FEATURE   = Assumed type parameters and dummy arguments - procedure pointers in a module
+#CREATOR   = DF Manual Update
+#DATE      = 20081015
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpATPDAModuleProcedurePointer.f
+#OUTPUT    = dtpATPDAModuleProcedurePointer$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpATPDAModuleProcedurePointer$(OBJ)
+#OUTPUT    = dtpATPDAModuleProcedurePointer$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpATPDAModuleProcedurePointer$(EXE)
+#STDOUT    = dtpATPDAModuleProcedurePointer.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpATPDAModuleProcedurePointer$(product)vf) dtpATPDAModuleProcedurePointer.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

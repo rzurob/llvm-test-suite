@@ -1,0 +1,108 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       complex_r128
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2008_COMPILE
+#IF in($(OPT_USE_HIGH_ORDER_TRANSFORMATIONS)) || in($$(OPT_OPTIMIZE_LEVEL<[3-5]>))
+  #OPTS = $(OPT_SET_STRICT_OPTIMIZATION<operationprecision>)
+#ENDIF
+#INPUT  = $(tcasedir)complex_r128.f
+#OUTPUT = complex_r128$(OBJ)
+#ENDCMD
+
+#CMD    = XLF2008_LINK
+#IF in($(OPT_USE_HIGH_ORDER_TRANSFORMATIONS)) || in($$(OPT_OPTIMIZE_LEVEL<[3-5]>))
+  #OPTS = $(OPT_SET_STRICT_OPTIMIZATION<operationprecision>)
+#ENDIF
+#INPUT  = complex_r128$(OBJ)
+#OUTPUT = complex_r128$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = complex_r128$(EXE)
+#STDOUT = complex_r128_F2008.out
+#ENDCMD
+
+
+#CMD    = XLF2003_COMPILE
+#IF in($(OPT_USE_HIGH_ORDER_TRANSFORMATIONS)) || in($$(OPT_OPTIMIZE_LEVEL<[3-5]>))
+  #OPTS = $(OPT_SET_STRICT_OPTIMIZATION<operationprecision>)
+#ENDIF
+#INPUT  = $(tcasedir)complex_r128.f
+#OUTPUT = complex_r128$(OBJ)
+#ENDCMD
+
+#CMD    = XLF2003_LINK
+#IF in($(OPT_USE_HIGH_ORDER_TRANSFORMATIONS)) || in($$(OPT_OPTIMIZE_LEVEL<[3-5]>))
+  #OPTS = $(OPT_SET_STRICT_OPTIMIZATION<operationprecision>)
+#ENDIF
+#INPUT  = complex_r128$(OBJ)
+#OUTPUT = complex_r128$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = complex_r128$(EXE)
+#STDOUT = complex_r128_F2003.out
+#ENDCMD
+
+
+#CMD    = XLF_COMPILE
+#IF in($(OPT_USE_HIGH_ORDER_TRANSFORMATIONS)) || in($$(OPT_OPTIMIZE_LEVEL<[3-5]>))
+  #OPTS = $(OPT_SET_STRICT_OPTIMIZATION<operationprecision>)
+#ENDIF
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#INPUT  = $(tcasedir)complex_r128.f
+#OUTPUT = complex_r128$(OBJ)
+#ENDCMD
+
+#CMD    = XLF_LINK
+#IF in($(OPT_USE_HIGH_ORDER_TRANSFORMATIONS)) || in($$(OPT_OPTIMIZE_LEVEL<[3-5]>))
+  #OPTS = $(OPT_SET_STRICT_OPTIMIZATION<operationprecision>)
+#ENDIF
+#OPTS   = $(OPT_FREE_SOURCE_FORM)
+#INPUT  = complex_r128$(OBJ)
+#OUTPUT = complex_r128$(EXE)
+#ENDCMD
+
+#CMD    = RUN
+#INPUT  = complex_r128$(EXE)
+#STDOUT = complex_r128_XLF.out
+#ENDCMD
+
+#CMD    = DIFF
+#INPUT  = complex_r128_F2008.out $($(tcasedir)complex_r128$(product)vf)
+#ENDCMD
+
+#CMD    = DIFF
+#INPUT  = complex_r128_F2003.out $($(tcasedir)complex_r128$(product)vf)
+#ENDCMD
+
+#CMD    = DIFF
+#INPUT  = complex_r128_XLF.out $($(tcasedir)complex_r128$(product)vf)
+#ENDCMD
+
+#CMD    = DIFF
+#INPUT  = complex_r128_F2008.out complex_r128_F2003.out
+#ENDCMD
+
+#CMD    = DIFF
+#INPUT  = complex_r128_F2008.out complex_r128_XLF.out
+#ENDCMD
+
+#CMD    = DIFF
+#INPUT  = complex_r128_F2003.out complex_r128_XLF.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

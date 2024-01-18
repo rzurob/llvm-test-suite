@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/abstract/crossFeature/selectType/selectType006.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB extension of OO_type/*
+#DATE      = 20070725
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)selectType006.f
+#OUTPUT    = selectType006$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = selectType006$(OBJ)
+#OUTPUT    = selectType006$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = selectType006$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

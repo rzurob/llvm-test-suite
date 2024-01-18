@@ -1,0 +1,149 @@
+!#######################################################################
+! SCCS ID Information
+! %W%, %I%
+! Extract Date/Time: %D% %T%
+! Checkin Date/Time: %E% %U%
+!#######################################################################
+! *********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: ffinal514a16.f
+! %VERIFY: ffinal514a16.out:ffinal514a16.vf
+! %STDIN:
+! %STDOUT: ffinal514a16.out
+! %EXECARGS:
+! %POSTCMD: 
+! %END
+! *********************************************************************
+!*  =================================================================== 
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
+!*  =================================================================== 
+!*  =================================================================== 
+!*
+!*  TEST CASE TITLE            :
+!*
+!*  PROGRAMMER                 : Jim Xia
+!*  DATE                       : 04/20/2004
+!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
+!*                             :
+!*
+!*  PRIMARY FUNCTIONS TESTED   :
+!*                             :
+!*  SECONDARY FUNCTIONS TESTED : 
+!*
+!*  DRIVER STANZA              : xlf95
+!*
+!*  DESCRIPTION                : final sub (finalization of function return
+!*                               created in DO WHILE LOOP)
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!* ===================================================================
+!*
+!*  REVISION HISTORY
+!*
+!*  MM/DD/YY:  Init:  Comments:
+!* ===================================================================
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
+module m
+    type base
+        integer*4, pointer :: data => null()
+
+        contains
+
+        final :: finalizeBase
+    end type
+
+    interface assignment (=)
+        subroutine base2Base (b1, b2)
+        import base
+            type (base), intent(out) :: b1
+            type (base), intent(in) :: b2
+        end subroutine
+    end interface
+
+    interface operator (==)
+        logical function baseEqual (b1, b2)
+        import base
+            type (base), intent(in) :: b1, b2
+        end function
+    end interface
+
+    contains
+
+    subroutine finalizeBase (b)
+        type (base), intent(inout) :: b
+
+        print *, 'finalizeBase'
+
+        if (associated (b%data)) then
+            print *, 'deallocating data'
+            deallocate (b%data)
+        end if
+    end subroutine
+
+    type (base) function makeBase (i)
+        integer*4, intent(in) :: i
+
+        allocate (makeBase%data)
+
+        makeBase%data = i
+    end function
+end module
+
+program ffinal514a16
+use m
+    type (base) :: b1(3)
+
+    allocate (b1(1)%data, b1(2)%data)
+
+    b1(1)%data = 1
+    b1(2)%data = 2
+
+    i = 1
+
+    do while (i <= 3 .and. b1(i) == makeBase (i))
+        print *, i
+
+        b1(i) = makeBase (-i)
+
+        print *, 'after assignment'
+        i = i + 1
+    end do
+
+    if (associated (b1(3)%data)) error stop 1_4
+    if ((b1(1)%data /= -1) .or. (b1(2)%data /= -2)) error stop 2_4
+
+    print *, 'end'
+end
+
+subroutine base2Base (b1, b2)
+use m, only: base
+    type (base), intent(out) :: b1
+    type (base), intent(in) :: b2
+
+    if (associated (b2%data)) then
+        allocate (b1%data)
+        b1%data = b2%data
+    end if
+end subroutine
+
+logical function baseEqual (b1, b2)
+use m, only: base
+    type (base), intent(in) :: b1, b2
+
+    if ((.not. associated (b1%data)) .and. (.not. associated (b2%data))) then
+        baseEqual = .true.
+    else if (associated (b1%data) .and. associated (b2%data)) then
+        if (b1%data == b2%data) then
+            baseEqual = .true.
+        else
+            baseEqual = .false.
+        end if
+    else
+        baseEqual = .false.
+    end if
+end function

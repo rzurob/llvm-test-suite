@@ -1,0 +1,60 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/statements/wait/idSpecIDValue07.scenario
+#FEATURE	= Asynchronous I/O -- WAIT() Statement
+#CREATOR	= GM Manual Creation
+#DATE		= 20060315
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)idSpecIDValue07.dat fort.12
+#ENDCMD
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)idSpecIDValue07.dat fort.14
+#ENDCMD
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)idSpecIDValue07.dat fort.16
+#ENDCMD
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)idSpecIDValue07.dat fort.18
+#ENDCMD
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)idSpecIDValue07.dat fort.20
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)idSpecIDValue07.f
+#OUTPUT		= idSpecIDValue07$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= idSpecIDValue07$(OBJ)
+#OUTPUT		= idSpecIDValue07$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= idSpecIDValue07$(EXE)
+#STDOUT		= idSpecIDValue07.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)idSpecIDValue07$(product)vf)	\
+				idSpecIDValue07.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

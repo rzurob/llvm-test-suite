@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/class/fclass008d.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071006
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fclass008d.f
+#OPTS      = -qdebug=intmsg:shutup
+#OUTPUT    = fclass008d$(OBJ)
+#STDERR    = fclass008d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)fclass008d$(product)vf) fclass008d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

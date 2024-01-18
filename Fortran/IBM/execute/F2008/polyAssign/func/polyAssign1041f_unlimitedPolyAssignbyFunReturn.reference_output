@@ -1,0 +1,20 @@
+ not related type in retPoly
+ inside main, type of p is t2, p%j== 1 p%k== 2
+ **************end of loop for i= 1 *************
+ 
+ inside retPoly, type of p is t2, p%j== 1 p%k== 2
+ inside main, type of p is t2, p%j== 2 p%k== 3
+ **************end of loop for i= 2 *************
+ 
+ inside retPoly, type of p is t2, p%j== 2 p%k== 3
+ inside main, type of p is t2, p%j== 3 p%k== 4
+ **************end of loop for i= 3 *************
+ 
+ inside retPoly, type of p is t2, p%j== 3 p%k== 4
+ inside main, type of p is t2, p%j== 4 p%k== 5
+ **************end of loop for i= 4 *************
+ 
+ inside retPoly, type of p is t2, p%j== 4 p%k== 5
+ inside main, type of p is t2, p%j== 5 p%k== 6
+ **************end of loop for i= 5 *************
+ 

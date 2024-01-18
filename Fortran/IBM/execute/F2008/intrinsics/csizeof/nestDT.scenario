@@ -1,0 +1,41 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    =  F2008/intrinsics/csizeof/nestDT.scenario
+#FEATURE =  F2008 ISO_C_BINDING C_SIZEOF function 381475
+#CREATOR =  Michelle Zhang
+#DATE    =  2011/01/14
+#TEST_TYPE= functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+  C_OPTS = -qlongdouble $(C_COMPILER_OPTS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)nestDT.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = f_test$(OBJ)
+#ENDCMD
+
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)nestDT.c
+#OPTS      = $C_OPTS
+#OUTPUT    = nestDT$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = nestDT$(OBJ) f_test$(OBJ)
+#OUTPUT    = nestDT$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = nestDT$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

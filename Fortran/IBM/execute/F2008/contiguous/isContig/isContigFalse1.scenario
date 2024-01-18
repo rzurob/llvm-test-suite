@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/contiguous/isContig/isContigFalse1.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20101028
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)isContigFalse1.f
+#OUTPUT    = isContigFalse1$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = isContigFalse1$(OBJ)
+#OUTPUT    = isContigFalse1$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = isContigFalse1$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

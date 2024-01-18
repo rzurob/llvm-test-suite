@@ -1,0 +1,7 @@
+"dfinal009ek.f", line 38.15: 1514-018 (E) Identifier "arg1" may not have the SAVE attribute specified.  SAVE attribute is ignored for this variable.
+** m   === End of Compilation 1 ===
+"dfinal009ek.f", line 48.27: 1514-587 (S) Component x is not permitted. x is the name of a component, binding, or type parameter that is inherited from type base.
+"dfinal009ek.f", line 60.15: 1514-018 (E) Identifier "arg1" may not have the SAVE attribute specified.  SAVE attribute is ignored for this variable.
+** m1   === End of Compilation 2 ===
+"dfinal009ek.f", line 66.8: 1514-219 (S) Unable to access module symbol file for module m1. Check path and file permissions of file. Use association not done for this module.
+1501-511  Compilation failed for file dfinal009ek.f.

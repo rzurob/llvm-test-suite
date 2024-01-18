@@ -1,0 +1,84 @@
+ Subroutine sub
+ pf pointer assoc. = F
+ Subroutine two
+ w%dtf pointer assoc. = F
+ w%dts pointer assoc. = F
+ i = 6
+ c = 2 2 2
+ Subroutine two
+ w%dtf pointer assoc. = T
+ w%dts pointer assoc. = T
+ i = 6
+ c = 2 2 2
+ Subroutine sub
+ pf pointer assoc. = T
+ Subroutine two
+ w%dtf pointer assoc. = F
+ w%dts pointer assoc. = F
+ Function one
+ w%dtf pointer assoc. = T
+ w%dts pointer assoc. = T
+ Function one
+ w%dtf pointer assoc. = T
+ w%dts pointer assoc. = T
+ c = 3 4 5
+ pf associated, i = 24
+ Subroutine two
+ w%dtf pointer assoc. = T
+ w%dts pointer assoc. = T
+ i = 6
+ c = 2 2 2
+ Subroutine two
+ w%dtf pointer assoc. = T
+ w%dts pointer assoc. = T
+ i = 6
+ c = 2 2 2
+ Subroutine two
+ w%dtf pointer assoc. = F
+ w%dts pointer assoc. = F
+ Function one
+ w%dtf pointer assoc. = T
+ w%dts pointer assoc. = T
+ optional arg. is present, i = 15
+ Function fun
+ pf pointer assoc. = F
+ Function one
+ w%dtf pointer assoc. = T
+ w%dts pointer assoc. = T
+ i = 6
+ c = 2 2 2
+ Function one
+ w%dtf pointer assoc. = T
+ w%dts pointer assoc. = T
+ i = 6
+ c = 2 2 2
+ Function fun
+ pf pointer assoc. = T
+ Subroutine two
+ w%dtf pointer assoc. = F
+ w%dts pointer assoc. = F
+ Subroutine two
+ w%dtf pointer assoc. = T
+ w%dts pointer assoc. = T
+ c = 3 4 5
+ Function one
+ w%dtf pointer assoc. = T
+ w%dts pointer assoc. = T
+ pf associated, i = 24
+ Function one
+ w%dtf pointer assoc. = T
+ w%dts pointer assoc. = T
+ i = 6
+ c = 2 2 2
+ Function one
+ w%dtf pointer assoc. = T
+ w%dts pointer assoc. = T
+ i = 6
+ c = 2 2 2
+ Subroutine two
+ w%dtf pointer assoc. = F
+ w%dts pointer assoc. = F
+ Function one
+ w%dtf pointer assoc. = T
+ w%dts pointer assoc. = T
+ optional arg. is present, i = 15

@@ -1,0 +1,27 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= F2003/dtparam/typeParamInquiry/Diag/d355089.scenario
+#FEATURE= Type Parameter Inquiry(354612)
+#CREATOR=   Nancy Wang
+#DATE= July 17 2008
+#TEST_TYPE= Diagnostic
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)d355089.f
+#STDERR = d355089.err
+#ENDCMD
+
+#CMD    = XLDIFF
+#INPUT  = d355089.err $($(tcasedir)d355089$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

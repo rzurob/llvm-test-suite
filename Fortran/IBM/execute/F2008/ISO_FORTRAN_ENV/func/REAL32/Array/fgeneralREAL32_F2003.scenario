@@ -1,0 +1,62 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       fgeneralREAL32
+#FEATURE=    ISO_FORTRAN_ENV (376078)
+#CREATOR=    Morteza Ershad-Manesh
+#DATE=       10-07-12
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD=    XLF2003_COMPILE
+#INPUT=  $(tcasedir)fgeneralREAL32.f
+#OUTPUT= fgeneralREAL32$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2003_LINK
+#INPUT=  fgeneralREAL32$(OBJ)
+#OUTPUT= fgeneralREAL32$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fgeneralREAL32$(EXE)
+#ENDCMD
+
+#CMD=    XLF2003_COMPILE
+#OPTS=   $(OPT_REALSIZE_8)
+#INPUT=  $(tcasedir)fgeneralREAL32.f
+#OUTPUT= fgeneralREAL32_1$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2003_LINK
+#OPTS=   $(OPT_REALSIZE_8)
+#INPUT=  fgeneralREAL32_1$(OBJ)
+#OUTPUT= fgeneralREAL32_1$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fgeneralREAL32_1$(EXE)
+#ENDCMD
+
+#CMD=    XLF2003_COMPILE
+#OPTS=   -qautodbl=dbl
+#INPUT=  $(tcasedir)fgeneralREAL32.f
+#OUTPUT= fgeneralREAL32_2$(OBJ)
+#ENDCMD
+
+#CMD=    XLF2003_LINK
+#OPTS=   -qautodbl=dbl
+#INPUT=  fgeneralREAL32_2$(OBJ)
+#OUTPUT= fgeneralREAL32_2$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  fgeneralREAL32_2$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

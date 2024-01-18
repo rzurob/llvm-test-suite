@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/io/formatted/listdirect/listDirectStreamAccess02.scenario
+#FEATURE   = 360757
+#CREATOR   = Nancy Wang
+#DATE      = Jan. 21 2009
+#TEST_TYPE = Functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD   = COPY
+#INPUT = $(tcasedir)listDirectStreamAccess02.dat .
+#ENDCMD
+
+#CMD   = F_COMPILE
+#INPUT = $(tcasedir)listDirectStreamAccess02.f
+#OUTPUT= listDirectStreamAccess02$(OBJ)
+#ENDCMD
+
+#CMD   = F_LINK
+#INPUT = listDirectStreamAccess02$(OBJ)
+#OUTPUT= listDirectStreamAccess02$(EXE)
+#ENDCMD
+
+#CMD   = RUN
+#INPUT = listDirectStreamAccess02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

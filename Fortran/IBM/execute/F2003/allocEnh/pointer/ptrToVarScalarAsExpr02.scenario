@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/pointer/ptrToVarScalarAsExpr02.scenario
+#FEATURE	= Intrinsic Assignment -- variable is a POINTER
+#CREATOR	= GM Manual Creation
+#DATE		= 20061025
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)ptrToVarScalarAsExpr02.f
+#OUTPUT		= ptrToVarScalarAsExpr02$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= ptrToVarScalarAsExpr02$(OBJ)
+#OUTPUT		= ptrToVarScalarAsExpr02$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= ptrToVarScalarAsExpr02$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

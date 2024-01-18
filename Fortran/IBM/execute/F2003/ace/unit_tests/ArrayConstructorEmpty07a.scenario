@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=ArrayConstructor/ArrayConstructorEmpty07
+#FEATURE = Array constructor enhancements
+#CREATOR = Rob James
+#DATE    = 20060915
+#TEST_TYPE=Unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ArrayConstructorEmpty07.f
+#OUTPUT    = ArrayConstructorEmpty07$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = ArrayConstructorEmpty07$(OBJ)
+#OUTPUT    = ArrayConstructorEmpty07$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ArrayConstructorEmpty07$(EXE)
+#STDOUT    = ArrayConstructorEmpty07.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)ArrayConstructorEmpty07$(product)vf) ArrayConstructorEmpty07.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

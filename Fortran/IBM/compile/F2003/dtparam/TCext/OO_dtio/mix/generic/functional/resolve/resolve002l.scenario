@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=.../F2003/dtparam/TCext/OO_dtio/mix/generic/functional/resolve/resolve002l.scenario
+#FEATURE = OO_dtio tests + derived type parameters
+#CREATOR = David Forster (derived from work by Robert Ma)
+#DATE    = 20070809
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)resolve002l.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = resolve002l$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = resolve002l.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = resolve002l.err $($(tcasedir)resolve002l$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

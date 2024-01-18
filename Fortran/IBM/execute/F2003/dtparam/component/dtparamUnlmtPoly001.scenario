@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/component/dtparamUnlmtPoly001.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamUnlmtPoly001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dtparamUnlmtPoly001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dtparamUnlmtPoly001$(OBJ)
+#OUTPUT    = dtparamUnlmtPoly001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamUnlmtPoly001$(EXE)
+#STDOUT    = dtparamUnlmtPoly001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dtparamUnlmtPoly001.out $($(tcasedir)dtparamUnlmtPoly001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

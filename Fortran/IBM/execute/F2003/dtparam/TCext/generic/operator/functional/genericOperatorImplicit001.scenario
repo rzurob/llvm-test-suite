@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/operator/functional/genericOperatorImplicit001.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericOperatorImplicit001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericOperatorImplicit001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericOperatorImplicit001$(OBJ)
+#OUTPUT    = genericOperatorImplicit001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericOperatorImplicit001$(EXE)
+#STDOUT    = genericOperatorImplicit001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericOperatorImplicit001.out $(tcasedir)genericOperatorImplicit001.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

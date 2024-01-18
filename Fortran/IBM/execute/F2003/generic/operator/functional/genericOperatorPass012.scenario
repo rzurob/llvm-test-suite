@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/operator/functional/genericOperatorPass012.scenario
+#FEATURE = generic tests
+#CREATOR = Robert Ma
+#DATE    = 20051122
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericOperatorPass012.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericOperatorPass012$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericOperatorPass012$(OBJ)
+#OUTPUT    = genericOperatorPass012$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericOperatorPass012$(EXE)
+#STDOUT    = genericOperatorPass012.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = genericOperatorPass012.out $(tcasedir)genericOperatorPass012.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,6 @@
+*** testcase variant:  -qfixed
+
+** s1   === End of Compilation 1 ===
+** p1   === End of Compilation 2 ===
+1501-510  Compilation successful for file notKeyword2.f.
+ arg c = 7.000000000

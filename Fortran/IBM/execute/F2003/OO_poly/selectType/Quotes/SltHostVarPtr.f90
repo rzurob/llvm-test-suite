@@ -1,0 +1,139 @@
+! *********************************************************************
+! %START
+! %MAIN: YES
+! %PRECMD: 
+! %COMPOPTS: -qfree=f90 
+! %GROUP: SltHostVarPtr.f
+! %VERIFY:  
+! %STDIN:
+! %STDOUT: 
+! %EXECARGS:
+! %POSTCMD: 
+! %END
+! *********************************************************************
+!*  ===================================================================
+!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
+!*  ===================================================================
+!*
+!*  TEST CASE NAME             : SltHostVarPtr
+!*  TEST CASE TITLE            : 
+!*
+!*  PROGRAMMER                 : Feng Ye
+!*  DATE                       : Dec. 23, 2004
+!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*
+!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*
+!*  REFERENCE                  : Feature 219934.OO_poly
+!*
+!*  DRIVER STANZA              :
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
+!*
+!*  DESCRIPTION
+!*     
+!*   The selector is an associate name associating to a pointer
+!*    ()
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
+
+
+  MODULE M
+
+    TYPE  :: Zero
+    END TYPE 
+
+    TYPE, EXTENDS(Zero)  :: Base
+      INTEGER :: BaseId = 1
+    CONTAINS
+      PROCEDURE, PASS   :: GetId => GetBaseId
+      PROCEDURE, PASS   :: SetId => SetBaseId
+    END TYPE
+
+    TYPE, EXTENDS(Base) :: Child
+      INTEGER  :: ChildId = 2
+      CLASS(Base), POINTER :: BasePtr => NULL()
+    CONTAINS
+      PROCEDURE, PASS   :: GetId => GetChildId
+      PROCEDURE, PASS   :: SetId => SetChildId
+    END TYPE
+
+    CONTAINS
+
+    ELEMENTAL FUNCTION GetChildId(Arg)
+    CLASS(Child), INTENT(IN) :: Arg
+    INTEGER                  :: GetChildId
+      GetChildId = Arg%ChildId
+    END FUNCTION
+
+    ELEMENTAL FUNCTION GetBaseId(Arg)
+    CLASS(Base), INTENT(IN)  :: Arg
+    INTEGER                  :: GetBaseId
+      GetBaseId = Arg%BaseId
+    END FUNCTION
+
+    SUBROUTINE SetBaseId(Arg)
+    CLASS(Base)  :: Arg
+      Arg%BaseId = -1
+    END SUBROUTINE
+
+    SUBROUTINE SetChildId(Arg)
+    CLASS(Child)  :: Arg
+      Arg%ChildId = -2
+    END SUBROUTINE
+
+  END MODULE
+
+
+  PROGRAM SltHostVarPtr
+  USE M
+  IMPLICIT  NONE
+  CLASS(Zero), POINTER :: Ptr 
+  CLASS(Child), ALLOCATABLE, Target :: Tar 
+
+  ALLOCATE(Child :: Tar) 
+  Ptr => Tar
+
+  SELECT TYPE ( As => Ptr )
+    CLASS IS (Zero) 
+      SELECT TYPE ( Ptr )
+        CLASS IS (Zero) 
+          SELECT TYPE ( As )
+            CLASS IS (Base) 
+              SELECT TYPE ( Ptr )
+                CLASS IS (Base) 
+                  SELECT TYPE ( As )
+                    CLASS IS (Child) 
+                      SELECT TYPE ( Ptr )
+                        CLASS IS (Child) 
+                          IF ( As%Base%GetId() .NE.  1 ) STOP 34
+                          IF ( As%GetId()      .NE.  2 ) STOP 35
+                          IF ( As%BaseId       .NE.  1 ) STOP 36
+                          IF ( As%ChildId      .NE.  2 ) STOP 37
+                          CALL Ptr%SetId()
+                          CALL Ptr%Base%SetId()
+                          IF ( As%Base%GetId() .NE. -1 ) STOP 34
+                          IF ( As%GetId()      .NE. -2 ) STOP 35
+                          IF ( As%BaseId       .NE. -1 ) STOP 36
+                          IF ( As%ChildId      .NE. -2 ) STOP 37
+                      END SELECT
+                  END SELECT
+              END SELECT
+          END SELECT
+      END SELECT
+
+    TYPE is (Base)
+      STOP 32
+    TYPE IS (Zero)
+      STOP 38
+
+  END SELECT
+
+
+  END
+  

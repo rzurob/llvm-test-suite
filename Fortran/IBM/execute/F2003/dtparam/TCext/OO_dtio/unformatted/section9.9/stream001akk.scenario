@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2003/dtparam/TCext/OO_dtio/unformatted/section9.9/stream001akk.scenario
+#FEATURE = OO_dtio/unformatted tests - regression run bucket + derived type parameters
+#CREATOR = automated conversion script
+#DATE    = 20071002
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)stream001akk.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = stream001akk$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  stream001akk$(OBJ)
+#OUTPUT    = stream001akk$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = stream001akk$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

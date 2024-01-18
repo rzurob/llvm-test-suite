@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_poly/intrinsics/typeQuery/structureConstructor002d.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_poly/*
+#DATE      = 20071001
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)structureConstructor002d.f
+#OUTPUT    = structureConstructor002d$(OBJ)
+#STDERR    = structureConstructor002d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)structureConstructor002d$(product)vf) structureConstructor002d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

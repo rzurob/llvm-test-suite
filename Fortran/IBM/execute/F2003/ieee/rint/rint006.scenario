@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = ieee/rint/rint006.scenario
+#FEATURE = ieee tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+  #INVALID_PRODUCT = noR16support
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD    = XLF95_COMPILE
+#INPUT     = $(tcasedir)ieeeconsts.f
+#OUTPUT    = ieeeconsts$(OBJ)
+#OPTS = $(OPT_SET_STRICT_OPTIMIZATION) -qfloat=rrm $(OPT_FOLD_FLOATS_OFF) $(OPT_FREE_SOURCE_FORM) -qxlf90=signedzero
+#ENDCMD
+
+#CMD    = XLF95_COMPILE
+#INPUT     = $(tcasedir)rint006.f
+#OUTPUT    = rint006$(OBJ)
+#OPTS = $(OPT_SET_STRICT_OPTIMIZATION) -qfloat=rrm $(OPT_FOLD_FLOATS_OFF) $(OPT_FREE_SOURCE_FORM) -qxlf90=signedzero
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT		= rint006$(OBJ)
+#OUTPUT		= rint006$(EXE)
+#OPTS = $(OPT_SET_STRICT_OPTIMIZATION) -qfloat=rrm $(OPT_FOLD_FLOATS_OFF) $(OPT_FREE_SOURCE_FORM) -qxlf90=signedzero
+#ENDCMD
+
+#CMD =RUN
+#INPUT =rint006
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /tstdev/OO_poly/intrinsics/pack/reshape002.scenario
+#CREATOR   = Yong Du
+#DATE      = 20050210
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)reshape002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = reshape002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = reshape002$(OBJ)
+#OUTPUT    = reshape002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = reshape002$(EXE)
+#STDOUT    = reshape002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)reshape002$(product)vf) reshape002.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

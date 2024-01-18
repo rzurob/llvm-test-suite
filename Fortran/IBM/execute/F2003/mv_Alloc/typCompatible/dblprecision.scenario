@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       dblprecision.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)dblprecision.f
+#OUTPUT= dblprecision$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  dblprecision$(OBJ)
+#OUTPUT= dblprecision$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  dblprecision$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,9 @@
+ start main
+ finalizeBase
+ start test1
+ end of test1
+ calling test2
+ starting test2
+ leaving test2
+ finalizeBase
+ end

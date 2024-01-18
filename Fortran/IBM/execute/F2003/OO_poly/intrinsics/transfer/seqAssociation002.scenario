@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/intrinsics/transfer/seqAssociation002.scenario
+#FEATURE = OO_poly/intrinsics tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)seqAssociation002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = seqAssociation002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  seqAssociation002$(OBJ)
+#OUTPUT    = seqAssociation002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = seqAssociation002$(EXE)
+#STDOUT    = seqAssociation002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)seqAssociation002$(product)vf) seqAssociation002.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

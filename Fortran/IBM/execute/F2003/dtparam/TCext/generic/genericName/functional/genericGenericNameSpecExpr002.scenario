@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/genericName/functional/genericGenericNameSpecExpr002.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of generic/*
+#DATE      = 20071221
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)genericGenericNameSpecExpr002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = genericGenericNameSpecExpr002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = genericGenericNameSpecExpr002$(OBJ)
+#OUTPUT    = genericGenericNameSpecExpr002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = genericGenericNameSpecExpr002$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

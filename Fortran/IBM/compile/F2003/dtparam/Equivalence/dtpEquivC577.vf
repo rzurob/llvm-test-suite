@@ -1,0 +1,4 @@
+"dtpEquivC577.f", line 50.16: 1515-019 (S) Syntax is incorrect.
+"dtpEquivC577.f", line 50.21: 1514-140 (E) EQUIVALENCE statement ignored due to presence of syntax errors.
+** dtpequivc577   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtpEquivC577.f.

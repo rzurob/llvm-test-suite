@@ -1,0 +1,8 @@
+ For j= 1 , p=Derived
+ ...DerivedDerived
+ ...DerivedDerivedDerivedDerived
+ ...
+ For j= 2 , p=Base
+ ...BaseBase
+ ...BaseBaseBaseBase
+ ...

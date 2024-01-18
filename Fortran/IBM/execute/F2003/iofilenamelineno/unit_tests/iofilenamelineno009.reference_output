@@ -1,0 +1,3 @@
+"iofilenamelineno009.f", line 47: 1525-213 A NAMELIST item name encountered by the NAMELIST READ statement was not followed by an equals ('=').  The program will recover by assuming an equals after the NAMELIST item name.
+"iofilenamelineno009.f", line 47: 1525-049 The list-directed or NAMELIST READ statement cannot be completed because the input data did not specify a valid delimited character string.  The program will recover by ignoring the item in the READ statement.
+"iofilenamelineno009.f", line 53: 1525-020 The formatted I/O statement on unit 2 cannot be completed because the unit is connected to the unformatted file iofilenamelineno002.dat.  The program will recover by ignoring the I/O statement.

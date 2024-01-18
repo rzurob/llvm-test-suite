@@ -1,0 +1,4 @@
+** m   === End of Compilation 1 ===
+"diagnose004.f", line 30.38: 1513-131 (S) DIM must be a scalar of type integer.
+** diagnose004   === End of Compilation 2 ===
+1501-511  Compilation failed for file diagnose004.f.

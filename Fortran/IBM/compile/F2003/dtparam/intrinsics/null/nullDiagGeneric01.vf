@@ -1,0 +1,15 @@
+** m   === End of Compilation 1 ===
+"nullDiagGeneric01.f", line 76.9: 1513-062 (S) Generic procedure reference can not be resolved due to incorrect actual argument attributes.
+"nullDiagGeneric01.f", line 77.9: 1513-062 (S) Generic procedure reference can not be resolved due to incorrect actual argument attributes.
+"nullDiagGeneric01.f", line 78.9: 1513-062 (S) Generic procedure reference can not be resolved due to incorrect actual argument attributes.
+"nullDiagGeneric01.f", line 79.9: 1513-062 (S) Generic procedure reference can not be resolved due to incorrect actual argument attributes.
+"nullDiagGeneric01.f", line 80.9: 1513-062 (S) Generic procedure reference can not be resolved due to incorrect actual argument attributes.
+"nullDiagGeneric01.f", line 81.9: 1513-062 (S) Generic procedure reference can not be resolved due to incorrect actual argument attributes.
+** nulldiaggeneric01   === End of Compilation 2 ===
+** sub1   === End of Compilation 3 ===
+** sub2   === End of Compilation 4 ===
+** sub3   === End of Compilation 5 ===
+** sub4   === End of Compilation 6 ===
+** sub5   === End of Compilation 7 ===
+** sub6   === End of Compilation 8 ===
+1501-511  Compilation failed for file nullDiagGeneric01.f.

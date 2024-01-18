@@ -1,0 +1,7 @@
+** m1   === End of Compilation 1 ===
+** iounit002l   === End of Compilation 2 ===
+"iounit002l.f", line 88.4: 1512-004 (S) UNIT number is missing or incorrect.  Statement is ignored.
+** readunformatted   === End of Compilation 3 ===
+"iounit002l.f", line 101.4: 1512-004 (S) UNIT number is missing or incorrect.  Statement is ignored.
+** writeunformatted   === End of Compilation 4 ===
+1501-511  Compilation failed for file iounit002l.f.

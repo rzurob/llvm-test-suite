@@ -1,0 +1,10 @@
+ 1 2 3 4
+ in sub2: size(dta(:))= 2 sub1 - 1:2
+ 1 2
+ in sub2: size(dta(:))= 2 sub1 - 1:2
+ 1 2
+ in sub2: size(dta(:))= 0 sub1 - 2:1
+ in sub2: size(dta(:))= 0 sub1 - 2:1
+ in sub2: size(dta(:))= 2 sub2 - 1:2)
+ 1 2
+ in sub2: size(dta(:))= 0 sub2 - 2:1)

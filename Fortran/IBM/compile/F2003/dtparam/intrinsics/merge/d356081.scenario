@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/intrinsics/merge/d356081.scenario
+#FEATURE   = 355754
+#CREATOR   = Nancy Wang
+#DATE      = Sept. 15 2008
+#TEST_TYPE = Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)d356081.f
+#STDERR = d356081.err
+#VALIDRCS = $(RC_COMP_E)
+#ENDCMD
+
+#CMD    = XLDIFF
+#INPUT  = d356081.err $($(tcasedir)d356081$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

@@ -1,0 +1,3 @@
+"AssumedRank01d.f", line 29.9: 1514-825 (S) Entity a is an assumed-rank object. a must be a dummy argument.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file AssumedRank01d.f.

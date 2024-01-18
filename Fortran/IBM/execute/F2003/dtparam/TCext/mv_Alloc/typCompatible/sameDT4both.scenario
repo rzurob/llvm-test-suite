@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/mv_Alloc/typCompatible/sameDT4both.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of mv_Alloc/*
+#DATE      = 20071105
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)sameDT4both.f
+#OUTPUT= sameDT4both$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  sameDT4both$(OBJ)
+#OUTPUT= sameDT4both$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  sameDT4both$(EXE)
+#STDOUT= sameDT4both.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = sameDT4both.out $(tcasedir)sameDT4both.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

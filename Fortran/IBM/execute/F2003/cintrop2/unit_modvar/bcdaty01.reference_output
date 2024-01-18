@@ -1,0 +1,3 @@
+"bcdaty01.f", line 38.27: 1516-189 (S) Variables with the BIND(C) attribute must have type and type parameters that are interoperable with some C type.
+** mod   === End of Compilation 1 ===
+1501-511  Compilation failed for file bcdaty01.f.

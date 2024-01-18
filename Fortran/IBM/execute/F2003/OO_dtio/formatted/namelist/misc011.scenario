@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_dtio/formatted/namelist/misc011.scenario
+#FEATURE = OO_dtio
+#CREATOR = Robert Ma
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)misc011.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = misc011$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  misc011$(OBJ)
+#OUTPUT    = misc011$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = misc011$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = /F2003/dtparam/procPtrComp/dtpPPCModPassNArgInterfaceLFunDTP.scenario
+#FEATURE   = Procedure Pointers as Components - reference to pass function with no other dummy args, DTP(L) result, ref via module var
+#CREATOR   = DF Manual Update
+#DATE      = 20090324
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpPPCModPassNArgInterfaceLFunDTP.f
+#OUTPUT    = dtpPPCModPassNArgInterfaceLFunDTP$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpPPCModPassNArgInterfaceLFunDTP$(OBJ)
+#OUTPUT    = dtpPPCModPassNArgInterfaceLFunDTP$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpPPCModPassNArgInterfaceLFunDTP$(EXE)
+#STDOUT    = dtpPPCModPassNArgInterfaceLFunDTP.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpPPCModPassNArgInterfaceLFunDTP$(product)vf) dtpPPCModPassNArgInterfaceLFunDTP.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,24 @@
+ &NMLB
+ B1=4, 4
+ /
+ &NMLC
+ C1=4, 0, ABCDEFG
+ /
+ &NMLN
+ N1=1, 4, 1, Erwin Rudo
+ /
+ &NMLT
+ B1=4, 4, C1=4, 0, ABCDEFG   , N1=1, 4, 1, Henrik Da , BTGT=4, 4, 4, 4, 4, 4, 4, 4, 4, 4
+ /
+ &NMLT
+ B1=4, 4, C1=4, 0, ABCDEFG   , N1=1, 4, 1, Erwin Rudo, BTGT=4, 4, 4, 4, 4, 4, 4, 4, 4, 4
+ /
+ &NMLN
+ N1=1, 4, 1, Erwin Rudo
+ /
+ &NMLC
+ C1=4, 0, ABCDEFG
+ /
+ &NMLB
+ B1=4, 4
+ /

@@ -1,0 +1,11 @@
+** m   === End of Compilation 1 ===
+  62.6   01610703 dtv‹readunformatted‹ALLOCATABLE‹
+  72.6   01610703 dtv‹writeunformatted‹POINTER‹
+  82.6   01610703 dtv‹readformatted‹TARGET‹
+  94.6   01610703 iostat‹writeformatted‹ALLOCATABLE‹
+  94.6   01610703 iomsg‹writeformatted‹TARGET‹
+  94.6   01610703 v_list‹writeformatted‹ALLOCATABLE‹
+  94.6   01610703 unit‹writeformatted‹POINTER‹
+  94.6   01610703 iotype‹writeformatted‹ALLOCATABLE‹
+** dummyargcharctrstc007   === End of Compilation 2 ===
+1501-511  Compilation failed for file dummyArgCharctrstc007.f.

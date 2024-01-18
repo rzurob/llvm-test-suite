@@ -1,0 +1,8 @@
+"fxdmodprocstmt014.f", line 58.26: 1514-266 (S) For entity f1 to be accessible here as a procedure, it must be declared RECURSIVE and if it is a function it must have RESULT specified.
+"fxdmodprocstmt014.f", line 64.26: 1514-266 (S) For entity s1 to be accessible here as a procedure, it must be declared RECURSIVE and if it is a function it must have RESULT specified.
+** m   === End of Compilation 1 ===
+"fxdmodprocstmt014.f", line 72.26: 1514-266 (S) For entity f2 to be accessible here as a procedure, it must be declared RECURSIVE and if it is a function it must have RESULT specified.
+** f2   === End of Compilation 2 ===
+"fxdmodprocstmt014.f", line 79.26: 1514-266 (S) For entity s2 to be accessible here as a procedure, it must be declared RECURSIVE and if it is a function it must have RESULT specified.
+** s2   === End of Compilation 3 ===
+1501-511  Compilation failed for file fxdmodprocstmt014.f.

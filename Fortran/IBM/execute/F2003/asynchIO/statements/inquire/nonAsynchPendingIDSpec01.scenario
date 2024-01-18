@@ -1,0 +1,64 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME	   = F2003/asynchIO/statements/inquire/nonAsynchPendingIDSpec01.scenario
+#FEATURE   = Asynchronous I/O -- INQUIRE Statement
+#CREATOR   = GM Manual Creation
+#DATE	   = 20060322
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#IF on(lnxle)
+ XLFRTEOPTS=ufmt_bigendian=2048,2052
+#ENDIF
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= COPY
+#INPUT		= $(tcasedir)nonAsynchPendingIDSpec01.dat .
+#ENDCMD
+
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)nonAsynchPendingIDSpec01.f
+#OUTPUT		= nonAsynchPendingIDSpec01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= nonAsynchPendingIDSpec01$(OBJ)
+#OUTPUT		= nonAsynchPendingIDSpec01$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= nonAsynchPendingIDSpec01$(EXE)
+#STDOUT		= nonAsynchPendingIDSpec01.stdout
+#ENDCMD
+
+#IF on(linuxle)
+
+  #CMD          = SED
+  #OPTS         = -e "s!\"/.*line.*:!!g"
+  #INPUT        = nonAsynchPendingIDSpec01.stdout
+  #STDOUT       = nonAsynchPendingIDSpec01.sed
+  #ENDCMD
+
+  #CMD          = RENAME
+  #INPUT        = nonAsynchPendingIDSpec01.sed
+  #OUTPUT       = nonAsynchPendingIDSpec01.stdout
+  #ENDCMD
+
+#ENDIF
+
+#CMD		= XLDIFF
+#OPTS           = -s
+#INPUT		= $($(tcasedir)nonAsynchPendingIDSpec01$(product)vf)	\
+				nonAsynchPendingIDSpec01.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

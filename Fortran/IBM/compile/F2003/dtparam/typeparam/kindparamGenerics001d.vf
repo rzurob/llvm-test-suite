@@ -1,0 +1,5 @@
+"kindparamGenerics001d.f", line 44.26: 1514-699 (S) Procedure "printchild4" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "printbase", present and type incompatible, present with different kind type parameters, or present with a different rank.
+"kindparamGenerics001d.f", line 45.26: 1514-699 (S) Procedure "printchild8" must have a nonoptional dummy argument that corresponds by position in the argument list to a dummy argument not present in procedure "printbase", present and type incompatible, present with different kind type parameters, or present with a different rank.
+** m   === End of Compilation 1 ===
+** kindparamgenerics001d   === End of Compilation 2 ===
+1501-511  Compilation failed for file kindparamGenerics001d.f.

@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/dtparam/inheritance/dtparamDTComp001.f
+#FEATURE =
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtparamDTComp001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=allowrpdt
+#OUTPUT    = dtparamDTComp001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = dtparamDTComp001$(OBJ)
+#OUTPUT    = dtparamDTComp001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtparamDTComp001$(EXE)
+#STDIN     = $(tcasedir)dtparamDTComp001.in
+#STDOUT    = dtparamDTComp001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dtparamDTComp001.out $($(tcasedir)dtparamDTComp001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

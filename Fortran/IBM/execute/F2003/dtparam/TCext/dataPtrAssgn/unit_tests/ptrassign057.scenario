@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/unit_tests/ptrassign057.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071217
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ptrassign057.f
+#OUTPUT    = ptrassign057$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = ptrassign057$(OBJ)
+#OUTPUT    = ptrassign057$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ptrassign057$(EXE)
+#STDERR    = ptrassign057.err
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

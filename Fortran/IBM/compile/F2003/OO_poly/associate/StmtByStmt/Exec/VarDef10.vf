@@ -1,0 +1,4 @@
+"VarDef10.f", line 54.27: 1511-139 (S) Associate name stat is not associated with an entity that can be defined. stat must not be redefined or become undefined.
+"VarDef10.f", line 55.28: 1511-139 (S) Associate name errmsg is not associated with an entity that can be defined. errmsg must not be redefined or become undefined.
+** vardef10   === End of Compilation 1 ===
+1501-511  Compilation failed for file VarDef10.f.

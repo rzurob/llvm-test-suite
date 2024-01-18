@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/uop/dtpUOpInheritedOperator.scenario
+#FEATURE   = User-Defined Operators - operators defined in parent class
+#CREATOR   = DF Manual Update
+#DATE      = 20090211
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpUOpInheritedOperator.f
+#OUTPUT    = dtpUOpInheritedOperator$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpUOpInheritedOperator$(OBJ)
+#OUTPUT    = dtpUOpInheritedOperator$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpUOpInheritedOperator$(EXE)
+#STDOUT    = dtpUOpInheritedOperator.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpUOpInheritedOperator$(product)vf) dtpUOpInheritedOperator.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

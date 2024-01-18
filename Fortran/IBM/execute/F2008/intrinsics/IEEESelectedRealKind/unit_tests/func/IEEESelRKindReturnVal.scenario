@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/intrinsics/IEEESelectedRealKind/unit_tests/func/IEEESelRKindReturnVal.scenario
+#FEATURE   = 376076
+#CREATOR   = Ren Jian Gang
+#DATE      = November 05, 2010
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)IEEESelRKindReturnVal.f
+#OUTPUT   =  IEEESelRKindReturnVal$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  IEEESelRKindReturnVal$(OBJ)
+#OUTPUT   =  IEEESelRKindReturnVal$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  IEEESelRKindReturnVal$(EXE)
+#STDOUT   =  IEEESelRKindReturnVal.out
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = IEEESelRKindReturnVal.out $(tcasedir)IEEESelRKindReturnVal.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/diag/types/derived/acetdt35a1d.scenario
+#FEATURE	= Array constructor enhancement AC's in static initialisation (minus acimpdo)
+#CREATOR	= DF Manual Update
+#DATE		= 20070907
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt35a1d.f
+#OPTS       = -qdebug=noline070112:shutup
+#OUTPUT		= acetdt35a1d$(OBJ)
+#STDERR		= acetdt35a1d.stderr
+#VALIDRCS       = $(RC_COMP_S)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $(tcasedir)acetdt35a1d.vf acetdt35a1d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

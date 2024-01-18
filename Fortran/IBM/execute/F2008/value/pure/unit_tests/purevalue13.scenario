@@ -1,0 +1,35 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME      = F2008/value/pure/unit_tests/purevalue13.scenario
+#FEATURE   = 384867 \
+             F2008: VALUE attribute allowed for dummy args of PURE procedures
+#CREATOR   = Gaby Baghdadi
+#DATE      = 20101201
+#TEST_TYPE = Unit test
+#ENDDOC
+
+#BEGINENV
+#IF !on(bgq)
+  #RESOURCES_REQ = VSX
+#ENDIF
+#INVALID_PRODUCT=cbe
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPLINK
+#IF !on(bgq)
+  #OPTS      = $(OPT_GEN_CODE_FOR_NATIVE_ARCHITECTURE) $(OPT_TUNE_CODE_FOR_NATIVE_ARCHITECTURE) $(OPT_ENABLE_VECTOR_INSTRUCTIONS_GENERATION)
+#ENDIF
+#INPUT     = $($(tcasedir)purevalue13$(product)f)
+#OUTPUT    = purevalue13$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = purevalue13$(EXE)
+#STDOUT    = purevalue13.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

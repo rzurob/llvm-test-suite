@@ -1,0 +1,5 @@
+** m   === End of Compilation 1 ===
+"dtSpec001d.f", line 37.11: 1514-690 (S) Type parameter values must not be specified for type a.  Type a does not have type parameters.
+"dtSpec001d.f", line 38.11: 1514-690 (S) Type parameter values must not be specified for type a.  Type a does not have type parameters.
+** dtspec001d   === End of Compilation 2 ===
+1501-511  Compilation failed for file dtSpec001d.f.

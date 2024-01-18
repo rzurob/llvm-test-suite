@@ -1,0 +1,47 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/asynchIO/attribute/misc/derivedSubObj01.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of asynchIO/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
+#INPUT		= $(tcasedir)derivedSubObj01.f
+#OUTPUT		= derivedSubObj01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= derivedSubObj01$(OBJ)
+#OUTPUT		= derivedSubObj01$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= derivedSubObj01$(EXE)
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= -i '^asynchPoint'
+#INPUT		= derivedSubObj01$(LST)
+#STDOUT		= derivedSubObj01.asynchPoint.stdout
+#ENDCMD
+
+#CMD		= EGREP
+#OPTS		= 'Asynchronous'
+#INPUT		= derivedSubObj01.asynchPoint.stdout
+#STDOUT		= derivedSubObj01.asynchronous.stdout
+#ENDCMD
+
+#IF ! ( in($$(F_COMPILE^OPT_GEN_CODE_FOR_ARCHITECTURE<.*>)) || in($(XLF_COMPILE^OPT_OPTIMIZE_LEVEL4)) || in($(XLF_COMPILE^OPT_OPTIMIZE_LEVEL5)) )
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)derivedSubObj01$(product)vf)	\
+				derivedSubObj01.asynchronous.stdout
+#ENDCMD
+#ENDIF
+
+#ENDCONTROL
+#ENDSCENARIO

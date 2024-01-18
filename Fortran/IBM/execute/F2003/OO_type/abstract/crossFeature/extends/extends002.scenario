@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_type/abstract/crossFeature/extends/extends002.scenario
+#FEATURE = OO_type/abstract/crossFeature tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)extends002.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = extends002$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  extends002$(OBJ)
+#OUTPUT    = extends002$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = extends002$(EXE)
+#STDOUT    = extends002.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)extends002$(product)vf) extends002.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

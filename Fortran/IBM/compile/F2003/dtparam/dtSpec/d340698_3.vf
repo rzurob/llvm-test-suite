@@ -1,0 +1,4 @@
+"d340698_3.f", line 35.17: 1516-305 (S) Assumed type parameter values are not permitted in this context.
+"d340698_3.f", line 36.17: 1516-306 (S) Deferred type parameter values are not permitted in this context.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file d340698_3.f.

@@ -1,0 +1,747 @@
+<html><head><title>CAF: STOP statement</title></head><body><div class="Section1">
+<table style="WIDTH: 100%; BACKGROUND: rgb(175,191,195) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 100%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt" valign="top" width="100%">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: navy; FONT-SIZE: 10pt">Document Control Information:</span></strong><span style="FONT-FAMILY: Helvetica; COLOR: navy; FONT-SIZE: 10pt"> </span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            <p>The official version of this document is kept in CMVC in the <span style="FONT-WEIGHT: bold; TEXT-DECORATION: underline">%CMVC_Family%</span> family, release <span style="FONT-WEIGHT: bold; TEXT-DECORATION: underline">%CMVC_Release%</span>, component <span style="FONT-WEIGHT: bold; TEXT-DECORATION: underline">%CMVC_Component%</span>, file <span style="COLOR: rgb(255,102,102); FONT-WEIGHT: bold; TEXT-DECORATION: underline">%CMVC_PathName%</span>. Users of this document are personally responsible for using the official version and for verifying that any copies of the document, in whole or in part, are of the official version. If this document is not a copy of the official version, it is obsolete.<br />
+            <br />
+            CMVC Extraction Information: %W% %H% %I% sccsid<br />
+            </p>
+            <p>CMVC_Family=aix, CMVC_Release=test.dev, CMVC_Component=test.values<br />
+            </p>
+            <p>This document is IBM Confidential.<span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="MsoNormal"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><u1:p></u1:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<table style="WIDTH: 100%; BACKGROUND: rgb(255,204,153) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable" border="1" cellspacing="3" cellpadding="0" width="100%">
+    <tbody>
+        <tr>
+            <td style="PADDING-BOTTOM: 1pt; PADDING-LEFT: 1pt; PADDING-RIGHT: 1pt; PADDING-TOP: 1pt" valign="top">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Reviewers</span></strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">: </span><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Please click the 'Reviewed' check-box beside your name to indicate your participation in the review.</span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN-BOTTOM: 6pt" class="MsoNormal"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><o:p></o:p></span></p>
+<p style="MARGIN-BOTTOM: 12pt" class="MsoNormal"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">%Reviews%</span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<u1:p></u1:p><u1:p></u1:p><u1:p></u1:p><u1:p></u1:p><u1:p></u1:p><u1:p></u1:p>
+<table style="WIDTH: 100%; BACKGROUND: rgb(224,255,191) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 21.22%; PADDING-RIGHT: 2.5pt; BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" valign="top" width="21%">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p><u2:p></u2:p>Document Title<u1:p></u1:p></span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 78.78%; PADDING-RIGHT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" valign="top" width="78%">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">%Document_Name%%Note{or IT2 for name of the feature you are testing}%</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 21.22%; PADDING-RIGHT: 2.5pt; BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" valign="top" width="21%">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">CMVC Feature Number:</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 78.78%; PADDING-RIGHT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" valign="top" width="78%"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">%CMVC_Feature%</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" valign="top">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Feature Title:</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" valign="top"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">%Note{Feature Title (please remember to change the title in the raw HTML, otherwise it shows up as ITSample in Web Review)}%</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" valign="top">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Author(s):</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" valign="top"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">%Authors%</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" valign="top">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Mandatory Reviewers:<u1:p></u1:p></span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">(Approver)</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" valign="top"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">%Note{These reviewers have technical approval authority and MUST approve this IT2. Generally, only list reviewers from the Component Reviewer list whose component is directly affected by this feature. Use Access Control to add or delete a reviewer}%</span></strong></p>
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">%Approvers%</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" valign="top">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Component Reviewers:(optional participation)</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" valign="top"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">%Note{ These groups must be made aware of the IT2, assign one person representing each. The names are suggested contacts (</span></strong><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">The component leads directly affected by AIX/Linux are in the list by default</span></strong><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">):</span></strong></p>
+            <ul>
+                <li>
+                <div><span><font color="#0000ff" face="Arial">C FE and related tools/libraries/driver:</font></span></div>
+                </li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p class="MsoNormal"><span><font face="Arial"><font color="#0000ff">AIX - Philip Luk (</font><a href="mailto:philipl@ca.ibm.com"><font color="#0000ff">philipl@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            </blockquote><blockquote style="COLOR: blue; MARGIN-RIGHT: 0px" dir="ltr" class="MsoNormal">
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><font color="#0000ff">Linux - Philip Luk (</font><a href="mailto:philipl@ca.ibm.com"><font color="#0000ff">philipl@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><font color="#0000ff">zOS - Kendrick Wong (</font><a href="mailto:kendrick@ca.ibm.com"><font color="#0000ff">kendrick@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><font color="#0000ff">CELL - Larry Lindsay (</font><a href="mailto:llindsay@ca.ibm.com"><font color="#0000ff">llindsay@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><font color="#0000ff">UPC - Philip Luk (</font><a href="mailto:philipl@ca.ibm.com"><font color="#0000ff">philipl@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            </blockquote>
+            <ul style="MARGIN-TOP: 0in" type="disc">
+                <li>
+                <div class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font color="#0000ff" face="Arial">C++ FE and related tools/libraries/driver:</font></span></div>
+                </li>
+            </ul>
+            <blockquote style="COLOR: blue; MARGIN-RIGHT: 0px" dir="ltr" class="MsoNormal">
+            <p class="MsoNormal" align="left"><span><font face="Arial"><font color="#0000ff">AIX - Jeff Heath (</font><a href="mailto:jrheath@ca.ibm.com"><font color="#0000ff">jrheath@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><font color="#0000ff">Linux - Sasha Kasapinovic (</font><a href="mailto:skasapin@ca.ibm.com"><font color="#0000ff">skasapin@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><font color="#0000ff">zOS - Michael Wong (</font><a href="mailto:michaelw@ca.ibm.com"><font color="#0000ff">michaelw@ca.ibm.com</font></a><font color="#0000ff">) </font></font></span></p>
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><font color="#0000ff">CELL - Kevin Shin (</font><a href="mailto:kevshin@ca.ibm.com"><font color="#0000ff">kevshin@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            </blockquote>
+            <p>&nbsp;</p>
+            <ul dir="ltr">
+                <li>
+                <div class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font color="#0000ff" face="Arial">Fortran FE, ASTI, PLIX, and related tools/libraries/driver:</font></span></div>
+                </li>
+            </ul>
+            <p>&nbsp;</p>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><font color="#0000ff">AIX, PLIX - Rafik Zurob (</font><a href="mailto:rzurob@ca.ibm.com"><font color="#0000ff">rzurob@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><font color="#0000ff">Linux - Xing Xue (</font><a href="mailto:xingxue@ca.ibm.com"><font color="#0000ff">xingxue@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><font color="#0000ff">BG/L - Daniel Chen (</font><a href="mailto:cdchen@ca.ibm.com"><font color="#0000ff">cdchen@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><font color="#0000ff">CELL - Kelvin Li (</font><a href="mailto:kli@ca.ibm.com"><font color="#0000ff">kli@ca.ibm.com</font></a><font color="#0000ff">) </font></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div class="MsoNormal" align="left"><span><font size="2"><font color="#0000ff"><font face="Arial">PL/X Development: </font><font face="Arial">Kirk Crane (<a href="mailto:krcrane@ca.ibm.com">krcrane@ca.ibm.com</a>)</font></font></font></span></div>
+                </li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font color="#0000ff" face="Arial">TPO and associated tools/libraries (libxlopt, SMPRT, MASS):</font></span></p>
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><font color="#0000ff">AIX - Edwin Chan (<a href="mailto:edwinc@ca.ibm.com)">edwinc@ca.ibm.com)</a></font></font></span></p>
+            <p class="MsoNormal" align="left"><span><font face="Arial"><font color="#0000ff">Linux - Tommy Wong (<a href="mailto:tomwong@ca.ibm.com">tomwong@ca.ibm.com</a>)</font></font></span></p>
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><font color="#0000ff">zOS - Chris Miclea (<a href="mailto:cmiclea@ca.ibm.com">cmiclea@ca.ibm.com</a>)</font></font></span></p>
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><font color="#0000ff">BG - Damien Bonaventure (</font><a href="mailto:damien@ca.ibm.com"><font color="#0000ff">damien@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><font color="#0000ff">CELL - Amy Wang (</font><a href="mailto:aktwang@ca.ibm.com"><font color="#0000ff">aktwang@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font color="#0000ff" face="Arial">TOBEY and associated tools/libraries: (dis, libxl, bolt)</font></span></div>
+                </li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p class="MsoNormal" align="left"><span><font color="#0000ff" face="Arial">AIX - Christopher Lapkowski</font></span></p>
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><font color="#0000ff">Linux - Irina Rada (<a href="mailto:irinar@ca.ibm.com">irinar@ca.ibm.com</a>)</font></font></span></p>
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><font color="#0000ff">zOS - Chwan-Hang Lee (</font><a href="mailto:chwan@ca.ibm.com"><font color="#0000ff">chwan@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><font color="#0000ff">BG - Damien Bonaventure (damien@ca.ibm.com), Leon Ding (Xiaoliang Ding/Piscataway/IBM@IBMUS, </font><a href="mailto:dingxi@us.ibm.com"><font color="#0000ff">dingxi@us.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><font color="#0000ff">CELL - Dickson Chau (</font><a href="mailto:dickchau@ca.ibm.com"><font color="#0000ff">dickchau@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><font color="#0000ff">dis (AIX/Linux) - Ian McIntosh (</font><a href="mailto:ianm@ca.ibm.com"><font color="#0000ff">ianm@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div class="MsoNormal" align="left"><font color="#0000ff"><span><font face="Arial">WCode: </font><font face="Arial">Roland Froese (<a href="mailto:froese@ca.ibm.com">froese@ca.ibm.com</a>) </font></span></font></div>
+                </li>
+            </ul>
+            <ul dir="ltr">
+                <li>
+                <div class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font color="#0000ff" face="Arial">Information Development:</font></span></div>
+                </li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><font color="#0000ff">C/C++ - Kathleen Dowling (</font><a href="mailto:dowling@ca.ibm.com"><font color="#0000ff">dowling@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><font color="#0000ff">Fortran - Joe Sobura (</font><a href="mailto:sobura@ca.ibm.com"><font color="#0000ff">sobura@ca.ibm.com</font></a><font color="#0000ff">) </font></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font color="#0000ff" face="Arial">Customer Service and Support:</font></span></div>
+                </li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><font color="#0000ff">AIX/Linux - Zoran Kulina (</font><a href="mailto:zoran@ca.ibm.com"><font color="#0000ff">zoran@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p class="MsoNormal" align="left"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Arial"><font color="#0000ff">Cell - Sean Kennedy (</font><a href="mailto:seanpk@ca.ibm.com"><font color="#0000ff">seanpk@ca.ibm.com</font></a><font color="#0000ff">)</font></font></span></p>
+            <p class="MsoNormal" align="left"><span><font face="Arial"><font color="#0000ff" size="2">Youssef Himo (</font><a href="mailto:himo@ca.ibm.com"><font color="#0000ff" size="2">himo@ca.ibm.com</font></a><font color="#0000ff" size="2">)</font></font></span></p>
+            </blockquote>
+            <ul>
+                <li>
+                <div class="MsoNormal" align="left"><span><font face="Arial"><font color="#0000ff" size="2">Compiler Enablement:Dwayne Moore (</font><a href="mailto:dwayne@ca.ibm.com"><font color="#0000ff" size="2">dwayne@ca.ibm.com</font></a><font color="#0000ff" size="2">) </font></font></span></div>
+                </li>
+                <li>
+                <div class="MsoNormal" align="left"><span><font face="Arial"><font size="2"><font color="#0000ff">Fortran Test:Kobi Vinayagamoorthy (<a href="mailto:kobiv@ca.ibm.com">kobiv@ca.ibm.com</a>) </font></font></font></span></div>
+                </li>
+                <li>
+                <div class="MsoNormal" align="left"><font size="2"><font color="#0000ff"><span><font face="Arial">C/C++ Test:</font><font face="Arial"> </font></span><span></span><span><font face="Arial">Adrian Gatea (system p) (<a href="mailto:gatea@ca.ibm.com">gatea@ca.ibm.com</a>) </font></span></font></font></div>
+                </li>
+                <li class="MsoNormal"><span><font size="2"><font color="#0000ff"><span>zOS C/C++ Test: </span>Leon L Kiriliuk (z/OS) (</font></font><a href="mailto:leonk@ca.ibm.com)"><font face="Times New Roman"></font></a><a href="mailto:leonk@ca.ibm.com)"><font color="#0000ff" size="2">leonk@ca.ibm.com)</font></a><font face="Arial"></font></span> </li>
+                <li class="MsoNormal"><font size="2"><font color="#0000ff"><span><font face="Arial">PL/X Test: </font></span><span><font face="Arial">Anne Wylie (<a href="mailto:wylie@ca.ibm.com">wylie@ca.ibm.com</a>) </font></span></font></font></li>
+                <li class="MsoNormal"><span><font color="#0000ff" size="2" face="Arial">Build and Packaging Team: </font></span></li>
+            </ul>
+            <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+            <p class="MsoNormal" align="left"><span><font face="Arial"><font color="#0000ff" size="2">AIX - Chris Taylor (</font><a href="mailto:cntaylor@ca.ibm.com"><font color="#0000ff" size="2">cntaylor@ca.ibm.com</font></a><font color="#0000ff" size="2">) </font></font></span></p>
+            <p class="MsoNormal" align="left"><span><font face="Arial"><font color="#0000ff" size="2">Linux - Viktor Ganich (</font><a href="mailto:vganich@ca.ibm.com"><font color="#0000ff" size="2">vganich@ca.ibm.com</font></a><font color="#0000ff" size="2">)</font></font></span></p>
+            <p class="MsoNormal" align="left"><span><font face="Arial"><font color="#0000ff" size="2">BGL - Steven Chen (</font><a href="mailto:stevchen@ca.ibm.com"><font color="#0000ff" size="2">stevchen@ca.ibm.com</font></a><font color="#0000ff" size="2">)</font></font></span></p>
+            <p class="MsoNormal" align="left"><span><font face="Arial"><font color="#0000ff" size="2">Cell - Kevin Yuen (</font><a href="mailto:kchyuen@ca.ibm.com"><font color="#0000ff" size="2">kchyuen@ca.ibm.com</font></a><font color="#0000ff" size="2">)</font></font></span></p>
+            <p class="MsoNormal" align="left"><span><font face="Arial"><font color="#0000ff" size="2">z/OS - Steve Chen (</font><a href="mailto:schen@ca.ibm.com"><font color="#0000ff" size="2">schen@ca.ibm.com</font></a><font color="#0000ff" size="2">)</font></font></span></p>
+            <p class="MsoNormal" align="left"><span><font face="Arial"><font color="#0000ff" size="2">Dale Soldiuk (</font><a href="mailto:soldiuk@ca.ibm.com"><font color="#0000ff" size="2">soldiuk@ca.ibm.com</font></a><font color="#0000ff" size="2">) (Please include Dale as optional on all reviews)</font></font></span></p>
+            </blockquote>
+            <ul dir="ltr">
+                <li>
+                <div class="MsoNormal" align="left"><span><font face="Arial"><font size="2"><font color="#0000ff">Performance Measurement and Analysis Team: John Tam (<a href="mailto:johntam@ca.ibm.com">johntam@ca.ibm.com</a>)</font></font></font></span></div>
+                </li>
+            </ul>
+            <ul dir="ltr">
+                <li>
+                <div class="MsoNormal" align="left"><font size="2"><span><font color="#0000ff" face="Arial">Planning: </font></span><span><font face="Arial"><font color="#0000ff">Mary Chan (</font><a href="mailto:marychan@ca.ibm.com"><font color="#0000ff">marychan@ca.ibm.com</font></a><font color="#0000ff">)</font> </font></span></font></div>
+                </li>
+            </ul>
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt"><span class="GramE"></span>Use Access Control comments to add/delete people from this list.}%<br />
+            <br />
+            %Component_Reviewers%</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; BACKGROUND: rgb(224,188,225) 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" valign="top">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Team Reviewers: (optional participation)</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; PADDING-RIGHT: 2.5pt; BACKGROUND: white 0% 50%; PADDING-TOP: 2.5pt; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" valign="top"><!-- Start -->
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt"><span class="GramE">%Note{</span>List any additional reviewers assigned to the review. These reviewers do not have approval authority. </span></strong><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">Use Access Control to add or delete a reviewer.</span></strong><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">}%<u1:p></u1:p><o:p></o:p></span></strong></p>
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; COLOR: blue; FONT-SIZE: 10pt">%Team_Reviewers%<o:p></o:p></span></strong></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN-BOTTOM: 12pt" class="MsoNormal"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><u1:p></u1:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<u1:p></u1:p>
+<table style="WIDTH: 100%; BACKGROUND: rgb(184,213,226) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 100%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt" valign="top" width="100%">
+            <p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">IT2 Status: <!-- Start -->For Approval </span><!-- End --></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="MsoNormal"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Approvers Only:</span></strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"> Click on the 'Approve' check-box beside your name in the table below if you agree with the technical and user interface content of this document; not checking your 'approve' check-box signifies you do not approve.<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">%Approvals%<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><strong>Approval Comments</strong></span></p>
+<p class="MsoNormal"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><strong><br />
+</strong></span></p>
+<p>
+<table style="TEXT-ALIGN: left; BACKGROUND-COLOR: rgb(200,175,200); WIDTH: 100%; FONT-FAMILY: Arial; FONT-SIZE: 12pt" border="1" cellspacing="2" cellpadding="2">
+    <tbody>
+        <tr>
+            <td style="FONT-FAMILY: Arial; VERTICAL-ALIGN: top"><strong>Access Change History</strong> %Note{Authors: Access Change History will list any changes to the access control done to the document draft. These changes would not be visible in a review. In a review, this section would only list the access changes done to the review itself.<br />
+            Please note that changes to the access control of a review are not automatically reflected in the access control of the draft document.}% </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+%CollapsedSection{<strong>Access Change History</strong>}{%Access_Change_History%}%
+<p class="MsoNormal"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in" class="MsoNormal"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<u1:p></u1:p>
+<table style="WIDTH: 100%; BACKGROUND: rgb(200,175,200) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 100%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt" valign="top" width="100%">
+            <p style="TEXT-ALIGN: center" class="MsoNormal" align="center"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 14pt">IT2 Comments</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><!-- Start Overview -->Reviewers, add you IT2 comments in this section.<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><u1:p><o:p></o:p></u1:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">%Note { <o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><u><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">General Comments:<u1:p></u1:p></span></u><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">&lt;<span class="GramE">comments</span>&gt;<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><u><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">Comments Specific to Individual Test Cases:<u1:p></u1:p></span></u><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">
+<list all="" your="" scenarios="" here="" eg=""></list>
+<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt" lang="PT-BR">xxxxx001f.scenario<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt" lang="PT-BR">xxxxx002f.scenario<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt" lang="PT-BR">xxxxx003f.scenario<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><!-- End Overview -->xxxxx004f.scenario<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">...<u1:p></u1:p><o:p></o:p></span></p>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">}%</span></p>
+<span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">
+<p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><o:p><font size="3" face="Times New Roman">&nbsp;</font></o:p></p>
+<h2 style="MARGIN: 0cm 0cm 0pt 26.95pt"><span style="FONT-STYLE: normal; FONT-FAMILY: &quot;Times New Roman&quot;">Diagnostic Tests:</span></h2>
+<p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="mso-spacerun: yes"><font size="3" face="Times New Roman">&nbsp;</font></span></p>
+<p style="MARGIN: 0in 0in 0pt">
+<table style="MARGIN: auto auto auto 14.2pt; WIDTH: 507.4pt; BORDER-COLLAPSE: collapse; mso-padding-alt: 0cm 0cm 0cm 0cm" border="0" cellspacing="0" cellpadding="0" width="677" class="MsoNormalTable">
+    <tbody>
+        <tr style="mso-yfti-irow: 0">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; PADDING-LEFT: 0cm; WIDTH: 147.4pt; PADDING-RIGHT: 0cm; BACKGROUND: #3366ff; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext 1.0pt; mso-border-bottom-alt: solid windowtext .5pt" valign="top" width="197">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Scenario name<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; PADDING-LEFT: 2pt; WIDTH: 63pt; PADDING-RIGHT: 2pt; BACKGROUND: #3366ff; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-bottom-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext 1.0pt; mso-border-right-alt: solid windowtext 1.0pt" valign="top" width="84">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><o:p><font face="Times New Roman">&nbsp;</font></o:p></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; PADDING-LEFT: 5.4pt; WIDTH: 297pt; PADDING-RIGHT: 5.4pt; BACKGROUND: #3366ff; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-bottom-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext 1.0pt; mso-border-right-alt: solid windowtext 1.0pt" valign="top" width="396">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><strong><span style="FONT-FAMILY: &quot;Courier New&quot;; FONT-SIZE: 10pt">Type of test / Comments</span></strong><span style="FONT-SIZE: 10pt"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 1">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 147.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="197">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_d001.scenario<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 63pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="84">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qcaf<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 297pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="396">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Test that the error message from the STOP statement will be printed out on stderr (not stdout) and will be prefixed with &quot;STOP&quot;.<o:p></o:p></font></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 2">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 147.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="197">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_d002.scenario<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 63pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="84">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qnocaf<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 297pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="396">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Same as above<o:p></o:p></font></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 3">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 147.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="197">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_d011.scenario<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 63pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="84">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qcaf<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 297pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="396">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Test that when errimagenum=yes is in effect, the image number of the executing image precedes STOP message.<o:p></o:p></font></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 4">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 147.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="197">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_d012.scenario<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 63pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="84">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qcaf<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 297pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="396">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Test that when errimagenum=no is in effect, the image number of the executing image does not precedes STOP message.<o:p></o:p></font></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 5">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 147.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="197">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_d013.scenario<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 63pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="84">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qcaf<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 297pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="396">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Test that when errimagenum is not specified (default to &lsquo;no&rsquo;), the image number of the executing image does not precedes STOP message.<o:p></o:p></font></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 6">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 147.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="197">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_d015.scenario<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 63pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="84">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qnocaf<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 297pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="396">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Test that errimagenum=yes has no effect on sequential (non-CAF) mode.<o:p></o:p></font></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 7">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 147.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="197">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_d016.scenario<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 63pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="84">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qnocaf<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 297pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="396">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Test that errimagenum=no has no effect on sequential (non-CAF) mode.<o:p></o:p></font></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 8">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 147.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="197">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_d017.scenario<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 63pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="84">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qnocaf<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 297pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="396">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Test that default errimagenum value has no effect on sequential (non-CAF) mode.<o:p></o:p></font></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 9">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 147.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="197">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_d021.scenario<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 63pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="84">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qcaf<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 297pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="396">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Test that when stop-code specified for the STOP statement is not &lsquo;0&rsquo;, the runtime will replace it with &lsquo;0&rsquo; as the program exit status and issue warning message:<o:p></o:p></font></span></p>
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">1525-705 The %C1 statement with stop code %I1 will terminate the program with return code %I2.<o:p></o:p></font></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 10">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 147.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="197">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_d022.scenario<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 63pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="84">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qcaf<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 297pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="396">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Similar as above<o:p></o:p></font></span></p>
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">With &ldquo;errimagenum=yes&rdquo;<o:p></o:p></font></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 11">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 147.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="197">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_d025.scenario<strong style="mso-bidi-font-weight: normal"><o:p></o:p></strong></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 63pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="84">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qcaf<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 297pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="396">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Test that a pure subprogram must not contain an STOP statement. Error message is issued:<o:p></o:p></font></span></p>
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">1516-108 (S) A pure subprogram must not contain a STOP or a PAUSE statement.<o:p></o:p></font></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 12">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 147.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="197">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_d026.scenario<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 63pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="84">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qnocaf<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 297pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="396">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Similar as above<o:p></o:p></font></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 13">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 147.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="197">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_d031.scenario<strong style="mso-bidi-font-weight: normal"><o:p></o:p></strong></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 63pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="84">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qcaf<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 297pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="396">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">If a statement label is specified in a DO statement, STOP must not be used to terminate that DO construct.<o:p></o:p></font></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 14">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 147.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="197">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_d032.scenario<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 63pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="84">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qnocaf<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 297pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="396">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Similar as above<o:p></o:p></font></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 15">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 147.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="197">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_d041.scenario<strong style="mso-bidi-font-weight: normal"><o:p></o:p></strong></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 63pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="84">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qcaf<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 297pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="396">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Test that the error messages that are issued when the STOP stop-code is not scalar constant expression of character or integer type.<o:p></o:p></font></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 16; mso-yfti-lastrow: yes">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 147.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="197">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_d042.scenario<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 63pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="84">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qnocaf<o:p></o:p></font></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 297pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="396">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Similar as above<o:p></o:p></font></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+<p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><o:p><font size="3" face="Times New Roman">&nbsp;</font></o:p></p>
+<p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><o:p><font size="3" face="Times New Roman">&nbsp;</font></o:p></p>
+<h2 style="MARGIN: 0cm 0cm 0pt 26.95pt"><span style="FONT-STYLE: normal; FONT-FAMILY: &quot;Times New Roman&quot;">Functional Tests:</span></h2>
+<p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="mso-spacerun: yes"><font size="3" face="Times New Roman">&nbsp;</font></span></p>
+<p style="MARGIN: 0in 0in 0pt">
+<table style="MARGIN: auto auto auto 14.2pt; WIDTH: 516.4pt; BORDER-COLLAPSE: collapse; mso-padding-alt: 0cm 0cm 0cm 0cm" border="0" cellspacing="0" cellpadding="0" width="689" class="MsoNormalTable">
+    <tbody>
+        <tr style="mso-yfti-irow: 0">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; PADDING-LEFT: 0cm; WIDTH: 138.4pt; PADDING-RIGHT: 0cm; BACKGROUND: #3366ff; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="185">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><font size="3" face="Times New Roman">Scenario name</font></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; PADDING-LEFT: 2pt; WIDTH: 72pt; PADDING-RIGHT: 2pt; BACKGROUND: #3366ff; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="96">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><o:p><font size="3" face="Times New Roman">&nbsp;</font></o:p></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; PADDING-LEFT: 5.4pt; WIDTH: 306pt; PADDING-RIGHT: 5.4pt; BACKGROUND: #3366ff; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="408">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><strong><span style="FONT-FAMILY: &quot;Courier New&quot;; FONT-SIZE: 9pt">Type of test / Comments</span></strong></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 1">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 138.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="185">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><a name="_Hlk270554348"><span style="FONT-SIZE: 10pt"><font color="#000000"><font face="Times New Roman">stop_f001.scenario<o:p></o:p></font></font></span></a></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 72pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="96">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qcaf<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 306pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm" valign="top" width="408">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Test that due to the limitation of POE, whatever the stop-code is, the value 0 is always supplied as the process exit status for the STOP statement. Also looks for the corresponding STOP message.<o:p></o:p></font></span></span></p>
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Stop values: 0, 2-127<o:p></o:p></font></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 2">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 138.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-bottom-alt: solid windowtext .5pt; mso-border-right-alt: solid windowtext 1.0pt; mso-border-left-alt: solid windowtext 1.0pt" valign="top" width="185">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_f002.scenario<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 72pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-bottom-alt: solid windowtext .5pt; mso-border-right-alt: solid windowtext 1.0pt" valign="top" width="96">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qcaf<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 306pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-bottom-alt: solid windowtext .5pt; mso-border-right-alt: solid windowtext 1.0pt" valign="top" width="408">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Same as above<o:p></o:p></font></span></span></p>
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Stop values: 1, 128-255<o:p></o:p></font></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 3">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 138.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="185">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_f003.scenario<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 72pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="96">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qnocaf<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 306pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="408">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Test that on sequential (non-CAF) mode, program exit status is the same as the supplied stop-code value in the STOP statement. Also looks for the corresponding STOP message.<o:p></o:p></font></span></span></p>
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Stop values: 0, 2-127<o:p></o:p></font></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 4">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 138.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="185">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_f004.scenario<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 72pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="96">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qnocaf<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 306pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="408">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Same as above<o:p></o:p></font></span></span></p>
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Stop values: 1, 128-255<o:p></o:p></font></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 5">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 138.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="185">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_f005.scenario<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 72pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="96">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qcaf<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 306pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="408">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Test that when user does not explicitly specify any stop-code for STOP (i.e. default one), then the program exit status is 0<o:p></o:p></font></span></span></p>
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Also looks for &quot;STOP&quot; prefix in the output.<o:p></o:p></font></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 6">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 138.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="185">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_f006.scenario<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 72pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="96">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qnocaf<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 306pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="408">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Similar as above<o:p></o:p></font></span></span></p>
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Since a character constant or digit string is not specified, the keyword STOP is not printed.<o:p></o:p></font></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 7">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 138.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="185">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_f007.scenario<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 72pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="96">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qcaf<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 306pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="408">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Test that when explicitly specify string (non integer) value for STOP, then the program exit status is 0<o:p></o:p></font></span></span></p>
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Also looks for &quot;STOP&quot; prefix in the output.<o:p></o:p></font></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 8">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 138.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="185">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_f008.scenario<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 72pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="96">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qnocaf<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 306pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="408">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Same as above<o:p></o:p></font></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 9">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 138.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="185">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_f020.scenario<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 72pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="96">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qcaf<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 306pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="408">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Testing the STOP statement initiating normal termination of execution - main program<o:p></o:p></font></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 10">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 138.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="185">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_f021.scenario<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 72pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="96">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qcaf<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 306pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="408">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Similar as above<span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>internal subroutine<o:p></o:p></font></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 11">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 138.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="185">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_f022.scenario<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 72pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="96">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qcaf<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 306pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="408">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Similar as above<span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>internal function<o:p></o:p></font></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 12">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 138.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="185">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_f023.scenario<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 72pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="96">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qcaf<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 306pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="408">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Similar as above<span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>external subroutine<o:p></o:p></font></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 13">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 138.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="185">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_f024.scenario<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 72pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="96">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qcaf<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 306pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="408">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Similar as above<span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>external function<o:p></o:p></font></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 14">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 138.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="185">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_f025.scenario<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 72pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="96">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qcaf<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 306pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="408">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Similar as above<span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>module subroutine<o:p></o:p></font></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 15">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 138.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="185">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_f026.scenario<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 72pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="96">
+            <p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qcaf<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 306pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="408">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">Similar as above<span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>module function<o:p></o:p></font></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 16">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 138.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="185">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_f040.scenario<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 72pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="96">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qcaf<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 306pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="408">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">STOP initiating normal termination of execution of ordered image work. All images complete in desired order.<o:p></o:p></font></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 17">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 138.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="185">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_f041.scenario<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 72pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="96">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qcaf<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 306pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="408">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">STOP initiating normal termination of circular shift<o:p></o:p></font></span></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 18; mso-yfti-lastrow: yes">
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 0cm; WIDTH: 138.4pt; PADDING-RIGHT: 0cm; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" valign="top" width="185">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">stop_f042.scenario<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 2pt; WIDTH: 72pt; PADDING-RIGHT: 2pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="96">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">-qcaf<o:p></o:p></font></span></span></p>
+            </td>
+            <td style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #ece9d8; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 306pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #ece9d8; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" valign="top" width="408">
+            <p style="MARGIN: 0cm 0cm 0pt 2.85pt"><span style="mso-bookmark: _Hlk270554348"><span style="FONT-SIZE: 10pt"><font face="Times New Roman">STOP initiating normal termination of execution and does NOT interrupt others images work in the middle<o:p></o:p></font></span></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<span style="mso-bookmark: _Hlk270554348"></span></p>
+<p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><o:p><font size="3" face="Times New Roman">&nbsp;</font></o:p></p>
+<o:p></o:p></span>
+<p style="MARGIN: 0in 0in 0pt"><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<u1:p></u1:p>
+<table style="WIDTH: 100%; BACKGROUND: rgb(200,175,200) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 100%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt" valign="top" width="100%">
+            <p style="TEXT-ALIGN: center" class="MsoNormal" align="center"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 14pt"><u1:p></u1:p></span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            <p style="TEXT-ALIGN: center" class="MsoNormal" align="center"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 14pt">IT2 Information</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><u1:p></u1:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt">%Note{<span class="GramE"></span>IT2 location and other related information}%</span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><font face="Courier New">&nbsp;&nbsp;&nbsp; The scenarios and sources can be found on:<br />
+&nbsp;&nbsp;&nbsp; &lt;release&gt;/F2008/coarray/error_stop<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Diagnostic TCs:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;release&gt;/F2008/coarray/stop/diag<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Functional TCs:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;release&gt;/F2008/coarray/stop/func<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For I0, IT1, IT2 docs etc.: &lt;release&gt;/F2008/coarray/stop/doc<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp; Component:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xlftest.F2008<br />
+&nbsp;&nbsp;&nbsp; Release(s):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tstdev</font></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><u1:p></u1:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<u1:p></u1:p>
+<table style="WIDTH: 100%; BACKGROUND: rgb(200,175,200) 0% 50%; moz-background-clip: -moz-initial; moz-background-inline-policy: -moz-initial; moz-background-origin: -moz-initial" class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+        <tr>
+            <td style="PADDING-BOTTOM: 2.5pt; PADDING-LEFT: 2.5pt; WIDTH: 100%; PADDING-RIGHT: 2.5pt; PADDING-TOP: 2.5pt" valign="top" width="100%">
+            <p style="TEXT-ALIGN: center" class="MsoNormal" align="center"><strong><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 14pt"><!-- End Multi-Platform Considerations -->Appendices/References</span></strong><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 11pt"><u1:p></u1:p></span><span style="FONT-FAMILY: Helvetica"><o:p></o:p></span></p>
+<p style="MARGIN: 2pt 0in"><span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><span class="GramE">%Note{</span>I0 and IT1 location and other related information}%<o:p></o:p></span></p>
+<span style="FONT-FAMILY: Helvetica; FONT-SIZE: 10pt"><u1:p></u1:p><o:p>
+<p style="MARGIN: 2pt 0in"><br />
+&nbsp;&nbsp;&nbsp; I0 on CMVC -&nbsp; family: aix;&nbsp; release: des.dev;&nbsp; component: design.i0;&nbsp; file: designs/i0/caf__error_stop_statement/caf__error_stop_statement.html<br />
+&nbsp;&nbsp;&nbsp; I0 on Feature Flow - <a href="https://featureflow.torolab.ibm.com/featureflow/show/4126">https://featureflow.torolab.ibm.com/featureflow/show/4126</a></p>
+<p style="MARGIN: 2pt 0in"><br />
+&nbsp;&nbsp;&nbsp; IT1 on CMVC -&nbsp; family: aix;&nbsp; release: des.dev;&nbsp; component: design.it1;&nbsp; file: designs/it1/caf__stop_statement/caf__stop_statement.html<br />
+&nbsp;&nbsp;&nbsp; IT1 on Feature Flow (release 1) - <a href="https://featureflow.torolab.ibm.com/featureflow/show/4535">https://featureflow.torolab.ibm.com/featureflow/show/4535</a></p>
+<p style="MARGIN: 2pt 0in">Related IT1 for CAF: EROR STOP statement:<br />
+&nbsp;&nbsp;&nbsp; On CMVC -&nbsp; family: aix;&nbsp; release: des.dev;&nbsp; component: design.it1;&nbsp; file: designs/it1/caf__error_stop_statement/caf__error_stop_statement.html<br />
+&nbsp;&nbsp;&nbsp; On Feature Flow - <a href="https://featureflow.torolab.ibm.com/featureflow/show/4241">https://featureflow.torolab.ibm.com/featureflow/show/4241</a></p>
+<p style="MARGIN: 2pt 0in">&nbsp;&nbsp;&nbsp; Fortran 2008 Standard - WD 1539-1, J3/10-007 (WG5/N1826)</p>
+</o:p></span></div>
+<!-- End Internal Interfaces --><!--HTML Wrapper--></body></html>

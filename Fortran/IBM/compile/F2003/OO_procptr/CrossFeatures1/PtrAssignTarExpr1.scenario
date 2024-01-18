@@ -1,0 +1,31 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      PtrAssignTarExpr1.f
+#FEATURE= PROCEDURE POINTER
+#CREATOR=   Feng Ye
+#DATE=      06-06-05
+#TEST_TYPE= DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=      F_COMPILE
+#OPTS=     $(OPT_FREE_SOURCE_FORM)
+#INPUT=    $(tcasedir)PtrAssignTarExpr1.f
+#STDERR=   PtrAssignTarExpr1.err
+#VALIDRCS= 1
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    PtrAssignTarExpr1.err $($(tcasedir)PtrAssignTarExpr1$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

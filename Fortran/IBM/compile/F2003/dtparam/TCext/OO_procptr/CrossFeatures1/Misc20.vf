@@ -1,0 +1,6 @@
+** m   === End of Compilation 1 ===
+"Misc20.f", line 104.3: 1516-036 (S) Entity v has undefined type.
+"Misc20.f", line 108.5: 1514-088 (S) Invalid component name.
+"Misc20.f", 1516-036 (S) Entity procptr1 has undefined type.
+** misc20   === End of Compilation 2 ===
+1501-511  Compilation failed for file Misc20.f.

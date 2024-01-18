@@ -1,0 +1,96 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/associat/option/fxass085.scenario
+#FEATURE = associat tests - regression run bucket
+#CREATOR = GB manual conversion
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#IF in($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_COLLECT)) || in($(F_COMPILE^OPT_PROFILE_DIRECTED_FEEDBACK_APPLY))
+  #CMD     = XLF90_COMPLINK
+  #OPTS    = -qipa=pdfname=_i
+  #INPUT   = $(tcasedir)fxass085.f
+  #OUTPUT  = fxass085$(EXE)
+  #ENDCMD
+
+  #CMD     = RUN
+  #INPUT   = fxass085$(EXE)
+  #ENDCMD
+
+  #CMD     = XLF90_COMPLINK
+  #OPTS    = $(OPT_INTSIZE_2) -qipa=pdfname=_i2
+  #INPUT   = $(tcasedir)fxass085.f
+  #OUTPUT  = fxass085$(EXE)
+  #ENDCMD
+
+  #CMD     = RUN
+  #INPUT   = fxass085$(EXE)
+  #ENDCMD
+
+  #CMD     = XLF90_COMPLINK
+  #OPTS    = $(OPT_INTSIZE_4) -qipa=pdfname=_i4
+  #INPUT   = $(tcasedir)fxass085.f
+  #OUTPUT  = fxass085$(EXE)
+  #ENDCMD
+
+  #CMD     = RUN
+  #INPUT   = fxass085$(EXE)
+  #ENDCMD
+
+  #CMD     = XLF90_COMPLINK
+  #OPTS    = $(OPT_INTSIZE_8) -qipa=pdfname=_i8
+  #INPUT   = $(tcasedir)fxass085.f
+  #OUTPUT  = fxass085$(EXE)
+  #ENDCMD
+
+  #CMD     = RUN
+  #INPUT   = fxass085$(EXE)
+  #ENDCMD
+
+#ELSE
+
+  #CMD     = XLF90_COMPLINK
+  #INPUT   = $(tcasedir)fxass085.f
+  #OUTPUT  = fxass085$(EXE)
+  #ENDCMD
+
+  #CMD     = RUN
+  #INPUT   = fxass085$(EXE)
+  #ENDCMD
+
+  #CMD     = XLF90_COMPLINK
+  #OPTS    = $(OPT_INTSIZE_2)
+  #INPUT   = $(tcasedir)fxass085.f
+  #OUTPUT  = fxass085$(EXE)
+  #ENDCMD
+
+  #CMD     = RUN
+  #INPUT   = fxass085$(EXE)
+  #ENDCMD
+
+  #CMD     = XLF90_COMPLINK
+  #OPTS    = $(OPT_INTSIZE_4)
+  #INPUT   = $(tcasedir)fxass085.f
+  #OUTPUT  = fxass085$(EXE)
+  #ENDCMD
+
+  #CMD     = RUN
+  #INPUT   = fxass085$(EXE)
+  #ENDCMD
+
+  #CMD     = XLF90_COMPLINK
+  #OPTS    = $(OPT_INTSIZE_8)
+  #INPUT   = $(tcasedir)fxass085.f
+  #OUTPUT  = fxass085$(EXE)
+  #ENDCMD
+
+  #CMD     = RUN
+  #INPUT   = fxass085$(EXE)
+  #ENDCMD
+#ENDIF
+
+#ENDCONTROL
+#ENDSCENARIO

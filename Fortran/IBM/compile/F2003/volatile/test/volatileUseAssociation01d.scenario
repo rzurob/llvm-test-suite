@@ -1,0 +1,63 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=release/F2003/volatile/volatileUseAssociation01d.f
+#FEATURE = VOLATILE 255728
+#CREATOR = William Zhang
+#DATE    = 05/30/2006
+#TEST_TYPE= diagnostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)volatileUseAssociation01d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qxlf2003=novolatile
+#OUTPUT    = volatileUseAssociation01$(OBJ)
+#STDERR    = volatileUseAssociation01.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)volatileUseAssociation01d$(product)vf) volatileUseAssociation01.err
+#ENDCMD
+
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)volatileUseAssociation01d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = volatileUseAssociation02$(OBJ)
+#STDERR    = volatileUseAssociation02.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)volatileUseAssociation01d$(product)vf) volatileUseAssociation02.err
+#ENDCMD
+
+#CMD       = XLF90_COMPILE
+#INPUT     = $(tcasedir)volatileUseAssociation01d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = volatileUseAssociation03$(OBJ)
+#STDERR    = volatileUseAssociation03.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)volatileUseAssociation01d$(product)vf) volatileUseAssociation03.err
+#ENDCMD
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)volatileUseAssociation01d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = volatileUseAssociation04$(OBJ)
+#STDERR    = volatileUseAssociation04.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)volatileUseAssociation01d$(product)vf) volatileUseAssociation04.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

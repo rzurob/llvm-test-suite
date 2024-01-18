@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/dataPtrAssgn/intrinsic/dataPtrMaxvalReal.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of dataPtrAssgn/*
+#DATE      = 20071216
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dataPtrMaxvalReal.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = dataPtrMaxvalReal$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dataPtrMaxvalReal$(OBJ)
+#OUTPUT    = dataPtrMaxvalReal$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dataPtrMaxvalReal$(EXE)
+#STDOUT    = dataPtrMaxvalReal.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = dataPtrMaxvalReal.out $($(tcasedir)dataPtrMaxvalReal$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

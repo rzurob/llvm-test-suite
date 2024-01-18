@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/derived/acetdt01.scenario
+#FEATURE	= Array constructor enhancement - derived TS with defined assignment, no parameters
+#CREATOR	= DF Manual Update
+#DATE		= 20060905
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt01.f
+#OUTPUT		= acetdt01$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetdt01$(OBJ)
+#OUTPUT		= acetdt01$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetdt01$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2003/dtparam/intrinsics/pack/fDecp9.scenario
+#FEATURE = dtp intrinsics
+#CREATOR = Adrian Green
+#DATE    = 20080821
+#TEST_TYPE=functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)fDecp9.f
+#OUTPUT   = fDecp9$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2003_LINK
+#INPUT     = fDecp9$(OBJ)
+#OUTPUT   = fDecp9$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fDecp9$(EXE)
+#STDOUT   = fDecp9.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $(tcasedir)fDecp9.vf fDecp9.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

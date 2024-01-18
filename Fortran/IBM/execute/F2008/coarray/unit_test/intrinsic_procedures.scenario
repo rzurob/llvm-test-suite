@@ -1,0 +1,50 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME	 = intrinsic_procedures.scenario
+#FEATURE = THIS_IMAGE intrinsic
+#CREATOR = Xing Xue
+#DATE    = 20090731
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_COARRAY_IMAGES<4>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = $(tcasedir)intrinsic_procedures.f
+#OUTPUT    = intrinsic_procedures$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_COARRAY_IMAGES<4>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = intrinsic_procedures$(OBJ)
+#OUTPUT    = intrinsic_procedures$(EXE)
+#ENDCMD
+
+#FOR i = 1 TO 1
+	#CMD       = RUN
+	#ENVAR     = CAF_NUM_IMAGES=4
+	#ENVAR     = MP_PROCS=1
+	#INPUT     = intrinsic_procedures$(EXE)
+	#STDOUT    = intrinsic_procedures.out
+	#ENDCMD
+
+	#CMD       = SORT
+	#INPUT     = intrinsic_procedures.out
+	#STDOUT    = intrinsic_procedures.out1
+	#ENDCMD
+	
+	#CMD       = DIFF
+	#INPUT     = intrinsic_procedures.out1 $($(tcasedir)intrinsic_procedures$(product)vf)
+	#ENDCMD
+#ENDFOR
+
+#ENDCONTROL
+#ENDSCENARIO
+

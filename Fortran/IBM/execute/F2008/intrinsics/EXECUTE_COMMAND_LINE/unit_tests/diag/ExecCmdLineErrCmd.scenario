@@ -1,0 +1,40 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME = $(tcasedir)ExecCmdLineErrCmd.scenario
+#FEATURE = unit_tests - regression run bucket
+#CREATOR = Ren Jian Gang
+#DATE    = December 05, 2010
+#TEST_TYPE = Diagnostic
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)ExecCmdLineErrCmd.f
+#OUTPUT   =  ExecCmdLineErrCmd$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  ExecCmdLineErrCmd$(OBJ)
+#OUTPUT   =  ExecCmdLineErrCmd$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  ExecCmdLineErrCmd$(EXE)
+#STDERR   =  ExecCmdLineErrCmd.err
+#VALIDRCS =  $(RC_FAIL)
+#ENDCMD
+
+! Valid line : "1525-610 Error encountered while attempting to execute the command:"
+#CMD      =  GREP
+#INPUT    =  "1525-610" ExecCmdLineErrCmd.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

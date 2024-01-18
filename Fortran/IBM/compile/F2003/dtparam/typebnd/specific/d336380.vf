@@ -1,0 +1,8 @@
+** m   === End of Compilation 1 ===
+"d336380.f", line 61.30: 1514-670 (S) Dummy argument b of overridden binding p and the corresponding dummy argument of overriding binding p must have the same type and type parameters.
+"d336380.f", line 62.30: 1514-670 (S) Dummy argument b2 of overridden binding q and the corresponding dummy argument of overriding binding q must have the same type and type parameters.
+"d336380.f", line 62.30: 1514-670 (S) Dummy argument b1 of overridden binding q and the corresponding dummy argument of overriding binding q must have the same type and type parameters.
+"d336380.f", line 63.22: 1514-670 (S) Dummy argument c of overridden binding r and the corresponding dummy argument of overriding binding r must have the same type and type parameters.
+** m1   === End of Compilation 2 ===
+** _main   === End of Compilation 3 ===
+1501-511  Compilation failed for file d336380.f.

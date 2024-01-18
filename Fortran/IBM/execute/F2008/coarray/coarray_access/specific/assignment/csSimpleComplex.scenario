@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/coarray/coarray_access/specific/assignment/csSimpleComplex
+#FEATURE        = CAF coarray access (specific) - assignment - assign simple values to complex coarray scalars and arrays
+#CREATOR        = DF
+#DATE           = 2010-10-04
+#TEST_TYPE      = functional
+#ENDDOC
+
+#BEGINENV
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = F_COMPILE
+#INPUT  = $(tcasedir)csSimpleComplex.f
+#OUTPUT = csSimpleComplex$(OBJ)
+#ENDCMD
+
+#CMD    = F_LINK
+#INPUT  = csSimpleComplex$(OBJ)
+#OUTPUT = csSimpleComplex$(EXE)
+#ENDCMD
+
+#CMD    = SET_DYN_ENV
+#ENDCMD
+
+#CMD    = MPRUN
+#INPUT  = csSimpleComplex$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = intLstInputReal003.f
+#FEATURE   = 311684
+#CREATOR   = Bardia Mahjour
+#DATE      = June 27, 2006
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)intLstInputReal003.f
+#OUTPUT   =  intLstInputReal003$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  intLstInputReal003$(OBJ)
+#OUTPUT   =  intLstInputReal003$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  intLstInputReal003$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

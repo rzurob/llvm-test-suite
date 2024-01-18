@@ -1,0 +1,10 @@
+ DT_b1
+ iotype: DT v_list:  1 100
+ iotype: DT v_list:  2 101 1001
+ LISTDIRECTED
+ iotype: DT v_list:  1 200
+ iotype: DT v_list:  2 201 2002
+ DT_b3 1
+ iotype: DT v_list:  1 300
+ iotype: DT v_list:  2 301
+ iotype: DT v_list:  3 302 3003

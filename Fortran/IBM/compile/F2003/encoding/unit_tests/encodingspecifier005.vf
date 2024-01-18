@@ -1,0 +1,4 @@
+"encodingspecifier005.f", line 32.47: 1512-024 (S) The ENCODING specifier must be a CHARACTER expression.
+"encodingspecifier005.f", line 39.14: 1512-015 (S) The ENCODING specifier must be a CHARACTER variable or array element.
+** _main   === End of Compilation 1 ===
+1501-511  Compilation failed for file encodingspecifier005.f.

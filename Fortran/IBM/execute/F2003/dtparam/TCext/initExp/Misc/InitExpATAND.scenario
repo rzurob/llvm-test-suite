@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/initExp/Misc/InitExpATAND.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of F2003/initExp/*
+#DATE      = 20071128
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#INPUT=  $(tcasedir)InitExpATAND.f
+#OUTPUT= InitExpATAND$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  InitExpATAND$(OBJ)
+#OUTPUT= InitExpATAND$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  InitExpATAND$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

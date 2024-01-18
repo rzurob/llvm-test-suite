@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/selectType/fselTyp503.f
+#FEATURE = OO_poly
+#CREATOR = Jim Xia
+#DATE    =
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fselTyp503.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fselTyp503$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = fselTyp503$(OBJ)
+#OUTPUT    = fselTyp503$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fselTyp503$(EXE)
+#STDOUT    = fselTyp503.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = fselTyp503.out $($(tcasedir)fselTyp503$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

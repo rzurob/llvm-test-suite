@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/contiguous/other/d383523.scenario
+#FEATURE   =
+#CREATOR   = Dorra Bouchiha
+#DATE      = 20101028
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)d383523.f
+#OUTPUT    = d383523$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = d383523$(OBJ)
+#OUTPUT    = d383523$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = d383523$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

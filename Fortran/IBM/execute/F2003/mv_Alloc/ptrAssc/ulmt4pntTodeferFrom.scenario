@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       ulmt4pntTodeferFrom.f
+#FEATURE=    move_alloc
+#CREATOR=    Michelle Zhang
+#DATE=       June 9, 2006
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)ulmt4pntTodeferFrom.f
+#OUTPUT= ulmt4pntTodeferFrom$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#INPUT=  ulmt4pntTodeferFrom$(OBJ)
+#OUTPUT= ulmt4pntTodeferFrom$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  ulmt4pntTodeferFrom$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

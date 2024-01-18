@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/submodule/func/submodule16f.scenario
+#FEATURE   = F2008 submodule
+#CREATOR   = Bernard Kan
+#DATE      = 20130220
+#TEST_TYPE = functional
+#KEYWORDS  = F2008, submodule, F2008 submodule
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)submodule16f.f
+#OUTPUT    = submodule16f$(OBJ)
+#ENDCMD
+
+#CMD       = XLF2008_LINK
+#INPUT     = submodule16f$(OBJ)
+#OUTPUT    = submodule16f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = submodule16f$(EXE)
+#STDOUT    = submodule16f.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)submodule16f$(product)vf) submodule16f.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+
+

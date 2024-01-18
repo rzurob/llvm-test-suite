@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/AssumedType/func/AssumedType08f.scenario
+#FEATURE   = C Interop: Assumed Type
+#CREATOR   = Dorra Bouchiha
+#DATE      = 2012-08-20
+#TEST_TYPE = functional
+#KEYWORDS  = C Interop, Assumed Type
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = XLC_COMPILE
+#INPUT     = $(tcasedir)AssumedType08c.c
+#OPTS      = $(C_COMPILER_OPTS) $(OPT_SET_LANG_LEVEL_EXTENDED) $(OPT_GEN_64BIT_LONGLONG) $(OPT_BIGGER_LONG_DOUBLE)
+#OUTPUT    = AssumedType08c$(OBJ)
+#ENDCMD
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AssumedType08f.f
+#OUTPUT    = AssumedType08f$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = AssumedType08c$(OBJ) AssumedType08f$(OBJ)
+#IF on(aix)
+   #OPTS   = -lC128
+#ENDIF
+#OUTPUT    = AssumedType08f$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = AssumedType08f$(EXE)
+#STDOUT    = AssumedType08f.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

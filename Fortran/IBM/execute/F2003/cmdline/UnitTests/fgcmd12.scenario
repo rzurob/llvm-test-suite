@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = cmdline/UnitTests/fgcmd12.scenario
+#FEATURE = cmdline tests - regression run bucket
+#CREATOR = SH Manual conversion - fixed CPR 20090121
+#DATE    = 20041207
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)fgcmd12.f
+#OPTS      = $(OPT_INTSIZE_4)
+#OUTPUT    = fgcmd12$(OBJ)
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#OPTS      = $(OPT_INTSIZE_4)
+#INPUT     = fgcmd12$(OBJ)
+#OUTPUT    = fgcmd12$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = ./fgcmd12$(EXE)
+#OPTS      = aa bbb
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

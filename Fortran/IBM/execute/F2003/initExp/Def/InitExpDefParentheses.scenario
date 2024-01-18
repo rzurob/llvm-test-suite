@@ -1,0 +1,35 @@
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=       InitExpDefParentheses.f
+#FEATURE=
+#CREATOR=    Feng Ye
+#DATE=       04-06-06
+#TEST_TYPE=  FUNCTIONAL
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=    F_COMPILE
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  $(tcasedir)InitExpDefParentheses.f
+#OUTPUT= InitExpDefParentheses$(OBJ)
+#ENDCMD
+
+#CMD=    F_LINK
+#OPTS=   $(OPT_FREE_SOURCE_FORM)
+#INPUT=  InitExpDefParentheses$(OBJ)
+#OUTPUT= InitExpDefParentheses$(EXE)
+#ENDCMD
+
+#CMD =   RUN
+#INPUT=  InitExpDefParentheses$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

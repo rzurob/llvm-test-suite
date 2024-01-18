@@ -1,0 +1,4 @@
+** mod   === End of Compilation 1 ===
+"bcdacn06.f", line 40.9: 1514-005 (S) COMMON block identifier blk was defined elsewhere with conflicting attributes. This identifier and any element names are ignored.
+** _main   === End of Compilation 2 ===
+1501-511  Compilation failed for file bcdacn06.f.

@@ -1,0 +1,34 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/intrinsics/acetint32lext.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
+				Procedure Pointers can be Invoked in implied-do for Data	\
+				(Logical))
+#CREATOR	= Glen Mateer (derived from work by David Forster)
+#DATE		= 20080125
+#TEST_TYPE	= Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint32lext.f
+#OUTPUT		= acetint32lext$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint32lext$(OBJ)
+#OUTPUT		= acetint32lext$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint32lext$(EXE)
+#STDOUT		= acetint32lext.stdout
+#ENDCMD
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)acetint32lext$(product)vf) acetint32lext.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

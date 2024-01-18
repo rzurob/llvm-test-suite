@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/OO_poly/implicit/fimplct001.scenario
+#FEATURE = OO_poly tests - regression run bucket
+#CREATOR = automated conversion script
+#DATE    = 20050118
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fimplct001.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = fimplct001$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     =  fimplct001$(OBJ)
+#OUTPUT    = fimplct001$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fimplct001$(EXE)
+#STDOUT    = fimplct001.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)fimplct001$(product)vf) fimplct001.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

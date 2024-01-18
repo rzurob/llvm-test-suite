@@ -1,0 +1,15 @@
+"genericR452Operator002d.f", line 41.19: 1515-019 (S) Syntax is incorrect.
+"genericR452Operator002d.f", line 41.30: 1515-018 (S) Incorrect character found in source at line 41 in column 30.  Hexadecimal value of character is 3F.
+"genericR452Operator002d.f", line 41.36: 1514-095 (S) Invalid statement within derived type definition.
+"genericR452Operator002d.f", line 42.9: 1515-019 (S) Syntax is incorrect.
+"genericR452Operator002d.f", line 42.29: 1514-095 (S) Invalid statement within derived type definition.
+"genericR452Operator002d.f", line 50.19: 1515-019 (S) Syntax is incorrect.
+"genericR452Operator002d.f", line 50.30: 1515-018 (S) Incorrect character found in source at line 50 in column 30.  Hexadecimal value of character is 25.
+"genericR452Operator002d.f", line 50.36: 1514-095 (S) Invalid statement within derived type definition.
+"genericR452Operator002d.f", line 51.9: 1515-019 (S) Syntax is incorrect.
+"genericR452Operator002d.f", line 51.29: 1514-095 (S) Invalid statement within derived type definition.
+"genericR452Operator002d.f", line 56.33: 1514-084 (S) Identifier a is being declared with type name base which has not been defined in a derived type definition.
+"genericR452Operator002d.f", line 64.34: 1514-084 (S) Identifier b is being declared with type name base1 which has not been defined in a derived type definition.
+** m   === End of Compilation 1 ===
+** genericr452operator002d   === End of Compilation 2 ===
+1501-511  Compilation failed for file genericR452Operator002d.f.

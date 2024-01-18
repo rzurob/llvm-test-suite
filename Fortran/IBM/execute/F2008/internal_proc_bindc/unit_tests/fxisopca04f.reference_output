@@ -1,0 +1,4 @@
+** some   === End of Compilation 1 ===
+"fxisopca04f.f", line 27.4: 1513-303 (S) The NAME specifier must not appear in the BIND(C) attribute for internal procedure subc.
+** fxisopca01   === End of Compilation 2 ===
+1501-511  Compilation failed for file fxisopca04f.f.

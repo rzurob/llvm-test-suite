@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME      = F2008/value/array/func/valuearray_f200.scenario
+#FEATURE   = VALUE(F2008 extension) - dummy argument arrays allowed with value
+#CREATOR   = Cezar Lutac
+#DATE      = 20150924
+#TEST_TYPE = functional
+#KEYWORDS  = F2008, value, arrays, array
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)valuearray_f200.f
+#OUTPUT    =  valuearray_f200$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     =  valuearray_f200$(OBJ)
+#OUTPUT    =  valuearray_f200$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     =  valuearray_f200$(EXE)
+#STDOUT    =  valuearray_f200.out
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+

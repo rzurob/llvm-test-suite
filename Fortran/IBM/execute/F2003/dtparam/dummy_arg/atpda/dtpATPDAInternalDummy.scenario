@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/dummy_arg/atpda/dtpATPDAInternalDummy.scenario
+#FEATURE   = Assumed type parameters and dummy arguments - test the length passed in
+#CREATOR   = DF Manual Update
+#DATE      = 20081015
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)dtpATPDAInternalDummy.f
+#OUTPUT    = dtpATPDAInternalDummy$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = dtpATPDAInternalDummy$(OBJ)
+#OUTPUT    = dtpATPDAInternalDummy$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = dtpATPDAInternalDummy$(EXE)
+#STDOUT    = dtpATPDAInternalDummy.out
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = $($(tcasedir)dtpATPDAInternalDummy$(product)vf) dtpATPDAInternalDummy.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,5 @@
+Coarray Character Feature
+
+There is no I0 for this feature. Although there are some existing test cases using character, but it's necessary to add coverage to character coarrays that otherwise will be missed by general coverage.
+
+The IT1 and IT2, can be found in ./doc subdirectory.

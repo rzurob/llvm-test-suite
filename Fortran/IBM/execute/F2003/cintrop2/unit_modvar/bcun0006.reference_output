@@ -1,0 +1,33 @@
+ Variable fh, fm, ff, fi and fa are initialized in Fortran.
+ F
+ 8.800000191
+ 1
+ 3 3 3 3 3 3
+ Variable fh, fm, ff, fi and fa are changed in C function csub().
+ Now in Fortran:
+ C
+ 9.800000191
+ 2
+ 4 4 4 4 4 4
+Display variables initialized in Fortran.
+In csub():
+ ch=F
+cf=8.800000
+ci=1
+ca[0][0][0]=3
+ca[0][0][1]=3
+ca[0][0][2]=3
+ca[0][1][0]=3
+ca[0][1][1]=3
+ca[0][1][2]=3
+Display changed variables in C.
+In csub(), after changing:
+ch=C
+cf=9.800000
+ci=2
+ca[0][0][0]=4
+ca[0][0][1]=4
+ca[0][0][2]=4
+ca[0][1][0]=4
+ca[0][1][1]=4
+ca[0][1][2]=4

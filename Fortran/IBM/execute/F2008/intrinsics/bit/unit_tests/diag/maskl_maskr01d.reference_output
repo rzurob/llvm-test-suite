@@ -1,0 +1,26 @@
+"maskl_maskr01d.f", line 52.37: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "maskl".
+"maskl_maskr01d.f", line 53.37: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "maskl".
+"maskl_maskr01d.f", line 55.37: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "maskr".
+"maskl_maskr01d.f", line 56.37: 1513-041 (S) Arguments of the wrong type were specified for the INTRINSIC procedure "maskr".
+"maskl_maskr01d.f", line 59.37: 1516-144 (S) The value of the argument must be between 0 and 32.
+"maskl_maskr01d.f", line 61.37: 1516-144 (S) The value of the argument must be between 0 and 32.
+"maskl_maskr01d.f", line 65.38: 1516-144 (S) The value of the argument must be between 0 and 8.
+"maskl_maskr01d.f", line 66.38: 1516-144 (S) The value of the argument must be between 0 and 8.
+"maskl_maskr01d.f", line 69.38: 1516-144 (S) The value of the argument must be between 0 and 16.
+"maskl_maskr01d.f", line 70.38: 1516-144 (S) The value of the argument must be between 0 and 16.
+"maskl_maskr01d.f", line 73.38: 1516-144 (S) The value of the argument must be between 0 and 32.
+"maskl_maskr01d.f", line 74.38: 1516-144 (S) The value of the argument must be between 0 and 32.
+"maskl_maskr01d.f", line 77.38: 1516-144 (S) The value of the argument must be between 0 and 64.
+"maskl_maskr01d.f", line 78.38: 1516-144 (S) The value of the argument must be between 0 and 64.
+"maskl_maskr01d.f", line 82.36: 1513-133 (S) KIND must be an integer constant.
+"maskl_maskr01d.f", line 83.36: 1513-133 (S) KIND must be an integer constant.
+"maskl_maskr01d.f", line 84.36: 1513-133 (S) KIND must be an integer constant.
+"maskl_maskr01d.f", line 85.36: 1513-133 (S) KIND must be an integer constant.
+"maskl_maskr01d.f", line 87.36: 1513-133 (S) KIND must be an integer constant.
+"maskl_maskr01d.f", line 88.36: 1513-133 (S) KIND must be an integer constant.
+"maskl_maskr01d.f", line 89.36: 1513-133 (S) KIND must be an integer constant.
+"maskl_maskr01d.f", line 90.36: 1513-133 (S) KIND must be an integer constant.
+"maskl_maskr01d.f", line 94.37: 1513-143 (S) Invalid KIND value.
+"maskl_maskr01d.f", line 95.37: 1513-143 (S) Invalid KIND value.
+** maskl_maskr   === End of Compilation 1 ===
+1501-511  Compilation failed for file maskl_maskr01d.f.

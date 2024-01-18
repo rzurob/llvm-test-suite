@@ -1,0 +1,13 @@
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6     0
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6  1234
+inside finalchild =>  iotype:DT_finalizingchild v_list: 6 8     0     xxx
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6     0
+inside finalchild =>  iotype:DT_finalizingchild v_list: 6 8  5678     abc
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6  5678
+allocatables and pointers
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6  2345
+inside finalchild =>  iotype:DT_finalizingchild v_list: 6 8  3456     def
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6  3456
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6  2345
+inside finalchild =>  iotype:DT_finalizingchild v_list: 6 8  3456     def
+inside finalbase =>  iotype:DT_finalizingbase v_list: 6  3456

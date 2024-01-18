@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/allocEnh/pointer/ptrToVarArrAsExpr05.scenario
+#FEATURE	= Intrinsic Assignment -- variable is a POINTER
+#CREATOR	= GM Manual Creation
+#DATE		= 20061020
+#TEST_TYPE	= functional
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)ptrToVarArrAsExpr05.f
+#OUTPUT		= ptrToVarArrAsExpr05$(OBJ)
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= ptrToVarArrAsExpr05$(OBJ)
+#OUTPUT		= ptrToVarArrAsExpr05$(EXE)
+#ENDCMD
+
+
+#CMD		= RUN
+#INPUT		= ptrToVarArrAsExpr05$(EXE)
+#STDOUT		= ptrToVarArrAsExpr05.stdout
+#ENDCMD
+
+
+#CMD		= DIFF
+#INPUT		= $($(tcasedir)ptrToVarArrAsExpr05$(product)vf)	\
+				ptrToVarArrAsExpr05.stdout
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

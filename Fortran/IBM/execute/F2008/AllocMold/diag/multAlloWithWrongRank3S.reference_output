@@ -1,0 +1,3 @@
+"multAlloWithWrongRank3S.f", line 7.27: 1511-128 (S) The expression specified by the SOURCE= specifier must be scalar, or of the same rank as the object to be allocated.
+** main   === End of Compilation 1 ===
+1501-511  Compilation failed for file multAlloWithWrongRank3S.f.

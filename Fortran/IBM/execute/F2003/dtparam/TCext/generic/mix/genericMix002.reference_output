@@ -1,0 +1,30 @@
+ *start for i:
+ add_int_integer
+ add_int_int
+ add_int_integer
+ add_int_integer
+ as_int_int
+ *end: 15
+ *start for ii:
+ as_integer_int
+ *end: 15
+ *start for j:
+ sub_int_integer
+ sub_int_int
+ sub_int_integer
+ add_int_integer
+ sub_int_int
+ as_int_int
+ *end: 4
+ *start for jj:
+ *end: 4
+ *start for k:
+ as_int_integer
+ *end: 3
+ *start for kk:
+ add_int_int
+ sub_int_int
+ add_int_integer
+ sub_int_integer
+ as_integer_int
+ *end: 6

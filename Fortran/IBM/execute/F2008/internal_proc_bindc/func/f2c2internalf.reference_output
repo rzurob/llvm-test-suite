@@ -1,0 +1,6 @@
+ Fortran program started:
+ Moving to C...
+Printing in C!
+Moving to Fortran...
+ Printing in Fortran!
+    the value of b is: 777

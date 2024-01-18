@@ -1,0 +1,38 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/iosign/iosign016.scenario
+#FEATURE = Abstract Interface Tests
+#CREATOR = Alberto Alvarez
+#DATE    = 20060220
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)iosign016.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = iosign016$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = iosign016$(OBJ)
+#OUTPUT    = iosign016$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = iosign016$(EXE)
+#ENDCMD
+
+#CMD       = DIFF
+#INPUT     = iosign016.1 $(tcasedir)iosign016.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

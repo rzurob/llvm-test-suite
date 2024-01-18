@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2004/ace/types/intrinsics/acetint40ip.scenario
+#FEATURE	= Array constructor enhancement - output AC with integer constants of different kinds
+#CREATOR	= DF Manual Update
+#DATE		= 20060614
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint40ip.f
+#OUTPUT		= acetint40ip$(OBJ)
+#STDERR		= acetint40ip.err
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= acetint40ip.err $(tcasedir)acetint40ip.vf
+#ENDCMD
+
+#CMD		= F_LINK
+#INPUT		= acetint40ip$(OBJ)
+#OUTPUT		= acetint40ip$(EXE)
+#ENDCMD
+
+#CMD		= RUN
+#INPUT		= acetint40ip$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

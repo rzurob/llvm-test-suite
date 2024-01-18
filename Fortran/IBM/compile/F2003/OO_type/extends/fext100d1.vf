@@ -1,0 +1,4 @@
+"fext100d1.f", line 60.29: 1514-076 (S) Identifier base appearing as the name of a derived type has already been defined as a derived type.
+** m   === End of Compilation 1 ===
+** fext100d1   === End of Compilation 2 ===
+1501-511  Compilation failed for file fext100d1.f.

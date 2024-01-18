@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_tpbnd/specific/ftpbnd508d.scenario
+#FEATURE   = 289057.TCext.OO
+#CREATOR   = GB DTP extension of OO_tpbnd/*
+#DATE      = 20071218
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)ftpbnd508d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#OUTPUT    = ftpbnd508d$(OBJ)
+#VALIDRCS  = 1
+#STDERR    = ftpbnd508d.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = ftpbnd508d.err $($(tcasedir)ftpbnd508d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

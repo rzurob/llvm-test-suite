@@ -1,0 +1,5 @@
+** volatilec1232assumedshape02d   === End of Compilation 1 ===
+"volatileC1232Assumedshape02d.f", line 45.38: 1516-272 (S) Dummy argument a of procedure externalassumeshapevolatile was specified with the VOLATILE attribute. a is not an assumed-shape array.  The corresponding actual argument must not be an array section or an assumed-shape array.
+** innerassumeshapevolatile   === End of Compilation 2 ===
+** externalassumeshapevolatile   === End of Compilation 3 ===
+1501-511  Compilation failed for file volatileC1232Assumedshape02d.f.

@@ -1,0 +1,4 @@
+"d338884.f", line 37.26: 1514-203 (S) Initialization of automatic object temp is not permitted.
+"d338884.f", line 37.38: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+** m   === End of Compilation 1 ===
+1501-511  Compilation failed for file d338884.f.

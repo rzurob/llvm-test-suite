@@ -1,0 +1,5 @@
+** mod   === End of Compilation 1 ===
+"bcdaen39.f", line 54.10: 1514-127 (E) Identifier sub declared with EXTERNAL/INTRINSIC attribute was defined elsewhere with conflicting attributes.  Identifier is ignored.
+"bcdaen39.f", 1516-036 (S) Entity sub has undefined type.
+** bcdaen39   === End of Compilation 2 ===
+1501-511  Compilation failed for file bcdaen39.f.

@@ -1,0 +1,4 @@
+"valueAllocatableComponentFinal001.f", line 46.19: 1514-598 (S) The dummy argument of the final subroutine finalbase must not have the VALUE attribute.
+** m   === End of Compilation 1 ===
+"valueAllocatableComponentFinal001.f", line 70.8: 1514-219 (S) Unable to access module symbol file for module m. Check path and file permissions of file. Use association not done for this module.
+1501-511  Compilation failed for file valueAllocatableComponentFinal001.f.

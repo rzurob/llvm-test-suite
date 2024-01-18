@@ -1,0 +1,53 @@
+! %W%
+! %G%, %U%, %I% sccsid
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = error_stop_22.scenario
+#FEATURE    = ERROR STOP
+#CREATOR    = Feng Ye
+#DATE       = 2010-07-30
+#TEST_TYPE  = unit test
+#ENDDOC
+
+! Scenario Environment Tags
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+! Scenario Control Tags
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_NOCOARRAY)
+#INPUT     = $(tcasedir)error_stop_22.f
+#OUTPUT    = error_stop_22$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#OPTS      = $(OPT_NOCOARRAY)
+#INPUT     = error_stop_22$(OBJ)
+#OUTPUT    = error_stop_22$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = error_stop_22$(EXE)
+#STDERR    = error_stop_22.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = GREP
+#INPUT     = "ERROR STOP" error_stop_22.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = GREP
+#INPUT     = "Can not reach here!" error_stop_22.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/OO_type/extends/fext009a.scenario
+#FEATURE   = OO_type tests - regression run bucket
+#CREATOR   = GB copy from OO_type/extends/fext009a.scenario
+#DATE      = 20070423
+#TEST_TYPE = sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)fext009a.f
+#OUTPUT    = fext009a$(OBJ)
+#ENDCMD
+
+#CMD       = F_LINK
+#INPUT     = fext009a$(OBJ)
+#OUTPUT    = fext009a$(EXE)
+#ENDCMD
+
+#CMD       = RUN
+#INPUT     = fext009a$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

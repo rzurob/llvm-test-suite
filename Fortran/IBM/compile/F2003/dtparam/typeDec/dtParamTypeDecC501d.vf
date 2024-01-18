@@ -1,0 +1,14 @@
+"dtParamTypeDecC501d.f", line 58.11: 1514-213 (S) A type parameter in this position must be a scalar integer initialization expression.
+"dtParamTypeDecC501d.f", line 58.16: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"dtParamTypeDecC501d.f", line 59.33: 1514-753 (S) Automatic object t2 is not permitted in the specification part of a module or main program.
+"dtParamTypeDecC501d.f", line 61.22: 1514-056 (S) Length on type specification must be an integer constant expression.
+"dtParamTypeDecC501d.f", line 61.24: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"dtParamTypeDecC501d.f", line 62.11: 1514-213 (S) A type parameter in this position must be a scalar integer initialization expression.
+"dtParamTypeDecC501d.f", line 64.22: 1514-056 (S) Length on type specification must be an integer constant expression.
+"dtParamTypeDecC501d.f", line 64.26: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"dtParamTypeDecC501d.f", line 65.11: 1514-213 (S) A type parameter in this position must be a scalar integer initialization expression.
+"dtParamTypeDecC501d.f", line 67.22: 1514-056 (S) Length on type specification must be an integer constant expression.
+"dtParamTypeDecC501d.f", line 67.24: 1516-050 (S) Expression or initial value must be evaluated at compile time.
+"dtParamTypeDecC501d.f", line 68.11: 1514-213 (S) A type parameter in this position must be a scalar integer initialization expression.
+** dtparamtypedecc501   === End of Compilation 1 ===
+1501-511  Compilation failed for file dtParamTypeDecC501d.f.

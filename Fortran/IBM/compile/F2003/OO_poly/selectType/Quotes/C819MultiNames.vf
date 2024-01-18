@@ -1,0 +1,5 @@
+"C819MultiNames.f", line 58.9: 1515-019 (S) Syntax is incorrect.
+"C819MultiNames.f", line 65.13: 1511-116 (E) The END SELECT statement must not contain a construct name.  Construct name select is ignored.
+"C819MultiNames.f", 1516-036 (S) Entity select has undefined type.
+** c819multinames   === End of Compilation 1 ===
+1501-511  Compilation failed for file C819MultiNames.f.

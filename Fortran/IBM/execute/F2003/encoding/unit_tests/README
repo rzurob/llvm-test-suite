@@ -1,0 +1,12 @@
+******DIAGNOSTIC********
+001-compile time langlvl messages
+002-unformatted I/O, compile time messages 
+003-unformatted I/O, runtime message
+004-unformatted I/O, runtime messages
+005-Incorrect specifiers value type, compile time messages
+006-Incorrect specifiers in invalid stmt, compile time messages
+007-Incorrect specifiers, runtime messages
+
+******FUNCTIONAL******
+008-test IOSTAT values
+009-OPEN and INQUIRE statements

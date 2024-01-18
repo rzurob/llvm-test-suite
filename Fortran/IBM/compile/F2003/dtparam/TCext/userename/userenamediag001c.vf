@@ -1,0 +1,15 @@
+"userenamediag001.f", line 40.15: 1518-351 (L) Type parameters are not permitted by the Fortran 95 standard.
+"userenamediag001.f", line 45.4: 1518-331 (L) Type-bound procedures are not permittted by the Fortran 95 standard.
+"userenamediag001.f", line 48.37: 1518-241 (L) A procedure must not be specified in a generic interface block if it has already been specified in an accessible generic interface block with the same generic specifier in the Fortran 95 standard.
+"userenamediag001.f", line 53.22: 1518-241 (L) A procedure must not be specified in a generic interface block if it has already been specified in an accessible generic interface block with the same generic specifier in the Fortran 95 standard.
+"userenamediag001.f", line 53.22: 1518-241 (L) A procedure must not be specified in a generic interface block if it has already been specified in an accessible generic interface block with the same generic specifier in the Fortran 95 standard.
+"userenamediag001.f", line 59.6: 1518-260 (L) The CLASS keyword is not permitted by the Fortran 95 standard.
+"userenamediag001.f", 1518-318 (L) The XLF2003(NOOLDNANINF) option can cause the program to behave in a way that is different from that specified by the Fortran 95 standard.
+"userenamediag001.f", 1518-318 (L) The STOPEXCEPT option can cause the program to behave in a way that is different from that specified by the Fortran 95 standard.
+** opmod   === End of Compilation 1 ===
+"userenamediag001.f", line 68.5: 1518-241 (L) A procedure must not be specified in a generic interface block if it has already been specified in an accessible generic interface block with the same generic specifier in the Fortran 95 standard.
+"userenamediag001.f", line 68.13: 1518-340 (L) A defined operator is not permitted to appear in a USE statement by the Fortran 95 standard.
+"userenamediag001.f", 1518-318 (L) The STOPEXCEPT option can cause the program to behave in a way that is different from that specified by the Fortran 95 standard.
+"userenamediag001.f", 1518-318 (L) The XLF2003(NOOLDNANINF) option can cause the program to behave in a way that is different from that specified by the Fortran 95 standard.
+** main   === End of Compilation 2 ===
+1501-510  Compilation successful for file userenamediag001.f.
