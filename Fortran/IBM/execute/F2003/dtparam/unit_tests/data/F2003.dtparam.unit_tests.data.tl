@@ -1,8 +1,0 @@
-diaBlockDataDTParm.scenario
-diaDataDTParmComp.scenario
-diaDataDTParmInitExpr.scenario
-diaDataDTParmNested.scenario
-funBlockDataDTParm.scenario
-funDataDTParm.scenario
-funDataDTParmExtend.scenario
-funDataDTParmNested.scenario

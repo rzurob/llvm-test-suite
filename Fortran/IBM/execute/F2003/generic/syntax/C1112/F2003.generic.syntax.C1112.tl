@@ -1,3 +1,0 @@
-! automatically generated
-genericC1112GenericName001d.scenario
-genericC1112Assignment001d.scenario

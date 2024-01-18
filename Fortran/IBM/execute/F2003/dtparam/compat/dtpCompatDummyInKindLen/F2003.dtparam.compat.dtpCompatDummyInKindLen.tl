@@ -1,5 +1,0 @@
-dtpCompatDummyInKindLen_111.scenario
-dtpCompatDummyInKindLen_111m.scenario
-dtpCompatDummyInKindLen_111r.scenario
-dtpCompatDummyInKindLen_121.scenario
-dtpCompatDummyInKindLen_121m.scenario

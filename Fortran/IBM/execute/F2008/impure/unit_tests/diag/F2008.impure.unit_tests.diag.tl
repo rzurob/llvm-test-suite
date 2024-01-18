@@ -1,9 +1,0 @@
-impure01d.scenario
-impure02d.scenario
-impure03d.scenario
-impure04d.scenario
-impure05d.scenario
-impure06d.scenario
-impure07d.scenario
-impure08d.scenario
-impure09d.scenario

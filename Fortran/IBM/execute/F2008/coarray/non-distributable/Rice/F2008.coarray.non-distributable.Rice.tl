@@ -1,9 +1,0 @@
-explicit_shape_1.scenario
-explicit_shape_2.scenario
-explicit_shape_3.scenario
-explicit_shape_4.scenario
-assumed_shape_1.scenario
-assumed_shape_2.scenario
-assumed_size_1.scenario
-assumed_size_2.scenario
-assumed_size_3.scenario

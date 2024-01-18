@@ -1,3 +1,0 @@
-! automatically generated
-specificBindingCall001.scenario
-bindingOrder001.scenario

@@ -1,6 +1,0 @@
-! automatically generated
-fxiosendeor001.scenario
-fxiosendeor002.scenario
-fxiosendeor003.scenario
-fxiosendeor004.scenario
-fxiosendeor024.scenario

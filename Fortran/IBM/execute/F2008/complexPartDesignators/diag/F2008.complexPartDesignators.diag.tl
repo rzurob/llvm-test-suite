@@ -1,5 +1,0 @@
-complexPartDesignatorD1.scenario
-complexPartDesignatorD2.scenario
-complexPartDesignatorD3.scenario
-complexPartDesignatorD4.scenario
-complexPartDesignatorD5.scenario

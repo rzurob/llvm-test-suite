@@ -1,5 +1,0 @@
-dtpCompatReturnValueKind_111.scenario
-dtpCompatReturnValueKind_111m.scenario
-dtpCompatReturnValueKind_111r.scenario
-dtpCompatReturnValueKind_121.scenario
-dtpCompatReturnValueKind_121m.scenario

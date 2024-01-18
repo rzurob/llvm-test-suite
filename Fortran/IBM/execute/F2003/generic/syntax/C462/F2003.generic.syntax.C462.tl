@@ -1,4 +1,0 @@
-! automatically generated
-genericC462Operator002d.scenario
-genericC462Operator003d.scenario
-genericC462Operator001d.scenario

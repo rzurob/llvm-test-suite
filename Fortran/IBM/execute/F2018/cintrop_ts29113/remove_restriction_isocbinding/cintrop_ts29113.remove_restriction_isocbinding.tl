@@ -1,1 +1,0 @@
-.im unit_tests/cintrop_ts29113.remove_restriction_isocbinding.unit_tests.tl

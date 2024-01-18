@@ -1,4 +1,0 @@
-num_images_d001a.scenario
-num_images_d001b.scenario
-num_images_d002.scenario
-num_images_d003.scenario

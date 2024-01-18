@@ -1,1 +1,0 @@
-generic_allocatable_pointer_d001.scenario

@@ -1,5 +1,0 @@
-faddINT64_F2003.scenario
-fdivideINT64_F2003.scenario
-fgeneralINT64_F2003.scenario
-fmultiplyINT64_F2003.scenario
-fsubtractINT64_F2003.scenario

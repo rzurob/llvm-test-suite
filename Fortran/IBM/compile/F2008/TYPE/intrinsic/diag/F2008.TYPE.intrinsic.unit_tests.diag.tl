@@ -1,4 +1,0 @@
-intrinsictype01d.scenario
-intrinsictype02d.scenario
-intrinsictype03d.scenario
-intrinsictype16d.scenario

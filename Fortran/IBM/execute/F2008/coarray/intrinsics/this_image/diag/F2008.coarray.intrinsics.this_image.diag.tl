@@ -1,9 +1,0 @@
-this_image_d001a.scenario
-this_image_d001b.scenario
-this_image_d002.scenario
-this_image_d003.scenario
-this_image_d004.scenario
-this_image_d005.scenario
-this_image_d006a.scenario
-this_image_d006b.scenario
-this_image_d007.scenario

@@ -1,9 +1,0 @@
-.im optional/cintrop_ts29113.optional.tl
-.im AssumedType/cintrop_ts29113.AssumedType.tl
-.im AllocatableAndPointer/cintrop_ts29113.AllocatableAndPointer.tl
-.im asynch_communication/cintrop_ts29113.asynch_communication.tl  
-.im AssumedRank/cintrop_ts29113.AssumedRank.tl
-.im AssumedSizeScalar/cintrop_ts29113.AssumedSizeScalar.tl
-.im AssumedLength/cintrop_ts29113.AssumedLength.tl
-.im remove_restriction_isocbinding/cintrop_ts29113.remove_restriction_isocbinding.tl
-.im c_ptrdiff_t/cintrop_ts29113.c_ptrdiff_t.tl

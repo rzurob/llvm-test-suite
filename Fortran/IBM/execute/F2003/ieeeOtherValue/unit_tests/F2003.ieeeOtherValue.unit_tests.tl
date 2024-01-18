@@ -1,3 +1,0 @@
-diaIeeeOtherVal.scenario
-diaIeeeValue.scenario
-fxIeeeOtherVal.scenario

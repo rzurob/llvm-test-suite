@@ -1,6 +1,0 @@
-codimension_f001a.scenario
-codimension_f001b.scenario
-codimension_f002a.scenario
-codimension_f002b.scenario
-codimension_f003a.scenario
-codimension_f003b.scenario

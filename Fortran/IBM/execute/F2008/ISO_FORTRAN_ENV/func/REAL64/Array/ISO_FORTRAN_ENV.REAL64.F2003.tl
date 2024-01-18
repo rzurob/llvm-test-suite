@@ -1,5 +1,0 @@
-faddREAL64_F2003.scenario
-fdivideREAL64_F2003.scenario
-fgeneralREAL64_F2003.scenario
-fmultiplyREAL64_F2003.scenario
-fsubtractREAL64_F2003.scenario

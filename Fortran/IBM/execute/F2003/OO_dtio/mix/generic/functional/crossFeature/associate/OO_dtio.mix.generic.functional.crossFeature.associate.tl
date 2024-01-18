@@ -1,7 +1,0 @@
-! automatically generated
-associate001.scenario
-associate001a.scenario
-associate002.scenario
-associate002a.scenario
-associate003.scenario
-associate003a.scenario

@@ -1,6 +1,0 @@
-maxminlocdiag01.scenario
-maxminlocdiag02.scenario
-maxminlocdiag03.scenario
-maxminlocdiag04.scenario
-maxminlocdiag05.scenario
-maxminlocdiag06.scenario

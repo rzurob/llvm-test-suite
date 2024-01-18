@@ -1,6 +1,0 @@
-ImageIndex01.scenario
-intrinsic_procedures.scenario
-gasnetBarrier.scenario
-cafsum02.scenario
-mcd-sum2.scenario
-defect367740.scenario

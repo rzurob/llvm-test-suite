@@ -1,5 +1,0 @@
-faddINT8_XLF.scenario
-fdivideINT8_XLF.scenario
-fgeneralINT8_XLF.scenario
-fmultiplyINT8_XLF.scenario
-fsubtractINT8_XLF.scenario

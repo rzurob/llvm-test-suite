@@ -1,8 +1,0 @@
-caflock01f.scenario
-caflock02f.scenario
-caflock03f.scenario
-caflock04f.scenario
-caflock05f.scenario
-caflock06f.scenario
-caflock07f.scenario
-caflock08f.scenario

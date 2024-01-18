@@ -1,5 +1,0 @@
-stop_unit1_caf.scenario
-stop_unit2_caf.scenario
-stop_unit3_caf.scenario
-stop_unit4_caf.scenario
-stop_unit5_caf.scenario

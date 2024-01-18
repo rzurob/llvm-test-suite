@@ -1,3 +1,0 @@
-fxsf000p.scenario
-fxsf000p_F2003.scenario
-fxsf000p_F2008.scenario

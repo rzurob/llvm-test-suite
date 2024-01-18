@@ -1,7 +1,0 @@
-forall_typespec_d01.scenario
-forall_typespec_d02.scenario
-forall_typespec_d03_1.scenario
-forall_typespec_d03_2.scenario
-forall_typespec_d03_3.scenario
-forall_typespec_d03_4.scenario
-forall_typespec_d04.scenario

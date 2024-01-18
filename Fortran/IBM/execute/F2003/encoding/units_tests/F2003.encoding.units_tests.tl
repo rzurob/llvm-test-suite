@@ -1,2 +1,0 @@
-encodingspecifier010.scenario
-encodingspecifier011.scenario

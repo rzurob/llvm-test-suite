@@ -1,5 +1,0 @@
-faddREAL64.scenario
-fdivideREAL64.scenario
-fgeneralREAL64.scenario
-fmultiplyREAL64.scenario
-fsubtractREAL64.scenario

@@ -1,4 +1,0 @@
-module_variables_001d.scenario
-module_variables_002d.scenario
-module_variables_003d.scenario
-module_variables_004d.scenario

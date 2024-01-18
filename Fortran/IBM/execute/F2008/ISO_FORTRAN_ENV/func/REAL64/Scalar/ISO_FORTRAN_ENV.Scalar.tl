@@ -1,8 +1,0 @@
-faddREAL64.scenario
-faddREAL64realsize.scenario
-fdivREAL64.scenario
-fdivREAL64realsize.scenario
-fmulREAL64.scenario
-fmulREAL64realsize.scenario
-fsubREAL64.scenario
-fsubREAL64realsize.scenario

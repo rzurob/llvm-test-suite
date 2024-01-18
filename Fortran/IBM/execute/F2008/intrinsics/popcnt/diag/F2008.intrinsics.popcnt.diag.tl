@@ -1,6 +1,0 @@
-POPCNT_001d.scenario
-POPCNT_004d.scenario
-POPCNT_005d.scenario
-POPCNT_006d.scenario
-POPCNT_007d.scenario
-POPCNT_008d.scenario

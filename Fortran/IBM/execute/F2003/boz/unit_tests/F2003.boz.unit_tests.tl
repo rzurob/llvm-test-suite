@@ -1,6 +1,0 @@
-! automatically generated
-bozlitargsIntrnFunc001.scenario
-bozlitargsIntrnFunc002.scenario
-bozlitargsIntrnFunc003.scenario
-bozlitargsIntrnFunc004.scenario
-bozlitargsIntrnFunc005.scenario

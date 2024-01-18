@@ -1,7 +1,0 @@
-! automatically generated
-selectType001.scenario
-selectType001a.scenario
-selectType002.scenario
-selectType002a.scenario
-selectType003.scenario
-selectType003a.scenario
